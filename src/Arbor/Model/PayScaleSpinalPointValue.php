@@ -1,0 +1,116 @@
+<?php
+namespace Arbor\Model;
+
+use \Arbor\Resource\ResourceType;
+use \Arbor\Api\Gateway\GatewayInterface;
+use \Arbor\Query\Query;
+use \Arbor\Model\Collection;
+use \Arbor\Model\ModelBase;
+use \Arbor\Model\Exception;
+use \Arbor\Model\PayScaleSpinalPoint;
+
+class PayScaleSpinalPointValue extends ModelBase
+{
+
+    const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
+
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
+
+    const GROSS_SALARY = 'grossSalary';
+
+    protected $_resourceType = ResourceType::PAY_SCALE_SPINAL_POINT_VALUE;
+
+    /**
+     * @param \Arbor\Query\Query $query
+     * @return PayScaleSpinalPointValue[] | Collection
+     * @throws Exception
+     */
+    public static function query(Query $query = null)
+    {
+        if(is_null($query)) $query = new Query();
+        $query->setResourceType("PayScaleSpinalPointValue");
+        $gateway = self::getDefaultGateway();
+        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        return $gateway->query($query);
+    }
+
+    /**
+     * @param mixed $id
+     * @return PayScaleSpinalPointValue
+     * @throws Exception
+     */
+    public static function retrieve($id)
+    {
+        $gateway = self::getDefaultGateway();
+        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        return $gateway->retrieve(ResourceType::PAY_SCALE_SPINAL_POINT_VALUE, $id);
+    }
+
+    /**
+     * @return PayScaleSpinalPoint
+     */
+    public function getPayScaleSpinalPoint()
+    {
+        return $this->getProperty("payScaleSpinalPoint");
+    }
+
+    /**
+     * @param PayScaleSpinalPoint $payScaleSpinalPoint
+     */
+    public function setPayScaleSpinalPoint(PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    {
+        $this->setProperty("payScaleSpinalPoint", $payScaleSpinalPoint);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->getProperty("effectiveDate");
+    }
+
+    /**
+     * @param \DateTime $effectiveDate
+     */
+    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    {
+        $this->setProperty("effectiveDate", $effectiveDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty("endDate");
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty("endDate", $endDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGrossSalary()
+    {
+        return $this->getProperty("grossSalary");
+    }
+
+    /**
+     * @param string $grossSalary
+     */
+    public function setGrossSalary($grossSalary = null)
+    {
+        $this->setProperty("grossSalary", $grossSalary);
+    }
+
+
+}

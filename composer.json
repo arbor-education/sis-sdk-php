@@ -1,0 +1,21 @@
+{
+    "name": "orchard-ondemand/arbor-sdk-php",
+    "type": "library",
+    "description": "Arbor Education PHP SDK",
+    "keywords": ["arbor", "mis", "library", "SDK", "REST api"],
+    "homepage": "https://bitbucket.org/orchard-ondemand/arbor-sdk-php",
+    "license": "Commercial",
+    "autoload": {
+        "psr-0": {"Arbor\\": "src/"}
+    },
+    "repositories": [
+
+    ],
+    "require":
+    {
+        "php": ">=5.3.0",
+        "guzzle/guzzle": "~3.7",
+        "phpunit/phpunit": ">=4.7.0"
+    },
+    "minimum-stability": "beta"
+}
