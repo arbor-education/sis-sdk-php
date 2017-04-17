@@ -13,6 +13,7 @@ class AttendanceRollCallRegistration
     const MARK_STUDENT = "student";
     const MARK_MARK = "attendanceMark";
     const MARK_ROLL_CALL_DATE_TIME = "rollCallDateTime";
+    const MARK_MINUTES_LATE = "minutesLate";
 
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
@@ -30,13 +31,15 @@ class AttendanceRollCallRegistration
      * @param Student $student
      * @param \DateTime $rollCallDateTime
      * @param AttendanceMark $attendanceMark
+     * @param int|null $minutesLate
      */
-    public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark)
+    public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark, $minutesLate = null)
     {
         $this->_marks[] = array(
             self::MARK_STUDENT => $student,
             self::MARK_ROLL_CALL_DATE_TIME => $rollCallDateTime,
             self::MARK_MARK => $attendanceMark,
+            self::MARK_MINUTES_LATE => $minutesLate,
         );
     }
 
@@ -53,6 +56,7 @@ class AttendanceRollCallRegistration
             //Convert models to REST representations
             $markPayload[self::MARK_STUDENT] = $this->getHydrator()->extractArray($mark[self::MARK_STUDENT], true);
             $markPayload[self::MARK_MARK] = $this->getHydrator()->extractArray($mark[self::MARK_MARK], true);
+            $markPayload[self::MARK_MINUTES_LATE] = $mark[self::MARK_MINUTES_LATE];
 
             //Convert date to Y-m-d H:i:s string
             /**@var \DateTime $rollCallDateTime*/
