@@ -1,5 +1,5 @@
 {
-    "name": "orchard-ondemand/arbor-sdk-php",
+    "name": "arbor-education/arbor-sdk-php",
     "type": "library",
     "description": "Arbor Education PHP SDK",
     "keywords": ["arbor", "mis", "library", "SDK", "REST api"],
