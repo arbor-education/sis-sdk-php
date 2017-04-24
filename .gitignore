@@ -1,7 +1,4 @@
-vendor
-composer.phar
-atlassian-ide-plugin.xml
+/vendor
 .idea
 /nbproject/
 /examples/config.php
-/test/test/
