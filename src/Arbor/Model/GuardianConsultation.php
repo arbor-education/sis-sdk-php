@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class GuardianConsultation extends ModelBase
 {
-
     const GUARDIAN_CONSULTATION_NAME = 'guardianConsultationName';
 
     const START_DATETIME = 'startDatetime';
@@ -30,10 +29,14 @@ class GuardianConsultation extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("GuardianConsultation");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class GuardianConsultation extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GUARDIAN_CONSULTATION, $id);
     }
 
@@ -128,6 +133,4 @@ class GuardianConsultation extends ModelBase
     {
         $this->setProperty("selfSchedulingClosesDatetime", $selfSchedulingClosesDatetime);
     }
-
-
 }

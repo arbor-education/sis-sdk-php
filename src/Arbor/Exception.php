@@ -3,5 +3,4 @@ namespace Arbor;
 
 class Exception extends \Exception
 {
-
 }

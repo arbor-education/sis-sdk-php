@@ -1,6 +1,7 @@
 <?php
 
 namespace Arbor\Service;
+
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\AttendanceMark;
 use Arbor\Model\Hydrator;
@@ -18,11 +19,13 @@ class AttendanceRollCallRegistration
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
-    protected $_marks = array();
+    protected $_marks = [];
 
     public function __construct($gateway=null)
     {
-        if(is_null($gateway))$gateway = ModelBase::getDefaultGateway();
+        if (is_null($gateway)) {
+            $gateway = ModelBase::getDefaultGateway();
+        }
         $this->setGateway($gateway);
         $this->_hydrator = new Hydrator();
     }
@@ -35,22 +38,21 @@ class AttendanceRollCallRegistration
      */
     public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark, $minutesLate = null)
     {
-        $this->_marks[] = array(
+        $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_ROLL_CALL_DATE_TIME => $rollCallDateTime,
             self::MARK_MARK => $attendanceMark,
             self::MARK_MINUTES_LATE => $minutesLate,
-        );
+        ];
     }
 
     public function saveMarks()
     {
-        $payload = array();
+        $payload = [];
 
         $payload['request']['marks'] = [];
 
-        foreach($this->_marks AS $mark)
-        {
+        foreach ($this->_marks as $mark) {
             $markPayload = [];
 
             //Convert models to REST representations
@@ -61,9 +63,10 @@ class AttendanceRollCallRegistration
             //Convert date to Y-m-d H:i:s string
             /**@var \DateTime $rollCallDateTime*/
             $rollCallDateTime = $mark[self::MARK_ROLL_CALL_DATE_TIME];
-            if(!$rollCallDateTime instanceof \DateTime) throw new \InvalidArgumentException("RollCallDateTime must be an PHP DateTime object");
+            if (!$rollCallDateTime instanceof \DateTime) {
+                throw new \InvalidArgumentException("RollCallDateTime must be an PHP DateTime object");
+            }
             $markPayload[self::MARK_ROLL_CALL_DATE_TIME] = $rollCallDateTime->format("Y-m-d H:i:s");
-
 
             $payload['request']['marks'][] = $markPayload;
         }
@@ -71,9 +74,8 @@ class AttendanceRollCallRegistration
         $response = $this->getGateway()->sendRequest(
             RestGateway::HTTP_METHOD_POST, "/rest-v2/attendance-roll-call-registration", json_encode($payload));
 
-        if($response instanceof Response && $response->getStatusCode() == 200)
-        {
-            $this->_marks = array();
+        if ($response instanceof Response && $response->getStatusCode() == 200) {
+            $this->_marks = [];
         }
     }
 

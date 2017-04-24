@@ -13,7 +13,6 @@ use \Arbor\Model\StaffAbsence;
 
 class StaffAttendanceRecord extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const ATTENDANCE_PERIOD_DATE = 'attendancePeriodDate';
@@ -41,10 +40,14 @@ class StaffAttendanceRecord extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StaffAttendanceRecord");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class StaffAttendanceRecord extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF_ATTENDANCE_RECORD, $id);
     }
 
@@ -203,6 +208,4 @@ class StaffAttendanceRecord extends ModelBase
     {
         $this->setProperty("staffAbsence", $staffAbsence);
     }
-
-
 }

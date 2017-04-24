@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class SchoolWorkforceVacancyPost extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -28,10 +27,14 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_SchoolWorkforceVacancyPost");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class SchoolWorkforceVacancyPost extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_VACANCY_POST, $id);
     }
 
@@ -110,6 +115,4 @@ class SchoolWorkforceVacancyPost extends ModelBase
     {
         $this->setProperty("post", $post);
     }
-
-
 }

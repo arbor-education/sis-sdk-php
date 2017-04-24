@@ -12,7 +12,6 @@ use \Arbor\Model\StandardizedAssessmentTemplate;
 
 class StandardizedAssessmentBatch extends ModelBase
 {
-
     const ACADEMIC_YEAR = 'academicYear';
 
     const BATCH_NAME = 'batchName';
@@ -34,10 +33,14 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StandardizedAssessmentBatch");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class StandardizedAssessmentBatch extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STANDARDIZED_ASSESSMENT_BATCH, $id);
     }
 
@@ -148,6 +153,4 @@ class StandardizedAssessmentBatch extends ModelBase
     {
         $this->setProperty("senStudentsOnly", $senStudentsOnly);
     }
-
-
 }

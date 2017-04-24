@@ -11,7 +11,6 @@ use \Arbor\Model\Meeting;
 
 class MeetingNote extends ModelBase
 {
-
     const MEETING = 'meeting';
 
     const NOTE_TEXT = 'noteText';
@@ -29,10 +28,14 @@ class MeetingNote extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MeetingNote");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class MeetingNote extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEETING_NOTE, $id);
     }
 
@@ -111,6 +116,4 @@ class MeetingNote extends ModelBase
     {
         $this->setProperty("isSharedWithGuardians", $isSharedWithGuardians);
     }
-
-
 }

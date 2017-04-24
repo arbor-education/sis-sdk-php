@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class DocumentLayout extends ModelBase
 {
-
     const LAYOUT_NAME = 'layoutName';
 
     const PAGE_FORMAT = 'pageFormat';
@@ -54,10 +53,14 @@ class DocumentLayout extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DocumentLayout");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -69,7 +72,9 @@ class DocumentLayout extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DOCUMENT_LAYOUT, $id);
     }
 
@@ -344,6 +349,4 @@ class DocumentLayout extends ModelBase
     {
         $this->setProperty("marginPage1footer", $marginPage1footer);
     }
-
-
 }

@@ -12,5 +12,4 @@ class DepluralizeFilter implements FilterInterface
     {
         // TODO: Implement filter() method.
     }
-
 }

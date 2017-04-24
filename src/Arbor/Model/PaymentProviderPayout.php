@@ -12,7 +12,6 @@ use \Arbor\Model\PaymentProvider;
 
 class PaymentProviderPayout extends ModelBase
 {
-
     const BANK_ACCOUNT = 'bankAccount';
 
     const PAYMENT_PROVIDER = 'paymentProvider';
@@ -40,10 +39,14 @@ class PaymentProviderPayout extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PaymentProviderPayout");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -55,7 +58,9 @@ class PaymentProviderPayout extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PAYMENT_PROVIDER_PAYOUT, $id);
     }
 
@@ -202,6 +207,4 @@ class PaymentProviderPayout extends ModelBase
     {
         $this->setProperty("payoutSourceType", $payoutSourceType);
     }
-
-
 }

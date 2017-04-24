@@ -12,7 +12,6 @@ use \Arbor\Model\EnrolmentMode;
 
 class EnrolmentModeAssignment extends ModelBase
 {
-
     const SCHOOL_ENROLMENT = 'schoolEnrolment';
 
     const ENROLMENT_MODE = 'enrolmentMode';
@@ -30,10 +29,14 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EnrolmentModeAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class EnrolmentModeAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ENROLMENT_MODE_ASSIGNMENT, $id);
     }
 
@@ -112,6 +117,4 @@ class EnrolmentModeAssignment extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

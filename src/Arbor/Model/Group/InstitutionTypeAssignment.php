@@ -12,7 +12,6 @@ use \Arbor\Model\InstitutionType;
 
 class InstitutionTypeAssignment extends ModelBase
 {
-
     const INSTITUTION = 'institution';
 
     const INSTITUTION_TYPE = 'institutionType';
@@ -30,10 +29,14 @@ class InstitutionTypeAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Group_InstitutionTypeAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class InstitutionTypeAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GROUP_INSTITUTION_TYPE_ASSIGNMENT, $id);
     }
 
@@ -112,6 +117,4 @@ class InstitutionTypeAssignment extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

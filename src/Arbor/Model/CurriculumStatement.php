@@ -12,7 +12,6 @@ use \Arbor\Model\CurriculumStatementBand;
 
 class CurriculumStatement extends ModelBase
 {
-
     const CURRICULUM_SECTION = 'curriculumSection';
 
     const CURRICULUM_STATEMENT_BAND = 'curriculumStatementBand';
@@ -42,10 +41,14 @@ class CurriculumStatement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CurriculumStatement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -57,7 +60,9 @@ class CurriculumStatement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CURRICULUM_STATEMENT, $id);
     }
 
@@ -220,6 +225,4 @@ class CurriculumStatement extends ModelBase
     {
         $this->setProperty("order", $order);
     }
-
-
 }

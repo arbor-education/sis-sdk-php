@@ -11,7 +11,6 @@ use \Arbor\Model\SendingProfile;
 
 class SmsMessageDraft extends ModelBase
 {
-
     const SENDING_PROFILE = 'sendingProfile';
 
     const MESSAGE_TEXT = 'messageText';
@@ -31,10 +30,14 @@ class SmsMessageDraft extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SmsMessageDraft");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class SmsMessageDraft extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SMS_MESSAGE_DRAFT, $id);
     }
 
@@ -129,6 +134,4 @@ class SmsMessageDraft extends ModelBase
     {
         $this->setProperty("sendingCompletedDatetime", $sendingCompletedDatetime);
     }
-
-
 }

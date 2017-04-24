@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class AcademicYear extends ModelBase
 {
-
     const ACADEMIC_YEAR_NAME = 'academicYearName';
 
     const CODE = 'code';
@@ -32,10 +31,14 @@ class AcademicYear extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicYear");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class AcademicYear extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_YEAR, $id);
     }
 
@@ -146,6 +151,4 @@ class AcademicYear extends ModelBase
     {
         $this->setProperty("timetableCycleResetsEachTerm", $timetableCycleResetsEachTerm);
     }
-
-
 }

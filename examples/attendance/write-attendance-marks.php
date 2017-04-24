@@ -24,7 +24,7 @@ ModelBase::setDefaultGateway($gateway);
 //Set session start time to today 9AM
 $sessionStartTime = new \DateTime('now');
 $sessionStartTime->setTimezone(new DateTimeZone("GMT"));
-$sessionStartTime->setTime(9,0,0);
+$sessionStartTime->setTime(9, 0, 0);
 
 //Get some students which we are going to mark
 $student12 = Student::retrieve(12);

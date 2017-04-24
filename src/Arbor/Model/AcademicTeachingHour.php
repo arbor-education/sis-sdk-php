@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class AcademicTeachingHour extends ModelBase
 {
-
     const EFFECTIVE_DATE = 'effectiveDate';
 
     const END_DATE = 'endDate';
@@ -30,10 +29,14 @@ class AcademicTeachingHour extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicTeachingHour");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class AcademicTeachingHour extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_TEACHING_HOUR, $id);
     }
 
@@ -128,6 +133,4 @@ class AcademicTeachingHour extends ModelBase
     {
         $this->setProperty("dayOfCycle", $dayOfCycle);
     }
-
-
 }

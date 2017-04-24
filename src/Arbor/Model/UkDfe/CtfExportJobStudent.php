@@ -12,7 +12,6 @@ use \Arbor\Model\Student;
 
 class CtfExportJobStudent extends ModelBase
 {
-
     const CTF_EXPORT_JOB = 'ctfExportJob';
 
     const STUDENT = 'student';
@@ -26,10 +25,14 @@ class CtfExportJobStudent extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_CtfExportJobStudent");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class CtfExportJobStudent extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_CTF_EXPORT_JOB_STUDENT, $id);
     }
 
@@ -76,6 +81,4 @@ class CtfExportJobStudent extends ModelBase
     {
         $this->setProperty("student", $student);
     }
-
-
 }

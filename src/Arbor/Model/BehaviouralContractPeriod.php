@@ -13,7 +13,6 @@ use \Arbor\Model\Session;
 
 class BehaviouralContractPeriod extends ModelBase
 {
-
     const BEHAVIOURAL_CONTRACT = 'behaviouralContract';
 
     const BEHAVIOURAL_CONTRACT_GOAL = 'behaviouralContractGoal';
@@ -41,10 +40,14 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BehaviouralContractPeriod");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class BehaviouralContractPeriod extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_CONTRACT_PERIOD, $id);
     }
 
@@ -203,6 +208,4 @@ class BehaviouralContractPeriod extends ModelBase
     {
         $this->setProperty("signedPerson", $signedPerson);
     }
-
-
 }

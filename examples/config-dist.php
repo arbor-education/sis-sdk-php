@@ -4,12 +4,12 @@
  * Rename this file to config.php and adjust the settings to match your environment
  */
 
-return array(
-  "api" => array(
+return [
+  "api" => [
       "baseUrl"=>"http://trunk.staging.arbor.sc/rest-v2/",
-      "auth" => array(
+      "auth" => [
           "user"=>"admin@arbor-education.com",
           "password"=>"XXXXXXXX"
-      )
-  )
-);
+      ]
+  ]
+];

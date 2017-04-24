@@ -12,7 +12,6 @@ use \Arbor\Model\Person;
 
 class MedicalInstitutionStaff extends ModelBase
 {
-
     const MEDICAL_INSTITUTION = 'medicalInstitution';
 
     const PERSON = 'person';
@@ -28,10 +27,14 @@ class MedicalInstitutionStaff extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MedicalInstitutionStaff");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class MedicalInstitutionStaff extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEDICAL_INSTITUTION_STAFF, $id);
     }
 
@@ -94,6 +99,4 @@ class MedicalInstitutionStaff extends ModelBase
     {
         $this->setProperty("position", $position);
     }
-
-
 }

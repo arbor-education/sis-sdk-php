@@ -15,7 +15,6 @@ use \Arbor\Model\SuperannuationScheme;
 
 class StaffContract extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const STAFF_EMPLOYMENT_TYPE = 'staffEmploymentType';
@@ -51,10 +50,14 @@ class StaffContract extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StaffContract");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -66,7 +69,9 @@ class StaffContract extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT, $id);
     }
 
@@ -277,6 +282,4 @@ class StaffContract extends ModelBase
     {
         $this->setProperty("lastPayReviewDate", $lastPayReviewDate);
     }
-
-
 }

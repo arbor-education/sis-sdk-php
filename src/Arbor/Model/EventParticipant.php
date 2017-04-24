@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class EventParticipant extends ModelBase
 {
-
     const EVENT = 'event';
 
     const PARTICIPANT = 'participant';
@@ -26,10 +25,14 @@ class EventParticipant extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EventParticipant");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class EventParticipant extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EVENT_PARTICIPANT, $id);
     }
 
@@ -92,6 +97,4 @@ class EventParticipant extends ModelBase
     {
         $this->setProperty("attendanceRequirement", $attendanceRequirement);
     }
-
-
 }

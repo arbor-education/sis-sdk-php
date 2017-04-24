@@ -12,7 +12,6 @@ use \Arbor\Model\ProgrammeInstance;
 
 class TeachingGroup extends ModelBase
 {
-
     const TEACHING_GROUP_NAME = 'teachingGroupName';
 
     const DESCRIPTION = 'description';
@@ -30,10 +29,14 @@ class TeachingGroup extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("TeachingGroup");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class TeachingGroup extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TEACHING_GROUP, $id);
     }
 
@@ -112,6 +117,4 @@ class TeachingGroup extends ModelBase
     {
         $this->setProperty("programmeInstance", $programmeInstance);
     }
-
-
 }

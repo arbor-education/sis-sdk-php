@@ -12,7 +12,6 @@ use \Arbor\Model\SenEventOutcomeType;
 
 class SenEventOutcome extends ModelBase
 {
-
     const SEN_EVENT = 'senEvent';
 
     const SEN_EVENT_OUTCOME_TYPE = 'senEventOutcomeType';
@@ -28,10 +27,14 @@ class SenEventOutcome extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SenEventOutcome");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class SenEventOutcome extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SEN_EVENT_OUTCOME, $id);
     }
 
@@ -94,6 +99,4 @@ class SenEventOutcome extends ModelBase
     {
         $this->setProperty("comments", $comments);
     }
-
-
 }

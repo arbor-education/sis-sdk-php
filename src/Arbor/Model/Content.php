@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class Content extends ModelBase
 {
-
     const CONTENT_NAME = 'contentName';
 
     const DESCRIPTION = 'description';
@@ -24,10 +23,14 @@ class Content extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Content");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class Content extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CONTENT, $id);
     }
 
@@ -74,6 +79,4 @@ class Content extends ModelBase
     {
         $this->setProperty("description", $description);
     }
-
-
 }

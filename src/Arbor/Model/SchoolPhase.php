@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class SchoolPhase extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -28,10 +27,14 @@ class SchoolPhase extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SchoolPhase");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class SchoolPhase extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SCHOOL_PHASE, $id);
     }
 
@@ -110,6 +115,4 @@ class SchoolPhase extends ModelBase
     {
         $this->setProperty("label", $label);
     }
-
-
 }

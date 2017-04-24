@@ -12,7 +12,6 @@ use \Arbor\Model\EducationalInstitution;
 
 class AtfImportJob extends ModelBase
 {
-
     const ATF_VERSION = 'atfVersion';
 
     const SOURCE_LOCAL_AUTHORITY_CODE = 'sourceLocalAuthorityCode';
@@ -46,10 +45,14 @@ class AtfImportJob extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_AtfImportJob");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -61,7 +64,9 @@ class AtfImportJob extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_ATF_IMPORT_JOB, $id);
     }
 
@@ -256,6 +261,4 @@ class AtfImportJob extends ModelBase
     {
         $this->setProperty("status", $status);
     }
-
-
 }

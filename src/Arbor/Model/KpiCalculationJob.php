@@ -11,7 +11,6 @@ use \Arbor\Model\Kpi;
 
 class KpiCalculationJob extends ModelBase
 {
-
     const KPI = 'kpi';
 
     const REFERENCE_DATE = 'referenceDate';
@@ -33,10 +32,14 @@ class KpiCalculationJob extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("KpiCalculationJob");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class KpiCalculationJob extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::KPI_CALCULATION_JOB, $id);
     }
 
@@ -147,6 +152,4 @@ class KpiCalculationJob extends ModelBase
     {
         $this->setProperty("threadId", $threadId);
     }
-
-
 }

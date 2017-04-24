@@ -14,7 +14,6 @@ use \Arbor\Model\TemporaryExclusion;
 
 class StudentAbsenceNote extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ABSENCE_START_DATETIME = 'absenceStartDatetime';
@@ -40,10 +39,14 @@ class StudentAbsenceNote extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentAbsenceNote");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -55,7 +58,9 @@ class StudentAbsenceNote extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_ABSENCE_NOTE, $id);
     }
 
@@ -186,6 +191,4 @@ class StudentAbsenceNote extends ModelBase
     {
         $this->setProperty("temporaryExclusion", $temporaryExclusion);
     }
-
-
 }

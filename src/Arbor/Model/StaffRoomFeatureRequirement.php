@@ -12,7 +12,6 @@ use \Arbor\Model\RoomFeature;
 
 class StaffRoomFeatureRequirement extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const ROOM_FEATURE = 'roomFeature';
@@ -26,10 +25,14 @@ class StaffRoomFeatureRequirement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StaffRoomFeatureRequirement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class StaffRoomFeatureRequirement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF_ROOM_FEATURE_REQUIREMENT, $id);
     }
 
@@ -76,6 +81,4 @@ class StaffRoomFeatureRequirement extends ModelBase
     {
         $this->setProperty("roomFeature", $roomFeature);
     }
-
-
 }

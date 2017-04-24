@@ -6,7 +6,6 @@ require_once(__DIR__."/example-bootstrap.php");
 
 date_default_timezone_set("Europe/London");
 
-
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\ModelBase;
 
@@ -28,13 +27,13 @@ $schoolworkQuery->addPropertyFilter(\Arbor\Model\StudentSchoolwork::STUDENT, \Ar
 
 $schoolworks = \Arbor\Model\StudentSchoolwork::query($schoolworkQuery);
 
-foreach($schoolworks as $schoolwork) {
+foreach ($schoolworks as $schoolwork) {
     $schoolworkMarkQuery = new \Arbor\Query\Query(\Arbor\Resource\ResourceType::STUDENT_SCHOOLWORK_MARK);
     $schoolworkMarkQuery->addPropertyFilter(\Arbor\Model\StudentSchoolworkMark::STUDENT_SCHOOLWORK, \Arbor\Query\Query::OPERATOR_EQUALS, $schoolwork);
 
     $schoolworkMarks = \Arbor\Model\StudentSchoolworkMark::query($schoolworkMarkQuery);
 
-    $assessments = array();
+    $assessments = [];
     foreach ($schoolworkMarks as $schoolworkMark) {
         $markGrade = $schoolworkMark->getMarkGrade();
         $markPupil = $student->getPerson()->getLegalFirstName() . ' ' . $student->getPerson()->getLegalLastName();
@@ -42,12 +41,11 @@ foreach($schoolworks as $schoolwork) {
 
         if ($markGrade) {
             $assessments[] = $markGrade->getGradeCode();
-        }
-        else {
-            $assessments[] = NULL;
+        } else {
+            $assessments[] = null;
         }
     }
     foreach ($assessments as $assessment) {
-        echo ($markDate . ' ' . $assessment . ' '. $markPupil) . PHP_EOL;
+        echo($markDate . ' ' . $assessment . ' '. $markPupil) . PHP_EOL;
     }
 }

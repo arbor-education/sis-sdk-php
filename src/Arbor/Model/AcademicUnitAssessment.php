@@ -12,7 +12,6 @@ use \Arbor\Model\Assessment;
 
 class AcademicUnitAssessment extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const ASSESSMENT = 'assessment';
@@ -26,10 +25,14 @@ class AcademicUnitAssessment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicUnitAssessment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class AcademicUnitAssessment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_ASSESSMENT, $id);
     }
 
@@ -76,6 +81,4 @@ class AcademicUnitAssessment extends ModelBase
     {
         $this->setProperty("assessment", $assessment);
     }
-
-
 }

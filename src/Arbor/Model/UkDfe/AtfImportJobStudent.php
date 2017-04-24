@@ -13,7 +13,6 @@ use \Arbor\Model\Student;
 
 class AtfImportJobStudent extends ModelBase
 {
-
     const ATF_IMPORT_JOB = 'atfImportJob';
 
     const FIRST_NAME = 'firstName';
@@ -61,10 +60,14 @@ class AtfImportJobStudent extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_AtfImportJobStudent");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -76,7 +79,9 @@ class AtfImportJobStudent extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_ATF_IMPORT_JOB_STUDENT, $id);
     }
 
@@ -383,6 +388,4 @@ class AtfImportJobStudent extends ModelBase
     {
         $this->setProperty("importErrors", $importErrors);
     }
-
-
 }

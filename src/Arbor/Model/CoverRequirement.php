@@ -11,7 +11,6 @@ use \Arbor\Model\Staff;
 
 class CoverRequirement extends ModelBase
 {
-
     const COVER_EVENT = 'coverEvent';
 
     const ABSENT_STAFF = 'absentStaff';
@@ -33,10 +32,14 @@ class CoverRequirement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CoverRequirement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class CoverRequirement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::COVER_REQUIREMENT, $id);
     }
 
@@ -147,6 +152,4 @@ class CoverRequirement extends ModelBase
     {
         $this->setProperty("coverNotRequiredDatetime", $coverNotRequiredDatetime);
     }
-
-
 }

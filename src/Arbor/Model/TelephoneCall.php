@@ -11,7 +11,6 @@ use \Arbor\Model\TelephoneNumber;
 
 class TelephoneCall extends ModelBase
 {
-
     const CALLER_NAME = 'callerName';
 
     const CALLER = 'caller';
@@ -47,10 +46,14 @@ class TelephoneCall extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("TelephoneCall");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -62,7 +65,9 @@ class TelephoneCall extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TELEPHONE_CALL, $id);
     }
 
@@ -273,6 +278,4 @@ class TelephoneCall extends ModelBase
     {
         $this->setProperty("actionRequiredByDatetime", $actionRequiredByDatetime);
     }
-
-
 }

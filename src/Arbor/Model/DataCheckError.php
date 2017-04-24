@@ -11,7 +11,6 @@ use \Arbor\Model\User;
 
 class DataCheckError extends ModelBase
 {
-
     const DATA_CHECKER_CLASS_NAME = 'dataCheckerClassName';
 
     const ERROR_IDENTIFIER = 'errorIdentifier';
@@ -43,10 +42,14 @@ class DataCheckError extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DataCheckError");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -58,7 +61,9 @@ class DataCheckError extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DATA_CHECK_ERROR, $id);
     }
 
@@ -237,6 +242,4 @@ class DataCheckError extends ModelBase
     {
         $this->setProperty("correctedByUser", $correctedByUser);
     }
-
-
 }

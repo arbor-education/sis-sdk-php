@@ -12,7 +12,6 @@ use \Arbor\Model\CurriculumGrade;
 
 class SchoolProgressTargetRule extends ModelBase
 {
-
     const RULE_NAME = 'ruleName';
 
     const ASSESSMENT = 'assessment';
@@ -42,10 +41,14 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SchoolProgressTargetRule");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -57,7 +60,9 @@ class SchoolProgressTargetRule extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SCHOOL_PROGRESS_TARGET_RULE, $id);
     }
 
@@ -220,6 +225,4 @@ class SchoolProgressTargetRule extends ModelBase
     {
         $this->setProperty("academicYearsOffset", $academicYearsOffset);
     }
-
-
 }

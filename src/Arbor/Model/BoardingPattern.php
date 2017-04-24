@@ -13,7 +13,6 @@ use \Arbor\Model\Room;
 
 class BoardingPattern extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -45,10 +44,14 @@ class BoardingPattern extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BoardingPattern");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -60,7 +63,9 @@ class BoardingPattern extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BOARDING_PATTERN, $id);
     }
 
@@ -239,6 +244,4 @@ class BoardingPattern extends ModelBase
     {
         $this->setProperty("accommodationRoom", $accommodationRoom);
     }
-
-
 }

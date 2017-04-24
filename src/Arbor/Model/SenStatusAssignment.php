@@ -12,7 +12,6 @@ use \Arbor\Model\Student;
 
 class SenStatusAssignment extends ModelBase
 {
-
     const SEN_STATUS = 'senStatus';
 
     const STUDENT = 'student';
@@ -30,10 +29,14 @@ class SenStatusAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SenStatusAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class SenStatusAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SEN_STATUS_ASSIGNMENT, $id);
     }
 
@@ -112,6 +117,4 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

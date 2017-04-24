@@ -11,7 +11,6 @@ use \Arbor\Model\MealProvision;
 
 class MealProvisionPriceCategory extends ModelBase
 {
-
     const CATEGORY_NAME = 'categoryName';
 
     const MEAL_PROVISION = 'mealProvision';
@@ -33,10 +32,14 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MealProvisionPriceCategory");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class MealProvisionPriceCategory extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEAL_PROVISION_PRICE_CATEGORY, $id);
     }
 
@@ -147,6 +152,4 @@ class MealProvisionPriceCategory extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

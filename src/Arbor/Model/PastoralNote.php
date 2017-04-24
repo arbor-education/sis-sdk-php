@@ -11,7 +11,6 @@ use \Arbor\Model\Student;
 
 class PastoralNote extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const SUMMARY = 'summary';
@@ -29,10 +28,14 @@ class PastoralNote extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PastoralNote");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class PastoralNote extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PASTORAL_NOTE, $id);
     }
 
@@ -111,6 +116,4 @@ class PastoralNote extends ModelBase
     {
         $this->setProperty("noteDate", $noteDate);
     }
-
-
 }

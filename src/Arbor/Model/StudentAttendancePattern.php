@@ -13,7 +13,6 @@ use \Arbor\Model\AttendancePattern;
 
 class StudentAttendancePattern extends ModelBase
 {
-
     const ACADEMIC_YEAR = 'academicYear';
 
     const STUDENT = 'student';
@@ -33,10 +32,14 @@ class StudentAttendancePattern extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentAttendancePattern");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class StudentAttendancePattern extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_ATTENDANCE_PATTERN, $id);
     }
 
@@ -131,6 +136,4 @@ class StudentAttendancePattern extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

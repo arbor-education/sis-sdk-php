@@ -22,8 +22,7 @@ $studentQuery->addPropertyFilter("ethnicity", Query::OPERATOR_EQUALS, $ethnicity
 $modelCollection = $api->query($studentQuery);
 
 //Display Logic
-foreach($modelCollection AS $model)
-{
+foreach ($modelCollection as $model) {
     $hydrator = new \Arbor\Model\Hydrator();
     $array = $hydrator->extractArray($model);
     print_r($array);

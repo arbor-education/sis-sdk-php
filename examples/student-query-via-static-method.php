@@ -24,8 +24,7 @@ $modelCollection = Student::query($query);
 
 $hydrator = new \Arbor\Model\Hydrator();
 //Display Logic
-foreach($modelCollection AS $model)
-{
+foreach ($modelCollection as $model) {
     $array = $hydrator->extractArray($model);
     print_r($array);
 }

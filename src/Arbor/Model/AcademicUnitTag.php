@@ -11,7 +11,6 @@ use \Arbor\Model\AcademicUnit;
 
 class AcademicUnitTag extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const RELATED_OBJECT = 'relatedObject';
@@ -25,10 +24,14 @@ class AcademicUnitTag extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicUnitTag");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class AcademicUnitTag extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_TAG, $id);
     }
 
@@ -75,6 +80,4 @@ class AcademicUnitTag extends ModelBase
     {
         $this->setProperty("relatedObject", $relatedObject);
     }
-
-
 }

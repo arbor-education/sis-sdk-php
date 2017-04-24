@@ -11,7 +11,6 @@ use \Arbor\Model\StandardizedAssessmentBatch;
 
 class StandardizedAssessmentBatchTarget extends ModelBase
 {
-
     const STANDARDIZED_ASSESSMENT_BATCH = 'standardizedAssessmentBatch';
 
     const TARGET = 'target';
@@ -25,10 +24,14 @@ class StandardizedAssessmentBatchTarget extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StandardizedAssessmentBatchTarget");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STANDARDIZED_ASSESSMENT_BATCH_TARGET, $id);
     }
 
@@ -75,6 +80,4 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty("target", $target);
     }
-
-
 }

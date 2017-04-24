@@ -4,7 +4,7 @@ namespace Arbor\Api;
 
 class ServerValidationException extends \InvalidArgumentException
 {
-    public $validationErrors = array();
+    public $validationErrors = [];
 
     /**
      * @param string $message
@@ -12,7 +12,7 @@ class ServerValidationException extends \InvalidArgumentException
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct($message="", $validationErrors=array(), $code=0, \Exception $previous=null)
+    public function __construct($message="", $validationErrors=[], $code=0, \Exception $previous=null)
     {
         parent::__construct($message, $code, $previous);
         $this->validationErrors = $validationErrors;

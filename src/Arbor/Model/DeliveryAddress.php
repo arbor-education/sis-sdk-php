@@ -11,7 +11,6 @@ use \Arbor\Model\PostalAddress;
 
 class DeliveryAddress extends ModelBase
 {
-
     const DELIVERY_ADDRESS_NAME = 'deliveryAddressName';
 
     const OWNER = 'owner';
@@ -37,10 +36,14 @@ class DeliveryAddress extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DeliveryAddress");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class DeliveryAddress extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DELIVERY_ADDRESS, $id);
     }
 
@@ -183,6 +188,4 @@ class DeliveryAddress extends ModelBase
     {
         $this->setProperty("isAddressForReuse", $isAddressForReuse);
     }
-
-
 }

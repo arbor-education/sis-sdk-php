@@ -11,7 +11,6 @@ use \Arbor\Model\TransportationMethod;
 
 class PersonTransportationMethod extends ModelBase
 {
-
     const PERSON = 'person';
 
     const TRANSPORTATION_METHOD = 'transportationMethod';
@@ -27,10 +26,14 @@ class PersonTransportationMethod extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PersonTransportationMethod");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class PersonTransportationMethod extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PERSON_TRANSPORTATION_METHOD, $id);
     }
 
@@ -93,6 +98,4 @@ class PersonTransportationMethod extends ModelBase
     {
         $this->setProperty("notes", $notes);
     }
-
-
 }

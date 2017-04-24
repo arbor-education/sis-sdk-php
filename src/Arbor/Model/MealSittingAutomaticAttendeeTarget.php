@@ -11,7 +11,6 @@ use \Arbor\Model\MealSitting;
 
 class MealSittingAutomaticAttendeeTarget extends ModelBase
 {
-
     const MEAL_SITTING = 'mealSitting';
 
     const AUTOMATIC_ATTENDEE_TARGET = 'automaticAttendeeTarget';
@@ -25,10 +24,14 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MealSittingAutomaticAttendeeTarget");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET, $id);
     }
 
@@ -75,6 +80,4 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     {
         $this->setProperty("automaticAttendeeTarget", $automaticAttendeeTarget);
     }
-
-
 }

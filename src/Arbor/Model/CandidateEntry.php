@@ -15,7 +15,6 @@ use \Arbor\Model\InvigilationSession;
 
 class CandidateEntry extends ModelBase
 {
-
     const CANDIDATE = 'candidate';
 
     const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
@@ -51,10 +50,14 @@ class CandidateEntry extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CandidateEntry");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -66,7 +69,9 @@ class CandidateEntry extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CANDIDATE_ENTRY, $id);
     }
 
@@ -277,6 +282,4 @@ class CandidateEntry extends ModelBase
     {
         $this->setProperty("minutesLate", $minutesLate);
     }
-
-
 }

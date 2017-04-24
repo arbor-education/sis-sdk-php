@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class BehaviourTime extends ModelBase
 {
-
     const START_TIME = 'startTime';
 
     const END_TIME = 'endTime';
@@ -26,10 +25,14 @@ class BehaviourTime extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BehaviourTime");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class BehaviourTime extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BEHAVIOUR_TIME, $id);
     }
 
@@ -92,6 +97,4 @@ class BehaviourTime extends ModelBase
     {
         $this->setProperty("name", $name);
     }
-
-
 }

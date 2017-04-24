@@ -11,7 +11,6 @@ use \Arbor\Model\CurriculumTargetSet;
 
 class CurriculumTarget extends ModelBase
 {
-
     const CURRICULUM_TARGET_SET = 'curriculumTargetSet';
 
     const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
@@ -29,10 +28,14 @@ class CurriculumTarget extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CurriculumTarget");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class CurriculumTarget extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CURRICULUM_TARGET, $id);
     }
 
@@ -111,6 +116,4 @@ class CurriculumTarget extends ModelBase
     {
         $this->setProperty("target", $target);
     }
-
-
 }

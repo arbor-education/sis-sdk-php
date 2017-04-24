@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class ApplicationSetting extends ModelBase
 {
-
     const SETTING_NAME = 'settingName';
 
     const SETTING_VALUE = 'settingValue';
@@ -24,10 +23,14 @@ class ApplicationSetting extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ApplicationSetting");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class ApplicationSetting extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::APPLICATION_SETTING, $id);
     }
 
@@ -74,6 +79,4 @@ class ApplicationSetting extends ModelBase
     {
         $this->setProperty("settingValue", $settingValue);
     }
-
-
 }

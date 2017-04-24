@@ -14,7 +14,6 @@ use \Arbor\Model\MealProvisionPriceCategory;
 
 class MealSessionRegisterRecord extends ModelBase
 {
-
     const MEAL_SESSION = 'mealSession';
 
     const PERSON = 'person';
@@ -36,10 +35,14 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MealSessionRegisterRecord");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -51,7 +54,9 @@ class MealSessionRegisterRecord extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEAL_SESSION_REGISTER_RECORD, $id);
     }
 
@@ -150,6 +155,4 @@ class MealSessionRegisterRecord extends ModelBase
     {
         $this->setProperty("source", $source);
     }
-
-
 }

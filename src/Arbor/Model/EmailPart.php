@@ -11,7 +11,6 @@ use \Arbor\Model\Email;
 
 class EmailPart extends ModelBase
 {
-
     const EMAIL = 'email';
 
     const MIME_CONTENT_ID = 'mimeContentId';
@@ -39,10 +38,14 @@ class EmailPart extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EmailPart");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -54,7 +57,9 @@ class EmailPart extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EMAIL_PART, $id);
     }
 
@@ -201,6 +206,4 @@ class EmailPart extends ModelBase
     {
         $this->setProperty("parentEmailPart", $parentEmailPart);
     }
-
-
 }

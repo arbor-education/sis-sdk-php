@@ -13,7 +13,6 @@ use \Arbor\Model\MessageDraftRecipient;
 
 class EmailRecipient extends ModelBase
 {
-
     const EMAIL = 'email';
 
     const RECIPIENT_TYPE = 'recipientType';
@@ -43,10 +42,14 @@ class EmailRecipient extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EmailRecipient");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -58,7 +61,9 @@ class EmailRecipient extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EMAIL_RECIPIENT, $id);
     }
 
@@ -221,6 +226,4 @@ class EmailRecipient extends ModelBase
     {
         $this->setProperty("failedDatetime", $failedDatetime);
     }
-
-
 }

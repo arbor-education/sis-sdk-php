@@ -11,7 +11,6 @@ use \Arbor\Model\AcademicYear;
 
 class Term extends ModelBase
 {
-
     const ACADEMIC_YEAR = 'academicYear';
 
     const TERM_NAME = 'termName';
@@ -35,10 +34,14 @@ class Term extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Term");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class Term extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TERM, $id);
     }
 
@@ -165,6 +170,4 @@ class Term extends ModelBase
     {
         $this->setProperty("timetableCycleOffset", $timetableCycleOffset);
     }
-
-
 }

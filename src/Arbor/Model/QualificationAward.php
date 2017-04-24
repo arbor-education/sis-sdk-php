@@ -16,7 +16,6 @@ use \Arbor\Model\QualificationAwardLevel;
 
 class QualificationAward extends ModelBase
 {
-
     const AWARDING_ORGANISATION_ACCREDITED_VERSION_NUMBER = 'awardingOrganisationAccreditedVersionNumber';
 
     const ASSESSMENT_LANGUAGE = 'assessmentLanguage';
@@ -120,10 +119,14 @@ class QualificationAward extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("QualificationAward");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -135,7 +138,9 @@ class QualificationAward extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD, $id);
     }
 
@@ -890,6 +895,4 @@ class QualificationAward extends ModelBase
     {
         $this->setProperty("assessor", $assessor);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\MedicalInstitution;
 
 class Immunization extends ModelBase
 {
-
     const PERSON = 'person';
 
     const IMMUNIZATION_TYPE = 'immunizationType';
@@ -30,10 +29,14 @@ class Immunization extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Immunization");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class Immunization extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::IMMUNIZATION, $id);
     }
 
@@ -112,6 +117,4 @@ class Immunization extends ModelBase
     {
         $this->setProperty("administeredByMedicalInstitution", $administeredByMedicalInstitution);
     }
-
-
 }

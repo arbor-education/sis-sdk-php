@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class LayoutObjectType extends ModelBase
 {
-
     const LAYOUT_OBJECT_TYPE_NAME = 'layoutObjectTypeName';
 
     const WIDTH = 'width';
@@ -26,10 +25,14 @@ class LayoutObjectType extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("LayoutObjectType");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class LayoutObjectType extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::LAYOUT_OBJECT_TYPE, $id);
     }
 
@@ -92,6 +97,4 @@ class LayoutObjectType extends ModelBase
     {
         $this->setProperty("height", $height);
     }
-
-
 }

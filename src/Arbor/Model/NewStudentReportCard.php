@@ -12,7 +12,6 @@ use \Arbor\Model\NewReportCardBatch;
 
 class NewStudentReportCard extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const REPORT_CARD_BATCH = 'reportCardBatch';
@@ -30,10 +29,14 @@ class NewStudentReportCard extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("NewStudentReportCard");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class NewStudentReportCard extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::NEW_STUDENT_REPORT_CARD, $id);
     }
 
@@ -112,6 +117,4 @@ class NewStudentReportCard extends ModelBase
     {
         $this->setProperty("approvedDatetime", $approvedDatetime);
     }
-
-
 }

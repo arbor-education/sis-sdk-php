@@ -12,7 +12,6 @@ use \Arbor\Model\Staff;
 
 class InvigilationDuty extends ModelBase
 {
-
     const INVIGILATION_SESSION = 'invigilationSession';
 
     const STAFF = 'staff';
@@ -32,10 +31,14 @@ class InvigilationDuty extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("InvigilationDuty");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class InvigilationDuty extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INVIGILATION_DUTY, $id);
     }
 
@@ -130,6 +135,4 @@ class InvigilationDuty extends ModelBase
     {
         $this->setProperty("endDatetime", $endDatetime);
     }
-
-
 }

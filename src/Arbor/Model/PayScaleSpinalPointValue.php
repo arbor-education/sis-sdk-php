@@ -11,7 +11,6 @@ use \Arbor\Model\PayScaleSpinalPoint;
 
 class PayScaleSpinalPointValue extends ModelBase
 {
-
     const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -29,10 +28,14 @@ class PayScaleSpinalPointValue extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PayScaleSpinalPointValue");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class PayScaleSpinalPointValue extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PAY_SCALE_SPINAL_POINT_VALUE, $id);
     }
 
@@ -111,6 +116,4 @@ class PayScaleSpinalPointValue extends ModelBase
     {
         $this->setProperty("grossSalary", $grossSalary);
     }
-
-
 }

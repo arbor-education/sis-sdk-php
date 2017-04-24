@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class ProgrammeInstance extends ModelBase
 {
-
     const PARTNER_UKPRN = 'partnerUkprn';
 
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_INSTANCE;
@@ -22,10 +21,14 @@ class ProgrammeInstance extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_ProgrammeInstance");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -37,7 +40,9 @@ class ProgrammeInstance extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_PROGRAMME_INSTANCE, $id);
     }
 
@@ -56,6 +61,4 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty("partnerUkprn", $partnerUkprn);
     }
-
-
 }

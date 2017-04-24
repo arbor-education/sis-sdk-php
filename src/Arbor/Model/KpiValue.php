@@ -12,7 +12,6 @@ use \Arbor\Model\KpiRange;
 
 class KpiValue extends ModelBase
 {
-
     const KPI = 'kpi';
 
     const KPI_CATEGORY = 'kpiCategory';
@@ -44,10 +43,14 @@ class KpiValue extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("KpiValue");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -59,7 +62,9 @@ class KpiValue extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::KPI_VALUE, $id);
     }
 
@@ -238,6 +243,4 @@ class KpiValue extends ModelBase
     {
         $this->setProperty("lastCalculatedDatetime", $lastCalculatedDatetime);
     }
-
-
 }

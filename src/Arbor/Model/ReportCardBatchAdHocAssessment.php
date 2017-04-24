@@ -12,7 +12,6 @@ use \Arbor\Model\AdHocAssessment;
 
 class ReportCardBatchAdHocAssessment extends ModelBase
 {
-
     const REPORT_CARD_BATCH = 'reportCardBatch';
 
     const AD_HOC_ASSESSMENT = 'adHocAssessment';
@@ -30,10 +29,14 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ReportCardBatchAdHocAssessment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::REPORT_CARD_BATCH_AD_HOC_ASSESSMENT, $id);
     }
 
@@ -112,6 +117,4 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     {
         $this->setProperty("markingCompletedDatetime", $markingCompletedDatetime);
     }
-
-
 }

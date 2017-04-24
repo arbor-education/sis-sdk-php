@@ -12,7 +12,6 @@ use \Arbor\Model\AcademicYear;
 
 class AcademicProgrammeInstance extends ModelBase
 {
-
     const ACADEMIC_PROGRAMME = 'academicProgramme';
 
     const INSTANCE_NAME = 'instanceName';
@@ -28,10 +27,14 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicProgrammeInstance");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class AcademicProgrammeInstance extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_PROGRAMME_INSTANCE, $id);
     }
 
@@ -102,6 +107,4 @@ class AcademicProgrammeInstance extends ModelBase
     {
         return $this->getCollectionProperty("topLevelAcademicUnits");
     }
-
-
 }

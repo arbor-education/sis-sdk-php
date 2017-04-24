@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class DataSetSubscription extends ModelBase
 {
-
     const DATA_SET_NAME = 'dataSetName';
 
     const DATA_SET_IDENTIFIER = 'dataSetIdentifier';
@@ -34,10 +33,14 @@ class DataSetSubscription extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DataSetSubscription");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class DataSetSubscription extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DATA_SET_SUBSCRIPTION, $id);
     }
 
@@ -164,6 +169,4 @@ class DataSetSubscription extends ModelBase
     {
         $this->setProperty("lastUpdatedDatetime", $lastUpdatedDatetime);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\CustomReport;
 
 class CustomReportScheduledExportReport extends ModelBase
 {
-
     const CUSTOM_REPORT_SCHEDULED_EXPORT = 'customReportScheduledExport';
 
     const CUSTOM_REPORT = 'customReport';
@@ -30,10 +29,14 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CustomReportScheduledExportReport");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class CustomReportScheduledExportReport extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT, $id);
     }
 
@@ -112,6 +117,4 @@ class CustomReportScheduledExportReport extends ModelBase
     {
         $this->setProperty("scheduledTime", $scheduledTime);
     }
-
-
 }

@@ -11,7 +11,6 @@ use \Arbor\Model\Bank;
 
 class BankDetail extends ModelBase
 {
-
     const ACCOUNT_HOLDER = 'accountHolder';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -35,10 +34,14 @@ class BankDetail extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BankDetail");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class BankDetail extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BANK_DETAIL, $id);
     }
 
@@ -165,6 +170,4 @@ class BankDetail extends ModelBase
     {
         $this->setProperty("sortCode", $sortCode);
     }
-
-
 }

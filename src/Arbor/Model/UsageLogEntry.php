@@ -11,7 +11,6 @@ use \Arbor\Model\User;
 
 class UsageLogEntry extends ModelBase
 {
-
     const TIMESTAMP = 'timestamp';
 
     const USER = 'user';
@@ -41,10 +40,14 @@ class UsageLogEntry extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UsageLogEntry");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class UsageLogEntry extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::USAGE_LOG_ENTRY, $id);
     }
 
@@ -219,6 +224,4 @@ class UsageLogEntry extends ModelBase
     {
         $this->setProperty("action", $action);
     }
-
-
 }

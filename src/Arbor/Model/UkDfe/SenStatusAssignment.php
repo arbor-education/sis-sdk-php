@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class SenStatusAssignment extends ModelBase
 {
-
     const IS_MEMBER_OF_SEN_UNIT = 'isMemberOfSenUnit';
 
     const HAS_RESOURCED_PROVISION = 'hasResourcedProvision';
@@ -24,10 +23,14 @@ class SenStatusAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_SenStatusAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class SenStatusAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_SEN_STATUS_ASSIGNMENT, $id);
     }
 
@@ -74,6 +79,4 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty("hasResourcedProvision", $hasResourcedProvision);
     }
-
-
 }

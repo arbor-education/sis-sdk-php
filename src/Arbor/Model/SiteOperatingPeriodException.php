@@ -11,7 +11,6 @@ use \Arbor\Model\Site;
 
 class SiteOperatingPeriodException extends ModelBase
 {
-
     const SITE = 'site';
 
     const START_DATE = 'startDate';
@@ -27,10 +26,14 @@ class SiteOperatingPeriodException extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SiteOperatingPeriodException");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class SiteOperatingPeriodException extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SITE_OPERATING_PERIOD_EXCEPTION, $id);
     }
 
@@ -93,6 +98,4 @@ class SiteOperatingPeriodException extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

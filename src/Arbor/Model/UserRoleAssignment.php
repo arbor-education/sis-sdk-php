@@ -13,7 +13,6 @@ use \Arbor\Model\BusinessRoleAssignment;
 
 class UserRoleAssignment extends ModelBase
 {
-
     const USER = 'user';
 
     const USER_ROLE = 'userRole';
@@ -33,10 +32,14 @@ class UserRoleAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UserRoleAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class UserRoleAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::USER_ROLE_ASSIGNMENT, $id);
     }
 
@@ -131,6 +136,4 @@ class UserRoleAssignment extends ModelBase
     {
         $this->setProperty("endDatetime", $endDatetime);
     }
-
-
 }

@@ -11,7 +11,6 @@ use \Arbor\Model\Kpi;
 
 class KpiTarget extends ModelBase
 {
-
     const KPI = 'kpi';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -37,10 +36,14 @@ class KpiTarget extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("KpiTarget");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class KpiTarget extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::KPI_TARGET, $id);
     }
 
@@ -183,6 +188,4 @@ class KpiTarget extends ModelBase
     {
         $this->setProperty("basis", $basis);
     }
-
-
 }

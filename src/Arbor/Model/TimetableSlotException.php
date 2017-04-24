@@ -11,7 +11,6 @@ use \Arbor\Model\TimetableSlot;
 
 class TimetableSlotException extends ModelBase
 {
-
     const TIMETABLE_SLOT = 'timetableSlot';
 
     const EXCEPTION_DATE = 'exceptionDate';
@@ -31,10 +30,14 @@ class TimetableSlotException extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("TimetableSlotException");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class TimetableSlotException extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TIMETABLE_SLOT_EXCEPTION, $id);
     }
 
@@ -129,6 +134,4 @@ class TimetableSlotException extends ModelBase
     {
         $this->setProperty("timeException", $timeException);
     }
-
-
 }

@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class SuperannuationScheme extends ModelBase
 {
-
     const SUPERANNUATION_SCHEME_NAME = 'superannuationSchemeName';
 
     const CODE = 'code';
@@ -24,10 +23,14 @@ class SuperannuationScheme extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SuperannuationScheme");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class SuperannuationScheme extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SUPERANNUATION_SCHEME, $id);
     }
 
@@ -74,6 +79,4 @@ class SuperannuationScheme extends ModelBase
     {
         $this->setProperty("code", $code);
     }
-
-
 }

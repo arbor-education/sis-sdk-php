@@ -11,7 +11,6 @@ use \Arbor\Model\CustomerAccount;
 
 class CashPayout extends ModelBase
 {
-
     const CUSTOMER_ACCOUNT = 'customerAccount';
 
     const PAYOUT_DATETIME = 'payoutDatetime';
@@ -29,10 +28,14 @@ class CashPayout extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CashPayout");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class CashPayout extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CASH_PAYOUT, $id);
     }
 
@@ -111,6 +116,4 @@ class CashPayout extends ModelBase
     {
         $this->setProperty("narrative", $narrative);
     }
-
-
 }

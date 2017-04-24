@@ -11,7 +11,6 @@ use \Arbor\Model\Staff;
 
 class SuspectedDuplicate extends ModelBase
 {
-
     const SUSPECT_ONE = 'suspectOne';
 
     const SUSPECT_TWO = 'suspectTwo';
@@ -35,10 +34,14 @@ class SuspectedDuplicate extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SuspectedDuplicate");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class SuspectedDuplicate extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SUSPECTED_DUPLICATE, $id);
     }
 
@@ -165,6 +170,4 @@ class SuspectedDuplicate extends ModelBase
     {
         $this->setProperty("resolution", $resolution);
     }
-
-
 }

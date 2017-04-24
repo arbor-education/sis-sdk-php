@@ -11,7 +11,6 @@ use \Arbor\Model\AcademicYear;
 
 class CustomGroup extends ModelBase
 {
-
     const CUSTOM_GROUP_NAME = 'customGroupName';
 
     const DESCRIPTION = 'description';
@@ -33,10 +32,14 @@ class CustomGroup extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CustomGroup");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class CustomGroup extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CUSTOM_GROUP, $id);
     }
 
@@ -147,6 +152,4 @@ class CustomGroup extends ModelBase
     {
         $this->setProperty("containsStaff", $containsStaff);
     }
-
-
 }

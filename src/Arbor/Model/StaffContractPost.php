@@ -14,7 +14,6 @@ use \Arbor\Model\StaffContractPostEndReason;
 
 class StaffContractPost extends ModelBase
 {
-
     const STAFF_CONTRACT = 'staffContract';
 
     const POSITION = 'position';
@@ -48,10 +47,14 @@ class StaffContractPost extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StaffContractPost");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -63,7 +66,9 @@ class StaffContractPost extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT_POST, $id);
     }
 
@@ -258,6 +263,4 @@ class StaffContractPost extends ModelBase
     {
         $this->setProperty("endReason", $endReason);
     }
-
-
 }

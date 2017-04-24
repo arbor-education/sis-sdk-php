@@ -11,7 +11,6 @@ use \Arbor\Model\RepeatingSchoolEvent;
 
 class RepeatingSchoolEventParticipant extends ModelBase
 {
-
     const REPEATING_SCHOOL_EVENT = 'repeatingSchoolEvent';
 
     const PARTICIPANT = 'participant';
@@ -25,10 +24,14 @@ class RepeatingSchoolEventParticipant extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("RepeatingSchoolEventParticipant");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class RepeatingSchoolEventParticipant extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::REPEATING_SCHOOL_EVENT_PARTICIPANT, $id);
     }
 
@@ -75,6 +80,4 @@ class RepeatingSchoolEventParticipant extends ModelBase
     {
         $this->setProperty("participant", $participant);
     }
-
-
 }

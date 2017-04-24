@@ -12,7 +12,6 @@ use \Arbor\Model\VatRate;
 
 class ClubMembershipPeriodPrice extends ModelBase
 {
-
     const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
 
     const PRICING_BASIS = 'pricingBasis';
@@ -34,10 +33,14 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ClubMembershipPeriodPrice");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class ClubMembershipPeriodPrice extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CLUB_MEMBERSHIP_PERIOD_PRICE, $id);
     }
 
@@ -148,6 +153,4 @@ class ClubMembershipPeriodPrice extends ModelBase
     {
         $this->setProperty("variableContribution", $variableContribution);
     }
-
-
 }

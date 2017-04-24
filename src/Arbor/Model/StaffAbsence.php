@@ -12,7 +12,6 @@ use \Arbor\Model\StaffAbsenceCategory;
 
 class StaffAbsence extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const START_DATETIME = 'startDatetime';
@@ -48,10 +47,14 @@ class StaffAbsence extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StaffAbsence");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -63,7 +66,9 @@ class StaffAbsence extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF_ABSENCE, $id);
     }
 
@@ -274,6 +279,4 @@ class StaffAbsence extends ModelBase
     {
         $this->setProperty("narrative", $narrative);
     }
-
-
 }

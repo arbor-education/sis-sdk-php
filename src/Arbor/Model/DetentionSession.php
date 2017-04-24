@@ -12,7 +12,6 @@ use \Arbor\Model\TimetableSlot;
 
 class DetentionSession extends ModelBase
 {
-
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -36,10 +35,14 @@ class DetentionSession extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DetentionSession");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -51,7 +54,9 @@ class DetentionSession extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DETENTION_SESSION, $id);
     }
 
@@ -166,6 +171,4 @@ class DetentionSession extends ModelBase
     {
         $this->setProperty("timetableSlot", $timetableSlot);
     }
-
-
 }

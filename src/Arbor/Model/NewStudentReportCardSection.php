@@ -11,7 +11,6 @@ use \Arbor\Model\NewStudentReportCard;
 
 class NewStudentReportCardSection extends ModelBase
 {
-
     const STUDENT_REPORT_CARD = 'studentReportCard';
 
     const LINKED_ENTITY = 'linkedEntity';
@@ -29,10 +28,14 @@ class NewStudentReportCardSection extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("NewStudentReportCardSection");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class NewStudentReportCardSection extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::NEW_STUDENT_REPORT_CARD_SECTION, $id);
     }
 
@@ -111,6 +116,4 @@ class NewStudentReportCardSection extends ModelBase
     {
         $this->setProperty("approvedDatetime", $approvedDatetime);
     }
-
-
 }

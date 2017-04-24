@@ -11,7 +11,6 @@ use \Arbor\Model\UkDfe\PayScaleCategory;
 
 class PayScale extends ModelBase
 {
-
     const REGIONAL_PAY_SPINE = 'regionalPaySpine';
 
     const PAY_SCALE_CATEGORY = 'payScaleCategory';
@@ -37,10 +36,14 @@ class PayScale extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PayScale");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class PayScale extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PAY_SCALE, $id);
     }
 
@@ -183,6 +188,4 @@ class PayScale extends ModelBase
     {
         $this->setProperty("maximumSalary", $maximumSalary);
     }
-
-
 }

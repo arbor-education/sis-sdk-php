@@ -18,7 +18,6 @@ $api = new RestGateway(
 $api->getHttpClient()->setSslVerification(false);
 ModelBase::setDefaultGateway($api);
 
-
 $student = \Arbor\Model\Student::retrieve(710);
 
 $query = new \Arbor\Query\Query(\Arbor\Resource\ResourceType::QUALIFICATION_RESULT);
@@ -26,11 +25,10 @@ $query->addPropertyFilter(\Arbor\Model\QualificationResult::STUDENT, \Arbor\Quer
 
 $qualificationResults = \Arbor\Model\QualificationResult::query($query);
 
-$results = array();
-foreach($qualificationResults as $qualificationResult)
-{
+$results = [];
+foreach ($qualificationResults as $qualificationResult) {
     $results[] = $qualificationResult->getQualificationGrade;
 }
-foreach($results as $result) {
+foreach ($results as $result) {
     echo($result) . PHP_EOL;
 }

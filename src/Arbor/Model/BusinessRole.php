@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class BusinessRole extends ModelBase
 {
-
     const SWF_CENSUS_IDENTIFIER = 'swfCensusIdentifier';
 
     const MANAGED_BY_CLIENT = 'managedByClient';
@@ -44,10 +43,14 @@ class BusinessRole extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BusinessRole");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -59,7 +62,9 @@ class BusinessRole extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BUSINESS_ROLE, $id);
     }
 
@@ -254,6 +259,4 @@ class BusinessRole extends ModelBase
     {
         $this->setProperty("customerManagesDefaultUserRoles", $customerManagesDefaultUserRoles);
     }
-
-
 }

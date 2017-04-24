@@ -14,7 +14,6 @@ use \Arbor\Model\LessonPlan;
 
 class Session extends ModelBase
 {
-
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -48,10 +47,14 @@ class Session extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Session");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -63,7 +66,9 @@ class Session extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SESSION, $id);
     }
 
@@ -258,6 +263,4 @@ class Session extends ModelBase
     {
         $this->setProperty("lessonPlan", $lessonPlan);
     }
-
-
 }

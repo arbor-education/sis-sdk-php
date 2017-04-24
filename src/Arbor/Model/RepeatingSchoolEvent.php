@@ -12,7 +12,6 @@ use \Arbor\Model\SchoolEventType;
 
 class RepeatingSchoolEvent extends ModelBase
 {
-
     const ACADEMIC_YEAR = 'academicYear';
 
     const SCHOOL_EVENT_TYPE = 'schoolEventType';
@@ -30,10 +29,14 @@ class RepeatingSchoolEvent extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("RepeatingSchoolEvent");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class RepeatingSchoolEvent extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::REPEATING_SCHOOL_EVENT, $id);
     }
 
@@ -112,6 +117,4 @@ class RepeatingSchoolEvent extends ModelBase
     {
         $this->setProperty("narrative", $narrative);
     }
-
-
 }

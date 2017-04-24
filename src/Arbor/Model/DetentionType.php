@@ -11,7 +11,6 @@ use \Arbor\Model\AcademicYear;
 
 class DetentionType extends ModelBase
 {
-
     const DETENTION_TYPE_NAME = 'detentionTypeName';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -25,10 +24,14 @@ class DetentionType extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DetentionType");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class DetentionType extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DETENTION_TYPE, $id);
     }
 
@@ -75,6 +80,4 @@ class DetentionType extends ModelBase
     {
         $this->setProperty("academicYear", $academicYear);
     }
-
-
 }

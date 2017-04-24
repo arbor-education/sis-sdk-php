@@ -12,7 +12,6 @@ use \Arbor\Model\QualificationAssessable;
 
 class AcademicUnitQualificationLink extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -32,10 +31,14 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicUnitQualificationLink");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class AcademicUnitQualificationLink extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_QUALIFICATION_LINK, $id);
     }
 
@@ -130,6 +135,4 @@ class AcademicUnitQualificationLink extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

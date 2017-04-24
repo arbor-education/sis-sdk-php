@@ -13,7 +13,6 @@ use \Arbor\Model\Staff;
 
 class BehaviouralIncidentStudentInvolvement extends ModelBase
 {
-
     const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     const STUDENT = 'student';
@@ -37,10 +36,14 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BehaviouralIncidentStudentInvolvement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT, $id);
     }
 
@@ -167,6 +172,4 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     {
         $this->setProperty("assignee", $assignee);
     }
-
-
 }

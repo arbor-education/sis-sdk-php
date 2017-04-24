@@ -21,8 +21,7 @@ $cohortCollection = $model->getAcademicUnitCohorts();
 //Display Logic
 echo "Cohort count = ".$cohortCollection->count()."\n";
 //print_r($model);
-foreach($cohortCollection AS $index => $cohort)
-{
+foreach ($cohortCollection as $index => $cohort) {
     echo "Cohort $index name: ".$cohort->getCohortName()."\n";
     //print_r($cohort);
 }

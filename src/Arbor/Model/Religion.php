@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class Religion extends ModelBase
 {
-
     const D00009 = 'd00009';
 
     const D00195 = 'd00195';
@@ -32,10 +31,14 @@ class Religion extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Religion");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class Religion extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::RELIGION, $id);
     }
 
@@ -146,6 +151,4 @@ class Religion extends ModelBase
     {
         $this->setProperty("label", $label);
     }
-
-
 }

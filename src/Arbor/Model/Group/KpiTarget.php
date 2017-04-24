@@ -12,7 +12,6 @@ use \Arbor\Model\AcademicYear;
 
 class KpiTarget extends ModelBase
 {
-
     const KPI = 'kpi';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -30,10 +29,14 @@ class KpiTarget extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Group_KpiTarget");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class KpiTarget extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GROUP_KPI_TARGET, $id);
     }
 
@@ -112,6 +117,4 @@ class KpiTarget extends ModelBase
     {
         $this->setProperty("comment", $comment);
     }
-
-
 }

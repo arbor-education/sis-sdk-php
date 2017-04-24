@@ -13,9 +13,8 @@ $api = new RestGateway(
 $changes = $api->getChanges(ResourceType::STUDENT, 43322);
 
 //Display Logic
-foreach($changes as $change)
-{
-     echo " Object: ". $change->getChangedResource()->getResourceType()
+foreach ($changes as $change) {
+    echo " Object: ". $change->getChangedResource()->getResourceType()
          . ", ID:" . $change->getChangedResource()->getResourceId()
          ." has been ".$change->getChangeType() ."ed\n";
 }

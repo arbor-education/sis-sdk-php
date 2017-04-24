@@ -11,7 +11,6 @@ use \Arbor\Model\Room;
 
 class RoomChangeRequirement extends ModelBase
 {
-
     const EVENT = 'event';
 
     const UNAVAILABLE_ROOM = 'unavailableRoom';
@@ -29,10 +28,14 @@ class RoomChangeRequirement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("RoomChangeRequirement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class RoomChangeRequirement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ROOM_CHANGE_REQUIREMENT, $id);
     }
 
@@ -111,6 +116,4 @@ class RoomChangeRequirement extends ModelBase
     {
         $this->setProperty("roomChangedDatetime", $roomChangedDatetime);
     }
-
-
 }

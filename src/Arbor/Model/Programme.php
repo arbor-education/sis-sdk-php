@@ -11,7 +11,6 @@ use \Arbor\Model\Faculty;
 
 class Programme extends ModelBase
 {
-
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
@@ -29,10 +28,14 @@ class Programme extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Programme");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class Programme extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PROGRAMME, $id);
     }
 
@@ -111,6 +116,4 @@ class Programme extends ModelBase
     {
         $this->setProperty("faculty", $faculty);
     }
-
-
 }

@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class SearchIndexJob extends ModelBase
 {
-
     const OBJECT = 'object';
 
     const STARTED_DATETIME = 'startedDatetime';
@@ -28,10 +27,14 @@ class SearchIndexJob extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SearchIndexJob");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class SearchIndexJob extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SEARCH_INDEX_JOB, $id);
     }
 
@@ -110,6 +115,4 @@ class SearchIndexJob extends ModelBase
     {
         $this->setProperty("completedDatetime", $completedDatetime);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\CustomerInvoiceItem;
 
 class CustomerCreditNoteItem extends ModelBase
 {
-
     const CUSTOMER_CREDIT_NOTE = 'customerCreditNote';
 
     const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
@@ -32,10 +31,14 @@ class CustomerCreditNoteItem extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CustomerCreditNoteItem");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class CustomerCreditNoteItem extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CUSTOMER_CREDIT_NOTE_ITEM, $id);
     }
 
@@ -130,6 +135,4 @@ class CustomerCreditNoteItem extends ModelBase
     {
         $this->setProperty("narrative", $narrative);
     }
-
-
 }

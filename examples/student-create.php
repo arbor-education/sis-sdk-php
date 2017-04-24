@@ -7,7 +7,6 @@ use \Arbor\Model\Person;
 use \Arbor\Model\Student;
 use Guzzle\Plugin\Log\LogPlugin;
 
-
 $api = new RestGateway(
     $config["api"]["baseUrl"],
     $config["api"]["auth"]["user"],

@@ -12,7 +12,6 @@ use \Arbor\Model\ProgressMeasurementPeriod;
 
 class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
 {
-
     const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
     const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
@@ -26,10 +25,14 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ProgressAssessmentBatchMeasurementPeriod");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PROGRESS_ASSESSMENT_BATCH_MEASUREMENT_PERIOD, $id);
     }
 
@@ -76,6 +81,4 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     {
         $this->setProperty("progressMeasurementPeriod", $progressMeasurementPeriod);
     }
-
-
 }

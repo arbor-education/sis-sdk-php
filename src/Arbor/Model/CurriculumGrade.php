@@ -11,7 +11,6 @@ use \Arbor\Model\CurriculumTier;
 
 class CurriculumGrade extends ModelBase
 {
-
     const D00020 = 'd00020';
 
     const D00020_ORDER = 'd00020Order';
@@ -41,10 +40,14 @@ class CurriculumGrade extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CurriculumGrade");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class CurriculumGrade extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CURRICULUM_GRADE, $id);
     }
 
@@ -219,6 +224,4 @@ class CurriculumGrade extends ModelBase
     {
         $this->setProperty("maximumAgeAtStart", $maximumAgeAtStart);
     }
-
-
 }

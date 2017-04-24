@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class AcademicHoliday extends ModelBase
 {
-
     const ACADEMIC_HOLIDAY_TYPE = 'academicHolidayType';
 
     const START_DATE = 'startDate';
@@ -30,10 +29,14 @@ class AcademicHoliday extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicHoliday");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class AcademicHoliday extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_HOLIDAY, $id);
     }
 
@@ -128,6 +133,4 @@ class AcademicHoliday extends ModelBase
     {
         $this->setProperty("considerAsDayOfTimetableCycle", $considerAsDayOfTimetableCycle);
     }
-
-
 }

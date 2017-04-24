@@ -11,7 +11,6 @@ use \Arbor\Model\Staff;
 
 class TeachingAssistantAllocation extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const DAY_OF_CYCLE = 'dayOfCycle';
@@ -35,10 +34,14 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("TeachingAssistantAllocation");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class TeachingAssistantAllocation extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TEACHING_ASSISTANT_ALLOCATION, $id);
     }
 
@@ -165,6 +170,4 @@ class TeachingAssistantAllocation extends ModelBase
     {
         $this->setProperty("allocatedTo", $allocatedTo);
     }
-
-
 }

@@ -13,7 +13,6 @@ use \Arbor\Model\Grade;
 
 class StudentSchoolworkMark extends ModelBase
 {
-
     const STUDENT_SCHOOLWORK = 'studentSchoolwork';
 
     const SCHOOLWORK_ASPECT = 'schoolworkAspect';
@@ -37,10 +36,14 @@ class StudentSchoolworkMark extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentSchoolworkMark");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class StudentSchoolworkMark extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_SCHOOLWORK_MARK, $id);
     }
 
@@ -167,6 +172,4 @@ class StudentSchoolworkMark extends ModelBase
     {
         $this->setProperty("markDate", $markDate);
     }
-
-
 }

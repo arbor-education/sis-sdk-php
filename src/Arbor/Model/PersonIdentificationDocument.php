@@ -12,7 +12,6 @@ use \Arbor\Model\Country;
 
 class PersonIdentificationDocument extends ModelBase
 {
-
     const PERSON = 'person';
 
     const DOCUMENT_TYPE = 'documentType';
@@ -38,10 +37,14 @@ class PersonIdentificationDocument extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PersonIdentificationDocument");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -53,7 +56,9 @@ class PersonIdentificationDocument extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PERSON_IDENTIFICATION_DOCUMENT, $id);
     }
 
@@ -184,6 +189,4 @@ class PersonIdentificationDocument extends ModelBase
     {
         $this->setProperty("file", $file);
     }
-
-
 }

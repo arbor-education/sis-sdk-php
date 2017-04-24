@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class CourtOrder extends ModelBase
 {
-
     const SUMMARY = 'summary';
 
     const CONTENT = 'content';
@@ -28,10 +27,14 @@ class CourtOrder extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CourtOrder");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class CourtOrder extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::COURT_ORDER, $id);
     }
 
@@ -110,6 +115,4 @@ class CourtOrder extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

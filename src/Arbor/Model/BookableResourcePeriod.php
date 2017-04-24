@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class BookableResourcePeriod extends ModelBase
 {
-
     const RESOURCE = 'resource';
 
     const START_DATETIME = 'startDatetime';
@@ -26,10 +25,14 @@ class BookableResourcePeriod extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BookableResourcePeriod");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class BookableResourcePeriod extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BOOKABLE_RESOURCE_PERIOD, $id);
     }
 
@@ -92,6 +97,4 @@ class BookableResourcePeriod extends ModelBase
     {
         $this->setProperty("endDatetime", $endDatetime);
     }
-
-
 }

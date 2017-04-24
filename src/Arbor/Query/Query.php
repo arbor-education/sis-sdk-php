@@ -8,9 +8,9 @@ class Query
 {
     protected $_resourceType = null;
     /**@var array $_propertyFilters*/
-    protected $_propertyFilters = array();
+    protected $_propertyFilters = [];
     /**@var array $_userTagFilters*/
-    protected $_userTagFilters = array();
+    protected $_userTagFilters = [];
     /**@var int $_pageNumber*/
     protected $_pageNumber = null;
     /**@var int $_pageSize*/
@@ -20,7 +20,7 @@ class Query
     /**@var string $_orderDirection*/
     protected $_orderDirection = null;
     /**@var array $_taggings*/
-    protected $_taggings = array();
+    protected $_taggings = [];
 
     const OPERATOR_EQUALS = "equals";
     const OPERATOR_FROM = "from";
@@ -30,8 +30,8 @@ class Query
     const OPERATOR_SEARCH = "search";
     const OPERATOR_IN = "in";
 
-    public function __construct($resourceType=null, $propertyFilters=array(), $userTagFilters=array(), $pageNumber=null,
-                                $pageSize=null, $taggingsFilter = array())
+    public function __construct($resourceType=null, $propertyFilters=[], $userTagFilters=[], $pageNumber=null,
+                                $pageSize=null, $taggingsFilter = [])
     {
         $this->setResourceType($resourceType);
         $this->setPropertyFilters($propertyFilters);
@@ -147,11 +147,11 @@ class Query
         */
         //Add filter
         $this->_propertyFilters[] =
-            array(
+            [
                 "propertyName"=>$propertyName,
                 "operator"=>$operator,
                 "value"=>$value
-            );
+            ];
     }
 
     /**
@@ -160,16 +160,15 @@ class Query
      */
     public function addUserTagFilter($tagName, $value)
     {
-        if($value instanceof \DateTime)
-        {
+        if ($value instanceof \DateTime) {
             $value = $value->format("Y-m-d H:i:s");
         }
 
         $this->_userTagFilters[] =
-            array(
+            [
                 "tagName"=>$tagName,
                 "value"=>$value
-            );
+            ];
     }
 
     /**
@@ -192,23 +191,17 @@ class Query
     {
         $queryString = new \Guzzle\Http\QueryString();
 
-        foreach($this->getPropertyFilters() AS $propertyFilter)
-        {
+        foreach ($this->getPropertyFilters() as $propertyFilter) {
             //Allow the value to be another model
-            if($propertyFilter["value"] instanceof ModelBase)
-            {
+            if ($propertyFilter["value"] instanceof ModelBase) {
                 $resourceUrl = $propertyFilter["value"]->getResourceUrl();
-                if(empty($resourceUrl))
-                {
+                if (empty($resourceUrl)) {
                     throw new Exception("Model user in filters must be connected and have a resource URL set");
                 }
                 $propertyFilter["value"] = $resourceUrl;
-            }
-            elseif($propertyFilter["value"] instanceof \DateTime)
-            {
+            } elseif ($propertyFilter["value"] instanceof \DateTime) {
                 $propertyFilter["value"] = $propertyFilter["value"]->format("Y-m-d H:i:s");
-            }elseif(is_null($propertyFilter["value"]))
-            {
+            } elseif (is_null($propertyFilter["value"])) {
                 $propertyFilter["value"]='NULL';
             }
 
@@ -218,16 +211,18 @@ class Query
             );
         }
 
-        foreach($this->getUserTagFilters() AS $userTagFilter)
-        {
+        foreach ($this->getUserTagFilters() as $userTagFilter) {
             $queryString->add('filters.tags.' . $userTagFilter['tagName'], $userTagFilter['value']);
         }
 
-        if(!is_null($this->getPageNumber())) $queryString->add('page', $this->getPageNumber());
-        if(!is_null($this->getPageSize())) $queryString->add('page-size', $this->getPageSize());
-        
-        foreach($this->getTaggings() AS $tag)
-        {
+        if (!is_null($this->getPageNumber())) {
+            $queryString->add('page', $this->getPageNumber());
+        }
+        if (!is_null($this->getPageSize())) {
+            $queryString->add('page-size', $this->getPageSize());
+        }
+
+        foreach ($this->getTaggings() as $tag) {
             $queryString->add('filters.self.tagged', $tag);
         }
 
@@ -259,6 +254,4 @@ class Query
     {
         $this->_taggings = $taggings;
     }
-
-
 }

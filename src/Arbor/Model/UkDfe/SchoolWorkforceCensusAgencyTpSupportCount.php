@@ -13,7 +13,6 @@ use \Arbor\Model\BusinessRole;
 
 class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
 {
-
     const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -33,10 +32,14 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_SchoolWorkforceCensusAgencyTpSupportCount");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT, $id);
     }
 
@@ -131,6 +136,4 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     {
         $this->setProperty("supHeadCount", $supHeadCount);
     }
-
-
 }

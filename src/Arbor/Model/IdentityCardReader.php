@@ -11,7 +11,6 @@ use \Arbor\Model\Room;
 
 class IdentityCardReader extends ModelBase
 {
-
     const READER_NUMBER = 'readerNumber';
 
     const ROOM = 'room';
@@ -25,10 +24,14 @@ class IdentityCardReader extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("IdentityCardReader");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class IdentityCardReader extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::IDENTITY_CARD_READER, $id);
     }
 
@@ -75,6 +80,4 @@ class IdentityCardReader extends ModelBase
     {
         $this->setProperty("room", $room);
     }
-
-
 }

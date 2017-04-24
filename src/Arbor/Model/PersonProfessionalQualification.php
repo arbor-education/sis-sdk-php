@@ -14,7 +14,6 @@ use \Arbor\Model\Country;
 
 class PersonProfessionalQualification extends ModelBase
 {
-
     const PERSON = 'person';
 
     const QUALIFICATION_NAME = 'qualificationName';
@@ -46,10 +45,14 @@ class PersonProfessionalQualification extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PersonProfessionalQualification");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -61,7 +64,9 @@ class PersonProfessionalQualification extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PERSON_PROFESSIONAL_QUALIFICATION, $id);
     }
 
@@ -240,6 +245,4 @@ class PersonProfessionalQualification extends ModelBase
     {
         $this->setProperty("isVerified", $isVerified);
     }
-
-
 }

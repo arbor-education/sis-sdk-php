@@ -15,7 +15,6 @@ use \Arbor\Model\Behaviour;
 
 class Detention extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ISSUED_BY_STAFF = 'issuedByStaff';
@@ -49,10 +48,14 @@ class Detention extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Detention");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -64,7 +67,9 @@ class Detention extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DETENTION, $id);
     }
 
@@ -259,6 +264,4 @@ class Detention extends ModelBase
     {
         $this->setProperty("reasonForDetention", $reasonForDetention);
     }
-
-
 }

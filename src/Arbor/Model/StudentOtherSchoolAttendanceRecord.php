@@ -13,7 +13,6 @@ use \Arbor\Model\AcademicYear;
 
 class StudentOtherSchoolAttendanceRecord extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -43,10 +42,14 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentOtherSchoolAttendanceRecord");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -58,7 +61,9 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD, $id);
     }
 
@@ -221,6 +226,4 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     {
         $this->setProperty("attendanceMarks", $attendanceMarks);
     }
-
-
 }

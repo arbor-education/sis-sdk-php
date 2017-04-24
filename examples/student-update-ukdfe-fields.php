@@ -22,7 +22,6 @@ $student->getPerson()->connect($api);
 $student->getPerson()->save();
 $student->save();
 
-
 //Display Logic
 $studentCopy2 = $api->retrieve(ResourceType::STUDENT, $student->getResourceId());
 

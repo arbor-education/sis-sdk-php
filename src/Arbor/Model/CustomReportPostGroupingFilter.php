@@ -11,7 +11,6 @@ use \Arbor\Model\CustomReport;
 
 class CustomReportPostGroupingFilter extends ModelBase
 {
-
     const CUSTOM_REPORT = 'customReport';
 
     const FIELD_CLASS = 'fieldClass';
@@ -37,10 +36,14 @@ class CustomReportPostGroupingFilter extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CustomReportPostGroupingFilter");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class CustomReportPostGroupingFilter extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_POST_GROUPING_FILTER, $id);
     }
 
@@ -183,6 +188,4 @@ class CustomReportPostGroupingFilter extends ModelBase
     {
         $this->setProperty("filterGroupIndex", $filterGroupIndex);
     }
-
-
 }

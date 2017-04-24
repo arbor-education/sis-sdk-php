@@ -17,7 +17,6 @@ class PluralizeFilter implements FilterInterface
                 if (substr($value, -2) == 'ay') {
                     $pluralizeLetter = 's';
                 } else {
-
                     $pluralizeLetter = 'ies';
                 }
                 break;
@@ -27,10 +26,8 @@ class PluralizeFilter implements FilterInterface
                 break;
         }
         if ($pluralizeLetter !== 's') {
-
             $returnString = substr($value, 0, (strlen($value) - 1)) . $pluralizeLetter;
         } else {
-
             $returnString = $value . $pluralizeLetter;
         }
         return $returnString;

@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class InterventionStaffCost extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const COST_PER_HOUR = 'costPerHour';
@@ -32,10 +31,14 @@ class InterventionStaffCost extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("InterventionStaffCost");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class InterventionStaffCost extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INTERVENTION_STAFF_COST, $id);
     }
 
@@ -146,6 +151,4 @@ class InterventionStaffCost extends ModelBase
     {
         $this->setProperty("minimumCharge", $minimumCharge);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\ConsentType;
 
 class Consent extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const CONSENT_TYPE = 'consentType';
@@ -38,10 +37,14 @@ class Consent extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Consent");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -53,7 +56,9 @@ class Consent extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CONSENT, $id);
     }
 
@@ -184,6 +189,4 @@ class Consent extends ModelBase
     {
         $this->setProperty("respondee", $respondee);
     }
-
-
 }

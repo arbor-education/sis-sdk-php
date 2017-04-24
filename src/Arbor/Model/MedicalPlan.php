@@ -11,7 +11,6 @@ use \Arbor\Model\Student;
 
 class MedicalPlan extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const SUMMARY = 'summary';
@@ -33,10 +32,14 @@ class MedicalPlan extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MedicalPlan");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class MedicalPlan extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEDICAL_PLAN, $id);
     }
 
@@ -147,6 +152,4 @@ class MedicalPlan extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\CurriculumTier;
 
 class InstitutionCurriculumTierAssignment extends ModelBase
 {
-
     const INSTITUTION = 'institution';
 
     const CURRICULUM_TIER = 'curriculumTier';
@@ -30,10 +29,14 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Group_InstitutionCurriculumTierAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -45,7 +48,9 @@ class InstitutionCurriculumTierAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GROUP_INSTITUTION_CURRICULUM_TIER_ASSIGNMENT, $id);
     }
 
@@ -112,6 +117,4 @@ class InstitutionCurriculumTierAssignment extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\BusinessRole;
 
 class PositionBusinessRole extends ModelBase
 {
-
     const POSITION = 'position';
 
     const BUSINESS_ROLE = 'businessRole';
@@ -28,10 +27,14 @@ class PositionBusinessRole extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PositionBusinessRole");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class PositionBusinessRole extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::POSITION_BUSINESS_ROLE, $id);
     }
 
@@ -94,6 +99,4 @@ class PositionBusinessRole extends ModelBase
     {
         $this->setProperty("ranking", $ranking);
     }
-
-
 }

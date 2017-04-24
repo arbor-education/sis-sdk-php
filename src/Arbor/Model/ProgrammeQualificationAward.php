@@ -12,7 +12,6 @@ use \Arbor\Model\QualificationAward;
 
 class ProgrammeQualificationAward extends ModelBase
 {
-
     const PROGRAMME_INSTANCE = 'programmeInstance';
 
     const QUALIFICATION_AWARD = 'qualificationAward';
@@ -26,10 +25,14 @@ class ProgrammeQualificationAward extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ProgrammeQualificationAward");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class ProgrammeQualificationAward extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PROGRAMME_QUALIFICATION_AWARD, $id);
     }
 
@@ -76,6 +81,4 @@ class ProgrammeQualificationAward extends ModelBase
     {
         $this->setProperty("qualificationAward", $qualificationAward);
     }
-
-
 }

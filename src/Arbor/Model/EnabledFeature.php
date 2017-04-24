@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class EnabledFeature extends ModelBase
 {
-
     const FEATURE_IDENTIFIER = 'featureIdentifier';
 
     const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
@@ -28,10 +27,14 @@ class EnabledFeature extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EnabledFeature");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class EnabledFeature extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ENABLED_FEATURE, $id);
     }
 
@@ -110,6 +115,4 @@ class EnabledFeature extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

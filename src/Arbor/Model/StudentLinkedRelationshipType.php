@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class StudentLinkedRelationshipType extends ModelBase
 {
-
     const STUDENT_LINKED_RELATIONSHIP_TYPE_NAME = 'studentLinkedRelationshipTypeName';
 
     const IS_MEDICAL = 'isMedical';
@@ -26,10 +25,14 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentLinkedRelationshipType");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class StudentLinkedRelationshipType extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_LINKED_RELATIONSHIP_TYPE, $id);
     }
 
@@ -92,6 +97,4 @@ class StudentLinkedRelationshipType extends ModelBase
     {
         $this->setProperty("isAcademic", $isAcademic);
     }
-
-
 }

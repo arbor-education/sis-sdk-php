@@ -11,7 +11,6 @@ use \Arbor\Model\CandidateEntry;
 
 class CandidateExtraTimeRequest extends ModelBase
 {
-
     const CANDIDATE_ENTRY = 'candidateEntry';
 
     const TIME_REQUESTED = 'timeRequested';
@@ -35,10 +34,14 @@ class CandidateExtraTimeRequest extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CandidateExtraTimeRequest");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class CandidateExtraTimeRequest extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CANDIDATE_EXTRA_TIME_REQUEST, $id);
     }
 
@@ -165,6 +170,4 @@ class CandidateExtraTimeRequest extends ModelBase
     {
         $this->setProperty("rejectedDatetime", $rejectedDatetime);
     }
-
-
 }

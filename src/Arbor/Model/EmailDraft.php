@@ -11,7 +11,6 @@ use \Arbor\Model\SendingProfile;
 
 class EmailDraft extends ModelBase
 {
-
     const SENDING_PROFILE = 'sendingProfile';
 
     const SUBJECT = 'subject';
@@ -33,10 +32,14 @@ class EmailDraft extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EmailDraft");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class EmailDraft extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EMAIL_DRAFT, $id);
     }
 
@@ -147,6 +152,4 @@ class EmailDraft extends ModelBase
     {
         $this->setProperty("sendingCompletedDatetime", $sendingCompletedDatetime);
     }
-
-
 }

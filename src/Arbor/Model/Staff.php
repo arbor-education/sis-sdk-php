@@ -14,7 +14,6 @@ use \Arbor\Model\Religion;
 
 class Staff extends ModelBase
 {
-
     const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
 
     const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
@@ -46,10 +45,14 @@ class Staff extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Staff");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -61,7 +64,9 @@ class Staff extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF, $id);
     }
 
@@ -240,6 +245,4 @@ class Staff extends ModelBase
     {
         $this->setProperty("timetableAbbreviation", $timetableAbbreviation);
     }
-
-
 }

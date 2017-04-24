@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class LabelPageLayout extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -56,10 +55,14 @@ class LabelPageLayout extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("LabelPageLayout");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -71,7 +74,9 @@ class LabelPageLayout extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::LABEL_PAGE_LAYOUT, $id);
     }
 
@@ -362,6 +367,4 @@ class LabelPageLayout extends ModelBase
     {
         $this->setProperty("verticalSpacing", $verticalSpacing);
     }
-
-
 }

@@ -11,7 +11,6 @@ use \Arbor\Model\MotorVehicleMake;
 
 class MotorVehicle extends ModelBase
 {
-
     const OWNER = 'owner';
 
     const MOTOR_VEHICLE_TYPE = 'motorVehicleType';
@@ -35,10 +34,14 @@ class MotorVehicle extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MotorVehicle");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class MotorVehicle extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MOTOR_VEHICLE, $id);
     }
 
@@ -165,6 +170,4 @@ class MotorVehicle extends ModelBase
     {
         $this->setProperty("parkingAllocationProvided", $parkingAllocationProvided);
     }
-
-
 }

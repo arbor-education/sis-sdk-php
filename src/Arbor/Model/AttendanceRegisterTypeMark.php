@@ -12,7 +12,6 @@ use \Arbor\Model\AttendanceMark;
 
 class AttendanceRegisterTypeMark extends ModelBase
 {
-
     const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
     const ATTENDANCE_MARK = 'attendanceMark';
@@ -26,10 +25,14 @@ class AttendanceRegisterTypeMark extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AttendanceRegisterTypeMark");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class AttendanceRegisterTypeMark extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ATTENDANCE_REGISTER_TYPE_MARK, $id);
     }
 
@@ -76,6 +81,4 @@ class AttendanceRegisterTypeMark extends ModelBase
     {
         $this->setProperty("attendanceMark", $attendanceMark);
     }
-
-
 }

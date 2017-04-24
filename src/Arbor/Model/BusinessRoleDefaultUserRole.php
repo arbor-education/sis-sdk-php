@@ -12,7 +12,6 @@ use \Arbor\Model\UserRole;
 
 class BusinessRoleDefaultUserRole extends ModelBase
 {
-
     const BUSINESS_ROLE = 'businessRole';
 
     const USER_ROLE = 'userRole';
@@ -26,10 +25,14 @@ class BusinessRoleDefaultUserRole extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BusinessRoleDefaultUserRole");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class BusinessRoleDefaultUserRole extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BUSINESS_ROLE_DEFAULT_USER_ROLE, $id);
     }
 
@@ -76,6 +81,4 @@ class BusinessRoleDefaultUserRole extends ModelBase
     {
         $this->setProperty("userRole", $userRole);
     }
-
-
 }

@@ -33,18 +33,16 @@ $api->getHttpClient()->addSubscriber(LogPlugin::getDebugPlugin());
 $results = LocalAuthority::query(
     new Query(
         null,
-        array(),
-        array(array("tagName"=>"colour", "value"=>"green"))
+        [],
+        [["tagName"=>"colour", "value"=>"green"]]
     )
 );
 
 //Display Logic
-foreach($results AS $model)
-{
+foreach ($results as $model) {
     /**@var LocalAuthority $model*/
     $hydrator = new \Arbor\Model\Hydrator();
     $array = $hydrator->extractArray($model);
     print_r($array);
     print_r($model->getUserTags());
 }
-

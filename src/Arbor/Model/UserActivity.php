@@ -11,7 +11,6 @@ use \Arbor\Model\User;
 
 class UserActivity extends ModelBase
 {
-
     const USER = 'user';
 
     const PRODUCT_AREA = 'productArea';
@@ -31,10 +30,14 @@ class UserActivity extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UserActivity");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class UserActivity extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::USER_ACTIVITY, $id);
     }
 
@@ -129,6 +134,4 @@ class UserActivity extends ModelBase
     {
         $this->setProperty("requests", $requests);
     }
-
-
 }

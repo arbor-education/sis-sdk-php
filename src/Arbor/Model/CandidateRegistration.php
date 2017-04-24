@@ -13,7 +13,6 @@ use \Arbor\Model\QualificationAvailabilityInstance;
 
 class CandidateRegistration extends ModelBase
 {
-
     const CANDIDATE = 'candidate';
 
     const QUALIFICATION_AWARD = 'qualificationAward';
@@ -39,10 +38,14 @@ class CandidateRegistration extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CandidateRegistration");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -54,7 +57,9 @@ class CandidateRegistration extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CANDIDATE_REGISTRATION, $id);
     }
 
@@ -185,6 +190,4 @@ class CandidateRegistration extends ModelBase
     {
         $this->setProperty("responseMessage", $responseMessage);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\BusinessRole;
 
 class EmailAccountAccessPermission extends ModelBase
 {
-
     const EMAIL_ACCOUNT = 'emailAccount';
 
     const BUSINESS_ROLE = 'businessRole';
@@ -26,10 +25,14 @@ class EmailAccountAccessPermission extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EmailAccountAccessPermission");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class EmailAccountAccessPermission extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EMAIL_ACCOUNT_ACCESS_PERMISSION, $id);
     }
 
@@ -76,6 +81,4 @@ class EmailAccountAccessPermission extends ModelBase
     {
         $this->setProperty("businessRole", $businessRole);
     }
-
-
 }

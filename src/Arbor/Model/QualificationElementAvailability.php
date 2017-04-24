@@ -11,7 +11,6 @@ use \Arbor\Model\QualificationAvailabilityInstance;
 
 class QualificationElementAvailability extends ModelBase
 {
-
     const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
     const QUALIFICATION_ELEMENT = 'qualificationElement';
@@ -25,10 +24,14 @@ class QualificationElementAvailability extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("QualificationElementAvailability");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class QualificationElementAvailability extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::QUALIFICATION_ELEMENT_AVAILABILITY, $id);
     }
 
@@ -75,6 +80,4 @@ class QualificationElementAvailability extends ModelBase
     {
         $this->setProperty("qualificationElement", $qualificationElement);
     }
-
-
 }

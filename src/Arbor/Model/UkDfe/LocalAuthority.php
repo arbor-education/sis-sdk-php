@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class LocalAuthority extends ModelBase
 {
-
     const AUTHORITY_CODE = 'authorityCode';
 
     const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
@@ -24,10 +23,14 @@ class LocalAuthority extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_LocalAuthority");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class LocalAuthority extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_LOCAL_AUTHORITY, $id);
     }
 
@@ -74,6 +79,4 @@ class LocalAuthority extends ModelBase
     {
         $this->setProperty("authorityCodePre2011", $authorityCodePre2011);
     }
-
-
 }

@@ -11,7 +11,6 @@ use \Arbor\Model\AwardingOrganization;
 
 class QualificationScheme extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -41,10 +40,14 @@ class QualificationScheme extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("QualificationScheme");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class QualificationScheme extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::QUALIFICATION_SCHEME, $id);
     }
 
@@ -219,6 +224,4 @@ class QualificationScheme extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

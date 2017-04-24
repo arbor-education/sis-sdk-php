@@ -11,7 +11,6 @@ use \Arbor\Model\BankAccount;
 
 class ChequeBook extends ModelBase
 {
-
     const BANK_ACCOUNT = 'bankAccount';
 
     const CHEQUE_NUMBER_LENGTH = 'chequeNumberLength';
@@ -31,10 +30,14 @@ class ChequeBook extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ChequeBook");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class ChequeBook extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CHEQUE_BOOK, $id);
     }
 
@@ -129,6 +134,4 @@ class ChequeBook extends ModelBase
     {
         $this->setProperty("nextChequeNumber", $nextChequeNumber);
     }
-
-
 }

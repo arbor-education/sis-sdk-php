@@ -12,7 +12,6 @@ use \Arbor\Model\BankDeposit;
 
 class ReceivedCheque extends ModelBase
 {
-
     const BILL_PAYER = 'billPayer';
 
     const BANK_DEPOSIT = 'bankDeposit';
@@ -32,10 +31,14 @@ class ReceivedCheque extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ReceivedCheque");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class ReceivedCheque extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::RECEIVED_CHEQUE, $id);
     }
 
@@ -130,6 +135,4 @@ class ReceivedCheque extends ModelBase
     {
         $this->setProperty("chequeAmount", $chequeAmount);
     }
-
-
 }

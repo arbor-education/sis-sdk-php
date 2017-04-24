@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class Flag extends ModelBase
 {
-
     const PERSON = 'person';
 
     const TEXT = 'text';
@@ -26,10 +25,14 @@ class Flag extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Flag");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class Flag extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::FLAG, $id);
     }
 
@@ -92,6 +97,4 @@ class Flag extends ModelBase
     {
         $this->setProperty("target", $target);
     }
-
-
 }

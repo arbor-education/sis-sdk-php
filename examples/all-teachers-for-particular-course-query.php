@@ -6,10 +6,8 @@ require_once(__DIR__ . "/example-bootstrap.php");
 
 date_default_timezone_set("Europe/London");
 
-
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\ModelBase;
-
 
 $api = new RestGateway(
     $config["api"]["baseUrl"],
@@ -20,7 +18,6 @@ $api = new RestGateway(
 $api->getHttpClient()->setSslVerification(false);
 ModelBase::setDefaultGateway($api);
 
-
 $academicUnit = '7TE-CI'; //DESIGN_TECHNOLOGY__YEAR_7__7TE-CI
 
 $academicUnitsQuery = new \Arbor\Query\Query(\Arbor\Resource\ResourceType::ACADEMIC_UNIT);
@@ -28,16 +25,14 @@ $academicUnitsQuery->addPropertyFilter(\Arbor\Model\AcademicUnit::ACADEMIC_UNIT_
 
 $academicUnits = \Arbor\Model\AcademicUnit::query($academicUnitsQuery);
 
-foreach($academicUnits as $academicUnit)
-{
+foreach ($academicUnits as $academicUnit) {
     $academicUnitLeadsQuery = new \Arbor\Query\Query(\Arbor\Resource\ResourceType::ACADEMIC_UNIT_LEAD);
     $academicUnitLeadsQuery->addPropertyFilter(\Arbor\Model\AcademicUnitLead::ACADEMIC_UNIT, \Arbor\Query\Query::OPERATOR_EQUALS, $academicUnit);
 
     $academicUnitLeads = \Arbor\Model\AcademicUnitLead::query($academicUnitLeadsQuery);
 
-    foreach($academicUnitLeads as $academicUnitLead)
-    {
-        echo(   $academicUnitLead->getStaff()->getPerson()->getLegalFirstName() . ' ' .
+    foreach ($academicUnitLeads as $academicUnitLead) {
+        echo($academicUnitLead->getStaff()->getPerson()->getLegalFirstName() . ' ' .
             $academicUnitLead->getStaff()->getPerson()->getLegalLastName() . ' / ' .
             $academicUnitLead->getStartDate() . ' / ' .
             $academicUnitLead->getEndDate()

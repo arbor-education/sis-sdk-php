@@ -11,7 +11,6 @@ use \Arbor\Model\Student;
 
 class UciAssignment extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const UCI = 'uci';
@@ -37,10 +36,14 @@ class UciAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_UciAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class UciAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_UCI_ASSIGNMENT, $id);
     }
 
@@ -183,6 +188,4 @@ class UciAssignment extends ModelBase
     {
         $this->setProperty("cancelledDatetime", $cancelledDatetime);
     }
-
-
 }

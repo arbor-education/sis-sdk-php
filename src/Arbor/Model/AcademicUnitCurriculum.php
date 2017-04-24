@@ -12,7 +12,6 @@ use \Arbor\Model\Curriculum;
 
 class AcademicUnitCurriculum extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const CURRICULUM = 'curriculum';
@@ -26,10 +25,14 @@ class AcademicUnitCurriculum extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicUnitCurriculum");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class AcademicUnitCurriculum extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_CURRICULUM, $id);
     }
 
@@ -76,6 +81,4 @@ class AcademicUnitCurriculum extends ModelBase
     {
         $this->setProperty("curriculum", $curriculum);
     }
-
-
 }

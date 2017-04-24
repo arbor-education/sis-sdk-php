@@ -1,6 +1,7 @@
 <?php
 
 namespace Arbor\Service;
+
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
@@ -17,11 +18,13 @@ class StandardizedAssessmentMarks
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
-    protected $_marks = array();
+    protected $_marks = [];
 
     public function __construct($gateway=null)
     {
-        if(is_null($gateway))$gateway = ModelBase::getDefaultGateway();
+        if (is_null($gateway)) {
+            $gateway = ModelBase::getDefaultGateway();
+        }
         $this->setGateway($gateway);
         $this->_hydrator = new Hydrator();
     }
@@ -34,22 +37,21 @@ class StandardizedAssessmentMarks
      */
     public function setMark($student, $resultDate, $assessmentCode, $result = null)
     {
-        $this->_marks[] = array(
+        $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_RESULT_DATE => $resultDate,
             self::MARK_ASSESSMENT_CODE => $assessmentCode,
             self::MARK_RESULT =>$result
-        );
+        ];
     }
 
     public function saveMarks()
     {
-        $payload = array();
+        $payload = [];
 
         $payload['request']['marks'] = [];
 
-        foreach($this->_marks AS $mark)
-        {
+        foreach ($this->_marks as $mark) {
             $markPayload = [];
 
             //Convert models to REST representations
@@ -60,9 +62,10 @@ class StandardizedAssessmentMarks
             //Convert date to Y-m-d H:i:s string
             /**@var \DateTime $resultDate*/
             $resultDate = $mark[self::MARK_RESULT_DATE];
-            if(!$resultDate instanceof \DateTime) throw new \InvalidArgumentException("ResultDate must be an PHP DateTime object");
+            if (!$resultDate instanceof \DateTime) {
+                throw new \InvalidArgumentException("ResultDate must be an PHP DateTime object");
+            }
             $markPayload[self::MARK_RESULT_DATE] = $resultDate->format("Y-m-d H:i:s");
-
 
             $payload['request']['marks'][] = $markPayload;
         }
@@ -70,9 +73,8 @@ class StandardizedAssessmentMarks
         $response = $this->getGateway()->sendRequest(
             RestGateway::HTTP_METHOD_POST, "/rest-v2/standardized-assessment-mark", json_encode($payload));
 
-        if($response instanceof Response && $response->getStatusCode() == 200)
-        {
-            $this->_marks = array();
+        if ($response instanceof Response && $response->getStatusCode() == 200) {
+            $this->_marks = [];
         }
     }
 

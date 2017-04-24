@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class MessageDraftRecipient extends ModelBase
 {
-
     const MESSAGE_DRAFT = 'messageDraft';
 
     const RECIPIENT = 'recipient';
@@ -26,10 +25,14 @@ class MessageDraftRecipient extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MessageDraftRecipient");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class MessageDraftRecipient extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MESSAGE_DRAFT_RECIPIENT, $id);
     }
 
@@ -92,6 +97,4 @@ class MessageDraftRecipient extends ModelBase
     {
         $this->setProperty("resolver", $resolver);
     }
-
-
 }

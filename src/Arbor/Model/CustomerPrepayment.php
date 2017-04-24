@@ -17,7 +17,6 @@ use \Arbor\Model\CashReceipt;
 
 class CustomerPrepayment extends ModelBase
 {
-
     const CUSTOMER_ACCOUNT = 'customerAccount';
 
     const BILL_PAYER = 'billPayer';
@@ -53,10 +52,14 @@ class CustomerPrepayment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CustomerPrepayment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -68,7 +71,9 @@ class CustomerPrepayment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CUSTOMER_PREPAYMENT, $id);
     }
 
@@ -279,6 +284,4 @@ class CustomerPrepayment extends ModelBase
     {
         $this->setProperty("prepaymentCancelledDatetime", $prepaymentCancelledDatetime);
     }
-
-
 }

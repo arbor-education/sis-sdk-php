@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class DataExportError extends ModelBase
 {
-
     const EXPORT_JOB = 'exportJob';
 
     const ERROR_MESSAGE = 'errorMessage';
@@ -24,10 +23,14 @@ class DataExportError extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DataExportError");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class DataExportError extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DATA_EXPORT_ERROR, $id);
     }
 
@@ -74,6 +79,4 @@ class DataExportError extends ModelBase
     {
         $this->setProperty("errorMessage", $errorMessage);
     }
-
-
 }

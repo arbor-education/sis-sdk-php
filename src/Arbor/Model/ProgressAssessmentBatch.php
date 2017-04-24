@@ -14,7 +14,6 @@ use \Arbor\Model\AcademicYearAssessment;
 
 class ProgressAssessmentBatch extends ModelBase
 {
-
     const BATCH_NAME = 'batchName';
 
     const ASSESSMENT = 'assessment';
@@ -34,10 +33,14 @@ class ProgressAssessmentBatch extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ProgressAssessmentBatch");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class ProgressAssessmentBatch extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PROGRESS_ASSESSMENT_BATCH, $id);
     }
 
@@ -132,6 +137,4 @@ class ProgressAssessmentBatch extends ModelBase
     {
         $this->setProperty("academicYearAssessment", $academicYearAssessment);
     }
-
-
 }

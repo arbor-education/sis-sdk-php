@@ -11,7 +11,6 @@ use \Arbor\Model\CustomReport;
 
 class CustomReportColumn extends ModelBase
 {
-
     const CUSTOM_REPORT = 'customReport';
 
     const FIELD_CLASS = 'fieldClass';
@@ -41,10 +40,14 @@ class CustomReportColumn extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CustomReportColumn");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class CustomReportColumn extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_COLUMN, $id);
     }
 
@@ -219,6 +224,4 @@ class CustomReportColumn extends ModelBase
     {
         $this->setProperty("customLabel", $customLabel);
     }
-
-
 }

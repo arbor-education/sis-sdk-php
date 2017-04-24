@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class Note extends ModelBase
 {
-
     const NOTE = 'note';
 
     const REFERENCE_OBJECT = 'referenceObject';
@@ -26,10 +25,14 @@ class Note extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Note");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class Note extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::NOTE, $id);
     }
 
@@ -92,6 +97,4 @@ class Note extends ModelBase
     {
         $this->setProperty("isSharedWithGuardians", $isSharedWithGuardians);
     }
-
-
 }

@@ -6,10 +6,8 @@ require_once(__DIR__ . "/example-bootstrap.php");
 
 date_default_timezone_set("Europe/London");
 
-
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\ModelBase;
-
 
 $api = new RestGateway(
     $config["api"]["baseUrl"],
@@ -19,7 +17,6 @@ $api = new RestGateway(
 
 $api->getHttpClient()->setSslVerification(false);
 ModelBase::setDefaultGateway($api);
-
 
 $users= \Arbor\Model\User::query();
 
@@ -33,8 +30,7 @@ $query->addPropertyFilter(\Arbor\Model\AcademicUnitEnrolment::ACADEMIC_UNIT, \Ar
 
 $currentAcademicUnitEnrolments = \Arbor\Model\AcademicUnitEnrolment::query($query);
 
-
-foreach($currentAcademicUnitEnrolments as $currentAcademicUnitEnrolment) {
+foreach ($currentAcademicUnitEnrolments as $currentAcademicUnitEnrolment) {
     echo($currentAcademicUnitEnrolment->getAcademicUnit()->getAcademicUnitName() . " => " .
         $currentAcademicUnitEnrolment->getStudent()->getPerson()->getLegalFirstName() . PHP_EOL);
 }

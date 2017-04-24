@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class PasswordRule extends ModelBase
 {
-
     const APPLIES_FOR = 'appliesFor';
 
     const MIN_LENGTH = 'minLength';
@@ -32,10 +31,14 @@ class PasswordRule extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PasswordRule");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -47,7 +50,9 @@ class PasswordRule extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PASSWORD_RULE, $id);
     }
 
@@ -146,6 +151,4 @@ class PasswordRule extends ModelBase
     {
         $this->setProperty("requireMixedCase", $requireMixedCase);
     }
-
-
 }

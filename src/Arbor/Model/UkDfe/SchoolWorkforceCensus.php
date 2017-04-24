@@ -11,7 +11,6 @@ use \Arbor\Model\AcademicYear;
 
 class SchoolWorkforceCensus extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -35,10 +34,14 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_SchoolWorkforceCensus");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class SchoolWorkforceCensus extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS, $id);
     }
 
@@ -165,6 +170,4 @@ class SchoolWorkforceCensus extends ModelBase
     {
         $this->setProperty("censusSubmissionDeadlineDate", $censusSubmissionDeadlineDate);
     }
-
-
 }

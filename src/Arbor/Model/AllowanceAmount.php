@@ -11,7 +11,6 @@ use \Arbor\Model\Allowance;
 
 class AllowanceAmount extends ModelBase
 {
-
     const ALLOWANCE = 'allowance';
 
     const START_DATE = 'startDate';
@@ -29,10 +28,14 @@ class AllowanceAmount extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AllowanceAmount");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class AllowanceAmount extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ALLOWANCE_AMOUNT, $id);
     }
 
@@ -111,6 +116,4 @@ class AllowanceAmount extends ModelBase
     {
         $this->setProperty("allowanceAmount", $allowanceAmount);
     }
-
-
 }

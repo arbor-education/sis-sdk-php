@@ -75,8 +75,6 @@ class Change
         return $this->_changedResource;
     }
 
-
-
     /**
      * @param int $changedToRevision
      */

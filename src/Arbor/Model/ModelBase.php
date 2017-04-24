@@ -8,7 +8,7 @@ use Arbor\Api\Gateway\RestGateway;
 class ModelBase implements \Serializable
 {
     /**@var array $_properties*/
-    protected $_properties = array();
+    protected $_properties = [];
 
     /**@var \Arbor\Api\Gateway\GatewayInterface $_apiGateway*/
     protected $_apiGateway;
@@ -28,11 +28,15 @@ class ModelBase implements \Serializable
      * @param array $properties
      * @param \Arbor\Api\Gateway\GatewayInterface $apiGateway
      */
-    public function __construct($resourceType=null, $properties=array(), $apiGateway=null)
+    public function __construct($resourceType=null, $properties=[], $apiGateway=null)
     {
-        if(!is_null($resourceType)) $this->setResourceType($resourceType);
+        if (!is_null($resourceType)) {
+            $this->setResourceType($resourceType);
+        }
         $this->setProperties($properties);
-        if(is_null($apiGateway)) $apiGateway = static::getDefaultGateway();
+        if (is_null($apiGateway)) {
+            $apiGateway = static::getDefaultGateway();
+        }
         $this->connect($apiGateway);
 //        $this->setProperty("userTags", new \ArrayObject());
     }
@@ -53,8 +57,6 @@ class ModelBase implements \Serializable
         return self::$_defaultGateway;
     }
 
-
-
     /**
      * @param string $name
      * @param array $arguments
@@ -63,17 +65,15 @@ class ModelBase implements \Serializable
      */
     public function __call($name, $arguments)
     {
-        if(substr($name, 0, 3) == "get")
-        {
+        if (substr($name, 0, 3) == "get") {
             $propertyName = lcfirst(substr($name, 3, strlen($name)-2));
             return $this->getProperty($propertyName);
-        }
-        elseif(substr($name, 0, 3) == "set")
-        {
+        } elseif (substr($name, 0, 3) == "set") {
             $propertyName = lcfirst(substr($name, 3, strlen($name)-3));
             $this->_properties[$propertyName] = $arguments[0];
+        } else {
+            throw new Exception("Invalid method: $name");
         }
-        else throw new Exception("Invalid method: $name");
     }
 
     /**
@@ -94,8 +94,7 @@ class ModelBase implements \Serializable
 
     public function getResourceId()
     {
-        if(!empty($this->_resourceUrl))
-        {
+        if (!empty($this->_resourceUrl)) {
             list($api, $resource, $id)=explode("/", trim($this->getResourceUrl(), "/"));
             return $id;
         }
@@ -139,13 +138,12 @@ class ModelBase implements \Serializable
      */
     public function getProperty($propertyName)
     {
-        if(!array_key_exists($propertyName, $this->_properties))
-        {
-            if($this->getResourceUrl())
-            {
+        if (!array_key_exists($propertyName, $this->_properties)) {
+            if ($this->getResourceUrl()) {
                 $this->refresh();
+            } else {
+                return null;
             }
-            else return null;
         }
         return $this->_properties[$propertyName];
     }
@@ -156,13 +154,13 @@ class ModelBase implements \Serializable
      */
     public function getCollectionProperty($propertyName)
     {
-        if(!array_key_exists($propertyName, $this->_properties))
-        {
+        if (!array_key_exists($propertyName, $this->_properties)) {
             $this->refresh();
         }
 
-        if(is_null($this->_properties[$propertyName]))
+        if (is_null($this->_properties[$propertyName])) {
             $this->_properties[$propertyName] = new Collection();
+        }
         return $this->_properties[$propertyName];
     }
 
@@ -171,11 +169,11 @@ class ModelBase implements \Serializable
      */
     public function refresh()
     {
-        if($this->getApiGateway())
-        {
-           return  $this->getApiGateway()->refresh($this);
+        if ($this->getApiGateway()) {
+            return  $this->getApiGateway()->refresh($this);
+        } else {
+            throw new Exception("Trying to refresh an unconnected model: ".$this->getResourceUrl());
         }
-        else throw new Exception("Trying to refresh an unconnected model: ".$this->getResourceUrl());
     }
     /**
      * @param string $propertyName
@@ -188,20 +186,14 @@ class ModelBase implements \Serializable
 
     public function save()
     {
-        if(!is_null($this->getApiGateway()))
-        {
+        if (!is_null($this->getApiGateway())) {
             $identity = $this->getResourceUrl();
-            if(!empty($identity))
-            {
+            if (!empty($identity)) {
                 $this->getApiGateway()->update($this);
-            }
-            else
-            {
+            } else {
                 $this->getApiGateway()->create($this);
             }
-        }
-        else
-        {
+        } else {
             throw new Exception("Trying to save an unconnected model. Please call connect() first.");
         }
     }
@@ -248,8 +240,7 @@ class ModelBase implements \Serializable
      */
     public function getUserTags()
     {
-        if(is_null($this->getProperty("userTags")))
-        {
+        if (is_null($this->getProperty("userTags"))) {
             $this->setUserTags(new \ArrayObject());
         }
         return $this->getProperty("userTags");

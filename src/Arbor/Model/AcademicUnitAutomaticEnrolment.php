@@ -12,7 +12,6 @@ use \Arbor\Model\AttendancePattern;
 
 class AcademicUnitAutomaticEnrolment extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const TRIGGER = 'trigger';
@@ -28,10 +27,14 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicUnitAutomaticEnrolment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_AUTOMATIC_ENROLMENT, $id);
     }
 
@@ -94,6 +99,4 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     {
         $this->setProperty("attendancePattern", $attendancePattern);
     }
-
-
 }

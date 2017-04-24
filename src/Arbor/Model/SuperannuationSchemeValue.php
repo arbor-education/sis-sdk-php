@@ -11,7 +11,6 @@ use \Arbor\Model\SuperannuationScheme;
 
 class SuperannuationSchemeValue extends ModelBase
 {
-
     const SUPERANNUATION_SCHEME = 'superannuationScheme';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -29,10 +28,14 @@ class SuperannuationSchemeValue extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SuperannuationSchemeValue");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -44,7 +47,9 @@ class SuperannuationSchemeValue extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SUPERANNUATION_SCHEME_VALUE, $id);
     }
 
@@ -111,6 +116,4 @@ class SuperannuationSchemeValue extends ModelBase
     {
         $this->setProperty("value", $value);
     }
-
-
 }

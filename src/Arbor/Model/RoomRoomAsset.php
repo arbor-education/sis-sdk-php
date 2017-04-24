@@ -12,7 +12,6 @@ use \Arbor\Model\RoomAsset;
 
 class RoomRoomAsset extends ModelBase
 {
-
     const ROOM = 'room';
 
     const ROOM_ASSET = 'roomAsset';
@@ -28,10 +27,14 @@ class RoomRoomAsset extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("RoomRoomAsset");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class RoomRoomAsset extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ROOM_ROOM_ASSET, $id);
     }
 
@@ -94,6 +99,4 @@ class RoomRoomAsset extends ModelBase
     {
         $this->setProperty("quantity", $quantity);
     }
-
-
 }

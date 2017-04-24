@@ -11,7 +11,6 @@ use \Arbor\Model\MedicalConditionType;
 
 class MedicalCondition extends ModelBase
 {
-
     const PERSON = 'person';
 
     const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
@@ -37,10 +36,14 @@ class MedicalCondition extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MedicalCondition");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class MedicalCondition extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEDICAL_CONDITION, $id);
     }
 
@@ -183,6 +188,4 @@ class MedicalCondition extends ModelBase
     {
         $this->setProperty("treatment", $treatment);
     }
-
-
 }

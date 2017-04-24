@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class EmailAddress extends ModelBase
 {
-
     const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
 
     const EMAIL_ADDRESS_TYPE = 'emailAddressType';
@@ -34,10 +33,14 @@ class EmailAddress extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EmailAddress");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class EmailAddress extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EMAIL_ADDRESS, $id);
     }
 
@@ -164,6 +169,4 @@ class EmailAddress extends ModelBase
     {
         $this->setProperty("disposable", $disposable);
     }
-
-
 }

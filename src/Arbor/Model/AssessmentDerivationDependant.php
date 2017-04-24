@@ -12,7 +12,6 @@ use \Arbor\Model\Assessment;
 
 class AssessmentDerivationDependant extends ModelBase
 {
-
     const ASSESSMENT_DERIVATION = 'assessmentDerivation';
 
     const DEPENDANT_ASSESSMENT = 'dependantAssessment';
@@ -28,10 +27,14 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AssessmentDerivationDependant");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class AssessmentDerivationDependant extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ASSESSMENT_DERIVATION_DEPENDANT, $id);
     }
 
@@ -94,6 +99,4 @@ class AssessmentDerivationDependant extends ModelBase
     {
         $this->setProperty("weighting", $weighting);
     }
-
-
 }

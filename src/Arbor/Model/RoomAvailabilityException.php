@@ -11,7 +11,6 @@ use \Arbor\Model\Room;
 
 class RoomAvailabilityException extends ModelBase
 {
-
     const ROOM = 'room';
 
     const START_DATETIME = 'startDatetime';
@@ -27,10 +26,14 @@ class RoomAvailabilityException extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("RoomAvailabilityException");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class RoomAvailabilityException extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ROOM_AVAILABILITY_EXCEPTION, $id);
     }
 
@@ -93,6 +98,4 @@ class RoomAvailabilityException extends ModelBase
     {
         $this->setProperty("endDatetime", $endDatetime);
     }
-
-
 }

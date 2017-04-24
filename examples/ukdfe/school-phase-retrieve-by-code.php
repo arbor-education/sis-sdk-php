@@ -13,7 +13,6 @@ $api = new RestGateway(
 $api->getHttpClient()->addSubscriber(LogPlugin::getDebugPlugin());
 $model = $api->retrieve(ResourceType::UK_DFE_SCHOOL_PHASE, "AT");
 
-
 //Display Logic
 $hydrator = new \Arbor\Model\Hydrator();
 $array = $hydrator->extractArray($model);

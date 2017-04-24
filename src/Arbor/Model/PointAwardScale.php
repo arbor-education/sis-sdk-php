@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class PointAwardScale extends ModelBase
 {
-
     const POINT_AWARD_SCALE_NAME = 'pointAwardScaleName';
 
     const SINGULAR_POINT_NAME = 'singularPointName';
@@ -40,10 +39,14 @@ class PointAwardScale extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PointAwardScale");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -55,7 +58,9 @@ class PointAwardScale extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::POINT_AWARD_SCALE, $id);
     }
 
@@ -218,6 +223,4 @@ class PointAwardScale extends ModelBase
     {
         $this->setProperty("directionality", $directionality);
     }
-
-
 }

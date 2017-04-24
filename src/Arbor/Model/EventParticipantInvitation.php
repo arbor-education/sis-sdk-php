@@ -11,7 +11,6 @@ use \Arbor\Model\EventParticipant;
 
 class EventParticipantInvitation extends ModelBase
 {
-
     const EVENT_PARTICIPANT = 'eventParticipant';
 
     const INVITEE = 'invitee';
@@ -35,10 +34,14 @@ class EventParticipantInvitation extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("EventParticipantInvitation");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class EventParticipantInvitation extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::EVENT_PARTICIPANT_INVITATION, $id);
     }
 
@@ -165,6 +170,4 @@ class EventParticipantInvitation extends ModelBase
     {
         $this->setProperty("invitationReply", $invitationReply);
     }
-
-
 }

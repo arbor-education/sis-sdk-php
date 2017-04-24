@@ -14,8 +14,7 @@ $api = new RestGateway(
 $modelCollection = $api->query(new Query(ResourceType::STUDENT));
 
 //Display Logic
-foreach($modelCollection AS $model)
-{
+foreach ($modelCollection as $model) {
     $hydrator = new \Arbor\Model\Hydrator();
     $array = $hydrator->extractArray($model);
     print_r($array);

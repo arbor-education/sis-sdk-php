@@ -13,7 +13,6 @@ use \Arbor\Model\Term;
 
 class Intervention extends ModelBase
 {
-
     const INTERVENTION_DEFINITION = 'interventionDefinition';
 
     const NAME = 'name';
@@ -47,10 +46,14 @@ class Intervention extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Intervention");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -62,7 +65,9 @@ class Intervention extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INTERVENTION, $id);
     }
 
@@ -257,6 +262,4 @@ class Intervention extends ModelBase
     {
         $this->setProperty("estimatedDuration", $estimatedDuration);
     }
-
-
 }

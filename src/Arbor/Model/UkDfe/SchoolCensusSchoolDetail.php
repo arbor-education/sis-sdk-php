@@ -11,7 +11,6 @@ use \Arbor\Model\UkDfe\SchoolCensus;
 
 class SchoolCensusSchoolDetail extends ModelBase
 {
-
     const SCHOOL_CENSUS = 'schoolCensus';
 
     const TEEN_MOTHER_PLACES = 'teenMotherPlaces';
@@ -43,10 +42,14 @@ class SchoolCensusSchoolDetail extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_SchoolCensusSchoolDetail");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -58,7 +61,9 @@ class SchoolCensusSchoolDetail extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL, $id);
     }
 
@@ -237,6 +242,4 @@ class SchoolCensusSchoolDetail extends ModelBase
     {
         $this->setProperty("qualificationResultsJson", $qualificationResultsJson);
     }
-
-
 }

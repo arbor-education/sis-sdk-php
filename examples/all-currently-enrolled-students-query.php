@@ -6,7 +6,6 @@ require_once(__DIR__ . "/example-bootstrap.php");
 
 date_default_timezone_set("Europe/London");
 
-
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\ModelBase;
 
@@ -21,7 +20,6 @@ ModelBase::setDefaultGateway($api);
 
 $users= \Arbor\Model\User::query();
 
-
 $date = new \DateTime();
 
 $query = new \Arbor\Query\Query(\Arbor\Resource\ResourceType::SCHOOL_ENROLMENT);
@@ -30,8 +28,8 @@ $query->addPropertyFilter(\Arbor\Model\SchoolEnrolment::END_DATE, \Arbor\Query\Q
 
 $enrolments = \Arbor\Model\SchoolEnrolment::query($query);
 
-$students = array();
-foreach($enrolments as $enrolment) {
+$students = [];
+foreach ($enrolments as $enrolment) {
     echo($enrolment->getStudent()->getPerson()->getLegalFirstName() . ' ' .
         $enrolment->getStudent()->getPerson()->getLegalLastName() . PHP_EOL);
 }

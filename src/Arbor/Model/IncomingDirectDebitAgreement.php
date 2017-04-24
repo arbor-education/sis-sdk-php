@@ -12,7 +12,6 @@ use \Arbor\Model\PaymentProvider;
 
 class IncomingDirectDebitAgreement extends ModelBase
 {
-
     const BILL_PAYER = 'billPayer';
 
     const PAYMENT_PROVIDER = 'paymentProvider';
@@ -36,10 +35,14 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("IncomingDirectDebitAgreement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -51,7 +54,9 @@ class IncomingDirectDebitAgreement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INCOMING_DIRECT_DEBIT_AGREEMENT, $id);
     }
 
@@ -166,6 +171,4 @@ class IncomingDirectDebitAgreement extends ModelBase
     {
         $this->setProperty("narrative", $narrative);
     }
-
-
 }

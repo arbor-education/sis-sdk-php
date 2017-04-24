@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class BillPayer extends ModelBase
 {
-
     const LEGAL_ENTITY = 'legalEntity';
 
     const DELETED_LEGAL_ENTITY_NAME = 'deletedLegalEntityName';
@@ -26,10 +25,14 @@ class BillPayer extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("BillPayer");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class BillPayer extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::BILL_PAYER, $id);
     }
 
@@ -92,6 +97,4 @@ class BillPayer extends ModelBase
     {
         $this->setProperty("stripeCustomerId", $stripeCustomerId);
     }
-
-
 }

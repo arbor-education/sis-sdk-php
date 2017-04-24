@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class InterventionFundingSource extends ModelBase
 {
-
     const NAME = 'name';
 
     const CODE = 'code';
@@ -28,10 +27,14 @@ class InterventionFundingSource extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("InterventionFundingSource");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class InterventionFundingSource extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INTERVENTION_FUNDING_SOURCE, $id);
     }
 
@@ -110,6 +115,4 @@ class InterventionFundingSource extends ModelBase
     {
         $this->setProperty("dataOrder", $dataOrder);
     }
-
-
 }

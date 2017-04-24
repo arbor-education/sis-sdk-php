@@ -11,7 +11,6 @@ use \Arbor\Model\AcademicYear;
 
 class ProgressMeasurementPeriodSet extends ModelBase
 {
-
     const PERIOD_FREQUENCY = 'periodFrequency';
 
     const SET_NAME = 'setName';
@@ -27,10 +26,14 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("ProgressMeasurementPeriodSet");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class ProgressMeasurementPeriodSet extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PROGRESS_MEASUREMENT_PERIOD_SET, $id);
     }
 
@@ -93,6 +98,4 @@ class ProgressMeasurementPeriodSet extends ModelBase
     {
         $this->setProperty("academicYear", $academicYear);
     }
-
-
 }

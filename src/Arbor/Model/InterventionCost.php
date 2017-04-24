@@ -11,7 +11,6 @@ use \Arbor\Model\Intervention;
 
 class InterventionCost extends ModelBase
 {
-
     const INTERVENTION = 'intervention';
 
     const AMOUNT = 'amount';
@@ -27,10 +26,14 @@ class InterventionCost extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("InterventionCost");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class InterventionCost extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INTERVENTION_COST, $id);
     }
 
@@ -93,6 +98,4 @@ class InterventionCost extends ModelBase
     {
         $this->setProperty("description", $description);
     }
-
-
 }

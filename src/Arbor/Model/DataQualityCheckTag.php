@@ -11,7 +11,6 @@ use \Arbor\Model\DataQualityCheckResult;
 
 class DataQualityCheckTag extends ModelBase
 {
-
     const DATA_QUALITY_CHECK_RESULT = 'dataQualityCheckResult';
 
     const TAGGED = 'tagged';
@@ -25,10 +24,14 @@ class DataQualityCheckTag extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DataQualityCheckTag");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class DataQualityCheckTag extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DATA_QUALITY_CHECK_TAG, $id);
     }
 
@@ -75,6 +80,4 @@ class DataQualityCheckTag extends ModelBase
     {
         $this->setProperty("tagged", $tagged);
     }
-
-
 }

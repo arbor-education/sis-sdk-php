@@ -12,7 +12,6 @@ use \Arbor\Model\Student;
 
 class StudentSchoolwork extends ModelBase
 {
-
     const SCHOOLWORK = 'schoolwork';
 
     const STUDENT = 'student';
@@ -34,10 +33,14 @@ class StudentSchoolwork extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentSchoolwork");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class StudentSchoolwork extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_SCHOOLWORK, $id);
     }
 
@@ -148,6 +153,4 @@ class StudentSchoolwork extends ModelBase
     {
         $this->setProperty("reviewedDatetime", $reviewedDatetime);
     }
-
-
 }

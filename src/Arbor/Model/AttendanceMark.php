@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class AttendanceMark extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -72,10 +71,14 @@ class AttendanceMark extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AttendanceMark");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -87,7 +90,9 @@ class AttendanceMark extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ATTENDANCE_MARK, $id);
     }
 
@@ -506,6 +511,4 @@ class AttendanceMark extends ModelBase
     {
         $this->setProperty("isExcluded", $isExcluded);
     }
-
-
 }

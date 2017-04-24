@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class WidgetType extends ModelBase
 {
-
     const WIDGET_TYPE_IDENTIFIER = 'widgetTypeIdentifier';
 
     const WIDGET_TYPE_NAME = 'widgetTypeName';
@@ -24,10 +23,14 @@ class WidgetType extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("WidgetType");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class WidgetType extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::WIDGET_TYPE, $id);
     }
 
@@ -74,6 +79,4 @@ class WidgetType extends ModelBase
     {
         $this->setProperty("widgetTypeName", $widgetTypeName);
     }
-
-
 }

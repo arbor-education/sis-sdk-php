@@ -11,7 +11,6 @@ use \Arbor\Model\Site;
 
 class Room extends ModelBase
 {
-
     const SITE = 'site';
 
     const ROOM_NAME = 'roomName';
@@ -33,10 +32,14 @@ class Room extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Room");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class Room extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ROOM, $id);
     }
 
@@ -147,6 +152,4 @@ class Room extends ModelBase
     {
         $this->setProperty("invigilationCapacity", $invigilationCapacity);
     }
-
-
 }

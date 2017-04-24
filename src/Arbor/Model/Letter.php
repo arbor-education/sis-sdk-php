@@ -11,7 +11,6 @@ use \Arbor\Model\MessageDraftRecipient;
 
 class Letter extends ModelBase
 {
-
     const LETTER_DATE = 'letterDate';
 
     const RECEIVED_DATE = 'receivedDate';
@@ -43,10 +42,14 @@ class Letter extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Letter");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -58,7 +61,9 @@ class Letter extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::LETTER, $id);
     }
 
@@ -237,6 +242,4 @@ class Letter extends ModelBase
     {
         $this->setProperty("actionRequiredByDatetime", $actionRequiredByDatetime);
     }
-
-
 }

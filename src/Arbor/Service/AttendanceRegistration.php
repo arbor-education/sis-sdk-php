@@ -1,6 +1,7 @@
 <?php
 
 namespace Arbor\Service;
+
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\AttendanceMark;
 use Arbor\Model\Hydrator;
@@ -19,11 +20,13 @@ class AttendanceRegistration
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
-    protected $_marks = array();
+    protected $_marks = [];
 
     public function __construct($gateway=null)
     {
-        if(is_null($gateway))$gateway = ModelBase::getDefaultGateway();
+        if (is_null($gateway)) {
+            $gateway = ModelBase::getDefaultGateway();
+        }
         $this->setGateway($gateway);
         $this->_hydrator = new Hydrator();
     }
@@ -37,23 +40,22 @@ class AttendanceRegistration
      */
     public function awardAttendanceMark($student, $sessionStartTime, $attendanceMark, $minutesLate=null, $note=null)
     {
-        $this->_marks[] = array(
+        $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_SESSION_START_TIME => $sessionStartTime,
             self::MARK_MARK => $attendanceMark,
             self::MARK_MINUTES_LATE =>$minutesLate,
             self::MARK_NOTE => $note
-        );
+        ];
     }
 
     public function saveMarks()
     {
-        $payload = array();
+        $payload = [];
 
         $payload['request']['marks'] = [];
 
-        foreach($this->_marks AS $mark)
-        {
+        foreach ($this->_marks as $mark) {
             $markPayload = [];
 
             //Convert models to REST representations
@@ -63,16 +65,16 @@ class AttendanceRegistration
             //Convert date to Y-m-d H:i:s string
             /**@var \DateTime $sessionStartTime*/
             $sessionStartTime = $mark[self::MARK_SESSION_START_TIME];
-            if(!$sessionStartTime instanceof \DateTime) throw new \InvalidArgumentException("SessionStartTime must be an PHP DateTime object");
+            if (!$sessionStartTime instanceof \DateTime) {
+                throw new \InvalidArgumentException("SessionStartTime must be an PHP DateTime object");
+            }
             $markPayload[self::MARK_SESSION_START_TIME] = $sessionStartTime->format("Y-m-d H:i:s");
 
             //Only include optional minutesLate and note parameters if not set to NULL
-            if(isset($mark[self::MARK_MINUTES_LATE]) && !is_null($mark[self::MARK_MINUTES_LATE]))
-            {
+            if (isset($mark[self::MARK_MINUTES_LATE]) && !is_null($mark[self::MARK_MINUTES_LATE])) {
                 $markPayload[self::MARK_MINUTES_LATE] = $mark[self::MARK_MINUTES_LATE];
             }
-            if(isset($mark[self::MARK_NOTE]) && !is_null($mark[self::MARK_NOTE]))
-            {
+            if (isset($mark[self::MARK_NOTE]) && !is_null($mark[self::MARK_NOTE])) {
                 $markPayload[self::MARK_NOTE] = $mark[self::MARK_NOTE];
             }
 
@@ -82,9 +84,8 @@ class AttendanceRegistration
         $response = $this->getGateway()->sendRequest(
             RestGateway::HTTP_METHOD_POST, "/rest-v2/attendance-registration", json_encode($payload));
 
-        if($response instanceof Response && $response->getStatusCode() == 200)
-        {
-            $this->_marks = array();
+        if ($response instanceof Response && $response->getStatusCode() == 200) {
+            $this->_marks = [];
         }
     }
 

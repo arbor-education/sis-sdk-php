@@ -12,7 +12,6 @@ use \Arbor\Model\RegistrationForm;
 
 class AcademicLevelRegistrationFormMapping extends ModelBase
 {
-
     const ACADEMIC_LEVEL = 'academicLevel';
 
     const REGISTRATION_FORM = 'registrationForm';
@@ -26,10 +25,14 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicLevelRegistrationFormMapping");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING, $id);
     }
 
@@ -76,6 +81,4 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     {
         $this->setProperty("registrationForm", $registrationForm);
     }
-
-
 }

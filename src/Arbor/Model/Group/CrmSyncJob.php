@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class CrmSyncJob extends ModelBase
 {
-
     const TASK = 'task';
 
     const PARAMS = 'params';
@@ -28,10 +27,14 @@ class CrmSyncJob extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Group_CrmSyncJob");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -43,7 +46,9 @@ class CrmSyncJob extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GROUP_CRM_SYNC_JOB, $id);
     }
 
@@ -110,6 +115,4 @@ class CrmSyncJob extends ModelBase
     {
         $this->setProperty("statusDatetime", $statusDatetime);
     }
-
-
 }

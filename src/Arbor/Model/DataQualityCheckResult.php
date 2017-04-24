@@ -11,7 +11,6 @@ use \Arbor\Model\User;
 
 class DataQualityCheckResult extends ModelBase
 {
-
     const OBJECT = 'object';
 
     const CHECK_CLASS = 'checkClass';
@@ -41,10 +40,14 @@ class DataQualityCheckResult extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DataQualityCheckResult");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class DataQualityCheckResult extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DATA_QUALITY_CHECK_RESULT, $id);
     }
 
@@ -219,6 +224,4 @@ class DataQualityCheckResult extends ModelBase
     {
         $this->setProperty("ignoredDatetime", $ignoredDatetime);
     }
-
-
 }

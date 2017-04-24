@@ -12,7 +12,6 @@ use \Arbor\Model\ExclusionReason;
 
 class PermanentExclusion extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const EXCLUSION_REASON = 'exclusionReason';
@@ -36,10 +35,14 @@ class PermanentExclusion extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PermanentExclusion");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -51,7 +54,9 @@ class PermanentExclusion extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::PERMANENT_EXCLUSION, $id);
     }
 
@@ -166,6 +171,4 @@ class PermanentExclusion extends ModelBase
     {
         $this->setProperty("narrative", $narrative);
     }
-
-
 }

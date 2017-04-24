@@ -14,7 +14,6 @@ use \Arbor\Model\StudentAttendancePattern;
 
 class AcademicUnitEnrolment extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const STUDENT = 'student';
@@ -42,10 +41,14 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AcademicUnitEnrolment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -57,7 +60,9 @@ class AcademicUnitEnrolment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_ENROLMENT, $id);
     }
 
@@ -204,6 +209,4 @@ class AcademicUnitEnrolment extends ModelBase
     {
         $this->setProperty("studentAttendancePatternDependency", $studentAttendancePatternDependency);
     }
-
-
 }

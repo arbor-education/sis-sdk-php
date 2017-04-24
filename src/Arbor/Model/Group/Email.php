@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class Email extends ModelBase
 {
-
     const CONTEXT = 'context';
 
     protected $_resourceType = ResourceType::GROUP_EMAIL;
@@ -22,10 +21,14 @@ class Email extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Group_Email");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -37,7 +40,9 @@ class Email extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GROUP_EMAIL, $id);
     }
 
@@ -56,6 +61,4 @@ class Email extends ModelBase
     {
         $this->setProperty("context", $context);
     }
-
-
 }

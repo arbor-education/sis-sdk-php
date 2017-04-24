@@ -11,7 +11,6 @@ use \Arbor\Model\Country;
 
 class PostalAddress extends ModelBase
 {
-
     const ADDRESS1 = 'address1';
 
     const ADDRESS2 = 'address2';
@@ -41,10 +40,14 @@ class PostalAddress extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("PostalAddress");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -56,7 +59,9 @@ class PostalAddress extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::POSTAL_ADDRESS, $id);
     }
 
@@ -219,6 +224,4 @@ class PostalAddress extends ModelBase
     {
         $this->setProperty("geocodeType", $geocodeType);
     }
-
-
 }

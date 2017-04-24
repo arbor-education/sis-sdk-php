@@ -11,7 +11,6 @@ use \Arbor\Model\LessonPlan;
 
 class LessonPlanSection extends ModelBase
 {
-
     const LESSON_PLAN = 'lessonPlan';
 
     const NARRATIVE = 'narrative';
@@ -33,10 +32,14 @@ class LessonPlanSection extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("LessonPlanSection");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class LessonPlanSection extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::LESSON_PLAN_SECTION, $id);
     }
 
@@ -147,6 +152,4 @@ class LessonPlanSection extends ModelBase
     {
         $this->setProperty("displayOrder", $displayOrder);
     }
-
-
 }

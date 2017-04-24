@@ -15,7 +15,6 @@ use \Arbor\Model\CandidateEntry;
 
 class QualificationResult extends ModelBase
 {
-
     const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -49,10 +48,14 @@ class QualificationResult extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("QualificationResult");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -64,7 +67,9 @@ class QualificationResult extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::QUALIFICATION_RESULT, $id);
     }
 
@@ -259,6 +264,4 @@ class QualificationResult extends ModelBase
     {
         $this->setProperty("endorsementGrade", $endorsementGrade);
     }
-
-
 }

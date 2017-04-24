@@ -11,7 +11,6 @@ use \Arbor\Model\LocalAuthority;
 
 class InCareStatusAssignment extends ModelBase
 {
-
     const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::UK_DFE_IN_CARE_STATUS_ASSIGNMENT;
@@ -23,10 +22,14 @@ class InCareStatusAssignment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_InCareStatusAssignment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -38,7 +41,9 @@ class InCareStatusAssignment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_IN_CARE_STATUS_ASSIGNMENT, $id);
     }
 
@@ -57,6 +62,4 @@ class InCareStatusAssignment extends ModelBase
     {
         $this->setProperty("responsibleLocalAuthority", $responsibleLocalAuthority);
     }
-
-
 }

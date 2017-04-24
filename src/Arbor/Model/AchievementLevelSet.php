@@ -11,7 +11,6 @@ use \Arbor\Model\Curriculum;
 
 class AchievementLevelSet extends ModelBase
 {
-
     const CODE = 'code';
 
     const NAME = 'name';
@@ -31,10 +30,14 @@ class AchievementLevelSet extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("AchievementLevelSet");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class AchievementLevelSet extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::ACHIEVEMENT_LEVEL_SET, $id);
     }
 
@@ -129,6 +134,4 @@ class AchievementLevelSet extends ModelBase
     {
         $this->setProperty("curriculum", $curriculum);
     }
-
-
 }

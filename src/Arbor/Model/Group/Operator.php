@@ -10,7 +10,6 @@ use \Arbor\Model\Exception;
 
 class Operator extends ModelBase
 {
-
     const NAME = 'name';
 
     const ARBOR_IDENTIFIER = 'arborIdentifier';
@@ -24,10 +23,14 @@ class Operator extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Group_Operator");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -39,7 +42,9 @@ class Operator extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::GROUP_OPERATOR, $id);
     }
 
@@ -74,6 +79,4 @@ class Operator extends ModelBase
     {
         $this->setProperty("arborIdentifier", $arborIdentifier);
     }
-
-
 }

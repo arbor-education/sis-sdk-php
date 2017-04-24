@@ -14,7 +14,6 @@ use \Arbor\Model\MealSittingAutomaticAttendeeTarget;
 
 class MealPattern extends ModelBase
 {
-
     const ATTENDEE = 'attendee';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -56,10 +55,14 @@ class MealPattern extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("MealPattern");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -71,7 +74,9 @@ class MealPattern extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::MEAL_PATTERN, $id);
     }
 
@@ -330,6 +335,4 @@ class MealPattern extends ModelBase
     {
         $this->setProperty("groupMembership", $groupMembership);
     }
-
-
 }

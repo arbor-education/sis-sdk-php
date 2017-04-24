@@ -11,7 +11,6 @@ use \Arbor\Model\Intervention;
 
 class InterventionGroup extends ModelBase
 {
-
     const INTERVENTION = 'intervention';
 
     const GROUP = 'group';
@@ -33,10 +32,14 @@ class InterventionGroup extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("InterventionGroup");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class InterventionGroup extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INTERVENTION_GROUP, $id);
     }
 
@@ -147,6 +152,4 @@ class InterventionGroup extends ModelBase
     {
         $this->setProperty("successCriteria", $successCriteria);
     }
-
-
 }

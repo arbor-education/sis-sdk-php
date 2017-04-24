@@ -16,13 +16,12 @@ $api->getHttpClient()->setSslVerification(false);
 
 $query = new Query(\Arbor\Resource\ResourceType::PERSON);
 $query->addPropertyFilter(\Arbor\Model\Person::LEGAL_FIRST_NAME, Query::OPERATOR_EQUALS, "");
-$query->addPropertyFilter(\Arbor\Model\Person::DATE_OF_BIRTH, Query::OPERATOR_EQUALS, NULL);
+$query->addPropertyFilter(\Arbor\Model\Person::DATE_OF_BIRTH, Query::OPERATOR_EQUALS, null);
 
 $modelCollection = $api->query($query);
 
 //Display Logic
-foreach($modelCollection AS $model)
-{
+foreach ($modelCollection as $model) {
     $hydrator = new \Arbor\Model\Hydrator();
     $array = $hydrator->extractArray($model);
     print_r($array);

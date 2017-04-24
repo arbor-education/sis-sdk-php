@@ -11,7 +11,6 @@ use \Arbor\Model\Site;
 
 class SiteTravelTime extends ModelBase
 {
-
     const SITE1 = 'site1';
 
     const SITE2 = 'site2';
@@ -27,10 +26,14 @@ class SiteTravelTime extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("SiteTravelTime");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class SiteTravelTime extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::SITE_TRAVEL_TIME, $id);
     }
 
@@ -93,6 +98,4 @@ class SiteTravelTime extends ModelBase
     {
         $this->setProperty("travelTime", $travelTime);
     }
-
-
 }

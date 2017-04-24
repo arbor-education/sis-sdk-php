@@ -11,7 +11,6 @@ use \Arbor\Model\Demographic;
 
 class InverseDemographic extends ModelBase
 {
-
     const DEMOGRAPHIC = 'demographic';
 
     protected $_resourceType = ResourceType::INVERSE_DEMOGRAPHIC;
@@ -23,10 +22,14 @@ class InverseDemographic extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("InverseDemographic");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -38,7 +41,9 @@ class InverseDemographic extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::INVERSE_DEMOGRAPHIC, $id);
     }
 
@@ -57,6 +62,4 @@ class InverseDemographic extends ModelBase
     {
         $this->setProperty("demographic", $demographic);
     }
-
-
 }

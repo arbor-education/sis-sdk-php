@@ -11,7 +11,6 @@ use \Arbor\Model\Dashboard;
 
 class DashboardSection extends ModelBase
 {
-
     const DASHBOARD = 'dashboard';
 
     const CODE = 'code';
@@ -31,10 +30,14 @@ class DashboardSection extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DashboardSection");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class DashboardSection extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DASHBOARD_SECTION, $id);
     }
 
@@ -129,6 +134,4 @@ class DashboardSection extends ModelBase
     {
         $this->setProperty("displayOrder", $displayOrder);
     }
-
-
 }

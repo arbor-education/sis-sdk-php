@@ -17,12 +17,11 @@ $api->getHttpClient()->addSubscriber(LogPlugin::getDebugPlugin());
 $ethnicity = $api->retrieve(ResourceType::ETHNICITY, "AAFR");
 
 $staffQuery = new Query(ResourceType::STAFF);
-$staffQuery->setTaggings(array('STAFF__CURRENT_TEACHING_STAFF'));
+$staffQuery->setTaggings(['STAFF__CURRENT_TEACHING_STAFF']);
 $modelCollection = $api->query($staffQuery);
 
 //Display Logic
-foreach($modelCollection AS $model)
-{
+foreach ($modelCollection as $model) {
     $hydrator = new \Arbor\Model\Hydrator();
     $array = $hydrator->extractArray($model);
     print_r($array);

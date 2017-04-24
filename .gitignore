@@ -2,3 +2,4 @@
 .idea
 /nbproject/
 /examples/config.php
+.php_cs.cache

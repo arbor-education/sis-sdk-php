@@ -13,7 +13,6 @@ use \Arbor\Model\CustomerInvoice;
 
 class TripParticipant extends ModelBase
 {
-
     const TRIP = 'trip';
 
     const STUDENT = 'student';
@@ -31,10 +30,14 @@ class TripParticipant extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("TripParticipant");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -46,7 +49,9 @@ class TripParticipant extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TRIP_PARTICIPANT, $id);
     }
 
@@ -113,6 +118,4 @@ class TripParticipant extends ModelBase
     {
         $this->setProperty("consentReceived", $consentReceived);
     }
-
-
 }

@@ -12,7 +12,6 @@ use \Arbor\Model\AdditionalPaymentReason;
 
 class StaffContractPostAdditionalPayment extends ModelBase
 {
-
     const STAFF_CONTRACT_POST = 'staffContractPost';
 
     const ADDITIONAL_PAYMENT = 'additionalPayment';
@@ -34,10 +33,14 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StaffContractPostAdditionalPayment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -49,7 +52,9 @@ class StaffContractPostAdditionalPayment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT, $id);
     }
 
@@ -148,6 +153,4 @@ class StaffContractPostAdditionalPayment extends ModelBase
     {
         $this->setProperty("endDate", $endDate);
     }
-
-
 }

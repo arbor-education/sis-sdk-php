@@ -11,7 +11,6 @@ use \Arbor\Model\NewsStory;
 
 class NewsStoryComment extends ModelBase
 {
-
     const NEWS_STORY = 'newsStory';
 
     const TEXT = 'text';
@@ -25,10 +24,14 @@ class NewsStoryComment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("NewsStoryComment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -40,7 +43,9 @@ class NewsStoryComment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::NEWS_STORY_COMMENT, $id);
     }
 
@@ -75,6 +80,4 @@ class NewsStoryComment extends ModelBase
     {
         $this->setProperty("text", $text);
     }
-
-
 }

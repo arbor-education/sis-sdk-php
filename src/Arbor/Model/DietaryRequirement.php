@@ -11,7 +11,6 @@ use \Arbor\Model\DietaryRequirementType;
 
 class DietaryRequirement extends ModelBase
 {
-
     const PERSON = 'person';
 
     const DIETARY_REQUIREMENT_TYPE = 'dietaryRequirementType';
@@ -27,10 +26,14 @@ class DietaryRequirement extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("DietaryRequirement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class DietaryRequirement extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::DIETARY_REQUIREMENT, $id);
     }
 
@@ -93,6 +98,4 @@ class DietaryRequirement extends ModelBase
     {
         $this->setProperty("note", $note);
     }
-
-
 }

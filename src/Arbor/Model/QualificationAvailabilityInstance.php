@@ -11,7 +11,6 @@ use \Arbor\Model\AwardingOrganization;
 
 class QualificationAvailabilityInstance extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -37,10 +36,14 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("QualificationAvailabilityInstance");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -52,7 +55,9 @@ class QualificationAvailabilityInstance extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::QUALIFICATION_AVAILABILITY_INSTANCE, $id);
     }
 
@@ -183,6 +188,4 @@ class QualificationAvailabilityInstance extends ModelBase
     {
         $this->setProperty("endDatetime", $endDatetime);
     }
-
-
 }

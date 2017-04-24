@@ -11,7 +11,6 @@ use \Arbor\Model\TrainingCourse;
 
 class TrainingEvent extends ModelBase
 {
-
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -35,10 +34,14 @@ class TrainingEvent extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("TrainingEvent");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -50,7 +53,9 @@ class TrainingEvent extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TRAINING_EVENT, $id);
     }
 
@@ -165,6 +170,4 @@ class TrainingEvent extends ModelBase
     {
         $this->setProperty("trainingCourse", $trainingCourse);
     }
-
-
 }

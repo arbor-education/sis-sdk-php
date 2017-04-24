@@ -14,7 +14,6 @@ use \Arbor\Model\ProgressMeasurementPeriod;
 
 class StudentProgressAssessment extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ASSESSMENT = 'assessment';
@@ -36,10 +35,14 @@ class StudentProgressAssessment extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentProgressAssessment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -51,7 +54,9 @@ class StudentProgressAssessment extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_PROGRESS_ASSESSMENT, $id);
     }
 
@@ -150,6 +155,4 @@ class StudentProgressAssessment extends ModelBase
     {
         $this->setProperty("completedDate", $completedDate);
     }
-
-
 }

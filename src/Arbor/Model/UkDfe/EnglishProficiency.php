@@ -11,7 +11,6 @@ use \Arbor\Model\Student;
 
 class EnglishProficiency extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const PROFICIENCY = 'proficiency';
@@ -27,10 +26,14 @@ class EnglishProficiency extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_EnglishProficiency");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -42,7 +45,9 @@ class EnglishProficiency extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_ENGLISH_PROFICIENCY, $id);
     }
 
@@ -93,6 +98,4 @@ class EnglishProficiency extends ModelBase
     {
         $this->setProperty("proficiencyDate", $proficiencyDate);
     }
-
-
 }

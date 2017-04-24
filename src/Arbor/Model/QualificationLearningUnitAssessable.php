@@ -12,7 +12,6 @@ use \Arbor\Model\QualificationAssessable;
 
 class QualificationLearningUnitAssessable extends ModelBase
 {
-
     const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
     const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -26,10 +25,14 @@ class QualificationLearningUnitAssessable extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("QualificationLearningUnitAssessable");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -41,7 +44,9 @@ class QualificationLearningUnitAssessable extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::QUALIFICATION_LEARNING_UNIT_ASSESSABLE, $id);
     }
 
@@ -76,6 +81,4 @@ class QualificationLearningUnitAssessable extends ModelBase
     {
         $this->setProperty("qualificationAssessable", $qualificationAssessable);
     }
-
-
 }

@@ -11,7 +11,6 @@ use \Arbor\Model\Tag;
 
 class Tagging extends ModelBase
 {
-
     const TAG = 'tag';
 
     const TAGGED_OBJECT = 'taggedObject';
@@ -33,10 +32,14 @@ class Tagging extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("Tagging");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -48,7 +51,9 @@ class Tagging extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::TAGGING, $id);
     }
 
@@ -147,6 +152,4 @@ class Tagging extends ModelBase
     {
         $this->setProperty("link2", $link2);
     }
-
-
 }

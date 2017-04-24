@@ -14,7 +14,6 @@ use \Arbor\Model\MedicalRelationshipType;
 
 class StudentMedicalRelationship extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const MEDICAL_INSTITUTION = 'medicalInstitution';
@@ -38,10 +37,14 @@ class StudentMedicalRelationship extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("StudentMedicalRelationship");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -53,7 +56,9 @@ class StudentMedicalRelationship extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::STUDENT_MEDICAL_RELATIONSHIP, $id);
     }
 
@@ -168,6 +173,4 @@ class StudentMedicalRelationship extends ModelBase
     {
         $this->setProperty("notes", $notes);
     }
-
-
 }

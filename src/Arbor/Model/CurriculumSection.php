@@ -12,7 +12,6 @@ use \Arbor\Model\Assessment;
 
 class CurriculumSection extends ModelBase
 {
-
     const CURRICULUM = 'curriculum';
 
     const CODE = 'code';
@@ -36,10 +35,14 @@ class CurriculumSection extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("CurriculumSection");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -51,7 +54,9 @@ class CurriculumSection extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::CURRICULUM_SECTION, $id);
     }
 
@@ -166,6 +171,4 @@ class CurriculumSection extends ModelBase
     {
         $this->setProperty("weighting", $weighting);
     }
-
-
 }
