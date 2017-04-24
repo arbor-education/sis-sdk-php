@@ -1,6 +1,6 @@
 /vendor
 /examples/config.php
-.composer.lock
+composer.lock
 .php_cs.cache
 .idea
 /nbproject/
