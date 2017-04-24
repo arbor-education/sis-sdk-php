@@ -26,5 +26,10 @@
         "cs-check": "php-cs-fixer fix --config=.php_cs -v --diff --dry-run",
         "cs-fix": "php-cs-fixer fix --config=.php_cs",
         "ci-cs": "git fetch; php-cs-fixer fix --config=.php_cs -v --dry-run --using-cache=no --path-mode=intersection `git diff --name-only --diff-filter=d origin/master | xargs`"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
