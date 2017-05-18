@@ -391,6 +391,7 @@ class RestGateway implements GatewayInterface
         //Uncomment this line to allow you to trigger a debug session in the Mis project
         //$url = $url . "?XDEBUG_SESSION_START=yes";
         $responsePayload = null;
+        $code = 0;
 
         try {
             $request = $this->getHttpClient()->createRequest($method, $url, $headers, $body);
@@ -401,8 +402,8 @@ class RestGateway implements GatewayInterface
                 $request->addHeader("x-mis-application-id", $this->getApplicationId());
             }
             $response = $request->send();
-            $responsePayload = $response->json();
             $code = $response->getStatusCode();
+            $responsePayload = $response->json();
         } catch (BadResponseException $e) {
             //Default to using the code and message from the Guzzle exception.
             //This is useful in case the response does not contain valid json
@@ -430,6 +431,7 @@ class RestGateway implements GatewayInterface
                 $message = "Server threw: $serverException with message: $serverMessage URL=$url";
             }
         }
+
         switch ($code) {
             case 422:
             case 200:
@@ -450,6 +452,7 @@ class RestGateway implements GatewayInterface
                 }
             break;
         }
+
         throw $exception;
     }
 
