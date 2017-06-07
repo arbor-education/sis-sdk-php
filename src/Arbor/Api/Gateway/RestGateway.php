@@ -409,7 +409,7 @@ class RestGateway implements GatewayInterface
             //This is useful in case the response does not contain valid json
             $responsePayload = $e->getResponse()->json();
         } catch (RuntimeException $e) {
-            throw new ServerErrorException("The server did not return a valid response from URL=$url. Response: ". $response->getBody(true));
+            throw new ServerErrorException("An unexpected error has occurred: " . $e->getMessage(), 0, $e);
         }
 
         //If the response has a code property
