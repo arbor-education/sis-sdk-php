@@ -11,7 +11,7 @@ class ServerErrorException extends \Arbor\Exception
     /**@var string $_serverExceptionTrace*/
     protected $_serverExceptionTrace;
 
-    public function __construct($message = "", $code = 0, Exception $previous = null,
+    public function __construct($message = "", $code = 0, $previous = null,
                                 $serverExceptionClass=null, $serverExceptionMessage=null, $serverExceptionTrace=null)
     {
         parent::__construct($message, $code, $previous);
