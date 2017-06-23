@@ -7,10 +7,10 @@ use Arbor\Model\ModelBase;
 interface GatewayInterface
 {
     /**
-     * @param \Arbor\Model\ModelBase
-     * @return \Arbor\Model\ModelBase
+     * @param ModelBase $model
+     * @return ModelBase
      */
-    public function create($model);
+    public function create(ModelBase $model);
 
     /**
      * @param string $resource
@@ -20,14 +20,14 @@ interface GatewayInterface
     public function retrieve($resource, $id);
 
     /**
-     * @param \Arbor\Model\ModelBase $model
+     * @param ModelBase $model
      */
-    public function update($model);
+    public function update(ModelBase $model);
 
     /**
-     * @param \Arbor\Model\ModelBase $model
+     * @param ModelBase $model
      */
-    public function delete($model);
+    public function delete(ModelBase $model);
 
     /**
      * @param $resource

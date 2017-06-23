@@ -1,18 +1,25 @@
 <?php
 namespace Arbor\Api\Gateway;
 
+use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
 use Arbor\Model\Collection;
 use Arbor\Model\Hydrator;
-use \Arbor\Model\ModelBase;
-use Arbor\Query\Query;
-use Guzzle\Common\Exception\RuntimeException;
-use \Guzzle\Http\Client;
-use \Arbor\Filter\Pluralize;
-use Guzzle\Http\Exception\BadResponseException;
-use Guzzle\Plugin\Backoff\BackoffPlugin;
+use Arbor\Model\ModelBase;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Handler\CurlHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+use Arbor\Filter\PluralizeFilter;
 
 class RestGateway implements GatewayInterface
 {
@@ -21,15 +28,17 @@ class RestGateway implements GatewayInterface
     const HTTP_METHOD_PUT = "put";
     const HTTP_METHOD_DELETE = "delete";
 
-    /**@var string $_baseUrl*/
+    const MAX_RETRIES = 5;
+
+    /**@var string $_baseUrl */
     protected $_baseUrl;
-    /**@var string $_authUser*/
+    /**@var string $_authUser */
     protected $_authUser;
-    /**@var string $_authPassword*/
+    /**@var string $_authPassword */
     protected $_authPassword;
-    /**@var \Guzzle\Http\Client $_httpClient*/
+    /**@var \GuzzleHttp\Client $_httpClient */
     protected $_httpClient;
-    /**@var string $_applicationId*/
+    /**@var string $_applicationId */
     protected $_applicationId;
 
     /**
@@ -37,279 +46,41 @@ class RestGateway implements GatewayInterface
      * @param string $authUser
      * @param string $authPassword
      * @param string $userAgent
+     * @param boolean $autoRetry
      */
-    public function __construct($baseUrl="", $authUser="", $authPassword="", $userAgent="Arbor PHP SDK", $autoRetry = true)
+    public function __construct($baseUrl = '', $authUser = '', $authPassword = '', $userAgent = 'Arbor PHP SDK', $autoRetry = true)
     {
-        $this->_httpClient = new Client();
-        $this->_httpClient->setUserAgent($userAgent);
+        $config = [
+            'base_uri' => $baseUrl,
+            'auth' => [$authUser, $authPassword],
+            'headers' => [
+                'User-Agent' => $userAgent
+            ]
+        ];
 
         if ($autoRetry) {
-            $backoffPlugin = BackoffPlugin::getExponentialBackoff(2);
-            $this->_httpClient->addSubscriber($backoffPlugin);
+            $handlerStack = HandlerStack::create(new CurlHandler());
+            $handlerStack->push(
+                Middleware::retry(
+                    $this->createRetryHandler(new NullLogger())
+                )
+            );
+
+            $config['handler'] = $handlerStack;
         }
 
+        $this->_httpClient = new Client($config);
         $this->setBaseUrl($baseUrl);
         $this->setAuthUser($authUser);
         $this->setAuthPassword($authPassword);
     }
 
     /**
-     * @param \Arbor\Model\ModelBase $model
-     * @return \Arbor\Model\ModelBase
+     * @return string
      */
-    public function create($model)
+    public function getAuthPassword()
     {
-        $filterPluralize = new \Arbor\Filter\PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $pluralResource = $filterPluralize->filter($model->getResourceType());
-        $resource = strtolower($filterCamelToDash->filter($pluralResource));
-        $url = "/rest-v2/$resource";
-
-        $hydrator = new Hydrator($this);
-        $arrayRepresentation = $hydrator->extractArray($model);
-
-        $resourceRoot = lcfirst($model->getResourceType());
-        $responseRepresentation = $this->sendRequest(
-            self::HTTP_METHOD_POST,
-            $url,
-            json_encode(
-                ["request"=>
-                        [
-                            $resourceRoot => $arrayRepresentation,
-                        ]
-                ]
-            )
-        );
-
-        try {
-            if (array_key_exists($resourceRoot, $responseRepresentation)) {
-                $resultingModelRepresentation = $responseRepresentation[$resourceRoot];
-            } else {
-                throw new Exception("API Error: ".print_r($responseRepresentation, true));
-            }
-        } catch (\Guzzle\Common\Exception\RuntimeException $e) {
-            throw new Exception("Invalid response body: ". $response->getBody(true));
-        }
-
-        $hydrator->hydrateModel($model, $resultingModelRepresentation);
-        return $model;
-    }
-
-    /**
-     * @param ModelBase $model
-     * @return ModelBase
-     * @throws Exception
-     */
-    public function refresh($model)
-    {
-        $url = $model->getResourceUrl();
-        $request = $this->getHttpClient()->get($url);
-        $request->setAuth($this->getAuthUser(), $this->getAuthPassword());
-        $response = $request->send();
-        $arrayRepresentation = $response->json();
-        $resourceRoot = lcfirst($model->getResourceType());
-        if (array_key_exists($resourceRoot, $arrayRepresentation)) {
-            $hydrator = new Hydrator($this);
-            $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
-            return $model;
-        } else {
-            throw new Exception("Resource {$model->getResourceType()} with ID {$model->getResourceId()} could not be retrieved from URL: $url");
-        }
-    }
-
-    /**
-     * @param string $resource
-     * @param string $id
-     * @return \Arbor\Model\ModelBase
-     * @throws Exception
-     */
-    public function retrieve($resource, $id)
-    {
-        $filterPluralize = new \Arbor\Filter\PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $resourceSegment = strtolower($filterCamelToDash->filter($filterPluralize->filter($resource)));
-
-        $url = "/rest-v2/$resourceSegment/$id";
-
-        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url);
-
-        $resourceRoot = lcfirst($resource);
-        if (array_key_exists($resourceRoot, $arrayRepresentation)) {
-            $model = $this->instantiateModel($resource);
-            $hydrator = new Hydrator($this);
-            $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
-            $model->initialArrayRepresentation = $arrayRepresentation;
-
-            return $model;
-        } else {
-            throw new Exception("Resource $resource with ID $id could not be retrieved from URL: $url");
-        }
-    }
-
-    /**
-     * @param string $resourceType
-     * @return ModelBase
-     */
-    public function instantiateModel($resourceType)
-    {
-        if (strstr($resourceType, "_")) {
-            //This is a module resource
-            list($modulePrefix, $moduleResource) = explode("_", $resourceType, 2);
-            $modelClass = "Arbor\\Model\\$modulePrefix\\$moduleResource";
-            $modelClassFile = __DIR__."/../../Model/$modulePrefix/$moduleResource.php";
-        } else {
-            $modelClass = "Arbor\\Model\\$resourceType";
-            $modelClassFile = __DIR__."/../../Model/$resourceType.php";
-        }
-        //Check wether a specific class for this resource has been autogenerated if not then use the base class.
-        //TODO: This is a development measure and can be removed once all models have been autogenerated
-        if (file_exists($modelClassFile)) {
-            $model = new $modelClass($resourceType, [], $this);
-        } else {
-            $model = new ModelBase($resourceType, [], $this);
-        }
-        return $model;
-    }
-
-    /**
-     * @param \Arbor\Model\ModelBase $model
-     */
-    public function update($model)
-    {
-        $url = $model->getResourceUrl();
-        $resourceType = $model->getResourceType();
-
-        $hydrator = new Hydrator($this);
-        $arrayRepresentation = $hydrator->extractArray($model);
-        $resourceRoot = lcfirst($resourceType);
-
-        $previousModel = $this->retrieve($resourceType, $model->getResourceId());
-        $prevModelArrRepresentation = $hydrator->extractArray($previousModel);
-        $modelDiff = $this->diffArrayRepresentationRecursive($arrayRepresentation, $prevModelArrRepresentation);
-
-        $body = json_encode(
-                    ["request"=>
-                        [
-                            $resourceRoot => $modelDiff,
-                    ]
-                ]
-        );
-
-        if (!empty($modelDiff)) {
-            $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_PUT, $url, $body);
-        } else {
-            return $model;
-        }
-
-        //Revision ID is a read-only property so lets remove it before sending the update request to the API
-        if (array_key_exists("revisionId", $responseRepresentation)) {
-            unset($responseRepresentation['revisionId']);
-        }
-
-        if (array_key_exists($resourceRoot, $responseRepresentation)) {
-            $resultingModelRepresentation = $responseRepresentation[$resourceRoot];
-        } else {
-            throw new Exception("API Error: ".print_r($responseRepresentation, true));
-        }
-
-        $hydrator->hydrateModel($model, $resultingModelRepresentation);
-
-        return $model;
-    }
-
-    /**
-     * @param \Arbor\Model\ModelBase $model
-     */
-    public function delete($model)
-    {
-        $request = $this->getHttpClient()->delete($model->getResourceUrl());
-        $request->setAuth($this->getAuthUser(), $this->getAuthPassword());
-        $response = $request->send();
-        $arrayRepresentation = $response->json();
-    }
-
-    /**
-     * @param $resource
-     * @return \Arbor\Resource\ResourceMetadata
-     */
-    public function describe($resource)
-    {
-        // TODO: Implement describe() method.
-    }
-
-    /**
-     * @param string $resourceType
-     * @param int $fromRevision
-     * @param int $toRevision
-     * @return \Arbor\Changelog\Change[]
-     */
-    public function getChanges($resourceType, $fromRevision=0, $toRevision=-1)
-    {
-        $filterPluralize = new \Arbor\Filter\PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $pluralResource = $filterPluralize->filter($resourceType);
-        $resourceSegment = strtolower($filterCamelToDash->filter($pluralResource));
-
-        $uri = "/rest-v2/$resourceSegment/changelog?";
-        if ($fromRevision > 0) {
-            $uri .= "from-revision=$fromRevision&";
-        }
-
-        if ($toRevision > -1) {
-            $uri.="to-revision=$toRevision&";
-        }
-
-        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $uri);
-
-        $changes = [];
-        if (array_key_exists("changes", $arrayRepresentation)) {
-            $hydrator = new Hydrator($this);
-            $results = $arrayRepresentation["changes"];
-            foreach ($results as $result) {
-                $model = $this->instantiateModel($resourceType);
-                $hydrator->hydrateModel($model, $result["changedObject"]);
-                $changes[] = new Change($model, $result['changeType'], $result['fromRevision'], $result['toRevision']);
-            }
-        }
-        return $changes;
-    }
-
-    /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\Collection
-     */
-    public function query($query)
-    {
-        $filterPluralize = new \Arbor\Filter\PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $pluralResource = $filterPluralize->filter($query->getResourceType());
-        $resource = strtolower($filterCamelToDash->filter($pluralResource));
-        $resourceRoot = lcfirst($pluralResource);
-        $url = "/rest-v2/$pluralResource";
-
-        $queryString = $query->getQueryString();
-
-        if (strlen($queryString) > 0) {
-            $url .= "?".$queryString;
-        }
-
-        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url);
-
-        $listing = new Collection();
-        if (array_key_exists($resourceRoot, $arrayRepresentation)) {
-            $hydrator = new Hydrator($this);
-            $results = $arrayRepresentation[$resourceRoot];
-            foreach ($results as $result) {
-                $model = $this->instantiateModel($query->getResourceType());
-                $hydrator->hydrateModel($model, $result);
-                $listing->add($model);
-            }
-        }
-        return $listing;
+        return $this->_authPassword;
     }
 
     /**
@@ -323,9 +94,9 @@ class RestGateway implements GatewayInterface
     /**
      * @return string
      */
-    public function getAuthPassword()
+    public function getAuthUser()
     {
-        return $this->_authPassword;
+        return $this->_authUser;
     }
 
     /**
@@ -339,9 +110,9 @@ class RestGateway implements GatewayInterface
     /**
      * @return string
      */
-    public function getAuthUser()
+    public function getBaseUrl()
     {
-        return $this->_authUser;
+        return $this->_baseUrl;
     }
 
     /**
@@ -350,27 +121,10 @@ class RestGateway implements GatewayInterface
     public function setBaseUrl($baseUrl)
     {
         $this->_baseUrl = $baseUrl;
-        $this->getHttpClient()->setBaseUrl($baseUrl);
     }
 
     /**
-     * @return string
-     */
-    public function getBaseUrl()
-    {
-        return $this->_baseUrl;
-    }
-
-    /**
-     * @param \Guzzle\Http\Client $httpClient
-     */
-    public function setHttpClient($httpClient)
-    {
-        $this->_httpClient = $httpClient;
-    }
-
-    /**
-     * @return \Guzzle\Http\Client
+     * @return Client
      */
     public function getHttpClient()
     {
@@ -378,38 +132,324 @@ class RestGateway implements GatewayInterface
     }
 
     /**
-     * @param string $method
-     * @param string $url
-     * @param array $body
-     * @param array $headers
-     * @return \Guzzle\Http\Message\Response
+     * @param Client $httpClient
      */
-    public function sendRequest($method, $url, $body=null, $headers=null)
+    public function setHttpClient($httpClient)
+    {
+        $this->_httpClient = $httpClient;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->_applicationId;
+    }
+
+    /**
+     * @param string $applicationId
+     */
+    public function setApplicationId($applicationId)
+    {
+        $this->_applicationId = $applicationId;
+    }
+
+    /**
+     * @param ModelBase $model
+     * @return ModelBase
+     * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException
+     */
+    public function create(ModelBase $model)
+    {
+        $filterPluralize = new PluralizeFilter();
+        $filterCamelToDash = new CamelCaseToDash();
+
+        $pluralResource = $filterPluralize->filter($model->getResourceType());
+        $resource = strtolower($filterCamelToDash->filter($pluralResource));
+
+        $hydrator = new Hydrator($this);
+        $arrayRepresentation = $hydrator->extractArray($model);
+        $resourceRoot = lcfirst($model->getResourceType());
+        $options = ['request' => [$resourceRoot => $arrayRepresentation]];
+
+        $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_POST, "/rest-v2/$resource", $options);
+
+        if (!array_key_exists($resourceRoot, $responseRepresentation)) {
+            throw new Exception('API Error: ' . print_r($responseRepresentation, true));
+        }
+
+        $resultingModelRepresentation = $responseRepresentation[$resourceRoot];
+        $hydrator->hydrateModel($model, $resultingModelRepresentation);
+
+        return $model;
+    }
+
+    /**
+     * @param ModelBase $model
+     * @return ModelBase
+     * @throws Exception|\RuntimeException
+     */
+    public function refresh($model)
+    {
+        $url = $model->getResourceUrl();
+        $response = $this->getHttpClient()->get($url);
+        $arrayRepresentation = json_decode($response->getBody()->getContents(), true);
+        $resourceRoot = lcfirst($model->getResourceType());
+        if (array_key_exists($resourceRoot, $arrayRepresentation)) {
+            $hydrator = new Hydrator($this);
+            $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
+
+            return $model;
+        }
+
+        throw new Exception("Resource {$model->getResourceType()} with ID {$model->getResourceId()} could not be retrieved from URL: $url");
+    }
+
+    /**
+     * @param string $resource
+     * @param string $id
+     * @return \Arbor\Model\ModelBase
+     * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException
+     */
+    public function retrieve($resource, $id)
+    {
+        $filterPluralize = new PluralizeFilter();
+        $filterCamelToDash = new CamelCaseToDash();
+
+        $resourceSegment = strtolower($filterCamelToDash->filter($filterPluralize->filter($resource)));
+
+        $url = "/rest-v2/$resourceSegment/$id";
+        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url);
+        $resourceRoot = lcfirst($resource);
+
+        if (!array_key_exists($resourceRoot, $arrayRepresentation)) {
+            throw new Exception("Resource $resource with ID $id could not be retrieved from URL: $url");
+        }
+
+        $model = $this->instantiateModel($resource);
+        $hydrator = new Hydrator($this);
+        $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
+        $model->initialArrayRepresentation = $arrayRepresentation;
+
+        return $model;
+    }
+
+    /**
+     * @param string $resourceType
+     * @return ModelBase
+     */
+    public function instantiateModel($resourceType)
+    {
+        if (false !== strpos($resourceType, '_')) {
+            //This is a module resource
+            list($modulePrefix, $moduleResource) = explode('_', $resourceType, 2);
+            $modelClass = "Arbor\\Model\\$modulePrefix\\$moduleResource";
+            $modelClassFile = __DIR__ . "/../../Model/$modulePrefix/$moduleResource.php";
+        } else {
+            $modelClass = "Arbor\\Model\\$resourceType";
+            $modelClassFile = __DIR__ . "/../../Model/$resourceType.php";
+        }
+        //Check wether a specific class for this resource has been autogenerated if not then use the base class.
+        //TODO: This is a development measure and can be removed once all models have been autogenerated
+        if (file_exists($modelClassFile)) {
+            $model = new $modelClass($resourceType, [], $this);
+        } else {
+            $model = new ModelBase($resourceType, [], $this);
+        }
+
+        return $model;
+    }
+
+    /**
+     * @param ModelBase $model
+     * @return ModelBase
+     * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException
+     */
+    public function update(ModelBase $model)
+    {
+        $url = $model->getResourceUrl();
+        $resourceType = $model->getResourceType();
+
+        $hydrator = new Hydrator($this);
+        $arrayRepresentation = $hydrator->extractArray($model);
+        $resourceRoot = lcfirst($resourceType);
+
+        $previousModel = $this->retrieve($resourceType, $model->getResourceId());
+        $prevModelArrRepresentation = $hydrator->extractArray($previousModel);
+        $modelDiff = $this->diffArrayRepresentationRecursive($arrayRepresentation, $prevModelArrRepresentation);
+
+        if (empty($modelDiff)) {
+            return $model;
+        }
+
+        $body = ['request' => [ $resourceRoot => $modelDiff]];
+        $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_PUT, $url, $body);
+
+        //Revision ID is a read-only property so lets remove it before sending the update request to the API
+        if (array_key_exists('revisionId', $responseRepresentation)) {
+            unset($responseRepresentation['revisionId']);
+        }
+
+        if (!array_key_exists($resourceRoot, $responseRepresentation)) {
+            throw new Exception('API Error: ' . print_r($responseRepresentation, true));
+        }
+
+        $resultingModelRepresentation = $responseRepresentation[$resourceRoot];
+        $hydrator->hydrateModel($model, $resultingModelRepresentation);
+
+        return $model;
+    }
+
+    /**
+     * @param ModelBase $model
+     * @return array
+     * @throws \RuntimeException
+     */
+    public function delete(ModelBase $model)
+    {
+        $response = $this->getHttpClient()->delete($model->getResourceUrl());
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    /**
+     * @param $resource
+     * @return void
+     */
+    public function describe($resource)
+    {
+        // TODO: Implement describe() method.
+    }
+
+    /**
+     * @param string $resourceType
+     * @param int $fromRevision
+     * @param int $toRevision
+     * @return \Arbor\Changelog\Change[]
+     * @throws ResourceNotFoundException|ServerErrorException|\RuntimeException
+     */
+    public function getChanges($resourceType, $fromRevision = 0, $toRevision = -1)
+    {
+        $filterPluralize = new PluralizeFilter();
+        $filterCamelToDash = new CamelCaseToDash();
+
+        $pluralResource = $filterPluralize->filter($resourceType);
+        $resourceSegment = strtolower($filterCamelToDash->filter($pluralResource));
+
+        $uri = "/rest-v2/$resourceSegment/changelog?";
+        if ($fromRevision > 0) {
+            $uri .= "from-revision=$fromRevision&";
+        }
+
+        if ($toRevision > -1) {
+            $uri .= "to-revision=$toRevision&";
+        }
+
+        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $uri);
+
+        $changes = [];
+        if (!array_key_exists('changes', $arrayRepresentation)) {
+            return $changes;
+        }
+
+        $hydrator = new Hydrator($this);
+        /** @var array $resourceChanges */
+        $resourceChanges = $arrayRepresentation['changes'];
+        foreach ($resourceChanges as $result) {
+            $model = $this->instantiateModel($resourceType);
+            $hydrator->hydrateModel($model, $result['changedObject']);
+            $changes[] = new Change($model, $result['changeType'], $result['fromRevision'], $result['toRevision']);
+        }
+
+        return $changes;
+    }
+
+    /**
+     * @param \Arbor\Query\Query $query
+     * @return \Arbor\Model\Collection
+     * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
+     */
+    public function query($query)
+    {
+        $filterPluralize = new PluralizeFilter();
+        $filterCamelToDash = new CamelCaseToDash();
+
+        $pluralResource = $filterPluralize->filter($query->getResourceType());
+        $pluralResource = strtolower($filterCamelToDash->filter($pluralResource));
+        $resourceRoot = lcfirst($pluralResource);
+        $url = "/rest-v2/$pluralResource";
+
+        $queryString = $query->getQueryString();
+
+        if (strlen($queryString) > 0) {
+            $url .= '?' . $queryString;
+        }
+
+        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url);
+
+        $listing = new Collection();
+        if (array_key_exists($resourceRoot, $arrayRepresentation)) {
+            $hydrator = new Hydrator($this);
+            /** @var array $results */
+            $results = $arrayRepresentation[$resourceRoot];
+            foreach ($results as $result) {
+                $model = $this->instantiateModel($query->getResourceType());
+                $hydrator->hydrateModel($model, $result);
+                $listing->add($model);
+            }
+        }
+
+        return $listing;
+    }
+
+    /**
+     * @param $method
+     * @param $url
+     * @param null $body
+     * @param null $headers
+     * @return array
+     * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
+     */
+    public function sendRequest($method, $url, $body = null, $headers = null)
     {
         //Set a generic error message
-        $message = "API Error";
+        $message = 'API Error';
         //Uncomment this line to allow you to trigger a debug session in the Mis project
         //$url = $url . "?XDEBUG_SESSION_START=yes";
         $responsePayload = null;
         $code = 0;
 
+        $options = [];
+        if ($headers) {
+            $options['headers'] = $headers;
+            if (!isset($options['headers']['User-Agent'])) {
+                $options['headers']['User-Agent'] = '"Arbor PHP SDK';
+            }
+        }
+
+        if ($body) {
+            $options['body'] = json_encode($body);
+        }
+
+        $method = strtoupper($method);
+
         try {
-            $request = $this->getHttpClient()->createRequest($method, $url, $headers, $body);
-            $request->setAuth($this->getAuthUser(), $this->getAuthPassword());
+            if ($this->getBaseUrl() === 'https://api.uk.arbor.sc/rest-v2' && $this->getApplicationId()) {
+                $options['headers']['x-mis-application-id'] = $this->getApplicationId();
+            }
+
+            $response = $this->getHttpClient()->request($method, $url, $options);
 
             //Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
-            if ($this->getBaseUrl()=="https://api.uk.arbor.sc/rest-v2" && $this->getApplicationId()) {
-                $request->addHeader("x-mis-application-id", $this->getApplicationId());
-            }
-            $response = $request->send();
             $code = $response->getStatusCode();
-            $responsePayload = $response->json();
+            $responsePayload = json_decode($response->getBody()->getContents(), true);
         } catch (BadResponseException $e) {
             //Default to using the code and message from the Guzzle exception.
             //This is useful in case the response does not contain valid json
-            $responsePayload = $e->getResponse()->json();
-        } catch (RuntimeException $e) {
-            throw new ServerErrorException("An unexpected error has occurred: " . $e->getMessage(), 0, $e);
+            $responsePayload = json_decode($e->getResponse()->getBody()->getContents(), true);
+        } catch (\RuntimeException $e) {
+            throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
         }
 
         //If the response has a code property
@@ -423,13 +463,17 @@ class RestGateway implements GatewayInterface
         }
 
         //If available use a specific error message
-        if (isset($responsePayload['response']['errors'])) {
-            if (is_array($responsePayload['response']['errors'])&&count($responsePayload['response']['errors'])) {
-                $serverException = $responsePayload['response']['errors'][0]["exception"];
-                $serverMessage = $responsePayload['response']['errors'][0]["message"];
-                $serverTrace = $responsePayload['response']['errors'][0]["trace"];
-                $message = "Server threw: $serverException with message: $serverMessage URL=$url";
-            }
+        $serverMessage = null;
+        $serverTrace = null;
+        $serverException = null;
+        if (isset($responsePayload['response']['errors']) &&
+            is_array($responsePayload['response']['errors']) &&
+            count($responsePayload['response']['errors'])
+        ) {
+            $serverException = $responsePayload['response']['errors'][0]['exception'];
+            $serverMessage = $responsePayload['response']['errors'][0]['message'];
+            $serverTrace = $responsePayload['response']['errors'][0]['trace'];
+            $message = "Server threw: $serverException with message: $serverMessage URL=$url";
         }
 
         switch ($code) {
@@ -439,18 +483,18 @@ class RestGateway implements GatewayInterface
                 // The request succeeded or failed due to validation errors.
                 // This is not an exception so return the response
                 return $responsePayload;
-            break;
+                break;
             case 404:
-                $exception = new \Arbor\Api\ResourceNotFoundException($message);
-            break;
+                $exception = new ResourceNotFoundException($message);
+                break;
             default:
-                $exception = new \Arbor\Api\ServerErrorException($message);
-                if (isset($serverException)) {
+                $exception = new ServerErrorException($message);
+                if (null !== $serverException) {
                     $exception->setServerExceptionClass($serverException);
                     $exception->setServerExceptionMessage($serverMessage);
                     $exception->setServerExceptionTrace($serverTrace);
                 }
-            break;
+                break;
         }
 
         throw $exception;
@@ -474,13 +518,14 @@ class RestGateway implements GatewayInterface
                 } elseif (!is_array($array2[$key])) {
                     $difference[$key] = $value;
                 } else { // This is some of MIS model types
-                    $new_diff = $this->diffArrayRepresentationRecursive($value, $array2[$key]);
-                    if ($new_diff != false) {
-                        $difference[$key] = $new_diff;
-                        if (array_key_exists('entityType', $array2[$key])) { // Preserve 'entityType' and 'href' since those values are mandatory, but not changed
-                            $difference[$key]['entityType'] = $array1[$key]['entityType'];
-                            $difference[$key]['href'] = $array1[$key]['href'];
-                        }
+                    if (!$new_diff = $this->diffArrayRepresentationRecursive($value, $array2[$key])) {
+                        continue;
+                    }
+
+                    $difference[$key] = $new_diff;
+                    if (array_key_exists('entityType', $array2[$key])) { // Preserve 'entityType' and 'href' since those values are mandatory, but not changed
+                        $difference[$key]['entityType'] = $array1[$key]['entityType'];
+                        $difference[$key]['href'] = $array1[$key]['href'];
                     }
                 }
             } elseif (!array_key_exists($key, $array2) || $array2[$key] != $value) {
@@ -492,18 +537,48 @@ class RestGateway implements GatewayInterface
     }
 
     /**
-     * @param string $applicationId
+     * @param LoggerInterface $logger
+     * @return \Closure
      */
-    public function setApplicationId($applicationId)
+    private function createRetryHandler(LoggerInterface $logger)
     {
-        $this->_applicationId = $applicationId;
+        return function ($retries, Request $request, Response $response = null, RequestException $exception = null) use ($logger) {
+            if ($retries >= self::MAX_RETRIES) {
+                return false;
+            }
+
+            if (!($this->isServerError($response) || $this->isConnectError($exception))) {
+                return false;
+            }
+
+            $logger->warning(sprintf(
+                'Retrying %s %s %s/%s, %s',
+                $request->getMethod(),
+                $request->getUri(),
+                $retries + 1,
+                self::MAX_RETRIES,
+                $response ? 'status code: ' . $response->getStatusCode() : $exception->getMessage()
+            ), [$request->getHeader('Host')[0]]);
+
+            return true;
+        };
     }
 
     /**
-     * @return string
+     * @param Response|null $response
+     * @return bool
      */
-    public function getApplicationId()
+    private function isServerError(Response $response = null)
     {
-        return $this->_applicationId;
+        return $response && $response->getStatusCode() >= 500;
+    }
+
+    /**
+     * @param RequestException|null $exception
+     * @return bool
+     */
+    private function isConnectError(RequestException $exception = null)
+    {
+        return $exception instanceof ConnectException;
     }
 }
