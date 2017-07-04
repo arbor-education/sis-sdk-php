@@ -20,6 +20,7 @@ use GuzzleHttp\Psr7\Response;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Arbor\Filter\PluralizeFilter;
+use Arbor\Query\Exception;
 
 class RestGateway implements GatewayInterface
 {
@@ -368,7 +369,7 @@ class RestGateway implements GatewayInterface
     /**
      * @param \Arbor\Query\Query $query
      * @return \Arbor\Model\Collection
-     * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
+     * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException|Exception
      */
     public function query($query)
     {
@@ -380,13 +381,7 @@ class RestGateway implements GatewayInterface
         $resourceRoot = lcfirst($pluralResource);
         $url = "/rest-v2/$pluralResource";
 
-        $queryString = $query->getQueryString();
-
-        if (strlen($queryString) > 0) {
-            $url .= '?' . $queryString;
-        }
-
-        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url);
+        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url, null, null, $query->getQueryOptions());
 
         $listing = new Collection();
         if (array_key_exists($resourceRoot, $arrayRepresentation)) {
@@ -408,10 +403,11 @@ class RestGateway implements GatewayInterface
      * @param $url
      * @param null $body
      * @param null $headers
+     * @param null|array $queryOptions
      * @return array
      * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
      */
-    public function sendRequest($method, $url, $body = null, $headers = null)
+    public function sendRequest($method, $url, $body = null, $headers = null, array $queryOptions = null)
     {
         //Set a generic error message
         $message = 'API Error';
@@ -430,6 +426,10 @@ class RestGateway implements GatewayInterface
 
         if ($body) {
             $options['body'] = json_encode($body);
+        }
+
+        if ($queryOptions) {
+            $options['query'] = $queryOptions;
         }
 
         $method = strtoupper($method);

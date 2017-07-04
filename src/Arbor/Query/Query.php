@@ -150,7 +150,7 @@ class Query
             [
                 "propertyName"=>$propertyName,
                 "operator"=>$operator,
-                "value"=>$value
+                'value'=>$value
             ];
     }
 
@@ -167,7 +167,7 @@ class Query
         $this->_userTagFilters[] =
             [
                 "tagName"=>$tagName,
-                "value"=>$value
+                'value'=>$value
             ];
     }
 
@@ -187,46 +187,48 @@ class Query
         return $this->_userTagFilters;
     }
 
-    public function getQueryString()
+    /**
+     * @return array
+     * @throws Exception
+     */
+    public function getQueryOptions()
     {
-        $queryString = new \Guzzle\Http\QueryString();
-
+        $queryString = [];
         foreach ($this->getPropertyFilters() as $propertyFilter) {
             //Allow the value to be another model
-            if ($propertyFilter["value"] instanceof ModelBase) {
-                $resourceUrl = $propertyFilter["value"]->getResourceUrl();
+            if ($propertyFilter['value'] instanceof ModelBase) {
+                $resourceUrl = $propertyFilter['value']->getResourceUrl();
                 if (empty($resourceUrl)) {
-                    throw new Exception("Model user in filters must be connected and have a resource URL set");
+                    throw new Exception('Model user in filters must be connected and have a resource URL set');
                 }
-                $propertyFilter["value"] = $resourceUrl;
-            } elseif ($propertyFilter["value"] instanceof \DateTime) {
-                $propertyFilter["value"] = $propertyFilter["value"]->format("Y-m-d H:i:s");
-            } elseif (is_null($propertyFilter["value"])) {
-                $propertyFilter["value"]='NULL';
+                $propertyFilter['value'] = $resourceUrl;
+            } elseif ($propertyFilter['value'] instanceof \DateTime) {
+                $propertyFilter['value'] = $propertyFilter['value']->format("Y-m-d H:i:s");
+            } elseif (null === $propertyFilter['value']) {
+                $propertyFilter['value']='NULL';
             }
 
-            $queryString->add(
-                'filters.' . $propertyFilter['propertyName'] . "." . $propertyFilter['operator'],
-                $propertyFilter['value']
-            );
+            $key = 'filters.' . $propertyFilter['propertyName'] . "." . $propertyFilter['operator'];
+            $queryString[$key] = $propertyFilter['value'];
         }
 
         foreach ($this->getUserTagFilters() as $userTagFilter) {
-            $queryString->add('filters.tags.' . $userTagFilter['tagName'], $userTagFilter['value']);
+            $tagKey = 'filters.tags.' . $userTagFilter['tagName'];
+            $queryString[$tagKey] = $userTagFilter['value'];
         }
 
-        if (!is_null($this->getPageNumber())) {
-            $queryString->add('page', $this->getPageNumber());
+        if (null !== $this->getPageNumber()) {
+            $queryString['page'] = $this->getPageNumber();
         }
-        if (!is_null($this->getPageSize())) {
-            $queryString->add('page-size', $this->getPageSize());
+        if (null !== $this->getPageSize()) {
+            $queryString['page-size'] = $this->getPageSize();
         }
 
         foreach ($this->getTaggings() as $tag) {
-            $queryString->add('filters.self.tagged', $tag);
+            $queryString['filters.self.tagged'] = $tag;
         }
 
-        return (string) $queryString;
+        return $queryString;
     }
 
     /**
