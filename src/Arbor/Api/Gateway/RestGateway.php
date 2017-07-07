@@ -377,7 +377,7 @@ class RestGateway implements GatewayInterface
         $filterCamelToDash = new CamelCaseToDash();
 
         $pluralResource = $filterPluralize->filter($query->getResourceType());
-        $pluralResource = strtolower($filterCamelToDash->filter($pluralResource));
+        $resource = strtolower($filterCamelToDash->filter($pluralResource));
         $resourceRoot = lcfirst($pluralResource);
         $url = "/rest-v2/$pluralResource";
 
