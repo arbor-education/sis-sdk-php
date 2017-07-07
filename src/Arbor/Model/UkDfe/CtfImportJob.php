@@ -14,7 +14,6 @@ use \Arbor\Model\IntakeSeason;
 
 class CtfImportJob extends ModelBase
 {
-
     const SOURCE_LOCAL_AUTHORITY_CODE = 'sourceLocalAuthorityCode';
 
     const SOURCE_LOCAL_AUTHORITY = 'sourceLocalAuthority';
@@ -48,10 +47,14 @@ class CtfImportJob extends ModelBase
      */
     public static function query(Query $query = null)
     {
-        if(is_null($query)) $query = new Query();
+        if (is_null($query)) {
+            $query = new Query();
+        }
         $query->setResourceType("UkDfe_CtfImportJob");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->query($query);
     }
 
@@ -63,7 +66,9 @@ class CtfImportJob extends ModelBase
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if (!$gateway) {
+            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        }
         return $gateway->retrieve(ResourceType::UK_DFE_CTF_IMPORT_JOB, $id);
     }
 
@@ -258,6 +263,4 @@ class CtfImportJob extends ModelBase
     {
         $this->setProperty("isQueuedForAllStudentImport", $isQueuedForAllStudentImport);
     }
-
-
 }
