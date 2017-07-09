@@ -7,7 +7,7 @@ class PluralizeFilter implements FilterInterface
     public function filter($value)
     {
         $exceptions = [
-            'staff' => 'staff',
+            // 'staff' => 'staff',
         ];
 
         $normalizedValue = strtolower($value);
