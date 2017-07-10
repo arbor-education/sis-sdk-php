@@ -5,8 +5,6 @@ namespace Arbor\Service;
 use Arbor\Api\Gateway\RestGateway;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
-use Guzzle\Http\Message\Response;
 
 class StandardizedAssessmentMarks
 {
@@ -71,9 +69,9 @@ class StandardizedAssessmentMarks
         }
 
         $response = $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST, "/rest-v2/standardized-assessment-mark", json_encode($payload));
+            RestGateway::HTTP_METHOD_POST, 'rest-v2/standardized-assessment-mark', $payload);
 
-        if ($response instanceof Response && $response->getStatusCode() == 200) {
+        if ($response instanceof \GuzzleHttp\Psr7\Response && (int)$response->getStatusCode() === 200) {
             $this->_marks = [];
         }
     }

@@ -7,7 +7,6 @@ use Arbor\Model\AttendanceMark;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
-use Guzzle\Http\Message\Response;
 
 class AttendanceRollCallRegistration
 {
@@ -72,9 +71,9 @@ class AttendanceRollCallRegistration
         }
 
         $response = $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST, "/rest-v2/attendance-roll-call-registration", json_encode($payload));
+            RestGateway::HTTP_METHOD_POST, "rest-v2/attendance-roll-call-registration", $payload);
 
-        if ($response instanceof Response && $response->getStatusCode() == 200) {
+        if ($response instanceof \GuzzleHttp\Psr7\Response && (int)$response->getStatusCode() === 200) {
             $this->_marks = [];
         }
     }
