@@ -22,10 +22,11 @@ class AttendanceRollCallRegistration
 
     public function __construct($gateway=null)
     {
-        if (is_null($gateway)) {
+        if (null === $gateway) {
             $gateway = ModelBase::getDefaultGateway();
         }
         $this->setGateway($gateway);
+
         $this->_hydrator = new Hydrator();
     }
 
@@ -70,12 +71,13 @@ class AttendanceRollCallRegistration
             $payload['request']['marks'][] = $markPayload;
         }
 
-        $response = $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST, '/rest-v2/attendance-roll-call-registration', ['body' => $payload]);
+        $this->getGateway()->sendRequest(
+            RestGateway::HTTP_METHOD_POST,
+            '/rest-v2/attendance-roll-call-registration',
+            ['body' => $payload]
+        );
 
-        if ($response instanceof \GuzzleHttp\Psr7\Response && (int)$response->getStatusCode() === 200) {
-            $this->_marks = [];
-        }
+        $this->_marks = [];
     }
 
     /**

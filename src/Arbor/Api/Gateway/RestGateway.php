@@ -43,6 +43,16 @@ class RestGateway implements GatewayInterface
     protected $_applicationId;
 
     /**
+     * @var PluralizeFilter
+     */
+    protected static $filterPluralize;
+
+    /**
+     * @var CamelCaseToDash
+     */
+    protected static $filterCamelToDash;
+
+    /**
      * @param string $baseUrl
      * @param string $authUser
      * @param string $authPassword
@@ -163,11 +173,8 @@ class RestGateway implements GatewayInterface
      */
     public function create(ModelBase $model)
     {
-        $filterPluralize = new PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $pluralResource = $filterPluralize->filter($model->getResourceType());
-        $resource = strtolower($filterCamelToDash->filter($pluralResource));
+        $pluralResource = self::getPluralizeFilter()->filter($model->getResourceType());
+        $resource = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
 
         $hydrator = new Hydrator($this);
         $arrayRepresentation = $hydrator->extractArray($model);
@@ -195,8 +202,10 @@ class RestGateway implements GatewayInterface
     {
         $url = $model->getResourceUrl();
         $response = $this->getHttpClient()->get($url);
+
         $arrayRepresentation = json_decode($response->getBody()->getContents(), true);
         $resourceRoot = lcfirst($model->getResourceType());
+
         if (array_key_exists($resourceRoot, $arrayRepresentation)) {
             $hydrator = new Hydrator($this);
             $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
@@ -215,10 +224,7 @@ class RestGateway implements GatewayInterface
      */
     public function retrieve($resource, $id)
     {
-        $filterPluralize = new PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $resourceSegment = strtolower($filterCamelToDash->filter($filterPluralize->filter($resource)));
+        $resourceSegment = strtolower(self::getCamelToDashFilter()->filter(self::getPluralizeFilter()->filter($resource)));
 
         $url = "/rest-v2/$resourceSegment/$id";
         $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url);
@@ -327,16 +333,13 @@ class RestGateway implements GatewayInterface
      * @param string $resourceType
      * @param int $fromRevision
      * @param int $toRevision
-     * @return \Arbor\Changelog\Change[]
      * @throws ResourceNotFoundException|ServerErrorException|\RuntimeException
+     * @return \Arbor\ChangeLog\Change[]
      */
     public function getChanges($resourceType, $fromRevision = 0, $toRevision = -1)
     {
-        $filterPluralize = new PluralizeFilter();
-        $filterCamelToDash = new CamelCaseToDash();
-
-        $pluralResource = $filterPluralize->filter($resourceType);
-        $resourceSegment = strtolower($filterCamelToDash->filter($pluralResource));
+        $pluralResource = self::getPluralizeFilter()->filter($resourceType);
+        $resourceSegment = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
 
         $uri = "/rest-v2/$resourceSegment/changelog?";
         if ($fromRevision > 0) {
@@ -373,9 +376,7 @@ class RestGateway implements GatewayInterface
      */
     public function query($query)
     {
-        $filterPluralize = new PluralizeFilter();
-
-        $pluralResource = $filterPluralize->filter($query->getResourceType());
+        $pluralResource = self::getPluralizeFilter()->filter($query->getResourceType());
         $resourceRoot = lcfirst($pluralResource);
         $url = "/rest-v2/$pluralResource";
         $options = ['query' => $query->getQueryOptions()];
@@ -401,8 +402,8 @@ class RestGateway implements GatewayInterface
      * @param $method
      * @param $url
      * @param array $options
-     * @return array
      * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
+     * @return array
      */
     public function sendRequest($method, $url, array $options = [])
     {
@@ -410,7 +411,6 @@ class RestGateway implements GatewayInterface
         $message = 'API Error';
         //Uncomment this line to allow you to trigger a debug session in the Mis project
         //$url = $url . "?XDEBUG_SESSION_START=yes";
-        $responsePayload = null;
         $code = 0;
 
         if (!isset($options['headers']['User-Agent'])) {
@@ -418,7 +418,9 @@ class RestGateway implements GatewayInterface
         }
 
         if (isset($options['body'])) {
-            $options['body'] = is_string($options['body']) && is_array(json_decode($options['body'], true)) ? $options['body'] : json_encode($options['body']);
+            if (is_array($options['body'])) {
+                $options['body'] = json_encode($options['body']);
+            }
         }
 
         $method = strtoupper($method);
@@ -452,9 +454,8 @@ class RestGateway implements GatewayInterface
         }
 
         //If available use a specific error message
-        $serverMessage = null;
-        $serverTrace = null;
-        $serverException = null;
+        $serverMessage = $serverTrace = $serverException = null;
+
         if (isset($responsePayload['response']['errors']) &&
             is_array($responsePayload['response']['errors']) &&
             count($responsePayload['response']['errors'])
@@ -472,7 +473,6 @@ class RestGateway implements GatewayInterface
                 // The request succeeded or failed due to validation errors.
                 // This is not an exception so return the response
                 return $responsePayload;
-                break;
             case 404:
                 $exception = new ResourceNotFoundException($message);
                 break;
@@ -500,6 +500,8 @@ class RestGateway implements GatewayInterface
      */
     public function diffArrayRepresentationRecursive($array1, $array2)
     {
+        $difference = [];
+
         foreach ($array1 as $key => $value) {
             if (is_array($value)) {
                 if (!isset($array2[$key])) {
@@ -507,7 +509,7 @@ class RestGateway implements GatewayInterface
                 } elseif (!is_array($array2[$key])) {
                     $difference[$key] = $value;
                 } else { // This is some of MIS model types
-                    if (!$new_diff = $this->diffArrayRepresentationRecursive($value, $array2[$key])) {
+                    if (! ($new_diff = $this->diffArrayRepresentationRecursive($value, $array2[$key]))) {
                         continue;
                     }
 
@@ -522,7 +524,7 @@ class RestGateway implements GatewayInterface
             }
         }
 
-        return !isset($difference) ? 0 : $difference;
+        return $difference;
     }
 
     /**
@@ -570,4 +572,29 @@ class RestGateway implements GatewayInterface
     {
         return $exception instanceof ConnectException;
     }
+
+    /**
+     * @return PluralizeFilter
+     */
+    final protected static function getPluralizeFilter()
+    {
+        if (null === self::$filterPluralize) {
+            self::$filterPluralize = new PluralizeFilter();
+        }
+
+        return self::$filterPluralize;
+    }
+
+    /**
+     * @return CamelCaseToDash
+     */
+    final protected static function getCamelToDashFilter()
+    {
+        if (null === self::$filterCamelToDash) {
+            self::$filterCamelToDash = new CamelCaseToDash();
+        }
+
+        return self::$filterCamelToDash;
+    }
+
 }
