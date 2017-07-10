@@ -378,8 +378,9 @@ class RestGateway implements GatewayInterface
         $pluralResource = $filterPluralize->filter($query->getResourceType());
         $resourceRoot = lcfirst($pluralResource);
         $url = "/rest-v2/$pluralResource";
+        $options = ['query' => $query->getQueryOptions()];
 
-        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url, null, null, $query->getQueryOptions());
+        $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url, $options);
 
         $listing = new Collection();
         if (array_key_exists($resourceRoot, $arrayRepresentation)) {
@@ -400,12 +401,10 @@ class RestGateway implements GatewayInterface
      * @param $method
      * @param $url
      * @param array $options
-     * @param null $headers
-     * @param null|array $queryOptions
      * @return array
      * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
      */
-    public function sendRequest($method, $url, array $options = [], $headers = null, array $queryOptions = null)
+    public function sendRequest($method, $url, array $options = [])
     {
         //Set a generic error message
         $message = 'API Error';
@@ -414,19 +413,12 @@ class RestGateway implements GatewayInterface
         $responsePayload = null;
         $code = 0;
 
-        if ($headers) {
-            $options['headers'] = $headers;
-            if (!isset($options['headers']['User-Agent'])) {
-                $options['headers']['User-Agent'] = '"Arbor PHP SDK';
-            }
+        if (!isset($options['headers']['User-Agent'])) {
+            $options['headers']['User-Agent'] = '"Arbor PHP SDK';
         }
 
         if (isset($options['body'])) {
             $options['body'] = is_string($options['body']) && is_array(json_decode($options['body'], true)) ? $options['body'] : json_encode($options['body']);
-        }
-
-        if ($queryOptions) {
-            $options['query'] = $queryOptions;
         }
 
         $method = strtoupper($method);
