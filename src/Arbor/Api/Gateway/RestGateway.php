@@ -284,8 +284,8 @@ class RestGateway implements GatewayInterface
             return $model;
         }
 
-        $body = ['request' => [ $resourceRoot => $modelDiff]];
-        $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_PUT, $url, $body);
+        $options = ['body' => ['request' => [ $resourceRoot => $modelDiff]]];
+        $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_PUT, $url, $options);
 
         //Revision ID is a read-only property so lets remove it before sending the update request to the API
         if (array_key_exists('revisionId', $responseRepresentation)) {
@@ -399,13 +399,13 @@ class RestGateway implements GatewayInterface
     /**
      * @param $method
      * @param $url
-     * @param null $body
+     * @param array $options
      * @param null $headers
      * @param null|array $queryOptions
      * @return array
      * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
      */
-    public function sendRequest($method, $url, $body = null, $headers = null, array $queryOptions = null)
+    public function sendRequest($method, $url, array $options = [], $headers = null, array $queryOptions = null)
     {
         //Set a generic error message
         $message = 'API Error';
@@ -414,7 +414,6 @@ class RestGateway implements GatewayInterface
         $responsePayload = null;
         $code = 0;
 
-        $options = [];
         if ($headers) {
             $options['headers'] = $headers;
             if (!isset($options['headers']['User-Agent'])) {
@@ -422,8 +421,8 @@ class RestGateway implements GatewayInterface
             }
         }
 
-        if ($body) {
-            $options['body'] = json_encode($body);
+        if (isset($options['body'])) {
+            $options['body'] = is_array(json_decode($options['body'], true)) ? $options['body'] : json_encode($options['body']);
         }
 
         if ($queryOptions) {
