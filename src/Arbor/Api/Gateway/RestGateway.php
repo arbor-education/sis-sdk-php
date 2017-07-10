@@ -422,7 +422,7 @@ class RestGateway implements GatewayInterface
         }
 
         if (isset($options['body'])) {
-            $options['body'] = is_array(json_decode($options['body'], true)) ? $options['body'] : json_encode($options['body']);
+            $options['body'] = is_string($options['body']) && is_array(json_decode($options['body'], true)) ? $options['body'] : json_encode($options['body']);
         }
 
         if ($queryOptions) {
