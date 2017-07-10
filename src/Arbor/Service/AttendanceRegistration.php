@@ -81,7 +81,7 @@ class AttendanceRegistration
         }
 
         $response = $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST, 'rest-v2/attendance-registration', ['body' => $payload]);
+            RestGateway::HTTP_METHOD_POST, '/rest-v2/attendance-registration', ['body' => $payload]);
 
         if ($response instanceof \GuzzleHttp\Psr7\Response && (int)$response->getStatusCode() === 200) {
             $this->_marks = [];

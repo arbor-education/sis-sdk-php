@@ -172,7 +172,7 @@ class RestGateway implements GatewayInterface
         $hydrator = new Hydrator($this);
         $arrayRepresentation = $hydrator->extractArray($model);
         $resourceRoot = lcfirst($model->getResourceType());
-        $options = ['request' => [$resourceRoot => $arrayRepresentation]];
+        $options = ['body' => ['request' => [$resourceRoot => $arrayRepresentation]]];
 
         $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_POST, "/rest-v2/$resource", $options);
 
