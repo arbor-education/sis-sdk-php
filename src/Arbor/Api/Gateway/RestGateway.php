@@ -17,8 +17,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 use Arbor\Filter\PluralizeFilter;
 use Arbor\Query\Exception;
 
@@ -61,26 +59,21 @@ class RestGateway implements GatewayInterface
      */
     public function __construct($baseUrl = '', $authUser = '', $authPassword = '', $userAgent = 'Arbor PHP SDK', $autoRetry = true)
     {
-        $config = [
+        $handlerStack = HandlerStack::create(new CurlHandler());
+
+        if ($autoRetry) {
+            $handlerStack->push(Middleware::retry($this->createRetryHandler()));
+        }
+
+        $this->_httpClient = new Client([
+            'handler' => $handlerStack,
             'base_uri' => $baseUrl,
             'auth' => [$authUser, $authPassword],
             'headers' => [
-                'User-Agent' => $userAgent
-            ]
-        ];
+                'User-Agent' => $userAgent,
+            ],
+        ]);
 
-        if ($autoRetry) {
-            $handlerStack = HandlerStack::create(new CurlHandler());
-            $handlerStack->push(
-                Middleware::retry(
-                    $this->createRetryHandler(new NullLogger())
-                )
-            );
-
-            $config['handler'] = $handlerStack;
-        }
-
-        $this->_httpClient = new Client($config);
         $this->setBaseUrl($baseUrl);
         $this->setAuthUser($authUser);
         $this->setAuthPassword($authPassword);
@@ -528,12 +521,12 @@ class RestGateway implements GatewayInterface
     }
 
     /**
-     * @param LoggerInterface $logger
-     * @return \Closure
+     * @return callable
      */
-    private function createRetryHandler(LoggerInterface $logger)
+    private function createRetryHandler()
     {
-        return function ($retries, Request $request, Response $response = null, RequestException $exception = null) use ($logger) {
+        /** @noinspection PhpUnusedParameterInspection */
+        return function ($retries, Request $request, Response $response = null, RequestException $exception = null) {
             if ($retries >= self::MAX_RETRIES) {
                 return false;
             }
@@ -541,15 +534,6 @@ class RestGateway implements GatewayInterface
             if (!($this->isServerError($response) || $this->isConnectError($exception))) {
                 return false;
             }
-
-            $logger->warning(sprintf(
-                'Retrying %s %s %s/%s, %s',
-                $request->getMethod(),
-                $request->getUri(),
-                $retries + 1,
-                self::MAX_RETRIES,
-                $response ? 'status code: ' . $response->getStatusCode() : $exception->getMessage()
-            ), [$request->getHeader('Host')[0]]);
 
             return true;
         };
@@ -596,5 +580,4 @@ class RestGateway implements GatewayInterface
 
         return self::$filterCamelToDash;
     }
-
 }
