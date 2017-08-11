@@ -169,7 +169,7 @@ class RestGateway implements GatewayInterface
         $pluralResource = self::getPluralizeFilter()->filter($model->getResourceType());
         $resource = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
 
-        $hydrator = new Hydrator($this);
+        $hydrator = new Hydrator();
         $arrayRepresentation = $hydrator->extractArray($model);
         $resourceRoot = lcfirst($model->getResourceType());
         $options = ['body' => ['request' => [$resourceRoot => $arrayRepresentation]]];
@@ -200,7 +200,7 @@ class RestGateway implements GatewayInterface
         $resourceRoot = lcfirst($model->getResourceType());
 
         if (array_key_exists($resourceRoot, $arrayRepresentation)) {
-            $hydrator = new Hydrator($this);
+            $hydrator = new Hydrator();
             $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
 
             return $model;
@@ -228,7 +228,7 @@ class RestGateway implements GatewayInterface
         }
 
         $model = $this->instantiateModel($resource);
-        $hydrator = new Hydrator($this);
+        $hydrator = new Hydrator();
         $hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
         $model->initialArrayRepresentation = $arrayRepresentation;
 
@@ -271,7 +271,7 @@ class RestGateway implements GatewayInterface
         $url = $model->getResourceUrl();
         $resourceType = $model->getResourceType();
 
-        $hydrator = new Hydrator($this);
+        $hydrator = new Hydrator();
         $arrayRepresentation = $hydrator->extractArray($model);
         $resourceRoot = lcfirst($resourceType);
 
@@ -350,7 +350,7 @@ class RestGateway implements GatewayInterface
             return $changes;
         }
 
-        $hydrator = new Hydrator($this);
+        $hydrator = new Hydrator();
         /** @var array $resourceChanges */
         $resourceChanges = $arrayRepresentation['changes'];
         foreach ($resourceChanges as $result) {
@@ -378,7 +378,7 @@ class RestGateway implements GatewayInterface
 
         $listing = new Collection();
         if (array_key_exists($resourceRoot, $arrayRepresentation)) {
-            $hydrator = new Hydrator($this);
+            $hydrator = new Hydrator();
             /** @var array $results */
             $results = $arrayRepresentation[$resourceRoot];
             foreach ($results as $result) {
@@ -434,6 +434,10 @@ class RestGateway implements GatewayInterface
             $responsePayload = json_decode($e->getResponse()->getBody()->getContents(), true);
         } catch (\RuntimeException $e) {
             throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
+        }
+
+        if (! is_array($responsePayload)) {
+            throw new ServerErrorException('Server responded with an invalid response');
         }
 
         //If the response has a code property
