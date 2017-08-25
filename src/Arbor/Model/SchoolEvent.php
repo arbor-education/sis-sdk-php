@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SchoolEventType;
-use \Arbor\Model\RepeatingSchoolEvent;
-use \Arbor\Model\TimetableSlot;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SchoolEvent extends ModelBase
 {
@@ -20,8 +13,6 @@ class SchoolEvent extends ModelBase
     const LOCATION_TEXT = 'locationText';
 
     const LOCATION = 'location';
-
-    const SCHEDULED_BY = 'scheduledBy';
 
     const SCHOOL_EVENT_TYPE = 'schoolEventType';
 
@@ -36,34 +27,38 @@ class SchoolEvent extends ModelBase
     protected $_resourceType = ResourceType::SCHOOL_EVENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolEvent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SchoolEvent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SCHOOL_EVENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolEvent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SCHOOL_EVENT, $id);
     }
 
@@ -72,7 +67,7 @@ class SchoolEvent extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -80,7 +75,7 @@ class SchoolEvent extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -88,7 +83,7 @@ class SchoolEvent extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -96,7 +91,7 @@ class SchoolEvent extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -104,7 +99,7 @@ class SchoolEvent extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -112,7 +107,7 @@ class SchoolEvent extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -120,7 +115,7 @@ class SchoolEvent extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -128,23 +123,7 @@ class SchoolEvent extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -152,7 +131,7 @@ class SchoolEvent extends ModelBase
      */
     public function getSchoolEventType()
     {
-        return $this->getProperty("schoolEventType");
+        return $this->getProperty('schoolEventType');
     }
 
     /**
@@ -160,7 +139,7 @@ class SchoolEvent extends ModelBase
      */
     public function setSchoolEventType(SchoolEventType $schoolEventType = null)
     {
-        $this->setProperty("schoolEventType", $schoolEventType);
+        $this->setProperty('schoolEventType', $schoolEventType);
     }
 
     /**
@@ -168,7 +147,7 @@ class SchoolEvent extends ModelBase
      */
     public function getRepeatingSchoolEvent()
     {
-        return $this->getProperty("repeatingSchoolEvent");
+        return $this->getProperty('repeatingSchoolEvent');
     }
 
     /**
@@ -176,7 +155,7 @@ class SchoolEvent extends ModelBase
      */
     public function setRepeatingSchoolEvent(RepeatingSchoolEvent $repeatingSchoolEvent = null)
     {
-        $this->setProperty("repeatingSchoolEvent", $repeatingSchoolEvent);
+        $this->setProperty('repeatingSchoolEvent', $repeatingSchoolEvent);
     }
 
     /**
@@ -184,7 +163,7 @@ class SchoolEvent extends ModelBase
      */
     public function getSchoolEventName()
     {
-        return $this->getProperty("schoolEventName");
+        return $this->getProperty('schoolEventName');
     }
 
     /**
@@ -192,7 +171,7 @@ class SchoolEvent extends ModelBase
      */
     public function setSchoolEventName($schoolEventName = null)
     {
-        $this->setProperty("schoolEventName", $schoolEventName);
+        $this->setProperty('schoolEventName', $schoolEventName);
     }
 
     /**
@@ -200,7 +179,7 @@ class SchoolEvent extends ModelBase
      */
     public function getTimetableSlot()
     {
-        return $this->getProperty("timetableSlot");
+        return $this->getProperty('timetableSlot');
     }
 
     /**
@@ -208,7 +187,7 @@ class SchoolEvent extends ModelBase
      */
     public function setTimetableSlot(TimetableSlot $timetableSlot = null)
     {
-        $this->setProperty("timetableSlot", $timetableSlot);
+        $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
@@ -216,7 +195,7 @@ class SchoolEvent extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -224,6 +203,6 @@ class SchoolEvent extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

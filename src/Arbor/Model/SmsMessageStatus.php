@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SmsMessage;
-use \Arbor\Model\SmsMessagePart;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SmsMessageStatus extends ModelBase
 {
@@ -25,34 +19,38 @@ class SmsMessageStatus extends ModelBase
     protected $_resourceType = ResourceType::SMS_MESSAGE_STATUS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SmsMessageStatus[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SmsMessageStatus");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SMS_MESSAGE_STATUS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SmsMessageStatus
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SMS_MESSAGE_STATUS, $id);
     }
 
@@ -61,7 +59,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function getSmsMessage()
     {
-        return $this->getProperty("smsMessage");
+        return $this->getProperty('smsMessage');
     }
 
     /**
@@ -69,7 +67,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function setSmsMessage(SmsMessage $smsMessage = null)
     {
-        $this->setProperty("smsMessage", $smsMessage);
+        $this->setProperty('smsMessage', $smsMessage);
     }
 
     /**
@@ -77,7 +75,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function getSmsMessagePart()
     {
-        return $this->getProperty("smsMessagePart");
+        return $this->getProperty('smsMessagePart');
     }
 
     /**
@@ -85,7 +83,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function setSmsMessagePart(SmsMessagePart $smsMessagePart = null)
     {
-        $this->setProperty("smsMessagePart", $smsMessagePart);
+        $this->setProperty('smsMessagePart', $smsMessagePart);
     }
 
     /**
@@ -93,7 +91,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function getStatusType()
     {
-        return $this->getProperty("statusType");
+        return $this->getProperty('statusType');
     }
 
     /**
@@ -101,7 +99,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function setStatusType($statusType = null)
     {
-        $this->setProperty("statusType", $statusType);
+        $this->setProperty('statusType', $statusType);
     }
 
     /**
@@ -109,7 +107,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function getStatusDatetime()
     {
-        return $this->getProperty("statusDatetime");
+        return $this->getProperty('statusDatetime');
     }
 
     /**
@@ -117,7 +115,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function setStatusDatetime(\DateTime $statusDatetime = null)
     {
-        $this->setProperty("statusDatetime", $statusDatetime);
+        $this->setProperty('statusDatetime', $statusDatetime);
     }
 
     /**
@@ -125,7 +123,7 @@ class SmsMessageStatus extends ModelBase
      */
     public function getErrorType()
     {
-        return $this->getProperty("errorType");
+        return $this->getProperty('errorType');
     }
 
     /**
@@ -133,6 +131,6 @@ class SmsMessageStatus extends ModelBase
      */
     public function setErrorType($errorType = null)
     {
-        $this->setProperty("errorType", $errorType);
+        $this->setProperty('errorType', $errorType);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Site;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SiteTravelTime extends ModelBase
 {
@@ -20,34 +15,38 @@ class SiteTravelTime extends ModelBase
     protected $_resourceType = ResourceType::SITE_TRAVEL_TIME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SiteTravelTime[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SiteTravelTime");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SITE_TRAVEL_TIME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SiteTravelTime
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SITE_TRAVEL_TIME, $id);
     }
 
@@ -56,7 +55,7 @@ class SiteTravelTime extends ModelBase
      */
     public function getSite1()
     {
-        return $this->getProperty("site1");
+        return $this->getProperty('site1');
     }
 
     /**
@@ -64,7 +63,7 @@ class SiteTravelTime extends ModelBase
      */
     public function setSite1(Site $site1 = null)
     {
-        $this->setProperty("site1", $site1);
+        $this->setProperty('site1', $site1);
     }
 
     /**
@@ -72,7 +71,7 @@ class SiteTravelTime extends ModelBase
      */
     public function getSite2()
     {
-        return $this->getProperty("site2");
+        return $this->getProperty('site2');
     }
 
     /**
@@ -80,7 +79,7 @@ class SiteTravelTime extends ModelBase
      */
     public function setSite2(Site $site2 = null)
     {
-        $this->setProperty("site2", $site2);
+        $this->setProperty('site2', $site2);
     }
 
     /**
@@ -88,7 +87,7 @@ class SiteTravelTime extends ModelBase
      */
     public function getTravelTime()
     {
-        return $this->getProperty("travelTime");
+        return $this->getProperty('travelTime');
     }
 
     /**
@@ -96,6 +95,6 @@ class SiteTravelTime extends ModelBase
      */
     public function setTravelTime($travelTime = null)
     {
-        $this->setProperty("travelTime", $travelTime);
+        $this->setProperty('travelTime', $travelTime);
     }
 }

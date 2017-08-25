@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewReportCardBatch;
-use \Arbor\Model\AdHocAssessment;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ReportCardBatchAdHocAssessment extends ModelBase
 {
@@ -23,34 +17,38 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_AD_HOC_ASSESSMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ReportCardBatchAdHocAssessment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ReportCardBatchAdHocAssessment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::REPORT_CARD_BATCH_AD_HOC_ASSESSMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ReportCardBatchAdHocAssessment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::REPORT_CARD_BATCH_AD_HOC_ASSESSMENT, $id);
     }
 
@@ -59,7 +57,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function getReportCardBatch()
     {
-        return $this->getProperty("reportCardBatch");
+        return $this->getProperty('reportCardBatch');
     }
 
     /**
@@ -67,7 +65,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
     {
-        $this->setProperty("reportCardBatch", $reportCardBatch);
+        $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
@@ -75,7 +73,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function getAdHocAssessment()
     {
-        return $this->getProperty("adHocAssessment");
+        return $this->getProperty('adHocAssessment');
     }
 
     /**
@@ -83,7 +81,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function setAdHocAssessment(AdHocAssessment $adHocAssessment = null)
     {
-        $this->setProperty("adHocAssessment", $adHocAssessment);
+        $this->setProperty('adHocAssessment', $adHocAssessment);
     }
 
     /**
@@ -91,7 +89,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function getOrder()
     {
-        return $this->getProperty("order");
+        return $this->getProperty('order');
     }
 
     /**
@@ -99,7 +97,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function setOrder($order = null)
     {
-        $this->setProperty("order", $order);
+        $this->setProperty('order', $order);
     }
 
     /**
@@ -107,7 +105,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function getMarkingCompletedDatetime()
     {
-        return $this->getProperty("markingCompletedDatetime");
+        return $this->getProperty('markingCompletedDatetime');
     }
 
     /**
@@ -115,6 +113,6 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      */
     public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
     {
-        $this->setProperty("markingCompletedDatetime", $markingCompletedDatetime);
+        $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
 }

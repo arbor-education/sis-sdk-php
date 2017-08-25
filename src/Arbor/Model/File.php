@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Content;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class File extends ModelBase
 {
@@ -30,34 +25,38 @@ class File extends ModelBase
     protected $_resourceType = ResourceType::FILE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return File[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("File");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::FILE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return File
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::FILE, $id);
     }
 
@@ -66,7 +65,7 @@ class File extends ModelBase
      */
     public function getContent()
     {
-        return $this->getProperty("content");
+        return $this->getProperty('content');
     }
 
     /**
@@ -74,7 +73,7 @@ class File extends ModelBase
      */
     public function setContent(Content $content = null)
     {
-        $this->setProperty("content", $content);
+        $this->setProperty('content', $content);
     }
 
     /**
@@ -82,7 +81,7 @@ class File extends ModelBase
      */
     public function getUrl()
     {
-        return $this->getProperty("url");
+        return $this->getProperty('url');
     }
 
     /**
@@ -90,7 +89,7 @@ class File extends ModelBase
      */
     public function setUrl($url = null)
     {
-        $this->setProperty("url", $url);
+        $this->setProperty('url', $url);
     }
 
     /**
@@ -98,7 +97,7 @@ class File extends ModelBase
      */
     public function getFileSize()
     {
-        return $this->getProperty("fileSize");
+        return $this->getProperty('fileSize');
     }
 
     /**
@@ -106,7 +105,7 @@ class File extends ModelBase
      */
     public function setFileSize($fileSize = null)
     {
-        $this->setProperty("fileSize", $fileSize);
+        $this->setProperty('fileSize', $fileSize);
     }
 
     /**
@@ -114,7 +113,7 @@ class File extends ModelBase
      */
     public function getMimeType()
     {
-        return $this->getProperty("mimeType");
+        return $this->getProperty('mimeType');
     }
 
     /**
@@ -122,7 +121,7 @@ class File extends ModelBase
      */
     public function setMimeType($mimeType = null)
     {
-        $this->setProperty("mimeType", $mimeType);
+        $this->setProperty('mimeType', $mimeType);
     }
 
     /**
@@ -130,7 +129,7 @@ class File extends ModelBase
      */
     public function getFileIdentifier()
     {
-        return $this->getProperty("fileIdentifier");
+        return $this->getProperty('fileIdentifier');
     }
 
     /**
@@ -138,7 +137,7 @@ class File extends ModelBase
      */
     public function setFileIdentifier($fileIdentifier = null)
     {
-        $this->setProperty("fileIdentifier", $fileIdentifier);
+        $this->setProperty('fileIdentifier', $fileIdentifier);
     }
 
     /**
@@ -146,7 +145,7 @@ class File extends ModelBase
      */
     public function getFileMetadata()
     {
-        return $this->getProperty("fileMetadata");
+        return $this->getProperty('fileMetadata');
     }
 
     /**
@@ -154,7 +153,7 @@ class File extends ModelBase
      */
     public function setFileMetadata($fileMetadata = null)
     {
-        $this->setProperty("fileMetadata", $fileMetadata);
+        $this->setProperty('fileMetadata', $fileMetadata);
     }
 
     /**
@@ -162,7 +161,7 @@ class File extends ModelBase
      */
     public function getFileName()
     {
-        return $this->getProperty("fileName");
+        return $this->getProperty('fileName');
     }
 
     /**
@@ -170,7 +169,7 @@ class File extends ModelBase
      */
     public function setFileName($fileName = null)
     {
-        $this->setProperty("fileName", $fileName);
+        $this->setProperty('fileName', $fileName);
     }
 
     /**
@@ -178,7 +177,7 @@ class File extends ModelBase
      */
     public function getCompressed()
     {
-        return $this->getProperty("compressed");
+        return $this->getProperty('compressed');
     }
 
     /**
@@ -186,6 +185,6 @@ class File extends ModelBase
      */
     public function setCompressed($compressed = null)
     {
-        $this->setProperty("compressed", $compressed);
+        $this->setProperty('compressed', $compressed);
     }
 }

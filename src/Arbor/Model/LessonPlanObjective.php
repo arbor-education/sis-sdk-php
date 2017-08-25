@@ -1,19 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LessonPlan;
-use \Arbor\Model\CurriculumStatement;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class LessonPlanObjective extends ModelBase
 {
-    const LESSON_PLAN = 'lessonPlan';
-
     const OBJECTIVE_TITLE = 'objectiveTitle';
 
     const OBJECTIVE_DESCRIPTION = 'objectiveDescription';
@@ -23,51 +15,39 @@ class LessonPlanObjective extends ModelBase
     protected $_resourceType = ResourceType::LESSON_PLAN_OBJECTIVE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LessonPlanObjective[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("LessonPlanObjective");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LESSON_PLAN_OBJECTIVE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LessonPlanObjective
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LESSON_PLAN_OBJECTIVE, $id);
-    }
-
-    /**
-     * @return LessonPlan
-     */
-    public function getLessonPlan()
-    {
-        return $this->getProperty("lessonPlan");
-    }
-
-    /**
-     * @param LessonPlan $lessonPlan
-     */
-    public function setLessonPlan(LessonPlan $lessonPlan = null)
-    {
-        $this->setProperty("lessonPlan", $lessonPlan);
     }
 
     /**
@@ -75,7 +55,7 @@ class LessonPlanObjective extends ModelBase
      */
     public function getObjectiveTitle()
     {
-        return $this->getProperty("objectiveTitle");
+        return $this->getProperty('objectiveTitle');
     }
 
     /**
@@ -83,7 +63,7 @@ class LessonPlanObjective extends ModelBase
      */
     public function setObjectiveTitle($objectiveTitle = null)
     {
-        $this->setProperty("objectiveTitle", $objectiveTitle);
+        $this->setProperty('objectiveTitle', $objectiveTitle);
     }
 
     /**
@@ -91,7 +71,7 @@ class LessonPlanObjective extends ModelBase
      */
     public function getObjectiveDescription()
     {
-        return $this->getProperty("objectiveDescription");
+        return $this->getProperty('objectiveDescription');
     }
 
     /**
@@ -99,7 +79,7 @@ class LessonPlanObjective extends ModelBase
      */
     public function setObjectiveDescription($objectiveDescription = null)
     {
-        $this->setProperty("objectiveDescription", $objectiveDescription);
+        $this->setProperty('objectiveDescription', $objectiveDescription);
     }
 
     /**
@@ -107,7 +87,7 @@ class LessonPlanObjective extends ModelBase
      */
     public function getCurriculumStatement()
     {
-        return $this->getProperty("curriculumStatement");
+        return $this->getProperty('curriculumStatement');
     }
 
     /**
@@ -115,6 +95,6 @@ class LessonPlanObjective extends ModelBase
      */
     public function setCurriculumStatement(CurriculumStatement $curriculumStatement = null)
     {
-        $this->setProperty("curriculumStatement", $curriculumStatement);
+        $this->setProperty('curriculumStatement', $curriculumStatement);
     }
 }

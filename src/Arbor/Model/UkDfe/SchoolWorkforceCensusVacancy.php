@@ -1,16 +1,14 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolWorkforceCensus;
-use \Arbor\Model\EducationalInstitution;
-use \Arbor\Model\UkDfe\SchoolWorkforceVacancyPost;
-use \Arbor\Model\Subject;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\EducationalInstitution;
+use Arbor\Model\Subject;
 
 class SchoolWorkforceCensusVacancy extends ModelBase
 {
@@ -31,34 +29,38 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolWorkforceCensusVacancy[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolWorkforceCensusVacancy");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolWorkforceCensusVacancy
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY, $id);
     }
 
@@ -67,7 +69,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getSchoolWorkforceCensus()
     {
-        return $this->getProperty("schoolWorkforceCensus");
+        return $this->getProperty('schoolWorkforceCensus');
     }
 
     /**
@@ -75,7 +77,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
-        $this->setProperty("schoolWorkforceCensus", $schoolWorkforceCensus);
+        $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
 
     /**
@@ -83,7 +85,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -91,7 +93,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -99,7 +101,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getSchoolWorkforceVacancyPost()
     {
-        return $this->getProperty("schoolWorkforceVacancyPost");
+        return $this->getProperty('schoolWorkforceVacancyPost');
     }
 
     /**
@@ -107,7 +109,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setSchoolWorkforceVacancyPost(SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost = null)
     {
-        $this->setProperty("schoolWorkforceVacancyPost", $schoolWorkforceVacancyPost);
+        $this->setProperty('schoolWorkforceVacancyPost', $schoolWorkforceVacancyPost);
     }
 
     /**
@@ -115,7 +117,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -123,7 +125,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setSubject(Subject $subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -131,7 +133,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getTenure()
     {
-        return $this->getProperty("tenure");
+        return $this->getProperty('tenure');
     }
 
     /**
@@ -139,7 +141,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setTenure($tenure = null)
     {
-        $this->setProperty("tenure", $tenure);
+        $this->setProperty('tenure', $tenure);
     }
 
     /**
@@ -147,7 +149,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getVacancyTemporarilyFilled()
     {
-        return $this->getProperty("vacancyTemporarilyFilled");
+        return $this->getProperty('vacancyTemporarilyFilled');
     }
 
     /**
@@ -155,7 +157,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setVacancyTemporarilyFilled($vacancyTemporarilyFilled = null)
     {
-        $this->setProperty("vacancyTemporarilyFilled", $vacancyTemporarilyFilled);
+        $this->setProperty('vacancyTemporarilyFilled', $vacancyTemporarilyFilled);
     }
 
     /**
@@ -163,7 +165,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function getVacancyAdvertised()
     {
-        return $this->getProperty("vacancyAdvertised");
+        return $this->getProperty('vacancyAdvertised');
     }
 
     /**
@@ -171,6 +173,6 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      */
     public function setVacancyAdvertised($vacancyAdvertised = null)
     {
-        $this->setProperty("vacancyAdvertised", $vacancyAdvertised);
+        $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }
 }

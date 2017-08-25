@@ -1,14 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\PositionCategory;
-use \Arbor\Model\UkDfe\SchoolWorkforceVacancyPost;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Position extends ModelBase
 {
@@ -19,34 +17,38 @@ class Position extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_POSITION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Position[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_Position");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_POSITION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Position
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_POSITION, $id);
     }
 
@@ -55,7 +57,7 @@ class Position extends ModelBase
      */
     public function getPositionCategory()
     {
-        return $this->getProperty("positionCategory");
+        return $this->getProperty('positionCategory');
     }
 
     /**
@@ -63,7 +65,7 @@ class Position extends ModelBase
      */
     public function setPositionCategory(PositionCategory $positionCategory = null)
     {
-        $this->setProperty("positionCategory", $positionCategory);
+        $this->setProperty('positionCategory', $positionCategory);
     }
 
     /**
@@ -71,7 +73,7 @@ class Position extends ModelBase
      */
     public function getWorkforceVacancyPost()
     {
-        return $this->getProperty("workforceVacancyPost");
+        return $this->getProperty('workforceVacancyPost');
     }
 
     /**
@@ -79,6 +81,6 @@ class Position extends ModelBase
      */
     public function setWorkforceVacancyPost(SchoolWorkforceVacancyPost $workforceVacancyPost = null)
     {
-        $this->setProperty("workforceVacancyPost", $workforceVacancyPost);
+        $this->setProperty('workforceVacancyPost', $workforceVacancyPost);
     }
 }

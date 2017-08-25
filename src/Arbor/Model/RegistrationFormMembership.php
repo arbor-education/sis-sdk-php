@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\RegistrationForm;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class RegistrationFormMembership extends ModelBase
 {
@@ -23,34 +17,38 @@ class RegistrationFormMembership extends ModelBase
     protected $_resourceType = ResourceType::REGISTRATION_FORM_MEMBERSHIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return RegistrationFormMembership[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("RegistrationFormMembership");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::REGISTRATION_FORM_MEMBERSHIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return RegistrationFormMembership
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::REGISTRATION_FORM_MEMBERSHIP, $id);
     }
 
@@ -59,7 +57,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function getRegistrationForm()
     {
-        return $this->getProperty("registrationForm");
+        return $this->getProperty('registrationForm');
     }
 
     /**
@@ -67,7 +65,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function setRegistrationForm(RegistrationForm $registrationForm = null)
     {
-        $this->setProperty("registrationForm", $registrationForm);
+        $this->setProperty('registrationForm', $registrationForm);
     }
 
     /**
@@ -75,7 +73,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -83,7 +81,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -91,7 +89,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -99,7 +97,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -107,7 +105,7 @@ class RegistrationFormMembership extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -115,6 +113,6 @@ class RegistrationFormMembership extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

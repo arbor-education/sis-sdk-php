@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\TravellerStatus;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Student;
 
 class TravellerStatusAssignment extends ModelBase
 {
@@ -25,34 +24,38 @@ class TravellerStatusAssignment extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_TRAVELLER_STATUS_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TravellerStatusAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_TravellerStatusAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_TRAVELLER_STATUS_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TravellerStatusAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_TRAVELLER_STATUS_ASSIGNMENT, $id);
     }
 
@@ -61,7 +64,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function getTravellerStatus()
     {
-        return $this->getProperty("travellerStatus");
+        return $this->getProperty('travellerStatus');
     }
 
     /**
@@ -69,7 +72,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function setTravellerStatus(TravellerStatus $travellerStatus = null)
     {
-        $this->setProperty("travellerStatus", $travellerStatus);
+        $this->setProperty('travellerStatus', $travellerStatus);
     }
 
     /**
@@ -77,7 +80,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -85,7 +88,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -93,7 +96,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -101,7 +104,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -109,7 +112,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -117,7 +120,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -125,7 +128,7 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function getInformationSource()
     {
-        return $this->getProperty("informationSource");
+        return $this->getProperty('informationSource');
     }
 
     /**
@@ -133,6 +136,6 @@ class TravellerStatusAssignment extends ModelBase
      */
     public function setInformationSource($informationSource = null)
     {
-        $this->setProperty("informationSource", $informationSource);
+        $this->setProperty('informationSource', $informationSource);
     }
 }

@@ -1,19 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicProgrammeInstance;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\Faculty;
-use \Arbor\Model\Subject;
-use \Arbor\Model\AcademicLevel;
-use \Arbor\Model\RegistrationForm;
-use \Arbor\Model\AttendanceRegisterType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnit extends ModelBase
 {
@@ -70,34 +59,38 @@ class AcademicUnit extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_UNIT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicUnit[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicUnit");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicUnit
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT, $id);
     }
 
@@ -106,7 +99,7 @@ class AcademicUnit extends ModelBase
      */
     public function getUniqueIdentifier()
     {
-        return $this->getProperty("uniqueIdentifier");
+        return $this->getProperty('uniqueIdentifier');
     }
 
     /**
@@ -114,7 +107,7 @@ class AcademicUnit extends ModelBase
      */
     public function setUniqueIdentifier($uniqueIdentifier = null)
     {
-        $this->setProperty("uniqueIdentifier", $uniqueIdentifier);
+        $this->setProperty('uniqueIdentifier', $uniqueIdentifier);
     }
 
     /**
@@ -122,7 +115,7 @@ class AcademicUnit extends ModelBase
      */
     public function getParentAcademicUnit()
     {
-        return $this->getProperty("parentAcademicUnit");
+        return $this->getProperty('parentAcademicUnit');
     }
 
     /**
@@ -130,7 +123,7 @@ class AcademicUnit extends ModelBase
      */
     public function setParentAcademicUnit(AcademicUnit $parentAcademicUnit = null)
     {
-        $this->setProperty("parentAcademicUnit", $parentAcademicUnit);
+        $this->setProperty('parentAcademicUnit', $parentAcademicUnit);
     }
 
     /**
@@ -138,7 +131,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicProgrammeInstance()
     {
-        return $this->getProperty("academicProgrammeInstance");
+        return $this->getProperty('academicProgrammeInstance');
     }
 
     /**
@@ -146,7 +139,7 @@ class AcademicUnit extends ModelBase
      */
     public function setAcademicProgrammeInstance(AcademicProgrammeInstance $academicProgrammeInstance = null)
     {
-        $this->setProperty("academicProgrammeInstance", $academicProgrammeInstance);
+        $this->setProperty('academicProgrammeInstance', $academicProgrammeInstance);
     }
 
     /**
@@ -154,7 +147,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicUnitName()
     {
-        return $this->getProperty("academicUnitName");
+        return $this->getProperty('academicUnitName');
     }
 
     /**
@@ -162,7 +155,7 @@ class AcademicUnit extends ModelBase
      */
     public function setAcademicUnitName($academicUnitName = null)
     {
-        $this->setProperty("academicUnitName", $academicUnitName);
+        $this->setProperty('academicUnitName', $academicUnitName);
     }
 
     /**
@@ -170,7 +163,7 @@ class AcademicUnit extends ModelBase
      */
     public function getLongName()
     {
-        return $this->getProperty("longName");
+        return $this->getProperty('longName');
     }
 
     /**
@@ -178,7 +171,7 @@ class AcademicUnit extends ModelBase
      */
     public function setLongName($longName = null)
     {
-        $this->setProperty("longName", $longName);
+        $this->setProperty('longName', $longName);
     }
 
     /**
@@ -186,7 +179,7 @@ class AcademicUnit extends ModelBase
      */
     public function getLongNameFormat()
     {
-        return $this->getProperty("longNameFormat");
+        return $this->getProperty('longNameFormat');
     }
 
     /**
@@ -194,7 +187,7 @@ class AcademicUnit extends ModelBase
      */
     public function setLongNameFormat($longNameFormat = null)
     {
-        $this->setProperty("longNameFormat", $longNameFormat);
+        $this->setProperty('longNameFormat', $longNameFormat);
     }
 
     /**
@@ -202,7 +195,7 @@ class AcademicUnit extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -210,7 +203,7 @@ class AcademicUnit extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -218,7 +211,7 @@ class AcademicUnit extends ModelBase
      */
     public function getShortNameFormat()
     {
-        return $this->getProperty("shortNameFormat");
+        return $this->getProperty('shortNameFormat');
     }
 
     /**
@@ -226,7 +219,7 @@ class AcademicUnit extends ModelBase
      */
     public function setShortNameFormat($shortNameFormat = null)
     {
-        $this->setProperty("shortNameFormat", $shortNameFormat);
+        $this->setProperty('shortNameFormat', $shortNameFormat);
     }
 
     /**
@@ -234,7 +227,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicUnitCode()
     {
-        return $this->getProperty("academicUnitCode");
+        return $this->getProperty('academicUnitCode');
     }
 
     /**
@@ -242,7 +235,7 @@ class AcademicUnit extends ModelBase
      */
     public function setAcademicUnitCode($academicUnitCode = null)
     {
-        $this->setProperty("academicUnitCode", $academicUnitCode);
+        $this->setProperty('academicUnitCode', $academicUnitCode);
     }
 
     /**
@@ -250,7 +243,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -258,7 +251,7 @@ class AcademicUnit extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -266,7 +259,7 @@ class AcademicUnit extends ModelBase
      */
     public function getPromotedToAcademicUnit()
     {
-        return $this->getProperty("promotedToAcademicUnit");
+        return $this->getProperty('promotedToAcademicUnit');
     }
 
     /**
@@ -274,7 +267,7 @@ class AcademicUnit extends ModelBase
      */
     public function setPromotedToAcademicUnit(AcademicUnit $promotedToAcademicUnit = null)
     {
-        $this->setProperty("promotedToAcademicUnit", $promotedToAcademicUnit);
+        $this->setProperty('promotedToAcademicUnit', $promotedToAcademicUnit);
     }
 
     /**
@@ -282,7 +275,7 @@ class AcademicUnit extends ModelBase
      */
     public function getPromotedDatetime()
     {
-        return $this->getProperty("promotedDatetime");
+        return $this->getProperty('promotedDatetime');
     }
 
     /**
@@ -290,7 +283,7 @@ class AcademicUnit extends ModelBase
      */
     public function setPromotedDatetime(\DateTime $promotedDatetime = null)
     {
-        $this->setProperty("promotedDatetime", $promotedDatetime);
+        $this->setProperty('promotedDatetime', $promotedDatetime);
     }
 
     /**
@@ -298,7 +291,7 @@ class AcademicUnit extends ModelBase
      */
     public function getCopiedToAcademicUnit()
     {
-        return $this->getProperty("copiedToAcademicUnit");
+        return $this->getProperty('copiedToAcademicUnit');
     }
 
     /**
@@ -306,7 +299,7 @@ class AcademicUnit extends ModelBase
      */
     public function setCopiedToAcademicUnit(AcademicUnit $copiedToAcademicUnit = null)
     {
-        $this->setProperty("copiedToAcademicUnit", $copiedToAcademicUnit);
+        $this->setProperty('copiedToAcademicUnit', $copiedToAcademicUnit);
     }
 
     /**
@@ -314,7 +307,7 @@ class AcademicUnit extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -322,7 +315,7 @@ class AcademicUnit extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -330,7 +323,7 @@ class AcademicUnit extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -338,7 +331,7 @@ class AcademicUnit extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -346,7 +339,7 @@ class AcademicUnit extends ModelBase
      */
     public function getFaculty()
     {
-        return $this->getProperty("faculty");
+        return $this->getProperty('faculty');
     }
 
     /**
@@ -354,7 +347,7 @@ class AcademicUnit extends ModelBase
      */
     public function setFaculty(Faculty $faculty = null)
     {
-        $this->setProperty("faculty", $faculty);
+        $this->setProperty('faculty', $faculty);
     }
 
     /**
@@ -362,7 +355,7 @@ class AcademicUnit extends ModelBase
      */
     public function getSelfServiceEnrolment()
     {
-        return $this->getProperty("selfServiceEnrolment");
+        return $this->getProperty('selfServiceEnrolment');
     }
 
     /**
@@ -370,7 +363,7 @@ class AcademicUnit extends ModelBase
      */
     public function setSelfServiceEnrolment($selfServiceEnrolment = null)
     {
-        $this->setProperty("selfServiceEnrolment", $selfServiceEnrolment);
+        $this->setProperty('selfServiceEnrolment', $selfServiceEnrolment);
     }
 
     /**
@@ -378,7 +371,7 @@ class AcademicUnit extends ModelBase
      */
     public function getMaximumEnrolments()
     {
-        return $this->getProperty("maximumEnrolments");
+        return $this->getProperty('maximumEnrolments');
     }
 
     /**
@@ -386,7 +379,7 @@ class AcademicUnit extends ModelBase
      */
     public function setMaximumEnrolments($maximumEnrolments = null)
     {
-        $this->setProperty("maximumEnrolments", $maximumEnrolments);
+        $this->setProperty('maximumEnrolments', $maximumEnrolments);
     }
 
     /**
@@ -394,7 +387,7 @@ class AcademicUnit extends ModelBase
      */
     public function getTargetEnrolments()
     {
-        return $this->getProperty("targetEnrolments");
+        return $this->getProperty('targetEnrolments');
     }
 
     /**
@@ -402,7 +395,7 @@ class AcademicUnit extends ModelBase
      */
     public function setTargetEnrolments($targetEnrolments = null)
     {
-        $this->setProperty("targetEnrolments", $targetEnrolments);
+        $this->setProperty('targetEnrolments', $targetEnrolments);
     }
 
     /**
@@ -410,7 +403,7 @@ class AcademicUnit extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -418,7 +411,7 @@ class AcademicUnit extends ModelBase
      */
     public function setSubject(Subject $subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -426,7 +419,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicLevel()
     {
-        return $this->getProperty("academicLevel");
+        return $this->getProperty('academicLevel');
     }
 
     /**
@@ -434,7 +427,7 @@ class AcademicUnit extends ModelBase
      */
     public function setAcademicLevel(AcademicLevel $academicLevel = null)
     {
-        $this->setProperty("academicLevel", $academicLevel);
+        $this->setProperty('academicLevel', $academicLevel);
     }
 
     /**
@@ -442,7 +435,7 @@ class AcademicUnit extends ModelBase
      */
     public function getRegistrationForm()
     {
-        return $this->getProperty("registrationForm");
+        return $this->getProperty('registrationForm');
     }
 
     /**
@@ -450,7 +443,7 @@ class AcademicUnit extends ModelBase
      */
     public function setRegistrationForm(RegistrationForm $registrationForm = null)
     {
-        $this->setProperty("registrationForm", $registrationForm);
+        $this->setProperty('registrationForm', $registrationForm);
     }
 
     /**
@@ -458,7 +451,7 @@ class AcademicUnit extends ModelBase
      */
     public function getIsMainAssessableUnit()
     {
-        return $this->getProperty("isMainAssessableUnit");
+        return $this->getProperty('isMainAssessableUnit');
     }
 
     /**
@@ -466,7 +459,7 @@ class AcademicUnit extends ModelBase
      */
     public function setIsMainAssessableUnit($isMainAssessableUnit = null)
     {
-        $this->setProperty("isMainAssessableUnit", $isMainAssessableUnit);
+        $this->setProperty('isMainAssessableUnit', $isMainAssessableUnit);
     }
 
     /**
@@ -474,7 +467,7 @@ class AcademicUnit extends ModelBase
      */
     public function getDisplayOrder()
     {
-        return $this->getProperty("displayOrder");
+        return $this->getProperty('displayOrder');
     }
 
     /**
@@ -482,7 +475,7 @@ class AcademicUnit extends ModelBase
      */
     public function setDisplayOrder($displayOrder = null)
     {
-        $this->setProperty("displayOrder", $displayOrder);
+        $this->setProperty('displayOrder', $displayOrder);
     }
 
     /**
@@ -490,7 +483,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAttendanceRegisterType()
     {
-        return $this->getProperty("attendanceRegisterType");
+        return $this->getProperty('attendanceRegisterType');
     }
 
     /**
@@ -498,7 +491,7 @@ class AcademicUnit extends ModelBase
      */
     public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
     {
-        $this->setProperty("attendanceRegisterType", $attendanceRegisterType);
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
     /**
@@ -506,7 +499,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicUnitCohorts()
     {
-        return $this->getCollectionProperty("academicUnitCohorts");
+        return $this->getCollectionProperty('academicUnitCohorts');
     }
 
     /**
@@ -514,7 +507,7 @@ class AcademicUnit extends ModelBase
      */
     public function getAcademicUnitCurriculums()
     {
-        return $this->getCollectionProperty("academicUnitCurriculums");
+        return $this->getCollectionProperty('academicUnitCurriculums');
     }
 
     /**
@@ -522,6 +515,6 @@ class AcademicUnit extends ModelBase
      */
     public function getTimetableSlots()
     {
-        return $this->getCollectionProperty("timetableSlots");
+        return $this->getCollectionProperty('timetableSlots');
     }
 }

@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationAspect;
-use \Arbor\Model\QualificationGrade;
-use \Arbor\Model\Student;
-use \Arbor\Model\CandidateEntry;
-use \Arbor\Model\CandidateRegistration;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationForecastResult extends ModelBase
 {
@@ -32,34 +23,38 @@ class QualificationForecastResult extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_FORECAST_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationForecastResult[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationForecastResult");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_FORECAST_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationForecastResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_FORECAST_RESULT, $id);
     }
 
@@ -68,7 +63,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getQualificationAspect()
     {
-        return $this->getProperty("qualificationAspect");
+        return $this->getProperty('qualificationAspect');
     }
 
     /**
@@ -76,7 +71,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function setQualificationAspect(QualificationAspect $qualificationAspect = null)
     {
-        $this->setProperty("qualificationAspect", $qualificationAspect);
+        $this->setProperty('qualificationAspect', $qualificationAspect);
     }
 
     /**
@@ -84,7 +79,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getQualificationGrade()
     {
-        return $this->getProperty("qualificationGrade");
+        return $this->getProperty('qualificationGrade');
     }
 
     /**
@@ -92,7 +87,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
     {
-        $this->setProperty("qualificationGrade", $qualificationGrade);
+        $this->setProperty('qualificationGrade', $qualificationGrade);
     }
 
     /**
@@ -100,7 +95,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getNumericValue()
     {
-        return $this->getProperty("numericValue");
+        return $this->getProperty('numericValue');
     }
 
     /**
@@ -108,7 +103,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function setNumericValue($numericValue = null)
     {
-        $this->setProperty("numericValue", $numericValue);
+        $this->setProperty('numericValue', $numericValue);
     }
 
     /**
@@ -116,7 +111,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -124,7 +119,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -132,7 +127,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getCandidateEntry()
     {
-        return $this->getProperty("candidateEntry");
+        return $this->getProperty('candidateEntry');
     }
 
     /**
@@ -140,7 +135,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function setCandidateEntry(CandidateEntry $candidateEntry = null)
     {
-        $this->setProperty("candidateEntry", $candidateEntry);
+        $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
@@ -148,7 +143,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getCandidateRegistration()
     {
-        return $this->getProperty("candidateRegistration");
+        return $this->getProperty('candidateRegistration');
     }
 
     /**
@@ -156,7 +151,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function setCandidateRegistration(CandidateRegistration $candidateRegistration = null)
     {
-        $this->setProperty("candidateRegistration", $candidateRegistration);
+        $this->setProperty('candidateRegistration', $candidateRegistration);
     }
 
     /**
@@ -164,7 +159,7 @@ class QualificationForecastResult extends ModelBase
      */
     public function getInputDatetime()
     {
-        return $this->getProperty("inputDatetime");
+        return $this->getProperty('inputDatetime');
     }
 
     /**
@@ -172,6 +167,6 @@ class QualificationForecastResult extends ModelBase
      */
     public function setInputDatetime(\DateTime $inputDatetime = null)
     {
-        $this->setProperty("inputDatetime", $inputDatetime);
+        $this->setProperty('inputDatetime', $inputDatetime);
     }
 }

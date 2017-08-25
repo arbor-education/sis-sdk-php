@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerAccountType;
-use \Arbor\Model\BillPayer;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomerAccount extends ModelBase
 {
@@ -41,34 +35,38 @@ class CustomerAccount extends ModelBase
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomerAccount[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomerAccount");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOMER_ACCOUNT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomerAccount
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOMER_ACCOUNT, $id);
     }
 
@@ -77,7 +75,7 @@ class CustomerAccount extends ModelBase
      */
     public function getRelatedEntity()
     {
-        return $this->getProperty("relatedEntity");
+        return $this->getProperty('relatedEntity');
     }
 
     /**
@@ -85,7 +83,7 @@ class CustomerAccount extends ModelBase
      */
     public function setRelatedEntity(ModelBase $relatedEntity = null)
     {
-        $this->setProperty("relatedEntity", $relatedEntity);
+        $this->setProperty('relatedEntity', $relatedEntity);
     }
 
     /**
@@ -93,7 +91,7 @@ class CustomerAccount extends ModelBase
      */
     public function getDeletedRelatedEntityName()
     {
-        return $this->getProperty("deletedRelatedEntityName");
+        return $this->getProperty('deletedRelatedEntityName');
     }
 
     /**
@@ -101,7 +99,7 @@ class CustomerAccount extends ModelBase
      */
     public function setDeletedRelatedEntityName($deletedRelatedEntityName = null)
     {
-        $this->setProperty("deletedRelatedEntityName", $deletedRelatedEntityName);
+        $this->setProperty('deletedRelatedEntityName', $deletedRelatedEntityName);
     }
 
     /**
@@ -109,7 +107,7 @@ class CustomerAccount extends ModelBase
      */
     public function getCustomerAccountType()
     {
-        return $this->getProperty("customerAccountType");
+        return $this->getProperty('customerAccountType');
     }
 
     /**
@@ -117,7 +115,7 @@ class CustomerAccount extends ModelBase
      */
     public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
     {
-        $this->setProperty("customerAccountType", $customerAccountType);
+        $this->setProperty('customerAccountType', $customerAccountType);
     }
 
     /**
@@ -125,7 +123,7 @@ class CustomerAccount extends ModelBase
      */
     public function getBillPayer1()
     {
-        return $this->getProperty("billPayer1");
+        return $this->getProperty('billPayer1');
     }
 
     /**
@@ -133,7 +131,7 @@ class CustomerAccount extends ModelBase
      */
     public function setBillPayer1(BillPayer $billPayer1 = null)
     {
-        $this->setProperty("billPayer1", $billPayer1);
+        $this->setProperty('billPayer1', $billPayer1);
     }
 
     /**
@@ -141,7 +139,7 @@ class CustomerAccount extends ModelBase
      */
     public function getBillPayer2()
     {
-        return $this->getProperty("billPayer2");
+        return $this->getProperty('billPayer2');
     }
 
     /**
@@ -149,7 +147,7 @@ class CustomerAccount extends ModelBase
      */
     public function setBillPayer2(BillPayer $billPayer2 = null)
     {
-        $this->setProperty("billPayer2", $billPayer2);
+        $this->setProperty('billPayer2', $billPayer2);
     }
 
     /**
@@ -157,7 +155,7 @@ class CustomerAccount extends ModelBase
      */
     public function getBillPayer3()
     {
-        return $this->getProperty("billPayer3");
+        return $this->getProperty('billPayer3');
     }
 
     /**
@@ -165,7 +163,7 @@ class CustomerAccount extends ModelBase
      */
     public function setBillPayer3(BillPayer $billPayer3 = null)
     {
-        $this->setProperty("billPayer3", $billPayer3);
+        $this->setProperty('billPayer3', $billPayer3);
     }
 
     /**
@@ -173,7 +171,7 @@ class CustomerAccount extends ModelBase
      */
     public function getBillPayer1Proportion()
     {
-        return $this->getProperty("billPayer1Proportion");
+        return $this->getProperty('billPayer1Proportion');
     }
 
     /**
@@ -181,7 +179,7 @@ class CustomerAccount extends ModelBase
      */
     public function setBillPayer1Proportion($billPayer1Proportion = null)
     {
-        $this->setProperty("billPayer1Proportion", $billPayer1Proportion);
+        $this->setProperty('billPayer1Proportion', $billPayer1Proportion);
     }
 
     /**
@@ -189,7 +187,7 @@ class CustomerAccount extends ModelBase
      */
     public function getBillPayer2Proportion()
     {
-        return $this->getProperty("billPayer2Proportion");
+        return $this->getProperty('billPayer2Proportion');
     }
 
     /**
@@ -197,7 +195,7 @@ class CustomerAccount extends ModelBase
      */
     public function setBillPayer2Proportion($billPayer2Proportion = null)
     {
-        $this->setProperty("billPayer2Proportion", $billPayer2Proportion);
+        $this->setProperty('billPayer2Proportion', $billPayer2Proportion);
     }
 
     /**
@@ -205,7 +203,7 @@ class CustomerAccount extends ModelBase
      */
     public function getBillPayer3Proportion()
     {
-        return $this->getProperty("billPayer3Proportion");
+        return $this->getProperty('billPayer3Proportion');
     }
 
     /**
@@ -213,7 +211,7 @@ class CustomerAccount extends ModelBase
      */
     public function setBillPayer3Proportion($billPayer3Proportion = null)
     {
-        $this->setProperty("billPayer3Proportion", $billPayer3Proportion);
+        $this->setProperty('billPayer3Proportion', $billPayer3Proportion);
     }
 
     /**
@@ -221,7 +219,7 @@ class CustomerAccount extends ModelBase
      */
     public function getAccountBalance()
     {
-        return $this->getProperty("accountBalance");
+        return $this->getProperty('accountBalance');
     }
 
     /**
@@ -229,7 +227,7 @@ class CustomerAccount extends ModelBase
      */
     public function setAccountBalance($accountBalance = null)
     {
-        $this->setProperty("accountBalance", $accountBalance);
+        $this->setProperty('accountBalance', $accountBalance);
     }
 
     /**
@@ -237,7 +235,7 @@ class CustomerAccount extends ModelBase
      */
     public function getCreditLimit()
     {
-        return $this->getProperty("creditLimit");
+        return $this->getProperty('creditLimit');
     }
 
     /**
@@ -245,7 +243,7 @@ class CustomerAccount extends ModelBase
      */
     public function setCreditLimit($creditLimit = null)
     {
-        $this->setProperty("creditLimit", $creditLimit);
+        $this->setProperty('creditLimit', $creditLimit);
     }
 
     /**
@@ -253,7 +251,7 @@ class CustomerAccount extends ModelBase
      */
     public function getOpeningBalanceTransactionDatetime()
     {
-        return $this->getProperty("openingBalanceTransactionDatetime");
+        return $this->getProperty('openingBalanceTransactionDatetime');
     }
 
     /**
@@ -261,7 +259,7 @@ class CustomerAccount extends ModelBase
      */
     public function setOpeningBalanceTransactionDatetime(\DateTime $openingBalanceTransactionDatetime = null)
     {
-        $this->setProperty("openingBalanceTransactionDatetime", $openingBalanceTransactionDatetime);
+        $this->setProperty('openingBalanceTransactionDatetime', $openingBalanceTransactionDatetime);
     }
 
     /**
@@ -269,7 +267,7 @@ class CustomerAccount extends ModelBase
      */
     public function getOpeningBalanceTransaction()
     {
-        return $this->getProperty("openingBalanceTransaction");
+        return $this->getProperty('openingBalanceTransaction');
     }
 
     /**
@@ -277,6 +275,6 @@ class CustomerAccount extends ModelBase
      */
     public function setOpeningBalanceTransaction(ModelBase $openingBalanceTransaction = null)
     {
-        $this->setProperty("openingBalanceTransaction", $openingBalanceTransaction);
+        $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }
 }

@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
-use \Arbor\Model\StaffAttendanceMark;
-use \Arbor\Model\StaffAbsence;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffAttendanceRecord extends ModelBase
 {
@@ -34,34 +27,38 @@ class StaffAttendanceRecord extends ModelBase
     protected $_resourceType = ResourceType::STAFF_ATTENDANCE_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffAttendanceRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffAttendanceRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_ATTENDANCE_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffAttendanceRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_ATTENDANCE_RECORD, $id);
     }
 
@@ -70,7 +67,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -78,7 +75,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -86,7 +83,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getAttendancePeriodDate()
     {
-        return $this->getProperty("attendancePeriodDate");
+        return $this->getProperty('attendancePeriodDate');
     }
 
     /**
@@ -94,7 +91,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setAttendancePeriodDate(\DateTime $attendancePeriodDate = null)
     {
-        $this->setProperty("attendancePeriodDate", $attendancePeriodDate);
+        $this->setProperty('attendancePeriodDate', $attendancePeriodDate);
     }
 
     /**
@@ -102,7 +99,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getAttendancePeriodStartTime()
     {
-        return $this->getProperty("attendancePeriodStartTime");
+        return $this->getProperty('attendancePeriodStartTime');
     }
 
     /**
@@ -110,7 +107,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setAttendancePeriodStartTime($attendancePeriodStartTime = null)
     {
-        $this->setProperty("attendancePeriodStartTime", $attendancePeriodStartTime);
+        $this->setProperty('attendancePeriodStartTime', $attendancePeriodStartTime);
     }
 
     /**
@@ -118,7 +115,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getAttendancePeriodEndTime()
     {
-        return $this->getProperty("attendancePeriodEndTime");
+        return $this->getProperty('attendancePeriodEndTime');
     }
 
     /**
@@ -126,7 +123,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setAttendancePeriodEndTime($attendancePeriodEndTime = null)
     {
-        $this->setProperty("attendancePeriodEndTime", $attendancePeriodEndTime);
+        $this->setProperty('attendancePeriodEndTime', $attendancePeriodEndTime);
     }
 
     /**
@@ -134,7 +131,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getActualStartTime()
     {
-        return $this->getProperty("actualStartTime");
+        return $this->getProperty('actualStartTime');
     }
 
     /**
@@ -142,7 +139,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setActualStartTime($actualStartTime = null)
     {
-        $this->setProperty("actualStartTime", $actualStartTime);
+        $this->setProperty('actualStartTime', $actualStartTime);
     }
 
     /**
@@ -150,7 +147,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getActualEndTime()
     {
-        return $this->getProperty("actualEndTime");
+        return $this->getProperty('actualEndTime');
     }
 
     /**
@@ -158,7 +155,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setActualEndTime($actualEndTime = null)
     {
-        $this->setProperty("actualEndTime", $actualEndTime);
+        $this->setProperty('actualEndTime', $actualEndTime);
     }
 
     /**
@@ -166,7 +163,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getStaffAttendanceMark()
     {
-        return $this->getProperty("staffAttendanceMark");
+        return $this->getProperty('staffAttendanceMark');
     }
 
     /**
@@ -174,7 +171,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setStaffAttendanceMark(StaffAttendanceMark $staffAttendanceMark = null)
     {
-        $this->setProperty("staffAttendanceMark", $staffAttendanceMark);
+        $this->setProperty('staffAttendanceMark', $staffAttendanceMark);
     }
 
     /**
@@ -182,7 +179,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -190,7 +187,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -198,7 +195,7 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function getStaffAbsence()
     {
-        return $this->getProperty("staffAbsence");
+        return $this->getProperty('staffAbsence');
     }
 
     /**
@@ -206,6 +203,6 @@ class StaffAttendanceRecord extends ModelBase
      */
     public function setStaffAbsence(StaffAbsence $staffAbsence = null)
     {
-        $this->setProperty("staffAbsence", $staffAbsence);
+        $this->setProperty('staffAbsence', $staffAbsence);
     }
 }

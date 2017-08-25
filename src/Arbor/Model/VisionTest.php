@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class VisionTest extends ModelBase
 {
@@ -22,34 +17,38 @@ class VisionTest extends ModelBase
     protected $_resourceType = ResourceType::VISION_TEST;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return VisionTest[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("VisionTest");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::VISION_TEST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return VisionTest
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::VISION_TEST, $id);
     }
 
@@ -58,7 +57,7 @@ class VisionTest extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -66,7 +65,7 @@ class VisionTest extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -74,7 +73,7 @@ class VisionTest extends ModelBase
      */
     public function getTestDate()
     {
-        return $this->getProperty("testDate");
+        return $this->getProperty('testDate');
     }
 
     /**
@@ -82,7 +81,7 @@ class VisionTest extends ModelBase
      */
     public function setTestDate(\DateTime $testDate = null)
     {
-        $this->setProperty("testDate", $testDate);
+        $this->setProperty('testDate', $testDate);
     }
 
     /**
@@ -90,7 +89,7 @@ class VisionTest extends ModelBase
      */
     public function getColorBlindness()
     {
-        return $this->getProperty("colorBlindness");
+        return $this->getProperty('colorBlindness');
     }
 
     /**
@@ -98,7 +97,7 @@ class VisionTest extends ModelBase
      */
     public function setColorBlindness($colorBlindness = null)
     {
-        $this->setProperty("colorBlindness", $colorBlindness);
+        $this->setProperty('colorBlindness', $colorBlindness);
     }
 
     /**
@@ -106,7 +105,7 @@ class VisionTest extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -114,6 +113,6 @@ class VisionTest extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 }

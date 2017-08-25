@@ -1,18 +1,12 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SchoolEnrolment;
-use \Arbor\Model\EnrolmentMode;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EnrolmentModeAssignment extends ModelBase
 {
-    const SCHOOL_ENROLMENT = 'schoolEnrolment';
+    const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
 
     const ENROLMENT_MODE = 'enrolmentMode';
 
@@ -23,51 +17,55 @@ class EnrolmentModeAssignment extends ModelBase
     protected $_resourceType = ResourceType::ENROLMENT_MODE_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EnrolmentModeAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EnrolmentModeAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ENROLMENT_MODE_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EnrolmentModeAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ENROLMENT_MODE_ASSIGNMENT, $id);
     }
 
     /**
-     * @return SchoolEnrolment
+     * @return AcademicYearEnrolment
      */
-    public function getSchoolEnrolment()
+    public function getAcademicYearEnrolment()
     {
-        return $this->getProperty("schoolEnrolment");
+        return $this->getProperty('academicYearEnrolment');
     }
 
     /**
-     * @param SchoolEnrolment $schoolEnrolment
+     * @param AcademicYearEnrolment $academicYearEnrolment
      */
-    public function setSchoolEnrolment(SchoolEnrolment $schoolEnrolment = null)
+    public function setAcademicYearEnrolment(AcademicYearEnrolment $academicYearEnrolment = null)
     {
-        $this->setProperty("schoolEnrolment", $schoolEnrolment);
+        $this->setProperty('academicYearEnrolment', $academicYearEnrolment);
     }
 
     /**
@@ -75,7 +73,7 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public function getEnrolmentMode()
     {
-        return $this->getProperty("enrolmentMode");
+        return $this->getProperty('enrolmentMode');
     }
 
     /**
@@ -83,7 +81,7 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public function setEnrolmentMode(EnrolmentMode $enrolmentMode = null)
     {
-        $this->setProperty("enrolmentMode", $enrolmentMode);
+        $this->setProperty('enrolmentMode', $enrolmentMode);
     }
 
     /**
@@ -91,7 +89,7 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -99,7 +97,7 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -107,7 +105,7 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -115,6 +113,6 @@ class EnrolmentModeAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

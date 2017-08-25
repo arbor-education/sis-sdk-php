@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Employer extends ModelBase
 {
@@ -15,34 +11,38 @@ class Employer extends ModelBase
     protected $_resourceType = ResourceType::EMPLOYER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Employer[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Employer");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMPLOYER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Employer
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMPLOYER, $id);
     }
 
@@ -51,7 +51,7 @@ class Employer extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -59,6 +59,6 @@ class Employer extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 }

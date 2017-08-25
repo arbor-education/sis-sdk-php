@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Room;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IdentityCardReader extends ModelBase
 {
@@ -18,34 +13,38 @@ class IdentityCardReader extends ModelBase
     protected $_resourceType = ResourceType::IDENTITY_CARD_READER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IdentityCardReader[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IdentityCardReader");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::IDENTITY_CARD_READER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IdentityCardReader
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::IDENTITY_CARD_READER, $id);
     }
 
@@ -54,7 +53,7 @@ class IdentityCardReader extends ModelBase
      */
     public function getReaderNumber()
     {
-        return $this->getProperty("readerNumber");
+        return $this->getProperty('readerNumber');
     }
 
     /**
@@ -62,7 +61,7 @@ class IdentityCardReader extends ModelBase
      */
     public function setReaderNumber($readerNumber = null)
     {
-        $this->setProperty("readerNumber", $readerNumber);
+        $this->setProperty('readerNumber', $readerNumber);
     }
 
     /**
@@ -70,7 +69,7 @@ class IdentityCardReader extends ModelBase
      */
     public function getRoom()
     {
-        return $this->getProperty("room");
+        return $this->getProperty('room');
     }
 
     /**
@@ -78,6 +77,6 @@ class IdentityCardReader extends ModelBase
      */
     public function setRoom(Room $room = null)
     {
-        $this->setProperty("room", $room);
+        $this->setProperty('room', $room);
     }
 }

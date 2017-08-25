@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\EmailAddress;
-use \Arbor\Model\TelephoneNumber;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SendingProfile extends ModelBase
 {
@@ -23,34 +17,38 @@ class SendingProfile extends ModelBase
     protected $_resourceType = ResourceType::SENDING_PROFILE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SendingProfile[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SendingProfile");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SENDING_PROFILE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SendingProfile
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SENDING_PROFILE, $id);
     }
 
@@ -59,7 +57,7 @@ class SendingProfile extends ModelBase
      */
     public function getOwner()
     {
-        return $this->getProperty("owner");
+        return $this->getProperty('owner');
     }
 
     /**
@@ -67,7 +65,7 @@ class SendingProfile extends ModelBase
      */
     public function setOwner(ModelBase $owner = null)
     {
-        $this->setProperty("owner", $owner);
+        $this->setProperty('owner', $owner);
     }
 
     /**
@@ -75,7 +73,7 @@ class SendingProfile extends ModelBase
      */
     public function getEmailAddress()
     {
-        return $this->getProperty("emailAddress");
+        return $this->getProperty('emailAddress');
     }
 
     /**
@@ -83,7 +81,7 @@ class SendingProfile extends ModelBase
      */
     public function setEmailAddress(EmailAddress $emailAddress = null)
     {
-        $this->setProperty("emailAddress", $emailAddress);
+        $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
@@ -91,7 +89,7 @@ class SendingProfile extends ModelBase
      */
     public function getMobileTelephoneNumber()
     {
-        return $this->getProperty("mobileTelephoneNumber");
+        return $this->getProperty('mobileTelephoneNumber');
     }
 
     /**
@@ -99,7 +97,7 @@ class SendingProfile extends ModelBase
      */
     public function setMobileTelephoneNumber(TelephoneNumber $mobileTelephoneNumber = null)
     {
-        $this->setProperty("mobileTelephoneNumber", $mobileTelephoneNumber);
+        $this->setProperty('mobileTelephoneNumber', $mobileTelephoneNumber);
     }
 
     /**
@@ -107,7 +105,7 @@ class SendingProfile extends ModelBase
      */
     public function getPermittedSender()
     {
-        return $this->getProperty("permittedSender");
+        return $this->getProperty('permittedSender');
     }
 
     /**
@@ -115,6 +113,6 @@ class SendingProfile extends ModelBase
      */
     public function setPermittedSender(ModelBase $permittedSender = null)
     {
-        $this->setProperty("permittedSender", $permittedSender);
+        $this->setProperty('permittedSender', $permittedSender);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewsStory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewsFeedMapping extends ModelBase
 {
@@ -22,34 +17,38 @@ class NewsFeedMapping extends ModelBase
     protected $_resourceType = ResourceType::NEWS_FEED_MAPPING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewsFeedMapping[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewsFeedMapping");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEWS_FEED_MAPPING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewsFeedMapping
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEWS_FEED_MAPPING, $id);
     }
 
@@ -58,7 +57,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -66,7 +65,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -74,7 +73,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function getNewsStory()
     {
-        return $this->getProperty("newsStory");
+        return $this->getProperty('newsStory');
     }
 
     /**
@@ -82,7 +81,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function setNewsStory(NewsStory $newsStory = null)
     {
-        $this->setProperty("newsStory", $newsStory);
+        $this->setProperty('newsStory', $newsStory);
     }
 
     /**
@@ -90,7 +89,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function getRank()
     {
-        return $this->getProperty("rank");
+        return $this->getProperty('rank');
     }
 
     /**
@@ -98,7 +97,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function setRank($rank = null)
     {
-        $this->setProperty("rank", $rank);
+        $this->setProperty('rank', $rank);
     }
 
     /**
@@ -106,7 +105,7 @@ class NewsFeedMapping extends ModelBase
      */
     public function getRankValidUntil()
     {
-        return $this->getProperty("rankValidUntil");
+        return $this->getProperty('rankValidUntil');
     }
 
     /**
@@ -114,6 +113,6 @@ class NewsFeedMapping extends ModelBase
      */
     public function setRankValidUntil(\DateTime $rankValidUntil = null)
     {
-        $this->setProperty("rankValidUntil", $rankValidUntil);
+        $this->setProperty('rankValidUntil', $rankValidUntil);
     }
 }

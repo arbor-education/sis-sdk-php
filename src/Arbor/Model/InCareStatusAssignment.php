@@ -1,20 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LocalAuthority;
-use \Arbor\Model\InCareStatus;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InCareStatusAssignment extends ModelBase
 {
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
-
     const IN_CARE_STATUS = 'inCareStatus';
 
     const STUDENT = 'student';
@@ -23,54 +14,44 @@ class InCareStatusAssignment extends ModelBase
 
     const END_DATE = 'endDate';
 
+    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
+
     protected $_resourceType = ResourceType::IN_CARE_STATUS_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InCareStatusAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InCareStatusAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::IN_CARE_STATUS_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InCareStatusAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::IN_CARE_STATUS_ASSIGNMENT, $id);
-    }
-
-    /**
-     * @return LocalAuthority
-     */
-    public function getResponsibleLocalAuthority()
-    {
-        return $this->getProperty("responsibleLocalAuthority");
-    }
-
-    /**
-     * @param LocalAuthority $responsibleLocalAuthority
-     */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
-    {
-        $this->setProperty("responsibleLocalAuthority", $responsibleLocalAuthority);
     }
 
     /**
@@ -78,7 +59,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function getInCareStatus()
     {
-        return $this->getProperty("inCareStatus");
+        return $this->getProperty('inCareStatus');
     }
 
     /**
@@ -86,7 +67,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function setInCareStatus(InCareStatus $inCareStatus = null)
     {
-        $this->setProperty("inCareStatus", $inCareStatus);
+        $this->setProperty('inCareStatus', $inCareStatus);
     }
 
     /**
@@ -94,7 +75,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -102,7 +83,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -110,7 +91,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -118,7 +99,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -126,7 +107,7 @@ class InCareStatusAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -134,6 +115,22 @@ class InCareStatusAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return LocalAuthority
+     */
+    public function getResponsibleLocalAuthority()
+    {
+        return $this->getProperty('responsibleLocalAuthority');
+    }
+
+    /**
+     * @param LocalAuthority $responsibleLocalAuthority
+     */
+    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
+    {
+        $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
 }

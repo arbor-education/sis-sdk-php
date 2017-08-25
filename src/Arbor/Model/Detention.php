@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Staff;
-use \Arbor\Model\DetentionSession;
-use \Arbor\Model\DetentionType;
-use \Arbor\Model\Behaviour;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Detention extends ModelBase
 {
@@ -39,37 +30,43 @@ class Detention extends ModelBase
 
     const REASON_FOR_DETENTION = 'reasonForDetention';
 
+    const ABSENTEES_DETENTION_ACTION = 'absenteesDetentionAction';
+
     protected $_resourceType = ResourceType::DETENTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Detention[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Detention");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DETENTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Detention
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DETENTION, $id);
     }
 
@@ -78,7 +75,7 @@ class Detention extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -86,7 +83,7 @@ class Detention extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -94,7 +91,7 @@ class Detention extends ModelBase
      */
     public function getIssuedByStaff()
     {
-        return $this->getProperty("issuedByStaff");
+        return $this->getProperty('issuedByStaff');
     }
 
     /**
@@ -102,7 +99,7 @@ class Detention extends ModelBase
      */
     public function setIssuedByStaff(Staff $issuedByStaff = null)
     {
-        $this->setProperty("issuedByStaff", $issuedByStaff);
+        $this->setProperty('issuedByStaff', $issuedByStaff);
     }
 
     /**
@@ -110,7 +107,7 @@ class Detention extends ModelBase
      */
     public function getDetentionSession()
     {
-        return $this->getProperty("detentionSession");
+        return $this->getProperty('detentionSession');
     }
 
     /**
@@ -118,7 +115,7 @@ class Detention extends ModelBase
      */
     public function setDetentionSession(DetentionSession $detentionSession = null)
     {
-        $this->setProperty("detentionSession", $detentionSession);
+        $this->setProperty('detentionSession', $detentionSession);
     }
 
     /**
@@ -126,7 +123,7 @@ class Detention extends ModelBase
      */
     public function getDetentionType()
     {
-        return $this->getProperty("detentionType");
+        return $this->getProperty('detentionType');
     }
 
     /**
@@ -134,7 +131,7 @@ class Detention extends ModelBase
      */
     public function setDetentionType(DetentionType $detentionType = null)
     {
-        $this->setProperty("detentionType", $detentionType);
+        $this->setProperty('detentionType', $detentionType);
     }
 
     /**
@@ -142,7 +139,7 @@ class Detention extends ModelBase
      */
     public function getDecisionDatetime()
     {
-        return $this->getProperty("decisionDatetime");
+        return $this->getProperty('decisionDatetime');
     }
 
     /**
@@ -150,7 +147,7 @@ class Detention extends ModelBase
      */
     public function setDecisionDatetime(\DateTime $decisionDatetime = null)
     {
-        $this->setProperty("decisionDatetime", $decisionDatetime);
+        $this->setProperty('decisionDatetime', $decisionDatetime);
     }
 
     /**
@@ -158,7 +155,7 @@ class Detention extends ModelBase
      */
     public function getNotifiedStudentDatetime()
     {
-        return $this->getProperty("notifiedStudentDatetime");
+        return $this->getProperty('notifiedStudentDatetime');
     }
 
     /**
@@ -166,7 +163,7 @@ class Detention extends ModelBase
      */
     public function setNotifiedStudentDatetime(\DateTime $notifiedStudentDatetime = null)
     {
-        $this->setProperty("notifiedStudentDatetime", $notifiedStudentDatetime);
+        $this->setProperty('notifiedStudentDatetime', $notifiedStudentDatetime);
     }
 
     /**
@@ -174,7 +171,7 @@ class Detention extends ModelBase
      */
     public function getNotifiedGuardiansDatetime()
     {
-        return $this->getProperty("notifiedGuardiansDatetime");
+        return $this->getProperty('notifiedGuardiansDatetime');
     }
 
     /**
@@ -182,7 +179,7 @@ class Detention extends ModelBase
      */
     public function setNotifiedGuardiansDatetime(\DateTime $notifiedGuardiansDatetime = null)
     {
-        $this->setProperty("notifiedGuardiansDatetime", $notifiedGuardiansDatetime);
+        $this->setProperty('notifiedGuardiansDatetime', $notifiedGuardiansDatetime);
     }
 
     /**
@@ -190,7 +187,7 @@ class Detention extends ModelBase
      */
     public function getNotifiedTutorsDatetime()
     {
-        return $this->getProperty("notifiedTutorsDatetime");
+        return $this->getProperty('notifiedTutorsDatetime');
     }
 
     /**
@@ -198,7 +195,7 @@ class Detention extends ModelBase
      */
     public function setNotifiedTutorsDatetime(\DateTime $notifiedTutorsDatetime = null)
     {
-        $this->setProperty("notifiedTutorsDatetime", $notifiedTutorsDatetime);
+        $this->setProperty('notifiedTutorsDatetime', $notifiedTutorsDatetime);
     }
 
     /**
@@ -206,7 +203,7 @@ class Detention extends ModelBase
      */
     public function getDetentionDuration()
     {
-        return $this->getProperty("detentionDuration");
+        return $this->getProperty('detentionDuration');
     }
 
     /**
@@ -214,7 +211,7 @@ class Detention extends ModelBase
      */
     public function setDetentionDuration($detentionDuration = null)
     {
-        $this->setProperty("detentionDuration", $detentionDuration);
+        $this->setProperty('detentionDuration', $detentionDuration);
     }
 
     /**
@@ -222,7 +219,7 @@ class Detention extends ModelBase
      */
     public function getAttendanceMark()
     {
-        return $this->getProperty("attendanceMark");
+        return $this->getProperty('attendanceMark');
     }
 
     /**
@@ -230,7 +227,7 @@ class Detention extends ModelBase
      */
     public function setAttendanceMark($attendanceMark = null)
     {
-        $this->setProperty("attendanceMark", $attendanceMark);
+        $this->setProperty('attendanceMark', $attendanceMark);
     }
 
     /**
@@ -238,7 +235,7 @@ class Detention extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -246,7 +243,7 @@ class Detention extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 
     /**
@@ -254,7 +251,7 @@ class Detention extends ModelBase
      */
     public function getReasonForDetention()
     {
-        return $this->getProperty("reasonForDetention");
+        return $this->getProperty('reasonForDetention');
     }
 
     /**
@@ -262,6 +259,22 @@ class Detention extends ModelBase
      */
     public function setReasonForDetention(Behaviour $reasonForDetention = null)
     {
-        $this->setProperty("reasonForDetention", $reasonForDetention);
+        $this->setProperty('reasonForDetention', $reasonForDetention);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getAbsenteesDetentionAction()
+    {
+        return $this->getProperty('absenteesDetentionAction');
+    }
+
+    /**
+     * @param ModelBase $absenteesDetentionAction
+     */
+    public function setAbsenteesDetentionAction(ModelBase $absenteesDetentionAction = null)
+    {
+        $this->setProperty('absenteesDetentionAction', $absenteesDetentionAction);
     }
 }

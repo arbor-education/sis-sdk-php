@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Club extends ModelBase
 {
@@ -26,34 +21,38 @@ class Club extends ModelBase
     protected $_resourceType = ResourceType::CLUB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Club[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Club");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CLUB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Club
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CLUB, $id);
     }
 
@@ -62,7 +61,7 @@ class Club extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -70,7 +69,7 @@ class Club extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -78,7 +77,7 @@ class Club extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -86,7 +85,7 @@ class Club extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -94,7 +93,7 @@ class Club extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -102,7 +101,7 @@ class Club extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -110,7 +109,7 @@ class Club extends ModelBase
      */
     public function getMaxMembersPerSession()
     {
-        return $this->getProperty("maxMembersPerSession");
+        return $this->getProperty('maxMembersPerSession');
     }
 
     /**
@@ -118,7 +117,7 @@ class Club extends ModelBase
      */
     public function setMaxMembersPerSession($maxMembersPerSession = null)
     {
-        $this->setProperty("maxMembersPerSession", $maxMembersPerSession);
+        $this->setProperty('maxMembersPerSession', $maxMembersPerSession);
     }
 
     /**
@@ -126,7 +125,7 @@ class Club extends ModelBase
      */
     public function getRequireConsent()
     {
-        return $this->getProperty("requireConsent");
+        return $this->getProperty('requireConsent');
     }
 
     /**
@@ -134,7 +133,7 @@ class Club extends ModelBase
      */
     public function setRequireConsent($requireConsent = null)
     {
-        $this->setProperty("requireConsent", $requireConsent);
+        $this->setProperty('requireConsent', $requireConsent);
     }
 
     /**
@@ -142,7 +141,7 @@ class Club extends ModelBase
      */
     public function getCopiedToClub()
     {
-        return $this->getProperty("copiedToClub");
+        return $this->getProperty('copiedToClub');
     }
 
     /**
@@ -150,6 +149,6 @@ class Club extends ModelBase
      */
     public function setCopiedToClub(Club $copiedToClub = null)
     {
-        $this->setProperty("copiedToClub", $copiedToClub);
+        $this->setProperty('copiedToClub', $copiedToClub);
     }
 }

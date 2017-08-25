@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
-use \Arbor\Model\DetentionType;
-use \Arbor\Model\PointAwardScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
@@ -22,6 +15,8 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     const ESCALATION_THRESHOLD_TIME_RANGE = 'escalationThresholdTimeRange';
 
     const ESCALATE_TO_LEVEL = 'escalateToLevel';
+
+    const RESET_TO_ZERO = 'resetToZero';
 
     const GUARDIAN_EMAIL_TEMPLATE = 'guardianEmailTemplate';
 
@@ -45,37 +40,43 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
 
     const ALLOW_ADD_DEDUCT_POINTS = 'allowAddDeductPoints';
 
+    const EMAIL_ASSIGNEE = 'emailAssignee';
+
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralIncidentLevelWorkflow[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralIncidentLevelWorkflow");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralIncidentLevelWorkflow
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW, $id);
     }
 
@@ -84,7 +85,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getLevelOfIncident()
     {
-        return $this->getProperty("levelOfIncident");
+        return $this->getProperty('levelOfIncident');
     }
 
     /**
@@ -92,7 +93,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setLevelOfIncident($levelOfIncident = null)
     {
-        $this->setProperty("levelOfIncident", $levelOfIncident);
+        $this->setProperty('levelOfIncident', $levelOfIncident);
     }
 
     /**
@@ -100,7 +101,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getAutoClose()
     {
-        return $this->getProperty("autoClose");
+        return $this->getProperty('autoClose');
     }
 
     /**
@@ -108,7 +109,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setAutoClose($autoClose = null)
     {
-        $this->setProperty("autoClose", $autoClose);
+        $this->setProperty('autoClose', $autoClose);
     }
 
     /**
@@ -116,7 +117,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getEscalationThresholdCount()
     {
-        return $this->getProperty("escalationThresholdCount");
+        return $this->getProperty('escalationThresholdCount');
     }
 
     /**
@@ -124,7 +125,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setEscalationThresholdCount($escalationThresholdCount = null)
     {
-        $this->setProperty("escalationThresholdCount", $escalationThresholdCount);
+        $this->setProperty('escalationThresholdCount', $escalationThresholdCount);
     }
 
     /**
@@ -132,7 +133,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getEscalationThresholdTimeRange()
     {
-        return $this->getProperty("escalationThresholdTimeRange");
+        return $this->getProperty('escalationThresholdTimeRange');
     }
 
     /**
@@ -140,7 +141,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setEscalationThresholdTimeRange($escalationThresholdTimeRange = null)
     {
-        $this->setProperty("escalationThresholdTimeRange", $escalationThresholdTimeRange);
+        $this->setProperty('escalationThresholdTimeRange', $escalationThresholdTimeRange);
     }
 
     /**
@@ -148,7 +149,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getEscalateToLevel()
     {
-        return $this->getProperty("escalateToLevel");
+        return $this->getProperty('escalateToLevel');
     }
 
     /**
@@ -156,7 +157,23 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setEscalateToLevel($escalateToLevel = null)
     {
-        $this->setProperty("escalateToLevel", $escalateToLevel);
+        $this->setProperty('escalateToLevel', $escalateToLevel);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getResetToZero()
+    {
+        return $this->getProperty('resetToZero');
+    }
+
+    /**
+     * @param bool $resetToZero
+     */
+    public function setResetToZero($resetToZero = null)
+    {
+        $this->setProperty('resetToZero', $resetToZero);
     }
 
     /**
@@ -164,7 +181,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getGuardianEmailTemplate()
     {
-        return $this->getProperty("guardianEmailTemplate");
+        return $this->getProperty('guardianEmailTemplate');
     }
 
     /**
@@ -172,7 +189,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setGuardianEmailTemplate($guardianEmailTemplate = null)
     {
-        $this->setProperty("guardianEmailTemplate", $guardianEmailTemplate);
+        $this->setProperty('guardianEmailTemplate', $guardianEmailTemplate);
     }
 
     /**
@@ -180,7 +197,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getMessageChannel()
     {
-        return $this->getProperty("messageChannel");
+        return $this->getProperty('messageChannel');
     }
 
     /**
@@ -188,7 +205,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setMessageChannel($messageChannel = null)
     {
-        $this->setProperty("messageChannel", $messageChannel);
+        $this->setProperty('messageChannel', $messageChannel);
     }
 
     /**
@@ -196,7 +213,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getDefaultAssignee()
     {
-        return $this->getProperty("defaultAssignee");
+        return $this->getProperty('defaultAssignee');
     }
 
     /**
@@ -204,7 +221,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setDefaultAssignee($defaultAssignee = null)
     {
-        $this->setProperty("defaultAssignee", $defaultAssignee);
+        $this->setProperty('defaultAssignee', $defaultAssignee);
     }
 
     /**
@@ -212,7 +229,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getSpecificAssignee()
     {
-        return $this->getProperty("specificAssignee");
+        return $this->getProperty('specificAssignee');
     }
 
     /**
@@ -220,7 +237,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setSpecificAssignee(Staff $specificAssignee = null)
     {
-        $this->setProperty("specificAssignee", $specificAssignee);
+        $this->setProperty('specificAssignee', $specificAssignee);
     }
 
     /**
@@ -228,7 +245,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getDetentionType()
     {
-        return $this->getProperty("detentionType");
+        return $this->getProperty('detentionType');
     }
 
     /**
@@ -236,7 +253,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setDetentionType(DetentionType $detentionType = null)
     {
-        $this->setProperty("detentionType", $detentionType);
+        $this->setProperty('detentionType', $detentionType);
     }
 
     /**
@@ -244,7 +261,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getDetentionTimeFrame()
     {
-        return $this->getProperty("detentionTimeFrame");
+        return $this->getProperty('detentionTimeFrame');
     }
 
     /**
@@ -252,7 +269,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setDetentionTimeFrame($detentionTimeFrame = null)
     {
-        $this->setProperty("detentionTimeFrame", $detentionTimeFrame);
+        $this->setProperty('detentionTimeFrame', $detentionTimeFrame);
     }
 
     /**
@@ -260,7 +277,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getPointAwardScale()
     {
-        return $this->getProperty("pointAwardScale");
+        return $this->getProperty('pointAwardScale');
     }
 
     /**
@@ -268,7 +285,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setPointAwardScale(PointAwardScale $pointAwardScale = null)
     {
-        $this->setProperty("pointAwardScale", $pointAwardScale);
+        $this->setProperty('pointAwardScale', $pointAwardScale);
     }
 
     /**
@@ -276,7 +293,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getAddDeductPoints()
     {
-        return $this->getProperty("addDeductPoints");
+        return $this->getProperty('addDeductPoints');
     }
 
     /**
@@ -284,7 +301,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setAddDeductPoints($addDeductPoints = null)
     {
-        $this->setProperty("addDeductPoints", $addDeductPoints);
+        $this->setProperty('addDeductPoints', $addDeductPoints);
     }
 
     /**
@@ -292,7 +309,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getEditableWatchers()
     {
-        return $this->getProperty("editableWatchers");
+        return $this->getProperty('editableWatchers');
     }
 
     /**
@@ -300,7 +317,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setEditableWatchers($editableWatchers = null)
     {
-        $this->setProperty("editableWatchers", $editableWatchers);
+        $this->setProperty('editableWatchers', $editableWatchers);
     }
 
     /**
@@ -308,7 +325,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getAllowAssignDetention()
     {
-        return $this->getProperty("allowAssignDetention");
+        return $this->getProperty('allowAssignDetention');
     }
 
     /**
@@ -316,7 +333,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setAllowAssignDetention($allowAssignDetention = null)
     {
-        $this->setProperty("allowAssignDetention", $allowAssignDetention);
+        $this->setProperty('allowAssignDetention', $allowAssignDetention);
     }
 
     /**
@@ -324,7 +341,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function getAllowAddDeductPoints()
     {
-        return $this->getProperty("allowAddDeductPoints");
+        return $this->getProperty('allowAddDeductPoints');
     }
 
     /**
@@ -332,6 +349,22 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      */
     public function setAllowAddDeductPoints($allowAddDeductPoints = null)
     {
-        $this->setProperty("allowAddDeductPoints", $allowAddDeductPoints);
+        $this->setProperty('allowAddDeductPoints', $allowAddDeductPoints);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getEmailAssignee()
+    {
+        return $this->getProperty('emailAssignee');
+    }
+
+    /**
+     * @param bool $emailAssignee
+     */
+    public function setEmailAssignee($emailAssignee = null)
+    {
+        $this->setProperty('emailAssignee', $emailAssignee);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SuspectedDuplicate extends ModelBase
 {
@@ -28,34 +23,38 @@ class SuspectedDuplicate extends ModelBase
     protected $_resourceType = ResourceType::SUSPECTED_DUPLICATE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SuspectedDuplicate[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SuspectedDuplicate");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SUSPECTED_DUPLICATE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SuspectedDuplicate
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SUSPECTED_DUPLICATE, $id);
     }
 
@@ -64,7 +63,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getSuspectOne()
     {
-        return $this->getProperty("suspectOne");
+        return $this->getProperty('suspectOne');
     }
 
     /**
@@ -72,7 +71,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setSuspectOne(ModelBase $suspectOne = null)
     {
-        $this->setProperty("suspectOne", $suspectOne);
+        $this->setProperty('suspectOne', $suspectOne);
     }
 
     /**
@@ -80,7 +79,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getSuspectTwo()
     {
-        return $this->getProperty("suspectTwo");
+        return $this->getProperty('suspectTwo');
     }
 
     /**
@@ -88,7 +87,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setSuspectTwo(ModelBase $suspectTwo = null)
     {
-        $this->setProperty("suspectTwo", $suspectTwo);
+        $this->setProperty('suspectTwo', $suspectTwo);
     }
 
     /**
@@ -96,7 +95,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getTotalDuplicateScore()
     {
-        return $this->getProperty("totalDuplicateScore");
+        return $this->getProperty('totalDuplicateScore');
     }
 
     /**
@@ -104,7 +103,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setTotalDuplicateScore($totalDuplicateScore = null)
     {
-        $this->setProperty("totalDuplicateScore", $totalDuplicateScore);
+        $this->setProperty('totalDuplicateScore', $totalDuplicateScore);
     }
 
     /**
@@ -112,7 +111,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getDuplicateScores()
     {
-        return $this->getProperty("duplicateScores");
+        return $this->getProperty('duplicateScores');
     }
 
     /**
@@ -120,7 +119,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setDuplicateScores($duplicateScores = null)
     {
-        $this->setProperty("duplicateScores", $duplicateScores);
+        $this->setProperty('duplicateScores', $duplicateScores);
     }
 
     /**
@@ -128,7 +127,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getResolvedDatetime()
     {
-        return $this->getProperty("resolvedDatetime");
+        return $this->getProperty('resolvedDatetime');
     }
 
     /**
@@ -136,7 +135,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
-        $this->setProperty("resolvedDatetime", $resolvedDatetime);
+        $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
 
     /**
@@ -144,7 +143,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getResolvedByStaff()
     {
-        return $this->getProperty("resolvedByStaff");
+        return $this->getProperty('resolvedByStaff');
     }
 
     /**
@@ -152,7 +151,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setResolvedByStaff(Staff $resolvedByStaff = null)
     {
-        $this->setProperty("resolvedByStaff", $resolvedByStaff);
+        $this->setProperty('resolvedByStaff', $resolvedByStaff);
     }
 
     /**
@@ -160,7 +159,7 @@ class SuspectedDuplicate extends ModelBase
      */
     public function getResolution()
     {
-        return $this->getProperty("resolution");
+        return $this->getProperty('resolution');
     }
 
     /**
@@ -168,6 +167,6 @@ class SuspectedDuplicate extends ModelBase
      */
     public function setResolution($resolution = null)
     {
-        $this->setProperty("resolution", $resolution);
+        $this->setProperty('resolution', $resolution);
     }
 }

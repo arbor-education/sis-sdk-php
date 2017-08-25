@@ -1,15 +1,14 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolWorkforceCensus;
-use \Arbor\Model\EducationalInstitution;
-use \Arbor\Model\BusinessRole;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\EducationalInstitution;
+use Arbor\Model\BusinessRole;
 
 class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
 {
@@ -26,34 +25,38 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolWorkforceCensusAgencyTpSupportCount[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolWorkforceCensusAgencyTpSupportCount");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolWorkforceCensusAgencyTpSupportCount
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT, $id);
     }
 
@@ -62,7 +65,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function getSchoolWorkforceCensus()
     {
-        return $this->getProperty("schoolWorkforceCensus");
+        return $this->getProperty('schoolWorkforceCensus');
     }
 
     /**
@@ -70,7 +73,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
-        $this->setProperty("schoolWorkforceCensus", $schoolWorkforceCensus);
+        $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
 
     /**
@@ -78,7 +81,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -86,7 +89,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -94,7 +97,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -102,7 +105,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 
     /**
@@ -110,7 +113,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function getAgencyTpSupportCategory()
     {
-        return $this->getProperty("agencyTpSupportCategory");
+        return $this->getProperty('agencyTpSupportCategory');
     }
 
     /**
@@ -118,7 +121,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function setAgencyTpSupportCategory($agencyTpSupportCategory = null)
     {
-        $this->setProperty("agencyTpSupportCategory", $agencyTpSupportCategory);
+        $this->setProperty('agencyTpSupportCategory', $agencyTpSupportCategory);
     }
 
     /**
@@ -126,7 +129,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function getSupHeadCount()
     {
-        return $this->getProperty("supHeadCount");
+        return $this->getProperty('supHeadCount');
     }
 
     /**
@@ -134,6 +137,6 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      */
     public function setSupHeadCount($supHeadCount = null)
     {
-        $this->setProperty("supHeadCount", $supHeadCount);
+        $this->setProperty('supHeadCount', $supHeadCount);
     }
 }

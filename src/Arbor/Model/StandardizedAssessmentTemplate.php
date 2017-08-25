@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StandardizedAssessmentTemplate extends ModelBase
 {
@@ -21,34 +17,38 @@ class StandardizedAssessmentTemplate extends ModelBase
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_TEMPLATE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StandardizedAssessmentTemplate[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StandardizedAssessmentTemplate");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STANDARDIZED_ASSESSMENT_TEMPLATE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StandardizedAssessmentTemplate
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STANDARDIZED_ASSESSMENT_TEMPLATE, $id);
     }
 
@@ -57,7 +57,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function getTemplateName()
     {
-        return $this->getProperty("templateName");
+        return $this->getProperty('templateName');
     }
 
     /**
@@ -65,7 +65,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function setTemplateName($templateName = null)
     {
-        $this->setProperty("templateName", $templateName);
+        $this->setProperty('templateName', $templateName);
     }
 
     /**
@@ -73,7 +73,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -81,7 +81,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -89,7 +89,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function getValidityStartDate()
     {
-        return $this->getProperty("validityStartDate");
+        return $this->getProperty('validityStartDate');
     }
 
     /**
@@ -97,7 +97,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function setValidityStartDate(\DateTime $validityStartDate = null)
     {
-        $this->setProperty("validityStartDate", $validityStartDate);
+        $this->setProperty('validityStartDate', $validityStartDate);
     }
 
     /**
@@ -105,7 +105,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function getValidityEndDate()
     {
-        return $this->getProperty("validityEndDate");
+        return $this->getProperty('validityEndDate');
     }
 
     /**
@@ -113,6 +113,6 @@ class StandardizedAssessmentTemplate extends ModelBase
      */
     public function setValidityEndDate(\DateTime $validityEndDate = null)
     {
-        $this->setProperty("validityEndDate", $validityEndDate);
+        $this->setProperty('validityEndDate', $validityEndDate);
     }
 }

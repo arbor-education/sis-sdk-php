@@ -1,22 +1,23 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Country;
-use \Arbor\Model\Region;
-use \Arbor\Model\LocalAuthority;
-use \Arbor\Model\Group\Operator;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Country;
+use Arbor\Model\Region;
+use Arbor\Model\LocalAuthority;
 
 class Institution extends ModelBase
 {
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
+
+    const ABBREVIATED_NAME = 'abbreviatedName';
 
     const OPENING_DATE = 'openingDate';
 
@@ -34,39 +35,47 @@ class Institution extends ModelBase
 
     const APPLICATION_ID = 'applicationId';
 
+    const ASSIGNED_FROM_DATE = 'assignedFromDate';
+
+    const ASSIGNED_TO_DATE = 'assignedToDate';
+
     const ARBOR_IDENTIFIER = 'arborIdentifier';
 
     protected $_resourceType = ResourceType::GROUP_INSTITUTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Institution[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_Institution");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_INSTITUTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Institution
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_INSTITUTION, $id);
     }
 
@@ -75,7 +84,7 @@ class Institution extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -83,7 +92,7 @@ class Institution extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -91,7 +100,7 @@ class Institution extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -99,7 +108,23 @@ class Institution extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAbbreviatedName()
+    {
+        return $this->getProperty('abbreviatedName');
+    }
+
+    /**
+     * @param string $abbreviatedName
+     */
+    public function setAbbreviatedName($abbreviatedName = null)
+    {
+        $this->setProperty('abbreviatedName', $abbreviatedName);
     }
 
     /**
@@ -107,7 +132,7 @@ class Institution extends ModelBase
      */
     public function getOpeningDate()
     {
-        return $this->getProperty("openingDate");
+        return $this->getProperty('openingDate');
     }
 
     /**
@@ -115,7 +140,7 @@ class Institution extends ModelBase
      */
     public function setOpeningDate(\DateTime $openingDate = null)
     {
-        $this->setProperty("openingDate", $openingDate);
+        $this->setProperty('openingDate', $openingDate);
     }
 
     /**
@@ -123,7 +148,7 @@ class Institution extends ModelBase
      */
     public function getClosingDate()
     {
-        return $this->getProperty("closingDate");
+        return $this->getProperty('closingDate');
     }
 
     /**
@@ -131,7 +156,7 @@ class Institution extends ModelBase
      */
     public function setClosingDate(\DateTime $closingDate = null)
     {
-        $this->setProperty("closingDate", $closingDate);
+        $this->setProperty('closingDate', $closingDate);
     }
 
     /**
@@ -139,7 +164,7 @@ class Institution extends ModelBase
      */
     public function getCountry()
     {
-        return $this->getProperty("country");
+        return $this->getProperty('country');
     }
 
     /**
@@ -147,7 +172,7 @@ class Institution extends ModelBase
      */
     public function setCountry(Country $country = null)
     {
-        $this->setProperty("country", $country);
+        $this->setProperty('country', $country);
     }
 
     /**
@@ -155,7 +180,7 @@ class Institution extends ModelBase
      */
     public function getRegion()
     {
-        return $this->getProperty("region");
+        return $this->getProperty('region');
     }
 
     /**
@@ -163,7 +188,7 @@ class Institution extends ModelBase
      */
     public function setRegion(Region $region = null)
     {
-        $this->setProperty("region", $region);
+        $this->setProperty('region', $region);
     }
 
     /**
@@ -171,7 +196,7 @@ class Institution extends ModelBase
      */
     public function getLocalAuthority()
     {
-        return $this->getProperty("localAuthority");
+        return $this->getProperty('localAuthority');
     }
 
     /**
@@ -179,7 +204,7 @@ class Institution extends ModelBase
      */
     public function setLocalAuthority(LocalAuthority $localAuthority = null)
     {
-        $this->setProperty("localAuthority", $localAuthority);
+        $this->setProperty('localAuthority', $localAuthority);
     }
 
     /**
@@ -187,7 +212,7 @@ class Institution extends ModelBase
      */
     public function getOperator()
     {
-        return $this->getProperty("operator");
+        return $this->getProperty('operator');
     }
 
     /**
@@ -195,7 +220,7 @@ class Institution extends ModelBase
      */
     public function setOperator(Operator $operator = null)
     {
-        $this->setProperty("operator", $operator);
+        $this->setProperty('operator', $operator);
     }
 
     /**
@@ -203,7 +228,7 @@ class Institution extends ModelBase
      */
     public function getBaseUrl()
     {
-        return $this->getProperty("baseUrl");
+        return $this->getProperty('baseUrl');
     }
 
     /**
@@ -211,7 +236,7 @@ class Institution extends ModelBase
      */
     public function setBaseUrl($baseUrl = null)
     {
-        $this->setProperty("baseUrl", $baseUrl);
+        $this->setProperty('baseUrl', $baseUrl);
     }
 
     /**
@@ -219,7 +244,7 @@ class Institution extends ModelBase
      */
     public function getApplicationId()
     {
-        return $this->getProperty("applicationId");
+        return $this->getProperty('applicationId');
     }
 
     /**
@@ -227,7 +252,39 @@ class Institution extends ModelBase
      */
     public function setApplicationId($applicationId = null)
     {
-        $this->setProperty("applicationId", $applicationId);
+        $this->setProperty('applicationId', $applicationId);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAssignedFromDate()
+    {
+        return $this->getProperty('assignedFromDate');
+    }
+
+    /**
+     * @param \DateTime $assignedFromDate
+     */
+    public function setAssignedFromDate(\DateTime $assignedFromDate = null)
+    {
+        $this->setProperty('assignedFromDate', $assignedFromDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAssignedToDate()
+    {
+        return $this->getProperty('assignedToDate');
+    }
+
+    /**
+     * @param \DateTime $assignedToDate
+     */
+    public function setAssignedToDate(\DateTime $assignedToDate = null)
+    {
+        $this->setProperty('assignedToDate', $assignedToDate);
     }
 
     /**
@@ -235,7 +292,7 @@ class Institution extends ModelBase
      */
     public function getArborIdentifier()
     {
-        return $this->getProperty("arborIdentifier");
+        return $this->getProperty('arborIdentifier');
     }
 
     /**
@@ -243,6 +300,6 @@ class Institution extends ModelBase
      */
     public function setArborIdentifier($arborIdentifier = null)
     {
-        $this->setProperty("arborIdentifier", $arborIdentifier);
+        $this->setProperty('arborIdentifier', $arborIdentifier);
     }
 }

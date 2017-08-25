@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Curriculum;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CurriculumTargetSet extends ModelBase
 {
@@ -24,34 +19,38 @@ class CurriculumTargetSet extends ModelBase
     protected $_resourceType = ResourceType::CURRICULUM_TARGET_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CurriculumTargetSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CurriculumTargetSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CURRICULUM_TARGET_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CurriculumTargetSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CURRICULUM_TARGET_SET, $id);
     }
 
@@ -60,7 +59,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function getCurriculum()
     {
-        return $this->getProperty("curriculum");
+        return $this->getProperty('curriculum');
     }
 
     /**
@@ -68,7 +67,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function setCurriculum(Curriculum $curriculum = null)
     {
-        $this->setProperty("curriculum", $curriculum);
+        $this->setProperty('curriculum', $curriculum);
     }
 
     /**
@@ -76,7 +75,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function getType()
     {
-        return $this->getProperty("type");
+        return $this->getProperty('type');
     }
 
     /**
@@ -84,7 +83,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function setType($type = null)
     {
-        $this->setProperty("type", $type);
+        $this->setProperty('type', $type);
     }
 
     /**
@@ -92,7 +91,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -100,7 +99,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -108,7 +107,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -116,7 +115,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -124,7 +123,7 @@ class CurriculumTargetSet extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -132,6 +131,6 @@ class CurriculumTargetSet extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\NewReportCardBatch;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewStudentReportCard extends ModelBase
 {
@@ -23,34 +17,38 @@ class NewStudentReportCard extends ModelBase
     protected $_resourceType = ResourceType::NEW_STUDENT_REPORT_CARD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewStudentReportCard[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewStudentReportCard");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEW_STUDENT_REPORT_CARD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewStudentReportCard
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEW_STUDENT_REPORT_CARD, $id);
     }
 
@@ -59,7 +57,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -67,7 +65,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -75,7 +73,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function getReportCardBatch()
     {
-        return $this->getProperty("reportCardBatch");
+        return $this->getProperty('reportCardBatch');
     }
 
     /**
@@ -83,7 +81,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
     {
-        $this->setProperty("reportCardBatch", $reportCardBatch);
+        $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
@@ -91,7 +89,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function getCompletedDatetime()
     {
-        return $this->getProperty("completedDatetime");
+        return $this->getProperty('completedDatetime');
     }
 
     /**
@@ -99,7 +97,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
-        $this->setProperty("completedDatetime", $completedDatetime);
+        $this->setProperty('completedDatetime', $completedDatetime);
     }
 
     /**
@@ -107,7 +105,7 @@ class NewStudentReportCard extends ModelBase
      */
     public function getApprovedDatetime()
     {
-        return $this->getProperty("approvedDatetime");
+        return $this->getProperty('approvedDatetime');
     }
 
     /**
@@ -115,6 +113,6 @@ class NewStudentReportCard extends ModelBase
      */
     public function setApprovedDatetime(\DateTime $approvedDatetime = null)
     {
-        $this->setProperty("approvedDatetime", $approvedDatetime);
+        $this->setProperty('approvedDatetime', $approvedDatetime);
     }
 }

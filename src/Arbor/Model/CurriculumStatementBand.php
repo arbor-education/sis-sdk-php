@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Curriculum;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CurriculumStatementBand extends ModelBase
 {
@@ -22,34 +17,38 @@ class CurriculumStatementBand extends ModelBase
     protected $_resourceType = ResourceType::CURRICULUM_STATEMENT_BAND;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CurriculumStatementBand[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CurriculumStatementBand");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CURRICULUM_STATEMENT_BAND);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CurriculumStatementBand
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CURRICULUM_STATEMENT_BAND, $id);
     }
 
@@ -58,7 +57,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function getCurriculum()
     {
-        return $this->getProperty("curriculum");
+        return $this->getProperty('curriculum');
     }
 
     /**
@@ -66,7 +65,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function setCurriculum(Curriculum $curriculum = null)
     {
-        $this->setProperty("curriculum", $curriculum);
+        $this->setProperty('curriculum', $curriculum);
     }
 
     /**
@@ -74,7 +73,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -82,7 +81,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -90,7 +89,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function getLowerGradePointScaleValue()
     {
-        return $this->getProperty("lowerGradePointScaleValue");
+        return $this->getProperty('lowerGradePointScaleValue');
     }
 
     /**
@@ -98,7 +97,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
     {
-        $this->setProperty("lowerGradePointScaleValue", $lowerGradePointScaleValue);
+        $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
 
     /**
@@ -106,7 +105,7 @@ class CurriculumStatementBand extends ModelBase
      */
     public function getUpperGradePointScaleValue()
     {
-        return $this->getProperty("upperGradePointScaleValue");
+        return $this->getProperty('upperGradePointScaleValue');
     }
 
     /**
@@ -114,6 +113,6 @@ class CurriculumStatementBand extends ModelBase
      */
     public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
     {
-        $this->setProperty("upperGradePointScaleValue", $upperGradePointScaleValue);
+        $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
 }

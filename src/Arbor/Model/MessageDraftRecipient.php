@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MessageDraftRecipient extends ModelBase
 {
@@ -19,34 +15,38 @@ class MessageDraftRecipient extends ModelBase
     protected $_resourceType = ResourceType::MESSAGE_DRAFT_RECIPIENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MessageDraftRecipient[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MessageDraftRecipient");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MESSAGE_DRAFT_RECIPIENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MessageDraftRecipient
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MESSAGE_DRAFT_RECIPIENT, $id);
     }
 
@@ -55,7 +55,7 @@ class MessageDraftRecipient extends ModelBase
      */
     public function getMessageDraft()
     {
-        return $this->getProperty("messageDraft");
+        return $this->getProperty('messageDraft');
     }
 
     /**
@@ -63,7 +63,7 @@ class MessageDraftRecipient extends ModelBase
      */
     public function setMessageDraft(ModelBase $messageDraft = null)
     {
-        $this->setProperty("messageDraft", $messageDraft);
+        $this->setProperty('messageDraft', $messageDraft);
     }
 
     /**
@@ -71,7 +71,7 @@ class MessageDraftRecipient extends ModelBase
      */
     public function getRecipient()
     {
-        return $this->getProperty("recipient");
+        return $this->getProperty('recipient');
     }
 
     /**
@@ -79,7 +79,7 @@ class MessageDraftRecipient extends ModelBase
      */
     public function setRecipient(ModelBase $recipient = null)
     {
-        $this->setProperty("recipient", $recipient);
+        $this->setProperty('recipient', $recipient);
     }
 
     /**
@@ -87,7 +87,7 @@ class MessageDraftRecipient extends ModelBase
      */
     public function getResolver()
     {
-        return $this->getProperty("resolver");
+        return $this->getProperty('resolver');
     }
 
     /**
@@ -95,6 +95,6 @@ class MessageDraftRecipient extends ModelBase
      */
     public function setResolver($resolver = null)
     {
-        $this->setProperty("resolver", $resolver);
+        $this->setProperty('resolver', $resolver);
     }
 }

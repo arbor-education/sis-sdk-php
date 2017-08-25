@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Trip extends ModelBase
 {
@@ -18,8 +13,6 @@ class Trip extends ModelBase
     const LOCATION_TEXT = 'locationText';
 
     const LOCATION = 'location';
-
-    const SCHEDULED_BY = 'scheduledBy';
 
     const NAME = 'name';
 
@@ -42,34 +35,38 @@ class Trip extends ModelBase
     protected $_resourceType = ResourceType::TRIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Trip[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Trip");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TRIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Trip
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TRIP, $id);
     }
 
@@ -78,7 +75,7 @@ class Trip extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -86,7 +83,7 @@ class Trip extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -94,7 +91,7 @@ class Trip extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -102,7 +99,7 @@ class Trip extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -110,7 +107,7 @@ class Trip extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -118,7 +115,7 @@ class Trip extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -126,7 +123,7 @@ class Trip extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -134,23 +131,7 @@ class Trip extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -158,7 +139,7 @@ class Trip extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -166,7 +147,7 @@ class Trip extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -174,7 +155,7 @@ class Trip extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -182,7 +163,7 @@ class Trip extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -190,7 +171,7 @@ class Trip extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -198,7 +179,7 @@ class Trip extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -206,7 +187,7 @@ class Trip extends ModelBase
      */
     public function getLinkTo()
     {
-        return $this->getProperty("linkTo");
+        return $this->getProperty('linkTo');
     }
 
     /**
@@ -214,7 +195,7 @@ class Trip extends ModelBase
      */
     public function setLinkTo(ModelBase $linkTo = null)
     {
-        $this->setProperty("linkTo", $linkTo);
+        $this->setProperty('linkTo', $linkTo);
     }
 
     /**
@@ -222,7 +203,7 @@ class Trip extends ModelBase
      */
     public function getCopiedToTrip()
     {
-        return $this->getProperty("copiedToTrip");
+        return $this->getProperty('copiedToTrip');
     }
 
     /**
@@ -230,7 +211,7 @@ class Trip extends ModelBase
      */
     public function setCopiedToTrip(Trip $copiedToTrip = null)
     {
-        $this->setProperty("copiedToTrip", $copiedToTrip);
+        $this->setProperty('copiedToTrip', $copiedToTrip);
     }
 
     /**
@@ -238,7 +219,7 @@ class Trip extends ModelBase
      */
     public function getMaxParticipants()
     {
-        return $this->getProperty("maxParticipants");
+        return $this->getProperty('maxParticipants');
     }
 
     /**
@@ -246,7 +227,7 @@ class Trip extends ModelBase
      */
     public function setMaxParticipants($maxParticipants = null)
     {
-        $this->setProperty("maxParticipants", $maxParticipants);
+        $this->setProperty('maxParticipants', $maxParticipants);
     }
 
     /**
@@ -254,7 +235,7 @@ class Trip extends ModelBase
      */
     public function getRequireConsent()
     {
-        return $this->getProperty("requireConsent");
+        return $this->getProperty('requireConsent');
     }
 
     /**
@@ -262,7 +243,7 @@ class Trip extends ModelBase
      */
     public function setRequireConsent($requireConsent = null)
     {
-        $this->setProperty("requireConsent", $requireConsent);
+        $this->setProperty('requireConsent', $requireConsent);
     }
 
     /**
@@ -270,7 +251,7 @@ class Trip extends ModelBase
      */
     public function getGuardianSignupStartDatetime()
     {
-        return $this->getProperty("guardianSignupStartDatetime");
+        return $this->getProperty('guardianSignupStartDatetime');
     }
 
     /**
@@ -278,7 +259,7 @@ class Trip extends ModelBase
      */
     public function setGuardianSignupStartDatetime(\DateTime $guardianSignupStartDatetime = null)
     {
-        $this->setProperty("guardianSignupStartDatetime", $guardianSignupStartDatetime);
+        $this->setProperty('guardianSignupStartDatetime', $guardianSignupStartDatetime);
     }
 
     /**
@@ -286,7 +267,7 @@ class Trip extends ModelBase
      */
     public function getGuardianSignupEndDatetime()
     {
-        return $this->getProperty("guardianSignupEndDatetime");
+        return $this->getProperty('guardianSignupEndDatetime');
     }
 
     /**
@@ -294,6 +275,6 @@ class Trip extends ModelBase
      */
     public function setGuardianSignupEndDatetime(\DateTime $guardianSignupEndDatetime = null)
     {
-        $this->setProperty("guardianSignupEndDatetime", $guardianSignupEndDatetime);
+        $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
 }

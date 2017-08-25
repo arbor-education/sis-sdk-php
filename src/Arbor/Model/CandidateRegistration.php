@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Candidate;
-use \Arbor\Model\QualificationAward;
-use \Arbor\Model\QualificationAvailabilityInstance;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CandidateRegistration extends ModelBase
 {
@@ -19,47 +12,45 @@ class CandidateRegistration extends ModelBase
 
     const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const REGISTRATION_NUMBER = 'registrationNumber';
+    const ENTRY_STATUS = 'entryStatus';
 
-    const REGISTRATION_REQUESTED_DATETIME = 'registrationRequestedDatetime';
-
-    const REGISTRATION_CONFIRMED_DATETIME = 'registrationConfirmedDatetime';
-
-    const RESPONSE_RECEIVED_DATETIME = 'responseReceivedDatetime';
-
-    const RESPONSE_MESSAGE = 'responseMessage';
+    const WITHDRAWAL_STATUS = 'withdrawalStatus';
 
     protected $_resourceType = ResourceType::CANDIDATE_REGISTRATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CandidateRegistration[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CandidateRegistration");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CANDIDATE_REGISTRATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CandidateRegistration
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CANDIDATE_REGISTRATION, $id);
     }
 
@@ -68,7 +59,7 @@ class CandidateRegistration extends ModelBase
      */
     public function getCandidate()
     {
-        return $this->getProperty("candidate");
+        return $this->getProperty('candidate');
     }
 
     /**
@@ -76,7 +67,7 @@ class CandidateRegistration extends ModelBase
      */
     public function setCandidate(Candidate $candidate = null)
     {
-        $this->setProperty("candidate", $candidate);
+        $this->setProperty('candidate', $candidate);
     }
 
     /**
@@ -84,7 +75,7 @@ class CandidateRegistration extends ModelBase
      */
     public function getQualificationAward()
     {
-        return $this->getProperty("qualificationAward");
+        return $this->getProperty('qualificationAward');
     }
 
     /**
@@ -92,7 +83,7 @@ class CandidateRegistration extends ModelBase
      */
     public function setQualificationAward(QualificationAward $qualificationAward = null)
     {
-        $this->setProperty("qualificationAward", $qualificationAward);
+        $this->setProperty('qualificationAward', $qualificationAward);
     }
 
     /**
@@ -100,7 +91,7 @@ class CandidateRegistration extends ModelBase
      */
     public function getQualificationAvailabilityInstance()
     {
-        return $this->getProperty("qualificationAvailabilityInstance");
+        return $this->getProperty('qualificationAvailabilityInstance');
     }
 
     /**
@@ -108,86 +99,38 @@ class CandidateRegistration extends ModelBase
      */
     public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
-        $this->setProperty("qualificationAvailabilityInstance", $qualificationAvailabilityInstance);
+        $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
      * @return string
      */
-    public function getRegistrationNumber()
+    public function getEntryStatus()
     {
-        return $this->getProperty("registrationNumber");
+        return $this->getProperty('entryStatus');
     }
 
     /**
-     * @param string $registrationNumber
+     * @param string $entryStatus
      */
-    public function setRegistrationNumber($registrationNumber = null)
+    public function setEntryStatus($entryStatus = null)
     {
-        $this->setProperty("registrationNumber", $registrationNumber);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getRegistrationRequestedDatetime()
-    {
-        return $this->getProperty("registrationRequestedDatetime");
-    }
-
-    /**
-     * @param \DateTime $registrationRequestedDatetime
-     */
-    public function setRegistrationRequestedDatetime(\DateTime $registrationRequestedDatetime = null)
-    {
-        $this->setProperty("registrationRequestedDatetime", $registrationRequestedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getRegistrationConfirmedDatetime()
-    {
-        return $this->getProperty("registrationConfirmedDatetime");
-    }
-
-    /**
-     * @param \DateTime $registrationConfirmedDatetime
-     */
-    public function setRegistrationConfirmedDatetime(\DateTime $registrationConfirmedDatetime = null)
-    {
-        $this->setProperty("registrationConfirmedDatetime", $registrationConfirmedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getResponseReceivedDatetime()
-    {
-        return $this->getProperty("responseReceivedDatetime");
-    }
-
-    /**
-     * @param \DateTime $responseReceivedDatetime
-     */
-    public function setResponseReceivedDatetime(\DateTime $responseReceivedDatetime = null)
-    {
-        $this->setProperty("responseReceivedDatetime", $responseReceivedDatetime);
+        $this->setProperty('entryStatus', $entryStatus);
     }
 
     /**
      * @return string
      */
-    public function getResponseMessage()
+    public function getWithdrawalStatus()
     {
-        return $this->getProperty("responseMessage");
+        return $this->getProperty('withdrawalStatus');
     }
 
     /**
-     * @param string $responseMessage
+     * @param string $withdrawalStatus
      */
-    public function setResponseMessage($responseMessage = null)
+    public function setWithdrawalStatus($withdrawalStatus = null)
     {
-        $this->setProperty("responseMessage", $responseMessage);
+        $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }
 }

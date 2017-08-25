@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UiParams extends ModelBase
 {
@@ -28,34 +23,38 @@ class UiParams extends ModelBase
     protected $_resourceType = ResourceType::UI_PARAMS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UiParams[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UiParams");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UI_PARAMS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UiParams
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UI_PARAMS, $id);
     }
 
@@ -64,7 +63,7 @@ class UiParams extends ModelBase
      */
     public function getIdentifier()
     {
-        return $this->getProperty("identifier");
+        return $this->getProperty('identifier');
     }
 
     /**
@@ -72,7 +71,7 @@ class UiParams extends ModelBase
      */
     public function setIdentifier($identifier = null)
     {
-        $this->setProperty("identifier", $identifier);
+        $this->setProperty('identifier', $identifier);
     }
 
     /**
@@ -80,7 +79,7 @@ class UiParams extends ModelBase
      */
     public function getParams()
     {
-        return $this->getProperty("params");
+        return $this->getProperty('params');
     }
 
     /**
@@ -88,7 +87,7 @@ class UiParams extends ModelBase
      */
     public function setParams($params = null)
     {
-        $this->setProperty("params", $params);
+        $this->setProperty('params', $params);
     }
 
     /**
@@ -96,7 +95,7 @@ class UiParams extends ModelBase
      */
     public function getHash()
     {
-        return $this->getProperty("hash");
+        return $this->getProperty('hash');
     }
 
     /**
@@ -104,7 +103,7 @@ class UiParams extends ModelBase
      */
     public function setHash($hash = null)
     {
-        $this->setProperty("hash", $hash);
+        $this->setProperty('hash', $hash);
     }
 
     /**
@@ -112,7 +111,7 @@ class UiParams extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -120,7 +119,7 @@ class UiParams extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -128,7 +127,7 @@ class UiParams extends ModelBase
      */
     public function getSessionId()
     {
-        return $this->getProperty("sessionId");
+        return $this->getProperty('sessionId');
     }
 
     /**
@@ -136,7 +135,7 @@ class UiParams extends ModelBase
      */
     public function setSessionId($sessionId = null)
     {
-        $this->setProperty("sessionId", $sessionId);
+        $this->setProperty('sessionId', $sessionId);
     }
 
     /**
@@ -144,7 +143,7 @@ class UiParams extends ModelBase
      */
     public function getCreatedDatetime()
     {
-        return $this->getProperty("createdDatetime");
+        return $this->getProperty('createdDatetime');
     }
 
     /**
@@ -152,7 +151,7 @@ class UiParams extends ModelBase
      */
     public function setCreatedDatetime(\DateTime $createdDatetime = null)
     {
-        $this->setProperty("createdDatetime", $createdDatetime);
+        $this->setProperty('createdDatetime', $createdDatetime);
     }
 
     /**
@@ -160,7 +159,7 @@ class UiParams extends ModelBase
      */
     public function getLastAccessDatetime()
     {
-        return $this->getProperty("lastAccessDatetime");
+        return $this->getProperty('lastAccessDatetime');
     }
 
     /**
@@ -168,6 +167,6 @@ class UiParams extends ModelBase
      */
     public function setLastAccessDatetime(\DateTime $lastAccessDatetime = null)
     {
-        $this->setProperty("lastAccessDatetime", $lastAccessDatetime);
+        $this->setProperty('lastAccessDatetime', $lastAccessDatetime);
     }
 }

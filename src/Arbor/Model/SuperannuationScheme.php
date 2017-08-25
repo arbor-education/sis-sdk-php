@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SuperannuationScheme extends ModelBase
 {
@@ -17,34 +13,38 @@ class SuperannuationScheme extends ModelBase
     protected $_resourceType = ResourceType::SUPERANNUATION_SCHEME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SuperannuationScheme[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SuperannuationScheme");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SUPERANNUATION_SCHEME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SuperannuationScheme
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SUPERANNUATION_SCHEME, $id);
     }
 
@@ -53,7 +53,7 @@ class SuperannuationScheme extends ModelBase
      */
     public function getSuperannuationSchemeName()
     {
-        return $this->getProperty("superannuationSchemeName");
+        return $this->getProperty('superannuationSchemeName');
     }
 
     /**
@@ -61,7 +61,7 @@ class SuperannuationScheme extends ModelBase
      */
     public function setSuperannuationSchemeName($superannuationSchemeName = null)
     {
-        $this->setProperty("superannuationSchemeName", $superannuationSchemeName);
+        $this->setProperty('superannuationSchemeName', $superannuationSchemeName);
     }
 
     /**
@@ -69,7 +69,7 @@ class SuperannuationScheme extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -77,6 +77,6 @@ class SuperannuationScheme extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 }

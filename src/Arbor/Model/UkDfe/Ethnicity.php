@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Ethnicity extends ModelBase
 {
@@ -21,34 +21,38 @@ class Ethnicity extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_ETHNICITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Ethnicity[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_Ethnicity");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_ETHNICITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Ethnicity
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_ETHNICITY, $id);
     }
 
@@ -57,7 +61,7 @@ class Ethnicity extends ModelBase
      */
     public function getDfesMainCode()
     {
-        return $this->getProperty("dfesMainCode");
+        return $this->getProperty('dfesMainCode');
     }
 
     /**
@@ -65,7 +69,7 @@ class Ethnicity extends ModelBase
      */
     public function setDfesMainCode($dfesMainCode = null)
     {
-        $this->setProperty("dfesMainCode", $dfesMainCode);
+        $this->setProperty('dfesMainCode', $dfesMainCode);
     }
 
     /**
@@ -73,7 +77,7 @@ class Ethnicity extends ModelBase
      */
     public function getD00005()
     {
-        return $this->getProperty("d00005");
+        return $this->getProperty('d00005');
     }
 
     /**
@@ -81,7 +85,7 @@ class Ethnicity extends ModelBase
      */
     public function setD00005($d00005 = null)
     {
-        $this->setProperty("d00005", $d00005);
+        $this->setProperty('d00005', $d00005);
     }
 
     /**
@@ -89,7 +93,7 @@ class Ethnicity extends ModelBase
      */
     public function getOnsCode()
     {
-        return $this->getProperty("onsCode");
+        return $this->getProperty('onsCode');
     }
 
     /**
@@ -97,7 +101,7 @@ class Ethnicity extends ModelBase
      */
     public function setOnsCode($onsCode = null)
     {
-        $this->setProperty("onsCode", $onsCode);
+        $this->setProperty('onsCode', $onsCode);
     }
 
     /**
@@ -105,7 +109,7 @@ class Ethnicity extends ModelBase
      */
     public function getD00250()
     {
-        return $this->getProperty("d00250");
+        return $this->getProperty('d00250');
     }
 
     /**
@@ -113,6 +117,6 @@ class Ethnicity extends ModelBase
      */
     public function setD00250($d00250 = null)
     {
-        $this->setProperty("d00250", $d00250);
+        $this->setProperty('d00250', $d00250);
     }
 }

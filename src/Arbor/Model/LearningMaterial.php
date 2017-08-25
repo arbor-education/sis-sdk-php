@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LearningMaterialFolder;
-use \Arbor\Model\ThirdPartySite;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class LearningMaterial extends ModelBase
 {
@@ -29,34 +23,38 @@ class LearningMaterial extends ModelBase
     protected $_resourceType = ResourceType::LEARNING_MATERIAL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LearningMaterial[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("LearningMaterial");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LEARNING_MATERIAL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LearningMaterial
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LEARNING_MATERIAL, $id);
     }
 
@@ -65,7 +63,7 @@ class LearningMaterial extends ModelBase
      */
     public function getLearningMaterialFolder()
     {
-        return $this->getProperty("learningMaterialFolder");
+        return $this->getProperty('learningMaterialFolder');
     }
 
     /**
@@ -73,7 +71,7 @@ class LearningMaterial extends ModelBase
      */
     public function setLearningMaterialFolder(LearningMaterialFolder $learningMaterialFolder = null)
     {
-        $this->setProperty("learningMaterialFolder", $learningMaterialFolder);
+        $this->setProperty('learningMaterialFolder', $learningMaterialFolder);
     }
 
     /**
@@ -81,7 +79,7 @@ class LearningMaterial extends ModelBase
      */
     public function getTitle()
     {
-        return $this->getProperty("title");
+        return $this->getProperty('title');
     }
 
     /**
@@ -89,7 +87,7 @@ class LearningMaterial extends ModelBase
      */
     public function setTitle($title = null)
     {
-        $this->setProperty("title", $title);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -97,7 +95,7 @@ class LearningMaterial extends ModelBase
      */
     public function getSummary()
     {
-        return $this->getProperty("summary");
+        return $this->getProperty('summary');
     }
 
     /**
@@ -105,7 +103,7 @@ class LearningMaterial extends ModelBase
      */
     public function setSummary($summary = null)
     {
-        $this->setProperty("summary", $summary);
+        $this->setProperty('summary', $summary);
     }
 
     /**
@@ -113,7 +111,7 @@ class LearningMaterial extends ModelBase
      */
     public function getUrl()
     {
-        return $this->getProperty("url");
+        return $this->getProperty('url');
     }
 
     /**
@@ -121,7 +119,7 @@ class LearningMaterial extends ModelBase
      */
     public function setUrl($url = null)
     {
-        $this->setProperty("url", $url);
+        $this->setProperty('url', $url);
     }
 
     /**
@@ -129,7 +127,7 @@ class LearningMaterial extends ModelBase
      */
     public function getEditUrl()
     {
-        return $this->getProperty("editUrl");
+        return $this->getProperty('editUrl');
     }
 
     /**
@@ -137,7 +135,7 @@ class LearningMaterial extends ModelBase
      */
     public function setEditUrl($editUrl = null)
     {
-        $this->setProperty("editUrl", $editUrl);
+        $this->setProperty('editUrl', $editUrl);
     }
 
     /**
@@ -145,7 +143,7 @@ class LearningMaterial extends ModelBase
      */
     public function getThirdPartySite()
     {
-        return $this->getProperty("thirdPartySite");
+        return $this->getProperty('thirdPartySite');
     }
 
     /**
@@ -153,7 +151,7 @@ class LearningMaterial extends ModelBase
      */
     public function setThirdPartySite(ThirdPartySite $thirdPartySite = null)
     {
-        $this->setProperty("thirdPartySite", $thirdPartySite);
+        $this->setProperty('thirdPartySite', $thirdPartySite);
     }
 
     /**
@@ -161,7 +159,7 @@ class LearningMaterial extends ModelBase
      */
     public function getAuthoredDatetime()
     {
-        return $this->getProperty("authoredDatetime");
+        return $this->getProperty('authoredDatetime');
     }
 
     /**
@@ -169,6 +167,6 @@ class LearningMaterial extends ModelBase
      */
     public function setAuthoredDatetime(\DateTime $authoredDatetime = null)
     {
-        $this->setProperty("authoredDatetime", $authoredDatetime);
+        $this->setProperty('authoredDatetime', $authoredDatetime);
     }
 }

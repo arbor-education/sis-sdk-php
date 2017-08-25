@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Assessment;
-use \Arbor\Model\CurriculumGrade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SchoolProgressTargetRule extends ModelBase
 {
@@ -35,34 +29,38 @@ class SchoolProgressTargetRule extends ModelBase
     protected $_resourceType = ResourceType::SCHOOL_PROGRESS_TARGET_RULE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolProgressTargetRule[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SchoolProgressTargetRule");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SCHOOL_PROGRESS_TARGET_RULE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolProgressTargetRule
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SCHOOL_PROGRESS_TARGET_RULE, $id);
     }
 
@@ -71,7 +69,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getRuleName()
     {
-        return $this->getProperty("ruleName");
+        return $this->getProperty('ruleName');
     }
 
     /**
@@ -79,7 +77,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setRuleName($ruleName = null)
     {
-        $this->setProperty("ruleName", $ruleName);
+        $this->setProperty('ruleName', $ruleName);
     }
 
     /**
@@ -87,7 +85,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -95,7 +93,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setAssessment(Assessment $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -103,7 +101,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -111,7 +109,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -119,7 +117,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -127,7 +125,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -135,7 +133,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getCurriculumGrade()
     {
-        return $this->getProperty("curriculumGrade");
+        return $this->getProperty('curriculumGrade');
     }
 
     /**
@@ -143,7 +141,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setCurriculumGrade(CurriculumGrade $curriculumGrade = null)
     {
-        $this->setProperty("curriculumGrade", $curriculumGrade);
+        $this->setProperty('curriculumGrade', $curriculumGrade);
     }
 
     /**
@@ -151,7 +149,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getTermNumber()
     {
-        return $this->getProperty("termNumber");
+        return $this->getProperty('termNumber');
     }
 
     /**
@@ -159,7 +157,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setTermNumber($termNumber = null)
     {
-        $this->setProperty("termNumber", $termNumber);
+        $this->setProperty('termNumber', $termNumber);
     }
 
     /**
@@ -167,7 +165,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getProgressAmount()
     {
-        return $this->getProperty("progressAmount");
+        return $this->getProperty('progressAmount');
     }
 
     /**
@@ -175,7 +173,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setProgressAmount($progressAmount = null)
     {
-        $this->setProperty("progressAmount", $progressAmount);
+        $this->setProperty('progressAmount', $progressAmount);
     }
 
     /**
@@ -183,7 +181,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getProgressAmountUnit()
     {
-        return $this->getProperty("progressAmountUnit");
+        return $this->getProperty('progressAmountUnit');
     }
 
     /**
@@ -191,7 +189,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setProgressAmountUnit($progressAmountUnit = null)
     {
-        $this->setProperty("progressAmountUnit", $progressAmountUnit);
+        $this->setProperty('progressAmountUnit', $progressAmountUnit);
     }
 
     /**
@@ -199,7 +197,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getProgressReferenceMarkType()
     {
-        return $this->getProperty("progressReferenceMarkType");
+        return $this->getProperty('progressReferenceMarkType');
     }
 
     /**
@@ -207,7 +205,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setProgressReferenceMarkType($progressReferenceMarkType = null)
     {
-        $this->setProperty("progressReferenceMarkType", $progressReferenceMarkType);
+        $this->setProperty('progressReferenceMarkType', $progressReferenceMarkType);
     }
 
     /**
@@ -215,7 +213,7 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function getAcademicYearsOffset()
     {
-        return $this->getProperty("academicYearsOffset");
+        return $this->getProperty('academicYearsOffset');
     }
 
     /**
@@ -223,6 +221,6 @@ class SchoolProgressTargetRule extends ModelBase
      */
     public function setAcademicYearsOffset($academicYearsOffset = null)
     {
-        $this->setProperty("academicYearsOffset", $academicYearsOffset);
+        $this->setProperty('academicYearsOffset', $academicYearsOffset);
     }
 }

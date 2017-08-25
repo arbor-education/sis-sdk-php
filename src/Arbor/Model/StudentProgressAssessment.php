@@ -1,24 +1,14 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Assessment;
-use \Arbor\Model\ProgressAssessmentBatchTarget;
-use \Arbor\Model\ProgressMeasurementPeriod;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentProgressAssessment extends ModelBase
 {
     const STUDENT = 'student';
 
     const ASSESSMENT = 'assessment';
-
-    const PROGRESS_ASSESSMENT_BATCH_TARGET = 'progressAssessmentBatchTarget';
 
     const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
@@ -29,34 +19,38 @@ class StudentProgressAssessment extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_PROGRESS_ASSESSMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentProgressAssessment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentProgressAssessment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_PROGRESS_ASSESSMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentProgressAssessment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_PROGRESS_ASSESSMENT, $id);
     }
 
@@ -65,7 +59,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -73,7 +67,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -81,7 +75,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -89,23 +83,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function setAssessment(Assessment $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
-    }
-
-    /**
-     * @return ProgressAssessmentBatchTarget
-     */
-    public function getProgressAssessmentBatchTarget()
-    {
-        return $this->getProperty("progressAssessmentBatchTarget");
-    }
-
-    /**
-     * @param ProgressAssessmentBatchTarget $progressAssessmentBatchTarget
-     */
-    public function setProgressAssessmentBatchTarget(ProgressAssessmentBatchTarget $progressAssessmentBatchTarget = null)
-    {
-        $this->setProperty("progressAssessmentBatchTarget", $progressAssessmentBatchTarget);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -113,7 +91,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function getProgressMeasurementPeriod()
     {
-        return $this->getProperty("progressMeasurementPeriod");
+        return $this->getProperty('progressMeasurementPeriod');
     }
 
     /**
@@ -121,7 +99,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
-        $this->setProperty("progressMeasurementPeriod", $progressMeasurementPeriod);
+        $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
 
     /**
@@ -129,7 +107,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function getAssessmentDate()
     {
-        return $this->getProperty("assessmentDate");
+        return $this->getProperty('assessmentDate');
     }
 
     /**
@@ -137,7 +115,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function setAssessmentDate(\DateTime $assessmentDate = null)
     {
-        $this->setProperty("assessmentDate", $assessmentDate);
+        $this->setProperty('assessmentDate', $assessmentDate);
     }
 
     /**
@@ -145,7 +123,7 @@ class StudentProgressAssessment extends ModelBase
      */
     public function getCompletedDate()
     {
-        return $this->getProperty("completedDate");
+        return $this->getProperty('completedDate');
     }
 
     /**
@@ -153,6 +131,6 @@ class StudentProgressAssessment extends ModelBase
      */
     public function setCompletedDate(\DateTime $completedDate = null)
     {
-        $this->setProperty("completedDate", $completedDate);
+        $this->setProperty('completedDate', $completedDate);
     }
 }

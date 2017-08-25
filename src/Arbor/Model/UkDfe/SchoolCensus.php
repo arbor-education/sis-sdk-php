@@ -1,13 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\AcademicYear;
 
 class SchoolCensus extends ModelBase
 {
@@ -34,34 +34,38 @@ class SchoolCensus extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolCensus[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolCensus");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_CENSUS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolCensus
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_CENSUS, $id);
     }
 
@@ -70,7 +74,7 @@ class SchoolCensus extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -78,7 +82,7 @@ class SchoolCensus extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -86,7 +90,7 @@ class SchoolCensus extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -94,7 +98,7 @@ class SchoolCensus extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -102,7 +106,7 @@ class SchoolCensus extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -110,7 +114,7 @@ class SchoolCensus extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -118,7 +122,7 @@ class SchoolCensus extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -126,7 +130,7 @@ class SchoolCensus extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -134,7 +138,7 @@ class SchoolCensus extends ModelBase
      */
     public function getSchoolCensusYear()
     {
-        return $this->getProperty("schoolCensusYear");
+        return $this->getProperty('schoolCensusYear');
     }
 
     /**
@@ -142,7 +146,7 @@ class SchoolCensus extends ModelBase
      */
     public function setSchoolCensusYear($schoolCensusYear = null)
     {
-        $this->setProperty("schoolCensusYear", $schoolCensusYear);
+        $this->setProperty('schoolCensusYear', $schoolCensusYear);
     }
 
     /**
@@ -150,7 +154,7 @@ class SchoolCensus extends ModelBase
      */
     public function getSchoolCensusTerm()
     {
-        return $this->getProperty("schoolCensusTerm");
+        return $this->getProperty('schoolCensusTerm');
     }
 
     /**
@@ -158,7 +162,7 @@ class SchoolCensus extends ModelBase
      */
     public function setSchoolCensusTerm($schoolCensusTerm = null)
     {
-        $this->setProperty("schoolCensusTerm", $schoolCensusTerm);
+        $this->setProperty('schoolCensusTerm', $schoolCensusTerm);
     }
 
     /**
@@ -166,7 +170,7 @@ class SchoolCensus extends ModelBase
      */
     public function getSchoolCensusReferenceDate()
     {
-        return $this->getProperty("schoolCensusReferenceDate");
+        return $this->getProperty('schoolCensusReferenceDate');
     }
 
     /**
@@ -174,7 +178,7 @@ class SchoolCensus extends ModelBase
      */
     public function setSchoolCensusReferenceDate(\DateTime $schoolCensusReferenceDate = null)
     {
-        $this->setProperty("schoolCensusReferenceDate", $schoolCensusReferenceDate);
+        $this->setProperty('schoolCensusReferenceDate', $schoolCensusReferenceDate);
     }
 
     /**
@@ -182,7 +186,7 @@ class SchoolCensus extends ModelBase
      */
     public function getSchoolCensusReturnDeadlineDate()
     {
-        return $this->getProperty("schoolCensusReturnDeadlineDate");
+        return $this->getProperty('schoolCensusReturnDeadlineDate');
     }
 
     /**
@@ -190,7 +194,7 @@ class SchoolCensus extends ModelBase
      */
     public function setSchoolCensusReturnDeadlineDate(\DateTime $schoolCensusReturnDeadlineDate = null)
     {
-        $this->setProperty("schoolCensusReturnDeadlineDate", $schoolCensusReturnDeadlineDate);
+        $this->setProperty('schoolCensusReturnDeadlineDate', $schoolCensusReturnDeadlineDate);
     }
 
     /**
@@ -198,7 +202,7 @@ class SchoolCensus extends ModelBase
      */
     public function getSchoolCensusDatabaseClosureDate()
     {
-        return $this->getProperty("schoolCensusDatabaseClosureDate");
+        return $this->getProperty('schoolCensusDatabaseClosureDate');
     }
 
     /**
@@ -206,7 +210,7 @@ class SchoolCensus extends ModelBase
      */
     public function setSchoolCensusDatabaseClosureDate(\DateTime $schoolCensusDatabaseClosureDate = null)
     {
-        $this->setProperty("schoolCensusDatabaseClosureDate", $schoolCensusDatabaseClosureDate);
+        $this->setProperty('schoolCensusDatabaseClosureDate', $schoolCensusDatabaseClosureDate);
     }
 
     /**
@@ -214,7 +218,7 @@ class SchoolCensus extends ModelBase
      */
     public function getSchoolCensusSpecificTime()
     {
-        return $this->getProperty("schoolCensusSpecificTime");
+        return $this->getProperty('schoolCensusSpecificTime');
     }
 
     /**
@@ -222,6 +226,6 @@ class SchoolCensus extends ModelBase
      */
     public function setSchoolCensusSpecificTime(\DateTime $schoolCensusSpecificTime = null)
     {
-        $this->setProperty("schoolCensusSpecificTime", $schoolCensusSpecificTime);
+        $this->setProperty('schoolCensusSpecificTime', $schoolCensusSpecificTime);
     }
 }

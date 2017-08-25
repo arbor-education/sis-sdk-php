@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CurriculumSection;
-use \Arbor\Model\CurriculumStatementBand;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CurriculumStatement extends ModelBase
 {
@@ -35,34 +29,38 @@ class CurriculumStatement extends ModelBase
     protected $_resourceType = ResourceType::CURRICULUM_STATEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CurriculumStatement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CurriculumStatement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CURRICULUM_STATEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CurriculumStatement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CURRICULUM_STATEMENT, $id);
     }
 
@@ -71,7 +69,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getCurriculumSection()
     {
-        return $this->getProperty("curriculumSection");
+        return $this->getProperty('curriculumSection');
     }
 
     /**
@@ -79,7 +77,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setCurriculumSection(CurriculumSection $curriculumSection = null)
     {
-        $this->setProperty("curriculumSection", $curriculumSection);
+        $this->setProperty('curriculumSection', $curriculumSection);
     }
 
     /**
@@ -87,7 +85,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getCurriculumStatementBand()
     {
-        return $this->getProperty("curriculumStatementBand");
+        return $this->getProperty('curriculumStatementBand');
     }
 
     /**
@@ -95,7 +93,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setCurriculumStatementBand(CurriculumStatementBand $curriculumStatementBand = null)
     {
-        $this->setProperty("curriculumStatementBand", $curriculumStatementBand);
+        $this->setProperty('curriculumStatementBand', $curriculumStatementBand);
     }
 
     /**
@@ -103,7 +101,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -111,7 +109,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -119,7 +117,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -127,7 +125,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -135,7 +133,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -143,7 +141,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -151,7 +149,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -159,7 +157,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -167,7 +165,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getExamples()
     {
-        return $this->getProperty("examples");
+        return $this->getProperty('examples');
     }
 
     /**
@@ -175,7 +173,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setExamples($examples = null)
     {
-        $this->setProperty("examples", $examples);
+        $this->setProperty('examples', $examples);
     }
 
     /**
@@ -183,7 +181,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getWeighting()
     {
-        return $this->getProperty("weighting");
+        return $this->getProperty('weighting');
     }
 
     /**
@@ -191,7 +189,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setWeighting($weighting = null)
     {
-        $this->setProperty("weighting", $weighting);
+        $this->setProperty('weighting', $weighting);
     }
 
     /**
@@ -199,7 +197,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getRequirementForHigher()
     {
-        return $this->getProperty("requirementForHigher");
+        return $this->getProperty('requirementForHigher');
     }
 
     /**
@@ -207,7 +205,7 @@ class CurriculumStatement extends ModelBase
      */
     public function setRequirementForHigher($requirementForHigher = null)
     {
-        $this->setProperty("requirementForHigher", $requirementForHigher);
+        $this->setProperty('requirementForHigher', $requirementForHigher);
     }
 
     /**
@@ -215,7 +213,7 @@ class CurriculumStatement extends ModelBase
      */
     public function getOrder()
     {
-        return $this->getProperty("order");
+        return $this->getProperty('order');
     }
 
     /**
@@ -223,6 +221,6 @@ class CurriculumStatement extends ModelBase
      */
     public function setOrder($order = null)
     {
-        $this->setProperty("order", $order);
+        $this->setProperty('order', $order);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Company;
-use \Arbor\Model\Person;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CompanyStaff extends ModelBase
 {
@@ -21,34 +15,38 @@ class CompanyStaff extends ModelBase
     protected $_resourceType = ResourceType::COMPANY_STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CompanyStaff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CompanyStaff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COMPANY_STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CompanyStaff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COMPANY_STAFF, $id);
     }
 
@@ -57,7 +55,7 @@ class CompanyStaff extends ModelBase
      */
     public function getCompany()
     {
-        return $this->getProperty("company");
+        return $this->getProperty('company');
     }
 
     /**
@@ -65,7 +63,7 @@ class CompanyStaff extends ModelBase
      */
     public function setCompany(Company $company = null)
     {
-        $this->setProperty("company", $company);
+        $this->setProperty('company', $company);
     }
 
     /**
@@ -73,7 +71,7 @@ class CompanyStaff extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -81,7 +79,7 @@ class CompanyStaff extends ModelBase
      */
     public function setPerson(Person $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -89,7 +87,7 @@ class CompanyStaff extends ModelBase
      */
     public function getPosition()
     {
-        return $this->getProperty("position");
+        return $this->getProperty('position');
     }
 
     /**
@@ -97,6 +95,6 @@ class CompanyStaff extends ModelBase
      */
     public function setPosition($position = null)
     {
-        $this->setProperty("position", $position);
+        $this->setProperty('position', $position);
     }
 }

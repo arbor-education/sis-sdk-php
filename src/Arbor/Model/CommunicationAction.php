@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CommunicationAction extends ModelBase
 {
@@ -21,34 +17,38 @@ class CommunicationAction extends ModelBase
     protected $_resourceType = ResourceType::COMMUNICATION_ACTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CommunicationAction[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CommunicationAction");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COMMUNICATION_ACTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CommunicationAction
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COMMUNICATION_ACTION, $id);
     }
 
@@ -57,7 +57,7 @@ class CommunicationAction extends ModelBase
      */
     public function getCommunication()
     {
-        return $this->getProperty("communication");
+        return $this->getProperty('communication');
     }
 
     /**
@@ -65,7 +65,7 @@ class CommunicationAction extends ModelBase
      */
     public function setCommunication(ModelBase $communication = null)
     {
-        $this->setProperty("communication", $communication);
+        $this->setProperty('communication', $communication);
     }
 
     /**
@@ -73,7 +73,7 @@ class CommunicationAction extends ModelBase
      */
     public function getActionTaken()
     {
-        return $this->getProperty("actionTaken");
+        return $this->getProperty('actionTaken');
     }
 
     /**
@@ -81,7 +81,7 @@ class CommunicationAction extends ModelBase
      */
     public function setActionTaken($actionTaken = null)
     {
-        $this->setProperty("actionTaken", $actionTaken);
+        $this->setProperty('actionTaken', $actionTaken);
     }
 
     /**
@@ -89,7 +89,7 @@ class CommunicationAction extends ModelBase
      */
     public function getReply()
     {
-        return $this->getProperty("reply");
+        return $this->getProperty('reply');
     }
 
     /**
@@ -97,7 +97,7 @@ class CommunicationAction extends ModelBase
      */
     public function setReply(ModelBase $reply = null)
     {
-        $this->setProperty("reply", $reply);
+        $this->setProperty('reply', $reply);
     }
 
     /**
@@ -105,7 +105,7 @@ class CommunicationAction extends ModelBase
      */
     public function getActionDatetime()
     {
-        return $this->getProperty("actionDatetime");
+        return $this->getProperty('actionDatetime');
     }
 
     /**
@@ -113,6 +113,6 @@ class CommunicationAction extends ModelBase
      */
     public function setActionDatetime(\DateTime $actionDatetime = null)
     {
-        $this->setProperty("actionDatetime", $actionDatetime);
+        $this->setProperty('actionDatetime', $actionDatetime);
     }
 }

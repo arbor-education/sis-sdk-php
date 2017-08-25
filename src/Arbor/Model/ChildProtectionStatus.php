@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ChildProtectionStatus extends ModelBase
 {
@@ -21,34 +17,38 @@ class ChildProtectionStatus extends ModelBase
     protected $_resourceType = ResourceType::CHILD_PROTECTION_STATUS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ChildProtectionStatus[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ChildProtectionStatus");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CHILD_PROTECTION_STATUS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ChildProtectionStatus
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CHILD_PROTECTION_STATUS, $id);
     }
 
@@ -57,7 +57,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -65,7 +65,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -73,7 +73,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -81,7 +81,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -89,7 +89,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -97,7 +97,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -105,7 +105,7 @@ class ChildProtectionStatus extends ModelBase
      */
     public function getChildProtectionStatusName()
     {
-        return $this->getProperty("childProtectionStatusName");
+        return $this->getProperty('childProtectionStatusName');
     }
 
     /**
@@ -113,6 +113,6 @@ class ChildProtectionStatus extends ModelBase
      */
     public function setChildProtectionStatusName($childProtectionStatusName = null)
     {
-        $this->setProperty("childProtectionStatusName", $childProtectionStatusName);
+        $this->setProperty('childProtectionStatusName', $childProtectionStatusName);
     }
 }

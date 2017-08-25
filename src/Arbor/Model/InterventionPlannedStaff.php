@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Intervention;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionPlannedStaff extends ModelBase
 {
@@ -20,34 +15,38 @@ class InterventionPlannedStaff extends ModelBase
     protected $_resourceType = ResourceType::INTERVENTION_PLANNED_STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionPlannedStaff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionPlannedStaff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_PLANNED_STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionPlannedStaff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_PLANNED_STAFF, $id);
     }
 
@@ -56,7 +55,7 @@ class InterventionPlannedStaff extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -64,7 +63,7 @@ class InterventionPlannedStaff extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -72,7 +71,7 @@ class InterventionPlannedStaff extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -80,7 +79,7 @@ class InterventionPlannedStaff extends ModelBase
      */
     public function setStaff(ModelBase $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -88,7 +87,7 @@ class InterventionPlannedStaff extends ModelBase
      */
     public function getPlannedHours()
     {
-        return $this->getProperty("plannedHours");
+        return $this->getProperty('plannedHours');
     }
 
     /**
@@ -96,6 +95,6 @@ class InterventionPlannedStaff extends ModelBase
      */
     public function setPlannedHours($plannedHours = null)
     {
-        $this->setProperty("plannedHours", $plannedHours);
+        $this->setProperty('plannedHours', $plannedHours);
     }
 }

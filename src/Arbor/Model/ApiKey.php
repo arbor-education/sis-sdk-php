@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ApiKey extends ModelBase
 {
@@ -22,34 +17,38 @@ class ApiKey extends ModelBase
     protected $_resourceType = ResourceType::API_KEY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ApiKey[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ApiKey");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::API_KEY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ApiKey
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::API_KEY, $id);
     }
 
@@ -58,7 +57,7 @@ class ApiKey extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -66,7 +65,7 @@ class ApiKey extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -74,7 +73,7 @@ class ApiKey extends ModelBase
      */
     public function getApiKey()
     {
-        return $this->getProperty("apiKey");
+        return $this->getProperty('apiKey');
     }
 
     /**
@@ -82,7 +81,7 @@ class ApiKey extends ModelBase
      */
     public function setApiKey($apiKey = null)
     {
-        $this->setProperty("apiKey", $apiKey);
+        $this->setProperty('apiKey', $apiKey);
     }
 
     /**
@@ -90,7 +89,7 @@ class ApiKey extends ModelBase
      */
     public function getIssuedDatetime()
     {
-        return $this->getProperty("issuedDatetime");
+        return $this->getProperty('issuedDatetime');
     }
 
     /**
@@ -98,7 +97,7 @@ class ApiKey extends ModelBase
      */
     public function setIssuedDatetime(\DateTime $issuedDatetime = null)
     {
-        $this->setProperty("issuedDatetime", $issuedDatetime);
+        $this->setProperty('issuedDatetime', $issuedDatetime);
     }
 
     /**
@@ -106,7 +105,7 @@ class ApiKey extends ModelBase
      */
     public function getRevokedDatetime()
     {
-        return $this->getProperty("revokedDatetime");
+        return $this->getProperty('revokedDatetime');
     }
 
     /**
@@ -114,6 +113,6 @@ class ApiKey extends ModelBase
      */
     public function setRevokedDatetime(\DateTime $revokedDatetime = null)
     {
-        $this->setProperty("revokedDatetime", $revokedDatetime);
+        $this->setProperty('revokedDatetime', $revokedDatetime);
     }
 }

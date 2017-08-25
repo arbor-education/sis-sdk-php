@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewsStory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TimelineMapping extends ModelBase
 {
@@ -18,34 +13,38 @@ class TimelineMapping extends ModelBase
     protected $_resourceType = ResourceType::TIMELINE_MAPPING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TimelineMapping[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TimelineMapping");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TIMELINE_MAPPING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TimelineMapping
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TIMELINE_MAPPING, $id);
     }
 
@@ -54,7 +53,7 @@ class TimelineMapping extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -62,7 +61,7 @@ class TimelineMapping extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -70,7 +69,7 @@ class TimelineMapping extends ModelBase
      */
     public function getNewsStory()
     {
-        return $this->getProperty("newsStory");
+        return $this->getProperty('newsStory');
     }
 
     /**
@@ -78,6 +77,6 @@ class TimelineMapping extends ModelBase
      */
     public function setNewsStory(NewsStory $newsStory = null)
     {
-        $this->setProperty("newsStory", $newsStory);
+        $this->setProperty('newsStory', $newsStory);
     }
 }

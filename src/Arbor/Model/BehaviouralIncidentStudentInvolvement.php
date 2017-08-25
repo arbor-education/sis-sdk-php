@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BehaviouralIncident;
-use \Arbor\Model\Student;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralIncidentStudentInvolvement extends ModelBase
 {
@@ -30,34 +23,38 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralIncidentStudentInvolvement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralIncidentStudentInvolvement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralIncidentStudentInvolvement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT, $id);
     }
 
@@ -66,7 +63,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getBehaviouralIncident()
     {
-        return $this->getProperty("behaviouralIncident");
+        return $this->getProperty('behaviouralIncident');
     }
 
     /**
@@ -74,7 +71,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
     {
-        $this->setProperty("behaviouralIncident", $behaviouralIncident);
+        $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
@@ -82,7 +79,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -90,7 +87,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -98,7 +95,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getResolvedBy()
     {
-        return $this->getProperty("resolvedBy");
+        return $this->getProperty('resolvedBy');
     }
 
     /**
@@ -106,7 +103,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setResolvedBy(Staff $resolvedBy = null)
     {
-        $this->setProperty("resolvedBy", $resolvedBy);
+        $this->setProperty('resolvedBy', $resolvedBy);
     }
 
     /**
@@ -114,7 +111,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getResolvedDatetime()
     {
-        return $this->getProperty("resolvedDatetime");
+        return $this->getProperty('resolvedDatetime');
     }
 
     /**
@@ -122,7 +119,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
-        $this->setProperty("resolvedDatetime", $resolvedDatetime);
+        $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
 
     /**
@@ -130,7 +127,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getComment()
     {
-        return $this->getProperty("comment");
+        return $this->getProperty('comment');
     }
 
     /**
@@ -138,7 +135,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setComment($comment = null)
     {
-        $this->setProperty("comment", $comment);
+        $this->setProperty('comment', $comment);
     }
 
     /**
@@ -146,7 +143,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getSeverity()
     {
-        return $this->getProperty("severity");
+        return $this->getProperty('severity');
     }
 
     /**
@@ -154,7 +151,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setSeverity($severity = null)
     {
-        $this->setProperty("severity", $severity);
+        $this->setProperty('severity', $severity);
     }
 
     /**
@@ -162,7 +159,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function getAssignee()
     {
-        return $this->getProperty("assignee");
+        return $this->getProperty('assignee');
     }
 
     /**
@@ -170,6 +167,6 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      */
     public function setAssignee(Staff $assignee = null)
     {
-        $this->setProperty("assignee", $assignee);
+        $this->setProperty('assignee', $assignee);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SenEvent;
-use \Arbor\Model\SenEventOutcomeType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SenEventOutcome extends ModelBase
 {
@@ -21,34 +15,38 @@ class SenEventOutcome extends ModelBase
     protected $_resourceType = ResourceType::SEN_EVENT_OUTCOME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SenEventOutcome[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SenEventOutcome");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SEN_EVENT_OUTCOME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SenEventOutcome
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SEN_EVENT_OUTCOME, $id);
     }
 
@@ -57,7 +55,7 @@ class SenEventOutcome extends ModelBase
      */
     public function getSenEvent()
     {
-        return $this->getProperty("senEvent");
+        return $this->getProperty('senEvent');
     }
 
     /**
@@ -65,7 +63,7 @@ class SenEventOutcome extends ModelBase
      */
     public function setSenEvent(SenEvent $senEvent = null)
     {
-        $this->setProperty("senEvent", $senEvent);
+        $this->setProperty('senEvent', $senEvent);
     }
 
     /**
@@ -73,7 +71,7 @@ class SenEventOutcome extends ModelBase
      */
     public function getSenEventOutcomeType()
     {
-        return $this->getProperty("senEventOutcomeType");
+        return $this->getProperty('senEventOutcomeType');
     }
 
     /**
@@ -81,7 +79,7 @@ class SenEventOutcome extends ModelBase
      */
     public function setSenEventOutcomeType(SenEventOutcomeType $senEventOutcomeType = null)
     {
-        $this->setProperty("senEventOutcomeType", $senEventOutcomeType);
+        $this->setProperty('senEventOutcomeType', $senEventOutcomeType);
     }
 
     /**
@@ -89,7 +87,7 @@ class SenEventOutcome extends ModelBase
      */
     public function getComments()
     {
-        return $this->getProperty("comments");
+        return $this->getProperty('comments');
     }
 
     /**
@@ -97,6 +95,6 @@ class SenEventOutcome extends ModelBase
      */
     public function setComments($comments = null)
     {
-        $this->setProperty("comments", $comments);
+        $this->setProperty('comments', $comments);
     }
 }

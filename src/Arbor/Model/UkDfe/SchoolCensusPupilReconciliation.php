@@ -1,13 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolCensus;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class SchoolCensusPupilReconciliation extends ModelBase
 {
@@ -26,34 +25,38 @@ class SchoolCensusPupilReconciliation extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolCensusPupilReconciliation[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolCensusPupilReconciliation");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolCensusPupilReconciliation
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION, $id);
     }
 
@@ -62,7 +65,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function getSchoolCensus()
     {
-        return $this->getProperty("schoolCensus");
+        return $this->getProperty('schoolCensus');
     }
 
     /**
@@ -70,7 +73,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function setSchoolCensus(SchoolCensus $schoolCensus = null)
     {
-        $this->setProperty("schoolCensus", $schoolCensus);
+        $this->setProperty('schoolCensus', $schoolCensus);
     }
 
     /**
@@ -78,7 +81,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function getPartTimeNotIn()
     {
-        return $this->getProperty("partTimeNotIn");
+        return $this->getProperty('partTimeNotIn');
     }
 
     /**
@@ -86,7 +89,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function setPartTimeNotIn($partTimeNotIn = null)
     {
-        $this->setProperty("partTimeNotIn", $partTimeNotIn);
+        $this->setProperty('partTimeNotIn', $partTimeNotIn);
     }
 
     /**
@@ -94,7 +97,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function getPrivateStudy()
     {
-        return $this->getProperty("privateStudy");
+        return $this->getProperty('privateStudy');
     }
 
     /**
@@ -102,7 +105,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function setPrivateStudy($privateStudy = null)
     {
-        $this->setProperty("privateStudy", $privateStudy);
+        $this->setProperty('privateStudy', $privateStudy);
     }
 
     /**
@@ -110,7 +113,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function getAtOtherSchool()
     {
-        return $this->getProperty("atOtherSchool");
+        return $this->getProperty('atOtherSchool');
     }
 
     /**
@@ -118,7 +121,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function setAtOtherSchool($atOtherSchool = null)
     {
-        $this->setProperty("atOtherSchool", $atOtherSchool);
+        $this->setProperty('atOtherSchool', $atOtherSchool);
     }
 
     /**
@@ -126,7 +129,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function getWorkExperience()
     {
-        return $this->getProperty("workExperience");
+        return $this->getProperty('workExperience');
     }
 
     /**
@@ -134,7 +137,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function setWorkExperience($workExperience = null)
     {
-        $this->setProperty("workExperience", $workExperience);
+        $this->setProperty('workExperience', $workExperience);
     }
 
     /**
@@ -142,7 +145,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function getFECollege()
     {
-        return $this->getProperty("fECollege");
+        return $this->getProperty('fECollege');
     }
 
     /**
@@ -150,6 +153,6 @@ class SchoolCensusPupilReconciliation extends ModelBase
      */
     public function setFECollege($fECollege = null)
     {
-        $this->setProperty("fECollege", $fECollege);
+        $this->setProperty('fECollege', $fECollege);
     }
 }

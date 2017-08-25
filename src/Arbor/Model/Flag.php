@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Flag extends ModelBase
 {
@@ -19,34 +15,38 @@ class Flag extends ModelBase
     protected $_resourceType = ResourceType::FLAG;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Flag[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Flag");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::FLAG);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Flag
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::FLAG, $id);
     }
 
@@ -55,7 +55,7 @@ class Flag extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -63,7 +63,7 @@ class Flag extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -71,7 +71,7 @@ class Flag extends ModelBase
      */
     public function getText()
     {
-        return $this->getProperty("text");
+        return $this->getProperty('text');
     }
 
     /**
@@ -79,7 +79,7 @@ class Flag extends ModelBase
      */
     public function setText($text = null)
     {
-        $this->setProperty("text", $text);
+        $this->setProperty('text', $text);
     }
 
     /**
@@ -87,7 +87,7 @@ class Flag extends ModelBase
      */
     public function getTarget()
     {
-        return $this->getProperty("target");
+        return $this->getProperty('target');
     }
 
     /**
@@ -95,6 +95,6 @@ class Flag extends ModelBase
      */
     public function setTarget(ModelBase $target = null)
     {
-        $this->setProperty("target", $target);
+        $this->setProperty('target', $target);
     }
 }

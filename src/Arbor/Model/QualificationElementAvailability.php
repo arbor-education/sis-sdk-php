@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationAvailabilityInstance;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationElementAvailability extends ModelBase
 {
@@ -18,34 +13,38 @@ class QualificationElementAvailability extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_ELEMENT_AVAILABILITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationElementAvailability[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationElementAvailability");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_ELEMENT_AVAILABILITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationElementAvailability
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_ELEMENT_AVAILABILITY, $id);
     }
 
@@ -54,7 +53,7 @@ class QualificationElementAvailability extends ModelBase
      */
     public function getQualificationAvailabilityInstance()
     {
-        return $this->getProperty("qualificationAvailabilityInstance");
+        return $this->getProperty('qualificationAvailabilityInstance');
     }
 
     /**
@@ -62,7 +61,7 @@ class QualificationElementAvailability extends ModelBase
      */
     public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
-        $this->setProperty("qualificationAvailabilityInstance", $qualificationAvailabilityInstance);
+        $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
@@ -70,7 +69,7 @@ class QualificationElementAvailability extends ModelBase
      */
     public function getQualificationElement()
     {
-        return $this->getProperty("qualificationElement");
+        return $this->getProperty('qualificationElement');
     }
 
     /**
@@ -78,6 +77,6 @@ class QualificationElementAvailability extends ModelBase
      */
     public function setQualificationElement(ModelBase $qualificationElement = null)
     {
-        $this->setProperty("qualificationElement", $qualificationElement);
+        $this->setProperty('qualificationElement', $qualificationElement);
     }
 }

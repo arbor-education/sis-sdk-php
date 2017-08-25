@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Club;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ClubMembershipPeriod extends ModelBase
 {
@@ -26,34 +21,38 @@ class ClubMembershipPeriod extends ModelBase
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP_PERIOD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ClubMembershipPeriod[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ClubMembershipPeriod");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CLUB_MEMBERSHIP_PERIOD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ClubMembershipPeriod
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CLUB_MEMBERSHIP_PERIOD, $id);
     }
 
@@ -62,7 +61,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function getClub()
     {
-        return $this->getProperty("club");
+        return $this->getProperty('club');
     }
 
     /**
@@ -70,7 +69,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function setClub(Club $club = null)
     {
-        $this->setProperty("club", $club);
+        $this->setProperty('club', $club);
     }
 
     /**
@@ -78,7 +77,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -86,7 +85,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -94,7 +93,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function getPurchaseStartDate()
     {
-        return $this->getProperty("purchaseStartDate");
+        return $this->getProperty('purchaseStartDate');
     }
 
     /**
@@ -102,7 +101,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function setPurchaseStartDate(\DateTime $purchaseStartDate = null)
     {
-        $this->setProperty("purchaseStartDate", $purchaseStartDate);
+        $this->setProperty('purchaseStartDate', $purchaseStartDate);
     }
 
     /**
@@ -110,7 +109,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function getPurchaseEndDate()
     {
-        return $this->getProperty("purchaseEndDate");
+        return $this->getProperty('purchaseEndDate');
     }
 
     /**
@@ -118,7 +117,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function setPurchaseEndDate(\DateTime $purchaseEndDate = null)
     {
-        $this->setProperty("purchaseEndDate", $purchaseEndDate);
+        $this->setProperty('purchaseEndDate', $purchaseEndDate);
     }
 
     /**
@@ -126,7 +125,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function getMembershipPeriodType()
     {
-        return $this->getProperty("membershipPeriodType");
+        return $this->getProperty('membershipPeriodType');
     }
 
     /**
@@ -134,7 +133,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function setMembershipPeriodType($membershipPeriodType = null)
     {
-        $this->setProperty("membershipPeriodType", $membershipPeriodType);
+        $this->setProperty('membershipPeriodType', $membershipPeriodType);
     }
 
     /**
@@ -142,7 +141,7 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function getAllowGuardianPortalSignup()
     {
-        return $this->getProperty("allowGuardianPortalSignup");
+        return $this->getProperty('allowGuardianPortalSignup');
     }
 
     /**
@@ -150,6 +149,6 @@ class ClubMembershipPeriod extends ModelBase
      */
     public function setAllowGuardianPortalSignup($allowGuardianPortalSignup = null)
     {
-        $this->setProperty("allowGuardianPortalSignup", $allowGuardianPortalSignup);
+        $this->setProperty('allowGuardianPortalSignup', $allowGuardianPortalSignup);
     }
 }

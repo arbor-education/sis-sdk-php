@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\EducationalInstitution;
-use \Arbor\Model\EducationRecordType;
-use \Arbor\Model\UnenrolmentReason;
-use \Arbor\Model\EnrolmentMode;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentEducationalHistory extends ModelBase
 {
@@ -34,34 +25,38 @@ class StudentEducationalHistory extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_EDUCATIONAL_HISTORY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentEducationalHistory[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentEducationalHistory");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_EDUCATIONAL_HISTORY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentEducationalHistory
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_EDUCATIONAL_HISTORY, $id);
     }
 
@@ -70,7 +65,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -78,7 +73,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -86,7 +81,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -94,7 +89,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -102,7 +97,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getEducationRecordType()
     {
-        return $this->getProperty("educationRecordType");
+        return $this->getProperty('educationRecordType');
     }
 
     /**
@@ -110,7 +105,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setEducationRecordType(EducationRecordType $educationRecordType = null)
     {
-        $this->setProperty("educationRecordType", $educationRecordType);
+        $this->setProperty('educationRecordType', $educationRecordType);
     }
 
     /**
@@ -118,7 +113,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getArrivalDate()
     {
-        return $this->getProperty("arrivalDate");
+        return $this->getProperty('arrivalDate');
     }
 
     /**
@@ -126,7 +121,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setArrivalDate(\DateTime $arrivalDate = null)
     {
-        $this->setProperty("arrivalDate", $arrivalDate);
+        $this->setProperty('arrivalDate', $arrivalDate);
     }
 
     /**
@@ -134,7 +129,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getLeavingDate()
     {
-        return $this->getProperty("leavingDate");
+        return $this->getProperty('leavingDate');
     }
 
     /**
@@ -142,7 +137,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setLeavingDate(\DateTime $leavingDate = null)
     {
-        $this->setProperty("leavingDate", $leavingDate);
+        $this->setProperty('leavingDate', $leavingDate);
     }
 
     /**
@@ -150,7 +145,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getUnenrolmentReason()
     {
-        return $this->getProperty("unenrolmentReason");
+        return $this->getProperty('unenrolmentReason');
     }
 
     /**
@@ -158,7 +153,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setUnenrolmentReason(UnenrolmentReason $unenrolmentReason = null)
     {
-        $this->setProperty("unenrolmentReason", $unenrolmentReason);
+        $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
 
     /**
@@ -166,7 +161,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getEnrolmentMode()
     {
-        return $this->getProperty("enrolmentMode");
+        return $this->getProperty('enrolmentMode');
     }
 
     /**
@@ -174,7 +169,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setEnrolmentMode(EnrolmentMode $enrolmentMode = null)
     {
-        $this->setProperty("enrolmentMode", $enrolmentMode);
+        $this->setProperty('enrolmentMode', $enrolmentMode);
     }
 
     /**
@@ -182,7 +177,7 @@ class StudentEducationalHistory extends ModelBase
      */
     public function getAttendanceMode()
     {
-        return $this->getProperty("attendanceMode");
+        return $this->getProperty('attendanceMode');
     }
 
     /**
@@ -190,6 +185,6 @@ class StudentEducationalHistory extends ModelBase
      */
     public function setAttendanceMode($attendanceMode = null)
     {
-        $this->setProperty("attendanceMode", $attendanceMode);
+        $this->setProperty('attendanceMode', $attendanceMode);
     }
 }

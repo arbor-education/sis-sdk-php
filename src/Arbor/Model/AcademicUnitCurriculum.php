@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicUnit;
-use \Arbor\Model\Curriculum;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnitCurriculum extends ModelBase
 {
@@ -19,34 +13,38 @@ class AcademicUnitCurriculum extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_CURRICULUM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicUnitCurriculum[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicUnitCurriculum");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT_CURRICULUM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicUnitCurriculum
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_CURRICULUM, $id);
     }
 
@@ -55,7 +53,7 @@ class AcademicUnitCurriculum extends ModelBase
      */
     public function getAcademicUnit()
     {
-        return $this->getProperty("academicUnit");
+        return $this->getProperty('academicUnit');
     }
 
     /**
@@ -63,7 +61,7 @@ class AcademicUnitCurriculum extends ModelBase
      */
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -71,7 +69,7 @@ class AcademicUnitCurriculum extends ModelBase
      */
     public function getCurriculum()
     {
-        return $this->getProperty("curriculum");
+        return $this->getProperty('curriculum');
     }
 
     /**
@@ -79,6 +77,6 @@ class AcademicUnitCurriculum extends ModelBase
      */
     public function setCurriculum(Curriculum $curriculum = null)
     {
-        $this->setProperty("curriculum", $curriculum);
+        $this->setProperty('curriculum', $curriculum);
     }
 }

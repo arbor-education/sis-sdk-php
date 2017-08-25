@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Content;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewsStory extends ModelBase
 {
@@ -40,34 +35,38 @@ class NewsStory extends ModelBase
     protected $_resourceType = ResourceType::NEWS_STORY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewsStory[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewsStory");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEWS_STORY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewsStory
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEWS_STORY, $id);
     }
 
@@ -76,7 +75,7 @@ class NewsStory extends ModelBase
      */
     public function getReferenceDatetime()
     {
-        return $this->getProperty("referenceDatetime");
+        return $this->getProperty('referenceDatetime');
     }
 
     /**
@@ -84,7 +83,7 @@ class NewsStory extends ModelBase
      */
     public function setReferenceDatetime(\DateTime $referenceDatetime = null)
     {
-        $this->setProperty("referenceDatetime", $referenceDatetime);
+        $this->setProperty('referenceDatetime', $referenceDatetime);
     }
 
     /**
@@ -92,7 +91,7 @@ class NewsStory extends ModelBase
      */
     public function getTitle()
     {
-        return $this->getProperty("title");
+        return $this->getProperty('title');
     }
 
     /**
@@ -100,7 +99,7 @@ class NewsStory extends ModelBase
      */
     public function setTitle($title = null)
     {
-        $this->setProperty("title", $title);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -108,7 +107,7 @@ class NewsStory extends ModelBase
      */
     public function getProfilePicture()
     {
-        return $this->getProperty("profilePicture");
+        return $this->getProperty('profilePicture');
     }
 
     /**
@@ -116,7 +115,7 @@ class NewsStory extends ModelBase
      */
     public function setProfilePicture(Content $profilePicture = null)
     {
-        $this->setProperty("profilePicture", $profilePicture);
+        $this->setProperty('profilePicture', $profilePicture);
     }
 
     /**
@@ -124,7 +123,7 @@ class NewsStory extends ModelBase
      */
     public function getImage()
     {
-        return $this->getProperty("image");
+        return $this->getProperty('image');
     }
 
     /**
@@ -132,7 +131,7 @@ class NewsStory extends ModelBase
      */
     public function setImage($image = null)
     {
-        $this->setProperty("image", $image);
+        $this->setProperty('image', $image);
     }
 
     /**
@@ -140,7 +139,7 @@ class NewsStory extends ModelBase
      */
     public function getCategory()
     {
-        return $this->getProperty("category");
+        return $this->getProperty('category');
     }
 
     /**
@@ -148,7 +147,7 @@ class NewsStory extends ModelBase
      */
     public function setCategory($category = null)
     {
-        $this->setProperty("category", $category);
+        $this->setProperty('category', $category);
     }
 
     /**
@@ -156,7 +155,7 @@ class NewsStory extends ModelBase
      */
     public function getBody()
     {
-        return $this->getProperty("body");
+        return $this->getProperty('body');
     }
 
     /**
@@ -164,7 +163,7 @@ class NewsStory extends ModelBase
      */
     public function setBody($body = null)
     {
-        $this->setProperty("body", $body);
+        $this->setProperty('body', $body);
     }
 
     /**
@@ -172,7 +171,7 @@ class NewsStory extends ModelBase
      */
     public function getTypeSpecificRatingFactor()
     {
-        return $this->getProperty("typeSpecificRatingFactor");
+        return $this->getProperty('typeSpecificRatingFactor');
     }
 
     /**
@@ -180,7 +179,7 @@ class NewsStory extends ModelBase
      */
     public function setTypeSpecificRatingFactor($typeSpecificRatingFactor = null)
     {
-        $this->setProperty("typeSpecificRatingFactor", $typeSpecificRatingFactor);
+        $this->setProperty('typeSpecificRatingFactor', $typeSpecificRatingFactor);
     }
 
     /**
@@ -188,7 +187,7 @@ class NewsStory extends ModelBase
      */
     public function getOrigin()
     {
-        return $this->getProperty("origin");
+        return $this->getProperty('origin');
     }
 
     /**
@@ -196,7 +195,7 @@ class NewsStory extends ModelBase
      */
     public function setOrigin(ModelBase $origin = null)
     {
-        $this->setProperty("origin", $origin);
+        $this->setProperty('origin', $origin);
     }
 
     /**
@@ -204,7 +203,7 @@ class NewsStory extends ModelBase
      */
     public function getIdentifier()
     {
-        return $this->getProperty("identifier");
+        return $this->getProperty('identifier');
     }
 
     /**
@@ -212,7 +211,7 @@ class NewsStory extends ModelBase
      */
     public function setIdentifier($identifier = null)
     {
-        $this->setProperty("identifier", $identifier);
+        $this->setProperty('identifier', $identifier);
     }
 
     /**
@@ -220,7 +219,7 @@ class NewsStory extends ModelBase
      */
     public function getType()
     {
-        return $this->getProperty("type");
+        return $this->getProperty('type');
     }
 
     /**
@@ -228,7 +227,7 @@ class NewsStory extends ModelBase
      */
     public function setType($type = null)
     {
-        $this->setProperty("type", $type);
+        $this->setProperty('type', $type);
     }
 
     /**
@@ -236,7 +235,7 @@ class NewsStory extends ModelBase
      */
     public function getData()
     {
-        return $this->getProperty("data");
+        return $this->getProperty('data');
     }
 
     /**
@@ -244,7 +243,7 @@ class NewsStory extends ModelBase
      */
     public function setData($data = null)
     {
-        $this->setProperty("data", $data);
+        $this->setProperty('data', $data);
     }
 
     /**
@@ -252,7 +251,7 @@ class NewsStory extends ModelBase
      */
     public function getMappedToNewsFeed()
     {
-        return $this->getProperty("mappedToNewsFeed");
+        return $this->getProperty('mappedToNewsFeed');
     }
 
     /**
@@ -260,7 +259,7 @@ class NewsStory extends ModelBase
      */
     public function setMappedToNewsFeed($mappedToNewsFeed = null)
     {
-        $this->setProperty("mappedToNewsFeed", $mappedToNewsFeed);
+        $this->setProperty('mappedToNewsFeed', $mappedToNewsFeed);
     }
 
     /**
@@ -268,7 +267,7 @@ class NewsStory extends ModelBase
      */
     public function getCommentCount()
     {
-        return $this->getProperty("commentCount");
+        return $this->getProperty('commentCount');
     }
 
     /**
@@ -276,6 +275,6 @@ class NewsStory extends ModelBase
      */
     public function setCommentCount($commentCount = null)
     {
-        $this->setProperty("commentCount", $commentCount);
+        $this->setProperty('commentCount', $commentCount);
     }
 }

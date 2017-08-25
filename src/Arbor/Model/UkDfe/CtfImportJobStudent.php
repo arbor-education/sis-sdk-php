@@ -1,15 +1,14 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\CtfImportJob;
-use \Arbor\Model\Gender;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Gender;
+use Arbor\Model\Student;
 
 class CtfImportJobStudent extends ModelBase
 {
@@ -84,34 +83,38 @@ class CtfImportJobStudent extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_CTF_IMPORT_JOB_STUDENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CtfImportJobStudent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_CtfImportJobStudent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_CTF_IMPORT_JOB_STUDENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CtfImportJobStudent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_CTF_IMPORT_JOB_STUDENT, $id);
     }
 
@@ -120,7 +123,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getCtfImportJob()
     {
-        return $this->getProperty("ctfImportJob");
+        return $this->getProperty('ctfImportJob');
     }
 
     /**
@@ -128,7 +131,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setCtfImportJob(CtfImportJob $ctfImportJob = null)
     {
-        $this->setProperty("ctfImportJob", $ctfImportJob);
+        $this->setProperty('ctfImportJob', $ctfImportJob);
     }
 
     /**
@@ -136,7 +139,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getFirstName()
     {
-        return $this->getProperty("firstName");
+        return $this->getProperty('firstName');
     }
 
     /**
@@ -144,7 +147,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setFirstName($firstName = null)
     {
-        $this->setProperty("firstName", $firstName);
+        $this->setProperty('firstName', $firstName);
     }
 
     /**
@@ -152,7 +155,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getLastName()
     {
-        return $this->getProperty("lastName");
+        return $this->getProperty('lastName');
     }
 
     /**
@@ -160,7 +163,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setLastName($lastName = null)
     {
-        $this->setProperty("lastName", $lastName);
+        $this->setProperty('lastName', $lastName);
     }
 
     /**
@@ -168,7 +171,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getDateOfBirth()
     {
-        return $this->getProperty("dateOfBirth");
+        return $this->getProperty('dateOfBirth');
     }
 
     /**
@@ -176,7 +179,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setDateOfBirth(\DateTime $dateOfBirth = null)
     {
-        $this->setProperty("dateOfBirth", $dateOfBirth);
+        $this->setProperty('dateOfBirth', $dateOfBirth);
     }
 
     /**
@@ -184,7 +187,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getGender()
     {
-        return $this->getProperty("gender");
+        return $this->getProperty('gender');
     }
 
     /**
@@ -192,7 +195,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setGender(Gender $gender = null)
     {
-        $this->setProperty("gender", $gender);
+        $this->setProperty('gender', $gender);
     }
 
     /**
@@ -200,7 +203,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getUpn()
     {
-        return $this->getProperty("upn");
+        return $this->getProperty('upn');
     }
 
     /**
@@ -208,7 +211,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setUpn($upn = null)
     {
-        $this->setProperty("upn", $upn);
+        $this->setProperty('upn', $upn);
     }
 
     /**
@@ -216,7 +219,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getUniqueLearnerNumber()
     {
-        return $this->getProperty("uniqueLearnerNumber");
+        return $this->getProperty('uniqueLearnerNumber');
     }
 
     /**
@@ -224,7 +227,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setUniqueLearnerNumber($uniqueLearnerNumber = null)
     {
-        $this->setProperty("uniqueLearnerNumber", $uniqueLearnerNumber);
+        $this->setProperty('uniqueLearnerNumber', $uniqueLearnerNumber);
     }
 
     /**
@@ -232,7 +235,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getUniqueCandidateIdentifier()
     {
-        return $this->getProperty("uniqueCandidateIdentifier");
+        return $this->getProperty('uniqueCandidateIdentifier');
     }
 
     /**
@@ -240,7 +243,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setUniqueCandidateIdentifier($uniqueCandidateIdentifier = null)
     {
-        $this->setProperty("uniqueCandidateIdentifier", $uniqueCandidateIdentifier);
+        $this->setProperty('uniqueCandidateIdentifier', $uniqueCandidateIdentifier);
     }
 
     /**
@@ -248,7 +251,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -256,7 +259,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -264,7 +267,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportDatetime()
     {
-        return $this->getProperty("importDatetime");
+        return $this->getProperty('importDatetime');
     }
 
     /**
@@ -272,7 +275,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportDatetime(\DateTime $importDatetime = null)
     {
-        $this->setProperty("importDatetime", $importDatetime);
+        $this->setProperty('importDatetime', $importDatetime);
     }
 
     /**
@@ -280,7 +283,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getBasicDetailsProcessed()
     {
-        return $this->getProperty("basicDetailsProcessed");
+        return $this->getProperty('basicDetailsProcessed');
     }
 
     /**
@@ -288,7 +291,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setBasicDetailsProcessed($basicDetailsProcessed = null)
     {
-        $this->setProperty("basicDetailsProcessed", $basicDetailsProcessed);
+        $this->setProperty('basicDetailsProcessed', $basicDetailsProcessed);
     }
 
     /**
@@ -296,7 +299,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getFsmHistoryProcessed()
     {
-        return $this->getProperty("fsmHistoryProcessed");
+        return $this->getProperty('fsmHistoryProcessed');
     }
 
     /**
@@ -304,7 +307,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setFsmHistoryProcessed($fsmHistoryProcessed = null)
     {
-        $this->setProperty("fsmHistoryProcessed", $fsmHistoryProcessed);
+        $this->setProperty('fsmHistoryProcessed', $fsmHistoryProcessed);
     }
 
     /**
@@ -312,7 +315,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getLookedAfterProcessed()
     {
-        return $this->getProperty("lookedAfterProcessed");
+        return $this->getProperty('lookedAfterProcessed');
     }
 
     /**
@@ -320,7 +323,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setLookedAfterProcessed($lookedAfterProcessed = null)
     {
-        $this->setProperty("lookedAfterProcessed", $lookedAfterProcessed);
+        $this->setProperty('lookedAfterProcessed', $lookedAfterProcessed);
     }
 
     /**
@@ -328,7 +331,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getSenHistoryProcessed()
     {
-        return $this->getProperty("senHistoryProcessed");
+        return $this->getProperty('senHistoryProcessed');
     }
 
     /**
@@ -336,7 +339,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setSenHistoryProcessed($senHistoryProcessed = null)
     {
-        $this->setProperty("senHistoryProcessed", $senHistoryProcessed);
+        $this->setProperty('senHistoryProcessed', $senHistoryProcessed);
     }
 
     /**
@@ -344,7 +347,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getAddressProcessed()
     {
-        return $this->getProperty("addressProcessed");
+        return $this->getProperty('addressProcessed');
     }
 
     /**
@@ -352,7 +355,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setAddressProcessed($addressProcessed = null)
     {
-        $this->setProperty("addressProcessed", $addressProcessed);
+        $this->setProperty('addressProcessed', $addressProcessed);
     }
 
     /**
@@ -360,7 +363,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getContactsProcessed()
     {
-        return $this->getProperty("contactsProcessed");
+        return $this->getProperty('contactsProcessed');
     }
 
     /**
@@ -368,7 +371,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setContactsProcessed($contactsProcessed = null)
     {
-        $this->setProperty("contactsProcessed", $contactsProcessed);
+        $this->setProperty('contactsProcessed', $contactsProcessed);
     }
 
     /**
@@ -376,7 +379,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getAttendanceProcessed()
     {
-        return $this->getProperty("attendanceProcessed");
+        return $this->getProperty('attendanceProcessed');
     }
 
     /**
@@ -384,7 +387,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setAttendanceProcessed($attendanceProcessed = null)
     {
-        $this->setProperty("attendanceProcessed", $attendanceProcessed);
+        $this->setProperty('attendanceProcessed', $attendanceProcessed);
     }
 
     /**
@@ -392,7 +395,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getStageAssessmentsProcessed()
     {
-        return $this->getProperty("stageAssessmentsProcessed");
+        return $this->getProperty('stageAssessmentsProcessed');
     }
 
     /**
@@ -400,7 +403,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setStageAssessmentsProcessed($stageAssessmentsProcessed = null)
     {
-        $this->setProperty("stageAssessmentsProcessed", $stageAssessmentsProcessed);
+        $this->setProperty('stageAssessmentsProcessed', $stageAssessmentsProcessed);
     }
 
     /**
@@ -408,7 +411,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getSchoolHistoryProcessed()
     {
-        return $this->getProperty("schoolHistoryProcessed");
+        return $this->getProperty('schoolHistoryProcessed');
     }
 
     /**
@@ -416,7 +419,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setSchoolHistoryProcessed($schoolHistoryProcessed = null)
     {
-        $this->setProperty("schoolHistoryProcessed", $schoolHistoryProcessed);
+        $this->setProperty('schoolHistoryProcessed', $schoolHistoryProcessed);
     }
 
     /**
@@ -424,7 +427,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getNawDetailsProcessed()
     {
-        return $this->getProperty("nawDetailsProcessed");
+        return $this->getProperty('nawDetailsProcessed');
     }
 
     /**
@@ -432,7 +435,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setNawDetailsProcessed($nawDetailsProcessed = null)
     {
-        $this->setProperty("nawDetailsProcessed", $nawDetailsProcessed);
+        $this->setProperty('nawDetailsProcessed', $nawDetailsProcessed);
     }
 
     /**
@@ -440,7 +443,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportName()
     {
-        return $this->getProperty("importName");
+        return $this->getProperty('importName');
     }
 
     /**
@@ -448,7 +451,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportName($importName = null)
     {
-        $this->setProperty("importName", $importName);
+        $this->setProperty('importName', $importName);
     }
 
     /**
@@ -456,7 +459,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportDateOfBirth()
     {
-        return $this->getProperty("importDateOfBirth");
+        return $this->getProperty('importDateOfBirth');
     }
 
     /**
@@ -464,7 +467,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportDateOfBirth($importDateOfBirth = null)
     {
-        $this->setProperty("importDateOfBirth", $importDateOfBirth);
+        $this->setProperty('importDateOfBirth', $importDateOfBirth);
     }
 
     /**
@@ -472,7 +475,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportLanguages()
     {
-        return $this->getProperty("importLanguages");
+        return $this->getProperty('importLanguages');
     }
 
     /**
@@ -480,7 +483,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportLanguages($importLanguages = null)
     {
-        $this->setProperty("importLanguages", $importLanguages);
+        $this->setProperty('importLanguages', $importLanguages);
     }
 
     /**
@@ -488,7 +491,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportDisabilities()
     {
-        return $this->getProperty("importDisabilities");
+        return $this->getProperty('importDisabilities');
     }
 
     /**
@@ -496,7 +499,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportDisabilities($importDisabilities = null)
     {
-        $this->setProperty("importDisabilities", $importDisabilities);
+        $this->setProperty('importDisabilities', $importDisabilities);
     }
 
     /**
@@ -504,7 +507,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportAddress()
     {
-        return $this->getProperty("importAddress");
+        return $this->getProperty('importAddress');
     }
 
     /**
@@ -512,7 +515,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportAddress($importAddress = null)
     {
-        $this->setProperty("importAddress", $importAddress);
+        $this->setProperty('importAddress', $importAddress);
     }
 
     /**
@@ -520,7 +523,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportGuardians()
     {
-        return $this->getProperty("importGuardians");
+        return $this->getProperty('importGuardians');
     }
 
     /**
@@ -528,7 +531,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportGuardians($importGuardians = null)
     {
-        $this->setProperty("importGuardians", $importGuardians);
+        $this->setProperty('importGuardians', $importGuardians);
     }
 
     /**
@@ -536,7 +539,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportSen()
     {
-        return $this->getProperty("importSen");
+        return $this->getProperty('importSen');
     }
 
     /**
@@ -544,7 +547,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportSen($importSen = null)
     {
-        $this->setProperty("importSen", $importSen);
+        $this->setProperty('importSen', $importSen);
     }
 
     /**
@@ -552,7 +555,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportAttendance()
     {
-        return $this->getProperty("importAttendance");
+        return $this->getProperty('importAttendance');
     }
 
     /**
@@ -560,7 +563,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportAttendance($importAttendance = null)
     {
-        $this->setProperty("importAttendance", $importAttendance);
+        $this->setProperty('importAttendance', $importAttendance);
     }
 
     /**
@@ -568,7 +571,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportAssessments()
     {
-        return $this->getProperty("importAssessments");
+        return $this->getProperty('importAssessments');
     }
 
     /**
@@ -576,7 +579,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportAssessments($importAssessments = null)
     {
-        $this->setProperty("importAssessments", $importAssessments);
+        $this->setProperty('importAssessments', $importAssessments);
     }
 
     /**
@@ -584,7 +587,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportSchoolHistory()
     {
-        return $this->getProperty("importSchoolHistory");
+        return $this->getProperty('importSchoolHistory');
     }
 
     /**
@@ -592,7 +595,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportSchoolHistory($importSchoolHistory = null)
     {
-        $this->setProperty("importSchoolHistory", $importSchoolHistory);
+        $this->setProperty('importSchoolHistory', $importSchoolHistory);
     }
 
     /**
@@ -600,7 +603,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportLookedAfter()
     {
-        return $this->getProperty("importLookedAfter");
+        return $this->getProperty('importLookedAfter');
     }
 
     /**
@@ -608,7 +611,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportLookedAfter($importLookedAfter = null)
     {
-        $this->setProperty("importLookedAfter", $importLookedAfter);
+        $this->setProperty('importLookedAfter', $importLookedAfter);
     }
 
     /**
@@ -616,7 +619,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportFsm()
     {
-        return $this->getProperty("importFsm");
+        return $this->getProperty('importFsm');
     }
 
     /**
@@ -624,7 +627,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportFsm($importFsm = null)
     {
-        $this->setProperty("importFsm", $importFsm);
+        $this->setProperty('importFsm', $importFsm);
     }
 
     /**
@@ -632,7 +635,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getIsCurrentlyBeingProcessed()
     {
-        return $this->getProperty("isCurrentlyBeingProcessed");
+        return $this->getProperty('isCurrentlyBeingProcessed');
     }
 
     /**
@@ -640,7 +643,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setIsCurrentlyBeingProcessed($isCurrentlyBeingProcessed = null)
     {
-        $this->setProperty("isCurrentlyBeingProcessed", $isCurrentlyBeingProcessed);
+        $this->setProperty('isCurrentlyBeingProcessed', $isCurrentlyBeingProcessed);
     }
 
     /**
@@ -648,7 +651,7 @@ class CtfImportJobStudent extends ModelBase
      */
     public function getImportErrors()
     {
-        return $this->getProperty("importErrors");
+        return $this->getProperty('importErrors');
     }
 
     /**
@@ -656,6 +659,6 @@ class CtfImportJobStudent extends ModelBase
      */
     public function setImportErrors($importErrors = null)
     {
-        $this->setProperty("importErrors", $importErrors);
+        $this->setProperty('importErrors', $importErrors);
     }
 }

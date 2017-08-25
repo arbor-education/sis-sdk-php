@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Intervention;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionReview extends ModelBase
 {
@@ -24,34 +19,38 @@ class InterventionReview extends ModelBase
     protected $_resourceType = ResourceType::INTERVENTION_REVIEW;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionReview[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionReview");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_REVIEW);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionReview
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_REVIEW, $id);
     }
 
@@ -60,7 +59,7 @@ class InterventionReview extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -68,7 +67,7 @@ class InterventionReview extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -76,7 +75,7 @@ class InterventionReview extends ModelBase
      */
     public function getReviewDueDate()
     {
-        return $this->getProperty("reviewDueDate");
+        return $this->getProperty('reviewDueDate');
     }
 
     /**
@@ -84,7 +83,7 @@ class InterventionReview extends ModelBase
      */
     public function setReviewDueDate(\DateTime $reviewDueDate = null)
     {
-        $this->setProperty("reviewDueDate", $reviewDueDate);
+        $this->setProperty('reviewDueDate', $reviewDueDate);
     }
 
     /**
@@ -92,7 +91,7 @@ class InterventionReview extends ModelBase
      */
     public function getReviewCompletedDate()
     {
-        return $this->getProperty("reviewCompletedDate");
+        return $this->getProperty('reviewCompletedDate');
     }
 
     /**
@@ -100,7 +99,7 @@ class InterventionReview extends ModelBase
      */
     public function setReviewCompletedDate(\DateTime $reviewCompletedDate = null)
     {
-        $this->setProperty("reviewCompletedDate", $reviewCompletedDate);
+        $this->setProperty('reviewCompletedDate', $reviewCompletedDate);
     }
 
     /**
@@ -108,7 +107,7 @@ class InterventionReview extends ModelBase
      */
     public function getReview()
     {
-        return $this->getProperty("review");
+        return $this->getProperty('review');
     }
 
     /**
@@ -116,7 +115,7 @@ class InterventionReview extends ModelBase
      */
     public function setReview($review = null)
     {
-        $this->setProperty("review", $review);
+        $this->setProperty('review', $review);
     }
 
     /**
@@ -124,7 +123,7 @@ class InterventionReview extends ModelBase
      */
     public function getRecommendations()
     {
-        return $this->getProperty("recommendations");
+        return $this->getProperty('recommendations');
     }
 
     /**
@@ -132,6 +131,6 @@ class InterventionReview extends ModelBase
      */
     public function setRecommendations($recommendations = null)
     {
-        $this->setProperty("recommendations", $recommendations);
+        $this->setProperty('recommendations', $recommendations);
     }
 }

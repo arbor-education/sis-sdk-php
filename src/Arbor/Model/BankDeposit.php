@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BankAccount;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BankDeposit extends ModelBase
 {
@@ -29,34 +23,38 @@ class BankDeposit extends ModelBase
     protected $_resourceType = ResourceType::BANK_DEPOSIT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BankDeposit[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BankDeposit");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BANK_DEPOSIT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BankDeposit
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BANK_DEPOSIT, $id);
     }
 
@@ -65,7 +63,7 @@ class BankDeposit extends ModelBase
      */
     public function getBankAccount()
     {
-        return $this->getProperty("bankAccount");
+        return $this->getProperty('bankAccount');
     }
 
     /**
@@ -73,7 +71,7 @@ class BankDeposit extends ModelBase
      */
     public function setBankAccount(BankAccount $bankAccount = null)
     {
-        $this->setProperty("bankAccount", $bankAccount);
+        $this->setProperty('bankAccount', $bankAccount);
     }
 
     /**
@@ -81,7 +79,7 @@ class BankDeposit extends ModelBase
      */
     public function getPaidToBankDate()
     {
-        return $this->getProperty("paidToBankDate");
+        return $this->getProperty('paidToBankDate');
     }
 
     /**
@@ -89,7 +87,7 @@ class BankDeposit extends ModelBase
      */
     public function setPaidToBankDate(\DateTime $paidToBankDate = null)
     {
-        $this->setProperty("paidToBankDate", $paidToBankDate);
+        $this->setProperty('paidToBankDate', $paidToBankDate);
     }
 
     /**
@@ -97,7 +95,7 @@ class BankDeposit extends ModelBase
      */
     public function getPaidByStaff()
     {
-        return $this->getProperty("paidByStaff");
+        return $this->getProperty('paidByStaff');
     }
 
     /**
@@ -105,7 +103,7 @@ class BankDeposit extends ModelBase
      */
     public function setPaidByStaff(Staff $paidByStaff = null)
     {
-        $this->setProperty("paidByStaff", $paidByStaff);
+        $this->setProperty('paidByStaff', $paidByStaff);
     }
 
     /**
@@ -113,7 +111,7 @@ class BankDeposit extends ModelBase
      */
     public function getDepositDatetime()
     {
-        return $this->getProperty("depositDatetime");
+        return $this->getProperty('depositDatetime');
     }
 
     /**
@@ -121,7 +119,7 @@ class BankDeposit extends ModelBase
      */
     public function setDepositDatetime(\DateTime $depositDatetime = null)
     {
-        $this->setProperty("depositDatetime", $depositDatetime);
+        $this->setProperty('depositDatetime', $depositDatetime);
     }
 
     /**
@@ -129,7 +127,7 @@ class BankDeposit extends ModelBase
      */
     public function getTotalChequeAmount()
     {
-        return $this->getProperty("totalChequeAmount");
+        return $this->getProperty('totalChequeAmount');
     }
 
     /**
@@ -137,7 +135,7 @@ class BankDeposit extends ModelBase
      */
     public function setTotalChequeAmount($totalChequeAmount = null)
     {
-        $this->setProperty("totalChequeAmount", $totalChequeAmount);
+        $this->setProperty('totalChequeAmount', $totalChequeAmount);
     }
 
     /**
@@ -145,7 +143,7 @@ class BankDeposit extends ModelBase
      */
     public function getTotalCashAmount()
     {
-        return $this->getProperty("totalCashAmount");
+        return $this->getProperty('totalCashAmount');
     }
 
     /**
@@ -153,7 +151,7 @@ class BankDeposit extends ModelBase
      */
     public function setTotalCashAmount($totalCashAmount = null)
     {
-        $this->setProperty("totalCashAmount", $totalCashAmount);
+        $this->setProperty('totalCashAmount', $totalCashAmount);
     }
 
     /**
@@ -161,7 +159,7 @@ class BankDeposit extends ModelBase
      */
     public function getDepositReference()
     {
-        return $this->getProperty("depositReference");
+        return $this->getProperty('depositReference');
     }
 
     /**
@@ -169,6 +167,6 @@ class BankDeposit extends ModelBase
      */
     public function setDepositReference($depositReference = null)
     {
-        $this->setProperty("depositReference", $depositReference);
+        $this->setProperty('depositReference', $depositReference);
     }
 }

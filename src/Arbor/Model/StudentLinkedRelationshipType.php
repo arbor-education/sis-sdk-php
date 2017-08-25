@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentLinkedRelationshipType extends ModelBase
 {
@@ -19,34 +15,38 @@ class StudentLinkedRelationshipType extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_LINKED_RELATIONSHIP_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentLinkedRelationshipType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentLinkedRelationshipType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_LINKED_RELATIONSHIP_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentLinkedRelationshipType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_LINKED_RELATIONSHIP_TYPE, $id);
     }
 
@@ -55,7 +55,7 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public function getStudentLinkedRelationshipTypeName()
     {
-        return $this->getProperty("studentLinkedRelationshipTypeName");
+        return $this->getProperty('studentLinkedRelationshipTypeName');
     }
 
     /**
@@ -63,7 +63,7 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public function setStudentLinkedRelationshipTypeName($studentLinkedRelationshipTypeName = null)
     {
-        $this->setProperty("studentLinkedRelationshipTypeName", $studentLinkedRelationshipTypeName);
+        $this->setProperty('studentLinkedRelationshipTypeName', $studentLinkedRelationshipTypeName);
     }
 
     /**
@@ -71,7 +71,7 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public function getIsMedical()
     {
-        return $this->getProperty("isMedical");
+        return $this->getProperty('isMedical');
     }
 
     /**
@@ -79,7 +79,7 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public function setIsMedical($isMedical = null)
     {
-        $this->setProperty("isMedical", $isMedical);
+        $this->setProperty('isMedical', $isMedical);
     }
 
     /**
@@ -87,7 +87,7 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public function getIsAcademic()
     {
-        return $this->getProperty("isAcademic");
+        return $this->getProperty('isAcademic');
     }
 
     /**
@@ -95,6 +95,6 @@ class StudentLinkedRelationshipType extends ModelBase
      */
     public function setIsAcademic($isAcademic = null)
     {
-        $this->setProperty("isAcademic", $isAcademic);
+        $this->setProperty('isAcademic', $isAcademic);
     }
 }

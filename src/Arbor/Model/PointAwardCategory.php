@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PointAwardScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PointAwardCategory extends ModelBase
 {
@@ -20,34 +15,38 @@ class PointAwardCategory extends ModelBase
     protected $_resourceType = ResourceType::POINT_AWARD_CATEGORY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PointAwardCategory[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PointAwardCategory");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::POINT_AWARD_CATEGORY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PointAwardCategory
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::POINT_AWARD_CATEGORY, $id);
     }
 
@@ -56,7 +55,7 @@ class PointAwardCategory extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -64,7 +63,7 @@ class PointAwardCategory extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -72,7 +71,7 @@ class PointAwardCategory extends ModelBase
      */
     public function getPointAwardScale()
     {
-        return $this->getProperty("pointAwardScale");
+        return $this->getProperty('pointAwardScale');
     }
 
     /**
@@ -80,7 +79,7 @@ class PointAwardCategory extends ModelBase
      */
     public function setPointAwardScale(PointAwardScale $pointAwardScale = null)
     {
-        $this->setProperty("pointAwardScale", $pointAwardScale);
+        $this->setProperty('pointAwardScale', $pointAwardScale);
     }
 
     /**
@@ -88,7 +87,7 @@ class PointAwardCategory extends ModelBase
      */
     public function getDefaultPoints()
     {
-        return $this->getProperty("defaultPoints");
+        return $this->getProperty('defaultPoints');
     }
 
     /**
@@ -96,6 +95,6 @@ class PointAwardCategory extends ModelBase
      */
     public function setDefaultPoints($defaultPoints = null)
     {
-        $this->setProperty("defaultPoints", $defaultPoints);
+        $this->setProperty('defaultPoints', $defaultPoints);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MealProvision;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealProvisionPriceCategory extends ModelBase
 {
@@ -26,34 +21,38 @@ class MealProvisionPriceCategory extends ModelBase
     protected $_resourceType = ResourceType::MEAL_PROVISION_PRICE_CATEGORY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealProvisionPriceCategory[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealProvisionPriceCategory");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_PROVISION_PRICE_CATEGORY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealProvisionPriceCategory
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_PROVISION_PRICE_CATEGORY, $id);
     }
 
@@ -62,7 +61,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function getCategoryName()
     {
-        return $this->getProperty("categoryName");
+        return $this->getProperty('categoryName');
     }
 
     /**
@@ -70,7 +69,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function setCategoryName($categoryName = null)
     {
-        $this->setProperty("categoryName", $categoryName);
+        $this->setProperty('categoryName', $categoryName);
     }
 
     /**
@@ -78,7 +77,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function getMealProvision()
     {
-        return $this->getProperty("mealProvision");
+        return $this->getProperty('mealProvision');
     }
 
     /**
@@ -86,7 +85,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function setMealProvision(MealProvision $mealProvision = null)
     {
-        $this->setProperty("mealProvision", $mealProvision);
+        $this->setProperty('mealProvision', $mealProvision);
     }
 
     /**
@@ -94,7 +93,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function getAppliesTo()
     {
-        return $this->getProperty("appliesTo");
+        return $this->getProperty('appliesTo');
     }
 
     /**
@@ -102,7 +101,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function setAppliesTo($appliesTo = null)
     {
-        $this->setProperty("appliesTo", $appliesTo);
+        $this->setProperty('appliesTo', $appliesTo);
     }
 
     /**
@@ -110,7 +109,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function getGroup()
     {
-        return $this->getProperty("group");
+        return $this->getProperty('group');
     }
 
     /**
@@ -118,7 +117,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function setGroup(ModelBase $group = null)
     {
-        $this->setProperty("group", $group);
+        $this->setProperty('group', $group);
     }
 
     /**
@@ -126,7 +125,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -134,7 +133,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -142,7 +141,7 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -150,6 +149,6 @@ class MealProvisionPriceCategory extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

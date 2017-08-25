@@ -38,7 +38,7 @@ class Hydrator implements HydratorInterface
                         switch ($propertyValue['entityType']) {
                             case 'date':
                                 /**@var \DateTime $propertyValue*/
-                                $model->setProperty($propertyName, new DateTime($propertyValue['date']));
+                                $model->setProperty($propertyName, new \DateTime($propertyValue['date']));
                             break;
                             default:
                                 $relateModelRepresentation = $propertyValue;

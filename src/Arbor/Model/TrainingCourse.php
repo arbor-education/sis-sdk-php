@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TrainingCourse extends ModelBase
 {
@@ -23,34 +19,38 @@ class TrainingCourse extends ModelBase
     protected $_resourceType = ResourceType::TRAINING_COURSE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TrainingCourse[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TrainingCourse");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TRAINING_COURSE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TrainingCourse
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TRAINING_COURSE, $id);
     }
 
@@ -59,7 +59,7 @@ class TrainingCourse extends ModelBase
      */
     public function getTrainingCourseTitle()
     {
-        return $this->getProperty("trainingCourseTitle");
+        return $this->getProperty('trainingCourseTitle');
     }
 
     /**
@@ -67,7 +67,7 @@ class TrainingCourse extends ModelBase
      */
     public function setTrainingCourseTitle($trainingCourseTitle = null)
     {
-        $this->setProperty("trainingCourseTitle", $trainingCourseTitle);
+        $this->setProperty('trainingCourseTitle', $trainingCourseTitle);
     }
 
     /**
@@ -75,7 +75,7 @@ class TrainingCourse extends ModelBase
      */
     public function getTrainingCourseDescription()
     {
-        return $this->getProperty("trainingCourseDescription");
+        return $this->getProperty('trainingCourseDescription');
     }
 
     /**
@@ -83,7 +83,7 @@ class TrainingCourse extends ModelBase
      */
     public function setTrainingCourseDescription($trainingCourseDescription = null)
     {
-        $this->setProperty("trainingCourseDescription", $trainingCourseDescription);
+        $this->setProperty('trainingCourseDescription', $trainingCourseDescription);
     }
 
     /**
@@ -91,7 +91,7 @@ class TrainingCourse extends ModelBase
      */
     public function getOrganizer()
     {
-        return $this->getProperty("organizer");
+        return $this->getProperty('organizer');
     }
 
     /**
@@ -99,7 +99,7 @@ class TrainingCourse extends ModelBase
      */
     public function setOrganizer(ModelBase $organizer = null)
     {
-        $this->setProperty("organizer", $organizer);
+        $this->setProperty('organizer', $organizer);
     }
 
     /**
@@ -107,7 +107,7 @@ class TrainingCourse extends ModelBase
      */
     public function getCourseFees()
     {
-        return $this->getProperty("courseFees");
+        return $this->getProperty('courseFees');
     }
 
     /**
@@ -115,7 +115,7 @@ class TrainingCourse extends ModelBase
      */
     public function setCourseFees($courseFees = null)
     {
-        $this->setProperty("courseFees", $courseFees);
+        $this->setProperty('courseFees', $courseFees);
     }
 
     /**
@@ -123,7 +123,7 @@ class TrainingCourse extends ModelBase
      */
     public function getOtherCosts()
     {
-        return $this->getProperty("otherCosts");
+        return $this->getProperty('otherCosts');
     }
 
     /**
@@ -131,6 +131,6 @@ class TrainingCourse extends ModelBase
      */
     public function setOtherCosts($otherCosts = null)
     {
-        $this->setProperty("otherCosts", $otherCosts);
+        $this->setProperty('otherCosts', $otherCosts);
     }
 }

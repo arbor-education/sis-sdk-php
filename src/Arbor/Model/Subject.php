@@ -1,23 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Subject extends ModelBase
 {
-    const USED_IN_SWF_ONLY = 'usedInSwfOnly';
-
-    const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
-
-    const D00115 = 'd00115';
-
-    const D00220 = 'd00220';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -28,102 +16,50 @@ class Subject extends ModelBase
 
     const PARENT_SUBJECT = 'parentSubject';
 
+    const USED_IN_SWF_ONLY = 'usedInSwfOnly';
+
+    const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
+
+    const D00115 = 'd00115';
+
+    const D00220 = 'd00220';
+
     protected $_resourceType = ResourceType::SUBJECT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Subject[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Subject");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SUBJECT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Subject
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SUBJECT, $id);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getUsedInSwfOnly()
-    {
-        return $this->getProperty("usedInSwfOnly");
-    }
-
-    /**
-     * @param bool $usedInSwfOnly
-     */
-    public function setUsedInSwfOnly($usedInSwfOnly = null)
-    {
-        $this->setProperty("usedInSwfOnly", $usedInSwfOnly);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getUsedInCbdsOnly()
-    {
-        return $this->getProperty("usedInCbdsOnly");
-    }
-
-    /**
-     * @param bool $usedInCbdsOnly
-     */
-    public function setUsedInCbdsOnly($usedInCbdsOnly = null)
-    {
-        $this->setProperty("usedInCbdsOnly", $usedInCbdsOnly);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00115()
-    {
-        return $this->getProperty("d00115");
-    }
-
-    /**
-     * @param string $d00115
-     */
-    public function setD00115($d00115 = null)
-    {
-        $this->setProperty("d00115", $d00115);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00220()
-    {
-        return $this->getProperty("d00220");
-    }
-
-    /**
-     * @param string $d00220
-     */
-    public function setD00220($d00220 = null)
-    {
-        $this->setProperty("d00220", $d00220);
     }
 
     /**
@@ -131,7 +67,7 @@ class Subject extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -139,7 +75,7 @@ class Subject extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -147,7 +83,7 @@ class Subject extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -155,7 +91,7 @@ class Subject extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -163,7 +99,7 @@ class Subject extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -171,7 +107,7 @@ class Subject extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -179,7 +115,7 @@ class Subject extends ModelBase
      */
     public function getSubjectName()
     {
-        return $this->getProperty("subjectName");
+        return $this->getProperty('subjectName');
     }
 
     /**
@@ -187,7 +123,7 @@ class Subject extends ModelBase
      */
     public function setSubjectName($subjectName = null)
     {
-        $this->setProperty("subjectName", $subjectName);
+        $this->setProperty('subjectName', $subjectName);
     }
 
     /**
@@ -195,7 +131,7 @@ class Subject extends ModelBase
      */
     public function getParentSubject()
     {
-        return $this->getProperty("parentSubject");
+        return $this->getProperty('parentSubject');
     }
 
     /**
@@ -203,6 +139,70 @@ class Subject extends ModelBase
      */
     public function setParentSubject(Subject $parentSubject = null)
     {
-        $this->setProperty("parentSubject", $parentSubject);
+        $this->setProperty('parentSubject', $parentSubject);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUsedInSwfOnly()
+    {
+        return $this->getProperty('usedInSwfOnly');
+    }
+
+    /**
+     * @param bool $usedInSwfOnly
+     */
+    public function setUsedInSwfOnly($usedInSwfOnly = null)
+    {
+        $this->setProperty('usedInSwfOnly', $usedInSwfOnly);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUsedInCbdsOnly()
+    {
+        return $this->getProperty('usedInCbdsOnly');
+    }
+
+    /**
+     * @param bool $usedInCbdsOnly
+     */
+    public function setUsedInCbdsOnly($usedInCbdsOnly = null)
+    {
+        $this->setProperty('usedInCbdsOnly', $usedInCbdsOnly);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00115()
+    {
+        return $this->getProperty('d00115');
+    }
+
+    /**
+     * @param string $d00115
+     */
+    public function setD00115($d00115 = null)
+    {
+        $this->setProperty('d00115', $d00115);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00220()
+    {
+        return $this->getProperty('d00220');
+    }
+
+    /**
+     * @param string $d00220
+     */
+    public function setD00220($d00220 = null)
+    {
+        $this->setProperty('d00220', $d00220);
     }
 }

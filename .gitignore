@@ -3,4 +3,5 @@
 composer.lock
 .php_cs.cache
 .idea
+phpunit.xml
 /nbproject/

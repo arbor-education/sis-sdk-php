@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Meeting;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MeetingTopic extends ModelBase
 {
@@ -18,34 +13,38 @@ class MeetingTopic extends ModelBase
     protected $_resourceType = ResourceType::MEETING_TOPIC;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MeetingTopic[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MeetingTopic");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEETING_TOPIC);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MeetingTopic
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEETING_TOPIC, $id);
     }
 
@@ -54,7 +53,7 @@ class MeetingTopic extends ModelBase
      */
     public function getMeeting()
     {
-        return $this->getProperty("meeting");
+        return $this->getProperty('meeting');
     }
 
     /**
@@ -62,7 +61,7 @@ class MeetingTopic extends ModelBase
      */
     public function setMeeting(Meeting $meeting = null)
     {
-        $this->setProperty("meeting", $meeting);
+        $this->setProperty('meeting', $meeting);
     }
 
     /**
@@ -70,7 +69,7 @@ class MeetingTopic extends ModelBase
      */
     public function getTopic()
     {
-        return $this->getProperty("topic");
+        return $this->getProperty('topic');
     }
 
     /**
@@ -78,6 +77,6 @@ class MeetingTopic extends ModelBase
      */
     public function setTopic(ModelBase $topic = null)
     {
-        $this->setProperty("topic", $topic);
+        $this->setProperty('topic', $topic);
     }
 }

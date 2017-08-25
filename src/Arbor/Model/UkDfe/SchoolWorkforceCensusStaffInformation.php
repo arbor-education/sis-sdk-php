@@ -1,13 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolWorkforceCensus;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class SchoolWorkforceCensusStaffInformation extends ModelBase
 {
@@ -22,34 +21,38 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolWorkforceCensusStaffInformation[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolWorkforceCensusStaffInformation");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolWorkforceCensusStaffInformation
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION, $id);
     }
 
@@ -58,7 +61,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function getSchoolWorkforceCensus()
     {
-        return $this->getProperty("schoolWorkforceCensus");
+        return $this->getProperty('schoolWorkforceCensus');
     }
 
     /**
@@ -66,7 +69,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
-        $this->setProperty("schoolWorkforceCensus", $schoolWorkforceCensus);
+        $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
 
     /**
@@ -74,7 +77,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function getOccasionalsQts()
     {
-        return $this->getProperty("occasionalsQts");
+        return $this->getProperty('occasionalsQts');
     }
 
     /**
@@ -82,7 +85,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function setOccasionalsQts($occasionalsQts = null)
     {
-        $this->setProperty("occasionalsQts", $occasionalsQts);
+        $this->setProperty('occasionalsQts', $occasionalsQts);
     }
 
     /**
@@ -90,7 +93,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function getOccasionalsNotQts()
     {
-        return $this->getProperty("occasionalsNotQts");
+        return $this->getProperty('occasionalsNotQts');
     }
 
     /**
@@ -98,7 +101,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function setOccasionalsNotQts($occasionalsNotQts = null)
     {
-        $this->setProperty("occasionalsNotQts", $occasionalsNotQts);
+        $this->setProperty('occasionalsNotQts', $occasionalsNotQts);
     }
 
     /**
@@ -106,7 +109,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function getOccasionalsNotKnown()
     {
-        return $this->getProperty("occasionalsNotKnown");
+        return $this->getProperty('occasionalsNotKnown');
     }
 
     /**
@@ -114,6 +117,6 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      */
     public function setOccasionalsNotKnown($occasionalsNotKnown = null)
     {
-        $this->setProperty("occasionalsNotKnown", $occasionalsNotKnown);
+        $this->setProperty('occasionalsNotKnown', $occasionalsNotKnown);
     }
 }

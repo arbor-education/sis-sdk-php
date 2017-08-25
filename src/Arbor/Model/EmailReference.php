@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Email;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailReference extends ModelBase
 {
@@ -24,34 +19,38 @@ class EmailReference extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_REFERENCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailReference[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailReference");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_REFERENCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailReference
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_REFERENCE, $id);
     }
 
@@ -60,7 +59,7 @@ class EmailReference extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -68,7 +67,7 @@ class EmailReference extends ModelBase
      */
     public function setEmail(Email $email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -76,7 +75,7 @@ class EmailReference extends ModelBase
      */
     public function getReferenceType()
     {
-        return $this->getProperty("referenceType");
+        return $this->getProperty('referenceType');
     }
 
     /**
@@ -84,7 +83,7 @@ class EmailReference extends ModelBase
      */
     public function setReferenceType($referenceType = null)
     {
-        $this->setProperty("referenceType", $referenceType);
+        $this->setProperty('referenceType', $referenceType);
     }
 
     /**
@@ -92,7 +91,7 @@ class EmailReference extends ModelBase
      */
     public function getReferencedMessageId()
     {
-        return $this->getProperty("referencedMessageId");
+        return $this->getProperty('referencedMessageId');
     }
 
     /**
@@ -100,7 +99,7 @@ class EmailReference extends ModelBase
      */
     public function setReferencedMessageId($referencedMessageId = null)
     {
-        $this->setProperty("referencedMessageId", $referencedMessageId);
+        $this->setProperty('referencedMessageId', $referencedMessageId);
     }
 
     /**
@@ -108,7 +107,7 @@ class EmailReference extends ModelBase
      */
     public function getReferenceEmail()
     {
-        return $this->getProperty("referenceEmail");
+        return $this->getProperty('referenceEmail');
     }
 
     /**
@@ -116,7 +115,7 @@ class EmailReference extends ModelBase
      */
     public function setReferenceEmail(Email $referenceEmail = null)
     {
-        $this->setProperty("referenceEmail", $referenceEmail);
+        $this->setProperty('referenceEmail', $referenceEmail);
     }
 
     /**
@@ -124,7 +123,7 @@ class EmailReference extends ModelBase
      */
     public function getReferenceIndex()
     {
-        return $this->getProperty("referenceIndex");
+        return $this->getProperty('referenceIndex');
     }
 
     /**
@@ -132,6 +131,6 @@ class EmailReference extends ModelBase
      */
     public function setReferenceIndex($referenceIndex = null)
     {
-        $this->setProperty("referenceIndex", $referenceIndex);
+        $this->setProperty('referenceIndex', $referenceIndex);
     }
 }

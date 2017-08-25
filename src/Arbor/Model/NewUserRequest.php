@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BusinessRole;
-use \Arbor\Model\Title;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewUserRequest extends ModelBase
 {
@@ -36,34 +29,38 @@ class NewUserRequest extends ModelBase
     protected $_resourceType = ResourceType::NEW_USER_REQUEST;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewUserRequest[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewUserRequest");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEW_USER_REQUEST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewUserRequest
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEW_USER_REQUEST, $id);
     }
 
@@ -72,7 +69,7 @@ class NewUserRequest extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -80,7 +77,7 @@ class NewUserRequest extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 
     /**
@@ -88,7 +85,7 @@ class NewUserRequest extends ModelBase
      */
     public function getTitle()
     {
-        return $this->getProperty("title");
+        return $this->getProperty('title');
     }
 
     /**
@@ -96,7 +93,7 @@ class NewUserRequest extends ModelBase
      */
     public function setTitle(Title $title = null)
     {
-        $this->setProperty("title", $title);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -104,7 +101,7 @@ class NewUserRequest extends ModelBase
      */
     public function getFirstName()
     {
-        return $this->getProperty("firstName");
+        return $this->getProperty('firstName');
     }
 
     /**
@@ -112,7 +109,7 @@ class NewUserRequest extends ModelBase
      */
     public function setFirstName($firstName = null)
     {
-        $this->setProperty("firstName", $firstName);
+        $this->setProperty('firstName', $firstName);
     }
 
     /**
@@ -120,7 +117,7 @@ class NewUserRequest extends ModelBase
      */
     public function getLastName()
     {
-        return $this->getProperty("lastName");
+        return $this->getProperty('lastName');
     }
 
     /**
@@ -128,7 +125,7 @@ class NewUserRequest extends ModelBase
      */
     public function setLastName($lastName = null)
     {
-        $this->setProperty("lastName", $lastName);
+        $this->setProperty('lastName', $lastName);
     }
 
     /**
@@ -136,7 +133,7 @@ class NewUserRequest extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -144,7 +141,7 @@ class NewUserRequest extends ModelBase
      */
     public function setEmail($email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -152,7 +149,7 @@ class NewUserRequest extends ModelBase
      */
     public function getMobileNumber()
     {
-        return $this->getProperty("mobileNumber");
+        return $this->getProperty('mobileNumber');
     }
 
     /**
@@ -160,7 +157,7 @@ class NewUserRequest extends ModelBase
      */
     public function setMobileNumber($mobileNumber = null)
     {
-        $this->setProperty("mobileNumber", $mobileNumber);
+        $this->setProperty('mobileNumber', $mobileNumber);
     }
 
     /**
@@ -168,7 +165,7 @@ class NewUserRequest extends ModelBase
      */
     public function getApprovedDatetime()
     {
-        return $this->getProperty("approvedDatetime");
+        return $this->getProperty('approvedDatetime');
     }
 
     /**
@@ -176,7 +173,7 @@ class NewUserRequest extends ModelBase
      */
     public function setApprovedDatetime(\DateTime $approvedDatetime = null)
     {
-        $this->setProperty("approvedDatetime", $approvedDatetime);
+        $this->setProperty('approvedDatetime', $approvedDatetime);
     }
 
     /**
@@ -184,7 +181,7 @@ class NewUserRequest extends ModelBase
      */
     public function getRejectedDatetime()
     {
-        return $this->getProperty("rejectedDatetime");
+        return $this->getProperty('rejectedDatetime');
     }
 
     /**
@@ -192,7 +189,7 @@ class NewUserRequest extends ModelBase
      */
     public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
     {
-        $this->setProperty("rejectedDatetime", $rejectedDatetime);
+        $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
 
     /**
@@ -200,7 +197,7 @@ class NewUserRequest extends ModelBase
      */
     public function getSelectedApproverStaff()
     {
-        return $this->getProperty("selectedApproverStaff");
+        return $this->getProperty('selectedApproverStaff');
     }
 
     /**
@@ -208,7 +205,7 @@ class NewUserRequest extends ModelBase
      */
     public function setSelectedApproverStaff(Staff $selectedApproverStaff = null)
     {
-        $this->setProperty("selectedApproverStaff", $selectedApproverStaff);
+        $this->setProperty('selectedApproverStaff', $selectedApproverStaff);
     }
 
     /**
@@ -216,7 +213,7 @@ class NewUserRequest extends ModelBase
      */
     public function getApproversExist()
     {
-        return $this->getProperty("approversExist");
+        return $this->getProperty('approversExist');
     }
 
     /**
@@ -224,6 +221,6 @@ class NewUserRequest extends ModelBase
      */
     public function setApproversExist($approversExist = null)
     {
-        $this->setProperty("approversExist", $approversExist);
+        $this->setProperty('approversExist', $approversExist);
     }
 }

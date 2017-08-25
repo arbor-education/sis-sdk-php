@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CoverRequirement;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CoverArrangement extends ModelBase
 {
@@ -27,34 +21,38 @@ class CoverArrangement extends ModelBase
     protected $_resourceType = ResourceType::COVER_ARRANGEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CoverArrangement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CoverArrangement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COVER_ARRANGEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CoverArrangement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COVER_ARRANGEMENT, $id);
     }
 
@@ -63,7 +61,7 @@ class CoverArrangement extends ModelBase
      */
     public function getCoverRequirement()
     {
-        return $this->getProperty("coverRequirement");
+        return $this->getProperty('coverRequirement');
     }
 
     /**
@@ -71,7 +69,7 @@ class CoverArrangement extends ModelBase
      */
     public function setCoverRequirement(CoverRequirement $coverRequirement = null)
     {
-        $this->setProperty("coverRequirement", $coverRequirement);
+        $this->setProperty('coverRequirement', $coverRequirement);
     }
 
     /**
@@ -79,7 +77,7 @@ class CoverArrangement extends ModelBase
      */
     public function getCoveringStaff()
     {
-        return $this->getProperty("coveringStaff");
+        return $this->getProperty('coveringStaff');
     }
 
     /**
@@ -87,7 +85,7 @@ class CoverArrangement extends ModelBase
      */
     public function setCoveringStaff(Staff $coveringStaff = null)
     {
-        $this->setProperty("coveringStaff", $coveringStaff);
+        $this->setProperty('coveringStaff', $coveringStaff);
     }
 
     /**
@@ -95,7 +93,7 @@ class CoverArrangement extends ModelBase
      */
     public function getCoverStartDatetime()
     {
-        return $this->getProperty("coverStartDatetime");
+        return $this->getProperty('coverStartDatetime');
     }
 
     /**
@@ -103,7 +101,7 @@ class CoverArrangement extends ModelBase
      */
     public function setCoverStartDatetime(\DateTime $coverStartDatetime = null)
     {
-        $this->setProperty("coverStartDatetime", $coverStartDatetime);
+        $this->setProperty('coverStartDatetime', $coverStartDatetime);
     }
 
     /**
@@ -111,7 +109,7 @@ class CoverArrangement extends ModelBase
      */
     public function getCoverEndDatetime()
     {
-        return $this->getProperty("coverEndDatetime");
+        return $this->getProperty('coverEndDatetime');
     }
 
     /**
@@ -119,7 +117,7 @@ class CoverArrangement extends ModelBase
      */
     public function setCoverEndDatetime(\DateTime $coverEndDatetime = null)
     {
-        $this->setProperty("coverEndDatetime", $coverEndDatetime);
+        $this->setProperty('coverEndDatetime', $coverEndDatetime);
     }
 
     /**
@@ -127,7 +125,7 @@ class CoverArrangement extends ModelBase
      */
     public function getAgreedDatetime()
     {
-        return $this->getProperty("agreedDatetime");
+        return $this->getProperty('agreedDatetime');
     }
 
     /**
@@ -135,7 +133,7 @@ class CoverArrangement extends ModelBase
      */
     public function setAgreedDatetime(\DateTime $agreedDatetime = null)
     {
-        $this->setProperty("agreedDatetime", $agreedDatetime);
+        $this->setProperty('agreedDatetime', $agreedDatetime);
     }
 
     /**
@@ -143,7 +141,7 @@ class CoverArrangement extends ModelBase
      */
     public function getNotAgreedDatetime()
     {
-        return $this->getProperty("notAgreedDatetime");
+        return $this->getProperty('notAgreedDatetime');
     }
 
     /**
@@ -151,6 +149,6 @@ class CoverArrangement extends ModelBase
      */
     public function setNotAgreedDatetime(\DateTime $notAgreedDatetime = null)
     {
-        $this->setProperty("notAgreedDatetime", $notAgreedDatetime);
+        $this->setProperty('notAgreedDatetime', $notAgreedDatetime);
     }
 }

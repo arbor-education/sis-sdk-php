@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationScheme;
-use \Arbor\Model\AwardingOrganization;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationLearningUnit extends ModelBase
 {
@@ -22,45 +16,49 @@ class QualificationLearningUnit extends ModelBase
 
     const AWARDING_ORGANIZATION = 'awardingOrganization';
 
+    const QUALIFICATION_LEARNING_UNIT_LEVEL = 'qualificationLearningUnitLevel';
+
     const LEARNING_UNIT_IDENTIFIER = 'learningUnitIdentifier';
 
-    const FULL_TITLE = 'fullTitle';
+    const TITLE = 'title';
 
-    const SHORT_TITLE = 'shortTitle';
-
-    const DESCRIPTION = 'description';
+    const IS_LINEAR_QUALIFICATION = 'isLinearQualification';
 
     protected $_resourceType = ResourceType::QUALIFICATION_LEARNING_UNIT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationLearningUnit[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationLearningUnit");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_LEARNING_UNIT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationLearningUnit
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_LEARNING_UNIT, $id);
     }
 
@@ -69,7 +67,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -77,7 +75,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -85,7 +83,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -93,7 +91,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -101,7 +99,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -109,7 +107,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -117,7 +115,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function getQualificationScheme()
     {
-        return $this->getProperty("qualificationScheme");
+        return $this->getProperty('qualificationScheme');
     }
 
     /**
@@ -125,7 +123,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function setQualificationScheme(QualificationScheme $qualificationScheme = null)
     {
-        $this->setProperty("qualificationScheme", $qualificationScheme);
+        $this->setProperty('qualificationScheme', $qualificationScheme);
     }
 
     /**
@@ -133,7 +131,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function getAwardingOrganization()
     {
-        return $this->getProperty("awardingOrganization");
+        return $this->getProperty('awardingOrganization');
     }
 
     /**
@@ -141,7 +139,23 @@ class QualificationLearningUnit extends ModelBase
      */
     public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
     {
-        $this->setProperty("awardingOrganization", $awardingOrganization);
+        $this->setProperty('awardingOrganization', $awardingOrganization);
+    }
+
+    /**
+     * @return QualificationLearningUnitLevel
+     */
+    public function getQualificationLearningUnitLevel()
+    {
+        return $this->getProperty('qualificationLearningUnitLevel');
+    }
+
+    /**
+     * @param QualificationLearningUnitLevel $qualificationLearningUnitLevel
+     */
+    public function setQualificationLearningUnitLevel(QualificationLearningUnitLevel $qualificationLearningUnitLevel = null)
+    {
+        $this->setProperty('qualificationLearningUnitLevel', $qualificationLearningUnitLevel);
     }
 
     /**
@@ -149,7 +163,7 @@ class QualificationLearningUnit extends ModelBase
      */
     public function getLearningUnitIdentifier()
     {
-        return $this->getProperty("learningUnitIdentifier");
+        return $this->getProperty('learningUnitIdentifier');
     }
 
     /**
@@ -157,54 +171,38 @@ class QualificationLearningUnit extends ModelBase
      */
     public function setLearningUnitIdentifier($learningUnitIdentifier = null)
     {
-        $this->setProperty("learningUnitIdentifier", $learningUnitIdentifier);
+        $this->setProperty('learningUnitIdentifier', $learningUnitIdentifier);
     }
 
     /**
      * @return string
      */
-    public function getFullTitle()
+    public function getTitle()
     {
-        return $this->getProperty("fullTitle");
+        return $this->getProperty('title');
     }
 
     /**
-     * @param string $fullTitle
+     * @param string $title
      */
-    public function setFullTitle($fullTitle = null)
+    public function setTitle($title = null)
     {
-        $this->setProperty("fullTitle", $fullTitle);
+        $this->setProperty('title', $title);
     }
 
     /**
-     * @return string
+     * @return bool
      */
-    public function getShortTitle()
+    public function getIsLinearQualification()
     {
-        return $this->getProperty("shortTitle");
+        return $this->getProperty('isLinearQualification');
     }
 
     /**
-     * @param string $shortTitle
+     * @param bool $isLinearQualification
      */
-    public function setShortTitle($shortTitle = null)
+    public function setIsLinearQualification($isLinearQualification = null)
     {
-        $this->setProperty("shortTitle", $shortTitle);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->getProperty("description");
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription($description = null)
-    {
-        $this->setProperty("description", $description);
+        $this->setProperty('isLinearQualification', $isLinearQualification);
     }
 }

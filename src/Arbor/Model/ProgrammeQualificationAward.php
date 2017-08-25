@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ProgrammeInstance;
-use \Arbor\Model\QualificationAward;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ProgrammeQualificationAward extends ModelBase
 {
@@ -19,34 +13,38 @@ class ProgrammeQualificationAward extends ModelBase
     protected $_resourceType = ResourceType::PROGRAMME_QUALIFICATION_AWARD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ProgrammeQualificationAward[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ProgrammeQualificationAward");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PROGRAMME_QUALIFICATION_AWARD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ProgrammeQualificationAward
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PROGRAMME_QUALIFICATION_AWARD, $id);
     }
 
@@ -55,7 +53,7 @@ class ProgrammeQualificationAward extends ModelBase
      */
     public function getProgrammeInstance()
     {
-        return $this->getProperty("programmeInstance");
+        return $this->getProperty('programmeInstance');
     }
 
     /**
@@ -63,7 +61,7 @@ class ProgrammeQualificationAward extends ModelBase
      */
     public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
     {
-        $this->setProperty("programmeInstance", $programmeInstance);
+        $this->setProperty('programmeInstance', $programmeInstance);
     }
 
     /**
@@ -71,7 +69,7 @@ class ProgrammeQualificationAward extends ModelBase
      */
     public function getQualificationAward()
     {
-        return $this->getProperty("qualificationAward");
+        return $this->getProperty('qualificationAward');
     }
 
     /**
@@ -79,6 +77,6 @@ class ProgrammeQualificationAward extends ModelBase
      */
     public function setQualificationAward(QualificationAward $qualificationAward = null)
     {
-        $this->setProperty("qualificationAward", $qualificationAward);
+        $this->setProperty('qualificationAward', $qualificationAward);
     }
 }

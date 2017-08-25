@@ -1,18 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Assessment;
-use \Arbor\Model\ProgressMeasurementPeriod;
-use \Arbor\Model\StudentProgressAssessment;
-use \Arbor\Model\Grade;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentProgressAssessmentMark extends ModelBase
 {
@@ -47,34 +37,38 @@ class StudentProgressAssessmentMark extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_PROGRESS_ASSESSMENT_MARK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentProgressAssessmentMark[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentProgressAssessmentMark");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_PROGRESS_ASSESSMENT_MARK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentProgressAssessmentMark
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_PROGRESS_ASSESSMENT_MARK, $id);
     }
 
@@ -83,7 +77,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -91,7 +85,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -99,7 +93,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -107,7 +101,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setAssessment(Assessment $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -115,7 +109,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getProgressMeasurementPeriod()
     {
-        return $this->getProperty("progressMeasurementPeriod");
+        return $this->getProperty('progressMeasurementPeriod');
     }
 
     /**
@@ -123,7 +117,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
-        $this->setProperty("progressMeasurementPeriod", $progressMeasurementPeriod);
+        $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
 
     /**
@@ -131,7 +125,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getStudentProgressAssessment()
     {
-        return $this->getProperty("studentProgressAssessment");
+        return $this->getProperty('studentProgressAssessment');
     }
 
     /**
@@ -139,7 +133,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setStudentProgressAssessment(StudentProgressAssessment $studentProgressAssessment = null)
     {
-        $this->setProperty("studentProgressAssessment", $studentProgressAssessment);
+        $this->setProperty('studentProgressAssessment', $studentProgressAssessment);
     }
 
     /**
@@ -147,7 +141,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getGrade()
     {
-        return $this->getProperty("grade");
+        return $this->getProperty('grade');
     }
 
     /**
@@ -155,7 +149,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setGrade(Grade $grade = null)
     {
-        $this->setProperty("grade", $grade);
+        $this->setProperty('grade', $grade);
     }
 
     /**
@@ -163,7 +157,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getLowerGradePointScaleValue()
     {
-        return $this->getProperty("lowerGradePointScaleValue");
+        return $this->getProperty('lowerGradePointScaleValue');
     }
 
     /**
@@ -171,7 +165,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
     {
-        $this->setProperty("lowerGradePointScaleValue", $lowerGradePointScaleValue);
+        $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
 
     /**
@@ -179,7 +173,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getUpperGradePointScaleValue()
     {
-        return $this->getProperty("upperGradePointScaleValue");
+        return $this->getProperty('upperGradePointScaleValue');
     }
 
     /**
@@ -187,7 +181,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
     {
-        $this->setProperty("upperGradePointScaleValue", $upperGradePointScaleValue);
+        $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
 
     /**
@@ -195,7 +189,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getStatisticalGradePointScaleValue()
     {
-        return $this->getProperty("statisticalGradePointScaleValue");
+        return $this->getProperty('statisticalGradePointScaleValue');
     }
 
     /**
@@ -203,7 +197,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
     {
-        $this->setProperty("statisticalGradePointScaleValue", $statisticalGradePointScaleValue);
+        $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
 
     /**
@@ -211,7 +205,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getAssessmentDate()
     {
-        return $this->getProperty("assessmentDate");
+        return $this->getProperty('assessmentDate');
     }
 
     /**
@@ -219,7 +213,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setAssessmentDate(\DateTime $assessmentDate = null)
     {
-        $this->setProperty("assessmentDate", $assessmentDate);
+        $this->setProperty('assessmentDate', $assessmentDate);
     }
 
     /**
@@ -227,7 +221,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getMarkingStaff()
     {
-        return $this->getProperty("markingStaff");
+        return $this->getProperty('markingStaff');
     }
 
     /**
@@ -235,7 +229,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setMarkingStaff(Staff $markingStaff = null)
     {
-        $this->setProperty("markingStaff", $markingStaff);
+        $this->setProperty('markingStaff', $markingStaff);
     }
 
     /**
@@ -243,7 +237,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getCompletedDatetime()
     {
-        return $this->getProperty("completedDatetime");
+        return $this->getProperty('completedDatetime');
     }
 
     /**
@@ -251,7 +245,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
-        $this->setProperty("completedDatetime", $completedDatetime);
+        $this->setProperty('completedDatetime', $completedDatetime);
     }
 
     /**
@@ -259,7 +253,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getCompletedStaff()
     {
-        return $this->getProperty("completedStaff");
+        return $this->getProperty('completedStaff');
     }
 
     /**
@@ -267,7 +261,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setCompletedStaff(Staff $completedStaff = null)
     {
-        $this->setProperty("completedStaff", $completedStaff);
+        $this->setProperty('completedStaff', $completedStaff);
     }
 
     /**
@@ -275,7 +269,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getApprovedDatetime()
     {
-        return $this->getProperty("approvedDatetime");
+        return $this->getProperty('approvedDatetime');
     }
 
     /**
@@ -283,7 +277,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setApprovedDatetime(\DateTime $approvedDatetime = null)
     {
-        $this->setProperty("approvedDatetime", $approvedDatetime);
+        $this->setProperty('approvedDatetime', $approvedDatetime);
     }
 
     /**
@@ -291,7 +285,7 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function getApprovedStaff()
     {
-        return $this->getProperty("approvedStaff");
+        return $this->getProperty('approvedStaff');
     }
 
     /**
@@ -299,6 +293,6 @@ class StudentProgressAssessmentMark extends ModelBase
      */
     public function setApprovedStaff(Staff $approvedStaff = null)
     {
-        $this->setProperty("approvedStaff", $approvedStaff);
+        $this->setProperty('approvedStaff', $approvedStaff);
     }
 }

@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class GuardianRelationshipType extends ModelBase
 {
@@ -19,34 +19,38 @@ class GuardianRelationshipType extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_GUARDIAN_RELATIONSHIP_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return GuardianRelationshipType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_GuardianRelationshipType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_GUARDIAN_RELATIONSHIP_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return GuardianRelationshipType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_GUARDIAN_RELATIONSHIP_TYPE, $id);
     }
 
@@ -55,7 +59,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getD00033()
     {
-        return $this->getProperty("d00033");
+        return $this->getProperty('d00033');
     }
 
     /**
@@ -63,7 +67,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setD00033($d00033 = null)
     {
-        $this->setProperty("d00033", $d00033);
+        $this->setProperty('d00033', $d00033);
     }
 
     /**
@@ -71,7 +75,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getD00034()
     {
-        return $this->getProperty("d00034");
+        return $this->getProperty('d00034');
     }
 
     /**
@@ -79,7 +83,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setD00034($d00034 = null)
     {
-        $this->setProperty("d00034", $d00034);
+        $this->setProperty('d00034', $d00034);
     }
 
     /**
@@ -87,7 +91,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getCtfExportCode()
     {
-        return $this->getProperty("ctfExportCode");
+        return $this->getProperty('ctfExportCode');
     }
 
     /**
@@ -95,6 +99,6 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setCtfExportCode($ctfExportCode = null)
     {
-        $this->setProperty("ctfExportCode", $ctfExportCode);
+        $this->setProperty('ctfExportCode', $ctfExportCode);
     }
 }

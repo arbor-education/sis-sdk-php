@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewReportCardBatch;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewReportCardBatchTarget extends ModelBase
 {
@@ -20,34 +15,38 @@ class NewReportCardBatchTarget extends ModelBase
     protected $_resourceType = ResourceType::NEW_REPORT_CARD_BATCH_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewReportCardBatchTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewReportCardBatchTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEW_REPORT_CARD_BATCH_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewReportCardBatchTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEW_REPORT_CARD_BATCH_TARGET, $id);
     }
 
@@ -56,7 +55,7 @@ class NewReportCardBatchTarget extends ModelBase
      */
     public function getReportCardBatch()
     {
-        return $this->getProperty("reportCardBatch");
+        return $this->getProperty('reportCardBatch');
     }
 
     /**
@@ -64,7 +63,7 @@ class NewReportCardBatchTarget extends ModelBase
      */
     public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
     {
-        $this->setProperty("reportCardBatch", $reportCardBatch);
+        $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
@@ -72,7 +71,7 @@ class NewReportCardBatchTarget extends ModelBase
      */
     public function getTarget()
     {
-        return $this->getProperty("target");
+        return $this->getProperty('target');
     }
 
     /**
@@ -80,7 +79,7 @@ class NewReportCardBatchTarget extends ModelBase
      */
     public function setTarget(ModelBase $target = null)
     {
-        $this->setProperty("target", $target);
+        $this->setProperty('target', $target);
     }
 
     /**
@@ -88,7 +87,7 @@ class NewReportCardBatchTarget extends ModelBase
      */
     public function getReportsGenerating()
     {
-        return $this->getProperty("reportsGenerating");
+        return $this->getProperty('reportsGenerating');
     }
 
     /**
@@ -96,6 +95,6 @@ class NewReportCardBatchTarget extends ModelBase
      */
     public function setReportsGenerating($reportsGenerating = null)
     {
-        $this->setProperty("reportsGenerating", $reportsGenerating);
+        $this->setProperty('reportsGenerating', $reportsGenerating);
     }
 }

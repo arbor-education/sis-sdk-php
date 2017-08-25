@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TimetablerImportResult extends ModelBase
 {
@@ -24,34 +19,38 @@ class TimetablerImportResult extends ModelBase
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TimetablerImportResult[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TimetablerImportResult");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TIMETABLER_IMPORT_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TimetablerImportResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TIMETABLER_IMPORT_RESULT, $id);
     }
 
@@ -60,7 +59,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -68,7 +67,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -76,7 +75,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function getStepsCompleted()
     {
-        return $this->getProperty("stepsCompleted");
+        return $this->getProperty('stepsCompleted');
     }
 
     /**
@@ -84,7 +83,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function setStepsCompleted($stepsCompleted = null)
     {
-        $this->setProperty("stepsCompleted", $stepsCompleted);
+        $this->setProperty('stepsCompleted', $stepsCompleted);
     }
 
     /**
@@ -92,7 +91,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function getStartedDatetime()
     {
-        return $this->getProperty("startedDatetime");
+        return $this->getProperty('startedDatetime');
     }
 
     /**
@@ -100,7 +99,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function setStartedDatetime(\DateTime $startedDatetime = null)
     {
-        $this->setProperty("startedDatetime", $startedDatetime);
+        $this->setProperty('startedDatetime', $startedDatetime);
     }
 
     /**
@@ -108,7 +107,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function getCompletedDatetime()
     {
-        return $this->getProperty("completedDatetime");
+        return $this->getProperty('completedDatetime');
     }
 
     /**
@@ -116,7 +115,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
-        $this->setProperty("completedDatetime", $completedDatetime);
+        $this->setProperty('completedDatetime', $completedDatetime);
     }
 
     /**
@@ -124,7 +123,7 @@ class TimetablerImportResult extends ModelBase
      */
     public function getFileHash()
     {
-        return $this->getProperty("fileHash");
+        return $this->getProperty('fileHash');
     }
 
     /**
@@ -132,6 +131,6 @@ class TimetablerImportResult extends ModelBase
      */
     public function setFileHash($fileHash = null)
     {
-        $this->setProperty("fileHash", $fileHash);
+        $this->setProperty('fileHash', $fileHash);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Behaviour;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralIncident extends ModelBase
 {
@@ -30,34 +25,38 @@ class BehaviouralIncident extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralIncident[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralIncident");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_INCIDENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralIncident
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT, $id);
     }
 
@@ -66,7 +65,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getBehaviour()
     {
-        return $this->getProperty("behaviour");
+        return $this->getProperty('behaviour');
     }
 
     /**
@@ -74,7 +73,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setBehaviour(Behaviour $behaviour = null)
     {
-        $this->setProperty("behaviour", $behaviour);
+        $this->setProperty('behaviour', $behaviour);
     }
 
     /**
@@ -82,7 +81,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getIncidentName()
     {
-        return $this->getProperty("incidentName");
+        return $this->getProperty('incidentName');
     }
 
     /**
@@ -90,7 +89,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setIncidentName($incidentName = null)
     {
-        $this->setProperty("incidentName", $incidentName);
+        $this->setProperty('incidentName', $incidentName);
     }
 
     /**
@@ -98,7 +97,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -106,7 +105,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -114,7 +113,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getIncidentDatetime()
     {
-        return $this->getProperty("incidentDatetime");
+        return $this->getProperty('incidentDatetime');
     }
 
     /**
@@ -122,7 +121,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setIncidentDatetime(\DateTime $incidentDatetime = null)
     {
-        $this->setProperty("incidentDatetime", $incidentDatetime);
+        $this->setProperty('incidentDatetime', $incidentDatetime);
     }
 
     /**
@@ -130,7 +129,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getSeverity()
     {
-        return $this->getProperty("severity");
+        return $this->getProperty('severity');
     }
 
     /**
@@ -138,7 +137,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setSeverity($severity = null)
     {
-        $this->setProperty("severity", $severity);
+        $this->setProperty('severity', $severity);
     }
 
     /**
@@ -146,7 +145,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getEvent()
     {
-        return $this->getProperty("event");
+        return $this->getProperty('event');
     }
 
     /**
@@ -154,7 +153,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setEvent(ModelBase $event = null)
     {
-        $this->setProperty("event", $event);
+        $this->setProperty('event', $event);
     }
 
     /**
@@ -162,7 +161,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -170,7 +169,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -178,7 +177,7 @@ class BehaviouralIncident extends ModelBase
      */
     public function getResolvedDatetime()
     {
-        return $this->getProperty("resolvedDatetime");
+        return $this->getProperty('resolvedDatetime');
     }
 
     /**
@@ -186,6 +185,6 @@ class BehaviouralIncident extends ModelBase
      */
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
-        $this->setProperty("resolvedDatetime", $resolvedDatetime);
+        $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
 }

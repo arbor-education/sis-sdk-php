@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\EmailMailbox;
-use \Arbor\Model\EmailDraft;
-use \Arbor\Model\EmailPart;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Email extends ModelBase
 {
@@ -46,34 +39,38 @@ class Email extends ModelBase
     protected $_resourceType = ResourceType::EMAIL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Email[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Email");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Email
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL, $id);
     }
 
@@ -82,7 +79,7 @@ class Email extends ModelBase
      */
     public function getEmailMailbox()
     {
-        return $this->getProperty("emailMailbox");
+        return $this->getProperty('emailMailbox');
     }
 
     /**
@@ -90,7 +87,7 @@ class Email extends ModelBase
      */
     public function setEmailMailbox(EmailMailbox $emailMailbox = null)
     {
-        $this->setProperty("emailMailbox", $emailMailbox);
+        $this->setProperty('emailMailbox', $emailMailbox);
     }
 
     /**
@@ -98,7 +95,7 @@ class Email extends ModelBase
      */
     public function getEmailDraft()
     {
-        return $this->getProperty("emailDraft");
+        return $this->getProperty('emailDraft');
     }
 
     /**
@@ -106,7 +103,7 @@ class Email extends ModelBase
      */
     public function setEmailDraft(EmailDraft $emailDraft = null)
     {
-        $this->setProperty("emailDraft", $emailDraft);
+        $this->setProperty('emailDraft', $emailDraft);
     }
 
     /**
@@ -114,7 +111,7 @@ class Email extends ModelBase
      */
     public function getUid()
     {
-        return $this->getProperty("uid");
+        return $this->getProperty('uid');
     }
 
     /**
@@ -122,7 +119,7 @@ class Email extends ModelBase
      */
     public function setUid($uid = null)
     {
-        $this->setProperty("uid", $uid);
+        $this->setProperty('uid', $uid);
     }
 
     /**
@@ -130,7 +127,7 @@ class Email extends ModelBase
      */
     public function getUidValidity()
     {
-        return $this->getProperty("uidValidity");
+        return $this->getProperty('uidValidity');
     }
 
     /**
@@ -138,7 +135,7 @@ class Email extends ModelBase
      */
     public function setUidValidity($uidValidity = null)
     {
-        $this->setProperty("uidValidity", $uidValidity);
+        $this->setProperty('uidValidity', $uidValidity);
     }
 
     /**
@@ -146,7 +143,7 @@ class Email extends ModelBase
      */
     public function getMessageId()
     {
-        return $this->getProperty("messageId");
+        return $this->getProperty('messageId');
     }
 
     /**
@@ -154,7 +151,7 @@ class Email extends ModelBase
      */
     public function setMessageId($messageId = null)
     {
-        $this->setProperty("messageId", $messageId);
+        $this->setProperty('messageId', $messageId);
     }
 
     /**
@@ -162,7 +159,7 @@ class Email extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -170,7 +167,7 @@ class Email extends ModelBase
      */
     public function setSubject($subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -178,7 +175,7 @@ class Email extends ModelBase
      */
     public function getOriginationDatetime()
     {
-        return $this->getProperty("originationDatetime");
+        return $this->getProperty('originationDatetime');
     }
 
     /**
@@ -186,7 +183,7 @@ class Email extends ModelBase
      */
     public function setOriginationDatetime(\DateTime $originationDatetime = null)
     {
-        $this->setProperty("originationDatetime", $originationDatetime);
+        $this->setProperty('originationDatetime', $originationDatetime);
     }
 
     /**
@@ -194,7 +191,7 @@ class Email extends ModelBase
      */
     public function getSendingStartedDatetime()
     {
-        return $this->getProperty("sendingStartedDatetime");
+        return $this->getProperty('sendingStartedDatetime');
     }
 
     /**
@@ -202,7 +199,7 @@ class Email extends ModelBase
      */
     public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
     {
-        $this->setProperty("sendingStartedDatetime", $sendingStartedDatetime);
+        $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
 
     /**
@@ -210,7 +207,7 @@ class Email extends ModelBase
      */
     public function getSentDatetime()
     {
-        return $this->getProperty("sentDatetime");
+        return $this->getProperty('sentDatetime');
     }
 
     /**
@@ -218,7 +215,7 @@ class Email extends ModelBase
      */
     public function setSentDatetime(\DateTime $sentDatetime = null)
     {
-        $this->setProperty("sentDatetime", $sentDatetime);
+        $this->setProperty('sentDatetime', $sentDatetime);
     }
 
     /**
@@ -226,7 +223,7 @@ class Email extends ModelBase
      */
     public function getReceivedDatetime()
     {
-        return $this->getProperty("receivedDatetime");
+        return $this->getProperty('receivedDatetime');
     }
 
     /**
@@ -234,7 +231,7 @@ class Email extends ModelBase
      */
     public function setReceivedDatetime(\DateTime $receivedDatetime = null)
     {
-        $this->setProperty("receivedDatetime", $receivedDatetime);
+        $this->setProperty('receivedDatetime', $receivedDatetime);
     }
 
     /**
@@ -242,7 +239,7 @@ class Email extends ModelBase
      */
     public function getFailedDatetime()
     {
-        return $this->getProperty("failedDatetime");
+        return $this->getProperty('failedDatetime');
     }
 
     /**
@@ -250,7 +247,7 @@ class Email extends ModelBase
      */
     public function setFailedDatetime(\DateTime $failedDatetime = null)
     {
-        $this->setProperty("failedDatetime", $failedDatetime);
+        $this->setProperty('failedDatetime', $failedDatetime);
     }
 
     /**
@@ -258,7 +255,7 @@ class Email extends ModelBase
      */
     public function getTextPart()
     {
-        return $this->getProperty("textPart");
+        return $this->getProperty('textPart');
     }
 
     /**
@@ -266,7 +263,7 @@ class Email extends ModelBase
      */
     public function setTextPart(EmailPart $textPart = null)
     {
-        $this->setProperty("textPart", $textPart);
+        $this->setProperty('textPart', $textPart);
     }
 
     /**
@@ -274,7 +271,7 @@ class Email extends ModelBase
      */
     public function getHtmlPart()
     {
-        return $this->getProperty("htmlPart");
+        return $this->getProperty('htmlPart');
     }
 
     /**
@@ -282,7 +279,7 @@ class Email extends ModelBase
      */
     public function setHtmlPart(EmailPart $htmlPart = null)
     {
-        $this->setProperty("htmlPart", $htmlPart);
+        $this->setProperty('htmlPart', $htmlPart);
     }
 
     /**
@@ -290,7 +287,7 @@ class Email extends ModelBase
      */
     public function getReadDatetime()
     {
-        return $this->getProperty("readDatetime");
+        return $this->getProperty('readDatetime');
     }
 
     /**
@@ -298,7 +295,7 @@ class Email extends ModelBase
      */
     public function setReadDatetime(\DateTime $readDatetime = null)
     {
-        $this->setProperty("readDatetime", $readDatetime);
+        $this->setProperty('readDatetime', $readDatetime);
     }
 
     /**
@@ -306,7 +303,7 @@ class Email extends ModelBase
      */
     public function getActionRequiredByDatetime()
     {
-        return $this->getProperty("actionRequiredByDatetime");
+        return $this->getProperty('actionRequiredByDatetime');
     }
 
     /**
@@ -314,6 +311,6 @@ class Email extends ModelBase
      */
     public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
     {
-        $this->setProperty("actionRequiredByDatetime", $actionRequiredByDatetime);
+        $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
 }

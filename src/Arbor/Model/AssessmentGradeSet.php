@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Assessment;
-use \Arbor\Model\GradeSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AssessmentGradeSet extends ModelBase
 {
@@ -23,34 +17,38 @@ class AssessmentGradeSet extends ModelBase
     protected $_resourceType = ResourceType::ASSESSMENT_GRADE_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AssessmentGradeSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AssessmentGradeSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ASSESSMENT_GRADE_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AssessmentGradeSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ASSESSMENT_GRADE_SET, $id);
     }
 
@@ -59,7 +57,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -67,7 +65,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function setAssessment(Assessment $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -75,7 +73,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function getGradeSet()
     {
-        return $this->getProperty("gradeSet");
+        return $this->getProperty('gradeSet');
     }
 
     /**
@@ -83,7 +81,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function setGradeSet(GradeSet $gradeSet = null)
     {
-        $this->setProperty("gradeSet", $gradeSet);
+        $this->setProperty('gradeSet', $gradeSet);
     }
 
     /**
@@ -91,7 +89,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function getIsDefault()
     {
-        return $this->getProperty("isDefault");
+        return $this->getProperty('isDefault');
     }
 
     /**
@@ -99,7 +97,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function setIsDefault($isDefault = null)
     {
-        $this->setProperty("isDefault", $isDefault);
+        $this->setProperty('isDefault', $isDefault);
     }
 
     /**
@@ -107,7 +105,7 @@ class AssessmentGradeSet extends ModelBase
      */
     public function getIsOriginal()
     {
-        return $this->getProperty("isOriginal");
+        return $this->getProperty('isOriginal');
     }
 
     /**
@@ -115,6 +113,6 @@ class AssessmentGradeSet extends ModelBase
      */
     public function setIsOriginal($isOriginal = null)
     {
-        $this->setProperty("isOriginal", $isOriginal);
+        $this->setProperty('isOriginal', $isOriginal);
     }
 }

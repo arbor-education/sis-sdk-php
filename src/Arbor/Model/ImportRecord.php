@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ImportRecord extends ModelBase
 {
@@ -21,34 +17,38 @@ class ImportRecord extends ModelBase
     protected $_resourceType = ResourceType::IMPORT_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ImportRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ImportRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::IMPORT_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ImportRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::IMPORT_RECORD, $id);
     }
 
@@ -57,7 +57,7 @@ class ImportRecord extends ModelBase
      */
     public function getImporter()
     {
-        return $this->getProperty("importer");
+        return $this->getProperty('importer');
     }
 
     /**
@@ -65,7 +65,7 @@ class ImportRecord extends ModelBase
      */
     public function setImporter(ModelBase $importer = null)
     {
-        $this->setProperty("importer", $importer);
+        $this->setProperty('importer', $importer);
     }
 
     /**
@@ -73,7 +73,7 @@ class ImportRecord extends ModelBase
      */
     public function getImporterName()
     {
-        return $this->getProperty("importerName");
+        return $this->getProperty('importerName');
     }
 
     /**
@@ -81,7 +81,7 @@ class ImportRecord extends ModelBase
      */
     public function setImporterName($importerName = null)
     {
-        $this->setProperty("importerName", $importerName);
+        $this->setProperty('importerName', $importerName);
     }
 
     /**
@@ -89,7 +89,7 @@ class ImportRecord extends ModelBase
      */
     public function getImportedRecordEntityType()
     {
-        return $this->getProperty("importedRecordEntityType");
+        return $this->getProperty('importedRecordEntityType');
     }
 
     /**
@@ -97,7 +97,7 @@ class ImportRecord extends ModelBase
      */
     public function setImportedRecordEntityType($importedRecordEntityType = null)
     {
-        $this->setProperty("importedRecordEntityType", $importedRecordEntityType);
+        $this->setProperty('importedRecordEntityType', $importedRecordEntityType);
     }
 
     /**
@@ -105,7 +105,7 @@ class ImportRecord extends ModelBase
      */
     public function getImportedRecord()
     {
-        return $this->getProperty("importedRecord");
+        return $this->getProperty('importedRecord');
     }
 
     /**
@@ -113,6 +113,6 @@ class ImportRecord extends ModelBase
      */
     public function setImportedRecord(ModelBase $importedRecord = null)
     {
-        $this->setProperty("importedRecord", $importedRecord);
+        $this->setProperty('importedRecord', $importedRecord);
     }
 }

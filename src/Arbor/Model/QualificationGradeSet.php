@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\GradePointScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationGradeSet extends ModelBase
 {
@@ -17,7 +12,7 @@ class QualificationGradeSet extends ModelBase
 
     const DATA_ORDER = 'dataOrder';
 
-    const QUALIFICATION_GRADE_SET_NAME = 'qualificationGradeSetName';
+    const NAME = 'name';
 
     const SCALE_DIRECTION = 'scaleDirection';
 
@@ -26,34 +21,38 @@ class QualificationGradeSet extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_GRADE_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationGradeSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationGradeSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_GRADE_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationGradeSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_GRADE_SET, $id);
     }
 
@@ -62,7 +61,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -70,7 +69,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -78,7 +77,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -86,7 +85,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -94,7 +93,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -102,23 +101,23 @@ class QualificationGradeSet extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
      * @return string
      */
-    public function getQualificationGradeSetName()
+    public function getName()
     {
-        return $this->getProperty("qualificationGradeSetName");
+        return $this->getProperty('name');
     }
 
     /**
-     * @param string $qualificationGradeSetName
+     * @param string $name
      */
-    public function setQualificationGradeSetName($qualificationGradeSetName = null)
+    public function setName($name = null)
     {
-        $this->setProperty("qualificationGradeSetName", $qualificationGradeSetName);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -126,7 +125,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function getScaleDirection()
     {
-        return $this->getProperty("scaleDirection");
+        return $this->getProperty('scaleDirection');
     }
 
     /**
@@ -134,7 +133,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function setScaleDirection($scaleDirection = null)
     {
-        $this->setProperty("scaleDirection", $scaleDirection);
+        $this->setProperty('scaleDirection', $scaleDirection);
     }
 
     /**
@@ -142,7 +141,7 @@ class QualificationGradeSet extends ModelBase
      */
     public function getGradePointScale()
     {
-        return $this->getProperty("gradePointScale");
+        return $this->getProperty('gradePointScale');
     }
 
     /**
@@ -150,6 +149,6 @@ class QualificationGradeSet extends ModelBase
      */
     public function setGradePointScale(GradePointScale $gradePointScale = null)
     {
-        $this->setProperty("gradePointScale", $gradePointScale);
+        $this->setProperty('gradePointScale', $gradePointScale);
     }
 }

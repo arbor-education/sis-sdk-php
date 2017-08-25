@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Gender;
-use \Arbor\Model\Title;
-use \Arbor\Model\MaritalStatus;
-use \Arbor\Model\Country;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Person extends ModelBase
 {
@@ -41,34 +33,38 @@ class Person extends ModelBase
     protected $_resourceType = ResourceType::PERSON;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Person[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Person");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Person
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON, $id);
     }
 
@@ -77,7 +73,7 @@ class Person extends ModelBase
      */
     public function getGender()
     {
-        return $this->getProperty("gender");
+        return $this->getProperty('gender');
     }
 
     /**
@@ -85,7 +81,7 @@ class Person extends ModelBase
      */
     public function setGender(Gender $gender = null)
     {
-        $this->setProperty("gender", $gender);
+        $this->setProperty('gender', $gender);
     }
 
     /**
@@ -93,7 +89,7 @@ class Person extends ModelBase
      */
     public function getTitle()
     {
-        return $this->getProperty("title");
+        return $this->getProperty('title');
     }
 
     /**
@@ -101,7 +97,7 @@ class Person extends ModelBase
      */
     public function setTitle(Title $title = null)
     {
-        $this->setProperty("title", $title);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -109,7 +105,7 @@ class Person extends ModelBase
      */
     public function getMaritalStatus()
     {
-        return $this->getProperty("maritalStatus");
+        return $this->getProperty('maritalStatus');
     }
 
     /**
@@ -117,7 +113,7 @@ class Person extends ModelBase
      */
     public function setMaritalStatus(MaritalStatus $maritalStatus = null)
     {
-        $this->setProperty("maritalStatus", $maritalStatus);
+        $this->setProperty('maritalStatus', $maritalStatus);
     }
 
     /**
@@ -125,7 +121,7 @@ class Person extends ModelBase
      */
     public function getLegalFirstName()
     {
-        return $this->getProperty("legalFirstName");
+        return $this->getProperty('legalFirstName');
     }
 
     /**
@@ -133,7 +129,7 @@ class Person extends ModelBase
      */
     public function setLegalFirstName($legalFirstName = null)
     {
-        $this->setProperty("legalFirstName", $legalFirstName);
+        $this->setProperty('legalFirstName', $legalFirstName);
     }
 
     /**
@@ -141,7 +137,7 @@ class Person extends ModelBase
      */
     public function getLegalMiddleNames()
     {
-        return $this->getProperty("legalMiddleNames");
+        return $this->getProperty('legalMiddleNames');
     }
 
     /**
@@ -149,7 +145,7 @@ class Person extends ModelBase
      */
     public function setLegalMiddleNames($legalMiddleNames = null)
     {
-        $this->setProperty("legalMiddleNames", $legalMiddleNames);
+        $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
 
     /**
@@ -157,7 +153,7 @@ class Person extends ModelBase
      */
     public function getLegalLastName()
     {
-        return $this->getProperty("legalLastName");
+        return $this->getProperty('legalLastName');
     }
 
     /**
@@ -165,7 +161,7 @@ class Person extends ModelBase
      */
     public function setLegalLastName($legalLastName = null)
     {
-        $this->setProperty("legalLastName", $legalLastName);
+        $this->setProperty('legalLastName', $legalLastName);
     }
 
     /**
@@ -173,7 +169,7 @@ class Person extends ModelBase
      */
     public function getPreferredFirstName()
     {
-        return $this->getProperty("preferredFirstName");
+        return $this->getProperty('preferredFirstName');
     }
 
     /**
@@ -181,7 +177,7 @@ class Person extends ModelBase
      */
     public function setPreferredFirstName($preferredFirstName = null)
     {
-        $this->setProperty("preferredFirstName", $preferredFirstName);
+        $this->setProperty('preferredFirstName', $preferredFirstName);
     }
 
     /**
@@ -189,7 +185,7 @@ class Person extends ModelBase
      */
     public function getPreferredLastName()
     {
-        return $this->getProperty("preferredLastName");
+        return $this->getProperty('preferredLastName');
     }
 
     /**
@@ -197,7 +193,7 @@ class Person extends ModelBase
      */
     public function setPreferredLastName($preferredLastName = null)
     {
-        $this->setProperty("preferredLastName", $preferredLastName);
+        $this->setProperty('preferredLastName', $preferredLastName);
     }
 
     /**
@@ -205,7 +201,7 @@ class Person extends ModelBase
      */
     public function getDateOfBirth()
     {
-        return $this->getProperty("dateOfBirth");
+        return $this->getProperty('dateOfBirth');
     }
 
     /**
@@ -213,7 +209,7 @@ class Person extends ModelBase
      */
     public function setDateOfBirth(\DateTime $dateOfBirth = null)
     {
-        $this->setProperty("dateOfBirth", $dateOfBirth);
+        $this->setProperty('dateOfBirth', $dateOfBirth);
     }
 
     /**
@@ -221,7 +217,7 @@ class Person extends ModelBase
      */
     public function getCountryOfBirth()
     {
-        return $this->getProperty("countryOfBirth");
+        return $this->getProperty('countryOfBirth');
     }
 
     /**
@@ -229,7 +225,7 @@ class Person extends ModelBase
      */
     public function setCountryOfBirth(Country $countryOfBirth = null)
     {
-        $this->setProperty("countryOfBirth", $countryOfBirth);
+        $this->setProperty('countryOfBirth', $countryOfBirth);
     }
 
     /**
@@ -237,7 +233,7 @@ class Person extends ModelBase
      */
     public function getDeceased()
     {
-        return $this->getProperty("deceased");
+        return $this->getProperty('deceased');
     }
 
     /**
@@ -245,7 +241,7 @@ class Person extends ModelBase
      */
     public function setDeceased($deceased = null)
     {
-        $this->setProperty("deceased", $deceased);
+        $this->setProperty('deceased', $deceased);
     }
 
     /**
@@ -253,7 +249,7 @@ class Person extends ModelBase
      */
     public function getDateOfDeath()
     {
-        return $this->getProperty("dateOfDeath");
+        return $this->getProperty('dateOfDeath');
     }
 
     /**
@@ -261,6 +257,6 @@ class Person extends ModelBase
      */
     public function setDateOfDeath(\DateTime $dateOfDeath = null)
     {
-        $this->setProperty("dateOfDeath", $dateOfDeath);
+        $this->setProperty('dateOfDeath', $dateOfDeath);
     }
 }

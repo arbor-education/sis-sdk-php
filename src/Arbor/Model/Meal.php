@@ -1,106 +1,75 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerAccountType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Meal extends ModelBase
 {
-    const CODE = 'code';
-
-    const ACTIVE = 'active';
-
-    const DATA_ORDER = 'dataOrder';
+    const ACADEMIC_YEAR = 'academicYear';
 
     const MEAL_NAME = 'mealName';
 
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
+
     const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
+
+    const COPIED_TO_MEAL = 'copiedToMeal';
 
     protected $_resourceType = ResourceType::MEAL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Meal[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Meal");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Meal
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL, $id);
     }
 
     /**
-     * @return string
+     * @return AcademicYear
      */
-    public function getCode()
+    public function getAcademicYear()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('academicYear');
     }
 
     /**
-     * @param string $code
+     * @param AcademicYear $academicYear
      */
-    public function setCode($code = null)
+    public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("code", $code);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getActive()
-    {
-        return $this->getProperty("active");
-    }
-
-    /**
-     * @param bool $active
-     */
-    public function setActive($active = null)
-    {
-        $this->setProperty("active", $active);
-    }
-
-    /**
-     * @return int
-     */
-    public function getDataOrder()
-    {
-        return $this->getProperty("dataOrder");
-    }
-
-    /**
-     * @param int $dataOrder
-     */
-    public function setDataOrder($dataOrder = null)
-    {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -108,7 +77,7 @@ class Meal extends ModelBase
      */
     public function getMealName()
     {
-        return $this->getProperty("mealName");
+        return $this->getProperty('mealName');
     }
 
     /**
@@ -116,7 +85,39 @@ class Meal extends ModelBase
      */
     public function setMealName($mealName = null)
     {
-        $this->setProperty("mealName", $mealName);
+        $this->setProperty('mealName', $mealName);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->getProperty('effectiveDate');
+    }
+
+    /**
+     * @param \DateTime $effectiveDate
+     */
+    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    {
+        $this->setProperty('effectiveDate', $effectiveDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty('endDate');
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -124,7 +125,7 @@ class Meal extends ModelBase
      */
     public function getCustomerAccountType()
     {
-        return $this->getProperty("customerAccountType");
+        return $this->getProperty('customerAccountType');
     }
 
     /**
@@ -132,6 +133,22 @@ class Meal extends ModelBase
      */
     public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
     {
-        $this->setProperty("customerAccountType", $customerAccountType);
+        $this->setProperty('customerAccountType', $customerAccountType);
+    }
+
+    /**
+     * @return Meal
+     */
+    public function getCopiedToMeal()
+    {
+        return $this->getProperty('copiedToMeal');
+    }
+
+    /**
+     * @param Meal $copiedToMeal
+     */
+    public function setCopiedToMeal(Meal $copiedToMeal = null)
+    {
+        $this->setProperty('copiedToMeal', $copiedToMeal);
     }
 }

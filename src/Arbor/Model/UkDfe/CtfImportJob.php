@@ -1,16 +1,15 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LocalAuthority;
-use \Arbor\Model\EducationalInstitution;
-use \Arbor\Model\UkDfe\EducationalInstitution;
-use \Arbor\Model\IntakeSeason;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\LocalAuthority;
+use Arbor\Model\EducationalInstitution;
+use Arbor\Model\IntakeSeason;
 
 class CtfImportJob extends ModelBase
 {
@@ -41,34 +40,38 @@ class CtfImportJob extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_CTF_IMPORT_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CtfImportJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_CtfImportJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_CTF_IMPORT_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CtfImportJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_CTF_IMPORT_JOB, $id);
     }
 
@@ -77,7 +80,7 @@ class CtfImportJob extends ModelBase
      */
     public function getSourceLocalAuthorityCode()
     {
-        return $this->getProperty("sourceLocalAuthorityCode");
+        return $this->getProperty('sourceLocalAuthorityCode');
     }
 
     /**
@@ -85,7 +88,7 @@ class CtfImportJob extends ModelBase
      */
     public function setSourceLocalAuthorityCode($sourceLocalAuthorityCode = null)
     {
-        $this->setProperty("sourceLocalAuthorityCode", $sourceLocalAuthorityCode);
+        $this->setProperty('sourceLocalAuthorityCode', $sourceLocalAuthorityCode);
     }
 
     /**
@@ -93,7 +96,7 @@ class CtfImportJob extends ModelBase
      */
     public function getSourceLocalAuthority()
     {
-        return $this->getProperty("sourceLocalAuthority");
+        return $this->getProperty('sourceLocalAuthority');
     }
 
     /**
@@ -101,7 +104,7 @@ class CtfImportJob extends ModelBase
      */
     public function setSourceLocalAuthority(LocalAuthority $sourceLocalAuthority = null)
     {
-        $this->setProperty("sourceLocalAuthority", $sourceLocalAuthority);
+        $this->setProperty('sourceLocalAuthority', $sourceLocalAuthority);
     }
 
     /**
@@ -109,7 +112,7 @@ class CtfImportJob extends ModelBase
      */
     public function getSourceEstablishmentNumber()
     {
-        return $this->getProperty("sourceEstablishmentNumber");
+        return $this->getProperty('sourceEstablishmentNumber');
     }
 
     /**
@@ -117,7 +120,7 @@ class CtfImportJob extends ModelBase
      */
     public function setSourceEstablishmentNumber($sourceEstablishmentNumber = null)
     {
-        $this->setProperty("sourceEstablishmentNumber", $sourceEstablishmentNumber);
+        $this->setProperty('sourceEstablishmentNumber', $sourceEstablishmentNumber);
     }
 
     /**
@@ -125,7 +128,7 @@ class CtfImportJob extends ModelBase
      */
     public function getSourceEducationalInstitutionName()
     {
-        return $this->getProperty("sourceEducationalInstitutionName");
+        return $this->getProperty('sourceEducationalInstitutionName');
     }
 
     /**
@@ -133,7 +136,7 @@ class CtfImportJob extends ModelBase
      */
     public function setSourceEducationalInstitutionName($sourceEducationalInstitutionName = null)
     {
-        $this->setProperty("sourceEducationalInstitutionName", $sourceEducationalInstitutionName);
+        $this->setProperty('sourceEducationalInstitutionName', $sourceEducationalInstitutionName);
     }
 
     /**
@@ -141,7 +144,7 @@ class CtfImportJob extends ModelBase
      */
     public function getSourceEducationalInstitution()
     {
-        return $this->getProperty("sourceEducationalInstitution");
+        return $this->getProperty('sourceEducationalInstitution');
     }
 
     /**
@@ -149,7 +152,7 @@ class CtfImportJob extends ModelBase
      */
     public function setSourceEducationalInstitution(EducationalInstitution $sourceEducationalInstitution = null)
     {
-        $this->setProperty("sourceEducationalInstitution", $sourceEducationalInstitution);
+        $this->setProperty('sourceEducationalInstitution', $sourceEducationalInstitution);
     }
 
     /**
@@ -157,7 +160,7 @@ class CtfImportJob extends ModelBase
      */
     public function getDestinationLocalAuthorityCode()
     {
-        return $this->getProperty("destinationLocalAuthorityCode");
+        return $this->getProperty('destinationLocalAuthorityCode');
     }
 
     /**
@@ -165,7 +168,7 @@ class CtfImportJob extends ModelBase
      */
     public function setDestinationLocalAuthorityCode($destinationLocalAuthorityCode = null)
     {
-        $this->setProperty("destinationLocalAuthorityCode", $destinationLocalAuthorityCode);
+        $this->setProperty('destinationLocalAuthorityCode', $destinationLocalAuthorityCode);
     }
 
     /**
@@ -173,7 +176,7 @@ class CtfImportJob extends ModelBase
      */
     public function getDestinationLocalAuthority()
     {
-        return $this->getProperty("destinationLocalAuthority");
+        return $this->getProperty('destinationLocalAuthority');
     }
 
     /**
@@ -181,7 +184,7 @@ class CtfImportJob extends ModelBase
      */
     public function setDestinationLocalAuthority(LocalAuthority $destinationLocalAuthority = null)
     {
-        $this->setProperty("destinationLocalAuthority", $destinationLocalAuthority);
+        $this->setProperty('destinationLocalAuthority', $destinationLocalAuthority);
     }
 
     /**
@@ -189,7 +192,7 @@ class CtfImportJob extends ModelBase
      */
     public function getDestinationEstablishmentNumber()
     {
-        return $this->getProperty("destinationEstablishmentNumber");
+        return $this->getProperty('destinationEstablishmentNumber');
     }
 
     /**
@@ -197,7 +200,7 @@ class CtfImportJob extends ModelBase
      */
     public function setDestinationEstablishmentNumber($destinationEstablishmentNumber = null)
     {
-        $this->setProperty("destinationEstablishmentNumber", $destinationEstablishmentNumber);
+        $this->setProperty('destinationEstablishmentNumber', $destinationEstablishmentNumber);
     }
 
     /**
@@ -205,7 +208,7 @@ class CtfImportJob extends ModelBase
      */
     public function getDestinationEducationalInstitution()
     {
-        return $this->getProperty("destinationEducationalInstitution");
+        return $this->getProperty('destinationEducationalInstitution');
     }
 
     /**
@@ -213,7 +216,7 @@ class CtfImportJob extends ModelBase
      */
     public function setDestinationEducationalInstitution(EducationalInstitution $destinationEducationalInstitution = null)
     {
-        $this->setProperty("destinationEducationalInstitution", $destinationEducationalInstitution);
+        $this->setProperty('destinationEducationalInstitution', $destinationEducationalInstitution);
     }
 
     /**
@@ -221,7 +224,7 @@ class CtfImportJob extends ModelBase
      */
     public function getDefaultIntakeSeason()
     {
-        return $this->getProperty("defaultIntakeSeason");
+        return $this->getProperty('defaultIntakeSeason');
     }
 
     /**
@@ -229,7 +232,7 @@ class CtfImportJob extends ModelBase
      */
     public function setDefaultIntakeSeason(IntakeSeason $defaultIntakeSeason = null)
     {
-        $this->setProperty("defaultIntakeSeason", $defaultIntakeSeason);
+        $this->setProperty('defaultIntakeSeason', $defaultIntakeSeason);
     }
 
     /**
@@ -237,7 +240,7 @@ class CtfImportJob extends ModelBase
      */
     public function getLastImportDatetime()
     {
-        return $this->getProperty("lastImportDatetime");
+        return $this->getProperty('lastImportDatetime');
     }
 
     /**
@@ -245,7 +248,7 @@ class CtfImportJob extends ModelBase
      */
     public function setLastImportDatetime(\DateTime $lastImportDatetime = null)
     {
-        $this->setProperty("lastImportDatetime", $lastImportDatetime);
+        $this->setProperty('lastImportDatetime', $lastImportDatetime);
     }
 
     /**
@@ -253,7 +256,7 @@ class CtfImportJob extends ModelBase
      */
     public function getIsQueuedForAllStudentImport()
     {
-        return $this->getProperty("isQueuedForAllStudentImport");
+        return $this->getProperty('isQueuedForAllStudentImport');
     }
 
     /**
@@ -261,6 +264,6 @@ class CtfImportJob extends ModelBase
      */
     public function setIsQueuedForAllStudentImport($isQueuedForAllStudentImport = null)
     {
-        $this->setProperty("isQueuedForAllStudentImport", $isQueuedForAllStudentImport);
+        $this->setProperty('isQueuedForAllStudentImport', $isQueuedForAllStudentImport);
     }
 }

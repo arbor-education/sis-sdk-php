@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SmsMessageDraft;
-use \Arbor\Model\MessageDraftRecipient;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SmsMessage extends ModelBase
 {
@@ -51,34 +45,38 @@ class SmsMessage extends ModelBase
     protected $_resourceType = ResourceType::SMS_MESSAGE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SmsMessage[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SmsMessage");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SMS_MESSAGE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SmsMessage
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SMS_MESSAGE, $id);
     }
 
@@ -87,7 +85,7 @@ class SmsMessage extends ModelBase
      */
     public function getSmsMessageDraft()
     {
-        return $this->getProperty("smsMessageDraft");
+        return $this->getProperty('smsMessageDraft');
     }
 
     /**
@@ -95,7 +93,7 @@ class SmsMessage extends ModelBase
      */
     public function setSmsMessageDraft(SmsMessageDraft $smsMessageDraft = null)
     {
-        $this->setProperty("smsMessageDraft", $smsMessageDraft);
+        $this->setProperty('smsMessageDraft', $smsMessageDraft);
     }
 
     /**
@@ -103,7 +101,7 @@ class SmsMessage extends ModelBase
      */
     public function getMessageType()
     {
-        return $this->getProperty("messageType");
+        return $this->getProperty('messageType');
     }
 
     /**
@@ -111,7 +109,7 @@ class SmsMessage extends ModelBase
      */
     public function setMessageType($messageType = null)
     {
-        $this->setProperty("messageType", $messageType);
+        $this->setProperty('messageType', $messageType);
     }
 
     /**
@@ -119,7 +117,7 @@ class SmsMessage extends ModelBase
      */
     public function getSenderNumber()
     {
-        return $this->getProperty("senderNumber");
+        return $this->getProperty('senderNumber');
     }
 
     /**
@@ -127,7 +125,7 @@ class SmsMessage extends ModelBase
      */
     public function setSenderNumber($senderNumber = null)
     {
-        $this->setProperty("senderNumber", $senderNumber);
+        $this->setProperty('senderNumber', $senderNumber);
     }
 
     /**
@@ -135,7 +133,7 @@ class SmsMessage extends ModelBase
      */
     public function getSender()
     {
-        return $this->getProperty("sender");
+        return $this->getProperty('sender');
     }
 
     /**
@@ -143,7 +141,7 @@ class SmsMessage extends ModelBase
      */
     public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty("sender", $sender);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -151,7 +149,7 @@ class SmsMessage extends ModelBase
      */
     public function getRecipientNumber()
     {
-        return $this->getProperty("recipientNumber");
+        return $this->getProperty('recipientNumber');
     }
 
     /**
@@ -159,7 +157,7 @@ class SmsMessage extends ModelBase
      */
     public function setRecipientNumber($recipientNumber = null)
     {
-        $this->setProperty("recipientNumber", $recipientNumber);
+        $this->setProperty('recipientNumber', $recipientNumber);
     }
 
     /**
@@ -167,7 +165,7 @@ class SmsMessage extends ModelBase
      */
     public function getRecipient()
     {
-        return $this->getProperty("recipient");
+        return $this->getProperty('recipient');
     }
 
     /**
@@ -175,7 +173,7 @@ class SmsMessage extends ModelBase
      */
     public function setRecipient(ModelBase $recipient = null)
     {
-        $this->setProperty("recipient", $recipient);
+        $this->setProperty('recipient', $recipient);
     }
 
     /**
@@ -183,7 +181,7 @@ class SmsMessage extends ModelBase
      */
     public function getDraftRecipient()
     {
-        return $this->getProperty("draftRecipient");
+        return $this->getProperty('draftRecipient');
     }
 
     /**
@@ -191,7 +189,7 @@ class SmsMessage extends ModelBase
      */
     public function setDraftRecipient(MessageDraftRecipient $draftRecipient = null)
     {
-        $this->setProperty("draftRecipient", $draftRecipient);
+        $this->setProperty('draftRecipient', $draftRecipient);
     }
 
     /**
@@ -199,7 +197,7 @@ class SmsMessage extends ModelBase
      */
     public function getMessageText()
     {
-        return $this->getProperty("messageText");
+        return $this->getProperty('messageText');
     }
 
     /**
@@ -207,7 +205,7 @@ class SmsMessage extends ModelBase
      */
     public function setMessageText($messageText = null)
     {
-        $this->setProperty("messageText", $messageText);
+        $this->setProperty('messageText', $messageText);
     }
 
     /**
@@ -215,7 +213,7 @@ class SmsMessage extends ModelBase
      */
     public function getSentDatetime()
     {
-        return $this->getProperty("sentDatetime");
+        return $this->getProperty('sentDatetime');
     }
 
     /**
@@ -223,7 +221,7 @@ class SmsMessage extends ModelBase
      */
     public function setSentDatetime(\DateTime $sentDatetime = null)
     {
-        $this->setProperty("sentDatetime", $sentDatetime);
+        $this->setProperty('sentDatetime', $sentDatetime);
     }
 
     /**
@@ -231,7 +229,7 @@ class SmsMessage extends ModelBase
      */
     public function getReadDatetime()
     {
-        return $this->getProperty("readDatetime");
+        return $this->getProperty('readDatetime');
     }
 
     /**
@@ -239,7 +237,7 @@ class SmsMessage extends ModelBase
      */
     public function setReadDatetime(\DateTime $readDatetime = null)
     {
-        $this->setProperty("readDatetime", $readDatetime);
+        $this->setProperty('readDatetime', $readDatetime);
     }
 
     /**
@@ -247,7 +245,7 @@ class SmsMessage extends ModelBase
      */
     public function getReceivedDatetime()
     {
-        return $this->getProperty("receivedDatetime");
+        return $this->getProperty('receivedDatetime');
     }
 
     /**
@@ -255,7 +253,7 @@ class SmsMessage extends ModelBase
      */
     public function setReceivedDatetime(\DateTime $receivedDatetime = null)
     {
-        $this->setProperty("receivedDatetime", $receivedDatetime);
+        $this->setProperty('receivedDatetime', $receivedDatetime);
     }
 
     /**
@@ -263,7 +261,7 @@ class SmsMessage extends ModelBase
      */
     public function getFailedDatetime()
     {
-        return $this->getProperty("failedDatetime");
+        return $this->getProperty('failedDatetime');
     }
 
     /**
@@ -271,7 +269,7 @@ class SmsMessage extends ModelBase
      */
     public function setFailedDatetime(\DateTime $failedDatetime = null)
     {
-        $this->setProperty("failedDatetime", $failedDatetime);
+        $this->setProperty('failedDatetime', $failedDatetime);
     }
 
     /**
@@ -279,7 +277,7 @@ class SmsMessage extends ModelBase
      */
     public function getTotalCost()
     {
-        return $this->getProperty("totalCost");
+        return $this->getProperty('totalCost');
     }
 
     /**
@@ -287,7 +285,7 @@ class SmsMessage extends ModelBase
      */
     public function setTotalCost($totalCost = null)
     {
-        $this->setProperty("totalCost", $totalCost);
+        $this->setProperty('totalCost', $totalCost);
     }
 
     /**
@@ -295,7 +293,7 @@ class SmsMessage extends ModelBase
      */
     public function getCreditsUsed()
     {
-        return $this->getProperty("creditsUsed");
+        return $this->getProperty('creditsUsed');
     }
 
     /**
@@ -303,7 +301,7 @@ class SmsMessage extends ModelBase
      */
     public function setCreditsUsed($creditsUsed = null)
     {
-        $this->setProperty("creditsUsed", $creditsUsed);
+        $this->setProperty('creditsUsed', $creditsUsed);
     }
 
     /**
@@ -311,7 +309,7 @@ class SmsMessage extends ModelBase
      */
     public function getFree()
     {
-        return $this->getProperty("free");
+        return $this->getProperty('free');
     }
 
     /**
@@ -319,7 +317,7 @@ class SmsMessage extends ModelBase
      */
     public function setFree($free = null)
     {
-        $this->setProperty("free", $free);
+        $this->setProperty('free', $free);
     }
 
     /**
@@ -327,7 +325,7 @@ class SmsMessage extends ModelBase
      */
     public function getMessageParts()
     {
-        return $this->getProperty("messageParts");
+        return $this->getProperty('messageParts');
     }
 
     /**
@@ -335,7 +333,7 @@ class SmsMessage extends ModelBase
      */
     public function setMessageParts($messageParts = null)
     {
-        $this->setProperty("messageParts", $messageParts);
+        $this->setProperty('messageParts', $messageParts);
     }
 
     /**
@@ -343,7 +341,7 @@ class SmsMessage extends ModelBase
      */
     public function getRecipientNetworkCode()
     {
-        return $this->getProperty("recipientNetworkCode");
+        return $this->getProperty('recipientNetworkCode');
     }
 
     /**
@@ -351,7 +349,7 @@ class SmsMessage extends ModelBase
      */
     public function setRecipientNetworkCode($recipientNetworkCode = null)
     {
-        $this->setProperty("recipientNetworkCode", $recipientNetworkCode);
+        $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }
 
     /**
@@ -359,7 +357,7 @@ class SmsMessage extends ModelBase
      */
     public function getActionRequiredByDatetime()
     {
-        return $this->getProperty("actionRequiredByDatetime");
+        return $this->getProperty('actionRequiredByDatetime');
     }
 
     /**
@@ -367,6 +365,6 @@ class SmsMessage extends ModelBase
      */
     public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
     {
-        $this->setProperty("actionRequiredByDatetime", $actionRequiredByDatetime);
+        $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
 }

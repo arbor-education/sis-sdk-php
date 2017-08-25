@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Country;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class LocalAuthority extends ModelBase
 {
@@ -26,34 +21,38 @@ class LocalAuthority extends ModelBase
     protected $_resourceType = ResourceType::LOCAL_AUTHORITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LocalAuthority[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("LocalAuthority");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LOCAL_AUTHORITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LocalAuthority
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LOCAL_AUTHORITY, $id);
     }
 
@@ -62,7 +61,7 @@ class LocalAuthority extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -70,7 +69,7 @@ class LocalAuthority extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -78,7 +77,7 @@ class LocalAuthority extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -86,7 +85,7 @@ class LocalAuthority extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -94,7 +93,7 @@ class LocalAuthority extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -102,7 +101,7 @@ class LocalAuthority extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -110,7 +109,7 @@ class LocalAuthority extends ModelBase
      */
     public function getCountry()
     {
-        return $this->getProperty("country");
+        return $this->getProperty('country');
     }
 
     /**
@@ -118,7 +117,7 @@ class LocalAuthority extends ModelBase
      */
     public function setCountry(Country $country = null)
     {
-        $this->setProperty("country", $country);
+        $this->setProperty('country', $country);
     }
 
     /**
@@ -126,7 +125,7 @@ class LocalAuthority extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -134,7 +133,7 @@ class LocalAuthority extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -142,7 +141,7 @@ class LocalAuthority extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -150,6 +149,6 @@ class LocalAuthority extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 }

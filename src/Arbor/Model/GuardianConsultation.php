@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class GuardianConsultation extends ModelBase
 {
@@ -23,34 +19,38 @@ class GuardianConsultation extends ModelBase
     protected $_resourceType = ResourceType::GUARDIAN_CONSULTATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return GuardianConsultation[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("GuardianConsultation");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GUARDIAN_CONSULTATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return GuardianConsultation
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GUARDIAN_CONSULTATION, $id);
     }
 
@@ -59,7 +59,7 @@ class GuardianConsultation extends ModelBase
      */
     public function getGuardianConsultationName()
     {
-        return $this->getProperty("guardianConsultationName");
+        return $this->getProperty('guardianConsultationName');
     }
 
     /**
@@ -67,7 +67,7 @@ class GuardianConsultation extends ModelBase
      */
     public function setGuardianConsultationName($guardianConsultationName = null)
     {
-        $this->setProperty("guardianConsultationName", $guardianConsultationName);
+        $this->setProperty('guardianConsultationName', $guardianConsultationName);
     }
 
     /**
@@ -75,7 +75,7 @@ class GuardianConsultation extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -83,7 +83,7 @@ class GuardianConsultation extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -91,7 +91,7 @@ class GuardianConsultation extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -99,7 +99,7 @@ class GuardianConsultation extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -107,7 +107,7 @@ class GuardianConsultation extends ModelBase
      */
     public function getSelfSchedulingOpensDatetime()
     {
-        return $this->getProperty("selfSchedulingOpensDatetime");
+        return $this->getProperty('selfSchedulingOpensDatetime');
     }
 
     /**
@@ -115,7 +115,7 @@ class GuardianConsultation extends ModelBase
      */
     public function setSelfSchedulingOpensDatetime(\DateTime $selfSchedulingOpensDatetime = null)
     {
-        $this->setProperty("selfSchedulingOpensDatetime", $selfSchedulingOpensDatetime);
+        $this->setProperty('selfSchedulingOpensDatetime', $selfSchedulingOpensDatetime);
     }
 
     /**
@@ -123,7 +123,7 @@ class GuardianConsultation extends ModelBase
      */
     public function getSelfSchedulingClosesDatetime()
     {
-        return $this->getProperty("selfSchedulingClosesDatetime");
+        return $this->getProperty('selfSchedulingClosesDatetime');
     }
 
     /**
@@ -131,6 +131,6 @@ class GuardianConsultation extends ModelBase
      */
     public function setSelfSchedulingClosesDatetime(\DateTime $selfSchedulingClosesDatetime = null)
     {
-        $this->setProperty("selfSchedulingClosesDatetime", $selfSchedulingClosesDatetime);
+        $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
 }

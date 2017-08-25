@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
-use \Arbor\Model\UserRole;
-use \Arbor\Model\BusinessRoleAssignment;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UserRoleAssignment extends ModelBase
 {
@@ -26,34 +19,38 @@ class UserRoleAssignment extends ModelBase
     protected $_resourceType = ResourceType::USER_ROLE_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UserRoleAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UserRoleAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USER_ROLE_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UserRoleAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USER_ROLE_ASSIGNMENT, $id);
     }
 
@@ -62,7 +59,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -70,7 +67,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -78,7 +75,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function getUserRole()
     {
-        return $this->getProperty("userRole");
+        return $this->getProperty('userRole');
     }
 
     /**
@@ -86,7 +83,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function setUserRole(UserRole $userRole = null)
     {
-        $this->setProperty("userRole", $userRole);
+        $this->setProperty('userRole', $userRole);
     }
 
     /**
@@ -94,7 +91,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function getBusinessRoleAssignment()
     {
-        return $this->getProperty("businessRoleAssignment");
+        return $this->getProperty('businessRoleAssignment');
     }
 
     /**
@@ -102,7 +99,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function setBusinessRoleAssignment(BusinessRoleAssignment $businessRoleAssignment = null)
     {
-        $this->setProperty("businessRoleAssignment", $businessRoleAssignment);
+        $this->setProperty('businessRoleAssignment', $businessRoleAssignment);
     }
 
     /**
@@ -110,7 +107,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -118,7 +115,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -126,7 +123,7 @@ class UserRoleAssignment extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -134,6 +131,6 @@ class UserRoleAssignment extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 }

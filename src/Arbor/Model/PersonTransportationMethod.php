@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\TransportationMethod;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonTransportationMethod extends ModelBase
 {
@@ -20,34 +15,38 @@ class PersonTransportationMethod extends ModelBase
     protected $_resourceType = ResourceType::PERSON_TRANSPORTATION_METHOD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonTransportationMethod[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonTransportationMethod");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_TRANSPORTATION_METHOD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonTransportationMethod
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_TRANSPORTATION_METHOD, $id);
     }
 
@@ -56,7 +55,7 @@ class PersonTransportationMethod extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -64,7 +63,7 @@ class PersonTransportationMethod extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -72,7 +71,7 @@ class PersonTransportationMethod extends ModelBase
      */
     public function getTransportationMethod()
     {
-        return $this->getProperty("transportationMethod");
+        return $this->getProperty('transportationMethod');
     }
 
     /**
@@ -80,7 +79,7 @@ class PersonTransportationMethod extends ModelBase
      */
     public function setTransportationMethod(TransportationMethod $transportationMethod = null)
     {
-        $this->setProperty("transportationMethod", $transportationMethod);
+        $this->setProperty('transportationMethod', $transportationMethod);
     }
 
     /**
@@ -88,7 +87,7 @@ class PersonTransportationMethod extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -96,6 +95,6 @@ class PersonTransportationMethod extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 }

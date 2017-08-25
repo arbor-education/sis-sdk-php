@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Subject;
-use \Arbor\Model\GradePointScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Assessment extends ModelBase
 {
@@ -41,34 +35,38 @@ class Assessment extends ModelBase
     protected $_resourceType = ResourceType::ASSESSMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Assessment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Assessment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ASSESSMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Assessment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ASSESSMENT, $id);
     }
 
@@ -77,7 +75,7 @@ class Assessment extends ModelBase
      */
     public function getAssessmentName()
     {
-        return $this->getProperty("assessmentName");
+        return $this->getProperty('assessmentName');
     }
 
     /**
@@ -85,7 +83,7 @@ class Assessment extends ModelBase
      */
     public function setAssessmentName($assessmentName = null)
     {
-        $this->setProperty("assessmentName", $assessmentName);
+        $this->setProperty('assessmentName', $assessmentName);
     }
 
     /**
@@ -93,7 +91,7 @@ class Assessment extends ModelBase
      */
     public function getAssessmentShortName()
     {
-        return $this->getProperty("assessmentShortName");
+        return $this->getProperty('assessmentShortName');
     }
 
     /**
@@ -101,7 +99,7 @@ class Assessment extends ModelBase
      */
     public function setAssessmentShortName($assessmentShortName = null)
     {
-        $this->setProperty("assessmentShortName", $assessmentShortName);
+        $this->setProperty('assessmentShortName', $assessmentShortName);
     }
 
     /**
@@ -109,7 +107,7 @@ class Assessment extends ModelBase
      */
     public function getParentAssessment()
     {
-        return $this->getProperty("parentAssessment");
+        return $this->getProperty('parentAssessment');
     }
 
     /**
@@ -117,7 +115,7 @@ class Assessment extends ModelBase
      */
     public function setParentAssessment(Assessment $parentAssessment = null)
     {
-        $this->setProperty("parentAssessment", $parentAssessment);
+        $this->setProperty('parentAssessment', $parentAssessment);
     }
 
     /**
@@ -125,7 +123,7 @@ class Assessment extends ModelBase
      */
     public function getAssessmentCode()
     {
-        return $this->getProperty("assessmentCode");
+        return $this->getProperty('assessmentCode');
     }
 
     /**
@@ -133,7 +131,7 @@ class Assessment extends ModelBase
      */
     public function setAssessmentCode($assessmentCode = null)
     {
-        $this->setProperty("assessmentCode", $assessmentCode);
+        $this->setProperty('assessmentCode', $assessmentCode);
     }
 
     /**
@@ -141,7 +139,7 @@ class Assessment extends ModelBase
      */
     public function getStudentProgressBaselineCalculatorClassName()
     {
-        return $this->getProperty("studentProgressBaselineCalculatorClassName");
+        return $this->getProperty('studentProgressBaselineCalculatorClassName');
     }
 
     /**
@@ -149,7 +147,7 @@ class Assessment extends ModelBase
      */
     public function setStudentProgressBaselineCalculatorClassName($studentProgressBaselineCalculatorClassName = null)
     {
-        $this->setProperty("studentProgressBaselineCalculatorClassName", $studentProgressBaselineCalculatorClassName);
+        $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
     }
 
     /**
@@ -157,7 +155,7 @@ class Assessment extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -165,7 +163,7 @@ class Assessment extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -173,7 +171,7 @@ class Assessment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -181,7 +179,7 @@ class Assessment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -189,7 +187,7 @@ class Assessment extends ModelBase
      */
     public function getMarkType()
     {
-        return $this->getProperty("markType");
+        return $this->getProperty('markType');
     }
 
     /**
@@ -197,7 +195,7 @@ class Assessment extends ModelBase
      */
     public function setMarkType($markType = null)
     {
-        $this->setProperty("markType", $markType);
+        $this->setProperty('markType', $markType);
     }
 
     /**
@@ -205,7 +203,7 @@ class Assessment extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -213,7 +211,7 @@ class Assessment extends ModelBase
      */
     public function setSubject(Subject $subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -221,7 +219,7 @@ class Assessment extends ModelBase
      */
     public function getGradePointScale()
     {
-        return $this->getProperty("gradePointScale");
+        return $this->getProperty('gradePointScale');
     }
 
     /**
@@ -229,7 +227,7 @@ class Assessment extends ModelBase
      */
     public function setGradePointScale(GradePointScale $gradePointScale = null)
     {
-        $this->setProperty("gradePointScale", $gradePointScale);
+        $this->setProperty('gradePointScale', $gradePointScale);
     }
 
     /**
@@ -237,7 +235,7 @@ class Assessment extends ModelBase
      */
     public function getMarkMinValue()
     {
-        return $this->getProperty("markMinValue");
+        return $this->getProperty('markMinValue');
     }
 
     /**
@@ -245,7 +243,7 @@ class Assessment extends ModelBase
      */
     public function setMarkMinValue($markMinValue = null)
     {
-        $this->setProperty("markMinValue", $markMinValue);
+        $this->setProperty('markMinValue', $markMinValue);
     }
 
     /**
@@ -253,7 +251,7 @@ class Assessment extends ModelBase
      */
     public function getMarkMaxValue()
     {
-        return $this->getProperty("markMaxValue");
+        return $this->getProperty('markMaxValue');
     }
 
     /**
@@ -261,7 +259,7 @@ class Assessment extends ModelBase
      */
     public function setMarkMaxValue($markMaxValue = null)
     {
-        $this->setProperty("markMaxValue", $markMaxValue);
+        $this->setProperty('markMaxValue', $markMaxValue);
     }
 
     /**
@@ -269,7 +267,7 @@ class Assessment extends ModelBase
      */
     public function getOrder()
     {
-        return $this->getProperty("order");
+        return $this->getProperty('order');
     }
 
     /**
@@ -277,6 +275,6 @@ class Assessment extends ModelBase
      */
     public function setOrder($order = null)
     {
-        $this->setProperty("order", $order);
+        $this->setProperty('order', $order);
     }
 }

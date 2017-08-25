@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\University;
-use \Arbor\Model\Person;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UniversityStaff extends ModelBase
 {
@@ -21,34 +15,38 @@ class UniversityStaff extends ModelBase
     protected $_resourceType = ResourceType::UNIVERSITY_STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UniversityStaff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UniversityStaff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UNIVERSITY_STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UniversityStaff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UNIVERSITY_STAFF, $id);
     }
 
@@ -57,7 +55,7 @@ class UniversityStaff extends ModelBase
      */
     public function getUniversity()
     {
-        return $this->getProperty("university");
+        return $this->getProperty('university');
     }
 
     /**
@@ -65,7 +63,7 @@ class UniversityStaff extends ModelBase
      */
     public function setUniversity(University $university = null)
     {
-        $this->setProperty("university", $university);
+        $this->setProperty('university', $university);
     }
 
     /**
@@ -73,7 +71,7 @@ class UniversityStaff extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -81,7 +79,7 @@ class UniversityStaff extends ModelBase
      */
     public function setPerson(Person $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -89,7 +87,7 @@ class UniversityStaff extends ModelBase
      */
     public function getPosition()
     {
-        return $this->getProperty("position");
+        return $this->getProperty('position');
     }
 
     /**
@@ -97,6 +95,6 @@ class UniversityStaff extends ModelBase
      */
     public function setPosition($position = null)
     {
-        $this->setProperty("position", $position);
+        $this->setProperty('position', $position);
     }
 }

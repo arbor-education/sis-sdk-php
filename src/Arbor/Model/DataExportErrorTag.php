@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\DataExportError;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DataExportErrorTag extends ModelBase
 {
@@ -24,34 +19,38 @@ class DataExportErrorTag extends ModelBase
     protected $_resourceType = ResourceType::DATA_EXPORT_ERROR_TAG;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DataExportErrorTag[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DataExportErrorTag");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DATA_EXPORT_ERROR_TAG);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DataExportErrorTag
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DATA_EXPORT_ERROR_TAG, $id);
     }
 
@@ -60,7 +59,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function getDataExportError()
     {
-        return $this->getProperty("dataExportError");
+        return $this->getProperty('dataExportError');
     }
 
     /**
@@ -68,7 +67,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function setDataExportError(DataExportError $dataExportError = null)
     {
-        $this->setProperty("dataExportError", $dataExportError);
+        $this->setProperty('dataExportError', $dataExportError);
     }
 
     /**
@@ -76,7 +75,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function getTaggedEntity()
     {
-        return $this->getProperty("taggedEntity");
+        return $this->getProperty('taggedEntity');
     }
 
     /**
@@ -84,7 +83,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function setTaggedEntity(ModelBase $taggedEntity = null)
     {
-        $this->setProperty("taggedEntity", $taggedEntity);
+        $this->setProperty('taggedEntity', $taggedEntity);
     }
 
     /**
@@ -92,7 +91,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function getTagName()
     {
-        return $this->getProperty("tagName");
+        return $this->getProperty('tagName');
     }
 
     /**
@@ -100,7 +99,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function setTagName($tagName = null)
     {
-        $this->setProperty("tagName", $tagName);
+        $this->setProperty('tagName', $tagName);
     }
 
     /**
@@ -108,7 +107,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function getTagValue()
     {
-        return $this->getProperty("tagValue");
+        return $this->getProperty('tagValue');
     }
 
     /**
@@ -116,7 +115,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function setTagValue($tagValue = null)
     {
-        $this->setProperty("tagValue", $tagValue);
+        $this->setProperty('tagValue', $tagValue);
     }
 
     /**
@@ -124,7 +123,7 @@ class DataExportErrorTag extends ModelBase
      */
     public function getTagUrl()
     {
-        return $this->getProperty("tagUrl");
+        return $this->getProperty('tagUrl');
     }
 
     /**
@@ -132,6 +131,6 @@ class DataExportErrorTag extends ModelBase
      */
     public function setTagUrl($tagUrl = null)
     {
-        $this->setProperty("tagUrl", $tagUrl);
+        $this->setProperty('tagUrl', $tagUrl);
     }
 }

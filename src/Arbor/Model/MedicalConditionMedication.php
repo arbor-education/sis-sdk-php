@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MedicalCondition;
-use \Arbor\Model\Medication;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MedicalConditionMedication extends ModelBase
 {
@@ -27,34 +21,38 @@ class MedicalConditionMedication extends ModelBase
     protected $_resourceType = ResourceType::MEDICAL_CONDITION_MEDICATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MedicalConditionMedication[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MedicalConditionMedication");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEDICAL_CONDITION_MEDICATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MedicalConditionMedication
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEDICAL_CONDITION_MEDICATION, $id);
     }
 
@@ -63,7 +61,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function getMedicalCondition()
     {
-        return $this->getProperty("medicalCondition");
+        return $this->getProperty('medicalCondition');
     }
 
     /**
@@ -71,7 +69,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function setMedicalCondition(MedicalCondition $medicalCondition = null)
     {
-        $this->setProperty("medicalCondition", $medicalCondition);
+        $this->setProperty('medicalCondition', $medicalCondition);
     }
 
     /**
@@ -79,7 +77,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function getMedication()
     {
-        return $this->getProperty("medication");
+        return $this->getProperty('medication');
     }
 
     /**
@@ -87,7 +85,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function setMedication(Medication $medication = null)
     {
-        $this->setProperty("medication", $medication);
+        $this->setProperty('medication', $medication);
     }
 
     /**
@@ -95,7 +93,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function getDosage()
     {
-        return $this->getProperty("dosage");
+        return $this->getProperty('dosage');
     }
 
     /**
@@ -103,7 +101,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function setDosage($dosage = null)
     {
-        $this->setProperty("dosage", $dosage);
+        $this->setProperty('dosage', $dosage);
     }
 
     /**
@@ -111,7 +109,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function getFrequency()
     {
-        return $this->getProperty("frequency");
+        return $this->getProperty('frequency');
     }
 
     /**
@@ -119,7 +117,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function setFrequency($frequency = null)
     {
-        $this->setProperty("frequency", $frequency);
+        $this->setProperty('frequency', $frequency);
     }
 
     /**
@@ -127,7 +125,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -135,7 +133,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -143,7 +141,7 @@ class MedicalConditionMedication extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -151,6 +149,6 @@ class MedicalConditionMedication extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Kpi extends ModelBase
 {
@@ -49,34 +45,38 @@ class Kpi extends ModelBase
     protected $_resourceType = ResourceType::KPI;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Kpi[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Kpi");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::KPI);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Kpi
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::KPI, $id);
     }
 
@@ -85,7 +85,7 @@ class Kpi extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -93,7 +93,7 @@ class Kpi extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -101,7 +101,7 @@ class Kpi extends ModelBase
      */
     public function getKpiName()
     {
-        return $this->getProperty("kpiName");
+        return $this->getProperty('kpiName');
     }
 
     /**
@@ -109,7 +109,7 @@ class Kpi extends ModelBase
      */
     public function setKpiName($kpiName = null)
     {
-        $this->setProperty("kpiName", $kpiName);
+        $this->setProperty('kpiName', $kpiName);
     }
 
     /**
@@ -117,7 +117,7 @@ class Kpi extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -125,7 +125,7 @@ class Kpi extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -133,7 +133,7 @@ class Kpi extends ModelBase
      */
     public function getCategory()
     {
-        return $this->getProperty("category");
+        return $this->getProperty('category');
     }
 
     /**
@@ -141,7 +141,7 @@ class Kpi extends ModelBase
      */
     public function setCategory($category = null)
     {
-        $this->setProperty("category", $category);
+        $this->setProperty('category', $category);
     }
 
     /**
@@ -149,7 +149,7 @@ class Kpi extends ModelBase
      */
     public function getCalculationClass()
     {
-        return $this->getProperty("calculationClass");
+        return $this->getProperty('calculationClass');
     }
 
     /**
@@ -157,7 +157,7 @@ class Kpi extends ModelBase
      */
     public function setCalculationClass($calculationClass = null)
     {
-        $this->setProperty("calculationClass", $calculationClass);
+        $this->setProperty('calculationClass', $calculationClass);
     }
 
     /**
@@ -165,7 +165,7 @@ class Kpi extends ModelBase
      */
     public function getCalculationClassParams()
     {
-        return $this->getProperty("calculationClassParams");
+        return $this->getProperty('calculationClassParams');
     }
 
     /**
@@ -173,7 +173,7 @@ class Kpi extends ModelBase
      */
     public function setCalculationClassParams($calculationClassParams = null)
     {
-        $this->setProperty("calculationClassParams", $calculationClassParams);
+        $this->setProperty('calculationClassParams', $calculationClassParams);
     }
 
     /**
@@ -181,7 +181,7 @@ class Kpi extends ModelBase
      */
     public function getDirection()
     {
-        return $this->getProperty("direction");
+        return $this->getProperty('direction');
     }
 
     /**
@@ -189,7 +189,7 @@ class Kpi extends ModelBase
      */
     public function setDirection($direction = null)
     {
-        $this->setProperty("direction", $direction);
+        $this->setProperty('direction', $direction);
     }
 
     /**
@@ -197,7 +197,7 @@ class Kpi extends ModelBase
      */
     public function getValueType()
     {
-        return $this->getProperty("valueType");
+        return $this->getProperty('valueType');
     }
 
     /**
@@ -205,7 +205,7 @@ class Kpi extends ModelBase
      */
     public function setValueType($valueType = null)
     {
-        $this->setProperty("valueType", $valueType);
+        $this->setProperty('valueType', $valueType);
     }
 
     /**
@@ -213,7 +213,7 @@ class Kpi extends ModelBase
      */
     public function getDateRangePeriodType()
     {
-        return $this->getProperty("dateRangePeriodType");
+        return $this->getProperty('dateRangePeriodType');
     }
 
     /**
@@ -221,7 +221,7 @@ class Kpi extends ModelBase
      */
     public function setDateRangePeriodType($dateRangePeriodType = null)
     {
-        $this->setProperty("dateRangePeriodType", $dateRangePeriodType);
+        $this->setProperty('dateRangePeriodType', $dateRangePeriodType);
     }
 
     /**
@@ -229,7 +229,7 @@ class Kpi extends ModelBase
      */
     public function getDateRangePeriodCount()
     {
-        return $this->getProperty("dateRangePeriodCount");
+        return $this->getProperty('dateRangePeriodCount');
     }
 
     /**
@@ -237,7 +237,7 @@ class Kpi extends ModelBase
      */
     public function setDateRangePeriodCount($dateRangePeriodCount = null)
     {
-        $this->setProperty("dateRangePeriodCount", $dateRangePeriodCount);
+        $this->setProperty('dateRangePeriodCount', $dateRangePeriodCount);
     }
 
     /**
@@ -245,7 +245,7 @@ class Kpi extends ModelBase
      */
     public function getDateRangePeriodOffset()
     {
-        return $this->getProperty("dateRangePeriodOffset");
+        return $this->getProperty('dateRangePeriodOffset');
     }
 
     /**
@@ -253,7 +253,7 @@ class Kpi extends ModelBase
      */
     public function setDateRangePeriodOffset($dateRangePeriodOffset = null)
     {
-        $this->setProperty("dateRangePeriodOffset", $dateRangePeriodOffset);
+        $this->setProperty('dateRangePeriodOffset', $dateRangePeriodOffset);
     }
 
     /**
@@ -261,7 +261,7 @@ class Kpi extends ModelBase
      */
     public function getDecimalPlaces()
     {
-        return $this->getProperty("decimalPlaces");
+        return $this->getProperty('decimalPlaces');
     }
 
     /**
@@ -269,7 +269,7 @@ class Kpi extends ModelBase
      */
     public function setDecimalPlaces($decimalPlaces = null)
     {
-        $this->setProperty("decimalPlaces", $decimalPlaces);
+        $this->setProperty('decimalPlaces', $decimalPlaces);
     }
 
     /**
@@ -277,7 +277,7 @@ class Kpi extends ModelBase
      */
     public function getSignificantFigures()
     {
-        return $this->getProperty("significantFigures");
+        return $this->getProperty('significantFigures');
     }
 
     /**
@@ -285,7 +285,7 @@ class Kpi extends ModelBase
      */
     public function setSignificantFigures($significantFigures = null)
     {
-        $this->setProperty("significantFigures", $significantFigures);
+        $this->setProperty('significantFigures', $significantFigures);
     }
 
     /**
@@ -293,7 +293,7 @@ class Kpi extends ModelBase
      */
     public function getCalculateForSchool()
     {
-        return $this->getProperty("calculateForSchool");
+        return $this->getProperty('calculateForSchool');
     }
 
     /**
@@ -301,7 +301,7 @@ class Kpi extends ModelBase
      */
     public function setCalculateForSchool($calculateForSchool = null)
     {
-        $this->setProperty("calculateForSchool", $calculateForSchool);
+        $this->setProperty('calculateForSchool', $calculateForSchool);
     }
 
     /**
@@ -309,7 +309,7 @@ class Kpi extends ModelBase
      */
     public function getCalculateForGroups()
     {
-        return $this->getProperty("calculateForGroups");
+        return $this->getProperty('calculateForGroups');
     }
 
     /**
@@ -317,7 +317,7 @@ class Kpi extends ModelBase
      */
     public function setCalculateForGroups($calculateForGroups = null)
     {
-        $this->setProperty("calculateForGroups", $calculateForGroups);
+        $this->setProperty('calculateForGroups', $calculateForGroups);
     }
 
     /**
@@ -325,7 +325,7 @@ class Kpi extends ModelBase
      */
     public function getCalculateForAcademicUnits()
     {
-        return $this->getProperty("calculateForAcademicUnits");
+        return $this->getProperty('calculateForAcademicUnits');
     }
 
     /**
@@ -333,7 +333,7 @@ class Kpi extends ModelBase
      */
     public function setCalculateForAcademicUnits($calculateForAcademicUnits = null)
     {
-        $this->setProperty("calculateForAcademicUnits", $calculateForAcademicUnits);
+        $this->setProperty('calculateForAcademicUnits', $calculateForAcademicUnits);
     }
 
     /**
@@ -341,7 +341,7 @@ class Kpi extends ModelBase
      */
     public function getCalculateForStudents()
     {
-        return $this->getProperty("calculateForStudents");
+        return $this->getProperty('calculateForStudents');
     }
 
     /**
@@ -349,7 +349,7 @@ class Kpi extends ModelBase
      */
     public function setCalculateForStudents($calculateForStudents = null)
     {
-        $this->setProperty("calculateForStudents", $calculateForStudents);
+        $this->setProperty('calculateForStudents', $calculateForStudents);
     }
 
     /**
@@ -357,7 +357,7 @@ class Kpi extends ModelBase
      */
     public function getCalculateForStudentAcademicUnitEnrolments()
     {
-        return $this->getProperty("calculateForStudentAcademicUnitEnrolments");
+        return $this->getProperty('calculateForStudentAcademicUnitEnrolments');
     }
 
     /**
@@ -365,6 +365,6 @@ class Kpi extends ModelBase
      */
     public function setCalculateForStudentAcademicUnitEnrolments($calculateForStudentAcademicUnitEnrolments = null)
     {
-        $this->setProperty("calculateForStudentAcademicUnitEnrolments", $calculateForStudentAcademicUnitEnrolments);
+        $this->setProperty('calculateForStudentAcademicUnitEnrolments', $calculateForStudentAcademicUnitEnrolments);
     }
 }

@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Programme extends ModelBase
 {
@@ -15,34 +15,38 @@ class Programme extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Programme[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_Programme");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_PROGRAMME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Programme
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_PROGRAMME, $id);
     }
 
@@ -51,7 +55,7 @@ class Programme extends ModelBase
      */
     public function getIsTraineeship()
     {
-        return $this->getProperty("isTraineeship");
+        return $this->getProperty('isTraineeship');
     }
 
     /**
@@ -59,6 +63,6 @@ class Programme extends ModelBase
      */
     public function setIsTraineeship($isTraineeship = null)
     {
-        $this->setProperty("isTraineeship", $isTraineeship);
+        $this->setProperty('isTraineeship', $isTraineeship);
     }
 }

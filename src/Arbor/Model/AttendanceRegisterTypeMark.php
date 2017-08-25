@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AttendanceRegisterType;
-use \Arbor\Model\AttendanceMark;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendanceRegisterTypeMark extends ModelBase
 {
@@ -19,34 +13,38 @@ class AttendanceRegisterTypeMark extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_REGISTER_TYPE_MARK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendanceRegisterTypeMark[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendanceRegisterTypeMark");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_REGISTER_TYPE_MARK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendanceRegisterTypeMark
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_REGISTER_TYPE_MARK, $id);
     }
 
@@ -55,7 +53,7 @@ class AttendanceRegisterTypeMark extends ModelBase
      */
     public function getAttendanceRegisterType()
     {
-        return $this->getProperty("attendanceRegisterType");
+        return $this->getProperty('attendanceRegisterType');
     }
 
     /**
@@ -63,7 +61,7 @@ class AttendanceRegisterTypeMark extends ModelBase
      */
     public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
     {
-        $this->setProperty("attendanceRegisterType", $attendanceRegisterType);
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
     /**
@@ -71,7 +69,7 @@ class AttendanceRegisterTypeMark extends ModelBase
      */
     public function getAttendanceMark()
     {
-        return $this->getProperty("attendanceMark");
+        return $this->getProperty('attendanceMark');
     }
 
     /**
@@ -79,6 +77,6 @@ class AttendanceRegisterTypeMark extends ModelBase
      */
     public function setAttendanceMark(AttendanceMark $attendanceMark = null)
     {
-        $this->setProperty("attendanceMark", $attendanceMark);
+        $this->setProperty('attendanceMark', $attendanceMark);
     }
 }

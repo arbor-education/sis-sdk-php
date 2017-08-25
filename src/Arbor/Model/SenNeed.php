@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\SenNeedType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SenNeed extends ModelBase
 {
@@ -20,37 +14,45 @@ class SenNeed extends ModelBase
 
     const RANKING = 'ranking';
 
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
+
     protected $_resourceType = ResourceType::SEN_NEED;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SenNeed[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SenNeed");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SEN_NEED);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SenNeed
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SEN_NEED, $id);
     }
 
@@ -59,7 +61,7 @@ class SenNeed extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -67,7 +69,7 @@ class SenNeed extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -75,7 +77,7 @@ class SenNeed extends ModelBase
      */
     public function getSenNeedType()
     {
-        return $this->getProperty("senNeedType");
+        return $this->getProperty('senNeedType');
     }
 
     /**
@@ -83,7 +85,7 @@ class SenNeed extends ModelBase
      */
     public function setSenNeedType(SenNeedType $senNeedType = null)
     {
-        $this->setProperty("senNeedType", $senNeedType);
+        $this->setProperty('senNeedType', $senNeedType);
     }
 
     /**
@@ -91,7 +93,7 @@ class SenNeed extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -99,7 +101,7 @@ class SenNeed extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -107,7 +109,7 @@ class SenNeed extends ModelBase
      */
     public function getRanking()
     {
-        return $this->getProperty("ranking");
+        return $this->getProperty('ranking');
     }
 
     /**
@@ -115,6 +117,38 @@ class SenNeed extends ModelBase
      */
     public function setRanking($ranking = null)
     {
-        $this->setProperty("ranking", $ranking);
+        $this->setProperty('ranking', $ranking);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->getProperty('effectiveDate');
+    }
+
+    /**
+     * @param \DateTime $effectiveDate
+     */
+    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    {
+        $this->setProperty('effectiveDate', $effectiveDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty('endDate');
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty('endDate', $endDate);
     }
 }

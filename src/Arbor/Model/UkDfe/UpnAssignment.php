@@ -1,13 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Student;
 
 class UpnAssignment extends ModelBase
 {
@@ -32,34 +32,38 @@ class UpnAssignment extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_UPN_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UpnAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_UpnAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_UPN_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UpnAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_UPN_ASSIGNMENT, $id);
     }
 
@@ -68,7 +72,7 @@ class UpnAssignment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -76,7 +80,7 @@ class UpnAssignment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -84,7 +88,7 @@ class UpnAssignment extends ModelBase
      */
     public function getIssuedYear()
     {
-        return $this->getProperty("issuedYear");
+        return $this->getProperty('issuedYear');
     }
 
     /**
@@ -92,7 +96,7 @@ class UpnAssignment extends ModelBase
      */
     public function setIssuedYear($issuedYear = null)
     {
-        $this->setProperty("issuedYear", $issuedYear);
+        $this->setProperty('issuedYear', $issuedYear);
     }
 
     /**
@@ -100,7 +104,7 @@ class UpnAssignment extends ModelBase
      */
     public function getIssuedLocalAuthority()
     {
-        return $this->getProperty("issuedLocalAuthority");
+        return $this->getProperty('issuedLocalAuthority');
     }
 
     /**
@@ -108,7 +112,7 @@ class UpnAssignment extends ModelBase
      */
     public function setIssuedLocalAuthority($issuedLocalAuthority = null)
     {
-        $this->setProperty("issuedLocalAuthority", $issuedLocalAuthority);
+        $this->setProperty('issuedLocalAuthority', $issuedLocalAuthority);
     }
 
     /**
@@ -116,7 +120,7 @@ class UpnAssignment extends ModelBase
      */
     public function getIssuedEstablishmentNumber()
     {
-        return $this->getProperty("issuedEstablishmentNumber");
+        return $this->getProperty('issuedEstablishmentNumber');
     }
 
     /**
@@ -124,7 +128,7 @@ class UpnAssignment extends ModelBase
      */
     public function setIssuedEstablishmentNumber($issuedEstablishmentNumber = null)
     {
-        $this->setProperty("issuedEstablishmentNumber", $issuedEstablishmentNumber);
+        $this->setProperty('issuedEstablishmentNumber', $issuedEstablishmentNumber);
     }
 
     /**
@@ -132,7 +136,7 @@ class UpnAssignment extends ModelBase
      */
     public function getIssuedSerialNumber()
     {
-        return $this->getProperty("issuedSerialNumber");
+        return $this->getProperty('issuedSerialNumber');
     }
 
     /**
@@ -140,7 +144,7 @@ class UpnAssignment extends ModelBase
      */
     public function setIssuedSerialNumber($issuedSerialNumber = null)
     {
-        $this->setProperty("issuedSerialNumber", $issuedSerialNumber);
+        $this->setProperty('issuedSerialNumber', $issuedSerialNumber);
     }
 
     /**
@@ -148,7 +152,7 @@ class UpnAssignment extends ModelBase
      */
     public function getUpn()
     {
-        return $this->getProperty("upn");
+        return $this->getProperty('upn');
     }
 
     /**
@@ -156,7 +160,7 @@ class UpnAssignment extends ModelBase
      */
     public function setUpn($upn = null)
     {
-        $this->setProperty("upn", $upn);
+        $this->setProperty('upn', $upn);
     }
 
     /**
@@ -164,7 +168,7 @@ class UpnAssignment extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -172,7 +176,7 @@ class UpnAssignment extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -180,7 +184,7 @@ class UpnAssignment extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -188,7 +192,7 @@ class UpnAssignment extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -196,7 +200,7 @@ class UpnAssignment extends ModelBase
      */
     public function getIsTemporary()
     {
-        return $this->getProperty("isTemporary");
+        return $this->getProperty('isTemporary');
     }
 
     /**
@@ -204,6 +208,6 @@ class UpnAssignment extends ModelBase
      */
     public function setIsTemporary($isTemporary = null)
     {
-        $this->setProperty("isTemporary", $isTemporary);
+        $this->setProperty('isTemporary', $isTemporary);
     }
 }

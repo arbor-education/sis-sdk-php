@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\MedicalInstitution;
-use \Arbor\Model\MedicalInstitutionStaff;
-use \Arbor\Model\MedicalRelationshipType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentMedicalRelationship extends ModelBase
 {
@@ -31,34 +23,38 @@ class StudentMedicalRelationship extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_MEDICAL_RELATIONSHIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentMedicalRelationship[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentMedicalRelationship");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_MEDICAL_RELATIONSHIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentMedicalRelationship
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_MEDICAL_RELATIONSHIP, $id);
     }
 
@@ -67,7 +63,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -75,7 +71,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -83,7 +79,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getMedicalInstitution()
     {
-        return $this->getProperty("medicalInstitution");
+        return $this->getProperty('medicalInstitution');
     }
 
     /**
@@ -91,7 +87,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setMedicalInstitution(MedicalInstitution $medicalInstitution = null)
     {
-        $this->setProperty("medicalInstitution", $medicalInstitution);
+        $this->setProperty('medicalInstitution', $medicalInstitution);
     }
 
     /**
@@ -99,7 +95,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getMedicalInstitutionStaff()
     {
-        return $this->getProperty("medicalInstitutionStaff");
+        return $this->getProperty('medicalInstitutionStaff');
     }
 
     /**
@@ -107,7 +103,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setMedicalInstitutionStaff(MedicalInstitutionStaff $medicalInstitutionStaff = null)
     {
-        $this->setProperty("medicalInstitutionStaff", $medicalInstitutionStaff);
+        $this->setProperty('medicalInstitutionStaff', $medicalInstitutionStaff);
     }
 
     /**
@@ -115,7 +111,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getMedicalRelationshipType()
     {
-        return $this->getProperty("medicalRelationshipType");
+        return $this->getProperty('medicalRelationshipType');
     }
 
     /**
@@ -123,7 +119,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setMedicalRelationshipType(MedicalRelationshipType $medicalRelationshipType = null)
     {
-        $this->setProperty("medicalRelationshipType", $medicalRelationshipType);
+        $this->setProperty('medicalRelationshipType', $medicalRelationshipType);
     }
 
     /**
@@ -131,7 +127,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -139,7 +135,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -147,7 +143,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -155,7 +151,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -163,7 +159,7 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -171,6 +167,6 @@ class StudentMedicalRelationship extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 }

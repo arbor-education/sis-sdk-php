@@ -1,20 +1,12 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Candidate;
-use \Arbor\Model\AwardingOrganization;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CandidateEnrolment extends ModelBase
 {
     const CANDIDATE = 'candidate';
-
-    const AWARDING_ORGANIZATION = 'awardingOrganization';
 
     const ENROLMENT_NUMBER = 'enrolmentNumber';
 
@@ -25,34 +17,38 @@ class CandidateEnrolment extends ModelBase
     protected $_resourceType = ResourceType::CANDIDATE_ENROLMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CandidateEnrolment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CandidateEnrolment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CANDIDATE_ENROLMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CandidateEnrolment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CANDIDATE_ENROLMENT, $id);
     }
 
@@ -61,7 +57,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function getCandidate()
     {
-        return $this->getProperty("candidate");
+        return $this->getProperty('candidate');
     }
 
     /**
@@ -69,23 +65,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function setCandidate(Candidate $candidate = null)
     {
-        $this->setProperty("candidate", $candidate);
-    }
-
-    /**
-     * @return AwardingOrganization
-     */
-    public function getAwardingOrganization()
-    {
-        return $this->getProperty("awardingOrganization");
-    }
-
-    /**
-     * @param AwardingOrganization $awardingOrganization
-     */
-    public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
-    {
-        $this->setProperty("awardingOrganization", $awardingOrganization);
+        $this->setProperty('candidate', $candidate);
     }
 
     /**
@@ -93,7 +73,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function getEnrolmentNumber()
     {
-        return $this->getProperty("enrolmentNumber");
+        return $this->getProperty('enrolmentNumber');
     }
 
     /**
@@ -101,7 +81,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function setEnrolmentNumber($enrolmentNumber = null)
     {
-        $this->setProperty("enrolmentNumber", $enrolmentNumber);
+        $this->setProperty('enrolmentNumber', $enrolmentNumber);
     }
 
     /**
@@ -109,7 +89,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function getEnrolmentRequestedDatetime()
     {
-        return $this->getProperty("enrolmentRequestedDatetime");
+        return $this->getProperty('enrolmentRequestedDatetime');
     }
 
     /**
@@ -117,7 +97,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function setEnrolmentRequestedDatetime(\DateTime $enrolmentRequestedDatetime = null)
     {
-        $this->setProperty("enrolmentRequestedDatetime", $enrolmentRequestedDatetime);
+        $this->setProperty('enrolmentRequestedDatetime', $enrolmentRequestedDatetime);
     }
 
     /**
@@ -125,7 +105,7 @@ class CandidateEnrolment extends ModelBase
      */
     public function getEnrolmentConfirmedDatetime()
     {
-        return $this->getProperty("enrolmentConfirmedDatetime");
+        return $this->getProperty('enrolmentConfirmedDatetime');
     }
 
     /**
@@ -133,6 +113,6 @@ class CandidateEnrolment extends ModelBase
      */
     public function setEnrolmentConfirmedDatetime(\DateTime $enrolmentConfirmedDatetime = null)
     {
-        $this->setProperty("enrolmentConfirmedDatetime", $enrolmentConfirmedDatetime);
+        $this->setProperty('enrolmentConfirmedDatetime', $enrolmentConfirmedDatetime);
     }
 }

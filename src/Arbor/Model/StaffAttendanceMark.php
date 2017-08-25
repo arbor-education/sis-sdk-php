@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffAttendanceMark extends ModelBase
 {
@@ -47,34 +43,38 @@ class StaffAttendanceMark extends ModelBase
     protected $_resourceType = ResourceType::STAFF_ATTENDANCE_MARK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffAttendanceMark[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffAttendanceMark");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_ATTENDANCE_MARK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffAttendanceMark
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_ATTENDANCE_MARK, $id);
     }
 
@@ -83,7 +83,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -91,7 +91,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -99,7 +99,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -107,7 +107,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -115,7 +115,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -123,7 +123,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -131,7 +131,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getAttendanceMark()
     {
-        return $this->getProperty("attendanceMark");
+        return $this->getProperty('attendanceMark');
     }
 
     /**
@@ -139,7 +139,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setAttendanceMark($attendanceMark = null)
     {
-        $this->setProperty("attendanceMark", $attendanceMark);
+        $this->setProperty('attendanceMark', $attendanceMark);
     }
 
     /**
@@ -147,7 +147,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getMarkDescription()
     {
-        return $this->getProperty("markDescription");
+        return $this->getProperty('markDescription');
     }
 
     /**
@@ -155,7 +155,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setMarkDescription($markDescription = null)
     {
-        $this->setProperty("markDescription", $markDescription);
+        $this->setProperty('markDescription', $markDescription);
     }
 
     /**
@@ -163,7 +163,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getMarkShortDescription()
     {
-        return $this->getProperty("markShortDescription");
+        return $this->getProperty('markShortDescription');
     }
 
     /**
@@ -171,7 +171,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setMarkShortDescription($markShortDescription = null)
     {
-        $this->setProperty("markShortDescription", $markShortDescription);
+        $this->setProperty('markShortDescription', $markShortDescription);
     }
 
     /**
@@ -179,7 +179,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsDefaultPresent()
     {
-        return $this->getProperty("isDefaultPresent");
+        return $this->getProperty('isDefaultPresent');
     }
 
     /**
@@ -187,7 +187,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsDefaultPresent($isDefaultPresent = null)
     {
-        $this->setProperty("isDefaultPresent", $isDefaultPresent);
+        $this->setProperty('isDefaultPresent', $isDefaultPresent);
     }
 
     /**
@@ -195,7 +195,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsDefaultAbsent()
     {
-        return $this->getProperty("isDefaultAbsent");
+        return $this->getProperty('isDefaultAbsent');
     }
 
     /**
@@ -203,7 +203,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsDefaultAbsent($isDefaultAbsent = null)
     {
-        $this->setProperty("isDefaultAbsent", $isDefaultAbsent);
+        $this->setProperty('isDefaultAbsent', $isDefaultAbsent);
     }
 
     /**
@@ -211,7 +211,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsDefaultLate()
     {
-        return $this->getProperty("isDefaultLate");
+        return $this->getProperty('isDefaultLate');
     }
 
     /**
@@ -219,7 +219,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsDefaultLate($isDefaultLate = null)
     {
-        $this->setProperty("isDefaultLate", $isDefaultLate);
+        $this->setProperty('isDefaultLate', $isDefaultLate);
     }
 
     /**
@@ -227,7 +227,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsLegalPresent()
     {
-        return $this->getProperty("isLegalPresent");
+        return $this->getProperty('isLegalPresent');
     }
 
     /**
@@ -235,7 +235,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsLegalPresent($isLegalPresent = null)
     {
-        $this->setProperty("isLegalPresent", $isLegalPresent);
+        $this->setProperty('isLegalPresent', $isLegalPresent);
     }
 
     /**
@@ -243,7 +243,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsLegalHolidayLeave()
     {
-        return $this->getProperty("isLegalHolidayLeave");
+        return $this->getProperty('isLegalHolidayLeave');
     }
 
     /**
@@ -251,7 +251,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsLegalHolidayLeave($isLegalHolidayLeave = null)
     {
-        $this->setProperty("isLegalHolidayLeave", $isLegalHolidayLeave);
+        $this->setProperty('isLegalHolidayLeave', $isLegalHolidayLeave);
     }
 
     /**
@@ -259,7 +259,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsLegalMedicalLeave()
     {
-        return $this->getProperty("isLegalMedicalLeave");
+        return $this->getProperty('isLegalMedicalLeave');
     }
 
     /**
@@ -267,7 +267,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsLegalMedicalLeave($isLegalMedicalLeave = null)
     {
-        $this->setProperty("isLegalMedicalLeave", $isLegalMedicalLeave);
+        $this->setProperty('isLegalMedicalLeave', $isLegalMedicalLeave);
     }
 
     /**
@@ -275,7 +275,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsLegalIllness()
     {
-        return $this->getProperty("isLegalIllness");
+        return $this->getProperty('isLegalIllness');
     }
 
     /**
@@ -283,7 +283,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsLegalIllness($isLegalIllness = null)
     {
-        $this->setProperty("isLegalIllness", $isLegalIllness);
+        $this->setProperty('isLegalIllness', $isLegalIllness);
     }
 
     /**
@@ -291,7 +291,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsPhysicalPresent()
     {
-        return $this->getProperty("isPhysicalPresent");
+        return $this->getProperty('isPhysicalPresent');
     }
 
     /**
@@ -299,7 +299,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsPhysicalPresent($isPhysicalPresent = null)
     {
-        $this->setProperty("isPhysicalPresent", $isPhysicalPresent);
+        $this->setProperty('isPhysicalPresent', $isPhysicalPresent);
     }
 
     /**
@@ -307,7 +307,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsPhysicalLate()
     {
-        return $this->getProperty("isPhysicalLate");
+        return $this->getProperty('isPhysicalLate');
     }
 
     /**
@@ -315,7 +315,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsPhysicalLate($isPhysicalLate = null)
     {
-        $this->setProperty("isPhysicalLate", $isPhysicalLate);
+        $this->setProperty('isPhysicalLate', $isPhysicalLate);
     }
 
     /**
@@ -323,7 +323,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsPhysicalAbsent()
     {
-        return $this->getProperty("isPhysicalAbsent");
+        return $this->getProperty('isPhysicalAbsent');
     }
 
     /**
@@ -331,7 +331,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsPhysicalAbsent($isPhysicalAbsent = null)
     {
-        $this->setProperty("isPhysicalAbsent", $isPhysicalAbsent);
+        $this->setProperty('isPhysicalAbsent', $isPhysicalAbsent);
     }
 
     /**
@@ -339,7 +339,7 @@ class StaffAttendanceMark extends ModelBase
      */
     public function getIsPhysicalNotRequired()
     {
-        return $this->getProperty("isPhysicalNotRequired");
+        return $this->getProperty('isPhysicalNotRequired');
     }
 
     /**
@@ -347,6 +347,6 @@ class StaffAttendanceMark extends ModelBase
      */
     public function setIsPhysicalNotRequired($isPhysicalNotRequired = null)
     {
-        $this->setProperty("isPhysicalNotRequired", $isPhysicalNotRequired);
+        $this->setProperty('isPhysicalNotRequired', $isPhysicalNotRequired);
     }
 }

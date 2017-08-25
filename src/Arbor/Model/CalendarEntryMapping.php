@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Calendar;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CalendarEntryMapping extends ModelBase
 {
@@ -26,34 +21,38 @@ class CalendarEntryMapping extends ModelBase
     protected $_resourceType = ResourceType::CALENDAR_ENTRY_MAPPING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CalendarEntryMapping[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CalendarEntryMapping");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CALENDAR_ENTRY_MAPPING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CalendarEntryMapping
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CALENDAR_ENTRY_MAPPING, $id);
     }
 
@@ -62,7 +61,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function getEvent()
     {
-        return $this->getProperty("event");
+        return $this->getProperty('event');
     }
 
     /**
@@ -70,7 +69,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function setEvent(ModelBase $event = null)
     {
-        $this->setProperty("event", $event);
+        $this->setProperty('event', $event);
     }
 
     /**
@@ -78,7 +77,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -86,7 +85,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -94,7 +93,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -102,7 +101,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -110,7 +109,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function getMapped()
     {
-        return $this->getProperty("mapped");
+        return $this->getProperty('mapped');
     }
 
     /**
@@ -118,7 +117,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function setMapped(ModelBase $mapped = null)
     {
-        $this->setProperty("mapped", $mapped);
+        $this->setProperty('mapped', $mapped);
     }
 
     /**
@@ -126,7 +125,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function getCalendar()
     {
-        return $this->getProperty("calendar");
+        return $this->getProperty('calendar');
     }
 
     /**
@@ -134,7 +133,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function setCalendar(Calendar $calendar = null)
     {
-        $this->setProperty("calendar", $calendar);
+        $this->setProperty('calendar', $calendar);
     }
 
     /**
@@ -142,7 +141,7 @@ class CalendarEntryMapping extends ModelBase
      */
     public function getTimeslotBlocked()
     {
-        return $this->getProperty("timeslotBlocked");
+        return $this->getProperty('timeslotBlocked');
     }
 
     /**
@@ -150,6 +149,6 @@ class CalendarEntryMapping extends ModelBase
      */
     public function setTimeslotBlocked($timeslotBlocked = null)
     {
-        $this->setProperty("timeslotBlocked", $timeslotBlocked);
+        $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }
 }

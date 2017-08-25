@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AwardingOrganization;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationAssessable extends ModelBase
 {
@@ -21,59 +16,47 @@ class QualificationAssessable extends ModelBase
 
     const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const FULL_TITLE = 'fullTitle';
-
-    const SHORT_TITLE = 'shortTitle';
-
-    const DESCRIPTION = 'description';
+    const TITLE = 'title';
 
     const ASSESSMENT_METHOD_TYPE = 'assessmentMethodType';
 
-    const ASSESSOR = 'assessor';
-
     const CENTER_ASSESSED = 'centerAssessed';
-
-    const TIME_ALLOWED = 'timeAllowed';
-
-    const MAXIMUM_EXTRA_TIME = 'maximumExtraTime';
-
-    const CREDIT_VALUE = 'creditValue';
-
-    const MAX_RESITS_ALLOWED = 'maxResitsAllowed';
-
-    const TIMETABLE_SLOT_DECIDER = 'timetableSlotDecider';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ASSESSABLE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationAssessable[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationAssessable");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_ASSESSABLE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationAssessable
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_ASSESSABLE, $id);
     }
 
@@ -82,7 +65,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -90,7 +73,7 @@ class QualificationAssessable extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -98,7 +81,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -106,7 +89,7 @@ class QualificationAssessable extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -114,7 +97,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -122,7 +105,7 @@ class QualificationAssessable extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -130,7 +113,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getAssessableIdentifier()
     {
-        return $this->getProperty("assessableIdentifier");
+        return $this->getProperty('assessableIdentifier');
     }
 
     /**
@@ -138,7 +121,7 @@ class QualificationAssessable extends ModelBase
      */
     public function setAssessableIdentifier($assessableIdentifier = null)
     {
-        $this->setProperty("assessableIdentifier", $assessableIdentifier);
+        $this->setProperty('assessableIdentifier', $assessableIdentifier);
     }
 
     /**
@@ -146,7 +129,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getAwardingOrganization()
     {
-        return $this->getProperty("awardingOrganization");
+        return $this->getProperty('awardingOrganization');
     }
 
     /**
@@ -154,55 +137,23 @@ class QualificationAssessable extends ModelBase
      */
     public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
     {
-        $this->setProperty("awardingOrganization", $awardingOrganization);
+        $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
      * @return string
      */
-    public function getFullTitle()
+    public function getTitle()
     {
-        return $this->getProperty("fullTitle");
+        return $this->getProperty('title');
     }
 
     /**
-     * @param string $fullTitle
+     * @param string $title
      */
-    public function setFullTitle($fullTitle = null)
+    public function setTitle($title = null)
     {
-        $this->setProperty("fullTitle", $fullTitle);
-    }
-
-    /**
-     * @return string
-     */
-    public function getShortTitle()
-    {
-        return $this->getProperty("shortTitle");
-    }
-
-    /**
-     * @param string $shortTitle
-     */
-    public function setShortTitle($shortTitle = null)
-    {
-        $this->setProperty("shortTitle", $shortTitle);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->getProperty("description");
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription($description = null)
-    {
-        $this->setProperty("description", $description);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -210,7 +161,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getAssessmentMethodType()
     {
-        return $this->getProperty("assessmentMethodType");
+        return $this->getProperty('assessmentMethodType');
     }
 
     /**
@@ -218,23 +169,7 @@ class QualificationAssessable extends ModelBase
      */
     public function setAssessmentMethodType($assessmentMethodType = null)
     {
-        $this->setProperty("assessmentMethodType", $assessmentMethodType);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAssessor()
-    {
-        return $this->getProperty("assessor");
-    }
-
-    /**
-     * @param string $assessor
-     */
-    public function setAssessor($assessor = null)
-    {
-        $this->setProperty("assessor", $assessor);
+        $this->setProperty('assessmentMethodType', $assessmentMethodType);
     }
 
     /**
@@ -242,7 +177,7 @@ class QualificationAssessable extends ModelBase
      */
     public function getCenterAssessed()
     {
-        return $this->getProperty("centerAssessed");
+        return $this->getProperty('centerAssessed');
     }
 
     /**
@@ -250,86 +185,6 @@ class QualificationAssessable extends ModelBase
      */
     public function setCenterAssessed($centerAssessed = null)
     {
-        $this->setProperty("centerAssessed", $centerAssessed);
-    }
-
-    /**
-     * @return string
-     */
-    public function getTimeAllowed()
-    {
-        return $this->getProperty("timeAllowed");
-    }
-
-    /**
-     * @param string $timeAllowed
-     */
-    public function setTimeAllowed($timeAllowed = null)
-    {
-        $this->setProperty("timeAllowed", $timeAllowed);
-    }
-
-    /**
-     * @return string
-     */
-    public function getMaximumExtraTime()
-    {
-        return $this->getProperty("maximumExtraTime");
-    }
-
-    /**
-     * @param string $maximumExtraTime
-     */
-    public function setMaximumExtraTime($maximumExtraTime = null)
-    {
-        $this->setProperty("maximumExtraTime", $maximumExtraTime);
-    }
-
-    /**
-     * @return float
-     */
-    public function getCreditValue()
-    {
-        return $this->getProperty("creditValue");
-    }
-
-    /**
-     * @param float $creditValue
-     */
-    public function setCreditValue($creditValue = null)
-    {
-        $this->setProperty("creditValue", $creditValue);
-    }
-
-    /**
-     * @return int
-     */
-    public function getMaxResitsAllowed()
-    {
-        return $this->getProperty("maxResitsAllowed");
-    }
-
-    /**
-     * @param int $maxResitsAllowed
-     */
-    public function setMaxResitsAllowed($maxResitsAllowed = null)
-    {
-        $this->setProperty("maxResitsAllowed", $maxResitsAllowed);
-    }
-
-    /**
-     * @return string
-     */
-    public function getTimetableSlotDecider()
-    {
-        return $this->getProperty("timetableSlotDecider");
-    }
-
-    /**
-     * @param string $timetableSlotDecider
-     */
-    public function setTimetableSlotDecider($timetableSlotDecider = null)
-    {
-        $this->setProperty("timetableSlotDecider", $timetableSlotDecider);
+        $this->setProperty('centerAssessed', $centerAssessed);
     }
 }

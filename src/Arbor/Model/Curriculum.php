@@ -1,19 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\GradePointScale;
-use \Arbor\Model\CurriculumTier;
-use \Arbor\Model\CurriculumGrade;
-use \Arbor\Model\Grade;
-use \Arbor\Model\AchievementLevelSet;
-use \Arbor\Model\Assessment;
-use \Arbor\Model\Subject;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Curriculum extends ModelBase
 {
@@ -56,34 +45,38 @@ class Curriculum extends ModelBase
     protected $_resourceType = ResourceType::CURRICULUM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Curriculum[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Curriculum");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CURRICULUM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Curriculum
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CURRICULUM, $id);
     }
 
@@ -92,7 +85,7 @@ class Curriculum extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -100,7 +93,7 @@ class Curriculum extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -108,7 +101,7 @@ class Curriculum extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -116,7 +109,7 @@ class Curriculum extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -124,7 +117,7 @@ class Curriculum extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -132,7 +125,7 @@ class Curriculum extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -140,7 +133,7 @@ class Curriculum extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -148,7 +141,7 @@ class Curriculum extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -156,7 +149,7 @@ class Curriculum extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -164,7 +157,7 @@ class Curriculum extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -172,7 +165,7 @@ class Curriculum extends ModelBase
      */
     public function getGradePointScale()
     {
-        return $this->getProperty("gradePointScale");
+        return $this->getProperty('gradePointScale');
     }
 
     /**
@@ -180,7 +173,7 @@ class Curriculum extends ModelBase
      */
     public function setGradePointScale(GradePointScale $gradePointScale = null)
     {
-        $this->setProperty("gradePointScale", $gradePointScale);
+        $this->setProperty('gradePointScale', $gradePointScale);
     }
 
     /**
@@ -188,7 +181,7 @@ class Curriculum extends ModelBase
      */
     public function getCurriculumTier()
     {
-        return $this->getProperty("curriculumTier");
+        return $this->getProperty('curriculumTier');
     }
 
     /**
@@ -196,7 +189,7 @@ class Curriculum extends ModelBase
      */
     public function setCurriculumTier(CurriculumTier $curriculumTier = null)
     {
-        $this->setProperty("curriculumTier", $curriculumTier);
+        $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
@@ -204,7 +197,7 @@ class Curriculum extends ModelBase
      */
     public function getLowerCurriculumGrade()
     {
-        return $this->getProperty("lowerCurriculumGrade");
+        return $this->getProperty('lowerCurriculumGrade');
     }
 
     /**
@@ -212,7 +205,7 @@ class Curriculum extends ModelBase
      */
     public function setLowerCurriculumGrade(CurriculumGrade $lowerCurriculumGrade = null)
     {
-        $this->setProperty("lowerCurriculumGrade", $lowerCurriculumGrade);
+        $this->setProperty('lowerCurriculumGrade', $lowerCurriculumGrade);
     }
 
     /**
@@ -220,7 +213,7 @@ class Curriculum extends ModelBase
      */
     public function getUpperCurriculumGrade()
     {
-        return $this->getProperty("upperCurriculumGrade");
+        return $this->getProperty('upperCurriculumGrade');
     }
 
     /**
@@ -228,7 +221,7 @@ class Curriculum extends ModelBase
      */
     public function setUpperCurriculumGrade(CurriculumGrade $upperCurriculumGrade = null)
     {
-        $this->setProperty("upperCurriculumGrade", $upperCurriculumGrade);
+        $this->setProperty('upperCurriculumGrade', $upperCurriculumGrade);
     }
 
     /**
@@ -236,7 +229,7 @@ class Curriculum extends ModelBase
      */
     public function getLowerGradePointScaleValue()
     {
-        return $this->getProperty("lowerGradePointScaleValue");
+        return $this->getProperty('lowerGradePointScaleValue');
     }
 
     /**
@@ -244,7 +237,7 @@ class Curriculum extends ModelBase
      */
     public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
     {
-        $this->setProperty("lowerGradePointScaleValue", $lowerGradePointScaleValue);
+        $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
 
     /**
@@ -252,7 +245,7 @@ class Curriculum extends ModelBase
      */
     public function getLowerBenchmarkGrade()
     {
-        return $this->getProperty("lowerBenchmarkGrade");
+        return $this->getProperty('lowerBenchmarkGrade');
     }
 
     /**
@@ -260,7 +253,7 @@ class Curriculum extends ModelBase
      */
     public function setLowerBenchmarkGrade(Grade $lowerBenchmarkGrade = null)
     {
-        $this->setProperty("lowerBenchmarkGrade", $lowerBenchmarkGrade);
+        $this->setProperty('lowerBenchmarkGrade', $lowerBenchmarkGrade);
     }
 
     /**
@@ -268,7 +261,7 @@ class Curriculum extends ModelBase
      */
     public function getUpperGradePointScaleValue()
     {
-        return $this->getProperty("upperGradePointScaleValue");
+        return $this->getProperty('upperGradePointScaleValue');
     }
 
     /**
@@ -276,7 +269,7 @@ class Curriculum extends ModelBase
      */
     public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
     {
-        $this->setProperty("upperGradePointScaleValue", $upperGradePointScaleValue);
+        $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
 
     /**
@@ -284,7 +277,7 @@ class Curriculum extends ModelBase
      */
     public function getUpperBenchmarkGrade()
     {
-        return $this->getProperty("upperBenchmarkGrade");
+        return $this->getProperty('upperBenchmarkGrade');
     }
 
     /**
@@ -292,7 +285,7 @@ class Curriculum extends ModelBase
      */
     public function setUpperBenchmarkGrade(Grade $upperBenchmarkGrade = null)
     {
-        $this->setProperty("upperBenchmarkGrade", $upperBenchmarkGrade);
+        $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
 
     /**
@@ -300,7 +293,7 @@ class Curriculum extends ModelBase
      */
     public function getAchievementLevelSet()
     {
-        return $this->getProperty("achievementLevelSet");
+        return $this->getProperty('achievementLevelSet');
     }
 
     /**
@@ -308,7 +301,7 @@ class Curriculum extends ModelBase
      */
     public function setAchievementLevelSet(AchievementLevelSet $achievementLevelSet = null)
     {
-        $this->setProperty("achievementLevelSet", $achievementLevelSet);
+        $this->setProperty('achievementLevelSet', $achievementLevelSet);
     }
 
     /**
@@ -316,7 +309,7 @@ class Curriculum extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -324,7 +317,7 @@ class Curriculum extends ModelBase
      */
     public function setAssessment(Assessment $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -332,7 +325,7 @@ class Curriculum extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -340,7 +333,7 @@ class Curriculum extends ModelBase
      */
     public function setSubject(Subject $subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -348,7 +341,7 @@ class Curriculum extends ModelBase
      */
     public function getValidFromDate()
     {
-        return $this->getProperty("validFromDate");
+        return $this->getProperty('validFromDate');
     }
 
     /**
@@ -356,7 +349,7 @@ class Curriculum extends ModelBase
      */
     public function setValidFromDate(\DateTime $validFromDate = null)
     {
-        $this->setProperty("validFromDate", $validFromDate);
+        $this->setProperty('validFromDate', $validFromDate);
     }
 
     /**
@@ -364,7 +357,7 @@ class Curriculum extends ModelBase
      */
     public function getValidUntilDate()
     {
-        return $this->getProperty("validUntilDate");
+        return $this->getProperty('validUntilDate');
     }
 
     /**
@@ -372,6 +365,6 @@ class Curriculum extends ModelBase
      */
     public function setValidUntilDate(\DateTime $validUntilDate = null)
     {
-        $this->setProperty("validUntilDate", $validUntilDate);
+        $this->setProperty('validUntilDate', $validUntilDate);
     }
 }

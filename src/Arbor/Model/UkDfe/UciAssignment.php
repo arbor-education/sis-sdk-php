@@ -1,13 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Student;
 
 class UciAssignment extends ModelBase
 {
@@ -30,34 +30,38 @@ class UciAssignment extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_UCI_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UciAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_UciAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_UCI_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UciAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_UCI_ASSIGNMENT, $id);
     }
 
@@ -66,7 +70,7 @@ class UciAssignment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -74,7 +78,7 @@ class UciAssignment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -82,7 +86,7 @@ class UciAssignment extends ModelBase
      */
     public function getUci()
     {
-        return $this->getProperty("uci");
+        return $this->getProperty('uci');
     }
 
     /**
@@ -90,7 +94,7 @@ class UciAssignment extends ModelBase
      */
     public function setUci($uci = null)
     {
-        $this->setProperty("uci", $uci);
+        $this->setProperty('uci', $uci);
     }
 
     /**
@@ -98,7 +102,7 @@ class UciAssignment extends ModelBase
      */
     public function getIssuedYear()
     {
-        return $this->getProperty("issuedYear");
+        return $this->getProperty('issuedYear');
     }
 
     /**
@@ -106,7 +110,7 @@ class UciAssignment extends ModelBase
      */
     public function setIssuedYear($issuedYear = null)
     {
-        $this->setProperty("issuedYear", $issuedYear);
+        $this->setProperty('issuedYear', $issuedYear);
     }
 
     /**
@@ -114,7 +118,7 @@ class UciAssignment extends ModelBase
      */
     public function getIssuedCenterNumber()
     {
-        return $this->getProperty("issuedCenterNumber");
+        return $this->getProperty('issuedCenterNumber');
     }
 
     /**
@@ -122,7 +126,7 @@ class UciAssignment extends ModelBase
      */
     public function setIssuedCenterNumber($issuedCenterNumber = null)
     {
-        $this->setProperty("issuedCenterNumber", $issuedCenterNumber);
+        $this->setProperty('issuedCenterNumber', $issuedCenterNumber);
     }
 
     /**
@@ -130,7 +134,7 @@ class UciAssignment extends ModelBase
      */
     public function getIssuedAwardingOrganizationIdentifier()
     {
-        return $this->getProperty("issuedAwardingOrganizationIdentifier");
+        return $this->getProperty('issuedAwardingOrganizationIdentifier');
     }
 
     /**
@@ -138,7 +142,7 @@ class UciAssignment extends ModelBase
      */
     public function setIssuedAwardingOrganizationIdentifier($issuedAwardingOrganizationIdentifier = null)
     {
-        $this->setProperty("issuedAwardingOrganizationIdentifier", $issuedAwardingOrganizationIdentifier);
+        $this->setProperty('issuedAwardingOrganizationIdentifier', $issuedAwardingOrganizationIdentifier);
     }
 
     /**
@@ -146,7 +150,7 @@ class UciAssignment extends ModelBase
      */
     public function getIssuedSerialNumber()
     {
-        return $this->getProperty("issuedSerialNumber");
+        return $this->getProperty('issuedSerialNumber');
     }
 
     /**
@@ -154,7 +158,7 @@ class UciAssignment extends ModelBase
      */
     public function setIssuedSerialNumber($issuedSerialNumber = null)
     {
-        $this->setProperty("issuedSerialNumber", $issuedSerialNumber);
+        $this->setProperty('issuedSerialNumber', $issuedSerialNumber);
     }
 
     /**
@@ -162,7 +166,7 @@ class UciAssignment extends ModelBase
      */
     public function getIssuedDatetime()
     {
-        return $this->getProperty("issuedDatetime");
+        return $this->getProperty('issuedDatetime');
     }
 
     /**
@@ -170,7 +174,7 @@ class UciAssignment extends ModelBase
      */
     public function setIssuedDatetime(\DateTime $issuedDatetime = null)
     {
-        $this->setProperty("issuedDatetime", $issuedDatetime);
+        $this->setProperty('issuedDatetime', $issuedDatetime);
     }
 
     /**
@@ -178,7 +182,7 @@ class UciAssignment extends ModelBase
      */
     public function getCancelledDatetime()
     {
-        return $this->getProperty("cancelledDatetime");
+        return $this->getProperty('cancelledDatetime');
     }
 
     /**
@@ -186,6 +190,6 @@ class UciAssignment extends ModelBase
      */
     public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
     {
-        $this->setProperty("cancelledDatetime", $cancelledDatetime);
+        $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
 }

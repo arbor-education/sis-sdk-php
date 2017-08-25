@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Country extends ModelBase
 {
@@ -33,34 +29,38 @@ class Country extends ModelBase
     protected $_resourceType = ResourceType::COUNTRY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Country[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Country");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COUNTRY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Country
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COUNTRY, $id);
     }
 
@@ -69,7 +69,7 @@ class Country extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -77,7 +77,7 @@ class Country extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -85,7 +85,7 @@ class Country extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -93,7 +93,7 @@ class Country extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -101,7 +101,7 @@ class Country extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -109,7 +109,7 @@ class Country extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -117,7 +117,7 @@ class Country extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -125,7 +125,7 @@ class Country extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -133,7 +133,7 @@ class Country extends ModelBase
      */
     public function getLongName()
     {
-        return $this->getProperty("longName");
+        return $this->getProperty('longName');
     }
 
     /**
@@ -141,7 +141,7 @@ class Country extends ModelBase
      */
     public function setLongName($longName = null)
     {
-        $this->setProperty("longName", $longName);
+        $this->setProperty('longName', $longName);
     }
 
     /**
@@ -149,7 +149,7 @@ class Country extends ModelBase
      */
     public function getIso31661Alpha2()
     {
-        return $this->getProperty("iso31661Alpha2");
+        return $this->getProperty('iso31661Alpha2');
     }
 
     /**
@@ -157,7 +157,7 @@ class Country extends ModelBase
      */
     public function setIso31661Alpha2($iso31661Alpha2 = null)
     {
-        $this->setProperty("iso31661Alpha2", $iso31661Alpha2);
+        $this->setProperty('iso31661Alpha2', $iso31661Alpha2);
     }
 
     /**
@@ -165,7 +165,7 @@ class Country extends ModelBase
      */
     public function getIso31661Alpha3()
     {
-        return $this->getProperty("iso31661Alpha3");
+        return $this->getProperty('iso31661Alpha3');
     }
 
     /**
@@ -173,7 +173,7 @@ class Country extends ModelBase
      */
     public function setIso31661Alpha3($iso31661Alpha3 = null)
     {
-        $this->setProperty("iso31661Alpha3", $iso31661Alpha3);
+        $this->setProperty('iso31661Alpha3', $iso31661Alpha3);
     }
 
     /**
@@ -181,7 +181,7 @@ class Country extends ModelBase
      */
     public function getIso31661Numeric()
     {
-        return $this->getProperty("iso31661Numeric");
+        return $this->getProperty('iso31661Numeric');
     }
 
     /**
@@ -189,7 +189,7 @@ class Country extends ModelBase
      */
     public function setIso31661Numeric($iso31661Numeric = null)
     {
-        $this->setProperty("iso31661Numeric", $iso31661Numeric);
+        $this->setProperty('iso31661Numeric', $iso31661Numeric);
     }
 
     /**
@@ -197,7 +197,7 @@ class Country extends ModelBase
      */
     public function getNote()
     {
-        return $this->getProperty("note");
+        return $this->getProperty('note');
     }
 
     /**
@@ -205,7 +205,7 @@ class Country extends ModelBase
      */
     public function setNote($note = null)
     {
-        $this->setProperty("note", $note);
+        $this->setProperty('note', $note);
     }
 
     /**
@@ -213,7 +213,7 @@ class Country extends ModelBase
      */
     public function getAppliesToPostalAddress()
     {
-        return $this->getProperty("appliesToPostalAddress");
+        return $this->getProperty('appliesToPostalAddress');
     }
 
     /**
@@ -221,6 +221,6 @@ class Country extends ModelBase
      */
     public function setAppliesToPostalAddress($appliesToPostalAddress = null)
     {
-        $this->setProperty("appliesToPostalAddress", $appliesToPostalAddress);
+        $this->setProperty('appliesToPostalAddress', $appliesToPostalAddress);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UsageLogEntry extends ModelBase
 {
@@ -34,34 +29,38 @@ class UsageLogEntry extends ModelBase
     protected $_resourceType = ResourceType::USAGE_LOG_ENTRY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UsageLogEntry[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UsageLogEntry");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USAGE_LOG_ENTRY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UsageLogEntry
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USAGE_LOG_ENTRY, $id);
     }
 
@@ -70,7 +69,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getTimestamp()
     {
-        return $this->getProperty("timestamp");
+        return $this->getProperty('timestamp');
     }
 
     /**
@@ -78,7 +77,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setTimestamp(\DateTime $timestamp = null)
     {
-        $this->setProperty("timestamp", $timestamp);
+        $this->setProperty('timestamp', $timestamp);
     }
 
     /**
@@ -86,7 +85,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -94,7 +93,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -102,7 +101,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getSeverity()
     {
-        return $this->getProperty("severity");
+        return $this->getProperty('severity');
     }
 
     /**
@@ -110,7 +109,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setSeverity($severity = null)
     {
-        $this->setProperty("severity", $severity);
+        $this->setProperty('severity', $severity);
     }
 
     /**
@@ -118,7 +117,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getMessage()
     {
-        return $this->getProperty("message");
+        return $this->getProperty('message');
     }
 
     /**
@@ -126,7 +125,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setMessage($message = null)
     {
-        $this->setProperty("message", $message);
+        $this->setProperty('message', $message);
     }
 
     /**
@@ -134,7 +133,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getEvent_type()
     {
-        return $this->getProperty("event_type");
+        return $this->getProperty('event_type');
     }
 
     /**
@@ -142,7 +141,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setEvent_type($event_type = null)
     {
-        $this->setProperty("event_type", $event_type);
+        $this->setProperty('event_type', $event_type);
     }
 
     /**
@@ -150,7 +149,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getEvent_name()
     {
-        return $this->getProperty("event_name");
+        return $this->getProperty('event_name');
     }
 
     /**
@@ -158,7 +157,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setEvent_name($event_name = null)
     {
-        $this->setProperty("event_name", $event_name);
+        $this->setProperty('event_name', $event_name);
     }
 
     /**
@@ -166,7 +165,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getEvent_data()
     {
-        return $this->getProperty("event_data");
+        return $this->getProperty('event_data');
     }
 
     /**
@@ -174,7 +173,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setEvent_data($event_data = null)
     {
-        $this->setProperty("event_data", $event_data);
+        $this->setProperty('event_data', $event_data);
     }
 
     /**
@@ -182,7 +181,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getModule()
     {
-        return $this->getProperty("module");
+        return $this->getProperty('module');
     }
 
     /**
@@ -190,7 +189,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setModule($module = null)
     {
-        $this->setProperty("module", $module);
+        $this->setProperty('module', $module);
     }
 
     /**
@@ -198,7 +197,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getController()
     {
-        return $this->getProperty("controller");
+        return $this->getProperty('controller');
     }
 
     /**
@@ -206,7 +205,7 @@ class UsageLogEntry extends ModelBase
      */
     public function setController($controller = null)
     {
-        $this->setProperty("controller", $controller);
+        $this->setProperty('controller', $controller);
     }
 
     /**
@@ -214,7 +213,7 @@ class UsageLogEntry extends ModelBase
      */
     public function getAction()
     {
-        return $this->getProperty("action");
+        return $this->getProperty('action');
     }
 
     /**
@@ -222,6 +221,6 @@ class UsageLogEntry extends ModelBase
      */
     public function setAction($action = null)
     {
-        $this->setProperty("action", $action);
+        $this->setProperty('action', $action);
     }
 }

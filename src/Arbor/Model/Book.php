@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BankAccount;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Book extends ModelBase
 {
@@ -28,34 +23,38 @@ class Book extends ModelBase
     protected $_resourceType = ResourceType::BOOK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Book[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Book");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BOOK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Book
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BOOK, $id);
     }
 
@@ -64,7 +63,7 @@ class Book extends ModelBase
      */
     public function getBookType()
     {
-        return $this->getProperty("bookType");
+        return $this->getProperty('bookType');
     }
 
     /**
@@ -72,7 +71,7 @@ class Book extends ModelBase
      */
     public function setBookType($bookType = null)
     {
-        $this->setProperty("bookType", $bookType);
+        $this->setProperty('bookType', $bookType);
     }
 
     /**
@@ -80,7 +79,7 @@ class Book extends ModelBase
      */
     public function getPrefix()
     {
-        return $this->getProperty("prefix");
+        return $this->getProperty('prefix');
     }
 
     /**
@@ -88,7 +87,7 @@ class Book extends ModelBase
      */
     public function setPrefix($prefix = null)
     {
-        $this->setProperty("prefix", $prefix);
+        $this->setProperty('prefix', $prefix);
     }
 
     /**
@@ -96,7 +95,7 @@ class Book extends ModelBase
      */
     public function getFirstNumber()
     {
-        return $this->getProperty("firstNumber");
+        return $this->getProperty('firstNumber');
     }
 
     /**
@@ -104,7 +103,7 @@ class Book extends ModelBase
      */
     public function setFirstNumber($firstNumber = null)
     {
-        $this->setProperty("firstNumber", $firstNumber);
+        $this->setProperty('firstNumber', $firstNumber);
     }
 
     /**
@@ -112,7 +111,7 @@ class Book extends ModelBase
      */
     public function getLastNumber()
     {
-        return $this->getProperty("lastNumber");
+        return $this->getProperty('lastNumber');
     }
 
     /**
@@ -120,7 +119,7 @@ class Book extends ModelBase
      */
     public function setLastNumber($lastNumber = null)
     {
-        $this->setProperty("lastNumber", $lastNumber);
+        $this->setProperty('lastNumber', $lastNumber);
     }
 
     /**
@@ -128,7 +127,7 @@ class Book extends ModelBase
      */
     public function getNextNumber()
     {
-        return $this->getProperty("nextNumber");
+        return $this->getProperty('nextNumber');
     }
 
     /**
@@ -136,7 +135,7 @@ class Book extends ModelBase
      */
     public function setNextNumber($nextNumber = null)
     {
-        $this->setProperty("nextNumber", $nextNumber);
+        $this->setProperty('nextNumber', $nextNumber);
     }
 
     /**
@@ -144,7 +143,7 @@ class Book extends ModelBase
      */
     public function getOpen()
     {
-        return $this->getProperty("open");
+        return $this->getProperty('open');
     }
 
     /**
@@ -152,7 +151,7 @@ class Book extends ModelBase
      */
     public function setOpen($open = null)
     {
-        $this->setProperty("open", $open);
+        $this->setProperty('open', $open);
     }
 
     /**
@@ -160,7 +159,7 @@ class Book extends ModelBase
      */
     public function getBankAccount()
     {
-        return $this->getProperty("bankAccount");
+        return $this->getProperty('bankAccount');
     }
 
     /**
@@ -168,6 +167,6 @@ class Book extends ModelBase
      */
     public function setBankAccount(BankAccount $bankAccount = null)
     {
-        $this->setProperty("bankAccount", $bankAccount);
+        $this->setProperty('bankAccount', $bankAccount);
     }
 }

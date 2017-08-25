@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Person;
-use \Arbor\Model\Religion;
-use \Arbor\Model\Ethnicity;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Guardian extends ModelBase
 {
@@ -29,37 +22,43 @@ class Guardian extends ModelBase
 
     const PREFERRED_CONTACT_METHOD = 'preferredContactMethod';
 
+    const LEGACY_SYSTEM_ID = 'legacySystemId';
+
     protected $_resourceType = ResourceType::GUARDIAN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Guardian[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Guardian");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GUARDIAN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Guardian
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GUARDIAN, $id);
     }
 
@@ -68,7 +67,7 @@ class Guardian extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -76,7 +75,7 @@ class Guardian extends ModelBase
      */
     public function setPerson(Person $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -84,7 +83,7 @@ class Guardian extends ModelBase
      */
     public function getEmployer()
     {
-        return $this->getProperty("employer");
+        return $this->getProperty('employer');
     }
 
     /**
@@ -92,7 +91,7 @@ class Guardian extends ModelBase
      */
     public function setEmployer($employer = null)
     {
-        $this->setProperty("employer", $employer);
+        $this->setProperty('employer', $employer);
     }
 
     /**
@@ -100,7 +99,7 @@ class Guardian extends ModelBase
      */
     public function getReligion()
     {
-        return $this->getProperty("religion");
+        return $this->getProperty('religion');
     }
 
     /**
@@ -108,7 +107,7 @@ class Guardian extends ModelBase
      */
     public function setReligion(Religion $religion = null)
     {
-        $this->setProperty("religion", $religion);
+        $this->setProperty('religion', $religion);
     }
 
     /**
@@ -116,7 +115,7 @@ class Guardian extends ModelBase
      */
     public function getEthnicity()
     {
-        return $this->getProperty("ethnicity");
+        return $this->getProperty('ethnicity');
     }
 
     /**
@@ -124,7 +123,7 @@ class Guardian extends ModelBase
      */
     public function setEthnicity(Ethnicity $ethnicity = null)
     {
-        $this->setProperty("ethnicity", $ethnicity);
+        $this->setProperty('ethnicity', $ethnicity);
     }
 
     /**
@@ -132,7 +131,7 @@ class Guardian extends ModelBase
      */
     public function getJobPosition()
     {
-        return $this->getProperty("jobPosition");
+        return $this->getProperty('jobPosition');
     }
 
     /**
@@ -140,7 +139,7 @@ class Guardian extends ModelBase
      */
     public function setJobPosition($jobPosition = null)
     {
-        $this->setProperty("jobPosition", $jobPosition);
+        $this->setProperty('jobPosition', $jobPosition);
     }
 
     /**
@@ -148,7 +147,7 @@ class Guardian extends ModelBase
      */
     public function getBloodGroup()
     {
-        return $this->getProperty("bloodGroup");
+        return $this->getProperty('bloodGroup');
     }
 
     /**
@@ -156,7 +155,7 @@ class Guardian extends ModelBase
      */
     public function setBloodGroup($bloodGroup = null)
     {
-        $this->setProperty("bloodGroup", $bloodGroup);
+        $this->setProperty('bloodGroup', $bloodGroup);
     }
 
     /**
@@ -164,7 +163,7 @@ class Guardian extends ModelBase
      */
     public function getShareContactDetails()
     {
-        return $this->getProperty("shareContactDetails");
+        return $this->getProperty('shareContactDetails');
     }
 
     /**
@@ -172,7 +171,7 @@ class Guardian extends ModelBase
      */
     public function setShareContactDetails($shareContactDetails = null)
     {
-        $this->setProperty("shareContactDetails", $shareContactDetails);
+        $this->setProperty('shareContactDetails', $shareContactDetails);
     }
 
     /**
@@ -180,7 +179,7 @@ class Guardian extends ModelBase
      */
     public function getPreferredContactMethod()
     {
-        return $this->getProperty("preferredContactMethod");
+        return $this->getProperty('preferredContactMethod');
     }
 
     /**
@@ -188,6 +187,22 @@ class Guardian extends ModelBase
      */
     public function setPreferredContactMethod($preferredContactMethod = null)
     {
-        $this->setProperty("preferredContactMethod", $preferredContactMethod);
+        $this->setProperty('preferredContactMethod', $preferredContactMethod);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLegacySystemId()
+    {
+        return $this->getProperty('legacySystemId');
+    }
+
+    /**
+     * @param string $legacySystemId
+     */
+    public function setLegacySystemId($legacySystemId = null)
+    {
+        $this->setProperty('legacySystemId', $legacySystemId);
     }
 }

@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicYear extends ModelBase
 {
@@ -20,39 +16,41 @@ class AcademicYear extends ModelBase
 
     const TIMETABLE_CYCLE_LENGTH = 'timetableCycleLength';
 
-    const TIMETABLE_CYCLE_RESETS_EACH_TERM = 'timetableCycleResetsEachTerm';
-
     protected $_resourceType = ResourceType::ACADEMIC_YEAR;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicYear[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicYear");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_YEAR);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicYear
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_YEAR, $id);
     }
 
@@ -61,7 +59,7 @@ class AcademicYear extends ModelBase
      */
     public function getAcademicYearName()
     {
-        return $this->getProperty("academicYearName");
+        return $this->getProperty('academicYearName');
     }
 
     /**
@@ -69,7 +67,7 @@ class AcademicYear extends ModelBase
      */
     public function setAcademicYearName($academicYearName = null)
     {
-        $this->setProperty("academicYearName", $academicYearName);
+        $this->setProperty('academicYearName', $academicYearName);
     }
 
     /**
@@ -77,7 +75,7 @@ class AcademicYear extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -85,7 +83,7 @@ class AcademicYear extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -93,7 +91,7 @@ class AcademicYear extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -101,7 +99,7 @@ class AcademicYear extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -109,7 +107,7 @@ class AcademicYear extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -117,7 +115,7 @@ class AcademicYear extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -125,7 +123,7 @@ class AcademicYear extends ModelBase
      */
     public function getTimetableCycleLength()
     {
-        return $this->getProperty("timetableCycleLength");
+        return $this->getProperty('timetableCycleLength');
     }
 
     /**
@@ -133,22 +131,6 @@ class AcademicYear extends ModelBase
      */
     public function setTimetableCycleLength($timetableCycleLength = null)
     {
-        $this->setProperty("timetableCycleLength", $timetableCycleLength);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getTimetableCycleResetsEachTerm()
-    {
-        return $this->getProperty("timetableCycleResetsEachTerm");
-    }
-
-    /**
-     * @param bool $timetableCycleResetsEachTerm
-     */
-    public function setTimetableCycleResetsEachTerm($timetableCycleResetsEachTerm = null)
-    {
-        $this->setProperty("timetableCycleResetsEachTerm", $timetableCycleResetsEachTerm);
+        $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }
 }

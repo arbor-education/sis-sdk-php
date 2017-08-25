@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BehaviouralContract;
-use \Arbor\Model\Behaviour;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralContractGoal extends ModelBase
 {
@@ -23,34 +17,38 @@ class BehaviouralContractGoal extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_CONTRACT_GOAL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralContractGoal[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralContractGoal");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_CONTRACT_GOAL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralContractGoal
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_CONTRACT_GOAL, $id);
     }
 
@@ -59,7 +57,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function getBehaviouralContract()
     {
-        return $this->getProperty("behaviouralContract");
+        return $this->getProperty('behaviouralContract');
     }
 
     /**
@@ -67,7 +65,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function setBehaviouralContract(BehaviouralContract $behaviouralContract = null)
     {
-        $this->setProperty("behaviouralContract", $behaviouralContract);
+        $this->setProperty('behaviouralContract', $behaviouralContract);
     }
 
     /**
@@ -75,7 +73,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -83,7 +81,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -91,7 +89,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function getFrequency()
     {
-        return $this->getProperty("frequency");
+        return $this->getProperty('frequency');
     }
 
     /**
@@ -99,7 +97,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function setFrequency($frequency = null)
     {
-        $this->setProperty("frequency", $frequency);
+        $this->setProperty('frequency', $frequency);
     }
 
     /**
@@ -107,7 +105,7 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function getBehaviour()
     {
-        return $this->getProperty("behaviour");
+        return $this->getProperty('behaviour');
     }
 
     /**
@@ -115,6 +113,6 @@ class BehaviouralContractGoal extends ModelBase
      */
     public function setBehaviour(Behaviour $behaviour = null)
     {
-        $this->setProperty("behaviour", $behaviour);
+        $this->setProperty('behaviour', $behaviour);
     }
 }

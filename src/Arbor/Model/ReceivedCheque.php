@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BillPayer;
-use \Arbor\Model\BankDeposit;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ReceivedCheque extends ModelBase
 {
@@ -25,34 +19,38 @@ class ReceivedCheque extends ModelBase
     protected $_resourceType = ResourceType::RECEIVED_CHEQUE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ReceivedCheque[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ReceivedCheque");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::RECEIVED_CHEQUE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ReceivedCheque
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::RECEIVED_CHEQUE, $id);
     }
 
@@ -61,7 +59,7 @@ class ReceivedCheque extends ModelBase
      */
     public function getBillPayer()
     {
-        return $this->getProperty("billPayer");
+        return $this->getProperty('billPayer');
     }
 
     /**
@@ -69,7 +67,7 @@ class ReceivedCheque extends ModelBase
      */
     public function setBillPayer(BillPayer $billPayer = null)
     {
-        $this->setProperty("billPayer", $billPayer);
+        $this->setProperty('billPayer', $billPayer);
     }
 
     /**
@@ -77,7 +75,7 @@ class ReceivedCheque extends ModelBase
      */
     public function getBankDeposit()
     {
-        return $this->getProperty("bankDeposit");
+        return $this->getProperty('bankDeposit');
     }
 
     /**
@@ -85,7 +83,7 @@ class ReceivedCheque extends ModelBase
      */
     public function setBankDeposit(BankDeposit $bankDeposit = null)
     {
-        $this->setProperty("bankDeposit", $bankDeposit);
+        $this->setProperty('bankDeposit', $bankDeposit);
     }
 
     /**
@@ -93,7 +91,7 @@ class ReceivedCheque extends ModelBase
      */
     public function getReceivedDate()
     {
-        return $this->getProperty("receivedDate");
+        return $this->getProperty('receivedDate');
     }
 
     /**
@@ -101,7 +99,7 @@ class ReceivedCheque extends ModelBase
      */
     public function setReceivedDate(\DateTime $receivedDate = null)
     {
-        $this->setProperty("receivedDate", $receivedDate);
+        $this->setProperty('receivedDate', $receivedDate);
     }
 
     /**
@@ -109,7 +107,7 @@ class ReceivedCheque extends ModelBase
      */
     public function getCancelledDatetime()
     {
-        return $this->getProperty("cancelledDatetime");
+        return $this->getProperty('cancelledDatetime');
     }
 
     /**
@@ -117,7 +115,7 @@ class ReceivedCheque extends ModelBase
      */
     public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
     {
-        $this->setProperty("cancelledDatetime", $cancelledDatetime);
+        $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
 
     /**
@@ -125,7 +123,7 @@ class ReceivedCheque extends ModelBase
      */
     public function getChequeAmount()
     {
-        return $this->getProperty("chequeAmount");
+        return $this->getProperty('chequeAmount');
     }
 
     /**
@@ -133,6 +131,6 @@ class ReceivedCheque extends ModelBase
      */
     public function setChequeAmount($chequeAmount = null)
     {
-        $this->setProperty("chequeAmount", $chequeAmount);
+        $this->setProperty('chequeAmount', $chequeAmount);
     }
 }

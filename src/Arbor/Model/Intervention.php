@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\InterventionDefinition;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\Term;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Intervention extends ModelBase
 {
@@ -37,37 +30,47 @@ class Intervention extends ModelBase
 
     const ESTIMATED_DURATION = 'estimatedDuration';
 
+    const SUBJECT = 'subject';
+
+    const CATEGORY = 'category';
+
+    const IS_COMPLETED = 'isCompleted';
+
     protected $_resourceType = ResourceType::INTERVENTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Intervention[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Intervention");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Intervention
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION, $id);
     }
 
@@ -76,7 +79,7 @@ class Intervention extends ModelBase
      */
     public function getInterventionDefinition()
     {
-        return $this->getProperty("interventionDefinition");
+        return $this->getProperty('interventionDefinition');
     }
 
     /**
@@ -84,7 +87,7 @@ class Intervention extends ModelBase
      */
     public function setInterventionDefinition(InterventionDefinition $interventionDefinition = null)
     {
-        $this->setProperty("interventionDefinition", $interventionDefinition);
+        $this->setProperty('interventionDefinition', $interventionDefinition);
     }
 
     /**
@@ -92,7 +95,7 @@ class Intervention extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -100,7 +103,7 @@ class Intervention extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -108,7 +111,7 @@ class Intervention extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -116,7 +119,7 @@ class Intervention extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -124,7 +127,7 @@ class Intervention extends ModelBase
      */
     public function getTerm()
     {
-        return $this->getProperty("term");
+        return $this->getProperty('term');
     }
 
     /**
@@ -132,7 +135,7 @@ class Intervention extends ModelBase
      */
     public function setTerm(Term $term = null)
     {
-        $this->setProperty("term", $term);
+        $this->setProperty('term', $term);
     }
 
     /**
@@ -140,7 +143,7 @@ class Intervention extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -148,7 +151,7 @@ class Intervention extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -156,7 +159,7 @@ class Intervention extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -164,7 +167,7 @@ class Intervention extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -172,7 +175,7 @@ class Intervention extends ModelBase
      */
     public function getMonitoring()
     {
-        return $this->getProperty("monitoring");
+        return $this->getProperty('monitoring');
     }
 
     /**
@@ -180,7 +183,7 @@ class Intervention extends ModelBase
      */
     public function setMonitoring($monitoring = null)
     {
-        $this->setProperty("monitoring", $monitoring);
+        $this->setProperty('monitoring', $monitoring);
     }
 
     /**
@@ -188,7 +191,7 @@ class Intervention extends ModelBase
      */
     public function getAimsOfIntervention()
     {
-        return $this->getProperty("aimsOfIntervention");
+        return $this->getProperty('aimsOfIntervention');
     }
 
     /**
@@ -196,7 +199,7 @@ class Intervention extends ModelBase
      */
     public function setAimsOfIntervention($aimsOfIntervention = null)
     {
-        $this->setProperty("aimsOfIntervention", $aimsOfIntervention);
+        $this->setProperty('aimsOfIntervention', $aimsOfIntervention);
     }
 
     /**
@@ -204,7 +207,7 @@ class Intervention extends ModelBase
      */
     public function getStrategies()
     {
-        return $this->getProperty("strategies");
+        return $this->getProperty('strategies');
     }
 
     /**
@@ -212,7 +215,7 @@ class Intervention extends ModelBase
      */
     public function setStrategies($strategies = null)
     {
-        $this->setProperty("strategies", $strategies);
+        $this->setProperty('strategies', $strategies);
     }
 
     /**
@@ -220,7 +223,7 @@ class Intervention extends ModelBase
      */
     public function getSuccessCriteria()
     {
-        return $this->getProperty("successCriteria");
+        return $this->getProperty('successCriteria');
     }
 
     /**
@@ -228,7 +231,7 @@ class Intervention extends ModelBase
      */
     public function setSuccessCriteria($successCriteria = null)
     {
-        $this->setProperty("successCriteria", $successCriteria);
+        $this->setProperty('successCriteria', $successCriteria);
     }
 
     /**
@@ -236,7 +239,7 @@ class Intervention extends ModelBase
      */
     public function getNextReviewDate()
     {
-        return $this->getProperty("nextReviewDate");
+        return $this->getProperty('nextReviewDate');
     }
 
     /**
@@ -244,7 +247,7 @@ class Intervention extends ModelBase
      */
     public function setNextReviewDate(\DateTime $nextReviewDate = null)
     {
-        $this->setProperty("nextReviewDate", $nextReviewDate);
+        $this->setProperty('nextReviewDate', $nextReviewDate);
     }
 
     /**
@@ -252,7 +255,7 @@ class Intervention extends ModelBase
      */
     public function getEstimatedDuration()
     {
-        return $this->getProperty("estimatedDuration");
+        return $this->getProperty('estimatedDuration');
     }
 
     /**
@@ -260,6 +263,54 @@ class Intervention extends ModelBase
      */
     public function setEstimatedDuration($estimatedDuration = null)
     {
-        $this->setProperty("estimatedDuration", $estimatedDuration);
+        $this->setProperty('estimatedDuration', $estimatedDuration);
+    }
+
+    /**
+     * @return Subject
+     */
+    public function getSubject()
+    {
+        return $this->getProperty('subject');
+    }
+
+    /**
+     * @param Subject $subject
+     */
+    public function setSubject(Subject $subject = null)
+    {
+        $this->setProperty('subject', $subject);
+    }
+
+    /**
+     * @return InterventionCategory
+     */
+    public function getCategory()
+    {
+        return $this->getProperty('category');
+    }
+
+    /**
+     * @param InterventionCategory $category
+     */
+    public function setCategory(InterventionCategory $category = null)
+    {
+        $this->setProperty('category', $category);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsCompleted()
+    {
+        return $this->getProperty('isCompleted');
+    }
+
+    /**
+     * @param bool $isCompleted
+     */
+    public function setIsCompleted($isCompleted = null)
+    {
+        $this->setProperty('isCompleted', $isCompleted);
     }
 }

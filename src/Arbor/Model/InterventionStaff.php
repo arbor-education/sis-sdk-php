@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Intervention;
-use \Arbor\Model\BusinessRole;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionStaff extends ModelBase
 {
@@ -26,34 +19,38 @@ class InterventionStaff extends ModelBase
     protected $_resourceType = ResourceType::INTERVENTION_STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionStaff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionStaff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionStaff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_STAFF, $id);
     }
 
@@ -62,7 +59,7 @@ class InterventionStaff extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -70,7 +67,7 @@ class InterventionStaff extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -78,7 +75,7 @@ class InterventionStaff extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -86,7 +83,7 @@ class InterventionStaff extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 
     /**
@@ -94,7 +91,7 @@ class InterventionStaff extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -102,7 +99,7 @@ class InterventionStaff extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -110,7 +107,7 @@ class InterventionStaff extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -118,7 +115,7 @@ class InterventionStaff extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -126,7 +123,7 @@ class InterventionStaff extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -134,6 +131,6 @@ class InterventionStaff extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

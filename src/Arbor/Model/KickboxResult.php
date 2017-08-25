@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class KickboxResult extends ModelBase
 {
@@ -35,34 +31,38 @@ class KickboxResult extends ModelBase
     protected $_resourceType = ResourceType::KICKBOX_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return KickboxResult[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("KickboxResult");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::KICKBOX_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return KickboxResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::KICKBOX_RESULT, $id);
     }
 
@@ -71,7 +71,7 @@ class KickboxResult extends ModelBase
      */
     public function getRawEmailAddress()
     {
-        return $this->getProperty("rawEmailAddress");
+        return $this->getProperty('rawEmailAddress');
     }
 
     /**
@@ -79,7 +79,7 @@ class KickboxResult extends ModelBase
      */
     public function setRawEmailAddress($rawEmailAddress = null)
     {
-        $this->setProperty("rawEmailAddress", $rawEmailAddress);
+        $this->setProperty('rawEmailAddress', $rawEmailAddress);
     }
 
     /**
@@ -87,7 +87,7 @@ class KickboxResult extends ModelBase
      */
     public function getResult()
     {
-        return $this->getProperty("result");
+        return $this->getProperty('result');
     }
 
     /**
@@ -95,7 +95,7 @@ class KickboxResult extends ModelBase
      */
     public function setResult($result = null)
     {
-        $this->setProperty("result", $result);
+        $this->setProperty('result', $result);
     }
 
     /**
@@ -103,7 +103,7 @@ class KickboxResult extends ModelBase
      */
     public function getReason()
     {
-        return $this->getProperty("reason");
+        return $this->getProperty('reason');
     }
 
     /**
@@ -111,7 +111,7 @@ class KickboxResult extends ModelBase
      */
     public function setReason($reason = null)
     {
-        $this->setProperty("reason", $reason);
+        $this->setProperty('reason', $reason);
     }
 
     /**
@@ -119,7 +119,7 @@ class KickboxResult extends ModelBase
      */
     public function getRole()
     {
-        return $this->getProperty("role");
+        return $this->getProperty('role');
     }
 
     /**
@@ -127,7 +127,7 @@ class KickboxResult extends ModelBase
      */
     public function setRole($role = null)
     {
-        $this->setProperty("role", $role);
+        $this->setProperty('role', $role);
     }
 
     /**
@@ -135,7 +135,7 @@ class KickboxResult extends ModelBase
      */
     public function getFree()
     {
-        return $this->getProperty("free");
+        return $this->getProperty('free');
     }
 
     /**
@@ -143,7 +143,7 @@ class KickboxResult extends ModelBase
      */
     public function setFree($free = null)
     {
-        $this->setProperty("free", $free);
+        $this->setProperty('free', $free);
     }
 
     /**
@@ -151,7 +151,7 @@ class KickboxResult extends ModelBase
      */
     public function getDisposable()
     {
-        return $this->getProperty("disposable");
+        return $this->getProperty('disposable');
     }
 
     /**
@@ -159,7 +159,7 @@ class KickboxResult extends ModelBase
      */
     public function setDisposable($disposable = null)
     {
-        $this->setProperty("disposable", $disposable);
+        $this->setProperty('disposable', $disposable);
     }
 
     /**
@@ -167,7 +167,7 @@ class KickboxResult extends ModelBase
      */
     public function getAcceptAll()
     {
-        return $this->getProperty("acceptAll");
+        return $this->getProperty('acceptAll');
     }
 
     /**
@@ -175,7 +175,7 @@ class KickboxResult extends ModelBase
      */
     public function setAcceptAll($acceptAll = null)
     {
-        $this->setProperty("acceptAll", $acceptAll);
+        $this->setProperty('acceptAll', $acceptAll);
     }
 
     /**
@@ -183,7 +183,7 @@ class KickboxResult extends ModelBase
      */
     public function getDidYouMean()
     {
-        return $this->getProperty("didYouMean");
+        return $this->getProperty('didYouMean');
     }
 
     /**
@@ -191,7 +191,7 @@ class KickboxResult extends ModelBase
      */
     public function setDidYouMean($didYouMean = null)
     {
-        $this->setProperty("didYouMean", $didYouMean);
+        $this->setProperty('didYouMean', $didYouMean);
     }
 
     /**
@@ -199,7 +199,7 @@ class KickboxResult extends ModelBase
      */
     public function getSendex()
     {
-        return $this->getProperty("sendex");
+        return $this->getProperty('sendex');
     }
 
     /**
@@ -207,7 +207,7 @@ class KickboxResult extends ModelBase
      */
     public function setSendex($sendex = null)
     {
-        $this->setProperty("sendex", $sendex);
+        $this->setProperty('sendex', $sendex);
     }
 
     /**
@@ -215,7 +215,7 @@ class KickboxResult extends ModelBase
      */
     public function getResponseCode()
     {
-        return $this->getProperty("responseCode");
+        return $this->getProperty('responseCode');
     }
 
     /**
@@ -223,7 +223,7 @@ class KickboxResult extends ModelBase
      */
     public function setResponseCode($responseCode = null)
     {
-        $this->setProperty("responseCode", $responseCode);
+        $this->setProperty('responseCode', $responseCode);
     }
 
     /**
@@ -231,7 +231,7 @@ class KickboxResult extends ModelBase
      */
     public function getLastCheckedDatetime()
     {
-        return $this->getProperty("lastCheckedDatetime");
+        return $this->getProperty('lastCheckedDatetime');
     }
 
     /**
@@ -239,6 +239,6 @@ class KickboxResult extends ModelBase
      */
     public function setLastCheckedDatetime(\DateTime $lastCheckedDatetime = null)
     {
-        $this->setProperty("lastCheckedDatetime", $lastCheckedDatetime);
+        $this->setProperty('lastCheckedDatetime', $lastCheckedDatetime);
     }
 }

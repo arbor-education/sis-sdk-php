@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TeachingAssistantAllocation extends ModelBase
 {
@@ -28,34 +23,38 @@ class TeachingAssistantAllocation extends ModelBase
     protected $_resourceType = ResourceType::TEACHING_ASSISTANT_ALLOCATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TeachingAssistantAllocation[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TeachingAssistantAllocation");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TEACHING_ASSISTANT_ALLOCATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TeachingAssistantAllocation
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TEACHING_ASSISTANT_ALLOCATION, $id);
     }
 
@@ -64,7 +63,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -72,7 +71,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -80,7 +79,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getDayOfCycle()
     {
-        return $this->getProperty("dayOfCycle");
+        return $this->getProperty('dayOfCycle');
     }
 
     /**
@@ -88,7 +87,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setDayOfCycle($dayOfCycle = null)
     {
-        $this->setProperty("dayOfCycle", $dayOfCycle);
+        $this->setProperty('dayOfCycle', $dayOfCycle);
     }
 
     /**
@@ -96,7 +95,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getStartTime()
     {
-        return $this->getProperty("startTime");
+        return $this->getProperty('startTime');
     }
 
     /**
@@ -104,7 +103,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setStartTime($startTime = null)
     {
-        $this->setProperty("startTime", $startTime);
+        $this->setProperty('startTime', $startTime);
     }
 
     /**
@@ -112,7 +111,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getEndTime()
     {
-        return $this->getProperty("endTime");
+        return $this->getProperty('endTime');
     }
 
     /**
@@ -120,7 +119,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setEndTime($endTime = null)
     {
-        $this->setProperty("endTime", $endTime);
+        $this->setProperty('endTime', $endTime);
     }
 
     /**
@@ -128,7 +127,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -136,7 +135,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -144,7 +143,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -152,7 +151,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -160,7 +159,7 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function getAllocatedTo()
     {
-        return $this->getProperty("allocatedTo");
+        return $this->getProperty('allocatedTo');
     }
 
     /**
@@ -168,6 +167,6 @@ class TeachingAssistantAllocation extends ModelBase
      */
     public function setAllocatedTo(ModelBase $allocatedTo = null)
     {
-        $this->setProperty("allocatedTo", $allocatedTo);
+        $this->setProperty('allocatedTo', $allocatedTo);
     }
 }

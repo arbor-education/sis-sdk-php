@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentRecordChange extends ModelBase
 {
@@ -33,34 +27,38 @@ class StudentRecordChange extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_RECORD_CHANGE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentRecordChange[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentRecordChange");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_RECORD_CHANGE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentRecordChange
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_RECORD_CHANGE, $id);
     }
 
@@ -69,7 +67,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -77,7 +75,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -85,7 +83,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getChangerClassName()
     {
-        return $this->getProperty("changerClassName");
+        return $this->getProperty('changerClassName');
     }
 
     /**
@@ -93,7 +91,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setChangerClassName($changerClassName = null)
     {
-        $this->setProperty("changerClassName", $changerClassName);
+        $this->setProperty('changerClassName', $changerClassName);
     }
 
     /**
@@ -101,7 +99,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getChangeType()
     {
-        return $this->getProperty("changeType");
+        return $this->getProperty('changeType');
     }
 
     /**
@@ -109,7 +107,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setChangeType($changeType = null)
     {
-        $this->setProperty("changeType", $changeType);
+        $this->setProperty('changeType', $changeType);
     }
 
     /**
@@ -117,7 +115,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getReferenceObject()
     {
-        return $this->getProperty("referenceObject");
+        return $this->getProperty('referenceObject');
     }
 
     /**
@@ -125,7 +123,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setReferenceObject(ModelBase $referenceObject = null)
     {
-        $this->setProperty("referenceObject", $referenceObject);
+        $this->setProperty('referenceObject', $referenceObject);
     }
 
     /**
@@ -133,7 +131,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getAcceptedDatetime()
     {
-        return $this->getProperty("acceptedDatetime");
+        return $this->getProperty('acceptedDatetime');
     }
 
     /**
@@ -141,7 +139,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setAcceptedDatetime(\DateTime $acceptedDatetime = null)
     {
-        $this->setProperty("acceptedDatetime", $acceptedDatetime);
+        $this->setProperty('acceptedDatetime', $acceptedDatetime);
     }
 
     /**
@@ -149,7 +147,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getRejectedDatetime()
     {
-        return $this->getProperty("rejectedDatetime");
+        return $this->getProperty('rejectedDatetime');
     }
 
     /**
@@ -157,7 +155,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
     {
-        $this->setProperty("rejectedDatetime", $rejectedDatetime);
+        $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
 
     /**
@@ -165,7 +163,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getActionedByStaff()
     {
-        return $this->getProperty("actionedByStaff");
+        return $this->getProperty('actionedByStaff');
     }
 
     /**
@@ -173,7 +171,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setActionedByStaff(Staff $actionedByStaff = null)
     {
-        $this->setProperty("actionedByStaff", $actionedByStaff);
+        $this->setProperty('actionedByStaff', $actionedByStaff);
     }
 
     /**
@@ -181,7 +179,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getOldData()
     {
-        return $this->getProperty("oldData");
+        return $this->getProperty('oldData');
     }
 
     /**
@@ -189,7 +187,7 @@ class StudentRecordChange extends ModelBase
      */
     public function setOldData($oldData = null)
     {
-        $this->setProperty("oldData", $oldData);
+        $this->setProperty('oldData', $oldData);
     }
 
     /**
@@ -197,7 +195,7 @@ class StudentRecordChange extends ModelBase
      */
     public function getNewData()
     {
-        return $this->getProperty("newData");
+        return $this->getProperty('newData');
     }
 
     /**
@@ -205,6 +203,6 @@ class StudentRecordChange extends ModelBase
      */
     public function setNewData($newData = null)
     {
-        $this->setProperty("newData", $newData);
+        $this->setProperty('newData', $newData);
     }
 }

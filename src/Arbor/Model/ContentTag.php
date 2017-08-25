@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Content;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ContentTag extends ModelBase
 {
@@ -22,34 +17,38 @@ class ContentTag extends ModelBase
     protected $_resourceType = ResourceType::CONTENT_TAG;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ContentTag[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ContentTag");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CONTENT_TAG);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ContentTag
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CONTENT_TAG, $id);
     }
 
@@ -58,7 +57,7 @@ class ContentTag extends ModelBase
      */
     public function getContent()
     {
-        return $this->getProperty("content");
+        return $this->getProperty('content');
     }
 
     /**
@@ -66,7 +65,7 @@ class ContentTag extends ModelBase
      */
     public function setContent(Content $content = null)
     {
-        $this->setProperty("content", $content);
+        $this->setProperty('content', $content);
     }
 
     /**
@@ -74,7 +73,7 @@ class ContentTag extends ModelBase
      */
     public function getTagged()
     {
-        return $this->getProperty("tagged");
+        return $this->getProperty('tagged');
     }
 
     /**
@@ -82,7 +81,7 @@ class ContentTag extends ModelBase
      */
     public function setTagged(ModelBase $tagged = null)
     {
-        $this->setProperty("tagged", $tagged);
+        $this->setProperty('tagged', $tagged);
     }
 
     /**
@@ -90,7 +89,7 @@ class ContentTag extends ModelBase
      */
     public function getTagName()
     {
-        return $this->getProperty("tagName");
+        return $this->getProperty('tagName');
     }
 
     /**
@@ -98,7 +97,7 @@ class ContentTag extends ModelBase
      */
     public function setTagName($tagName = null)
     {
-        $this->setProperty("tagName", $tagName);
+        $this->setProperty('tagName', $tagName);
     }
 
     /**
@@ -106,7 +105,7 @@ class ContentTag extends ModelBase
      */
     public function getTagValue()
     {
-        return $this->getProperty("tagValue");
+        return $this->getProperty('tagValue');
     }
 
     /**
@@ -114,6 +113,6 @@ class ContentTag extends ModelBase
      */
     public function setTagValue($tagValue = null)
     {
-        $this->setProperty("tagValue", $tagValue);
+        $this->setProperty('tagValue', $tagValue);
     }
 }

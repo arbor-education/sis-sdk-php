@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class BusinessRole extends ModelBase
 {
@@ -17,34 +17,38 @@ class BusinessRole extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_BUSINESS_ROLE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BusinessRole[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_BusinessRole");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_BUSINESS_ROLE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BusinessRole
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_BUSINESS_ROLE, $id);
     }
 
@@ -53,7 +57,7 @@ class BusinessRole extends ModelBase
      */
     public function getSwfCensusIdentifier()
     {
-        return $this->getProperty("swfCensusIdentifier");
+        return $this->getProperty('swfCensusIdentifier');
     }
 
     /**
@@ -61,7 +65,7 @@ class BusinessRole extends ModelBase
      */
     public function setSwfCensusIdentifier($swfCensusIdentifier = null)
     {
-        $this->setProperty("swfCensusIdentifier", $swfCensusIdentifier);
+        $this->setProperty('swfCensusIdentifier', $swfCensusIdentifier);
     }
 
     /**
@@ -69,7 +73,7 @@ class BusinessRole extends ModelBase
      */
     public function getManagedByClient()
     {
-        return $this->getProperty("managedByClient");
+        return $this->getProperty('managedByClient');
     }
 
     /**
@@ -77,6 +81,6 @@ class BusinessRole extends ModelBase
      */
     public function setManagedByClient($managedByClient = null)
     {
-        $this->setProperty("managedByClient", $managedByClient);
+        $this->setProperty('managedByClient', $managedByClient);
     }
 }

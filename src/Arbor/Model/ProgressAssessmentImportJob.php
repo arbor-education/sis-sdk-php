@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ProgressAssessmentImportJob extends ModelBase
 {
@@ -21,34 +17,38 @@ class ProgressAssessmentImportJob extends ModelBase
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_IMPORT_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ProgressAssessmentImportJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ProgressAssessmentImportJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PROGRESS_ASSESSMENT_IMPORT_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ProgressAssessmentImportJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PROGRESS_ASSESSMENT_IMPORT_JOB, $id);
     }
 
@@ -57,7 +57,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function getUploadedDatetime()
     {
-        return $this->getProperty("uploadedDatetime");
+        return $this->getProperty('uploadedDatetime');
     }
 
     /**
@@ -65,7 +65,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function setUploadedDatetime(\DateTime $uploadedDatetime = null)
     {
-        $this->setProperty("uploadedDatetime", $uploadedDatetime);
+        $this->setProperty('uploadedDatetime', $uploadedDatetime);
     }
 
     /**
@@ -73,7 +73,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function getImportStartedDatetime()
     {
-        return $this->getProperty("importStartedDatetime");
+        return $this->getProperty('importStartedDatetime');
     }
 
     /**
@@ -81,7 +81,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function setImportStartedDatetime(\DateTime $importStartedDatetime = null)
     {
-        $this->setProperty("importStartedDatetime", $importStartedDatetime);
+        $this->setProperty('importStartedDatetime', $importStartedDatetime);
     }
 
     /**
@@ -89,7 +89,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function getImportedDatetime()
     {
-        return $this->getProperty("importedDatetime");
+        return $this->getProperty('importedDatetime');
     }
 
     /**
@@ -97,7 +97,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function setImportedDatetime(\DateTime $importedDatetime = null)
     {
-        $this->setProperty("importedDatetime", $importedDatetime);
+        $this->setProperty('importedDatetime', $importedDatetime);
     }
 
     /**
@@ -105,7 +105,7 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function getData()
     {
-        return $this->getProperty("data");
+        return $this->getProperty('data');
     }
 
     /**
@@ -113,6 +113,6 @@ class ProgressAssessmentImportJob extends ModelBase
      */
     public function setData($data = null)
     {
-        $this->setProperty("data", $data);
+        $this->setProperty('data', $data);
     }
 }

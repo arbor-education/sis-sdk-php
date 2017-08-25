@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BillPayer extends ModelBase
 {
@@ -19,34 +15,38 @@ class BillPayer extends ModelBase
     protected $_resourceType = ResourceType::BILL_PAYER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BillPayer[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BillPayer");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BILL_PAYER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BillPayer
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BILL_PAYER, $id);
     }
 
@@ -55,7 +55,7 @@ class BillPayer extends ModelBase
      */
     public function getLegalEntity()
     {
-        return $this->getProperty("legalEntity");
+        return $this->getProperty('legalEntity');
     }
 
     /**
@@ -63,7 +63,7 @@ class BillPayer extends ModelBase
      */
     public function setLegalEntity(ModelBase $legalEntity = null)
     {
-        $this->setProperty("legalEntity", $legalEntity);
+        $this->setProperty('legalEntity', $legalEntity);
     }
 
     /**
@@ -71,7 +71,7 @@ class BillPayer extends ModelBase
      */
     public function getDeletedLegalEntityName()
     {
-        return $this->getProperty("deletedLegalEntityName");
+        return $this->getProperty('deletedLegalEntityName');
     }
 
     /**
@@ -79,7 +79,7 @@ class BillPayer extends ModelBase
      */
     public function setDeletedLegalEntityName($deletedLegalEntityName = null)
     {
-        $this->setProperty("deletedLegalEntityName", $deletedLegalEntityName);
+        $this->setProperty('deletedLegalEntityName', $deletedLegalEntityName);
     }
 
     /**
@@ -87,7 +87,7 @@ class BillPayer extends ModelBase
      */
     public function getStripeCustomerId()
     {
-        return $this->getProperty("stripeCustomerId");
+        return $this->getProperty('stripeCustomerId');
     }
 
     /**
@@ -95,6 +95,6 @@ class BillPayer extends ModelBase
      */
     public function setStripeCustomerId($stripeCustomerId = null)
     {
-        $this->setProperty("stripeCustomerId", $stripeCustomerId);
+        $this->setProperty('stripeCustomerId', $stripeCustomerId);
     }
 }

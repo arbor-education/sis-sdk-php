@@ -1,20 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LocalAuthority;
-use \Arbor\Model\ChildProtectionStatus;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ChildProtectionStatusAssignment extends ModelBase
 {
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
-
     const CHILD_PROTECTION_STATUS = 'childProtectionStatus';
 
     const STUDENT = 'student';
@@ -25,54 +16,44 @@ class ChildProtectionStatusAssignment extends ModelBase
 
     const NOTES = 'notes';
 
+    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
+
     protected $_resourceType = ResourceType::CHILD_PROTECTION_STATUS_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ChildProtectionStatusAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ChildProtectionStatusAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CHILD_PROTECTION_STATUS_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ChildProtectionStatusAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CHILD_PROTECTION_STATUS_ASSIGNMENT, $id);
-    }
-
-    /**
-     * @return LocalAuthority
-     */
-    public function getResponsibleLocalAuthority()
-    {
-        return $this->getProperty("responsibleLocalAuthority");
-    }
-
-    /**
-     * @param LocalAuthority $responsibleLocalAuthority
-     */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
-    {
-        $this->setProperty("responsibleLocalAuthority", $responsibleLocalAuthority);
     }
 
     /**
@@ -80,7 +61,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function getChildProtectionStatus()
     {
-        return $this->getProperty("childProtectionStatus");
+        return $this->getProperty('childProtectionStatus');
     }
 
     /**
@@ -88,7 +69,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function setChildProtectionStatus(ChildProtectionStatus $childProtectionStatus = null)
     {
-        $this->setProperty("childProtectionStatus", $childProtectionStatus);
+        $this->setProperty('childProtectionStatus', $childProtectionStatus);
     }
 
     /**
@@ -96,7 +77,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -104,7 +85,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -112,7 +93,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -120,7 +101,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -128,7 +109,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -136,7 +117,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -144,7 +125,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -152,6 +133,22 @@ class ChildProtectionStatusAssignment extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
+    }
+
+    /**
+     * @return LocalAuthority
+     */
+    public function getResponsibleLocalAuthority()
+    {
+        return $this->getProperty('responsibleLocalAuthority');
+    }
+
+    /**
+     * @param LocalAuthority $responsibleLocalAuthority
+     */
+    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
+    {
+        $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
 }

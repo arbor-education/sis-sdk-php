@@ -1,6 +1,6 @@
 <?php
 
-namespace \Arbor\Filter;
+namespace Arbor\Filter;
 
 class DepluralizeFilter implements FilterInterface
 {

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Term extends ModelBase
 {
@@ -23,39 +18,41 @@ class Term extends ModelBase
 
     const END_DATE = 'endDate';
 
-    const TIMETABLE_CYCLE_OFFSET = 'timetableCycleOffset';
-
     protected $_resourceType = ResourceType::TERM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Term[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Term");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TERM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Term
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TERM, $id);
     }
 
@@ -64,7 +61,7 @@ class Term extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -72,7 +69,7 @@ class Term extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -80,7 +77,7 @@ class Term extends ModelBase
      */
     public function getTermName()
     {
-        return $this->getProperty("termName");
+        return $this->getProperty('termName');
     }
 
     /**
@@ -88,7 +85,7 @@ class Term extends ModelBase
      */
     public function setTermName($termName = null)
     {
-        $this->setProperty("termName", $termName);
+        $this->setProperty('termName', $termName);
     }
 
     /**
@@ -96,7 +93,7 @@ class Term extends ModelBase
      */
     public function getShortTermName()
     {
-        return $this->getProperty("shortTermName");
+        return $this->getProperty('shortTermName');
     }
 
     /**
@@ -104,7 +101,7 @@ class Term extends ModelBase
      */
     public function setShortTermName($shortTermName = null)
     {
-        $this->setProperty("shortTermName", $shortTermName);
+        $this->setProperty('shortTermName', $shortTermName);
     }
 
     /**
@@ -112,7 +109,7 @@ class Term extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -120,7 +117,7 @@ class Term extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -128,7 +125,7 @@ class Term extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -136,7 +133,7 @@ class Term extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -144,7 +141,7 @@ class Term extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -152,22 +149,6 @@ class Term extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
-    }
-
-    /**
-     * @return int
-     */
-    public function getTimetableCycleOffset()
-    {
-        return $this->getProperty("timetableCycleOffset");
-    }
-
-    /**
-     * @param int $timetableCycleOffset
-     */
-    public function setTimetableCycleOffset($timetableCycleOffset = null)
-    {
-        $this->setProperty("timetableCycleOffset", $timetableCycleOffset);
+        $this->setProperty('endDate', $endDate);
     }
 }

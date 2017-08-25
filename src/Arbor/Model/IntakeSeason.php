@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IntakeSeason extends ModelBase
 {
@@ -26,34 +21,38 @@ class IntakeSeason extends ModelBase
     protected $_resourceType = ResourceType::INTAKE_SEASON;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IntakeSeason[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IntakeSeason");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTAKE_SEASON);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IntakeSeason
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTAKE_SEASON, $id);
     }
 
@@ -62,7 +61,7 @@ class IntakeSeason extends ModelBase
      */
     public function getIntakeSeasonName()
     {
-        return $this->getProperty("intakeSeasonName");
+        return $this->getProperty('intakeSeasonName');
     }
 
     /**
@@ -70,7 +69,7 @@ class IntakeSeason extends ModelBase
      */
     public function setIntakeSeasonName($intakeSeasonName = null)
     {
-        $this->setProperty("intakeSeasonName", $intakeSeasonName);
+        $this->setProperty('intakeSeasonName', $intakeSeasonName);
     }
 
     /**
@@ -78,7 +77,7 @@ class IntakeSeason extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -86,7 +85,7 @@ class IntakeSeason extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -94,7 +93,7 @@ class IntakeSeason extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -102,7 +101,7 @@ class IntakeSeason extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -110,7 +109,7 @@ class IntakeSeason extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -118,7 +117,7 @@ class IntakeSeason extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -126,7 +125,7 @@ class IntakeSeason extends ModelBase
      */
     public function getPublishedAdmissionsNumber()
     {
-        return $this->getProperty("publishedAdmissionsNumber");
+        return $this->getProperty('publishedAdmissionsNumber');
     }
 
     /**
@@ -134,7 +133,7 @@ class IntakeSeason extends ModelBase
      */
     public function setPublishedAdmissionsNumber($publishedAdmissionsNumber = null)
     {
-        $this->setProperty("publishedAdmissionsNumber", $publishedAdmissionsNumber);
+        $this->setProperty('publishedAdmissionsNumber', $publishedAdmissionsNumber);
     }
 
     /**
@@ -142,7 +141,7 @@ class IntakeSeason extends ModelBase
      */
     public function getTargetApplicationNumber()
     {
-        return $this->getProperty("targetApplicationNumber");
+        return $this->getProperty('targetApplicationNumber');
     }
 
     /**
@@ -150,6 +149,6 @@ class IntakeSeason extends ModelBase
      */
     public function setTargetApplicationNumber($targetApplicationNumber = null)
     {
-        $this->setProperty("targetApplicationNumber", $targetApplicationNumber);
+        $this->setProperty('targetApplicationNumber', $targetApplicationNumber);
     }
 }

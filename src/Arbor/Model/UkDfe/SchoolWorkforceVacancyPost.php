@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class SchoolWorkforceVacancyPost extends ModelBase
 {
@@ -21,34 +21,38 @@ class SchoolWorkforceVacancyPost extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_VACANCY_POST;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolWorkforceVacancyPost[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolWorkforceVacancyPost");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_WORKFORCE_VACANCY_POST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolWorkforceVacancyPost
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_VACANCY_POST, $id);
     }
 
@@ -57,7 +61,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -65,7 +69,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -73,7 +77,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -81,7 +85,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -89,7 +93,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -97,7 +101,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -105,7 +109,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function getPost()
     {
-        return $this->getProperty("post");
+        return $this->getProperty('post');
     }
 
     /**
@@ -113,6 +117,6 @@ class SchoolWorkforceVacancyPost extends ModelBase
      */
     public function setPost($post = null)
     {
-        $this->setProperty("post", $post);
+        $this->setProperty('post', $post);
     }
 }

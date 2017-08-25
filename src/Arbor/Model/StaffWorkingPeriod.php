@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffWorkingPeriod extends ModelBase
 {
@@ -38,34 +33,38 @@ class StaffWorkingPeriod extends ModelBase
     protected $_resourceType = ResourceType::STAFF_WORKING_PERIOD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffWorkingPeriod[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffWorkingPeriod");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_WORKING_PERIOD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffWorkingPeriod
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_WORKING_PERIOD, $id);
     }
 
@@ -74,7 +73,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -82,7 +81,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -90,7 +89,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -98,7 +97,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -106,7 +105,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -114,7 +113,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -122,7 +121,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnMonday()
     {
-        return $this->getProperty("appliesOnMonday");
+        return $this->getProperty('appliesOnMonday');
     }
 
     /**
@@ -130,7 +129,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnMonday($appliesOnMonday = null)
     {
-        $this->setProperty("appliesOnMonday", $appliesOnMonday);
+        $this->setProperty('appliesOnMonday', $appliesOnMonday);
     }
 
     /**
@@ -138,7 +137,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnTuesday()
     {
-        return $this->getProperty("appliesOnTuesday");
+        return $this->getProperty('appliesOnTuesday');
     }
 
     /**
@@ -146,7 +145,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnTuesday($appliesOnTuesday = null)
     {
-        $this->setProperty("appliesOnTuesday", $appliesOnTuesday);
+        $this->setProperty('appliesOnTuesday', $appliesOnTuesday);
     }
 
     /**
@@ -154,7 +153,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnWednesday()
     {
-        return $this->getProperty("appliesOnWednesday");
+        return $this->getProperty('appliesOnWednesday');
     }
 
     /**
@@ -162,7 +161,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnWednesday($appliesOnWednesday = null)
     {
-        $this->setProperty("appliesOnWednesday", $appliesOnWednesday);
+        $this->setProperty('appliesOnWednesday', $appliesOnWednesday);
     }
 
     /**
@@ -170,7 +169,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnThursday()
     {
-        return $this->getProperty("appliesOnThursday");
+        return $this->getProperty('appliesOnThursday');
     }
 
     /**
@@ -178,7 +177,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnThursday($appliesOnThursday = null)
     {
-        $this->setProperty("appliesOnThursday", $appliesOnThursday);
+        $this->setProperty('appliesOnThursday', $appliesOnThursday);
     }
 
     /**
@@ -186,7 +185,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnFriday()
     {
-        return $this->getProperty("appliesOnFriday");
+        return $this->getProperty('appliesOnFriday');
     }
 
     /**
@@ -194,7 +193,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnFriday($appliesOnFriday = null)
     {
-        $this->setProperty("appliesOnFriday", $appliesOnFriday);
+        $this->setProperty('appliesOnFriday', $appliesOnFriday);
     }
 
     /**
@@ -202,7 +201,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnSaturday()
     {
-        return $this->getProperty("appliesOnSaturday");
+        return $this->getProperty('appliesOnSaturday');
     }
 
     /**
@@ -210,7 +209,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnSaturday($appliesOnSaturday = null)
     {
-        $this->setProperty("appliesOnSaturday", $appliesOnSaturday);
+        $this->setProperty('appliesOnSaturday', $appliesOnSaturday);
     }
 
     /**
@@ -218,7 +217,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getAppliesOnSunday()
     {
-        return $this->getProperty("appliesOnSunday");
+        return $this->getProperty('appliesOnSunday');
     }
 
     /**
@@ -226,7 +225,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setAppliesOnSunday($appliesOnSunday = null)
     {
-        $this->setProperty("appliesOnSunday", $appliesOnSunday);
+        $this->setProperty('appliesOnSunday', $appliesOnSunday);
     }
 
     /**
@@ -234,7 +233,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getStartTime()
     {
-        return $this->getProperty("startTime");
+        return $this->getProperty('startTime');
     }
 
     /**
@@ -242,7 +241,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setStartTime($startTime = null)
     {
-        $this->setProperty("startTime", $startTime);
+        $this->setProperty('startTime', $startTime);
     }
 
     /**
@@ -250,7 +249,7 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function getEndTime()
     {
-        return $this->getProperty("endTime");
+        return $this->getProperty('endTime');
     }
 
     /**
@@ -258,6 +257,6 @@ class StaffWorkingPeriod extends ModelBase
      */
     public function setEndTime($endTime = null)
     {
-        $this->setProperty("endTime", $endTime);
+        $this->setProperty('endTime', $endTime);
     }
 }

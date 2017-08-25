@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ReportSubscription extends ModelBase
 {
@@ -17,34 +13,38 @@ class ReportSubscription extends ModelBase
     protected $_resourceType = ResourceType::REPORT_SUBSCRIPTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ReportSubscription[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ReportSubscription");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::REPORT_SUBSCRIPTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ReportSubscription
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::REPORT_SUBSCRIPTION, $id);
     }
 
@@ -53,7 +53,7 @@ class ReportSubscription extends ModelBase
      */
     public function getReportIdentifier()
     {
-        return $this->getProperty("reportIdentifier");
+        return $this->getProperty('reportIdentifier');
     }
 
     /**
@@ -61,7 +61,7 @@ class ReportSubscription extends ModelBase
      */
     public function setReportIdentifier($reportIdentifier = null)
     {
-        $this->setProperty("reportIdentifier", $reportIdentifier);
+        $this->setProperty('reportIdentifier', $reportIdentifier);
     }
 
     /**
@@ -69,7 +69,7 @@ class ReportSubscription extends ModelBase
      */
     public function getSubscriber()
     {
-        return $this->getProperty("subscriber");
+        return $this->getProperty('subscriber');
     }
 
     /**
@@ -77,6 +77,6 @@ class ReportSubscription extends ModelBase
      */
     public function setSubscriber(ModelBase $subscriber = null)
     {
-        $this->setProperty("subscriber", $subscriber);
+        $this->setProperty('subscriber', $subscriber);
     }
 }

@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PasswordRule extends ModelBase
 {
@@ -25,34 +21,38 @@ class PasswordRule extends ModelBase
     protected $_resourceType = ResourceType::PASSWORD_RULE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PasswordRule[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PasswordRule");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PASSWORD_RULE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PasswordRule
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PASSWORD_RULE, $id);
     }
 
@@ -61,7 +61,7 @@ class PasswordRule extends ModelBase
      */
     public function getAppliesFor()
     {
-        return $this->getProperty("appliesFor");
+        return $this->getProperty('appliesFor');
     }
 
     /**
@@ -69,7 +69,7 @@ class PasswordRule extends ModelBase
      */
     public function setAppliesFor($appliesFor = null)
     {
-        $this->setProperty("appliesFor", $appliesFor);
+        $this->setProperty('appliesFor', $appliesFor);
     }
 
     /**
@@ -77,7 +77,7 @@ class PasswordRule extends ModelBase
      */
     public function getMinLength()
     {
-        return $this->getProperty("minLength");
+        return $this->getProperty('minLength');
     }
 
     /**
@@ -85,7 +85,7 @@ class PasswordRule extends ModelBase
      */
     public function setMinLength($minLength = null)
     {
-        $this->setProperty("minLength", $minLength);
+        $this->setProperty('minLength', $minLength);
     }
 
     /**
@@ -93,7 +93,7 @@ class PasswordRule extends ModelBase
      */
     public function getDaysValid()
     {
-        return $this->getProperty("daysValid");
+        return $this->getProperty('daysValid');
     }
 
     /**
@@ -101,7 +101,7 @@ class PasswordRule extends ModelBase
      */
     public function setDaysValid($daysValid = null)
     {
-        $this->setProperty("daysValid", $daysValid);
+        $this->setProperty('daysValid', $daysValid);
     }
 
     /**
@@ -109,7 +109,7 @@ class PasswordRule extends ModelBase
      */
     public function getRequireNumber()
     {
-        return $this->getProperty("requireNumber");
+        return $this->getProperty('requireNumber');
     }
 
     /**
@@ -117,7 +117,7 @@ class PasswordRule extends ModelBase
      */
     public function setRequireNumber($requireNumber = null)
     {
-        $this->setProperty("requireNumber", $requireNumber);
+        $this->setProperty('requireNumber', $requireNumber);
     }
 
     /**
@@ -125,7 +125,7 @@ class PasswordRule extends ModelBase
      */
     public function getRequireLetter()
     {
-        return $this->getProperty("requireLetter");
+        return $this->getProperty('requireLetter');
     }
 
     /**
@@ -133,7 +133,7 @@ class PasswordRule extends ModelBase
      */
     public function setRequireLetter($requireLetter = null)
     {
-        $this->setProperty("requireLetter", $requireLetter);
+        $this->setProperty('requireLetter', $requireLetter);
     }
 
     /**
@@ -141,7 +141,7 @@ class PasswordRule extends ModelBase
      */
     public function getRequireMixedCase()
     {
-        return $this->getProperty("requireMixedCase");
+        return $this->getProperty('requireMixedCase');
     }
 
     /**
@@ -149,6 +149,6 @@ class PasswordRule extends ModelBase
      */
     public function setRequireMixedCase($requireMixedCase = null)
     {
-        $this->setProperty("requireMixedCase", $requireMixedCase);
+        $this->setProperty('requireMixedCase', $requireMixedCase);
     }
 }

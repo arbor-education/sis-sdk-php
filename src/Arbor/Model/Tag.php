@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Tag extends ModelBase
 {
@@ -17,34 +13,38 @@ class Tag extends ModelBase
     protected $_resourceType = ResourceType::TAG;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Tag[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Tag");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TAG);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Tag
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TAG, $id);
     }
 
@@ -53,7 +53,7 @@ class Tag extends ModelBase
      */
     public function getTagName()
     {
-        return $this->getProperty("tagName");
+        return $this->getProperty('tagName');
     }
 
     /**
@@ -61,7 +61,7 @@ class Tag extends ModelBase
      */
     public function setTagName($tagName = null)
     {
-        $this->setProperty("tagName", $tagName);
+        $this->setProperty('tagName', $tagName);
     }
 
     /**
@@ -69,7 +69,7 @@ class Tag extends ModelBase
      */
     public function getTagIdentifier()
     {
-        return $this->getProperty("tagIdentifier");
+        return $this->getProperty('tagIdentifier');
     }
 
     /**
@@ -77,6 +77,6 @@ class Tag extends ModelBase
      */
     public function setTagIdentifier($tagIdentifier = null)
     {
-        $this->setProperty("tagIdentifier", $tagIdentifier);
+        $this->setProperty('tagIdentifier', $tagIdentifier);
     }
 }

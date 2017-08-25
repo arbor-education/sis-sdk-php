@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttainmentGroup extends ModelBase
 {
@@ -23,34 +19,38 @@ class AttainmentGroup extends ModelBase
     protected $_resourceType = ResourceType::ATTAINMENT_GROUP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttainmentGroup[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttainmentGroup");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTAINMENT_GROUP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttainmentGroup
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTAINMENT_GROUP, $id);
     }
 
@@ -59,7 +59,7 @@ class AttainmentGroup extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -67,7 +67,7 @@ class AttainmentGroup extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -75,7 +75,7 @@ class AttainmentGroup extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -83,7 +83,7 @@ class AttainmentGroup extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -91,7 +91,7 @@ class AttainmentGroup extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -99,7 +99,7 @@ class AttainmentGroup extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -107,7 +107,7 @@ class AttainmentGroup extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -115,7 +115,7 @@ class AttainmentGroup extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -123,7 +123,7 @@ class AttainmentGroup extends ModelBase
      */
     public function getCalculationClass()
     {
-        return $this->getProperty("calculationClass");
+        return $this->getProperty('calculationClass');
     }
 
     /**
@@ -131,6 +131,6 @@ class AttainmentGroup extends ModelBase
      */
     public function setCalculationClass($calculationClass = null)
     {
-        $this->setProperty("calculationClass", $calculationClass);
+        $this->setProperty('calculationClass', $calculationClass);
     }
 }

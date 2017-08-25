@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Group\Institution;
-use \Arbor\Model\SchoolPhase;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\SchoolPhase;
 
 class SchoolPhaseAssignment extends ModelBase
 {
@@ -23,34 +22,38 @@ class SchoolPhaseAssignment extends ModelBase
     protected $_resourceType = ResourceType::GROUP_SCHOOL_PHASE_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolPhaseAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_SchoolPhaseAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_SCHOOL_PHASE_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolPhaseAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_SCHOOL_PHASE_ASSIGNMENT, $id);
     }
 
@@ -59,7 +62,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function getInstitution()
     {
-        return $this->getProperty("institution");
+        return $this->getProperty('institution');
     }
 
     /**
@@ -67,7 +70,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function setInstitution(Institution $institution = null)
     {
-        $this->setProperty("institution", $institution);
+        $this->setProperty('institution', $institution);
     }
 
     /**
@@ -75,7 +78,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function getSchoolPhase()
     {
-        return $this->getProperty("schoolPhase");
+        return $this->getProperty('schoolPhase');
     }
 
     /**
@@ -83,7 +86,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function setSchoolPhase(SchoolPhase $schoolPhase = null)
     {
-        $this->setProperty("schoolPhase", $schoolPhase);
+        $this->setProperty('schoolPhase', $schoolPhase);
     }
 
     /**
@@ -91,7 +94,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -99,7 +102,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -107,7 +110,7 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -115,6 +118,6 @@ class SchoolPhaseAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

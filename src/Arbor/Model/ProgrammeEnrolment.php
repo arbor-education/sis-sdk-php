@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ProgrammeInstance;
-use \Arbor\Model\Student;
-use \Arbor\Model\ProgrammeWithdrawalReason;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ProgrammeEnrolment extends ModelBase
 {
@@ -32,34 +25,38 @@ class ProgrammeEnrolment extends ModelBase
     protected $_resourceType = ResourceType::PROGRAMME_ENROLMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ProgrammeEnrolment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PROGRAMME_ENROLMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ProgrammeEnrolment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PROGRAMME_ENROLMENT, $id);
     }
 
@@ -68,7 +65,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getProgrammeInstance()
     {
-        return $this->getProperty("programmeInstance");
+        return $this->getProperty('programmeInstance');
     }
 
     /**
@@ -76,7 +73,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
     {
-        $this->setProperty("programmeInstance", $programmeInstance);
+        $this->setProperty('programmeInstance', $programmeInstance);
     }
 
     /**
@@ -84,7 +81,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -92,7 +89,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -100,7 +97,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getMainProgramme()
     {
-        return $this->getProperty("mainProgramme");
+        return $this->getProperty('mainProgramme');
     }
 
     /**
@@ -108,7 +105,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setMainProgramme($mainProgramme = null)
     {
-        $this->setProperty("mainProgramme", $mainProgramme);
+        $this->setProperty('mainProgramme', $mainProgramme);
     }
 
     /**
@@ -116,7 +113,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getPlannedStartDate()
     {
-        return $this->getProperty("plannedStartDate");
+        return $this->getProperty('plannedStartDate');
     }
 
     /**
@@ -124,7 +121,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setPlannedStartDate(\DateTime $plannedStartDate = null)
     {
-        $this->setProperty("plannedStartDate", $plannedStartDate);
+        $this->setProperty('plannedStartDate', $plannedStartDate);
     }
 
     /**
@@ -132,7 +129,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getPlannedEndDate()
     {
-        return $this->getProperty("plannedEndDate");
+        return $this->getProperty('plannedEndDate');
     }
 
     /**
@@ -140,7 +137,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setPlannedEndDate(\DateTime $plannedEndDate = null)
     {
-        $this->setProperty("plannedEndDate", $plannedEndDate);
+        $this->setProperty('plannedEndDate', $plannedEndDate);
     }
 
     /**
@@ -148,7 +145,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getActualEndDate()
     {
-        return $this->getProperty("actualEndDate");
+        return $this->getProperty('actualEndDate');
     }
 
     /**
@@ -156,7 +153,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setActualEndDate(\DateTime $actualEndDate = null)
     {
-        $this->setProperty("actualEndDate", $actualEndDate);
+        $this->setProperty('actualEndDate', $actualEndDate);
     }
 
     /**
@@ -164,7 +161,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getCompletionStatus()
     {
-        return $this->getProperty("completionStatus");
+        return $this->getProperty('completionStatus');
     }
 
     /**
@@ -172,7 +169,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setCompletionStatus($completionStatus = null)
     {
-        $this->setProperty("completionStatus", $completionStatus);
+        $this->setProperty('completionStatus', $completionStatus);
     }
 
     /**
@@ -180,7 +177,7 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function getWithdrawalReason()
     {
-        return $this->getProperty("withdrawalReason");
+        return $this->getProperty('withdrawalReason');
     }
 
     /**
@@ -188,6 +185,6 @@ class ProgrammeEnrolment extends ModelBase
      */
     public function setWithdrawalReason(ProgrammeWithdrawalReason $withdrawalReason = null)
     {
-        $this->setProperty("withdrawalReason", $withdrawalReason);
+        $this->setProperty('withdrawalReason', $withdrawalReason);
     }
 }

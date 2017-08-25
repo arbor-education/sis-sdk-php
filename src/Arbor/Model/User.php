@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
-use \Arbor\Model\Student;
-use \Arbor\Model\Guardian;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class User extends ModelBase
 {
@@ -18,6 +11,8 @@ class User extends ModelBase
     const STUDENT = 'student';
 
     const GUARDIAN = 'guardian';
+
+    const EXTERNAL_ADMINISTRATOR = 'externalAdministrator';
 
     const USERNAME = 'username';
 
@@ -52,34 +47,38 @@ class User extends ModelBase
     protected $_resourceType = ResourceType::USER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return User[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("User");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return User
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USER, $id);
     }
 
@@ -88,7 +87,7 @@ class User extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -96,7 +95,7 @@ class User extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -104,7 +103,7 @@ class User extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -112,7 +111,7 @@ class User extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -120,7 +119,7 @@ class User extends ModelBase
      */
     public function getGuardian()
     {
-        return $this->getProperty("guardian");
+        return $this->getProperty('guardian');
     }
 
     /**
@@ -128,7 +127,23 @@ class User extends ModelBase
      */
     public function setGuardian(Guardian $guardian = null)
     {
-        $this->setProperty("guardian", $guardian);
+        $this->setProperty('guardian', $guardian);
+    }
+
+    /**
+     * @return ExternalAdministrator
+     */
+    public function getExternalAdministrator()
+    {
+        return $this->getProperty('externalAdministrator');
+    }
+
+    /**
+     * @param ExternalAdministrator $externalAdministrator
+     */
+    public function setExternalAdministrator(ExternalAdministrator $externalAdministrator = null)
+    {
+        $this->setProperty('externalAdministrator', $externalAdministrator);
     }
 
     /**
@@ -136,7 +151,7 @@ class User extends ModelBase
      */
     public function getUsername()
     {
-        return $this->getProperty("username");
+        return $this->getProperty('username');
     }
 
     /**
@@ -144,7 +159,7 @@ class User extends ModelBase
      */
     public function setUsername($username = null)
     {
-        $this->setProperty("username", $username);
+        $this->setProperty('username', $username);
     }
 
     /**
@@ -152,7 +167,7 @@ class User extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -160,7 +175,7 @@ class User extends ModelBase
      */
     public function setEmail($email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -168,7 +183,7 @@ class User extends ModelBase
      */
     public function getPasswordHash()
     {
-        return $this->getProperty("passwordHash");
+        return $this->getProperty('passwordHash');
     }
 
     /**
@@ -176,7 +191,7 @@ class User extends ModelBase
      */
     public function setPasswordHash($passwordHash = null)
     {
-        $this->setProperty("passwordHash", $passwordHash);
+        $this->setProperty('passwordHash', $passwordHash);
     }
 
     /**
@@ -184,7 +199,7 @@ class User extends ModelBase
      */
     public function getAuthenticationType()
     {
-        return $this->getProperty("authenticationType");
+        return $this->getProperty('authenticationType');
     }
 
     /**
@@ -192,7 +207,7 @@ class User extends ModelBase
      */
     public function setAuthenticationType($authenticationType = null)
     {
-        $this->setProperty("authenticationType", $authenticationType);
+        $this->setProperty('authenticationType', $authenticationType);
     }
 
     /**
@@ -200,7 +215,7 @@ class User extends ModelBase
      */
     public function getAuthenticationToken()
     {
-        return $this->getProperty("authenticationToken");
+        return $this->getProperty('authenticationToken');
     }
 
     /**
@@ -208,7 +223,7 @@ class User extends ModelBase
      */
     public function setAuthenticationToken($authenticationToken = null)
     {
-        $this->setProperty("authenticationToken", $authenticationToken);
+        $this->setProperty('authenticationToken', $authenticationToken);
     }
 
     /**
@@ -216,7 +231,7 @@ class User extends ModelBase
      */
     public function getAuthenticationTokenExpiryDatetime()
     {
-        return $this->getProperty("authenticationTokenExpiryDatetime");
+        return $this->getProperty('authenticationTokenExpiryDatetime');
     }
 
     /**
@@ -224,7 +239,7 @@ class User extends ModelBase
      */
     public function setAuthenticationTokenExpiryDatetime(\DateTime $authenticationTokenExpiryDatetime = null)
     {
-        $this->setProperty("authenticationTokenExpiryDatetime", $authenticationTokenExpiryDatetime);
+        $this->setProperty('authenticationTokenExpiryDatetime', $authenticationTokenExpiryDatetime);
     }
 
     /**
@@ -232,7 +247,7 @@ class User extends ModelBase
      */
     public function getCurrentIpAddress()
     {
-        return $this->getProperty("currentIpAddress");
+        return $this->getProperty('currentIpAddress');
     }
 
     /**
@@ -240,7 +255,7 @@ class User extends ModelBase
      */
     public function setCurrentIpAddress($currentIpAddress = null)
     {
-        $this->setProperty("currentIpAddress", $currentIpAddress);
+        $this->setProperty('currentIpAddress', $currentIpAddress);
     }
 
     /**
@@ -248,7 +263,7 @@ class User extends ModelBase
      */
     public function getLastAccessDatetime()
     {
-        return $this->getProperty("lastAccessDatetime");
+        return $this->getProperty('lastAccessDatetime');
     }
 
     /**
@@ -256,7 +271,7 @@ class User extends ModelBase
      */
     public function setLastAccessDatetime(\DateTime $lastAccessDatetime = null)
     {
-        $this->setProperty("lastAccessDatetime", $lastAccessDatetime);
+        $this->setProperty('lastAccessDatetime', $lastAccessDatetime);
     }
 
     /**
@@ -264,7 +279,7 @@ class User extends ModelBase
      */
     public function getPasswordLastChangedDatetime()
     {
-        return $this->getProperty("passwordLastChangedDatetime");
+        return $this->getProperty('passwordLastChangedDatetime');
     }
 
     /**
@@ -272,7 +287,7 @@ class User extends ModelBase
      */
     public function setPasswordLastChangedDatetime(\DateTime $passwordLastChangedDatetime = null)
     {
-        $this->setProperty("passwordLastChangedDatetime", $passwordLastChangedDatetime);
+        $this->setProperty('passwordLastChangedDatetime', $passwordLastChangedDatetime);
     }
 
     /**
@@ -280,7 +295,7 @@ class User extends ModelBase
      */
     public function getEnabled()
     {
-        return $this->getProperty("enabled");
+        return $this->getProperty('enabled');
     }
 
     /**
@@ -288,7 +303,7 @@ class User extends ModelBase
      */
     public function setEnabled($enabled = null)
     {
-        $this->setProperty("enabled", $enabled);
+        $this->setProperty('enabled', $enabled);
     }
 
     /**
@@ -296,7 +311,7 @@ class User extends ModelBase
      */
     public function getVerifiedDatetime()
     {
-        return $this->getProperty("verifiedDatetime");
+        return $this->getProperty('verifiedDatetime');
     }
 
     /**
@@ -304,7 +319,7 @@ class User extends ModelBase
      */
     public function setVerifiedDatetime(\DateTime $verifiedDatetime = null)
     {
-        $this->setProperty("verifiedDatetime", $verifiedDatetime);
+        $this->setProperty('verifiedDatetime', $verifiedDatetime);
     }
 
     /**
@@ -312,7 +327,7 @@ class User extends ModelBase
      */
     public function getTermsAcceptedDatetime()
     {
-        return $this->getProperty("termsAcceptedDatetime");
+        return $this->getProperty('termsAcceptedDatetime');
     }
 
     /**
@@ -320,7 +335,7 @@ class User extends ModelBase
      */
     public function setTermsAcceptedDatetime(\DateTime $termsAcceptedDatetime = null)
     {
-        $this->setProperty("termsAcceptedDatetime", $termsAcceptedDatetime);
+        $this->setProperty('termsAcceptedDatetime', $termsAcceptedDatetime);
     }
 
     /**
@@ -328,7 +343,7 @@ class User extends ModelBase
      */
     public function getWelcomeMessageDatetime()
     {
-        return $this->getProperty("welcomeMessageDatetime");
+        return $this->getProperty('welcomeMessageDatetime');
     }
 
     /**
@@ -336,7 +351,7 @@ class User extends ModelBase
      */
     public function setWelcomeMessageDatetime(\DateTime $welcomeMessageDatetime = null)
     {
-        $this->setProperty("welcomeMessageDatetime", $welcomeMessageDatetime);
+        $this->setProperty('welcomeMessageDatetime', $welcomeMessageDatetime);
     }
 
     /**
@@ -344,7 +359,7 @@ class User extends ModelBase
      */
     public function getTwoFactorAuthMethod()
     {
-        return $this->getProperty("twoFactorAuthMethod");
+        return $this->getProperty('twoFactorAuthMethod');
     }
 
     /**
@@ -352,7 +367,7 @@ class User extends ModelBase
      */
     public function setTwoFactorAuthMethod($twoFactorAuthMethod = null)
     {
-        $this->setProperty("twoFactorAuthMethod", $twoFactorAuthMethod);
+        $this->setProperty('twoFactorAuthMethod', $twoFactorAuthMethod);
     }
 
     /**
@@ -360,7 +375,7 @@ class User extends ModelBase
      */
     public function getTwoFactorDeviceIdentifier()
     {
-        return $this->getProperty("twoFactorDeviceIdentifier");
+        return $this->getProperty('twoFactorDeviceIdentifier');
     }
 
     /**
@@ -368,6 +383,6 @@ class User extends ModelBase
      */
     public function setTwoFactorDeviceIdentifier($twoFactorDeviceIdentifier = null)
     {
-        $this->setProperty("twoFactorDeviceIdentifier", $twoFactorDeviceIdentifier);
+        $this->setProperty('twoFactorDeviceIdentifier', $twoFactorDeviceIdentifier);
     }
 }

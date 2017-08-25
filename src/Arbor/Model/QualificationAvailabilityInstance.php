@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AwardingOrganization;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationAvailabilityInstance extends ModelBase
 {
@@ -19,45 +14,49 @@ class QualificationAvailabilityInstance extends ModelBase
 
     const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const LABEL = 'label';
-
     const QUALIFICATION_AVAILABILITY_IDENTIFIER = 'qualificationAvailabilityIdentifier';
 
-    const START_DATETIME = 'startDatetime';
+    const START_DATE = 'startDate';
 
-    const END_DATETIME = 'endDatetime';
+    const END_DATE = 'endDate';
+
+    const EDI_AWARDING_BODY_IDENTIFIER = 'ediAwardingBodyIdentifier';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AVAILABILITY_INSTANCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationAvailabilityInstance[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationAvailabilityInstance");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_AVAILABILITY_INSTANCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationAvailabilityInstance
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_AVAILABILITY_INSTANCE, $id);
     }
 
@@ -66,7 +65,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -74,7 +73,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -82,7 +81,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -90,7 +89,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -98,7 +97,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -106,7 +105,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -114,7 +113,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function getAwardingOrganization()
     {
-        return $this->getProperty("awardingOrganization");
+        return $this->getProperty('awardingOrganization');
     }
 
     /**
@@ -122,23 +121,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
     {
-        $this->setProperty("awardingOrganization", $awardingOrganization);
-    }
-
-    /**
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->getProperty("label");
-    }
-
-    /**
-     * @param string $label
-     */
-    public function setLabel($label = null)
-    {
-        $this->setProperty("label", $label);
+        $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
@@ -146,7 +129,7 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function getQualificationAvailabilityIdentifier()
     {
-        return $this->getProperty("qualificationAvailabilityIdentifier");
+        return $this->getProperty('qualificationAvailabilityIdentifier');
     }
 
     /**
@@ -154,38 +137,54 @@ class QualificationAvailabilityInstance extends ModelBase
      */
     public function setQualificationAvailabilityIdentifier($qualificationAvailabilityIdentifier = null)
     {
-        $this->setProperty("qualificationAvailabilityIdentifier", $qualificationAvailabilityIdentifier);
+        $this->setProperty('qualificationAvailabilityIdentifier', $qualificationAvailabilityIdentifier);
     }
 
     /**
      * @return \DateTime
      */
-    public function getStartDatetime()
+    public function getStartDate()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDate');
     }
 
     /**
-     * @param \DateTime $startDatetime
+     * @param \DateTime $startDate
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
      * @return \DateTime
      */
-    public function getEndDatetime()
+    public function getEndDate()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDate');
     }
 
     /**
-     * @param \DateTime $endDatetime
+     * @param \DateTime $endDate
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getEdiAwardingBodyIdentifier()
+    {
+        return $this->getProperty('ediAwardingBodyIdentifier');
+    }
+
+    /**
+     * @param string $ediAwardingBodyIdentifier
+     */
+    public function setEdiAwardingBodyIdentifier($ediAwardingBodyIdentifier = null)
+    {
+        $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }
 }

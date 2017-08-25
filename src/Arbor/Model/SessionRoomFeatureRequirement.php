@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Session;
-use \Arbor\Model\RoomFeature;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SessionRoomFeatureRequirement extends ModelBase
 {
@@ -19,34 +13,38 @@ class SessionRoomFeatureRequirement extends ModelBase
     protected $_resourceType = ResourceType::SESSION_ROOM_FEATURE_REQUIREMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SessionRoomFeatureRequirement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SessionRoomFeatureRequirement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SESSION_ROOM_FEATURE_REQUIREMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SessionRoomFeatureRequirement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SESSION_ROOM_FEATURE_REQUIREMENT, $id);
     }
 
@@ -55,7 +53,7 @@ class SessionRoomFeatureRequirement extends ModelBase
      */
     public function getSession()
     {
-        return $this->getProperty("session");
+        return $this->getProperty('session');
     }
 
     /**
@@ -63,7 +61,7 @@ class SessionRoomFeatureRequirement extends ModelBase
      */
     public function setSession(Session $session = null)
     {
-        $this->setProperty("session", $session);
+        $this->setProperty('session', $session);
     }
 
     /**
@@ -71,7 +69,7 @@ class SessionRoomFeatureRequirement extends ModelBase
      */
     public function getRoomFeature()
     {
-        return $this->getProperty("roomFeature");
+        return $this->getProperty('roomFeature');
     }
 
     /**
@@ -79,6 +77,6 @@ class SessionRoomFeatureRequirement extends ModelBase
      */
     public function setRoomFeature(RoomFeature $roomFeature = null)
     {
-        $this->setProperty("roomFeature", $roomFeature);
+        $this->setProperty('roomFeature', $roomFeature);
     }
 }

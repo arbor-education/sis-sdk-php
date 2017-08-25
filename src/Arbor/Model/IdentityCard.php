@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IdentityCard extends ModelBase
 {
@@ -23,34 +19,38 @@ class IdentityCard extends ModelBase
     protected $_resourceType = ResourceType::IDENTITY_CARD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IdentityCard[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IdentityCard");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::IDENTITY_CARD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IdentityCard
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::IDENTITY_CARD, $id);
     }
 
@@ -59,7 +59,7 @@ class IdentityCard extends ModelBase
      */
     public function getOwner()
     {
-        return $this->getProperty("owner");
+        return $this->getProperty('owner');
     }
 
     /**
@@ -67,7 +67,7 @@ class IdentityCard extends ModelBase
      */
     public function setOwner(ModelBase $owner = null)
     {
-        $this->setProperty("owner", $owner);
+        $this->setProperty('owner', $owner);
     }
 
     /**
@@ -75,7 +75,7 @@ class IdentityCard extends ModelBase
      */
     public function getCardNumber()
     {
-        return $this->getProperty("cardNumber");
+        return $this->getProperty('cardNumber');
     }
 
     /**
@@ -83,7 +83,7 @@ class IdentityCard extends ModelBase
      */
     public function setCardNumber($cardNumber = null)
     {
-        $this->setProperty("cardNumber", $cardNumber);
+        $this->setProperty('cardNumber', $cardNumber);
     }
 
     /**
@@ -91,7 +91,7 @@ class IdentityCard extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -99,7 +99,7 @@ class IdentityCard extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -107,7 +107,7 @@ class IdentityCard extends ModelBase
      */
     public function getIssuedDatetime()
     {
-        return $this->getProperty("issuedDatetime");
+        return $this->getProperty('issuedDatetime');
     }
 
     /**
@@ -115,7 +115,7 @@ class IdentityCard extends ModelBase
      */
     public function setIssuedDatetime(\DateTime $issuedDatetime = null)
     {
-        $this->setProperty("issuedDatetime", $issuedDatetime);
+        $this->setProperty('issuedDatetime', $issuedDatetime);
     }
 
     /**
@@ -123,7 +123,7 @@ class IdentityCard extends ModelBase
      */
     public function getLostDatetime()
     {
-        return $this->getProperty("lostDatetime");
+        return $this->getProperty('lostDatetime');
     }
 
     /**
@@ -131,6 +131,6 @@ class IdentityCard extends ModelBase
      */
     public function setLostDatetime(\DateTime $lostDatetime = null)
     {
-        $this->setProperty("lostDatetime", $lostDatetime);
+        $this->setProperty('lostDatetime', $lostDatetime);
     }
 }

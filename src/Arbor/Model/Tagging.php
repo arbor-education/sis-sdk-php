@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Tag;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Tagging extends ModelBase
 {
@@ -26,34 +21,38 @@ class Tagging extends ModelBase
     protected $_resourceType = ResourceType::TAGGING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Tagging[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Tagging");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TAGGING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Tagging
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TAGGING, $id);
     }
 
@@ -62,7 +61,7 @@ class Tagging extends ModelBase
      */
     public function getTag()
     {
-        return $this->getProperty("tag");
+        return $this->getProperty('tag');
     }
 
     /**
@@ -70,7 +69,7 @@ class Tagging extends ModelBase
      */
     public function setTag(Tag $tag = null)
     {
-        $this->setProperty("tag", $tag);
+        $this->setProperty('tag', $tag);
     }
 
     /**
@@ -78,7 +77,7 @@ class Tagging extends ModelBase
      */
     public function getTaggedObject()
     {
-        return $this->getProperty("taggedObject");
+        return $this->getProperty('taggedObject');
     }
 
     /**
@@ -86,7 +85,7 @@ class Tagging extends ModelBase
      */
     public function setTaggedObject(ModelBase $taggedObject = null)
     {
-        $this->setProperty("taggedObject", $taggedObject);
+        $this->setProperty('taggedObject', $taggedObject);
     }
 
     /**
@@ -94,7 +93,7 @@ class Tagging extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -102,7 +101,7 @@ class Tagging extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -110,7 +109,7 @@ class Tagging extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -118,7 +117,7 @@ class Tagging extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -126,7 +125,7 @@ class Tagging extends ModelBase
      */
     public function getLink1()
     {
-        return $this->getProperty("link1");
+        return $this->getProperty('link1');
     }
 
     /**
@@ -134,7 +133,7 @@ class Tagging extends ModelBase
      */
     public function setLink1(ModelBase $link1 = null)
     {
-        $this->setProperty("link1", $link1);
+        $this->setProperty('link1', $link1);
     }
 
     /**
@@ -142,7 +141,7 @@ class Tagging extends ModelBase
      */
     public function getLink2()
     {
-        return $this->getProperty("link2");
+        return $this->getProperty('link2');
     }
 
     /**
@@ -150,6 +149,6 @@ class Tagging extends ModelBase
      */
     public function setLink2(ModelBase $link2 = null)
     {
-        $this->setProperty("link2", $link2);
+        $this->setProperty('link2', $link2);
     }
 }

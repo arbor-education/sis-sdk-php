@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class CurriculumGrade extends ModelBase
 {
@@ -17,34 +17,38 @@ class CurriculumGrade extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_CURRICULUM_GRADE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CurriculumGrade[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_CurriculumGrade");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_CURRICULUM_GRADE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CurriculumGrade
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_CURRICULUM_GRADE, $id);
     }
 
@@ -53,7 +57,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getD00020()
     {
-        return $this->getProperty("d00020");
+        return $this->getProperty('d00020');
     }
 
     /**
@@ -61,7 +65,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setD00020($d00020 = null)
     {
-        $this->setProperty("d00020", $d00020);
+        $this->setProperty('d00020', $d00020);
     }
 
     /**
@@ -69,7 +73,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getD00020Order()
     {
-        return $this->getProperty("d00020Order");
+        return $this->getProperty('d00020Order');
     }
 
     /**
@@ -77,6 +81,6 @@ class CurriculumGrade extends ModelBase
      */
     public function setD00020Order($d00020Order = null)
     {
-        $this->setProperty("d00020Order", $d00020Order);
+        $this->setProperty('d00020Order', $d00020Order);
     }
 }

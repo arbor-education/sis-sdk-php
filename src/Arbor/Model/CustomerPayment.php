@@ -1,19 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerInvoice;
-use \Arbor\Model\BillPayer;
-use \Arbor\Model\IncomingDirectDebitTransaction;
-use \Arbor\Model\IncomingCardTransaction;
-use \Arbor\Model\IncomingBankTransaction;
-use \Arbor\Model\ReceivedCheque;
-use \Arbor\Model\CashReceipt;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomerPayment extends ModelBase
 {
@@ -46,34 +35,38 @@ class CustomerPayment extends ModelBase
     protected $_resourceType = ResourceType::CUSTOMER_PAYMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomerPayment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomerPayment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOMER_PAYMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomerPayment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOMER_PAYMENT, $id);
     }
 
@@ -82,7 +75,7 @@ class CustomerPayment extends ModelBase
      */
     public function getCustomerInvoice()
     {
-        return $this->getProperty("customerInvoice");
+        return $this->getProperty('customerInvoice');
     }
 
     /**
@@ -90,7 +83,7 @@ class CustomerPayment extends ModelBase
      */
     public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
     {
-        $this->setProperty("customerInvoice", $customerInvoice);
+        $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
@@ -98,7 +91,7 @@ class CustomerPayment extends ModelBase
      */
     public function getBillPayer()
     {
-        return $this->getProperty("billPayer");
+        return $this->getProperty('billPayer');
     }
 
     /**
@@ -106,7 +99,7 @@ class CustomerPayment extends ModelBase
      */
     public function setBillPayer(BillPayer $billPayer = null)
     {
-        $this->setProperty("billPayer", $billPayer);
+        $this->setProperty('billPayer', $billPayer);
     }
 
     /**
@@ -114,7 +107,7 @@ class CustomerPayment extends ModelBase
      */
     public function getIncomingDirectDebitTransaction()
     {
-        return $this->getProperty("incomingDirectDebitTransaction");
+        return $this->getProperty('incomingDirectDebitTransaction');
     }
 
     /**
@@ -122,7 +115,7 @@ class CustomerPayment extends ModelBase
      */
     public function setIncomingDirectDebitTransaction(IncomingDirectDebitTransaction $incomingDirectDebitTransaction = null)
     {
-        $this->setProperty("incomingDirectDebitTransaction", $incomingDirectDebitTransaction);
+        $this->setProperty('incomingDirectDebitTransaction', $incomingDirectDebitTransaction);
     }
 
     /**
@@ -130,7 +123,7 @@ class CustomerPayment extends ModelBase
      */
     public function getIncomingCardTransaction()
     {
-        return $this->getProperty("incomingCardTransaction");
+        return $this->getProperty('incomingCardTransaction');
     }
 
     /**
@@ -138,7 +131,7 @@ class CustomerPayment extends ModelBase
      */
     public function setIncomingCardTransaction(IncomingCardTransaction $incomingCardTransaction = null)
     {
-        $this->setProperty("incomingCardTransaction", $incomingCardTransaction);
+        $this->setProperty('incomingCardTransaction', $incomingCardTransaction);
     }
 
     /**
@@ -146,7 +139,7 @@ class CustomerPayment extends ModelBase
      */
     public function getIncomingBankTransaction()
     {
-        return $this->getProperty("incomingBankTransaction");
+        return $this->getProperty('incomingBankTransaction');
     }
 
     /**
@@ -154,7 +147,7 @@ class CustomerPayment extends ModelBase
      */
     public function setIncomingBankTransaction(IncomingBankTransaction $incomingBankTransaction = null)
     {
-        $this->setProperty("incomingBankTransaction", $incomingBankTransaction);
+        $this->setProperty('incomingBankTransaction', $incomingBankTransaction);
     }
 
     /**
@@ -162,7 +155,7 @@ class CustomerPayment extends ModelBase
      */
     public function getReceivedCheque()
     {
-        return $this->getProperty("receivedCheque");
+        return $this->getProperty('receivedCheque');
     }
 
     /**
@@ -170,7 +163,7 @@ class CustomerPayment extends ModelBase
      */
     public function setReceivedCheque(ReceivedCheque $receivedCheque = null)
     {
-        $this->setProperty("receivedCheque", $receivedCheque);
+        $this->setProperty('receivedCheque', $receivedCheque);
     }
 
     /**
@@ -178,7 +171,7 @@ class CustomerPayment extends ModelBase
      */
     public function getCashReceipt()
     {
-        return $this->getProperty("cashReceipt");
+        return $this->getProperty('cashReceipt');
     }
 
     /**
@@ -186,7 +179,7 @@ class CustomerPayment extends ModelBase
      */
     public function setCashReceipt(CashReceipt $cashReceipt = null)
     {
-        $this->setProperty("cashReceipt", $cashReceipt);
+        $this->setProperty('cashReceipt', $cashReceipt);
     }
 
     /**
@@ -194,7 +187,7 @@ class CustomerPayment extends ModelBase
      */
     public function getPaymentAmount()
     {
-        return $this->getProperty("paymentAmount");
+        return $this->getProperty('paymentAmount');
     }
 
     /**
@@ -202,7 +195,7 @@ class CustomerPayment extends ModelBase
      */
     public function setPaymentAmount($paymentAmount = null)
     {
-        $this->setProperty("paymentAmount", $paymentAmount);
+        $this->setProperty('paymentAmount', $paymentAmount);
     }
 
     /**
@@ -210,7 +203,7 @@ class CustomerPayment extends ModelBase
      */
     public function getPaymentDatetime()
     {
-        return $this->getProperty("paymentDatetime");
+        return $this->getProperty('paymentDatetime');
     }
 
     /**
@@ -218,7 +211,7 @@ class CustomerPayment extends ModelBase
      */
     public function setPaymentDatetime(\DateTime $paymentDatetime = null)
     {
-        $this->setProperty("paymentDatetime", $paymentDatetime);
+        $this->setProperty('paymentDatetime', $paymentDatetime);
     }
 
     /**
@@ -226,7 +219,7 @@ class CustomerPayment extends ModelBase
      */
     public function getPaymentSucceededDatetime()
     {
-        return $this->getProperty("paymentSucceededDatetime");
+        return $this->getProperty('paymentSucceededDatetime');
     }
 
     /**
@@ -234,7 +227,7 @@ class CustomerPayment extends ModelBase
      */
     public function setPaymentSucceededDatetime(\DateTime $paymentSucceededDatetime = null)
     {
-        $this->setProperty("paymentSucceededDatetime", $paymentSucceededDatetime);
+        $this->setProperty('paymentSucceededDatetime', $paymentSucceededDatetime);
     }
 
     /**
@@ -242,7 +235,7 @@ class CustomerPayment extends ModelBase
      */
     public function getPaymentFailedDatetime()
     {
-        return $this->getProperty("paymentFailedDatetime");
+        return $this->getProperty('paymentFailedDatetime');
     }
 
     /**
@@ -250,7 +243,7 @@ class CustomerPayment extends ModelBase
      */
     public function setPaymentFailedDatetime(\DateTime $paymentFailedDatetime = null)
     {
-        $this->setProperty("paymentFailedDatetime", $paymentFailedDatetime);
+        $this->setProperty('paymentFailedDatetime', $paymentFailedDatetime);
     }
 
     /**
@@ -258,7 +251,7 @@ class CustomerPayment extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -266,7 +259,7 @@ class CustomerPayment extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -274,7 +267,7 @@ class CustomerPayment extends ModelBase
      */
     public function getPaymentCancelledDatetime()
     {
-        return $this->getProperty("paymentCancelledDatetime");
+        return $this->getProperty('paymentCancelledDatetime');
     }
 
     /**
@@ -282,6 +275,6 @@ class CustomerPayment extends ModelBase
      */
     public function setPaymentCancelledDatetime(\DateTime $paymentCancelledDatetime = null)
     {
-        $this->setProperty("paymentCancelledDatetime", $paymentCancelledDatetime);
+        $this->setProperty('paymentCancelledDatetime', $paymentCancelledDatetime);
     }
 }

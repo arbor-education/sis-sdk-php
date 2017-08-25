@@ -1,17 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SenStatus extends ModelBase
 {
-    const D00229 = 'd00229';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -24,54 +18,44 @@ class SenStatus extends ModelBase
 
     const COUNTS_AS_SEN_STATUS = 'countsAsSenStatus';
 
+    const D00229 = 'd00229';
+
     protected $_resourceType = ResourceType::SEN_STATUS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SenStatus[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SenStatus");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SEN_STATUS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SenStatus
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SEN_STATUS, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00229()
-    {
-        return $this->getProperty("d00229");
-    }
-
-    /**
-     * @param string $d00229
-     */
-    public function setD00229($d00229 = null)
-    {
-        $this->setProperty("d00229", $d00229);
     }
 
     /**
@@ -79,7 +63,7 @@ class SenStatus extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -87,7 +71,7 @@ class SenStatus extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -95,7 +79,7 @@ class SenStatus extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -103,7 +87,7 @@ class SenStatus extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -111,7 +95,7 @@ class SenStatus extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -119,7 +103,7 @@ class SenStatus extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -127,7 +111,7 @@ class SenStatus extends ModelBase
      */
     public function getSenStatusName()
     {
-        return $this->getProperty("senStatusName");
+        return $this->getProperty('senStatusName');
     }
 
     /**
@@ -135,7 +119,7 @@ class SenStatus extends ModelBase
      */
     public function setSenStatusName($senStatusName = null)
     {
-        $this->setProperty("senStatusName", $senStatusName);
+        $this->setProperty('senStatusName', $senStatusName);
     }
 
     /**
@@ -143,7 +127,7 @@ class SenStatus extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -151,7 +135,7 @@ class SenStatus extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -159,7 +143,7 @@ class SenStatus extends ModelBase
      */
     public function getCountsAsSenStatus()
     {
-        return $this->getProperty("countsAsSenStatus");
+        return $this->getProperty('countsAsSenStatus');
     }
 
     /**
@@ -167,6 +151,22 @@ class SenStatus extends ModelBase
      */
     public function setCountsAsSenStatus($countsAsSenStatus = null)
     {
-        $this->setProperty("countsAsSenStatus", $countsAsSenStatus);
+        $this->setProperty('countsAsSenStatus', $countsAsSenStatus);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00229()
+    {
+        return $this->getProperty('d00229');
+    }
+
+    /**
+     * @param string $d00229
+     */
+    public function setD00229($d00229 = null)
+    {
+        $this->setProperty('d00229', $d00229);
     }
 }

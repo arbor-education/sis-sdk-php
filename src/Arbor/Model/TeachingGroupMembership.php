@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\TeachingGroup;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TeachingGroupMembership extends ModelBase
 {
@@ -23,34 +17,38 @@ class TeachingGroupMembership extends ModelBase
     protected $_resourceType = ResourceType::TEACHING_GROUP_MEMBERSHIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TeachingGroupMembership[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TeachingGroupMembership");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TEACHING_GROUP_MEMBERSHIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TeachingGroupMembership
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TEACHING_GROUP_MEMBERSHIP, $id);
     }
 
@@ -59,7 +57,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function getTeachingGroup()
     {
-        return $this->getProperty("teachingGroup");
+        return $this->getProperty('teachingGroup');
     }
 
     /**
@@ -67,7 +65,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function setTeachingGroup(TeachingGroup $teachingGroup = null)
     {
-        $this->setProperty("teachingGroup", $teachingGroup);
+        $this->setProperty('teachingGroup', $teachingGroup);
     }
 
     /**
@@ -75,7 +73,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -83,7 +81,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -91,7 +89,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -99,7 +97,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -107,7 +105,7 @@ class TeachingGroupMembership extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -115,6 +113,6 @@ class TeachingGroupMembership extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

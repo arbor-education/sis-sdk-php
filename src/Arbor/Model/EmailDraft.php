@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SendingProfile;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailDraft extends ModelBase
 {
@@ -16,6 +11,8 @@ class EmailDraft extends ModelBase
     const SUBJECT = 'subject';
 
     const BODY = 'body';
+
+    const CUSTOM_REPORT = 'customReport';
 
     const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
@@ -26,34 +23,38 @@ class EmailDraft extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_DRAFT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailDraft[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailDraft");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_DRAFT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailDraft
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_DRAFT, $id);
     }
 
@@ -62,7 +63,7 @@ class EmailDraft extends ModelBase
      */
     public function getSendingProfile()
     {
-        return $this->getProperty("sendingProfile");
+        return $this->getProperty('sendingProfile');
     }
 
     /**
@@ -70,7 +71,7 @@ class EmailDraft extends ModelBase
      */
     public function setSendingProfile(SendingProfile $sendingProfile = null)
     {
-        $this->setProperty("sendingProfile", $sendingProfile);
+        $this->setProperty('sendingProfile', $sendingProfile);
     }
 
     /**
@@ -78,7 +79,7 @@ class EmailDraft extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -86,7 +87,7 @@ class EmailDraft extends ModelBase
      */
     public function setSubject($subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -94,7 +95,7 @@ class EmailDraft extends ModelBase
      */
     public function getBody()
     {
-        return $this->getProperty("body");
+        return $this->getProperty('body');
     }
 
     /**
@@ -102,7 +103,23 @@ class EmailDraft extends ModelBase
      */
     public function setBody($body = null)
     {
-        $this->setProperty("body", $body);
+        $this->setProperty('body', $body);
+    }
+
+    /**
+     * @return CustomReport
+     */
+    public function getCustomReport()
+    {
+        return $this->getProperty('customReport');
+    }
+
+    /**
+     * @param CustomReport $customReport
+     */
+    public function setCustomReport(CustomReport $customReport = null)
+    {
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -110,7 +127,7 @@ class EmailDraft extends ModelBase
      */
     public function getSendingStartedDatetime()
     {
-        return $this->getProperty("sendingStartedDatetime");
+        return $this->getProperty('sendingStartedDatetime');
     }
 
     /**
@@ -118,7 +135,7 @@ class EmailDraft extends ModelBase
      */
     public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
     {
-        $this->setProperty("sendingStartedDatetime", $sendingStartedDatetime);
+        $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
 
     /**
@@ -126,7 +143,7 @@ class EmailDraft extends ModelBase
      */
     public function getRecipientsResolvedDatetime()
     {
-        return $this->getProperty("recipientsResolvedDatetime");
+        return $this->getProperty('recipientsResolvedDatetime');
     }
 
     /**
@@ -134,7 +151,7 @@ class EmailDraft extends ModelBase
      */
     public function setRecipientsResolvedDatetime(\DateTime $recipientsResolvedDatetime = null)
     {
-        $this->setProperty("recipientsResolvedDatetime", $recipientsResolvedDatetime);
+        $this->setProperty('recipientsResolvedDatetime', $recipientsResolvedDatetime);
     }
 
     /**
@@ -142,7 +159,7 @@ class EmailDraft extends ModelBase
      */
     public function getSendingCompletedDatetime()
     {
-        return $this->getProperty("sendingCompletedDatetime");
+        return $this->getProperty('sendingCompletedDatetime');
     }
 
     /**
@@ -150,6 +167,6 @@ class EmailDraft extends ModelBase
      */
     public function setSendingCompletedDatetime(\DateTime $sendingCompletedDatetime = null)
     {
-        $this->setProperty("sendingCompletedDatetime", $sendingCompletedDatetime);
+        $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
     }
 }

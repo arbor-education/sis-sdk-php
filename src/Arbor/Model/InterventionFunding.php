@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Intervention;
-use \Arbor\Model\Student;
-use \Arbor\Model\InterventionFundingSource;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionFunding extends ModelBase
 {
@@ -26,34 +19,38 @@ class InterventionFunding extends ModelBase
     protected $_resourceType = ResourceType::INTERVENTION_FUNDING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionFunding[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionFunding");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_FUNDING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionFunding
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_FUNDING, $id);
     }
 
@@ -62,7 +59,7 @@ class InterventionFunding extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -70,7 +67,7 @@ class InterventionFunding extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -78,7 +75,7 @@ class InterventionFunding extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -86,7 +83,7 @@ class InterventionFunding extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -94,7 +91,7 @@ class InterventionFunding extends ModelBase
      */
     public function getInterventionFundingSource()
     {
-        return $this->getProperty("interventionFundingSource");
+        return $this->getProperty('interventionFundingSource');
     }
 
     /**
@@ -102,7 +99,7 @@ class InterventionFunding extends ModelBase
      */
     public function setInterventionFundingSource(InterventionFundingSource $interventionFundingSource = null)
     {
-        $this->setProperty("interventionFundingSource", $interventionFundingSource);
+        $this->setProperty('interventionFundingSource', $interventionFundingSource);
     }
 
     /**
@@ -110,7 +107,7 @@ class InterventionFunding extends ModelBase
      */
     public function getFundingAmount()
     {
-        return $this->getProperty("fundingAmount");
+        return $this->getProperty('fundingAmount');
     }
 
     /**
@@ -118,7 +115,7 @@ class InterventionFunding extends ModelBase
      */
     public function setFundingAmount($fundingAmount = null)
     {
-        $this->setProperty("fundingAmount", $fundingAmount);
+        $this->setProperty('fundingAmount', $fundingAmount);
     }
 
     /**
@@ -126,7 +123,7 @@ class InterventionFunding extends ModelBase
      */
     public function getFundingPercentage()
     {
-        return $this->getProperty("fundingPercentage");
+        return $this->getProperty('fundingPercentage');
     }
 
     /**
@@ -134,6 +131,6 @@ class InterventionFunding extends ModelBase
      */
     public function setFundingPercentage($fundingPercentage = null)
     {
-        $this->setProperty("fundingPercentage", $fundingPercentage);
+        $this->setProperty('fundingPercentage', $fundingPercentage);
     }
 }

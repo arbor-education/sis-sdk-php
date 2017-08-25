@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\ExclusionReason;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PermanentExclusion extends ModelBase
 {
@@ -29,34 +23,38 @@ class PermanentExclusion extends ModelBase
     protected $_resourceType = ResourceType::PERMANENT_EXCLUSION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PermanentExclusion[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PermanentExclusion");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERMANENT_EXCLUSION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PermanentExclusion
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERMANENT_EXCLUSION, $id);
     }
 
@@ -65,7 +63,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -73,7 +71,7 @@ class PermanentExclusion extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -81,7 +79,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getExclusionReason()
     {
-        return $this->getProperty("exclusionReason");
+        return $this->getProperty('exclusionReason');
     }
 
     /**
@@ -89,7 +87,7 @@ class PermanentExclusion extends ModelBase
      */
     public function setExclusionReason(ExclusionReason $exclusionReason = null)
     {
-        $this->setProperty("exclusionReason", $exclusionReason);
+        $this->setProperty('exclusionReason', $exclusionReason);
     }
 
     /**
@@ -97,7 +95,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getFromDate()
     {
-        return $this->getProperty("fromDate");
+        return $this->getProperty('fromDate');
     }
 
     /**
@@ -105,7 +103,7 @@ class PermanentExclusion extends ModelBase
      */
     public function setFromDate(\DateTime $fromDate = null)
     {
-        $this->setProperty("fromDate", $fromDate);
+        $this->setProperty('fromDate', $fromDate);
     }
 
     /**
@@ -113,7 +111,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getDecisionDatetime()
     {
-        return $this->getProperty("decisionDatetime");
+        return $this->getProperty('decisionDatetime');
     }
 
     /**
@@ -121,7 +119,7 @@ class PermanentExclusion extends ModelBase
      */
     public function setDecisionDatetime(\DateTime $decisionDatetime = null)
     {
-        $this->setProperty("decisionDatetime", $decisionDatetime);
+        $this->setProperty('decisionDatetime', $decisionDatetime);
     }
 
     /**
@@ -129,7 +127,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getNotifiedStudentDatetime()
     {
-        return $this->getProperty("notifiedStudentDatetime");
+        return $this->getProperty('notifiedStudentDatetime');
     }
 
     /**
@@ -137,7 +135,7 @@ class PermanentExclusion extends ModelBase
      */
     public function setNotifiedStudentDatetime(\DateTime $notifiedStudentDatetime = null)
     {
-        $this->setProperty("notifiedStudentDatetime", $notifiedStudentDatetime);
+        $this->setProperty('notifiedStudentDatetime', $notifiedStudentDatetime);
     }
 
     /**
@@ -145,7 +143,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getNotifiedGuardiansDatetime()
     {
-        return $this->getProperty("notifiedGuardiansDatetime");
+        return $this->getProperty('notifiedGuardiansDatetime');
     }
 
     /**
@@ -153,7 +151,7 @@ class PermanentExclusion extends ModelBase
      */
     public function setNotifiedGuardiansDatetime(\DateTime $notifiedGuardiansDatetime = null)
     {
-        $this->setProperty("notifiedGuardiansDatetime", $notifiedGuardiansDatetime);
+        $this->setProperty('notifiedGuardiansDatetime', $notifiedGuardiansDatetime);
     }
 
     /**
@@ -161,7 +159,7 @@ class PermanentExclusion extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -169,6 +167,6 @@ class PermanentExclusion extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

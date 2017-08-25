@@ -1,18 +1,20 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class OfstedGrade extends ModelBase
 {
     const LABEL = 'label';
 
     const CODE = 'code';
+
+    const NUMERICAL_CODE = 'numericalCode';
 
     const ACTIVE = 'active';
 
@@ -21,34 +23,38 @@ class OfstedGrade extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_OFSTED_GRADE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return OfstedGrade[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_OfstedGrade");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_OFSTED_GRADE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return OfstedGrade
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_OFSTED_GRADE, $id);
     }
 
@@ -57,7 +63,7 @@ class OfstedGrade extends ModelBase
      */
     public function getLabel()
     {
-        return $this->getProperty("label");
+        return $this->getProperty('label');
     }
 
     /**
@@ -65,7 +71,7 @@ class OfstedGrade extends ModelBase
      */
     public function setLabel($label = null)
     {
-        $this->setProperty("label", $label);
+        $this->setProperty('label', $label);
     }
 
     /**
@@ -73,7 +79,7 @@ class OfstedGrade extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -81,7 +87,23 @@ class OfstedGrade extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumericalCode()
+    {
+        return $this->getProperty('numericalCode');
+    }
+
+    /**
+     * @param int $numericalCode
+     */
+    public function setNumericalCode($numericalCode = null)
+    {
+        $this->setProperty('numericalCode', $numericalCode);
     }
 
     /**
@@ -89,7 +111,7 @@ class OfstedGrade extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -97,7 +119,7 @@ class OfstedGrade extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -105,7 +127,7 @@ class OfstedGrade extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -113,6 +135,6 @@ class OfstedGrade extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 }

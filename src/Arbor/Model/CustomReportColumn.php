@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomReport;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReportColumn extends ModelBase
 {
@@ -34,34 +29,38 @@ class CustomReportColumn extends ModelBase
     protected $_resourceType = ResourceType::CUSTOM_REPORT_COLUMN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReportColumn[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReportColumn");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT_COLUMN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReportColumn
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_COLUMN, $id);
     }
 
@@ -70,7 +69,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getCustomReport()
     {
-        return $this->getProperty("customReport");
+        return $this->getProperty('customReport');
     }
 
     /**
@@ -78,7 +77,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setCustomReport(CustomReport $customReport = null)
     {
-        $this->setProperty("customReport", $customReport);
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -86,7 +85,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getFieldClass()
     {
-        return $this->getProperty("fieldClass");
+        return $this->getProperty('fieldClass');
     }
 
     /**
@@ -94,7 +93,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setFieldClass($fieldClass = null)
     {
-        $this->setProperty("fieldClass", $fieldClass);
+        $this->setProperty('fieldClass', $fieldClass);
     }
 
     /**
@@ -102,7 +101,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getFieldParams()
     {
-        return $this->getProperty("fieldParams");
+        return $this->getProperty('fieldParams');
     }
 
     /**
@@ -110,7 +109,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setFieldParams($fieldParams = null)
     {
-        $this->setProperty("fieldParams", $fieldParams);
+        $this->setProperty('fieldParams', $fieldParams);
     }
 
     /**
@@ -118,7 +117,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getTargetType()
     {
-        return $this->getProperty("targetType");
+        return $this->getProperty('targetType');
     }
 
     /**
@@ -126,7 +125,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setTargetType($targetType = null)
     {
-        $this->setProperty("targetType", $targetType);
+        $this->setProperty('targetType', $targetType);
     }
 
     /**
@@ -134,7 +133,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getTargetIndex()
     {
-        return $this->getProperty("targetIndex");
+        return $this->getProperty('targetIndex');
     }
 
     /**
@@ -142,7 +141,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setTargetIndex($targetIndex = null)
     {
-        $this->setProperty("targetIndex", $targetIndex);
+        $this->setProperty('targetIndex', $targetIndex);
     }
 
     /**
@@ -150,7 +149,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getTransformationClass()
     {
-        return $this->getProperty("transformationClass");
+        return $this->getProperty('transformationClass');
     }
 
     /**
@@ -158,7 +157,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setTransformationClass($transformationClass = null)
     {
-        $this->setProperty("transformationClass", $transformationClass);
+        $this->setProperty('transformationClass', $transformationClass);
     }
 
     /**
@@ -166,7 +165,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getDisplayOrder()
     {
-        return $this->getProperty("displayOrder");
+        return $this->getProperty('displayOrder');
     }
 
     /**
@@ -174,7 +173,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setDisplayOrder($displayOrder = null)
     {
-        $this->setProperty("displayOrder", $displayOrder);
+        $this->setProperty('displayOrder', $displayOrder);
     }
 
     /**
@@ -182,7 +181,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getFormatterClass()
     {
-        return $this->getProperty("formatterClass");
+        return $this->getProperty('formatterClass');
     }
 
     /**
@@ -190,7 +189,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setFormatterClass($formatterClass = null)
     {
-        $this->setProperty("formatterClass", $formatterClass);
+        $this->setProperty('formatterClass', $formatterClass);
     }
 
     /**
@@ -198,7 +197,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getLocked()
     {
-        return $this->getProperty("locked");
+        return $this->getProperty('locked');
     }
 
     /**
@@ -206,7 +205,7 @@ class CustomReportColumn extends ModelBase
      */
     public function setLocked($locked = null)
     {
-        $this->setProperty("locked", $locked);
+        $this->setProperty('locked', $locked);
     }
 
     /**
@@ -214,7 +213,7 @@ class CustomReportColumn extends ModelBase
      */
     public function getCustomLabel()
     {
-        return $this->getProperty("customLabel");
+        return $this->getProperty('customLabel');
     }
 
     /**
@@ -222,6 +221,6 @@ class CustomReportColumn extends ModelBase
      */
     public function setCustomLabel($customLabel = null)
     {
-        $this->setProperty("customLabel", $customLabel);
+        $this->setProperty('customLabel', $customLabel);
     }
 }

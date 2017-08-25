@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\InterventionCategory;
-use \Arbor\Model\CurriculumGrade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionDefinition extends ModelBase
 {
@@ -25,34 +19,38 @@ class InterventionDefinition extends ModelBase
     protected $_resourceType = ResourceType::INTERVENTION_DEFINITION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionDefinition[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionDefinition");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_DEFINITION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionDefinition
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_DEFINITION, $id);
     }
 
@@ -61,7 +59,7 @@ class InterventionDefinition extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -69,7 +67,7 @@ class InterventionDefinition extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -77,7 +75,7 @@ class InterventionDefinition extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -85,7 +83,7 @@ class InterventionDefinition extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -93,7 +91,7 @@ class InterventionDefinition extends ModelBase
      */
     public function getInterventionCategory()
     {
-        return $this->getProperty("interventionCategory");
+        return $this->getProperty('interventionCategory');
     }
 
     /**
@@ -101,7 +99,7 @@ class InterventionDefinition extends ModelBase
      */
     public function setInterventionCategory(InterventionCategory $interventionCategory = null)
     {
-        $this->setProperty("interventionCategory", $interventionCategory);
+        $this->setProperty('interventionCategory', $interventionCategory);
     }
 
     /**
@@ -109,7 +107,7 @@ class InterventionDefinition extends ModelBase
      */
     public function getLowestCurriculumGrade()
     {
-        return $this->getProperty("lowestCurriculumGrade");
+        return $this->getProperty('lowestCurriculumGrade');
     }
 
     /**
@@ -117,7 +115,7 @@ class InterventionDefinition extends ModelBase
      */
     public function setLowestCurriculumGrade(CurriculumGrade $lowestCurriculumGrade = null)
     {
-        $this->setProperty("lowestCurriculumGrade", $lowestCurriculumGrade);
+        $this->setProperty('lowestCurriculumGrade', $lowestCurriculumGrade);
     }
 
     /**
@@ -125,7 +123,7 @@ class InterventionDefinition extends ModelBase
      */
     public function getHighestCurriculumGrade()
     {
-        return $this->getProperty("highestCurriculumGrade");
+        return $this->getProperty('highestCurriculumGrade');
     }
 
     /**
@@ -133,6 +131,6 @@ class InterventionDefinition extends ModelBase
      */
     public function setHighestCurriculumGrade(CurriculumGrade $highestCurriculumGrade = null)
     {
-        $this->setProperty("highestCurriculumGrade", $highestCurriculumGrade);
+        $this->setProperty('highestCurriculumGrade', $highestCurriculumGrade);
     }
 }

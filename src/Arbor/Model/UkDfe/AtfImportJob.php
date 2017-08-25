@@ -1,14 +1,14 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LocalAuthority;
-use \Arbor\Model\EducationalInstitution;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\LocalAuthority;
+use Arbor\Model\EducationalInstitution;
 
 class AtfImportJob extends ModelBase
 {
@@ -39,34 +39,38 @@ class AtfImportJob extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_ATF_IMPORT_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AtfImportJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_AtfImportJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_ATF_IMPORT_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AtfImportJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_ATF_IMPORT_JOB, $id);
     }
 
@@ -75,7 +79,7 @@ class AtfImportJob extends ModelBase
      */
     public function getAtfVersion()
     {
-        return $this->getProperty("atfVersion");
+        return $this->getProperty('atfVersion');
     }
 
     /**
@@ -83,7 +87,7 @@ class AtfImportJob extends ModelBase
      */
     public function setAtfVersion($atfVersion = null)
     {
-        $this->setProperty("atfVersion", $atfVersion);
+        $this->setProperty('atfVersion', $atfVersion);
     }
 
     /**
@@ -91,7 +95,7 @@ class AtfImportJob extends ModelBase
      */
     public function getSourceLocalAuthorityCode()
     {
-        return $this->getProperty("sourceLocalAuthorityCode");
+        return $this->getProperty('sourceLocalAuthorityCode');
     }
 
     /**
@@ -99,7 +103,7 @@ class AtfImportJob extends ModelBase
      */
     public function setSourceLocalAuthorityCode($sourceLocalAuthorityCode = null)
     {
-        $this->setProperty("sourceLocalAuthorityCode", $sourceLocalAuthorityCode);
+        $this->setProperty('sourceLocalAuthorityCode', $sourceLocalAuthorityCode);
     }
 
     /**
@@ -107,7 +111,7 @@ class AtfImportJob extends ModelBase
      */
     public function getSourceLocalAuthority()
     {
-        return $this->getProperty("sourceLocalAuthority");
+        return $this->getProperty('sourceLocalAuthority');
     }
 
     /**
@@ -115,7 +119,7 @@ class AtfImportJob extends ModelBase
      */
     public function setSourceLocalAuthority(LocalAuthority $sourceLocalAuthority = null)
     {
-        $this->setProperty("sourceLocalAuthority", $sourceLocalAuthority);
+        $this->setProperty('sourceLocalAuthority', $sourceLocalAuthority);
     }
 
     /**
@@ -123,7 +127,7 @@ class AtfImportJob extends ModelBase
      */
     public function getSourceEstablishmentNumber()
     {
-        return $this->getProperty("sourceEstablishmentNumber");
+        return $this->getProperty('sourceEstablishmentNumber');
     }
 
     /**
@@ -131,7 +135,7 @@ class AtfImportJob extends ModelBase
      */
     public function setSourceEstablishmentNumber($sourceEstablishmentNumber = null)
     {
-        $this->setProperty("sourceEstablishmentNumber", $sourceEstablishmentNumber);
+        $this->setProperty('sourceEstablishmentNumber', $sourceEstablishmentNumber);
     }
 
     /**
@@ -139,7 +143,7 @@ class AtfImportJob extends ModelBase
      */
     public function getSourceEducationalInstitutionName()
     {
-        return $this->getProperty("sourceEducationalInstitutionName");
+        return $this->getProperty('sourceEducationalInstitutionName');
     }
 
     /**
@@ -147,7 +151,7 @@ class AtfImportJob extends ModelBase
      */
     public function setSourceEducationalInstitutionName($sourceEducationalInstitutionName = null)
     {
-        $this->setProperty("sourceEducationalInstitutionName", $sourceEducationalInstitutionName);
+        $this->setProperty('sourceEducationalInstitutionName', $sourceEducationalInstitutionName);
     }
 
     /**
@@ -155,7 +159,7 @@ class AtfImportJob extends ModelBase
      */
     public function getSourceEducationalInstitution()
     {
-        return $this->getProperty("sourceEducationalInstitution");
+        return $this->getProperty('sourceEducationalInstitution');
     }
 
     /**
@@ -163,7 +167,7 @@ class AtfImportJob extends ModelBase
      */
     public function setSourceEducationalInstitution(EducationalInstitution $sourceEducationalInstitution = null)
     {
-        $this->setProperty("sourceEducationalInstitution", $sourceEducationalInstitution);
+        $this->setProperty('sourceEducationalInstitution', $sourceEducationalInstitution);
     }
 
     /**
@@ -171,7 +175,7 @@ class AtfImportJob extends ModelBase
      */
     public function getDestinationLocalAuthorityCode()
     {
-        return $this->getProperty("destinationLocalAuthorityCode");
+        return $this->getProperty('destinationLocalAuthorityCode');
     }
 
     /**
@@ -179,7 +183,7 @@ class AtfImportJob extends ModelBase
      */
     public function setDestinationLocalAuthorityCode($destinationLocalAuthorityCode = null)
     {
-        $this->setProperty("destinationLocalAuthorityCode", $destinationLocalAuthorityCode);
+        $this->setProperty('destinationLocalAuthorityCode', $destinationLocalAuthorityCode);
     }
 
     /**
@@ -187,7 +191,7 @@ class AtfImportJob extends ModelBase
      */
     public function getDestinationLocalAuthority()
     {
-        return $this->getProperty("destinationLocalAuthority");
+        return $this->getProperty('destinationLocalAuthority');
     }
 
     /**
@@ -195,7 +199,7 @@ class AtfImportJob extends ModelBase
      */
     public function setDestinationLocalAuthority(LocalAuthority $destinationLocalAuthority = null)
     {
-        $this->setProperty("destinationLocalAuthority", $destinationLocalAuthority);
+        $this->setProperty('destinationLocalAuthority', $destinationLocalAuthority);
     }
 
     /**
@@ -203,7 +207,7 @@ class AtfImportJob extends ModelBase
      */
     public function getDestinationEstablishmentNumber()
     {
-        return $this->getProperty("destinationEstablishmentNumber");
+        return $this->getProperty('destinationEstablishmentNumber');
     }
 
     /**
@@ -211,7 +215,7 @@ class AtfImportJob extends ModelBase
      */
     public function setDestinationEstablishmentNumber($destinationEstablishmentNumber = null)
     {
-        $this->setProperty("destinationEstablishmentNumber", $destinationEstablishmentNumber);
+        $this->setProperty('destinationEstablishmentNumber', $destinationEstablishmentNumber);
     }
 
     /**
@@ -219,7 +223,7 @@ class AtfImportJob extends ModelBase
      */
     public function getDestinationEducationalInstitution()
     {
-        return $this->getProperty("destinationEducationalInstitution");
+        return $this->getProperty('destinationEducationalInstitution');
     }
 
     /**
@@ -227,7 +231,7 @@ class AtfImportJob extends ModelBase
      */
     public function setDestinationEducationalInstitution(EducationalInstitution $destinationEducationalInstitution = null)
     {
-        $this->setProperty("destinationEducationalInstitution", $destinationEducationalInstitution);
+        $this->setProperty('destinationEducationalInstitution', $destinationEducationalInstitution);
     }
 
     /**
@@ -235,7 +239,7 @@ class AtfImportJob extends ModelBase
      */
     public function getLastImportDatetime()
     {
-        return $this->getProperty("lastImportDatetime");
+        return $this->getProperty('lastImportDatetime');
     }
 
     /**
@@ -243,7 +247,7 @@ class AtfImportJob extends ModelBase
      */
     public function setLastImportDatetime(\DateTime $lastImportDatetime = null)
     {
-        $this->setProperty("lastImportDatetime", $lastImportDatetime);
+        $this->setProperty('lastImportDatetime', $lastImportDatetime);
     }
 
     /**
@@ -251,7 +255,7 @@ class AtfImportJob extends ModelBase
      */
     public function getStatus()
     {
-        return $this->getProperty("status");
+        return $this->getProperty('status');
     }
 
     /**
@@ -259,6 +263,6 @@ class AtfImportJob extends ModelBase
      */
     public function setStatus($status = null)
     {
-        $this->setProperty("status", $status);
+        $this->setProperty('status', $status);
     }
 }

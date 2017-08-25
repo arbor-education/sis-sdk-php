@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StaffContractPost;
-use \Arbor\Model\PayScale;
-use \Arbor\Model\PayScaleGrade;
-use \Arbor\Model\PayScaleSpinalPoint;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffContractPostSalary extends ModelBase
 {
@@ -43,34 +35,38 @@ class StaffContractPostSalary extends ModelBase
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST_SALARY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffContractPostSalary[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffContractPostSalary");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_CONTRACT_POST_SALARY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffContractPostSalary
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT_POST_SALARY, $id);
     }
 
@@ -79,7 +75,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getStaffContractPost()
     {
-        return $this->getProperty("staffContractPost");
+        return $this->getProperty('staffContractPost');
     }
 
     /**
@@ -87,7 +83,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setStaffContractPost(StaffContractPost $staffContractPost = null)
     {
-        $this->setProperty("staffContractPost", $staffContractPost);
+        $this->setProperty('staffContractPost', $staffContractPost);
     }
 
     /**
@@ -95,7 +91,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getGrossSalary()
     {
-        return $this->getProperty("grossSalary");
+        return $this->getProperty('grossSalary');
     }
 
     /**
@@ -103,7 +99,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setGrossSalary($grossSalary = null)
     {
-        $this->setProperty("grossSalary", $grossSalary);
+        $this->setProperty('grossSalary', $grossSalary);
     }
 
     /**
@@ -111,7 +107,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getPayScale()
     {
-        return $this->getProperty("payScale");
+        return $this->getProperty('payScale');
     }
 
     /**
@@ -119,7 +115,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setPayScale(PayScale $payScale = null)
     {
-        $this->setProperty("payScale", $payScale);
+        $this->setProperty('payScale', $payScale);
     }
 
     /**
@@ -127,7 +123,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getPayScaleGrade()
     {
-        return $this->getProperty("payScaleGrade");
+        return $this->getProperty('payScaleGrade');
     }
 
     /**
@@ -135,7 +131,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setPayScaleGrade(PayScaleGrade $payScaleGrade = null)
     {
-        $this->setProperty("payScaleGrade", $payScaleGrade);
+        $this->setProperty('payScaleGrade', $payScaleGrade);
     }
 
     /**
@@ -143,7 +139,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getPayScaleSpinalPoint()
     {
-        return $this->getProperty("payScaleSpinalPoint");
+        return $this->getProperty('payScaleSpinalPoint');
     }
 
     /**
@@ -151,7 +147,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setPayScaleSpinalPoint(PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
-        $this->setProperty("payScaleSpinalPoint", $payScaleSpinalPoint);
+        $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
 
     /**
@@ -159,7 +155,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getHoursPerWeek()
     {
-        return $this->getProperty("hoursPerWeek");
+        return $this->getProperty('hoursPerWeek');
     }
 
     /**
@@ -167,7 +163,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setHoursPerWeek($hoursPerWeek = null)
     {
-        $this->setProperty("hoursPerWeek", $hoursPerWeek);
+        $this->setProperty('hoursPerWeek', $hoursPerWeek);
     }
 
     /**
@@ -175,7 +171,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getWeeksPerYear()
     {
-        return $this->getProperty("weeksPerYear");
+        return $this->getProperty('weeksPerYear');
     }
 
     /**
@@ -183,7 +179,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setWeeksPerYear($weeksPerYear = null)
     {
-        $this->setProperty("weeksPerYear", $weeksPerYear);
+        $this->setProperty('weeksPerYear', $weeksPerYear);
     }
 
     /**
@@ -191,7 +187,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getFteHoursPerWeek()
     {
-        return $this->getProperty("fteHoursPerWeek");
+        return $this->getProperty('fteHoursPerWeek');
     }
 
     /**
@@ -199,7 +195,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setFteHoursPerWeek($fteHoursPerWeek = null)
     {
-        $this->setProperty("fteHoursPerWeek", $fteHoursPerWeek);
+        $this->setProperty('fteHoursPerWeek', $fteHoursPerWeek);
     }
 
     /**
@@ -207,7 +203,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getFteWeeksPerYear()
     {
-        return $this->getProperty("fteWeeksPerYear");
+        return $this->getProperty('fteWeeksPerYear');
     }
 
     /**
@@ -215,7 +211,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setFteWeeksPerYear($fteWeeksPerYear = null)
     {
-        $this->setProperty("fteWeeksPerYear", $fteWeeksPerYear);
+        $this->setProperty('fteWeeksPerYear', $fteWeeksPerYear);
     }
 
     /**
@@ -223,7 +219,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -231,7 +227,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -239,7 +235,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -247,7 +243,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -255,7 +251,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getSafeguardedPeriodStartDate()
     {
-        return $this->getProperty("safeguardedPeriodStartDate");
+        return $this->getProperty('safeguardedPeriodStartDate');
     }
 
     /**
@@ -263,7 +259,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setSafeguardedPeriodStartDate(\DateTime $safeguardedPeriodStartDate = null)
     {
-        $this->setProperty("safeguardedPeriodStartDate", $safeguardedPeriodStartDate);
+        $this->setProperty('safeguardedPeriodStartDate', $safeguardedPeriodStartDate);
     }
 
     /**
@@ -271,7 +267,7 @@ class StaffContractPostSalary extends ModelBase
      */
     public function getSafeguardedPeriodEndDate()
     {
-        return $this->getProperty("safeguardedPeriodEndDate");
+        return $this->getProperty('safeguardedPeriodEndDate');
     }
 
     /**
@@ -279,6 +275,6 @@ class StaffContractPostSalary extends ModelBase
      */
     public function setSafeguardedPeriodEndDate(\DateTime $safeguardedPeriodEndDate = null)
     {
-        $this->setProperty("safeguardedPeriodEndDate", $safeguardedPeriodEndDate);
+        $this->setProperty('safeguardedPeriodEndDate', $safeguardedPeriodEndDate);
     }
 }

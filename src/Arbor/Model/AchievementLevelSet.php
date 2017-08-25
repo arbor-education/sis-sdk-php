@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Curriculum;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AchievementLevelSet extends ModelBase
 {
@@ -24,34 +19,38 @@ class AchievementLevelSet extends ModelBase
     protected $_resourceType = ResourceType::ACHIEVEMENT_LEVEL_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AchievementLevelSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AchievementLevelSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACHIEVEMENT_LEVEL_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AchievementLevelSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACHIEVEMENT_LEVEL_SET, $id);
     }
 
@@ -60,7 +59,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -68,7 +67,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -76,7 +75,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -84,7 +83,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -92,7 +91,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function getAchievedThreshold()
     {
-        return $this->getProperty("achievedThreshold");
+        return $this->getProperty('achievedThreshold');
     }
 
     /**
@@ -100,7 +99,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function setAchievedThreshold($achievedThreshold = null)
     {
-        $this->setProperty("achievedThreshold", $achievedThreshold);
+        $this->setProperty('achievedThreshold', $achievedThreshold);
     }
 
     /**
@@ -108,7 +107,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function getType()
     {
-        return $this->getProperty("type");
+        return $this->getProperty('type');
     }
 
     /**
@@ -116,7 +115,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function setType($type = null)
     {
-        $this->setProperty("type", $type);
+        $this->setProperty('type', $type);
     }
 
     /**
@@ -124,7 +123,7 @@ class AchievementLevelSet extends ModelBase
      */
     public function getCurriculum()
     {
-        return $this->getProperty("curriculum");
+        return $this->getProperty('curriculum');
     }
 
     /**
@@ -132,6 +131,6 @@ class AchievementLevelSet extends ModelBase
      */
     public function setCurriculum(Curriculum $curriculum = null)
     {
-        $this->setProperty("curriculum", $curriculum);
+        $this->setProperty('curriculum', $curriculum);
     }
 }

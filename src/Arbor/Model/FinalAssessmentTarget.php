@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Assessment;
-use \Arbor\Model\Grade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class FinalAssessmentTarget extends ModelBase
 {
@@ -30,34 +23,38 @@ class FinalAssessmentTarget extends ModelBase
     protected $_resourceType = ResourceType::FINAL_ASSESSMENT_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return FinalAssessmentTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("FinalAssessmentTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::FINAL_ASSESSMENT_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return FinalAssessmentTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::FINAL_ASSESSMENT_TARGET, $id);
     }
 
@@ -66,7 +63,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -74,7 +71,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -82,7 +79,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -90,7 +87,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setAssessment(Assessment $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -98,7 +95,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getGrade()
     {
-        return $this->getProperty("grade");
+        return $this->getProperty('grade');
     }
 
     /**
@@ -106,7 +103,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setGrade(Grade $grade = null)
     {
-        $this->setProperty("grade", $grade);
+        $this->setProperty('grade', $grade);
     }
 
     /**
@@ -114,7 +111,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getLowerGradePointScaleValue()
     {
-        return $this->getProperty("lowerGradePointScaleValue");
+        return $this->getProperty('lowerGradePointScaleValue');
     }
 
     /**
@@ -122,7 +119,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
     {
-        $this->setProperty("lowerGradePointScaleValue", $lowerGradePointScaleValue);
+        $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
 
     /**
@@ -130,7 +127,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getUpperGradePointScaleValue()
     {
-        return $this->getProperty("upperGradePointScaleValue");
+        return $this->getProperty('upperGradePointScaleValue');
     }
 
     /**
@@ -138,7 +135,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
     {
-        $this->setProperty("upperGradePointScaleValue", $upperGradePointScaleValue);
+        $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
 
     /**
@@ -146,7 +143,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getStatisticalGradePointScaleValue()
     {
-        return $this->getProperty("statisticalGradePointScaleValue");
+        return $this->getProperty('statisticalGradePointScaleValue');
     }
 
     /**
@@ -154,7 +151,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
     {
-        $this->setProperty("statisticalGradePointScaleValue", $statisticalGradePointScaleValue);
+        $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
 
     /**
@@ -162,7 +159,7 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function getLocked()
     {
-        return $this->getProperty("locked");
+        return $this->getProperty('locked');
     }
 
     /**
@@ -170,6 +167,6 @@ class FinalAssessmentTarget extends ModelBase
      */
     public function setLocked($locked = null)
     {
-        $this->setProperty("locked", $locked);
+        $this->setProperty('locked', $locked);
     }
 }

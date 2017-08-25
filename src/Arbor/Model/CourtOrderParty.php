@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CourtOrder;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CourtOrderParty extends ModelBase
 {
@@ -18,34 +13,38 @@ class CourtOrderParty extends ModelBase
     protected $_resourceType = ResourceType::COURT_ORDER_PARTY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CourtOrderParty[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CourtOrderParty");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COURT_ORDER_PARTY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CourtOrderParty
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COURT_ORDER_PARTY, $id);
     }
 
@@ -54,7 +53,7 @@ class CourtOrderParty extends ModelBase
      */
     public function getCourtOrder()
     {
-        return $this->getProperty("courtOrder");
+        return $this->getProperty('courtOrder');
     }
 
     /**
@@ -62,7 +61,7 @@ class CourtOrderParty extends ModelBase
      */
     public function setCourtOrder(CourtOrder $courtOrder = null)
     {
-        $this->setProperty("courtOrder", $courtOrder);
+        $this->setProperty('courtOrder', $courtOrder);
     }
 
     /**
@@ -70,7 +69,7 @@ class CourtOrderParty extends ModelBase
      */
     public function getParty()
     {
-        return $this->getProperty("party");
+        return $this->getProperty('party');
     }
 
     /**
@@ -78,6 +77,6 @@ class CourtOrderParty extends ModelBase
      */
     public function setParty(ModelBase $party = null)
     {
-        $this->setProperty("party", $party);
+        $this->setProperty('party', $party);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\DataCheckError;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DataCheckErrorRelatedEntity extends ModelBase
 {
@@ -18,34 +13,38 @@ class DataCheckErrorRelatedEntity extends ModelBase
     protected $_resourceType = ResourceType::DATA_CHECK_ERROR_RELATED_ENTITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DataCheckErrorRelatedEntity[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DataCheckErrorRelatedEntity");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DATA_CHECK_ERROR_RELATED_ENTITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DataCheckErrorRelatedEntity
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DATA_CHECK_ERROR_RELATED_ENTITY, $id);
     }
 
@@ -54,7 +53,7 @@ class DataCheckErrorRelatedEntity extends ModelBase
      */
     public function getDataCheckError()
     {
-        return $this->getProperty("dataCheckError");
+        return $this->getProperty('dataCheckError');
     }
 
     /**
@@ -62,7 +61,7 @@ class DataCheckErrorRelatedEntity extends ModelBase
      */
     public function setDataCheckError(DataCheckError $dataCheckError = null)
     {
-        $this->setProperty("dataCheckError", $dataCheckError);
+        $this->setProperty('dataCheckError', $dataCheckError);
     }
 
     /**
@@ -70,7 +69,7 @@ class DataCheckErrorRelatedEntity extends ModelBase
      */
     public function getRelatedEntity()
     {
-        return $this->getProperty("relatedEntity");
+        return $this->getProperty('relatedEntity');
     }
 
     /**
@@ -78,6 +77,6 @@ class DataCheckErrorRelatedEntity extends ModelBase
      */
     public function setRelatedEntity(ModelBase $relatedEntity = null)
     {
-        $this->setProperty("relatedEntity", $relatedEntity);
+        $this->setProperty('relatedEntity', $relatedEntity);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MedicalConditionType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MedicalCondition extends ModelBase
 {
@@ -30,34 +25,38 @@ class MedicalCondition extends ModelBase
     protected $_resourceType = ResourceType::MEDICAL_CONDITION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MedicalCondition[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MedicalCondition");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEDICAL_CONDITION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MedicalCondition
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEDICAL_CONDITION, $id);
     }
 
@@ -66,7 +65,7 @@ class MedicalCondition extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -74,7 +73,7 @@ class MedicalCondition extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -82,7 +81,7 @@ class MedicalCondition extends ModelBase
      */
     public function getMedicalConditionType()
     {
-        return $this->getProperty("medicalConditionType");
+        return $this->getProperty('medicalConditionType');
     }
 
     /**
@@ -90,7 +89,7 @@ class MedicalCondition extends ModelBase
      */
     public function setMedicalConditionType(MedicalConditionType $medicalConditionType = null)
     {
-        $this->setProperty("medicalConditionType", $medicalConditionType);
+        $this->setProperty('medicalConditionType', $medicalConditionType);
     }
 
     /**
@@ -98,7 +97,7 @@ class MedicalCondition extends ModelBase
      */
     public function getMedicalConditionName()
     {
-        return $this->getProperty("medicalConditionName");
+        return $this->getProperty('medicalConditionName');
     }
 
     /**
@@ -106,7 +105,7 @@ class MedicalCondition extends ModelBase
      */
     public function setMedicalConditionName($medicalConditionName = null)
     {
-        $this->setProperty("medicalConditionName", $medicalConditionName);
+        $this->setProperty('medicalConditionName', $medicalConditionName);
     }
 
     /**
@@ -114,7 +113,7 @@ class MedicalCondition extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -122,7 +121,7 @@ class MedicalCondition extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -130,7 +129,7 @@ class MedicalCondition extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -138,7 +137,7 @@ class MedicalCondition extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -146,7 +145,7 @@ class MedicalCondition extends ModelBase
      */
     public function getSeverity()
     {
-        return $this->getProperty("severity");
+        return $this->getProperty('severity');
     }
 
     /**
@@ -154,7 +153,7 @@ class MedicalCondition extends ModelBase
      */
     public function setSeverity($severity = null)
     {
-        $this->setProperty("severity", $severity);
+        $this->setProperty('severity', $severity);
     }
 
     /**
@@ -162,7 +161,7 @@ class MedicalCondition extends ModelBase
      */
     public function getSymptoms()
     {
-        return $this->getProperty("symptoms");
+        return $this->getProperty('symptoms');
     }
 
     /**
@@ -170,7 +169,7 @@ class MedicalCondition extends ModelBase
      */
     public function setSymptoms($symptoms = null)
     {
-        $this->setProperty("symptoms", $symptoms);
+        $this->setProperty('symptoms', $symptoms);
     }
 
     /**
@@ -178,7 +177,7 @@ class MedicalCondition extends ModelBase
      */
     public function getTreatment()
     {
-        return $this->getProperty("treatment");
+        return $this->getProperty('treatment');
     }
 
     /**
@@ -186,6 +185,6 @@ class MedicalCondition extends ModelBase
      */
     public function setTreatment($treatment = null)
     {
-        $this->setProperty("treatment", $treatment);
+        $this->setProperty('treatment', $treatment);
     }
 }

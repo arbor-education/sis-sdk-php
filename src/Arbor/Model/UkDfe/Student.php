@@ -1,13 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LocalAuthority;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\LocalAuthority;
 
 class Student extends ModelBase
 {
@@ -27,37 +27,45 @@ class Student extends ModelBase
 
     const ETHNICITY_SOURCE = 'ethnicitySource';
 
+    const EXTENDED_HOURS = 'extendedHours';
+
+    const THIRTY_HOUR_CODE = 'thirtyHourCode';
+
     protected $_resourceType = ResourceType::UK_DFE_STUDENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Student[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_Student");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_STUDENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Student
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_STUDENT, $id);
     }
 
@@ -66,7 +74,7 @@ class Student extends ModelBase
      */
     public function getUniqueLearnerNumber()
     {
-        return $this->getProperty("uniqueLearnerNumber");
+        return $this->getProperty('uniqueLearnerNumber');
     }
 
     /**
@@ -74,7 +82,7 @@ class Student extends ModelBase
      */
     public function setUniqueLearnerNumber($uniqueLearnerNumber = null)
     {
-        $this->setProperty("uniqueLearnerNumber", $uniqueLearnerNumber);
+        $this->setProperty('uniqueLearnerNumber', $uniqueLearnerNumber);
     }
 
     /**
@@ -82,7 +90,7 @@ class Student extends ModelBase
      */
     public function getResponsibleLocalAuthority()
     {
-        return $this->getProperty("responsibleLocalAuthority");
+        return $this->getProperty('responsibleLocalAuthority');
     }
 
     /**
@@ -90,7 +98,7 @@ class Student extends ModelBase
      */
     public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
     {
-        $this->setProperty("responsibleLocalAuthority", $responsibleLocalAuthority);
+        $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
 
     /**
@@ -98,7 +106,7 @@ class Student extends ModelBase
      */
     public function getHomeLocalAuthority()
     {
-        return $this->getProperty("homeLocalAuthority");
+        return $this->getProperty('homeLocalAuthority');
     }
 
     /**
@@ -106,7 +114,7 @@ class Student extends ModelBase
      */
     public function setHomeLocalAuthority(LocalAuthority $homeLocalAuthority = null)
     {
-        $this->setProperty("homeLocalAuthority", $homeLocalAuthority);
+        $this->setProperty('homeLocalAuthority', $homeLocalAuthority);
     }
 
     /**
@@ -114,7 +122,7 @@ class Student extends ModelBase
      */
     public function getTravellerStatus()
     {
-        return $this->getProperty("travellerStatus");
+        return $this->getProperty('travellerStatus');
     }
 
     /**
@@ -122,7 +130,7 @@ class Student extends ModelBase
      */
     public function setTravellerStatus($travellerStatus = null)
     {
-        $this->setProperty("travellerStatus", $travellerStatus);
+        $this->setProperty('travellerStatus', $travellerStatus);
     }
 
     /**
@@ -130,7 +138,7 @@ class Student extends ModelBase
      */
     public function getYouthSupportServicesAgreement()
     {
-        return $this->getProperty("youthSupportServicesAgreement");
+        return $this->getProperty('youthSupportServicesAgreement');
     }
 
     /**
@@ -138,7 +146,7 @@ class Student extends ModelBase
      */
     public function setYouthSupportServicesAgreement($youthSupportServicesAgreement = null)
     {
-        $this->setProperty("youthSupportServicesAgreement", $youthSupportServicesAgreement);
+        $this->setProperty('youthSupportServicesAgreement', $youthSupportServicesAgreement);
     }
 
     /**
@@ -146,7 +154,7 @@ class Student extends ModelBase
      */
     public function getHoursAtSetting()
     {
-        return $this->getProperty("hoursAtSetting");
+        return $this->getProperty('hoursAtSetting');
     }
 
     /**
@@ -154,7 +162,7 @@ class Student extends ModelBase
      */
     public function setHoursAtSetting($hoursAtSetting = null)
     {
-        $this->setProperty("hoursAtSetting", $hoursAtSetting);
+        $this->setProperty('hoursAtSetting', $hoursAtSetting);
     }
 
     /**
@@ -162,7 +170,7 @@ class Student extends ModelBase
      */
     public function getFundedHours()
     {
-        return $this->getProperty("fundedHours");
+        return $this->getProperty('fundedHours');
     }
 
     /**
@@ -170,7 +178,7 @@ class Student extends ModelBase
      */
     public function setFundedHours($fundedHours = null)
     {
-        $this->setProperty("fundedHours", $fundedHours);
+        $this->setProperty('fundedHours', $fundedHours);
     }
 
     /**
@@ -178,7 +186,7 @@ class Student extends ModelBase
      */
     public function getEthnicitySource()
     {
-        return $this->getProperty("ethnicitySource");
+        return $this->getProperty('ethnicitySource');
     }
 
     /**
@@ -186,6 +194,38 @@ class Student extends ModelBase
      */
     public function setEthnicitySource($ethnicitySource = null)
     {
-        $this->setProperty("ethnicitySource", $ethnicitySource);
+        $this->setProperty('ethnicitySource', $ethnicitySource);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExtendedHours()
+    {
+        return $this->getProperty('extendedHours');
+    }
+
+    /**
+     * @param string $extendedHours
+     */
+    public function setExtendedHours($extendedHours = null)
+    {
+        $this->setProperty('extendedHours', $extendedHours);
+    }
+
+    /**
+     * @return string
+     */
+    public function getThirtyHourCode()
+    {
+        return $this->getProperty('thirtyHourCode');
+    }
+
+    /**
+     * @param string $thirtyHourCode
+     */
+    public function setThirtyHourCode($thirtyHourCode = null)
+    {
+        $this->setProperty('thirtyHourCode', $thirtyHourCode);
     }
 }

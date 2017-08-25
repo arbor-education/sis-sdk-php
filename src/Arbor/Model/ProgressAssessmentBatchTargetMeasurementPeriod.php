@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ProgressAssessmentBatchTarget;
-use \Arbor\Model\ProgressMeasurementPeriod;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
 {
@@ -25,34 +19,38 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ProgressAssessmentBatchTargetMeasurementPeriod[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ProgressAssessmentBatchTargetMeasurementPeriod");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ProgressAssessmentBatchTargetMeasurementPeriod
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD, $id);
     }
 
@@ -61,7 +59,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function getProgressAssessmentBatchTarget()
     {
-        return $this->getProperty("progressAssessmentBatchTarget");
+        return $this->getProperty('progressAssessmentBatchTarget');
     }
 
     /**
@@ -69,7 +67,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function setProgressAssessmentBatchTarget(ProgressAssessmentBatchTarget $progressAssessmentBatchTarget = null)
     {
-        $this->setProperty("progressAssessmentBatchTarget", $progressAssessmentBatchTarget);
+        $this->setProperty('progressAssessmentBatchTarget', $progressAssessmentBatchTarget);
     }
 
     /**
@@ -77,7 +75,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function getProgressMeasurementPeriod()
     {
-        return $this->getProperty("progressMeasurementPeriod");
+        return $this->getProperty('progressMeasurementPeriod');
     }
 
     /**
@@ -85,7 +83,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
-        $this->setProperty("progressMeasurementPeriod", $progressMeasurementPeriod);
+        $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
 
     /**
@@ -93,7 +91,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function getMarkingStartedDatetime()
     {
-        return $this->getProperty("markingStartedDatetime");
+        return $this->getProperty('markingStartedDatetime');
     }
 
     /**
@@ -101,7 +99,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function setMarkingStartedDatetime(\DateTime $markingStartedDatetime = null)
     {
-        $this->setProperty("markingStartedDatetime", $markingStartedDatetime);
+        $this->setProperty('markingStartedDatetime', $markingStartedDatetime);
     }
 
     /**
@@ -109,7 +107,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function getMarkingCompletedDatetime()
     {
-        return $this->getProperty("markingCompletedDatetime");
+        return $this->getProperty('markingCompletedDatetime');
     }
 
     /**
@@ -117,7 +115,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
     {
-        $this->setProperty("markingCompletedDatetime", $markingCompletedDatetime);
+        $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
 
     /**
@@ -125,7 +123,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function getMarkingFinalizedDatetime()
     {
-        return $this->getProperty("markingFinalizedDatetime");
+        return $this->getProperty('markingFinalizedDatetime');
     }
 
     /**
@@ -133,6 +131,6 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      */
     public function setMarkingFinalizedDatetime(\DateTime $markingFinalizedDatetime = null)
     {
-        $this->setProperty("markingFinalizedDatetime", $markingFinalizedDatetime);
+        $this->setProperty('markingFinalizedDatetime', $markingFinalizedDatetime);
     }
 }

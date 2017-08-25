@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Country;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PostalAddress extends ModelBase
 {
@@ -34,34 +29,38 @@ class PostalAddress extends ModelBase
     protected $_resourceType = ResourceType::POSTAL_ADDRESS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PostalAddress[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PostalAddress");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::POSTAL_ADDRESS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PostalAddress
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::POSTAL_ADDRESS, $id);
     }
 
@@ -70,7 +69,7 @@ class PostalAddress extends ModelBase
      */
     public function getAddress1()
     {
-        return $this->getProperty("address1");
+        return $this->getProperty('address1');
     }
 
     /**
@@ -78,7 +77,7 @@ class PostalAddress extends ModelBase
      */
     public function setAddress1($address1 = null)
     {
-        $this->setProperty("address1", $address1);
+        $this->setProperty('address1', $address1);
     }
 
     /**
@@ -86,7 +85,7 @@ class PostalAddress extends ModelBase
      */
     public function getAddress2()
     {
-        return $this->getProperty("address2");
+        return $this->getProperty('address2');
     }
 
     /**
@@ -94,7 +93,7 @@ class PostalAddress extends ModelBase
      */
     public function setAddress2($address2 = null)
     {
-        $this->setProperty("address2", $address2);
+        $this->setProperty('address2', $address2);
     }
 
     /**
@@ -102,7 +101,7 @@ class PostalAddress extends ModelBase
      */
     public function getAddress3()
     {
-        return $this->getProperty("address3");
+        return $this->getProperty('address3');
     }
 
     /**
@@ -110,7 +109,7 @@ class PostalAddress extends ModelBase
      */
     public function setAddress3($address3 = null)
     {
-        $this->setProperty("address3", $address3);
+        $this->setProperty('address3', $address3);
     }
 
     /**
@@ -118,7 +117,7 @@ class PostalAddress extends ModelBase
      */
     public function getPostalTown()
     {
-        return $this->getProperty("postalTown");
+        return $this->getProperty('postalTown');
     }
 
     /**
@@ -126,7 +125,7 @@ class PostalAddress extends ModelBase
      */
     public function setPostalTown($postalTown = null)
     {
-        $this->setProperty("postalTown", $postalTown);
+        $this->setProperty('postalTown', $postalTown);
     }
 
     /**
@@ -134,7 +133,7 @@ class PostalAddress extends ModelBase
      */
     public function getPostalState()
     {
-        return $this->getProperty("postalState");
+        return $this->getProperty('postalState');
     }
 
     /**
@@ -142,7 +141,7 @@ class PostalAddress extends ModelBase
      */
     public function setPostalState($postalState = null)
     {
-        $this->setProperty("postalState", $postalState);
+        $this->setProperty('postalState', $postalState);
     }
 
     /**
@@ -150,7 +149,7 @@ class PostalAddress extends ModelBase
      */
     public function getPostalCode()
     {
-        return $this->getProperty("postalCode");
+        return $this->getProperty('postalCode');
     }
 
     /**
@@ -158,7 +157,7 @@ class PostalAddress extends ModelBase
      */
     public function setPostalCode($postalCode = null)
     {
-        $this->setProperty("postalCode", $postalCode);
+        $this->setProperty('postalCode', $postalCode);
     }
 
     /**
@@ -166,7 +165,7 @@ class PostalAddress extends ModelBase
      */
     public function getCountry()
     {
-        return $this->getProperty("country");
+        return $this->getProperty('country');
     }
 
     /**
@@ -174,7 +173,7 @@ class PostalAddress extends ModelBase
      */
     public function setCountry(Country $country = null)
     {
-        $this->setProperty("country", $country);
+        $this->setProperty('country', $country);
     }
 
     /**
@@ -182,7 +181,7 @@ class PostalAddress extends ModelBase
      */
     public function getLat()
     {
-        return $this->getProperty("lat");
+        return $this->getProperty('lat');
     }
 
     /**
@@ -190,7 +189,7 @@ class PostalAddress extends ModelBase
      */
     public function setLat($lat = null)
     {
-        $this->setProperty("lat", $lat);
+        $this->setProperty('lat', $lat);
     }
 
     /**
@@ -198,7 +197,7 @@ class PostalAddress extends ModelBase
      */
     public function getLng()
     {
-        return $this->getProperty("lng");
+        return $this->getProperty('lng');
     }
 
     /**
@@ -206,7 +205,7 @@ class PostalAddress extends ModelBase
      */
     public function setLng($lng = null)
     {
-        $this->setProperty("lng", $lng);
+        $this->setProperty('lng', $lng);
     }
 
     /**
@@ -214,7 +213,7 @@ class PostalAddress extends ModelBase
      */
     public function getGeocodeType()
     {
-        return $this->getProperty("geocodeType");
+        return $this->getProperty('geocodeType');
     }
 
     /**
@@ -222,6 +221,6 @@ class PostalAddress extends ModelBase
      */
     public function setGeocodeType($geocodeType = null)
     {
-        $this->setProperty("geocodeType", $geocodeType);
+        $this->setProperty('geocodeType', $geocodeType);
     }
 }

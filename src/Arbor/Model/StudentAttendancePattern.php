@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\Student;
-use \Arbor\Model\AttendancePattern;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentAttendancePattern extends ModelBase
 {
@@ -26,34 +19,38 @@ class StudentAttendancePattern extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_ATTENDANCE_PATTERN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentAttendancePattern[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentAttendancePattern");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_ATTENDANCE_PATTERN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentAttendancePattern
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_ATTENDANCE_PATTERN, $id);
     }
 
@@ -62,7 +59,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -70,7 +67,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -78,7 +75,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -86,7 +83,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -94,7 +91,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function getAttendancePattern()
     {
-        return $this->getProperty("attendancePattern");
+        return $this->getProperty('attendancePattern');
     }
 
     /**
@@ -102,7 +99,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function setAttendancePattern(AttendancePattern $attendancePattern = null)
     {
-        $this->setProperty("attendancePattern", $attendancePattern);
+        $this->setProperty('attendancePattern', $attendancePattern);
     }
 
     /**
@@ -110,7 +107,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -118,7 +115,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -126,7 +123,7 @@ class StudentAttendancePattern extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -134,6 +131,6 @@ class StudentAttendancePattern extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

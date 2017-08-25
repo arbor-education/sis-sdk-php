@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Meal;
-use \Arbor\Model\Room;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealSitting extends ModelBase
 {
@@ -19,8 +12,6 @@ class MealSitting extends ModelBase
 
     const ROOM = 'room';
 
-    const ACADEMIC_YEAR = 'academicYear';
-
     const EFFECTIVE_DATE = 'effectiveDate';
 
     const END_DATE = 'endDate';
@@ -28,34 +19,38 @@ class MealSitting extends ModelBase
     protected $_resourceType = ResourceType::MEAL_SITTING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealSitting[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealSitting");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_SITTING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealSitting
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_SITTING, $id);
     }
 
@@ -64,7 +59,7 @@ class MealSitting extends ModelBase
      */
     public function getMeal()
     {
-        return $this->getProperty("meal");
+        return $this->getProperty('meal');
     }
 
     /**
@@ -72,7 +67,7 @@ class MealSitting extends ModelBase
      */
     public function setMeal(Meal $meal = null)
     {
-        $this->setProperty("meal", $meal);
+        $this->setProperty('meal', $meal);
     }
 
     /**
@@ -80,7 +75,7 @@ class MealSitting extends ModelBase
      */
     public function getMealSittingName()
     {
-        return $this->getProperty("mealSittingName");
+        return $this->getProperty('mealSittingName');
     }
 
     /**
@@ -88,7 +83,7 @@ class MealSitting extends ModelBase
      */
     public function setMealSittingName($mealSittingName = null)
     {
-        $this->setProperty("mealSittingName", $mealSittingName);
+        $this->setProperty('mealSittingName', $mealSittingName);
     }
 
     /**
@@ -96,7 +91,7 @@ class MealSitting extends ModelBase
      */
     public function getRoom()
     {
-        return $this->getProperty("room");
+        return $this->getProperty('room');
     }
 
     /**
@@ -104,23 +99,7 @@ class MealSitting extends ModelBase
      */
     public function setRoom(Room $room = null)
     {
-        $this->setProperty("room", $room);
-    }
-
-    /**
-     * @return AcademicYear
-     */
-    public function getAcademicYear()
-    {
-        return $this->getProperty("academicYear");
-    }
-
-    /**
-     * @param AcademicYear $academicYear
-     */
-    public function setAcademicYear(AcademicYear $academicYear = null)
-    {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('room', $room);
     }
 
     /**
@@ -128,7 +107,7 @@ class MealSitting extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -136,7 +115,7 @@ class MealSitting extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -144,7 +123,7 @@ class MealSitting extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -152,6 +131,6 @@ class MealSitting extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

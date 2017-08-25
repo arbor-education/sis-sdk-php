@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\StudentLinkedRelationshipType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentLinkedRelationship extends ModelBase
 {
@@ -25,34 +19,38 @@ class StudentLinkedRelationship extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_LINKED_RELATIONSHIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentLinkedRelationship[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentLinkedRelationship");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_LINKED_RELATIONSHIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentLinkedRelationship
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_LINKED_RELATIONSHIP, $id);
     }
 
@@ -61,7 +59,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -69,7 +67,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -77,7 +75,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function getLinkedObject()
     {
-        return $this->getProperty("linkedObject");
+        return $this->getProperty('linkedObject');
     }
 
     /**
@@ -85,7 +83,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function setLinkedObject(ModelBase $linkedObject = null)
     {
-        $this->setProperty("linkedObject", $linkedObject);
+        $this->setProperty('linkedObject', $linkedObject);
     }
 
     /**
@@ -93,7 +91,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function getStudentLinkedRelationshipType()
     {
-        return $this->getProperty("studentLinkedRelationshipType");
+        return $this->getProperty('studentLinkedRelationshipType');
     }
 
     /**
@@ -101,7 +99,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function setStudentLinkedRelationshipType(StudentLinkedRelationshipType $studentLinkedRelationshipType = null)
     {
-        $this->setProperty("studentLinkedRelationshipType", $studentLinkedRelationshipType);
+        $this->setProperty('studentLinkedRelationshipType', $studentLinkedRelationshipType);
     }
 
     /**
@@ -109,7 +107,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -117,7 +115,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -125,7 +123,7 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -133,6 +131,6 @@ class StudentLinkedRelationship extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

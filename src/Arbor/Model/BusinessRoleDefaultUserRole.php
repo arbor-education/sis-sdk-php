@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BusinessRole;
-use \Arbor\Model\UserRole;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BusinessRoleDefaultUserRole extends ModelBase
 {
@@ -19,34 +13,38 @@ class BusinessRoleDefaultUserRole extends ModelBase
     protected $_resourceType = ResourceType::BUSINESS_ROLE_DEFAULT_USER_ROLE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BusinessRoleDefaultUserRole[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BusinessRoleDefaultUserRole");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BUSINESS_ROLE_DEFAULT_USER_ROLE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BusinessRoleDefaultUserRole
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BUSINESS_ROLE_DEFAULT_USER_ROLE, $id);
     }
 
@@ -55,7 +53,7 @@ class BusinessRoleDefaultUserRole extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -63,7 +61,7 @@ class BusinessRoleDefaultUserRole extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 
     /**
@@ -71,7 +69,7 @@ class BusinessRoleDefaultUserRole extends ModelBase
      */
     public function getUserRole()
     {
-        return $this->getProperty("userRole");
+        return $this->getProperty('userRole');
     }
 
     /**
@@ -79,6 +77,6 @@ class BusinessRoleDefaultUserRole extends ModelBase
      */
     public function setUserRole(UserRole $userRole = null)
     {
-        $this->setProperty("userRole", $userRole);
+        $this->setProperty('userRole', $userRole);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AttendancePattern;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendancePatternPeriod extends ModelBase
 {
@@ -22,34 +17,38 @@ class AttendancePatternPeriod extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_PATTERN_PERIOD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendancePatternPeriod[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendancePatternPeriod");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_PATTERN_PERIOD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendancePatternPeriod
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_PATTERN_PERIOD, $id);
     }
 
@@ -58,7 +57,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function getAttendancePattern()
     {
-        return $this->getProperty("attendancePattern");
+        return $this->getProperty('attendancePattern');
     }
 
     /**
@@ -66,7 +65,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function setAttendancePattern(AttendancePattern $attendancePattern = null)
     {
-        $this->setProperty("attendancePattern", $attendancePattern);
+        $this->setProperty('attendancePattern', $attendancePattern);
     }
 
     /**
@@ -74,7 +73,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function getDayOfCycle()
     {
-        return $this->getProperty("dayOfCycle");
+        return $this->getProperty('dayOfCycle');
     }
 
     /**
@@ -82,7 +81,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function setDayOfCycle($dayOfCycle = null)
     {
-        $this->setProperty("dayOfCycle", $dayOfCycle);
+        $this->setProperty('dayOfCycle', $dayOfCycle);
     }
 
     /**
@@ -90,7 +89,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function getStartTime()
     {
-        return $this->getProperty("startTime");
+        return $this->getProperty('startTime');
     }
 
     /**
@@ -98,7 +97,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function setStartTime($startTime = null)
     {
-        $this->setProperty("startTime", $startTime);
+        $this->setProperty('startTime', $startTime);
     }
 
     /**
@@ -106,7 +105,7 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function getEndTime()
     {
-        return $this->getProperty("endTime");
+        return $this->getProperty('endTime');
     }
 
     /**
@@ -114,6 +113,6 @@ class AttendancePatternPeriod extends ModelBase
      */
     public function setEndTime($endTime = null)
     {
-        $this->setProperty("endTime", $endTime);
+        $this->setProperty('endTime', $endTime);
     }
 }

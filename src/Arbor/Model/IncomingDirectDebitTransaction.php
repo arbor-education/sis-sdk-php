@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\IncomingDirectDebitAgreement;
-use \Arbor\Model\PaymentProviderPayout;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IncomingDirectDebitTransaction extends ModelBase
 {
@@ -39,34 +33,38 @@ class IncomingDirectDebitTransaction extends ModelBase
     protected $_resourceType = ResourceType::INCOMING_DIRECT_DEBIT_TRANSACTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IncomingDirectDebitTransaction[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IncomingDirectDebitTransaction");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INCOMING_DIRECT_DEBIT_TRANSACTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IncomingDirectDebitTransaction
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INCOMING_DIRECT_DEBIT_TRANSACTION, $id);
     }
 
@@ -75,7 +73,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getIncomingDirectDebitAgreement()
     {
-        return $this->getProperty("incomingDirectDebitAgreement");
+        return $this->getProperty('incomingDirectDebitAgreement');
     }
 
     /**
@@ -83,7 +81,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setIncomingDirectDebitAgreement(IncomingDirectDebitAgreement $incomingDirectDebitAgreement = null)
     {
-        $this->setProperty("incomingDirectDebitAgreement", $incomingDirectDebitAgreement);
+        $this->setProperty('incomingDirectDebitAgreement', $incomingDirectDebitAgreement);
     }
 
     /**
@@ -91,7 +89,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getPaymentProviderPayout()
     {
-        return $this->getProperty("paymentProviderPayout");
+        return $this->getProperty('paymentProviderPayout');
     }
 
     /**
@@ -99,7 +97,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setPaymentProviderPayout(PaymentProviderPayout $paymentProviderPayout = null)
     {
-        $this->setProperty("paymentProviderPayout", $paymentProviderPayout);
+        $this->setProperty('paymentProviderPayout', $paymentProviderPayout);
     }
 
     /**
@@ -107,7 +105,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getPaymentProviderTransactionIdentifier()
     {
-        return $this->getProperty("paymentProviderTransactionIdentifier");
+        return $this->getProperty('paymentProviderTransactionIdentifier');
     }
 
     /**
@@ -115,7 +113,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setPaymentProviderTransactionIdentifier($paymentProviderTransactionIdentifier = null)
     {
-        $this->setProperty("paymentProviderTransactionIdentifier", $paymentProviderTransactionIdentifier);
+        $this->setProperty('paymentProviderTransactionIdentifier', $paymentProviderTransactionIdentifier);
     }
 
     /**
@@ -123,7 +121,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionNetAmount()
     {
-        return $this->getProperty("transactionNetAmount");
+        return $this->getProperty('transactionNetAmount');
     }
 
     /**
@@ -131,7 +129,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionNetAmount($transactionNetAmount = null)
     {
-        $this->setProperty("transactionNetAmount", $transactionNetAmount);
+        $this->setProperty('transactionNetAmount', $transactionNetAmount);
     }
 
     /**
@@ -139,7 +137,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionFee()
     {
-        return $this->getProperty("transactionFee");
+        return $this->getProperty('transactionFee');
     }
 
     /**
@@ -147,7 +145,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionFee($transactionFee = null)
     {
-        $this->setProperty("transactionFee", $transactionFee);
+        $this->setProperty('transactionFee', $transactionFee);
     }
 
     /**
@@ -155,7 +153,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionReference()
     {
-        return $this->getProperty("transactionReference");
+        return $this->getProperty('transactionReference');
     }
 
     /**
@@ -163,7 +161,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionReference($transactionReference = null)
     {
-        $this->setProperty("transactionReference", $transactionReference);
+        $this->setProperty('transactionReference', $transactionReference);
     }
 
     /**
@@ -171,7 +169,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionInitiatedDatetime()
     {
-        return $this->getProperty("transactionInitiatedDatetime");
+        return $this->getProperty('transactionInitiatedDatetime');
     }
 
     /**
@@ -179,7 +177,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionInitiatedDatetime(\DateTime $transactionInitiatedDatetime = null)
     {
-        $this->setProperty("transactionInitiatedDatetime", $transactionInitiatedDatetime);
+        $this->setProperty('transactionInitiatedDatetime', $transactionInitiatedDatetime);
     }
 
     /**
@@ -187,7 +185,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionSucceededDatetime()
     {
-        return $this->getProperty("transactionSucceededDatetime");
+        return $this->getProperty('transactionSucceededDatetime');
     }
 
     /**
@@ -195,7 +193,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionSucceededDatetime(\DateTime $transactionSucceededDatetime = null)
     {
-        $this->setProperty("transactionSucceededDatetime", $transactionSucceededDatetime);
+        $this->setProperty('transactionSucceededDatetime', $transactionSucceededDatetime);
     }
 
     /**
@@ -203,7 +201,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionFailedDatetime()
     {
-        return $this->getProperty("transactionFailedDatetime");
+        return $this->getProperty('transactionFailedDatetime');
     }
 
     /**
@@ -211,7 +209,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionFailedDatetime(\DateTime $transactionFailedDatetime = null)
     {
-        $this->setProperty("transactionFailedDatetime", $transactionFailedDatetime);
+        $this->setProperty('transactionFailedDatetime', $transactionFailedDatetime);
     }
 
     /**
@@ -219,7 +217,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getTransactionRefundedDatetime()
     {
-        return $this->getProperty("transactionRefundedDatetime");
+        return $this->getProperty('transactionRefundedDatetime');
     }
 
     /**
@@ -227,7 +225,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setTransactionRefundedDatetime(\DateTime $transactionRefundedDatetime = null)
     {
-        $this->setProperty("transactionRefundedDatetime", $transactionRefundedDatetime);
+        $this->setProperty('transactionRefundedDatetime', $transactionRefundedDatetime);
     }
 
     /**
@@ -235,7 +233,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getCancelledDatetime()
     {
-        return $this->getProperty("cancelledDatetime");
+        return $this->getProperty('cancelledDatetime');
     }
 
     /**
@@ -243,7 +241,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
     {
-        $this->setProperty("cancelledDatetime", $cancelledDatetime);
+        $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
 
     /**
@@ -251,7 +249,7 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function getCustomerNotificationDatetime()
     {
-        return $this->getProperty("customerNotificationDatetime");
+        return $this->getProperty('customerNotificationDatetime');
     }
 
     /**
@@ -259,6 +257,6 @@ class IncomingDirectDebitTransaction extends ModelBase
      */
     public function setCustomerNotificationDatetime(\DateTime $customerNotificationDatetime = null)
     {
-        $this->setProperty("customerNotificationDatetime", $customerNotificationDatetime);
+        $this->setProperty('customerNotificationDatetime', $customerNotificationDatetime);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BillPayer;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IncomingBankTransaction extends ModelBase
 {
@@ -22,34 +17,38 @@ class IncomingBankTransaction extends ModelBase
     protected $_resourceType = ResourceType::INCOMING_BANK_TRANSACTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IncomingBankTransaction[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IncomingBankTransaction");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INCOMING_BANK_TRANSACTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IncomingBankTransaction
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INCOMING_BANK_TRANSACTION, $id);
     }
 
@@ -58,7 +57,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function getBillPayer()
     {
-        return $this->getProperty("billPayer");
+        return $this->getProperty('billPayer');
     }
 
     /**
@@ -66,7 +65,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function setBillPayer(BillPayer $billPayer = null)
     {
-        $this->setProperty("billPayer", $billPayer);
+        $this->setProperty('billPayer', $billPayer);
     }
 
     /**
@@ -74,7 +73,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function getReceivedDate()
     {
-        return $this->getProperty("receivedDate");
+        return $this->getProperty('receivedDate');
     }
 
     /**
@@ -82,7 +81,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function setReceivedDate(\DateTime $receivedDate = null)
     {
-        $this->setProperty("receivedDate", $receivedDate);
+        $this->setProperty('receivedDate', $receivedDate);
     }
 
     /**
@@ -90,7 +89,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function getCancelledDate()
     {
-        return $this->getProperty("cancelledDate");
+        return $this->getProperty('cancelledDate');
     }
 
     /**
@@ -98,7 +97,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function setCancelledDate(\DateTime $cancelledDate = null)
     {
-        $this->setProperty("cancelledDate", $cancelledDate);
+        $this->setProperty('cancelledDate', $cancelledDate);
     }
 
     /**
@@ -106,7 +105,7 @@ class IncomingBankTransaction extends ModelBase
      */
     public function getPayment()
     {
-        return $this->getProperty("payment");
+        return $this->getProperty('payment');
     }
 
     /**
@@ -114,6 +113,6 @@ class IncomingBankTransaction extends ModelBase
      */
     public function setPayment($payment = null)
     {
-        $this->setProperty("payment", $payment);
+        $this->setProperty('payment', $payment);
     }
 }

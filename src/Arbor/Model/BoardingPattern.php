@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\BoardingStatus;
-use \Arbor\Model\Room;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BoardingPattern extends ModelBase
 {
@@ -38,34 +31,38 @@ class BoardingPattern extends ModelBase
     protected $_resourceType = ResourceType::BOARDING_PATTERN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BoardingPattern[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BoardingPattern");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BOARDING_PATTERN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BoardingPattern
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BOARDING_PATTERN, $id);
     }
 
@@ -74,7 +71,7 @@ class BoardingPattern extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -82,7 +79,7 @@ class BoardingPattern extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -90,7 +87,7 @@ class BoardingPattern extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -98,7 +95,7 @@ class BoardingPattern extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -106,7 +103,7 @@ class BoardingPattern extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -114,7 +111,7 @@ class BoardingPattern extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -122,7 +119,7 @@ class BoardingPattern extends ModelBase
      */
     public function getMondayBoardingStatus()
     {
-        return $this->getProperty("mondayBoardingStatus");
+        return $this->getProperty('mondayBoardingStatus');
     }
 
     /**
@@ -130,7 +127,7 @@ class BoardingPattern extends ModelBase
      */
     public function setMondayBoardingStatus(BoardingStatus $mondayBoardingStatus = null)
     {
-        $this->setProperty("mondayBoardingStatus", $mondayBoardingStatus);
+        $this->setProperty('mondayBoardingStatus', $mondayBoardingStatus);
     }
 
     /**
@@ -138,7 +135,7 @@ class BoardingPattern extends ModelBase
      */
     public function getTuesdayBoardingStatus()
     {
-        return $this->getProperty("tuesdayBoardingStatus");
+        return $this->getProperty('tuesdayBoardingStatus');
     }
 
     /**
@@ -146,7 +143,7 @@ class BoardingPattern extends ModelBase
      */
     public function setTuesdayBoardingStatus(BoardingStatus $tuesdayBoardingStatus = null)
     {
-        $this->setProperty("tuesdayBoardingStatus", $tuesdayBoardingStatus);
+        $this->setProperty('tuesdayBoardingStatus', $tuesdayBoardingStatus);
     }
 
     /**
@@ -154,7 +151,7 @@ class BoardingPattern extends ModelBase
      */
     public function getWednesdayBoardingStatus()
     {
-        return $this->getProperty("wednesdayBoardingStatus");
+        return $this->getProperty('wednesdayBoardingStatus');
     }
 
     /**
@@ -162,7 +159,7 @@ class BoardingPattern extends ModelBase
      */
     public function setWednesdayBoardingStatus(BoardingStatus $wednesdayBoardingStatus = null)
     {
-        $this->setProperty("wednesdayBoardingStatus", $wednesdayBoardingStatus);
+        $this->setProperty('wednesdayBoardingStatus', $wednesdayBoardingStatus);
     }
 
     /**
@@ -170,7 +167,7 @@ class BoardingPattern extends ModelBase
      */
     public function getThursdayBoardingStatus()
     {
-        return $this->getProperty("thursdayBoardingStatus");
+        return $this->getProperty('thursdayBoardingStatus');
     }
 
     /**
@@ -178,7 +175,7 @@ class BoardingPattern extends ModelBase
      */
     public function setThursdayBoardingStatus(BoardingStatus $thursdayBoardingStatus = null)
     {
-        $this->setProperty("thursdayBoardingStatus", $thursdayBoardingStatus);
+        $this->setProperty('thursdayBoardingStatus', $thursdayBoardingStatus);
     }
 
     /**
@@ -186,7 +183,7 @@ class BoardingPattern extends ModelBase
      */
     public function getFridayBoardingStatus()
     {
-        return $this->getProperty("fridayBoardingStatus");
+        return $this->getProperty('fridayBoardingStatus');
     }
 
     /**
@@ -194,7 +191,7 @@ class BoardingPattern extends ModelBase
      */
     public function setFridayBoardingStatus(BoardingStatus $fridayBoardingStatus = null)
     {
-        $this->setProperty("fridayBoardingStatus", $fridayBoardingStatus);
+        $this->setProperty('fridayBoardingStatus', $fridayBoardingStatus);
     }
 
     /**
@@ -202,7 +199,7 @@ class BoardingPattern extends ModelBase
      */
     public function getSaturdayBoardingStatus()
     {
-        return $this->getProperty("saturdayBoardingStatus");
+        return $this->getProperty('saturdayBoardingStatus');
     }
 
     /**
@@ -210,7 +207,7 @@ class BoardingPattern extends ModelBase
      */
     public function setSaturdayBoardingStatus(BoardingStatus $saturdayBoardingStatus = null)
     {
-        $this->setProperty("saturdayBoardingStatus", $saturdayBoardingStatus);
+        $this->setProperty('saturdayBoardingStatus', $saturdayBoardingStatus);
     }
 
     /**
@@ -218,7 +215,7 @@ class BoardingPattern extends ModelBase
      */
     public function getSundayBoardingStatus()
     {
-        return $this->getProperty("sundayBoardingStatus");
+        return $this->getProperty('sundayBoardingStatus');
     }
 
     /**
@@ -226,7 +223,7 @@ class BoardingPattern extends ModelBase
      */
     public function setSundayBoardingStatus(BoardingStatus $sundayBoardingStatus = null)
     {
-        $this->setProperty("sundayBoardingStatus", $sundayBoardingStatus);
+        $this->setProperty('sundayBoardingStatus', $sundayBoardingStatus);
     }
 
     /**
@@ -234,7 +231,7 @@ class BoardingPattern extends ModelBase
      */
     public function getAccommodationRoom()
     {
-        return $this->getProperty("accommodationRoom");
+        return $this->getProperty('accommodationRoom');
     }
 
     /**
@@ -242,6 +239,6 @@ class BoardingPattern extends ModelBase
      */
     public function setAccommodationRoom(Room $accommodationRoom = null)
     {
-        $this->setProperty("accommodationRoom", $accommodationRoom);
+        $this->setProperty('accommodationRoom', $accommodationRoom);
     }
 }

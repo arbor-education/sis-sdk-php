@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicUnit;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnitTag extends ModelBase
 {
@@ -18,34 +13,38 @@ class AcademicUnitTag extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_TAG;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicUnitTag[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicUnitTag");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT_TAG);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicUnitTag
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_TAG, $id);
     }
 
@@ -54,7 +53,7 @@ class AcademicUnitTag extends ModelBase
      */
     public function getAcademicUnit()
     {
-        return $this->getProperty("academicUnit");
+        return $this->getProperty('academicUnit');
     }
 
     /**
@@ -62,7 +61,7 @@ class AcademicUnitTag extends ModelBase
      */
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -70,7 +69,7 @@ class AcademicUnitTag extends ModelBase
      */
     public function getRelatedObject()
     {
-        return $this->getProperty("relatedObject");
+        return $this->getProperty('relatedObject');
     }
 
     /**
@@ -78,6 +77,6 @@ class AcademicUnitTag extends ModelBase
      */
     public function setRelatedObject(ModelBase $relatedObject = null)
     {
-        $this->setProperty("relatedObject", $relatedObject);
+        $this->setProperty('relatedObject', $relatedObject);
     }
 }

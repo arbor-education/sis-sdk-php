@@ -1,25 +1,14 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PointAwardScale;
-use \Arbor\Model\Student;
-use \Arbor\Model\Session;
-use \Arbor\Model\PointAwardCategory;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PointAward extends ModelBase
 {
     const POINT_AWARD_SCALE = 'pointAwardScale';
 
     const STUDENT = 'student';
-
-    const SESSION = 'session';
 
     const POINT_AWARD_CATEGORY = 'pointAwardCategory';
 
@@ -33,37 +22,43 @@ class PointAward extends ModelBase
 
     const AWARDED_BY_STAFF = 'awardedByStaff';
 
+    const EVENT = 'event';
+
     protected $_resourceType = ResourceType::POINT_AWARD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PointAward[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PointAward");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::POINT_AWARD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PointAward
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::POINT_AWARD, $id);
     }
 
@@ -72,7 +67,7 @@ class PointAward extends ModelBase
      */
     public function getPointAwardScale()
     {
-        return $this->getProperty("pointAwardScale");
+        return $this->getProperty('pointAwardScale');
     }
 
     /**
@@ -80,7 +75,7 @@ class PointAward extends ModelBase
      */
     public function setPointAwardScale(PointAwardScale $pointAwardScale = null)
     {
-        $this->setProperty("pointAwardScale", $pointAwardScale);
+        $this->setProperty('pointAwardScale', $pointAwardScale);
     }
 
     /**
@@ -88,7 +83,7 @@ class PointAward extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -96,23 +91,7 @@ class PointAward extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
-    }
-
-    /**
-     * @return Session
-     */
-    public function getSession()
-    {
-        return $this->getProperty("session");
-    }
-
-    /**
-     * @param Session $session
-     */
-    public function setSession(Session $session = null)
-    {
-        $this->setProperty("session", $session);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -120,7 +99,7 @@ class PointAward extends ModelBase
      */
     public function getPointAwardCategory()
     {
-        return $this->getProperty("pointAwardCategory");
+        return $this->getProperty('pointAwardCategory');
     }
 
     /**
@@ -128,7 +107,7 @@ class PointAward extends ModelBase
      */
     public function setPointAwardCategory(PointAwardCategory $pointAwardCategory = null)
     {
-        $this->setProperty("pointAwardCategory", $pointAwardCategory);
+        $this->setProperty('pointAwardCategory', $pointAwardCategory);
     }
 
     /**
@@ -136,7 +115,7 @@ class PointAward extends ModelBase
      */
     public function getPoints()
     {
-        return $this->getProperty("points");
+        return $this->getProperty('points');
     }
 
     /**
@@ -144,7 +123,7 @@ class PointAward extends ModelBase
      */
     public function setPoints($points = null)
     {
-        $this->setProperty("points", $points);
+        $this->setProperty('points', $points);
     }
 
     /**
@@ -152,7 +131,7 @@ class PointAward extends ModelBase
      */
     public function getAwardedDatetime()
     {
-        return $this->getProperty("awardedDatetime");
+        return $this->getProperty('awardedDatetime');
     }
 
     /**
@@ -160,7 +139,7 @@ class PointAward extends ModelBase
      */
     public function setAwardedDatetime(\DateTime $awardedDatetime = null)
     {
-        $this->setProperty("awardedDatetime", $awardedDatetime);
+        $this->setProperty('awardedDatetime', $awardedDatetime);
     }
 
     /**
@@ -168,7 +147,7 @@ class PointAward extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -176,7 +155,7 @@ class PointAward extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -184,7 +163,7 @@ class PointAward extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -192,7 +171,7 @@ class PointAward extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -200,7 +179,7 @@ class PointAward extends ModelBase
      */
     public function getAwardedByStaff()
     {
-        return $this->getProperty("awardedByStaff");
+        return $this->getProperty('awardedByStaff');
     }
 
     /**
@@ -208,6 +187,22 @@ class PointAward extends ModelBase
      */
     public function setAwardedByStaff(Staff $awardedByStaff = null)
     {
-        $this->setProperty("awardedByStaff", $awardedByStaff);
+        $this->setProperty('awardedByStaff', $awardedByStaff);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getEvent()
+    {
+        return $this->getProperty('event');
+    }
+
+    /**
+     * @param ModelBase $event
+     */
+    public function setEvent(ModelBase $event = null)
+    {
+        $this->setProperty('event', $event);
     }
 }

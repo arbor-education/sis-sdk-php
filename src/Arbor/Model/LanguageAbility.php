@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Language;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class LanguageAbility extends ModelBase
 {
@@ -30,34 +25,38 @@ class LanguageAbility extends ModelBase
     protected $_resourceType = ResourceType::LANGUAGE_ABILITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LanguageAbility[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("LanguageAbility");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LANGUAGE_ABILITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LanguageAbility
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LANGUAGE_ABILITY, $id);
     }
 
@@ -66,7 +65,7 @@ class LanguageAbility extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -74,7 +73,7 @@ class LanguageAbility extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -82,7 +81,7 @@ class LanguageAbility extends ModelBase
      */
     public function getLanguage()
     {
-        return $this->getProperty("language");
+        return $this->getProperty('language');
     }
 
     /**
@@ -90,7 +89,7 @@ class LanguageAbility extends ModelBase
      */
     public function setLanguage(Language $language = null)
     {
-        $this->setProperty("language", $language);
+        $this->setProperty('language', $language);
     }
 
     /**
@@ -98,7 +97,7 @@ class LanguageAbility extends ModelBase
      */
     public function getIsNativeLanguage()
     {
-        return $this->getProperty("isNativeLanguage");
+        return $this->getProperty('isNativeLanguage');
     }
 
     /**
@@ -106,7 +105,7 @@ class LanguageAbility extends ModelBase
      */
     public function setIsNativeLanguage($isNativeLanguage = null)
     {
-        $this->setProperty("isNativeLanguage", $isNativeLanguage);
+        $this->setProperty('isNativeLanguage', $isNativeLanguage);
     }
 
     /**
@@ -114,7 +113,7 @@ class LanguageAbility extends ModelBase
      */
     public function getSpeaksLanguage()
     {
-        return $this->getProperty("speaksLanguage");
+        return $this->getProperty('speaksLanguage');
     }
 
     /**
@@ -122,7 +121,7 @@ class LanguageAbility extends ModelBase
      */
     public function setSpeaksLanguage($speaksLanguage = null)
     {
-        $this->setProperty("speaksLanguage", $speaksLanguage);
+        $this->setProperty('speaksLanguage', $speaksLanguage);
     }
 
     /**
@@ -130,7 +129,7 @@ class LanguageAbility extends ModelBase
      */
     public function getUnderstandsLanguage()
     {
-        return $this->getProperty("understandsLanguage");
+        return $this->getProperty('understandsLanguage');
     }
 
     /**
@@ -138,7 +137,7 @@ class LanguageAbility extends ModelBase
      */
     public function setUnderstandsLanguage($understandsLanguage = null)
     {
-        $this->setProperty("understandsLanguage", $understandsLanguage);
+        $this->setProperty('understandsLanguage', $understandsLanguage);
     }
 
     /**
@@ -146,7 +145,7 @@ class LanguageAbility extends ModelBase
      */
     public function getIsSpokenAtHome()
     {
-        return $this->getProperty("isSpokenAtHome");
+        return $this->getProperty('isSpokenAtHome');
     }
 
     /**
@@ -154,7 +153,7 @@ class LanguageAbility extends ModelBase
      */
     public function setIsSpokenAtHome($isSpokenAtHome = null)
     {
-        $this->setProperty("isSpokenAtHome", $isSpokenAtHome);
+        $this->setProperty('isSpokenAtHome', $isSpokenAtHome);
     }
 
     /**
@@ -162,7 +161,7 @@ class LanguageAbility extends ModelBase
      */
     public function getLanguageProficiency()
     {
-        return $this->getProperty("languageProficiency");
+        return $this->getProperty('languageProficiency');
     }
 
     /**
@@ -170,7 +169,7 @@ class LanguageAbility extends ModelBase
      */
     public function setLanguageProficiency($languageProficiency = null)
     {
-        $this->setProperty("languageProficiency", $languageProficiency);
+        $this->setProperty('languageProficiency', $languageProficiency);
     }
 
     /**
@@ -178,7 +177,7 @@ class LanguageAbility extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -186,6 +185,6 @@ class LanguageAbility extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 }

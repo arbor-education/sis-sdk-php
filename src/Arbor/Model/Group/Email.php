@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Email extends ModelBase
 {
@@ -15,34 +15,38 @@ class Email extends ModelBase
     protected $_resourceType = ResourceType::GROUP_EMAIL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Email[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_Email");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_EMAIL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Email
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_EMAIL, $id);
     }
 
@@ -51,7 +55,7 @@ class Email extends ModelBase
      */
     public function getContext()
     {
-        return $this->getProperty("context");
+        return $this->getProperty('context');
     }
 
     /**
@@ -59,6 +63,6 @@ class Email extends ModelBase
      */
     public function setContext($context = null)
     {
-        $this->setProperty("context", $context);
+        $this->setProperty('context', $context);
     }
 }

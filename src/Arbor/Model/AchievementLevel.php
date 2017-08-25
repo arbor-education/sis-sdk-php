@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AchievementLevelSet;
-use \Arbor\Model\Grade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AchievementLevel extends ModelBase
 {
@@ -37,34 +31,38 @@ class AchievementLevel extends ModelBase
     protected $_resourceType = ResourceType::ACHIEVEMENT_LEVEL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AchievementLevel[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AchievementLevel");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACHIEVEMENT_LEVEL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AchievementLevel
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACHIEVEMENT_LEVEL, $id);
     }
 
@@ -73,7 +71,7 @@ class AchievementLevel extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -81,7 +79,7 @@ class AchievementLevel extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -89,7 +87,7 @@ class AchievementLevel extends ModelBase
      */
     public function getAchievementLevelSet()
     {
-        return $this->getProperty("achievementLevelSet");
+        return $this->getProperty('achievementLevelSet');
     }
 
     /**
@@ -97,7 +95,7 @@ class AchievementLevel extends ModelBase
      */
     public function setAchievementLevelSet(AchievementLevelSet $achievementLevelSet = null)
     {
-        $this->setProperty("achievementLevelSet", $achievementLevelSet);
+        $this->setProperty('achievementLevelSet', $achievementLevelSet);
     }
 
     /**
@@ -105,7 +103,7 @@ class AchievementLevel extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -113,7 +111,7 @@ class AchievementLevel extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -121,7 +119,7 @@ class AchievementLevel extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -129,7 +127,7 @@ class AchievementLevel extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -137,7 +135,7 @@ class AchievementLevel extends ModelBase
      */
     public function getAchievementValue()
     {
-        return $this->getProperty("achievementValue");
+        return $this->getProperty('achievementValue');
     }
 
     /**
@@ -145,7 +143,7 @@ class AchievementLevel extends ModelBase
      */
     public function setAchievementValue($achievementValue = null)
     {
-        $this->setProperty("achievementValue", $achievementValue);
+        $this->setProperty('achievementValue', $achievementValue);
     }
 
     /**
@@ -153,7 +151,7 @@ class AchievementLevel extends ModelBase
      */
     public function getLowerAchievementValue()
     {
-        return $this->getProperty("lowerAchievementValue");
+        return $this->getProperty('lowerAchievementValue');
     }
 
     /**
@@ -161,7 +159,7 @@ class AchievementLevel extends ModelBase
      */
     public function setLowerAchievementValue($lowerAchievementValue = null)
     {
-        $this->setProperty("lowerAchievementValue", $lowerAchievementValue);
+        $this->setProperty('lowerAchievementValue', $lowerAchievementValue);
     }
 
     /**
@@ -169,7 +167,7 @@ class AchievementLevel extends ModelBase
      */
     public function getUpperAchievementValue()
     {
-        return $this->getProperty("upperAchievementValue");
+        return $this->getProperty('upperAchievementValue');
     }
 
     /**
@@ -177,7 +175,7 @@ class AchievementLevel extends ModelBase
      */
     public function setUpperAchievementValue($upperAchievementValue = null)
     {
-        $this->setProperty("upperAchievementValue", $upperAchievementValue);
+        $this->setProperty('upperAchievementValue', $upperAchievementValue);
     }
 
     /**
@@ -185,7 +183,7 @@ class AchievementLevel extends ModelBase
      */
     public function getLowerGradePointScaleValue()
     {
-        return $this->getProperty("lowerGradePointScaleValue");
+        return $this->getProperty('lowerGradePointScaleValue');
     }
 
     /**
@@ -193,7 +191,7 @@ class AchievementLevel extends ModelBase
      */
     public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
     {
-        $this->setProperty("lowerGradePointScaleValue", $lowerGradePointScaleValue);
+        $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
 
     /**
@@ -201,7 +199,7 @@ class AchievementLevel extends ModelBase
      */
     public function getLowerBenchmarkGrade()
     {
-        return $this->getProperty("lowerBenchmarkGrade");
+        return $this->getProperty('lowerBenchmarkGrade');
     }
 
     /**
@@ -209,7 +207,7 @@ class AchievementLevel extends ModelBase
      */
     public function setLowerBenchmarkGrade(Grade $lowerBenchmarkGrade = null)
     {
-        $this->setProperty("lowerBenchmarkGrade", $lowerBenchmarkGrade);
+        $this->setProperty('lowerBenchmarkGrade', $lowerBenchmarkGrade);
     }
 
     /**
@@ -217,7 +215,7 @@ class AchievementLevel extends ModelBase
      */
     public function getUpperGradePointScaleValue()
     {
-        return $this->getProperty("upperGradePointScaleValue");
+        return $this->getProperty('upperGradePointScaleValue');
     }
 
     /**
@@ -225,7 +223,7 @@ class AchievementLevel extends ModelBase
      */
     public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
     {
-        $this->setProperty("upperGradePointScaleValue", $upperGradePointScaleValue);
+        $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
 
     /**
@@ -233,7 +231,7 @@ class AchievementLevel extends ModelBase
      */
     public function getUpperBenchmarkGrade()
     {
-        return $this->getProperty("upperBenchmarkGrade");
+        return $this->getProperty('upperBenchmarkGrade');
     }
 
     /**
@@ -241,6 +239,6 @@ class AchievementLevel extends ModelBase
      */
     public function setUpperBenchmarkGrade(Grade $upperBenchmarkGrade = null)
     {
-        $this->setProperty("upperBenchmarkGrade", $upperBenchmarkGrade);
+        $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
 }

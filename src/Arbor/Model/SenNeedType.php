@@ -1,17 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SenNeedType extends ModelBase
 {
-    const D00237 = 'd00237';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -20,54 +14,46 @@ class SenNeedType extends ModelBase
 
     const LABEL = 'label';
 
+    const D00237 = 'd00237';
+
+    const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::SEN_NEED_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SenNeedType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SenNeedType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SEN_NEED_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SenNeedType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SEN_NEED_TYPE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00237()
-    {
-        return $this->getProperty("d00237");
-    }
-
-    /**
-     * @param string $d00237
-     */
-    public function setD00237($d00237 = null)
-    {
-        $this->setProperty("d00237", $d00237);
     }
 
     /**
@@ -75,7 +61,7 @@ class SenNeedType extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -83,7 +69,7 @@ class SenNeedType extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -91,7 +77,7 @@ class SenNeedType extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -99,7 +85,7 @@ class SenNeedType extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -107,7 +93,7 @@ class SenNeedType extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -115,7 +101,7 @@ class SenNeedType extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -123,7 +109,7 @@ class SenNeedType extends ModelBase
      */
     public function getLabel()
     {
-        return $this->getProperty("label");
+        return $this->getProperty('label');
     }
 
     /**
@@ -131,6 +117,38 @@ class SenNeedType extends ModelBase
      */
     public function setLabel($label = null)
     {
-        $this->setProperty("label", $label);
+        $this->setProperty('label', $label);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00237()
+    {
+        return $this->getProperty('d00237');
+    }
+
+    /**
+     * @param string $d00237
+     */
+    public function setD00237($d00237 = null)
+    {
+        $this->setProperty('d00237', $d00237);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode($exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

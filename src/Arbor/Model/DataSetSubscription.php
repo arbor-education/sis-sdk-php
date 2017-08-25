@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DataSetSubscription extends ModelBase
 {
@@ -27,34 +23,38 @@ class DataSetSubscription extends ModelBase
     protected $_resourceType = ResourceType::DATA_SET_SUBSCRIPTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DataSetSubscription[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DataSetSubscription");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DATA_SET_SUBSCRIPTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DataSetSubscription
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DATA_SET_SUBSCRIPTION, $id);
     }
 
@@ -63,7 +63,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getDataSetName()
     {
-        return $this->getProperty("dataSetName");
+        return $this->getProperty('dataSetName');
     }
 
     /**
@@ -71,7 +71,7 @@ class DataSetSubscription extends ModelBase
      */
     public function setDataSetName($dataSetName = null)
     {
-        $this->setProperty("dataSetName", $dataSetName);
+        $this->setProperty('dataSetName', $dataSetName);
     }
 
     /**
@@ -79,7 +79,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getDataSetIdentifier()
     {
-        return $this->getProperty("dataSetIdentifier");
+        return $this->getProperty('dataSetIdentifier');
     }
 
     /**
@@ -87,7 +87,7 @@ class DataSetSubscription extends ModelBase
      */
     public function setDataSetIdentifier($dataSetIdentifier = null)
     {
-        $this->setProperty("dataSetIdentifier", $dataSetIdentifier);
+        $this->setProperty('dataSetIdentifier', $dataSetIdentifier);
     }
 
     /**
@@ -95,7 +95,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getSupplierIdentifier()
     {
-        return $this->getProperty("supplierIdentifier");
+        return $this->getProperty('supplierIdentifier');
     }
 
     /**
@@ -103,7 +103,7 @@ class DataSetSubscription extends ModelBase
      */
     public function setSupplierIdentifier($supplierIdentifier = null)
     {
-        $this->setProperty("supplierIdentifier", $supplierIdentifier);
+        $this->setProperty('supplierIdentifier', $supplierIdentifier);
     }
 
     /**
@@ -111,7 +111,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getEntityType()
     {
-        return $this->getProperty("entityType");
+        return $this->getProperty('entityType');
     }
 
     /**
@@ -119,7 +119,7 @@ class DataSetSubscription extends ModelBase
      */
     public function setEntityType($entityType = null)
     {
-        $this->setProperty("entityType", $entityType);
+        $this->setProperty('entityType', $entityType);
     }
 
     /**
@@ -127,7 +127,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getCurrentDataSetVersion()
     {
-        return $this->getProperty("currentDataSetVersion");
+        return $this->getProperty('currentDataSetVersion');
     }
 
     /**
@@ -135,7 +135,7 @@ class DataSetSubscription extends ModelBase
      */
     public function setCurrentDataSetVersion($currentDataSetVersion = null)
     {
-        $this->setProperty("currentDataSetVersion", $currentDataSetVersion);
+        $this->setProperty('currentDataSetVersion', $currentDataSetVersion);
     }
 
     /**
@@ -143,7 +143,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getFilters()
     {
-        return $this->getProperty("filters");
+        return $this->getProperty('filters');
     }
 
     /**
@@ -151,7 +151,7 @@ class DataSetSubscription extends ModelBase
      */
     public function setFilters($filters = null)
     {
-        $this->setProperty("filters", $filters);
+        $this->setProperty('filters', $filters);
     }
 
     /**
@@ -159,7 +159,7 @@ class DataSetSubscription extends ModelBase
      */
     public function getLastUpdatedDatetime()
     {
-        return $this->getProperty("lastUpdatedDatetime");
+        return $this->getProperty('lastUpdatedDatetime');
     }
 
     /**
@@ -167,6 +167,6 @@ class DataSetSubscription extends ModelBase
      */
     public function setLastUpdatedDatetime(\DateTime $lastUpdatedDatetime = null)
     {
-        $this->setProperty("lastUpdatedDatetime", $lastUpdatedDatetime);
+        $this->setProperty('lastUpdatedDatetime', $lastUpdatedDatetime);
     }
 }

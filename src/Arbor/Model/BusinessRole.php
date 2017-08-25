@@ -1,19 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BusinessRole extends ModelBase
 {
-    const SWF_CENSUS_IDENTIFIER = 'swfCensusIdentifier';
-
-    const MANAGED_BY_CLIENT = 'managedByClient';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -34,70 +26,46 @@ class BusinessRole extends ModelBase
 
     const CUSTOMER_MANAGES_DEFAULT_USER_ROLES = 'customerManagesDefaultUserRoles';
 
+    const SWF_CENSUS_IDENTIFIER = 'swfCensusIdentifier';
+
+    const MANAGED_BY_CLIENT = 'managedByClient';
+
     protected $_resourceType = ResourceType::BUSINESS_ROLE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BusinessRole[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BusinessRole");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BUSINESS_ROLE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BusinessRole
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BUSINESS_ROLE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getSwfCensusIdentifier()
-    {
-        return $this->getProperty("swfCensusIdentifier");
-    }
-
-    /**
-     * @param string $swfCensusIdentifier
-     */
-    public function setSwfCensusIdentifier($swfCensusIdentifier = null)
-    {
-        $this->setProperty("swfCensusIdentifier", $swfCensusIdentifier);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getManagedByClient()
-    {
-        return $this->getProperty("managedByClient");
-    }
-
-    /**
-     * @param bool $managedByClient
-     */
-    public function setManagedByClient($managedByClient = null)
-    {
-        $this->setProperty("managedByClient", $managedByClient);
     }
 
     /**
@@ -105,7 +73,7 @@ class BusinessRole extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -113,7 +81,7 @@ class BusinessRole extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -121,7 +89,7 @@ class BusinessRole extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -129,7 +97,7 @@ class BusinessRole extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -137,7 +105,7 @@ class BusinessRole extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -145,7 +113,7 @@ class BusinessRole extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -153,7 +121,7 @@ class BusinessRole extends ModelBase
      */
     public function getBusinessRoleName()
     {
-        return $this->getProperty("businessRoleName");
+        return $this->getProperty('businessRoleName');
     }
 
     /**
@@ -161,7 +129,7 @@ class BusinessRole extends ModelBase
      */
     public function setBusinessRoleName($businessRoleName = null)
     {
-        $this->setProperty("businessRoleName", $businessRoleName);
+        $this->setProperty('businessRoleName', $businessRoleName);
     }
 
     /**
@@ -169,7 +137,7 @@ class BusinessRole extends ModelBase
      */
     public function getUserDefinedName()
     {
-        return $this->getProperty("userDefinedName");
+        return $this->getProperty('userDefinedName');
     }
 
     /**
@@ -177,7 +145,7 @@ class BusinessRole extends ModelBase
      */
     public function setUserDefinedName($userDefinedName = null)
     {
-        $this->setProperty("userDefinedName", $userDefinedName);
+        $this->setProperty('userDefinedName', $userDefinedName);
     }
 
     /**
@@ -185,7 +153,7 @@ class BusinessRole extends ModelBase
      */
     public function getBusinessRoleDescription()
     {
-        return $this->getProperty("businessRoleDescription");
+        return $this->getProperty('businessRoleDescription');
     }
 
     /**
@@ -193,7 +161,7 @@ class BusinessRole extends ModelBase
      */
     public function setBusinessRoleDescription($businessRoleDescription = null)
     {
-        $this->setProperty("businessRoleDescription", $businessRoleDescription);
+        $this->setProperty('businessRoleDescription', $businessRoleDescription);
     }
 
     /**
@@ -201,7 +169,7 @@ class BusinessRole extends ModelBase
      */
     public function getUserDefinedDescription()
     {
-        return $this->getProperty("userDefinedDescription");
+        return $this->getProperty('userDefinedDescription');
     }
 
     /**
@@ -209,7 +177,7 @@ class BusinessRole extends ModelBase
      */
     public function setUserDefinedDescription($userDefinedDescription = null)
     {
-        $this->setProperty("userDefinedDescription", $userDefinedDescription);
+        $this->setProperty('userDefinedDescription', $userDefinedDescription);
     }
 
     /**
@@ -217,7 +185,7 @@ class BusinessRole extends ModelBase
      */
     public function getInternalStaff()
     {
-        return $this->getProperty("internalStaff");
+        return $this->getProperty('internalStaff');
     }
 
     /**
@@ -225,7 +193,7 @@ class BusinessRole extends ModelBase
      */
     public function setInternalStaff($internalStaff = null)
     {
-        $this->setProperty("internalStaff", $internalStaff);
+        $this->setProperty('internalStaff', $internalStaff);
     }
 
     /**
@@ -233,7 +201,7 @@ class BusinessRole extends ModelBase
      */
     public function getTeachingStaff()
     {
-        return $this->getProperty("teachingStaff");
+        return $this->getProperty('teachingStaff');
     }
 
     /**
@@ -241,7 +209,7 @@ class BusinessRole extends ModelBase
      */
     public function setTeachingStaff($teachingStaff = null)
     {
-        $this->setProperty("teachingStaff", $teachingStaff);
+        $this->setProperty('teachingStaff', $teachingStaff);
     }
 
     /**
@@ -249,7 +217,7 @@ class BusinessRole extends ModelBase
      */
     public function getCustomerManagesDefaultUserRoles()
     {
-        return $this->getProperty("customerManagesDefaultUserRoles");
+        return $this->getProperty('customerManagesDefaultUserRoles');
     }
 
     /**
@@ -257,6 +225,38 @@ class BusinessRole extends ModelBase
      */
     public function setCustomerManagesDefaultUserRoles($customerManagesDefaultUserRoles = null)
     {
-        $this->setProperty("customerManagesDefaultUserRoles", $customerManagesDefaultUserRoles);
+        $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSwfCensusIdentifier()
+    {
+        return $this->getProperty('swfCensusIdentifier');
+    }
+
+    /**
+     * @param string $swfCensusIdentifier
+     */
+    public function setSwfCensusIdentifier($swfCensusIdentifier = null)
+    {
+        $this->setProperty('swfCensusIdentifier', $swfCensusIdentifier);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getManagedByClient()
+    {
+        return $this->getProperty('managedByClient');
+    }
+
+    /**
+     * @param bool $managedByClient
+     */
+    public function setManagedByClient($managedByClient = null)
+    {
+        $this->setProperty('managedByClient', $managedByClient);
     }
 }

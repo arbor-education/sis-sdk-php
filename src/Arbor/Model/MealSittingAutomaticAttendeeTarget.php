@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MealSitting;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealSittingAutomaticAttendeeTarget extends ModelBase
 {
@@ -18,34 +13,38 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     protected $_resourceType = ResourceType::MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealSittingAutomaticAttendeeTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealSittingAutomaticAttendeeTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealSittingAutomaticAttendeeTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET, $id);
     }
 
@@ -54,7 +53,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      */
     public function getMealSitting()
     {
-        return $this->getProperty("mealSitting");
+        return $this->getProperty('mealSitting');
     }
 
     /**
@@ -62,7 +61,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      */
     public function setMealSitting(MealSitting $mealSitting = null)
     {
-        $this->setProperty("mealSitting", $mealSitting);
+        $this->setProperty('mealSitting', $mealSitting);
     }
 
     /**
@@ -70,7 +69,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      */
     public function getAutomaticAttendeeTarget()
     {
-        return $this->getProperty("automaticAttendeeTarget");
+        return $this->getProperty('automaticAttendeeTarget');
     }
 
     /**
@@ -78,6 +77,6 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      */
     public function setAutomaticAttendeeTarget(ModelBase $automaticAttendeeTarget = null)
     {
-        $this->setProperty("automaticAttendeeTarget", $automaticAttendeeTarget);
+        $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }
 }

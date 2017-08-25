@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CommunicationTag extends ModelBase
 {
@@ -19,34 +15,38 @@ class CommunicationTag extends ModelBase
     protected $_resourceType = ResourceType::COMMUNICATION_TAG;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CommunicationTag[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CommunicationTag");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COMMUNICATION_TAG);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CommunicationTag
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COMMUNICATION_TAG, $id);
     }
 
@@ -55,7 +55,7 @@ class CommunicationTag extends ModelBase
      */
     public function getCommunication()
     {
-        return $this->getProperty("communication");
+        return $this->getProperty('communication');
     }
 
     /**
@@ -63,7 +63,7 @@ class CommunicationTag extends ModelBase
      */
     public function setCommunication(ModelBase $communication = null)
     {
-        $this->setProperty("communication", $communication);
+        $this->setProperty('communication', $communication);
     }
 
     /**
@@ -71,7 +71,7 @@ class CommunicationTag extends ModelBase
      */
     public function getTaggedEntity()
     {
-        return $this->getProperty("taggedEntity");
+        return $this->getProperty('taggedEntity');
     }
 
     /**
@@ -79,7 +79,7 @@ class CommunicationTag extends ModelBase
      */
     public function setTaggedEntity(ModelBase $taggedEntity = null)
     {
-        $this->setProperty("taggedEntity", $taggedEntity);
+        $this->setProperty('taggedEntity', $taggedEntity);
     }
 
     /**
@@ -87,7 +87,7 @@ class CommunicationTag extends ModelBase
      */
     public function getIsShared()
     {
-        return $this->getProperty("isShared");
+        return $this->getProperty('isShared');
     }
 
     /**
@@ -95,6 +95,6 @@ class CommunicationTag extends ModelBase
      */
     public function setIsShared($isShared = null)
     {
-        $this->setProperty("isShared", $isShared);
+        $this->setProperty('isShared', $isShared);
     }
 }

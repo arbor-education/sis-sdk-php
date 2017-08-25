@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Eligibility;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EligibilityRecord extends ModelBase
 {
@@ -26,34 +21,38 @@ class EligibilityRecord extends ModelBase
     protected $_resourceType = ResourceType::ELIGIBILITY_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EligibilityRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EligibilityRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ELIGIBILITY_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EligibilityRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ELIGIBILITY_RECORD, $id);
     }
 
@@ -62,7 +61,7 @@ class EligibilityRecord extends ModelBase
      */
     public function getEligibility()
     {
-        return $this->getProperty("eligibility");
+        return $this->getProperty('eligibility');
     }
 
     /**
@@ -70,7 +69,7 @@ class EligibilityRecord extends ModelBase
      */
     public function setEligibility(Eligibility $eligibility = null)
     {
-        $this->setProperty("eligibility", $eligibility);
+        $this->setProperty('eligibility', $eligibility);
     }
 
     /**
@@ -78,7 +77,7 @@ class EligibilityRecord extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -86,7 +85,7 @@ class EligibilityRecord extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -94,7 +93,7 @@ class EligibilityRecord extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -102,7 +101,7 @@ class EligibilityRecord extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -110,7 +109,7 @@ class EligibilityRecord extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -118,7 +117,7 @@ class EligibilityRecord extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -126,7 +125,7 @@ class EligibilityRecord extends ModelBase
      */
     public function getLastVerifiedDate()
     {
-        return $this->getProperty("lastVerifiedDate");
+        return $this->getProperty('lastVerifiedDate');
     }
 
     /**
@@ -134,7 +133,7 @@ class EligibilityRecord extends ModelBase
      */
     public function setLastVerifiedDate(\DateTime $lastVerifiedDate = null)
     {
-        $this->setProperty("lastVerifiedDate", $lastVerifiedDate);
+        $this->setProperty('lastVerifiedDate', $lastVerifiedDate);
     }
 
     /**
@@ -142,7 +141,7 @@ class EligibilityRecord extends ModelBase
      */
     public function getNextCheckDate()
     {
-        return $this->getProperty("nextCheckDate");
+        return $this->getProperty('nextCheckDate');
     }
 
     /**
@@ -150,6 +149,6 @@ class EligibilityRecord extends ModelBase
      */
     public function setNextCheckDate(\DateTime $nextCheckDate = null)
     {
-        $this->setProperty("nextCheckDate", $nextCheckDate);
+        $this->setProperty('nextCheckDate', $nextCheckDate);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\TimetablerImportResult;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TimetablerImportResultUpdate extends ModelBase
 {
@@ -18,34 +13,38 @@ class TimetablerImportResultUpdate extends ModelBase
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_RESULT_UPDATE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TimetablerImportResultUpdate[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TimetablerImportResultUpdate");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TIMETABLER_IMPORT_RESULT_UPDATE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TimetablerImportResultUpdate
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TIMETABLER_IMPORT_RESULT_UPDATE, $id);
     }
 
@@ -54,7 +53,7 @@ class TimetablerImportResultUpdate extends ModelBase
      */
     public function getTimetablerImportResult()
     {
-        return $this->getProperty("timetablerImportResult");
+        return $this->getProperty('timetablerImportResult');
     }
 
     /**
@@ -62,7 +61,7 @@ class TimetablerImportResultUpdate extends ModelBase
      */
     public function setTimetablerImportResult(TimetablerImportResult $timetablerImportResult = null)
     {
-        $this->setProperty("timetablerImportResult", $timetablerImportResult);
+        $this->setProperty('timetablerImportResult', $timetablerImportResult);
     }
 
     /**
@@ -70,7 +69,7 @@ class TimetablerImportResultUpdate extends ModelBase
      */
     public function getUpdated()
     {
-        return $this->getProperty("updated");
+        return $this->getProperty('updated');
     }
 
     /**
@@ -78,6 +77,6 @@ class TimetablerImportResultUpdate extends ModelBase
      */
     public function setUpdated(ModelBase $updated = null)
     {
-        $this->setProperty("updated", $updated);
+        $this->setProperty('updated', $updated);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomReportScope;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReportScopeFilter extends ModelBase
 {
@@ -28,34 +23,38 @@ class CustomReportScopeFilter extends ModelBase
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCOPE_FILTER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReportScopeFilter[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReportScopeFilter");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT_SCOPE_FILTER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReportScopeFilter
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_SCOPE_FILTER, $id);
     }
 
@@ -64,7 +63,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getCustomReportScope()
     {
-        return $this->getProperty("customReportScope");
+        return $this->getProperty('customReportScope');
     }
 
     /**
@@ -72,7 +71,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setCustomReportScope(CustomReportScope $customReportScope = null)
     {
-        $this->setProperty("customReportScope", $customReportScope);
+        $this->setProperty('customReportScope', $customReportScope);
     }
 
     /**
@@ -80,7 +79,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getFieldClass()
     {
-        return $this->getProperty("fieldClass");
+        return $this->getProperty('fieldClass');
     }
 
     /**
@@ -88,7 +87,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setFieldClass($fieldClass = null)
     {
-        $this->setProperty("fieldClass", $fieldClass);
+        $this->setProperty('fieldClass', $fieldClass);
     }
 
     /**
@@ -96,7 +95,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getFieldParams()
     {
-        return $this->getProperty("fieldParams");
+        return $this->getProperty('fieldParams');
     }
 
     /**
@@ -104,7 +103,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setFieldParams($fieldParams = null)
     {
-        $this->setProperty("fieldParams", $fieldParams);
+        $this->setProperty('fieldParams', $fieldParams);
     }
 
     /**
@@ -112,7 +111,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getTransformationClass()
     {
-        return $this->getProperty("transformationClass");
+        return $this->getProperty('transformationClass');
     }
 
     /**
@@ -120,7 +119,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setTransformationClass($transformationClass = null)
     {
-        $this->setProperty("transformationClass", $transformationClass);
+        $this->setProperty('transformationClass', $transformationClass);
     }
 
     /**
@@ -128,7 +127,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getConditionClass()
     {
-        return $this->getProperty("conditionClass");
+        return $this->getProperty('conditionClass');
     }
 
     /**
@@ -136,7 +135,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setConditionClass($conditionClass = null)
     {
-        $this->setProperty("conditionClass", $conditionClass);
+        $this->setProperty('conditionClass', $conditionClass);
     }
 
     /**
@@ -144,7 +143,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getConditionParams()
     {
-        return $this->getProperty("conditionParams");
+        return $this->getProperty('conditionParams');
     }
 
     /**
@@ -152,7 +151,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setConditionParams($conditionParams = null)
     {
-        $this->setProperty("conditionParams", $conditionParams);
+        $this->setProperty('conditionParams', $conditionParams);
     }
 
     /**
@@ -160,7 +159,7 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function getFilterGroupIndex()
     {
-        return $this->getProperty("filterGroupIndex");
+        return $this->getProperty('filterGroupIndex');
     }
 
     /**
@@ -168,6 +167,6 @@ class CustomReportScopeFilter extends ModelBase
      */
     public function setFilterGroupIndex($filterGroupIndex = null)
     {
-        $this->setProperty("filterGroupIndex", $filterGroupIndex);
+        $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
 }

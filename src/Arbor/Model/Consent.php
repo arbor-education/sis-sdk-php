@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\ConsentType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Consent extends ModelBase
 {
@@ -31,34 +25,38 @@ class Consent extends ModelBase
     protected $_resourceType = ResourceType::CONSENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Consent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Consent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CONSENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Consent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CONSENT, $id);
     }
 
@@ -67,7 +65,7 @@ class Consent extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -75,7 +73,7 @@ class Consent extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -83,7 +81,7 @@ class Consent extends ModelBase
      */
     public function getConsentType()
     {
-        return $this->getProperty("consentType");
+        return $this->getProperty('consentType');
     }
 
     /**
@@ -91,7 +89,7 @@ class Consent extends ModelBase
      */
     public function setConsentType(ConsentType $consentType = null)
     {
-        $this->setProperty("consentType", $consentType);
+        $this->setProperty('consentType', $consentType);
     }
 
     /**
@@ -99,7 +97,7 @@ class Consent extends ModelBase
      */
     public function getRelated()
     {
-        return $this->getProperty("related");
+        return $this->getProperty('related');
     }
 
     /**
@@ -107,7 +105,7 @@ class Consent extends ModelBase
      */
     public function setRelated(ModelBase $related = null)
     {
-        $this->setProperty("related", $related);
+        $this->setProperty('related', $related);
     }
 
     /**
@@ -115,7 +113,7 @@ class Consent extends ModelBase
      */
     public function getRequestor()
     {
-        return $this->getProperty("requestor");
+        return $this->getProperty('requestor');
     }
 
     /**
@@ -123,7 +121,7 @@ class Consent extends ModelBase
      */
     public function setRequestor(ModelBase $requestor = null)
     {
-        $this->setProperty("requestor", $requestor);
+        $this->setProperty('requestor', $requestor);
     }
 
     /**
@@ -131,7 +129,7 @@ class Consent extends ModelBase
      */
     public function getRequestedDatetime()
     {
-        return $this->getProperty("requestedDatetime");
+        return $this->getProperty('requestedDatetime');
     }
 
     /**
@@ -139,7 +137,7 @@ class Consent extends ModelBase
      */
     public function setRequestedDatetime(\DateTime $requestedDatetime = null)
     {
-        $this->setProperty("requestedDatetime", $requestedDatetime);
+        $this->setProperty('requestedDatetime', $requestedDatetime);
     }
 
     /**
@@ -147,7 +145,7 @@ class Consent extends ModelBase
      */
     public function getRejectedDatetime()
     {
-        return $this->getProperty("rejectedDatetime");
+        return $this->getProperty('rejectedDatetime');
     }
 
     /**
@@ -155,7 +153,7 @@ class Consent extends ModelBase
      */
     public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
     {
-        $this->setProperty("rejectedDatetime", $rejectedDatetime);
+        $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
 
     /**
@@ -163,7 +161,7 @@ class Consent extends ModelBase
      */
     public function getConsentedDatetime()
     {
-        return $this->getProperty("consentedDatetime");
+        return $this->getProperty('consentedDatetime');
     }
 
     /**
@@ -171,7 +169,7 @@ class Consent extends ModelBase
      */
     public function setConsentedDatetime(\DateTime $consentedDatetime = null)
     {
-        $this->setProperty("consentedDatetime", $consentedDatetime);
+        $this->setProperty('consentedDatetime', $consentedDatetime);
     }
 
     /**
@@ -179,7 +177,7 @@ class Consent extends ModelBase
      */
     public function getRespondee()
     {
-        return $this->getProperty("respondee");
+        return $this->getProperty('respondee');
     }
 
     /**
@@ -187,6 +185,6 @@ class Consent extends ModelBase
      */
     public function setRespondee(ModelBase $respondee = null)
     {
-        $this->setProperty("respondee", $respondee);
+        $this->setProperty('respondee', $respondee);
     }
 }

@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\CurriculumStatement;
-use \Arbor\Model\StudentCurriculumAchievement;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentCurriculumEvidence extends ModelBase
 {
@@ -33,34 +25,38 @@ class StudentCurriculumEvidence extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_CURRICULUM_EVIDENCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentCurriculumEvidence[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentCurriculumEvidence");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_CURRICULUM_EVIDENCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentCurriculumEvidence
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_CURRICULUM_EVIDENCE, $id);
     }
 
@@ -69,7 +65,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -77,7 +73,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -85,7 +81,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getCurriculumStatement()
     {
-        return $this->getProperty("curriculumStatement");
+        return $this->getProperty('curriculumStatement');
     }
 
     /**
@@ -93,7 +89,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setCurriculumStatement(CurriculumStatement $curriculumStatement = null)
     {
-        $this->setProperty("curriculumStatement", $curriculumStatement);
+        $this->setProperty('curriculumStatement', $curriculumStatement);
     }
 
     /**
@@ -101,7 +97,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getStudentCurriculumAchievement()
     {
-        return $this->getProperty("studentCurriculumAchievement");
+        return $this->getProperty('studentCurriculumAchievement');
     }
 
     /**
@@ -109,7 +105,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setStudentCurriculumAchievement(StudentCurriculumAchievement $studentCurriculumAchievement = null)
     {
-        $this->setProperty("studentCurriculumAchievement", $studentCurriculumAchievement);
+        $this->setProperty('studentCurriculumAchievement', $studentCurriculumAchievement);
     }
 
     /**
@@ -117,7 +113,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getSummary()
     {
-        return $this->getProperty("summary");
+        return $this->getProperty('summary');
     }
 
     /**
@@ -125,7 +121,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setSummary($summary = null)
     {
-        $this->setProperty("summary", $summary);
+        $this->setProperty('summary', $summary);
     }
 
     /**
@@ -133,7 +129,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getDetails()
     {
-        return $this->getProperty("details");
+        return $this->getProperty('details');
     }
 
     /**
@@ -141,7 +137,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setDetails($details = null)
     {
-        $this->setProperty("details", $details);
+        $this->setProperty('details', $details);
     }
 
     /**
@@ -149,7 +145,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getObservationDate()
     {
-        return $this->getProperty("observationDate");
+        return $this->getProperty('observationDate');
     }
 
     /**
@@ -157,7 +153,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setObservationDate(\DateTime $observationDate = null)
     {
-        $this->setProperty("observationDate", $observationDate);
+        $this->setProperty('observationDate', $observationDate);
     }
 
     /**
@@ -165,7 +161,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getObservationStaff()
     {
-        return $this->getProperty("observationStaff");
+        return $this->getProperty('observationStaff');
     }
 
     /**
@@ -173,7 +169,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setObservationStaff(Staff $observationStaff = null)
     {
-        $this->setProperty("observationStaff", $observationStaff);
+        $this->setProperty('observationStaff', $observationStaff);
     }
 
     /**
@@ -181,7 +177,7 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function getEvidence()
     {
-        return $this->getProperty("evidence");
+        return $this->getProperty('evidence');
     }
 
     /**
@@ -189,6 +185,6 @@ class StudentCurriculumEvidence extends ModelBase
      */
     public function setEvidence(ModelBase $evidence = null)
     {
-        $this->setProperty("evidence", $evidence);
+        $this->setProperty('evidence', $evidence);
     }
 }

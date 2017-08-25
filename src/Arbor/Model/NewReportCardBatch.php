@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewReportCardTemplate;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewReportCardBatch extends ModelBase
 {
@@ -16,15 +10,15 @@ class NewReportCardBatch extends ModelBase
 
     const REPORT_CARD_TITLE = 'reportCardTitle';
 
+    const GENERAL_SETTINGS_JSON = 'generalSettingsJson';
+
     const REPORT_CARD_DATE = 'reportCardDate';
+
+    const ATTAINMENT_SETTINGS_JSON = 'attainmentSettingsJson';
 
     const ASSESSMENT_PERIOD_START_DATE = 'assessmentPeriodStartDate';
 
     const ASSESSMENT_PERIOD_END_DATE = 'assessmentPeriodEndDate';
-
-    const ATTENDANCE_PERIOD_START_DATE = 'attendancePeriodStartDate';
-
-    const ATTENDANCE_PERIOD_END_DATE = 'attendancePeriodEndDate';
 
     const DUE_DATE = 'dueDate';
 
@@ -50,37 +44,49 @@ class NewReportCardBatch extends ModelBase
 
     const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
 
+    const BEHAVIOUR_FIELDS = 'behaviourFields';
+
+    const ATTENDANCE_FIELDS = 'attendanceFields';
+
+    const SHOW_COMMENTS = 'showComments';
+
+    const CUSTOM_DISPLAY_NAMES_JSON = 'customDisplayNamesJson';
+
     protected $_resourceType = ResourceType::NEW_REPORT_CARD_BATCH;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewReportCardBatch[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewReportCardBatch");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEW_REPORT_CARD_BATCH);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewReportCardBatch
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEW_REPORT_CARD_BATCH, $id);
     }
 
@@ -89,7 +95,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getReportCardTemplate()
     {
-        return $this->getProperty("reportCardTemplate");
+        return $this->getProperty('reportCardTemplate');
     }
 
     /**
@@ -97,7 +103,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setReportCardTemplate(NewReportCardTemplate $reportCardTemplate = null)
     {
-        $this->setProperty("reportCardTemplate", $reportCardTemplate);
+        $this->setProperty('reportCardTemplate', $reportCardTemplate);
     }
 
     /**
@@ -105,7 +111,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getReportCardTitle()
     {
-        return $this->getProperty("reportCardTitle");
+        return $this->getProperty('reportCardTitle');
     }
 
     /**
@@ -113,7 +119,23 @@ class NewReportCardBatch extends ModelBase
      */
     public function setReportCardTitle($reportCardTitle = null)
     {
-        $this->setProperty("reportCardTitle", $reportCardTitle);
+        $this->setProperty('reportCardTitle', $reportCardTitle);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGeneralSettingsJson()
+    {
+        return $this->getProperty('generalSettingsJson');
+    }
+
+    /**
+     * @param string $generalSettingsJson
+     */
+    public function setGeneralSettingsJson($generalSettingsJson = null)
+    {
+        $this->setProperty('generalSettingsJson', $generalSettingsJson);
     }
 
     /**
@@ -121,7 +143,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getReportCardDate()
     {
-        return $this->getProperty("reportCardDate");
+        return $this->getProperty('reportCardDate');
     }
 
     /**
@@ -129,7 +151,23 @@ class NewReportCardBatch extends ModelBase
      */
     public function setReportCardDate(\DateTime $reportCardDate = null)
     {
-        $this->setProperty("reportCardDate", $reportCardDate);
+        $this->setProperty('reportCardDate', $reportCardDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAttainmentSettingsJson()
+    {
+        return $this->getProperty('attainmentSettingsJson');
+    }
+
+    /**
+     * @param string $attainmentSettingsJson
+     */
+    public function setAttainmentSettingsJson($attainmentSettingsJson = null)
+    {
+        $this->setProperty('attainmentSettingsJson', $attainmentSettingsJson);
     }
 
     /**
@@ -137,7 +175,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getAssessmentPeriodStartDate()
     {
-        return $this->getProperty("assessmentPeriodStartDate");
+        return $this->getProperty('assessmentPeriodStartDate');
     }
 
     /**
@@ -145,7 +183,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setAssessmentPeriodStartDate(\DateTime $assessmentPeriodStartDate = null)
     {
-        $this->setProperty("assessmentPeriodStartDate", $assessmentPeriodStartDate);
+        $this->setProperty('assessmentPeriodStartDate', $assessmentPeriodStartDate);
     }
 
     /**
@@ -153,7 +191,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getAssessmentPeriodEndDate()
     {
-        return $this->getProperty("assessmentPeriodEndDate");
+        return $this->getProperty('assessmentPeriodEndDate');
     }
 
     /**
@@ -161,39 +199,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setAssessmentPeriodEndDate(\DateTime $assessmentPeriodEndDate = null)
     {
-        $this->setProperty("assessmentPeriodEndDate", $assessmentPeriodEndDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getAttendancePeriodStartDate()
-    {
-        return $this->getProperty("attendancePeriodStartDate");
-    }
-
-    /**
-     * @param \DateTime $attendancePeriodStartDate
-     */
-    public function setAttendancePeriodStartDate(\DateTime $attendancePeriodStartDate = null)
-    {
-        $this->setProperty("attendancePeriodStartDate", $attendancePeriodStartDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getAttendancePeriodEndDate()
-    {
-        return $this->getProperty("attendancePeriodEndDate");
-    }
-
-    /**
-     * @param \DateTime $attendancePeriodEndDate
-     */
-    public function setAttendancePeriodEndDate(\DateTime $attendancePeriodEndDate = null)
-    {
-        $this->setProperty("attendancePeriodEndDate", $attendancePeriodEndDate);
+        $this->setProperty('assessmentPeriodEndDate', $assessmentPeriodEndDate);
     }
 
     /**
@@ -201,7 +207,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getDueDate()
     {
-        return $this->getProperty("dueDate");
+        return $this->getProperty('dueDate');
     }
 
     /**
@@ -209,7 +215,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setDueDate(\DateTime $dueDate = null)
     {
-        $this->setProperty("dueDate", $dueDate);
+        $this->setProperty('dueDate', $dueDate);
     }
 
     /**
@@ -217,7 +223,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -225,7 +231,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -233,7 +239,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getIncludeTeacherInitials()
     {
-        return $this->getProperty("includeTeacherInitials");
+        return $this->getProperty('includeTeacherInitials');
     }
 
     /**
@@ -241,7 +247,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setIncludeTeacherInitials($includeTeacherInitials = null)
     {
-        $this->setProperty("includeTeacherInitials", $includeTeacherInitials);
+        $this->setProperty('includeTeacherInitials', $includeTeacherInitials);
     }
 
     /**
@@ -249,7 +255,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getIncludeTeacherName()
     {
-        return $this->getProperty("includeTeacherName");
+        return $this->getProperty('includeTeacherName');
     }
 
     /**
@@ -257,7 +263,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setIncludeTeacherName($includeTeacherName = null)
     {
-        $this->setProperty("includeTeacherName", $includeTeacherName);
+        $this->setProperty('includeTeacherName', $includeTeacherName);
     }
 
     /**
@@ -265,7 +271,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getIncludeBaseline()
     {
-        return $this->getProperty("includeBaseline");
+        return $this->getProperty('includeBaseline');
     }
 
     /**
@@ -273,7 +279,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setIncludeBaseline($includeBaseline = null)
     {
-        $this->setProperty("includeBaseline", $includeBaseline);
+        $this->setProperty('includeBaseline', $includeBaseline);
     }
 
     /**
@@ -281,7 +287,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getIncludeWorkingAtCurrentPeriod()
     {
-        return $this->getProperty("includeWorkingAtCurrentPeriod");
+        return $this->getProperty('includeWorkingAtCurrentPeriod');
     }
 
     /**
@@ -289,7 +295,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setIncludeWorkingAtCurrentPeriod($includeWorkingAtCurrentPeriod = null)
     {
-        $this->setProperty("includeWorkingAtCurrentPeriod", $includeWorkingAtCurrentPeriod);
+        $this->setProperty('includeWorkingAtCurrentPeriod', $includeWorkingAtCurrentPeriod);
     }
 
     /**
@@ -297,7 +303,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getIncludeWorkingAtPreviousPeriod()
     {
-        return $this->getProperty("includeWorkingAtPreviousPeriod");
+        return $this->getProperty('includeWorkingAtPreviousPeriod');
     }
 
     /**
@@ -305,7 +311,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setIncludeWorkingAtPreviousPeriod($includeWorkingAtPreviousPeriod = null)
     {
-        $this->setProperty("includeWorkingAtPreviousPeriod", $includeWorkingAtPreviousPeriod);
+        $this->setProperty('includeWorkingAtPreviousPeriod', $includeWorkingAtPreviousPeriod);
     }
 
     /**
@@ -313,7 +319,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getPreviousPeriodMeaning()
     {
-        return $this->getProperty("previousPeriodMeaning");
+        return $this->getProperty('previousPeriodMeaning');
     }
 
     /**
@@ -321,7 +327,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setPreviousPeriodMeaning($previousPeriodMeaning = null)
     {
-        $this->setProperty("previousPeriodMeaning", $previousPeriodMeaning);
+        $this->setProperty('previousPeriodMeaning', $previousPeriodMeaning);
     }
 
     /**
@@ -329,7 +335,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getIncludeTeacherTarget()
     {
-        return $this->getProperty("includeTeacherTarget");
+        return $this->getProperty('includeTeacherTarget');
     }
 
     /**
@@ -337,7 +343,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setIncludeTeacherTarget($includeTeacherTarget = null)
     {
-        $this->setProperty("includeTeacherTarget", $includeTeacherTarget);
+        $this->setProperty('includeTeacherTarget', $includeTeacherTarget);
     }
 
     /**
@@ -345,7 +351,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getFinalizedDatetime()
     {
-        return $this->getProperty("finalizedDatetime");
+        return $this->getProperty('finalizedDatetime');
     }
 
     /**
@@ -353,7 +359,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setFinalizedDatetime(\DateTime $finalizedDatetime = null)
     {
-        $this->setProperty("finalizedDatetime", $finalizedDatetime);
+        $this->setProperty('finalizedDatetime', $finalizedDatetime);
     }
 
     /**
@@ -361,7 +367,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getFinalizationInProgress()
     {
-        return $this->getProperty("finalizationInProgress");
+        return $this->getProperty('finalizationInProgress');
     }
 
     /**
@@ -369,7 +375,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function setFinalizationInProgress($finalizationInProgress = null)
     {
-        $this->setProperty("finalizationInProgress", $finalizationInProgress);
+        $this->setProperty('finalizationInProgress', $finalizationInProgress);
     }
 
     /**
@@ -377,7 +383,7 @@ class NewReportCardBatch extends ModelBase
      */
     public function getSharedWithGuardians()
     {
-        return $this->getProperty("sharedWithGuardians");
+        return $this->getProperty('sharedWithGuardians');
     }
 
     /**
@@ -385,6 +391,70 @@ class NewReportCardBatch extends ModelBase
      */
     public function setSharedWithGuardians($sharedWithGuardians = null)
     {
-        $this->setProperty("sharedWithGuardians", $sharedWithGuardians);
+        $this->setProperty('sharedWithGuardians', $sharedWithGuardians);
+    }
+
+    /**
+     * @return string
+     */
+    public function getBehaviourFields()
+    {
+        return $this->getProperty('behaviourFields');
+    }
+
+    /**
+     * @param string $behaviourFields
+     */
+    public function setBehaviourFields($behaviourFields = null)
+    {
+        $this->setProperty('behaviourFields', $behaviourFields);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAttendanceFields()
+    {
+        return $this->getProperty('attendanceFields');
+    }
+
+    /**
+     * @param string $attendanceFields
+     */
+    public function setAttendanceFields($attendanceFields = null)
+    {
+        $this->setProperty('attendanceFields', $attendanceFields);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowComments()
+    {
+        return $this->getProperty('showComments');
+    }
+
+    /**
+     * @param bool $showComments
+     */
+    public function setShowComments($showComments = null)
+    {
+        $this->setProperty('showComments', $showComments);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomDisplayNamesJson()
+    {
+        return $this->getProperty('customDisplayNamesJson');
+    }
+
+    /**
+     * @param string $customDisplayNamesJson
+     */
+    public function setCustomDisplayNamesJson($customDisplayNamesJson = null)
+    {
+        $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }
 }

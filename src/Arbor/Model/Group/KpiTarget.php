@@ -1,14 +1,14 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Kpi;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Kpi;
+use Arbor\Model\AcademicYear;
 
 class KpiTarget extends ModelBase
 {
@@ -23,34 +23,38 @@ class KpiTarget extends ModelBase
     protected $_resourceType = ResourceType::GROUP_KPI_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return KpiTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_KpiTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_KPI_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return KpiTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_KPI_TARGET, $id);
     }
 
@@ -59,7 +63,7 @@ class KpiTarget extends ModelBase
      */
     public function getKpi()
     {
-        return $this->getProperty("kpi");
+        return $this->getProperty('kpi');
     }
 
     /**
@@ -67,7 +71,7 @@ class KpiTarget extends ModelBase
      */
     public function setKpi(Kpi $kpi = null)
     {
-        $this->setProperty("kpi", $kpi);
+        $this->setProperty('kpi', $kpi);
     }
 
     /**
@@ -75,7 +79,7 @@ class KpiTarget extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -83,7 +87,7 @@ class KpiTarget extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -91,7 +95,7 @@ class KpiTarget extends ModelBase
      */
     public function getTargetValue()
     {
-        return $this->getProperty("targetValue");
+        return $this->getProperty('targetValue');
     }
 
     /**
@@ -99,7 +103,7 @@ class KpiTarget extends ModelBase
      */
     public function setTargetValue($targetValue = null)
     {
-        $this->setProperty("targetValue", $targetValue);
+        $this->setProperty('targetValue', $targetValue);
     }
 
     /**
@@ -107,7 +111,7 @@ class KpiTarget extends ModelBase
      */
     public function getComment()
     {
-        return $this->getProperty("comment");
+        return $this->getProperty('comment');
     }
 
     /**
@@ -115,6 +119,6 @@ class KpiTarget extends ModelBase
      */
     public function setComment($comment = null)
     {
-        $this->setProperty("comment", $comment);
+        $this->setProperty('comment', $comment);
     }
 }

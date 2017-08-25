@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\GradePointScale;
-use \Arbor\Model\GradeSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class GradePointScaleLevelGradeSet extends ModelBase
 {
@@ -23,34 +17,38 @@ class GradePointScaleLevelGradeSet extends ModelBase
     protected $_resourceType = ResourceType::GRADE_POINT_SCALE_LEVEL_GRADE_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return GradePointScaleLevelGradeSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("GradePointScaleLevelGradeSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GRADE_POINT_SCALE_LEVEL_GRADE_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return GradePointScaleLevelGradeSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GRADE_POINT_SCALE_LEVEL_GRADE_SET, $id);
     }
 
@@ -59,7 +57,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function getGradePointScale()
     {
-        return $this->getProperty("gradePointScale");
+        return $this->getProperty('gradePointScale');
     }
 
     /**
@@ -67,7 +65,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function setGradePointScale(GradePointScale $gradePointScale = null)
     {
-        $this->setProperty("gradePointScale", $gradePointScale);
+        $this->setProperty('gradePointScale', $gradePointScale);
     }
 
     /**
@@ -75,7 +73,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function getGradeSet()
     {
-        return $this->getProperty("gradeSet");
+        return $this->getProperty('gradeSet');
     }
 
     /**
@@ -83,7 +81,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function setGradeSet(GradeSet $gradeSet = null)
     {
-        $this->setProperty("gradeSet", $gradeSet);
+        $this->setProperty('gradeSet', $gradeSet);
     }
 
     /**
@@ -91,7 +89,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function getLevelType()
     {
-        return $this->getProperty("levelType");
+        return $this->getProperty('levelType');
     }
 
     /**
@@ -99,7 +97,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function setLevelType($levelType = null)
     {
-        $this->setProperty("levelType", $levelType);
+        $this->setProperty('levelType', $levelType);
     }
 
     /**
@@ -107,7 +105,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function getAppliesToSenStudentOnly()
     {
-        return $this->getProperty("appliesToSenStudentOnly");
+        return $this->getProperty('appliesToSenStudentOnly');
     }
 
     /**
@@ -115,6 +113,6 @@ class GradePointScaleLevelGradeSet extends ModelBase
      */
     public function setAppliesToSenStudentOnly($appliesToSenStudentOnly = null)
     {
-        $this->setProperty("appliesToSenStudentOnly", $appliesToSenStudentOnly);
+        $this->setProperty('appliesToSenStudentOnly', $appliesToSenStudentOnly);
     }
 }

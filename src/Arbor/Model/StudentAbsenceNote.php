@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Staff;
-use \Arbor\Model\AttendanceMark;
-use \Arbor\Model\TemporaryExclusion;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentAbsenceNote extends ModelBase
 {
@@ -28,39 +20,43 @@ class StudentAbsenceNote extends ModelBase
 
     const ATTENDANCE_MARK = 'attendanceMark';
 
-    const TEMPORARY_EXCLUSION = 'temporaryExclusion';
+    const FIXED_PERIOD_EXCLUSION = 'fixedPeriodExclusion';
 
     protected $_resourceType = ResourceType::STUDENT_ABSENCE_NOTE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentAbsenceNote[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentAbsenceNote");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_ABSENCE_NOTE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentAbsenceNote
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_ABSENCE_NOTE, $id);
     }
 
@@ -69,7 +65,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -77,7 +73,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -85,7 +81,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getAbsenceStartDatetime()
     {
-        return $this->getProperty("absenceStartDatetime");
+        return $this->getProperty('absenceStartDatetime');
     }
 
     /**
@@ -93,7 +89,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setAbsenceStartDatetime(\DateTime $absenceStartDatetime = null)
     {
-        $this->setProperty("absenceStartDatetime", $absenceStartDatetime);
+        $this->setProperty('absenceStartDatetime', $absenceStartDatetime);
     }
 
     /**
@@ -101,7 +97,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getAbsenceEndDatetime()
     {
-        return $this->getProperty("absenceEndDatetime");
+        return $this->getProperty('absenceEndDatetime');
     }
 
     /**
@@ -109,7 +105,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setAbsenceEndDatetime(\DateTime $absenceEndDatetime = null)
     {
-        $this->setProperty("absenceEndDatetime", $absenceEndDatetime);
+        $this->setProperty('absenceEndDatetime', $absenceEndDatetime);
     }
 
     /**
@@ -117,7 +113,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -125,7 +121,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 
     /**
@@ -133,7 +129,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getApprovedDate()
     {
-        return $this->getProperty("approvedDate");
+        return $this->getProperty('approvedDate');
     }
 
     /**
@@ -141,7 +137,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setApprovedDate(\DateTime $approvedDate = null)
     {
-        $this->setProperty("approvedDate", $approvedDate);
+        $this->setProperty('approvedDate', $approvedDate);
     }
 
     /**
@@ -149,7 +145,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getApprovedByStaff()
     {
-        return $this->getProperty("approvedByStaff");
+        return $this->getProperty('approvedByStaff');
     }
 
     /**
@@ -157,7 +153,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setApprovedByStaff(Staff $approvedByStaff = null)
     {
-        $this->setProperty("approvedByStaff", $approvedByStaff);
+        $this->setProperty('approvedByStaff', $approvedByStaff);
     }
 
     /**
@@ -165,7 +161,7 @@ class StudentAbsenceNote extends ModelBase
      */
     public function getAttendanceMark()
     {
-        return $this->getProperty("attendanceMark");
+        return $this->getProperty('attendanceMark');
     }
 
     /**
@@ -173,22 +169,22 @@ class StudentAbsenceNote extends ModelBase
      */
     public function setAttendanceMark(AttendanceMark $attendanceMark = null)
     {
-        $this->setProperty("attendanceMark", $attendanceMark);
+        $this->setProperty('attendanceMark', $attendanceMark);
     }
 
     /**
-     * @return TemporaryExclusion
+     * @return FixedPeriodExclusion
      */
-    public function getTemporaryExclusion()
+    public function getFixedPeriodExclusion()
     {
-        return $this->getProperty("temporaryExclusion");
+        return $this->getProperty('fixedPeriodExclusion');
     }
 
     /**
-     * @param TemporaryExclusion $temporaryExclusion
+     * @param FixedPeriodExclusion $fixedPeriodExclusion
      */
-    public function setTemporaryExclusion(TemporaryExclusion $temporaryExclusion = null)
+    public function setFixedPeriodExclusion(FixedPeriodExclusion $fixedPeriodExclusion = null)
     {
-        $this->setProperty("temporaryExclusion", $temporaryExclusion);
+        $this->setProperty('fixedPeriodExclusion', $fixedPeriodExclusion);
     }
 }

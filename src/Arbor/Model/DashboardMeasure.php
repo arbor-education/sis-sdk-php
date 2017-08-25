@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\DashboardSection;
-use \Arbor\Model\Kpi;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DashboardMeasure extends ModelBase
 {
@@ -27,34 +21,38 @@ class DashboardMeasure extends ModelBase
     protected $_resourceType = ResourceType::DASHBOARD_MEASURE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DashboardMeasure[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DashboardMeasure");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DASHBOARD_MEASURE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DashboardMeasure
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DASHBOARD_MEASURE, $id);
     }
 
@@ -63,7 +61,7 @@ class DashboardMeasure extends ModelBase
      */
     public function getDashboardSection()
     {
-        return $this->getProperty("dashboardSection");
+        return $this->getProperty('dashboardSection');
     }
 
     /**
@@ -71,7 +69,7 @@ class DashboardMeasure extends ModelBase
      */
     public function setDashboardSection(DashboardSection $dashboardSection = null)
     {
-        $this->setProperty("dashboardSection", $dashboardSection);
+        $this->setProperty('dashboardSection', $dashboardSection);
     }
 
     /**
@@ -79,7 +77,7 @@ class DashboardMeasure extends ModelBase
      */
     public function getKpi()
     {
-        return $this->getProperty("kpi");
+        return $this->getProperty('kpi');
     }
 
     /**
@@ -87,7 +85,7 @@ class DashboardMeasure extends ModelBase
      */
     public function setKpi(Kpi $kpi = null)
     {
-        $this->setProperty("kpi", $kpi);
+        $this->setProperty('kpi', $kpi);
     }
 
     /**
@@ -95,7 +93,7 @@ class DashboardMeasure extends ModelBase
      */
     public function getFallbackKpi()
     {
-        return $this->getProperty("fallbackKpi");
+        return $this->getProperty('fallbackKpi');
     }
 
     /**
@@ -103,7 +101,7 @@ class DashboardMeasure extends ModelBase
      */
     public function setFallbackKpi(Kpi $fallbackKpi = null)
     {
-        $this->setProperty("fallbackKpi", $fallbackKpi);
+        $this->setProperty('fallbackKpi', $fallbackKpi);
     }
 
     /**
@@ -111,7 +109,7 @@ class DashboardMeasure extends ModelBase
      */
     public function getComparisonKpi()
     {
-        return $this->getProperty("comparisonKpi");
+        return $this->getProperty('comparisonKpi');
     }
 
     /**
@@ -119,7 +117,7 @@ class DashboardMeasure extends ModelBase
      */
     public function setComparisonKpi(Kpi $comparisonKpi = null)
     {
-        $this->setProperty("comparisonKpi", $comparisonKpi);
+        $this->setProperty('comparisonKpi', $comparisonKpi);
     }
 
     /**
@@ -127,7 +125,7 @@ class DashboardMeasure extends ModelBase
      */
     public function getTargetable()
     {
-        return $this->getProperty("targetable");
+        return $this->getProperty('targetable');
     }
 
     /**
@@ -135,7 +133,7 @@ class DashboardMeasure extends ModelBase
      */
     public function setTargetable($targetable = null)
     {
-        $this->setProperty("targetable", $targetable);
+        $this->setProperty('targetable', $targetable);
     }
 
     /**
@@ -143,7 +141,7 @@ class DashboardMeasure extends ModelBase
      */
     public function getDisplayOrder()
     {
-        return $this->getProperty("displayOrder");
+        return $this->getProperty('displayOrder');
     }
 
     /**
@@ -151,6 +149,6 @@ class DashboardMeasure extends ModelBase
      */
     public function setDisplayOrder($displayOrder = null)
     {
-        $this->setProperty("displayOrder", $displayOrder);
+        $this->setProperty('displayOrder', $displayOrder);
     }
 }

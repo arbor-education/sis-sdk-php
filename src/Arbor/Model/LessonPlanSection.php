@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LessonPlan;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class LessonPlanSection extends ModelBase
 {
@@ -26,34 +21,38 @@ class LessonPlanSection extends ModelBase
     protected $_resourceType = ResourceType::LESSON_PLAN_SECTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LessonPlanSection[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("LessonPlanSection");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LESSON_PLAN_SECTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LessonPlanSection
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LESSON_PLAN_SECTION, $id);
     }
 
@@ -62,7 +61,7 @@ class LessonPlanSection extends ModelBase
      */
     public function getLessonPlan()
     {
-        return $this->getProperty("lessonPlan");
+        return $this->getProperty('lessonPlan');
     }
 
     /**
@@ -70,7 +69,7 @@ class LessonPlanSection extends ModelBase
      */
     public function setLessonPlan(LessonPlan $lessonPlan = null)
     {
-        $this->setProperty("lessonPlan", $lessonPlan);
+        $this->setProperty('lessonPlan', $lessonPlan);
     }
 
     /**
@@ -78,7 +77,7 @@ class LessonPlanSection extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -86,7 +85,7 @@ class LessonPlanSection extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -94,7 +93,7 @@ class LessonPlanSection extends ModelBase
      */
     public function getTeacherNotes()
     {
-        return $this->getProperty("teacherNotes");
+        return $this->getProperty('teacherNotes');
     }
 
     /**
@@ -102,7 +101,7 @@ class LessonPlanSection extends ModelBase
      */
     public function setTeacherNotes($teacherNotes = null)
     {
-        $this->setProperty("teacherNotes", $teacherNotes);
+        $this->setProperty('teacherNotes', $teacherNotes);
     }
 
     /**
@@ -110,7 +109,7 @@ class LessonPlanSection extends ModelBase
      */
     public function getSectionType()
     {
-        return $this->getProperty("sectionType");
+        return $this->getProperty('sectionType');
     }
 
     /**
@@ -118,7 +117,7 @@ class LessonPlanSection extends ModelBase
      */
     public function setSectionType($sectionType = null)
     {
-        $this->setProperty("sectionType", $sectionType);
+        $this->setProperty('sectionType', $sectionType);
     }
 
     /**
@@ -126,7 +125,7 @@ class LessonPlanSection extends ModelBase
      */
     public function getExpectedDuration()
     {
-        return $this->getProperty("expectedDuration");
+        return $this->getProperty('expectedDuration');
     }
 
     /**
@@ -134,7 +133,7 @@ class LessonPlanSection extends ModelBase
      */
     public function setExpectedDuration($expectedDuration = null)
     {
-        $this->setProperty("expectedDuration", $expectedDuration);
+        $this->setProperty('expectedDuration', $expectedDuration);
     }
 
     /**
@@ -142,7 +141,7 @@ class LessonPlanSection extends ModelBase
      */
     public function getDisplayOrder()
     {
-        return $this->getProperty("displayOrder");
+        return $this->getProperty('displayOrder');
     }
 
     /**
@@ -150,6 +149,6 @@ class LessonPlanSection extends ModelBase
      */
     public function setDisplayOrder($displayOrder = null)
     {
-        $this->setProperty("displayOrder", $displayOrder);
+        $this->setProperty('displayOrder', $displayOrder);
     }
 }

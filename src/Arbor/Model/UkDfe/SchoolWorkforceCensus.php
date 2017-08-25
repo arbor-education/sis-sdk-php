@@ -1,13 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\AcademicYear;
 
 class SchoolWorkforceCensus extends ModelBase
 {
@@ -28,34 +28,38 @@ class SchoolWorkforceCensus extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolWorkforceCensus[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolWorkforceCensus");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolWorkforceCensus
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS, $id);
     }
 
@@ -64,7 +68,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -72,7 +76,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -80,7 +84,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -88,7 +92,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -96,7 +100,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -104,7 +108,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -112,7 +116,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -120,7 +124,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -128,7 +132,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getCensusYear()
     {
-        return $this->getProperty("censusYear");
+        return $this->getProperty('censusYear');
     }
 
     /**
@@ -136,7 +140,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setCensusYear($censusYear = null)
     {
-        $this->setProperty("censusYear", $censusYear);
+        $this->setProperty('censusYear', $censusYear);
     }
 
     /**
@@ -144,7 +148,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getCensusReferenceDate()
     {
-        return $this->getProperty("censusReferenceDate");
+        return $this->getProperty('censusReferenceDate');
     }
 
     /**
@@ -152,7 +156,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setCensusReferenceDate(\DateTime $censusReferenceDate = null)
     {
-        $this->setProperty("censusReferenceDate", $censusReferenceDate);
+        $this->setProperty('censusReferenceDate', $censusReferenceDate);
     }
 
     /**
@@ -160,7 +164,7 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function getCensusSubmissionDeadlineDate()
     {
-        return $this->getProperty("censusSubmissionDeadlineDate");
+        return $this->getProperty('censusSubmissionDeadlineDate');
     }
 
     /**
@@ -168,6 +172,6 @@ class SchoolWorkforceCensus extends ModelBase
      */
     public function setCensusSubmissionDeadlineDate(\DateTime $censusSubmissionDeadlineDate = null)
     {
-        $this->setProperty("censusSubmissionDeadlineDate", $censusSubmissionDeadlineDate);
+        $this->setProperty('censusSubmissionDeadlineDate', $censusSubmissionDeadlineDate);
     }
 }

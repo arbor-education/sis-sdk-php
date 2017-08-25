@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationAssessable;
-use \Arbor\Model\QualificationAvailabilityInstance;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationAssessableInstance extends ModelBase
 {
@@ -24,45 +18,57 @@ class QualificationAssessableInstance extends ModelBase
 
     const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
+    const QUALIFICATION_TIMETABLE_SESSION_TYPE = 'qualificationTimetableSessionType';
+
     const START_DATE_RANGE_FROM = 'startDateRangeFrom';
 
     const START_DATE_RANGE_UNTIL = 'startDateRangeUntil';
 
     const DURATION = 'duration';
 
+    const IS_CENTRE_SPECIFIED_TIMETABLE = 'isCentreSpecifiedTimetable';
+
+    const CENTRE_SPECIFIED_DATETIME = 'centreSpecifiedDatetime';
+
+    const CENTRE_SPECIFIED_DURATION = 'centreSpecifiedDuration';
+
     const IS_PROVISIONAL = 'isProvisional';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ASSESSABLE_INSTANCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationAssessableInstance[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationAssessableInstance");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_ASSESSABLE_INSTANCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationAssessableInstance
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_ASSESSABLE_INSTANCE, $id);
     }
 
@@ -71,7 +77,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -79,7 +85,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -87,7 +93,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -95,7 +101,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -103,7 +109,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -111,7 +117,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -119,7 +125,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getAssessableInstanceIdentifier()
     {
-        return $this->getProperty("assessableInstanceIdentifier");
+        return $this->getProperty('assessableInstanceIdentifier');
     }
 
     /**
@@ -127,7 +133,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setAssessableInstanceIdentifier($assessableInstanceIdentifier = null)
     {
-        $this->setProperty("assessableInstanceIdentifier", $assessableInstanceIdentifier);
+        $this->setProperty('assessableInstanceIdentifier', $assessableInstanceIdentifier);
     }
 
     /**
@@ -135,7 +141,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getQualificationAssessable()
     {
-        return $this->getProperty("qualificationAssessable");
+        return $this->getProperty('qualificationAssessable');
     }
 
     /**
@@ -143,7 +149,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
     {
-        $this->setProperty("qualificationAssessable", $qualificationAssessable);
+        $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
 
     /**
@@ -151,7 +157,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getQualificationAvailabilityInstance()
     {
-        return $this->getProperty("qualificationAvailabilityInstance");
+        return $this->getProperty('qualificationAvailabilityInstance');
     }
 
     /**
@@ -159,7 +165,23 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
-        $this->setProperty("qualificationAvailabilityInstance", $qualificationAvailabilityInstance);
+        $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
+    }
+
+    /**
+     * @return QualificationTimetableSessionType
+     */
+    public function getQualificationTimetableSessionType()
+    {
+        return $this->getProperty('qualificationTimetableSessionType');
+    }
+
+    /**
+     * @param QualificationTimetableSessionType $qualificationTimetableSessionType
+     */
+    public function setQualificationTimetableSessionType(QualificationTimetableSessionType $qualificationTimetableSessionType = null)
+    {
+        $this->setProperty('qualificationTimetableSessionType', $qualificationTimetableSessionType);
     }
 
     /**
@@ -167,7 +189,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getStartDateRangeFrom()
     {
-        return $this->getProperty("startDateRangeFrom");
+        return $this->getProperty('startDateRangeFrom');
     }
 
     /**
@@ -175,7 +197,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setStartDateRangeFrom(\DateTime $startDateRangeFrom = null)
     {
-        $this->setProperty("startDateRangeFrom", $startDateRangeFrom);
+        $this->setProperty('startDateRangeFrom', $startDateRangeFrom);
     }
 
     /**
@@ -183,7 +205,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getStartDateRangeUntil()
     {
-        return $this->getProperty("startDateRangeUntil");
+        return $this->getProperty('startDateRangeUntil');
     }
 
     /**
@@ -191,7 +213,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setStartDateRangeUntil(\DateTime $startDateRangeUntil = null)
     {
-        $this->setProperty("startDateRangeUntil", $startDateRangeUntil);
+        $this->setProperty('startDateRangeUntil', $startDateRangeUntil);
     }
 
     /**
@@ -199,7 +221,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getDuration()
     {
-        return $this->getProperty("duration");
+        return $this->getProperty('duration');
     }
 
     /**
@@ -207,7 +229,55 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setDuration($duration = null)
     {
-        $this->setProperty("duration", $duration);
+        $this->setProperty('duration', $duration);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsCentreSpecifiedTimetable()
+    {
+        return $this->getProperty('isCentreSpecifiedTimetable');
+    }
+
+    /**
+     * @param bool $isCentreSpecifiedTimetable
+     */
+    public function setIsCentreSpecifiedTimetable($isCentreSpecifiedTimetable = null)
+    {
+        $this->setProperty('isCentreSpecifiedTimetable', $isCentreSpecifiedTimetable);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCentreSpecifiedDatetime()
+    {
+        return $this->getProperty('centreSpecifiedDatetime');
+    }
+
+    /**
+     * @param \DateTime $centreSpecifiedDatetime
+     */
+    public function setCentreSpecifiedDatetime(\DateTime $centreSpecifiedDatetime = null)
+    {
+        $this->setProperty('centreSpecifiedDatetime', $centreSpecifiedDatetime);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCentreSpecifiedDuration()
+    {
+        return $this->getProperty('centreSpecifiedDuration');
+    }
+
+    /**
+     * @param string $centreSpecifiedDuration
+     */
+    public function setCentreSpecifiedDuration($centreSpecifiedDuration = null)
+    {
+        $this->setProperty('centreSpecifiedDuration', $centreSpecifiedDuration);
     }
 
     /**
@@ -215,7 +285,7 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function getIsProvisional()
     {
-        return $this->getProperty("isProvisional");
+        return $this->getProperty('isProvisional');
     }
 
     /**
@@ -223,6 +293,6 @@ class QualificationAssessableInstance extends ModelBase
      */
     public function setIsProvisional($isProvisional = null)
     {
-        $this->setProperty("isProvisional", $isProvisional);
+        $this->setProperty('isProvisional', $isProvisional);
     }
 }

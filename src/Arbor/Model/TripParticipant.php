@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Trip;
-use \Arbor\Model\Student;
-use \Arbor\Model\CustomerInvoice;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TripParticipant extends ModelBase
 {
@@ -24,34 +17,38 @@ class TripParticipant extends ModelBase
     protected $_resourceType = ResourceType::TRIP_PARTICIPANT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TripParticipant[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TripParticipant");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TRIP_PARTICIPANT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TripParticipant
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TRIP_PARTICIPANT, $id);
     }
 
@@ -60,7 +57,7 @@ class TripParticipant extends ModelBase
      */
     public function getTrip()
     {
-        return $this->getProperty("trip");
+        return $this->getProperty('trip');
     }
 
     /**
@@ -68,7 +65,7 @@ class TripParticipant extends ModelBase
      */
     public function setTrip(Trip $trip = null)
     {
-        $this->setProperty("trip", $trip);
+        $this->setProperty('trip', $trip);
     }
 
     /**
@@ -76,7 +73,7 @@ class TripParticipant extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -84,7 +81,7 @@ class TripParticipant extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -92,7 +89,7 @@ class TripParticipant extends ModelBase
      */
     public function getCustomerInvoice()
     {
-        return $this->getProperty("customerInvoice");
+        return $this->getProperty('customerInvoice');
     }
 
     /**
@@ -100,7 +97,7 @@ class TripParticipant extends ModelBase
      */
     public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
     {
-        $this->setProperty("customerInvoice", $customerInvoice);
+        $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
@@ -108,7 +105,7 @@ class TripParticipant extends ModelBase
      */
     public function getConsentReceived()
     {
-        return $this->getProperty("consentReceived");
+        return $this->getProperty('consentReceived');
     }
 
     /**
@@ -116,6 +113,6 @@ class TripParticipant extends ModelBase
      */
     public function setConsentReceived($consentReceived = null)
     {
-        $this->setProperty("consentReceived", $consentReceived);
+        $this->setProperty('consentReceived', $consentReceived);
     }
 }

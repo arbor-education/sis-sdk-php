@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AttendanceRegisterType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendanceRollCall extends ModelBase
 {
@@ -28,34 +23,38 @@ class AttendanceRollCall extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendanceRollCall[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendanceRollCall");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_ROLL_CALL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendanceRollCall
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_ROLL_CALL, $id);
     }
 
@@ -64,7 +63,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -72,7 +71,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -80,7 +79,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -88,7 +87,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -96,7 +95,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getAutoFillClass()
     {
-        return $this->getProperty("autoFillClass");
+        return $this->getProperty('autoFillClass');
     }
 
     /**
@@ -104,7 +103,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function setAutoFillClass($autoFillClass = null)
     {
-        $this->setProperty("autoFillClass", $autoFillClass);
+        $this->setProperty('autoFillClass', $autoFillClass);
     }
 
     /**
@@ -112,7 +111,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getAttendanceRegisterType()
     {
-        return $this->getProperty("attendanceRegisterType");
+        return $this->getProperty('attendanceRegisterType');
     }
 
     /**
@@ -120,7 +119,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
     {
-        $this->setProperty("attendanceRegisterType", $attendanceRegisterType);
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
     /**
@@ -128,7 +127,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -136,7 +135,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -144,7 +143,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -152,7 +151,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -160,7 +159,7 @@ class AttendanceRollCall extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -168,6 +167,6 @@ class AttendanceRollCall extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 }

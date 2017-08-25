@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Trip;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TripEligibility extends ModelBase
 {
@@ -18,34 +13,38 @@ class TripEligibility extends ModelBase
     protected $_resourceType = ResourceType::TRIP_ELIGIBILITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TripEligibility[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TripEligibility");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TRIP_ELIGIBILITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TripEligibility
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TRIP_ELIGIBILITY, $id);
     }
 
@@ -54,7 +53,7 @@ class TripEligibility extends ModelBase
      */
     public function getTrip()
     {
-        return $this->getProperty("trip");
+        return $this->getProperty('trip');
     }
 
     /**
@@ -62,7 +61,7 @@ class TripEligibility extends ModelBase
      */
     public function setTrip(Trip $trip = null)
     {
-        $this->setProperty("trip", $trip);
+        $this->setProperty('trip', $trip);
     }
 
     /**
@@ -70,7 +69,7 @@ class TripEligibility extends ModelBase
      */
     public function getEligibile()
     {
-        return $this->getProperty("eligibile");
+        return $this->getProperty('eligibile');
     }
 
     /**
@@ -78,6 +77,6 @@ class TripEligibility extends ModelBase
      */
     public function setEligibile(ModelBase $eligibile = null)
     {
-        $this->setProperty("eligibile", $eligibile);
+        $this->setProperty('eligibile', $eligibile);
     }
 }

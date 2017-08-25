@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TodoItem extends ModelBase
 {
@@ -29,34 +25,38 @@ class TodoItem extends ModelBase
     protected $_resourceType = ResourceType::TODO_ITEM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TodoItem[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TodoItem");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TODO_ITEM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TodoItem
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TODO_ITEM, $id);
     }
 
@@ -65,7 +65,7 @@ class TodoItem extends ModelBase
      */
     public function getIdentifier()
     {
-        return $this->getProperty("identifier");
+        return $this->getProperty('identifier');
     }
 
     /**
@@ -73,7 +73,7 @@ class TodoItem extends ModelBase
      */
     public function setIdentifier($identifier = null)
     {
-        $this->setProperty("identifier", $identifier);
+        $this->setProperty('identifier', $identifier);
     }
 
     /**
@@ -81,7 +81,7 @@ class TodoItem extends ModelBase
      */
     public function getText()
     {
-        return $this->getProperty("text");
+        return $this->getProperty('text');
     }
 
     /**
@@ -89,7 +89,7 @@ class TodoItem extends ModelBase
      */
     public function setText($text = null)
     {
-        $this->setProperty("text", $text);
+        $this->setProperty('text', $text);
     }
 
     /**
@@ -97,7 +97,7 @@ class TodoItem extends ModelBase
      */
     public function getAssignee()
     {
-        return $this->getProperty("assignee");
+        return $this->getProperty('assignee');
     }
 
     /**
@@ -105,7 +105,7 @@ class TodoItem extends ModelBase
      */
     public function setAssignee(ModelBase $assignee = null)
     {
-        $this->setProperty("assignee", $assignee);
+        $this->setProperty('assignee', $assignee);
     }
 
     /**
@@ -113,7 +113,7 @@ class TodoItem extends ModelBase
      */
     public function getReferenceDatetime()
     {
-        return $this->getProperty("referenceDatetime");
+        return $this->getProperty('referenceDatetime');
     }
 
     /**
@@ -121,7 +121,7 @@ class TodoItem extends ModelBase
      */
     public function setReferenceDatetime(\DateTime $referenceDatetime = null)
     {
-        $this->setProperty("referenceDatetime", $referenceDatetime);
+        $this->setProperty('referenceDatetime', $referenceDatetime);
     }
 
     /**
@@ -129,7 +129,7 @@ class TodoItem extends ModelBase
      */
     public function getDueDatetime()
     {
-        return $this->getProperty("dueDatetime");
+        return $this->getProperty('dueDatetime');
     }
 
     /**
@@ -137,7 +137,7 @@ class TodoItem extends ModelBase
      */
     public function setDueDatetime(\DateTime $dueDatetime = null)
     {
-        $this->setProperty("dueDatetime", $dueDatetime);
+        $this->setProperty('dueDatetime', $dueDatetime);
     }
 
     /**
@@ -145,7 +145,7 @@ class TodoItem extends ModelBase
      */
     public function getResolvedDatetime()
     {
-        return $this->getProperty("resolvedDatetime");
+        return $this->getProperty('resolvedDatetime');
     }
 
     /**
@@ -153,7 +153,7 @@ class TodoItem extends ModelBase
      */
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
-        $this->setProperty("resolvedDatetime", $resolvedDatetime);
+        $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
 
     /**
@@ -161,7 +161,7 @@ class TodoItem extends ModelBase
      */
     public function getOrigin()
     {
-        return $this->getProperty("origin");
+        return $this->getProperty('origin');
     }
 
     /**
@@ -169,7 +169,7 @@ class TodoItem extends ModelBase
      */
     public function setOrigin(ModelBase $origin = null)
     {
-        $this->setProperty("origin", $origin);
+        $this->setProperty('origin', $origin);
     }
 
     /**
@@ -177,7 +177,7 @@ class TodoItem extends ModelBase
      */
     public function getType()
     {
-        return $this->getProperty("type");
+        return $this->getProperty('type');
     }
 
     /**
@@ -185,6 +185,6 @@ class TodoItem extends ModelBase
      */
     public function setType($type = null)
     {
-        $this->setProperty("type", $type);
+        $this->setProperty('type', $type);
     }
 }

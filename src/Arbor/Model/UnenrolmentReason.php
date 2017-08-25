@@ -1,17 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UnenrolmentReason extends ModelBase
 {
-    const D00206 = 'd00206';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -20,54 +14,44 @@ class UnenrolmentReason extends ModelBase
 
     const UNENROLMENT_REASON = 'unenrolmentReason';
 
+    const D00206 = 'd00206';
+
     protected $_resourceType = ResourceType::UNENROLMENT_REASON;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UnenrolmentReason[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UnenrolmentReason");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UNENROLMENT_REASON);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UnenrolmentReason
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UNENROLMENT_REASON, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00206()
-    {
-        return $this->getProperty("d00206");
-    }
-
-    /**
-     * @param string $d00206
-     */
-    public function setD00206($d00206 = null)
-    {
-        $this->setProperty("d00206", $d00206);
     }
 
     /**
@@ -75,7 +59,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -83,7 +67,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -91,7 +75,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -99,7 +83,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -107,7 +91,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -115,7 +99,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -123,7 +107,7 @@ class UnenrolmentReason extends ModelBase
      */
     public function getUnenrolmentReason()
     {
-        return $this->getProperty("unenrolmentReason");
+        return $this->getProperty('unenrolmentReason');
     }
 
     /**
@@ -131,6 +115,22 @@ class UnenrolmentReason extends ModelBase
      */
     public function setUnenrolmentReason($unenrolmentReason = null)
     {
-        $this->setProperty("unenrolmentReason", $unenrolmentReason);
+        $this->setProperty('unenrolmentReason', $unenrolmentReason);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00206()
+    {
+        return $this->getProperty('d00206');
+    }
+
+    /**
+     * @param string $d00206
+     */
+    public function setD00206($d00206 = null)
+    {
+        $this->setProperty('d00206', $d00206);
     }
 }

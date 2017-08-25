@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Employer;
-use \Arbor\Model\EmploymentRecordType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentEmploymentRecord extends ModelBase
 {
@@ -32,34 +25,38 @@ class StudentEmploymentRecord extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_EMPLOYMENT_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentEmploymentRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentEmploymentRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_EMPLOYMENT_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentEmploymentRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_EMPLOYMENT_RECORD, $id);
     }
 
@@ -68,7 +65,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -76,7 +73,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -84,7 +81,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getEmployer()
     {
-        return $this->getProperty("employer");
+        return $this->getProperty('employer');
     }
 
     /**
@@ -92,7 +89,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setEmployer(Employer $employer = null)
     {
-        $this->setProperty("employer", $employer);
+        $this->setProperty('employer', $employer);
     }
 
     /**
@@ -100,7 +97,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -108,7 +105,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -116,7 +113,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -124,7 +121,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -132,7 +129,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getMinHoursPerWeek()
     {
-        return $this->getProperty("minHoursPerWeek");
+        return $this->getProperty('minHoursPerWeek');
     }
 
     /**
@@ -140,7 +137,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setMinHoursPerWeek($minHoursPerWeek = null)
     {
-        $this->setProperty("minHoursPerWeek", $minHoursPerWeek);
+        $this->setProperty('minHoursPerWeek', $minHoursPerWeek);
     }
 
     /**
@@ -148,7 +145,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getMaxHoursPerWeek()
     {
-        return $this->getProperty("maxHoursPerWeek");
+        return $this->getProperty('maxHoursPerWeek');
     }
 
     /**
@@ -156,7 +153,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setMaxHoursPerWeek($maxHoursPerWeek = null)
     {
-        $this->setProperty("maxHoursPerWeek", $maxHoursPerWeek);
+        $this->setProperty('maxHoursPerWeek', $maxHoursPerWeek);
     }
 
     /**
@@ -164,7 +161,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getInformationCollectedDate()
     {
-        return $this->getProperty("informationCollectedDate");
+        return $this->getProperty('informationCollectedDate');
     }
 
     /**
@@ -172,7 +169,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setInformationCollectedDate(\DateTime $informationCollectedDate = null)
     {
-        $this->setProperty("informationCollectedDate", $informationCollectedDate);
+        $this->setProperty('informationCollectedDate', $informationCollectedDate);
     }
 
     /**
@@ -180,7 +177,7 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function getEmploymentRecordType()
     {
-        return $this->getProperty("employmentRecordType");
+        return $this->getProperty('employmentRecordType');
     }
 
     /**
@@ -188,6 +185,6 @@ class StudentEmploymentRecord extends ModelBase
      */
     public function setEmploymentRecordType(EmploymentRecordType $employmentRecordType = null)
     {
-        $this->setProperty("employmentRecordType", $employmentRecordType);
+        $this->setProperty('employmentRecordType', $employmentRecordType);
     }
 }

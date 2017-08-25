@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AwardingOrganization extends ModelBase
 {
@@ -31,34 +27,38 @@ class AwardingOrganization extends ModelBase
     protected $_resourceType = ResourceType::AWARDING_ORGANIZATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AwardingOrganization[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AwardingOrganization");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::AWARDING_ORGANIZATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AwardingOrganization
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::AWARDING_ORGANIZATION, $id);
     }
 
@@ -67,7 +67,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -75,7 +75,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -83,7 +83,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -91,7 +91,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -99,7 +99,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -107,7 +107,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -115,7 +115,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -123,7 +123,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -131,7 +131,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -139,7 +139,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -147,7 +147,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getIssuedCenterNumber()
     {
-        return $this->getProperty("issuedCenterNumber");
+        return $this->getProperty('issuedCenterNumber');
     }
 
     /**
@@ -155,7 +155,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setIssuedCenterNumber($issuedCenterNumber = null)
     {
-        $this->setProperty("issuedCenterNumber", $issuedCenterNumber);
+        $this->setProperty('issuedCenterNumber', $issuedCenterNumber);
     }
 
     /**
@@ -163,7 +163,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getCenterNumberIssuedDate()
     {
-        return $this->getProperty("centerNumberIssuedDate");
+        return $this->getProperty('centerNumberIssuedDate');
     }
 
     /**
@@ -171,7 +171,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setCenterNumberIssuedDate(\DateTime $centerNumberIssuedDate = null)
     {
-        $this->setProperty("centerNumberIssuedDate", $centerNumberIssuedDate);
+        $this->setProperty('centerNumberIssuedDate', $centerNumberIssuedDate);
     }
 
     /**
@@ -179,7 +179,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -187,7 +187,7 @@ class AwardingOrganization extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -195,7 +195,7 @@ class AwardingOrganization extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -203,6 +203,6 @@ class AwardingOrganization extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Room;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class RegistrationForm extends ModelBase
 {
@@ -35,34 +29,38 @@ class RegistrationForm extends ModelBase
     protected $_resourceType = ResourceType::REGISTRATION_FORM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return RegistrationForm[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("RegistrationForm");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::REGISTRATION_FORM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return RegistrationForm
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::REGISTRATION_FORM, $id);
     }
 
@@ -71,7 +69,7 @@ class RegistrationForm extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -79,7 +77,7 @@ class RegistrationForm extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -87,7 +85,7 @@ class RegistrationForm extends ModelBase
      */
     public function getRegistrationFormName()
     {
-        return $this->getProperty("registrationFormName");
+        return $this->getProperty('registrationFormName');
     }
 
     /**
@@ -95,7 +93,7 @@ class RegistrationForm extends ModelBase
      */
     public function setRegistrationFormName($registrationFormName = null)
     {
-        $this->setProperty("registrationFormName", $registrationFormName);
+        $this->setProperty('registrationFormName', $registrationFormName);
     }
 
     /**
@@ -103,7 +101,7 @@ class RegistrationForm extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -111,7 +109,7 @@ class RegistrationForm extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -119,7 +117,7 @@ class RegistrationForm extends ModelBase
      */
     public function getRoom()
     {
-        return $this->getProperty("room");
+        return $this->getProperty('room');
     }
 
     /**
@@ -127,7 +125,7 @@ class RegistrationForm extends ModelBase
      */
     public function setRoom(Room $room = null)
     {
-        $this->setProperty("room", $room);
+        $this->setProperty('room', $room);
     }
 
     /**
@@ -135,7 +133,7 @@ class RegistrationForm extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -143,7 +141,7 @@ class RegistrationForm extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -151,7 +149,7 @@ class RegistrationForm extends ModelBase
      */
     public function getPromotedToRegistrationForm()
     {
-        return $this->getProperty("promotedToRegistrationForm");
+        return $this->getProperty('promotedToRegistrationForm');
     }
 
     /**
@@ -159,7 +157,7 @@ class RegistrationForm extends ModelBase
      */
     public function setPromotedToRegistrationForm(RegistrationForm $promotedToRegistrationForm = null)
     {
-        $this->setProperty("promotedToRegistrationForm", $promotedToRegistrationForm);
+        $this->setProperty('promotedToRegistrationForm', $promotedToRegistrationForm);
     }
 
     /**
@@ -167,7 +165,7 @@ class RegistrationForm extends ModelBase
      */
     public function getPromotedDatetime()
     {
-        return $this->getProperty("promotedDatetime");
+        return $this->getProperty('promotedDatetime');
     }
 
     /**
@@ -175,7 +173,7 @@ class RegistrationForm extends ModelBase
      */
     public function setPromotedDatetime(\DateTime $promotedDatetime = null)
     {
-        $this->setProperty("promotedDatetime", $promotedDatetime);
+        $this->setProperty('promotedDatetime', $promotedDatetime);
     }
 
     /**
@@ -183,7 +181,7 @@ class RegistrationForm extends ModelBase
      */
     public function getCopiedToRegistrationForm()
     {
-        return $this->getProperty("copiedToRegistrationForm");
+        return $this->getProperty('copiedToRegistrationForm');
     }
 
     /**
@@ -191,7 +189,7 @@ class RegistrationForm extends ModelBase
      */
     public function setCopiedToRegistrationForm(RegistrationForm $copiedToRegistrationForm = null)
     {
-        $this->setProperty("copiedToRegistrationForm", $copiedToRegistrationForm);
+        $this->setProperty('copiedToRegistrationForm', $copiedToRegistrationForm);
     }
 
     /**
@@ -199,7 +197,7 @@ class RegistrationForm extends ModelBase
      */
     public function getDisplayOrder()
     {
-        return $this->getProperty("displayOrder");
+        return $this->getProperty('displayOrder');
     }
 
     /**
@@ -207,7 +205,7 @@ class RegistrationForm extends ModelBase
      */
     public function setDisplayOrder($displayOrder = null)
     {
-        $this->setProperty("displayOrder", $displayOrder);
+        $this->setProperty('displayOrder', $displayOrder);
     }
 
     /**
@@ -215,7 +213,7 @@ class RegistrationForm extends ModelBase
      */
     public function getTargetEnrolment()
     {
-        return $this->getProperty("targetEnrolment");
+        return $this->getProperty('targetEnrolment');
     }
 
     /**
@@ -223,7 +221,7 @@ class RegistrationForm extends ModelBase
      */
     public function setTargetEnrolment($targetEnrolment = null)
     {
-        $this->setProperty("targetEnrolment", $targetEnrolment);
+        $this->setProperty('targetEnrolment', $targetEnrolment);
     }
 
     /**
@@ -231,7 +229,7 @@ class RegistrationForm extends ModelBase
      */
     public function getTutors()
     {
-        return $this->getCollectionProperty("tutors");
+        return $this->getCollectionProperty('tutors');
     }
 
     /**
@@ -239,6 +237,6 @@ class RegistrationForm extends ModelBase
      */
     public function getStudentMemberships()
     {
-        return $this->getCollectionProperty("studentMemberships");
+        return $this->getCollectionProperty('studentMemberships');
     }
 }

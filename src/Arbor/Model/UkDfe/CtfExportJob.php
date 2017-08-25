@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class CtfExportJob extends ModelBase
 {
@@ -39,34 +39,38 @@ class CtfExportJob extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_CTF_EXPORT_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CtfExportJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_CtfExportJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_CTF_EXPORT_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CtfExportJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_CTF_EXPORT_JOB, $id);
     }
 
@@ -75,7 +79,7 @@ class CtfExportJob extends ModelBase
      */
     public function getExportType()
     {
-        return $this->getProperty("exportType");
+        return $this->getProperty('exportType');
     }
 
     /**
@@ -83,7 +87,7 @@ class CtfExportJob extends ModelBase
      */
     public function setExportType($exportType = null)
     {
-        $this->setProperty("exportType", $exportType);
+        $this->setProperty('exportType', $exportType);
     }
 
     /**
@@ -91,7 +95,7 @@ class CtfExportJob extends ModelBase
      */
     public function getLaSend()
     {
-        return $this->getProperty("laSend");
+        return $this->getProperty('laSend');
     }
 
     /**
@@ -99,7 +103,7 @@ class CtfExportJob extends ModelBase
      */
     public function setLaSend($laSend = null)
     {
-        $this->setProperty("laSend", $laSend);
+        $this->setProperty('laSend', $laSend);
     }
 
     /**
@@ -107,7 +111,7 @@ class CtfExportJob extends ModelBase
      */
     public function getLaReceive()
     {
-        return $this->getProperty("laReceive");
+        return $this->getProperty('laReceive');
     }
 
     /**
@@ -115,7 +119,7 @@ class CtfExportJob extends ModelBase
      */
     public function setLaReceive($laReceive = null)
     {
-        $this->setProperty("laReceive", $laReceive);
+        $this->setProperty('laReceive', $laReceive);
     }
 
     /**
@@ -123,7 +127,7 @@ class CtfExportJob extends ModelBase
      */
     public function getDfeSend()
     {
-        return $this->getProperty("dfeSend");
+        return $this->getProperty('dfeSend');
     }
 
     /**
@@ -131,7 +135,7 @@ class CtfExportJob extends ModelBase
      */
     public function setDfeSend($dfeSend = null)
     {
-        $this->setProperty("dfeSend", $dfeSend);
+        $this->setProperty('dfeSend', $dfeSend);
     }
 
     /**
@@ -139,7 +143,7 @@ class CtfExportJob extends ModelBase
      */
     public function getDfeReceive()
     {
-        return $this->getProperty("dfeReceive");
+        return $this->getProperty('dfeReceive');
     }
 
     /**
@@ -147,7 +151,7 @@ class CtfExportJob extends ModelBase
      */
     public function setDfeReceive($dfeReceive = null)
     {
-        $this->setProperty("dfeReceive", $dfeReceive);
+        $this->setProperty('dfeReceive', $dfeReceive);
     }
 
     /**
@@ -155,7 +159,7 @@ class CtfExportJob extends ModelBase
      */
     public function getFileName()
     {
-        return $this->getProperty("fileName");
+        return $this->getProperty('fileName');
     }
 
     /**
@@ -163,7 +167,7 @@ class CtfExportJob extends ModelBase
      */
     public function setFileName($fileName = null)
     {
-        $this->setProperty("fileName", $fileName);
+        $this->setProperty('fileName', $fileName);
     }
 
     /**
@@ -171,7 +175,7 @@ class CtfExportJob extends ModelBase
      */
     public function getFileNumber()
     {
-        return $this->getProperty("fileNumber");
+        return $this->getProperty('fileNumber');
     }
 
     /**
@@ -179,7 +183,7 @@ class CtfExportJob extends ModelBase
      */
     public function setFileNumber($fileNumber = null)
     {
-        $this->setProperty("fileNumber", $fileNumber);
+        $this->setProperty('fileNumber', $fileNumber);
     }
 
     /**
@@ -187,7 +191,7 @@ class CtfExportJob extends ModelBase
      */
     public function getReportingPeriodStartDate()
     {
-        return $this->getProperty("reportingPeriodStartDate");
+        return $this->getProperty('reportingPeriodStartDate');
     }
 
     /**
@@ -195,7 +199,7 @@ class CtfExportJob extends ModelBase
      */
     public function setReportingPeriodStartDate(\DateTime $reportingPeriodStartDate = null)
     {
-        $this->setProperty("reportingPeriodStartDate", $reportingPeriodStartDate);
+        $this->setProperty('reportingPeriodStartDate', $reportingPeriodStartDate);
     }
 
     /**
@@ -203,7 +207,7 @@ class CtfExportJob extends ModelBase
      */
     public function getReportingPeriodEndDate()
     {
-        return $this->getProperty("reportingPeriodEndDate");
+        return $this->getProperty('reportingPeriodEndDate');
     }
 
     /**
@@ -211,7 +215,7 @@ class CtfExportJob extends ModelBase
      */
     public function setReportingPeriodEndDate(\DateTime $reportingPeriodEndDate = null)
     {
-        $this->setProperty("reportingPeriodEndDate", $reportingPeriodEndDate);
+        $this->setProperty('reportingPeriodEndDate', $reportingPeriodEndDate);
     }
 
     /**
@@ -219,7 +223,7 @@ class CtfExportJob extends ModelBase
      */
     public function getExportDatetime()
     {
-        return $this->getProperty("exportDatetime");
+        return $this->getProperty('exportDatetime');
     }
 
     /**
@@ -227,7 +231,7 @@ class CtfExportJob extends ModelBase
      */
     public function setExportDatetime(\DateTime $exportDatetime = null)
     {
-        $this->setProperty("exportDatetime", $exportDatetime);
+        $this->setProperty('exportDatetime', $exportDatetime);
     }
 
     /**
@@ -235,7 +239,7 @@ class CtfExportJob extends ModelBase
      */
     public function getXsdError()
     {
-        return $this->getProperty("xsdError");
+        return $this->getProperty('xsdError');
     }
 
     /**
@@ -243,7 +247,7 @@ class CtfExportJob extends ModelBase
      */
     public function setXsdError($xsdError = null)
     {
-        $this->setProperty("xsdError", $xsdError);
+        $this->setProperty('xsdError', $xsdError);
     }
 
     /**
@@ -251,7 +255,7 @@ class CtfExportJob extends ModelBase
      */
     public function getDataError()
     {
-        return $this->getProperty("dataError");
+        return $this->getProperty('dataError');
     }
 
     /**
@@ -259,7 +263,7 @@ class CtfExportJob extends ModelBase
      */
     public function setDataError($dataError = null)
     {
-        $this->setProperty("dataError", $dataError);
+        $this->setProperty('dataError', $dataError);
     }
 
     /**
@@ -267,7 +271,7 @@ class CtfExportJob extends ModelBase
      */
     public function getDataErrorMessage()
     {
-        return $this->getProperty("dataErrorMessage");
+        return $this->getProperty('dataErrorMessage');
     }
 
     /**
@@ -275,6 +279,6 @@ class CtfExportJob extends ModelBase
      */
     public function setDataErrorMessage($dataErrorMessage = null)
     {
-        $this->setProperty("dataErrorMessage", $dataErrorMessage);
+        $this->setProperty('dataErrorMessage', $dataErrorMessage);
     }
 }

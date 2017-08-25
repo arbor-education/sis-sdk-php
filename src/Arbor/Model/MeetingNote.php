@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Meeting;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MeetingNote extends ModelBase
 {
@@ -22,34 +17,38 @@ class MeetingNote extends ModelBase
     protected $_resourceType = ResourceType::MEETING_NOTE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MeetingNote[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MeetingNote");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEETING_NOTE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MeetingNote
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEETING_NOTE, $id);
     }
 
@@ -58,7 +57,7 @@ class MeetingNote extends ModelBase
      */
     public function getMeeting()
     {
-        return $this->getProperty("meeting");
+        return $this->getProperty('meeting');
     }
 
     /**
@@ -66,7 +65,7 @@ class MeetingNote extends ModelBase
      */
     public function setMeeting(Meeting $meeting = null)
     {
-        $this->setProperty("meeting", $meeting);
+        $this->setProperty('meeting', $meeting);
     }
 
     /**
@@ -74,7 +73,7 @@ class MeetingNote extends ModelBase
      */
     public function getNoteText()
     {
-        return $this->getProperty("noteText");
+        return $this->getProperty('noteText');
     }
 
     /**
@@ -82,7 +81,7 @@ class MeetingNote extends ModelBase
      */
     public function setNoteText($noteText = null)
     {
-        $this->setProperty("noteText", $noteText);
+        $this->setProperty('noteText', $noteText);
     }
 
     /**
@@ -90,7 +89,7 @@ class MeetingNote extends ModelBase
      */
     public function getNoteCreatedDatetime()
     {
-        return $this->getProperty("noteCreatedDatetime");
+        return $this->getProperty('noteCreatedDatetime');
     }
 
     /**
@@ -98,7 +97,7 @@ class MeetingNote extends ModelBase
      */
     public function setNoteCreatedDatetime(\DateTime $noteCreatedDatetime = null)
     {
-        $this->setProperty("noteCreatedDatetime", $noteCreatedDatetime);
+        $this->setProperty('noteCreatedDatetime', $noteCreatedDatetime);
     }
 
     /**
@@ -106,7 +105,7 @@ class MeetingNote extends ModelBase
      */
     public function getIsSharedWithGuardians()
     {
-        return $this->getProperty("isSharedWithGuardians");
+        return $this->getProperty('isSharedWithGuardians');
     }
 
     /**
@@ -114,6 +113,6 @@ class MeetingNote extends ModelBase
      */
     public function setIsSharedWithGuardians($isSharedWithGuardians = null)
     {
-        $this->setProperty("isSharedWithGuardians", $isSharedWithGuardians);
+        $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
 }

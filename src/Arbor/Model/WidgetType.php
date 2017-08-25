@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class WidgetType extends ModelBase
 {
@@ -17,34 +13,38 @@ class WidgetType extends ModelBase
     protected $_resourceType = ResourceType::WIDGET_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return WidgetType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("WidgetType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::WIDGET_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return WidgetType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::WIDGET_TYPE, $id);
     }
 
@@ -53,7 +53,7 @@ class WidgetType extends ModelBase
      */
     public function getWidgetTypeIdentifier()
     {
-        return $this->getProperty("widgetTypeIdentifier");
+        return $this->getProperty('widgetTypeIdentifier');
     }
 
     /**
@@ -61,7 +61,7 @@ class WidgetType extends ModelBase
      */
     public function setWidgetTypeIdentifier($widgetTypeIdentifier = null)
     {
-        $this->setProperty("widgetTypeIdentifier", $widgetTypeIdentifier);
+        $this->setProperty('widgetTypeIdentifier', $widgetTypeIdentifier);
     }
 
     /**
@@ -69,7 +69,7 @@ class WidgetType extends ModelBase
      */
     public function getWidgetTypeName()
     {
-        return $this->getProperty("widgetTypeName");
+        return $this->getProperty('widgetTypeName');
     }
 
     /**
@@ -77,6 +77,6 @@ class WidgetType extends ModelBase
      */
     public function setWidgetTypeName($widgetTypeName = null)
     {
-        $this->setProperty("widgetTypeName", $widgetTypeName);
+        $this->setProperty('widgetTypeName', $widgetTypeName);
     }
 }

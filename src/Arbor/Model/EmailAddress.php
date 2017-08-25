@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailAddress extends ModelBase
 {
@@ -27,34 +23,38 @@ class EmailAddress extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_ADDRESS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailAddress[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailAddress");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_ADDRESS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailAddress
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_ADDRESS, $id);
     }
 
@@ -63,7 +63,7 @@ class EmailAddress extends ModelBase
      */
     public function getEmailAddressOwner()
     {
-        return $this->getProperty("emailAddressOwner");
+        return $this->getProperty('emailAddressOwner');
     }
 
     /**
@@ -71,7 +71,7 @@ class EmailAddress extends ModelBase
      */
     public function setEmailAddressOwner(ModelBase $emailAddressOwner = null)
     {
-        $this->setProperty("emailAddressOwner", $emailAddressOwner);
+        $this->setProperty('emailAddressOwner', $emailAddressOwner);
     }
 
     /**
@@ -79,7 +79,7 @@ class EmailAddress extends ModelBase
      */
     public function getEmailAddressType()
     {
-        return $this->getProperty("emailAddressType");
+        return $this->getProperty('emailAddressType');
     }
 
     /**
@@ -87,7 +87,7 @@ class EmailAddress extends ModelBase
      */
     public function setEmailAddressType($emailAddressType = null)
     {
-        $this->setProperty("emailAddressType", $emailAddressType);
+        $this->setProperty('emailAddressType', $emailAddressType);
     }
 
     /**
@@ -95,7 +95,7 @@ class EmailAddress extends ModelBase
      */
     public function getEmailAddress()
     {
-        return $this->getProperty("emailAddress");
+        return $this->getProperty('emailAddress');
     }
 
     /**
@@ -103,7 +103,7 @@ class EmailAddress extends ModelBase
      */
     public function setEmailAddress($emailAddress = null)
     {
-        $this->setProperty("emailAddress", $emailAddress);
+        $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
@@ -111,7 +111,7 @@ class EmailAddress extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -119,7 +119,7 @@ class EmailAddress extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -127,7 +127,7 @@ class EmailAddress extends ModelBase
      */
     public function getRole()
     {
-        return $this->getProperty("role");
+        return $this->getProperty('role');
     }
 
     /**
@@ -135,7 +135,7 @@ class EmailAddress extends ModelBase
      */
     public function setRole($role = null)
     {
-        $this->setProperty("role", $role);
+        $this->setProperty('role', $role);
     }
 
     /**
@@ -143,7 +143,7 @@ class EmailAddress extends ModelBase
      */
     public function getFree()
     {
-        return $this->getProperty("free");
+        return $this->getProperty('free');
     }
 
     /**
@@ -151,7 +151,7 @@ class EmailAddress extends ModelBase
      */
     public function setFree($free = null)
     {
-        $this->setProperty("free", $free);
+        $this->setProperty('free', $free);
     }
 
     /**
@@ -159,7 +159,7 @@ class EmailAddress extends ModelBase
      */
     public function getDisposable()
     {
-        return $this->getProperty("disposable");
+        return $this->getProperty('disposable');
     }
 
     /**
@@ -167,6 +167,6 @@ class EmailAddress extends ModelBase
      */
     public function setDisposable($disposable = null)
     {
-        $this->setProperty("disposable", $disposable);
+        $this->setProperty('disposable', $disposable);
     }
 }

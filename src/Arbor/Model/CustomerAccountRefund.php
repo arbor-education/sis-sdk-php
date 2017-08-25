@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerAccount;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomerAccountRefund extends ModelBase
 {
@@ -22,34 +17,38 @@ class CustomerAccountRefund extends ModelBase
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT_REFUND;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomerAccountRefund[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomerAccountRefund");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOMER_ACCOUNT_REFUND);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomerAccountRefund
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOMER_ACCOUNT_REFUND, $id);
     }
 
@@ -58,7 +57,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function getCustomerAccount()
     {
-        return $this->getProperty("customerAccount");
+        return $this->getProperty('customerAccount');
     }
 
     /**
@@ -66,7 +65,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function setCustomerAccount(CustomerAccount $customerAccount = null)
     {
-        $this->setProperty("customerAccount", $customerAccount);
+        $this->setProperty('customerAccount', $customerAccount);
     }
 
     /**
@@ -74,7 +73,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function getRefundDatetime()
     {
-        return $this->getProperty("refundDatetime");
+        return $this->getProperty('refundDatetime');
     }
 
     /**
@@ -82,7 +81,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function setRefundDatetime(\DateTime $refundDatetime = null)
     {
-        $this->setProperty("refundDatetime", $refundDatetime);
+        $this->setProperty('refundDatetime', $refundDatetime);
     }
 
     /**
@@ -90,7 +89,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function getRefund()
     {
-        return $this->getProperty("refund");
+        return $this->getProperty('refund');
     }
 
     /**
@@ -98,7 +97,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function setRefund($refund = null)
     {
-        $this->setProperty("refund", $refund);
+        $this->setProperty('refund', $refund);
     }
 
     /**
@@ -106,7 +105,7 @@ class CustomerAccountRefund extends ModelBase
      */
     public function getTransaction()
     {
-        return $this->getProperty("transaction");
+        return $this->getProperty('transaction');
     }
 
     /**
@@ -114,6 +113,6 @@ class CustomerAccountRefund extends ModelBase
      */
     public function setTransaction(ModelBase $transaction = null)
     {
-        $this->setProperty("transaction", $transaction);
+        $this->setProperty('transaction', $transaction);
     }
 }

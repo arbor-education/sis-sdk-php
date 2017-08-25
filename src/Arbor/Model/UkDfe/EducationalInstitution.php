@@ -1,17 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\LocalAuthority;
-use \Arbor\Model\UkDfe\CensusSchoolPhase;
-use \Arbor\Model\UkDfe\SchoolType;
-use \Arbor\Model\UkDfe\SchoolGovernanceType;
-use \Arbor\Model\UkDfe\SchoolIntakeType;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\LocalAuthority;
 
 class EducationalInstitution extends ModelBase
 {
@@ -56,34 +52,38 @@ class EducationalInstitution extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_EducationalInstitution");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EducationalInstitution
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION, $id);
     }
 
@@ -92,7 +92,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getLocalAuthority()
     {
-        return $this->getProperty("localAuthority");
+        return $this->getProperty('localAuthority');
     }
 
     /**
@@ -100,7 +100,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setLocalAuthority(LocalAuthority $localAuthority = null)
     {
-        $this->setProperty("localAuthority", $localAuthority);
+        $this->setProperty('localAuthority', $localAuthority);
     }
 
     /**
@@ -108,7 +108,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getEstablishmentNumber()
     {
-        return $this->getProperty("establishmentNumber");
+        return $this->getProperty('establishmentNumber');
     }
 
     /**
@@ -116,7 +116,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setEstablishmentNumber($establishmentNumber = null)
     {
-        $this->setProperty("establishmentNumber", $establishmentNumber);
+        $this->setProperty('establishmentNumber', $establishmentNumber);
     }
 
     /**
@@ -124,7 +124,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getCensusSchoolPhase()
     {
-        return $this->getProperty("censusSchoolPhase");
+        return $this->getProperty('censusSchoolPhase');
     }
 
     /**
@@ -132,7 +132,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setCensusSchoolPhase(CensusSchoolPhase $censusSchoolPhase = null)
     {
-        $this->setProperty("censusSchoolPhase", $censusSchoolPhase);
+        $this->setProperty('censusSchoolPhase', $censusSchoolPhase);
     }
 
     /**
@@ -140,7 +140,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSchoolType()
     {
-        return $this->getProperty("schoolType");
+        return $this->getProperty('schoolType');
     }
 
     /**
@@ -148,7 +148,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSchoolType(SchoolType $schoolType = null)
     {
-        $this->setProperty("schoolType", $schoolType);
+        $this->setProperty('schoolType', $schoolType);
     }
 
     /**
@@ -156,7 +156,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSchoolGender()
     {
-        return $this->getProperty("schoolGender");
+        return $this->getProperty('schoolGender');
     }
 
     /**
@@ -164,7 +164,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSchoolGender($schoolGender = null)
     {
-        $this->setProperty("schoolGender", $schoolGender);
+        $this->setProperty('schoolGender', $schoolGender);
     }
 
     /**
@@ -172,7 +172,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getGovernanceType()
     {
-        return $this->getProperty("governanceType");
+        return $this->getProperty('governanceType');
     }
 
     /**
@@ -180,7 +180,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setGovernanceType(SchoolGovernanceType $governanceType = null)
     {
-        $this->setProperty("governanceType", $governanceType);
+        $this->setProperty('governanceType', $governanceType);
     }
 
     /**
@@ -188,7 +188,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getIntakeType()
     {
-        return $this->getProperty("intakeType");
+        return $this->getProperty('intakeType');
     }
 
     /**
@@ -196,7 +196,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setIntakeType(SchoolIntakeType $intakeType = null)
     {
-        $this->setProperty("intakeType", $intakeType);
+        $this->setProperty('intakeType', $intakeType);
     }
 
     /**
@@ -204,7 +204,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getUrn()
     {
-        return $this->getProperty("urn");
+        return $this->getProperty('urn');
     }
 
     /**
@@ -212,7 +212,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setUrn($urn = null)
     {
-        $this->setProperty("urn", $urn);
+        $this->setProperty('urn', $urn);
     }
 
     /**
@@ -220,7 +220,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getHasChildMotherProvision()
     {
-        return $this->getProperty("hasChildMotherProvision");
+        return $this->getProperty('hasChildMotherProvision');
     }
 
     /**
@@ -228,7 +228,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setHasChildMotherProvision($hasChildMotherProvision = null)
     {
-        $this->setProperty("hasChildMotherProvision", $hasChildMotherProvision);
+        $this->setProperty('hasChildMotherProvision', $hasChildMotherProvision);
     }
 
     /**
@@ -236,7 +236,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getHasChildcarePlaces()
     {
-        return $this->getProperty("hasChildcarePlaces");
+        return $this->getProperty('hasChildcarePlaces');
     }
 
     /**
@@ -244,7 +244,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setHasChildcarePlaces($hasChildcarePlaces = null)
     {
-        $this->setProperty("hasChildcarePlaces", $hasChildcarePlaces);
+        $this->setProperty('hasChildcarePlaces', $hasChildcarePlaces);
     }
 
     /**
@@ -252,7 +252,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getCenterNumber()
     {
-        return $this->getProperty("centerNumber");
+        return $this->getProperty('centerNumber');
     }
 
     /**
@@ -260,7 +260,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setCenterNumber($centerNumber = null)
     {
-        $this->setProperty("centerNumber", $centerNumber);
+        $this->setProperty('centerNumber', $centerNumber);
     }
 
     /**
@@ -268,7 +268,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolAccommodation()
     {
-        return $this->getProperty("specialSchoolAccommodation");
+        return $this->getProperty('specialSchoolAccommodation');
     }
 
     /**
@@ -276,7 +276,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolAccommodation($specialSchoolAccommodation = null)
     {
-        $this->setProperty("specialSchoolAccommodation", $specialSchoolAccommodation);
+        $this->setProperty('specialSchoolAccommodation', $specialSchoolAccommodation);
     }
 
     /**
@@ -284,7 +284,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolMaxDayPupils()
     {
-        return $this->getProperty("specialSchoolMaxDayPupils");
+        return $this->getProperty('specialSchoolMaxDayPupils');
     }
 
     /**
@@ -292,7 +292,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolMaxDayPupils($specialSchoolMaxDayPupils = null)
     {
-        $this->setProperty("specialSchoolMaxDayPupils", $specialSchoolMaxDayPupils);
+        $this->setProperty('specialSchoolMaxDayPupils', $specialSchoolMaxDayPupils);
     }
 
     /**
@@ -300,7 +300,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolMaxBoarders()
     {
-        return $this->getProperty("specialSchoolMaxBoarders");
+        return $this->getProperty('specialSchoolMaxBoarders');
     }
 
     /**
@@ -308,7 +308,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolMaxBoarders($specialSchoolMaxBoarders = null)
     {
-        $this->setProperty("specialSchoolMaxBoarders", $specialSchoolMaxBoarders);
+        $this->setProperty('specialSchoolMaxBoarders', $specialSchoolMaxBoarders);
     }
 
     /**
@@ -316,7 +316,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolMinMaleAge()
     {
-        return $this->getProperty("specialSchoolMinMaleAge");
+        return $this->getProperty('specialSchoolMinMaleAge');
     }
 
     /**
@@ -324,7 +324,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolMinMaleAge($specialSchoolMinMaleAge = null)
     {
-        $this->setProperty("specialSchoolMinMaleAge", $specialSchoolMinMaleAge);
+        $this->setProperty('specialSchoolMinMaleAge', $specialSchoolMinMaleAge);
     }
 
     /**
@@ -332,7 +332,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolMaxMaleAge()
     {
-        return $this->getProperty("specialSchoolMaxMaleAge");
+        return $this->getProperty('specialSchoolMaxMaleAge');
     }
 
     /**
@@ -340,7 +340,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolMaxMaleAge($specialSchoolMaxMaleAge = null)
     {
-        $this->setProperty("specialSchoolMaxMaleAge", $specialSchoolMaxMaleAge);
+        $this->setProperty('specialSchoolMaxMaleAge', $specialSchoolMaxMaleAge);
     }
 
     /**
@@ -348,7 +348,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolMinFemaleAge()
     {
-        return $this->getProperty("specialSchoolMinFemaleAge");
+        return $this->getProperty('specialSchoolMinFemaleAge');
     }
 
     /**
@@ -356,7 +356,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolMinFemaleAge($specialSchoolMinFemaleAge = null)
     {
-        $this->setProperty("specialSchoolMinFemaleAge", $specialSchoolMinFemaleAge);
+        $this->setProperty('specialSchoolMinFemaleAge', $specialSchoolMinFemaleAge);
     }
 
     /**
@@ -364,7 +364,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolMaxFemaleAge()
     {
-        return $this->getProperty("specialSchoolMaxFemaleAge");
+        return $this->getProperty('specialSchoolMaxFemaleAge');
     }
 
     /**
@@ -372,7 +372,7 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolMaxFemaleAge($specialSchoolMaxFemaleAge = null)
     {
-        $this->setProperty("specialSchoolMaxFemaleAge", $specialSchoolMaxFemaleAge);
+        $this->setProperty('specialSchoolMaxFemaleAge', $specialSchoolMaxFemaleAge);
     }
 
     /**
@@ -380,7 +380,7 @@ class EducationalInstitution extends ModelBase
      */
     public function getSpecialSchoolSenProvisions()
     {
-        return $this->getProperty("specialSchoolSenProvisions");
+        return $this->getProperty('specialSchoolSenProvisions');
     }
 
     /**
@@ -388,6 +388,6 @@ class EducationalInstitution extends ModelBase
      */
     public function setSpecialSchoolSenProvisions($specialSchoolSenProvisions = null)
     {
-        $this->setProperty("specialSchoolSenProvisions", $specialSchoolSenProvisions);
+        $this->setProperty('specialSchoolSenProvisions', $specialSchoolSenProvisions);
     }
 }

@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolCensus;
-use \Arbor\Model\Session;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Session;
 
 class SchoolCensusClass extends ModelBase
 {
@@ -29,34 +28,38 @@ class SchoolCensusClass extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_CLASS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolCensusClass[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolCensusClass");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_CENSUS_CLASS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolCensusClass
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_CENSUS_CLASS, $id);
     }
 
@@ -65,7 +68,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getSchoolCensus()
     {
-        return $this->getProperty("schoolCensus");
+        return $this->getProperty('schoolCensus');
     }
 
     /**
@@ -73,7 +76,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function setSchoolCensus(SchoolCensus $schoolCensus = null)
     {
-        $this->setProperty("schoolCensus", $schoolCensus);
+        $this->setProperty('schoolCensus', $schoolCensus);
     }
 
     /**
@@ -81,7 +84,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getSession()
     {
-        return $this->getProperty("session");
+        return $this->getProperty('session');
     }
 
     /**
@@ -89,7 +92,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function setSession(Session $session = null)
     {
-        $this->setProperty("session", $session);
+        $this->setProperty('session', $session);
     }
 
     /**
@@ -97,7 +100,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getTeachers()
     {
-        return $this->getProperty("teachers");
+        return $this->getProperty('teachers');
     }
 
     /**
@@ -105,7 +108,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function setTeachers($teachers = null)
     {
-        $this->setProperty("teachers", $teachers);
+        $this->setProperty('teachers', $teachers);
     }
 
     /**
@@ -113,7 +116,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getNonTeachers()
     {
-        return $this->getProperty("nonTeachers");
+        return $this->getProperty('nonTeachers');
     }
 
     /**
@@ -121,7 +124,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function setNonTeachers($nonTeachers = null)
     {
-        $this->setProperty("nonTeachers", $nonTeachers);
+        $this->setProperty('nonTeachers', $nonTeachers);
     }
 
     /**
@@ -129,7 +132,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getAscActivity()
     {
-        return $this->getProperty("ascActivity");
+        return $this->getProperty('ascActivity');
     }
 
     /**
@@ -137,7 +140,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function setAscActivity($ascActivity = null)
     {
-        $this->setProperty("ascActivity", $ascActivity);
+        $this->setProperty('ascActivity', $ascActivity);
     }
 
     /**
@@ -145,7 +148,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getHomePupils()
     {
-        return $this->getProperty("homePupils");
+        return $this->getProperty('homePupils');
     }
 
     /**
@@ -153,7 +156,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function setHomePupils($homePupils = null)
     {
-        $this->setProperty("homePupils", $homePupils);
+        $this->setProperty('homePupils', $homePupils);
     }
 
     /**
@@ -161,7 +164,7 @@ class SchoolCensusClass extends ModelBase
      */
     public function getGuestPupils()
     {
-        return $this->getProperty("guestPupils");
+        return $this->getProperty('guestPupils');
     }
 
     /**
@@ -169,6 +172,6 @@ class SchoolCensusClass extends ModelBase
      */
     public function setGuestPupils($guestPupils = null)
     {
-        $this->setProperty("guestPupils", $guestPupils);
+        $this->setProperty('guestPupils', $guestPupils);
     }
 }

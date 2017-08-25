@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Schoolwork;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentSchoolwork extends ModelBase
 {
@@ -27,34 +21,38 @@ class StudentSchoolwork extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_SCHOOLWORK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentSchoolwork[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentSchoolwork");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_SCHOOLWORK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentSchoolwork
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_SCHOOLWORK, $id);
     }
 
@@ -63,7 +61,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function getSchoolwork()
     {
-        return $this->getProperty("schoolwork");
+        return $this->getProperty('schoolwork');
     }
 
     /**
@@ -71,7 +69,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function setSchoolwork(Schoolwork $schoolwork = null)
     {
-        $this->setProperty("schoolwork", $schoolwork);
+        $this->setProperty('schoolwork', $schoolwork);
     }
 
     /**
@@ -79,7 +77,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -87,7 +85,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -95,7 +93,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function getDueDatetime()
     {
-        return $this->getProperty("dueDatetime");
+        return $this->getProperty('dueDatetime');
     }
 
     /**
@@ -103,7 +101,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function setDueDatetime(\DateTime $dueDatetime = null)
     {
-        $this->setProperty("dueDatetime", $dueDatetime);
+        $this->setProperty('dueDatetime', $dueDatetime);
     }
 
     /**
@@ -111,7 +109,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function getSubmittedDatetime()
     {
-        return $this->getProperty("submittedDatetime");
+        return $this->getProperty('submittedDatetime');
     }
 
     /**
@@ -119,7 +117,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
     {
-        $this->setProperty("submittedDatetime", $submittedDatetime);
+        $this->setProperty('submittedDatetime', $submittedDatetime);
     }
 
     /**
@@ -127,7 +125,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function getMarkingCompletedDatetime()
     {
-        return $this->getProperty("markingCompletedDatetime");
+        return $this->getProperty('markingCompletedDatetime');
     }
 
     /**
@@ -135,7 +133,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
     {
-        $this->setProperty("markingCompletedDatetime", $markingCompletedDatetime);
+        $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
 
     /**
@@ -143,7 +141,7 @@ class StudentSchoolwork extends ModelBase
      */
     public function getReviewedDatetime()
     {
-        return $this->getProperty("reviewedDatetime");
+        return $this->getProperty('reviewedDatetime');
     }
 
     /**
@@ -151,6 +149,6 @@ class StudentSchoolwork extends ModelBase
      */
     public function setReviewedDatetime(\DateTime $reviewedDatetime = null)
     {
-        $this->setProperty("reviewedDatetime", $reviewedDatetime);
+        $this->setProperty('reviewedDatetime', $reviewedDatetime);
     }
 }

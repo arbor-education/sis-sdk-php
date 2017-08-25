@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class ChildCarePlace extends ModelBase
 {
@@ -33,34 +33,38 @@ class ChildCarePlace extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_CHILD_CARE_PLACE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ChildCarePlace[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_ChildCarePlace");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_CHILD_CARE_PLACE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ChildCarePlace
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_CHILD_CARE_PLACE, $id);
     }
 
@@ -69,7 +73,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -77,7 +81,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -85,7 +89,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareOnSite()
     {
-        return $this->getProperty("childCareOnSite");
+        return $this->getProperty('childCareOnSite');
     }
 
     /**
@@ -93,7 +97,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareOnSite($childCareOnSite = null)
     {
-        $this->setProperty("childCareOnSite", $childCareOnSite);
+        $this->setProperty('childCareOnSite', $childCareOnSite);
     }
 
     /**
@@ -101,7 +105,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareSignposting()
     {
-        return $this->getProperty("childCareSignposting");
+        return $this->getProperty('childCareSignposting');
     }
 
     /**
@@ -109,7 +113,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareSignposting($childCareSignposting = null)
     {
-        $this->setProperty("childCareSignposting", $childCareSignposting);
+        $this->setProperty('childCareSignposting', $childCareSignposting);
     }
 
     /**
@@ -117,7 +121,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareType()
     {
-        return $this->getProperty("childCareType");
+        return $this->getProperty('childCareType');
     }
 
     /**
@@ -125,7 +129,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareType($childCareType = null)
     {
-        $this->setProperty("childCareType", $childCareType);
+        $this->setProperty('childCareType', $childCareType);
     }
 
     /**
@@ -133,7 +137,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareOpeningTime()
     {
-        return $this->getProperty("childCareOpeningTime");
+        return $this->getProperty('childCareOpeningTime');
     }
 
     /**
@@ -141,7 +145,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareOpeningTime($childCareOpeningTime = null)
     {
-        $this->setProperty("childCareOpeningTime", $childCareOpeningTime);
+        $this->setProperty('childCareOpeningTime', $childCareOpeningTime);
     }
 
     /**
@@ -149,7 +153,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareClosingTime()
     {
-        return $this->getProperty("childCareClosingTime");
+        return $this->getProperty('childCareClosingTime');
     }
 
     /**
@@ -157,7 +161,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareClosingTime($childCareClosingTime = null)
     {
-        $this->setProperty("childCareClosingTime", $childCareClosingTime);
+        $this->setProperty('childCareClosingTime', $childCareClosingTime);
     }
 
     /**
@@ -165,7 +169,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareNumberOfPlaces()
     {
-        return $this->getProperty("childCareNumberOfPlaces");
+        return $this->getProperty('childCareNumberOfPlaces');
     }
 
     /**
@@ -173,7 +177,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareNumberOfPlaces($childCareNumberOfPlaces = null)
     {
-        $this->setProperty("childCareNumberOfPlaces", $childCareNumberOfPlaces);
+        $this->setProperty('childCareNumberOfPlaces', $childCareNumberOfPlaces);
     }
 
     /**
@@ -181,7 +185,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareProvider()
     {
-        return $this->getProperty("childCareProvider");
+        return $this->getProperty('childCareProvider');
     }
 
     /**
@@ -189,7 +193,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareProvider($childCareProvider = null)
     {
-        $this->setProperty("childCareProvider", $childCareProvider);
+        $this->setProperty('childCareProvider', $childCareProvider);
     }
 
     /**
@@ -197,7 +201,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareOtherSchools()
     {
-        return $this->getProperty("childCareOtherSchools");
+        return $this->getProperty('childCareOtherSchools');
     }
 
     /**
@@ -205,7 +209,7 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareOtherSchools($childCareOtherSchools = null)
     {
-        $this->setProperty("childCareOtherSchools", $childCareOtherSchools);
+        $this->setProperty('childCareOtherSchools', $childCareOtherSchools);
     }
 
     /**
@@ -213,7 +217,7 @@ class ChildCarePlace extends ModelBase
      */
     public function getChildCareWeeksOpen()
     {
-        return $this->getProperty("childCareWeeksOpen");
+        return $this->getProperty('childCareWeeksOpen');
     }
 
     /**
@@ -221,6 +225,6 @@ class ChildCarePlace extends ModelBase
      */
     public function setChildCareWeeksOpen($childCareWeeksOpen = null)
     {
-        $this->setProperty("childCareWeeksOpen", $childCareWeeksOpen);
+        $this->setProperty('childCareWeeksOpen', $childCareWeeksOpen);
     }
 }

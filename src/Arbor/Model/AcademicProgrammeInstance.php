@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicProgramme;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicProgrammeInstance extends ModelBase
 {
@@ -21,34 +15,38 @@ class AcademicProgrammeInstance extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_PROGRAMME_INSTANCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicProgrammeInstance[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicProgrammeInstance");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_PROGRAMME_INSTANCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicProgrammeInstance
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_PROGRAMME_INSTANCE, $id);
     }
 
@@ -57,7 +55,7 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function getAcademicProgramme()
     {
-        return $this->getProperty("academicProgramme");
+        return $this->getProperty('academicProgramme');
     }
 
     /**
@@ -65,7 +63,7 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function setAcademicProgramme(AcademicProgramme $academicProgramme = null)
     {
-        $this->setProperty("academicProgramme", $academicProgramme);
+        $this->setProperty('academicProgramme', $academicProgramme);
     }
 
     /**
@@ -73,7 +71,7 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function getInstanceName()
     {
-        return $this->getProperty("instanceName");
+        return $this->getProperty('instanceName');
     }
 
     /**
@@ -81,7 +79,7 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function setInstanceName($instanceName = null)
     {
-        $this->setProperty("instanceName", $instanceName);
+        $this->setProperty('instanceName', $instanceName);
     }
 
     /**
@@ -89,7 +87,7 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -97,7 +95,7 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -105,6 +103,6 @@ class AcademicProgrammeInstance extends ModelBase
      */
     public function getTopLevelAcademicUnits()
     {
-        return $this->getCollectionProperty("topLevelAcademicUnits");
+        return $this->getCollectionProperty('topLevelAcademicUnits');
     }
 }

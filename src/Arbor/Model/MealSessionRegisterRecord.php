@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MealSession;
-use \Arbor\Model\MealProvision;
-use \Arbor\Model\CustomerInvoice;
-use \Arbor\Model\MealProvisionPriceCategory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealSessionRegisterRecord extends ModelBase
 {
@@ -29,34 +21,38 @@ class MealSessionRegisterRecord extends ModelBase
     protected $_resourceType = ResourceType::MEAL_SESSION_REGISTER_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealSessionRegisterRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealSessionRegisterRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_SESSION_REGISTER_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealSessionRegisterRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_SESSION_REGISTER_RECORD, $id);
     }
 
@@ -65,7 +61,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function getMealSession()
     {
-        return $this->getProperty("mealSession");
+        return $this->getProperty('mealSession');
     }
 
     /**
@@ -73,7 +69,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function setMealSession(MealSession $mealSession = null)
     {
-        $this->setProperty("mealSession", $mealSession);
+        $this->setProperty('mealSession', $mealSession);
     }
 
     /**
@@ -81,7 +77,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -89,7 +85,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -97,7 +93,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function getMealProvision()
     {
-        return $this->getProperty("mealProvision");
+        return $this->getProperty('mealProvision');
     }
 
     /**
@@ -105,7 +101,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function setMealProvision(MealProvision $mealProvision = null)
     {
-        $this->setProperty("mealProvision", $mealProvision);
+        $this->setProperty('mealProvision', $mealProvision);
     }
 
     /**
@@ -113,7 +109,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function getCustomerInvoice()
     {
-        return $this->getProperty("customerInvoice");
+        return $this->getProperty('customerInvoice');
     }
 
     /**
@@ -121,7 +117,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
     {
-        $this->setProperty("customerInvoice", $customerInvoice);
+        $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
@@ -129,7 +125,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function getMealProvisionPriceCategory()
     {
-        return $this->getProperty("mealProvisionPriceCategory");
+        return $this->getProperty('mealProvisionPriceCategory');
     }
 
     /**
@@ -137,7 +133,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function setMealProvisionPriceCategory(MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
-        $this->setProperty("mealProvisionPriceCategory", $mealProvisionPriceCategory);
+        $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
 
     /**
@@ -145,7 +141,7 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function getSource()
     {
-        return $this->getProperty("source");
+        return $this->getProperty('source');
     }
 
     /**
@@ -153,6 +149,6 @@ class MealSessionRegisterRecord extends ModelBase
      */
     public function setSource($source = null)
     {
-        $this->setProperty("source", $source);
+        $this->setProperty('source', $source);
     }
 }

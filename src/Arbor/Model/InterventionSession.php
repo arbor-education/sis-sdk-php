@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Intervention;
-use \Arbor\Model\TimetableSlot;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionSession extends ModelBase
 {
@@ -20,8 +14,6 @@ class InterventionSession extends ModelBase
 
     const LOCATION = 'location';
 
-    const SCHEDULED_BY = 'scheduledBy';
-
     const INTERVENTION = 'intervention';
 
     const STAFF_COUNT = 'staffCount';
@@ -32,37 +24,43 @@ class InterventionSession extends ModelBase
 
     const TIMETABLE_SLOT = 'timetableSlot';
 
+    const INTERVENTION_GROUP = 'interventionGroup';
+
     protected $_resourceType = ResourceType::INTERVENTION_SESSION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionSession[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionSession");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_SESSION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionSession
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_SESSION, $id);
     }
 
@@ -71,7 +69,7 @@ class InterventionSession extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -79,7 +77,7 @@ class InterventionSession extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -87,7 +85,7 @@ class InterventionSession extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -95,7 +93,7 @@ class InterventionSession extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -103,7 +101,7 @@ class InterventionSession extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -111,7 +109,7 @@ class InterventionSession extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -119,7 +117,7 @@ class InterventionSession extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -127,23 +125,7 @@ class InterventionSession extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -151,7 +133,7 @@ class InterventionSession extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -159,7 +141,7 @@ class InterventionSession extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -167,7 +149,7 @@ class InterventionSession extends ModelBase
      */
     public function getStaffCount()
     {
-        return $this->getProperty("staffCount");
+        return $this->getProperty('staffCount');
     }
 
     /**
@@ -175,7 +157,7 @@ class InterventionSession extends ModelBase
      */
     public function setStaffCount($staffCount = null)
     {
-        $this->setProperty("staffCount", $staffCount);
+        $this->setProperty('staffCount', $staffCount);
     }
 
     /**
@@ -183,7 +165,7 @@ class InterventionSession extends ModelBase
      */
     public function getStudentCount()
     {
-        return $this->getProperty("studentCount");
+        return $this->getProperty('studentCount');
     }
 
     /**
@@ -191,7 +173,7 @@ class InterventionSession extends ModelBase
      */
     public function setStudentCount($studentCount = null)
     {
-        $this->setProperty("studentCount", $studentCount);
+        $this->setProperty('studentCount', $studentCount);
     }
 
     /**
@@ -199,7 +181,7 @@ class InterventionSession extends ModelBase
      */
     public function getCalendarWeek()
     {
-        return $this->getProperty("calendarWeek");
+        return $this->getProperty('calendarWeek');
     }
 
     /**
@@ -207,7 +189,7 @@ class InterventionSession extends ModelBase
      */
     public function setCalendarWeek($calendarWeek = null)
     {
-        $this->setProperty("calendarWeek", $calendarWeek);
+        $this->setProperty('calendarWeek', $calendarWeek);
     }
 
     /**
@@ -215,7 +197,7 @@ class InterventionSession extends ModelBase
      */
     public function getTimetableSlot()
     {
-        return $this->getProperty("timetableSlot");
+        return $this->getProperty('timetableSlot');
     }
 
     /**
@@ -223,6 +205,22 @@ class InterventionSession extends ModelBase
      */
     public function setTimetableSlot(TimetableSlot $timetableSlot = null)
     {
-        $this->setProperty("timetableSlot", $timetableSlot);
+        $this->setProperty('timetableSlot', $timetableSlot);
+    }
+
+    /**
+     * @return InterventionGroup
+     */
+    public function getInterventionGroup()
+    {
+        return $this->getProperty('interventionGroup');
+    }
+
+    /**
+     * @param InterventionGroup $interventionGroup
+     */
+    public function setInterventionGroup(InterventionGroup $interventionGroup = null)
+    {
+        $this->setProperty('interventionGroup', $interventionGroup);
     }
 }

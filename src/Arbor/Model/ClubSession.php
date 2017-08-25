@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Club;
-use \Arbor\Model\TimetableSlot;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ClubSession extends ModelBase
 {
@@ -20,8 +14,6 @@ class ClubSession extends ModelBase
 
     const LOCATION = 'location';
 
-    const SCHEDULED_BY = 'scheduledBy';
-
     const CLUB = 'club';
 
     const NAME = 'name';
@@ -31,34 +23,38 @@ class ClubSession extends ModelBase
     protected $_resourceType = ResourceType::CLUB_SESSION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ClubSession[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ClubSession");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CLUB_SESSION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ClubSession
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CLUB_SESSION, $id);
     }
 
@@ -67,7 +63,7 @@ class ClubSession extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -75,7 +71,7 @@ class ClubSession extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -83,7 +79,7 @@ class ClubSession extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -91,7 +87,7 @@ class ClubSession extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -99,7 +95,7 @@ class ClubSession extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -107,7 +103,7 @@ class ClubSession extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -115,7 +111,7 @@ class ClubSession extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -123,23 +119,7 @@ class ClubSession extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -147,7 +127,7 @@ class ClubSession extends ModelBase
      */
     public function getClub()
     {
-        return $this->getProperty("club");
+        return $this->getProperty('club');
     }
 
     /**
@@ -155,7 +135,7 @@ class ClubSession extends ModelBase
      */
     public function setClub(Club $club = null)
     {
-        $this->setProperty("club", $club);
+        $this->setProperty('club', $club);
     }
 
     /**
@@ -163,7 +143,7 @@ class ClubSession extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -171,7 +151,7 @@ class ClubSession extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -179,7 +159,7 @@ class ClubSession extends ModelBase
      */
     public function getTimetableSlot()
     {
-        return $this->getProperty("timetableSlot");
+        return $this->getProperty('timetableSlot');
     }
 
     /**
@@ -187,6 +167,6 @@ class ClubSession extends ModelBase
      */
     public function setTimetableSlot(TimetableSlot $timetableSlot = null)
     {
-        $this->setProperty("timetableSlot", $timetableSlot);
+        $this->setProperty('timetableSlot', $timetableSlot);
     }
 }

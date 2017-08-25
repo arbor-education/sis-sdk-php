@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Bank extends ModelBase
 {
@@ -23,34 +19,38 @@ class Bank extends ModelBase
     protected $_resourceType = ResourceType::BANK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Bank[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Bank");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BANK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Bank
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BANK, $id);
     }
 
@@ -59,7 +59,7 @@ class Bank extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -67,7 +67,7 @@ class Bank extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -75,7 +75,7 @@ class Bank extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -83,7 +83,7 @@ class Bank extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -91,7 +91,7 @@ class Bank extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -99,7 +99,7 @@ class Bank extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -107,7 +107,7 @@ class Bank extends ModelBase
      */
     public function getBankName()
     {
-        return $this->getProperty("bankName");
+        return $this->getProperty('bankName');
     }
 
     /**
@@ -115,7 +115,7 @@ class Bank extends ModelBase
      */
     public function setBankName($bankName = null)
     {
-        $this->setProperty("bankName", $bankName);
+        $this->setProperty('bankName', $bankName);
     }
 
     /**
@@ -123,7 +123,7 @@ class Bank extends ModelBase
      */
     public function getCountryCode()
     {
-        return $this->getProperty("countryCode");
+        return $this->getProperty('countryCode');
     }
 
     /**
@@ -131,6 +131,6 @@ class Bank extends ModelBase
      */
     public function setCountryCode($countryCode = null)
     {
-        $this->setProperty("countryCode", $countryCode);
+        $this->setProperty('countryCode', $countryCode);
     }
 }

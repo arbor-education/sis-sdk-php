@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UserDefinedField;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UserDefinedRecord extends ModelBase
 {
@@ -20,34 +15,38 @@ class UserDefinedRecord extends ModelBase
     protected $_resourceType = ResourceType::USER_DEFINED_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UserDefinedRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UserDefinedRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USER_DEFINED_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UserDefinedRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USER_DEFINED_RECORD, $id);
     }
 
@@ -56,7 +55,7 @@ class UserDefinedRecord extends ModelBase
      */
     public function getEntity()
     {
-        return $this->getProperty("entity");
+        return $this->getProperty('entity');
     }
 
     /**
@@ -64,7 +63,7 @@ class UserDefinedRecord extends ModelBase
      */
     public function setEntity(ModelBase $entity = null)
     {
-        $this->setProperty("entity", $entity);
+        $this->setProperty('entity', $entity);
     }
 
     /**
@@ -72,7 +71,7 @@ class UserDefinedRecord extends ModelBase
      */
     public function getUserDefinedField()
     {
-        return $this->getProperty("userDefinedField");
+        return $this->getProperty('userDefinedField');
     }
 
     /**
@@ -80,7 +79,7 @@ class UserDefinedRecord extends ModelBase
      */
     public function setUserDefinedField(UserDefinedField $userDefinedField = null)
     {
-        $this->setProperty("userDefinedField", $userDefinedField);
+        $this->setProperty('userDefinedField', $userDefinedField);
     }
 
     /**
@@ -88,7 +87,7 @@ class UserDefinedRecord extends ModelBase
      */
     public function getValue()
     {
-        return $this->getProperty("value");
+        return $this->getProperty('value');
     }
 
     /**
@@ -96,6 +95,6 @@ class UserDefinedRecord extends ModelBase
      */
     public function setValue($value = null)
     {
-        $this->setProperty("value", $value);
+        $this->setProperty('value', $value);
     }
 }

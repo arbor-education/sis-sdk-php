@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\DietaryRequirementType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DietaryRequirement extends ModelBase
 {
@@ -20,34 +15,38 @@ class DietaryRequirement extends ModelBase
     protected $_resourceType = ResourceType::DIETARY_REQUIREMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DietaryRequirement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DietaryRequirement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DIETARY_REQUIREMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DietaryRequirement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DIETARY_REQUIREMENT, $id);
     }
 
@@ -56,7 +55,7 @@ class DietaryRequirement extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -64,7 +63,7 @@ class DietaryRequirement extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -72,7 +71,7 @@ class DietaryRequirement extends ModelBase
      */
     public function getDietaryRequirementType()
     {
-        return $this->getProperty("dietaryRequirementType");
+        return $this->getProperty('dietaryRequirementType');
     }
 
     /**
@@ -80,7 +79,7 @@ class DietaryRequirement extends ModelBase
      */
     public function setDietaryRequirementType(DietaryRequirementType $dietaryRequirementType = null)
     {
-        $this->setProperty("dietaryRequirementType", $dietaryRequirementType);
+        $this->setProperty('dietaryRequirementType', $dietaryRequirementType);
     }
 
     /**
@@ -88,7 +87,7 @@ class DietaryRequirement extends ModelBase
      */
     public function getNote()
     {
-        return $this->getProperty("note");
+        return $this->getProperty('note');
     }
 
     /**
@@ -96,6 +95,6 @@ class DietaryRequirement extends ModelBase
      */
     public function setNote($note = null)
     {
-        $this->setProperty("note", $note);
+        $this->setProperty('note', $note);
     }
 }

@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class LessonPlan extends ModelBase
 {
@@ -17,34 +13,38 @@ class LessonPlan extends ModelBase
     protected $_resourceType = ResourceType::LESSON_PLAN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LessonPlan[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("LessonPlan");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LESSON_PLAN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LessonPlan
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LESSON_PLAN, $id);
     }
 
@@ -53,7 +53,7 @@ class LessonPlan extends ModelBase
      */
     public function getTitle()
     {
-        return $this->getProperty("title");
+        return $this->getProperty('title');
     }
 
     /**
@@ -61,7 +61,7 @@ class LessonPlan extends ModelBase
      */
     public function setTitle($title = null)
     {
-        $this->setProperty("title", $title);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -69,7 +69,7 @@ class LessonPlan extends ModelBase
      */
     public function getSummary()
     {
-        return $this->getProperty("summary");
+        return $this->getProperty('summary');
     }
 
     /**
@@ -77,6 +77,6 @@ class LessonPlan extends ModelBase
      */
     public function setSummary($summary = null)
     {
-        $this->setProperty("summary", $summary);
+        $this->setProperty('summary', $summary);
     }
 }

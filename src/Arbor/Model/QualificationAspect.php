@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationGradeSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationAspect extends ModelBase
 {
@@ -42,34 +37,38 @@ class QualificationAspect extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_ASPECT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationAspect[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationAspect");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_ASPECT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationAspect
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_ASPECT, $id);
     }
 
@@ -78,7 +77,7 @@ class QualificationAspect extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -86,7 +85,7 @@ class QualificationAspect extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -94,7 +93,7 @@ class QualificationAspect extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -102,7 +101,7 @@ class QualificationAspect extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -110,7 +109,7 @@ class QualificationAspect extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -118,7 +117,7 @@ class QualificationAspect extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -126,7 +125,7 @@ class QualificationAspect extends ModelBase
      */
     public function getQualificationElement()
     {
-        return $this->getProperty("qualificationElement");
+        return $this->getProperty('qualificationElement');
     }
 
     /**
@@ -134,7 +133,7 @@ class QualificationAspect extends ModelBase
      */
     public function setQualificationElement(ModelBase $qualificationElement = null)
     {
-        $this->setProperty("qualificationElement", $qualificationElement);
+        $this->setProperty('qualificationElement', $qualificationElement);
     }
 
     /**
@@ -142,7 +141,7 @@ class QualificationAspect extends ModelBase
      */
     public function getGradeIndex()
     {
-        return $this->getProperty("gradeIndex");
+        return $this->getProperty('gradeIndex');
     }
 
     /**
@@ -150,7 +149,7 @@ class QualificationAspect extends ModelBase
      */
     public function setGradeIndex($gradeIndex = null)
     {
-        $this->setProperty("gradeIndex", $gradeIndex);
+        $this->setProperty('gradeIndex', $gradeIndex);
     }
 
     /**
@@ -158,7 +157,7 @@ class QualificationAspect extends ModelBase
      */
     public function getNumericMarkType()
     {
-        return $this->getProperty("numericMarkType");
+        return $this->getProperty('numericMarkType');
     }
 
     /**
@@ -166,7 +165,7 @@ class QualificationAspect extends ModelBase
      */
     public function setNumericMarkType($numericMarkType = null)
     {
-        $this->setProperty("numericMarkType", $numericMarkType);
+        $this->setProperty('numericMarkType', $numericMarkType);
     }
 
     /**
@@ -174,7 +173,7 @@ class QualificationAspect extends ModelBase
      */
     public function getDecimalPlaces()
     {
-        return $this->getProperty("decimalPlaces");
+        return $this->getProperty('decimalPlaces');
     }
 
     /**
@@ -182,7 +181,7 @@ class QualificationAspect extends ModelBase
      */
     public function setDecimalPlaces($decimalPlaces = null)
     {
-        $this->setProperty("decimalPlaces", $decimalPlaces);
+        $this->setProperty('decimalPlaces', $decimalPlaces);
     }
 
     /**
@@ -190,7 +189,7 @@ class QualificationAspect extends ModelBase
      */
     public function getMinimumNumericValue()
     {
-        return $this->getProperty("minimumNumericValue");
+        return $this->getProperty('minimumNumericValue');
     }
 
     /**
@@ -198,7 +197,7 @@ class QualificationAspect extends ModelBase
      */
     public function setMinimumNumericValue($minimumNumericValue = null)
     {
-        $this->setProperty("minimumNumericValue", $minimumNumericValue);
+        $this->setProperty('minimumNumericValue', $minimumNumericValue);
     }
 
     /**
@@ -206,7 +205,7 @@ class QualificationAspect extends ModelBase
      */
     public function getMaximumNumericValue()
     {
-        return $this->getProperty("maximumNumericValue");
+        return $this->getProperty('maximumNumericValue');
     }
 
     /**
@@ -214,7 +213,7 @@ class QualificationAspect extends ModelBase
      */
     public function setMaximumNumericValue($maximumNumericValue = null)
     {
-        $this->setProperty("maximumNumericValue", $maximumNumericValue);
+        $this->setProperty('maximumNumericValue', $maximumNumericValue);
     }
 
     /**
@@ -222,7 +221,7 @@ class QualificationAspect extends ModelBase
      */
     public function getResultGradeSet()
     {
-        return $this->getProperty("resultGradeSet");
+        return $this->getProperty('resultGradeSet');
     }
 
     /**
@@ -230,7 +229,7 @@ class QualificationAspect extends ModelBase
      */
     public function setResultGradeSet(QualificationGradeSet $resultGradeSet = null)
     {
-        $this->setProperty("resultGradeSet", $resultGradeSet);
+        $this->setProperty('resultGradeSet', $resultGradeSet);
     }
 
     /**
@@ -238,7 +237,7 @@ class QualificationAspect extends ModelBase
      */
     public function getForecastGradeSet()
     {
-        return $this->getProperty("forecastGradeSet");
+        return $this->getProperty('forecastGradeSet');
     }
 
     /**
@@ -246,7 +245,7 @@ class QualificationAspect extends ModelBase
      */
     public function setForecastGradeSet(QualificationGradeSet $forecastGradeSet = null)
     {
-        $this->setProperty("forecastGradeSet", $forecastGradeSet);
+        $this->setProperty('forecastGradeSet', $forecastGradeSet);
     }
 
     /**
@@ -254,7 +253,7 @@ class QualificationAspect extends ModelBase
      */
     public function getEndorsementGradeSet()
     {
-        return $this->getProperty("endorsementGradeSet");
+        return $this->getProperty('endorsementGradeSet');
     }
 
     /**
@@ -262,7 +261,7 @@ class QualificationAspect extends ModelBase
      */
     public function setEndorsementGradeSet(QualificationGradeSet $endorsementGradeSet = null)
     {
-        $this->setProperty("endorsementGradeSet", $endorsementGradeSet);
+        $this->setProperty('endorsementGradeSet', $endorsementGradeSet);
     }
 
     /**
@@ -270,7 +269,7 @@ class QualificationAspect extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -278,7 +277,7 @@ class QualificationAspect extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -286,7 +285,7 @@ class QualificationAspect extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -294,6 +293,6 @@ class QualificationAspect extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

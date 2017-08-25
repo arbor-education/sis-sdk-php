@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\TeachingGroup;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TeachingGroupTutor extends ModelBase
 {
@@ -23,34 +17,38 @@ class TeachingGroupTutor extends ModelBase
     protected $_resourceType = ResourceType::TEACHING_GROUP_TUTOR;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TeachingGroupTutor[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TeachingGroupTutor");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TEACHING_GROUP_TUTOR);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TeachingGroupTutor
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TEACHING_GROUP_TUTOR, $id);
     }
 
@@ -59,7 +57,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function getTeachingGroup()
     {
-        return $this->getProperty("teachingGroup");
+        return $this->getProperty('teachingGroup');
     }
 
     /**
@@ -67,7 +65,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function setTeachingGroup(TeachingGroup $teachingGroup = null)
     {
-        $this->setProperty("teachingGroup", $teachingGroup);
+        $this->setProperty('teachingGroup', $teachingGroup);
     }
 
     /**
@@ -75,7 +73,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -83,7 +81,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -91,7 +89,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -99,7 +97,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -107,7 +105,7 @@ class TeachingGroupTutor extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -115,6 +113,6 @@ class TeachingGroupTutor extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

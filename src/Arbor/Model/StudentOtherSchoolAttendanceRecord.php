@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\EducationalInstitution;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentOtherSchoolAttendanceRecord extends ModelBase
 {
@@ -36,34 +29,38 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentOtherSchoolAttendanceRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentOtherSchoolAttendanceRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentOtherSchoolAttendanceRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD, $id);
     }
 
@@ -72,7 +69,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -80,7 +77,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -88,7 +85,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -96,7 +93,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -104,7 +101,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getYear()
     {
-        return $this->getProperty("year");
+        return $this->getProperty('year');
     }
 
     /**
@@ -112,7 +109,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setYear($year = null)
     {
-        $this->setProperty("year", $year);
+        $this->setProperty('year', $year);
     }
 
     /**
@@ -120,7 +117,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -128,7 +125,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -136,7 +133,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getSessionsPossible()
     {
-        return $this->getProperty("sessionsPossible");
+        return $this->getProperty('sessionsPossible');
     }
 
     /**
@@ -144,7 +141,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setSessionsPossible($sessionsPossible = null)
     {
-        $this->setProperty("sessionsPossible", $sessionsPossible);
+        $this->setProperty('sessionsPossible', $sessionsPossible);
     }
 
     /**
@@ -152,7 +149,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getSessionsAttended()
     {
-        return $this->getProperty("sessionsAttended");
+        return $this->getProperty('sessionsAttended');
     }
 
     /**
@@ -160,7 +157,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setSessionsAttended($sessionsAttended = null)
     {
-        $this->setProperty("sessionsAttended", $sessionsAttended);
+        $this->setProperty('sessionsAttended', $sessionsAttended);
     }
 
     /**
@@ -168,7 +165,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getSessionsAuthorizedAbsence()
     {
-        return $this->getProperty("sessionsAuthorizedAbsence");
+        return $this->getProperty('sessionsAuthorizedAbsence');
     }
 
     /**
@@ -176,7 +173,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setSessionsAuthorizedAbsence($sessionsAuthorizedAbsence = null)
     {
-        $this->setProperty("sessionsAuthorizedAbsence", $sessionsAuthorizedAbsence);
+        $this->setProperty('sessionsAuthorizedAbsence', $sessionsAuthorizedAbsence);
     }
 
     /**
@@ -184,7 +181,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getSessionsUnauthorizedAbsence()
     {
-        return $this->getProperty("sessionsUnauthorizedAbsence");
+        return $this->getProperty('sessionsUnauthorizedAbsence');
     }
 
     /**
@@ -192,7 +189,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setSessionsUnauthorizedAbsence($sessionsUnauthorizedAbsence = null)
     {
-        $this->setProperty("sessionsUnauthorizedAbsence", $sessionsUnauthorizedAbsence);
+        $this->setProperty('sessionsUnauthorizedAbsence', $sessionsUnauthorizedAbsence);
     }
 
     /**
@@ -200,7 +197,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getAttendanceStartDate()
     {
-        return $this->getProperty("attendanceStartDate");
+        return $this->getProperty('attendanceStartDate');
     }
 
     /**
@@ -208,7 +205,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setAttendanceStartDate(\DateTime $attendanceStartDate = null)
     {
-        $this->setProperty("attendanceStartDate", $attendanceStartDate);
+        $this->setProperty('attendanceStartDate', $attendanceStartDate);
     }
 
     /**
@@ -216,7 +213,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function getAttendanceMarks()
     {
-        return $this->getProperty("attendanceMarks");
+        return $this->getProperty('attendanceMarks');
     }
 
     /**
@@ -224,6 +221,6 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      */
     public function setAttendanceMarks($attendanceMarks = null)
     {
-        $this->setProperty("attendanceMarks", $attendanceMarks);
+        $this->setProperty('attendanceMarks', $attendanceMarks);
     }
 }

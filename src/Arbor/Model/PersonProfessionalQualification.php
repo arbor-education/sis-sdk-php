@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ProfessionalQualificationType;
-use \Arbor\Model\ProfessionalQualificationClass;
-use \Arbor\Model\ProfessionalQualificationSubject;
-use \Arbor\Model\Country;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonProfessionalQualification extends ModelBase
 {
@@ -39,34 +31,38 @@ class PersonProfessionalQualification extends ModelBase
     protected $_resourceType = ResourceType::PERSON_PROFESSIONAL_QUALIFICATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonProfessionalQualification[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonProfessionalQualification");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_PROFESSIONAL_QUALIFICATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonProfessionalQualification
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_PROFESSIONAL_QUALIFICATION, $id);
     }
 
@@ -75,7 +71,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -83,7 +79,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -91,7 +87,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getQualificationName()
     {
-        return $this->getProperty("qualificationName");
+        return $this->getProperty('qualificationName');
     }
 
     /**
@@ -99,7 +95,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setQualificationName($qualificationName = null)
     {
-        $this->setProperty("qualificationName", $qualificationName);
+        $this->setProperty('qualificationName', $qualificationName);
     }
 
     /**
@@ -107,7 +103,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getDateAwarded()
     {
-        return $this->getProperty("dateAwarded");
+        return $this->getProperty('dateAwarded');
     }
 
     /**
@@ -115,7 +111,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setDateAwarded(\DateTime $dateAwarded = null)
     {
-        $this->setProperty("dateAwarded", $dateAwarded);
+        $this->setProperty('dateAwarded', $dateAwarded);
     }
 
     /**
@@ -123,7 +119,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getAwardingInstitution()
     {
-        return $this->getProperty("awardingInstitution");
+        return $this->getProperty('awardingInstitution');
     }
 
     /**
@@ -131,7 +127,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setAwardingInstitution($awardingInstitution = null)
     {
-        $this->setProperty("awardingInstitution", $awardingInstitution);
+        $this->setProperty('awardingInstitution', $awardingInstitution);
     }
 
     /**
@@ -139,7 +135,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getProfessionalQualificationType()
     {
-        return $this->getProperty("professionalQualificationType");
+        return $this->getProperty('professionalQualificationType');
     }
 
     /**
@@ -147,7 +143,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setProfessionalQualificationType(ProfessionalQualificationType $professionalQualificationType = null)
     {
-        $this->setProperty("professionalQualificationType", $professionalQualificationType);
+        $this->setProperty('professionalQualificationType', $professionalQualificationType);
     }
 
     /**
@@ -155,7 +151,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getProfessionalQualificationClass()
     {
-        return $this->getProperty("professionalQualificationClass");
+        return $this->getProperty('professionalQualificationClass');
     }
 
     /**
@@ -163,7 +159,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setProfessionalQualificationClass(ProfessionalQualificationClass $professionalQualificationClass = null)
     {
-        $this->setProperty("professionalQualificationClass", $professionalQualificationClass);
+        $this->setProperty('professionalQualificationClass', $professionalQualificationClass);
     }
 
     /**
@@ -171,7 +167,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getFirstSubject()
     {
-        return $this->getProperty("firstSubject");
+        return $this->getProperty('firstSubject');
     }
 
     /**
@@ -179,7 +175,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setFirstSubject(ProfessionalQualificationSubject $firstSubject = null)
     {
-        $this->setProperty("firstSubject", $firstSubject);
+        $this->setProperty('firstSubject', $firstSubject);
     }
 
     /**
@@ -187,7 +183,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getSecondSubject()
     {
-        return $this->getProperty("secondSubject");
+        return $this->getProperty('secondSubject');
     }
 
     /**
@@ -195,7 +191,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setSecondSubject(ProfessionalQualificationSubject $secondSubject = null)
     {
-        $this->setProperty("secondSubject", $secondSubject);
+        $this->setProperty('secondSubject', $secondSubject);
     }
 
     /**
@@ -203,7 +199,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getOriginCountry()
     {
-        return $this->getProperty("originCountry");
+        return $this->getProperty('originCountry');
     }
 
     /**
@@ -211,7 +207,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setOriginCountry(Country $originCountry = null)
     {
-        $this->setProperty("originCountry", $originCountry);
+        $this->setProperty('originCountry', $originCountry);
     }
 
     /**
@@ -219,7 +215,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getIsVocationalQualification()
     {
-        return $this->getProperty("isVocationalQualification");
+        return $this->getProperty('isVocationalQualification');
     }
 
     /**
@@ -227,7 +223,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setIsVocationalQualification($isVocationalQualification = null)
     {
-        $this->setProperty("isVocationalQualification", $isVocationalQualification);
+        $this->setProperty('isVocationalQualification', $isVocationalQualification);
     }
 
     /**
@@ -235,7 +231,7 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function getIsVerified()
     {
-        return $this->getProperty("isVerified");
+        return $this->getProperty('isVerified');
     }
 
     /**
@@ -243,6 +239,6 @@ class PersonProfessionalQualification extends ModelBase
      */
     public function setIsVerified($isVerified = null)
     {
-        $this->setProperty("isVerified", $isVerified);
+        $this->setProperty('isVerified', $isVerified);
     }
 }

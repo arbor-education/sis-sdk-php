@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StaffContractPost;
-use \Arbor\Model\AdditionalPaymentReason;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffContractPostAdditionalPayment extends ModelBase
 {
@@ -27,34 +21,38 @@ class StaffContractPostAdditionalPayment extends ModelBase
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffContractPostAdditionalPayment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffContractPostAdditionalPayment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffContractPostAdditionalPayment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT, $id);
     }
 
@@ -63,7 +61,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function getStaffContractPost()
     {
-        return $this->getProperty("staffContractPost");
+        return $this->getProperty('staffContractPost');
     }
 
     /**
@@ -71,7 +69,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function setStaffContractPost(StaffContractPost $staffContractPost = null)
     {
-        $this->setProperty("staffContractPost", $staffContractPost);
+        $this->setProperty('staffContractPost', $staffContractPost);
     }
 
     /**
@@ -79,7 +77,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function getAdditionalPayment()
     {
-        return $this->getProperty("additionalPayment");
+        return $this->getProperty('additionalPayment');
     }
 
     /**
@@ -87,7 +85,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function setAdditionalPayment($additionalPayment = null)
     {
-        $this->setProperty("additionalPayment", $additionalPayment);
+        $this->setProperty('additionalPayment', $additionalPayment);
     }
 
     /**
@@ -95,7 +93,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function getPaymentDate()
     {
-        return $this->getProperty("paymentDate");
+        return $this->getProperty('paymentDate');
     }
 
     /**
@@ -103,7 +101,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function setPaymentDate(\DateTime $paymentDate = null)
     {
-        $this->setProperty("paymentDate", $paymentDate);
+        $this->setProperty('paymentDate', $paymentDate);
     }
 
     /**
@@ -111,7 +109,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function getAdditionalPaymentReason()
     {
-        return $this->getProperty("additionalPaymentReason");
+        return $this->getProperty('additionalPaymentReason');
     }
 
     /**
@@ -119,7 +117,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function setAdditionalPaymentReason(AdditionalPaymentReason $additionalPaymentReason = null)
     {
-        $this->setProperty("additionalPaymentReason", $additionalPaymentReason);
+        $this->setProperty('additionalPaymentReason', $additionalPaymentReason);
     }
 
     /**
@@ -127,7 +125,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -135,7 +133,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -143,7 +141,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -151,6 +149,6 @@ class StaffContractPostAdditionalPayment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

@@ -1,16 +1,13 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Intervention;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionGroup extends ModelBase
 {
+    const NAME = 'name';
+
     const INTERVENTION = 'intervention';
 
     const GROUP = 'group';
@@ -23,38 +20,60 @@ class InterventionGroup extends ModelBase
 
     const SUCCESS_CRITERIA = 'successCriteria';
 
+    const STAFF = 'staff';
+
     protected $_resourceType = ResourceType::INTERVENTION_GROUP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionGroup[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionGroup");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_GROUP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionGroup
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_GROUP, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->getProperty('name');
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name = null)
+    {
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -62,7 +81,7 @@ class InterventionGroup extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -70,7 +89,7 @@ class InterventionGroup extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -78,7 +97,7 @@ class InterventionGroup extends ModelBase
      */
     public function getGroup()
     {
-        return $this->getProperty("group");
+        return $this->getProperty('group');
     }
 
     /**
@@ -86,7 +105,7 @@ class InterventionGroup extends ModelBase
      */
     public function setGroup(ModelBase $group = null)
     {
-        $this->setProperty("group", $group);
+        $this->setProperty('group', $group);
     }
 
     /**
@@ -94,7 +113,7 @@ class InterventionGroup extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -102,7 +121,7 @@ class InterventionGroup extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -110,7 +129,7 @@ class InterventionGroup extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -118,7 +137,7 @@ class InterventionGroup extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -126,7 +145,7 @@ class InterventionGroup extends ModelBase
      */
     public function getAims()
     {
-        return $this->getProperty("aims");
+        return $this->getProperty('aims');
     }
 
     /**
@@ -134,7 +153,7 @@ class InterventionGroup extends ModelBase
      */
     public function setAims($aims = null)
     {
-        $this->setProperty("aims", $aims);
+        $this->setProperty('aims', $aims);
     }
 
     /**
@@ -142,7 +161,7 @@ class InterventionGroup extends ModelBase
      */
     public function getSuccessCriteria()
     {
-        return $this->getProperty("successCriteria");
+        return $this->getProperty('successCriteria');
     }
 
     /**
@@ -150,6 +169,22 @@ class InterventionGroup extends ModelBase
      */
     public function setSuccessCriteria($successCriteria = null)
     {
-        $this->setProperty("successCriteria", $successCriteria);
+        $this->setProperty('successCriteria', $successCriteria);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getStaff()
+    {
+        return $this->getProperty('staff');
+    }
+
+    /**
+     * @param Staff $staff
+     */
+    public function setStaff(Staff $staff = null)
+    {
+        $this->setProperty('staff', $staff);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewsStory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewsStoryComment extends ModelBase
 {
@@ -18,34 +13,38 @@ class NewsStoryComment extends ModelBase
     protected $_resourceType = ResourceType::NEWS_STORY_COMMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewsStoryComment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewsStoryComment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEWS_STORY_COMMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewsStoryComment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEWS_STORY_COMMENT, $id);
     }
 
@@ -54,7 +53,7 @@ class NewsStoryComment extends ModelBase
      */
     public function getNewsStory()
     {
-        return $this->getProperty("newsStory");
+        return $this->getProperty('newsStory');
     }
 
     /**
@@ -62,7 +61,7 @@ class NewsStoryComment extends ModelBase
      */
     public function setNewsStory(NewsStory $newsStory = null)
     {
-        $this->setProperty("newsStory", $newsStory);
+        $this->setProperty('newsStory', $newsStory);
     }
 
     /**
@@ -70,7 +69,7 @@ class NewsStoryComment extends ModelBase
      */
     public function getText()
     {
-        return $this->getProperty("text");
+        return $this->getProperty('text');
     }
 
     /**
@@ -78,6 +77,6 @@ class NewsStoryComment extends ModelBase
      */
     public function setText($text = null)
     {
-        $this->setProperty("text", $text);
+        $this->setProperty('text', $text);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UserNotification extends ModelBase
 {
@@ -38,34 +33,38 @@ class UserNotification extends ModelBase
     protected $_resourceType = ResourceType::USER_NOTIFICATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UserNotification[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UserNotification");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USER_NOTIFICATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UserNotification
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USER_NOTIFICATION, $id);
     }
 
@@ -74,7 +73,7 @@ class UserNotification extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -82,7 +81,7 @@ class UserNotification extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -90,7 +89,7 @@ class UserNotification extends ModelBase
      */
     public function getIsRead()
     {
-        return $this->getProperty("isRead");
+        return $this->getProperty('isRead');
     }
 
     /**
@@ -98,7 +97,7 @@ class UserNotification extends ModelBase
      */
     public function setIsRead($isRead = null)
     {
-        $this->setProperty("isRead", $isRead);
+        $this->setProperty('isRead', $isRead);
     }
 
     /**
@@ -106,7 +105,7 @@ class UserNotification extends ModelBase
      */
     public function getStatus()
     {
-        return $this->getProperty("status");
+        return $this->getProperty('status');
     }
 
     /**
@@ -114,7 +113,7 @@ class UserNotification extends ModelBase
      */
     public function setStatus($status = null)
     {
-        $this->setProperty("status", $status);
+        $this->setProperty('status', $status);
     }
 
     /**
@@ -122,7 +121,7 @@ class UserNotification extends ModelBase
      */
     public function getModifiedGlobalCounter()
     {
-        return $this->getProperty("modifiedGlobalCounter");
+        return $this->getProperty('modifiedGlobalCounter');
     }
 
     /**
@@ -130,7 +129,7 @@ class UserNotification extends ModelBase
      */
     public function setModifiedGlobalCounter($modifiedGlobalCounter = null)
     {
-        $this->setProperty("modifiedGlobalCounter", $modifiedGlobalCounter);
+        $this->setProperty('modifiedGlobalCounter', $modifiedGlobalCounter);
     }
 
     /**
@@ -138,7 +137,7 @@ class UserNotification extends ModelBase
      */
     public function getCreatedDatetime()
     {
-        return $this->getProperty("createdDatetime");
+        return $this->getProperty('createdDatetime');
     }
 
     /**
@@ -146,7 +145,7 @@ class UserNotification extends ModelBase
      */
     public function setCreatedDatetime(\DateTime $createdDatetime = null)
     {
-        $this->setProperty("createdDatetime", $createdDatetime);
+        $this->setProperty('createdDatetime', $createdDatetime);
     }
 
     /**
@@ -154,7 +153,7 @@ class UserNotification extends ModelBase
      */
     public function getAction()
     {
-        return $this->getProperty("action");
+        return $this->getProperty('action');
     }
 
     /**
@@ -162,7 +161,7 @@ class UserNotification extends ModelBase
      */
     public function setAction($action = null)
     {
-        $this->setProperty("action", $action);
+        $this->setProperty('action', $action);
     }
 
     /**
@@ -170,7 +169,7 @@ class UserNotification extends ModelBase
      */
     public function getIcon()
     {
-        return $this->getProperty("icon");
+        return $this->getProperty('icon');
     }
 
     /**
@@ -178,7 +177,7 @@ class UserNotification extends ModelBase
      */
     public function setIcon($icon = null)
     {
-        $this->setProperty("icon", $icon);
+        $this->setProperty('icon', $icon);
     }
 
     /**
@@ -186,7 +185,7 @@ class UserNotification extends ModelBase
      */
     public function getOrigin()
     {
-        return $this->getProperty("origin");
+        return $this->getProperty('origin');
     }
 
     /**
@@ -194,7 +193,7 @@ class UserNotification extends ModelBase
      */
     public function setOrigin($origin = null)
     {
-        $this->setProperty("origin", $origin);
+        $this->setProperty('origin', $origin);
     }
 
     /**
@@ -202,7 +201,7 @@ class UserNotification extends ModelBase
      */
     public function getParameters()
     {
-        return $this->getProperty("parameters");
+        return $this->getProperty('parameters');
     }
 
     /**
@@ -210,7 +209,7 @@ class UserNotification extends ModelBase
      */
     public function setParameters($parameters = null)
     {
-        $this->setProperty("parameters", $parameters);
+        $this->setProperty('parameters', $parameters);
     }
 
     /**
@@ -218,7 +217,7 @@ class UserNotification extends ModelBase
      */
     public function getType()
     {
-        return $this->getProperty("type");
+        return $this->getProperty('type');
     }
 
     /**
@@ -226,7 +225,7 @@ class UserNotification extends ModelBase
      */
     public function setType($type = null)
     {
-        $this->setProperty("type", $type);
+        $this->setProperty('type', $type);
     }
 
     /**
@@ -234,7 +233,7 @@ class UserNotification extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -242,7 +241,7 @@ class UserNotification extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -250,7 +249,7 @@ class UserNotification extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -258,6 +257,6 @@ class UserNotification extends ModelBase
      */
     public function setSubject($subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ChequeBook;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Cheque extends ModelBase
 {
@@ -18,34 +13,38 @@ class Cheque extends ModelBase
     protected $_resourceType = ResourceType::CHEQUE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Cheque[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Cheque");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CHEQUE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Cheque
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CHEQUE, $id);
     }
 
@@ -54,7 +53,7 @@ class Cheque extends ModelBase
      */
     public function getChequeBook()
     {
-        return $this->getProperty("chequeBook");
+        return $this->getProperty('chequeBook');
     }
 
     /**
@@ -62,7 +61,7 @@ class Cheque extends ModelBase
      */
     public function setChequeBook(ChequeBook $chequeBook = null)
     {
-        $this->setProperty("chequeBook", $chequeBook);
+        $this->setProperty('chequeBook', $chequeBook);
     }
 
     /**
@@ -70,7 +69,7 @@ class Cheque extends ModelBase
      */
     public function getChequeNumber()
     {
-        return $this->getProperty("chequeNumber");
+        return $this->getProperty('chequeNumber');
     }
 
     /**
@@ -78,6 +77,6 @@ class Cheque extends ModelBase
      */
     public function setChequeNumber($chequeNumber = null)
     {
-        $this->setProperty("chequeNumber", $chequeNumber);
+        $this->setProperty('chequeNumber', $chequeNumber);
     }
 }

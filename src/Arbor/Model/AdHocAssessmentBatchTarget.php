@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AdHocAssessmentBatch;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AdHocAssessmentBatchTarget extends ModelBase
 {
@@ -22,34 +17,38 @@ class AdHocAssessmentBatchTarget extends ModelBase
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AdHocAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AdHocAssessmentBatchTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::AD_HOC_ASSESSMENT_BATCH_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AdHocAssessmentBatchTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::AD_HOC_ASSESSMENT_BATCH_TARGET, $id);
     }
 
@@ -58,7 +57,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function getAdHocAssessmentBatch()
     {
-        return $this->getProperty("adHocAssessmentBatch");
+        return $this->getProperty('adHocAssessmentBatch');
     }
 
     /**
@@ -66,7 +65,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function setAdHocAssessmentBatch(AdHocAssessmentBatch $adHocAssessmentBatch = null)
     {
-        $this->setProperty("adHocAssessmentBatch", $adHocAssessmentBatch);
+        $this->setProperty('adHocAssessmentBatch', $adHocAssessmentBatch);
     }
 
     /**
@@ -74,7 +73,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function getTarget()
     {
-        return $this->getProperty("target");
+        return $this->getProperty('target');
     }
 
     /**
@@ -82,7 +81,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function setTarget(ModelBase $target = null)
     {
-        $this->setProperty("target", $target);
+        $this->setProperty('target', $target);
     }
 
     /**
@@ -90,7 +89,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function getMarkingStartedDatetime()
     {
-        return $this->getProperty("markingStartedDatetime");
+        return $this->getProperty('markingStartedDatetime');
     }
 
     /**
@@ -98,7 +97,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function setMarkingStartedDatetime(\DateTime $markingStartedDatetime = null)
     {
-        $this->setProperty("markingStartedDatetime", $markingStartedDatetime);
+        $this->setProperty('markingStartedDatetime', $markingStartedDatetime);
     }
 
     /**
@@ -106,7 +105,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function getMarkingCompletedDatetime()
     {
-        return $this->getProperty("markingCompletedDatetime");
+        return $this->getProperty('markingCompletedDatetime');
     }
 
     /**
@@ -114,6 +113,6 @@ class AdHocAssessmentBatchTarget extends ModelBase
      */
     public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
     {
-        $this->setProperty("markingCompletedDatetime", $markingCompletedDatetime);
+        $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
 }

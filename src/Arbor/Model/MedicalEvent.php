@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MedicalEventType;
-use \Arbor\Model\MedicalCondition;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MedicalEvent extends ModelBase
 {
@@ -27,34 +21,38 @@ class MedicalEvent extends ModelBase
     protected $_resourceType = ResourceType::MEDICAL_EVENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MedicalEvent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MedicalEvent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEDICAL_EVENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MedicalEvent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEDICAL_EVENT, $id);
     }
 
@@ -63,7 +61,7 @@ class MedicalEvent extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -71,7 +69,7 @@ class MedicalEvent extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -79,7 +77,7 @@ class MedicalEvent extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -87,7 +85,7 @@ class MedicalEvent extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -95,7 +93,7 @@ class MedicalEvent extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -103,7 +101,7 @@ class MedicalEvent extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -111,7 +109,7 @@ class MedicalEvent extends ModelBase
      */
     public function getMedicalEventType()
     {
-        return $this->getProperty("medicalEventType");
+        return $this->getProperty('medicalEventType');
     }
 
     /**
@@ -119,7 +117,7 @@ class MedicalEvent extends ModelBase
      */
     public function setMedicalEventType(MedicalEventType $medicalEventType = null)
     {
-        $this->setProperty("medicalEventType", $medicalEventType);
+        $this->setProperty('medicalEventType', $medicalEventType);
     }
 
     /**
@@ -127,7 +125,7 @@ class MedicalEvent extends ModelBase
      */
     public function getMedicalEventDescription()
     {
-        return $this->getProperty("medicalEventDescription");
+        return $this->getProperty('medicalEventDescription');
     }
 
     /**
@@ -135,7 +133,7 @@ class MedicalEvent extends ModelBase
      */
     public function setMedicalEventDescription($medicalEventDescription = null)
     {
-        $this->setProperty("medicalEventDescription", $medicalEventDescription);
+        $this->setProperty('medicalEventDescription', $medicalEventDescription);
     }
 
     /**
@@ -143,7 +141,7 @@ class MedicalEvent extends ModelBase
      */
     public function getMedicalCondition()
     {
-        return $this->getProperty("medicalCondition");
+        return $this->getProperty('medicalCondition');
     }
 
     /**
@@ -151,6 +149,6 @@ class MedicalEvent extends ModelBase
      */
     public function setMedicalCondition(MedicalCondition $medicalCondition = null)
     {
-        $this->setProperty("medicalCondition", $medicalCondition);
+        $this->setProperty('medicalCondition', $medicalCondition);
     }
 }

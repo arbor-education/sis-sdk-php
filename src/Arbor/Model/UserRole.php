@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UserRole extends ModelBase
 {
@@ -27,34 +23,38 @@ class UserRole extends ModelBase
     protected $_resourceType = ResourceType::USER_ROLE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UserRole[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UserRole");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USER_ROLE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UserRole
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USER_ROLE, $id);
     }
 
@@ -63,7 +63,7 @@ class UserRole extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -71,7 +71,7 @@ class UserRole extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -79,7 +79,7 @@ class UserRole extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -87,7 +87,7 @@ class UserRole extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -95,7 +95,7 @@ class UserRole extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -103,7 +103,7 @@ class UserRole extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -111,7 +111,7 @@ class UserRole extends ModelBase
      */
     public function getSectionName()
     {
-        return $this->getProperty("sectionName");
+        return $this->getProperty('sectionName');
     }
 
     /**
@@ -119,7 +119,7 @@ class UserRole extends ModelBase
      */
     public function setSectionName($sectionName = null)
     {
-        $this->setProperty("sectionName", $sectionName);
+        $this->setProperty('sectionName', $sectionName);
     }
 
     /**
@@ -127,7 +127,7 @@ class UserRole extends ModelBase
      */
     public function getFunctionName()
     {
-        return $this->getProperty("functionName");
+        return $this->getProperty('functionName');
     }
 
     /**
@@ -135,7 +135,7 @@ class UserRole extends ModelBase
      */
     public function setFunctionName($functionName = null)
     {
-        $this->setProperty("functionName", $functionName);
+        $this->setProperty('functionName', $functionName);
     }
 
     /**
@@ -143,7 +143,7 @@ class UserRole extends ModelBase
      */
     public function getPermissionName()
     {
-        return $this->getProperty("permissionName");
+        return $this->getProperty('permissionName');
     }
 
     /**
@@ -151,7 +151,7 @@ class UserRole extends ModelBase
      */
     public function setPermissionName($permissionName = null)
     {
-        $this->setProperty("permissionName", $permissionName);
+        $this->setProperty('permissionName', $permissionName);
     }
 
     /**
@@ -159,7 +159,7 @@ class UserRole extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -167,6 +167,6 @@ class UserRole extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 }

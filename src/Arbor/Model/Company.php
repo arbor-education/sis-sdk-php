@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Company extends ModelBase
 {
@@ -21,34 +17,38 @@ class Company extends ModelBase
     protected $_resourceType = ResourceType::COMPANY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Company[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Company");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COMPANY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Company
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COMPANY, $id);
     }
 
@@ -57,7 +57,7 @@ class Company extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -65,7 +65,7 @@ class Company extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -73,7 +73,7 @@ class Company extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -81,7 +81,7 @@ class Company extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -89,7 +89,7 @@ class Company extends ModelBase
      */
     public function getRegistrationNumber()
     {
-        return $this->getProperty("registrationNumber");
+        return $this->getProperty('registrationNumber');
     }
 
     /**
@@ -97,7 +97,7 @@ class Company extends ModelBase
      */
     public function setRegistrationNumber($registrationNumber = null)
     {
-        $this->setProperty("registrationNumber", $registrationNumber);
+        $this->setProperty('registrationNumber', $registrationNumber);
     }
 
     /**
@@ -105,7 +105,7 @@ class Company extends ModelBase
      */
     public function getVatIdentificationNumber()
     {
-        return $this->getProperty("vatIdentificationNumber");
+        return $this->getProperty('vatIdentificationNumber');
     }
 
     /**
@@ -113,6 +113,6 @@ class Company extends ModelBase
      */
     public function setVatIdentificationNumber($vatIdentificationNumber = null)
     {
-        $this->setProperty("vatIdentificationNumber", $vatIdentificationNumber);
+        $this->setProperty('vatIdentificationNumber', $vatIdentificationNumber);
     }
 }

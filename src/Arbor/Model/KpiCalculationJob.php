@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Kpi;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class KpiCalculationJob extends ModelBase
 {
@@ -26,34 +21,38 @@ class KpiCalculationJob extends ModelBase
     protected $_resourceType = ResourceType::KPI_CALCULATION_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return KpiCalculationJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("KpiCalculationJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::KPI_CALCULATION_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return KpiCalculationJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::KPI_CALCULATION_JOB, $id);
     }
 
@@ -62,7 +61,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function getKpi()
     {
-        return $this->getProperty("kpi");
+        return $this->getProperty('kpi');
     }
 
     /**
@@ -70,7 +69,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function setKpi(Kpi $kpi = null)
     {
-        $this->setProperty("kpi", $kpi);
+        $this->setProperty('kpi', $kpi);
     }
 
     /**
@@ -78,7 +77,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function getReferenceDate()
     {
-        return $this->getProperty("referenceDate");
+        return $this->getProperty('referenceDate');
     }
 
     /**
@@ -86,7 +85,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function setReferenceDate(\DateTime $referenceDate = null)
     {
-        $this->setProperty("referenceDate", $referenceDate);
+        $this->setProperty('referenceDate', $referenceDate);
     }
 
     /**
@@ -94,7 +93,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function getRequestedDatetime()
     {
-        return $this->getProperty("requestedDatetime");
+        return $this->getProperty('requestedDatetime');
     }
 
     /**
@@ -102,7 +101,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function setRequestedDatetime(\DateTime $requestedDatetime = null)
     {
-        $this->setProperty("requestedDatetime", $requestedDatetime);
+        $this->setProperty('requestedDatetime', $requestedDatetime);
     }
 
     /**
@@ -110,7 +109,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function getStartedDatetime()
     {
-        return $this->getProperty("startedDatetime");
+        return $this->getProperty('startedDatetime');
     }
 
     /**
@@ -118,7 +117,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function setStartedDatetime(\DateTime $startedDatetime = null)
     {
-        $this->setProperty("startedDatetime", $startedDatetime);
+        $this->setProperty('startedDatetime', $startedDatetime);
     }
 
     /**
@@ -126,7 +125,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function getCompletedDatetime()
     {
-        return $this->getProperty("completedDatetime");
+        return $this->getProperty('completedDatetime');
     }
 
     /**
@@ -134,7 +133,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
-        $this->setProperty("completedDatetime", $completedDatetime);
+        $this->setProperty('completedDatetime', $completedDatetime);
     }
 
     /**
@@ -142,7 +141,7 @@ class KpiCalculationJob extends ModelBase
      */
     public function getThreadId()
     {
-        return $this->getProperty("threadId");
+        return $this->getProperty('threadId');
     }
 
     /**
@@ -150,6 +149,6 @@ class KpiCalculationJob extends ModelBase
      */
     public function setThreadId($threadId = null)
     {
-        $this->setProperty("threadId", $threadId);
+        $this->setProperty('threadId', $threadId);
     }
 }

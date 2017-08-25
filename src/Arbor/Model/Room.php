@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Site;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Room extends ModelBase
 {
@@ -26,34 +21,38 @@ class Room extends ModelBase
     protected $_resourceType = ResourceType::ROOM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Room[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Room");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ROOM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Room
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ROOM, $id);
     }
 
@@ -62,7 +61,7 @@ class Room extends ModelBase
      */
     public function getSite()
     {
-        return $this->getProperty("site");
+        return $this->getProperty('site');
     }
 
     /**
@@ -70,7 +69,7 @@ class Room extends ModelBase
      */
     public function setSite(Site $site = null)
     {
-        $this->setProperty("site", $site);
+        $this->setProperty('site', $site);
     }
 
     /**
@@ -78,7 +77,7 @@ class Room extends ModelBase
      */
     public function getRoomName()
     {
-        return $this->getProperty("roomName");
+        return $this->getProperty('roomName');
     }
 
     /**
@@ -86,7 +85,7 @@ class Room extends ModelBase
      */
     public function setRoomName($roomName = null)
     {
-        $this->setProperty("roomName", $roomName);
+        $this->setProperty('roomName', $roomName);
     }
 
     /**
@@ -94,7 +93,7 @@ class Room extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -102,7 +101,7 @@ class Room extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -110,7 +109,7 @@ class Room extends ModelBase
      */
     public function getStudentCapacity()
     {
-        return $this->getProperty("studentCapacity");
+        return $this->getProperty('studentCapacity');
     }
 
     /**
@@ -118,7 +117,7 @@ class Room extends ModelBase
      */
     public function setStudentCapacity($studentCapacity = null)
     {
-        $this->setProperty("studentCapacity", $studentCapacity);
+        $this->setProperty('studentCapacity', $studentCapacity);
     }
 
     /**
@@ -126,7 +125,7 @@ class Room extends ModelBase
      */
     public function getIsInvigilationRoom()
     {
-        return $this->getProperty("isInvigilationRoom");
+        return $this->getProperty('isInvigilationRoom');
     }
 
     /**
@@ -134,7 +133,7 @@ class Room extends ModelBase
      */
     public function setIsInvigilationRoom($isInvigilationRoom = null)
     {
-        $this->setProperty("isInvigilationRoom", $isInvigilationRoom);
+        $this->setProperty('isInvigilationRoom', $isInvigilationRoom);
     }
 
     /**
@@ -142,7 +141,7 @@ class Room extends ModelBase
      */
     public function getInvigilationCapacity()
     {
-        return $this->getProperty("invigilationCapacity");
+        return $this->getProperty('invigilationCapacity');
     }
 
     /**
@@ -150,6 +149,6 @@ class Room extends ModelBase
      */
     public function setInvigilationCapacity($invigilationCapacity = null)
     {
-        $this->setProperty("invigilationCapacity", $invigilationCapacity);
+        $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }
 }

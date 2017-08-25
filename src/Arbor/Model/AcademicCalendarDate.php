@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\Term;
-use \Arbor\Model\AcademicHoliday;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicCalendarDate extends ModelBase
 {
@@ -31,10 +24,6 @@ class AcademicCalendarDate extends ModelBase
 
     const TERM = 'term';
 
-    const ACADEMIC_YEAR_CYCLE_NUMBER = 'academicYearCycleNumber';
-
-    const TERM_CYCLE_NUMBER = 'termCycleNumber';
-
     const DAY_OF_CYCLE = 'dayOfCycle';
 
     const DAY_OF_TERM = 'dayOfTerm';
@@ -48,34 +37,38 @@ class AcademicCalendarDate extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_CALENDAR_DATE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicCalendarDate[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicCalendarDate");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_CALENDAR_DATE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicCalendarDate
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_CALENDAR_DATE, $id);
     }
 
@@ -84,7 +77,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -92,7 +85,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -100,7 +93,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -108,7 +101,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -116,7 +109,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getCalendarYear()
     {
-        return $this->getProperty("calendarYear");
+        return $this->getProperty('calendarYear');
     }
 
     /**
@@ -124,7 +117,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setCalendarYear($calendarYear = null)
     {
-        $this->setProperty("calendarYear", $calendarYear);
+        $this->setProperty('calendarYear', $calendarYear);
     }
 
     /**
@@ -132,7 +125,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getCalendarMonth()
     {
-        return $this->getProperty("calendarMonth");
+        return $this->getProperty('calendarMonth');
     }
 
     /**
@@ -140,7 +133,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setCalendarMonth($calendarMonth = null)
     {
-        $this->setProperty("calendarMonth", $calendarMonth);
+        $this->setProperty('calendarMonth', $calendarMonth);
     }
 
     /**
@@ -148,7 +141,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getCalendarWeek()
     {
-        return $this->getProperty("calendarWeek");
+        return $this->getProperty('calendarWeek');
     }
 
     /**
@@ -156,7 +149,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setCalendarWeek($calendarWeek = null)
     {
-        $this->setProperty("calendarWeek", $calendarWeek);
+        $this->setProperty('calendarWeek', $calendarWeek);
     }
 
     /**
@@ -164,7 +157,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getCalendarDay()
     {
-        return $this->getProperty("calendarDay");
+        return $this->getProperty('calendarDay');
     }
 
     /**
@@ -172,7 +165,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setCalendarDay($calendarDay = null)
     {
-        $this->setProperty("calendarDay", $calendarDay);
+        $this->setProperty('calendarDay', $calendarDay);
     }
 
     /**
@@ -180,7 +173,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getCalendarDayOfWeek()
     {
-        return $this->getProperty("calendarDayOfWeek");
+        return $this->getProperty('calendarDayOfWeek');
     }
 
     /**
@@ -188,7 +181,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setCalendarDayOfWeek($calendarDayOfWeek = null)
     {
-        $this->setProperty("calendarDayOfWeek", $calendarDayOfWeek);
+        $this->setProperty('calendarDayOfWeek', $calendarDayOfWeek);
     }
 
     /**
@@ -196,7 +189,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -204,7 +197,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -212,7 +205,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getTerm()
     {
-        return $this->getProperty("term");
+        return $this->getProperty('term');
     }
 
     /**
@@ -220,39 +213,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setTerm(Term $term = null)
     {
-        $this->setProperty("term", $term);
-    }
-
-    /**
-     * @return int
-     */
-    public function getAcademicYearCycleNumber()
-    {
-        return $this->getProperty("academicYearCycleNumber");
-    }
-
-    /**
-     * @param int $academicYearCycleNumber
-     */
-    public function setAcademicYearCycleNumber($academicYearCycleNumber = null)
-    {
-        $this->setProperty("academicYearCycleNumber", $academicYearCycleNumber);
-    }
-
-    /**
-     * @return int
-     */
-    public function getTermCycleNumber()
-    {
-        return $this->getProperty("termCycleNumber");
-    }
-
-    /**
-     * @param int $termCycleNumber
-     */
-    public function setTermCycleNumber($termCycleNumber = null)
-    {
-        $this->setProperty("termCycleNumber", $termCycleNumber);
+        $this->setProperty('term', $term);
     }
 
     /**
@@ -260,7 +221,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getDayOfCycle()
     {
-        return $this->getProperty("dayOfCycle");
+        return $this->getProperty('dayOfCycle');
     }
 
     /**
@@ -268,7 +229,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setDayOfCycle($dayOfCycle = null)
     {
-        $this->setProperty("dayOfCycle", $dayOfCycle);
+        $this->setProperty('dayOfCycle', $dayOfCycle);
     }
 
     /**
@@ -276,7 +237,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getDayOfTerm()
     {
-        return $this->getProperty("dayOfTerm");
+        return $this->getProperty('dayOfTerm');
     }
 
     /**
@@ -284,7 +245,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setDayOfTerm($dayOfTerm = null)
     {
-        $this->setProperty("dayOfTerm", $dayOfTerm);
+        $this->setProperty('dayOfTerm', $dayOfTerm);
     }
 
     /**
@@ -292,7 +253,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getDayOfAcademicYear()
     {
-        return $this->getProperty("dayOfAcademicYear");
+        return $this->getProperty('dayOfAcademicYear');
     }
 
     /**
@@ -300,7 +261,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setDayOfAcademicYear($dayOfAcademicYear = null)
     {
-        $this->setProperty("dayOfAcademicYear", $dayOfAcademicYear);
+        $this->setProperty('dayOfAcademicYear', $dayOfAcademicYear);
     }
 
     /**
@@ -308,7 +269,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getAcademicHoliday()
     {
-        return $this->getProperty("academicHoliday");
+        return $this->getProperty('academicHoliday');
     }
 
     /**
@@ -316,7 +277,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setAcademicHoliday(AcademicHoliday $academicHoliday = null)
     {
-        $this->setProperty("academicHoliday", $academicHoliday);
+        $this->setProperty('academicHoliday', $academicHoliday);
     }
 
     /**
@@ -324,7 +285,7 @@ class AcademicCalendarDate extends ModelBase
      */
     public function getIsGoodSchoolDay()
     {
-        return $this->getProperty("isGoodSchoolDay");
+        return $this->getProperty('isGoodSchoolDay');
     }
 
     /**
@@ -332,6 +293,6 @@ class AcademicCalendarDate extends ModelBase
      */
     public function setIsGoodSchoolDay($isGoodSchoolDay = null)
     {
-        $this->setProperty("isGoodSchoolDay", $isGoodSchoolDay);
+        $this->setProperty('isGoodSchoolDay', $isGoodSchoolDay);
     }
 }

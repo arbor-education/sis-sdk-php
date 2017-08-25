@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PayScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PayScaleGrade extends ModelBase
 {
@@ -20,34 +15,38 @@ class PayScaleGrade extends ModelBase
     protected $_resourceType = ResourceType::PAY_SCALE_GRADE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PayScaleGrade[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PayScaleGrade");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PAY_SCALE_GRADE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PayScaleGrade
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PAY_SCALE_GRADE, $id);
     }
 
@@ -56,7 +55,7 @@ class PayScaleGrade extends ModelBase
      */
     public function getPayScale()
     {
-        return $this->getProperty("payScale");
+        return $this->getProperty('payScale');
     }
 
     /**
@@ -64,7 +63,7 @@ class PayScaleGrade extends ModelBase
      */
     public function setPayScale(PayScale $payScale = null)
     {
-        $this->setProperty("payScale", $payScale);
+        $this->setProperty('payScale', $payScale);
     }
 
     /**
@@ -72,7 +71,7 @@ class PayScaleGrade extends ModelBase
      */
     public function getGradeName()
     {
-        return $this->getProperty("gradeName");
+        return $this->getProperty('gradeName');
     }
 
     /**
@@ -80,7 +79,7 @@ class PayScaleGrade extends ModelBase
      */
     public function setGradeName($gradeName = null)
     {
-        $this->setProperty("gradeName", $gradeName);
+        $this->setProperty('gradeName', $gradeName);
     }
 
     /**
@@ -88,7 +87,7 @@ class PayScaleGrade extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -96,6 +95,6 @@ class PayScaleGrade extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 }

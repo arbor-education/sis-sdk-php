@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ProgressMeasurementPeriodSet extends ModelBase
 {
@@ -20,34 +15,38 @@ class ProgressMeasurementPeriodSet extends ModelBase
     protected $_resourceType = ResourceType::PROGRESS_MEASUREMENT_PERIOD_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ProgressMeasurementPeriodSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ProgressMeasurementPeriodSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PROGRESS_MEASUREMENT_PERIOD_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ProgressMeasurementPeriodSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PROGRESS_MEASUREMENT_PERIOD_SET, $id);
     }
 
@@ -56,7 +55,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public function getPeriodFrequency()
     {
-        return $this->getProperty("periodFrequency");
+        return $this->getProperty('periodFrequency');
     }
 
     /**
@@ -64,7 +63,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public function setPeriodFrequency($periodFrequency = null)
     {
-        $this->setProperty("periodFrequency", $periodFrequency);
+        $this->setProperty('periodFrequency', $periodFrequency);
     }
 
     /**
@@ -72,7 +71,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public function getSetName()
     {
-        return $this->getProperty("setName");
+        return $this->getProperty('setName');
     }
 
     /**
@@ -80,7 +79,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public function setSetName($setName = null)
     {
-        $this->setProperty("setName", $setName);
+        $this->setProperty('setName', $setName);
     }
 
     /**
@@ -88,7 +87,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -96,6 +95,6 @@ class ProgressMeasurementPeriodSet extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentCurriculumScore extends ModelBase
 {
@@ -34,34 +29,38 @@ class StudentCurriculumScore extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_CURRICULUM_SCORE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentCurriculumScore[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentCurriculumScore");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_CURRICULUM_SCORE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentCurriculumScore
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_CURRICULUM_SCORE, $id);
     }
 
@@ -70,7 +69,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -78,7 +77,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -86,7 +85,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getCurriculumEntity()
     {
-        return $this->getProperty("curriculumEntity");
+        return $this->getProperty('curriculumEntity');
     }
 
     /**
@@ -94,7 +93,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setCurriculumEntity(ModelBase $curriculumEntity = null)
     {
-        $this->setProperty("curriculumEntity", $curriculumEntity);
+        $this->setProperty('curriculumEntity', $curriculumEntity);
     }
 
     /**
@@ -102,7 +101,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getAssessmentType()
     {
-        return $this->getProperty("assessmentType");
+        return $this->getProperty('assessmentType');
     }
 
     /**
@@ -110,7 +109,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setAssessmentType($assessmentType = null)
     {
-        $this->setProperty("assessmentType", $assessmentType);
+        $this->setProperty('assessmentType', $assessmentType);
     }
 
     /**
@@ -118,7 +117,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getCurriculumCompletion()
     {
-        return $this->getProperty("curriculumCompletion");
+        return $this->getProperty('curriculumCompletion');
     }
 
     /**
@@ -126,7 +125,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setCurriculumCompletion($curriculumCompletion = null)
     {
-        $this->setProperty("curriculumCompletion", $curriculumCompletion);
+        $this->setProperty('curriculumCompletion', $curriculumCompletion);
     }
 
     /**
@@ -134,7 +133,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getPredictedMastery()
     {
-        return $this->getProperty("predictedMastery");
+        return $this->getProperty('predictedMastery');
     }
 
     /**
@@ -142,7 +141,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setPredictedMastery($predictedMastery = null)
     {
-        $this->setProperty("predictedMastery", $predictedMastery);
+        $this->setProperty('predictedMastery', $predictedMastery);
     }
 
     /**
@@ -150,7 +149,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getCurrentMastery()
     {
-        return $this->getProperty("currentMastery");
+        return $this->getProperty('currentMastery');
     }
 
     /**
@@ -158,7 +157,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setCurrentMastery($currentMastery = null)
     {
-        $this->setProperty("currentMastery", $currentMastery);
+        $this->setProperty('currentMastery', $currentMastery);
     }
 
     /**
@@ -166,7 +165,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getPredictedGradePointValue()
     {
-        return $this->getProperty("predictedGradePointValue");
+        return $this->getProperty('predictedGradePointValue');
     }
 
     /**
@@ -174,7 +173,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setPredictedGradePointValue($predictedGradePointValue = null)
     {
-        $this->setProperty("predictedGradePointValue", $predictedGradePointValue);
+        $this->setProperty('predictedGradePointValue', $predictedGradePointValue);
     }
 
     /**
@@ -182,7 +181,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getCurrentGradePointValue()
     {
-        return $this->getProperty("currentGradePointValue");
+        return $this->getProperty('currentGradePointValue');
     }
 
     /**
@@ -190,7 +189,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setCurrentGradePointValue($currentGradePointValue = null)
     {
-        $this->setProperty("currentGradePointValue", $currentGradePointValue);
+        $this->setProperty('currentGradePointValue', $currentGradePointValue);
     }
 
     /**
@@ -198,7 +197,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getGradePointValueCap()
     {
-        return $this->getProperty("gradePointValueCap");
+        return $this->getProperty('gradePointValueCap');
     }
 
     /**
@@ -206,7 +205,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setGradePointValueCap($gradePointValueCap = null)
     {
-        $this->setProperty("gradePointValueCap", $gradePointValueCap);
+        $this->setProperty('gradePointValueCap', $gradePointValueCap);
     }
 
     /**
@@ -214,7 +213,7 @@ class StudentCurriculumScore extends ModelBase
      */
     public function getDate()
     {
-        return $this->getProperty("date");
+        return $this->getProperty('date');
     }
 
     /**
@@ -222,6 +221,6 @@ class StudentCurriculumScore extends ModelBase
      */
     public function setDate(\DateTime $date = null)
     {
-        $this->setProperty("date", $date);
+        $this->setProperty('date', $date);
     }
 }

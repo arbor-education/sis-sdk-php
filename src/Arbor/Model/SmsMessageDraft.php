@@ -1,19 +1,16 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SendingProfile;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SmsMessageDraft extends ModelBase
 {
     const SENDING_PROFILE = 'sendingProfile';
 
     const MESSAGE_TEXT = 'messageText';
+
+    const CUSTOM_REPORT = 'customReport';
 
     const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
@@ -24,34 +21,38 @@ class SmsMessageDraft extends ModelBase
     protected $_resourceType = ResourceType::SMS_MESSAGE_DRAFT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SmsMessageDraft[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SmsMessageDraft");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SMS_MESSAGE_DRAFT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SmsMessageDraft
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SMS_MESSAGE_DRAFT, $id);
     }
 
@@ -60,7 +61,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function getSendingProfile()
     {
-        return $this->getProperty("sendingProfile");
+        return $this->getProperty('sendingProfile');
     }
 
     /**
@@ -68,7 +69,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function setSendingProfile(SendingProfile $sendingProfile = null)
     {
-        $this->setProperty("sendingProfile", $sendingProfile);
+        $this->setProperty('sendingProfile', $sendingProfile);
     }
 
     /**
@@ -76,7 +77,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function getMessageText()
     {
-        return $this->getProperty("messageText");
+        return $this->getProperty('messageText');
     }
 
     /**
@@ -84,7 +85,23 @@ class SmsMessageDraft extends ModelBase
      */
     public function setMessageText($messageText = null)
     {
-        $this->setProperty("messageText", $messageText);
+        $this->setProperty('messageText', $messageText);
+    }
+
+    /**
+     * @return CustomReport
+     */
+    public function getCustomReport()
+    {
+        return $this->getProperty('customReport');
+    }
+
+    /**
+     * @param CustomReport $customReport
+     */
+    public function setCustomReport(CustomReport $customReport = null)
+    {
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -92,7 +109,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function getSendingStartedDatetime()
     {
-        return $this->getProperty("sendingStartedDatetime");
+        return $this->getProperty('sendingStartedDatetime');
     }
 
     /**
@@ -100,7 +117,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
     {
-        $this->setProperty("sendingStartedDatetime", $sendingStartedDatetime);
+        $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
 
     /**
@@ -108,7 +125,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function getRecipientsResolvedDatetime()
     {
-        return $this->getProperty("recipientsResolvedDatetime");
+        return $this->getProperty('recipientsResolvedDatetime');
     }
 
     /**
@@ -116,7 +133,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function setRecipientsResolvedDatetime(\DateTime $recipientsResolvedDatetime = null)
     {
-        $this->setProperty("recipientsResolvedDatetime", $recipientsResolvedDatetime);
+        $this->setProperty('recipientsResolvedDatetime', $recipientsResolvedDatetime);
     }
 
     /**
@@ -124,7 +141,7 @@ class SmsMessageDraft extends ModelBase
      */
     public function getSendingCompletedDatetime()
     {
-        return $this->getProperty("sendingCompletedDatetime");
+        return $this->getProperty('sendingCompletedDatetime');
     }
 
     /**
@@ -132,6 +149,6 @@ class SmsMessageDraft extends ModelBase
      */
     public function setSendingCompletedDatetime(\DateTime $sendingCompletedDatetime = null)
     {
-        $this->setProperty("sendingCompletedDatetime", $sendingCompletedDatetime);
+        $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
     }
 }

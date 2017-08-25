@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\CtfExportJob;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Student;
 
 class CtfExportJobStudent extends ModelBase
 {
@@ -19,34 +18,38 @@ class CtfExportJobStudent extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_CTF_EXPORT_JOB_STUDENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CtfExportJobStudent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_CtfExportJobStudent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_CTF_EXPORT_JOB_STUDENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CtfExportJobStudent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_CTF_EXPORT_JOB_STUDENT, $id);
     }
 
@@ -55,7 +58,7 @@ class CtfExportJobStudent extends ModelBase
      */
     public function getCtfExportJob()
     {
-        return $this->getProperty("ctfExportJob");
+        return $this->getProperty('ctfExportJob');
     }
 
     /**
@@ -63,7 +66,7 @@ class CtfExportJobStudent extends ModelBase
      */
     public function setCtfExportJob(CtfExportJob $ctfExportJob = null)
     {
-        $this->setProperty("ctfExportJob", $ctfExportJob);
+        $this->setProperty('ctfExportJob', $ctfExportJob);
     }
 
     /**
@@ -71,7 +74,7 @@ class CtfExportJobStudent extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -79,6 +82,6 @@ class CtfExportJobStudent extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 }

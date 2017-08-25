@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Person;
-use \Arbor\Model\NextOfKinRelationship;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonNextOfKin extends ModelBase
 {
@@ -21,34 +15,38 @@ class PersonNextOfKin extends ModelBase
     protected $_resourceType = ResourceType::PERSON_NEXT_OF_KIN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonNextOfKin[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonNextOfKin");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_NEXT_OF_KIN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonNextOfKin
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_NEXT_OF_KIN, $id);
     }
 
@@ -57,7 +55,7 @@ class PersonNextOfKin extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -65,7 +63,7 @@ class PersonNextOfKin extends ModelBase
      */
     public function setPerson(Person $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -73,7 +71,7 @@ class PersonNextOfKin extends ModelBase
      */
     public function getRelatedPerson()
     {
-        return $this->getProperty("relatedPerson");
+        return $this->getProperty('relatedPerson');
     }
 
     /**
@@ -81,7 +79,7 @@ class PersonNextOfKin extends ModelBase
      */
     public function setRelatedPerson(ModelBase $relatedPerson = null)
     {
-        $this->setProperty("relatedPerson", $relatedPerson);
+        $this->setProperty('relatedPerson', $relatedPerson);
     }
 
     /**
@@ -89,7 +87,7 @@ class PersonNextOfKin extends ModelBase
      */
     public function getRelationship()
     {
-        return $this->getProperty("relationship");
+        return $this->getProperty('relationship');
     }
 
     /**
@@ -97,6 +95,6 @@ class PersonNextOfKin extends ModelBase
      */
     public function setRelationship(NextOfKinRelationship $relationship = null)
     {
-        $this->setProperty("relationship", $relationship);
+        $this->setProperty('relationship', $relationship);
     }
 }

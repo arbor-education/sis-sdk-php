@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PostalAddress;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class GbrPostalAddressCleanJob extends ModelBase
 {
@@ -38,34 +33,38 @@ class GbrPostalAddressCleanJob extends ModelBase
     protected $_resourceType = ResourceType::GBR_POSTAL_ADDRESS_CLEAN_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return GbrPostalAddressCleanJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("GbrPostalAddressCleanJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GBR_POSTAL_ADDRESS_CLEAN_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return GbrPostalAddressCleanJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GBR_POSTAL_ADDRESS_CLEAN_JOB, $id);
     }
 
@@ -74,7 +73,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getPostalAddress()
     {
-        return $this->getProperty("postalAddress");
+        return $this->getProperty('postalAddress');
     }
 
     /**
@@ -82,7 +81,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setPostalAddress(PostalAddress $postalAddress = null)
     {
-        $this->setProperty("postalAddress", $postalAddress);
+        $this->setProperty('postalAddress', $postalAddress);
     }
 
     /**
@@ -90,7 +89,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getExecutedDatetime()
     {
-        return $this->getProperty("executedDatetime");
+        return $this->getProperty('executedDatetime');
     }
 
     /**
@@ -98,7 +97,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setExecutedDatetime(\DateTime $executedDatetime = null)
     {
-        $this->setProperty("executedDatetime", $executedDatetime);
+        $this->setProperty('executedDatetime', $executedDatetime);
     }
 
     /**
@@ -106,7 +105,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getCleanAddress_1()
     {
-        return $this->getProperty("cleanAddress_1");
+        return $this->getProperty('cleanAddress_1');
     }
 
     /**
@@ -114,7 +113,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setCleanAddress_1($cleanAddress_1 = null)
     {
-        $this->setProperty("cleanAddress_1", $cleanAddress_1);
+        $this->setProperty('cleanAddress_1', $cleanAddress_1);
     }
 
     /**
@@ -122,7 +121,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getCleanAddress_2()
     {
-        return $this->getProperty("cleanAddress_2");
+        return $this->getProperty('cleanAddress_2');
     }
 
     /**
@@ -130,7 +129,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setCleanAddress_2($cleanAddress_2 = null)
     {
-        $this->setProperty("cleanAddress_2", $cleanAddress_2);
+        $this->setProperty('cleanAddress_2', $cleanAddress_2);
     }
 
     /**
@@ -138,7 +137,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getCleanAddress_3()
     {
-        return $this->getProperty("cleanAddress_3");
+        return $this->getProperty('cleanAddress_3');
     }
 
     /**
@@ -146,7 +145,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setCleanAddress_3($cleanAddress_3 = null)
     {
-        $this->setProperty("cleanAddress_3", $cleanAddress_3);
+        $this->setProperty('cleanAddress_3', $cleanAddress_3);
     }
 
     /**
@@ -154,7 +153,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getCleanTown()
     {
-        return $this->getProperty("cleanTown");
+        return $this->getProperty('cleanTown');
     }
 
     /**
@@ -162,7 +161,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setCleanTown($cleanTown = null)
     {
-        $this->setProperty("cleanTown", $cleanTown);
+        $this->setProperty('cleanTown', $cleanTown);
     }
 
     /**
@@ -170,7 +169,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getCleanState()
     {
-        return $this->getProperty("cleanState");
+        return $this->getProperty('cleanState');
     }
 
     /**
@@ -178,7 +177,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setCleanState($cleanState = null)
     {
-        $this->setProperty("cleanState", $cleanState);
+        $this->setProperty('cleanState', $cleanState);
     }
 
     /**
@@ -186,7 +185,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getCleanPostalCode()
     {
-        return $this->getProperty("cleanPostalCode");
+        return $this->getProperty('cleanPostalCode');
     }
 
     /**
@@ -194,7 +193,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setCleanPostalCode($cleanPostalCode = null)
     {
-        $this->setProperty("cleanPostalCode", $cleanPostalCode);
+        $this->setProperty('cleanPostalCode', $cleanPostalCode);
     }
 
     /**
@@ -202,7 +201,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getUpdrn()
     {
-        return $this->getProperty("updrn");
+        return $this->getProperty('updrn');
     }
 
     /**
@@ -210,7 +209,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setUpdrn($updrn = null)
     {
-        $this->setProperty("updrn", $updrn);
+        $this->setProperty('updrn', $updrn);
     }
 
     /**
@@ -218,7 +217,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getOutcome()
     {
-        return $this->getProperty("outcome");
+        return $this->getProperty('outcome');
     }
 
     /**
@@ -226,7 +225,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setOutcome($outcome = null)
     {
-        $this->setProperty("outcome", $outcome);
+        $this->setProperty('outcome', $outcome);
     }
 
     /**
@@ -234,7 +233,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getResponseCode()
     {
-        return $this->getProperty("responseCode");
+        return $this->getProperty('responseCode');
     }
 
     /**
@@ -242,7 +241,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setResponseCode($responseCode = null)
     {
-        $this->setProperty("responseCode", $responseCode);
+        $this->setProperty('responseCode', $responseCode);
     }
 
     /**
@@ -250,7 +249,7 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function getErrorDescription()
     {
-        return $this->getProperty("errorDescription");
+        return $this->getProperty('errorDescription');
     }
 
     /**
@@ -258,6 +257,6 @@ class GbrPostalAddressCleanJob extends ModelBase
      */
     public function setErrorDescription($errorDescription = null)
     {
-        $this->setProperty("errorDescription", $errorDescription);
+        $this->setProperty('errorDescription', $errorDescription);
     }
 }

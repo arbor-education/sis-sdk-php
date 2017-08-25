@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralContract extends ModelBase
 {
@@ -26,34 +21,38 @@ class BehaviouralContract extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_CONTRACT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralContract[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralContract");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_CONTRACT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralContract
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_CONTRACT, $id);
     }
 
@@ -62,7 +61,7 @@ class BehaviouralContract extends ModelBase
      */
     public function getBehaviouralContractTitle()
     {
-        return $this->getProperty("behaviouralContractTitle");
+        return $this->getProperty('behaviouralContractTitle');
     }
 
     /**
@@ -70,7 +69,7 @@ class BehaviouralContract extends ModelBase
      */
     public function setBehaviouralContractTitle($behaviouralContractTitle = null)
     {
-        $this->setProperty("behaviouralContractTitle", $behaviouralContractTitle);
+        $this->setProperty('behaviouralContractTitle', $behaviouralContractTitle);
     }
 
     /**
@@ -78,7 +77,7 @@ class BehaviouralContract extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -86,7 +85,7 @@ class BehaviouralContract extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -94,7 +93,7 @@ class BehaviouralContract extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -102,7 +101,7 @@ class BehaviouralContract extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -110,7 +109,7 @@ class BehaviouralContract extends ModelBase
      */
     public function getContractStartDate()
     {
-        return $this->getProperty("contractStartDate");
+        return $this->getProperty('contractStartDate');
     }
 
     /**
@@ -118,7 +117,7 @@ class BehaviouralContract extends ModelBase
      */
     public function setContractStartDate(\DateTime $contractStartDate = null)
     {
-        $this->setProperty("contractStartDate", $contractStartDate);
+        $this->setProperty('contractStartDate', $contractStartDate);
     }
 
     /**
@@ -126,7 +125,7 @@ class BehaviouralContract extends ModelBase
      */
     public function getContractEndDate()
     {
-        return $this->getProperty("contractEndDate");
+        return $this->getProperty('contractEndDate');
     }
 
     /**
@@ -134,7 +133,7 @@ class BehaviouralContract extends ModelBase
      */
     public function setContractEndDate(\DateTime $contractEndDate = null)
     {
-        $this->setProperty("contractEndDate", $contractEndDate);
+        $this->setProperty('contractEndDate', $contractEndDate);
     }
 
     /**
@@ -142,7 +141,7 @@ class BehaviouralContract extends ModelBase
      */
     public function getContractReviewDate()
     {
-        return $this->getProperty("contractReviewDate");
+        return $this->getProperty('contractReviewDate');
     }
 
     /**
@@ -150,6 +149,6 @@ class BehaviouralContract extends ModelBase
      */
     public function setContractReviewDate(\DateTime $contractReviewDate = null)
     {
-        $this->setProperty("contractReviewDate", $contractReviewDate);
+        $this->setProperty('contractReviewDate', $contractReviewDate);
     }
 }

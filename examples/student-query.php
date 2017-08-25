@@ -1,29 +1,15 @@
 <?php
-require_once(__DIR__."/example-bootstrap.php");
 
-use \Arbor\Api\Gateway\RestGateway;
-use \Arbor\Resource\ResourceType;
-use \Arbor\Query\Query;
-use Guzzle\Plugin\Log\LogPlugin;
+require_once __DIR__ . '/example-bootstrap.php';
 
-$api = new RestGateway(
-    $config["api"]["baseUrl"],
-    $config["api"]["auth"]["user"],
-    $config["api"]["auth"]["password"]
-);
-//$api->getHttpClient()->addSubscriber(LogPlugin::getDebugPlugin());
-$api->getHttpClient()->setSslVerification(false);
+$ethnicity = $api->retrieve(\Arbor\Resource\ResourceType::ETHNICITY, 'AAFR');
 
-$ethnicity = $api->retrieve(ResourceType::ETHNICITY, "AAFR");
-
-$studentQuery = new Query(ResourceType::STUDENT);
-$studentQuery->addPropertyFilter("ethnicity", Query::OPERATOR_EQUALS, $ethnicity);
-//$studentQuery->addUserTagFilter("sims-id", 123);
+$studentQuery = new \Arbor\Query\Query(\Arbor\Resource\ResourceType::STUDENT);
+$studentQuery->addPropertyFilter(\Arbor\Model\Student::ETHNICITY, \Arbor\Query\Query::OPERATOR_EQUALS, $ethnicity);
+$studentQuery->addUserTagFilter('sims-id', 123);
 $modelCollection = $api->query($studentQuery);
 
-//Display Logic
 foreach ($modelCollection as $model) {
     $hydrator = new \Arbor\Model\Hydrator();
-    $array = $hydrator->extractArray($model);
-    print_r($array);
+    print_r($hydrator->extractArray($model));
 }

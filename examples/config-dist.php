@@ -5,11 +5,11 @@
  */
 
 return [
-  "api" => [
-      "baseUrl"=>"http://trunk.staging.arbor.sc/rest-v2/",
-      "auth" => [
-          "user"=>"admin@arbor-education.com",
-          "password"=>"XXXXXXXX"
-      ]
-  ]
+    'api' => [
+        'baseUrl' => 'http://trunk.staging.arbor.sc/rest-v2/',
+        'auth' => [
+            'user' => 'admin@arbor-education.com',
+            'password' => 'XXXXXXXX'
+        ]
+    ]
 ];

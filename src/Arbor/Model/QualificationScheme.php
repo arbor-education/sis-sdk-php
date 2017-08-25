@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AwardingOrganization;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationScheme extends ModelBase
 {
@@ -21,47 +16,43 @@ class QualificationScheme extends ModelBase
 
     const SCHEME_IDENTIFIER = 'schemeIdentifier';
 
-    const FULL_TITLE = 'fullTitle';
-
-    const SHORT_TITLE = 'shortTitle';
-
-    const DESCRIPTION = 'description';
-
-    const EFFECTIVE_DATE = 'effectiveDate';
-
-    const END_DATE = 'endDate';
+    const TITLE = 'title';
 
     protected $_resourceType = ResourceType::QUALIFICATION_SCHEME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationScheme[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationScheme");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_SCHEME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationScheme
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_SCHEME, $id);
     }
 
@@ -70,7 +61,7 @@ class QualificationScheme extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -78,7 +69,7 @@ class QualificationScheme extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -86,7 +77,7 @@ class QualificationScheme extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -94,7 +85,7 @@ class QualificationScheme extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -102,7 +93,7 @@ class QualificationScheme extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -110,7 +101,7 @@ class QualificationScheme extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -118,7 +109,7 @@ class QualificationScheme extends ModelBase
      */
     public function getAwardingOrganization()
     {
-        return $this->getProperty("awardingOrganization");
+        return $this->getProperty('awardingOrganization');
     }
 
     /**
@@ -126,7 +117,7 @@ class QualificationScheme extends ModelBase
      */
     public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
     {
-        $this->setProperty("awardingOrganization", $awardingOrganization);
+        $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
@@ -134,7 +125,7 @@ class QualificationScheme extends ModelBase
      */
     public function getSchemeIdentifier()
     {
-        return $this->getProperty("schemeIdentifier");
+        return $this->getProperty('schemeIdentifier');
     }
 
     /**
@@ -142,86 +133,22 @@ class QualificationScheme extends ModelBase
      */
     public function setSchemeIdentifier($schemeIdentifier = null)
     {
-        $this->setProperty("schemeIdentifier", $schemeIdentifier);
+        $this->setProperty('schemeIdentifier', $schemeIdentifier);
     }
 
     /**
      * @return string
      */
-    public function getFullTitle()
+    public function getTitle()
     {
-        return $this->getProperty("fullTitle");
+        return $this->getProperty('title');
     }
 
     /**
-     * @param string $fullTitle
+     * @param string $title
      */
-    public function setFullTitle($fullTitle = null)
+    public function setTitle($title = null)
     {
-        $this->setProperty("fullTitle", $fullTitle);
-    }
-
-    /**
-     * @return string
-     */
-    public function getShortTitle()
-    {
-        return $this->getProperty("shortTitle");
-    }
-
-    /**
-     * @param string $shortTitle
-     */
-    public function setShortTitle($shortTitle = null)
-    {
-        $this->setProperty("shortTitle", $shortTitle);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->getProperty("description");
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription($description = null)
-    {
-        $this->setProperty("description", $description);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEffectiveDate()
-    {
-        return $this->getProperty("effectiveDate");
-    }
-
-    /**
-     * @param \DateTime $effectiveDate
-     */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
-    {
-        $this->setProperty("effectiveDate", $effectiveDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->getProperty("endDate");
-    }
-
-    /**
-     * @param \DateTime $endDate
-     */
-    public function setEndDate(\DateTime $endDate = null)
-    {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('title', $title);
     }
 }

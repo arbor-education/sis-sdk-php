@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
-use \Arbor\Model\StaffAbsenceCategory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffAbsence extends ModelBase
 {
@@ -41,34 +35,38 @@ class StaffAbsence extends ModelBase
     protected $_resourceType = ResourceType::STAFF_ABSENCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffAbsence[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffAbsence");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_ABSENCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffAbsence
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_ABSENCE, $id);
     }
 
@@ -77,7 +75,7 @@ class StaffAbsence extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -85,7 +83,7 @@ class StaffAbsence extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -93,7 +91,7 @@ class StaffAbsence extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -101,7 +99,7 @@ class StaffAbsence extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -109,7 +107,7 @@ class StaffAbsence extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -117,7 +115,7 @@ class StaffAbsence extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -125,7 +123,7 @@ class StaffAbsence extends ModelBase
      */
     public function getStaffAbsenceCategory()
     {
-        return $this->getProperty("staffAbsenceCategory");
+        return $this->getProperty('staffAbsenceCategory');
     }
 
     /**
@@ -133,7 +131,7 @@ class StaffAbsence extends ModelBase
      */
     public function setStaffAbsenceCategory(StaffAbsenceCategory $staffAbsenceCategory = null)
     {
-        $this->setProperty("staffAbsenceCategory", $staffAbsenceCategory);
+        $this->setProperty('staffAbsenceCategory', $staffAbsenceCategory);
     }
 
     /**
@@ -141,7 +139,7 @@ class StaffAbsence extends ModelBase
      */
     public function getApprovedDatetime()
     {
-        return $this->getProperty("approvedDatetime");
+        return $this->getProperty('approvedDatetime');
     }
 
     /**
@@ -149,7 +147,7 @@ class StaffAbsence extends ModelBase
      */
     public function setApprovedDatetime(\DateTime $approvedDatetime = null)
     {
-        $this->setProperty("approvedDatetime", $approvedDatetime);
+        $this->setProperty('approvedDatetime', $approvedDatetime);
     }
 
     /**
@@ -157,7 +155,7 @@ class StaffAbsence extends ModelBase
      */
     public function getApprovedByStaff()
     {
-        return $this->getProperty("approvedByStaff");
+        return $this->getProperty('approvedByStaff');
     }
 
     /**
@@ -165,7 +163,7 @@ class StaffAbsence extends ModelBase
      */
     public function setApprovedByStaff(Staff $approvedByStaff = null)
     {
-        $this->setProperty("approvedByStaff", $approvedByStaff);
+        $this->setProperty('approvedByStaff', $approvedByStaff);
     }
 
     /**
@@ -173,7 +171,7 @@ class StaffAbsence extends ModelBase
      */
     public function getPaidSickLeaveUsed()
     {
-        return $this->getProperty("paidSickLeaveUsed");
+        return $this->getProperty('paidSickLeaveUsed');
     }
 
     /**
@@ -181,7 +179,7 @@ class StaffAbsence extends ModelBase
      */
     public function setPaidSickLeaveUsed($paidSickLeaveUsed = null)
     {
-        $this->setProperty("paidSickLeaveUsed", $paidSickLeaveUsed);
+        $this->setProperty('paidSickLeaveUsed', $paidSickLeaveUsed);
     }
 
     /**
@@ -189,7 +187,7 @@ class StaffAbsence extends ModelBase
      */
     public function getUnpaidSickLeaveUsed()
     {
-        return $this->getProperty("unpaidSickLeaveUsed");
+        return $this->getProperty('unpaidSickLeaveUsed');
     }
 
     /**
@@ -197,7 +195,7 @@ class StaffAbsence extends ModelBase
      */
     public function setUnpaidSickLeaveUsed($unpaidSickLeaveUsed = null)
     {
-        $this->setProperty("unpaidSickLeaveUsed", $unpaidSickLeaveUsed);
+        $this->setProperty('unpaidSickLeaveUsed', $unpaidSickLeaveUsed);
     }
 
     /**
@@ -205,7 +203,7 @@ class StaffAbsence extends ModelBase
      */
     public function getPaidHolidayUsed()
     {
-        return $this->getProperty("paidHolidayUsed");
+        return $this->getProperty('paidHolidayUsed');
     }
 
     /**
@@ -213,7 +211,7 @@ class StaffAbsence extends ModelBase
      */
     public function setPaidHolidayUsed($paidHolidayUsed = null)
     {
-        $this->setProperty("paidHolidayUsed", $paidHolidayUsed);
+        $this->setProperty('paidHolidayUsed', $paidHolidayUsed);
     }
 
     /**
@@ -221,7 +219,7 @@ class StaffAbsence extends ModelBase
      */
     public function getUnpaidHolidayUsed()
     {
-        return $this->getProperty("unpaidHolidayUsed");
+        return $this->getProperty('unpaidHolidayUsed');
     }
 
     /**
@@ -229,7 +227,7 @@ class StaffAbsence extends ModelBase
      */
     public function setUnpaidHolidayUsed($unpaidHolidayUsed = null)
     {
-        $this->setProperty("unpaidHolidayUsed", $unpaidHolidayUsed);
+        $this->setProperty('unpaidHolidayUsed', $unpaidHolidayUsed);
     }
 
     /**
@@ -237,7 +235,7 @@ class StaffAbsence extends ModelBase
      */
     public function getPaidOtherLeave()
     {
-        return $this->getProperty("paidOtherLeave");
+        return $this->getProperty('paidOtherLeave');
     }
 
     /**
@@ -245,7 +243,7 @@ class StaffAbsence extends ModelBase
      */
     public function setPaidOtherLeave($paidOtherLeave = null)
     {
-        $this->setProperty("paidOtherLeave", $paidOtherLeave);
+        $this->setProperty('paidOtherLeave', $paidOtherLeave);
     }
 
     /**
@@ -253,7 +251,7 @@ class StaffAbsence extends ModelBase
      */
     public function getUnpaidOtherLeave()
     {
-        return $this->getProperty("unpaidOtherLeave");
+        return $this->getProperty('unpaidOtherLeave');
     }
 
     /**
@@ -261,7 +259,7 @@ class StaffAbsence extends ModelBase
      */
     public function setUnpaidOtherLeave($unpaidOtherLeave = null)
     {
-        $this->setProperty("unpaidOtherLeave", $unpaidOtherLeave);
+        $this->setProperty('unpaidOtherLeave', $unpaidOtherLeave);
     }
 
     /**
@@ -269,7 +267,7 @@ class StaffAbsence extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -277,6 +275,6 @@ class StaffAbsence extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

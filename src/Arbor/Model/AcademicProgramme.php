@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicProgramme extends ModelBase
 {
@@ -15,34 +11,38 @@ class AcademicProgramme extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_PROGRAMME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicProgramme[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicProgramme");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_PROGRAMME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicProgramme
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_PROGRAMME, $id);
     }
 
@@ -51,7 +51,7 @@ class AcademicProgramme extends ModelBase
      */
     public function getAcademicProgrammeName()
     {
-        return $this->getProperty("academicProgrammeName");
+        return $this->getProperty('academicProgrammeName');
     }
 
     /**
@@ -59,7 +59,7 @@ class AcademicProgramme extends ModelBase
      */
     public function setAcademicProgrammeName($academicProgrammeName = null)
     {
-        $this->setProperty("academicProgrammeName", $academicProgrammeName);
+        $this->setProperty('academicProgrammeName', $academicProgrammeName);
     }
 
     /**
@@ -67,6 +67,6 @@ class AcademicProgramme extends ModelBase
      */
     public function getInstances()
     {
-        return $this->getCollectionProperty("instances");
+        return $this->getCollectionProperty('instances');
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Behaviour;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviourDefaultWatcher extends ModelBase
 {
@@ -21,34 +15,38 @@ class BehaviourDefaultWatcher extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOUR_DEFAULT_WATCHER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviourDefaultWatcher[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviourDefaultWatcher");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOUR_DEFAULT_WATCHER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviourDefaultWatcher
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOUR_DEFAULT_WATCHER, $id);
     }
 
@@ -57,7 +55,7 @@ class BehaviourDefaultWatcher extends ModelBase
      */
     public function getBehaviour()
     {
-        return $this->getProperty("behaviour");
+        return $this->getProperty('behaviour');
     }
 
     /**
@@ -65,7 +63,7 @@ class BehaviourDefaultWatcher extends ModelBase
      */
     public function setBehaviour(Behaviour $behaviour = null)
     {
-        $this->setProperty("behaviour", $behaviour);
+        $this->setProperty('behaviour', $behaviour);
     }
 
     /**
@@ -73,7 +71,7 @@ class BehaviourDefaultWatcher extends ModelBase
      */
     public function getRelationToStudent()
     {
-        return $this->getProperty("relationToStudent");
+        return $this->getProperty('relationToStudent');
     }
 
     /**
@@ -81,7 +79,7 @@ class BehaviourDefaultWatcher extends ModelBase
      */
     public function setRelationToStudent($relationToStudent = null)
     {
-        $this->setProperty("relationToStudent", $relationToStudent);
+        $this->setProperty('relationToStudent', $relationToStudent);
     }
 
     /**
@@ -89,7 +87,7 @@ class BehaviourDefaultWatcher extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -97,6 +95,6 @@ class BehaviourDefaultWatcher extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 }

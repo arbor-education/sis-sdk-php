@@ -1,71 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Language;
-use \Arbor\Model\QualificationScheme;
-use \Arbor\Model\QualificationSubject;
-use \Arbor\Model\AwardingOrganization;
-use \Arbor\Model\QualificationAwardType;
-use \Arbor\Model\QualificationAwardLevel;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationAward extends ModelBase
 {
-    const AWARDING_ORGANISATION_ACCREDITED_VERSION_NUMBER = 'awardingOrganisationAccreditedVersionNumber';
-
-    const ASSESSMENT_LANGUAGE = 'assessmentLanguage';
-
-    const CERTIFICATE_OF_UNIT_CREDIT_ISSUED = 'certificateOfUnitCreditIssued';
-
-    const CONTRIBUTING_UNITS_LISTED = 'contributingUnitsListed';
-
-    const COURSE_LENGTH_TYPE = 'courseLengthType';
-
-    const ENDORSED_TITLE_REQUIRED = 'endorsedTitleRequired';
-
-    const GUIDED_LEARNING_MIN_HOURS = 'guidedLearningMinHours';
-
-    const GUIDED_LEARNING_MAX_HOURS = 'guidedLearningMaxHours';
-
-    const LEARNING_AIM_CODE = 'learningAimCode';
-
-    const DELIVERY_MODEL_TYPE = 'deliveryModelType';
-
-    const EVIDENCE_REQUIREMENT_PROVIDED = 'evidenceRequirementProvided';
-
-    const EVIDENCE_REQUIREMENT_TYPE = 'evidenceRequirementType';
-
-    const QUALIFICATION_NUMBER = 'qualificationNumber';
-
-    const REGISTRATION_EXPIRY_MONTHS = 'registrationExpiryMonths';
-
-    const RESIT_RULE_TEXT = 'resitRuleText';
-
-    const STATEMENT_OF_CREDIT_ISSUED = 'statementOfCreditIssued';
-
-    const QCA_CLASSIFICATION_CODE = 'qcaClassificationCode';
-
-    const QCA_ACCREDITATION_NUMBER = 'qcaAccreditationNumber';
-
-    const KS4_DISCOUNT_CODE2014 = 'ks4DiscountCode2014';
-
-    const KS4_DISCOUNT_CODE2015 = 'ks4DiscountCode2015';
-
-    const KS4_DISCOUNT_CODE2016 = 'ks4DiscountCode2016';
-
-    const KS4_DISCOUNT_CODE2017 = 'ks4DiscountCode2017';
-
-    const POST16_DISCOUNT_CODE = 'post16DiscountCode';
-
-    const NQF = 'nqf';
-
-    const EXAMINATION_FEE = 'examinationFee';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -80,13 +20,13 @@ class QualificationAward extends ModelBase
 
     const AWARD_IDENTIFIER = 'awardIdentifier';
 
-    const FULL_TITLE = 'fullTitle';
+    const TITLE = 'title';
 
     const SHORT_TITLE = 'shortTitle';
 
     const QUALIFICATION_AWARD_TYPE = 'qualificationAwardType';
 
-    const QUALIFICATION_AWARD_LEVEL = 'qualificationAwardLevel';
+    const QUALIFICATION_AWARD_SUBTYPE = 'qualificationAwardSubtype';
 
     const ACCREDITATION_START_DATE = 'accreditationStartDate';
 
@@ -96,452 +36,62 @@ class QualificationAward extends ModelBase
 
     const END_DATE = 'endDate';
 
-    const CERTIFICATION_START_DATE = 'certificationStartDate';
-
     const CERTIFICATION_END_DATE = 'certificationEndDate';
 
     const OPERATIONAL_START_DATE = 'operationalStartDate';
 
     const OPERATIONAL_END_DATE = 'operationalEndDate';
 
-    const CLASSIFICATION = 'classification';
+    const IS_LINEAR_QUALIFICATION = 'isLinearQualification';
 
-    const SECTOR_LEAD_ORGANIZATION = 'sectorLeadOrganization';
+    const QCA_ACCREDITATION_NUMBER = 'qcaAccreditationNumber';
 
-    const ASSESSOR = 'assessor';
+    const KS4_DISCOUNT_CODE2014 = 'ks4DiscountCode2014';
+
+    const KS4_DISCOUNT_CODE2015 = 'ks4DiscountCode2015';
+
+    const KS4_DISCOUNT_CODE2016 = 'ks4DiscountCode2016';
+
+    const KS4_DISCOUNT_CODE2017 = 'ks4DiscountCode2017';
+
+    const POST16_DISCOUNT_CODE = 'post16DiscountCode';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationAward[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationAward");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_AWARD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationAward
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAwardingOrganisationAccreditedVersionNumber()
-    {
-        return $this->getProperty("awardingOrganisationAccreditedVersionNumber");
-    }
-
-    /**
-     * @param string $awardingOrganisationAccreditedVersionNumber
-     */
-    public function setAwardingOrganisationAccreditedVersionNumber($awardingOrganisationAccreditedVersionNumber = null)
-    {
-        $this->setProperty("awardingOrganisationAccreditedVersionNumber", $awardingOrganisationAccreditedVersionNumber);
-    }
-
-    /**
-     * @return Language
-     */
-    public function getAssessmentLanguage()
-    {
-        return $this->getProperty("assessmentLanguage");
-    }
-
-    /**
-     * @param Language $assessmentLanguage
-     */
-    public function setAssessmentLanguage(Language $assessmentLanguage = null)
-    {
-        $this->setProperty("assessmentLanguage", $assessmentLanguage);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getCertificateOfUnitCreditIssued()
-    {
-        return $this->getProperty("certificateOfUnitCreditIssued");
-    }
-
-    /**
-     * @param bool $certificateOfUnitCreditIssued
-     */
-    public function setCertificateOfUnitCreditIssued($certificateOfUnitCreditIssued = null)
-    {
-        $this->setProperty("certificateOfUnitCreditIssued", $certificateOfUnitCreditIssued);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getContributingUnitsListed()
-    {
-        return $this->getProperty("contributingUnitsListed");
-    }
-
-    /**
-     * @param bool $contributingUnitsListed
-     */
-    public function setContributingUnitsListed($contributingUnitsListed = null)
-    {
-        $this->setProperty("contributingUnitsListed", $contributingUnitsListed);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCourseLengthType()
-    {
-        return $this->getProperty("courseLengthType");
-    }
-
-    /**
-     * @param string $courseLengthType
-     */
-    public function setCourseLengthType($courseLengthType = null)
-    {
-        $this->setProperty("courseLengthType", $courseLengthType);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getEndorsedTitleRequired()
-    {
-        return $this->getProperty("endorsedTitleRequired");
-    }
-
-    /**
-     * @param bool $endorsedTitleRequired
-     */
-    public function setEndorsedTitleRequired($endorsedTitleRequired = null)
-    {
-        $this->setProperty("endorsedTitleRequired", $endorsedTitleRequired);
-    }
-
-    /**
-     * @return int
-     */
-    public function getGuidedLearningMinHours()
-    {
-        return $this->getProperty("guidedLearningMinHours");
-    }
-
-    /**
-     * @param int $guidedLearningMinHours
-     */
-    public function setGuidedLearningMinHours($guidedLearningMinHours = null)
-    {
-        $this->setProperty("guidedLearningMinHours", $guidedLearningMinHours);
-    }
-
-    /**
-     * @return int
-     */
-    public function getGuidedLearningMaxHours()
-    {
-        return $this->getProperty("guidedLearningMaxHours");
-    }
-
-    /**
-     * @param int $guidedLearningMaxHours
-     */
-    public function setGuidedLearningMaxHours($guidedLearningMaxHours = null)
-    {
-        $this->setProperty("guidedLearningMaxHours", $guidedLearningMaxHours);
-    }
-
-    /**
-     * @return string
-     */
-    public function getLearningAimCode()
-    {
-        return $this->getProperty("learningAimCode");
-    }
-
-    /**
-     * @param string $learningAimCode
-     */
-    public function setLearningAimCode($learningAimCode = null)
-    {
-        $this->setProperty("learningAimCode", $learningAimCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDeliveryModelType()
-    {
-        return $this->getProperty("deliveryModelType");
-    }
-
-    /**
-     * @param string $deliveryModelType
-     */
-    public function setDeliveryModelType($deliveryModelType = null)
-    {
-        $this->setProperty("deliveryModelType", $deliveryModelType);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getEvidenceRequirementProvided()
-    {
-        return $this->getProperty("evidenceRequirementProvided");
-    }
-
-    /**
-     * @param bool $evidenceRequirementProvided
-     */
-    public function setEvidenceRequirementProvided($evidenceRequirementProvided = null)
-    {
-        $this->setProperty("evidenceRequirementProvided", $evidenceRequirementProvided);
-    }
-
-    /**
-     * @return string
-     */
-    public function getEvidenceRequirementType()
-    {
-        return $this->getProperty("evidenceRequirementType");
-    }
-
-    /**
-     * @param string $evidenceRequirementType
-     */
-    public function setEvidenceRequirementType($evidenceRequirementType = null)
-    {
-        $this->setProperty("evidenceRequirementType", $evidenceRequirementType);
-    }
-
-    /**
-     * @return string
-     */
-    public function getQualificationNumber()
-    {
-        return $this->getProperty("qualificationNumber");
-    }
-
-    /**
-     * @param string $qualificationNumber
-     */
-    public function setQualificationNumber($qualificationNumber = null)
-    {
-        $this->setProperty("qualificationNumber", $qualificationNumber);
-    }
-
-    /**
-     * @return int
-     */
-    public function getRegistrationExpiryMonths()
-    {
-        return $this->getProperty("registrationExpiryMonths");
-    }
-
-    /**
-     * @param int $registrationExpiryMonths
-     */
-    public function setRegistrationExpiryMonths($registrationExpiryMonths = null)
-    {
-        $this->setProperty("registrationExpiryMonths", $registrationExpiryMonths);
-    }
-
-    /**
-     * @return string
-     */
-    public function getResitRuleText()
-    {
-        return $this->getProperty("resitRuleText");
-    }
-
-    /**
-     * @param string $resitRuleText
-     */
-    public function setResitRuleText($resitRuleText = null)
-    {
-        $this->setProperty("resitRuleText", $resitRuleText);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getStatementOfCreditIssued()
-    {
-        return $this->getProperty("statementOfCreditIssued");
-    }
-
-    /**
-     * @param bool $statementOfCreditIssued
-     */
-    public function setStatementOfCreditIssued($statementOfCreditIssued = null)
-    {
-        $this->setProperty("statementOfCreditIssued", $statementOfCreditIssued);
-    }
-
-    /**
-     * @return string
-     */
-    public function getQcaClassificationCode()
-    {
-        return $this->getProperty("qcaClassificationCode");
-    }
-
-    /**
-     * @param string $qcaClassificationCode
-     */
-    public function setQcaClassificationCode($qcaClassificationCode = null)
-    {
-        $this->setProperty("qcaClassificationCode", $qcaClassificationCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getQcaAccreditationNumber()
-    {
-        return $this->getProperty("qcaAccreditationNumber");
-    }
-
-    /**
-     * @param string $qcaAccreditationNumber
-     */
-    public function setQcaAccreditationNumber($qcaAccreditationNumber = null)
-    {
-        $this->setProperty("qcaAccreditationNumber", $qcaAccreditationNumber);
-    }
-
-    /**
-     * @return string
-     */
-    public function getKs4DiscountCode2014()
-    {
-        return $this->getProperty("ks4DiscountCode2014");
-    }
-
-    /**
-     * @param string $ks4DiscountCode2014
-     */
-    public function setKs4DiscountCode2014($ks4DiscountCode2014 = null)
-    {
-        $this->setProperty("ks4DiscountCode2014", $ks4DiscountCode2014);
-    }
-
-    /**
-     * @return string
-     */
-    public function getKs4DiscountCode2015()
-    {
-        return $this->getProperty("ks4DiscountCode2015");
-    }
-
-    /**
-     * @param string $ks4DiscountCode2015
-     */
-    public function setKs4DiscountCode2015($ks4DiscountCode2015 = null)
-    {
-        $this->setProperty("ks4DiscountCode2015", $ks4DiscountCode2015);
-    }
-
-    /**
-     * @return string
-     */
-    public function getKs4DiscountCode2016()
-    {
-        return $this->getProperty("ks4DiscountCode2016");
-    }
-
-    /**
-     * @param string $ks4DiscountCode2016
-     */
-    public function setKs4DiscountCode2016($ks4DiscountCode2016 = null)
-    {
-        $this->setProperty("ks4DiscountCode2016", $ks4DiscountCode2016);
-    }
-
-    /**
-     * @return string
-     */
-    public function getKs4DiscountCode2017()
-    {
-        return $this->getProperty("ks4DiscountCode2017");
-    }
-
-    /**
-     * @param string $ks4DiscountCode2017
-     */
-    public function setKs4DiscountCode2017($ks4DiscountCode2017 = null)
-    {
-        $this->setProperty("ks4DiscountCode2017", $ks4DiscountCode2017);
-    }
-
-    /**
-     * @return string
-     */
-    public function getPost16DiscountCode()
-    {
-        return $this->getProperty("post16DiscountCode");
-    }
-
-    /**
-     * @param string $post16DiscountCode
-     */
-    public function setPost16DiscountCode($post16DiscountCode = null)
-    {
-        $this->setProperty("post16DiscountCode", $post16DiscountCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getNqf()
-    {
-        return $this->getProperty("nqf");
-    }
-
-    /**
-     * @param string $nqf
-     */
-    public function setNqf($nqf = null)
-    {
-        $this->setProperty("nqf", $nqf);
-    }
-
-    /**
-     * @return float
-     */
-    public function getExaminationFee()
-    {
-        return $this->getProperty("examinationFee");
-    }
-
-    /**
-     * @param float $examinationFee
-     */
-    public function setExaminationFee($examinationFee = null)
-    {
-        $this->setProperty("examinationFee", $examinationFee);
     }
 
     /**
@@ -549,7 +99,7 @@ class QualificationAward extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -557,7 +107,7 @@ class QualificationAward extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -565,7 +115,7 @@ class QualificationAward extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -573,7 +123,7 @@ class QualificationAward extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -581,7 +131,7 @@ class QualificationAward extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -589,7 +139,7 @@ class QualificationAward extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -597,7 +147,7 @@ class QualificationAward extends ModelBase
      */
     public function getQualificationScheme()
     {
-        return $this->getProperty("qualificationScheme");
+        return $this->getProperty('qualificationScheme');
     }
 
     /**
@@ -605,7 +155,7 @@ class QualificationAward extends ModelBase
      */
     public function setQualificationScheme(QualificationScheme $qualificationScheme = null)
     {
-        $this->setProperty("qualificationScheme", $qualificationScheme);
+        $this->setProperty('qualificationScheme', $qualificationScheme);
     }
 
     /**
@@ -613,7 +163,7 @@ class QualificationAward extends ModelBase
      */
     public function getQualificationSubject()
     {
-        return $this->getProperty("qualificationSubject");
+        return $this->getProperty('qualificationSubject');
     }
 
     /**
@@ -621,7 +171,7 @@ class QualificationAward extends ModelBase
      */
     public function setQualificationSubject(QualificationSubject $qualificationSubject = null)
     {
-        $this->setProperty("qualificationSubject", $qualificationSubject);
+        $this->setProperty('qualificationSubject', $qualificationSubject);
     }
 
     /**
@@ -629,7 +179,7 @@ class QualificationAward extends ModelBase
      */
     public function getAwardingOrganization()
     {
-        return $this->getProperty("awardingOrganization");
+        return $this->getProperty('awardingOrganization');
     }
 
     /**
@@ -637,7 +187,7 @@ class QualificationAward extends ModelBase
      */
     public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
     {
-        $this->setProperty("awardingOrganization", $awardingOrganization);
+        $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
@@ -645,7 +195,7 @@ class QualificationAward extends ModelBase
      */
     public function getAwardIdentifier()
     {
-        return $this->getProperty("awardIdentifier");
+        return $this->getProperty('awardIdentifier');
     }
 
     /**
@@ -653,23 +203,23 @@ class QualificationAward extends ModelBase
      */
     public function setAwardIdentifier($awardIdentifier = null)
     {
-        $this->setProperty("awardIdentifier", $awardIdentifier);
+        $this->setProperty('awardIdentifier', $awardIdentifier);
     }
 
     /**
      * @return string
      */
-    public function getFullTitle()
+    public function getTitle()
     {
-        return $this->getProperty("fullTitle");
+        return $this->getProperty('title');
     }
 
     /**
-     * @param string $fullTitle
+     * @param string $title
      */
-    public function setFullTitle($fullTitle = null)
+    public function setTitle($title = null)
     {
-        $this->setProperty("fullTitle", $fullTitle);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -677,7 +227,7 @@ class QualificationAward extends ModelBase
      */
     public function getShortTitle()
     {
-        return $this->getProperty("shortTitle");
+        return $this->getProperty('shortTitle');
     }
 
     /**
@@ -685,7 +235,7 @@ class QualificationAward extends ModelBase
      */
     public function setShortTitle($shortTitle = null)
     {
-        $this->setProperty("shortTitle", $shortTitle);
+        $this->setProperty('shortTitle', $shortTitle);
     }
 
     /**
@@ -693,7 +243,7 @@ class QualificationAward extends ModelBase
      */
     public function getQualificationAwardType()
     {
-        return $this->getProperty("qualificationAwardType");
+        return $this->getProperty('qualificationAwardType');
     }
 
     /**
@@ -701,23 +251,23 @@ class QualificationAward extends ModelBase
      */
     public function setQualificationAwardType(QualificationAwardType $qualificationAwardType = null)
     {
-        $this->setProperty("qualificationAwardType", $qualificationAwardType);
+        $this->setProperty('qualificationAwardType', $qualificationAwardType);
     }
 
     /**
-     * @return QualificationAwardLevel
+     * @return QualificationAwardSubtype
      */
-    public function getQualificationAwardLevel()
+    public function getQualificationAwardSubtype()
     {
-        return $this->getProperty("qualificationAwardLevel");
+        return $this->getProperty('qualificationAwardSubtype');
     }
 
     /**
-     * @param QualificationAwardLevel $qualificationAwardLevel
+     * @param QualificationAwardSubtype $qualificationAwardSubtype
      */
-    public function setQualificationAwardLevel(QualificationAwardLevel $qualificationAwardLevel = null)
+    public function setQualificationAwardSubtype(QualificationAwardSubtype $qualificationAwardSubtype = null)
     {
-        $this->setProperty("qualificationAwardLevel", $qualificationAwardLevel);
+        $this->setProperty('qualificationAwardSubtype', $qualificationAwardSubtype);
     }
 
     /**
@@ -725,7 +275,7 @@ class QualificationAward extends ModelBase
      */
     public function getAccreditationStartDate()
     {
-        return $this->getProperty("accreditationStartDate");
+        return $this->getProperty('accreditationStartDate');
     }
 
     /**
@@ -733,7 +283,7 @@ class QualificationAward extends ModelBase
      */
     public function setAccreditationStartDate(\DateTime $accreditationStartDate = null)
     {
-        $this->setProperty("accreditationStartDate", $accreditationStartDate);
+        $this->setProperty('accreditationStartDate', $accreditationStartDate);
     }
 
     /**
@@ -741,7 +291,7 @@ class QualificationAward extends ModelBase
      */
     public function getAccreditationEndDate()
     {
-        return $this->getProperty("accreditationEndDate");
+        return $this->getProperty('accreditationEndDate');
     }
 
     /**
@@ -749,7 +299,7 @@ class QualificationAward extends ModelBase
      */
     public function setAccreditationEndDate(\DateTime $accreditationEndDate = null)
     {
-        $this->setProperty("accreditationEndDate", $accreditationEndDate);
+        $this->setProperty('accreditationEndDate', $accreditationEndDate);
     }
 
     /**
@@ -757,7 +307,7 @@ class QualificationAward extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -765,7 +315,7 @@ class QualificationAward extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -773,7 +323,7 @@ class QualificationAward extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -781,23 +331,7 @@ class QualificationAward extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getCertificationStartDate()
-    {
-        return $this->getProperty("certificationStartDate");
-    }
-
-    /**
-     * @param \DateTime $certificationStartDate
-     */
-    public function setCertificationStartDate(\DateTime $certificationStartDate = null)
-    {
-        $this->setProperty("certificationStartDate", $certificationStartDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -805,7 +339,7 @@ class QualificationAward extends ModelBase
      */
     public function getCertificationEndDate()
     {
-        return $this->getProperty("certificationEndDate");
+        return $this->getProperty('certificationEndDate');
     }
 
     /**
@@ -813,7 +347,7 @@ class QualificationAward extends ModelBase
      */
     public function setCertificationEndDate(\DateTime $certificationEndDate = null)
     {
-        $this->setProperty("certificationEndDate", $certificationEndDate);
+        $this->setProperty('certificationEndDate', $certificationEndDate);
     }
 
     /**
@@ -821,7 +355,7 @@ class QualificationAward extends ModelBase
      */
     public function getOperationalStartDate()
     {
-        return $this->getProperty("operationalStartDate");
+        return $this->getProperty('operationalStartDate');
     }
 
     /**
@@ -829,7 +363,7 @@ class QualificationAward extends ModelBase
      */
     public function setOperationalStartDate(\DateTime $operationalStartDate = null)
     {
-        $this->setProperty("operationalStartDate", $operationalStartDate);
+        $this->setProperty('operationalStartDate', $operationalStartDate);
     }
 
     /**
@@ -837,7 +371,7 @@ class QualificationAward extends ModelBase
      */
     public function getOperationalEndDate()
     {
-        return $this->getProperty("operationalEndDate");
+        return $this->getProperty('operationalEndDate');
     }
 
     /**
@@ -845,54 +379,118 @@ class QualificationAward extends ModelBase
      */
     public function setOperationalEndDate(\DateTime $operationalEndDate = null)
     {
-        $this->setProperty("operationalEndDate", $operationalEndDate);
+        $this->setProperty('operationalEndDate', $operationalEndDate);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsLinearQualification()
+    {
+        return $this->getProperty('isLinearQualification');
+    }
+
+    /**
+     * @param bool $isLinearQualification
+     */
+    public function setIsLinearQualification($isLinearQualification = null)
+    {
+        $this->setProperty('isLinearQualification', $isLinearQualification);
     }
 
     /**
      * @return string
      */
-    public function getClassification()
+    public function getQcaAccreditationNumber()
     {
-        return $this->getProperty("classification");
+        return $this->getProperty('qcaAccreditationNumber');
     }
 
     /**
-     * @param string $classification
+     * @param string $qcaAccreditationNumber
      */
-    public function setClassification($classification = null)
+    public function setQcaAccreditationNumber($qcaAccreditationNumber = null)
     {
-        $this->setProperty("classification", $classification);
-    }
-
-    /**
-     * @return string
-     */
-    public function getSectorLeadOrganization()
-    {
-        return $this->getProperty("sectorLeadOrganization");
-    }
-
-    /**
-     * @param string $sectorLeadOrganization
-     */
-    public function setSectorLeadOrganization($sectorLeadOrganization = null)
-    {
-        $this->setProperty("sectorLeadOrganization", $sectorLeadOrganization);
+        $this->setProperty('qcaAccreditationNumber', $qcaAccreditationNumber);
     }
 
     /**
      * @return string
      */
-    public function getAssessor()
+    public function getKs4DiscountCode2014()
     {
-        return $this->getProperty("assessor");
+        return $this->getProperty('ks4DiscountCode2014');
     }
 
     /**
-     * @param string $assessor
+     * @param string $ks4DiscountCode2014
      */
-    public function setAssessor($assessor = null)
+    public function setKs4DiscountCode2014($ks4DiscountCode2014 = null)
     {
-        $this->setProperty("assessor", $assessor);
+        $this->setProperty('ks4DiscountCode2014', $ks4DiscountCode2014);
+    }
+
+    /**
+     * @return string
+     */
+    public function getKs4DiscountCode2015()
+    {
+        return $this->getProperty('ks4DiscountCode2015');
+    }
+
+    /**
+     * @param string $ks4DiscountCode2015
+     */
+    public function setKs4DiscountCode2015($ks4DiscountCode2015 = null)
+    {
+        $this->setProperty('ks4DiscountCode2015', $ks4DiscountCode2015);
+    }
+
+    /**
+     * @return string
+     */
+    public function getKs4DiscountCode2016()
+    {
+        return $this->getProperty('ks4DiscountCode2016');
+    }
+
+    /**
+     * @param string $ks4DiscountCode2016
+     */
+    public function setKs4DiscountCode2016($ks4DiscountCode2016 = null)
+    {
+        $this->setProperty('ks4DiscountCode2016', $ks4DiscountCode2016);
+    }
+
+    /**
+     * @return string
+     */
+    public function getKs4DiscountCode2017()
+    {
+        return $this->getProperty('ks4DiscountCode2017');
+    }
+
+    /**
+     * @param string $ks4DiscountCode2017
+     */
+    public function setKs4DiscountCode2017($ks4DiscountCode2017 = null)
+    {
+        $this->setProperty('ks4DiscountCode2017', $ks4DiscountCode2017);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPost16DiscountCode()
+    {
+        return $this->getProperty('post16DiscountCode');
+    }
+
+    /**
+     * @param string $post16DiscountCode
+     */
+    public function setPost16DiscountCode($post16DiscountCode = null)
+    {
+        $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }
 }

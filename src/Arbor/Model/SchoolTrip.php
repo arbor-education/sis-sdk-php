@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SchoolTrip extends ModelBase
 {
@@ -18,8 +14,6 @@ class SchoolTrip extends ModelBase
 
     const LOCATION = 'location';
 
-    const SCHEDULED_BY = 'scheduledBy';
-
     const TRIP_NAME = 'tripName';
 
     const DESCRIPTION = 'description';
@@ -27,34 +21,38 @@ class SchoolTrip extends ModelBase
     protected $_resourceType = ResourceType::SCHOOL_TRIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolTrip[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SchoolTrip");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SCHOOL_TRIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolTrip
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SCHOOL_TRIP, $id);
     }
 
@@ -63,7 +61,7 @@ class SchoolTrip extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -71,7 +69,7 @@ class SchoolTrip extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -79,7 +77,7 @@ class SchoolTrip extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -87,7 +85,7 @@ class SchoolTrip extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -95,7 +93,7 @@ class SchoolTrip extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -103,7 +101,7 @@ class SchoolTrip extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -111,7 +109,7 @@ class SchoolTrip extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -119,23 +117,7 @@ class SchoolTrip extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -143,7 +125,7 @@ class SchoolTrip extends ModelBase
      */
     public function getTripName()
     {
-        return $this->getProperty("tripName");
+        return $this->getProperty('tripName');
     }
 
     /**
@@ -151,7 +133,7 @@ class SchoolTrip extends ModelBase
      */
     public function setTripName($tripName = null)
     {
-        $this->setProperty("tripName", $tripName);
+        $this->setProperty('tripName', $tripName);
     }
 
     /**
@@ -159,7 +141,7 @@ class SchoolTrip extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -167,6 +149,6 @@ class SchoolTrip extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 }

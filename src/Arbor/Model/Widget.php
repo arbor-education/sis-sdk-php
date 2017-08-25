@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\WidgetType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Widget extends ModelBase
 {
@@ -26,34 +21,38 @@ class Widget extends ModelBase
     protected $_resourceType = ResourceType::WIDGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Widget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Widget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::WIDGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Widget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::WIDGET, $id);
     }
 
@@ -62,7 +61,7 @@ class Widget extends ModelBase
      */
     public function getZoneIdentifier()
     {
-        return $this->getProperty("zoneIdentifier");
+        return $this->getProperty('zoneIdentifier');
     }
 
     /**
@@ -70,7 +69,7 @@ class Widget extends ModelBase
      */
     public function setZoneIdentifier($zoneIdentifier = null)
     {
-        $this->setProperty("zoneIdentifier", $zoneIdentifier);
+        $this->setProperty('zoneIdentifier', $zoneIdentifier);
     }
 
     /**
@@ -78,7 +77,7 @@ class Widget extends ModelBase
      */
     public function getObject()
     {
-        return $this->getProperty("object");
+        return $this->getProperty('object');
     }
 
     /**
@@ -86,7 +85,7 @@ class Widget extends ModelBase
      */
     public function setObject(ModelBase $object = null)
     {
-        $this->setProperty("object", $object);
+        $this->setProperty('object', $object);
     }
 
     /**
@@ -94,7 +93,7 @@ class Widget extends ModelBase
      */
     public function getWidgetType()
     {
-        return $this->getProperty("widgetType");
+        return $this->getProperty('widgetType');
     }
 
     /**
@@ -102,7 +101,7 @@ class Widget extends ModelBase
      */
     public function setWidgetType(WidgetType $widgetType = null)
     {
-        $this->setProperty("widgetType", $widgetType);
+        $this->setProperty('widgetType', $widgetType);
     }
 
     /**
@@ -110,7 +109,7 @@ class Widget extends ModelBase
      */
     public function getSettings()
     {
-        return $this->getProperty("settings");
+        return $this->getProperty('settings');
     }
 
     /**
@@ -118,7 +117,7 @@ class Widget extends ModelBase
      */
     public function setSettings($settings = null)
     {
-        $this->setProperty("settings", $settings);
+        $this->setProperty('settings', $settings);
     }
 
     /**
@@ -126,7 +125,7 @@ class Widget extends ModelBase
      */
     public function getPositionColumn()
     {
-        return $this->getProperty("positionColumn");
+        return $this->getProperty('positionColumn');
     }
 
     /**
@@ -134,7 +133,7 @@ class Widget extends ModelBase
      */
     public function setPositionColumn($positionColumn = null)
     {
-        $this->setProperty("positionColumn", $positionColumn);
+        $this->setProperty('positionColumn', $positionColumn);
     }
 
     /**
@@ -142,7 +141,7 @@ class Widget extends ModelBase
      */
     public function getPositionRow()
     {
-        return $this->getProperty("positionRow");
+        return $this->getProperty('positionRow');
     }
 
     /**
@@ -150,6 +149,6 @@ class Widget extends ModelBase
      */
     public function setPositionRow($positionRow = null)
     {
-        $this->setProperty("positionRow", $positionRow);
+        $this->setProperty('positionRow', $positionRow);
     }
 }

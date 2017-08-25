@@ -1,27 +1,12 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\QualifiedTeacherRoute;
-use \Arbor\Model\Person;
-use \Arbor\Model\Ethnicity;
-use \Arbor\Model\Religion;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\UkDfe\QualifiedTeacherRoute;
 
 class Staff extends ModelBase
 {
-    const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
-
-    const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
-
-    const QUALIFIED_TEACHER_ROUTE = 'qualifiedTeacherRoute';
-
-    const HLTA_STATUS = 'hltaStatus';
-
     const PERSON = 'person';
 
     const ETHNICITY = 'ethnicity';
@@ -36,102 +21,52 @@ class Staff extends ModelBase
 
     const TIMETABLE_ABBREVIATION = 'timetableAbbreviation';
 
+    const LEGACY_SYSTEM_ID = 'legacySystemId';
+
+    const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
+
+    const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
+
+    const QUALIFIED_TEACHER_ROUTE = 'qualifiedTeacherRoute';
+
+    const HLTA_STATUS = 'hltaStatus';
+
     protected $_resourceType = ResourceType::STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Staff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Staff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Staff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF, $id);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getEligibleForSchoolWorkforceReturn()
-    {
-        return $this->getProperty("eligibleForSchoolWorkforceReturn");
-    }
-
-    /**
-     * @param bool $eligibleForSchoolWorkforceReturn
-     */
-    public function setEligibleForSchoolWorkforceReturn($eligibleForSchoolWorkforceReturn = null)
-    {
-        $this->setProperty("eligibleForSchoolWorkforceReturn", $eligibleForSchoolWorkforceReturn);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getQualifiedTeacherStatus()
-    {
-        return $this->getProperty("qualifiedTeacherStatus");
-    }
-
-    /**
-     * @param bool $qualifiedTeacherStatus
-     */
-    public function setQualifiedTeacherStatus($qualifiedTeacherStatus = null)
-    {
-        $this->setProperty("qualifiedTeacherStatus", $qualifiedTeacherStatus);
-    }
-
-    /**
-     * @return QualifiedTeacherRoute
-     */
-    public function getQualifiedTeacherRoute()
-    {
-        return $this->getProperty("qualifiedTeacherRoute");
-    }
-
-    /**
-     * @param QualifiedTeacherRoute $qualifiedTeacherRoute
-     */
-    public function setQualifiedTeacherRoute(QualifiedTeacherRoute $qualifiedTeacherRoute = null)
-    {
-        $this->setProperty("qualifiedTeacherRoute", $qualifiedTeacherRoute);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHltaStatus()
-    {
-        return $this->getProperty("hltaStatus");
-    }
-
-    /**
-     * @param bool $hltaStatus
-     */
-    public function setHltaStatus($hltaStatus = null)
-    {
-        $this->setProperty("hltaStatus", $hltaStatus);
     }
 
     /**
@@ -139,7 +74,7 @@ class Staff extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -147,7 +82,7 @@ class Staff extends ModelBase
      */
     public function setPerson(Person $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -155,7 +90,7 @@ class Staff extends ModelBase
      */
     public function getEthnicity()
     {
-        return $this->getProperty("ethnicity");
+        return $this->getProperty('ethnicity');
     }
 
     /**
@@ -163,7 +98,7 @@ class Staff extends ModelBase
      */
     public function setEthnicity(Ethnicity $ethnicity = null)
     {
-        $this->setProperty("ethnicity", $ethnicity);
+        $this->setProperty('ethnicity', $ethnicity);
     }
 
     /**
@@ -171,7 +106,7 @@ class Staff extends ModelBase
      */
     public function getReligion()
     {
-        return $this->getProperty("religion");
+        return $this->getProperty('religion');
     }
 
     /**
@@ -179,7 +114,7 @@ class Staff extends ModelBase
      */
     public function setReligion(Religion $religion = null)
     {
-        $this->setProperty("religion", $religion);
+        $this->setProperty('religion', $religion);
     }
 
     /**
@@ -187,7 +122,7 @@ class Staff extends ModelBase
      */
     public function getBloodGroup()
     {
-        return $this->getProperty("bloodGroup");
+        return $this->getProperty('bloodGroup');
     }
 
     /**
@@ -195,7 +130,7 @@ class Staff extends ModelBase
      */
     public function setBloodGroup($bloodGroup = null)
     {
-        $this->setProperty("bloodGroup", $bloodGroup);
+        $this->setProperty('bloodGroup', $bloodGroup);
     }
 
     /**
@@ -203,7 +138,7 @@ class Staff extends ModelBase
      */
     public function getStaffNumber()
     {
-        return $this->getProperty("staffNumber");
+        return $this->getProperty('staffNumber');
     }
 
     /**
@@ -211,7 +146,7 @@ class Staff extends ModelBase
      */
     public function setStaffNumber($staffNumber = null)
     {
-        $this->setProperty("staffNumber", $staffNumber);
+        $this->setProperty('staffNumber', $staffNumber);
     }
 
     /**
@@ -219,7 +154,7 @@ class Staff extends ModelBase
      */
     public function getZendeskUser()
     {
-        return $this->getProperty("zendeskUser");
+        return $this->getProperty('zendeskUser');
     }
 
     /**
@@ -227,7 +162,7 @@ class Staff extends ModelBase
      */
     public function setZendeskUser($zendeskUser = null)
     {
-        $this->setProperty("zendeskUser", $zendeskUser);
+        $this->setProperty('zendeskUser', $zendeskUser);
     }
 
     /**
@@ -235,7 +170,7 @@ class Staff extends ModelBase
      */
     public function getTimetableAbbreviation()
     {
-        return $this->getProperty("timetableAbbreviation");
+        return $this->getProperty('timetableAbbreviation');
     }
 
     /**
@@ -243,6 +178,86 @@ class Staff extends ModelBase
      */
     public function setTimetableAbbreviation($timetableAbbreviation = null)
     {
-        $this->setProperty("timetableAbbreviation", $timetableAbbreviation);
+        $this->setProperty('timetableAbbreviation', $timetableAbbreviation);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLegacySystemId()
+    {
+        return $this->getProperty('legacySystemId');
+    }
+
+    /**
+     * @param string $legacySystemId
+     */
+    public function setLegacySystemId($legacySystemId = null)
+    {
+        $this->setProperty('legacySystemId', $legacySystemId);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getEligibleForSchoolWorkforceReturn()
+    {
+        return $this->getProperty('eligibleForSchoolWorkforceReturn');
+    }
+
+    /**
+     * @param bool $eligibleForSchoolWorkforceReturn
+     */
+    public function setEligibleForSchoolWorkforceReturn($eligibleForSchoolWorkforceReturn = null)
+    {
+        $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getQualifiedTeacherStatus()
+    {
+        return $this->getProperty('qualifiedTeacherStatus');
+    }
+
+    /**
+     * @param bool $qualifiedTeacherStatus
+     */
+    public function setQualifiedTeacherStatus($qualifiedTeacherStatus = null)
+    {
+        $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
+    }
+
+    /**
+     * @return QualifiedTeacherRoute
+     */
+    public function getQualifiedTeacherRoute()
+    {
+        return $this->getProperty('qualifiedTeacherRoute');
+    }
+
+    /**
+     * @param QualifiedTeacherRoute $qualifiedTeacherRoute
+     */
+    public function setQualifiedTeacherRoute(QualifiedTeacherRoute $qualifiedTeacherRoute = null)
+    {
+        $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getHltaStatus()
+    {
+        return $this->getProperty('hltaStatus');
+    }
+
+    /**
+     * @param bool $hltaStatus
+     */
+    public function setHltaStatus($hltaStatus = null)
+    {
+        $this->setProperty('hltaStatus', $hltaStatus);
     }
 }

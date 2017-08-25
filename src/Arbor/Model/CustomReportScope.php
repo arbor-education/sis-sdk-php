@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomReport;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReportScope extends ModelBase
 {
@@ -28,34 +23,38 @@ class CustomReportScope extends ModelBase
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCOPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReportScope[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReportScope");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT_SCOPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReportScope
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_SCOPE, $id);
     }
 
@@ -64,7 +63,7 @@ class CustomReportScope extends ModelBase
      */
     public function getCustomReport()
     {
-        return $this->getProperty("customReport");
+        return $this->getProperty('customReport');
     }
 
     /**
@@ -72,7 +71,7 @@ class CustomReportScope extends ModelBase
      */
     public function setCustomReport(CustomReport $customReport = null)
     {
-        $this->setProperty("customReport", $customReport);
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -80,7 +79,7 @@ class CustomReportScope extends ModelBase
      */
     public function getBaseEntityType()
     {
-        return $this->getProperty("baseEntityType");
+        return $this->getProperty('baseEntityType');
     }
 
     /**
@@ -88,7 +87,7 @@ class CustomReportScope extends ModelBase
      */
     public function setBaseEntityType($baseEntityType = null)
     {
-        $this->setProperty("baseEntityType", $baseEntityType);
+        $this->setProperty('baseEntityType', $baseEntityType);
     }
 
     /**
@@ -96,7 +95,7 @@ class CustomReportScope extends ModelBase
      */
     public function getReferenceDateRangeStartDate()
     {
-        return $this->getProperty("referenceDateRangeStartDate");
+        return $this->getProperty('referenceDateRangeStartDate');
     }
 
     /**
@@ -104,7 +103,7 @@ class CustomReportScope extends ModelBase
      */
     public function setReferenceDateRangeStartDate(\DateTime $referenceDateRangeStartDate = null)
     {
-        $this->setProperty("referenceDateRangeStartDate", $referenceDateRangeStartDate);
+        $this->setProperty('referenceDateRangeStartDate', $referenceDateRangeStartDate);
     }
 
     /**
@@ -112,7 +111,7 @@ class CustomReportScope extends ModelBase
      */
     public function getReferenceDateRangeEndDate()
     {
-        return $this->getProperty("referenceDateRangeEndDate");
+        return $this->getProperty('referenceDateRangeEndDate');
     }
 
     /**
@@ -120,7 +119,7 @@ class CustomReportScope extends ModelBase
      */
     public function setReferenceDateRangeEndDate(\DateTime $referenceDateRangeEndDate = null)
     {
-        $this->setProperty("referenceDateRangeEndDate", $referenceDateRangeEndDate);
+        $this->setProperty('referenceDateRangeEndDate', $referenceDateRangeEndDate);
     }
 
     /**
@@ -128,7 +127,7 @@ class CustomReportScope extends ModelBase
      */
     public function getReferenceDateRangePeriodType()
     {
-        return $this->getProperty("referenceDateRangePeriodType");
+        return $this->getProperty('referenceDateRangePeriodType');
     }
 
     /**
@@ -136,7 +135,7 @@ class CustomReportScope extends ModelBase
      */
     public function setReferenceDateRangePeriodType($referenceDateRangePeriodType = null)
     {
-        $this->setProperty("referenceDateRangePeriodType", $referenceDateRangePeriodType);
+        $this->setProperty('referenceDateRangePeriodType', $referenceDateRangePeriodType);
     }
 
     /**
@@ -144,7 +143,7 @@ class CustomReportScope extends ModelBase
      */
     public function getReferenceDateRangePeriodCount()
     {
-        return $this->getProperty("referenceDateRangePeriodCount");
+        return $this->getProperty('referenceDateRangePeriodCount');
     }
 
     /**
@@ -152,7 +151,7 @@ class CustomReportScope extends ModelBase
      */
     public function setReferenceDateRangePeriodCount($referenceDateRangePeriodCount = null)
     {
-        $this->setProperty("referenceDateRangePeriodCount", $referenceDateRangePeriodCount);
+        $this->setProperty('referenceDateRangePeriodCount', $referenceDateRangePeriodCount);
     }
 
     /**
@@ -160,7 +159,7 @@ class CustomReportScope extends ModelBase
      */
     public function getReferenceDateRangePeriodOffset()
     {
-        return $this->getProperty("referenceDateRangePeriodOffset");
+        return $this->getProperty('referenceDateRangePeriodOffset');
     }
 
     /**
@@ -168,6 +167,6 @@ class CustomReportScope extends ModelBase
      */
     public function setReferenceDateRangePeriodOffset($referenceDateRangePeriodOffset = null)
     {
-        $this->setProperty("referenceDateRangePeriodOffset", $referenceDateRangePeriodOffset);
+        $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }
 }

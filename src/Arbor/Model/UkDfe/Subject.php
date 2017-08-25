@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Subject extends ModelBase
 {
@@ -21,34 +21,38 @@ class Subject extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SUBJECT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Subject[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_Subject");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SUBJECT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Subject
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SUBJECT, $id);
     }
 
@@ -57,7 +61,7 @@ class Subject extends ModelBase
      */
     public function getUsedInSwfOnly()
     {
-        return $this->getProperty("usedInSwfOnly");
+        return $this->getProperty('usedInSwfOnly');
     }
 
     /**
@@ -65,7 +69,7 @@ class Subject extends ModelBase
      */
     public function setUsedInSwfOnly($usedInSwfOnly = null)
     {
-        $this->setProperty("usedInSwfOnly", $usedInSwfOnly);
+        $this->setProperty('usedInSwfOnly', $usedInSwfOnly);
     }
 
     /**
@@ -73,7 +77,7 @@ class Subject extends ModelBase
      */
     public function getUsedInCbdsOnly()
     {
-        return $this->getProperty("usedInCbdsOnly");
+        return $this->getProperty('usedInCbdsOnly');
     }
 
     /**
@@ -81,7 +85,7 @@ class Subject extends ModelBase
      */
     public function setUsedInCbdsOnly($usedInCbdsOnly = null)
     {
-        $this->setProperty("usedInCbdsOnly", $usedInCbdsOnly);
+        $this->setProperty('usedInCbdsOnly', $usedInCbdsOnly);
     }
 
     /**
@@ -89,7 +93,7 @@ class Subject extends ModelBase
      */
     public function getD00115()
     {
-        return $this->getProperty("d00115");
+        return $this->getProperty('d00115');
     }
 
     /**
@@ -97,7 +101,7 @@ class Subject extends ModelBase
      */
     public function setD00115($d00115 = null)
     {
-        $this->setProperty("d00115", $d00115);
+        $this->setProperty('d00115', $d00115);
     }
 
     /**
@@ -105,7 +109,7 @@ class Subject extends ModelBase
      */
     public function getD00220()
     {
-        return $this->getProperty("d00220");
+        return $this->getProperty('d00220');
     }
 
     /**
@@ -113,6 +117,6 @@ class Subject extends ModelBase
      */
     public function setD00220($d00220 = null)
     {
-        $this->setProperty("d00220", $d00220);
+        $this->setProperty('d00220', $d00220);
     }
 }

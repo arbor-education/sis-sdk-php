@@ -1,20 +1,14 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewReportCardBatch;
-use \Arbor\Model\Curriculum;
-use \Arbor\Model\AchievementLevel;
-use \Arbor\Model\AchievementLevelSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ReportCardBatchCurriculum extends ModelBase
 {
     const REPORT_CARD_BATCH = 'reportCardBatch';
+
+    const ORDER = 'order';
 
     const CURRICULUM = 'curriculum';
 
@@ -39,34 +33,38 @@ class ReportCardBatchCurriculum extends ModelBase
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_CURRICULUM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ReportCardBatchCurriculum[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ReportCardBatchCurriculum");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::REPORT_CARD_BATCH_CURRICULUM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ReportCardBatchCurriculum
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::REPORT_CARD_BATCH_CURRICULUM, $id);
     }
 
@@ -75,7 +73,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getReportCardBatch()
     {
-        return $this->getProperty("reportCardBatch");
+        return $this->getProperty('reportCardBatch');
     }
 
     /**
@@ -83,7 +81,23 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
     {
-        $this->setProperty("reportCardBatch", $reportCardBatch);
+        $this->setProperty('reportCardBatch', $reportCardBatch);
+    }
+
+    /**
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->getProperty('order');
+    }
+
+    /**
+     * @param int $order
+     */
+    public function setOrder($order = null)
+    {
+        $this->setProperty('order', $order);
     }
 
     /**
@@ -91,7 +105,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getCurriculum()
     {
-        return $this->getProperty("curriculum");
+        return $this->getProperty('curriculum');
     }
 
     /**
@@ -99,7 +113,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setCurriculum(Curriculum $curriculum = null)
     {
-        $this->setProperty("curriculum", $curriculum);
+        $this->setProperty('curriculum', $curriculum);
     }
 
     /**
@@ -107,7 +121,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getIncludeStatements()
     {
-        return $this->getProperty("includeStatements");
+        return $this->getProperty('includeStatements');
     }
 
     /**
@@ -115,7 +129,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setIncludeStatements($includeStatements = null)
     {
-        $this->setProperty("includeStatements", $includeStatements);
+        $this->setProperty('includeStatements', $includeStatements);
     }
 
     /**
@@ -123,7 +137,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getLowerAchievementLevel()
     {
-        return $this->getProperty("lowerAchievementLevel");
+        return $this->getProperty('lowerAchievementLevel');
     }
 
     /**
@@ -131,7 +145,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setLowerAchievementLevel(AchievementLevel $lowerAchievementLevel = null)
     {
-        $this->setProperty("lowerAchievementLevel", $lowerAchievementLevel);
+        $this->setProperty('lowerAchievementLevel', $lowerAchievementLevel);
     }
 
     /**
@@ -139,7 +153,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getLowerAchievementValue()
     {
-        return $this->getProperty("lowerAchievementValue");
+        return $this->getProperty('lowerAchievementValue');
     }
 
     /**
@@ -147,7 +161,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setLowerAchievementValue($lowerAchievementValue = null)
     {
-        $this->setProperty("lowerAchievementValue", $lowerAchievementValue);
+        $this->setProperty('lowerAchievementValue', $lowerAchievementValue);
     }
 
     /**
@@ -155,7 +169,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getUpperAchievementLevel()
     {
-        return $this->getProperty("upperAchievementLevel");
+        return $this->getProperty('upperAchievementLevel');
     }
 
     /**
@@ -163,7 +177,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setUpperAchievementLevel(AchievementLevel $upperAchievementLevel = null)
     {
-        $this->setProperty("upperAchievementLevel", $upperAchievementLevel);
+        $this->setProperty('upperAchievementLevel', $upperAchievementLevel);
     }
 
     /**
@@ -171,7 +185,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getUpperAchievementValue()
     {
-        return $this->getProperty("upperAchievementValue");
+        return $this->getProperty('upperAchievementValue');
     }
 
     /**
@@ -179,7 +193,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setUpperAchievementValue($upperAchievementValue = null)
     {
-        $this->setProperty("upperAchievementValue", $upperAchievementValue);
+        $this->setProperty('upperAchievementValue', $upperAchievementValue);
     }
 
     /**
@@ -187,7 +201,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getReportingMode()
     {
-        return $this->getProperty("reportingMode");
+        return $this->getProperty('reportingMode');
     }
 
     /**
@@ -195,7 +209,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setReportingMode($reportingMode = null)
     {
-        $this->setProperty("reportingMode", $reportingMode);
+        $this->setProperty('reportingMode', $reportingMode);
     }
 
     /**
@@ -203,7 +217,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getIncludeSummativeGrade()
     {
-        return $this->getProperty("includeSummativeGrade");
+        return $this->getProperty('includeSummativeGrade');
     }
 
     /**
@@ -211,7 +225,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setIncludeSummativeGrade($includeSummativeGrade = null)
     {
-        $this->setProperty("includeSummativeGrade", $includeSummativeGrade);
+        $this->setProperty('includeSummativeGrade', $includeSummativeGrade);
     }
 
     /**
@@ -219,7 +233,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getSummativeGradeType()
     {
-        return $this->getProperty("summativeGradeType");
+        return $this->getProperty('summativeGradeType');
     }
 
     /**
@@ -227,7 +241,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setSummativeGradeType($summativeGradeType = null)
     {
-        $this->setProperty("summativeGradeType", $summativeGradeType);
+        $this->setProperty('summativeGradeType', $summativeGradeType);
     }
 
     /**
@@ -235,7 +249,7 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function getSummativeGradeAchievementLevelSet()
     {
-        return $this->getProperty("summativeGradeAchievementLevelSet");
+        return $this->getProperty('summativeGradeAchievementLevelSet');
     }
 
     /**
@@ -243,6 +257,6 @@ class ReportCardBatchCurriculum extends ModelBase
      */
     public function setSummativeGradeAchievementLevelSet(AchievementLevelSet $summativeGradeAchievementLevelSet = null)
     {
-        $this->setProperty("summativeGradeAchievementLevelSet", $summativeGradeAchievementLevelSet);
+        $this->setProperty('summativeGradeAchievementLevelSet', $summativeGradeAchievementLevelSet);
     }
 }

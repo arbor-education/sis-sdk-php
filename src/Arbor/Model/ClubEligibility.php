@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Club;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ClubEligibility extends ModelBase
 {
@@ -18,34 +13,38 @@ class ClubEligibility extends ModelBase
     protected $_resourceType = ResourceType::CLUB_ELIGIBILITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ClubEligibility[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ClubEligibility");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CLUB_ELIGIBILITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ClubEligibility
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CLUB_ELIGIBILITY, $id);
     }
 
@@ -54,7 +53,7 @@ class ClubEligibility extends ModelBase
      */
     public function getClub()
     {
-        return $this->getProperty("club");
+        return $this->getProperty('club');
     }
 
     /**
@@ -62,7 +61,7 @@ class ClubEligibility extends ModelBase
      */
     public function setClub(Club $club = null)
     {
-        $this->setProperty("club", $club);
+        $this->setProperty('club', $club);
     }
 
     /**
@@ -70,7 +69,7 @@ class ClubEligibility extends ModelBase
      */
     public function getEligible()
     {
-        return $this->getProperty("eligible");
+        return $this->getProperty('eligible');
     }
 
     /**
@@ -78,6 +77,6 @@ class ClubEligibility extends ModelBase
      */
     public function setEligible(ModelBase $eligible = null)
     {
-        $this->setProperty("eligible", $eligible);
+        $this->setProperty('eligible', $eligible);
     }
 }

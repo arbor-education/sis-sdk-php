@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DataQualityCheckResult extends ModelBase
 {
@@ -34,34 +29,38 @@ class DataQualityCheckResult extends ModelBase
     protected $_resourceType = ResourceType::DATA_QUALITY_CHECK_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DataQualityCheckResult[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DataQualityCheckResult");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DATA_QUALITY_CHECK_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DataQualityCheckResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DATA_QUALITY_CHECK_RESULT, $id);
     }
 
@@ -70,7 +69,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getObject()
     {
-        return $this->getProperty("object");
+        return $this->getProperty('object');
     }
 
     /**
@@ -78,7 +77,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setObject(ModelBase $object = null)
     {
-        $this->setProperty("object", $object);
+        $this->setProperty('object', $object);
     }
 
     /**
@@ -86,7 +85,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getCheckClass()
     {
-        return $this->getProperty("checkClass");
+        return $this->getProperty('checkClass');
     }
 
     /**
@@ -94,7 +93,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setCheckClass($checkClass = null)
     {
-        $this->setProperty("checkClass", $checkClass);
+        $this->setProperty('checkClass', $checkClass);
     }
 
     /**
@@ -102,7 +101,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getResultType()
     {
-        return $this->getProperty("resultType");
+        return $this->getProperty('resultType');
     }
 
     /**
@@ -110,7 +109,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setResultType($resultType = null)
     {
-        $this->setProperty("resultType", $resultType);
+        $this->setProperty('resultType', $resultType);
     }
 
     /**
@@ -118,7 +117,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getResultCode()
     {
-        return $this->getProperty("resultCode");
+        return $this->getProperty('resultCode');
     }
 
     /**
@@ -126,7 +125,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setResultCode($resultCode = null)
     {
-        $this->setProperty("resultCode", $resultCode);
+        $this->setProperty('resultCode', $resultCode);
     }
 
     /**
@@ -134,7 +133,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getMessage()
     {
-        return $this->getProperty("message");
+        return $this->getProperty('message');
     }
 
     /**
@@ -142,7 +141,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setMessage($message = null)
     {
-        $this->setProperty("message", $message);
+        $this->setProperty('message', $message);
     }
 
     /**
@@ -150,7 +149,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getLastCheckedDatetime()
     {
-        return $this->getProperty("lastCheckedDatetime");
+        return $this->getProperty('lastCheckedDatetime');
     }
 
     /**
@@ -158,7 +157,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setLastCheckedDatetime(\DateTime $lastCheckedDatetime = null)
     {
-        $this->setProperty("lastCheckedDatetime", $lastCheckedDatetime);
+        $this->setProperty('lastCheckedDatetime', $lastCheckedDatetime);
     }
 
     /**
@@ -166,7 +165,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getResolvedDatetime()
     {
-        return $this->getProperty("resolvedDatetime");
+        return $this->getProperty('resolvedDatetime');
     }
 
     /**
@@ -174,7 +173,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
-        $this->setProperty("resolvedDatetime", $resolvedDatetime);
+        $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
 
     /**
@@ -182,7 +181,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getResolvedUser()
     {
-        return $this->getProperty("resolvedUser");
+        return $this->getProperty('resolvedUser');
     }
 
     /**
@@ -190,7 +189,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setResolvedUser(User $resolvedUser = null)
     {
-        $this->setProperty("resolvedUser", $resolvedUser);
+        $this->setProperty('resolvedUser', $resolvedUser);
     }
 
     /**
@@ -198,7 +197,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getIgnoredUser()
     {
-        return $this->getProperty("ignoredUser");
+        return $this->getProperty('ignoredUser');
     }
 
     /**
@@ -206,7 +205,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setIgnoredUser(User $ignoredUser = null)
     {
-        $this->setProperty("ignoredUser", $ignoredUser);
+        $this->setProperty('ignoredUser', $ignoredUser);
     }
 
     /**
@@ -214,7 +213,7 @@ class DataQualityCheckResult extends ModelBase
      */
     public function getIgnoredDatetime()
     {
-        return $this->getProperty("ignoredDatetime");
+        return $this->getProperty('ignoredDatetime');
     }
 
     /**
@@ -222,6 +221,6 @@ class DataQualityCheckResult extends ModelBase
      */
     public function setIgnoredDatetime(\DateTime $ignoredDatetime = null)
     {
-        $this->setProperty("ignoredDatetime", $ignoredDatetime);
+        $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
 }

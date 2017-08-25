@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ImmunizationType;
-use \Arbor\Model\MedicalInstitution;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Immunization extends ModelBase
 {
@@ -23,34 +17,38 @@ class Immunization extends ModelBase
     protected $_resourceType = ResourceType::IMMUNIZATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Immunization[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Immunization");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::IMMUNIZATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Immunization
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::IMMUNIZATION, $id);
     }
 
@@ -59,7 +57,7 @@ class Immunization extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -67,7 +65,7 @@ class Immunization extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -75,7 +73,7 @@ class Immunization extends ModelBase
      */
     public function getImmunizationType()
     {
-        return $this->getProperty("immunizationType");
+        return $this->getProperty('immunizationType');
     }
 
     /**
@@ -83,7 +81,7 @@ class Immunization extends ModelBase
      */
     public function setImmunizationType(ImmunizationType $immunizationType = null)
     {
-        $this->setProperty("immunizationType", $immunizationType);
+        $this->setProperty('immunizationType', $immunizationType);
     }
 
     /**
@@ -91,7 +89,7 @@ class Immunization extends ModelBase
      */
     public function getImmunizationDate()
     {
-        return $this->getProperty("immunizationDate");
+        return $this->getProperty('immunizationDate');
     }
 
     /**
@@ -99,7 +97,7 @@ class Immunization extends ModelBase
      */
     public function setImmunizationDate(\DateTime $immunizationDate = null)
     {
-        $this->setProperty("immunizationDate", $immunizationDate);
+        $this->setProperty('immunizationDate', $immunizationDate);
     }
 
     /**
@@ -107,7 +105,7 @@ class Immunization extends ModelBase
      */
     public function getAdministeredByMedicalInstitution()
     {
-        return $this->getProperty("administeredByMedicalInstitution");
+        return $this->getProperty('administeredByMedicalInstitution');
     }
 
     /**
@@ -115,6 +113,6 @@ class Immunization extends ModelBase
      */
     public function setAdministeredByMedicalInstitution(MedicalInstitution $administeredByMedicalInstitution = null)
     {
-        $this->setProperty("administeredByMedicalInstitution", $administeredByMedicalInstitution);
+        $this->setProperty('administeredByMedicalInstitution', $administeredByMedicalInstitution);
     }
 }

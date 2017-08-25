@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class LocalAuthority extends ModelBase
 {
@@ -17,34 +17,38 @@ class LocalAuthority extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_LOCAL_AUTHORITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return LocalAuthority[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_LocalAuthority");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_LOCAL_AUTHORITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return LocalAuthority
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_LOCAL_AUTHORITY, $id);
     }
 
@@ -53,7 +57,7 @@ class LocalAuthority extends ModelBase
      */
     public function getAuthorityCode()
     {
-        return $this->getProperty("authorityCode");
+        return $this->getProperty('authorityCode');
     }
 
     /**
@@ -61,7 +65,7 @@ class LocalAuthority extends ModelBase
      */
     public function setAuthorityCode($authorityCode = null)
     {
-        $this->setProperty("authorityCode", $authorityCode);
+        $this->setProperty('authorityCode', $authorityCode);
     }
 
     /**
@@ -69,7 +73,7 @@ class LocalAuthority extends ModelBase
      */
     public function getAuthorityCodePre2011()
     {
-        return $this->getProperty("authorityCodePre2011");
+        return $this->getProperty('authorityCodePre2011');
     }
 
     /**
@@ -77,6 +81,6 @@ class LocalAuthority extends ModelBase
      */
     public function setAuthorityCodePre2011($authorityCodePre2011 = null)
     {
-        $this->setProperty("authorityCodePre2011", $authorityCodePre2011);
+        $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }
 }

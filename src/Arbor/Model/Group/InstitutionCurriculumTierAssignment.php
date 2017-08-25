@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Group\Institution;
-use \Arbor\Model\CurriculumTier;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\CurriculumTier;
 
 class InstitutionCurriculumTierAssignment extends ModelBase
 {
@@ -23,34 +22,38 @@ class InstitutionCurriculumTierAssignment extends ModelBase
     protected $_resourceType = ResourceType::GROUP_INSTITUTION_CURRICULUM_TIER_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InstitutionCurriculumTierAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_InstitutionCurriculumTierAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_INSTITUTION_CURRICULUM_TIER_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InstitutionCurriculumTierAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_INSTITUTION_CURRICULUM_TIER_ASSIGNMENT, $id);
     }
 
@@ -59,7 +62,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function getInstitution()
     {
-        return $this->getProperty("institution");
+        return $this->getProperty('institution');
     }
 
     /**
@@ -67,7 +70,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function setInstitution(Institution $institution = null)
     {
-        $this->setProperty("institution", $institution);
+        $this->setProperty('institution', $institution);
     }
 
     /**
@@ -75,7 +78,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function getCurriculumTier()
     {
-        return $this->getProperty("curriculumTier");
+        return $this->getProperty('curriculumTier');
     }
 
     /**
@@ -83,7 +86,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function setCurriculumTier(CurriculumTier $curriculumTier = null)
     {
-        $this->setProperty("curriculumTier", $curriculumTier);
+        $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
@@ -91,7 +94,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -99,7 +102,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -107,7 +110,7 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -115,6 +118,6 @@ class InstitutionCurriculumTierAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

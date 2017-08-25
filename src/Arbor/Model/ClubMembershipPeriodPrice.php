@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ClubMembershipPeriod;
-use \Arbor\Model\VatRate;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ClubMembershipPeriodPrice extends ModelBase
 {
@@ -27,34 +21,38 @@ class ClubMembershipPeriodPrice extends ModelBase
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP_PERIOD_PRICE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ClubMembershipPeriodPrice[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ClubMembershipPeriodPrice");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CLUB_MEMBERSHIP_PERIOD_PRICE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ClubMembershipPeriodPrice
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CLUB_MEMBERSHIP_PERIOD_PRICE, $id);
     }
 
@@ -63,7 +61,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function getClubMembershipPeriod()
     {
-        return $this->getProperty("clubMembershipPeriod");
+        return $this->getProperty('clubMembershipPeriod');
     }
 
     /**
@@ -71,7 +69,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function setClubMembershipPeriod(ClubMembershipPeriod $clubMembershipPeriod = null)
     {
-        $this->setProperty("clubMembershipPeriod", $clubMembershipPeriod);
+        $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
 
     /**
@@ -79,7 +77,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function getPricingBasis()
     {
-        return $this->getProperty("pricingBasis");
+        return $this->getProperty('pricingBasis');
     }
 
     /**
@@ -87,7 +85,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function setPricingBasis($pricingBasis = null)
     {
-        $this->setProperty("pricingBasis", $pricingBasis);
+        $this->setProperty('pricingBasis', $pricingBasis);
     }
 
     /**
@@ -95,7 +93,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function getPriceExVat()
     {
-        return $this->getProperty("priceExVat");
+        return $this->getProperty('priceExVat');
     }
 
     /**
@@ -103,7 +101,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function setPriceExVat($priceExVat = null)
     {
-        $this->setProperty("priceExVat", $priceExVat);
+        $this->setProperty('priceExVat', $priceExVat);
     }
 
     /**
@@ -111,7 +109,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function getVatRate()
     {
-        return $this->getProperty("vatRate");
+        return $this->getProperty('vatRate');
     }
 
     /**
@@ -119,7 +117,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function setVatRate(VatRate $vatRate = null)
     {
-        $this->setProperty("vatRate", $vatRate);
+        $this->setProperty('vatRate', $vatRate);
     }
 
     /**
@@ -127,7 +125,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function getApplicable()
     {
-        return $this->getProperty("applicable");
+        return $this->getProperty('applicable');
     }
 
     /**
@@ -135,7 +133,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function setApplicable(ModelBase $applicable = null)
     {
-        $this->setProperty("applicable", $applicable);
+        $this->setProperty('applicable', $applicable);
     }
 
     /**
@@ -143,7 +141,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function getVariableContribution()
     {
-        return $this->getProperty("variableContribution");
+        return $this->getProperty('variableContribution');
     }
 
     /**
@@ -151,6 +149,6 @@ class ClubMembershipPeriodPrice extends ModelBase
      */
     public function setVariableContribution($variableContribution = null)
     {
-        $this->setProperty("variableContribution", $variableContribution);
+        $this->setProperty('variableContribution', $variableContribution);
     }
 }

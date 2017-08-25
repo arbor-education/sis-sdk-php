@@ -1,56 +1,54 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\NewReportCardBatch;
-use \Arbor\Model\AcademicUnit;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ReportCardBatchAcademicUnit extends ModelBase
 {
     const REPORT_CARD_BATCH = 'reportCardBatch';
 
-    const ACADEMIC_UNIT = 'academicUnit';
-
     const ORDER = 'order';
+
+    const ACADEMIC_UNIT = 'academicUnit';
 
     const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_ACADEMIC_UNIT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ReportCardBatchAcademicUnit[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ReportCardBatchAcademicUnit");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::REPORT_CARD_BATCH_ACADEMIC_UNIT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ReportCardBatchAcademicUnit
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::REPORT_CARD_BATCH_ACADEMIC_UNIT, $id);
     }
 
@@ -59,7 +57,7 @@ class ReportCardBatchAcademicUnit extends ModelBase
      */
     public function getReportCardBatch()
     {
-        return $this->getProperty("reportCardBatch");
+        return $this->getProperty('reportCardBatch');
     }
 
     /**
@@ -67,23 +65,7 @@ class ReportCardBatchAcademicUnit extends ModelBase
      */
     public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
     {
-        $this->setProperty("reportCardBatch", $reportCardBatch);
-    }
-
-    /**
-     * @return AcademicUnit
-     */
-    public function getAcademicUnit()
-    {
-        return $this->getProperty("academicUnit");
-    }
-
-    /**
-     * @param AcademicUnit $academicUnit
-     */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
-    {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
@@ -91,7 +73,7 @@ class ReportCardBatchAcademicUnit extends ModelBase
      */
     public function getOrder()
     {
-        return $this->getProperty("order");
+        return $this->getProperty('order');
     }
 
     /**
@@ -99,7 +81,23 @@ class ReportCardBatchAcademicUnit extends ModelBase
      */
     public function setOrder($order = null)
     {
-        $this->setProperty("order", $order);
+        $this->setProperty('order', $order);
+    }
+
+    /**
+     * @return AcademicUnit
+     */
+    public function getAcademicUnit()
+    {
+        return $this->getProperty('academicUnit');
+    }
+
+    /**
+     * @param AcademicUnit $academicUnit
+     */
+    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    {
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -107,7 +105,7 @@ class ReportCardBatchAcademicUnit extends ModelBase
      */
     public function getMarkingCompletedDatetime()
     {
-        return $this->getProperty("markingCompletedDatetime");
+        return $this->getProperty('markingCompletedDatetime');
     }
 
     /**
@@ -115,6 +113,6 @@ class ReportCardBatchAcademicUnit extends ModelBase
      */
     public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
     {
-        $this->setProperty("markingCompletedDatetime", $markingCompletedDatetime);
+        $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
 }

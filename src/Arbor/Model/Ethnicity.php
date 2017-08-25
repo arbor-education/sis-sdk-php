@@ -1,24 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\EthnicityCategory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Ethnicity extends ModelBase
 {
-    const DFES_MAIN_CODE = 'dfesMainCode';
-
-    const D00005 = 'd00005';
-
-    const ONS_CODE = 'onsCode';
-
-    const D00250 = 'd00250';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -35,102 +22,50 @@ class Ethnicity extends ModelBase
 
     const NOTES = 'notes';
 
+    const DFES_MAIN_CODE = 'dfesMainCode';
+
+    const D00005 = 'd00005';
+
+    const ONS_CODE = 'onsCode';
+
+    const D00250 = 'd00250';
+
     protected $_resourceType = ResourceType::ETHNICITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Ethnicity[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Ethnicity");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ETHNICITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Ethnicity
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ETHNICITY, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDfesMainCode()
-    {
-        return $this->getProperty("dfesMainCode");
-    }
-
-    /**
-     * @param string $dfesMainCode
-     */
-    public function setDfesMainCode($dfesMainCode = null)
-    {
-        $this->setProperty("dfesMainCode", $dfesMainCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00005()
-    {
-        return $this->getProperty("d00005");
-    }
-
-    /**
-     * @param string $d00005
-     */
-    public function setD00005($d00005 = null)
-    {
-        $this->setProperty("d00005", $d00005);
-    }
-
-    /**
-     * @return string
-     */
-    public function getOnsCode()
-    {
-        return $this->getProperty("onsCode");
-    }
-
-    /**
-     * @param string $onsCode
-     */
-    public function setOnsCode($onsCode = null)
-    {
-        $this->setProperty("onsCode", $onsCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00250()
-    {
-        return $this->getProperty("d00250");
-    }
-
-    /**
-     * @param string $d00250
-     */
-    public function setD00250($d00250 = null)
-    {
-        $this->setProperty("d00250", $d00250);
     }
 
     /**
@@ -138,7 +73,7 @@ class Ethnicity extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -146,7 +81,7 @@ class Ethnicity extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -154,7 +89,7 @@ class Ethnicity extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -162,7 +97,7 @@ class Ethnicity extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -170,7 +105,7 @@ class Ethnicity extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -178,7 +113,7 @@ class Ethnicity extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -186,7 +121,7 @@ class Ethnicity extends ModelBase
      */
     public function getEthnicityName()
     {
-        return $this->getProperty("ethnicityName");
+        return $this->getProperty('ethnicityName');
     }
 
     /**
@@ -194,7 +129,7 @@ class Ethnicity extends ModelBase
      */
     public function setEthnicityName($ethnicityName = null)
     {
-        $this->setProperty("ethnicityName", $ethnicityName);
+        $this->setProperty('ethnicityName', $ethnicityName);
     }
 
     /**
@@ -202,7 +137,7 @@ class Ethnicity extends ModelBase
      */
     public function getEthnicityCategory()
     {
-        return $this->getProperty("ethnicityCategory");
+        return $this->getProperty('ethnicityCategory');
     }
 
     /**
@@ -210,7 +145,7 @@ class Ethnicity extends ModelBase
      */
     public function setEthnicityCategory(EthnicityCategory $ethnicityCategory = null)
     {
-        $this->setProperty("ethnicityCategory", $ethnicityCategory);
+        $this->setProperty('ethnicityCategory', $ethnicityCategory);
     }
 
     /**
@@ -218,7 +153,7 @@ class Ethnicity extends ModelBase
      */
     public function getAppliesToStudents()
     {
-        return $this->getProperty("appliesToStudents");
+        return $this->getProperty('appliesToStudents');
     }
 
     /**
@@ -226,7 +161,7 @@ class Ethnicity extends ModelBase
      */
     public function setAppliesToStudents($appliesToStudents = null)
     {
-        $this->setProperty("appliesToStudents", $appliesToStudents);
+        $this->setProperty('appliesToStudents', $appliesToStudents);
     }
 
     /**
@@ -234,7 +169,7 @@ class Ethnicity extends ModelBase
      */
     public function getAppliesToStaff()
     {
-        return $this->getProperty("appliesToStaff");
+        return $this->getProperty('appliesToStaff');
     }
 
     /**
@@ -242,7 +177,7 @@ class Ethnicity extends ModelBase
      */
     public function setAppliesToStaff($appliesToStaff = null)
     {
-        $this->setProperty("appliesToStaff", $appliesToStaff);
+        $this->setProperty('appliesToStaff', $appliesToStaff);
     }
 
     /**
@@ -250,7 +185,7 @@ class Ethnicity extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -258,6 +193,70 @@ class Ethnicity extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDfesMainCode()
+    {
+        return $this->getProperty('dfesMainCode');
+    }
+
+    /**
+     * @param string $dfesMainCode
+     */
+    public function setDfesMainCode($dfesMainCode = null)
+    {
+        $this->setProperty('dfesMainCode', $dfesMainCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00005()
+    {
+        return $this->getProperty('d00005');
+    }
+
+    /**
+     * @param string $d00005
+     */
+    public function setD00005($d00005 = null)
+    {
+        $this->setProperty('d00005', $d00005);
+    }
+
+    /**
+     * @return string
+     */
+    public function getOnsCode()
+    {
+        return $this->getProperty('onsCode');
+    }
+
+    /**
+     * @param string $onsCode
+     */
+    public function setOnsCode($onsCode = null)
+    {
+        $this->setProperty('onsCode', $onsCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00250()
+    {
+        return $this->getProperty('d00250');
+    }
+
+    /**
+     * @param string $d00250
+     */
+    public function setD00250($d00250 = null)
+    {
+        $this->setProperty('d00250', $d00250);
     }
 }

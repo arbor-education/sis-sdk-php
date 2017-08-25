@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\EducationalInstitution;
-use \Arbor\Model\Person;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EducationalInstitutionStaff extends ModelBase
 {
@@ -21,34 +15,38 @@ class EducationalInstitutionStaff extends ModelBase
     protected $_resourceType = ResourceType::EDUCATIONAL_INSTITUTION_STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EducationalInstitutionStaff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EducationalInstitutionStaff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EDUCATIONAL_INSTITUTION_STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EducationalInstitutionStaff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EDUCATIONAL_INSTITUTION_STAFF, $id);
     }
 
@@ -57,7 +55,7 @@ class EducationalInstitutionStaff extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -65,7 +63,7 @@ class EducationalInstitutionStaff extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -73,7 +71,7 @@ class EducationalInstitutionStaff extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -81,7 +79,7 @@ class EducationalInstitutionStaff extends ModelBase
      */
     public function setPerson(Person $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -89,7 +87,7 @@ class EducationalInstitutionStaff extends ModelBase
      */
     public function getPosition()
     {
-        return $this->getProperty("position");
+        return $this->getProperty('position');
     }
 
     /**
@@ -97,6 +95,6 @@ class EducationalInstitutionStaff extends ModelBase
      */
     public function setPosition($position = null)
     {
-        $this->setProperty("position", $position);
+        $this->setProperty('position', $position);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PostalAddress;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PostalAddressOccupancy extends ModelBase
 {
@@ -26,34 +21,38 @@ class PostalAddressOccupancy extends ModelBase
     protected $_resourceType = ResourceType::POSTAL_ADDRESS_OCCUPANCY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PostalAddressOccupancy[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PostalAddressOccupancy");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::POSTAL_ADDRESS_OCCUPANCY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PostalAddressOccupancy
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::POSTAL_ADDRESS_OCCUPANCY, $id);
     }
 
@@ -62,7 +61,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function getPostalAddress()
     {
-        return $this->getProperty("postalAddress");
+        return $this->getProperty('postalAddress');
     }
 
     /**
@@ -70,7 +69,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function setPostalAddress(PostalAddress $postalAddress = null)
     {
-        $this->setProperty("postalAddress", $postalAddress);
+        $this->setProperty('postalAddress', $postalAddress);
     }
 
     /**
@@ -78,7 +77,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function getOccupant()
     {
-        return $this->getProperty("occupant");
+        return $this->getProperty('occupant');
     }
 
     /**
@@ -86,7 +85,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function setOccupant(ModelBase $occupant = null)
     {
-        $this->setProperty("occupant", $occupant);
+        $this->setProperty('occupant', $occupant);
     }
 
     /**
@@ -94,7 +93,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -102,7 +101,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -110,7 +109,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -118,7 +117,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -126,7 +125,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function getPostalAddressType()
     {
-        return $this->getProperty("postalAddressType");
+        return $this->getProperty('postalAddressType');
     }
 
     /**
@@ -134,7 +133,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function setPostalAddressType($postalAddressType = null)
     {
-        $this->setProperty("postalAddressType", $postalAddressType);
+        $this->setProperty('postalAddressType', $postalAddressType);
     }
 
     /**
@@ -142,7 +141,7 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function getIsCorrespondenceAddress()
     {
-        return $this->getProperty("isCorrespondenceAddress");
+        return $this->getProperty('isCorrespondenceAddress');
     }
 
     /**
@@ -150,6 +149,6 @@ class PostalAddressOccupancy extends ModelBase
      */
     public function setIsCorrespondenceAddress($isCorrespondenceAddress = null)
     {
-        $this->setProperty("isCorrespondenceAddress", $isCorrespondenceAddress);
+        $this->setProperty('isCorrespondenceAddress', $isCorrespondenceAddress);
     }
 }

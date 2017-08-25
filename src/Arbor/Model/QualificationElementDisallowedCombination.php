@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationElementDisallowedCombination extends ModelBase
 {
@@ -14,39 +10,41 @@ class QualificationElementDisallowedCombination extends ModelBase
 
     const SECOND_ELEMENT = 'secondElement';
 
-    const DISALLOWED_SCOPE = 'disallowedScope';
-
     protected $_resourceType = ResourceType::QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationElementDisallowedCombination[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationElementDisallowedCombination");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationElementDisallowedCombination
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION, $id);
     }
 
@@ -55,7 +53,7 @@ class QualificationElementDisallowedCombination extends ModelBase
      */
     public function getFirstElement()
     {
-        return $this->getProperty("firstElement");
+        return $this->getProperty('firstElement');
     }
 
     /**
@@ -63,7 +61,7 @@ class QualificationElementDisallowedCombination extends ModelBase
      */
     public function setFirstElement(ModelBase $firstElement = null)
     {
-        $this->setProperty("firstElement", $firstElement);
+        $this->setProperty('firstElement', $firstElement);
     }
 
     /**
@@ -71,7 +69,7 @@ class QualificationElementDisallowedCombination extends ModelBase
      */
     public function getSecondElement()
     {
-        return $this->getProperty("secondElement");
+        return $this->getProperty('secondElement');
     }
 
     /**
@@ -79,22 +77,6 @@ class QualificationElementDisallowedCombination extends ModelBase
      */
     public function setSecondElement(ModelBase $secondElement = null)
     {
-        $this->setProperty("secondElement", $secondElement);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDisallowedScope()
-    {
-        return $this->getProperty("disallowedScope");
-    }
-
-    /**
-     * @param string $disallowedScope
-     */
-    public function setDisallowedScope($disallowedScope = null)
-    {
-        $this->setProperty("disallowedScope", $disallowedScope);
+        $this->setProperty('secondElement', $secondElement);
     }
 }

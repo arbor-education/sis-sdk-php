@@ -1,20 +1,12 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\PayScaleCategory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\UkDfe\PayScaleCategory;
 
 class PayScale extends ModelBase
 {
-    const REGIONAL_PAY_SPINE = 'regionalPaySpine';
-
-    const PAY_SCALE_CATEGORY = 'payScaleCategory';
-
     const PAY_SCALE_CODE = 'payScaleCode';
 
     const PAY_SCALE_NAME = 'payScaleName';
@@ -27,70 +19,46 @@ class PayScale extends ModelBase
 
     const MAXIMUM_SALARY = 'maximumSalary';
 
+    const REGIONAL_PAY_SPINE = 'regionalPaySpine';
+
+    const PAY_SCALE_CATEGORY = 'payScaleCategory';
+
     protected $_resourceType = ResourceType::PAY_SCALE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PayScale[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PayScale");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PAY_SCALE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PayScale
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PAY_SCALE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getRegionalPaySpine()
-    {
-        return $this->getProperty("regionalPaySpine");
-    }
-
-    /**
-     * @param string $regionalPaySpine
-     */
-    public function setRegionalPaySpine($regionalPaySpine = null)
-    {
-        $this->setProperty("regionalPaySpine", $regionalPaySpine);
-    }
-
-    /**
-     * @return PayScaleCategory
-     */
-    public function getPayScaleCategory()
-    {
-        return $this->getProperty("payScaleCategory");
-    }
-
-    /**
-     * @param PayScaleCategory $payScaleCategory
-     */
-    public function setPayScaleCategory(PayScaleCategory $payScaleCategory = null)
-    {
-        $this->setProperty("payScaleCategory", $payScaleCategory);
     }
 
     /**
@@ -98,7 +66,7 @@ class PayScale extends ModelBase
      */
     public function getPayScaleCode()
     {
-        return $this->getProperty("payScaleCode");
+        return $this->getProperty('payScaleCode');
     }
 
     /**
@@ -106,7 +74,7 @@ class PayScale extends ModelBase
      */
     public function setPayScaleCode($payScaleCode = null)
     {
-        $this->setProperty("payScaleCode", $payScaleCode);
+        $this->setProperty('payScaleCode', $payScaleCode);
     }
 
     /**
@@ -114,7 +82,7 @@ class PayScale extends ModelBase
      */
     public function getPayScaleName()
     {
-        return $this->getProperty("payScaleName");
+        return $this->getProperty('payScaleName');
     }
 
     /**
@@ -122,7 +90,7 @@ class PayScale extends ModelBase
      */
     public function setPayScaleName($payScaleName = null)
     {
-        $this->setProperty("payScaleName", $payScaleName);
+        $this->setProperty('payScaleName', $payScaleName);
     }
 
     /**
@@ -130,7 +98,7 @@ class PayScale extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -138,7 +106,7 @@ class PayScale extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -146,7 +114,7 @@ class PayScale extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -154,7 +122,7 @@ class PayScale extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -162,7 +130,7 @@ class PayScale extends ModelBase
      */
     public function getMinimumSalary()
     {
-        return $this->getProperty("minimumSalary");
+        return $this->getProperty('minimumSalary');
     }
 
     /**
@@ -170,7 +138,7 @@ class PayScale extends ModelBase
      */
     public function setMinimumSalary($minimumSalary = null)
     {
-        $this->setProperty("minimumSalary", $minimumSalary);
+        $this->setProperty('minimumSalary', $minimumSalary);
     }
 
     /**
@@ -178,7 +146,7 @@ class PayScale extends ModelBase
      */
     public function getMaximumSalary()
     {
-        return $this->getProperty("maximumSalary");
+        return $this->getProperty('maximumSalary');
     }
 
     /**
@@ -186,6 +154,38 @@ class PayScale extends ModelBase
      */
     public function setMaximumSalary($maximumSalary = null)
     {
-        $this->setProperty("maximumSalary", $maximumSalary);
+        $this->setProperty('maximumSalary', $maximumSalary);
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegionalPaySpine()
+    {
+        return $this->getProperty('regionalPaySpine');
+    }
+
+    /**
+     * @param string $regionalPaySpine
+     */
+    public function setRegionalPaySpine($regionalPaySpine = null)
+    {
+        $this->setProperty('regionalPaySpine', $regionalPaySpine);
+    }
+
+    /**
+     * @return PayScaleCategory
+     */
+    public function getPayScaleCategory()
+    {
+        return $this->getProperty('payScaleCategory');
+    }
+
+    /**
+     * @param PayScaleCategory $payScaleCategory
+     */
+    public function setPayScaleCategory(PayScaleCategory $payScaleCategory = null)
+    {
+        $this->setProperty('payScaleCategory', $payScaleCategory);
     }
 }

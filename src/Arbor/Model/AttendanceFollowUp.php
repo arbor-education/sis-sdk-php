@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendanceFollowUp extends ModelBase
 {
@@ -30,34 +25,38 @@ class AttendanceFollowUp extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_FOLLOW_UP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendanceFollowUp[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendanceFollowUp");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_FOLLOW_UP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendanceFollowUp
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_FOLLOW_UP, $id);
     }
 
@@ -66,7 +65,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -74,7 +73,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -82,7 +81,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getAttendanceDate()
     {
-        return $this->getProperty("attendanceDate");
+        return $this->getProperty('attendanceDate');
     }
 
     /**
@@ -90,7 +89,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setAttendanceDate(\DateTime $attendanceDate = null)
     {
-        $this->setProperty("attendanceDate", $attendanceDate);
+        $this->setProperty('attendanceDate', $attendanceDate);
     }
 
     /**
@@ -98,7 +97,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getSendingStartedDatetime()
     {
-        return $this->getProperty("sendingStartedDatetime");
+        return $this->getProperty('sendingStartedDatetime');
     }
 
     /**
@@ -106,7 +105,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
     {
-        $this->setProperty("sendingStartedDatetime", $sendingStartedDatetime);
+        $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
 
     /**
@@ -114,7 +113,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getEmailSentDatetime()
     {
-        return $this->getProperty("emailSentDatetime");
+        return $this->getProperty('emailSentDatetime');
     }
 
     /**
@@ -122,7 +121,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setEmailSentDatetime(\DateTime $emailSentDatetime = null)
     {
-        $this->setProperty("emailSentDatetime", $emailSentDatetime);
+        $this->setProperty('emailSentDatetime', $emailSentDatetime);
     }
 
     /**
@@ -130,7 +129,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getEmailFailedDatetime()
     {
-        return $this->getProperty("emailFailedDatetime");
+        return $this->getProperty('emailFailedDatetime');
     }
 
     /**
@@ -138,7 +137,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setEmailFailedDatetime(\DateTime $emailFailedDatetime = null)
     {
-        $this->setProperty("emailFailedDatetime", $emailFailedDatetime);
+        $this->setProperty('emailFailedDatetime', $emailFailedDatetime);
     }
 
     /**
@@ -146,7 +145,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getSmsSentDatetime()
     {
-        return $this->getProperty("smsSentDatetime");
+        return $this->getProperty('smsSentDatetime');
     }
 
     /**
@@ -154,7 +153,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setSmsSentDatetime(\DateTime $smsSentDatetime = null)
     {
-        $this->setProperty("smsSentDatetime", $smsSentDatetime);
+        $this->setProperty('smsSentDatetime', $smsSentDatetime);
     }
 
     /**
@@ -162,7 +161,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getSmsFailedDatetime()
     {
-        return $this->getProperty("smsFailedDatetime");
+        return $this->getProperty('smsFailedDatetime');
     }
 
     /**
@@ -170,7 +169,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setSmsFailedDatetime(\DateTime $smsFailedDatetime = null)
     {
-        $this->setProperty("smsFailedDatetime", $smsFailedDatetime);
+        $this->setProperty('smsFailedDatetime', $smsFailedDatetime);
     }
 
     /**
@@ -178,7 +177,7 @@ class AttendanceFollowUp extends ModelBase
      */
     public function getTelephoneCallDatetime()
     {
-        return $this->getProperty("telephoneCallDatetime");
+        return $this->getProperty('telephoneCallDatetime');
     }
 
     /**
@@ -186,6 +185,6 @@ class AttendanceFollowUp extends ModelBase
      */
     public function setTelephoneCallDatetime(\DateTime $telephoneCallDatetime = null)
     {
-        $this->setProperty("telephoneCallDatetime", $telephoneCallDatetime);
+        $this->setProperty('telephoneCallDatetime', $telephoneCallDatetime);
     }
 }

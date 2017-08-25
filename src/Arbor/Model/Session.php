@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicUnit;
-use \Arbor\Model\TimetableSlot;
-use \Arbor\Model\AttendanceRegisterType;
-use \Arbor\Model\LessonPlan;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Session extends ModelBase
 {
@@ -22,8 +14,6 @@ class Session extends ModelBase
 
     const LOCATION = 'location';
 
-    const SCHEDULED_BY = 'scheduledBy';
-
     const SESSION_NAME = 'sessionName';
 
     const ACADEMIC_UNIT = 'academicUnit';
@@ -32,43 +22,43 @@ class Session extends ModelBase
 
     const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const ATTENDANCE_REGISTER_OPENED_DATETIME = 'attendanceRegisterOpenedDatetime';
-
-    const ATTENDANCE_REGISTER_CLOSED_DATETIME = 'attendanceRegisterClosedDatetime';
-
     const LESSON_PLAN = 'lessonPlan';
 
     protected $_resourceType = ResourceType::SESSION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Session[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Session");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SESSION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Session
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SESSION, $id);
     }
 
@@ -77,7 +67,7 @@ class Session extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -85,7 +75,7 @@ class Session extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -93,7 +83,7 @@ class Session extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -101,7 +91,7 @@ class Session extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -109,7 +99,7 @@ class Session extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -117,7 +107,7 @@ class Session extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -125,7 +115,7 @@ class Session extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -133,23 +123,7 @@ class Session extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -157,7 +131,7 @@ class Session extends ModelBase
      */
     public function getSessionName()
     {
-        return $this->getProperty("sessionName");
+        return $this->getProperty('sessionName');
     }
 
     /**
@@ -165,7 +139,7 @@ class Session extends ModelBase
      */
     public function setSessionName($sessionName = null)
     {
-        $this->setProperty("sessionName", $sessionName);
+        $this->setProperty('sessionName', $sessionName);
     }
 
     /**
@@ -173,7 +147,7 @@ class Session extends ModelBase
      */
     public function getAcademicUnit()
     {
-        return $this->getProperty("academicUnit");
+        return $this->getProperty('academicUnit');
     }
 
     /**
@@ -181,7 +155,7 @@ class Session extends ModelBase
      */
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -189,7 +163,7 @@ class Session extends ModelBase
      */
     public function getTimetableSlot()
     {
-        return $this->getProperty("timetableSlot");
+        return $this->getProperty('timetableSlot');
     }
 
     /**
@@ -197,7 +171,7 @@ class Session extends ModelBase
      */
     public function setTimetableSlot(TimetableSlot $timetableSlot = null)
     {
-        $this->setProperty("timetableSlot", $timetableSlot);
+        $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
@@ -205,7 +179,7 @@ class Session extends ModelBase
      */
     public function getAttendanceRegisterType()
     {
-        return $this->getProperty("attendanceRegisterType");
+        return $this->getProperty('attendanceRegisterType');
     }
 
     /**
@@ -213,39 +187,7 @@ class Session extends ModelBase
      */
     public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
     {
-        $this->setProperty("attendanceRegisterType", $attendanceRegisterType);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getAttendanceRegisterOpenedDatetime()
-    {
-        return $this->getProperty("attendanceRegisterOpenedDatetime");
-    }
-
-    /**
-     * @param \DateTime $attendanceRegisterOpenedDatetime
-     */
-    public function setAttendanceRegisterOpenedDatetime(\DateTime $attendanceRegisterOpenedDatetime = null)
-    {
-        $this->setProperty("attendanceRegisterOpenedDatetime", $attendanceRegisterOpenedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getAttendanceRegisterClosedDatetime()
-    {
-        return $this->getProperty("attendanceRegisterClosedDatetime");
-    }
-
-    /**
-     * @param \DateTime $attendanceRegisterClosedDatetime
-     */
-    public function setAttendanceRegisterClosedDatetime(\DateTime $attendanceRegisterClosedDatetime = null)
-    {
-        $this->setProperty("attendanceRegisterClosedDatetime", $attendanceRegisterClosedDatetime);
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
     /**
@@ -253,7 +195,7 @@ class Session extends ModelBase
      */
     public function getLessonPlan()
     {
-        return $this->getProperty("lessonPlan");
+        return $this->getProperty('lessonPlan');
     }
 
     /**
@@ -261,6 +203,6 @@ class Session extends ModelBase
      */
     public function setLessonPlan(LessonPlan $lessonPlan = null)
     {
-        $this->setProperty("lessonPlan", $lessonPlan);
+        $this->setProperty('lessonPlan', $lessonPlan);
     }
 }

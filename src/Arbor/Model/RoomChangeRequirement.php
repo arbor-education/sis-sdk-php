@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Room;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class RoomChangeRequirement extends ModelBase
 {
@@ -15,41 +10,47 @@ class RoomChangeRequirement extends ModelBase
 
     const UNAVAILABLE_ROOM = 'unavailableRoom';
 
-    const REASON = 'reason';
+    const NEW_ROOM = 'newRoom';
+
+    const UNAVAILABILITY_EVENT = 'unavailabilityEvent';
 
     const ROOM_CHANGED_DATETIME = 'roomChangedDatetime';
 
     protected $_resourceType = ResourceType::ROOM_CHANGE_REQUIREMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return RoomChangeRequirement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("RoomChangeRequirement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ROOM_CHANGE_REQUIREMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return RoomChangeRequirement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ROOM_CHANGE_REQUIREMENT, $id);
     }
 
@@ -58,7 +59,7 @@ class RoomChangeRequirement extends ModelBase
      */
     public function getEvent()
     {
-        return $this->getProperty("event");
+        return $this->getProperty('event');
     }
 
     /**
@@ -66,7 +67,7 @@ class RoomChangeRequirement extends ModelBase
      */
     public function setEvent(ModelBase $event = null)
     {
-        $this->setProperty("event", $event);
+        $this->setProperty('event', $event);
     }
 
     /**
@@ -74,7 +75,7 @@ class RoomChangeRequirement extends ModelBase
      */
     public function getUnavailableRoom()
     {
-        return $this->getProperty("unavailableRoom");
+        return $this->getProperty('unavailableRoom');
     }
 
     /**
@@ -82,23 +83,39 @@ class RoomChangeRequirement extends ModelBase
      */
     public function setUnavailableRoom(Room $unavailableRoom = null)
     {
-        $this->setProperty("unavailableRoom", $unavailableRoom);
+        $this->setProperty('unavailableRoom', $unavailableRoom);
+    }
+
+    /**
+     * @return Room
+     */
+    public function getNewRoom()
+    {
+        return $this->getProperty('newRoom');
+    }
+
+    /**
+     * @param Room $newRoom
+     */
+    public function setNewRoom(Room $newRoom = null)
+    {
+        $this->setProperty('newRoom', $newRoom);
     }
 
     /**
      * @return ModelBase
      */
-    public function getReason()
+    public function getUnavailabilityEvent()
     {
-        return $this->getProperty("reason");
+        return $this->getProperty('unavailabilityEvent');
     }
 
     /**
-     * @param ModelBase $reason
+     * @param ModelBase $unavailabilityEvent
      */
-    public function setReason(ModelBase $reason = null)
+    public function setUnavailabilityEvent(ModelBase $unavailabilityEvent = null)
     {
-        $this->setProperty("reason", $reason);
+        $this->setProperty('unavailabilityEvent', $unavailabilityEvent);
     }
 
     /**
@@ -106,7 +123,7 @@ class RoomChangeRequirement extends ModelBase
      */
     public function getRoomChangedDatetime()
     {
-        return $this->getProperty("roomChangedDatetime");
+        return $this->getProperty('roomChangedDatetime');
     }
 
     /**
@@ -114,6 +131,6 @@ class RoomChangeRequirement extends ModelBase
      */
     public function setRoomChangedDatetime(\DateTime $roomChangedDatetime = null)
     {
-        $this->setProperty("roomChangedDatetime", $roomChangedDatetime);
+        $this->setProperty('roomChangedDatetime', $roomChangedDatetime);
     }
 }

@@ -1,19 +1,18 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Meal;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealProvision extends ModelBase
 {
     const MEAL = 'meal';
 
     const MEAL_PROVISION_NAME = 'mealProvisionName';
+
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
 
     const IS_ABSENT = 'isAbsent';
 
@@ -27,37 +26,43 @@ class MealProvision extends ModelBase
 
     const REQUIRES_MEAL = 'requiresMeal';
 
+    const COPIED_TO_MEAL_PROVISION = 'copiedToMealProvision';
+
     protected $_resourceType = ResourceType::MEAL_PROVISION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealProvision[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealProvision");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_PROVISION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealProvision
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_PROVISION, $id);
     }
 
@@ -66,7 +71,7 @@ class MealProvision extends ModelBase
      */
     public function getMeal()
     {
-        return $this->getProperty("meal");
+        return $this->getProperty('meal');
     }
 
     /**
@@ -74,7 +79,7 @@ class MealProvision extends ModelBase
      */
     public function setMeal(Meal $meal = null)
     {
-        $this->setProperty("meal", $meal);
+        $this->setProperty('meal', $meal);
     }
 
     /**
@@ -82,7 +87,7 @@ class MealProvision extends ModelBase
      */
     public function getMealProvisionName()
     {
-        return $this->getProperty("mealProvisionName");
+        return $this->getProperty('mealProvisionName');
     }
 
     /**
@@ -90,7 +95,39 @@ class MealProvision extends ModelBase
      */
     public function setMealProvisionName($mealProvisionName = null)
     {
-        $this->setProperty("mealProvisionName", $mealProvisionName);
+        $this->setProperty('mealProvisionName', $mealProvisionName);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->getProperty('effectiveDate');
+    }
+
+    /**
+     * @param \DateTime $effectiveDate
+     */
+    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    {
+        $this->setProperty('effectiveDate', $effectiveDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty('endDate');
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -98,7 +135,7 @@ class MealProvision extends ModelBase
      */
     public function getIsAbsent()
     {
-        return $this->getProperty("isAbsent");
+        return $this->getProperty('isAbsent');
     }
 
     /**
@@ -106,7 +143,7 @@ class MealProvision extends ModelBase
      */
     public function setIsAbsent($isAbsent = null)
     {
-        $this->setProperty("isAbsent", $isAbsent);
+        $this->setProperty('isAbsent', $isAbsent);
     }
 
     /**
@@ -114,7 +151,7 @@ class MealProvision extends ModelBase
      */
     public function getIsSchoolHotMeal()
     {
-        return $this->getProperty("isSchoolHotMeal");
+        return $this->getProperty('isSchoolHotMeal');
     }
 
     /**
@@ -122,7 +159,7 @@ class MealProvision extends ModelBase
      */
     public function setIsSchoolHotMeal($isSchoolHotMeal = null)
     {
-        $this->setProperty("isSchoolHotMeal", $isSchoolHotMeal);
+        $this->setProperty('isSchoolHotMeal', $isSchoolHotMeal);
     }
 
     /**
@@ -130,7 +167,7 @@ class MealProvision extends ModelBase
      */
     public function getIsSchoolLightMeal()
     {
-        return $this->getProperty("isSchoolLightMeal");
+        return $this->getProperty('isSchoolLightMeal');
     }
 
     /**
@@ -138,7 +175,7 @@ class MealProvision extends ModelBase
      */
     public function setIsSchoolLightMeal($isSchoolLightMeal = null)
     {
-        $this->setProperty("isSchoolLightMeal", $isSchoolLightMeal);
+        $this->setProperty('isSchoolLightMeal', $isSchoolLightMeal);
     }
 
     /**
@@ -146,7 +183,7 @@ class MealProvision extends ModelBase
      */
     public function getIsSchoolPackedMeal()
     {
-        return $this->getProperty("isSchoolPackedMeal");
+        return $this->getProperty('isSchoolPackedMeal');
     }
 
     /**
@@ -154,7 +191,7 @@ class MealProvision extends ModelBase
      */
     public function setIsSchoolPackedMeal($isSchoolPackedMeal = null)
     {
-        $this->setProperty("isSchoolPackedMeal", $isSchoolPackedMeal);
+        $this->setProperty('isSchoolPackedMeal', $isSchoolPackedMeal);
     }
 
     /**
@@ -162,7 +199,7 @@ class MealProvision extends ModelBase
      */
     public function getIsStudentPackedMeal()
     {
-        return $this->getProperty("isStudentPackedMeal");
+        return $this->getProperty('isStudentPackedMeal');
     }
 
     /**
@@ -170,7 +207,7 @@ class MealProvision extends ModelBase
      */
     public function setIsStudentPackedMeal($isStudentPackedMeal = null)
     {
-        $this->setProperty("isStudentPackedMeal", $isStudentPackedMeal);
+        $this->setProperty('isStudentPackedMeal', $isStudentPackedMeal);
     }
 
     /**
@@ -178,7 +215,7 @@ class MealProvision extends ModelBase
      */
     public function getRequiresMeal()
     {
-        return $this->getProperty("requiresMeal");
+        return $this->getProperty('requiresMeal');
     }
 
     /**
@@ -186,6 +223,22 @@ class MealProvision extends ModelBase
      */
     public function setRequiresMeal($requiresMeal = null)
     {
-        $this->setProperty("requiresMeal", $requiresMeal);
+        $this->setProperty('requiresMeal', $requiresMeal);
+    }
+
+    /**
+     * @return MealProvision
+     */
+    public function getCopiedToMealProvision()
+    {
+        return $this->getProperty('copiedToMealProvision');
+    }
+
+    /**
+     * @param MealProvision $copiedToMealProvision
+     */
+    public function setCopiedToMealProvision(MealProvision $copiedToMealProvision = null)
+    {
+        $this->setProperty('copiedToMealProvision', $copiedToMealProvision);
     }
 }

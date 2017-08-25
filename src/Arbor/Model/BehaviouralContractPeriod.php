@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BehaviouralContract;
-use \Arbor\Model\BehaviouralContractGoal;
-use \Arbor\Model\Session;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralContractPeriod extends ModelBase
 {
@@ -34,34 +27,38 @@ class BehaviouralContractPeriod extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_CONTRACT_PERIOD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralContractPeriod[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralContractPeriod");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_CONTRACT_PERIOD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralContractPeriod
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_CONTRACT_PERIOD, $id);
     }
 
@@ -70,7 +67,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getBehaviouralContract()
     {
-        return $this->getProperty("behaviouralContract");
+        return $this->getProperty('behaviouralContract');
     }
 
     /**
@@ -78,7 +75,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setBehaviouralContract(BehaviouralContract $behaviouralContract = null)
     {
-        $this->setProperty("behaviouralContract", $behaviouralContract);
+        $this->setProperty('behaviouralContract', $behaviouralContract);
     }
 
     /**
@@ -86,7 +83,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getBehaviouralContractGoal()
     {
-        return $this->getProperty("behaviouralContractGoal");
+        return $this->getProperty('behaviouralContractGoal');
     }
 
     /**
@@ -94,7 +91,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setBehaviouralContractGoal(BehaviouralContractGoal $behaviouralContractGoal = null)
     {
-        $this->setProperty("behaviouralContractGoal", $behaviouralContractGoal);
+        $this->setProperty('behaviouralContractGoal', $behaviouralContractGoal);
     }
 
     /**
@@ -102,7 +99,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getSession()
     {
-        return $this->getProperty("session");
+        return $this->getProperty('session');
     }
 
     /**
@@ -110,7 +107,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setSession(Session $session = null)
     {
-        $this->setProperty("session", $session);
+        $this->setProperty('session', $session);
     }
 
     /**
@@ -118,7 +115,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getGoalAchieved()
     {
-        return $this->getProperty("goalAchieved");
+        return $this->getProperty('goalAchieved');
     }
 
     /**
@@ -126,7 +123,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setGoalAchieved($goalAchieved = null)
     {
-        $this->setProperty("goalAchieved", $goalAchieved);
+        $this->setProperty('goalAchieved', $goalAchieved);
     }
 
     /**
@@ -134,7 +131,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getComment()
     {
-        return $this->getProperty("comment");
+        return $this->getProperty('comment');
     }
 
     /**
@@ -142,7 +139,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setComment($comment = null)
     {
-        $this->setProperty("comment", $comment);
+        $this->setProperty('comment', $comment);
     }
 
     /**
@@ -150,7 +147,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getPeriodStartDatetime()
     {
-        return $this->getProperty("periodStartDatetime");
+        return $this->getProperty('periodStartDatetime');
     }
 
     /**
@@ -158,7 +155,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setPeriodStartDatetime(\DateTime $periodStartDatetime = null)
     {
-        $this->setProperty("periodStartDatetime", $periodStartDatetime);
+        $this->setProperty('periodStartDatetime', $periodStartDatetime);
     }
 
     /**
@@ -166,7 +163,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getPeriodEndDatetime()
     {
-        return $this->getProperty("periodEndDatetime");
+        return $this->getProperty('periodEndDatetime');
     }
 
     /**
@@ -174,7 +171,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setPeriodEndDatetime(\DateTime $periodEndDatetime = null)
     {
-        $this->setProperty("periodEndDatetime", $periodEndDatetime);
+        $this->setProperty('periodEndDatetime', $periodEndDatetime);
     }
 
     /**
@@ -182,7 +179,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getSignedDatetime()
     {
-        return $this->getProperty("signedDatetime");
+        return $this->getProperty('signedDatetime');
     }
 
     /**
@@ -190,7 +187,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setSignedDatetime(\DateTime $signedDatetime = null)
     {
-        $this->setProperty("signedDatetime", $signedDatetime);
+        $this->setProperty('signedDatetime', $signedDatetime);
     }
 
     /**
@@ -198,7 +195,7 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function getSignedPerson()
     {
-        return $this->getProperty("signedPerson");
+        return $this->getProperty('signedPerson');
     }
 
     /**
@@ -206,6 +203,6 @@ class BehaviouralContractPeriod extends ModelBase
      */
     public function setSignedPerson(ModelBase $signedPerson = null)
     {
-        $this->setProperty("signedPerson", $signedPerson);
+        $this->setProperty('signedPerson', $signedPerson);
     }
 }

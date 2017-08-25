@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Guardian;
-use \Arbor\Model\GuardianRelationshipType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentGuardianRelationship extends ModelBase
 {
@@ -36,34 +29,38 @@ class StudentGuardianRelationship extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_GUARDIAN_RELATIONSHIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentGuardianRelationship[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentGuardianRelationship");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_GUARDIAN_RELATIONSHIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentGuardianRelationship
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_GUARDIAN_RELATIONSHIP, $id);
     }
 
@@ -72,7 +69,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -80,7 +77,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -88,7 +85,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getGuardian()
     {
-        return $this->getProperty("guardian");
+        return $this->getProperty('guardian');
     }
 
     /**
@@ -96,7 +93,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setGuardian(Guardian $guardian = null)
     {
-        $this->setProperty("guardian", $guardian);
+        $this->setProperty('guardian', $guardian);
     }
 
     /**
@@ -104,7 +101,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getGuardianRelationshipType()
     {
-        return $this->getProperty("guardianRelationshipType");
+        return $this->getProperty('guardianRelationshipType');
     }
 
     /**
@@ -112,7 +109,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setGuardianRelationshipType(GuardianRelationshipType $guardianRelationshipType = null)
     {
-        $this->setProperty("guardianRelationshipType", $guardianRelationshipType);
+        $this->setProperty('guardianRelationshipType', $guardianRelationshipType);
     }
 
     /**
@@ -120,7 +117,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getIsLegalGuardian()
     {
-        return $this->getProperty("isLegalGuardian");
+        return $this->getProperty('isLegalGuardian');
     }
 
     /**
@@ -128,7 +125,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setIsLegalGuardian($isLegalGuardian = null)
     {
-        $this->setProperty("isLegalGuardian", $isLegalGuardian);
+        $this->setProperty('isLegalGuardian', $isLegalGuardian);
     }
 
     /**
@@ -136,7 +133,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getIsPrimaryGuardian()
     {
-        return $this->getProperty("isPrimaryGuardian");
+        return $this->getProperty('isPrimaryGuardian');
     }
 
     /**
@@ -144,7 +141,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setIsPrimaryGuardian($isPrimaryGuardian = null)
     {
-        $this->setProperty("isPrimaryGuardian", $isPrimaryGuardian);
+        $this->setProperty('isPrimaryGuardian', $isPrimaryGuardian);
     }
 
     /**
@@ -152,7 +149,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getIsAuthorizedToCollect()
     {
-        return $this->getProperty("isAuthorizedToCollect");
+        return $this->getProperty('isAuthorizedToCollect');
     }
 
     /**
@@ -160,23 +157,23 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setIsAuthorizedToCollect($isAuthorizedToCollect = null)
     {
-        $this->setProperty("isAuthorizedToCollect", $isAuthorizedToCollect);
+        $this->setProperty('isAuthorizedToCollect', $isAuthorizedToCollect);
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getEmergencyContactPriority()
     {
-        return $this->getProperty("emergencyContactPriority");
+        return $this->getProperty('emergencyContactPriority');
     }
 
     /**
-     * @param int $emergencyContactPriority
+     * @param string $emergencyContactPriority
      */
     public function setEmergencyContactPriority($emergencyContactPriority = null)
     {
-        $this->setProperty("emergencyContactPriority", $emergencyContactPriority);
+        $this->setProperty('emergencyContactPriority', $emergencyContactPriority);
     }
 
     /**
@@ -184,7 +181,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getUnsubscribedFromComms()
     {
-        return $this->getProperty("unsubscribedFromComms");
+        return $this->getProperty('unsubscribedFromComms');
     }
 
     /**
@@ -192,7 +189,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setUnsubscribedFromComms($unsubscribedFromComms = null)
     {
-        $this->setProperty("unsubscribedFromComms", $unsubscribedFromComms);
+        $this->setProperty('unsubscribedFromComms', $unsubscribedFromComms);
     }
 
     /**
@@ -200,7 +197,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getGuardianUserAuthorized()
     {
-        return $this->getProperty("guardianUserAuthorized");
+        return $this->getProperty('guardianUserAuthorized');
     }
 
     /**
@@ -208,7 +205,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setGuardianUserAuthorized($guardianUserAuthorized = null)
     {
-        $this->setProperty("guardianUserAuthorized", $guardianUserAuthorized);
+        $this->setProperty('guardianUserAuthorized', $guardianUserAuthorized);
     }
 
     /**
@@ -216,7 +213,7 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function getAccessNotes()
     {
-        return $this->getProperty("accessNotes");
+        return $this->getProperty('accessNotes');
     }
 
     /**
@@ -224,6 +221,6 @@ class StudentGuardianRelationship extends ModelBase
      */
     public function setAccessNotes($accessNotes = null)
     {
-        $this->setProperty("accessNotes", $accessNotes);
+        $this->setProperty('accessNotes', $accessNotes);
     }
 }

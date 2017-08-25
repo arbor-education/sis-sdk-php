@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolWorkforceCensus;
-use \Arbor\Model\EducationalInstitution;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\EducationalInstitution;
 
 class SchoolWorkforceCensusReturn extends ModelBase
 {
@@ -41,34 +40,38 @@ class SchoolWorkforceCensusReturn extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolWorkforceCensusReturn[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolWorkforceCensusReturn");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolWorkforceCensusReturn
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN, $id);
     }
 
@@ -77,7 +80,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getSchoolWorkforceCensus()
     {
-        return $this->getProperty("schoolWorkforceCensus");
+        return $this->getProperty('schoolWorkforceCensus');
     }
 
     /**
@@ -85,7 +88,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
-        $this->setProperty("schoolWorkforceCensus", $schoolWorkforceCensus);
+        $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
 
     /**
@@ -93,7 +96,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -101,7 +104,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -109,7 +112,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getReturnFilename()
     {
-        return $this->getProperty("returnFilename");
+        return $this->getProperty('returnFilename');
     }
 
     /**
@@ -117,7 +120,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setReturnFilename($returnFilename = null)
     {
-        $this->setProperty("returnFilename", $returnFilename);
+        $this->setProperty('returnFilename', $returnFilename);
     }
 
     /**
@@ -125,7 +128,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getStatusDescription()
     {
-        return $this->getProperty("statusDescription");
+        return $this->getProperty('statusDescription');
     }
 
     /**
@@ -133,7 +136,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setStatusDescription($statusDescription = null)
     {
-        $this->setProperty("statusDescription", $statusDescription);
+        $this->setProperty('statusDescription', $statusDescription);
     }
 
     /**
@@ -141,7 +144,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getReturnFilenameSequenceNumber()
     {
-        return $this->getProperty("returnFilenameSequenceNumber");
+        return $this->getProperty('returnFilenameSequenceNumber');
     }
 
     /**
@@ -149,7 +152,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setReturnFilenameSequenceNumber($returnFilenameSequenceNumber = null)
     {
-        $this->setProperty("returnFilenameSequenceNumber", $returnFilenameSequenceNumber);
+        $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
 
     /**
@@ -157,7 +160,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getXsltError()
     {
-        return $this->getProperty("xsltError");
+        return $this->getProperty('xsltError');
     }
 
     /**
@@ -165,7 +168,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setXsltError($xsltError = null)
     {
-        $this->setProperty("xsltError", $xsltError);
+        $this->setProperty('xsltError', $xsltError);
     }
 
     /**
@@ -173,7 +176,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getDataError()
     {
-        return $this->getProperty("dataError");
+        return $this->getProperty('dataError');
     }
 
     /**
@@ -181,7 +184,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setDataError($dataError = null)
     {
-        $this->setProperty("dataError", $dataError);
+        $this->setProperty('dataError', $dataError);
     }
 
     /**
@@ -189,7 +192,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getIsDryRun()
     {
-        return $this->getProperty("isDryRun");
+        return $this->getProperty('isDryRun');
     }
 
     /**
@@ -197,7 +200,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setIsDryRun($isDryRun = null)
     {
-        $this->setProperty("isDryRun", $isDryRun);
+        $this->setProperty('isDryRun', $isDryRun);
     }
 
     /**
@@ -205,7 +208,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getDataExportStartedDatetime()
     {
-        return $this->getProperty("dataExportStartedDatetime");
+        return $this->getProperty('dataExportStartedDatetime');
     }
 
     /**
@@ -213,7 +216,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setDataExportStartedDatetime(\DateTime $dataExportStartedDatetime = null)
     {
-        $this->setProperty("dataExportStartedDatetime", $dataExportStartedDatetime);
+        $this->setProperty('dataExportStartedDatetime', $dataExportStartedDatetime);
     }
 
     /**
@@ -221,7 +224,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getDataExportCompletedDatetime()
     {
-        return $this->getProperty("dataExportCompletedDatetime");
+        return $this->getProperty('dataExportCompletedDatetime');
     }
 
     /**
@@ -229,7 +232,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setDataExportCompletedDatetime(\DateTime $dataExportCompletedDatetime = null)
     {
-        $this->setProperty("dataExportCompletedDatetime", $dataExportCompletedDatetime);
+        $this->setProperty('dataExportCompletedDatetime', $dataExportCompletedDatetime);
     }
 
     /**
@@ -237,7 +240,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getSchoolApprovedDatetime()
     {
-        return $this->getProperty("schoolApprovedDatetime");
+        return $this->getProperty('schoolApprovedDatetime');
     }
 
     /**
@@ -245,7 +248,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setSchoolApprovedDatetime(\DateTime $schoolApprovedDatetime = null)
     {
-        $this->setProperty("schoolApprovedDatetime", $schoolApprovedDatetime);
+        $this->setProperty('schoolApprovedDatetime', $schoolApprovedDatetime);
     }
 
     /**
@@ -253,7 +256,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getLocalAuthorityRejectedDatetime()
     {
-        return $this->getProperty("localAuthorityRejectedDatetime");
+        return $this->getProperty('localAuthorityRejectedDatetime');
     }
 
     /**
@@ -261,7 +264,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setLocalAuthorityRejectedDatetime(\DateTime $localAuthorityRejectedDatetime = null)
     {
-        $this->setProperty("localAuthorityRejectedDatetime", $localAuthorityRejectedDatetime);
+        $this->setProperty('localAuthorityRejectedDatetime', $localAuthorityRejectedDatetime);
     }
 
     /**
@@ -269,7 +272,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function getLocalAuthorityAcceptedDatetime()
     {
-        return $this->getProperty("localAuthorityAcceptedDatetime");
+        return $this->getProperty('localAuthorityAcceptedDatetime');
     }
 
     /**
@@ -277,6 +280,6 @@ class SchoolWorkforceCensusReturn extends ModelBase
      */
     public function setLocalAuthorityAcceptedDatetime(\DateTime $localAuthorityAcceptedDatetime = null)
     {
-        $this->setProperty("localAuthorityAcceptedDatetime", $localAuthorityAcceptedDatetime);
+        $this->setProperty('localAuthorityAcceptedDatetime', $localAuthorityAcceptedDatetime);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AttendanceRollCall;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendanceRollCallTime extends ModelBase
 {
@@ -26,34 +21,38 @@ class AttendanceRollCallTime extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL_TIME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendanceRollCallTime[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendanceRollCallTime");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_ROLL_CALL_TIME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendanceRollCallTime
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_ROLL_CALL_TIME, $id);
     }
 
@@ -62,7 +61,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function getAttendanceRollCall()
     {
-        return $this->getProperty("attendanceRollCall");
+        return $this->getProperty('attendanceRollCall');
     }
 
     /**
@@ -70,7 +69,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function setAttendanceRollCall(AttendanceRollCall $attendanceRollCall = null)
     {
-        $this->setProperty("attendanceRollCall", $attendanceRollCall);
+        $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
 
     /**
@@ -78,7 +77,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -86,7 +85,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -94,7 +93,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -102,7 +101,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -110,7 +109,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function getRegisterOpensTime()
     {
-        return $this->getProperty("registerOpensTime");
+        return $this->getProperty('registerOpensTime');
     }
 
     /**
@@ -118,7 +117,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function setRegisterOpensTime($registerOpensTime = null)
     {
-        $this->setProperty("registerOpensTime", $registerOpensTime);
+        $this->setProperty('registerOpensTime', $registerOpensTime);
     }
 
     /**
@@ -126,7 +125,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function getRegisterClosesTime()
     {
-        return $this->getProperty("registerClosesTime");
+        return $this->getProperty('registerClosesTime');
     }
 
     /**
@@ -134,7 +133,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function setRegisterClosesTime($registerClosesTime = null)
     {
-        $this->setProperty("registerClosesTime", $registerClosesTime);
+        $this->setProperty('registerClosesTime', $registerClosesTime);
     }
 
     /**
@@ -142,7 +141,7 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function getRollCallPeriodEndTime()
     {
-        return $this->getProperty("rollCallPeriodEndTime");
+        return $this->getProperty('rollCallPeriodEndTime');
     }
 
     /**
@@ -150,6 +149,6 @@ class AttendanceRollCallTime extends ModelBase
      */
     public function setRollCallPeriodEndTime($rollCallPeriodEndTime = null)
     {
-        $this->setProperty("rollCallPeriodEndTime", $rollCallPeriodEndTime);
+        $this->setProperty('rollCallPeriodEndTime', $rollCallPeriodEndTime);
     }
 }

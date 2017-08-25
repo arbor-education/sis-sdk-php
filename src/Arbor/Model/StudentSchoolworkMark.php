@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StudentSchoolwork;
-use \Arbor\Model\SchoolworkAspect;
-use \Arbor\Model\Grade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentSchoolworkMark extends ModelBase
 {
@@ -30,34 +23,38 @@ class StudentSchoolworkMark extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_SCHOOLWORK_MARK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentSchoolworkMark[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentSchoolworkMark");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_SCHOOLWORK_MARK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentSchoolworkMark
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_SCHOOLWORK_MARK, $id);
     }
 
@@ -66,7 +63,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getStudentSchoolwork()
     {
-        return $this->getProperty("studentSchoolwork");
+        return $this->getProperty('studentSchoolwork');
     }
 
     /**
@@ -74,7 +71,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setStudentSchoolwork(StudentSchoolwork $studentSchoolwork = null)
     {
-        $this->setProperty("studentSchoolwork", $studentSchoolwork);
+        $this->setProperty('studentSchoolwork', $studentSchoolwork);
     }
 
     /**
@@ -82,7 +79,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getSchoolworkAspect()
     {
-        return $this->getProperty("schoolworkAspect");
+        return $this->getProperty('schoolworkAspect');
     }
 
     /**
@@ -90,7 +87,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setSchoolworkAspect(SchoolworkAspect $schoolworkAspect = null)
     {
-        $this->setProperty("schoolworkAspect", $schoolworkAspect);
+        $this->setProperty('schoolworkAspect', $schoolworkAspect);
     }
 
     /**
@@ -98,7 +95,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getMarkInteger()
     {
-        return $this->getProperty("markInteger");
+        return $this->getProperty('markInteger');
     }
 
     /**
@@ -106,7 +103,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setMarkInteger($markInteger = null)
     {
-        $this->setProperty("markInteger", $markInteger);
+        $this->setProperty('markInteger', $markInteger);
     }
 
     /**
@@ -114,7 +111,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getMarkDecimal()
     {
-        return $this->getProperty("markDecimal");
+        return $this->getProperty('markDecimal');
     }
 
     /**
@@ -122,7 +119,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setMarkDecimal($markDecimal = null)
     {
-        $this->setProperty("markDecimal", $markDecimal);
+        $this->setProperty('markDecimal', $markDecimal);
     }
 
     /**
@@ -130,7 +127,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getMarkNumeric()
     {
-        return $this->getProperty("markNumeric");
+        return $this->getProperty('markNumeric');
     }
 
     /**
@@ -138,7 +135,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setMarkNumeric($markNumeric = null)
     {
-        $this->setProperty("markNumeric", $markNumeric);
+        $this->setProperty('markNumeric', $markNumeric);
     }
 
     /**
@@ -146,7 +143,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getMarkGrade()
     {
-        return $this->getProperty("markGrade");
+        return $this->getProperty('markGrade');
     }
 
     /**
@@ -154,7 +151,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setMarkGrade(Grade $markGrade = null)
     {
-        $this->setProperty("markGrade", $markGrade);
+        $this->setProperty('markGrade', $markGrade);
     }
 
     /**
@@ -162,7 +159,7 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function getMarkDate()
     {
-        return $this->getProperty("markDate");
+        return $this->getProperty('markDate');
     }
 
     /**
@@ -170,6 +167,6 @@ class StudentSchoolworkMark extends ModelBase
      */
     public function setMarkDate(\DateTime $markDate = null)
     {
-        $this->setProperty("markDate", $markDate);
+        $this->setProperty('markDate', $markDate);
     }
 }

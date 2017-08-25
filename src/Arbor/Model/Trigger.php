@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Trigger extends ModelBase
 {
@@ -35,34 +31,38 @@ class Trigger extends ModelBase
     protected $_resourceType = ResourceType::TRIGGER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Trigger[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Trigger");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TRIGGER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Trigger
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TRIGGER, $id);
     }
 
@@ -71,7 +71,7 @@ class Trigger extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -79,7 +79,7 @@ class Trigger extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -87,7 +87,7 @@ class Trigger extends ModelBase
      */
     public function getTriggerCategory()
     {
-        return $this->getProperty("triggerCategory");
+        return $this->getProperty('triggerCategory');
     }
 
     /**
@@ -95,7 +95,7 @@ class Trigger extends ModelBase
      */
     public function setTriggerCategory($triggerCategory = null)
     {
-        $this->setProperty("triggerCategory", $triggerCategory);
+        $this->setProperty('triggerCategory', $triggerCategory);
     }
 
     /**
@@ -103,7 +103,7 @@ class Trigger extends ModelBase
      */
     public function getTriggerName()
     {
-        return $this->getProperty("triggerName");
+        return $this->getProperty('triggerName');
     }
 
     /**
@@ -111,7 +111,7 @@ class Trigger extends ModelBase
      */
     public function setTriggerName($triggerName = null)
     {
-        $this->setProperty("triggerName", $triggerName);
+        $this->setProperty('triggerName', $triggerName);
     }
 
     /**
@@ -119,7 +119,7 @@ class Trigger extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -127,7 +127,7 @@ class Trigger extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -135,7 +135,7 @@ class Trigger extends ModelBase
      */
     public function getTriggerClass()
     {
-        return $this->getProperty("triggerClass");
+        return $this->getProperty('triggerClass');
     }
 
     /**
@@ -143,7 +143,7 @@ class Trigger extends ModelBase
      */
     public function setTriggerClass($triggerClass = null)
     {
-        $this->setProperty("triggerClass", $triggerClass);
+        $this->setProperty('triggerClass', $triggerClass);
     }
 
     /**
@@ -151,7 +151,7 @@ class Trigger extends ModelBase
      */
     public function getTriggerClassArgs()
     {
-        return $this->getProperty("triggerClassArgs");
+        return $this->getProperty('triggerClassArgs');
     }
 
     /**
@@ -159,7 +159,7 @@ class Trigger extends ModelBase
      */
     public function setTriggerClassArgs($triggerClassArgs = null)
     {
-        $this->setProperty("triggerClassArgs", $triggerClassArgs);
+        $this->setProperty('triggerClassArgs', $triggerClassArgs);
     }
 
     /**
@@ -167,7 +167,7 @@ class Trigger extends ModelBase
      */
     public function getTestForSchool()
     {
-        return $this->getProperty("testForSchool");
+        return $this->getProperty('testForSchool');
     }
 
     /**
@@ -175,7 +175,7 @@ class Trigger extends ModelBase
      */
     public function setTestForSchool($testForSchool = null)
     {
-        $this->setProperty("testForSchool", $testForSchool);
+        $this->setProperty('testForSchool', $testForSchool);
     }
 
     /**
@@ -183,7 +183,7 @@ class Trigger extends ModelBase
      */
     public function getTestForGroups()
     {
-        return $this->getProperty("testForGroups");
+        return $this->getProperty('testForGroups');
     }
 
     /**
@@ -191,7 +191,7 @@ class Trigger extends ModelBase
      */
     public function setTestForGroups($testForGroups = null)
     {
-        $this->setProperty("testForGroups", $testForGroups);
+        $this->setProperty('testForGroups', $testForGroups);
     }
 
     /**
@@ -199,7 +199,7 @@ class Trigger extends ModelBase
      */
     public function getTestForAcademicUnits()
     {
-        return $this->getProperty("testForAcademicUnits");
+        return $this->getProperty('testForAcademicUnits');
     }
 
     /**
@@ -207,7 +207,7 @@ class Trigger extends ModelBase
      */
     public function setTestForAcademicUnits($testForAcademicUnits = null)
     {
-        $this->setProperty("testForAcademicUnits", $testForAcademicUnits);
+        $this->setProperty('testForAcademicUnits', $testForAcademicUnits);
     }
 
     /**
@@ -215,7 +215,7 @@ class Trigger extends ModelBase
      */
     public function getTestForStudents()
     {
-        return $this->getProperty("testForStudents");
+        return $this->getProperty('testForStudents');
     }
 
     /**
@@ -223,7 +223,7 @@ class Trigger extends ModelBase
      */
     public function setTestForStudents($testForStudents = null)
     {
-        $this->setProperty("testForStudents", $testForStudents);
+        $this->setProperty('testForStudents', $testForStudents);
     }
 
     /**
@@ -231,7 +231,7 @@ class Trigger extends ModelBase
      */
     public function getTestForStudentAcademicUnitEnrolments()
     {
-        return $this->getProperty("testForStudentAcademicUnitEnrolments");
+        return $this->getProperty('testForStudentAcademicUnitEnrolments');
     }
 
     /**
@@ -239,6 +239,6 @@ class Trigger extends ModelBase
      */
     public function setTestForStudentAcademicUnitEnrolments($testForStudentAcademicUnitEnrolments = null)
     {
-        $this->setProperty("testForStudentAcademicUnitEnrolments", $testForStudentAcademicUnitEnrolments);
+        $this->setProperty('testForStudentAcademicUnitEnrolments', $testForStudentAcademicUnitEnrolments);
     }
 }

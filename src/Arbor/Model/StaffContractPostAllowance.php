@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StaffContractPost;
-use \Arbor\Model\Allowance;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffContractPostAllowance extends ModelBase
 {
@@ -37,34 +31,38 @@ class StaffContractPostAllowance extends ModelBase
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST_ALLOWANCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffContractPostAllowance[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffContractPostAllowance");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_CONTRACT_POST_ALLOWANCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffContractPostAllowance
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT_POST_ALLOWANCE, $id);
     }
 
@@ -73,7 +71,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getStaffContractPost()
     {
-        return $this->getProperty("staffContractPost");
+        return $this->getProperty('staffContractPost');
     }
 
     /**
@@ -81,7 +79,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setStaffContractPost(StaffContractPost $staffContractPost = null)
     {
-        $this->setProperty("staffContractPost", $staffContractPost);
+        $this->setProperty('staffContractPost', $staffContractPost);
     }
 
     /**
@@ -89,7 +87,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getLinkedAllowance()
     {
-        return $this->getProperty("linkedAllowance");
+        return $this->getProperty('linkedAllowance');
     }
 
     /**
@@ -97,7 +95,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setLinkedAllowance(Allowance $linkedAllowance = null)
     {
-        $this->setProperty("linkedAllowance", $linkedAllowance);
+        $this->setProperty('linkedAllowance', $linkedAllowance);
     }
 
     /**
@@ -105,7 +103,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -113,7 +111,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -121,7 +119,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -129,7 +127,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -137,7 +135,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getGrossAllowance()
     {
-        return $this->getProperty("grossAllowance");
+        return $this->getProperty('grossAllowance');
     }
 
     /**
@@ -145,7 +143,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setGrossAllowance($grossAllowance = null)
     {
-        $this->setProperty("grossAllowance", $grossAllowance);
+        $this->setProperty('grossAllowance', $grossAllowance);
     }
 
     /**
@@ -153,7 +151,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getReason()
     {
-        return $this->getProperty("reason");
+        return $this->getProperty('reason');
     }
 
     /**
@@ -161,7 +159,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setReason($reason = null)
     {
-        $this->setProperty("reason", $reason);
+        $this->setProperty('reason', $reason);
     }
 
     /**
@@ -169,7 +167,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getAllowanceType()
     {
-        return $this->getProperty("allowanceType");
+        return $this->getProperty('allowanceType');
     }
 
     /**
@@ -177,7 +175,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setAllowanceType($allowanceType = null)
     {
-        $this->setProperty("allowanceType", $allowanceType);
+        $this->setProperty('allowanceType', $allowanceType);
     }
 
     /**
@@ -185,7 +183,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getPayFactor()
     {
-        return $this->getProperty("payFactor");
+        return $this->getProperty('payFactor');
     }
 
     /**
@@ -193,7 +191,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setPayFactor($payFactor = null)
     {
-        $this->setProperty("payFactor", $payFactor);
+        $this->setProperty('payFactor', $payFactor);
     }
 
     /**
@@ -201,7 +199,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getSuperannuation()
     {
-        return $this->getProperty("superannuation");
+        return $this->getProperty('superannuation');
     }
 
     /**
@@ -209,7 +207,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setSuperannuation($superannuation = null)
     {
-        $this->setProperty("superannuation", $superannuation);
+        $this->setProperty('superannuation', $superannuation);
     }
 
     /**
@@ -217,7 +215,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getNiStatus()
     {
-        return $this->getProperty("niStatus");
+        return $this->getProperty('niStatus');
     }
 
     /**
@@ -225,7 +223,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setNiStatus($niStatus = null)
     {
-        $this->setProperty("niStatus", $niStatus);
+        $this->setProperty('niStatus', $niStatus);
     }
 
     /**
@@ -233,7 +231,7 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function getBenefitInKind()
     {
-        return $this->getProperty("benefitInKind");
+        return $this->getProperty('benefitInKind');
     }
 
     /**
@@ -241,6 +239,6 @@ class StaffContractPostAllowance extends ModelBase
      */
     public function setBenefitInKind($benefitInKind = null)
     {
-        $this->setProperty("benefitInKind", $benefitInKind);
+        $this->setProperty('benefitInKind', $benefitInKind);
     }
 }

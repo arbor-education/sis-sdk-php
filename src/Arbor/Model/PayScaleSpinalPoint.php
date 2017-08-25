@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PayScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PayScaleSpinalPoint extends ModelBase
 {
@@ -22,34 +17,38 @@ class PayScaleSpinalPoint extends ModelBase
     protected $_resourceType = ResourceType::PAY_SCALE_SPINAL_POINT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PayScaleSpinalPoint[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PayScaleSpinalPoint");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PAY_SCALE_SPINAL_POINT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PayScaleSpinalPoint
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PAY_SCALE_SPINAL_POINT, $id);
     }
 
@@ -58,7 +57,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function getPayScale()
     {
-        return $this->getProperty("payScale");
+        return $this->getProperty('payScale');
     }
 
     /**
@@ -66,7 +65,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function setPayScale(PayScale $payScale = null)
     {
-        $this->setProperty("payScale", $payScale);
+        $this->setProperty('payScale', $payScale);
     }
 
     /**
@@ -74,7 +73,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function getSpinalPointCode()
     {
-        return $this->getProperty("spinalPointCode");
+        return $this->getProperty('spinalPointCode');
     }
 
     /**
@@ -82,7 +81,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function setSpinalPointCode($spinalPointCode = null)
     {
-        $this->setProperty("spinalPointCode", $spinalPointCode);
+        $this->setProperty('spinalPointCode', $spinalPointCode);
     }
 
     /**
@@ -90,7 +89,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function getSpinalPointName()
     {
-        return $this->getProperty("spinalPointName");
+        return $this->getProperty('spinalPointName');
     }
 
     /**
@@ -98,7 +97,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function setSpinalPointName($spinalPointName = null)
     {
-        $this->setProperty("spinalPointName", $spinalPointName);
+        $this->setProperty('spinalPointName', $spinalPointName);
     }
 
     /**
@@ -106,7 +105,7 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -114,6 +113,6 @@ class PayScaleSpinalPoint extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 }

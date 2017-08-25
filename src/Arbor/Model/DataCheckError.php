@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DataCheckError extends ModelBase
 {
@@ -36,34 +31,38 @@ class DataCheckError extends ModelBase
     protected $_resourceType = ResourceType::DATA_CHECK_ERROR;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DataCheckError[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DataCheckError");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DATA_CHECK_ERROR);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DataCheckError
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DATA_CHECK_ERROR, $id);
     }
 
@@ -72,7 +71,7 @@ class DataCheckError extends ModelBase
      */
     public function getDataCheckerClassName()
     {
-        return $this->getProperty("dataCheckerClassName");
+        return $this->getProperty('dataCheckerClassName');
     }
 
     /**
@@ -80,7 +79,7 @@ class DataCheckError extends ModelBase
      */
     public function setDataCheckerClassName($dataCheckerClassName = null)
     {
-        $this->setProperty("dataCheckerClassName", $dataCheckerClassName);
+        $this->setProperty('dataCheckerClassName', $dataCheckerClassName);
     }
 
     /**
@@ -88,7 +87,7 @@ class DataCheckError extends ModelBase
      */
     public function getErrorIdentifier()
     {
-        return $this->getProperty("errorIdentifier");
+        return $this->getProperty('errorIdentifier');
     }
 
     /**
@@ -96,7 +95,7 @@ class DataCheckError extends ModelBase
      */
     public function setErrorIdentifier($errorIdentifier = null)
     {
-        $this->setProperty("errorIdentifier", $errorIdentifier);
+        $this->setProperty('errorIdentifier', $errorIdentifier);
     }
 
     /**
@@ -104,7 +103,7 @@ class DataCheckError extends ModelBase
      */
     public function getCheckedEntity()
     {
-        return $this->getProperty("checkedEntity");
+        return $this->getProperty('checkedEntity');
     }
 
     /**
@@ -112,7 +111,7 @@ class DataCheckError extends ModelBase
      */
     public function setCheckedEntity(ModelBase $checkedEntity = null)
     {
-        $this->setProperty("checkedEntity", $checkedEntity);
+        $this->setProperty('checkedEntity', $checkedEntity);
     }
 
     /**
@@ -120,7 +119,7 @@ class DataCheckError extends ModelBase
      */
     public function getReportingEntity()
     {
-        return $this->getProperty("reportingEntity");
+        return $this->getProperty('reportingEntity');
     }
 
     /**
@@ -128,7 +127,7 @@ class DataCheckError extends ModelBase
      */
     public function setReportingEntity(ModelBase $reportingEntity = null)
     {
-        $this->setProperty("reportingEntity", $reportingEntity);
+        $this->setProperty('reportingEntity', $reportingEntity);
     }
 
     /**
@@ -136,7 +135,7 @@ class DataCheckError extends ModelBase
      */
     public function getReportedDatetime()
     {
-        return $this->getProperty("reportedDatetime");
+        return $this->getProperty('reportedDatetime');
     }
 
     /**
@@ -144,7 +143,7 @@ class DataCheckError extends ModelBase
      */
     public function setReportedDatetime(\DateTime $reportedDatetime = null)
     {
-        $this->setProperty("reportedDatetime", $reportedDatetime);
+        $this->setProperty('reportedDatetime', $reportedDatetime);
     }
 
     /**
@@ -152,7 +151,7 @@ class DataCheckError extends ModelBase
      */
     public function getPriority()
     {
-        return $this->getProperty("priority");
+        return $this->getProperty('priority');
     }
 
     /**
@@ -160,7 +159,7 @@ class DataCheckError extends ModelBase
      */
     public function setPriority($priority = null)
     {
-        $this->setProperty("priority", $priority);
+        $this->setProperty('priority', $priority);
     }
 
     /**
@@ -168,7 +167,7 @@ class DataCheckError extends ModelBase
      */
     public function getErrorFixIsMandatory()
     {
-        return $this->getProperty("errorFixIsMandatory");
+        return $this->getProperty('errorFixIsMandatory');
     }
 
     /**
@@ -176,7 +175,7 @@ class DataCheckError extends ModelBase
      */
     public function setErrorFixIsMandatory($errorFixIsMandatory = null)
     {
-        $this->setProperty("errorFixIsMandatory", $errorFixIsMandatory);
+        $this->setProperty('errorFixIsMandatory', $errorFixIsMandatory);
     }
 
     /**
@@ -184,7 +183,7 @@ class DataCheckError extends ModelBase
      */
     public function getIgnoredDatetime()
     {
-        return $this->getProperty("ignoredDatetime");
+        return $this->getProperty('ignoredDatetime');
     }
 
     /**
@@ -192,7 +191,7 @@ class DataCheckError extends ModelBase
      */
     public function setIgnoredDatetime(\DateTime $ignoredDatetime = null)
     {
-        $this->setProperty("ignoredDatetime", $ignoredDatetime);
+        $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
 
     /**
@@ -200,7 +199,7 @@ class DataCheckError extends ModelBase
      */
     public function getIgnoredByUser()
     {
-        return $this->getProperty("ignoredByUser");
+        return $this->getProperty('ignoredByUser');
     }
 
     /**
@@ -208,7 +207,7 @@ class DataCheckError extends ModelBase
      */
     public function setIgnoredByUser(\DateTime $ignoredByUser = null)
     {
-        $this->setProperty("ignoredByUser", $ignoredByUser);
+        $this->setProperty('ignoredByUser', $ignoredByUser);
     }
 
     /**
@@ -216,7 +215,7 @@ class DataCheckError extends ModelBase
      */
     public function getCorrectedDatetime()
     {
-        return $this->getProperty("correctedDatetime");
+        return $this->getProperty('correctedDatetime');
     }
 
     /**
@@ -224,7 +223,7 @@ class DataCheckError extends ModelBase
      */
     public function setCorrectedDatetime(\DateTime $correctedDatetime = null)
     {
-        $this->setProperty("correctedDatetime", $correctedDatetime);
+        $this->setProperty('correctedDatetime', $correctedDatetime);
     }
 
     /**
@@ -232,7 +231,7 @@ class DataCheckError extends ModelBase
      */
     public function getCorrectedByUser()
     {
-        return $this->getProperty("correctedByUser");
+        return $this->getProperty('correctedByUser');
     }
 
     /**
@@ -240,6 +239,6 @@ class DataCheckError extends ModelBase
      */
     public function setCorrectedByUser(User $correctedByUser = null)
     {
-        $this->setProperty("correctedByUser", $correctedByUser);
+        $this->setProperty('correctedByUser', $correctedByUser);
     }
 }

@@ -31,7 +31,7 @@ interface GatewayInterface
 
     /**
      * @param $resource
-     * @return \Arbor\Resource\ResourceMetadata
+     * @return mixed
      */
     public function describe($resource);
 
@@ -61,7 +61,7 @@ interface GatewayInterface
     public function setApplicationId($applicationId);
 
     /**
-     * @return return string
+     * @return string
      */
     public function getApplicationId();
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BehaviouralContract;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralContractParty extends ModelBase
 {
@@ -20,34 +15,38 @@ class BehaviouralContractParty extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_CONTRACT_PARTY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralContractParty[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralContractParty");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_CONTRACT_PARTY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralContractParty
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_CONTRACT_PARTY, $id);
     }
 
@@ -56,7 +55,7 @@ class BehaviouralContractParty extends ModelBase
      */
     public function getBehaviouralContract()
     {
-        return $this->getProperty("behaviouralContract");
+        return $this->getProperty('behaviouralContract');
     }
 
     /**
@@ -64,7 +63,7 @@ class BehaviouralContractParty extends ModelBase
      */
     public function setBehaviouralContract(BehaviouralContract $behaviouralContract = null)
     {
-        $this->setProperty("behaviouralContract", $behaviouralContract);
+        $this->setProperty('behaviouralContract', $behaviouralContract);
     }
 
     /**
@@ -72,7 +71,7 @@ class BehaviouralContractParty extends ModelBase
      */
     public function getParty()
     {
-        return $this->getProperty("party");
+        return $this->getProperty('party');
     }
 
     /**
@@ -80,7 +79,7 @@ class BehaviouralContractParty extends ModelBase
      */
     public function setParty(ModelBase $party = null)
     {
-        $this->setProperty("party", $party);
+        $this->setProperty('party', $party);
     }
 
     /**
@@ -88,7 +87,7 @@ class BehaviouralContractParty extends ModelBase
      */
     public function getResponsible()
     {
-        return $this->getProperty("responsible");
+        return $this->getProperty('responsible');
     }
 
     /**
@@ -96,6 +95,6 @@ class BehaviouralContractParty extends ModelBase
      */
     public function setResponsible($responsible = null)
     {
-        $this->setProperty("responsible", $responsible);
+        $this->setProperty('responsible', $responsible);
     }
 }

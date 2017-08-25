@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralIncidentDefaultWatcher extends ModelBase
 {
@@ -20,34 +15,38 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_DEFAULT_WATCHER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralIncidentDefaultWatcher[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralIncidentDefaultWatcher");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_INCIDENT_DEFAULT_WATCHER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralIncidentDefaultWatcher
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_DEFAULT_WATCHER, $id);
     }
 
@@ -56,7 +55,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      */
     public function getLevelOfIncident()
     {
-        return $this->getProperty("levelOfIncident");
+        return $this->getProperty('levelOfIncident');
     }
 
     /**
@@ -64,7 +63,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      */
     public function setLevelOfIncident($levelOfIncident = null)
     {
-        $this->setProperty("levelOfIncident", $levelOfIncident);
+        $this->setProperty('levelOfIncident', $levelOfIncident);
     }
 
     /**
@@ -72,7 +71,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      */
     public function getRelationToStudent()
     {
-        return $this->getProperty("relationToStudent");
+        return $this->getProperty('relationToStudent');
     }
 
     /**
@@ -80,7 +79,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      */
     public function setRelationToStudent($relationToStudent = null)
     {
-        $this->setProperty("relationToStudent", $relationToStudent);
+        $this->setProperty('relationToStudent', $relationToStudent);
     }
 
     /**
@@ -88,7 +87,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -96,6 +95,6 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 }

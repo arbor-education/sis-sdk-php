@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PinnedItem extends ModelBase
 {
@@ -17,34 +13,38 @@ class PinnedItem extends ModelBase
     protected $_resourceType = ResourceType::PINNED_ITEM;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PinnedItem[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PinnedItem");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PINNED_ITEM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PinnedItem
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PINNED_ITEM, $id);
     }
 
@@ -53,7 +53,7 @@ class PinnedItem extends ModelBase
      */
     public function getPinned()
     {
-        return $this->getProperty("pinned");
+        return $this->getProperty('pinned');
     }
 
     /**
@@ -61,7 +61,7 @@ class PinnedItem extends ModelBase
      */
     public function setPinned(ModelBase $pinned = null)
     {
-        $this->setProperty("pinned", $pinned);
+        $this->setProperty('pinned', $pinned);
     }
 
     /**
@@ -69,7 +69,7 @@ class PinnedItem extends ModelBase
      */
     public function getTarget()
     {
-        return $this->getProperty("target");
+        return $this->getProperty('target');
     }
 
     /**
@@ -77,6 +77,6 @@ class PinnedItem extends ModelBase
      */
     public function setTarget(ModelBase $target = null)
     {
-        $this->setProperty("target", $target);
+        $this->setProperty('target', $target);
     }
 }

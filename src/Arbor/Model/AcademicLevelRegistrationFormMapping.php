@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicLevel;
-use \Arbor\Model\RegistrationForm;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicLevelRegistrationFormMapping extends ModelBase
 {
@@ -19,34 +13,38 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicLevelRegistrationFormMapping[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicLevelRegistrationFormMapping");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicLevelRegistrationFormMapping
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING, $id);
     }
 
@@ -55,7 +53,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      */
     public function getAcademicLevel()
     {
-        return $this->getProperty("academicLevel");
+        return $this->getProperty('academicLevel');
     }
 
     /**
@@ -63,7 +61,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      */
     public function setAcademicLevel(AcademicLevel $academicLevel = null)
     {
-        $this->setProperty("academicLevel", $academicLevel);
+        $this->setProperty('academicLevel', $academicLevel);
     }
 
     /**
@@ -71,7 +69,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      */
     public function getRegistrationForm()
     {
-        return $this->getProperty("registrationForm");
+        return $this->getProperty('registrationForm');
     }
 
     /**
@@ -79,6 +77,6 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      */
     public function setRegistrationForm(RegistrationForm $registrationForm = null)
     {
-        $this->setProperty("registrationForm", $registrationForm);
+        $this->setProperty('registrationForm', $registrationForm);
     }
 }

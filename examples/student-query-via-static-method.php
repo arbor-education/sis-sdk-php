@@ -1,30 +1,14 @@
 <?php
-require_once(__DIR__."/example-bootstrap.php");
 
-use \Arbor\Api\Gateway\RestGateway;
-use \Arbor\Resource\ResourceType;
-use \Arbor\Query\Query;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Student;
+require_once __DIR__ . '/example-bootstrap.php';
 
-$api = new RestGateway(
-    $config["api"]["baseUrl"],
-    $config["api"]["auth"]["user"],
-    $config["api"]["auth"]["password"]
-);
+$ethnicity = $api->retrieve(\Arbor\Resource\ResourceType::ETHNICITY, 'AAFR');
+$query = new \Arbor\Query\Query();
+$query->addPropertyFilter(\Arbor\Model\Student::ETHNICITY, \Arbor\Query\Query::OPERATOR_EQUALS, $ethnicity);
 
-ModelBase::setDefaultGateway($api);
-
-$ethnicity = $api->retrieve(ResourceType::ETHNICITY, "AAFR");
-
-$query = new Query();
-$query->addPropertyFilter("ethnicity", Query::OPERATOR_EQUALS, $ethnicity);
-
-$modelCollection = Student::query($query);
-
+$modelCollection = \Arbor\Model\Student::query($query);
 $hydrator = new \Arbor\Model\Hydrator();
-//Display Logic
+
 foreach ($modelCollection as $model) {
-    $array = $hydrator->extractArray($model);
-    print_r($array);
+    print_r($hydrator->extractArray($model));
 }

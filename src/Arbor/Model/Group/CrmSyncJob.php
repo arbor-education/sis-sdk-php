@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class CrmSyncJob extends ModelBase
 {
@@ -21,34 +21,38 @@ class CrmSyncJob extends ModelBase
     protected $_resourceType = ResourceType::GROUP_CRM_SYNC_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CrmSyncJob[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_CrmSyncJob");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_CRM_SYNC_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CrmSyncJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_CRM_SYNC_JOB, $id);
     }
 
@@ -57,7 +61,7 @@ class CrmSyncJob extends ModelBase
      */
     public function getTask()
     {
-        return $this->getProperty("task");
+        return $this->getProperty('task');
     }
 
     /**
@@ -65,7 +69,7 @@ class CrmSyncJob extends ModelBase
      */
     public function setTask($task = null)
     {
-        $this->setProperty("task", $task);
+        $this->setProperty('task', $task);
     }
 
     /**
@@ -73,7 +77,7 @@ class CrmSyncJob extends ModelBase
      */
     public function getParams()
     {
-        return $this->getProperty("params");
+        return $this->getProperty('params');
     }
 
     /**
@@ -81,7 +85,7 @@ class CrmSyncJob extends ModelBase
      */
     public function setParams($params = null)
     {
-        $this->setProperty("params", $params);
+        $this->setProperty('params', $params);
     }
 
     /**
@@ -89,7 +93,7 @@ class CrmSyncJob extends ModelBase
      */
     public function getStatus()
     {
-        return $this->getProperty("status");
+        return $this->getProperty('status');
     }
 
     /**
@@ -97,7 +101,7 @@ class CrmSyncJob extends ModelBase
      */
     public function setStatus($status = null)
     {
-        $this->setProperty("status", $status);
+        $this->setProperty('status', $status);
     }
 
     /**
@@ -105,7 +109,7 @@ class CrmSyncJob extends ModelBase
      */
     public function getStatusDatetime()
     {
-        return $this->getProperty("statusDatetime");
+        return $this->getProperty('statusDatetime');
     }
 
     /**
@@ -113,6 +117,6 @@ class CrmSyncJob extends ModelBase
      */
     public function setStatusDatetime(\DateTime $statusDatetime = null)
     {
-        $this->setProperty("statusDatetime", $statusDatetime);
+        $this->setProperty('statusDatetime', $statusDatetime);
     }
 }

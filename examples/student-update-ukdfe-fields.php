@@ -1,30 +1,13 @@
 <?php
-require_once(__DIR__."/example-bootstrap.php");
 
-use \Arbor\Api\Gateway\RestGateway;
-use \Arbor\Resource\ResourceType;
-use Guzzle\Plugin\Log\LogPlugin;
+require_once __DIR__ . '/example-bootstrap.php';
 
-$api = new RestGateway(
-    $config["api"]["baseUrl"],
-    $config["api"]["auth"]["user"],
-    $config["api"]["auth"]["password"]
-);
-//$api->getHttpClient()->addSubscriber(LogPlugin::getDebugPlugin());
-
-$student = $api->retrieve(ResourceType::STUDENT, 137);
-//$student->setPerson(new Person());
+/** @var \Arbor\Model\Student $student */
+$student = $api->retrieve(\Arbor\Resource\ResourceType::STUDENT, 137);
 $student->setUniqueLearnerNumber(1000000000);
-
 $student->connect($api);
-$student->getPerson()->connect($api);
-
-$student->getPerson()->save();
 $student->save();
 
-//Display Logic
-$studentCopy2 = $api->retrieve(ResourceType::STUDENT, $student->getResourceId());
-
+$studentCopy2 = $api->retrieve(\Arbor\Resource\ResourceType::STUDENT, $student->getResourceId());
 $hydrator = new \Arbor\Model\Hydrator();
-$array = $hydrator->extractArray($studentCopy2);
-print_r($array);
+print_r($hydrator->extractArray($studentCopy2));

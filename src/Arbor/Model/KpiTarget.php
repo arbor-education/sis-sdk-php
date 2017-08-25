@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Kpi;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class KpiTarget extends ModelBase
 {
@@ -30,34 +25,38 @@ class KpiTarget extends ModelBase
     protected $_resourceType = ResourceType::KPI_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return KpiTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("KpiTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::KPI_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return KpiTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::KPI_TARGET, $id);
     }
 
@@ -66,7 +65,7 @@ class KpiTarget extends ModelBase
      */
     public function getKpi()
     {
-        return $this->getProperty("kpi");
+        return $this->getProperty('kpi');
     }
 
     /**
@@ -74,7 +73,7 @@ class KpiTarget extends ModelBase
      */
     public function setKpi(Kpi $kpi = null)
     {
-        $this->setProperty("kpi", $kpi);
+        $this->setProperty('kpi', $kpi);
     }
 
     /**
@@ -82,7 +81,7 @@ class KpiTarget extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -90,7 +89,7 @@ class KpiTarget extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -98,7 +97,7 @@ class KpiTarget extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -106,7 +105,7 @@ class KpiTarget extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -114,7 +113,7 @@ class KpiTarget extends ModelBase
      */
     public function getTargetValue()
     {
-        return $this->getProperty("targetValue");
+        return $this->getProperty('targetValue');
     }
 
     /**
@@ -122,7 +121,7 @@ class KpiTarget extends ModelBase
      */
     public function setTargetValue($targetValue = null)
     {
-        $this->setProperty("targetValue", $targetValue);
+        $this->setProperty('targetValue', $targetValue);
     }
 
     /**
@@ -130,7 +129,7 @@ class KpiTarget extends ModelBase
      */
     public function getTargetName()
     {
-        return $this->getProperty("targetName");
+        return $this->getProperty('targetName');
     }
 
     /**
@@ -138,7 +137,7 @@ class KpiTarget extends ModelBase
      */
     public function setTargetName($targetName = null)
     {
-        $this->setProperty("targetName", $targetName);
+        $this->setProperty('targetName', $targetName);
     }
 
     /**
@@ -146,7 +145,7 @@ class KpiTarget extends ModelBase
      */
     public function getAbbreviation()
     {
-        return $this->getProperty("abbreviation");
+        return $this->getProperty('abbreviation');
     }
 
     /**
@@ -154,7 +153,7 @@ class KpiTarget extends ModelBase
      */
     public function setAbbreviation($abbreviation = null)
     {
-        $this->setProperty("abbreviation", $abbreviation);
+        $this->setProperty('abbreviation', $abbreviation);
     }
 
     /**
@@ -162,7 +161,7 @@ class KpiTarget extends ModelBase
      */
     public function getValueType()
     {
-        return $this->getProperty("valueType");
+        return $this->getProperty('valueType');
     }
 
     /**
@@ -170,7 +169,7 @@ class KpiTarget extends ModelBase
      */
     public function setValueType($valueType = null)
     {
-        $this->setProperty("valueType", $valueType);
+        $this->setProperty('valueType', $valueType);
     }
 
     /**
@@ -178,7 +177,7 @@ class KpiTarget extends ModelBase
      */
     public function getBasis()
     {
-        return $this->getProperty("basis");
+        return $this->getProperty('basis');
     }
 
     /**
@@ -186,6 +185,6 @@ class KpiTarget extends ModelBase
      */
     public function setBasis(ModelBase $basis = null)
     {
-        $this->setProperty("basis", $basis);
+        $this->setProperty('basis', $basis);
     }
 }

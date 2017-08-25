@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TelephoneNumber extends ModelBase
 {
@@ -25,34 +21,38 @@ class TelephoneNumber extends ModelBase
     protected $_resourceType = ResourceType::TELEPHONE_NUMBER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TelephoneNumber[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TelephoneNumber");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TELEPHONE_NUMBER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TelephoneNumber
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TELEPHONE_NUMBER, $id);
     }
 
@@ -61,7 +61,7 @@ class TelephoneNumber extends ModelBase
      */
     public function getNumberOwner()
     {
-        return $this->getProperty("numberOwner");
+        return $this->getProperty('numberOwner');
     }
 
     /**
@@ -69,7 +69,7 @@ class TelephoneNumber extends ModelBase
      */
     public function setNumberOwner(ModelBase $numberOwner = null)
     {
-        $this->setProperty("numberOwner", $numberOwner);
+        $this->setProperty('numberOwner', $numberOwner);
     }
 
     /**
@@ -77,7 +77,7 @@ class TelephoneNumber extends ModelBase
      */
     public function getTelephoneNumberType()
     {
-        return $this->getProperty("telephoneNumberType");
+        return $this->getProperty('telephoneNumberType');
     }
 
     /**
@@ -85,7 +85,7 @@ class TelephoneNumber extends ModelBase
      */
     public function setTelephoneNumberType($telephoneNumberType = null)
     {
-        $this->setProperty("telephoneNumberType", $telephoneNumberType);
+        $this->setProperty('telephoneNumberType', $telephoneNumberType);
     }
 
     /**
@@ -93,7 +93,7 @@ class TelephoneNumber extends ModelBase
      */
     public function getNumber()
     {
-        return $this->getProperty("number");
+        return $this->getProperty('number');
     }
 
     /**
@@ -101,7 +101,7 @@ class TelephoneNumber extends ModelBase
      */
     public function setNumber($number = null)
     {
-        $this->setProperty("number", $number);
+        $this->setProperty('number', $number);
     }
 
     /**
@@ -109,7 +109,7 @@ class TelephoneNumber extends ModelBase
      */
     public function getExtensionNumber()
     {
-        return $this->getProperty("extensionNumber");
+        return $this->getProperty('extensionNumber');
     }
 
     /**
@@ -117,7 +117,7 @@ class TelephoneNumber extends ModelBase
      */
     public function setExtensionNumber($extensionNumber = null)
     {
-        $this->setProperty("extensionNumber", $extensionNumber);
+        $this->setProperty('extensionNumber', $extensionNumber);
     }
 
     /**
@@ -125,7 +125,7 @@ class TelephoneNumber extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -133,7 +133,7 @@ class TelephoneNumber extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 
     /**
@@ -141,7 +141,7 @@ class TelephoneNumber extends ModelBase
      */
     public function getTelephoneNumberRanking()
     {
-        return $this->getProperty("telephoneNumberRanking");
+        return $this->getProperty('telephoneNumberRanking');
     }
 
     /**
@@ -149,6 +149,6 @@ class TelephoneNumber extends ModelBase
      */
     public function setTelephoneNumberRanking($telephoneNumberRanking = null)
     {
-        $this->setProperty("telephoneNumberRanking", $telephoneNumberRanking);
+        $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }
 }

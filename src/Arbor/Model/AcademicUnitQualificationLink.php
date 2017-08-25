@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicUnit;
-use \Arbor\Model\QualificationAssessable;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnitQualificationLink extends ModelBase
 {
@@ -25,34 +19,38 @@ class AcademicUnitQualificationLink extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_QUALIFICATION_LINK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicUnitQualificationLink[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicUnitQualificationLink");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT_QUALIFICATION_LINK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicUnitQualificationLink
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_QUALIFICATION_LINK, $id);
     }
 
@@ -61,7 +59,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function getAcademicUnit()
     {
-        return $this->getProperty("academicUnit");
+        return $this->getProperty('academicUnit');
     }
 
     /**
@@ -69,7 +67,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -77,7 +75,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function getQualificationAssessable()
     {
-        return $this->getProperty("qualificationAssessable");
+        return $this->getProperty('qualificationAssessable');
     }
 
     /**
@@ -85,7 +83,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
     {
-        $this->setProperty("qualificationAssessable", $qualificationAssessable);
+        $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
 
     /**
@@ -93,7 +91,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function getAutomaticEntry()
     {
-        return $this->getProperty("automaticEntry");
+        return $this->getProperty('automaticEntry');
     }
 
     /**
@@ -101,7 +99,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function setAutomaticEntry($automaticEntry = null)
     {
-        $this->setProperty("automaticEntry", $automaticEntry);
+        $this->setProperty('automaticEntry', $automaticEntry);
     }
 
     /**
@@ -109,7 +107,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -117,7 +115,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -125,7 +123,7 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -133,6 +131,6 @@ class AcademicUnitQualificationLink extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Email;
-use \Arbor\Model\EmailAddress;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailSender extends ModelBase
 {
@@ -29,34 +23,38 @@ class EmailSender extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_SENDER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailSender[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailSender");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_SENDER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailSender
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_SENDER, $id);
     }
 
@@ -65,7 +63,7 @@ class EmailSender extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -73,7 +71,7 @@ class EmailSender extends ModelBase
      */
     public function setEmail(Email $email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -81,7 +79,7 @@ class EmailSender extends ModelBase
      */
     public function getSenderType()
     {
-        return $this->getProperty("senderType");
+        return $this->getProperty('senderType');
     }
 
     /**
@@ -89,7 +87,7 @@ class EmailSender extends ModelBase
      */
     public function setSenderType($senderType = null)
     {
-        $this->setProperty("senderType", $senderType);
+        $this->setProperty('senderType', $senderType);
     }
 
     /**
@@ -97,7 +95,7 @@ class EmailSender extends ModelBase
      */
     public function getSenderName()
     {
-        return $this->getProperty("senderName");
+        return $this->getProperty('senderName');
     }
 
     /**
@@ -105,7 +103,7 @@ class EmailSender extends ModelBase
      */
     public function setSenderName($senderName = null)
     {
-        $this->setProperty("senderName", $senderName);
+        $this->setProperty('senderName', $senderName);
     }
 
     /**
@@ -113,7 +111,7 @@ class EmailSender extends ModelBase
      */
     public function getSenderRawEmail()
     {
-        return $this->getProperty("senderRawEmail");
+        return $this->getProperty('senderRawEmail');
     }
 
     /**
@@ -121,7 +119,7 @@ class EmailSender extends ModelBase
      */
     public function setSenderRawEmail($senderRawEmail = null)
     {
-        $this->setProperty("senderRawEmail", $senderRawEmail);
+        $this->setProperty('senderRawEmail', $senderRawEmail);
     }
 
     /**
@@ -129,7 +127,7 @@ class EmailSender extends ModelBase
      */
     public function getEmailAddress()
     {
-        return $this->getProperty("emailAddress");
+        return $this->getProperty('emailAddress');
     }
 
     /**
@@ -137,7 +135,7 @@ class EmailSender extends ModelBase
      */
     public function setEmailAddress(EmailAddress $emailAddress = null)
     {
-        $this->setProperty("emailAddress", $emailAddress);
+        $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
@@ -145,7 +143,7 @@ class EmailSender extends ModelBase
      */
     public function getSender()
     {
-        return $this->getProperty("sender");
+        return $this->getProperty('sender');
     }
 
     /**
@@ -153,7 +151,7 @@ class EmailSender extends ModelBase
      */
     public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty("sender", $sender);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -161,7 +159,7 @@ class EmailSender extends ModelBase
      */
     public function getSenderIndex()
     {
-        return $this->getProperty("senderIndex");
+        return $this->getProperty('senderIndex');
     }
 
     /**
@@ -169,6 +167,6 @@ class EmailSender extends ModelBase
      */
     public function setSenderIndex($senderIndex = null)
     {
-        $this->setProperty("senderIndex", $senderIndex);
+        $this->setProperty('senderIndex', $senderIndex);
     }
 }

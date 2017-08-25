@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Email;
-use \Arbor\Model\EmailAddress;
-use \Arbor\Model\MessageDraftRecipient;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailRecipient extends ModelBase
 {
@@ -36,34 +29,38 @@ class EmailRecipient extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_RECIPIENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailRecipient[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailRecipient");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_RECIPIENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailRecipient
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_RECIPIENT, $id);
     }
 
@@ -72,7 +69,7 @@ class EmailRecipient extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -80,7 +77,7 @@ class EmailRecipient extends ModelBase
      */
     public function setEmail(Email $email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -88,7 +85,7 @@ class EmailRecipient extends ModelBase
      */
     public function getRecipientType()
     {
-        return $this->getProperty("recipientType");
+        return $this->getProperty('recipientType');
     }
 
     /**
@@ -96,7 +93,7 @@ class EmailRecipient extends ModelBase
      */
     public function setRecipientType($recipientType = null)
     {
-        $this->setProperty("recipientType", $recipientType);
+        $this->setProperty('recipientType', $recipientType);
     }
 
     /**
@@ -104,7 +101,7 @@ class EmailRecipient extends ModelBase
      */
     public function getRecipientName()
     {
-        return $this->getProperty("recipientName");
+        return $this->getProperty('recipientName');
     }
 
     /**
@@ -112,7 +109,7 @@ class EmailRecipient extends ModelBase
      */
     public function setRecipientName($recipientName = null)
     {
-        $this->setProperty("recipientName", $recipientName);
+        $this->setProperty('recipientName', $recipientName);
     }
 
     /**
@@ -120,7 +117,7 @@ class EmailRecipient extends ModelBase
      */
     public function getRecipientRawEmail()
     {
-        return $this->getProperty("recipientRawEmail");
+        return $this->getProperty('recipientRawEmail');
     }
 
     /**
@@ -128,7 +125,7 @@ class EmailRecipient extends ModelBase
      */
     public function setRecipientRawEmail($recipientRawEmail = null)
     {
-        $this->setProperty("recipientRawEmail", $recipientRawEmail);
+        $this->setProperty('recipientRawEmail', $recipientRawEmail);
     }
 
     /**
@@ -136,7 +133,7 @@ class EmailRecipient extends ModelBase
      */
     public function getEmailAddress()
     {
-        return $this->getProperty("emailAddress");
+        return $this->getProperty('emailAddress');
     }
 
     /**
@@ -144,7 +141,7 @@ class EmailRecipient extends ModelBase
      */
     public function setEmailAddress(EmailAddress $emailAddress = null)
     {
-        $this->setProperty("emailAddress", $emailAddress);
+        $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
@@ -152,7 +149,7 @@ class EmailRecipient extends ModelBase
      */
     public function getRecipient()
     {
-        return $this->getProperty("recipient");
+        return $this->getProperty('recipient');
     }
 
     /**
@@ -160,7 +157,7 @@ class EmailRecipient extends ModelBase
      */
     public function setRecipient(ModelBase $recipient = null)
     {
-        $this->setProperty("recipient", $recipient);
+        $this->setProperty('recipient', $recipient);
     }
 
     /**
@@ -168,7 +165,7 @@ class EmailRecipient extends ModelBase
      */
     public function getDraftRecipient()
     {
-        return $this->getProperty("draftRecipient");
+        return $this->getProperty('draftRecipient');
     }
 
     /**
@@ -176,7 +173,7 @@ class EmailRecipient extends ModelBase
      */
     public function setDraftRecipient(MessageDraftRecipient $draftRecipient = null)
     {
-        $this->setProperty("draftRecipient", $draftRecipient);
+        $this->setProperty('draftRecipient', $draftRecipient);
     }
 
     /**
@@ -184,7 +181,7 @@ class EmailRecipient extends ModelBase
      */
     public function getRecipientIndex()
     {
-        return $this->getProperty("recipientIndex");
+        return $this->getProperty('recipientIndex');
     }
 
     /**
@@ -192,7 +189,7 @@ class EmailRecipient extends ModelBase
      */
     public function setRecipientIndex($recipientIndex = null)
     {
-        $this->setProperty("recipientIndex", $recipientIndex);
+        $this->setProperty('recipientIndex', $recipientIndex);
     }
 
     /**
@@ -200,7 +197,7 @@ class EmailRecipient extends ModelBase
      */
     public function getReceivedDatetime()
     {
-        return $this->getProperty("receivedDatetime");
+        return $this->getProperty('receivedDatetime');
     }
 
     /**
@@ -208,7 +205,7 @@ class EmailRecipient extends ModelBase
      */
     public function setReceivedDatetime(\DateTime $receivedDatetime = null)
     {
-        $this->setProperty("receivedDatetime", $receivedDatetime);
+        $this->setProperty('receivedDatetime', $receivedDatetime);
     }
 
     /**
@@ -216,7 +213,7 @@ class EmailRecipient extends ModelBase
      */
     public function getFailedDatetime()
     {
-        return $this->getProperty("failedDatetime");
+        return $this->getProperty('failedDatetime');
     }
 
     /**
@@ -224,6 +221,6 @@ class EmailRecipient extends ModelBase
      */
     public function setFailedDatetime(\DateTime $failedDatetime = null)
     {
-        $this->setProperty("failedDatetime", $failedDatetime);
+        $this->setProperty('failedDatetime', $failedDatetime);
     }
 }

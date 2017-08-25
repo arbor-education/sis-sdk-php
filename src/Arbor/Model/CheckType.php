@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CheckType extends ModelBase
 {
@@ -35,34 +31,38 @@ class CheckType extends ModelBase
     protected $_resourceType = ResourceType::CHECK_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CheckType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CheckType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CHECK_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CheckType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CHECK_TYPE, $id);
     }
 
@@ -71,7 +71,7 @@ class CheckType extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -79,7 +79,7 @@ class CheckType extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -87,7 +87,7 @@ class CheckType extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -95,7 +95,7 @@ class CheckType extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -103,7 +103,7 @@ class CheckType extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -111,7 +111,7 @@ class CheckType extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -119,7 +119,7 @@ class CheckType extends ModelBase
      */
     public function getCheckName()
     {
-        return $this->getProperty("checkName");
+        return $this->getProperty('checkName');
     }
 
     /**
@@ -127,7 +127,7 @@ class CheckType extends ModelBase
      */
     public function setCheckName($checkName = null)
     {
-        $this->setProperty("checkName", $checkName);
+        $this->setProperty('checkName', $checkName);
     }
 
     /**
@@ -135,7 +135,7 @@ class CheckType extends ModelBase
      */
     public function getIsRequested()
     {
-        return $this->getProperty("isRequested");
+        return $this->getProperty('isRequested');
     }
 
     /**
@@ -143,7 +143,7 @@ class CheckType extends ModelBase
      */
     public function setIsRequested($isRequested = null)
     {
-        $this->setProperty("isRequested", $isRequested);
+        $this->setProperty('isRequested', $isRequested);
     }
 
     /**
@@ -151,7 +151,7 @@ class CheckType extends ModelBase
      */
     public function getHasExpiryDate()
     {
-        return $this->getProperty("hasExpiryDate");
+        return $this->getProperty('hasExpiryDate');
     }
 
     /**
@@ -159,7 +159,7 @@ class CheckType extends ModelBase
      */
     public function setHasExpiryDate($hasExpiryDate = null)
     {
-        $this->setProperty("hasExpiryDate", $hasExpiryDate);
+        $this->setProperty('hasExpiryDate', $hasExpiryDate);
     }
 
     /**
@@ -167,7 +167,7 @@ class CheckType extends ModelBase
      */
     public function getHasReferenceNumber()
     {
-        return $this->getProperty("hasReferenceNumber");
+        return $this->getProperty('hasReferenceNumber');
     }
 
     /**
@@ -175,7 +175,7 @@ class CheckType extends ModelBase
      */
     public function setHasReferenceNumber($hasReferenceNumber = null)
     {
-        $this->setProperty("hasReferenceNumber", $hasReferenceNumber);
+        $this->setProperty('hasReferenceNumber', $hasReferenceNumber);
     }
 
     /**
@@ -183,7 +183,7 @@ class CheckType extends ModelBase
      */
     public function getEvidenceRequired()
     {
-        return $this->getProperty("evidenceRequired");
+        return $this->getProperty('evidenceRequired');
     }
 
     /**
@@ -191,7 +191,7 @@ class CheckType extends ModelBase
      */
     public function setEvidenceRequired($evidenceRequired = null)
     {
-        $this->setProperty("evidenceRequired", $evidenceRequired);
+        $this->setProperty('evidenceRequired', $evidenceRequired);
     }
 
     /**
@@ -199,7 +199,7 @@ class CheckType extends ModelBase
      */
     public function getRelatedEntityType()
     {
-        return $this->getProperty("relatedEntityType");
+        return $this->getProperty('relatedEntityType');
     }
 
     /**
@@ -207,7 +207,7 @@ class CheckType extends ModelBase
      */
     public function setRelatedEntityType($relatedEntityType = null)
     {
-        $this->setProperty("relatedEntityType", $relatedEntityType);
+        $this->setProperty('relatedEntityType', $relatedEntityType);
     }
 
     /**
@@ -215,7 +215,7 @@ class CheckType extends ModelBase
      */
     public function getRequestFromAllStaff()
     {
-        return $this->getProperty("requestFromAllStaff");
+        return $this->getProperty('requestFromAllStaff');
     }
 
     /**
@@ -223,7 +223,7 @@ class CheckType extends ModelBase
      */
     public function setRequestFromAllStaff($requestFromAllStaff = null)
     {
-        $this->setProperty("requestFromAllStaff", $requestFromAllStaff);
+        $this->setProperty('requestFromAllStaff', $requestFromAllStaff);
     }
 
     /**
@@ -231,7 +231,7 @@ class CheckType extends ModelBase
      */
     public function getRequestFromTeachingStaff()
     {
-        return $this->getProperty("requestFromTeachingStaff");
+        return $this->getProperty('requestFromTeachingStaff');
     }
 
     /**
@@ -239,6 +239,6 @@ class CheckType extends ModelBase
      */
     public function setRequestFromTeachingStaff($requestFromTeachingStaff = null)
     {
-        $this->setProperty("requestFromTeachingStaff", $requestFromTeachingStaff);
+        $this->setProperty('requestFromTeachingStaff', $requestFromTeachingStaff);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BusinessRole;
-use \Arbor\Model\StaffContractPost;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BusinessRoleAssignment extends ModelBase
 {
@@ -25,34 +19,38 @@ class BusinessRoleAssignment extends ModelBase
     protected $_resourceType = ResourceType::BUSINESS_ROLE_ASSIGNMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BusinessRoleAssignment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BusinessRoleAssignment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BUSINESS_ROLE_ASSIGNMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BusinessRoleAssignment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BUSINESS_ROLE_ASSIGNMENT, $id);
     }
 
@@ -61,7 +59,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -69,7 +67,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 
     /**
@@ -77,7 +75,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function getStaffContractPost()
     {
-        return $this->getProperty("staffContractPost");
+        return $this->getProperty('staffContractPost');
     }
 
     /**
@@ -85,7 +83,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function setStaffContractPost(StaffContractPost $staffContractPost = null)
     {
-        $this->setProperty("staffContractPost", $staffContractPost);
+        $this->setProperty('staffContractPost', $staffContractPost);
     }
 
     /**
@@ -93,7 +91,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -101,7 +99,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -109,7 +107,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -117,7 +115,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -125,7 +123,7 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -133,6 +131,6 @@ class BusinessRoleAssignment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

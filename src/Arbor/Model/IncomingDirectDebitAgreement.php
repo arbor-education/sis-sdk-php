@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BillPayer;
-use \Arbor\Model\PaymentProvider;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IncomingDirectDebitAgreement extends ModelBase
 {
@@ -29,34 +23,38 @@ class IncomingDirectDebitAgreement extends ModelBase
     protected $_resourceType = ResourceType::INCOMING_DIRECT_DEBIT_AGREEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IncomingDirectDebitAgreement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IncomingDirectDebitAgreement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INCOMING_DIRECT_DEBIT_AGREEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IncomingDirectDebitAgreement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INCOMING_DIRECT_DEBIT_AGREEMENT, $id);
     }
 
@@ -65,7 +63,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getBillPayer()
     {
-        return $this->getProperty("billPayer");
+        return $this->getProperty('billPayer');
     }
 
     /**
@@ -73,7 +71,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setBillPayer(BillPayer $billPayer = null)
     {
-        $this->setProperty("billPayer", $billPayer);
+        $this->setProperty('billPayer', $billPayer);
     }
 
     /**
@@ -81,7 +79,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getPaymentProvider()
     {
-        return $this->getProperty("paymentProvider");
+        return $this->getProperty('paymentProvider');
     }
 
     /**
@@ -89,7 +87,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setPaymentProvider(PaymentProvider $paymentProvider = null)
     {
-        $this->setProperty("paymentProvider", $paymentProvider);
+        $this->setProperty('paymentProvider', $paymentProvider);
     }
 
     /**
@@ -97,7 +95,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getPaymentProviderAgreementIdentifier()
     {
-        return $this->getProperty("paymentProviderAgreementIdentifier");
+        return $this->getProperty('paymentProviderAgreementIdentifier');
     }
 
     /**
@@ -105,7 +103,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setPaymentProviderAgreementIdentifier($paymentProviderAgreementIdentifier = null)
     {
-        $this->setProperty("paymentProviderAgreementIdentifier", $paymentProviderAgreementIdentifier);
+        $this->setProperty('paymentProviderAgreementIdentifier', $paymentProviderAgreementIdentifier);
     }
 
     /**
@@ -113,7 +111,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getAgreementStartDate()
     {
-        return $this->getProperty("agreementStartDate");
+        return $this->getProperty('agreementStartDate');
     }
 
     /**
@@ -121,7 +119,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setAgreementStartDate(\DateTime $agreementStartDate = null)
     {
-        $this->setProperty("agreementStartDate", $agreementStartDate);
+        $this->setProperty('agreementStartDate', $agreementStartDate);
     }
 
     /**
@@ -129,7 +127,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getAgreementEndDate()
     {
-        return $this->getProperty("agreementEndDate");
+        return $this->getProperty('agreementEndDate');
     }
 
     /**
@@ -137,7 +135,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setAgreementEndDate(\DateTime $agreementEndDate = null)
     {
-        $this->setProperty("agreementEndDate", $agreementEndDate);
+        $this->setProperty('agreementEndDate', $agreementEndDate);
     }
 
     /**
@@ -145,7 +143,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getAgreementReference()
     {
-        return $this->getProperty("agreementReference");
+        return $this->getProperty('agreementReference');
     }
 
     /**
@@ -153,7 +151,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setAgreementReference($agreementReference = null)
     {
-        $this->setProperty("agreementReference", $agreementReference);
+        $this->setProperty('agreementReference', $agreementReference);
     }
 
     /**
@@ -161,7 +159,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -169,6 +167,6 @@ class IncomingDirectDebitAgreement extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

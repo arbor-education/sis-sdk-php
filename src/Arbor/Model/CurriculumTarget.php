@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CurriculumTargetSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CurriculumTarget extends ModelBase
 {
@@ -22,34 +17,38 @@ class CurriculumTarget extends ModelBase
     protected $_resourceType = ResourceType::CURRICULUM_TARGET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CurriculumTarget[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CurriculumTarget");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CURRICULUM_TARGET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CurriculumTarget
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CURRICULUM_TARGET, $id);
     }
 
@@ -58,7 +57,7 @@ class CurriculumTarget extends ModelBase
      */
     public function getCurriculumTargetSet()
     {
-        return $this->getProperty("curriculumTargetSet");
+        return $this->getProperty('curriculumTargetSet');
     }
 
     /**
@@ -66,7 +65,7 @@ class CurriculumTarget extends ModelBase
      */
     public function setCurriculumTargetSet(CurriculumTargetSet $curriculumTargetSet = null)
     {
-        $this->setProperty("curriculumTargetSet", $curriculumTargetSet);
+        $this->setProperty('curriculumTargetSet', $curriculumTargetSet);
     }
 
     /**
@@ -74,7 +73,7 @@ class CurriculumTarget extends ModelBase
      */
     public function getAcademicYearIndex()
     {
-        return $this->getProperty("academicYearIndex");
+        return $this->getProperty('academicYearIndex');
     }
 
     /**
@@ -82,7 +81,7 @@ class CurriculumTarget extends ModelBase
      */
     public function setAcademicYearIndex($academicYearIndex = null)
     {
-        $this->setProperty("academicYearIndex", $academicYearIndex);
+        $this->setProperty('academicYearIndex', $academicYearIndex);
     }
 
     /**
@@ -90,7 +89,7 @@ class CurriculumTarget extends ModelBase
      */
     public function getAcademicYearPoint()
     {
-        return $this->getProperty("academicYearPoint");
+        return $this->getProperty('academicYearPoint');
     }
 
     /**
@@ -98,7 +97,7 @@ class CurriculumTarget extends ModelBase
      */
     public function setAcademicYearPoint($academicYearPoint = null)
     {
-        $this->setProperty("academicYearPoint", $academicYearPoint);
+        $this->setProperty('academicYearPoint', $academicYearPoint);
     }
 
     /**
@@ -106,7 +105,7 @@ class CurriculumTarget extends ModelBase
      */
     public function getTarget()
     {
-        return $this->getProperty("target");
+        return $this->getProperty('target');
     }
 
     /**
@@ -114,6 +113,6 @@ class CurriculumTarget extends ModelBase
      */
     public function setTarget($target = null)
     {
-        $this->setProperty("target", $target);
+        $this->setProperty('target', $target);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Allowance;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AllowanceAmount extends ModelBase
 {
@@ -22,34 +17,38 @@ class AllowanceAmount extends ModelBase
     protected $_resourceType = ResourceType::ALLOWANCE_AMOUNT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AllowanceAmount[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AllowanceAmount");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ALLOWANCE_AMOUNT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AllowanceAmount
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ALLOWANCE_AMOUNT, $id);
     }
 
@@ -58,7 +57,7 @@ class AllowanceAmount extends ModelBase
      */
     public function getAllowance()
     {
-        return $this->getProperty("allowance");
+        return $this->getProperty('allowance');
     }
 
     /**
@@ -66,7 +65,7 @@ class AllowanceAmount extends ModelBase
      */
     public function setAllowance(Allowance $allowance = null)
     {
-        $this->setProperty("allowance", $allowance);
+        $this->setProperty('allowance', $allowance);
     }
 
     /**
@@ -74,7 +73,7 @@ class AllowanceAmount extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -82,7 +81,7 @@ class AllowanceAmount extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -90,7 +89,7 @@ class AllowanceAmount extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -98,7 +97,7 @@ class AllowanceAmount extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -106,7 +105,7 @@ class AllowanceAmount extends ModelBase
      */
     public function getAllowanceAmount()
     {
-        return $this->getProperty("allowanceAmount");
+        return $this->getProperty('allowanceAmount');
     }
 
     /**
@@ -114,6 +113,6 @@ class AllowanceAmount extends ModelBase
      */
     public function setAllowanceAmount($allowanceAmount = null)
     {
-        $this->setProperty("allowanceAmount", $allowanceAmount);
+        $this->setProperty('allowanceAmount', $allowanceAmount);
     }
 }

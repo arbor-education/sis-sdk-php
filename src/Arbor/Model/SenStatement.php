@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SenStatement extends ModelBase
 {
@@ -38,34 +33,38 @@ class SenStatement extends ModelBase
     protected $_resourceType = ResourceType::SEN_STATEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SenStatement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SenStatement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SEN_STATEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SenStatement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SEN_STATEMENT, $id);
     }
 
@@ -74,7 +73,7 @@ class SenStatement extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -82,7 +81,7 @@ class SenStatement extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -90,7 +89,7 @@ class SenStatement extends ModelBase
      */
     public function getDateRequested()
     {
-        return $this->getProperty("dateRequested");
+        return $this->getProperty('dateRequested');
     }
 
     /**
@@ -98,7 +97,7 @@ class SenStatement extends ModelBase
      */
     public function setDateRequested(\DateTime $dateRequested = null)
     {
-        $this->setProperty("dateRequested", $dateRequested);
+        $this->setProperty('dateRequested', $dateRequested);
     }
 
     /**
@@ -106,7 +105,7 @@ class SenStatement extends ModelBase
      */
     public function getDateParentConsulted()
     {
-        return $this->getProperty("dateParentConsulted");
+        return $this->getProperty('dateParentConsulted');
     }
 
     /**
@@ -114,7 +113,7 @@ class SenStatement extends ModelBase
      */
     public function setDateParentConsulted(\DateTime $dateParentConsulted = null)
     {
-        $this->setProperty("dateParentConsulted", $dateParentConsulted);
+        $this->setProperty('dateParentConsulted', $dateParentConsulted);
     }
 
     /**
@@ -122,7 +121,7 @@ class SenStatement extends ModelBase
      */
     public function getDisapplicationFromNcPermanentSubjects()
     {
-        return $this->getProperty("disapplicationFromNcPermanentSubjects");
+        return $this->getProperty('disapplicationFromNcPermanentSubjects');
     }
 
     /**
@@ -130,7 +129,7 @@ class SenStatement extends ModelBase
      */
     public function setDisapplicationFromNcPermanentSubjects($disapplicationFromNcPermanentSubjects = null)
     {
-        $this->setProperty("disapplicationFromNcPermanentSubjects", $disapplicationFromNcPermanentSubjects);
+        $this->setProperty('disapplicationFromNcPermanentSubjects', $disapplicationFromNcPermanentSubjects);
     }
 
     /**
@@ -138,7 +137,7 @@ class SenStatement extends ModelBase
      */
     public function getDisapplicationFromNcTemporarySubjects()
     {
-        return $this->getProperty("disapplicationFromNcTemporarySubjects");
+        return $this->getProperty('disapplicationFromNcTemporarySubjects');
     }
 
     /**
@@ -146,7 +145,7 @@ class SenStatement extends ModelBase
      */
     public function setDisapplicationFromNcTemporarySubjects($disapplicationFromNcTemporarySubjects = null)
     {
-        $this->setProperty("disapplicationFromNcTemporarySubjects", $disapplicationFromNcTemporarySubjects);
+        $this->setProperty('disapplicationFromNcTemporarySubjects', $disapplicationFromNcTemporarySubjects);
     }
 
     /**
@@ -154,7 +153,7 @@ class SenStatement extends ModelBase
      */
     public function getLocalAuthorityOfficer()
     {
-        return $this->getProperty("localAuthorityOfficer");
+        return $this->getProperty('localAuthorityOfficer');
     }
 
     /**
@@ -162,7 +161,7 @@ class SenStatement extends ModelBase
      */
     public function setLocalAuthorityOfficer($localAuthorityOfficer = null)
     {
-        $this->setProperty("localAuthorityOfficer", $localAuthorityOfficer);
+        $this->setProperty('localAuthorityOfficer', $localAuthorityOfficer);
     }
 
     /**
@@ -170,7 +169,7 @@ class SenStatement extends ModelBase
      */
     public function getDecisionStatus()
     {
-        return $this->getProperty("decisionStatus");
+        return $this->getProperty('decisionStatus');
     }
 
     /**
@@ -178,7 +177,7 @@ class SenStatement extends ModelBase
      */
     public function setDecisionStatus($decisionStatus = null)
     {
-        $this->setProperty("decisionStatus", $decisionStatus);
+        $this->setProperty('decisionStatus', $decisionStatus);
     }
 
     /**
@@ -186,7 +185,7 @@ class SenStatement extends ModelBase
      */
     public function getSubjectToSenTribunal()
     {
-        return $this->getProperty("subjectToSenTribunal");
+        return $this->getProperty('subjectToSenTribunal');
     }
 
     /**
@@ -194,7 +193,7 @@ class SenStatement extends ModelBase
      */
     public function setSubjectToSenTribunal($subjectToSenTribunal = null)
     {
-        $this->setProperty("subjectToSenTribunal", $subjectToSenTribunal);
+        $this->setProperty('subjectToSenTribunal', $subjectToSenTribunal);
     }
 
     /**
@@ -202,7 +201,7 @@ class SenStatement extends ModelBase
      */
     public function getAppealNotes()
     {
-        return $this->getProperty("appealNotes");
+        return $this->getProperty('appealNotes');
     }
 
     /**
@@ -210,7 +209,7 @@ class SenStatement extends ModelBase
      */
     public function setAppealNotes($appealNotes = null)
     {
-        $this->setProperty("appealNotes", $appealNotes);
+        $this->setProperty('appealNotes', $appealNotes);
     }
 
     /**
@@ -218,7 +217,7 @@ class SenStatement extends ModelBase
      */
     public function getDateFinalized()
     {
-        return $this->getProperty("dateFinalized");
+        return $this->getProperty('dateFinalized');
     }
 
     /**
@@ -226,7 +225,7 @@ class SenStatement extends ModelBase
      */
     public function setDateFinalized(\DateTime $dateFinalized = null)
     {
-        $this->setProperty("dateFinalized", $dateFinalized);
+        $this->setProperty('dateFinalized', $dateFinalized);
     }
 
     /**
@@ -234,7 +233,7 @@ class SenStatement extends ModelBase
      */
     public function getDateCeased()
     {
-        return $this->getProperty("dateCeased");
+        return $this->getProperty('dateCeased');
     }
 
     /**
@@ -242,7 +241,7 @@ class SenStatement extends ModelBase
      */
     public function setDateCeased(\DateTime $dateCeased = null)
     {
-        $this->setProperty("dateCeased", $dateCeased);
+        $this->setProperty('dateCeased', $dateCeased);
     }
 
     /**
@@ -250,7 +249,7 @@ class SenStatement extends ModelBase
      */
     public function getComments()
     {
-        return $this->getProperty("comments");
+        return $this->getProperty('comments');
     }
 
     /**
@@ -258,6 +257,6 @@ class SenStatement extends ModelBase
      */
     public function setComments($comments = null)
     {
-        $this->setProperty("comments", $comments);
+        $this->setProperty('comments', $comments);
     }
 }

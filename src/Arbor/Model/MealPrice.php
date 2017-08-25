@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MealProvisionPriceCategory;
-use \Arbor\Model\VatRate;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealPrice extends ModelBase
 {
@@ -27,34 +21,38 @@ class MealPrice extends ModelBase
     protected $_resourceType = ResourceType::MEAL_PRICE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealPrice[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealPrice");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_PRICE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealPrice
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_PRICE, $id);
     }
 
@@ -63,7 +61,7 @@ class MealPrice extends ModelBase
      */
     public function getMealProvisionPriceCategory()
     {
-        return $this->getProperty("mealProvisionPriceCategory");
+        return $this->getProperty('mealProvisionPriceCategory');
     }
 
     /**
@@ -71,7 +69,7 @@ class MealPrice extends ModelBase
      */
     public function setMealProvisionPriceCategory(MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
-        $this->setProperty("mealProvisionPriceCategory", $mealProvisionPriceCategory);
+        $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
 
     /**
@@ -79,7 +77,7 @@ class MealPrice extends ModelBase
      */
     public function getPriceExVat()
     {
-        return $this->getProperty("priceExVat");
+        return $this->getProperty('priceExVat');
     }
 
     /**
@@ -87,7 +85,7 @@ class MealPrice extends ModelBase
      */
     public function setPriceExVat($priceExVat = null)
     {
-        $this->setProperty("priceExVat", $priceExVat);
+        $this->setProperty('priceExVat', $priceExVat);
     }
 
     /**
@@ -95,7 +93,7 @@ class MealPrice extends ModelBase
      */
     public function getVatAmount()
     {
-        return $this->getProperty("vatAmount");
+        return $this->getProperty('vatAmount');
     }
 
     /**
@@ -103,7 +101,7 @@ class MealPrice extends ModelBase
      */
     public function setVatAmount($vatAmount = null)
     {
-        $this->setProperty("vatAmount", $vatAmount);
+        $this->setProperty('vatAmount', $vatAmount);
     }
 
     /**
@@ -111,7 +109,7 @@ class MealPrice extends ModelBase
      */
     public function getVatRate()
     {
-        return $this->getProperty("vatRate");
+        return $this->getProperty('vatRate');
     }
 
     /**
@@ -119,7 +117,7 @@ class MealPrice extends ModelBase
      */
     public function setVatRate(VatRate $vatRate = null)
     {
-        $this->setProperty("vatRate", $vatRate);
+        $this->setProperty('vatRate', $vatRate);
     }
 
     /**
@@ -127,7 +125,7 @@ class MealPrice extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -135,7 +133,7 @@ class MealPrice extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -143,7 +141,7 @@ class MealPrice extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -151,6 +149,6 @@ class MealPrice extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 }

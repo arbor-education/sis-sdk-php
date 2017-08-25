@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\CurriculumStatement;
-use \Arbor\Model\AchievementLevel;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentCurriculumAchievement extends ModelBase
 {
@@ -28,34 +21,38 @@ class StudentCurriculumAchievement extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_CURRICULUM_ACHIEVEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentCurriculumAchievement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentCurriculumAchievement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_CURRICULUM_ACHIEVEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentCurriculumAchievement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_CURRICULUM_ACHIEVEMENT, $id);
     }
 
@@ -64,7 +61,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -72,7 +69,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -80,7 +77,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function getCurriculumStatement()
     {
-        return $this->getProperty("curriculumStatement");
+        return $this->getProperty('curriculumStatement');
     }
 
     /**
@@ -88,7 +85,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function setCurriculumStatement(CurriculumStatement $curriculumStatement = null)
     {
-        $this->setProperty("curriculumStatement", $curriculumStatement);
+        $this->setProperty('curriculumStatement', $curriculumStatement);
     }
 
     /**
@@ -96,7 +93,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function getAchievementLevel()
     {
-        return $this->getProperty("achievementLevel");
+        return $this->getProperty('achievementLevel');
     }
 
     /**
@@ -104,7 +101,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function setAchievementLevel(AchievementLevel $achievementLevel = null)
     {
-        $this->setProperty("achievementLevel", $achievementLevel);
+        $this->setProperty('achievementLevel', $achievementLevel);
     }
 
     /**
@@ -112,7 +109,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function getAchievementValue()
     {
-        return $this->getProperty("achievementValue");
+        return $this->getProperty('achievementValue');
     }
 
     /**
@@ -120,7 +117,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function setAchievementValue($achievementValue = null)
     {
-        $this->setProperty("achievementValue", $achievementValue);
+        $this->setProperty('achievementValue', $achievementValue);
     }
 
     /**
@@ -128,7 +125,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function getAssessmentType()
     {
-        return $this->getProperty("assessmentType");
+        return $this->getProperty('assessmentType');
     }
 
     /**
@@ -136,7 +133,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function setAssessmentType($assessmentType = null)
     {
-        $this->setProperty("assessmentType", $assessmentType);
+        $this->setProperty('assessmentType', $assessmentType);
     }
 
     /**
@@ -144,7 +141,7 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function getAchievementDate()
     {
-        return $this->getProperty("achievementDate");
+        return $this->getProperty('achievementDate');
     }
 
     /**
@@ -152,6 +149,6 @@ class StudentCurriculumAchievement extends ModelBase
      */
     public function setAchievementDate(\DateTime $achievementDate = null)
     {
-        $this->setProperty("achievementDate", $achievementDate);
+        $this->setProperty('achievementDate', $achievementDate);
     }
 }

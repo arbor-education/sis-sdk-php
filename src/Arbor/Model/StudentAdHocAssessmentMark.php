@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AdHocAssessmentBatch;
-use \Arbor\Model\Student;
-use \Arbor\Model\AdHocAssessment;
-use \Arbor\Model\Grade;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentAdHocAssessmentMark extends ModelBase
 {
@@ -42,34 +33,38 @@ class StudentAdHocAssessmentMark extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_AD_HOC_ASSESSMENT_MARK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentAdHocAssessmentMark[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentAdHocAssessmentMark");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_AD_HOC_ASSESSMENT_MARK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentAdHocAssessmentMark
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_AD_HOC_ASSESSMENT_MARK, $id);
     }
 
@@ -78,7 +73,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getAdHocAssessmentBatch()
     {
-        return $this->getProperty("adHocAssessmentBatch");
+        return $this->getProperty('adHocAssessmentBatch');
     }
 
     /**
@@ -86,7 +81,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setAdHocAssessmentBatch(AdHocAssessmentBatch $adHocAssessmentBatch = null)
     {
-        $this->setProperty("adHocAssessmentBatch", $adHocAssessmentBatch);
+        $this->setProperty('adHocAssessmentBatch', $adHocAssessmentBatch);
     }
 
     /**
@@ -94,7 +89,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -102,7 +97,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -110,7 +105,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getAdHocAssessment()
     {
-        return $this->getProperty("adHocAssessment");
+        return $this->getProperty('adHocAssessment');
     }
 
     /**
@@ -118,7 +113,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setAdHocAssessment(AdHocAssessment $adHocAssessment = null)
     {
-        $this->setProperty("adHocAssessment", $adHocAssessment);
+        $this->setProperty('adHocAssessment', $adHocAssessment);
     }
 
     /**
@@ -126,7 +121,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getAssessmentReferenceDate()
     {
-        return $this->getProperty("assessmentReferenceDate");
+        return $this->getProperty('assessmentReferenceDate');
     }
 
     /**
@@ -134,7 +129,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setAssessmentReferenceDate(\DateTime $assessmentReferenceDate = null)
     {
-        $this->setProperty("assessmentReferenceDate", $assessmentReferenceDate);
+        $this->setProperty('assessmentReferenceDate', $assessmentReferenceDate);
     }
 
     /**
@@ -142,7 +137,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getScopeEntity()
     {
-        return $this->getProperty("scopeEntity");
+        return $this->getProperty('scopeEntity');
     }
 
     /**
@@ -150,7 +145,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setScopeEntity(ModelBase $scopeEntity = null)
     {
-        $this->setProperty("scopeEntity", $scopeEntity);
+        $this->setProperty('scopeEntity', $scopeEntity);
     }
 
     /**
@@ -158,7 +153,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getGrade()
     {
-        return $this->getProperty("grade");
+        return $this->getProperty('grade');
     }
 
     /**
@@ -166,7 +161,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setGrade(Grade $grade = null)
     {
-        $this->setProperty("grade", $grade);
+        $this->setProperty('grade', $grade);
     }
 
     /**
@@ -174,7 +169,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getNumber()
     {
-        return $this->getProperty("number");
+        return $this->getProperty('number');
     }
 
     /**
@@ -182,7 +177,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setNumber($number = null)
     {
-        $this->setProperty("number", $number);
+        $this->setProperty('number', $number);
     }
 
     /**
@@ -190,7 +185,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getMarkingStaff()
     {
-        return $this->getProperty("markingStaff");
+        return $this->getProperty('markingStaff');
     }
 
     /**
@@ -198,7 +193,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setMarkingStaff(Staff $markingStaff = null)
     {
-        $this->setProperty("markingStaff", $markingStaff);
+        $this->setProperty('markingStaff', $markingStaff);
     }
 
     /**
@@ -206,7 +201,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getCompletedDatetime()
     {
-        return $this->getProperty("completedDatetime");
+        return $this->getProperty('completedDatetime');
     }
 
     /**
@@ -214,7 +209,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
-        $this->setProperty("completedDatetime", $completedDatetime);
+        $this->setProperty('completedDatetime', $completedDatetime);
     }
 
     /**
@@ -222,7 +217,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getCompletedStaff()
     {
-        return $this->getProperty("completedStaff");
+        return $this->getProperty('completedStaff');
     }
 
     /**
@@ -230,7 +225,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setCompletedStaff(Staff $completedStaff = null)
     {
-        $this->setProperty("completedStaff", $completedStaff);
+        $this->setProperty('completedStaff', $completedStaff);
     }
 
     /**
@@ -238,7 +233,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getApprovedDatetime()
     {
-        return $this->getProperty("approvedDatetime");
+        return $this->getProperty('approvedDatetime');
     }
 
     /**
@@ -246,7 +241,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setApprovedDatetime(\DateTime $approvedDatetime = null)
     {
-        $this->setProperty("approvedDatetime", $approvedDatetime);
+        $this->setProperty('approvedDatetime', $approvedDatetime);
     }
 
     /**
@@ -254,7 +249,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function getApprovedStaff()
     {
-        return $this->getProperty("approvedStaff");
+        return $this->getProperty('approvedStaff');
     }
 
     /**
@@ -262,6 +257,6 @@ class StudentAdHocAssessmentMark extends ModelBase
      */
     public function setApprovedStaff(Staff $approvedStaff = null)
     {
-        $this->setProperty("approvedStaff", $approvedStaff);
+        $this->setProperty('approvedStaff', $approvedStaff);
     }
 }

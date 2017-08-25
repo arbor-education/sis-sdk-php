@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationAspect;
-use \Arbor\Model\QualificationGrade;
-use \Arbor\Model\Student;
-use \Arbor\Model\CandidateRegistration;
-use \Arbor\Model\CandidateEntry;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationResult extends ModelBase
 {
@@ -42,34 +33,38 @@ class QualificationResult extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationResult[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationResult");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_RESULT, $id);
     }
 
@@ -78,7 +73,7 @@ class QualificationResult extends ModelBase
      */
     public function getQualificationAspect()
     {
-        return $this->getProperty("qualificationAspect");
+        return $this->getProperty('qualificationAspect');
     }
 
     /**
@@ -86,7 +81,7 @@ class QualificationResult extends ModelBase
      */
     public function setQualificationAspect(QualificationAspect $qualificationAspect = null)
     {
-        $this->setProperty("qualificationAspect", $qualificationAspect);
+        $this->setProperty('qualificationAspect', $qualificationAspect);
     }
 
     /**
@@ -94,7 +89,7 @@ class QualificationResult extends ModelBase
      */
     public function getQualificationGrade()
     {
-        return $this->getProperty("qualificationGrade");
+        return $this->getProperty('qualificationGrade');
     }
 
     /**
@@ -102,7 +97,7 @@ class QualificationResult extends ModelBase
      */
     public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
     {
-        $this->setProperty("qualificationGrade", $qualificationGrade);
+        $this->setProperty('qualificationGrade', $qualificationGrade);
     }
 
     /**
@@ -110,7 +105,7 @@ class QualificationResult extends ModelBase
      */
     public function getNumericValue()
     {
-        return $this->getProperty("numericValue");
+        return $this->getProperty('numericValue');
     }
 
     /**
@@ -118,7 +113,7 @@ class QualificationResult extends ModelBase
      */
     public function setNumericValue($numericValue = null)
     {
-        $this->setProperty("numericValue", $numericValue);
+        $this->setProperty('numericValue', $numericValue);
     }
 
     /**
@@ -126,7 +121,7 @@ class QualificationResult extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -134,7 +129,7 @@ class QualificationResult extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -142,7 +137,7 @@ class QualificationResult extends ModelBase
      */
     public function getCandidateRegistration()
     {
-        return $this->getProperty("candidateRegistration");
+        return $this->getProperty('candidateRegistration');
     }
 
     /**
@@ -150,7 +145,7 @@ class QualificationResult extends ModelBase
      */
     public function setCandidateRegistration(CandidateRegistration $candidateRegistration = null)
     {
-        $this->setProperty("candidateRegistration", $candidateRegistration);
+        $this->setProperty('candidateRegistration', $candidateRegistration);
     }
 
     /**
@@ -158,7 +153,7 @@ class QualificationResult extends ModelBase
      */
     public function getCandidateEntry()
     {
-        return $this->getProperty("candidateEntry");
+        return $this->getProperty('candidateEntry');
     }
 
     /**
@@ -166,7 +161,7 @@ class QualificationResult extends ModelBase
      */
     public function setCandidateEntry(CandidateEntry $candidateEntry = null)
     {
-        $this->setProperty("candidateEntry", $candidateEntry);
+        $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
@@ -174,7 +169,7 @@ class QualificationResult extends ModelBase
      */
     public function getResultDatetime()
     {
-        return $this->getProperty("resultDatetime");
+        return $this->getProperty('resultDatetime');
     }
 
     /**
@@ -182,7 +177,7 @@ class QualificationResult extends ModelBase
      */
     public function setResultDatetime(\DateTime $resultDatetime = null)
     {
-        $this->setProperty("resultDatetime", $resultDatetime);
+        $this->setProperty('resultDatetime', $resultDatetime);
     }
 
     /**
@@ -190,7 +185,7 @@ class QualificationResult extends ModelBase
      */
     public function getEmbargoDatetime()
     {
-        return $this->getProperty("embargoDatetime");
+        return $this->getProperty('embargoDatetime');
     }
 
     /**
@@ -198,7 +193,7 @@ class QualificationResult extends ModelBase
      */
     public function setEmbargoDatetime(\DateTime $embargoDatetime = null)
     {
-        $this->setProperty("embargoDatetime", $embargoDatetime);
+        $this->setProperty('embargoDatetime', $embargoDatetime);
     }
 
     /**
@@ -206,7 +201,7 @@ class QualificationResult extends ModelBase
      */
     public function getImportJob()
     {
-        return $this->getProperty("importJob");
+        return $this->getProperty('importJob');
     }
 
     /**
@@ -214,7 +209,7 @@ class QualificationResult extends ModelBase
      */
     public function setImportJob(ModelBase $importJob = null)
     {
-        $this->setProperty("importJob", $importJob);
+        $this->setProperty('importJob', $importJob);
     }
 
     /**
@@ -222,7 +217,7 @@ class QualificationResult extends ModelBase
      */
     public function getMissingResultReason()
     {
-        return $this->getProperty("missingResultReason");
+        return $this->getProperty('missingResultReason');
     }
 
     /**
@@ -230,7 +225,7 @@ class QualificationResult extends ModelBase
      */
     public function setMissingResultReason($missingResultReason = null)
     {
-        $this->setProperty("missingResultReason", $missingResultReason);
+        $this->setProperty('missingResultReason', $missingResultReason);
     }
 
     /**
@@ -238,7 +233,7 @@ class QualificationResult extends ModelBase
      */
     public function getPartialAbsence()
     {
-        return $this->getProperty("partialAbsence");
+        return $this->getProperty('partialAbsence');
     }
 
     /**
@@ -246,7 +241,7 @@ class QualificationResult extends ModelBase
      */
     public function setPartialAbsence($partialAbsence = null)
     {
-        $this->setProperty("partialAbsence", $partialAbsence);
+        $this->setProperty('partialAbsence', $partialAbsence);
     }
 
     /**
@@ -254,7 +249,7 @@ class QualificationResult extends ModelBase
      */
     public function getEndorsementGrade()
     {
-        return $this->getProperty("endorsementGrade");
+        return $this->getProperty('endorsementGrade');
     }
 
     /**
@@ -262,6 +257,6 @@ class QualificationResult extends ModelBase
      */
     public function setEndorsementGrade(QualificationGrade $endorsementGrade = null)
     {
-        $this->setProperty("endorsementGrade", $endorsementGrade);
+        $this->setProperty('endorsementGrade', $endorsementGrade);
     }
 }

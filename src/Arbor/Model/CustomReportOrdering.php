@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomReport;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReportOrdering extends ModelBase
 {
@@ -16,6 +11,8 @@ class CustomReportOrdering extends ModelBase
     const FIELD_CLASS = 'fieldClass';
 
     const FIELD_PARAMS = 'fieldParams';
+
+    const TRANSFORMATION_CLASS = 'transformationClass';
 
     const DIRECTION = 'direction';
 
@@ -26,34 +23,38 @@ class CustomReportOrdering extends ModelBase
     protected $_resourceType = ResourceType::CUSTOM_REPORT_ORDERING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReportOrdering[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReportOrdering");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT_ORDERING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReportOrdering
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_ORDERING, $id);
     }
 
@@ -62,7 +63,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function getCustomReport()
     {
-        return $this->getProperty("customReport");
+        return $this->getProperty('customReport');
     }
 
     /**
@@ -70,7 +71,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function setCustomReport(CustomReport $customReport = null)
     {
-        $this->setProperty("customReport", $customReport);
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -78,7 +79,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function getFieldClass()
     {
-        return $this->getProperty("fieldClass");
+        return $this->getProperty('fieldClass');
     }
 
     /**
@@ -86,7 +87,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function setFieldClass($fieldClass = null)
     {
-        $this->setProperty("fieldClass", $fieldClass);
+        $this->setProperty('fieldClass', $fieldClass);
     }
 
     /**
@@ -94,7 +95,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function getFieldParams()
     {
-        return $this->getProperty("fieldParams");
+        return $this->getProperty('fieldParams');
     }
 
     /**
@@ -102,7 +103,23 @@ class CustomReportOrdering extends ModelBase
      */
     public function setFieldParams($fieldParams = null)
     {
-        $this->setProperty("fieldParams", $fieldParams);
+        $this->setProperty('fieldParams', $fieldParams);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransformationClass()
+    {
+        return $this->getProperty('transformationClass');
+    }
+
+    /**
+     * @param string $transformationClass
+     */
+    public function setTransformationClass($transformationClass = null)
+    {
+        $this->setProperty('transformationClass', $transformationClass);
     }
 
     /**
@@ -110,7 +127,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function getDirection()
     {
-        return $this->getProperty("direction");
+        return $this->getProperty('direction');
     }
 
     /**
@@ -118,7 +135,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function setDirection($direction = null)
     {
-        $this->setProperty("direction", $direction);
+        $this->setProperty('direction', $direction);
     }
 
     /**
@@ -126,7 +143,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function getTargetType()
     {
-        return $this->getProperty("targetType");
+        return $this->getProperty('targetType');
     }
 
     /**
@@ -134,7 +151,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function setTargetType($targetType = null)
     {
-        $this->setProperty("targetType", $targetType);
+        $this->setProperty('targetType', $targetType);
     }
 
     /**
@@ -142,7 +159,7 @@ class CustomReportOrdering extends ModelBase
      */
     public function getTargetIndex()
     {
-        return $this->getProperty("targetIndex");
+        return $this->getProperty('targetIndex');
     }
 
     /**
@@ -150,6 +167,6 @@ class CustomReportOrdering extends ModelBase
      */
     public function setTargetIndex($targetIndex = null)
     {
-        $this->setProperty("targetIndex", $targetIndex);
+        $this->setProperty('targetIndex', $targetIndex);
     }
 }

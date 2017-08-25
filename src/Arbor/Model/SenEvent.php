@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\SenEventType;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SenEvent extends ModelBase
 {
@@ -19,8 +13,6 @@ class SenEvent extends ModelBase
     const LOCATION_TEXT = 'locationText';
 
     const LOCATION = 'location';
-
-    const SCHEDULED_BY = 'scheduledBy';
 
     const STUDENT = 'student';
 
@@ -33,34 +25,38 @@ class SenEvent extends ModelBase
     protected $_resourceType = ResourceType::SEN_EVENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SenEvent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SenEvent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SEN_EVENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SenEvent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SEN_EVENT, $id);
     }
 
@@ -69,7 +65,7 @@ class SenEvent extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -77,7 +73,7 @@ class SenEvent extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -85,7 +81,7 @@ class SenEvent extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -93,7 +89,7 @@ class SenEvent extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -101,7 +97,7 @@ class SenEvent extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -109,7 +105,7 @@ class SenEvent extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -117,7 +113,7 @@ class SenEvent extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -125,23 +121,7 @@ class SenEvent extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -149,7 +129,7 @@ class SenEvent extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -157,7 +137,7 @@ class SenEvent extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -165,7 +145,7 @@ class SenEvent extends ModelBase
      */
     public function getSenEventType()
     {
-        return $this->getProperty("senEventType");
+        return $this->getProperty('senEventType');
     }
 
     /**
@@ -173,7 +153,7 @@ class SenEvent extends ModelBase
      */
     public function setSenEventType(SenEventType $senEventType = null)
     {
-        $this->setProperty("senEventType", $senEventType);
+        $this->setProperty('senEventType', $senEventType);
     }
 
     /**
@@ -181,7 +161,7 @@ class SenEvent extends ModelBase
      */
     public function getSenEventName()
     {
-        return $this->getProperty("senEventName");
+        return $this->getProperty('senEventName');
     }
 
     /**
@@ -189,7 +169,7 @@ class SenEvent extends ModelBase
      */
     public function setSenEventName($senEventName = null)
     {
-        $this->setProperty("senEventName", $senEventName);
+        $this->setProperty('senEventName', $senEventName);
     }
 
     /**
@@ -197,7 +177,7 @@ class SenEvent extends ModelBase
      */
     public function getSenEventDescription()
     {
-        return $this->getProperty("senEventDescription");
+        return $this->getProperty('senEventDescription');
     }
 
     /**
@@ -205,6 +185,6 @@ class SenEvent extends ModelBase
      */
     public function setSenEventDescription($senEventDescription = null)
     {
-        $this->setProperty("senEventDescription", $senEventDescription);
+        $this->setProperty('senEventDescription', $senEventDescription);
     }
 }

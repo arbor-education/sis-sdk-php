@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerAccount;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomerInvoice extends ModelBase
 {
@@ -40,34 +35,38 @@ class CustomerInvoice extends ModelBase
     protected $_resourceType = ResourceType::CUSTOMER_INVOICE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomerInvoice[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomerInvoice");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOMER_INVOICE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomerInvoice
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOMER_INVOICE, $id);
     }
 
@@ -76,7 +75,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getPreviousCustomerInvoice()
     {
-        return $this->getProperty("previousCustomerInvoice");
+        return $this->getProperty('previousCustomerInvoice');
     }
 
     /**
@@ -84,7 +83,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setPreviousCustomerInvoice(CustomerInvoice $previousCustomerInvoice = null)
     {
-        $this->setProperty("previousCustomerInvoice", $previousCustomerInvoice);
+        $this->setProperty('previousCustomerInvoice', $previousCustomerInvoice);
     }
 
     /**
@@ -92,7 +91,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getCustomerAccount()
     {
-        return $this->getProperty("customerAccount");
+        return $this->getProperty('customerAccount');
     }
 
     /**
@@ -100,7 +99,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setCustomerAccount(CustomerAccount $customerAccount = null)
     {
-        $this->setProperty("customerAccount", $customerAccount);
+        $this->setProperty('customerAccount', $customerAccount);
     }
 
     /**
@@ -108,7 +107,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getInvoiceNumber()
     {
-        return $this->getProperty("invoiceNumber");
+        return $this->getProperty('invoiceNumber');
     }
 
     /**
@@ -116,7 +115,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setInvoiceNumber($invoiceNumber = null)
     {
-        $this->setProperty("invoiceNumber", $invoiceNumber);
+        $this->setProperty('invoiceNumber', $invoiceNumber);
     }
 
     /**
@@ -124,7 +123,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getInvoiceDate()
     {
-        return $this->getProperty("invoiceDate");
+        return $this->getProperty('invoiceDate');
     }
 
     /**
@@ -132,7 +131,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setInvoiceDate(\DateTime $invoiceDate = null)
     {
-        $this->setProperty("invoiceDate", $invoiceDate);
+        $this->setProperty('invoiceDate', $invoiceDate);
     }
 
     /**
@@ -140,7 +139,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getInvoiceIssuedDate()
     {
-        return $this->getProperty("invoiceIssuedDate");
+        return $this->getProperty('invoiceIssuedDate');
     }
 
     /**
@@ -148,7 +147,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setInvoiceIssuedDate(\DateTime $invoiceIssuedDate = null)
     {
-        $this->setProperty("invoiceIssuedDate", $invoiceIssuedDate);
+        $this->setProperty('invoiceIssuedDate', $invoiceIssuedDate);
     }
 
     /**
@@ -156,7 +155,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getPaymentDueDate()
     {
-        return $this->getProperty("paymentDueDate");
+        return $this->getProperty('paymentDueDate');
     }
 
     /**
@@ -164,7 +163,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setPaymentDueDate(\DateTime $paymentDueDate = null)
     {
-        $this->setProperty("paymentDueDate", $paymentDueDate);
+        $this->setProperty('paymentDueDate', $paymentDueDate);
     }
 
     /**
@@ -172,7 +171,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getFullyPaidDate()
     {
-        return $this->getProperty("fullyPaidDate");
+        return $this->getProperty('fullyPaidDate');
     }
 
     /**
@@ -180,7 +179,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setFullyPaidDate(\DateTime $fullyPaidDate = null)
     {
-        $this->setProperty("fullyPaidDate", $fullyPaidDate);
+        $this->setProperty('fullyPaidDate', $fullyPaidDate);
     }
 
     /**
@@ -188,7 +187,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -196,7 +195,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -204,7 +203,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getTotalAmountExVat()
     {
-        return $this->getProperty("totalAmountExVat");
+        return $this->getProperty('totalAmountExVat');
     }
 
     /**
@@ -212,7 +211,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setTotalAmountExVat($totalAmountExVat = null)
     {
-        $this->setProperty("totalAmountExVat", $totalAmountExVat);
+        $this->setProperty('totalAmountExVat', $totalAmountExVat);
     }
 
     /**
@@ -220,7 +219,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getVatTotal()
     {
-        return $this->getProperty("vatTotal");
+        return $this->getProperty('vatTotal');
     }
 
     /**
@@ -228,7 +227,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setVatTotal($vatTotal = null)
     {
-        $this->setProperty("vatTotal", $vatTotal);
+        $this->setProperty('vatTotal', $vatTotal);
     }
 
     /**
@@ -236,7 +235,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getBalance()
     {
-        return $this->getProperty("balance");
+        return $this->getProperty('balance');
     }
 
     /**
@@ -244,7 +243,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setBalance($balance = null)
     {
-        $this->setProperty("balance", $balance);
+        $this->setProperty('balance', $balance);
     }
 
     /**
@@ -252,7 +251,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getCancelledDate()
     {
-        return $this->getProperty("cancelledDate");
+        return $this->getProperty('cancelledDate');
     }
 
     /**
@@ -260,7 +259,7 @@ class CustomerInvoice extends ModelBase
      */
     public function setCancelledDate(\DateTime $cancelledDate = null)
     {
-        $this->setProperty("cancelledDate", $cancelledDate);
+        $this->setProperty('cancelledDate', $cancelledDate);
     }
 
     /**
@@ -268,7 +267,7 @@ class CustomerInvoice extends ModelBase
      */
     public function getReissuedDate()
     {
-        return $this->getProperty("reissuedDate");
+        return $this->getProperty('reissuedDate');
     }
 
     /**
@@ -276,6 +275,6 @@ class CustomerInvoice extends ModelBase
      */
     public function setReissuedDate(\DateTime $reissuedDate = null)
     {
-        $this->setProperty("reissuedDate", $reissuedDate);
+        $this->setProperty('reissuedDate', $reissuedDate);
     }
 }

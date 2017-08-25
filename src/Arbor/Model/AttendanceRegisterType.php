@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendanceRegisterType extends ModelBase
 {
@@ -22,37 +18,43 @@ class AttendanceRegisterType extends ModelBase
 
     const IS_AFTERNOON = 'isAfternoon';
 
+    const EVENT_OBJECT_TYPE_ID = 'eventObjectTypeId';
+
     protected $_resourceType = ResourceType::ATTENDANCE_REGISTER_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendanceRegisterType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendanceRegisterType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_REGISTER_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendanceRegisterType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_REGISTER_TYPE, $id);
     }
 
@@ -61,7 +63,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -69,7 +71,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -77,7 +79,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -85,7 +87,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -93,7 +95,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -101,7 +103,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -109,7 +111,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function getAttendanceRegisterTypeName()
     {
-        return $this->getProperty("attendanceRegisterTypeName");
+        return $this->getProperty('attendanceRegisterTypeName');
     }
 
     /**
@@ -117,7 +119,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function setAttendanceRegisterTypeName($attendanceRegisterTypeName = null)
     {
-        $this->setProperty("attendanceRegisterTypeName", $attendanceRegisterTypeName);
+        $this->setProperty('attendanceRegisterTypeName', $attendanceRegisterTypeName);
     }
 
     /**
@@ -125,7 +127,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function getIsMorning()
     {
-        return $this->getProperty("isMorning");
+        return $this->getProperty('isMorning');
     }
 
     /**
@@ -133,7 +135,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function setIsMorning($isMorning = null)
     {
-        $this->setProperty("isMorning", $isMorning);
+        $this->setProperty('isMorning', $isMorning);
     }
 
     /**
@@ -141,7 +143,7 @@ class AttendanceRegisterType extends ModelBase
      */
     public function getIsAfternoon()
     {
-        return $this->getProperty("isAfternoon");
+        return $this->getProperty('isAfternoon');
     }
 
     /**
@@ -149,6 +151,22 @@ class AttendanceRegisterType extends ModelBase
      */
     public function setIsAfternoon($isAfternoon = null)
     {
-        $this->setProperty("isAfternoon", $isAfternoon);
+        $this->setProperty('isAfternoon', $isAfternoon);
+    }
+
+    /**
+     * @return int
+     */
+    public function getEventObjectTypeId()
+    {
+        return $this->getProperty('eventObjectTypeId');
+    }
+
+    /**
+     * @param int $eventObjectTypeId
+     */
+    public function setEventObjectTypeId($eventObjectTypeId = null)
+    {
+        $this->setProperty('eventObjectTypeId', $eventObjectTypeId);
     }
 }

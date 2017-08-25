@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\EmailAccount;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailMailbox extends ModelBase
 {
@@ -36,34 +31,38 @@ class EmailMailbox extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_MAILBOX;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailMailbox[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailMailbox");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_MAILBOX);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailMailbox
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_MAILBOX, $id);
     }
 
@@ -72,7 +71,7 @@ class EmailMailbox extends ModelBase
      */
     public function getEmailAccount()
     {
-        return $this->getProperty("emailAccount");
+        return $this->getProperty('emailAccount');
     }
 
     /**
@@ -80,7 +79,7 @@ class EmailMailbox extends ModelBase
      */
     public function setEmailAccount(EmailAccount $emailAccount = null)
     {
-        $this->setProperty("emailAccount", $emailAccount);
+        $this->setProperty('emailAccount', $emailAccount);
     }
 
     /**
@@ -88,7 +87,7 @@ class EmailMailbox extends ModelBase
      */
     public function getMailboxType()
     {
-        return $this->getProperty("mailboxType");
+        return $this->getProperty('mailboxType');
     }
 
     /**
@@ -96,7 +95,7 @@ class EmailMailbox extends ModelBase
      */
     public function setMailboxType($mailboxType = null)
     {
-        $this->setProperty("mailboxType", $mailboxType);
+        $this->setProperty('mailboxType', $mailboxType);
     }
 
     /**
@@ -104,7 +103,7 @@ class EmailMailbox extends ModelBase
      */
     public function getMailboxFolder()
     {
-        return $this->getProperty("mailboxFolder");
+        return $this->getProperty('mailboxFolder');
     }
 
     /**
@@ -112,7 +111,7 @@ class EmailMailbox extends ModelBase
      */
     public function setMailboxFolder($mailboxFolder = null)
     {
-        $this->setProperty("mailboxFolder", $mailboxFolder);
+        $this->setProperty('mailboxFolder', $mailboxFolder);
     }
 
     /**
@@ -120,7 +119,7 @@ class EmailMailbox extends ModelBase
      */
     public function getLastRetrievedDatetime()
     {
-        return $this->getProperty("lastRetrievedDatetime");
+        return $this->getProperty('lastRetrievedDatetime');
     }
 
     /**
@@ -128,7 +127,7 @@ class EmailMailbox extends ModelBase
      */
     public function setLastRetrievedDatetime(\DateTime $lastRetrievedDatetime = null)
     {
-        $this->setProperty("lastRetrievedDatetime", $lastRetrievedDatetime);
+        $this->setProperty('lastRetrievedDatetime', $lastRetrievedDatetime);
     }
 
     /**
@@ -136,7 +135,7 @@ class EmailMailbox extends ModelBase
      */
     public function getLastSeenUid()
     {
-        return $this->getProperty("lastSeenUid");
+        return $this->getProperty('lastSeenUid');
     }
 
     /**
@@ -144,7 +143,7 @@ class EmailMailbox extends ModelBase
      */
     public function setLastSeenUid($lastSeenUid = null)
     {
-        $this->setProperty("lastSeenUid", $lastSeenUid);
+        $this->setProperty('lastSeenUid', $lastSeenUid);
     }
 
     /**
@@ -152,7 +151,7 @@ class EmailMailbox extends ModelBase
      */
     public function getUidValidity()
     {
-        return $this->getProperty("uidValidity");
+        return $this->getProperty('uidValidity');
     }
 
     /**
@@ -160,7 +159,7 @@ class EmailMailbox extends ModelBase
      */
     public function setUidValidity($uidValidity = null)
     {
-        $this->setProperty("uidValidity", $uidValidity);
+        $this->setProperty('uidValidity', $uidValidity);
     }
 
     /**
@@ -168,7 +167,7 @@ class EmailMailbox extends ModelBase
      */
     public function getDefaultActionRequiredByTime()
     {
-        return $this->getProperty("defaultActionRequiredByTime");
+        return $this->getProperty('defaultActionRequiredByTime');
     }
 
     /**
@@ -176,7 +175,7 @@ class EmailMailbox extends ModelBase
      */
     public function setDefaultActionRequiredByTime($defaultActionRequiredByTime = null)
     {
-        $this->setProperty("defaultActionRequiredByTime", $defaultActionRequiredByTime);
+        $this->setProperty('defaultActionRequiredByTime', $defaultActionRequiredByTime);
     }
 
     /**
@@ -184,7 +183,7 @@ class EmailMailbox extends ModelBase
      */
     public function getSharedByDefault()
     {
-        return $this->getProperty("sharedByDefault");
+        return $this->getProperty('sharedByDefault');
     }
 
     /**
@@ -192,7 +191,7 @@ class EmailMailbox extends ModelBase
      */
     public function setSharedByDefault($sharedByDefault = null)
     {
-        $this->setProperty("sharedByDefault", $sharedByDefault);
+        $this->setProperty('sharedByDefault', $sharedByDefault);
     }
 
     /**
@@ -200,7 +199,7 @@ class EmailMailbox extends ModelBase
      */
     public function getFirstErrorDatetime()
     {
-        return $this->getProperty("firstErrorDatetime");
+        return $this->getProperty('firstErrorDatetime');
     }
 
     /**
@@ -208,7 +207,7 @@ class EmailMailbox extends ModelBase
      */
     public function setFirstErrorDatetime(\DateTime $firstErrorDatetime = null)
     {
-        $this->setProperty("firstErrorDatetime", $firstErrorDatetime);
+        $this->setProperty('firstErrorDatetime', $firstErrorDatetime);
     }
 
     /**
@@ -216,7 +215,7 @@ class EmailMailbox extends ModelBase
      */
     public function getLastErrorDatetime()
     {
-        return $this->getProperty("lastErrorDatetime");
+        return $this->getProperty('lastErrorDatetime');
     }
 
     /**
@@ -224,7 +223,7 @@ class EmailMailbox extends ModelBase
      */
     public function setLastErrorDatetime(\DateTime $lastErrorDatetime = null)
     {
-        $this->setProperty("lastErrorDatetime", $lastErrorDatetime);
+        $this->setProperty('lastErrorDatetime', $lastErrorDatetime);
     }
 
     /**
@@ -232,7 +231,7 @@ class EmailMailbox extends ModelBase
      */
     public function getDisabled()
     {
-        return $this->getProperty("disabled");
+        return $this->getProperty('disabled');
     }
 
     /**
@@ -240,6 +239,6 @@ class EmailMailbox extends ModelBase
      */
     public function setDisabled($disabled = null)
     {
-        $this->setProperty("disabled", $disabled);
+        $this->setProperty('disabled', $disabled);
     }
 }

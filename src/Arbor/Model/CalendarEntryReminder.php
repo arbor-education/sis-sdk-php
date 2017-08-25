@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CalendarEntryMapping;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CalendarEntryReminder extends ModelBase
 {
@@ -18,34 +13,38 @@ class CalendarEntryReminder extends ModelBase
     protected $_resourceType = ResourceType::CALENDAR_ENTRY_REMINDER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CalendarEntryReminder[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CalendarEntryReminder");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CALENDAR_ENTRY_REMINDER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CalendarEntryReminder
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CALENDAR_ENTRY_REMINDER, $id);
     }
 
@@ -54,7 +53,7 @@ class CalendarEntryReminder extends ModelBase
      */
     public function getCalendarEntryMapping()
     {
-        return $this->getProperty("calendarEntryMapping");
+        return $this->getProperty('calendarEntryMapping');
     }
 
     /**
@@ -62,7 +61,7 @@ class CalendarEntryReminder extends ModelBase
      */
     public function setCalendarEntryMapping(CalendarEntryMapping $calendarEntryMapping = null)
     {
-        $this->setProperty("calendarEntryMapping", $calendarEntryMapping);
+        $this->setProperty('calendarEntryMapping', $calendarEntryMapping);
     }
 
     /**
@@ -70,7 +69,7 @@ class CalendarEntryReminder extends ModelBase
      */
     public function getReminderSentDatetime()
     {
-        return $this->getProperty("reminderSentDatetime");
+        return $this->getProperty('reminderSentDatetime');
     }
 
     /**
@@ -78,6 +77,6 @@ class CalendarEntryReminder extends ModelBase
      */
     public function setReminderSentDatetime(\DateTime $reminderSentDatetime = null)
     {
-        $this->setProperty("reminderSentDatetime", $reminderSentDatetime);
+        $this->setProperty('reminderSentDatetime', $reminderSentDatetime);
     }
 }

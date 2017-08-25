@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationAspect;
-use \Arbor\Model\QualificationGrade;
-use \Arbor\Model\Student;
-use \Arbor\Model\CandidateEntry;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationCenterAssessedOutcome extends ModelBase
 {
@@ -31,34 +23,38 @@ class QualificationCenterAssessedOutcome extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_CENTER_ASSESSED_OUTCOME;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationCenterAssessedOutcome[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationCenterAssessedOutcome");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_CENTER_ASSESSED_OUTCOME);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationCenterAssessedOutcome
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_CENTER_ASSESSED_OUTCOME, $id);
     }
 
@@ -67,7 +63,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getQualificationAspect()
     {
-        return $this->getProperty("qualificationAspect");
+        return $this->getProperty('qualificationAspect');
     }
 
     /**
@@ -75,7 +71,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setQualificationAspect(QualificationAspect $qualificationAspect = null)
     {
-        $this->setProperty("qualificationAspect", $qualificationAspect);
+        $this->setProperty('qualificationAspect', $qualificationAspect);
     }
 
     /**
@@ -83,7 +79,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getQualificationGrade()
     {
-        return $this->getProperty("qualificationGrade");
+        return $this->getProperty('qualificationGrade');
     }
 
     /**
@@ -91,7 +87,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
     {
-        $this->setProperty("qualificationGrade", $qualificationGrade);
+        $this->setProperty('qualificationGrade', $qualificationGrade);
     }
 
     /**
@@ -99,7 +95,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getNumericValue()
     {
-        return $this->getProperty("numericValue");
+        return $this->getProperty('numericValue');
     }
 
     /**
@@ -107,7 +103,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setNumericValue($numericValue = null)
     {
-        $this->setProperty("numericValue", $numericValue);
+        $this->setProperty('numericValue', $numericValue);
     }
 
     /**
@@ -115,7 +111,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -123,7 +119,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -131,7 +127,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getCandidateEntry()
     {
-        return $this->getProperty("candidateEntry");
+        return $this->getProperty('candidateEntry');
     }
 
     /**
@@ -139,7 +135,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setCandidateEntry(CandidateEntry $candidateEntry = null)
     {
-        $this->setProperty("candidateEntry", $candidateEntry);
+        $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
@@ -147,7 +143,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getAssessmentDate()
     {
-        return $this->getProperty("assessmentDate");
+        return $this->getProperty('assessmentDate');
     }
 
     /**
@@ -155,7 +151,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setAssessmentDate(\DateTime $assessmentDate = null)
     {
-        $this->setProperty("assessmentDate", $assessmentDate);
+        $this->setProperty('assessmentDate', $assessmentDate);
     }
 
     /**
@@ -163,7 +159,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -171,6 +167,6 @@ class QualificationCenterAssessedOutcome extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

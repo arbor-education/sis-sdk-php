@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Snippet extends ModelBase
 {
@@ -26,34 +21,38 @@ class Snippet extends ModelBase
     protected $_resourceType = ResourceType::SNIPPET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Snippet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Snippet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SNIPPET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Snippet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SNIPPET, $id);
     }
 
@@ -62,7 +61,7 @@ class Snippet extends ModelBase
      */
     public function getSnippetName()
     {
-        return $this->getProperty("snippetName");
+        return $this->getProperty('snippetName');
     }
 
     /**
@@ -70,7 +69,7 @@ class Snippet extends ModelBase
      */
     public function setSnippetName($snippetName = null)
     {
-        $this->setProperty("snippetName", $snippetName);
+        $this->setProperty('snippetName', $snippetName);
     }
 
     /**
@@ -78,7 +77,7 @@ class Snippet extends ModelBase
      */
     public function getSnippetText()
     {
-        return $this->getProperty("snippetText");
+        return $this->getProperty('snippetText');
     }
 
     /**
@@ -86,7 +85,7 @@ class Snippet extends ModelBase
      */
     public function setSnippetText($snippetText = null)
     {
-        $this->setProperty("snippetText", $snippetText);
+        $this->setProperty('snippetText', $snippetText);
     }
 
     /**
@@ -94,7 +93,7 @@ class Snippet extends ModelBase
      */
     public function getCategory()
     {
-        return $this->getProperty("category");
+        return $this->getProperty('category');
     }
 
     /**
@@ -102,7 +101,7 @@ class Snippet extends ModelBase
      */
     public function setCategory($category = null)
     {
-        $this->setProperty("category", $category);
+        $this->setProperty('category', $category);
     }
 
     /**
@@ -110,7 +109,7 @@ class Snippet extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -118,7 +117,7 @@ class Snippet extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -126,7 +125,7 @@ class Snippet extends ModelBase
      */
     public function getLinkedToEntity()
     {
-        return $this->getProperty("linkedToEntity");
+        return $this->getProperty('linkedToEntity');
     }
 
     /**
@@ -134,7 +133,7 @@ class Snippet extends ModelBase
      */
     public function setLinkedToEntity(ModelBase $linkedToEntity = null)
     {
-        $this->setProperty("linkedToEntity", $linkedToEntity);
+        $this->setProperty('linkedToEntity', $linkedToEntity);
     }
 
     /**
@@ -142,7 +141,7 @@ class Snippet extends ModelBase
      */
     public function getIsShared()
     {
-        return $this->getProperty("isShared");
+        return $this->getProperty('isShared');
     }
 
     /**
@@ -150,6 +149,6 @@ class Snippet extends ModelBase
      */
     public function setIsShared($isShared = null)
     {
-        $this->setProperty("isShared", $isShared);
+        $this->setProperty('isShared', $isShared);
     }
 }

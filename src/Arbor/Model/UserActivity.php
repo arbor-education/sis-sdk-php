@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class UserActivity extends ModelBase
 {
@@ -24,34 +19,38 @@ class UserActivity extends ModelBase
     protected $_resourceType = ResourceType::USER_ACTIVITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return UserActivity[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UserActivity");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::USER_ACTIVITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return UserActivity
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::USER_ACTIVITY, $id);
     }
 
@@ -60,7 +59,7 @@ class UserActivity extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -68,7 +67,7 @@ class UserActivity extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -76,7 +75,7 @@ class UserActivity extends ModelBase
      */
     public function getProductArea()
     {
-        return $this->getProperty("productArea");
+        return $this->getProperty('productArea');
     }
 
     /**
@@ -84,7 +83,7 @@ class UserActivity extends ModelBase
      */
     public function setProductArea($productArea = null)
     {
-        $this->setProperty("productArea", $productArea);
+        $this->setProperty('productArea', $productArea);
     }
 
     /**
@@ -92,7 +91,7 @@ class UserActivity extends ModelBase
      */
     public function getDay()
     {
-        return $this->getProperty("day");
+        return $this->getProperty('day');
     }
 
     /**
@@ -100,7 +99,7 @@ class UserActivity extends ModelBase
      */
     public function setDay(\DateTime $day = null)
     {
-        $this->setProperty("day", $day);
+        $this->setProperty('day', $day);
     }
 
     /**
@@ -108,7 +107,7 @@ class UserActivity extends ModelBase
      */
     public function getHour()
     {
-        return $this->getProperty("hour");
+        return $this->getProperty('hour');
     }
 
     /**
@@ -116,7 +115,7 @@ class UserActivity extends ModelBase
      */
     public function setHour(\DateTime $hour = null)
     {
-        $this->setProperty("hour", $hour);
+        $this->setProperty('hour', $hour);
     }
 
     /**
@@ -124,7 +123,7 @@ class UserActivity extends ModelBase
      */
     public function getRequests()
     {
-        return $this->getProperty("requests");
+        return $this->getProperty('requests');
     }
 
     /**
@@ -132,6 +131,6 @@ class UserActivity extends ModelBase
      */
     public function setRequests($requests = null)
     {
-        $this->setProperty("requests", $requests);
+        $this->setProperty('requests', $requests);
     }
 }

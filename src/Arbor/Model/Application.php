@@ -1,20 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\IntakeSeason;
-use \Arbor\Model\IntakeSeasonApplicantBucket;
-use \Arbor\Model\ApplicationWithdrawalReason;
-use \Arbor\Model\IntakeSeasonGroup;
-use \Arbor\Model\AcademicLevel;
-use \Arbor\Model\RegistrationForm;
-use \Arbor\Model\House;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Application extends ModelBase
 {
@@ -55,34 +43,38 @@ class Application extends ModelBase
     protected $_resourceType = ResourceType::APPLICATION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Application[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Application");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::APPLICATION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Application
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::APPLICATION, $id);
     }
 
@@ -91,7 +83,7 @@ class Application extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -99,7 +91,7 @@ class Application extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -107,7 +99,7 @@ class Application extends ModelBase
      */
     public function getApplicationDatetime()
     {
-        return $this->getProperty("applicationDatetime");
+        return $this->getProperty('applicationDatetime');
     }
 
     /**
@@ -115,7 +107,7 @@ class Application extends ModelBase
      */
     public function setApplicationDatetime(\DateTime $applicationDatetime = null)
     {
-        $this->setProperty("applicationDatetime", $applicationDatetime);
+        $this->setProperty('applicationDatetime', $applicationDatetime);
     }
 
     /**
@@ -123,7 +115,7 @@ class Application extends ModelBase
      */
     public function getApplicationReferenceNumber()
     {
-        return $this->getProperty("applicationReferenceNumber");
+        return $this->getProperty('applicationReferenceNumber');
     }
 
     /**
@@ -131,7 +123,7 @@ class Application extends ModelBase
      */
     public function setApplicationReferenceNumber($applicationReferenceNumber = null)
     {
-        $this->setProperty("applicationReferenceNumber", $applicationReferenceNumber);
+        $this->setProperty('applicationReferenceNumber', $applicationReferenceNumber);
     }
 
     /**
@@ -139,7 +131,7 @@ class Application extends ModelBase
      */
     public function getIntakeSeason()
     {
-        return $this->getProperty("intakeSeason");
+        return $this->getProperty('intakeSeason');
     }
 
     /**
@@ -147,7 +139,7 @@ class Application extends ModelBase
      */
     public function setIntakeSeason(IntakeSeason $intakeSeason = null)
     {
-        $this->setProperty("intakeSeason", $intakeSeason);
+        $this->setProperty('intakeSeason', $intakeSeason);
     }
 
     /**
@@ -155,7 +147,7 @@ class Application extends ModelBase
      */
     public function getApplicantBucket()
     {
-        return $this->getProperty("applicantBucket");
+        return $this->getProperty('applicantBucket');
     }
 
     /**
@@ -163,7 +155,7 @@ class Application extends ModelBase
      */
     public function setApplicantBucket(IntakeSeasonApplicantBucket $applicantBucket = null)
     {
-        $this->setProperty("applicantBucket", $applicantBucket);
+        $this->setProperty('applicantBucket', $applicantBucket);
     }
 
     /**
@@ -171,7 +163,7 @@ class Application extends ModelBase
      */
     public function getBucketScore()
     {
-        return $this->getProperty("bucketScore");
+        return $this->getProperty('bucketScore');
     }
 
     /**
@@ -179,7 +171,7 @@ class Application extends ModelBase
      */
     public function setBucketScore($bucketScore = null)
     {
-        $this->setProperty("bucketScore", $bucketScore);
+        $this->setProperty('bucketScore', $bucketScore);
     }
 
     /**
@@ -187,7 +179,7 @@ class Application extends ModelBase
      */
     public function getWithdrawnDatetime()
     {
-        return $this->getProperty("withdrawnDatetime");
+        return $this->getProperty('withdrawnDatetime');
     }
 
     /**
@@ -195,7 +187,7 @@ class Application extends ModelBase
      */
     public function setWithdrawnDatetime(\DateTime $withdrawnDatetime = null)
     {
-        $this->setProperty("withdrawnDatetime", $withdrawnDatetime);
+        $this->setProperty('withdrawnDatetime', $withdrawnDatetime);
     }
 
     /**
@@ -203,7 +195,7 @@ class Application extends ModelBase
      */
     public function getWithdrawalReason()
     {
-        return $this->getProperty("withdrawalReason");
+        return $this->getProperty('withdrawalReason');
     }
 
     /**
@@ -211,7 +203,7 @@ class Application extends ModelBase
      */
     public function setWithdrawalReason(ApplicationWithdrawalReason $withdrawalReason = null)
     {
-        $this->setProperty("withdrawalReason", $withdrawalReason);
+        $this->setProperty('withdrawalReason', $withdrawalReason);
     }
 
     /**
@@ -219,7 +211,7 @@ class Application extends ModelBase
      */
     public function getRejectedDatetime()
     {
-        return $this->getProperty("rejectedDatetime");
+        return $this->getProperty('rejectedDatetime');
     }
 
     /**
@@ -227,7 +219,7 @@ class Application extends ModelBase
      */
     public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
     {
-        $this->setProperty("rejectedDatetime", $rejectedDatetime);
+        $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
 
     /**
@@ -235,7 +227,7 @@ class Application extends ModelBase
      */
     public function getIntakeSeasonGroup()
     {
-        return $this->getProperty("intakeSeasonGroup");
+        return $this->getProperty('intakeSeasonGroup');
     }
 
     /**
@@ -243,7 +235,7 @@ class Application extends ModelBase
      */
     public function setIntakeSeasonGroup(IntakeSeasonGroup $intakeSeasonGroup = null)
     {
-        $this->setProperty("intakeSeasonGroup", $intakeSeasonGroup);
+        $this->setProperty('intakeSeasonGroup', $intakeSeasonGroup);
     }
 
     /**
@@ -251,7 +243,7 @@ class Application extends ModelBase
      */
     public function getOfferedDatetime()
     {
-        return $this->getProperty("offeredDatetime");
+        return $this->getProperty('offeredDatetime');
     }
 
     /**
@@ -259,7 +251,7 @@ class Application extends ModelBase
      */
     public function setOfferedDatetime(\DateTime $offeredDatetime = null)
     {
-        $this->setProperty("offeredDatetime", $offeredDatetime);
+        $this->setProperty('offeredDatetime', $offeredDatetime);
     }
 
     /**
@@ -267,7 +259,7 @@ class Application extends ModelBase
      */
     public function getAcceptedDatetime()
     {
-        return $this->getProperty("acceptedDatetime");
+        return $this->getProperty('acceptedDatetime');
     }
 
     /**
@@ -275,7 +267,7 @@ class Application extends ModelBase
      */
     public function setAcceptedDatetime(\DateTime $acceptedDatetime = null)
     {
-        $this->setProperty("acceptedDatetime", $acceptedDatetime);
+        $this->setProperty('acceptedDatetime', $acceptedDatetime);
     }
 
     /**
@@ -283,7 +275,7 @@ class Application extends ModelBase
      */
     public function getExpectedAdmissionDate()
     {
-        return $this->getProperty("expectedAdmissionDate");
+        return $this->getProperty('expectedAdmissionDate');
     }
 
     /**
@@ -291,7 +283,7 @@ class Application extends ModelBase
      */
     public function setExpectedAdmissionDate(\DateTime $expectedAdmissionDate = null)
     {
-        $this->setProperty("expectedAdmissionDate", $expectedAdmissionDate);
+        $this->setProperty('expectedAdmissionDate', $expectedAdmissionDate);
     }
 
     /**
@@ -299,7 +291,7 @@ class Application extends ModelBase
      */
     public function getExpectedAcademicLevel()
     {
-        return $this->getProperty("expectedAcademicLevel");
+        return $this->getProperty('expectedAcademicLevel');
     }
 
     /**
@@ -307,7 +299,7 @@ class Application extends ModelBase
      */
     public function setExpectedAcademicLevel(AcademicLevel $expectedAcademicLevel = null)
     {
-        $this->setProperty("expectedAcademicLevel", $expectedAcademicLevel);
+        $this->setProperty('expectedAcademicLevel', $expectedAcademicLevel);
     }
 
     /**
@@ -315,7 +307,7 @@ class Application extends ModelBase
      */
     public function getExpectedRegistrationForm()
     {
-        return $this->getProperty("expectedRegistrationForm");
+        return $this->getProperty('expectedRegistrationForm');
     }
 
     /**
@@ -323,7 +315,7 @@ class Application extends ModelBase
      */
     public function setExpectedRegistrationForm(RegistrationForm $expectedRegistrationForm = null)
     {
-        $this->setProperty("expectedRegistrationForm", $expectedRegistrationForm);
+        $this->setProperty('expectedRegistrationForm', $expectedRegistrationForm);
     }
 
     /**
@@ -331,7 +323,7 @@ class Application extends ModelBase
      */
     public function getExpectedHouse()
     {
-        return $this->getProperty("expectedHouse");
+        return $this->getProperty('expectedHouse');
     }
 
     /**
@@ -339,7 +331,7 @@ class Application extends ModelBase
      */
     public function setExpectedHouse(House $expectedHouse = null)
     {
-        $this->setProperty("expectedHouse", $expectedHouse);
+        $this->setProperty('expectedHouse', $expectedHouse);
     }
 
     /**
@@ -347,7 +339,7 @@ class Application extends ModelBase
      */
     public function getEnrolledDatetime()
     {
-        return $this->getProperty("enrolledDatetime");
+        return $this->getProperty('enrolledDatetime');
     }
 
     /**
@@ -355,6 +347,6 @@ class Application extends ModelBase
      */
     public function setEnrolledDatetime(\DateTime $enrolledDatetime = null)
     {
-        $this->setProperty("enrolledDatetime", $enrolledDatetime);
+        $this->setProperty('enrolledDatetime', $enrolledDatetime);
     }
 }

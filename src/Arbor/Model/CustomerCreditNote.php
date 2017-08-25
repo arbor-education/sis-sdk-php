@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerAccount;
-use \Arbor\Model\BillPayer;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomerCreditNote extends ModelBase
 {
@@ -27,34 +21,38 @@ class CustomerCreditNote extends ModelBase
     protected $_resourceType = ResourceType::CUSTOMER_CREDIT_NOTE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomerCreditNote[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomerCreditNote");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOMER_CREDIT_NOTE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomerCreditNote
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOMER_CREDIT_NOTE, $id);
     }
 
@@ -63,7 +61,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function getCustomerAccount()
     {
-        return $this->getProperty("customerAccount");
+        return $this->getProperty('customerAccount');
     }
 
     /**
@@ -71,7 +69,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function setCustomerAccount(CustomerAccount $customerAccount = null)
     {
-        $this->setProperty("customerAccount", $customerAccount);
+        $this->setProperty('customerAccount', $customerAccount);
     }
 
     /**
@@ -79,7 +77,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function getBillPayer()
     {
-        return $this->getProperty("billPayer");
+        return $this->getProperty('billPayer');
     }
 
     /**
@@ -87,7 +85,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function setBillPayer(BillPayer $billPayer = null)
     {
-        $this->setProperty("billPayer", $billPayer);
+        $this->setProperty('billPayer', $billPayer);
     }
 
     /**
@@ -95,7 +93,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function getCreditNoteDate()
     {
-        return $this->getProperty("creditNoteDate");
+        return $this->getProperty('creditNoteDate');
     }
 
     /**
@@ -103,7 +101,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function setCreditNoteDate(\DateTime $creditNoteDate = null)
     {
-        $this->setProperty("creditNoteDate", $creditNoteDate);
+        $this->setProperty('creditNoteDate', $creditNoteDate);
     }
 
     /**
@@ -111,7 +109,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function getTotalAmountCredited()
     {
-        return $this->getProperty("totalAmountCredited");
+        return $this->getProperty('totalAmountCredited');
     }
 
     /**
@@ -119,7 +117,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function setTotalAmountCredited($totalAmountCredited = null)
     {
-        $this->setProperty("totalAmountCredited", $totalAmountCredited);
+        $this->setProperty('totalAmountCredited', $totalAmountCredited);
     }
 
     /**
@@ -127,7 +125,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function getCreditNoteNumber()
     {
-        return $this->getProperty("creditNoteNumber");
+        return $this->getProperty('creditNoteNumber');
     }
 
     /**
@@ -135,7 +133,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function setCreditNoteNumber($creditNoteNumber = null)
     {
-        $this->setProperty("creditNoteNumber", $creditNoteNumber);
+        $this->setProperty('creditNoteNumber', $creditNoteNumber);
     }
 
     /**
@@ -143,7 +141,7 @@ class CustomerCreditNote extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -151,6 +149,6 @@ class CustomerCreditNote extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

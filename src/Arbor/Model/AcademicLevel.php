@@ -1,19 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CurriculumGrade;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicLevel extends ModelBase
 {
-    const CODE = 'code';
-
     const ACADEMIC_LEVEL_NAME = 'academicLevelName';
 
     const SHORT_NAME = 'shortName';
@@ -35,51 +27,39 @@ class AcademicLevel extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_LEVEL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicLevel[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicLevel");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_LEVEL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicLevel
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_LEVEL, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->getProperty("code");
-    }
-
-    /**
-     * @param string $code
-     */
-    public function setCode($code = null)
-    {
-        $this->setProperty("code", $code);
     }
 
     /**
@@ -87,7 +67,7 @@ class AcademicLevel extends ModelBase
      */
     public function getAcademicLevelName()
     {
-        return $this->getProperty("academicLevelName");
+        return $this->getProperty('academicLevelName');
     }
 
     /**
@@ -95,7 +75,7 @@ class AcademicLevel extends ModelBase
      */
     public function setAcademicLevelName($academicLevelName = null)
     {
-        $this->setProperty("academicLevelName", $academicLevelName);
+        $this->setProperty('academicLevelName', $academicLevelName);
     }
 
     /**
@@ -103,7 +83,7 @@ class AcademicLevel extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -111,7 +91,7 @@ class AcademicLevel extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -119,7 +99,7 @@ class AcademicLevel extends ModelBase
      */
     public function getCurriculumGrade()
     {
-        return $this->getProperty("curriculumGrade");
+        return $this->getProperty('curriculumGrade');
     }
 
     /**
@@ -127,7 +107,7 @@ class AcademicLevel extends ModelBase
      */
     public function setCurriculumGrade(CurriculumGrade $curriculumGrade = null)
     {
-        $this->setProperty("curriculumGrade", $curriculumGrade);
+        $this->setProperty('curriculumGrade', $curriculumGrade);
     }
 
     /**
@@ -135,7 +115,7 @@ class AcademicLevel extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -143,7 +123,7 @@ class AcademicLevel extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -151,7 +131,7 @@ class AcademicLevel extends ModelBase
      */
     public function getPromotedToAcademicLevel()
     {
-        return $this->getProperty("promotedToAcademicLevel");
+        return $this->getProperty('promotedToAcademicLevel');
     }
 
     /**
@@ -159,7 +139,7 @@ class AcademicLevel extends ModelBase
      */
     public function setPromotedToAcademicLevel(AcademicLevel $promotedToAcademicLevel = null)
     {
-        $this->setProperty("promotedToAcademicLevel", $promotedToAcademicLevel);
+        $this->setProperty('promotedToAcademicLevel', $promotedToAcademicLevel);
     }
 
     /**
@@ -167,7 +147,7 @@ class AcademicLevel extends ModelBase
      */
     public function getPromotedDatetime()
     {
-        return $this->getProperty("promotedDatetime");
+        return $this->getProperty('promotedDatetime');
     }
 
     /**
@@ -175,7 +155,7 @@ class AcademicLevel extends ModelBase
      */
     public function setPromotedDatetime(\DateTime $promotedDatetime = null)
     {
-        $this->setProperty("promotedDatetime", $promotedDatetime);
+        $this->setProperty('promotedDatetime', $promotedDatetime);
     }
 
     /**
@@ -183,7 +163,7 @@ class AcademicLevel extends ModelBase
      */
     public function getCopiedToAcademicLevel()
     {
-        return $this->getProperty("copiedToAcademicLevel");
+        return $this->getProperty('copiedToAcademicLevel');
     }
 
     /**
@@ -191,7 +171,7 @@ class AcademicLevel extends ModelBase
      */
     public function setCopiedToAcademicLevel(AcademicLevel $copiedToAcademicLevel = null)
     {
-        $this->setProperty("copiedToAcademicLevel", $copiedToAcademicLevel);
+        $this->setProperty('copiedToAcademicLevel', $copiedToAcademicLevel);
     }
 
     /**
@@ -199,7 +179,7 @@ class AcademicLevel extends ModelBase
      */
     public function getDisplayOrder()
     {
-        return $this->getProperty("displayOrder");
+        return $this->getProperty('displayOrder');
     }
 
     /**
@@ -207,7 +187,7 @@ class AcademicLevel extends ModelBase
      */
     public function setDisplayOrder($displayOrder = null)
     {
-        $this->setProperty("displayOrder", $displayOrder);
+        $this->setProperty('displayOrder', $displayOrder);
     }
 
     /**
@@ -215,7 +195,7 @@ class AcademicLevel extends ModelBase
      */
     public function getTargetEnrolment()
     {
-        return $this->getProperty("targetEnrolment");
+        return $this->getProperty('targetEnrolment');
     }
 
     /**
@@ -223,7 +203,7 @@ class AcademicLevel extends ModelBase
      */
     public function setTargetEnrolment($targetEnrolment = null)
     {
-        $this->setProperty("targetEnrolment", $targetEnrolment);
+        $this->setProperty('targetEnrolment', $targetEnrolment);
     }
 
     /**
@@ -231,6 +211,6 @@ class AcademicLevel extends ModelBase
      */
     public function getTutorMemberships()
     {
-        return $this->getCollectionProperty("tutorMemberships");
+        return $this->getCollectionProperty('tutorMemberships');
     }
 }

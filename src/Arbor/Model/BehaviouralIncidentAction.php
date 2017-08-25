@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BehaviouralIncident;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralIncidentAction extends ModelBase
 {
@@ -23,34 +17,38 @@ class BehaviouralIncidentAction extends ModelBase
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_ACTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BehaviouralIncidentAction[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BehaviouralIncidentAction");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_INCIDENT_ACTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BehaviouralIncidentAction
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_ACTION, $id);
     }
 
@@ -59,7 +57,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function getBehaviouralIncident()
     {
-        return $this->getProperty("behaviouralIncident");
+        return $this->getProperty('behaviouralIncident');
     }
 
     /**
@@ -67,7 +65,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
     {
-        $this->setProperty("behaviouralIncident", $behaviouralIncident);
+        $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
@@ -75,7 +73,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -83,7 +81,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -91,7 +89,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function getAction()
     {
-        return $this->getProperty("action");
+        return $this->getProperty('action');
     }
 
     /**
@@ -99,7 +97,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function setAction(ModelBase $action = null)
     {
-        $this->setProperty("action", $action);
+        $this->setProperty('action', $action);
     }
 
     /**
@@ -107,7 +105,7 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function getIsAutomatic()
     {
-        return $this->getProperty("isAutomatic");
+        return $this->getProperty('isAutomatic');
     }
 
     /**
@@ -115,6 +113,6 @@ class BehaviouralIncidentAction extends ModelBase
      */
     public function setIsAutomatic($isAutomatic = null)
     {
-        $this->setProperty("isAutomatic", $isAutomatic);
+        $this->setProperty('isAutomatic', $isAutomatic);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Schoolwork;
-use \Arbor\Model\GradeSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SchoolworkAspect extends ModelBase
 {
@@ -29,34 +23,38 @@ class SchoolworkAspect extends ModelBase
     protected $_resourceType = ResourceType::SCHOOLWORK_ASPECT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolworkAspect[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SchoolworkAspect");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SCHOOLWORK_ASPECT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolworkAspect
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SCHOOLWORK_ASPECT, $id);
     }
 
@@ -65,7 +63,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getSchoolwork()
     {
-        return $this->getProperty("schoolwork");
+        return $this->getProperty('schoolwork');
     }
 
     /**
@@ -73,7 +71,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function setSchoolwork(Schoolwork $schoolwork = null)
     {
-        $this->setProperty("schoolwork", $schoolwork);
+        $this->setProperty('schoolwork', $schoolwork);
     }
 
     /**
@@ -81,7 +79,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getAspectName()
     {
-        return $this->getProperty("aspectName");
+        return $this->getProperty('aspectName');
     }
 
     /**
@@ -89,7 +87,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function setAspectName($aspectName = null)
     {
-        $this->setProperty("aspectName", $aspectName);
+        $this->setProperty('aspectName', $aspectName);
     }
 
     /**
@@ -97,7 +95,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getAspectDataType()
     {
-        return $this->getProperty("aspectDataType");
+        return $this->getProperty('aspectDataType');
     }
 
     /**
@@ -105,7 +103,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function setAspectDataType($aspectDataType = null)
     {
-        $this->setProperty("aspectDataType", $aspectDataType);
+        $this->setProperty('aspectDataType', $aspectDataType);
     }
 
     /**
@@ -113,7 +111,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getGradeSet()
     {
-        return $this->getProperty("gradeSet");
+        return $this->getProperty('gradeSet');
     }
 
     /**
@@ -121,7 +119,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function setGradeSet(GradeSet $gradeSet = null)
     {
-        $this->setProperty("gradeSet", $gradeSet);
+        $this->setProperty('gradeSet', $gradeSet);
     }
 
     /**
@@ -129,7 +127,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getMarkMinValue()
     {
-        return $this->getProperty("markMinValue");
+        return $this->getProperty('markMinValue');
     }
 
     /**
@@ -137,7 +135,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function setMarkMinValue($markMinValue = null)
     {
-        $this->setProperty("markMinValue", $markMinValue);
+        $this->setProperty('markMinValue', $markMinValue);
     }
 
     /**
@@ -145,7 +143,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getMarkMaxValue()
     {
-        return $this->getProperty("markMaxValue");
+        return $this->getProperty('markMaxValue');
     }
 
     /**
@@ -153,7 +151,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function setMarkMaxValue($markMaxValue = null)
     {
-        $this->setProperty("markMaxValue", $markMaxValue);
+        $this->setProperty('markMaxValue', $markMaxValue);
     }
 
     /**
@@ -161,7 +159,7 @@ class SchoolworkAspect extends ModelBase
      */
     public function getScaleDirection()
     {
-        return $this->getProperty("scaleDirection");
+        return $this->getProperty('scaleDirection');
     }
 
     /**
@@ -169,6 +167,6 @@ class SchoolworkAspect extends ModelBase
      */
     public function setScaleDirection($scaleDirection = null)
     {
-        $this->setProperty("scaleDirection", $scaleDirection);
+        $this->setProperty('scaleDirection', $scaleDirection);
     }
 }

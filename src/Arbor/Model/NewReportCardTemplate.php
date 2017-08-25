@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class NewReportCardTemplate extends ModelBase
 {
@@ -31,34 +27,38 @@ class NewReportCardTemplate extends ModelBase
     protected $_resourceType = ResourceType::NEW_REPORT_CARD_TEMPLATE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return NewReportCardTemplate[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("NewReportCardTemplate");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::NEW_REPORT_CARD_TEMPLATE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return NewReportCardTemplate
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::NEW_REPORT_CARD_TEMPLATE, $id);
     }
 
@@ -67,7 +67,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getTemplateName()
     {
-        return $this->getProperty("templateName");
+        return $this->getProperty('templateName');
     }
 
     /**
@@ -75,7 +75,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setTemplateName($templateName = null)
     {
-        $this->setProperty("templateName", $templateName);
+        $this->setProperty('templateName', $templateName);
     }
 
     /**
@@ -83,7 +83,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getTemplateFilename()
     {
-        return $this->getProperty("templateFilename");
+        return $this->getProperty('templateFilename');
     }
 
     /**
@@ -91,7 +91,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setTemplateFilename($templateFilename = null)
     {
-        $this->setProperty("templateFilename", $templateFilename);
+        $this->setProperty('templateFilename', $templateFilename);
     }
 
     /**
@@ -99,7 +99,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getTemplateHtml()
     {
-        return $this->getProperty("templateHtml");
+        return $this->getProperty('templateHtml');
     }
 
     /**
@@ -107,7 +107,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setTemplateHtml($templateHtml = null)
     {
-        $this->setProperty("templateHtml", $templateHtml);
+        $this->setProperty('templateHtml', $templateHtml);
     }
 
     /**
@@ -115,7 +115,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getCss()
     {
-        return $this->getProperty("css");
+        return $this->getProperty('css');
     }
 
     /**
@@ -123,7 +123,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setCss($css = null)
     {
-        $this->setProperty("css", $css);
+        $this->setProperty('css', $css);
     }
 
     /**
@@ -131,7 +131,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getHelperClassName()
     {
-        return $this->getProperty("helperClassName");
+        return $this->getProperty('helperClassName');
     }
 
     /**
@@ -139,7 +139,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setHelperClassName($helperClassName = null)
     {
-        $this->setProperty("helperClassName", $helperClassName);
+        $this->setProperty('helperClassName', $helperClassName);
     }
 
     /**
@@ -147,7 +147,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getVariables()
     {
-        return $this->getProperty("variables");
+        return $this->getProperty('variables');
     }
 
     /**
@@ -155,7 +155,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setVariables($variables = null)
     {
-        $this->setProperty("variables", $variables);
+        $this->setProperty('variables', $variables);
     }
 
     /**
@@ -163,7 +163,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -171,7 +171,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -179,7 +179,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getOrientation()
     {
-        return $this->getProperty("orientation");
+        return $this->getProperty('orientation');
     }
 
     /**
@@ -187,7 +187,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setOrientation($orientation = null)
     {
-        $this->setProperty("orientation", $orientation);
+        $this->setProperty('orientation', $orientation);
     }
 
     /**
@@ -195,7 +195,7 @@ class NewReportCardTemplate extends ModelBase
      */
     public function getIsCustom()
     {
-        return $this->getProperty("isCustom");
+        return $this->getProperty('isCustom');
     }
 
     /**
@@ -203,6 +203,6 @@ class NewReportCardTemplate extends ModelBase
      */
     public function setIsCustom($isCustom = null)
     {
-        $this->setProperty("isCustom", $isCustom);
+        $this->setProperty('isCustom', $isCustom);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Session;
-use \Arbor\Model\RoomAsset;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SessionRoomAssetRequirement extends ModelBase
 {
@@ -21,34 +15,38 @@ class SessionRoomAssetRequirement extends ModelBase
     protected $_resourceType = ResourceType::SESSION_ROOM_ASSET_REQUIREMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SessionRoomAssetRequirement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SessionRoomAssetRequirement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SESSION_ROOM_ASSET_REQUIREMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SessionRoomAssetRequirement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SESSION_ROOM_ASSET_REQUIREMENT, $id);
     }
 
@@ -57,7 +55,7 @@ class SessionRoomAssetRequirement extends ModelBase
      */
     public function getSession()
     {
-        return $this->getProperty("session");
+        return $this->getProperty('session');
     }
 
     /**
@@ -65,7 +63,7 @@ class SessionRoomAssetRequirement extends ModelBase
      */
     public function setSession(Session $session = null)
     {
-        $this->setProperty("session", $session);
+        $this->setProperty('session', $session);
     }
 
     /**
@@ -73,7 +71,7 @@ class SessionRoomAssetRequirement extends ModelBase
      */
     public function getRoomAsset()
     {
-        return $this->getProperty("roomAsset");
+        return $this->getProperty('roomAsset');
     }
 
     /**
@@ -81,7 +79,7 @@ class SessionRoomAssetRequirement extends ModelBase
      */
     public function setRoomAsset(RoomAsset $roomAsset = null)
     {
-        $this->setProperty("roomAsset", $roomAsset);
+        $this->setProperty('roomAsset', $roomAsset);
     }
 
     /**
@@ -89,7 +87,7 @@ class SessionRoomAssetRequirement extends ModelBase
      */
     public function getQuantity()
     {
-        return $this->getProperty("quantity");
+        return $this->getProperty('quantity');
     }
 
     /**
@@ -97,6 +95,6 @@ class SessionRoomAssetRequirement extends ModelBase
      */
     public function setQuantity($quantity = null)
     {
-        $this->setProperty("quantity", $quantity);
+        $this->setProperty('quantity', $quantity);
     }
 }

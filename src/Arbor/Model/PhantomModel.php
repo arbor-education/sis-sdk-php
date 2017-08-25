@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PhantomModel extends ModelBase
 {
@@ -20,34 +15,38 @@ class PhantomModel extends ModelBase
     protected $_resourceType = ResourceType::PHANTOM_MODEL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PhantomModel[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PhantomModel");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PHANTOM_MODEL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PhantomModel
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PHANTOM_MODEL, $id);
     }
 
@@ -56,7 +55,7 @@ class PhantomModel extends ModelBase
      */
     public function getEntityType()
     {
-        return $this->getProperty("entityType");
+        return $this->getProperty('entityType');
     }
 
     /**
@@ -64,7 +63,7 @@ class PhantomModel extends ModelBase
      */
     public function setEntityType($entityType = null)
     {
-        $this->setProperty("entityType", $entityType);
+        $this->setProperty('entityType', $entityType);
     }
 
     /**
@@ -72,7 +71,7 @@ class PhantomModel extends ModelBase
      */
     public function getUser()
     {
-        return $this->getProperty("user");
+        return $this->getProperty('user');
     }
 
     /**
@@ -80,7 +79,7 @@ class PhantomModel extends ModelBase
      */
     public function setUser(User $user = null)
     {
-        $this->setProperty("user", $user);
+        $this->setProperty('user', $user);
     }
 
     /**
@@ -88,7 +87,7 @@ class PhantomModel extends ModelBase
      */
     public function getModelCreatedDatetime()
     {
-        return $this->getProperty("modelCreatedDatetime");
+        return $this->getProperty('modelCreatedDatetime');
     }
 
     /**
@@ -96,6 +95,6 @@ class PhantomModel extends ModelBase
      */
     public function setModelCreatedDatetime(\DateTime $modelCreatedDatetime = null)
     {
-        $this->setProperty("modelCreatedDatetime", $modelCreatedDatetime);
+        $this->setProperty('modelCreatedDatetime', $modelCreatedDatetime);
     }
 }

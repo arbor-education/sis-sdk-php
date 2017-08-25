@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReport extends ModelBase
 {
@@ -22,37 +18,43 @@ class CustomReport extends ModelBase
 
     const LAST_TOTAL_TIME = 'lastTotalTime';
 
+    const SETUP_COMPLETED_DATETIME = 'setupCompletedDatetime';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReport[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReport");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReport
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT, $id);
     }
 
@@ -61,7 +63,7 @@ class CustomReport extends ModelBase
      */
     public function getTitle()
     {
-        return $this->getProperty("title");
+        return $this->getProperty('title');
     }
 
     /**
@@ -69,7 +71,7 @@ class CustomReport extends ModelBase
      */
     public function setTitle($title = null)
     {
-        $this->setProperty("title", $title);
+        $this->setProperty('title', $title);
     }
 
     /**
@@ -77,7 +79,7 @@ class CustomReport extends ModelBase
      */
     public function getReportClass()
     {
-        return $this->getProperty("reportClass");
+        return $this->getProperty('reportClass');
     }
 
     /**
@@ -85,7 +87,7 @@ class CustomReport extends ModelBase
      */
     public function setReportClass($reportClass = null)
     {
-        $this->setProperty("reportClass", $reportClass);
+        $this->setProperty('reportClass', $reportClass);
     }
 
     /**
@@ -93,7 +95,7 @@ class CustomReport extends ModelBase
      */
     public function getLastAccessDatetime()
     {
-        return $this->getProperty("lastAccessDatetime");
+        return $this->getProperty('lastAccessDatetime');
     }
 
     /**
@@ -101,7 +103,7 @@ class CustomReport extends ModelBase
      */
     public function setLastAccessDatetime(\DateTime $lastAccessDatetime = null)
     {
-        $this->setProperty("lastAccessDatetime", $lastAccessDatetime);
+        $this->setProperty('lastAccessDatetime', $lastAccessDatetime);
     }
 
     /**
@@ -109,7 +111,7 @@ class CustomReport extends ModelBase
      */
     public function getLastDbQueries()
     {
-        return $this->getProperty("lastDbQueries");
+        return $this->getProperty('lastDbQueries');
     }
 
     /**
@@ -117,7 +119,7 @@ class CustomReport extends ModelBase
      */
     public function setLastDbQueries($lastDbQueries = null)
     {
-        $this->setProperty("lastDbQueries", $lastDbQueries);
+        $this->setProperty('lastDbQueries', $lastDbQueries);
     }
 
     /**
@@ -125,7 +127,7 @@ class CustomReport extends ModelBase
      */
     public function getLastDbTime()
     {
-        return $this->getProperty("lastDbTime");
+        return $this->getProperty('lastDbTime');
     }
 
     /**
@@ -133,7 +135,7 @@ class CustomReport extends ModelBase
      */
     public function setLastDbTime($lastDbTime = null)
     {
-        $this->setProperty("lastDbTime", $lastDbTime);
+        $this->setProperty('lastDbTime', $lastDbTime);
     }
 
     /**
@@ -141,7 +143,7 @@ class CustomReport extends ModelBase
      */
     public function getLastTotalTime()
     {
-        return $this->getProperty("lastTotalTime");
+        return $this->getProperty('lastTotalTime');
     }
 
     /**
@@ -149,6 +151,22 @@ class CustomReport extends ModelBase
      */
     public function setLastTotalTime($lastTotalTime = null)
     {
-        $this->setProperty("lastTotalTime", $lastTotalTime);
+        $this->setProperty('lastTotalTime', $lastTotalTime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getSetupCompletedDatetime()
+    {
+        return $this->getProperty('setupCompletedDatetime');
+    }
+
+    /**
+     * @param \DateTime $setupCompletedDatetime
+     */
+    public function setSetupCompletedDatetime(\DateTime $setupCompletedDatetime = null)
+    {
+        $this->setProperty('setupCompletedDatetime', $setupCompletedDatetime);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Email;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailPart extends ModelBase
 {
@@ -32,34 +27,38 @@ class EmailPart extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_PART;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailPart[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailPart");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_PART);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailPart
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_PART, $id);
     }
 
@@ -68,7 +67,7 @@ class EmailPart extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -76,7 +75,7 @@ class EmailPart extends ModelBase
      */
     public function setEmail(Email $email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -84,7 +83,7 @@ class EmailPart extends ModelBase
      */
     public function getMimeContentId()
     {
-        return $this->getProperty("mimeContentId");
+        return $this->getProperty('mimeContentId');
     }
 
     /**
@@ -92,7 +91,7 @@ class EmailPart extends ModelBase
      */
     public function setMimeContentId($mimeContentId = null)
     {
-        $this->setProperty("mimeContentId", $mimeContentId);
+        $this->setProperty('mimeContentId', $mimeContentId);
     }
 
     /**
@@ -100,7 +99,7 @@ class EmailPart extends ModelBase
      */
     public function getDisposition()
     {
-        return $this->getProperty("disposition");
+        return $this->getProperty('disposition');
     }
 
     /**
@@ -108,7 +107,7 @@ class EmailPart extends ModelBase
      */
     public function setDisposition($disposition = null)
     {
-        $this->setProperty("disposition", $disposition);
+        $this->setProperty('disposition', $disposition);
     }
 
     /**
@@ -116,7 +115,7 @@ class EmailPart extends ModelBase
      */
     public function getFilename()
     {
-        return $this->getProperty("filename");
+        return $this->getProperty('filename');
     }
 
     /**
@@ -124,7 +123,7 @@ class EmailPart extends ModelBase
      */
     public function setFilename($filename = null)
     {
-        $this->setProperty("filename", $filename);
+        $this->setProperty('filename', $filename);
     }
 
     /**
@@ -132,7 +131,7 @@ class EmailPart extends ModelBase
      */
     public function getTypeMajor()
     {
-        return $this->getProperty("typeMajor");
+        return $this->getProperty('typeMajor');
     }
 
     /**
@@ -140,7 +139,7 @@ class EmailPart extends ModelBase
      */
     public function setTypeMajor($typeMajor = null)
     {
-        $this->setProperty("typeMajor", $typeMajor);
+        $this->setProperty('typeMajor', $typeMajor);
     }
 
     /**
@@ -148,7 +147,7 @@ class EmailPart extends ModelBase
      */
     public function getTypeMinor()
     {
-        return $this->getProperty("typeMinor");
+        return $this->getProperty('typeMinor');
     }
 
     /**
@@ -156,7 +155,7 @@ class EmailPart extends ModelBase
      */
     public function setTypeMinor($typeMinor = null)
     {
-        $this->setProperty("typeMinor", $typeMinor);
+        $this->setProperty('typeMinor', $typeMinor);
     }
 
     /**
@@ -164,7 +163,7 @@ class EmailPart extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -172,7 +171,7 @@ class EmailPart extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -180,7 +179,7 @@ class EmailPart extends ModelBase
      */
     public function getSubject()
     {
-        return $this->getProperty("subject");
+        return $this->getProperty('subject');
     }
 
     /**
@@ -188,7 +187,7 @@ class EmailPart extends ModelBase
      */
     public function setSubject($subject = null)
     {
-        $this->setProperty("subject", $subject);
+        $this->setProperty('subject', $subject);
     }
 
     /**
@@ -196,7 +195,7 @@ class EmailPart extends ModelBase
      */
     public function getParentEmailPart()
     {
-        return $this->getProperty("parentEmailPart");
+        return $this->getProperty('parentEmailPart');
     }
 
     /**
@@ -204,6 +203,6 @@ class EmailPart extends ModelBase
      */
     public function setParentEmailPart(EmailPart $parentEmailPart = null)
     {
-        $this->setProperty("parentEmailPart", $parentEmailPart);
+        $this->setProperty('parentEmailPart', $parentEmailPart);
     }
 }

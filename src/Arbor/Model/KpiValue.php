@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Kpi;
-use \Arbor\Model\KpiRange;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class KpiValue extends ModelBase
 {
@@ -37,34 +31,38 @@ class KpiValue extends ModelBase
     protected $_resourceType = ResourceType::KPI_VALUE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return KpiValue[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("KpiValue");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::KPI_VALUE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return KpiValue
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::KPI_VALUE, $id);
     }
 
@@ -73,7 +71,7 @@ class KpiValue extends ModelBase
      */
     public function getKpi()
     {
-        return $this->getProperty("kpi");
+        return $this->getProperty('kpi');
     }
 
     /**
@@ -81,7 +79,7 @@ class KpiValue extends ModelBase
      */
     public function setKpi(Kpi $kpi = null)
     {
-        $this->setProperty("kpi", $kpi);
+        $this->setProperty('kpi', $kpi);
     }
 
     /**
@@ -89,7 +87,7 @@ class KpiValue extends ModelBase
      */
     public function getKpiCategory()
     {
-        return $this->getProperty("kpiCategory");
+        return $this->getProperty('kpiCategory');
     }
 
     /**
@@ -97,7 +95,7 @@ class KpiValue extends ModelBase
      */
     public function setKpiCategory($kpiCategory = null)
     {
-        $this->setProperty("kpiCategory", $kpiCategory);
+        $this->setProperty('kpiCategory', $kpiCategory);
     }
 
     /**
@@ -105,7 +103,7 @@ class KpiValue extends ModelBase
      */
     public function getReferenceDatetime()
     {
-        return $this->getProperty("referenceDatetime");
+        return $this->getProperty('referenceDatetime');
     }
 
     /**
@@ -113,7 +111,7 @@ class KpiValue extends ModelBase
      */
     public function setReferenceDatetime(\DateTime $referenceDatetime = null)
     {
-        $this->setProperty("referenceDatetime", $referenceDatetime);
+        $this->setProperty('referenceDatetime', $referenceDatetime);
     }
 
     /**
@@ -121,7 +119,7 @@ class KpiValue extends ModelBase
      */
     public function getCalculationRangeStartDatetime()
     {
-        return $this->getProperty("calculationRangeStartDatetime");
+        return $this->getProperty('calculationRangeStartDatetime');
     }
 
     /**
@@ -129,7 +127,7 @@ class KpiValue extends ModelBase
      */
     public function setCalculationRangeStartDatetime(\DateTime $calculationRangeStartDatetime = null)
     {
-        $this->setProperty("calculationRangeStartDatetime", $calculationRangeStartDatetime);
+        $this->setProperty('calculationRangeStartDatetime', $calculationRangeStartDatetime);
     }
 
     /**
@@ -137,7 +135,7 @@ class KpiValue extends ModelBase
      */
     public function getCalculationRangeEndDatetime()
     {
-        return $this->getProperty("calculationRangeEndDatetime");
+        return $this->getProperty('calculationRangeEndDatetime');
     }
 
     /**
@@ -145,7 +143,7 @@ class KpiValue extends ModelBase
      */
     public function setCalculationRangeEndDatetime(\DateTime $calculationRangeEndDatetime = null)
     {
-        $this->setProperty("calculationRangeEndDatetime", $calculationRangeEndDatetime);
+        $this->setProperty('calculationRangeEndDatetime', $calculationRangeEndDatetime);
     }
 
     /**
@@ -153,7 +151,7 @@ class KpiValue extends ModelBase
      */
     public function getBasis()
     {
-        return $this->getProperty("basis");
+        return $this->getProperty('basis');
     }
 
     /**
@@ -161,7 +159,7 @@ class KpiValue extends ModelBase
      */
     public function setBasis(ModelBase $basis = null)
     {
-        $this->setProperty("basis", $basis);
+        $this->setProperty('basis', $basis);
     }
 
     /**
@@ -169,7 +167,7 @@ class KpiValue extends ModelBase
      */
     public function getValue()
     {
-        return $this->getProperty("value");
+        return $this->getProperty('value');
     }
 
     /**
@@ -177,7 +175,7 @@ class KpiValue extends ModelBase
      */
     public function setValue($value = null)
     {
-        $this->setProperty("value", $value);
+        $this->setProperty('value', $value);
     }
 
     /**
@@ -185,7 +183,7 @@ class KpiValue extends ModelBase
      */
     public function getKpiRange()
     {
-        return $this->getProperty("kpiRange");
+        return $this->getProperty('kpiRange');
     }
 
     /**
@@ -193,7 +191,7 @@ class KpiValue extends ModelBase
      */
     public function setKpiRange(KpiRange $kpiRange = null)
     {
-        $this->setProperty("kpiRange", $kpiRange);
+        $this->setProperty('kpiRange', $kpiRange);
     }
 
     /**
@@ -201,7 +199,7 @@ class KpiValue extends ModelBase
      */
     public function getRecalculationScheduledDatetime()
     {
-        return $this->getProperty("recalculationScheduledDatetime");
+        return $this->getProperty('recalculationScheduledDatetime');
     }
 
     /**
@@ -209,7 +207,7 @@ class KpiValue extends ModelBase
      */
     public function setRecalculationScheduledDatetime(\DateTime $recalculationScheduledDatetime = null)
     {
-        $this->setProperty("recalculationScheduledDatetime", $recalculationScheduledDatetime);
+        $this->setProperty('recalculationScheduledDatetime', $recalculationScheduledDatetime);
     }
 
     /**
@@ -217,7 +215,7 @@ class KpiValue extends ModelBase
      */
     public function getRecalculationStartedDatetime()
     {
-        return $this->getProperty("recalculationStartedDatetime");
+        return $this->getProperty('recalculationStartedDatetime');
     }
 
     /**
@@ -225,7 +223,7 @@ class KpiValue extends ModelBase
      */
     public function setRecalculationStartedDatetime(\DateTime $recalculationStartedDatetime = null)
     {
-        $this->setProperty("recalculationStartedDatetime", $recalculationStartedDatetime);
+        $this->setProperty('recalculationStartedDatetime', $recalculationStartedDatetime);
     }
 
     /**
@@ -233,7 +231,7 @@ class KpiValue extends ModelBase
      */
     public function getLastCalculatedDatetime()
     {
-        return $this->getProperty("lastCalculatedDatetime");
+        return $this->getProperty('lastCalculatedDatetime');
     }
 
     /**
@@ -241,6 +239,6 @@ class KpiValue extends ModelBase
      */
     public function setLastCalculatedDatetime(\DateTime $lastCalculatedDatetime = null)
     {
-        $this->setProperty("lastCalculatedDatetime", $lastCalculatedDatetime);
+        $this->setProperty('lastCalculatedDatetime', $lastCalculatedDatetime);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AssessmentDerivation;
-use \Arbor\Model\Assessment;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AssessmentDerivationDependant extends ModelBase
 {
@@ -21,34 +15,38 @@ class AssessmentDerivationDependant extends ModelBase
     protected $_resourceType = ResourceType::ASSESSMENT_DERIVATION_DEPENDANT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AssessmentDerivationDependant[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AssessmentDerivationDependant");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ASSESSMENT_DERIVATION_DEPENDANT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AssessmentDerivationDependant
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ASSESSMENT_DERIVATION_DEPENDANT, $id);
     }
 
@@ -57,7 +55,7 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public function getAssessmentDerivation()
     {
-        return $this->getProperty("assessmentDerivation");
+        return $this->getProperty('assessmentDerivation');
     }
 
     /**
@@ -65,7 +63,7 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public function setAssessmentDerivation(AssessmentDerivation $assessmentDerivation = null)
     {
-        $this->setProperty("assessmentDerivation", $assessmentDerivation);
+        $this->setProperty('assessmentDerivation', $assessmentDerivation);
     }
 
     /**
@@ -73,7 +71,7 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public function getDependantAssessment()
     {
-        return $this->getProperty("dependantAssessment");
+        return $this->getProperty('dependantAssessment');
     }
 
     /**
@@ -81,7 +79,7 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public function setDependantAssessment(Assessment $dependantAssessment = null)
     {
-        $this->setProperty("dependantAssessment", $dependantAssessment);
+        $this->setProperty('dependantAssessment', $dependantAssessment);
     }
 
     /**
@@ -89,7 +87,7 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public function getWeighting()
     {
-        return $this->getProperty("weighting");
+        return $this->getProperty('weighting');
     }
 
     /**
@@ -97,6 +95,6 @@ class AssessmentDerivationDependant extends ModelBase
      */
     public function setWeighting($weighting = null)
     {
-        $this->setProperty("weighting", $weighting);
+        $this->setProperty('weighting', $weighting);
     }
 }

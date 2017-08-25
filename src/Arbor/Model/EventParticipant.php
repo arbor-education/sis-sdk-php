@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EventParticipant extends ModelBase
 {
@@ -19,34 +15,38 @@ class EventParticipant extends ModelBase
     protected $_resourceType = ResourceType::EVENT_PARTICIPANT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EventParticipant[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EventParticipant");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EVENT_PARTICIPANT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EventParticipant
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EVENT_PARTICIPANT, $id);
     }
 
@@ -55,7 +55,7 @@ class EventParticipant extends ModelBase
      */
     public function getEvent()
     {
-        return $this->getProperty("event");
+        return $this->getProperty('event');
     }
 
     /**
@@ -63,7 +63,7 @@ class EventParticipant extends ModelBase
      */
     public function setEvent(ModelBase $event = null)
     {
-        $this->setProperty("event", $event);
+        $this->setProperty('event', $event);
     }
 
     /**
@@ -71,7 +71,7 @@ class EventParticipant extends ModelBase
      */
     public function getParticipant()
     {
-        return $this->getProperty("participant");
+        return $this->getProperty('participant');
     }
 
     /**
@@ -79,7 +79,7 @@ class EventParticipant extends ModelBase
      */
     public function setParticipant(ModelBase $participant = null)
     {
-        $this->setProperty("participant", $participant);
+        $this->setProperty('participant', $participant);
     }
 
     /**
@@ -87,7 +87,7 @@ class EventParticipant extends ModelBase
      */
     public function getAttendanceRequirement()
     {
-        return $this->getProperty("attendanceRequirement");
+        return $this->getProperty('attendanceRequirement');
     }
 
     /**
@@ -95,6 +95,6 @@ class EventParticipant extends ModelBase
      */
     public function setAttendanceRequirement($attendanceRequirement = null)
     {
-        $this->setProperty("attendanceRequirement", $attendanceRequirement);
+        $this->setProperty('attendanceRequirement', $attendanceRequirement);
     }
 }

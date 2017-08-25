@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Trip;
-use \Arbor\Model\VatRate;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class TripPrice extends ModelBase
 {
@@ -25,34 +19,38 @@ class TripPrice extends ModelBase
     protected $_resourceType = ResourceType::TRIP_PRICE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return TripPrice[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("TripPrice");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::TRIP_PRICE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return TripPrice
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::TRIP_PRICE, $id);
     }
 
@@ -61,7 +59,7 @@ class TripPrice extends ModelBase
      */
     public function getTrip()
     {
-        return $this->getProperty("trip");
+        return $this->getProperty('trip');
     }
 
     /**
@@ -69,7 +67,7 @@ class TripPrice extends ModelBase
      */
     public function setTrip(Trip $trip = null)
     {
-        $this->setProperty("trip", $trip);
+        $this->setProperty('trip', $trip);
     }
 
     /**
@@ -77,7 +75,7 @@ class TripPrice extends ModelBase
      */
     public function getApplicable()
     {
-        return $this->getProperty("applicable");
+        return $this->getProperty('applicable');
     }
 
     /**
@@ -85,7 +83,7 @@ class TripPrice extends ModelBase
      */
     public function setApplicable(ModelBase $applicable = null)
     {
-        $this->setProperty("applicable", $applicable);
+        $this->setProperty('applicable', $applicable);
     }
 
     /**
@@ -93,7 +91,7 @@ class TripPrice extends ModelBase
      */
     public function getPriceExVat()
     {
-        return $this->getProperty("priceExVat");
+        return $this->getProperty('priceExVat');
     }
 
     /**
@@ -101,7 +99,7 @@ class TripPrice extends ModelBase
      */
     public function setPriceExVat($priceExVat = null)
     {
-        $this->setProperty("priceExVat", $priceExVat);
+        $this->setProperty('priceExVat', $priceExVat);
     }
 
     /**
@@ -109,7 +107,7 @@ class TripPrice extends ModelBase
      */
     public function getVatRate()
     {
-        return $this->getProperty("vatRate");
+        return $this->getProperty('vatRate');
     }
 
     /**
@@ -117,7 +115,7 @@ class TripPrice extends ModelBase
      */
     public function setVatRate(VatRate $vatRate = null)
     {
-        $this->setProperty("vatRate", $vatRate);
+        $this->setProperty('vatRate', $vatRate);
     }
 
     /**
@@ -125,7 +123,7 @@ class TripPrice extends ModelBase
      */
     public function getVoluntaryContribution()
     {
-        return $this->getProperty("voluntaryContribution");
+        return $this->getProperty('voluntaryContribution');
     }
 
     /**
@@ -133,6 +131,6 @@ class TripPrice extends ModelBase
      */
     public function setVoluntaryContribution($voluntaryContribution = null)
     {
-        $this->setProperty("voluntaryContribution", $voluntaryContribution);
+        $this->setProperty('voluntaryContribution', $voluntaryContribution);
     }
 }

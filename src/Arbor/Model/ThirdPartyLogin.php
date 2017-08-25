@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ThirdPartySite;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ThirdPartyLogin extends ModelBase
 {
@@ -26,34 +21,38 @@ class ThirdPartyLogin extends ModelBase
     protected $_resourceType = ResourceType::THIRD_PARTY_LOGIN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ThirdPartyLogin[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ThirdPartyLogin");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::THIRD_PARTY_LOGIN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ThirdPartyLogin
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::THIRD_PARTY_LOGIN, $id);
     }
 
@@ -62,7 +61,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function getThirdPartySite()
     {
-        return $this->getProperty("thirdPartySite");
+        return $this->getProperty('thirdPartySite');
     }
 
     /**
@@ -70,7 +69,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function setThirdPartySite(ThirdPartySite $thirdPartySite = null)
     {
-        $this->setProperty("thirdPartySite", $thirdPartySite);
+        $this->setProperty('thirdPartySite', $thirdPartySite);
     }
 
     /**
@@ -78,7 +77,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function getUsername()
     {
-        return $this->getProperty("username");
+        return $this->getProperty('username');
     }
 
     /**
@@ -86,7 +85,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function setUsername($username = null)
     {
-        $this->setProperty("username", $username);
+        $this->setProperty('username', $username);
     }
 
     /**
@@ -94,7 +93,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function getPassword()
     {
-        return $this->getProperty("password");
+        return $this->getProperty('password');
     }
 
     /**
@@ -102,7 +101,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function setPassword($password = null)
     {
-        $this->setProperty("password", $password);
+        $this->setProperty('password', $password);
     }
 
     /**
@@ -110,7 +109,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function getVerifiedDatetime()
     {
-        return $this->getProperty("verifiedDatetime");
+        return $this->getProperty('verifiedDatetime');
     }
 
     /**
@@ -118,7 +117,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function setVerifiedDatetime(\DateTime $verifiedDatetime = null)
     {
-        $this->setProperty("verifiedDatetime", $verifiedDatetime);
+        $this->setProperty('verifiedDatetime', $verifiedDatetime);
     }
 
     /**
@@ -126,7 +125,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function getFailedDatetime()
     {
-        return $this->getProperty("failedDatetime");
+        return $this->getProperty('failedDatetime');
     }
 
     /**
@@ -134,7 +133,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function setFailedDatetime(\DateTime $failedDatetime = null)
     {
-        $this->setProperty("failedDatetime", $failedDatetime);
+        $this->setProperty('failedDatetime', $failedDatetime);
     }
 
     /**
@@ -142,7 +141,7 @@ class ThirdPartyLogin extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -150,6 +149,6 @@ class ThirdPartyLogin extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 }

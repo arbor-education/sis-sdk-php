@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Kpi;
-use \Arbor\Model\KpiTarget;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class KpiRange extends ModelBase
 {
@@ -31,34 +25,38 @@ class KpiRange extends ModelBase
     protected $_resourceType = ResourceType::KPI_RANGE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return KpiRange[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("KpiRange");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::KPI_RANGE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return KpiRange
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::KPI_RANGE, $id);
     }
 
@@ -67,7 +65,7 @@ class KpiRange extends ModelBase
      */
     public function getKpi()
     {
-        return $this->getProperty("kpi");
+        return $this->getProperty('kpi');
     }
 
     /**
@@ -75,7 +73,7 @@ class KpiRange extends ModelBase
      */
     public function setKpi(Kpi $kpi = null)
     {
-        $this->setProperty("kpi", $kpi);
+        $this->setProperty('kpi', $kpi);
     }
 
     /**
@@ -83,7 +81,7 @@ class KpiRange extends ModelBase
      */
     public function getKpiTarget()
     {
-        return $this->getProperty("kpiTarget");
+        return $this->getProperty('kpiTarget');
     }
 
     /**
@@ -91,7 +89,7 @@ class KpiRange extends ModelBase
      */
     public function setKpiTarget(KpiTarget $kpiTarget = null)
     {
-        $this->setProperty("kpiTarget", $kpiTarget);
+        $this->setProperty('kpiTarget', $kpiTarget);
     }
 
     /**
@@ -99,7 +97,7 @@ class KpiRange extends ModelBase
      */
     public function getRangeName()
     {
-        return $this->getProperty("rangeName");
+        return $this->getProperty('rangeName');
     }
 
     /**
@@ -107,7 +105,7 @@ class KpiRange extends ModelBase
      */
     public function setRangeName($rangeName = null)
     {
-        $this->setProperty("rangeName", $rangeName);
+        $this->setProperty('rangeName', $rangeName);
     }
 
     /**
@@ -115,7 +113,7 @@ class KpiRange extends ModelBase
      */
     public function getAbbreviation()
     {
-        return $this->getProperty("abbreviation");
+        return $this->getProperty('abbreviation');
     }
 
     /**
@@ -123,7 +121,7 @@ class KpiRange extends ModelBase
      */
     public function setAbbreviation($abbreviation = null)
     {
-        $this->setProperty("abbreviation", $abbreviation);
+        $this->setProperty('abbreviation', $abbreviation);
     }
 
     /**
@@ -131,7 +129,7 @@ class KpiRange extends ModelBase
      */
     public function getLowerValue()
     {
-        return $this->getProperty("lowerValue");
+        return $this->getProperty('lowerValue');
     }
 
     /**
@@ -139,7 +137,7 @@ class KpiRange extends ModelBase
      */
     public function setLowerValue($lowerValue = null)
     {
-        $this->setProperty("lowerValue", $lowerValue);
+        $this->setProperty('lowerValue', $lowerValue);
     }
 
     /**
@@ -147,7 +145,7 @@ class KpiRange extends ModelBase
      */
     public function getUpperValue()
     {
-        return $this->getProperty("upperValue");
+        return $this->getProperty('upperValue');
     }
 
     /**
@@ -155,7 +153,7 @@ class KpiRange extends ModelBase
      */
     public function setUpperValue($upperValue = null)
     {
-        $this->setProperty("upperValue", $upperValue);
+        $this->setProperty('upperValue', $upperValue);
     }
 
     /**
@@ -163,7 +161,7 @@ class KpiRange extends ModelBase
      */
     public function getValueType()
     {
-        return $this->getProperty("valueType");
+        return $this->getProperty('valueType');
     }
 
     /**
@@ -171,7 +169,7 @@ class KpiRange extends ModelBase
      */
     public function setValueType($valueType = null)
     {
-        $this->setProperty("valueType", $valueType);
+        $this->setProperty('valueType', $valueType);
     }
 
     /**
@@ -179,7 +177,7 @@ class KpiRange extends ModelBase
      */
     public function getColor()
     {
-        return $this->getProperty("color");
+        return $this->getProperty('color');
     }
 
     /**
@@ -187,6 +185,6 @@ class KpiRange extends ModelBase
      */
     public function setColor($color = null)
     {
-        $this->setProperty("color", $color);
+        $this->setProperty('color', $color);
     }
 }

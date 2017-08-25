@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicUnit;
-use \Arbor\Model\AttendancePattern;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnitAutomaticEnrolment extends ModelBase
 {
@@ -21,34 +15,38 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_AUTOMATIC_ENROLMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicUnitAutomaticEnrolment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicUnitAutomaticEnrolment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT_AUTOMATIC_ENROLMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicUnitAutomaticEnrolment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_AUTOMATIC_ENROLMENT, $id);
     }
 
@@ -57,7 +55,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public function getAcademicUnit()
     {
-        return $this->getProperty("academicUnit");
+        return $this->getProperty('academicUnit');
     }
 
     /**
@@ -65,7 +63,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -73,7 +71,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public function getTrigger()
     {
-        return $this->getProperty("trigger");
+        return $this->getProperty('trigger');
     }
 
     /**
@@ -81,7 +79,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public function setTrigger(ModelBase $trigger = null)
     {
-        $this->setProperty("trigger", $trigger);
+        $this->setProperty('trigger', $trigger);
     }
 
     /**
@@ -89,7 +87,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public function getAttendancePattern()
     {
-        return $this->getProperty("attendancePattern");
+        return $this->getProperty('attendancePattern');
     }
 
     /**
@@ -97,6 +95,6 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      */
     public function setAttendancePattern(AttendancePattern $attendancePattern = null)
     {
-        $this->setProperty("attendancePattern", $attendancePattern);
+        $this->setProperty('attendancePattern', $attendancePattern);
     }
 }

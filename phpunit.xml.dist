@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-        bootstrap="./vendor/autoload.php"
-        colors="true"
->
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
     <testsuites>
-        <testsuite name="Arbor SDK Test Suite">
-            <directory>./test</directory>
+        <testsuite name="arbor tests">
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
-
     <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
+        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
         </whitelist>
+        <blacklist>
+            <directory>./tests</directory>
+            <directory>./vendor</directory>
+        </blacklist>
     </filter>
 </phpunit>

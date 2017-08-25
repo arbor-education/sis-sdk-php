@@ -1,13 +1,12 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Group\Institution;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class InstitutionPredecessor extends ModelBase
 {
@@ -20,34 +19,38 @@ class InstitutionPredecessor extends ModelBase
     protected $_resourceType = ResourceType::GROUP_INSTITUTION_PREDECESSOR;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InstitutionPredecessor[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_InstitutionPredecessor");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_INSTITUTION_PREDECESSOR);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InstitutionPredecessor
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_INSTITUTION_PREDECESSOR, $id);
     }
 
@@ -56,7 +59,7 @@ class InstitutionPredecessor extends ModelBase
      */
     public function getInstitution()
     {
-        return $this->getProperty("institution");
+        return $this->getProperty('institution');
     }
 
     /**
@@ -64,7 +67,7 @@ class InstitutionPredecessor extends ModelBase
      */
     public function setInstitution(Institution $institution = null)
     {
-        $this->setProperty("institution", $institution);
+        $this->setProperty('institution', $institution);
     }
 
     /**
@@ -72,7 +75,7 @@ class InstitutionPredecessor extends ModelBase
      */
     public function getPredecessorInstitution()
     {
-        return $this->getProperty("predecessorInstitution");
+        return $this->getProperty('predecessorInstitution');
     }
 
     /**
@@ -80,7 +83,7 @@ class InstitutionPredecessor extends ModelBase
      */
     public function setPredecessorInstitution(Institution $predecessorInstitution = null)
     {
-        $this->setProperty("predecessorInstitution", $predecessorInstitution);
+        $this->setProperty('predecessorInstitution', $predecessorInstitution);
     }
 
     /**
@@ -88,7 +91,7 @@ class InstitutionPredecessor extends ModelBase
      */
     public function getFromDate()
     {
-        return $this->getProperty("fromDate");
+        return $this->getProperty('fromDate');
     }
 
     /**
@@ -96,6 +99,6 @@ class InstitutionPredecessor extends ModelBase
      */
     public function setFromDate(\DateTime $fromDate = null)
     {
-        $this->setProperty("fromDate", $fromDate);
+        $this->setProperty('fromDate', $fromDate);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Email;
-use \Arbor\Model\EmailRecipient;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailStatus extends ModelBase
 {
@@ -31,34 +25,38 @@ class EmailStatus extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_STATUS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailStatus[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailStatus");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_STATUS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailStatus
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_STATUS, $id);
     }
 
@@ -67,7 +65,7 @@ class EmailStatus extends ModelBase
      */
     public function getEmail()
     {
-        return $this->getProperty("email");
+        return $this->getProperty('email');
     }
 
     /**
@@ -75,7 +73,7 @@ class EmailStatus extends ModelBase
      */
     public function setEmail(Email $email = null)
     {
-        $this->setProperty("email", $email);
+        $this->setProperty('email', $email);
     }
 
     /**
@@ -83,7 +81,7 @@ class EmailStatus extends ModelBase
      */
     public function getEmailAddress()
     {
-        return $this->getProperty("emailAddress");
+        return $this->getProperty('emailAddress');
     }
 
     /**
@@ -91,7 +89,7 @@ class EmailStatus extends ModelBase
      */
     public function setEmailAddress($emailAddress = null)
     {
-        $this->setProperty("emailAddress", $emailAddress);
+        $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
@@ -99,7 +97,7 @@ class EmailStatus extends ModelBase
      */
     public function getEmailRecipient()
     {
-        return $this->getProperty("emailRecipient");
+        return $this->getProperty('emailRecipient');
     }
 
     /**
@@ -107,7 +105,7 @@ class EmailStatus extends ModelBase
      */
     public function setEmailRecipient(EmailRecipient $emailRecipient = null)
     {
-        $this->setProperty("emailRecipient", $emailRecipient);
+        $this->setProperty('emailRecipient', $emailRecipient);
     }
 
     /**
@@ -115,7 +113,7 @@ class EmailStatus extends ModelBase
      */
     public function getStatusType()
     {
-        return $this->getProperty("statusType");
+        return $this->getProperty('statusType');
     }
 
     /**
@@ -123,7 +121,7 @@ class EmailStatus extends ModelBase
      */
     public function setStatusType($statusType = null)
     {
-        $this->setProperty("statusType", $statusType);
+        $this->setProperty('statusType', $statusType);
     }
 
     /**
@@ -131,7 +129,7 @@ class EmailStatus extends ModelBase
      */
     public function getStatusDatetime()
     {
-        return $this->getProperty("statusDatetime");
+        return $this->getProperty('statusDatetime');
     }
 
     /**
@@ -139,7 +137,7 @@ class EmailStatus extends ModelBase
      */
     public function setStatusDatetime(\DateTime $statusDatetime = null)
     {
-        $this->setProperty("statusDatetime", $statusDatetime);
+        $this->setProperty('statusDatetime', $statusDatetime);
     }
 
     /**
@@ -147,7 +145,7 @@ class EmailStatus extends ModelBase
      */
     public function getStatusCode()
     {
-        return $this->getProperty("statusCode");
+        return $this->getProperty('statusCode');
     }
 
     /**
@@ -155,7 +153,7 @@ class EmailStatus extends ModelBase
      */
     public function setStatusCode($statusCode = null)
     {
-        $this->setProperty("statusCode", $statusCode);
+        $this->setProperty('statusCode', $statusCode);
     }
 
     /**
@@ -163,7 +161,7 @@ class EmailStatus extends ModelBase
      */
     public function getStatusDetail()
     {
-        return $this->getProperty("statusDetail");
+        return $this->getProperty('statusDetail');
     }
 
     /**
@@ -171,7 +169,7 @@ class EmailStatus extends ModelBase
      */
     public function setStatusDetail($statusDetail = null)
     {
-        $this->setProperty("statusDetail", $statusDetail);
+        $this->setProperty('statusDetail', $statusDetail);
     }
 
     /**
@@ -179,7 +177,7 @@ class EmailStatus extends ModelBase
      */
     public function getDeliveryAttemptNumber()
     {
-        return $this->getProperty("deliveryAttemptNumber");
+        return $this->getProperty('deliveryAttemptNumber');
     }
 
     /**
@@ -187,6 +185,6 @@ class EmailStatus extends ModelBase
      */
     public function setDeliveryAttemptNumber($deliveryAttemptNumber = null)
     {
-        $this->setProperty("deliveryAttemptNumber", $deliveryAttemptNumber);
+        $this->setProperty('deliveryAttemptNumber', $deliveryAttemptNumber);
     }
 }

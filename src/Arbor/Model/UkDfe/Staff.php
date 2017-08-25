@@ -1,13 +1,12 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\QualifiedTeacherRoute;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Staff extends ModelBase
 {
@@ -22,34 +21,38 @@ class Staff extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_STAFF;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Staff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_Staff");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_STAFF);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Staff
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_STAFF, $id);
     }
 
@@ -58,7 +61,7 @@ class Staff extends ModelBase
      */
     public function getEligibleForSchoolWorkforceReturn()
     {
-        return $this->getProperty("eligibleForSchoolWorkforceReturn");
+        return $this->getProperty('eligibleForSchoolWorkforceReturn');
     }
 
     /**
@@ -66,7 +69,7 @@ class Staff extends ModelBase
      */
     public function setEligibleForSchoolWorkforceReturn($eligibleForSchoolWorkforceReturn = null)
     {
-        $this->setProperty("eligibleForSchoolWorkforceReturn", $eligibleForSchoolWorkforceReturn);
+        $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
 
     /**
@@ -74,7 +77,7 @@ class Staff extends ModelBase
      */
     public function getQualifiedTeacherStatus()
     {
-        return $this->getProperty("qualifiedTeacherStatus");
+        return $this->getProperty('qualifiedTeacherStatus');
     }
 
     /**
@@ -82,7 +85,7 @@ class Staff extends ModelBase
      */
     public function setQualifiedTeacherStatus($qualifiedTeacherStatus = null)
     {
-        $this->setProperty("qualifiedTeacherStatus", $qualifiedTeacherStatus);
+        $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
 
     /**
@@ -90,7 +93,7 @@ class Staff extends ModelBase
      */
     public function getQualifiedTeacherRoute()
     {
-        return $this->getProperty("qualifiedTeacherRoute");
+        return $this->getProperty('qualifiedTeacherRoute');
     }
 
     /**
@@ -98,7 +101,7 @@ class Staff extends ModelBase
      */
     public function setQualifiedTeacherRoute(QualifiedTeacherRoute $qualifiedTeacherRoute = null)
     {
-        $this->setProperty("qualifiedTeacherRoute", $qualifiedTeacherRoute);
+        $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
     }
 
     /**
@@ -106,7 +109,7 @@ class Staff extends ModelBase
      */
     public function getHltaStatus()
     {
-        return $this->getProperty("hltaStatus");
+        return $this->getProperty('hltaStatus');
     }
 
     /**
@@ -114,6 +117,6 @@ class Staff extends ModelBase
      */
     public function setHltaStatus($hltaStatus = null)
     {
-        $this->setProperty("hltaStatus", $hltaStatus);
+        $this->setProperty('hltaStatus', $hltaStatus);
     }
 }

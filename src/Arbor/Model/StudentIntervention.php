@@ -1,18 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
-use \Arbor\Model\Intervention;
-use \Arbor\Model\InterventionGroup;
-use \Arbor\Model\SenNeed;
-use \Arbor\Model\LanguageAbility;
-use \Arbor\Model\MedicalCondition;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentIntervention extends ModelBase
 {
@@ -53,34 +43,38 @@ class StudentIntervention extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentIntervention[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentIntervention");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_INTERVENTION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentIntervention
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_INTERVENTION, $id);
     }
 
@@ -89,7 +83,7 @@ class StudentIntervention extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -97,7 +91,7 @@ class StudentIntervention extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -105,7 +99,7 @@ class StudentIntervention extends ModelBase
      */
     public function getIntervention()
     {
-        return $this->getProperty("intervention");
+        return $this->getProperty('intervention');
     }
 
     /**
@@ -113,7 +107,7 @@ class StudentIntervention extends ModelBase
      */
     public function setIntervention(Intervention $intervention = null)
     {
-        $this->setProperty("intervention", $intervention);
+        $this->setProperty('intervention', $intervention);
     }
 
     /**
@@ -121,7 +115,7 @@ class StudentIntervention extends ModelBase
      */
     public function getInterventionGroup()
     {
-        return $this->getProperty("interventionGroup");
+        return $this->getProperty('interventionGroup');
     }
 
     /**
@@ -129,7 +123,7 @@ class StudentIntervention extends ModelBase
      */
     public function setInterventionGroup(InterventionGroup $interventionGroup = null)
     {
-        $this->setProperty("interventionGroup", $interventionGroup);
+        $this->setProperty('interventionGroup', $interventionGroup);
     }
 
     /**
@@ -137,7 +131,7 @@ class StudentIntervention extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -145,7 +139,7 @@ class StudentIntervention extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -153,7 +147,7 @@ class StudentIntervention extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -161,7 +155,7 @@ class StudentIntervention extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -169,7 +163,7 @@ class StudentIntervention extends ModelBase
      */
     public function getPriority()
     {
-        return $this->getProperty("priority");
+        return $this->getProperty('priority');
     }
 
     /**
@@ -177,7 +171,7 @@ class StudentIntervention extends ModelBase
      */
     public function setPriority($priority = null)
     {
-        $this->setProperty("priority", $priority);
+        $this->setProperty('priority', $priority);
     }
 
     /**
@@ -185,7 +179,7 @@ class StudentIntervention extends ModelBase
      */
     public function getStatus()
     {
-        return $this->getProperty("status");
+        return $this->getProperty('status');
     }
 
     /**
@@ -193,7 +187,7 @@ class StudentIntervention extends ModelBase
      */
     public function setStatus($status = null)
     {
-        $this->setProperty("status", $status);
+        $this->setProperty('status', $status);
     }
 
     /**
@@ -201,7 +195,7 @@ class StudentIntervention extends ModelBase
      */
     public function getMonitoring()
     {
-        return $this->getProperty("monitoring");
+        return $this->getProperty('monitoring');
     }
 
     /**
@@ -209,7 +203,7 @@ class StudentIntervention extends ModelBase
      */
     public function setMonitoring($monitoring = null)
     {
-        $this->setProperty("monitoring", $monitoring);
+        $this->setProperty('monitoring', $monitoring);
     }
 
     /**
@@ -217,7 +211,7 @@ class StudentIntervention extends ModelBase
      */
     public function getAims()
     {
-        return $this->getProperty("aims");
+        return $this->getProperty('aims');
     }
 
     /**
@@ -225,7 +219,7 @@ class StudentIntervention extends ModelBase
      */
     public function setAims($aims = null)
     {
-        $this->setProperty("aims", $aims);
+        $this->setProperty('aims', $aims);
     }
 
     /**
@@ -233,7 +227,7 @@ class StudentIntervention extends ModelBase
      */
     public function getStrategies()
     {
-        return $this->getProperty("strategies");
+        return $this->getProperty('strategies');
     }
 
     /**
@@ -241,7 +235,7 @@ class StudentIntervention extends ModelBase
      */
     public function setStrategies($strategies = null)
     {
-        $this->setProperty("strategies", $strategies);
+        $this->setProperty('strategies', $strategies);
     }
 
     /**
@@ -249,7 +243,7 @@ class StudentIntervention extends ModelBase
      */
     public function getSuccessCriteria()
     {
-        return $this->getProperty("successCriteria");
+        return $this->getProperty('successCriteria');
     }
 
     /**
@@ -257,7 +251,7 @@ class StudentIntervention extends ModelBase
      */
     public function setSuccessCriteria($successCriteria = null)
     {
-        $this->setProperty("successCriteria", $successCriteria);
+        $this->setProperty('successCriteria', $successCriteria);
     }
 
     /**
@@ -265,7 +259,7 @@ class StudentIntervention extends ModelBase
      */
     public function getReason()
     {
-        return $this->getProperty("reason");
+        return $this->getProperty('reason');
     }
 
     /**
@@ -273,7 +267,7 @@ class StudentIntervention extends ModelBase
      */
     public function setReason($reason = null)
     {
-        $this->setProperty("reason", $reason);
+        $this->setProperty('reason', $reason);
     }
 
     /**
@@ -281,7 +275,7 @@ class StudentIntervention extends ModelBase
      */
     public function getSenNeed()
     {
-        return $this->getProperty("senNeed");
+        return $this->getProperty('senNeed');
     }
 
     /**
@@ -289,7 +283,7 @@ class StudentIntervention extends ModelBase
      */
     public function setSenNeed(SenNeed $senNeed = null)
     {
-        $this->setProperty("senNeed", $senNeed);
+        $this->setProperty('senNeed', $senNeed);
     }
 
     /**
@@ -297,7 +291,7 @@ class StudentIntervention extends ModelBase
      */
     public function getLanguageAbility()
     {
-        return $this->getProperty("languageAbility");
+        return $this->getProperty('languageAbility');
     }
 
     /**
@@ -305,7 +299,7 @@ class StudentIntervention extends ModelBase
      */
     public function setLanguageAbility(LanguageAbility $languageAbility = null)
     {
-        $this->setProperty("languageAbility", $languageAbility);
+        $this->setProperty('languageAbility', $languageAbility);
     }
 
     /**
@@ -313,7 +307,7 @@ class StudentIntervention extends ModelBase
      */
     public function getMedicalCondition()
     {
-        return $this->getProperty("medicalCondition");
+        return $this->getProperty('medicalCondition');
     }
 
     /**
@@ -321,7 +315,7 @@ class StudentIntervention extends ModelBase
      */
     public function setMedicalCondition(MedicalCondition $medicalCondition = null)
     {
-        $this->setProperty("medicalCondition", $medicalCondition);
+        $this->setProperty('medicalCondition', $medicalCondition);
     }
 
     /**
@@ -329,7 +323,7 @@ class StudentIntervention extends ModelBase
      */
     public function getSuccess()
     {
-        return $this->getProperty("success");
+        return $this->getProperty('success');
     }
 
     /**
@@ -337,7 +331,7 @@ class StudentIntervention extends ModelBase
      */
     public function setSuccess($success = null)
     {
-        $this->setProperty("success", $success);
+        $this->setProperty('success', $success);
     }
 
     /**
@@ -345,7 +339,7 @@ class StudentIntervention extends ModelBase
      */
     public function getEstimatedDuration()
     {
-        return $this->getProperty("estimatedDuration");
+        return $this->getProperty('estimatedDuration');
     }
 
     /**
@@ -353,6 +347,6 @@ class StudentIntervention extends ModelBase
      */
     public function setEstimatedDuration($estimatedDuration = null)
     {
-        $this->setProperty("estimatedDuration", $estimatedDuration);
+        $this->setProperty('estimatedDuration', $estimatedDuration);
     }
 }

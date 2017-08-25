@@ -1,13 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Student;
 
 class EnglishProficiency extends ModelBase
 {
@@ -20,34 +20,38 @@ class EnglishProficiency extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_ENGLISH_PROFICIENCY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EnglishProficiency[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_EnglishProficiency");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_ENGLISH_PROFICIENCY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EnglishProficiency
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_ENGLISH_PROFICIENCY, $id);
     }
 
@@ -56,7 +60,7 @@ class EnglishProficiency extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -64,7 +68,7 @@ class EnglishProficiency extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -72,7 +76,7 @@ class EnglishProficiency extends ModelBase
      */
     public function getProficiency()
     {
-        return $this->getProperty("proficiency");
+        return $this->getProperty('proficiency');
     }
 
     /**
@@ -80,7 +84,7 @@ class EnglishProficiency extends ModelBase
      */
     public function setProficiency($proficiency = null)
     {
-        $this->setProperty("proficiency", $proficiency);
+        $this->setProperty('proficiency', $proficiency);
     }
 
     /**
@@ -88,7 +92,7 @@ class EnglishProficiency extends ModelBase
      */
     public function getProficiencyDate()
     {
-        return $this->getProperty("proficiencyDate");
+        return $this->getProperty('proficiencyDate');
     }
 
     /**
@@ -96,6 +100,6 @@ class EnglishProficiency extends ModelBase
      */
     public function setProficiencyDate(\DateTime $proficiencyDate = null)
     {
-        $this->setProperty("proficiencyDate", $proficiencyDate);
+        $this->setProperty('proficiencyDate', $proficiencyDate);
     }
 }

@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\InvigilationSession;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InvigilationDuty extends ModelBase
 {
@@ -25,34 +19,38 @@ class InvigilationDuty extends ModelBase
     protected $_resourceType = ResourceType::INVIGILATION_DUTY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InvigilationDuty[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InvigilationDuty");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INVIGILATION_DUTY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InvigilationDuty
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INVIGILATION_DUTY, $id);
     }
 
@@ -61,7 +59,7 @@ class InvigilationDuty extends ModelBase
      */
     public function getInvigilationSession()
     {
-        return $this->getProperty("invigilationSession");
+        return $this->getProperty('invigilationSession');
     }
 
     /**
@@ -69,7 +67,7 @@ class InvigilationDuty extends ModelBase
      */
     public function setInvigilationSession(InvigilationSession $invigilationSession = null)
     {
-        $this->setProperty("invigilationSession", $invigilationSession);
+        $this->setProperty('invigilationSession', $invigilationSession);
     }
 
     /**
@@ -77,7 +75,7 @@ class InvigilationDuty extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -85,7 +83,7 @@ class InvigilationDuty extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -93,7 +91,7 @@ class InvigilationDuty extends ModelBase
      */
     public function getAdditionalRole()
     {
-        return $this->getProperty("additionalRole");
+        return $this->getProperty('additionalRole');
     }
 
     /**
@@ -101,7 +99,7 @@ class InvigilationDuty extends ModelBase
      */
     public function setAdditionalRole($additionalRole = null)
     {
-        $this->setProperty("additionalRole", $additionalRole);
+        $this->setProperty('additionalRole', $additionalRole);
     }
 
     /**
@@ -109,7 +107,7 @@ class InvigilationDuty extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -117,7 +115,7 @@ class InvigilationDuty extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -125,7 +123,7 @@ class InvigilationDuty extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -133,6 +131,6 @@ class InvigilationDuty extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 }

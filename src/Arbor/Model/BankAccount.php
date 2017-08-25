@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Bank;
-use \Arbor\Model\PaymentProvider;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BankAccount extends ModelBase
 {
@@ -31,34 +25,38 @@ class BankAccount extends ModelBase
     protected $_resourceType = ResourceType::BANK_ACCOUNT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return BankAccount[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("BankAccount");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::BANK_ACCOUNT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return BankAccount
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::BANK_ACCOUNT, $id);
     }
 
@@ -67,7 +65,7 @@ class BankAccount extends ModelBase
      */
     public function getBank()
     {
-        return $this->getProperty("bank");
+        return $this->getProperty('bank');
     }
 
     /**
@@ -75,7 +73,7 @@ class BankAccount extends ModelBase
      */
     public function setBank(Bank $bank = null)
     {
-        $this->setProperty("bank", $bank);
+        $this->setProperty('bank', $bank);
     }
 
     /**
@@ -83,7 +81,7 @@ class BankAccount extends ModelBase
      */
     public function getPaymentProvider()
     {
-        return $this->getProperty("paymentProvider");
+        return $this->getProperty('paymentProvider');
     }
 
     /**
@@ -91,7 +89,7 @@ class BankAccount extends ModelBase
      */
     public function setPaymentProvider(PaymentProvider $paymentProvider = null)
     {
-        $this->setProperty("paymentProvider", $paymentProvider);
+        $this->setProperty('paymentProvider', $paymentProvider);
     }
 
     /**
@@ -99,7 +97,7 @@ class BankAccount extends ModelBase
      */
     public function getAccountHolderName()
     {
-        return $this->getProperty("accountHolderName");
+        return $this->getProperty('accountHolderName');
     }
 
     /**
@@ -107,7 +105,7 @@ class BankAccount extends ModelBase
      */
     public function setAccountHolderName($accountHolderName = null)
     {
-        $this->setProperty("accountHolderName", $accountHolderName);
+        $this->setProperty('accountHolderName', $accountHolderName);
     }
 
     /**
@@ -115,7 +113,7 @@ class BankAccount extends ModelBase
      */
     public function getAccountNumber()
     {
-        return $this->getProperty("accountNumber");
+        return $this->getProperty('accountNumber');
     }
 
     /**
@@ -123,7 +121,7 @@ class BankAccount extends ModelBase
      */
     public function setAccountNumber($accountNumber = null)
     {
-        $this->setProperty("accountNumber", $accountNumber);
+        $this->setProperty('accountNumber', $accountNumber);
     }
 
     /**
@@ -131,7 +129,7 @@ class BankAccount extends ModelBase
      */
     public function getSortCode()
     {
-        return $this->getProperty("sortCode");
+        return $this->getProperty('sortCode');
     }
 
     /**
@@ -139,7 +137,7 @@ class BankAccount extends ModelBase
      */
     public function setSortCode($sortCode = null)
     {
-        $this->setProperty("sortCode", $sortCode);
+        $this->setProperty('sortCode', $sortCode);
     }
 
     /**
@@ -147,7 +145,7 @@ class BankAccount extends ModelBase
      */
     public function getSwiftCode()
     {
-        return $this->getProperty("swiftCode");
+        return $this->getProperty('swiftCode');
     }
 
     /**
@@ -155,7 +153,7 @@ class BankAccount extends ModelBase
      */
     public function setSwiftCode($swiftCode = null)
     {
-        $this->setProperty("swiftCode", $swiftCode);
+        $this->setProperty('swiftCode', $swiftCode);
     }
 
     /**
@@ -163,7 +161,7 @@ class BankAccount extends ModelBase
      */
     public function getIban()
     {
-        return $this->getProperty("iban");
+        return $this->getProperty('iban');
     }
 
     /**
@@ -171,7 +169,7 @@ class BankAccount extends ModelBase
      */
     public function setIban($iban = null)
     {
-        $this->setProperty("iban", $iban);
+        $this->setProperty('iban', $iban);
     }
 
     /**
@@ -179,7 +177,7 @@ class BankAccount extends ModelBase
      */
     public function getBacsUserNumber()
     {
-        return $this->getProperty("bacsUserNumber");
+        return $this->getProperty('bacsUserNumber');
     }
 
     /**
@@ -187,6 +185,6 @@ class BankAccount extends ModelBase
      */
     public function setBacsUserNumber($bacsUserNumber = null)
     {
-        $this->setProperty("bacsUserNumber", $bacsUserNumber);
+        $this->setProperty('bacsUserNumber', $bacsUserNumber);
     }
 }

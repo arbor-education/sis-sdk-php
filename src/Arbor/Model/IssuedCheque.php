@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomerAccount;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class IssuedCheque extends ModelBase
 {
@@ -22,34 +17,38 @@ class IssuedCheque extends ModelBase
     protected $_resourceType = ResourceType::ISSUED_CHEQUE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return IssuedCheque[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("IssuedCheque");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ISSUED_CHEQUE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return IssuedCheque
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ISSUED_CHEQUE, $id);
     }
 
@@ -58,7 +57,7 @@ class IssuedCheque extends ModelBase
      */
     public function getCustomerAccount()
     {
-        return $this->getProperty("customerAccount");
+        return $this->getProperty('customerAccount');
     }
 
     /**
@@ -66,7 +65,7 @@ class IssuedCheque extends ModelBase
      */
     public function setCustomerAccount(CustomerAccount $customerAccount = null)
     {
-        $this->setProperty("customerAccount", $customerAccount);
+        $this->setProperty('customerAccount', $customerAccount);
     }
 
     /**
@@ -74,7 +73,7 @@ class IssuedCheque extends ModelBase
      */
     public function getIssuedDatetime()
     {
-        return $this->getProperty("issuedDatetime");
+        return $this->getProperty('issuedDatetime');
     }
 
     /**
@@ -82,7 +81,7 @@ class IssuedCheque extends ModelBase
      */
     public function setIssuedDatetime(\DateTime $issuedDatetime = null)
     {
-        $this->setProperty("issuedDatetime", $issuedDatetime);
+        $this->setProperty('issuedDatetime', $issuedDatetime);
     }
 
     /**
@@ -90,7 +89,7 @@ class IssuedCheque extends ModelBase
      */
     public function getIssued()
     {
-        return $this->getProperty("issued");
+        return $this->getProperty('issued');
     }
 
     /**
@@ -98,7 +97,7 @@ class IssuedCheque extends ModelBase
      */
     public function setIssued($issued = null)
     {
-        $this->setProperty("issued", $issued);
+        $this->setProperty('issued', $issued);
     }
 
     /**
@@ -106,7 +105,7 @@ class IssuedCheque extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -114,6 +113,6 @@ class IssuedCheque extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 }

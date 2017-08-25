@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Trigger;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Alert extends ModelBase
 {
@@ -28,34 +23,38 @@ class Alert extends ModelBase
     protected $_resourceType = ResourceType::ALERT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Alert[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Alert");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ALERT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Alert
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ALERT, $id);
     }
 
@@ -64,7 +63,7 @@ class Alert extends ModelBase
      */
     public function getTrigger()
     {
-        return $this->getProperty("trigger");
+        return $this->getProperty('trigger');
     }
 
     /**
@@ -72,7 +71,7 @@ class Alert extends ModelBase
      */
     public function setTrigger(Trigger $trigger = null)
     {
-        $this->setProperty("trigger", $trigger);
+        $this->setProperty('trigger', $trigger);
     }
 
     /**
@@ -80,7 +79,7 @@ class Alert extends ModelBase
      */
     public function getReferenceDate()
     {
-        return $this->getProperty("referenceDate");
+        return $this->getProperty('referenceDate');
     }
 
     /**
@@ -88,7 +87,7 @@ class Alert extends ModelBase
      */
     public function setReferenceDate(\DateTime $referenceDate = null)
     {
-        $this->setProperty("referenceDate", $referenceDate);
+        $this->setProperty('referenceDate', $referenceDate);
     }
 
     /**
@@ -96,7 +95,7 @@ class Alert extends ModelBase
      */
     public function getObject()
     {
-        return $this->getProperty("object");
+        return $this->getProperty('object');
     }
 
     /**
@@ -104,7 +103,7 @@ class Alert extends ModelBase
      */
     public function setObject(ModelBase $object = null)
     {
-        $this->setProperty("object", $object);
+        $this->setProperty('object', $object);
     }
 
     /**
@@ -112,7 +111,7 @@ class Alert extends ModelBase
      */
     public function getSeverity()
     {
-        return $this->getProperty("severity");
+        return $this->getProperty('severity');
     }
 
     /**
@@ -120,7 +119,7 @@ class Alert extends ModelBase
      */
     public function setSeverity($severity = null)
     {
-        $this->setProperty("severity", $severity);
+        $this->setProperty('severity', $severity);
     }
 
     /**
@@ -128,7 +127,7 @@ class Alert extends ModelBase
      */
     public function getAlertParams()
     {
-        return $this->getProperty("alertParams");
+        return $this->getProperty('alertParams');
     }
 
     /**
@@ -136,7 +135,7 @@ class Alert extends ModelBase
      */
     public function setAlertParams($alertParams = null)
     {
-        $this->setProperty("alertParams", $alertParams);
+        $this->setProperty('alertParams', $alertParams);
     }
 
     /**
@@ -144,7 +143,7 @@ class Alert extends ModelBase
      */
     public function getSilencedDatetime()
     {
-        return $this->getProperty("silencedDatetime");
+        return $this->getProperty('silencedDatetime');
     }
 
     /**
@@ -152,7 +151,7 @@ class Alert extends ModelBase
      */
     public function setSilencedDatetime(\DateTime $silencedDatetime = null)
     {
-        $this->setProperty("silencedDatetime", $silencedDatetime);
+        $this->setProperty('silencedDatetime', $silencedDatetime);
     }
 
     /**
@@ -160,7 +159,7 @@ class Alert extends ModelBase
      */
     public function getActionDatetime()
     {
-        return $this->getProperty("actionDatetime");
+        return $this->getProperty('actionDatetime');
     }
 
     /**
@@ -168,6 +167,6 @@ class Alert extends ModelBase
      */
     public function setActionDatetime(\DateTime $actionDatetime = null)
     {
-        $this->setProperty("actionDatetime", $actionDatetime);
+        $this->setProperty('actionDatetime', $actionDatetime);
     }
 }

@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PaymentProvider extends ModelBase
 {
@@ -18,10 +14,6 @@ class PaymentProvider extends ModelBase
 
     const PUBLISHABLE_KEY = 'publishableKey';
 
-    const SCHOOL_COVERS_FEE = 'schoolCoversFee';
-
-    const FEE_PERCENTAGE = 'feePercentage';
-
     const IS_ENABLED = 'isEnabled';
 
     const MINIMUM_TRANSACTION_AMOUNT = 'minimumTransactionAmount';
@@ -29,34 +21,38 @@ class PaymentProvider extends ModelBase
     protected $_resourceType = ResourceType::PAYMENT_PROVIDER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PaymentProvider[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PaymentProvider");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PAYMENT_PROVIDER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PaymentProvider
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PAYMENT_PROVIDER, $id);
     }
 
@@ -65,7 +61,7 @@ class PaymentProvider extends ModelBase
      */
     public function getPaymentProviderName()
     {
-        return $this->getProperty("paymentProviderName");
+        return $this->getProperty('paymentProviderName');
     }
 
     /**
@@ -73,7 +69,7 @@ class PaymentProvider extends ModelBase
      */
     public function setPaymentProviderName($paymentProviderName = null)
     {
-        $this->setProperty("paymentProviderName", $paymentProviderName);
+        $this->setProperty('paymentProviderName', $paymentProviderName);
     }
 
     /**
@@ -81,7 +77,7 @@ class PaymentProvider extends ModelBase
      */
     public function getProviderCode()
     {
-        return $this->getProperty("providerCode");
+        return $this->getProperty('providerCode');
     }
 
     /**
@@ -89,7 +85,7 @@ class PaymentProvider extends ModelBase
      */
     public function setProviderCode($providerCode = null)
     {
-        $this->setProperty("providerCode", $providerCode);
+        $this->setProperty('providerCode', $providerCode);
     }
 
     /**
@@ -97,7 +93,7 @@ class PaymentProvider extends ModelBase
      */
     public function getSecretKey()
     {
-        return $this->getProperty("secretKey");
+        return $this->getProperty('secretKey');
     }
 
     /**
@@ -105,7 +101,7 @@ class PaymentProvider extends ModelBase
      */
     public function setSecretKey($secretKey = null)
     {
-        $this->setProperty("secretKey", $secretKey);
+        $this->setProperty('secretKey', $secretKey);
     }
 
     /**
@@ -113,7 +109,7 @@ class PaymentProvider extends ModelBase
      */
     public function getPublishableKey()
     {
-        return $this->getProperty("publishableKey");
+        return $this->getProperty('publishableKey');
     }
 
     /**
@@ -121,39 +117,7 @@ class PaymentProvider extends ModelBase
      */
     public function setPublishableKey($publishableKey = null)
     {
-        $this->setProperty("publishableKey", $publishableKey);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSchoolCoversFee()
-    {
-        return $this->getProperty("schoolCoversFee");
-    }
-
-    /**
-     * @param bool $schoolCoversFee
-     */
-    public function setSchoolCoversFee($schoolCoversFee = null)
-    {
-        $this->setProperty("schoolCoversFee", $schoolCoversFee);
-    }
-
-    /**
-     * @return float
-     */
-    public function getFeePercentage()
-    {
-        return $this->getProperty("feePercentage");
-    }
-
-    /**
-     * @param float $feePercentage
-     */
-    public function setFeePercentage($feePercentage = null)
-    {
-        $this->setProperty("feePercentage", $feePercentage);
+        $this->setProperty('publishableKey', $publishableKey);
     }
 
     /**
@@ -161,7 +125,7 @@ class PaymentProvider extends ModelBase
      */
     public function getIsEnabled()
     {
-        return $this->getProperty("isEnabled");
+        return $this->getProperty('isEnabled');
     }
 
     /**
@@ -169,7 +133,7 @@ class PaymentProvider extends ModelBase
      */
     public function setIsEnabled($isEnabled = null)
     {
-        $this->setProperty("isEnabled", $isEnabled);
+        $this->setProperty('isEnabled', $isEnabled);
     }
 
     /**
@@ -177,7 +141,7 @@ class PaymentProvider extends ModelBase
      */
     public function getMinimumTransactionAmount()
     {
-        return $this->getProperty("minimumTransactionAmount");
+        return $this->getProperty('minimumTransactionAmount');
     }
 
     /**
@@ -185,6 +149,6 @@ class PaymentProvider extends ModelBase
      */
     public function setMinimumTransactionAmount($minimumTransactionAmount = null)
     {
-        $this->setProperty("minimumTransactionAmount", $minimumTransactionAmount);
+        $this->setProperty('minimumTransactionAmount', $minimumTransactionAmount);
     }
 }

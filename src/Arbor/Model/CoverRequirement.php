@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CoverRequirement extends ModelBase
 {
@@ -26,34 +21,38 @@ class CoverRequirement extends ModelBase
     protected $_resourceType = ResourceType::COVER_REQUIREMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CoverRequirement[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CoverRequirement");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::COVER_REQUIREMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CoverRequirement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::COVER_REQUIREMENT, $id);
     }
 
@@ -62,7 +61,7 @@ class CoverRequirement extends ModelBase
      */
     public function getCoverEvent()
     {
-        return $this->getProperty("coverEvent");
+        return $this->getProperty('coverEvent');
     }
 
     /**
@@ -70,7 +69,7 @@ class CoverRequirement extends ModelBase
      */
     public function setCoverEvent(ModelBase $coverEvent = null)
     {
-        $this->setProperty("coverEvent", $coverEvent);
+        $this->setProperty('coverEvent', $coverEvent);
     }
 
     /**
@@ -78,7 +77,7 @@ class CoverRequirement extends ModelBase
      */
     public function getAbsentStaff()
     {
-        return $this->getProperty("absentStaff");
+        return $this->getProperty('absentStaff');
     }
 
     /**
@@ -86,7 +85,7 @@ class CoverRequirement extends ModelBase
      */
     public function setAbsentStaff(Staff $absentStaff = null)
     {
-        $this->setProperty("absentStaff", $absentStaff);
+        $this->setProperty('absentStaff', $absentStaff);
     }
 
     /**
@@ -94,7 +93,7 @@ class CoverRequirement extends ModelBase
      */
     public function getAbsenceEvent()
     {
-        return $this->getProperty("absenceEvent");
+        return $this->getProperty('absenceEvent');
     }
 
     /**
@@ -102,7 +101,7 @@ class CoverRequirement extends ModelBase
      */
     public function setAbsenceEvent(ModelBase $absenceEvent = null)
     {
-        $this->setProperty("absenceEvent", $absenceEvent);
+        $this->setProperty('absenceEvent', $absenceEvent);
     }
 
     /**
@@ -110,7 +109,7 @@ class CoverRequirement extends ModelBase
      */
     public function getCoverProposedDatetime()
     {
-        return $this->getProperty("coverProposedDatetime");
+        return $this->getProperty('coverProposedDatetime');
     }
 
     /**
@@ -118,7 +117,7 @@ class CoverRequirement extends ModelBase
      */
     public function setCoverProposedDatetime(\DateTime $coverProposedDatetime = null)
     {
-        $this->setProperty("coverProposedDatetime", $coverProposedDatetime);
+        $this->setProperty('coverProposedDatetime', $coverProposedDatetime);
     }
 
     /**
@@ -126,7 +125,7 @@ class CoverRequirement extends ModelBase
      */
     public function getCoverArrangedDatetime()
     {
-        return $this->getProperty("coverArrangedDatetime");
+        return $this->getProperty('coverArrangedDatetime');
     }
 
     /**
@@ -134,7 +133,7 @@ class CoverRequirement extends ModelBase
      */
     public function setCoverArrangedDatetime(\DateTime $coverArrangedDatetime = null)
     {
-        $this->setProperty("coverArrangedDatetime", $coverArrangedDatetime);
+        $this->setProperty('coverArrangedDatetime', $coverArrangedDatetime);
     }
 
     /**
@@ -142,7 +141,7 @@ class CoverRequirement extends ModelBase
      */
     public function getCoverNotRequiredDatetime()
     {
-        return $this->getProperty("coverNotRequiredDatetime");
+        return $this->getProperty('coverNotRequiredDatetime');
     }
 
     /**
@@ -150,6 +149,6 @@ class CoverRequirement extends ModelBase
      */
     public function setCoverNotRequiredDatetime(\DateTime $coverNotRequiredDatetime = null)
     {
-        $this->setProperty("coverNotRequiredDatetime", $coverNotRequiredDatetime);
+        $this->setProperty('coverNotRequiredDatetime', $coverNotRequiredDatetime);
     }
 }

@@ -1,22 +1,14 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\StandardizedAssessmentTemplate;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StandardizedAssessmentBatch extends ModelBase
 {
     const ACADEMIC_YEAR = 'academicYear';
 
     const BATCH_NAME = 'batchName';
-
-    const GRADE_POINT_SCALE_LEVEL_TYPE = 'gradePointScaleLevelType';
 
     const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
@@ -27,34 +19,38 @@ class StandardizedAssessmentBatch extends ModelBase
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_BATCH;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StandardizedAssessmentBatch[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StandardizedAssessmentBatch");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STANDARDIZED_ASSESSMENT_BATCH);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StandardizedAssessmentBatch
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STANDARDIZED_ASSESSMENT_BATCH, $id);
     }
 
@@ -63,7 +59,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -71,7 +67,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -79,7 +75,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function getBatchName()
     {
-        return $this->getProperty("batchName");
+        return $this->getProperty('batchName');
     }
 
     /**
@@ -87,23 +83,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function setBatchName($batchName = null)
     {
-        $this->setProperty("batchName", $batchName);
-    }
-
-    /**
-     * @return string
-     */
-    public function getGradePointScaleLevelType()
-    {
-        return $this->getProperty("gradePointScaleLevelType");
-    }
-
-    /**
-     * @param string $gradePointScaleLevelType
-     */
-    public function setGradePointScaleLevelType($gradePointScaleLevelType = null)
-    {
-        $this->setProperty("gradePointScaleLevelType", $gradePointScaleLevelType);
+        $this->setProperty('batchName', $batchName);
     }
 
     /**
@@ -111,7 +91,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function getStandardizedAssessmentTemplate()
     {
-        return $this->getProperty("standardizedAssessmentTemplate");
+        return $this->getProperty('standardizedAssessmentTemplate');
     }
 
     /**
@@ -119,7 +99,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
-        $this->setProperty("standardizedAssessmentTemplate", $standardizedAssessmentTemplate);
+        $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }
 
     /**
@@ -127,7 +107,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function getAssessmentDate()
     {
-        return $this->getProperty("assessmentDate");
+        return $this->getProperty('assessmentDate');
     }
 
     /**
@@ -135,7 +115,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function setAssessmentDate(\DateTime $assessmentDate = null)
     {
-        $this->setProperty("assessmentDate", $assessmentDate);
+        $this->setProperty('assessmentDate', $assessmentDate);
     }
 
     /**
@@ -143,7 +123,7 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function getSenStudentsOnly()
     {
-        return $this->getProperty("senStudentsOnly");
+        return $this->getProperty('senStudentsOnly');
     }
 
     /**
@@ -151,6 +131,6 @@ class StandardizedAssessmentBatch extends ModelBase
      */
     public function setSenStudentsOnly($senStudentsOnly = null)
     {
-        $this->setProperty("senStudentsOnly", $senStudentsOnly);
+        $this->setProperty('senStudentsOnly', $senStudentsOnly);
     }
 }

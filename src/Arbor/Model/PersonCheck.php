@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CheckType;
-use \Arbor\Model\CheckClearanceLevel;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonCheck extends ModelBase
 {
@@ -38,34 +31,38 @@ class PersonCheck extends ModelBase
     protected $_resourceType = ResourceType::PERSON_CHECK;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonCheck[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonCheck");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_CHECK);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonCheck
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_CHECK, $id);
     }
 
@@ -74,7 +71,7 @@ class PersonCheck extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -82,7 +79,7 @@ class PersonCheck extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -90,7 +87,7 @@ class PersonCheck extends ModelBase
      */
     public function getCheckType()
     {
-        return $this->getProperty("checkType");
+        return $this->getProperty('checkType');
     }
 
     /**
@@ -98,7 +95,7 @@ class PersonCheck extends ModelBase
      */
     public function setCheckType(CheckType $checkType = null)
     {
-        $this->setProperty("checkType", $checkType);
+        $this->setProperty('checkType', $checkType);
     }
 
     /**
@@ -106,7 +103,7 @@ class PersonCheck extends ModelBase
      */
     public function getCheckClearanceLevel()
     {
-        return $this->getProperty("checkClearanceLevel");
+        return $this->getProperty('checkClearanceLevel');
     }
 
     /**
@@ -114,7 +111,7 @@ class PersonCheck extends ModelBase
      */
     public function setCheckClearanceLevel(CheckClearanceLevel $checkClearanceLevel = null)
     {
-        $this->setProperty("checkClearanceLevel", $checkClearanceLevel);
+        $this->setProperty('checkClearanceLevel', $checkClearanceLevel);
     }
 
     /**
@@ -122,7 +119,7 @@ class PersonCheck extends ModelBase
      */
     public function getRequestedDate()
     {
-        return $this->getProperty("requestedDate");
+        return $this->getProperty('requestedDate');
     }
 
     /**
@@ -130,7 +127,7 @@ class PersonCheck extends ModelBase
      */
     public function setRequestedDate(\DateTime $requestedDate = null)
     {
-        $this->setProperty("requestedDate", $requestedDate);
+        $this->setProperty('requestedDate', $requestedDate);
     }
 
     /**
@@ -138,7 +135,7 @@ class PersonCheck extends ModelBase
      */
     public function getReturnedDate()
     {
-        return $this->getProperty("returnedDate");
+        return $this->getProperty('returnedDate');
     }
 
     /**
@@ -146,7 +143,7 @@ class PersonCheck extends ModelBase
      */
     public function setReturnedDate(\DateTime $returnedDate = null)
     {
-        $this->setProperty("returnedDate", $returnedDate);
+        $this->setProperty('returnedDate', $returnedDate);
     }
 
     /**
@@ -154,7 +151,7 @@ class PersonCheck extends ModelBase
      */
     public function getExpiryDate()
     {
-        return $this->getProperty("expiryDate");
+        return $this->getProperty('expiryDate');
     }
 
     /**
@@ -162,7 +159,7 @@ class PersonCheck extends ModelBase
      */
     public function setExpiryDate(\DateTime $expiryDate = null)
     {
-        $this->setProperty("expiryDate", $expiryDate);
+        $this->setProperty('expiryDate', $expiryDate);
     }
 
     /**
@@ -170,7 +167,7 @@ class PersonCheck extends ModelBase
      */
     public function getReferenceNumber()
     {
-        return $this->getProperty("referenceNumber");
+        return $this->getProperty('referenceNumber');
     }
 
     /**
@@ -178,7 +175,7 @@ class PersonCheck extends ModelBase
      */
     public function setReferenceNumber($referenceNumber = null)
     {
-        $this->setProperty("referenceNumber", $referenceNumber);
+        $this->setProperty('referenceNumber', $referenceNumber);
     }
 
     /**
@@ -186,7 +183,7 @@ class PersonCheck extends ModelBase
      */
     public function getAuthenticatedDate()
     {
-        return $this->getProperty("authenticatedDate");
+        return $this->getProperty('authenticatedDate');
     }
 
     /**
@@ -194,7 +191,7 @@ class PersonCheck extends ModelBase
      */
     public function setAuthenticatedDate(\DateTime $authenticatedDate = null)
     {
-        $this->setProperty("authenticatedDate", $authenticatedDate);
+        $this->setProperty('authenticatedDate', $authenticatedDate);
     }
 
     /**
@@ -202,7 +199,7 @@ class PersonCheck extends ModelBase
      */
     public function getAuthenticatedByStaff()
     {
-        return $this->getProperty("authenticatedByStaff");
+        return $this->getProperty('authenticatedByStaff');
     }
 
     /**
@@ -210,7 +207,7 @@ class PersonCheck extends ModelBase
      */
     public function setAuthenticatedByStaff(Staff $authenticatedByStaff = null)
     {
-        $this->setProperty("authenticatedByStaff", $authenticatedByStaff);
+        $this->setProperty('authenticatedByStaff', $authenticatedByStaff);
     }
 
     /**
@@ -218,7 +215,7 @@ class PersonCheck extends ModelBase
      */
     public function getEvidenceRecordedDate()
     {
-        return $this->getProperty("evidenceRecordedDate");
+        return $this->getProperty('evidenceRecordedDate');
     }
 
     /**
@@ -226,7 +223,7 @@ class PersonCheck extends ModelBase
      */
     public function setEvidenceRecordedDate(\DateTime $evidenceRecordedDate = null)
     {
-        $this->setProperty("evidenceRecordedDate", $evidenceRecordedDate);
+        $this->setProperty('evidenceRecordedDate', $evidenceRecordedDate);
     }
 
     /**
@@ -234,7 +231,7 @@ class PersonCheck extends ModelBase
      */
     public function getComment()
     {
-        return $this->getProperty("comment");
+        return $this->getProperty('comment');
     }
 
     /**
@@ -242,6 +239,6 @@ class PersonCheck extends ModelBase
      */
     public function setComment($comment = null)
     {
-        $this->setProperty("comment", $comment);
+        $this->setProperty('comment', $comment);
     }
 }

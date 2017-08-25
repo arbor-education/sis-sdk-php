@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomGroup extends ModelBase
 {
@@ -23,37 +18,45 @@ class CustomGroup extends ModelBase
 
     const CONTAINS_STAFF = 'containsStaff';
 
+    const START_DATE = 'startDate';
+
+    const END_DATE = 'endDate';
+
     protected $_resourceType = ResourceType::CUSTOM_GROUP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomGroup[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomGroup");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_GROUP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomGroup
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_GROUP, $id);
     }
 
@@ -62,7 +65,7 @@ class CustomGroup extends ModelBase
      */
     public function getCustomGroupName()
     {
-        return $this->getProperty("customGroupName");
+        return $this->getProperty('customGroupName');
     }
 
     /**
@@ -70,7 +73,7 @@ class CustomGroup extends ModelBase
      */
     public function setCustomGroupName($customGroupName = null)
     {
-        $this->setProperty("customGroupName", $customGroupName);
+        $this->setProperty('customGroupName', $customGroupName);
     }
 
     /**
@@ -78,7 +81,7 @@ class CustomGroup extends ModelBase
      */
     public function getDescription()
     {
-        return $this->getProperty("description");
+        return $this->getProperty('description');
     }
 
     /**
@@ -86,7 +89,7 @@ class CustomGroup extends ModelBase
      */
     public function setDescription($description = null)
     {
-        $this->setProperty("description", $description);
+        $this->setProperty('description', $description);
     }
 
     /**
@@ -94,7 +97,7 @@ class CustomGroup extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -102,7 +105,7 @@ class CustomGroup extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -110,7 +113,7 @@ class CustomGroup extends ModelBase
      */
     public function getContainsStudents()
     {
-        return $this->getProperty("containsStudents");
+        return $this->getProperty('containsStudents');
     }
 
     /**
@@ -118,7 +121,7 @@ class CustomGroup extends ModelBase
      */
     public function setContainsStudents($containsStudents = null)
     {
-        $this->setProperty("containsStudents", $containsStudents);
+        $this->setProperty('containsStudents', $containsStudents);
     }
 
     /**
@@ -126,7 +129,7 @@ class CustomGroup extends ModelBase
      */
     public function getContainsGuardians()
     {
-        return $this->getProperty("containsGuardians");
+        return $this->getProperty('containsGuardians');
     }
 
     /**
@@ -134,7 +137,7 @@ class CustomGroup extends ModelBase
      */
     public function setContainsGuardians($containsGuardians = null)
     {
-        $this->setProperty("containsGuardians", $containsGuardians);
+        $this->setProperty('containsGuardians', $containsGuardians);
     }
 
     /**
@@ -142,7 +145,7 @@ class CustomGroup extends ModelBase
      */
     public function getContainsStaff()
     {
-        return $this->getProperty("containsStaff");
+        return $this->getProperty('containsStaff');
     }
 
     /**
@@ -150,6 +153,38 @@ class CustomGroup extends ModelBase
      */
     public function setContainsStaff($containsStaff = null)
     {
-        $this->setProperty("containsStaff", $containsStaff);
+        $this->setProperty('containsStaff', $containsStaff);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->getProperty('startDate');
+    }
+
+    /**
+     * @param \DateTime $startDate
+     */
+    public function setStartDate(\DateTime $startDate = null)
+    {
+        $this->setProperty('startDate', $startDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty('endDate');
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty('endDate', $endDate);
     }
 }

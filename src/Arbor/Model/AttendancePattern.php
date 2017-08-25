@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendancePattern extends ModelBase
 {
@@ -27,34 +23,38 @@ class AttendancePattern extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_PATTERN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendancePattern[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendancePattern");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_PATTERN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendancePattern
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_PATTERN, $id);
     }
 
@@ -63,7 +63,7 @@ class AttendancePattern extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -71,7 +71,7 @@ class AttendancePattern extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -79,7 +79,7 @@ class AttendancePattern extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -87,7 +87,7 @@ class AttendancePattern extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -95,7 +95,7 @@ class AttendancePattern extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -103,7 +103,7 @@ class AttendancePattern extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -111,7 +111,7 @@ class AttendancePattern extends ModelBase
      */
     public function getAttendancePatternName()
     {
-        return $this->getProperty("attendancePatternName");
+        return $this->getProperty('attendancePatternName');
     }
 
     /**
@@ -119,7 +119,7 @@ class AttendancePattern extends ModelBase
      */
     public function setAttendancePatternName($attendancePatternName = null)
     {
-        $this->setProperty("attendancePatternName", $attendancePatternName);
+        $this->setProperty('attendancePatternName', $attendancePatternName);
     }
 
     /**
@@ -127,7 +127,7 @@ class AttendancePattern extends ModelBase
      */
     public function getIsPartTime()
     {
-        return $this->getProperty("isPartTime");
+        return $this->getProperty('isPartTime');
     }
 
     /**
@@ -135,7 +135,7 @@ class AttendancePattern extends ModelBase
      */
     public function setIsPartTime($isPartTime = null)
     {
-        $this->setProperty("isPartTime", $isPartTime);
+        $this->setProperty('isPartTime', $isPartTime);
     }
 
     /**
@@ -143,7 +143,7 @@ class AttendancePattern extends ModelBase
      */
     public function getIsMorningOnly()
     {
-        return $this->getProperty("isMorningOnly");
+        return $this->getProperty('isMorningOnly');
     }
 
     /**
@@ -151,7 +151,7 @@ class AttendancePattern extends ModelBase
      */
     public function setIsMorningOnly($isMorningOnly = null)
     {
-        $this->setProperty("isMorningOnly", $isMorningOnly);
+        $this->setProperty('isMorningOnly', $isMorningOnly);
     }
 
     /**
@@ -159,7 +159,7 @@ class AttendancePattern extends ModelBase
      */
     public function getIsAfternoonOnly()
     {
-        return $this->getProperty("isAfternoonOnly");
+        return $this->getProperty('isAfternoonOnly');
     }
 
     /**
@@ -167,6 +167,6 @@ class AttendancePattern extends ModelBase
      */
     public function setIsAfternoonOnly($isAfternoonOnly = null)
     {
-        $this->setProperty("isAfternoonOnly", $isAfternoonOnly);
+        $this->setProperty('isAfternoonOnly', $isAfternoonOnly);
     }
 }

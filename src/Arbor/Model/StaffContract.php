@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Staff;
-use \Arbor\Model\StaffEmploymentType;
-use \Arbor\Model\StaffOrigin;
-use \Arbor\Model\StaffDestination;
-use \Arbor\Model\SuperannuationScheme;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffContract extends ModelBase
 {
@@ -44,34 +35,38 @@ class StaffContract extends ModelBase
     protected $_resourceType = ResourceType::STAFF_CONTRACT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffContract[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffContract");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_CONTRACT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffContract
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT, $id);
     }
 
@@ -80,7 +75,7 @@ class StaffContract extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -88,7 +83,7 @@ class StaffContract extends ModelBase
      */
     public function setStaff(Staff $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -96,7 +91,7 @@ class StaffContract extends ModelBase
      */
     public function getStaffEmploymentType()
     {
-        return $this->getProperty("staffEmploymentType");
+        return $this->getProperty('staffEmploymentType');
     }
 
     /**
@@ -104,7 +99,7 @@ class StaffContract extends ModelBase
      */
     public function setStaffEmploymentType(StaffEmploymentType $staffEmploymentType = null)
     {
-        $this->setProperty("staffEmploymentType", $staffEmploymentType);
+        $this->setProperty('staffEmploymentType', $staffEmploymentType);
     }
 
     /**
@@ -112,7 +107,7 @@ class StaffContract extends ModelBase
      */
     public function getContractName()
     {
-        return $this->getProperty("contractName");
+        return $this->getProperty('contractName');
     }
 
     /**
@@ -120,7 +115,7 @@ class StaffContract extends ModelBase
      */
     public function setContractName($contractName = null)
     {
-        $this->setProperty("contractName", $contractName);
+        $this->setProperty('contractName', $contractName);
     }
 
     /**
@@ -128,7 +123,7 @@ class StaffContract extends ModelBase
      */
     public function getContractReference()
     {
-        return $this->getProperty("contractReference");
+        return $this->getProperty('contractReference');
     }
 
     /**
@@ -136,7 +131,7 @@ class StaffContract extends ModelBase
      */
     public function setContractReference($contractReference = null)
     {
-        $this->setProperty("contractReference", $contractReference);
+        $this->setProperty('contractReference', $contractReference);
     }
 
     /**
@@ -144,7 +139,7 @@ class StaffContract extends ModelBase
      */
     public function getIssuedDate()
     {
-        return $this->getProperty("issuedDate");
+        return $this->getProperty('issuedDate');
     }
 
     /**
@@ -152,7 +147,7 @@ class StaffContract extends ModelBase
      */
     public function setIssuedDate(\DateTime $issuedDate = null)
     {
-        $this->setProperty("issuedDate", $issuedDate);
+        $this->setProperty('issuedDate', $issuedDate);
     }
 
     /**
@@ -160,7 +155,7 @@ class StaffContract extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -168,7 +163,7 @@ class StaffContract extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -176,7 +171,7 @@ class StaffContract extends ModelBase
      */
     public function getExpectedEndDate()
     {
-        return $this->getProperty("expectedEndDate");
+        return $this->getProperty('expectedEndDate');
     }
 
     /**
@@ -184,7 +179,7 @@ class StaffContract extends ModelBase
      */
     public function setExpectedEndDate(\DateTime $expectedEndDate = null)
     {
-        $this->setProperty("expectedEndDate", $expectedEndDate);
+        $this->setProperty('expectedEndDate', $expectedEndDate);
     }
 
     /**
@@ -192,7 +187,7 @@ class StaffContract extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -200,7 +195,7 @@ class StaffContract extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -208,7 +203,7 @@ class StaffContract extends ModelBase
      */
     public function getPayrollNumber()
     {
-        return $this->getProperty("payrollNumber");
+        return $this->getProperty('payrollNumber');
     }
 
     /**
@@ -216,7 +211,7 @@ class StaffContract extends ModelBase
      */
     public function setPayrollNumber($payrollNumber = null)
     {
-        $this->setProperty("payrollNumber", $payrollNumber);
+        $this->setProperty('payrollNumber', $payrollNumber);
     }
 
     /**
@@ -224,7 +219,7 @@ class StaffContract extends ModelBase
      */
     public function getStaffOrigin()
     {
-        return $this->getProperty("staffOrigin");
+        return $this->getProperty('staffOrigin');
     }
 
     /**
@@ -232,7 +227,7 @@ class StaffContract extends ModelBase
      */
     public function setStaffOrigin(StaffOrigin $staffOrigin = null)
     {
-        $this->setProperty("staffOrigin", $staffOrigin);
+        $this->setProperty('staffOrigin', $staffOrigin);
     }
 
     /**
@@ -240,7 +235,7 @@ class StaffContract extends ModelBase
      */
     public function getStaffDestination()
     {
-        return $this->getProperty("staffDestination");
+        return $this->getProperty('staffDestination');
     }
 
     /**
@@ -248,7 +243,7 @@ class StaffContract extends ModelBase
      */
     public function setStaffDestination(StaffDestination $staffDestination = null)
     {
-        $this->setProperty("staffDestination", $staffDestination);
+        $this->setProperty('staffDestination', $staffDestination);
     }
 
     /**
@@ -256,7 +251,7 @@ class StaffContract extends ModelBase
      */
     public function getSuperannuationScheme()
     {
-        return $this->getProperty("superannuationScheme");
+        return $this->getProperty('superannuationScheme');
     }
 
     /**
@@ -264,7 +259,7 @@ class StaffContract extends ModelBase
      */
     public function setSuperannuationScheme(SuperannuationScheme $superannuationScheme = null)
     {
-        $this->setProperty("superannuationScheme", $superannuationScheme);
+        $this->setProperty('superannuationScheme', $superannuationScheme);
     }
 
     /**
@@ -272,7 +267,7 @@ class StaffContract extends ModelBase
      */
     public function getLastPayReviewDate()
     {
-        return $this->getProperty("lastPayReviewDate");
+        return $this->getProperty('lastPayReviewDate');
     }
 
     /**
@@ -280,6 +275,6 @@ class StaffContract extends ModelBase
      */
     public function setLastPayReviewDate(\DateTime $lastPayReviewDate = null)
     {
-        $this->setProperty("lastPayReviewDate", $lastPayReviewDate);
+        $this->setProperty('lastPayReviewDate', $lastPayReviewDate);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\GradePointScale;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class GradeSet extends ModelBase
 {
@@ -30,34 +25,38 @@ class GradeSet extends ModelBase
     protected $_resourceType = ResourceType::GRADE_SET;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return GradeSet[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("GradeSet");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GRADE_SET);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return GradeSet
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GRADE_SET, $id);
     }
 
@@ -66,7 +65,7 @@ class GradeSet extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -74,7 +73,7 @@ class GradeSet extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -82,7 +81,7 @@ class GradeSet extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -90,7 +89,7 @@ class GradeSet extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -98,7 +97,7 @@ class GradeSet extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -106,7 +105,7 @@ class GradeSet extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -114,7 +113,7 @@ class GradeSet extends ModelBase
      */
     public function getGradeSetName()
     {
-        return $this->getProperty("gradeSetName");
+        return $this->getProperty('gradeSetName');
     }
 
     /**
@@ -122,7 +121,7 @@ class GradeSet extends ModelBase
      */
     public function setGradeSetName($gradeSetName = null)
     {
-        $this->setProperty("gradeSetName", $gradeSetName);
+        $this->setProperty('gradeSetName', $gradeSetName);
     }
 
     /**
@@ -130,7 +129,7 @@ class GradeSet extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -138,7 +137,7 @@ class GradeSet extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -146,7 +145,7 @@ class GradeSet extends ModelBase
      */
     public function getGradePointScale()
     {
-        return $this->getProperty("gradePointScale");
+        return $this->getProperty('gradePointScale');
     }
 
     /**
@@ -154,7 +153,7 @@ class GradeSet extends ModelBase
      */
     public function setGradePointScale(GradePointScale $gradePointScale = null)
     {
-        $this->setProperty("gradePointScale", $gradePointScale);
+        $this->setProperty('gradePointScale', $gradePointScale);
     }
 
     /**
@@ -162,7 +161,7 @@ class GradeSet extends ModelBase
      */
     public function getIsDisplayGradeSet()
     {
-        return $this->getProperty("isDisplayGradeSet");
+        return $this->getProperty('isDisplayGradeSet');
     }
 
     /**
@@ -170,7 +169,7 @@ class GradeSet extends ModelBase
      */
     public function setIsDisplayGradeSet($isDisplayGradeSet = null)
     {
-        $this->setProperty("isDisplayGradeSet", $isDisplayGradeSet);
+        $this->setProperty('isDisplayGradeSet', $isDisplayGradeSet);
     }
 
     /**
@@ -178,7 +177,7 @@ class GradeSet extends ModelBase
      */
     public function getScaleDirection()
     {
-        return $this->getProperty("scaleDirection");
+        return $this->getProperty('scaleDirection');
     }
 
     /**
@@ -186,6 +185,6 @@ class GradeSet extends ModelBase
      */
     public function setScaleDirection($scaleDirection = null)
     {
-        $this->setProperty("scaleDirection", $scaleDirection);
+        $this->setProperty('scaleDirection', $scaleDirection);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Programme;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ProgrammeInstance extends ModelBase
 {
@@ -22,34 +17,38 @@ class ProgrammeInstance extends ModelBase
     protected $_resourceType = ResourceType::PROGRAMME_INSTANCE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ProgrammeInstance");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PROGRAMME_INSTANCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ProgrammeInstance
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PROGRAMME_INSTANCE, $id);
     }
 
@@ -58,7 +57,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function getProgramme()
     {
-        return $this->getProperty("programme");
+        return $this->getProperty('programme');
     }
 
     /**
@@ -66,7 +65,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function setProgramme(Programme $programme = null)
     {
-        $this->setProperty("programme", $programme);
+        $this->setProperty('programme', $programme);
     }
 
     /**
@@ -74,7 +73,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -82,7 +81,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -90,7 +89,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function getPlannedStartDate()
     {
-        return $this->getProperty("plannedStartDate");
+        return $this->getProperty('plannedStartDate');
     }
 
     /**
@@ -98,7 +97,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function setPlannedStartDate(\DateTime $plannedStartDate = null)
     {
-        $this->setProperty("plannedStartDate", $plannedStartDate);
+        $this->setProperty('plannedStartDate', $plannedStartDate);
     }
 
     /**
@@ -106,7 +105,7 @@ class ProgrammeInstance extends ModelBase
      */
     public function getPlannedEndDate()
     {
-        return $this->getProperty("plannedEndDate");
+        return $this->getProperty('plannedEndDate');
     }
 
     /**
@@ -114,6 +113,6 @@ class ProgrammeInstance extends ModelBase
      */
     public function setPlannedEndDate(\DateTime $plannedEndDate = null)
     {
-        $this->setProperty("plannedEndDate", $plannedEndDate);
+        $this->setProperty('plannedEndDate', $plannedEndDate);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomReport;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReportGrouping extends ModelBase
 {
@@ -22,34 +17,38 @@ class CustomReportGrouping extends ModelBase
     protected $_resourceType = ResourceType::CUSTOM_REPORT_GROUPING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReportGrouping[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReportGrouping");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT_GROUPING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReportGrouping
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_GROUPING, $id);
     }
 
@@ -58,7 +57,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function getCustomReport()
     {
-        return $this->getProperty("customReport");
+        return $this->getProperty('customReport');
     }
 
     /**
@@ -66,7 +65,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function setCustomReport(CustomReport $customReport = null)
     {
-        $this->setProperty("customReport", $customReport);
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -74,7 +73,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function getFieldClass()
     {
-        return $this->getProperty("fieldClass");
+        return $this->getProperty('fieldClass');
     }
 
     /**
@@ -82,7 +81,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function setFieldClass($fieldClass = null)
     {
-        $this->setProperty("fieldClass", $fieldClass);
+        $this->setProperty('fieldClass', $fieldClass);
     }
 
     /**
@@ -90,7 +89,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function getFieldParams()
     {
-        return $this->getProperty("fieldParams");
+        return $this->getProperty('fieldParams');
     }
 
     /**
@@ -98,7 +97,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function setFieldParams($fieldParams = null)
     {
-        $this->setProperty("fieldParams", $fieldParams);
+        $this->setProperty('fieldParams', $fieldParams);
     }
 
     /**
@@ -106,7 +105,7 @@ class CustomReportGrouping extends ModelBase
      */
     public function getTransformationClass()
     {
-        return $this->getProperty("transformationClass");
+        return $this->getProperty('transformationClass');
     }
 
     /**
@@ -114,6 +113,6 @@ class CustomReportGrouping extends ModelBase
      */
     public function setTransformationClass($transformationClass = null)
     {
-        $this->setProperty("transformationClass", $transformationClass);
+        $this->setProperty('transformationClass', $transformationClass);
     }
 }

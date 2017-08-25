@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\QualificationAward;
-use \Arbor\Model\QualificationLearningUnit;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationAwardLearningUnit extends ModelBase
 {
@@ -19,34 +13,38 @@ class QualificationAwardLearningUnit extends ModelBase
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD_LEARNING_UNIT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return QualificationAwardLearningUnit[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("QualificationAwardLearningUnit");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_AWARD_LEARNING_UNIT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return QualificationAwardLearningUnit
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD_LEARNING_UNIT, $id);
     }
 
@@ -55,7 +53,7 @@ class QualificationAwardLearningUnit extends ModelBase
      */
     public function getQualificationAward()
     {
-        return $this->getProperty("qualificationAward");
+        return $this->getProperty('qualificationAward');
     }
 
     /**
@@ -63,7 +61,7 @@ class QualificationAwardLearningUnit extends ModelBase
      */
     public function setQualificationAward(QualificationAward $qualificationAward = null)
     {
-        $this->setProperty("qualificationAward", $qualificationAward);
+        $this->setProperty('qualificationAward', $qualificationAward);
     }
 
     /**
@@ -71,7 +69,7 @@ class QualificationAwardLearningUnit extends ModelBase
      */
     public function getQualificationLearningUnit()
     {
-        return $this->getProperty("qualificationLearningUnit");
+        return $this->getProperty('qualificationLearningUnit');
     }
 
     /**
@@ -79,6 +77,6 @@ class QualificationAwardLearningUnit extends ModelBase
      */
     public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
     {
-        $this->setProperty("qualificationLearningUnit", $qualificationLearningUnit);
+        $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
 }

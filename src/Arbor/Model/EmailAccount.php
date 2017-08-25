@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailAccount extends ModelBase
 {
@@ -27,34 +23,38 @@ class EmailAccount extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_ACCOUNT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailAccount[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailAccount");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_ACCOUNT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailAccount
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_ACCOUNT, $id);
     }
 
@@ -63,7 +63,7 @@ class EmailAccount extends ModelBase
      */
     public function getServerType()
     {
-        return $this->getProperty("serverType");
+        return $this->getProperty('serverType');
     }
 
     /**
@@ -71,7 +71,7 @@ class EmailAccount extends ModelBase
      */
     public function setServerType($serverType = null)
     {
-        $this->setProperty("serverType", $serverType);
+        $this->setProperty('serverType', $serverType);
     }
 
     /**
@@ -79,7 +79,7 @@ class EmailAccount extends ModelBase
      */
     public function getServerHost()
     {
-        return $this->getProperty("serverHost");
+        return $this->getProperty('serverHost');
     }
 
     /**
@@ -87,7 +87,7 @@ class EmailAccount extends ModelBase
      */
     public function setServerHost($serverHost = null)
     {
-        $this->setProperty("serverHost", $serverHost);
+        $this->setProperty('serverHost', $serverHost);
     }
 
     /**
@@ -95,7 +95,7 @@ class EmailAccount extends ModelBase
      */
     public function getServerPort()
     {
-        return $this->getProperty("serverPort");
+        return $this->getProperty('serverPort');
     }
 
     /**
@@ -103,7 +103,7 @@ class EmailAccount extends ModelBase
      */
     public function setServerPort($serverPort = null)
     {
-        $this->setProperty("serverPort", $serverPort);
+        $this->setProperty('serverPort', $serverPort);
     }
 
     /**
@@ -111,7 +111,7 @@ class EmailAccount extends ModelBase
      */
     public function getServerEncryption()
     {
-        return $this->getProperty("serverEncryption");
+        return $this->getProperty('serverEncryption');
     }
 
     /**
@@ -119,7 +119,7 @@ class EmailAccount extends ModelBase
      */
     public function setServerEncryption($serverEncryption = null)
     {
-        $this->setProperty("serverEncryption", $serverEncryption);
+        $this->setProperty('serverEncryption', $serverEncryption);
     }
 
     /**
@@ -127,7 +127,7 @@ class EmailAccount extends ModelBase
      */
     public function getUsername()
     {
-        return $this->getProperty("username");
+        return $this->getProperty('username');
     }
 
     /**
@@ -135,7 +135,7 @@ class EmailAccount extends ModelBase
      */
     public function setUsername($username = null)
     {
-        $this->setProperty("username", $username);
+        $this->setProperty('username', $username);
     }
 
     /**
@@ -143,7 +143,7 @@ class EmailAccount extends ModelBase
      */
     public function getPassword()
     {
-        return $this->getProperty("password");
+        return $this->getProperty('password');
     }
 
     /**
@@ -151,7 +151,7 @@ class EmailAccount extends ModelBase
      */
     public function setPassword($password = null)
     {
-        $this->setProperty("password", $password);
+        $this->setProperty('password', $password);
     }
 
     /**
@@ -159,7 +159,7 @@ class EmailAccount extends ModelBase
      */
     public function getOwner()
     {
-        return $this->getProperty("owner");
+        return $this->getProperty('owner');
     }
 
     /**
@@ -167,6 +167,6 @@ class EmailAccount extends ModelBase
      */
     public function setOwner(ModelBase $owner = null)
     {
-        $this->setProperty("owner", $owner);
+        $this->setProperty('owner', $owner);
     }
 }

@@ -1,20 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CurriculumTier;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CurriculumGrade extends ModelBase
 {
-    const D00020 = 'd00020';
-
-    const D00020_ORDER = 'd00020Order';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -31,70 +22,46 @@ class CurriculumGrade extends ModelBase
 
     const MAXIMUM_AGE_AT_START = 'maximumAgeAtStart';
 
+    const D00020 = 'd00020';
+
+    const D00020_ORDER = 'd00020Order';
+
     protected $_resourceType = ResourceType::CURRICULUM_GRADE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CurriculumGrade[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CurriculumGrade");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CURRICULUM_GRADE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CurriculumGrade
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CURRICULUM_GRADE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00020()
-    {
-        return $this->getProperty("d00020");
-    }
-
-    /**
-     * @param string $d00020
-     */
-    public function setD00020($d00020 = null)
-    {
-        $this->setProperty("d00020", $d00020);
-    }
-
-    /**
-     * @return int
-     */
-    public function getD00020Order()
-    {
-        return $this->getProperty("d00020Order");
-    }
-
-    /**
-     * @param int $d00020Order
-     */
-    public function setD00020Order($d00020Order = null)
-    {
-        $this->setProperty("d00020Order", $d00020Order);
     }
 
     /**
@@ -102,7 +69,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -110,7 +77,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -118,7 +85,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -126,7 +93,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -134,7 +101,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -142,7 +109,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -150,7 +117,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getCurriculumGradeName()
     {
-        return $this->getProperty("curriculumGradeName");
+        return $this->getProperty('curriculumGradeName');
     }
 
     /**
@@ -158,7 +125,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setCurriculumGradeName($curriculumGradeName = null)
     {
-        $this->setProperty("curriculumGradeName", $curriculumGradeName);
+        $this->setProperty('curriculumGradeName', $curriculumGradeName);
     }
 
     /**
@@ -166,7 +133,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getCurriculumTier()
     {
-        return $this->getProperty("curriculumTier");
+        return $this->getProperty('curriculumTier');
     }
 
     /**
@@ -174,7 +141,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setCurriculumTier(CurriculumTier $curriculumTier = null)
     {
-        $this->setProperty("curriculumTier", $curriculumTier);
+        $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
@@ -182,7 +149,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getAcademicYearIndex()
     {
-        return $this->getProperty("academicYearIndex");
+        return $this->getProperty('academicYearIndex');
     }
 
     /**
@@ -190,7 +157,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setAcademicYearIndex($academicYearIndex = null)
     {
-        $this->setProperty("academicYearIndex", $academicYearIndex);
+        $this->setProperty('academicYearIndex', $academicYearIndex);
     }
 
     /**
@@ -198,7 +165,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getMinimumAgeAtStart()
     {
-        return $this->getProperty("minimumAgeAtStart");
+        return $this->getProperty('minimumAgeAtStart');
     }
 
     /**
@@ -206,7 +173,7 @@ class CurriculumGrade extends ModelBase
      */
     public function setMinimumAgeAtStart($minimumAgeAtStart = null)
     {
-        $this->setProperty("minimumAgeAtStart", $minimumAgeAtStart);
+        $this->setProperty('minimumAgeAtStart', $minimumAgeAtStart);
     }
 
     /**
@@ -214,7 +181,7 @@ class CurriculumGrade extends ModelBase
      */
     public function getMaximumAgeAtStart()
     {
-        return $this->getProperty("maximumAgeAtStart");
+        return $this->getProperty('maximumAgeAtStart');
     }
 
     /**
@@ -222,6 +189,38 @@ class CurriculumGrade extends ModelBase
      */
     public function setMaximumAgeAtStart($maximumAgeAtStart = null)
     {
-        $this->setProperty("maximumAgeAtStart", $maximumAgeAtStart);
+        $this->setProperty('maximumAgeAtStart', $maximumAgeAtStart);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00020()
+    {
+        return $this->getProperty('d00020');
+    }
+
+    /**
+     * @param string $d00020
+     */
+    public function setD00020($d00020 = null)
+    {
+        $this->setProperty('d00020', $d00020);
+    }
+
+    /**
+     * @return int
+     */
+    public function getD00020Order()
+    {
+        return $this->getProperty('d00020Order');
+    }
+
+    /**
+     * @param int $d00020Order
+     */
+    public function setD00020Order($d00020Order = null)
+    {
+        $this->setProperty('d00020Order', $d00020Order);
     }
 }

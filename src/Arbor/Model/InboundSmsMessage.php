@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InboundSmsMessage extends ModelBase
 {
@@ -33,34 +29,38 @@ class InboundSmsMessage extends ModelBase
     protected $_resourceType = ResourceType::INBOUND_SMS_MESSAGE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InboundSmsMessage[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InboundSmsMessage");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INBOUND_SMS_MESSAGE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InboundSmsMessage
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INBOUND_SMS_MESSAGE, $id);
     }
 
@@ -69,7 +69,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getMessageType()
     {
-        return $this->getProperty("messageType");
+        return $this->getProperty('messageType');
     }
 
     /**
@@ -77,7 +77,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setMessageType($messageType = null)
     {
-        $this->setProperty("messageType", $messageType);
+        $this->setProperty('messageType', $messageType);
     }
 
     /**
@@ -85,7 +85,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getSenderNumber()
     {
-        return $this->getProperty("senderNumber");
+        return $this->getProperty('senderNumber');
     }
 
     /**
@@ -93,7 +93,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setSenderNumber($senderNumber = null)
     {
-        $this->setProperty("senderNumber", $senderNumber);
+        $this->setProperty('senderNumber', $senderNumber);
     }
 
     /**
@@ -101,7 +101,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getSender()
     {
-        return $this->getProperty("sender");
+        return $this->getProperty('sender');
     }
 
     /**
@@ -109,7 +109,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty("sender", $sender);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -117,7 +117,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getRecipientNumber()
     {
-        return $this->getProperty("recipientNumber");
+        return $this->getProperty('recipientNumber');
     }
 
     /**
@@ -125,7 +125,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setRecipientNumber($recipientNumber = null)
     {
-        $this->setProperty("recipientNumber", $recipientNumber);
+        $this->setProperty('recipientNumber', $recipientNumber);
     }
 
     /**
@@ -133,7 +133,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getRecipient()
     {
-        return $this->getProperty("recipient");
+        return $this->getProperty('recipient');
     }
 
     /**
@@ -141,7 +141,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setRecipient(ModelBase $recipient = null)
     {
-        $this->setProperty("recipient", $recipient);
+        $this->setProperty('recipient', $recipient);
     }
 
     /**
@@ -149,7 +149,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getMessageText()
     {
-        return $this->getProperty("messageText");
+        return $this->getProperty('messageText');
     }
 
     /**
@@ -157,7 +157,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setMessageText($messageText = null)
     {
-        $this->setProperty("messageText", $messageText);
+        $this->setProperty('messageText', $messageText);
     }
 
     /**
@@ -165,7 +165,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getMessageIdentifier()
     {
-        return $this->getProperty("messageIdentifier");
+        return $this->getProperty('messageIdentifier');
     }
 
     /**
@@ -173,7 +173,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setMessageIdentifier($messageIdentifier = null)
     {
-        $this->setProperty("messageIdentifier", $messageIdentifier);
+        $this->setProperty('messageIdentifier', $messageIdentifier);
     }
 
     /**
@@ -181,7 +181,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getReceivedDatetime()
     {
-        return $this->getProperty("receivedDatetime");
+        return $this->getProperty('receivedDatetime');
     }
 
     /**
@@ -189,7 +189,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setReceivedDatetime(\DateTime $receivedDatetime = null)
     {
-        $this->setProperty("receivedDatetime", $receivedDatetime);
+        $this->setProperty('receivedDatetime', $receivedDatetime);
     }
 
     /**
@@ -197,7 +197,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getReadDatetime()
     {
-        return $this->getProperty("readDatetime");
+        return $this->getProperty('readDatetime');
     }
 
     /**
@@ -205,7 +205,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function setReadDatetime(\DateTime $readDatetime = null)
     {
-        $this->setProperty("readDatetime", $readDatetime);
+        $this->setProperty('readDatetime', $readDatetime);
     }
 
     /**
@@ -213,7 +213,7 @@ class InboundSmsMessage extends ModelBase
      */
     public function getActionRequiredByDatetime()
     {
-        return $this->getProperty("actionRequiredByDatetime");
+        return $this->getProperty('actionRequiredByDatetime');
     }
 
     /**
@@ -221,6 +221,6 @@ class InboundSmsMessage extends ModelBase
      */
     public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
     {
-        $this->setProperty("actionRequiredByDatetime", $actionRequiredByDatetime);
+        $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
 }

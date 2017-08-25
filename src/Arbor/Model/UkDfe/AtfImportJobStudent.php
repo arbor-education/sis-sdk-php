@@ -1,15 +1,14 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\AftImportJob;
-use \Arbor\Model\Gender;
-use \Arbor\Model\Student;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\Gender;
+use Arbor\Model\Student;
 
 class AtfImportJobStudent extends ModelBase
 {
@@ -54,34 +53,38 @@ class AtfImportJobStudent extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_ATF_IMPORT_JOB_STUDENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AtfImportJobStudent[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_AtfImportJobStudent");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_ATF_IMPORT_JOB_STUDENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AtfImportJobStudent
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_ATF_IMPORT_JOB_STUDENT, $id);
     }
 
@@ -90,7 +93,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getAtfImportJob()
     {
-        return $this->getProperty("atfImportJob");
+        return $this->getProperty('atfImportJob');
     }
 
     /**
@@ -98,7 +101,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setAtfImportJob(AftImportJob $atfImportJob = null)
     {
-        $this->setProperty("atfImportJob", $atfImportJob);
+        $this->setProperty('atfImportJob', $atfImportJob);
     }
 
     /**
@@ -106,7 +109,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getFirstName()
     {
-        return $this->getProperty("firstName");
+        return $this->getProperty('firstName');
     }
 
     /**
@@ -114,7 +117,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setFirstName($firstName = null)
     {
-        $this->setProperty("firstName", $firstName);
+        $this->setProperty('firstName', $firstName);
     }
 
     /**
@@ -122,7 +125,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getLastName()
     {
-        return $this->getProperty("lastName");
+        return $this->getProperty('lastName');
     }
 
     /**
@@ -130,7 +133,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setLastName($lastName = null)
     {
-        $this->setProperty("lastName", $lastName);
+        $this->setProperty('lastName', $lastName);
     }
 
     /**
@@ -138,7 +141,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getDateOfBirth()
     {
-        return $this->getProperty("dateOfBirth");
+        return $this->getProperty('dateOfBirth');
     }
 
     /**
@@ -146,7 +149,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setDateOfBirth(\DateTime $dateOfBirth = null)
     {
-        $this->setProperty("dateOfBirth", $dateOfBirth);
+        $this->setProperty('dateOfBirth', $dateOfBirth);
     }
 
     /**
@@ -154,7 +157,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getGender()
     {
-        return $this->getProperty("gender");
+        return $this->getProperty('gender');
     }
 
     /**
@@ -162,7 +165,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setGender(Gender $gender = null)
     {
-        $this->setProperty("gender", $gender);
+        $this->setProperty('gender', $gender);
     }
 
     /**
@@ -170,7 +173,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getApplicationReference()
     {
-        return $this->getProperty("applicationReference");
+        return $this->getProperty('applicationReference');
     }
 
     /**
@@ -178,7 +181,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setApplicationReference($applicationReference = null)
     {
-        $this->setProperty("applicationReference", $applicationReference);
+        $this->setProperty('applicationReference', $applicationReference);
     }
 
     /**
@@ -186,7 +189,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getUpn()
     {
-        return $this->getProperty("upn");
+        return $this->getProperty('upn');
     }
 
     /**
@@ -194,7 +197,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setUpn($upn = null)
     {
-        $this->setProperty("upn", $upn);
+        $this->setProperty('upn', $upn);
     }
 
     /**
@@ -202,7 +205,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getUniqueLearnerNumber()
     {
-        return $this->getProperty("uniqueLearnerNumber");
+        return $this->getProperty('uniqueLearnerNumber');
     }
 
     /**
@@ -210,7 +213,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setUniqueLearnerNumber($uniqueLearnerNumber = null)
     {
-        $this->setProperty("uniqueLearnerNumber", $uniqueLearnerNumber);
+        $this->setProperty('uniqueLearnerNumber', $uniqueLearnerNumber);
     }
 
     /**
@@ -218,7 +221,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getUniqueCandidateIdentifier()
     {
-        return $this->getProperty("uniqueCandidateIdentifier");
+        return $this->getProperty('uniqueCandidateIdentifier');
     }
 
     /**
@@ -226,7 +229,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setUniqueCandidateIdentifier($uniqueCandidateIdentifier = null)
     {
-        $this->setProperty("uniqueCandidateIdentifier", $uniqueCandidateIdentifier);
+        $this->setProperty('uniqueCandidateIdentifier', $uniqueCandidateIdentifier);
     }
 
     /**
@@ -234,7 +237,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -242,7 +245,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -250,7 +253,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getImportDatetime()
     {
-        return $this->getProperty("importDatetime");
+        return $this->getProperty('importDatetime');
     }
 
     /**
@@ -258,7 +261,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setImportDatetime(\DateTime $importDatetime = null)
     {
-        $this->setProperty("importDatetime", $importDatetime);
+        $this->setProperty('importDatetime', $importDatetime);
     }
 
     /**
@@ -266,7 +269,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getBasicDetailsProcessed()
     {
-        return $this->getProperty("basicDetailsProcessed");
+        return $this->getProperty('basicDetailsProcessed');
     }
 
     /**
@@ -274,7 +277,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setBasicDetailsProcessed($basicDetailsProcessed = null)
     {
-        $this->setProperty("basicDetailsProcessed", $basicDetailsProcessed);
+        $this->setProperty('basicDetailsProcessed', $basicDetailsProcessed);
     }
 
     /**
@@ -282,7 +285,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getFsmHistoryProcessed()
     {
-        return $this->getProperty("fsmHistoryProcessed");
+        return $this->getProperty('fsmHistoryProcessed');
     }
 
     /**
@@ -290,7 +293,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setFsmHistoryProcessed($fsmHistoryProcessed = null)
     {
-        $this->setProperty("fsmHistoryProcessed", $fsmHistoryProcessed);
+        $this->setProperty('fsmHistoryProcessed', $fsmHistoryProcessed);
     }
 
     /**
@@ -298,7 +301,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getLookedAfterProcessed()
     {
-        return $this->getProperty("lookedAfterProcessed");
+        return $this->getProperty('lookedAfterProcessed');
     }
 
     /**
@@ -306,7 +309,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setLookedAfterProcessed($lookedAfterProcessed = null)
     {
-        $this->setProperty("lookedAfterProcessed", $lookedAfterProcessed);
+        $this->setProperty('lookedAfterProcessed', $lookedAfterProcessed);
     }
 
     /**
@@ -314,7 +317,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getSenHistoryProcessed()
     {
-        return $this->getProperty("senHistoryProcessed");
+        return $this->getProperty('senHistoryProcessed');
     }
 
     /**
@@ -322,7 +325,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setSenHistoryProcessed($senHistoryProcessed = null)
     {
-        $this->setProperty("senHistoryProcessed", $senHistoryProcessed);
+        $this->setProperty('senHistoryProcessed', $senHistoryProcessed);
     }
 
     /**
@@ -330,7 +333,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getAddressProcessed()
     {
-        return $this->getProperty("addressProcessed");
+        return $this->getProperty('addressProcessed');
     }
 
     /**
@@ -338,7 +341,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setAddressProcessed($addressProcessed = null)
     {
-        $this->setProperty("addressProcessed", $addressProcessed);
+        $this->setProperty('addressProcessed', $addressProcessed);
     }
 
     /**
@@ -346,7 +349,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getContactsProcessed()
     {
-        return $this->getProperty("contactsProcessed");
+        return $this->getProperty('contactsProcessed');
     }
 
     /**
@@ -354,7 +357,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setContactsProcessed($contactsProcessed = null)
     {
-        $this->setProperty("contactsProcessed", $contactsProcessed);
+        $this->setProperty('contactsProcessed', $contactsProcessed);
     }
 
     /**
@@ -362,7 +365,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getSchoolHistoryProcessed()
     {
-        return $this->getProperty("schoolHistoryProcessed");
+        return $this->getProperty('schoolHistoryProcessed');
     }
 
     /**
@@ -370,7 +373,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setSchoolHistoryProcessed($schoolHistoryProcessed = null)
     {
-        $this->setProperty("schoolHistoryProcessed", $schoolHistoryProcessed);
+        $this->setProperty('schoolHistoryProcessed', $schoolHistoryProcessed);
     }
 
     /**
@@ -378,7 +381,7 @@ class AtfImportJobStudent extends ModelBase
      */
     public function getImportErrors()
     {
-        return $this->getProperty("importErrors");
+        return $this->getProperty('importErrors');
     }
 
     /**
@@ -386,6 +389,6 @@ class AtfImportJobStudent extends ModelBase
      */
     public function setImportErrors($importErrors = null)
     {
-        $this->setProperty("importErrors", $importErrors);
+        $this->setProperty('importErrors', $importErrors);
     }
 }

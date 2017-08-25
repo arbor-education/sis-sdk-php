@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StudentIntervention;
-use \Arbor\Model\InterventionReview;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentInterventionReview extends ModelBase
 {
@@ -21,34 +15,38 @@ class StudentInterventionReview extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION_REVIEW;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentInterventionReview[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentInterventionReview");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_INTERVENTION_REVIEW);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentInterventionReview
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_INTERVENTION_REVIEW, $id);
     }
 
@@ -57,7 +55,7 @@ class StudentInterventionReview extends ModelBase
      */
     public function getStudentIntervention()
     {
-        return $this->getProperty("studentIntervention");
+        return $this->getProperty('studentIntervention');
     }
 
     /**
@@ -65,7 +63,7 @@ class StudentInterventionReview extends ModelBase
      */
     public function setStudentIntervention(StudentIntervention $studentIntervention = null)
     {
-        $this->setProperty("studentIntervention", $studentIntervention);
+        $this->setProperty('studentIntervention', $studentIntervention);
     }
 
     /**
@@ -73,7 +71,7 @@ class StudentInterventionReview extends ModelBase
      */
     public function getInterventionReview()
     {
-        return $this->getProperty("interventionReview");
+        return $this->getProperty('interventionReview');
     }
 
     /**
@@ -81,7 +79,7 @@ class StudentInterventionReview extends ModelBase
      */
     public function setInterventionReview(InterventionReview $interventionReview = null)
     {
-        $this->setProperty("interventionReview", $interventionReview);
+        $this->setProperty('interventionReview', $interventionReview);
     }
 
     /**
@@ -89,7 +87,7 @@ class StudentInterventionReview extends ModelBase
      */
     public function getReview()
     {
-        return $this->getProperty("review");
+        return $this->getProperty('review');
     }
 
     /**
@@ -97,6 +95,6 @@ class StudentInterventionReview extends ModelBase
      */
     public function setReview($review = null)
     {
-        $this->setProperty("review", $review);
+        $this->setProperty('review', $review);
     }
 }

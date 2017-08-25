@@ -1,15 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\CurriculumTier;
-use \Arbor\Model\ProgressMeasurementPeriodSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicYearAssessment extends ModelBase
 {
@@ -32,34 +25,38 @@ class AcademicYearAssessment extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_ASSESSMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicYearAssessment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicYearAssessment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_YEAR_ASSESSMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicYearAssessment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_YEAR_ASSESSMENT, $id);
     }
 
@@ -68,7 +65,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -76,7 +73,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -84,7 +81,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getAssessmentName()
     {
-        return $this->getProperty("assessmentName");
+        return $this->getProperty('assessmentName');
     }
 
     /**
@@ -92,7 +89,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setAssessmentName($assessmentName = null)
     {
-        $this->setProperty("assessmentName", $assessmentName);
+        $this->setProperty('assessmentName', $assessmentName);
     }
 
     /**
@@ -100,7 +97,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getCurriculumTier()
     {
-        return $this->getProperty("curriculumTier");
+        return $this->getProperty('curriculumTier');
     }
 
     /**
@@ -108,7 +105,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setCurriculumTier(CurriculumTier $curriculumTier = null)
     {
-        $this->setProperty("curriculumTier", $curriculumTier);
+        $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
@@ -116,7 +113,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getAssessmentEntity()
     {
-        return $this->getProperty("assessmentEntity");
+        return $this->getProperty('assessmentEntity');
     }
 
     /**
@@ -124,7 +121,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setAssessmentEntity(ModelBase $assessmentEntity = null)
     {
-        $this->setProperty("assessmentEntity", $assessmentEntity);
+        $this->setProperty('assessmentEntity', $assessmentEntity);
     }
 
     /**
@@ -132,7 +129,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getProgressMeasurementPeriodSet()
     {
-        return $this->getProperty("progressMeasurementPeriodSet");
+        return $this->getProperty('progressMeasurementPeriodSet');
     }
 
     /**
@@ -140,7 +137,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setProgressMeasurementPeriodSet(ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
-        $this->setProperty("progressMeasurementPeriodSet", $progressMeasurementPeriodSet);
+        $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
 
     /**
@@ -148,7 +145,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getIsLinkedToSummativeTracking()
     {
-        return $this->getProperty("isLinkedToSummativeTracking");
+        return $this->getProperty('isLinkedToSummativeTracking');
     }
 
     /**
@@ -156,7 +153,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setIsLinkedToSummativeTracking($isLinkedToSummativeTracking = null)
     {
-        $this->setProperty("isLinkedToSummativeTracking", $isLinkedToSummativeTracking);
+        $this->setProperty('isLinkedToSummativeTracking', $isLinkedToSummativeTracking);
     }
 
     /**
@@ -164,7 +161,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getSetupCompletedDatetime()
     {
-        return $this->getProperty("setupCompletedDatetime");
+        return $this->getProperty('setupCompletedDatetime');
     }
 
     /**
@@ -172,7 +169,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setSetupCompletedDatetime(\DateTime $setupCompletedDatetime = null)
     {
-        $this->setProperty("setupCompletedDatetime", $setupCompletedDatetime);
+        $this->setProperty('setupCompletedDatetime', $setupCompletedDatetime);
     }
 
     /**
@@ -180,7 +177,7 @@ class AcademicYearAssessment extends ModelBase
      */
     public function getSetupCompletionStartedDatetime()
     {
-        return $this->getProperty("setupCompletionStartedDatetime");
+        return $this->getProperty('setupCompletionStartedDatetime');
     }
 
     /**
@@ -188,6 +185,6 @@ class AcademicYearAssessment extends ModelBase
      */
     public function setSetupCompletionStartedDatetime(\DateTime $setupCompletionStartedDatetime = null)
     {
-        $this->setProperty("setupCompletionStartedDatetime", $setupCompletionStartedDatetime);
+        $this->setProperty('setupCompletionStartedDatetime', $setupCompletionStartedDatetime);
     }
 }

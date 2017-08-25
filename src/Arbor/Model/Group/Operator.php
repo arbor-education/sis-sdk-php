@@ -1,12 +1,12 @@
 <?php
+
 namespace Arbor\Model\Group;
 
-use \Arbor\Resource\Group\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\Group\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
 
 class Operator extends ModelBase
 {
@@ -17,34 +17,38 @@ class Operator extends ModelBase
     protected $_resourceType = ResourceType::GROUP_OPERATOR;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Operator[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Group_Operator");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GROUP_OPERATOR);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Operator
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GROUP_OPERATOR, $id);
     }
 
@@ -53,7 +57,7 @@ class Operator extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -61,7 +65,7 @@ class Operator extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -69,7 +73,7 @@ class Operator extends ModelBase
      */
     public function getArborIdentifier()
     {
-        return $this->getProperty("arborIdentifier");
+        return $this->getProperty('arborIdentifier');
     }
 
     /**
@@ -77,6 +81,6 @@ class Operator extends ModelBase
      */
     public function setArborIdentifier($arborIdentifier = null)
     {
-        $this->setProperty("arborIdentifier", $arborIdentifier);
+        $this->setProperty('arborIdentifier', $arborIdentifier);
     }
 }

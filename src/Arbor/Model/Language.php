@@ -1,19 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Language extends ModelBase
 {
-    const D00011_ALPHA3 = 'd00011Alpha3';
-
-    const D00011_ALPHA4 = 'd00011Alpha4';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -30,70 +22,46 @@ class Language extends ModelBase
 
     const PARENT_CODE = 'parentCode';
 
+    const D00011_ALPHA3 = 'd00011Alpha3';
+
+    const D00011_ALPHA4 = 'd00011Alpha4';
+
     protected $_resourceType = ResourceType::LANGUAGE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Language[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Language");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LANGUAGE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Language
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LANGUAGE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00011Alpha3()
-    {
-        return $this->getProperty("d00011Alpha3");
-    }
-
-    /**
-     * @param string $d00011Alpha3
-     */
-    public function setD00011Alpha3($d00011Alpha3 = null)
-    {
-        $this->setProperty("d00011Alpha3", $d00011Alpha3);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00011Alpha4()
-    {
-        return $this->getProperty("d00011Alpha4");
-    }
-
-    /**
-     * @param string $d00011Alpha4
-     */
-    public function setD00011Alpha4($d00011Alpha4 = null)
-    {
-        $this->setProperty("d00011Alpha4", $d00011Alpha4);
     }
 
     /**
@@ -101,7 +69,7 @@ class Language extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -109,7 +77,7 @@ class Language extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -117,7 +85,7 @@ class Language extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -125,7 +93,7 @@ class Language extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -133,7 +101,7 @@ class Language extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -141,7 +109,7 @@ class Language extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -149,7 +117,7 @@ class Language extends ModelBase
      */
     public function getLabel()
     {
-        return $this->getProperty("label");
+        return $this->getProperty('label');
     }
 
     /**
@@ -157,7 +125,7 @@ class Language extends ModelBase
      */
     public function setLabel($label = null)
     {
-        $this->setProperty("label", $label);
+        $this->setProperty('label', $label);
     }
 
     /**
@@ -165,7 +133,7 @@ class Language extends ModelBase
      */
     public function getIso6391Alpha2()
     {
-        return $this->getProperty("iso6391Alpha2");
+        return $this->getProperty('iso6391Alpha2');
     }
 
     /**
@@ -173,7 +141,7 @@ class Language extends ModelBase
      */
     public function setIso6391Alpha2($iso6391Alpha2 = null)
     {
-        $this->setProperty("iso6391Alpha2", $iso6391Alpha2);
+        $this->setProperty('iso6391Alpha2', $iso6391Alpha2);
     }
 
     /**
@@ -181,7 +149,7 @@ class Language extends ModelBase
      */
     public function getIso6392Alpha3()
     {
-        return $this->getProperty("iso6392Alpha3");
+        return $this->getProperty('iso6392Alpha3');
     }
 
     /**
@@ -189,7 +157,7 @@ class Language extends ModelBase
      */
     public function setIso6392Alpha3($iso6392Alpha3 = null)
     {
-        $this->setProperty("iso6392Alpha3", $iso6392Alpha3);
+        $this->setProperty('iso6392Alpha3', $iso6392Alpha3);
     }
 
     /**
@@ -197,7 +165,7 @@ class Language extends ModelBase
      */
     public function getIso6392Alpha3Terminology()
     {
-        return $this->getProperty("iso6392Alpha3Terminology");
+        return $this->getProperty('iso6392Alpha3Terminology');
     }
 
     /**
@@ -205,7 +173,7 @@ class Language extends ModelBase
      */
     public function setIso6392Alpha3Terminology($iso6392Alpha3Terminology = null)
     {
-        $this->setProperty("iso6392Alpha3Terminology", $iso6392Alpha3Terminology);
+        $this->setProperty('iso6392Alpha3Terminology', $iso6392Alpha3Terminology);
     }
 
     /**
@@ -213,7 +181,7 @@ class Language extends ModelBase
      */
     public function getParentCode()
     {
-        return $this->getProperty("parentCode");
+        return $this->getProperty('parentCode');
     }
 
     /**
@@ -221,6 +189,38 @@ class Language extends ModelBase
      */
     public function setParentCode($parentCode = null)
     {
-        $this->setProperty("parentCode", $parentCode);
+        $this->setProperty('parentCode', $parentCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00011Alpha3()
+    {
+        return $this->getProperty('d00011Alpha3');
+    }
+
+    /**
+     * @param string $d00011Alpha3
+     */
+    public function setD00011Alpha3($d00011Alpha3 = null)
+    {
+        $this->setProperty('d00011Alpha3', $d00011Alpha3);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00011Alpha4()
+    {
+        return $this->getProperty('d00011Alpha4');
+    }
+
+    /**
+     * @param string $d00011Alpha4
+     */
+    public function setD00011Alpha4($d00011Alpha4 = null)
+    {
+        $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }
 }

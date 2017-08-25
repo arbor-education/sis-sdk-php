@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InterventionStaffCost extends ModelBase
 {
@@ -25,34 +21,38 @@ class InterventionStaffCost extends ModelBase
     protected $_resourceType = ResourceType::INTERVENTION_STAFF_COST;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return InterventionStaffCost[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("InterventionStaffCost");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::INTERVENTION_STAFF_COST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return InterventionStaffCost
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::INTERVENTION_STAFF_COST, $id);
     }
 
@@ -61,7 +61,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function getStaff()
     {
-        return $this->getProperty("staff");
+        return $this->getProperty('staff');
     }
 
     /**
@@ -69,7 +69,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function setStaff(ModelBase $staff = null)
     {
-        $this->setProperty("staff", $staff);
+        $this->setProperty('staff', $staff);
     }
 
     /**
@@ -77,7 +77,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function getCostPerHour()
     {
-        return $this->getProperty("costPerHour");
+        return $this->getProperty('costPerHour');
     }
 
     /**
@@ -85,7 +85,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function setCostPerHour($costPerHour = null)
     {
-        $this->setProperty("costPerHour", $costPerHour);
+        $this->setProperty('costPerHour', $costPerHour);
     }
 
     /**
@@ -93,7 +93,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -101,7 +101,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -109,7 +109,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -117,7 +117,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -125,7 +125,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function getRoundToNearest()
     {
-        return $this->getProperty("roundToNearest");
+        return $this->getProperty('roundToNearest');
     }
 
     /**
@@ -133,7 +133,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function setRoundToNearest($roundToNearest = null)
     {
-        $this->setProperty("roundToNearest", $roundToNearest);
+        $this->setProperty('roundToNearest', $roundToNearest);
     }
 
     /**
@@ -141,7 +141,7 @@ class InterventionStaffCost extends ModelBase
      */
     public function getMinimumCharge()
     {
-        return $this->getProperty("minimumCharge");
+        return $this->getProperty('minimumCharge');
     }
 
     /**
@@ -149,6 +149,6 @@ class InterventionStaffCost extends ModelBase
      */
     public function setMinimumCharge($minimumCharge = null)
     {
-        $this->setProperty("minimumCharge", $minimumCharge);
+        $this->setProperty('minimumCharge', $minimumCharge);
     }
 }

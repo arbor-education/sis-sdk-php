@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\BankAccount;
-use \Arbor\Model\PaymentProvider;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PaymentProviderPayout extends ModelBase
 {
@@ -33,34 +27,38 @@ class PaymentProviderPayout extends ModelBase
     protected $_resourceType = ResourceType::PAYMENT_PROVIDER_PAYOUT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PaymentProviderPayout[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PaymentProviderPayout");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PAYMENT_PROVIDER_PAYOUT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PaymentProviderPayout
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PAYMENT_PROVIDER_PAYOUT, $id);
     }
 
@@ -69,7 +67,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getBankAccount()
     {
-        return $this->getProperty("bankAccount");
+        return $this->getProperty('bankAccount');
     }
 
     /**
@@ -77,7 +75,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setBankAccount(BankAccount $bankAccount = null)
     {
-        $this->setProperty("bankAccount", $bankAccount);
+        $this->setProperty('bankAccount', $bankAccount);
     }
 
     /**
@@ -85,7 +83,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPaymentProvider()
     {
-        return $this->getProperty("paymentProvider");
+        return $this->getProperty('paymentProvider');
     }
 
     /**
@@ -93,7 +91,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPaymentProvider(PaymentProvider $paymentProvider = null)
     {
-        $this->setProperty("paymentProvider", $paymentProvider);
+        $this->setProperty('paymentProvider', $paymentProvider);
     }
 
     /**
@@ -101,7 +99,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPaymentProviderPayoutIdentifier()
     {
-        return $this->getProperty("paymentProviderPayoutIdentifier");
+        return $this->getProperty('paymentProviderPayoutIdentifier');
     }
 
     /**
@@ -109,7 +107,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPaymentProviderPayoutIdentifier($paymentProviderPayoutIdentifier = null)
     {
-        $this->setProperty("paymentProviderPayoutIdentifier", $paymentProviderPayoutIdentifier);
+        $this->setProperty('paymentProviderPayoutIdentifier', $paymentProviderPayoutIdentifier);
     }
 
     /**
@@ -117,7 +115,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPayoutAmount()
     {
-        return $this->getProperty("payoutAmount");
+        return $this->getProperty('payoutAmount');
     }
 
     /**
@@ -125,7 +123,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPayoutAmount($payoutAmount = null)
     {
-        $this->setProperty("payoutAmount", $payoutAmount);
+        $this->setProperty('payoutAmount', $payoutAmount);
     }
 
     /**
@@ -133,7 +131,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPayoutReference()
     {
-        return $this->getProperty("payoutReference");
+        return $this->getProperty('payoutReference');
     }
 
     /**
@@ -141,7 +139,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPayoutReference($payoutReference = null)
     {
-        $this->setProperty("payoutReference", $payoutReference);
+        $this->setProperty('payoutReference', $payoutReference);
     }
 
     /**
@@ -149,7 +147,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPayoutInitiatedDatetime()
     {
-        return $this->getProperty("payoutInitiatedDatetime");
+        return $this->getProperty('payoutInitiatedDatetime');
     }
 
     /**
@@ -157,7 +155,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPayoutInitiatedDatetime(\DateTime $payoutInitiatedDatetime = null)
     {
-        $this->setProperty("payoutInitiatedDatetime", $payoutInitiatedDatetime);
+        $this->setProperty('payoutInitiatedDatetime', $payoutInitiatedDatetime);
     }
 
     /**
@@ -165,7 +163,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPayoutSucceededDatetime()
     {
-        return $this->getProperty("payoutSucceededDatetime");
+        return $this->getProperty('payoutSucceededDatetime');
     }
 
     /**
@@ -173,7 +171,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPayoutSucceededDatetime(\DateTime $payoutSucceededDatetime = null)
     {
-        $this->setProperty("payoutSucceededDatetime", $payoutSucceededDatetime);
+        $this->setProperty('payoutSucceededDatetime', $payoutSucceededDatetime);
     }
 
     /**
@@ -181,7 +179,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPayoutFailedDatetime()
     {
-        return $this->getProperty("payoutFailedDatetime");
+        return $this->getProperty('payoutFailedDatetime');
     }
 
     /**
@@ -189,7 +187,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPayoutFailedDatetime(\DateTime $payoutFailedDatetime = null)
     {
-        $this->setProperty("payoutFailedDatetime", $payoutFailedDatetime);
+        $this->setProperty('payoutFailedDatetime', $payoutFailedDatetime);
     }
 
     /**
@@ -197,7 +195,7 @@ class PaymentProviderPayout extends ModelBase
      */
     public function getPayoutSourceType()
     {
-        return $this->getProperty("payoutSourceType");
+        return $this->getProperty('payoutSourceType');
     }
 
     /**
@@ -205,6 +203,6 @@ class PaymentProviderPayout extends ModelBase
      */
     public function setPayoutSourceType($payoutSourceType = null)
     {
-        $this->setProperty("payoutSourceType", $payoutSourceType);
+        $this->setProperty('payoutSourceType', $payoutSourceType);
     }
 }

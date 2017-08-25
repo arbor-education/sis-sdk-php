@@ -1,352 +1,334 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DocumentLayout extends ModelBase
 {
-    const LAYOUT_NAME = 'layoutName';
+    const NAME = 'name';
 
-    const PAGE_FORMAT = 'pageFormat';
+    const FIRST_PAGE_HEADER_HTML = 'firstPageHeaderHtml';
 
-    const PAGE_NUMBER_STYLE = 'pageNumberStyle';
+    const FIRST_PAGE_HEADER_HEIGHT = 'firstPageHeaderHeight';
 
-    const HEADER_HTML = 'headerHtml';
+    const FIRST_PAGE_FOOTER_HTML = 'firstPageFooterHtml';
 
-    const HEADER_PAGE1HTML = 'headerPage1html';
+    const FIRST_PAGE_FOOTER_HEIGHT = 'firstPageFooterHeight';
 
-    const FOOTER_HTML = 'footerHtml';
+    const OTHER_PAGES_HEADER_HTML = 'otherPagesHeaderHtml';
 
-    const FOOTER_PAGE1HTML = 'footerPage1html';
+    const OTHER_PAGES_HEADER_HEIGHT = 'otherPagesHeaderHeight';
 
-    const MARGIN_TOP = 'marginTop';
+    const OTHER_PAGES_FOOTER_HTML = 'otherPagesFooterHtml';
 
-    const MARGIN_BOTTOM = 'marginBottom';
+    const OTHER_PAGES_FOOTER_HEIGHT = 'otherPagesFooterHeight';
 
-    const MARGIN_HEADER = 'marginHeader';
+    const LEFT_MARGIN = 'leftMargin';
 
-    const MARGIN_FOOTER = 'marginFooter';
+    const RIGHT_MARGIN = 'rightMargin';
 
-    const MARGIN_LEFT = 'marginLeft';
+    const PAPER_SIZE = 'paperSize';
 
-    const MARGIN_RIGHT = 'marginRight';
+    const ORIENTATION = 'orientation';
 
-    const MARGIN_PAGE1TOP = 'marginPage1top';
+    const DEFAULT_FONT_FAMILY = 'defaultFontFamily';
 
-    const MARGIN_PAGE1BOTTOM = 'marginPage1bottom';
+    const DEFAULT_FONT_SIZE = 'defaultFontSize';
 
-    const MARGIN_PAGE1HEADER = 'marginPage1header';
-
-    const MARGIN_PAGE1FOOTER = 'marginPage1footer';
+    const SHOW_ADDRESS_ENVELOPE_SIZE = 'showAddressEnvelopeSize';
 
     protected $_resourceType = ResourceType::DOCUMENT_LAYOUT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DocumentLayout[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DocumentLayout");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DOCUMENT_LAYOUT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DocumentLayout
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DOCUMENT_LAYOUT, $id);
     }
 
     /**
      * @return string
      */
-    public function getLayoutName()
+    public function getName()
     {
-        return $this->getProperty("layoutName");
+        return $this->getProperty('name');
     }
 
     /**
-     * @param string $layoutName
+     * @param string $name
      */
-    public function setLayoutName($layoutName = null)
+    public function setName($name = null)
     {
-        $this->setProperty("layoutName", $layoutName);
-    }
-
-    /**
-     * @return string
-     */
-    public function getPageFormat()
-    {
-        return $this->getProperty("pageFormat");
-    }
-
-    /**
-     * @param string $pageFormat
-     */
-    public function setPageFormat($pageFormat = null)
-    {
-        $this->setProperty("pageFormat", $pageFormat);
+        $this->setProperty('name', $name);
     }
 
     /**
      * @return string
      */
-    public function getPageNumberStyle()
+    public function getFirstPageHeaderHtml()
     {
-        return $this->getProperty("pageNumberStyle");
+        return $this->getProperty('firstPageHeaderHtml');
     }
 
     /**
-     * @param string $pageNumberStyle
+     * @param string $firstPageHeaderHtml
      */
-    public function setPageNumberStyle($pageNumberStyle = null)
+    public function setFirstPageHeaderHtml($firstPageHeaderHtml = null)
     {
-        $this->setProperty("pageNumberStyle", $pageNumberStyle);
+        $this->setProperty('firstPageHeaderHtml', $firstPageHeaderHtml);
     }
 
     /**
-     * @return string
+     * @return float
      */
-    public function getHeaderHtml()
+    public function getFirstPageHeaderHeight()
     {
-        return $this->getProperty("headerHtml");
+        return $this->getProperty('firstPageHeaderHeight');
     }
 
     /**
-     * @param string $headerHtml
+     * @param float $firstPageHeaderHeight
      */
-    public function setHeaderHtml($headerHtml = null)
+    public function setFirstPageHeaderHeight($firstPageHeaderHeight = null)
     {
-        $this->setProperty("headerHtml", $headerHtml);
-    }
-
-    /**
-     * @return string
-     */
-    public function getHeaderPage1html()
-    {
-        return $this->getProperty("headerPage1html");
-    }
-
-    /**
-     * @param string $headerPage1html
-     */
-    public function setHeaderPage1html($headerPage1html = null)
-    {
-        $this->setProperty("headerPage1html", $headerPage1html);
+        $this->setProperty('firstPageHeaderHeight', $firstPageHeaderHeight);
     }
 
     /**
      * @return string
      */
-    public function getFooterHtml()
+    public function getFirstPageFooterHtml()
     {
-        return $this->getProperty("footerHtml");
+        return $this->getProperty('firstPageFooterHtml');
     }
 
     /**
-     * @param string $footerHtml
+     * @param string $firstPageFooterHtml
      */
-    public function setFooterHtml($footerHtml = null)
+    public function setFirstPageFooterHtml($firstPageFooterHtml = null)
     {
-        $this->setProperty("footerHtml", $footerHtml);
+        $this->setProperty('firstPageFooterHtml', $firstPageFooterHtml);
+    }
+
+    /**
+     * @return float
+     */
+    public function getFirstPageFooterHeight()
+    {
+        return $this->getProperty('firstPageFooterHeight');
+    }
+
+    /**
+     * @param float $firstPageFooterHeight
+     */
+    public function setFirstPageFooterHeight($firstPageFooterHeight = null)
+    {
+        $this->setProperty('firstPageFooterHeight', $firstPageFooterHeight);
     }
 
     /**
      * @return string
      */
-    public function getFooterPage1html()
+    public function getOtherPagesHeaderHtml()
     {
-        return $this->getProperty("footerPage1html");
+        return $this->getProperty('otherPagesHeaderHtml');
     }
 
     /**
-     * @param string $footerPage1html
+     * @param string $otherPagesHeaderHtml
      */
-    public function setFooterPage1html($footerPage1html = null)
+    public function setOtherPagesHeaderHtml($otherPagesHeaderHtml = null)
     {
-        $this->setProperty("footerPage1html", $footerPage1html);
+        $this->setProperty('otherPagesHeaderHtml', $otherPagesHeaderHtml);
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMarginTop()
+    public function getOtherPagesHeaderHeight()
     {
-        return $this->getProperty("marginTop");
+        return $this->getProperty('otherPagesHeaderHeight');
     }
 
     /**
-     * @param int $marginTop
+     * @param float $otherPagesHeaderHeight
      */
-    public function setMarginTop($marginTop = null)
+    public function setOtherPagesHeaderHeight($otherPagesHeaderHeight = null)
     {
-        $this->setProperty("marginTop", $marginTop);
+        $this->setProperty('otherPagesHeaderHeight', $otherPagesHeaderHeight);
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getMarginBottom()
+    public function getOtherPagesFooterHtml()
     {
-        return $this->getProperty("marginBottom");
+        return $this->getProperty('otherPagesFooterHtml');
     }
 
     /**
-     * @param int $marginBottom
+     * @param string $otherPagesFooterHtml
      */
-    public function setMarginBottom($marginBottom = null)
+    public function setOtherPagesFooterHtml($otherPagesFooterHtml = null)
     {
-        $this->setProperty("marginBottom", $marginBottom);
+        $this->setProperty('otherPagesFooterHtml', $otherPagesFooterHtml);
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMarginHeader()
+    public function getOtherPagesFooterHeight()
     {
-        return $this->getProperty("marginHeader");
+        return $this->getProperty('otherPagesFooterHeight');
     }
 
     /**
-     * @param int $marginHeader
+     * @param float $otherPagesFooterHeight
      */
-    public function setMarginHeader($marginHeader = null)
+    public function setOtherPagesFooterHeight($otherPagesFooterHeight = null)
     {
-        $this->setProperty("marginHeader", $marginHeader);
+        $this->setProperty('otherPagesFooterHeight', $otherPagesFooterHeight);
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMarginFooter()
+    public function getLeftMargin()
     {
-        return $this->getProperty("marginFooter");
+        return $this->getProperty('leftMargin');
     }
 
     /**
-     * @param int $marginFooter
+     * @param float $leftMargin
      */
-    public function setMarginFooter($marginFooter = null)
+    public function setLeftMargin($leftMargin = null)
     {
-        $this->setProperty("marginFooter", $marginFooter);
+        $this->setProperty('leftMargin', $leftMargin);
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMarginLeft()
+    public function getRightMargin()
     {
-        return $this->getProperty("marginLeft");
+        return $this->getProperty('rightMargin');
     }
 
     /**
-     * @param int $marginLeft
+     * @param float $rightMargin
      */
-    public function setMarginLeft($marginLeft = null)
+    public function setRightMargin($rightMargin = null)
     {
-        $this->setProperty("marginLeft", $marginLeft);
+        $this->setProperty('rightMargin', $rightMargin);
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getMarginRight()
+    public function getPaperSize()
     {
-        return $this->getProperty("marginRight");
+        return $this->getProperty('paperSize');
     }
 
     /**
-     * @param int $marginRight
+     * @param string $paperSize
      */
-    public function setMarginRight($marginRight = null)
+    public function setPaperSize($paperSize = null)
     {
-        $this->setProperty("marginRight", $marginRight);
+        $this->setProperty('paperSize', $paperSize);
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getMarginPage1top()
+    public function getOrientation()
     {
-        return $this->getProperty("marginPage1top");
+        return $this->getProperty('orientation');
     }
 
     /**
-     * @param int $marginPage1top
+     * @param string $orientation
      */
-    public function setMarginPage1top($marginPage1top = null)
+    public function setOrientation($orientation = null)
     {
-        $this->setProperty("marginPage1top", $marginPage1top);
+        $this->setProperty('orientation', $orientation);
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getMarginPage1bottom()
+    public function getDefaultFontFamily()
     {
-        return $this->getProperty("marginPage1bottom");
+        return $this->getProperty('defaultFontFamily');
     }
 
     /**
-     * @param int $marginPage1bottom
+     * @param string $defaultFontFamily
      */
-    public function setMarginPage1bottom($marginPage1bottom = null)
+    public function setDefaultFontFamily($defaultFontFamily = null)
     {
-        $this->setProperty("marginPage1bottom", $marginPage1bottom);
+        $this->setProperty('defaultFontFamily', $defaultFontFamily);
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMarginPage1header()
+    public function getDefaultFontSize()
     {
-        return $this->getProperty("marginPage1header");
+        return $this->getProperty('defaultFontSize');
     }
 
     /**
-     * @param int $marginPage1header
+     * @param float $defaultFontSize
      */
-    public function setMarginPage1header($marginPage1header = null)
+    public function setDefaultFontSize($defaultFontSize = null)
     {
-        $this->setProperty("marginPage1header", $marginPage1header);
+        $this->setProperty('defaultFontSize', $defaultFontSize);
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getMarginPage1footer()
+    public function getShowAddressEnvelopeSize()
     {
-        return $this->getProperty("marginPage1footer");
+        return $this->getProperty('showAddressEnvelopeSize');
     }
 
     /**
-     * @param int $marginPage1footer
+     * @param string $showAddressEnvelopeSize
      */
-    public function setMarginPage1footer($marginPage1footer = null)
+    public function setShowAddressEnvelopeSize($showAddressEnvelopeSize = null)
     {
-        $this->setProperty("marginPage1footer", $marginPage1footer);
+        $this->setProperty('showAddressEnvelopeSize', $showAddressEnvelopeSize);
     }
 }

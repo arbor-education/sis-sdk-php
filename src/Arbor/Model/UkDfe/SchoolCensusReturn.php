@@ -1,14 +1,13 @@
 <?php
+
 namespace Arbor\Model\UkDfe;
 
-use \Arbor\Resource\UkDfe\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\UkDfe\SchoolCensus;
-use \Arbor\Model\EducationalInstitution;
+use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
+use Arbor\Model\ModelBase;
+use Arbor\Model\EducationalInstitution;
 
 class SchoolCensusReturn extends ModelBase
 {
@@ -43,34 +42,38 @@ class SchoolCensusReturn extends ModelBase
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_RETURN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SchoolCensusReturn[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("UkDfe_SchoolCensusReturn");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::UK_DFE_SCHOOL_CENSUS_RETURN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SchoolCensusReturn
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::UK_DFE_SCHOOL_CENSUS_RETURN, $id);
     }
 
@@ -79,7 +82,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getSchoolCensus()
     {
-        return $this->getProperty("schoolCensus");
+        return $this->getProperty('schoolCensus');
     }
 
     /**
@@ -87,7 +90,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setSchoolCensus(SchoolCensus $schoolCensus = null)
     {
-        $this->setProperty("schoolCensus", $schoolCensus);
+        $this->setProperty('schoolCensus', $schoolCensus);
     }
 
     /**
@@ -95,7 +98,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getEducationalInstitution()
     {
-        return $this->getProperty("educationalInstitution");
+        return $this->getProperty('educationalInstitution');
     }
 
     /**
@@ -103,7 +106,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
-        $this->setProperty("educationalInstitution", $educationalInstitution);
+        $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
@@ -111,7 +114,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getCurrentReturnNumber()
     {
-        return $this->getProperty("currentReturnNumber");
+        return $this->getProperty('currentReturnNumber');
     }
 
     /**
@@ -119,7 +122,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setCurrentReturnNumber($currentReturnNumber = null)
     {
-        $this->setProperty("currentReturnNumber", $currentReturnNumber);
+        $this->setProperty('currentReturnNumber', $currentReturnNumber);
     }
 
     /**
@@ -127,7 +130,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getReturnFilename()
     {
-        return $this->getProperty("returnFilename");
+        return $this->getProperty('returnFilename');
     }
 
     /**
@@ -135,7 +138,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setReturnFilename($returnFilename = null)
     {
-        $this->setProperty("returnFilename", $returnFilename);
+        $this->setProperty('returnFilename', $returnFilename);
     }
 
     /**
@@ -143,7 +146,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getReturnFilenameSequenceNumber()
     {
-        return $this->getProperty("returnFilenameSequenceNumber");
+        return $this->getProperty('returnFilenameSequenceNumber');
     }
 
     /**
@@ -151,7 +154,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setReturnFilenameSequenceNumber($returnFilenameSequenceNumber = null)
     {
-        $this->setProperty("returnFilenameSequenceNumber", $returnFilenameSequenceNumber);
+        $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
 
     /**
@@ -159,7 +162,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getDataError()
     {
-        return $this->getProperty("dataError");
+        return $this->getProperty('dataError');
     }
 
     /**
@@ -167,7 +170,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setDataError($dataError = null)
     {
-        $this->setProperty("dataError", $dataError);
+        $this->setProperty('dataError', $dataError);
     }
 
     /**
@@ -175,7 +178,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getXsdError()
     {
-        return $this->getProperty("xsdError");
+        return $this->getProperty('xsdError');
     }
 
     /**
@@ -183,7 +186,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setXsdError($xsdError = null)
     {
-        $this->setProperty("xsdError", $xsdError);
+        $this->setProperty('xsdError', $xsdError);
     }
 
     /**
@@ -191,7 +194,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getXsltError()
     {
-        return $this->getProperty("xsltError");
+        return $this->getProperty('xsltError');
     }
 
     /**
@@ -199,7 +202,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setXsltError($xsltError = null)
     {
-        $this->setProperty("xsltError", $xsltError);
+        $this->setProperty('xsltError', $xsltError);
     }
 
     /**
@@ -207,7 +210,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getSummaryError()
     {
-        return $this->getProperty("summaryError");
+        return $this->getProperty('summaryError');
     }
 
     /**
@@ -215,7 +218,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setSummaryError($summaryError = null)
     {
-        $this->setProperty("summaryError", $summaryError);
+        $this->setProperty('summaryError', $summaryError);
     }
 
     /**
@@ -223,7 +226,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getSummaryErrorDescription()
     {
-        return $this->getProperty("summaryErrorDescription");
+        return $this->getProperty('summaryErrorDescription');
     }
 
     /**
@@ -231,7 +234,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setSummaryErrorDescription($summaryErrorDescription = null)
     {
-        $this->setProperty("summaryErrorDescription", $summaryErrorDescription);
+        $this->setProperty('summaryErrorDescription', $summaryErrorDescription);
     }
 
     /**
@@ -239,7 +242,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getStatusDescription()
     {
-        return $this->getProperty("statusDescription");
+        return $this->getProperty('statusDescription');
     }
 
     /**
@@ -247,7 +250,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setStatusDescription($statusDescription = null)
     {
-        $this->setProperty("statusDescription", $statusDescription);
+        $this->setProperty('statusDescription', $statusDescription);
     }
 
     /**
@@ -255,7 +258,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getDataExportStartedDatetime()
     {
-        return $this->getProperty("dataExportStartedDatetime");
+        return $this->getProperty('dataExportStartedDatetime');
     }
 
     /**
@@ -263,7 +266,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setDataExportStartedDatetime(\DateTime $dataExportStartedDatetime = null)
     {
-        $this->setProperty("dataExportStartedDatetime", $dataExportStartedDatetime);
+        $this->setProperty('dataExportStartedDatetime', $dataExportStartedDatetime);
     }
 
     /**
@@ -271,7 +274,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getDataExportCompletedDatetime()
     {
-        return $this->getProperty("dataExportCompletedDatetime");
+        return $this->getProperty('dataExportCompletedDatetime');
     }
 
     /**
@@ -279,7 +282,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setDataExportCompletedDatetime(\DateTime $dataExportCompletedDatetime = null)
     {
-        $this->setProperty("dataExportCompletedDatetime", $dataExportCompletedDatetime);
+        $this->setProperty('dataExportCompletedDatetime', $dataExportCompletedDatetime);
     }
 
     /**
@@ -287,7 +290,7 @@ class SchoolCensusReturn extends ModelBase
      */
     public function getIsDryRun()
     {
-        return $this->getProperty("isDryRun");
+        return $this->getProperty('isDryRun');
     }
 
     /**
@@ -295,6 +298,6 @@ class SchoolCensusReturn extends ModelBase
      */
     public function setIsDryRun($isDryRun = null)
     {
-        $this->setProperty("isDryRun", $isDryRun);
+        $this->setProperty('isDryRun', $isDryRun);
     }
 }

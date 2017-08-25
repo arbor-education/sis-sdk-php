@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CalendarType extends ModelBase
 {
@@ -23,34 +19,38 @@ class CalendarType extends ModelBase
     protected $_resourceType = ResourceType::CALENDAR_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CalendarType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CalendarType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CALENDAR_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CalendarType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CALENDAR_TYPE, $id);
     }
 
@@ -59,7 +59,7 @@ class CalendarType extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -67,7 +67,7 @@ class CalendarType extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -75,7 +75,7 @@ class CalendarType extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -83,7 +83,7 @@ class CalendarType extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -91,7 +91,7 @@ class CalendarType extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -99,7 +99,7 @@ class CalendarType extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -107,7 +107,7 @@ class CalendarType extends ModelBase
      */
     public function getCalendarTypeName()
     {
-        return $this->getProperty("calendarTypeName");
+        return $this->getProperty('calendarTypeName');
     }
 
     /**
@@ -115,7 +115,7 @@ class CalendarType extends ModelBase
      */
     public function setCalendarTypeName($calendarTypeName = null)
     {
-        $this->setProperty("calendarTypeName", $calendarTypeName);
+        $this->setProperty('calendarTypeName', $calendarTypeName);
     }
 
     /**
@@ -123,7 +123,7 @@ class CalendarType extends ModelBase
      */
     public function getCalendarTypeColor()
     {
-        return $this->getProperty("calendarTypeColor");
+        return $this->getProperty('calendarTypeColor');
     }
 
     /**
@@ -131,6 +131,6 @@ class CalendarType extends ModelBase
      */
     public function setCalendarTypeColor($calendarTypeColor = null)
     {
-        $this->setProperty("calendarTypeColor", $calendarTypeColor);
+        $this->setProperty('calendarTypeColor', $calendarTypeColor);
     }
 }

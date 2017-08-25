@@ -1,22 +1,12 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicYear;
-use \Arbor\Model\Meal;
-use \Arbor\Model\MealSitting;
-use \Arbor\Model\MealSittingAutomaticAttendeeTarget;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealPattern extends ModelBase
 {
     const ATTENDEE = 'attendee';
-
-    const ACADEMIC_YEAR = 'academicYear';
 
     const MEAL = 'meal';
 
@@ -49,34 +39,38 @@ class MealPattern extends ModelBase
     protected $_resourceType = ResourceType::MEAL_PATTERN;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return MealPattern[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("MealPattern");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEAL_PATTERN);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return MealPattern
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEAL_PATTERN, $id);
     }
 
@@ -85,7 +79,7 @@ class MealPattern extends ModelBase
      */
     public function getAttendee()
     {
-        return $this->getProperty("attendee");
+        return $this->getProperty('attendee');
     }
 
     /**
@@ -93,23 +87,7 @@ class MealPattern extends ModelBase
      */
     public function setAttendee(ModelBase $attendee = null)
     {
-        $this->setProperty("attendee", $attendee);
-    }
-
-    /**
-     * @return AcademicYear
-     */
-    public function getAcademicYear()
-    {
-        return $this->getProperty("academicYear");
-    }
-
-    /**
-     * @param AcademicYear $academicYear
-     */
-    public function setAcademicYear(AcademicYear $academicYear = null)
-    {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('attendee', $attendee);
     }
 
     /**
@@ -117,7 +95,7 @@ class MealPattern extends ModelBase
      */
     public function getMeal()
     {
-        return $this->getProperty("meal");
+        return $this->getProperty('meal');
     }
 
     /**
@@ -125,7 +103,7 @@ class MealPattern extends ModelBase
      */
     public function setMeal(Meal $meal = null)
     {
-        $this->setProperty("meal", $meal);
+        $this->setProperty('meal', $meal);
     }
 
     /**
@@ -133,7 +111,7 @@ class MealPattern extends ModelBase
      */
     public function getMealSitting()
     {
-        return $this->getProperty("mealSitting");
+        return $this->getProperty('mealSitting');
     }
 
     /**
@@ -141,7 +119,7 @@ class MealPattern extends ModelBase
      */
     public function setMealSitting(MealSitting $mealSitting = null)
     {
-        $this->setProperty("mealSitting", $mealSitting);
+        $this->setProperty('mealSitting', $mealSitting);
     }
 
     /**
@@ -149,7 +127,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesMonday()
     {
-        return $this->getProperty("appliesMonday");
+        return $this->getProperty('appliesMonday');
     }
 
     /**
@@ -157,7 +135,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesMonday($appliesMonday = null)
     {
-        $this->setProperty("appliesMonday", $appliesMonday);
+        $this->setProperty('appliesMonday', $appliesMonday);
     }
 
     /**
@@ -165,7 +143,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesTuesday()
     {
-        return $this->getProperty("appliesTuesday");
+        return $this->getProperty('appliesTuesday');
     }
 
     /**
@@ -173,7 +151,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesTuesday($appliesTuesday = null)
     {
-        $this->setProperty("appliesTuesday", $appliesTuesday);
+        $this->setProperty('appliesTuesday', $appliesTuesday);
     }
 
     /**
@@ -181,7 +159,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesWednesday()
     {
-        return $this->getProperty("appliesWednesday");
+        return $this->getProperty('appliesWednesday');
     }
 
     /**
@@ -189,7 +167,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesWednesday($appliesWednesday = null)
     {
-        $this->setProperty("appliesWednesday", $appliesWednesday);
+        $this->setProperty('appliesWednesday', $appliesWednesday);
     }
 
     /**
@@ -197,7 +175,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesThursday()
     {
-        return $this->getProperty("appliesThursday");
+        return $this->getProperty('appliesThursday');
     }
 
     /**
@@ -205,7 +183,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesThursday($appliesThursday = null)
     {
-        $this->setProperty("appliesThursday", $appliesThursday);
+        $this->setProperty('appliesThursday', $appliesThursday);
     }
 
     /**
@@ -213,7 +191,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesFriday()
     {
-        return $this->getProperty("appliesFriday");
+        return $this->getProperty('appliesFriday');
     }
 
     /**
@@ -221,7 +199,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesFriday($appliesFriday = null)
     {
-        $this->setProperty("appliesFriday", $appliesFriday);
+        $this->setProperty('appliesFriday', $appliesFriday);
     }
 
     /**
@@ -229,7 +207,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesSaturday()
     {
-        return $this->getProperty("appliesSaturday");
+        return $this->getProperty('appliesSaturday');
     }
 
     /**
@@ -237,7 +215,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesSaturday($appliesSaturday = null)
     {
-        $this->setProperty("appliesSaturday", $appliesSaturday);
+        $this->setProperty('appliesSaturday', $appliesSaturday);
     }
 
     /**
@@ -245,7 +223,7 @@ class MealPattern extends ModelBase
      */
     public function getAppliesSunday()
     {
-        return $this->getProperty("appliesSunday");
+        return $this->getProperty('appliesSunday');
     }
 
     /**
@@ -253,7 +231,7 @@ class MealPattern extends ModelBase
      */
     public function setAppliesSunday($appliesSunday = null)
     {
-        $this->setProperty("appliesSunday", $appliesSunday);
+        $this->setProperty('appliesSunday', $appliesSunday);
     }
 
     /**
@@ -261,7 +239,7 @@ class MealPattern extends ModelBase
      */
     public function getDayOfCycle()
     {
-        return $this->getProperty("dayOfCycle");
+        return $this->getProperty('dayOfCycle');
     }
 
     /**
@@ -269,7 +247,7 @@ class MealPattern extends ModelBase
      */
     public function setDayOfCycle($dayOfCycle = null)
     {
-        $this->setProperty("dayOfCycle", $dayOfCycle);
+        $this->setProperty('dayOfCycle', $dayOfCycle);
     }
 
     /**
@@ -277,7 +255,7 @@ class MealPattern extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -285,7 +263,7 @@ class MealPattern extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -293,7 +271,7 @@ class MealPattern extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -301,7 +279,7 @@ class MealPattern extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -309,7 +287,7 @@ class MealPattern extends ModelBase
      */
     public function getMealSittingAutomaticAttendeeTarget()
     {
-        return $this->getProperty("mealSittingAutomaticAttendeeTarget");
+        return $this->getProperty('mealSittingAutomaticAttendeeTarget');
     }
 
     /**
@@ -317,7 +295,7 @@ class MealPattern extends ModelBase
      */
     public function setMealSittingAutomaticAttendeeTarget(MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget = null)
     {
-        $this->setProperty("mealSittingAutomaticAttendeeTarget", $mealSittingAutomaticAttendeeTarget);
+        $this->setProperty('mealSittingAutomaticAttendeeTarget', $mealSittingAutomaticAttendeeTarget);
     }
 
     /**
@@ -325,7 +303,7 @@ class MealPattern extends ModelBase
      */
     public function getGroupMembership()
     {
-        return $this->getProperty("groupMembership");
+        return $this->getProperty('groupMembership');
     }
 
     /**
@@ -333,6 +311,6 @@ class MealPattern extends ModelBase
      */
     public function setGroupMembership(ModelBase $groupMembership = null)
     {
-        $this->setProperty("groupMembership", $groupMembership);
+        $this->setProperty('groupMembership', $groupMembership);
     }
 }

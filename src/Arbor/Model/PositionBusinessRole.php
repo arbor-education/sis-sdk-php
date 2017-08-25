@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Position;
-use \Arbor\Model\BusinessRole;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PositionBusinessRole extends ModelBase
 {
@@ -21,34 +15,38 @@ class PositionBusinessRole extends ModelBase
     protected $_resourceType = ResourceType::POSITION_BUSINESS_ROLE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PositionBusinessRole[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PositionBusinessRole");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::POSITION_BUSINESS_ROLE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PositionBusinessRole
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::POSITION_BUSINESS_ROLE, $id);
     }
 
@@ -57,7 +55,7 @@ class PositionBusinessRole extends ModelBase
      */
     public function getPosition()
     {
-        return $this->getProperty("position");
+        return $this->getProperty('position');
     }
 
     /**
@@ -65,7 +63,7 @@ class PositionBusinessRole extends ModelBase
      */
     public function setPosition(Position $position = null)
     {
-        $this->setProperty("position", $position);
+        $this->setProperty('position', $position);
     }
 
     /**
@@ -73,7 +71,7 @@ class PositionBusinessRole extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -81,7 +79,7 @@ class PositionBusinessRole extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 
     /**
@@ -89,7 +87,7 @@ class PositionBusinessRole extends ModelBase
      */
     public function getRanking()
     {
-        return $this->getProperty("ranking");
+        return $this->getProperty('ranking');
     }
 
     /**
@@ -97,6 +95,6 @@ class PositionBusinessRole extends ModelBase
      */
     public function setRanking($ranking = null)
     {
-        $this->setProperty("ranking", $ranking);
+        $this->setProperty('ranking', $ranking);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class HearingTest extends ModelBase
 {
@@ -20,34 +15,38 @@ class HearingTest extends ModelBase
     protected $_resourceType = ResourceType::HEARING_TEST;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return HearingTest[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("HearingTest");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::HEARING_TEST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return HearingTest
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::HEARING_TEST, $id);
     }
 
@@ -56,7 +55,7 @@ class HearingTest extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -64,7 +63,7 @@ class HearingTest extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -72,7 +71,7 @@ class HearingTest extends ModelBase
      */
     public function getTestDate()
     {
-        return $this->getProperty("testDate");
+        return $this->getProperty('testDate');
     }
 
     /**
@@ -80,7 +79,7 @@ class HearingTest extends ModelBase
      */
     public function setTestDate(\DateTime $testDate = null)
     {
-        $this->setProperty("testDate", $testDate);
+        $this->setProperty('testDate', $testDate);
     }
 
     /**
@@ -88,7 +87,7 @@ class HearingTest extends ModelBase
      */
     public function getNotes()
     {
-        return $this->getProperty("notes");
+        return $this->getProperty('notes');
     }
 
     /**
@@ -96,6 +95,6 @@ class HearingTest extends ModelBase
      */
     public function setNotes($notes = null)
     {
-        $this->setProperty("notes", $notes);
+        $this->setProperty('notes', $notes);
     }
 }

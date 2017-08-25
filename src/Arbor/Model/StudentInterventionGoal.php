@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StudentIntervention;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StudentInterventionGoal extends ModelBase
 {
@@ -20,34 +15,38 @@ class StudentInterventionGoal extends ModelBase
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION_GOAL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StudentInterventionGoal[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StudentInterventionGoal");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STUDENT_INTERVENTION_GOAL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StudentInterventionGoal
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STUDENT_INTERVENTION_GOAL, $id);
     }
 
@@ -56,7 +55,7 @@ class StudentInterventionGoal extends ModelBase
      */
     public function getStudentIntervention()
     {
-        return $this->getProperty("studentIntervention");
+        return $this->getProperty('studentIntervention');
     }
 
     /**
@@ -64,7 +63,7 @@ class StudentInterventionGoal extends ModelBase
      */
     public function setStudentIntervention(StudentIntervention $studentIntervention = null)
     {
-        $this->setProperty("studentIntervention", $studentIntervention);
+        $this->setProperty('studentIntervention', $studentIntervention);
     }
 
     /**
@@ -72,7 +71,7 @@ class StudentInterventionGoal extends ModelBase
      */
     public function getTargetDate()
     {
-        return $this->getProperty("targetDate");
+        return $this->getProperty('targetDate');
     }
 
     /**
@@ -80,7 +79,7 @@ class StudentInterventionGoal extends ModelBase
      */
     public function setTargetDate(\DateTime $targetDate = null)
     {
-        $this->setProperty("targetDate", $targetDate);
+        $this->setProperty('targetDate', $targetDate);
     }
 
     /**
@@ -88,7 +87,7 @@ class StudentInterventionGoal extends ModelBase
      */
     public function getObjectives()
     {
-        return $this->getProperty("objectives");
+        return $this->getProperty('objectives');
     }
 
     /**
@@ -96,6 +95,6 @@ class StudentInterventionGoal extends ModelBase
      */
     public function setObjectives($objectives = null)
     {
-        $this->setProperty("objectives", $objectives);
+        $this->setProperty('objectives', $objectives);
     }
 }

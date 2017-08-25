@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Meeting extends ModelBase
 {
@@ -17,8 +13,6 @@ class Meeting extends ModelBase
     const LOCATION_TEXT = 'locationText';
 
     const LOCATION = 'location';
-
-    const SCHEDULED_BY = 'scheduledBy';
 
     const MEETING_NAME = 'meetingName';
 
@@ -47,34 +41,38 @@ class Meeting extends ModelBase
     protected $_resourceType = ResourceType::MEETING;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Meeting[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Meeting");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::MEETING);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Meeting
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::MEETING, $id);
     }
 
@@ -83,7 +81,7 @@ class Meeting extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -91,7 +89,7 @@ class Meeting extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -99,7 +97,7 @@ class Meeting extends ModelBase
      */
     public function getEndDatetime()
     {
-        return $this->getProperty("endDatetime");
+        return $this->getProperty('endDatetime');
     }
 
     /**
@@ -107,7 +105,7 @@ class Meeting extends ModelBase
      */
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty("endDatetime", $endDatetime);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -115,7 +113,7 @@ class Meeting extends ModelBase
      */
     public function getLocationText()
     {
-        return $this->getProperty("locationText");
+        return $this->getProperty('locationText');
     }
 
     /**
@@ -123,7 +121,7 @@ class Meeting extends ModelBase
      */
     public function setLocationText($locationText = null)
     {
-        $this->setProperty("locationText", $locationText);
+        $this->setProperty('locationText', $locationText);
     }
 
     /**
@@ -131,7 +129,7 @@ class Meeting extends ModelBase
      */
     public function getLocation()
     {
-        return $this->getProperty("location");
+        return $this->getProperty('location');
     }
 
     /**
@@ -139,23 +137,7 @@ class Meeting extends ModelBase
      */
     public function setLocation(ModelBase $location = null)
     {
-        $this->setProperty("location", $location);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getScheduledBy()
-    {
-        return $this->getProperty("scheduledBy");
-    }
-
-    /**
-     * @param ModelBase $scheduledBy
-     */
-    public function setScheduledBy(ModelBase $scheduledBy = null)
-    {
-        $this->setProperty("scheduledBy", $scheduledBy);
+        $this->setProperty('location', $location);
     }
 
     /**
@@ -163,7 +145,7 @@ class Meeting extends ModelBase
      */
     public function getMeetingName()
     {
-        return $this->getProperty("meetingName");
+        return $this->getProperty('meetingName');
     }
 
     /**
@@ -171,7 +153,7 @@ class Meeting extends ModelBase
      */
     public function setMeetingName($meetingName = null)
     {
-        $this->setProperty("meetingName", $meetingName);
+        $this->setProperty('meetingName', $meetingName);
     }
 
     /**
@@ -179,7 +161,7 @@ class Meeting extends ModelBase
      */
     public function getAllowSelfServiceScheduling()
     {
-        return $this->getProperty("allowSelfServiceScheduling");
+        return $this->getProperty('allowSelfServiceScheduling');
     }
 
     /**
@@ -187,7 +169,7 @@ class Meeting extends ModelBase
      */
     public function setAllowSelfServiceScheduling($allowSelfServiceScheduling = null)
     {
-        $this->setProperty("allowSelfServiceScheduling", $allowSelfServiceScheduling);
+        $this->setProperty('allowSelfServiceScheduling', $allowSelfServiceScheduling);
     }
 
     /**
@@ -195,7 +177,7 @@ class Meeting extends ModelBase
      */
     public function getSelfSchedulingOpensDatetime()
     {
-        return $this->getProperty("selfSchedulingOpensDatetime");
+        return $this->getProperty('selfSchedulingOpensDatetime');
     }
 
     /**
@@ -203,7 +185,7 @@ class Meeting extends ModelBase
      */
     public function setSelfSchedulingOpensDatetime(\DateTime $selfSchedulingOpensDatetime = null)
     {
-        $this->setProperty("selfSchedulingOpensDatetime", $selfSchedulingOpensDatetime);
+        $this->setProperty('selfSchedulingOpensDatetime', $selfSchedulingOpensDatetime);
     }
 
     /**
@@ -211,7 +193,7 @@ class Meeting extends ModelBase
      */
     public function getSelfSchedulingClosesDatetime()
     {
-        return $this->getProperty("selfSchedulingClosesDatetime");
+        return $this->getProperty('selfSchedulingClosesDatetime');
     }
 
     /**
@@ -219,7 +201,7 @@ class Meeting extends ModelBase
      */
     public function setSelfSchedulingClosesDatetime(\DateTime $selfSchedulingClosesDatetime = null)
     {
-        $this->setProperty("selfSchedulingClosesDatetime", $selfSchedulingClosesDatetime);
+        $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
 
     /**
@@ -227,7 +209,7 @@ class Meeting extends ModelBase
      */
     public function getScheduleMinimumDuration()
     {
-        return $this->getProperty("scheduleMinimumDuration");
+        return $this->getProperty('scheduleMinimumDuration');
     }
 
     /**
@@ -235,7 +217,7 @@ class Meeting extends ModelBase
      */
     public function setScheduleMinimumDuration($scheduleMinimumDuration = null)
     {
-        $this->setProperty("scheduleMinimumDuration", $scheduleMinimumDuration);
+        $this->setProperty('scheduleMinimumDuration', $scheduleMinimumDuration);
     }
 
     /**
@@ -243,7 +225,7 @@ class Meeting extends ModelBase
      */
     public function getScheduleMaximumDuration()
     {
-        return $this->getProperty("scheduleMaximumDuration");
+        return $this->getProperty('scheduleMaximumDuration');
     }
 
     /**
@@ -251,7 +233,7 @@ class Meeting extends ModelBase
      */
     public function setScheduleMaximumDuration($scheduleMaximumDuration = null)
     {
-        $this->setProperty("scheduleMaximumDuration", $scheduleMaximumDuration);
+        $this->setProperty('scheduleMaximumDuration', $scheduleMaximumDuration);
     }
 
     /**
@@ -259,7 +241,7 @@ class Meeting extends ModelBase
      */
     public function getScheduleSuggestedDuration()
     {
-        return $this->getProperty("scheduleSuggestedDuration");
+        return $this->getProperty('scheduleSuggestedDuration');
     }
 
     /**
@@ -267,7 +249,7 @@ class Meeting extends ModelBase
      */
     public function setScheduleSuggestedDuration($scheduleSuggestedDuration = null)
     {
-        $this->setProperty("scheduleSuggestedDuration", $scheduleSuggestedDuration);
+        $this->setProperty('scheduleSuggestedDuration', $scheduleSuggestedDuration);
     }
 
     /**
@@ -275,7 +257,7 @@ class Meeting extends ModelBase
      */
     public function getScheduleLocation()
     {
-        return $this->getProperty("scheduleLocation");
+        return $this->getProperty('scheduleLocation');
     }
 
     /**
@@ -283,7 +265,7 @@ class Meeting extends ModelBase
      */
     public function setScheduleLocation(ModelBase $scheduleLocation = null)
     {
-        $this->setProperty("scheduleLocation", $scheduleLocation);
+        $this->setProperty('scheduleLocation', $scheduleLocation);
     }
 
     /**
@@ -291,7 +273,7 @@ class Meeting extends ModelBase
      */
     public function getAllowDuplicateScheduling()
     {
-        return $this->getProperty("allowDuplicateScheduling");
+        return $this->getProperty('allowDuplicateScheduling');
     }
 
     /**
@@ -299,7 +281,7 @@ class Meeting extends ModelBase
      */
     public function setAllowDuplicateScheduling($allowDuplicateScheduling = null)
     {
-        $this->setProperty("allowDuplicateScheduling", $allowDuplicateScheduling);
+        $this->setProperty('allowDuplicateScheduling', $allowDuplicateScheduling);
     }
 
     /**
@@ -307,7 +289,7 @@ class Meeting extends ModelBase
      */
     public function getAims()
     {
-        return $this->getProperty("aims");
+        return $this->getProperty('aims');
     }
 
     /**
@@ -315,7 +297,7 @@ class Meeting extends ModelBase
      */
     public function setAims($aims = null)
     {
-        $this->setProperty("aims", $aims);
+        $this->setProperty('aims', $aims);
     }
 
     /**
@@ -323,7 +305,7 @@ class Meeting extends ModelBase
      */
     public function getAgenda()
     {
-        return $this->getProperty("agenda");
+        return $this->getProperty('agenda');
     }
 
     /**
@@ -331,7 +313,7 @@ class Meeting extends ModelBase
      */
     public function setAgenda($agenda = null)
     {
-        $this->setProperty("agenda", $agenda);
+        $this->setProperty('agenda', $agenda);
     }
 
     /**
@@ -339,7 +321,7 @@ class Meeting extends ModelBase
      */
     public function getOutcomes()
     {
-        return $this->getProperty("outcomes");
+        return $this->getProperty('outcomes');
     }
 
     /**
@@ -347,6 +329,6 @@ class Meeting extends ModelBase
      */
     public function setOutcomes($outcomes = null)
     {
-        $this->setProperty("outcomes", $outcomes);
+        $this->setProperty('outcomes', $outcomes);
     }
 }

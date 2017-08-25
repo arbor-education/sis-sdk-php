@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Country;
-use \Arbor\Model\NationalityStatus;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonNationality extends ModelBase
 {
@@ -21,34 +15,38 @@ class PersonNationality extends ModelBase
     protected $_resourceType = ResourceType::PERSON_NATIONALITY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonNationality[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonNationality");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_NATIONALITY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonNationality
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_NATIONALITY, $id);
     }
 
@@ -57,7 +55,7 @@ class PersonNationality extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -65,7 +63,7 @@ class PersonNationality extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -73,7 +71,7 @@ class PersonNationality extends ModelBase
      */
     public function getCountry()
     {
-        return $this->getProperty("country");
+        return $this->getProperty('country');
     }
 
     /**
@@ -81,7 +79,7 @@ class PersonNationality extends ModelBase
      */
     public function setCountry(Country $country = null)
     {
-        $this->setProperty("country", $country);
+        $this->setProperty('country', $country);
     }
 
     /**
@@ -89,7 +87,7 @@ class PersonNationality extends ModelBase
      */
     public function getNationalityStatus()
     {
-        return $this->getProperty("nationalityStatus");
+        return $this->getProperty('nationalityStatus');
     }
 
     /**
@@ -97,6 +95,6 @@ class PersonNationality extends ModelBase
      */
     public function setNationalityStatus(NationalityStatus $nationalityStatus = null)
     {
-        $this->setProperty("nationalityStatus", $nationalityStatus);
+        $this->setProperty('nationalityStatus', $nationalityStatus);
     }
 }

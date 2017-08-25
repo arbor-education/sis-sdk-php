@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\MessageDraftRecipient;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Letter extends ModelBase
 {
@@ -36,34 +31,38 @@ class Letter extends ModelBase
     protected $_resourceType = ResourceType::LETTER;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Letter[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Letter");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::LETTER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Letter
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::LETTER, $id);
     }
 
@@ -72,7 +71,7 @@ class Letter extends ModelBase
      */
     public function getLetterDate()
     {
-        return $this->getProperty("letterDate");
+        return $this->getProperty('letterDate');
     }
 
     /**
@@ -80,7 +79,7 @@ class Letter extends ModelBase
      */
     public function setLetterDate(\DateTime $letterDate = null)
     {
-        $this->setProperty("letterDate", $letterDate);
+        $this->setProperty('letterDate', $letterDate);
     }
 
     /**
@@ -88,7 +87,7 @@ class Letter extends ModelBase
      */
     public function getReceivedDate()
     {
-        return $this->getProperty("receivedDate");
+        return $this->getProperty('receivedDate');
     }
 
     /**
@@ -96,7 +95,7 @@ class Letter extends ModelBase
      */
     public function setReceivedDate(\DateTime $receivedDate = null)
     {
-        $this->setProperty("receivedDate", $receivedDate);
+        $this->setProperty('receivedDate', $receivedDate);
     }
 
     /**
@@ -104,7 +103,7 @@ class Letter extends ModelBase
      */
     public function getPreparedDatetime()
     {
-        return $this->getProperty("preparedDatetime");
+        return $this->getProperty('preparedDatetime');
     }
 
     /**
@@ -112,7 +111,7 @@ class Letter extends ModelBase
      */
     public function setPreparedDatetime(\DateTime $preparedDatetime = null)
     {
-        $this->setProperty("preparedDatetime", $preparedDatetime);
+        $this->setProperty('preparedDatetime', $preparedDatetime);
     }
 
     /**
@@ -120,7 +119,7 @@ class Letter extends ModelBase
      */
     public function getSentDatetime()
     {
-        return $this->getProperty("sentDatetime");
+        return $this->getProperty('sentDatetime');
     }
 
     /**
@@ -128,7 +127,7 @@ class Letter extends ModelBase
      */
     public function setSentDatetime(\DateTime $sentDatetime = null)
     {
-        $this->setProperty("sentDatetime", $sentDatetime);
+        $this->setProperty('sentDatetime', $sentDatetime);
     }
 
     /**
@@ -136,7 +135,7 @@ class Letter extends ModelBase
      */
     public function getSenderName()
     {
-        return $this->getProperty("senderName");
+        return $this->getProperty('senderName');
     }
 
     /**
@@ -144,7 +143,7 @@ class Letter extends ModelBase
      */
     public function setSenderName($senderName = null)
     {
-        $this->setProperty("senderName", $senderName);
+        $this->setProperty('senderName', $senderName);
     }
 
     /**
@@ -152,7 +151,7 @@ class Letter extends ModelBase
      */
     public function getSender()
     {
-        return $this->getProperty("sender");
+        return $this->getProperty('sender');
     }
 
     /**
@@ -160,7 +159,7 @@ class Letter extends ModelBase
      */
     public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty("sender", $sender);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -168,7 +167,7 @@ class Letter extends ModelBase
      */
     public function getDraftRecipient()
     {
-        return $this->getProperty("draftRecipient");
+        return $this->getProperty('draftRecipient');
     }
 
     /**
@@ -176,7 +175,7 @@ class Letter extends ModelBase
      */
     public function setDraftRecipient(MessageDraftRecipient $draftRecipient = null)
     {
-        $this->setProperty("draftRecipient", $draftRecipient);
+        $this->setProperty('draftRecipient', $draftRecipient);
     }
 
     /**
@@ -184,7 +183,7 @@ class Letter extends ModelBase
      */
     public function getRecipientName()
     {
-        return $this->getProperty("recipientName");
+        return $this->getProperty('recipientName');
     }
 
     /**
@@ -192,7 +191,7 @@ class Letter extends ModelBase
      */
     public function setRecipientName($recipientName = null)
     {
-        $this->setProperty("recipientName", $recipientName);
+        $this->setProperty('recipientName', $recipientName);
     }
 
     /**
@@ -200,7 +199,7 @@ class Letter extends ModelBase
      */
     public function getRecipient()
     {
-        return $this->getProperty("recipient");
+        return $this->getProperty('recipient');
     }
 
     /**
@@ -208,7 +207,7 @@ class Letter extends ModelBase
      */
     public function setRecipient(ModelBase $recipient = null)
     {
-        $this->setProperty("recipient", $recipient);
+        $this->setProperty('recipient', $recipient);
     }
 
     /**
@@ -216,7 +215,7 @@ class Letter extends ModelBase
      */
     public function getSummary()
     {
-        return $this->getProperty("summary");
+        return $this->getProperty('summary');
     }
 
     /**
@@ -224,7 +223,7 @@ class Letter extends ModelBase
      */
     public function setSummary($summary = null)
     {
-        $this->setProperty("summary", $summary);
+        $this->setProperty('summary', $summary);
     }
 
     /**
@@ -232,7 +231,7 @@ class Letter extends ModelBase
      */
     public function getActionRequiredByDatetime()
     {
-        return $this->getProperty("actionRequiredByDatetime");
+        return $this->getProperty('actionRequiredByDatetime');
     }
 
     /**
@@ -240,6 +239,6 @@ class Letter extends ModelBase
      */
     public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
     {
-        $this->setProperty("actionRequiredByDatetime", $actionRequiredByDatetime);
+        $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
 }

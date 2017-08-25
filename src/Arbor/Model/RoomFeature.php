@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class RoomFeature extends ModelBase
 {
@@ -17,34 +13,38 @@ class RoomFeature extends ModelBase
     protected $_resourceType = ResourceType::ROOM_FEATURE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return RoomFeature[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("RoomFeature");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ROOM_FEATURE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return RoomFeature
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ROOM_FEATURE, $id);
     }
 
@@ -53,7 +53,7 @@ class RoomFeature extends ModelBase
      */
     public function getRoomFeatureName()
     {
-        return $this->getProperty("roomFeatureName");
+        return $this->getProperty('roomFeatureName');
     }
 
     /**
@@ -61,7 +61,7 @@ class RoomFeature extends ModelBase
      */
     public function setRoomFeatureName($roomFeatureName = null)
     {
-        $this->setProperty("roomFeatureName", $roomFeatureName);
+        $this->setProperty('roomFeatureName', $roomFeatureName);
     }
 
     /**
@@ -69,7 +69,7 @@ class RoomFeature extends ModelBase
      */
     public function getAssignToPeople()
     {
-        return $this->getProperty("assignToPeople");
+        return $this->getProperty('assignToPeople');
     }
 
     /**
@@ -77,6 +77,6 @@ class RoomFeature extends ModelBase
      */
     public function setAssignToPeople($assignToPeople = null)
     {
-        $this->setProperty("assignToPeople", $assignToPeople);
+        $this->setProperty('assignToPeople', $assignToPeople);
     }
 }

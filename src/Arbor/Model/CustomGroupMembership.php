@@ -1,13 +1,10 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomGroup;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
+use Arbor\Model\Group\CustomGroup;
+use Arbor\Model\Group\Institution;
 
 class CustomGroupMembership extends ModelBase
 {
@@ -19,37 +16,43 @@ class CustomGroupMembership extends ModelBase
 
     const END_DATE = 'endDate';
 
+    const GROUP_INSTITUTION = 'groupInstitution';
+
     protected $_resourceType = ResourceType::CUSTOM_GROUP_MEMBERSHIP;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomGroupMembership[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomGroupMembership");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_GROUP_MEMBERSHIP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomGroupMembership
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_GROUP_MEMBERSHIP, $id);
     }
 
@@ -58,7 +61,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function getCustomGroup()
     {
-        return $this->getProperty("customGroup");
+        return $this->getProperty('customGroup');
     }
 
     /**
@@ -66,7 +69,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function setCustomGroup(CustomGroup $customGroup = null)
     {
-        $this->setProperty("customGroup", $customGroup);
+        $this->setProperty('customGroup', $customGroup);
     }
 
     /**
@@ -74,7 +77,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -82,7 +85,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -90,7 +93,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -98,7 +101,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -106,7 +109,7 @@ class CustomGroupMembership extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -114,6 +117,22 @@ class CustomGroupMembership extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return Institution
+     */
+    public function getGroupInstitution()
+    {
+        return $this->getProperty('groupInstitution');
+    }
+
+    /**
+     * @param Institution $groupInstitution
+     */
+    public function setGroupInstitution(Institution $groupInstitution = null)
+    {
+        $this->setProperty('groupInstitution', $groupInstitution);
     }
 }

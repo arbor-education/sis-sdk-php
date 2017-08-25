@@ -1,17 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Candidate;
-use \Arbor\Model\QualificationLearningUnit;
-use \Arbor\Model\QualificationAssessable;
-use \Arbor\Model\QualificationAssessableInstance;
-use \Arbor\Model\InvigilationSession;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CandidateEntry extends ModelBase
 {
@@ -19,59 +10,47 @@ class CandidateEntry extends ModelBase
 
     const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
-    const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
+    const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const QUALIFICATION_ASSESSABLE_INSTANCE = 'qualificationAssessableInstance';
+    const ENTRY_STATUS = 'entryStatus';
 
-    const INVIGILATION_SESSION = 'invigilationSession';
-
-    const ENTRY_NUMBER = 'entryNumber';
-
-    const ENTRY_REQUESTED_DATETIME = 'entryRequestedDatetime';
-
-    const ENTRY_CONFIRMED_DATETIME = 'entryConfirmedDatetime';
-
-    const RESPONSE_RECEIVED_DATETIME = 'responseReceivedDatetime';
-
-    const START_DATETIME = 'startDatetime';
-
-    const RESPONSE_MESSAGE = 'responseMessage';
-
-    const ATTENDANCE_MARK = 'attendanceMark';
-
-    const MINUTES_LATE = 'minutesLate';
+    const WITHDRAWAL_STATUS = 'withdrawalStatus';
 
     protected $_resourceType = ResourceType::CANDIDATE_ENTRY;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CandidateEntry[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CandidateEntry");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CANDIDATE_ENTRY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CandidateEntry
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CANDIDATE_ENTRY, $id);
     }
 
@@ -80,7 +59,7 @@ class CandidateEntry extends ModelBase
      */
     public function getCandidate()
     {
-        return $this->getProperty("candidate");
+        return $this->getProperty('candidate');
     }
 
     /**
@@ -88,7 +67,7 @@ class CandidateEntry extends ModelBase
      */
     public function setCandidate(Candidate $candidate = null)
     {
-        $this->setProperty("candidate", $candidate);
+        $this->setProperty('candidate', $candidate);
     }
 
     /**
@@ -96,7 +75,7 @@ class CandidateEntry extends ModelBase
      */
     public function getQualificationLearningUnit()
     {
-        return $this->getProperty("qualificationLearningUnit");
+        return $this->getProperty('qualificationLearningUnit');
     }
 
     /**
@@ -104,182 +83,54 @@ class CandidateEntry extends ModelBase
      */
     public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
     {
-        $this->setProperty("qualificationLearningUnit", $qualificationLearningUnit);
+        $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
 
     /**
-     * @return QualificationAssessable
+     * @return QualificationAvailabilityInstance
      */
-    public function getQualificationAssessable()
+    public function getQualificationAvailabilityInstance()
     {
-        return $this->getProperty("qualificationAssessable");
+        return $this->getProperty('qualificationAvailabilityInstance');
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
      */
-    public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
-        $this->setProperty("qualificationAssessable", $qualificationAssessable);
-    }
-
-    /**
-     * @return QualificationAssessableInstance
-     */
-    public function getQualificationAssessableInstance()
-    {
-        return $this->getProperty("qualificationAssessableInstance");
-    }
-
-    /**
-     * @param QualificationAssessableInstance $qualificationAssessableInstance
-     */
-    public function setQualificationAssessableInstance(QualificationAssessableInstance $qualificationAssessableInstance = null)
-    {
-        $this->setProperty("qualificationAssessableInstance", $qualificationAssessableInstance);
-    }
-
-    /**
-     * @return InvigilationSession
-     */
-    public function getInvigilationSession()
-    {
-        return $this->getProperty("invigilationSession");
-    }
-
-    /**
-     * @param InvigilationSession $invigilationSession
-     */
-    public function setInvigilationSession(InvigilationSession $invigilationSession = null)
-    {
-        $this->setProperty("invigilationSession", $invigilationSession);
+        $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
      * @return string
      */
-    public function getEntryNumber()
+    public function getEntryStatus()
     {
-        return $this->getProperty("entryNumber");
+        return $this->getProperty('entryStatus');
     }
 
     /**
-     * @param string $entryNumber
+     * @param string $entryStatus
      */
-    public function setEntryNumber($entryNumber = null)
+    public function setEntryStatus($entryStatus = null)
     {
-        $this->setProperty("entryNumber", $entryNumber);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEntryRequestedDatetime()
-    {
-        return $this->getProperty("entryRequestedDatetime");
-    }
-
-    /**
-     * @param \DateTime $entryRequestedDatetime
-     */
-    public function setEntryRequestedDatetime(\DateTime $entryRequestedDatetime = null)
-    {
-        $this->setProperty("entryRequestedDatetime", $entryRequestedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEntryConfirmedDatetime()
-    {
-        return $this->getProperty("entryConfirmedDatetime");
-    }
-
-    /**
-     * @param \DateTime $entryConfirmedDatetime
-     */
-    public function setEntryConfirmedDatetime(\DateTime $entryConfirmedDatetime = null)
-    {
-        $this->setProperty("entryConfirmedDatetime", $entryConfirmedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getResponseReceivedDatetime()
-    {
-        return $this->getProperty("responseReceivedDatetime");
-    }
-
-    /**
-     * @param \DateTime $responseReceivedDatetime
-     */
-    public function setResponseReceivedDatetime(\DateTime $responseReceivedDatetime = null)
-    {
-        $this->setProperty("responseReceivedDatetime", $responseReceivedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getStartDatetime()
-    {
-        return $this->getProperty("startDatetime");
-    }
-
-    /**
-     * @param \DateTime $startDatetime
-     */
-    public function setStartDatetime(\DateTime $startDatetime = null)
-    {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('entryStatus', $entryStatus);
     }
 
     /**
      * @return string
      */
-    public function getResponseMessage()
+    public function getWithdrawalStatus()
     {
-        return $this->getProperty("responseMessage");
+        return $this->getProperty('withdrawalStatus');
     }
 
     /**
-     * @param string $responseMessage
+     * @param string $withdrawalStatus
      */
-    public function setResponseMessage($responseMessage = null)
+    public function setWithdrawalStatus($withdrawalStatus = null)
     {
-        $this->setProperty("responseMessage", $responseMessage);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAttendanceMark()
-    {
-        return $this->getProperty("attendanceMark");
-    }
-
-    /**
-     * @param string $attendanceMark
-     */
-    public function setAttendanceMark($attendanceMark = null)
-    {
-        $this->setProperty("attendanceMark", $attendanceMark);
-    }
-
-    /**
-     * @return int
-     */
-    public function getMinutesLate()
-    {
-        return $this->getProperty("minutesLate");
-    }
-
-    /**
-     * @param int $minutesLate
-     */
-    public function setMinutesLate($minutesLate = null)
-    {
-        $this->setProperty("minutesLate", $minutesLate);
+        $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }
 }

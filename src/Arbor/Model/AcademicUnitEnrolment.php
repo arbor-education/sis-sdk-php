@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AcademicUnit;
-use \Arbor\Model\Student;
-use \Arbor\Model\AcademicUnitAutomaticEnrolment;
-use \Arbor\Model\StudentAttendancePattern;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnitEnrolment extends ModelBase
 {
@@ -35,34 +27,38 @@ class AcademicUnitEnrolment extends ModelBase
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_ENROLMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AcademicUnitEnrolment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AcademicUnitEnrolment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT_ENROLMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AcademicUnitEnrolment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_ENROLMENT, $id);
     }
 
@@ -71,7 +67,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getAcademicUnit()
     {
-        return $this->getProperty("academicUnit");
+        return $this->getProperty('academicUnit');
     }
 
     /**
@@ -79,7 +75,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
-        $this->setProperty("academicUnit", $academicUnit);
+        $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
@@ -87,7 +83,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -95,7 +91,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -103,7 +99,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -111,7 +107,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -119,7 +115,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -127,7 +123,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -135,7 +131,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getEnrolmentStatus()
     {
-        return $this->getProperty("enrolmentStatus");
+        return $this->getProperty('enrolmentStatus');
     }
 
     /**
@@ -143,7 +139,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setEnrolmentStatus($enrolmentStatus = null)
     {
-        $this->setProperty("enrolmentStatus", $enrolmentStatus);
+        $this->setProperty('enrolmentStatus', $enrolmentStatus);
     }
 
     /**
@@ -151,7 +147,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getRepeatEnrolment()
     {
-        return $this->getProperty("repeatEnrolment");
+        return $this->getProperty('repeatEnrolment');
     }
 
     /**
@@ -159,7 +155,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setRepeatEnrolment($repeatEnrolment = null)
     {
-        $this->setProperty("repeatEnrolment", $repeatEnrolment);
+        $this->setProperty('repeatEnrolment', $repeatEnrolment);
     }
 
     /**
@@ -167,7 +163,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getAcademicUnitAutomaticEnrolment()
     {
-        return $this->getProperty("academicUnitAutomaticEnrolment");
+        return $this->getProperty('academicUnitAutomaticEnrolment');
     }
 
     /**
@@ -175,7 +171,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setAcademicUnitAutomaticEnrolment(AcademicUnitAutomaticEnrolment $academicUnitAutomaticEnrolment = null)
     {
-        $this->setProperty("academicUnitAutomaticEnrolment", $academicUnitAutomaticEnrolment);
+        $this->setProperty('academicUnitAutomaticEnrolment', $academicUnitAutomaticEnrolment);
     }
 
     /**
@@ -183,7 +179,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getEnrolmentDependency()
     {
-        return $this->getProperty("enrolmentDependency");
+        return $this->getProperty('enrolmentDependency');
     }
 
     /**
@@ -191,7 +187,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setEnrolmentDependency(ModelBase $enrolmentDependency = null)
     {
-        $this->setProperty("enrolmentDependency", $enrolmentDependency);
+        $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
 
     /**
@@ -199,7 +195,7 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function getStudentAttendancePatternDependency()
     {
-        return $this->getProperty("studentAttendancePatternDependency");
+        return $this->getProperty('studentAttendancePatternDependency');
     }
 
     /**
@@ -207,6 +203,6 @@ class AcademicUnitEnrolment extends ModelBase
      */
     public function setStudentAttendancePatternDependency(StudentAttendancePattern $studentAttendancePatternDependency = null)
     {
-        $this->setProperty("studentAttendancePatternDependency", $studentAttendancePatternDependency);
+        $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
     }
 }

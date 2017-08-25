@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\IdentificationDocumentType;
-use \Arbor\Model\Country;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonIdentificationDocument extends ModelBase
 {
@@ -26,39 +20,41 @@ class PersonIdentificationDocument extends ModelBase
 
     const ISSUING_COUNTRY = 'issuingCountry';
 
-    const FILE = 'file';
-
     protected $_resourceType = ResourceType::PERSON_IDENTIFICATION_DOCUMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonIdentificationDocument[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonIdentificationDocument");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_IDENTIFICATION_DOCUMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonIdentificationDocument
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_IDENTIFICATION_DOCUMENT, $id);
     }
 
@@ -67,7 +63,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -75,7 +71,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -83,7 +79,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getDocumentType()
     {
-        return $this->getProperty("documentType");
+        return $this->getProperty('documentType');
     }
 
     /**
@@ -91,7 +87,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setDocumentType(IdentificationDocumentType $documentType = null)
     {
-        $this->setProperty("documentType", $documentType);
+        $this->setProperty('documentType', $documentType);
     }
 
     /**
@@ -99,7 +95,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getDocumentNumber()
     {
-        return $this->getProperty("documentNumber");
+        return $this->getProperty('documentNumber');
     }
 
     /**
@@ -107,7 +103,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setDocumentNumber($documentNumber = null)
     {
-        $this->setProperty("documentNumber", $documentNumber);
+        $this->setProperty('documentNumber', $documentNumber);
     }
 
     /**
@@ -115,7 +111,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getIssueDate()
     {
-        return $this->getProperty("issueDate");
+        return $this->getProperty('issueDate');
     }
 
     /**
@@ -123,7 +119,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setIssueDate(\DateTime $issueDate = null)
     {
-        $this->setProperty("issueDate", $issueDate);
+        $this->setProperty('issueDate', $issueDate);
     }
 
     /**
@@ -131,7 +127,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getExpiryDate()
     {
-        return $this->getProperty("expiryDate");
+        return $this->getProperty('expiryDate');
     }
 
     /**
@@ -139,7 +135,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setExpiryDate(\DateTime $expiryDate = null)
     {
-        $this->setProperty("expiryDate", $expiryDate);
+        $this->setProperty('expiryDate', $expiryDate);
     }
 
     /**
@@ -147,7 +143,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getNameOnDocument()
     {
-        return $this->getProperty("nameOnDocument");
+        return $this->getProperty('nameOnDocument');
     }
 
     /**
@@ -155,7 +151,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setNameOnDocument($nameOnDocument = null)
     {
-        $this->setProperty("nameOnDocument", $nameOnDocument);
+        $this->setProperty('nameOnDocument', $nameOnDocument);
     }
 
     /**
@@ -163,7 +159,7 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function getIssuingCountry()
     {
-        return $this->getProperty("issuingCountry");
+        return $this->getProperty('issuingCountry');
     }
 
     /**
@@ -171,22 +167,6 @@ class PersonIdentificationDocument extends ModelBase
      */
     public function setIssuingCountry(Country $issuingCountry = null)
     {
-        $this->setProperty("issuingCountry", $issuingCountry);
-    }
-
-    /**
-     * @return int
-     */
-    public function getFile()
-    {
-        return $this->getProperty("file");
-    }
-
-    /**
-     * @param int $file
-     */
-    public function setFile($file = null)
-    {
-        $this->setProperty("file", $file);
+        $this->setProperty('issuingCountry', $issuingCountry);
     }
 }

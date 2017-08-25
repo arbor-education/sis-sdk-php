@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\StaffContract;
-use \Arbor\Model\Position;
-use \Arbor\Model\StaffContractPostStartReason;
-use \Arbor\Model\StaffContractPostEndReason;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StaffContractPost extends ModelBase
 {
@@ -41,34 +33,38 @@ class StaffContractPost extends ModelBase
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return StaffContractPost[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("StaffContractPost");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::STAFF_CONTRACT_POST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return StaffContractPost
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::STAFF_CONTRACT_POST, $id);
     }
 
@@ -77,7 +73,7 @@ class StaffContractPost extends ModelBase
      */
     public function getStaffContract()
     {
-        return $this->getProperty("staffContract");
+        return $this->getProperty('staffContract');
     }
 
     /**
@@ -85,7 +81,7 @@ class StaffContractPost extends ModelBase
      */
     public function setStaffContract(StaffContract $staffContract = null)
     {
-        $this->setProperty("staffContract", $staffContract);
+        $this->setProperty('staffContract', $staffContract);
     }
 
     /**
@@ -93,7 +89,7 @@ class StaffContractPost extends ModelBase
      */
     public function getPosition()
     {
-        return $this->getProperty("position");
+        return $this->getProperty('position');
     }
 
     /**
@@ -101,7 +97,7 @@ class StaffContractPost extends ModelBase
      */
     public function setPosition(Position $position = null)
     {
-        $this->setProperty("position", $position);
+        $this->setProperty('position', $position);
     }
 
     /**
@@ -109,7 +105,7 @@ class StaffContractPost extends ModelBase
      */
     public function getPostReference()
     {
-        return $this->getProperty("postReference");
+        return $this->getProperty('postReference');
     }
 
     /**
@@ -117,7 +113,7 @@ class StaffContractPost extends ModelBase
      */
     public function setPostReference($postReference = null)
     {
-        $this->setProperty("postReference", $postReference);
+        $this->setProperty('postReference', $postReference);
     }
 
     /**
@@ -125,7 +121,7 @@ class StaffContractPost extends ModelBase
      */
     public function getJobTitle()
     {
-        return $this->getProperty("jobTitle");
+        return $this->getProperty('jobTitle');
     }
 
     /**
@@ -133,7 +129,7 @@ class StaffContractPost extends ModelBase
      */
     public function setJobTitle($jobTitle = null)
     {
-        $this->setProperty("jobTitle", $jobTitle);
+        $this->setProperty('jobTitle', $jobTitle);
     }
 
     /**
@@ -141,7 +137,7 @@ class StaffContractPost extends ModelBase
      */
     public function getOfferedDate()
     {
-        return $this->getProperty("offeredDate");
+        return $this->getProperty('offeredDate');
     }
 
     /**
@@ -149,7 +145,7 @@ class StaffContractPost extends ModelBase
      */
     public function setOfferedDate(\DateTime $offeredDate = null)
     {
-        $this->setProperty("offeredDate", $offeredDate);
+        $this->setProperty('offeredDate', $offeredDate);
     }
 
     /**
@@ -157,7 +153,7 @@ class StaffContractPost extends ModelBase
      */
     public function getAcceptedDate()
     {
-        return $this->getProperty("acceptedDate");
+        return $this->getProperty('acceptedDate');
     }
 
     /**
@@ -165,7 +161,7 @@ class StaffContractPost extends ModelBase
      */
     public function setAcceptedDate(\DateTime $acceptedDate = null)
     {
-        $this->setProperty("acceptedDate", $acceptedDate);
+        $this->setProperty('acceptedDate', $acceptedDate);
     }
 
     /**
@@ -173,7 +169,7 @@ class StaffContractPost extends ModelBase
      */
     public function getStartDate()
     {
-        return $this->getProperty("startDate");
+        return $this->getProperty('startDate');
     }
 
     /**
@@ -181,7 +177,7 @@ class StaffContractPost extends ModelBase
      */
     public function setStartDate(\DateTime $startDate = null)
     {
-        $this->setProperty("startDate", $startDate);
+        $this->setProperty('startDate', $startDate);
     }
 
     /**
@@ -189,7 +185,7 @@ class StaffContractPost extends ModelBase
      */
     public function getStartReason()
     {
-        return $this->getProperty("startReason");
+        return $this->getProperty('startReason');
     }
 
     /**
@@ -197,7 +193,7 @@ class StaffContractPost extends ModelBase
      */
     public function setStartReason(StaffContractPostStartReason $startReason = null)
     {
-        $this->setProperty("startReason", $startReason);
+        $this->setProperty('startReason', $startReason);
     }
 
     /**
@@ -205,7 +201,7 @@ class StaffContractPost extends ModelBase
      */
     public function getExpectedEndDate()
     {
-        return $this->getProperty("expectedEndDate");
+        return $this->getProperty('expectedEndDate');
     }
 
     /**
@@ -213,7 +209,7 @@ class StaffContractPost extends ModelBase
      */
     public function setExpectedEndDate(\DateTime $expectedEndDate = null)
     {
-        $this->setProperty("expectedEndDate", $expectedEndDate);
+        $this->setProperty('expectedEndDate', $expectedEndDate);
     }
 
     /**
@@ -221,7 +217,7 @@ class StaffContractPost extends ModelBase
      */
     public function getExpectedEndReason()
     {
-        return $this->getProperty("expectedEndReason");
+        return $this->getProperty('expectedEndReason');
     }
 
     /**
@@ -229,7 +225,7 @@ class StaffContractPost extends ModelBase
      */
     public function setExpectedEndReason(StaffContractPostEndReason $expectedEndReason = null)
     {
-        $this->setProperty("expectedEndReason", $expectedEndReason);
+        $this->setProperty('expectedEndReason', $expectedEndReason);
     }
 
     /**
@@ -237,7 +233,7 @@ class StaffContractPost extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -245,7 +241,7 @@ class StaffContractPost extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -253,7 +249,7 @@ class StaffContractPost extends ModelBase
      */
     public function getEndReason()
     {
-        return $this->getProperty("endReason");
+        return $this->getProperty('endReason');
     }
 
     /**
@@ -261,6 +257,6 @@ class StaffContractPost extends ModelBase
      */
     public function setEndReason(StaffContractPostEndReason $endReason = null)
     {
-        $this->setProperty("endReason", $endReason);
+        $this->setProperty('endReason', $endReason);
     }
 }

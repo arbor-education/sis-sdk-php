@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\PostalAddress;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DeliveryAddress extends ModelBase
 {
@@ -30,34 +25,38 @@ class DeliveryAddress extends ModelBase
     protected $_resourceType = ResourceType::DELIVERY_ADDRESS;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return DeliveryAddress[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("DeliveryAddress");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::DELIVERY_ADDRESS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return DeliveryAddress
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::DELIVERY_ADDRESS, $id);
     }
 
@@ -66,7 +65,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getDeliveryAddressName()
     {
-        return $this->getProperty("deliveryAddressName");
+        return $this->getProperty('deliveryAddressName');
     }
 
     /**
@@ -74,7 +73,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setDeliveryAddressName($deliveryAddressName = null)
     {
-        $this->setProperty("deliveryAddressName", $deliveryAddressName);
+        $this->setProperty('deliveryAddressName', $deliveryAddressName);
     }
 
     /**
@@ -82,7 +81,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getOwner()
     {
-        return $this->getProperty("owner");
+        return $this->getProperty('owner');
     }
 
     /**
@@ -90,7 +89,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setOwner(ModelBase $owner = null)
     {
-        $this->setProperty("owner", $owner);
+        $this->setProperty('owner', $owner);
     }
 
     /**
@@ -98,7 +97,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getPostalAddress()
     {
-        return $this->getProperty("postalAddress");
+        return $this->getProperty('postalAddress');
     }
 
     /**
@@ -106,7 +105,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setPostalAddress(PostalAddress $postalAddress = null)
     {
-        $this->setProperty("postalAddress", $postalAddress);
+        $this->setProperty('postalAddress', $postalAddress);
     }
 
     /**
@@ -114,7 +113,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getDeliveryContactName()
     {
-        return $this->getProperty("deliveryContactName");
+        return $this->getProperty('deliveryContactName');
     }
 
     /**
@@ -122,7 +121,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setDeliveryContactName($deliveryContactName = null)
     {
-        $this->setProperty("deliveryContactName", $deliveryContactName);
+        $this->setProperty('deliveryContactName', $deliveryContactName);
     }
 
     /**
@@ -130,7 +129,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getDeliveryContactNumber()
     {
-        return $this->getProperty("deliveryContactNumber");
+        return $this->getProperty('deliveryContactNumber');
     }
 
     /**
@@ -138,7 +137,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setDeliveryContactNumber($deliveryContactNumber = null)
     {
-        $this->setProperty("deliveryContactNumber", $deliveryContactNumber);
+        $this->setProperty('deliveryContactNumber', $deliveryContactNumber);
     }
 
     /**
@@ -146,7 +145,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getDeliveryInstructions()
     {
-        return $this->getProperty("deliveryInstructions");
+        return $this->getProperty('deliveryInstructions');
     }
 
     /**
@@ -154,7 +153,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setDeliveryInstructions($deliveryInstructions = null)
     {
-        $this->setProperty("deliveryInstructions", $deliveryInstructions);
+        $this->setProperty('deliveryInstructions', $deliveryInstructions);
     }
 
     /**
@@ -162,7 +161,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getIsDefault()
     {
-        return $this->getProperty("isDefault");
+        return $this->getProperty('isDefault');
     }
 
     /**
@@ -170,7 +169,7 @@ class DeliveryAddress extends ModelBase
      */
     public function setIsDefault($isDefault = null)
     {
-        $this->setProperty("isDefault", $isDefault);
+        $this->setProperty('isDefault', $isDefault);
     }
 
     /**
@@ -178,7 +177,7 @@ class DeliveryAddress extends ModelBase
      */
     public function getIsAddressForReuse()
     {
-        return $this->getProperty("isAddressForReuse");
+        return $this->getProperty('isAddressForReuse');
     }
 
     /**
@@ -186,6 +185,6 @@ class DeliveryAddress extends ModelBase
      */
     public function setIsAddressForReuse($isAddressForReuse = null)
     {
-        $this->setProperty("isAddressForReuse", $isAddressForReuse);
+        $this->setProperty('isAddressForReuse', $isAddressForReuse);
     }
 }

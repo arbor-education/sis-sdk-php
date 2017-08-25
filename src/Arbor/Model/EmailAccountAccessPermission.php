@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\EmailAccount;
-use \Arbor\Model\BusinessRole;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class EmailAccountAccessPermission extends ModelBase
 {
@@ -19,34 +13,38 @@ class EmailAccountAccessPermission extends ModelBase
     protected $_resourceType = ResourceType::EMAIL_ACCOUNT_ACCESS_PERMISSION;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return EmailAccountAccessPermission[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("EmailAccountAccessPermission");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::EMAIL_ACCOUNT_ACCESS_PERMISSION);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return EmailAccountAccessPermission
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::EMAIL_ACCOUNT_ACCESS_PERMISSION, $id);
     }
 
@@ -55,7 +53,7 @@ class EmailAccountAccessPermission extends ModelBase
      */
     public function getEmailAccount()
     {
-        return $this->getProperty("emailAccount");
+        return $this->getProperty('emailAccount');
     }
 
     /**
@@ -63,7 +61,7 @@ class EmailAccountAccessPermission extends ModelBase
      */
     public function setEmailAccount(EmailAccount $emailAccount = null)
     {
-        $this->setProperty("emailAccount", $emailAccount);
+        $this->setProperty('emailAccount', $emailAccount);
     }
 
     /**
@@ -71,7 +69,7 @@ class EmailAccountAccessPermission extends ModelBase
      */
     public function getBusinessRole()
     {
-        return $this->getProperty("businessRole");
+        return $this->getProperty('businessRole');
     }
 
     /**
@@ -79,6 +77,6 @@ class EmailAccountAccessPermission extends ModelBase
      */
     public function setBusinessRole(BusinessRole $businessRole = null)
     {
-        $this->setProperty("businessRole", $businessRole);
+        $this->setProperty('businessRole', $businessRole);
     }
 }

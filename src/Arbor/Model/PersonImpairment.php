@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\ImpairmentCategory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PersonImpairment extends ModelBase
 {
@@ -24,34 +19,38 @@ class PersonImpairment extends ModelBase
     protected $_resourceType = ResourceType::PERSON_IMPAIRMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return PersonImpairment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("PersonImpairment");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::PERSON_IMPAIRMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return PersonImpairment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::PERSON_IMPAIRMENT, $id);
     }
 
@@ -60,7 +59,7 @@ class PersonImpairment extends ModelBase
      */
     public function getPerson()
     {
-        return $this->getProperty("person");
+        return $this->getProperty('person');
     }
 
     /**
@@ -68,7 +67,7 @@ class PersonImpairment extends ModelBase
      */
     public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty("person", $person);
+        $this->setProperty('person', $person);
     }
 
     /**
@@ -76,7 +75,7 @@ class PersonImpairment extends ModelBase
      */
     public function getPersonImpairmentName()
     {
-        return $this->getProperty("personImpairmentName");
+        return $this->getProperty('personImpairmentName');
     }
 
     /**
@@ -84,7 +83,7 @@ class PersonImpairment extends ModelBase
      */
     public function setPersonImpairmentName($personImpairmentName = null)
     {
-        $this->setProperty("personImpairmentName", $personImpairmentName);
+        $this->setProperty('personImpairmentName', $personImpairmentName);
     }
 
     /**
@@ -92,7 +91,7 @@ class PersonImpairment extends ModelBase
      */
     public function getImpairmentCategory()
     {
-        return $this->getProperty("impairmentCategory");
+        return $this->getProperty('impairmentCategory');
     }
 
     /**
@@ -100,7 +99,7 @@ class PersonImpairment extends ModelBase
      */
     public function setImpairmentCategory(ImpairmentCategory $impairmentCategory = null)
     {
-        $this->setProperty("impairmentCategory", $impairmentCategory);
+        $this->setProperty('impairmentCategory', $impairmentCategory);
     }
 
     /**
@@ -108,7 +107,7 @@ class PersonImpairment extends ModelBase
      */
     public function getDateAdvised()
     {
-        return $this->getProperty("dateAdvised");
+        return $this->getProperty('dateAdvised');
     }
 
     /**
@@ -116,7 +115,7 @@ class PersonImpairment extends ModelBase
      */
     public function setDateAdvised(\DateTime $dateAdvised = null)
     {
-        $this->setProperty("dateAdvised", $dateAdvised);
+        $this->setProperty('dateAdvised', $dateAdvised);
     }
 
     /**
@@ -124,7 +123,7 @@ class PersonImpairment extends ModelBase
      */
     public function getAffectsWorkingAbility()
     {
-        return $this->getProperty("affectsWorkingAbility");
+        return $this->getProperty('affectsWorkingAbility');
     }
 
     /**
@@ -132,6 +131,6 @@ class PersonImpairment extends ModelBase
      */
     public function setAffectsWorkingAbility($affectsWorkingAbility = null)
     {
-        $this->setProperty("affectsWorkingAbility", $affectsWorkingAbility);
+        $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }
 }

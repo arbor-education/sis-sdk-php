@@ -1,21 +1,11 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class GuardianRelationshipType extends ModelBase
 {
-    const D00033 = 'd00033';
-
-    const D00034 = 'd00034';
-
-    const CTF_EXPORT_CODE = 'ctfExportCode';
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -32,86 +22,48 @@ class GuardianRelationshipType extends ModelBase
 
     const IS_SIBLING = 'isSibling';
 
+    const D00033 = 'd00033';
+
+    const D00034 = 'd00034';
+
+    const CTF_EXPORT_CODE = 'ctfExportCode';
+
     protected $_resourceType = ResourceType::GUARDIAN_RELATIONSHIP_TYPE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return GuardianRelationshipType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("GuardianRelationshipType");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::GUARDIAN_RELATIONSHIP_TYPE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return GuardianRelationshipType
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::GUARDIAN_RELATIONSHIP_TYPE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00033()
-    {
-        return $this->getProperty("d00033");
-    }
-
-    /**
-     * @param string $d00033
-     */
-    public function setD00033($d00033 = null)
-    {
-        $this->setProperty("d00033", $d00033);
-    }
-
-    /**
-     * @return string
-     */
-    public function getD00034()
-    {
-        return $this->getProperty("d00034");
-    }
-
-    /**
-     * @param string $d00034
-     */
-    public function setD00034($d00034 = null)
-    {
-        $this->setProperty("d00034", $d00034);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCtfExportCode()
-    {
-        return $this->getProperty("ctfExportCode");
-    }
-
-    /**
-     * @param string $ctfExportCode
-     */
-    public function setCtfExportCode($ctfExportCode = null)
-    {
-        $this->setProperty("ctfExportCode", $ctfExportCode);
     }
 
     /**
@@ -119,7 +71,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -127,7 +79,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -135,7 +87,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -143,7 +95,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -151,7 +103,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -159,7 +111,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -167,7 +119,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getRelationshipName()
     {
-        return $this->getProperty("relationshipName");
+        return $this->getProperty('relationshipName');
     }
 
     /**
@@ -175,7 +127,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setRelationshipName($relationshipName = null)
     {
-        $this->setProperty("relationshipName", $relationshipName);
+        $this->setProperty('relationshipName', $relationshipName);
     }
 
     /**
@@ -183,7 +135,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -191,7 +143,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -199,7 +151,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getIsMale()
     {
-        return $this->getProperty("isMale");
+        return $this->getProperty('isMale');
     }
 
     /**
@@ -207,7 +159,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setIsMale($isMale = null)
     {
-        $this->setProperty("isMale", $isMale);
+        $this->setProperty('isMale', $isMale);
     }
 
     /**
@@ -215,7 +167,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getIsFemale()
     {
-        return $this->getProperty("isFemale");
+        return $this->getProperty('isFemale');
     }
 
     /**
@@ -223,7 +175,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setIsFemale($isFemale = null)
     {
-        $this->setProperty("isFemale", $isFemale);
+        $this->setProperty('isFemale', $isFemale);
     }
 
     /**
@@ -231,7 +183,7 @@ class GuardianRelationshipType extends ModelBase
      */
     public function getIsSibling()
     {
-        return $this->getProperty("isSibling");
+        return $this->getProperty('isSibling');
     }
 
     /**
@@ -239,6 +191,54 @@ class GuardianRelationshipType extends ModelBase
      */
     public function setIsSibling($isSibling = null)
     {
-        $this->setProperty("isSibling", $isSibling);
+        $this->setProperty('isSibling', $isSibling);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00033()
+    {
+        return $this->getProperty('d00033');
+    }
+
+    /**
+     * @param string $d00033
+     */
+    public function setD00033($d00033 = null)
+    {
+        $this->setProperty('d00033', $d00033);
+    }
+
+    /**
+     * @return string
+     */
+    public function getD00034()
+    {
+        return $this->getProperty('d00034');
+    }
+
+    /**
+     * @param string $d00034
+     */
+    public function setD00034($d00034 = null)
+    {
+        $this->setProperty('d00034', $d00034);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCtfExportCode()
+    {
+        return $this->getProperty('ctfExportCode');
+    }
+
+    /**
+     * @param string $ctfExportCode
+     */
+    public function setCtfExportCode($ctfExportCode = null)
+    {
+        $this->setProperty('ctfExportCode', $ctfExportCode);
     }
 }

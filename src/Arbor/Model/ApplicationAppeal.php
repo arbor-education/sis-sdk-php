@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\Application;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ApplicationAppeal extends ModelBase
 {
@@ -28,34 +23,38 @@ class ApplicationAppeal extends ModelBase
     protected $_resourceType = ResourceType::APPLICATION_APPEAL;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return ApplicationAppeal[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("ApplicationAppeal");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::APPLICATION_APPEAL);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return ApplicationAppeal
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::APPLICATION_APPEAL, $id);
     }
 
@@ -64,7 +63,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getApplication()
     {
-        return $this->getProperty("application");
+        return $this->getProperty('application');
     }
 
     /**
@@ -72,7 +71,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function setApplication(Application $application = null)
     {
-        $this->setProperty("application", $application);
+        $this->setProperty('application', $application);
     }
 
     /**
@@ -80,7 +79,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -88,7 +87,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -96,7 +95,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getLodgedDate()
     {
-        return $this->getProperty("lodgedDate");
+        return $this->getProperty('lodgedDate');
     }
 
     /**
@@ -104,7 +103,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function setLodgedDate(\DateTime $lodgedDate = null)
     {
-        $this->setProperty("lodgedDate", $lodgedDate);
+        $this->setProperty('lodgedDate', $lodgedDate);
     }
 
     /**
@@ -112,7 +111,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getWithdrawnDate()
     {
-        return $this->getProperty("withdrawnDate");
+        return $this->getProperty('withdrawnDate');
     }
 
     /**
@@ -120,7 +119,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function setWithdrawnDate(\DateTime $withdrawnDate = null)
     {
-        $this->setProperty("withdrawnDate", $withdrawnDate);
+        $this->setProperty('withdrawnDate', $withdrawnDate);
     }
 
     /**
@@ -128,7 +127,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getHearingDate()
     {
-        return $this->getProperty("hearingDate");
+        return $this->getProperty('hearingDate');
     }
 
     /**
@@ -136,7 +135,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function setHearingDate(\DateTime $hearingDate = null)
     {
-        $this->setProperty("hearingDate", $hearingDate);
+        $this->setProperty('hearingDate', $hearingDate);
     }
 
     /**
@@ -144,7 +143,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getDecisionDatetime()
     {
-        return $this->getProperty("decisionDatetime");
+        return $this->getProperty('decisionDatetime');
     }
 
     /**
@@ -152,7 +151,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function setDecisionDatetime(\DateTime $decisionDatetime = null)
     {
-        $this->setProperty("decisionDatetime", $decisionDatetime);
+        $this->setProperty('decisionDatetime', $decisionDatetime);
     }
 
     /**
@@ -160,7 +159,7 @@ class ApplicationAppeal extends ModelBase
      */
     public function getDecision()
     {
-        return $this->getProperty("decision");
+        return $this->getProperty('decision');
     }
 
     /**
@@ -168,6 +167,6 @@ class ApplicationAppeal extends ModelBase
      */
     public function setDecision($decision = null)
     {
-        $this->setProperty("decision", $decision);
+        $this->setProperty('decision', $decision);
     }
 }

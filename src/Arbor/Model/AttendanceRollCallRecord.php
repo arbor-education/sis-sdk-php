@@ -1,16 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\AttendanceRollCall;
-use \Arbor\Model\Student;
-use \Arbor\Model\AttendanceMark;
-use \Arbor\Model\AttendanceRecord;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AttendanceRollCallRecord extends ModelBase
 {
@@ -22,6 +14,8 @@ class AttendanceRollCallRecord extends ModelBase
 
     const ATTENDANCE_MARK = 'attendanceMark';
 
+    const MINUTES_LATE = 'minutesLate';
+
     const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
 
     const VALIDATION_ERROR = 'validationError';
@@ -29,34 +23,38 @@ class AttendanceRollCallRecord extends ModelBase
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL_RECORD;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return AttendanceRollCallRecord[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("AttendanceRollCallRecord");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::ATTENDANCE_ROLL_CALL_RECORD);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return AttendanceRollCallRecord
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::ATTENDANCE_ROLL_CALL_RECORD, $id);
     }
 
@@ -65,7 +63,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function getAttendanceRollCall()
     {
-        return $this->getProperty("attendanceRollCall");
+        return $this->getProperty('attendanceRollCall');
     }
 
     /**
@@ -73,7 +71,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function setAttendanceRollCall(AttendanceRollCall $attendanceRollCall = null)
     {
-        $this->setProperty("attendanceRollCall", $attendanceRollCall);
+        $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
 
     /**
@@ -81,7 +79,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function getRecordDate()
     {
-        return $this->getProperty("recordDate");
+        return $this->getProperty('recordDate');
     }
 
     /**
@@ -89,7 +87,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function setRecordDate(\DateTime $recordDate = null)
     {
-        $this->setProperty("recordDate", $recordDate);
+        $this->setProperty('recordDate', $recordDate);
     }
 
     /**
@@ -97,7 +95,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -105,7 +103,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -113,7 +111,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function getAttendanceMark()
     {
-        return $this->getProperty("attendanceMark");
+        return $this->getProperty('attendanceMark');
     }
 
     /**
@@ -121,7 +119,23 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function setAttendanceMark(AttendanceMark $attendanceMark = null)
     {
-        $this->setProperty("attendanceMark", $attendanceMark);
+        $this->setProperty('attendanceMark', $attendanceMark);
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinutesLate()
+    {
+        return $this->getProperty('minutesLate');
+    }
+
+    /**
+     * @param int $minutesLate
+     */
+    public function setMinutesLate($minutesLate = null)
+    {
+        $this->setProperty('minutesLate', $minutesLate);
     }
 
     /**
@@ -129,7 +143,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function getSourceAttendanceRecord()
     {
-        return $this->getProperty("sourceAttendanceRecord");
+        return $this->getProperty('sourceAttendanceRecord');
     }
 
     /**
@@ -137,7 +151,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function setSourceAttendanceRecord(AttendanceRecord $sourceAttendanceRecord = null)
     {
-        $this->setProperty("sourceAttendanceRecord", $sourceAttendanceRecord);
+        $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
 
     /**
@@ -145,7 +159,7 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function getValidationError()
     {
-        return $this->getProperty("validationError");
+        return $this->getProperty('validationError');
     }
 
     /**
@@ -153,6 +167,6 @@ class AttendanceRollCallRecord extends ModelBase
      */
     public function setValidationError($validationError = null)
     {
-        $this->setProperty("validationError", $validationError);
+        $this->setProperty('validationError', $validationError);
     }
 }

@@ -1,13 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\SmsMessage;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SmsMessagePart extends ModelBase
 {
@@ -26,34 +21,38 @@ class SmsMessagePart extends ModelBase
     protected $_resourceType = ResourceType::SMS_MESSAGE_PART;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return SmsMessagePart[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("SmsMessagePart");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SMS_MESSAGE_PART);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return SmsMessagePart
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SMS_MESSAGE_PART, $id);
     }
 
@@ -62,7 +61,7 @@ class SmsMessagePart extends ModelBase
      */
     public function getSmsMessage()
     {
-        return $this->getProperty("smsMessage");
+        return $this->getProperty('smsMessage');
     }
 
     /**
@@ -70,7 +69,7 @@ class SmsMessagePart extends ModelBase
      */
     public function setSmsMessage(SmsMessage $smsMessage = null)
     {
-        $this->setProperty("smsMessage", $smsMessage);
+        $this->setProperty('smsMessage', $smsMessage);
     }
 
     /**
@@ -78,7 +77,7 @@ class SmsMessagePart extends ModelBase
      */
     public function getPartIdentifier()
     {
-        return $this->getProperty("partIdentifier");
+        return $this->getProperty('partIdentifier');
     }
 
     /**
@@ -86,7 +85,7 @@ class SmsMessagePart extends ModelBase
      */
     public function setPartIdentifier($partIdentifier = null)
     {
-        $this->setProperty("partIdentifier", $partIdentifier);
+        $this->setProperty('partIdentifier', $partIdentifier);
     }
 
     /**
@@ -94,7 +93,7 @@ class SmsMessagePart extends ModelBase
      */
     public function getReceivedDatetime()
     {
-        return $this->getProperty("receivedDatetime");
+        return $this->getProperty('receivedDatetime');
     }
 
     /**
@@ -102,7 +101,7 @@ class SmsMessagePart extends ModelBase
      */
     public function setReceivedDatetime(\DateTime $receivedDatetime = null)
     {
-        $this->setProperty("receivedDatetime", $receivedDatetime);
+        $this->setProperty('receivedDatetime', $receivedDatetime);
     }
 
     /**
@@ -110,7 +109,7 @@ class SmsMessagePart extends ModelBase
      */
     public function getFailedDatetime()
     {
-        return $this->getProperty("failedDatetime");
+        return $this->getProperty('failedDatetime');
     }
 
     /**
@@ -118,7 +117,7 @@ class SmsMessagePart extends ModelBase
      */
     public function setFailedDatetime(\DateTime $failedDatetime = null)
     {
-        $this->setProperty("failedDatetime", $failedDatetime);
+        $this->setProperty('failedDatetime', $failedDatetime);
     }
 
     /**
@@ -126,7 +125,7 @@ class SmsMessagePart extends ModelBase
      */
     public function getRecipientNetworkCode()
     {
-        return $this->getProperty("recipientNetworkCode");
+        return $this->getProperty('recipientNetworkCode');
     }
 
     /**
@@ -134,7 +133,7 @@ class SmsMessagePart extends ModelBase
      */
     public function setRecipientNetworkCode($recipientNetworkCode = null)
     {
-        $this->setProperty("recipientNetworkCode", $recipientNetworkCode);
+        $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }
 
     /**
@@ -142,7 +141,7 @@ class SmsMessagePart extends ModelBase
      */
     public function getCost()
     {
-        return $this->getProperty("cost");
+        return $this->getProperty('cost');
     }
 
     /**
@@ -150,6 +149,6 @@ class SmsMessagePart extends ModelBase
      */
     public function setCost($cost = null)
     {
-        $this->setProperty("cost", $cost);
+        $this->setProperty('cost', $cost);
     }
 }

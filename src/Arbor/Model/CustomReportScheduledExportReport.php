@@ -1,14 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
-use \Arbor\Model\CustomReportScheduledExport;
-use \Arbor\Model\CustomReport;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class CustomReportScheduledExportReport extends ModelBase
 {
@@ -23,34 +17,38 @@ class CustomReportScheduledExportReport extends ModelBase
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return CustomReportScheduledExportReport[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("CustomReportScheduledExportReport");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return CustomReportScheduledExportReport
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT, $id);
     }
 
@@ -59,7 +57,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function getCustomReportScheduledExport()
     {
-        return $this->getProperty("customReportScheduledExport");
+        return $this->getProperty('customReportScheduledExport');
     }
 
     /**
@@ -67,7 +65,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function setCustomReportScheduledExport(CustomReportScheduledExport $customReportScheduledExport = null)
     {
-        $this->setProperty("customReportScheduledExport", $customReportScheduledExport);
+        $this->setProperty('customReportScheduledExport', $customReportScheduledExport);
     }
 
     /**
@@ -75,7 +73,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function getCustomReport()
     {
-        return $this->getProperty("customReport");
+        return $this->getProperty('customReport');
     }
 
     /**
@@ -83,7 +81,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function setCustomReport(CustomReport $customReport = null)
     {
-        $this->setProperty("customReport", $customReport);
+        $this->setProperty('customReport', $customReport);
     }
 
     /**
@@ -91,7 +89,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function getExportFormat()
     {
-        return $this->getProperty("exportFormat");
+        return $this->getProperty('exportFormat');
     }
 
     /**
@@ -99,7 +97,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function setExportFormat($exportFormat = null)
     {
-        $this->setProperty("exportFormat", $exportFormat);
+        $this->setProperty('exportFormat', $exportFormat);
     }
 
     /**
@@ -107,7 +105,7 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function getScheduledTime()
     {
-        return $this->getProperty("scheduledTime");
+        return $this->getProperty('scheduledTime');
     }
 
     /**
@@ -115,6 +113,6 @@ class CustomReportScheduledExportReport extends ModelBase
      */
     public function setScheduledTime($scheduledTime = null)
     {
-        $this->setProperty("scheduledTime", $scheduledTime);
+        $this->setProperty('scheduledTime', $scheduledTime);
     }
 }

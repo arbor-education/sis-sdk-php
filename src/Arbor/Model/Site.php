@@ -1,12 +1,8 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ModelBase;
-use \Arbor\Model\Exception;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class Site extends ModelBase
 {
@@ -19,34 +15,38 @@ class Site extends ModelBase
     protected $_resourceType = ResourceType::SITE;
 
     /**
-     * @param \Arbor\Query\Query $query
+     * @param Query $query
      * @return Site[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
     {
-        if (is_null($query)) {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
             $query = new Query();
         }
-        $query->setResourceType("Site");
-        $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        }
+
+        $query->setResourceType(ResourceType::SITE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Site
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if (!$gateway) {
-            throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
+
         return $gateway->retrieve(ResourceType::SITE, $id);
     }
 
@@ -55,7 +55,7 @@ class Site extends ModelBase
      */
     public function getSiteName()
     {
-        return $this->getProperty("siteName");
+        return $this->getProperty('siteName');
     }
 
     /**
@@ -63,7 +63,7 @@ class Site extends ModelBase
      */
     public function setSiteName($siteName = null)
     {
-        $this->setProperty("siteName", $siteName);
+        $this->setProperty('siteName', $siteName);
     }
 
     /**
@@ -71,7 +71,7 @@ class Site extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -79,7 +79,7 @@ class Site extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -87,7 +87,7 @@ class Site extends ModelBase
      */
     public function getSiteDisplayOrder()
     {
-        return $this->getProperty("siteDisplayOrder");
+        return $this->getProperty('siteDisplayOrder');
     }
 
     /**
@@ -95,6 +95,6 @@ class Site extends ModelBase
      */
     public function setSiteDisplayOrder($siteDisplayOrder = null)
     {
-        $this->setProperty("siteDisplayOrder", $siteDisplayOrder);
+        $this->setProperty('siteDisplayOrder', $siteDisplayOrder);
     }
 }
