@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TodoItem extends ModelBase
 {
-
     const IDENTIFIER = 'identifier';
 
     const TEXT = 'text';
@@ -188,6 +187,4 @@ class TodoItem extends ModelBase
     {
         $this->setProperty('type', $type);
     }
-
-
 }

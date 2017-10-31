@@ -10,7 +10,6 @@ use Arbor\Model\ModelBase;
 
 class StudentFundingType extends ModelBase
 {
-
     const D00209 = 'd00209';
 
     protected $_resourceType = ResourceType::UK_DFE_STUDENT_FUNDING_TYPE;
@@ -66,6 +65,4 @@ class StudentFundingType extends ModelBase
     {
         $this->setProperty('d00209', $d00209);
     }
-
-
 }

@@ -11,7 +11,6 @@ use Arbor\Model\UserRole;
 
 class Kpi extends ModelBase
 {
-
     const FEATURE_IDENTIFIER = 'featureIdentifier';
 
     const PERMISSION_GROUP = 'permissionGroup';
@@ -121,6 +120,4 @@ class Kpi extends ModelBase
     {
         $this->setProperty('listPersonDetailsUserRole', $listPersonDetailsUserRole);
     }
-
-
 }

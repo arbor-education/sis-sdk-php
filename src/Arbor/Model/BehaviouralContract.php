@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviouralContract extends ModelBase
 {
-
     const BEHAVIOURAL_CONTRACT_TITLE = 'behaviouralContractTitle';
 
     const STUDENT = 'student';
@@ -152,6 +151,4 @@ class BehaviouralContract extends ModelBase
     {
         $this->setProperty('contractReviewDate', $contractReviewDate);
     }
-
-
 }

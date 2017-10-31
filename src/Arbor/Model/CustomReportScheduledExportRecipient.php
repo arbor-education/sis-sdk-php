@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomReportScheduledExportRecipient extends ModelBase
 {
-
     const CUSTOM_REPORT_SCHEDULED_EXPORT = 'customReportScheduledExport';
 
     const STAFF = 'staff';
@@ -98,6 +97,4 @@ class CustomReportScheduledExportRecipient extends ModelBase
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Faculty extends ModelBase
 {
-
     const CODE = 'code';
 
     const FACULTY_NAME = 'facultyName';
@@ -80,6 +79,4 @@ class Faculty extends ModelBase
     {
         $this->setProperty('facultyName', $facultyName);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class KickboxResult extends ModelBase
 {
-
     const RAW_EMAIL_ADDRESS = 'rawEmailAddress';
 
     const RESULT = 'result';
@@ -242,6 +241,4 @@ class KickboxResult extends ModelBase
     {
         $this->setProperty('lastCheckedDatetime', $lastCheckedDatetime);
     }
-
-
 }

@@ -11,7 +11,6 @@ use Arbor\Model\Student;
 
 class EarlyYearsPupilPremiumEligibility extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const START_DATE = 'startDate';
@@ -139,6 +138,4 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     {
         $this->setProperty('eligibleForOtherReasons', $eligibleForOtherReasons);
     }
-
-
 }

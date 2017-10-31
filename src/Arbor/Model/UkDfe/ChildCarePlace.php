@@ -10,7 +10,6 @@ use Arbor\Model\ModelBase;
 
 class ChildCarePlace extends ModelBase
 {
-
     const NAME = 'name';
 
     const CHILD_CARE_ON_SITE = 'childCareOnSite';
@@ -228,6 +227,4 @@ class ChildCarePlace extends ModelBase
     {
         $this->setProperty('childCareWeeksOpen', $childCareWeeksOpen);
     }
-
-
 }

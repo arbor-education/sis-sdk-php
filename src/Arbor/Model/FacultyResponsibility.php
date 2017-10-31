@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class FacultyResponsibility extends ModelBase
 {
-
     const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
 
     const FACULTY = 'faculty';
@@ -116,6 +115,4 @@ class FacultyResponsibility extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
-
 }

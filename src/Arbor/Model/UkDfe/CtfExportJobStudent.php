@@ -11,7 +11,6 @@ use Arbor\Model\Student;
 
 class CtfExportJobStudent extends ModelBase
 {
-
     const CTF_EXPORT_JOB = 'ctfExportJob';
 
     const STUDENT = 'student';
@@ -103,6 +102,4 @@ class CtfExportJobStudent extends ModelBase
     {
         $this->setProperty('cmlRemovalGrounds', $cmlRemovalGrounds);
     }
-
-
 }

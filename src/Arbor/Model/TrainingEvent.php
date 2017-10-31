@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TrainingEvent extends ModelBase
 {
-
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -152,6 +151,4 @@ class TrainingEvent extends ModelBase
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }
-
-
 }

@@ -13,7 +13,6 @@ use Arbor\Model\LocalAuthority;
 
 class Institution extends ModelBase
 {
-
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
@@ -303,6 +302,4 @@ class Institution extends ModelBase
     {
         $this->setProperty('arborIdentifier', $arborIdentifier);
     }
-
-
 }

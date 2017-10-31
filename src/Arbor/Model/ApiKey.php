@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ApiKey extends ModelBase
 {
-
     const USER = 'user';
 
     const API_KEY = 'apiKey';
@@ -116,6 +115,4 @@ class ApiKey extends ModelBase
     {
         $this->setProperty('revokedDatetime', $revokedDatetime);
     }
-
-
 }

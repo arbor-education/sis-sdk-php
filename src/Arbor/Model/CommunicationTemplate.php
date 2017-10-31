@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CommunicationTemplate extends ModelBase
 {
-
     const NAME = 'name';
 
     const IDENTIFIER = 'identifier';
@@ -170,6 +169,4 @@ class CommunicationTemplate extends ModelBase
     {
         $this->setProperty('communicationTemplateDefinitionClass', $communicationTemplateDefinitionClass);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CandidateAssessableEntry extends ModelBase
 {
-
     const CANDIDATE_ENTRY = 'candidateEntry';
 
     const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -206,6 +205,4 @@ class CandidateAssessableEntry extends ModelBase
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
-
-
 }

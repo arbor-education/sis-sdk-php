@@ -10,7 +10,6 @@ use Arbor\Model\ModelBase;
 
 class CrmSyncJob extends ModelBase
 {
-
     const TASK = 'task';
 
     const PARAMS = 'params';
@@ -120,6 +119,4 @@ class CrmSyncJob extends ModelBase
     {
         $this->setProperty('statusDatetime', $statusDatetime);
     }
-
-
 }

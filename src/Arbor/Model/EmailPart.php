@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmailPart extends ModelBase
 {
-
     const EMAIL = 'email';
 
     const MIME_CONTENT_ID = 'mimeContentId';
@@ -206,6 +205,4 @@ class EmailPart extends ModelBase
     {
         $this->setProperty('parentEmailPart', $parentEmailPart);
     }
-
-
 }

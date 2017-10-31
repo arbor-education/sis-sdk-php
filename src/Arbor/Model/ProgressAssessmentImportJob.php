@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProgressAssessmentImportJob extends ModelBase
 {
-
     const UPLOADED_DATETIME = 'uploadedDatetime';
 
     const IMPORT_STARTED_DATETIME = 'importStartedDatetime';
@@ -116,6 +115,4 @@ class ProgressAssessmentImportJob extends ModelBase
     {
         $this->setProperty('data', $data);
     }
-
-
 }

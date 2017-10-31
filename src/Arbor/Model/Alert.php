@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Alert extends ModelBase
 {
-
     const TRIGGER = 'trigger';
 
     const REFERENCE_DATE = 'referenceDate';
@@ -170,6 +169,4 @@ class Alert extends ModelBase
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }
-
-
 }

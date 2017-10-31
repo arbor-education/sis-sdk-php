@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class NewsFeedMapping extends ModelBase
 {
-
     const PERSON = 'person';
 
     const NEWS_STORY = 'newsStory';
@@ -116,6 +115,4 @@ class NewsFeedMapping extends ModelBase
     {
         $this->setProperty('rankValidUntil', $rankValidUntil);
     }
-
-
 }

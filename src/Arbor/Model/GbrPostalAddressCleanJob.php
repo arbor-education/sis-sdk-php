@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class GbrPostalAddressCleanJob extends ModelBase
 {
-
     const POSTAL_ADDRESS = 'postalAddress';
 
     const EXECUTED_DATETIME = 'executedDatetime';
@@ -260,6 +259,4 @@ class GbrPostalAddressCleanJob extends ModelBase
     {
         $this->setProperty('errorDescription', $errorDescription);
     }
-
-
 }

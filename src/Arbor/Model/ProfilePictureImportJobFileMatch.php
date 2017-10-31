@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProfilePictureImportJobFileMatch extends ModelBase
 {
-
     const PROFILE_PICTURE_IMPORT_JOB_FILE = 'profilePictureImportJobFile';
 
     const PERSON = 'person';
@@ -80,6 +79,4 @@ class ProfilePictureImportJobFileMatch extends ModelBase
     {
         $this->setProperty('person', $person);
     }
-
-
 }

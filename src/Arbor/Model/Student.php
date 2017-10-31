@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Student extends ModelBase
 {
-
     const PERSON = 'person';
 
     const RELIGION = 'religion';
@@ -422,6 +421,4 @@ class Student extends ModelBase
     {
         $this->setProperty('thirtyHourCode', $thirtyHourCode);
     }
-
-
 }

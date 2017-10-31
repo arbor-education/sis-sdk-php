@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class FacultyResponsibilityType extends ModelBase
 {
-
     const RESPONSIBILITY_TYPE_NAME = 'responsibilityTypeName';
 
     protected $_resourceType = ResourceType::FACULTY_RESPONSIBILITY_TYPE;
@@ -62,6 +61,4 @@ class FacultyResponsibilityType extends ModelBase
     {
         $this->setProperty('responsibilityTypeName', $responsibilityTypeName);
     }
-
-
 }

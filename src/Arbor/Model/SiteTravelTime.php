@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SiteTravelTime extends ModelBase
 {
-
     const SITE1 = 'site1';
 
     const SITE2 = 'site2';
@@ -98,6 +97,4 @@ class SiteTravelTime extends ModelBase
     {
         $this->setProperty('travelTime', $travelTime);
     }
-
-
 }

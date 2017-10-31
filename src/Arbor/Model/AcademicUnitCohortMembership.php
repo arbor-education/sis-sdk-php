@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitCohortMembership extends ModelBase
 {
-
     const ACADEMIC_UNIT_COHORT = 'academicUnitCohort';
 
     const STUDENT = 'student';
@@ -116,6 +115,4 @@ class AcademicUnitCohortMembership extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
-
 }

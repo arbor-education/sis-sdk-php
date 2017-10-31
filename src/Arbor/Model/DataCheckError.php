@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DataCheckError extends ModelBase
 {
-
     const DATA_CHECKER_CLASS_NAME = 'dataCheckerClassName';
 
     const ERROR_IDENTIFIER = 'errorIdentifier';
@@ -242,6 +241,4 @@ class DataCheckError extends ModelBase
     {
         $this->setProperty('correctedByUser', $correctedByUser);
     }
-
-
 }

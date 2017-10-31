@@ -11,7 +11,6 @@ use Arbor\Model\AcademicYear;
 
 class SchoolWorkforceCensus extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -175,6 +174,4 @@ class SchoolWorkforceCensus extends ModelBase
     {
         $this->setProperty('censusSubmissionDeadlineDate', $censusSubmissionDeadlineDate);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class UsageLogEntry extends ModelBase
 {
-
     const TIMESTAMP = 'timestamp';
 
     const USER = 'user';
@@ -224,6 +223,4 @@ class UsageLogEntry extends ModelBase
     {
         $this->setProperty('action', $action);
     }
-
-
 }

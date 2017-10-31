@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ClubMembershipPeriod extends ModelBase
 {
-
     const CLUB = 'club';
 
     const NAME = 'name';
@@ -152,6 +151,4 @@ class ClubMembershipPeriod extends ModelBase
     {
         $this->setProperty('allowGuardianPortalSignup', $allowGuardianPortalSignup);
     }
-
-
 }

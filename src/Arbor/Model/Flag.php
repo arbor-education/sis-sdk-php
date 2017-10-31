@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Flag extends ModelBase
 {
-
     const PERSON = 'person';
 
     const TEXT = 'text';
@@ -98,6 +97,4 @@ class Flag extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BankDeposit extends ModelBase
 {
-
     const BANK_ACCOUNT = 'bankAccount';
 
     const PAID_TO_BANK_DATE = 'paidToBankDate';
@@ -170,6 +169,4 @@ class BankDeposit extends ModelBase
     {
         $this->setProperty('depositReference', $depositReference);
     }
-
-
 }

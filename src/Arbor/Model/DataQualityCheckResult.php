@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DataQualityCheckResult extends ModelBase
 {
-
     const OBJECT = 'object';
 
     const CHECK_CLASS = 'checkClass';
@@ -224,6 +223,4 @@ class DataQualityCheckResult extends ModelBase
     {
         $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
-
-
 }

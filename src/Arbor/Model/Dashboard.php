@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Dashboard extends ModelBase
 {
-
     const CODE = 'code';
 
     const TITLE = 'title';
@@ -116,6 +115,4 @@ class Dashboard extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitCohort extends ModelBase
 {
-
     const COHORT_NAME = 'cohortName';
 
     const COHORT_CODE = 'cohortCode';
@@ -98,6 +97,4 @@ class AcademicUnitCohort extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
-
-
 }

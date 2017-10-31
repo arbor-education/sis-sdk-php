@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PasswordRule extends ModelBase
 {
-
     const APPLIES_FOR = 'appliesFor';
 
     const MIN_LENGTH = 'minLength';
@@ -152,6 +151,4 @@ class PasswordRule extends ModelBase
     {
         $this->setProperty('requireMixedCase', $requireMixedCase);
     }
-
-
 }

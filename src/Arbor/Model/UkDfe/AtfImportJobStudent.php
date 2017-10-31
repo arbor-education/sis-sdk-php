@@ -12,7 +12,6 @@ use Arbor\Model\Student;
 
 class AtfImportJobStudent extends ModelBase
 {
-
     const ATF_IMPORT_JOB = 'atfImportJob';
 
     const FIRST_NAME = 'firstName';
@@ -392,6 +391,4 @@ class AtfImportJobStudent extends ModelBase
     {
         $this->setProperty('importErrors', $importErrors);
     }
-
-
 }

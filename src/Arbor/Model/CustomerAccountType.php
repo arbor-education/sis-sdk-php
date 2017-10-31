@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomerAccountType extends ModelBase
 {
-
     const ACCOUNT_TYPE_NAME = 'accountTypeName';
 
     const ACCOUNT_TYPE_DESCRIPTION = 'accountTypeDescription';
@@ -170,6 +169,4 @@ class CustomerAccountType extends ModelBase
     {
         $this->setProperty('autoCreateForStaff', $autoCreateForStaff);
     }
-
-
 }

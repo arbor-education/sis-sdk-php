@@ -10,7 +10,6 @@ use Arbor\Model\ModelBase;
 
 class CapitaOneStudentExportJob extends ModelBase
 {
-
     const SEQUENCE_NUMBER = 'sequenceNumber';
 
     const STARTED_DATETIME = 'startedDatetime';
@@ -138,6 +137,4 @@ class CapitaOneStudentExportJob extends ModelBase
     {
         $this->setProperty('errorLog', $errorLog);
     }
-
-
 }

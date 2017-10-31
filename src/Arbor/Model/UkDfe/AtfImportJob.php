@@ -12,7 +12,6 @@ use Arbor\Model\EducationalInstitution;
 
 class AtfImportJob extends ModelBase
 {
-
     const ATF_VERSION = 'atfVersion';
 
     const SOURCE_LOCAL_AUTHORITY_CODE = 'sourceLocalAuthorityCode';
@@ -266,6 +265,4 @@ class AtfImportJob extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
-
 }

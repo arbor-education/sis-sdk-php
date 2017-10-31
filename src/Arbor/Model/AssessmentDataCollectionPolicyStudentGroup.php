@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionPolicyStudentGroup extends ModelBase
 {
-
     const ASSESSMENT_DATA_COLLECTION_POLICY = 'assessmentDataCollectionPolicy';
 
     const STUDENT_GROUP = 'studentGroup';
@@ -80,6 +79,4 @@ class AssessmentDataCollectionPolicyStudentGroup extends ModelBase
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
-
-
 }

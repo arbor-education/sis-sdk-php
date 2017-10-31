@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EducationRecordType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class EducationRecordType extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
-
 }

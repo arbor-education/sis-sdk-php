@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentFundingType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class StudentFundingType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
-
 }

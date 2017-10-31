@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EnrolmentModeAssignment extends ModelBase
 {
-
     const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
 
     const ENROLMENT_MODE = 'enrolmentMode';
@@ -116,6 +115,4 @@ class EnrolmentModeAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
-
 }

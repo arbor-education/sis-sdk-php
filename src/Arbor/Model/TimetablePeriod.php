@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TimetablePeriod extends ModelBase
 {
-
     const TIMETABLE_PERIOD_GROUPING = 'timetablePeriodGrouping';
 
     const DAY_OF_CYCLE = 'dayOfCycle';
@@ -134,6 +133,4 @@ class TimetablePeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
-
 }

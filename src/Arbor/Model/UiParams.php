@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class UiParams extends ModelBase
 {
-
     const IDENTIFIER = 'identifier';
 
     const PARAMS = 'params';
@@ -170,6 +169,4 @@ class UiParams extends ModelBase
     {
         $this->setProperty('lastAccessDatetime', $lastAccessDatetime);
     }
-
-
 }

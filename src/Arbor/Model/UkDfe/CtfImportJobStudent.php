@@ -12,7 +12,6 @@ use Arbor\Model\Student;
 
 class CtfImportJobStudent extends ModelBase
 {
-
     const CTF_IMPORT_JOB = 'ctfImportJob';
 
     const FIRST_NAME = 'firstName';
@@ -662,6 +661,4 @@ class CtfImportJobStudent extends ModelBase
     {
         $this->setProperty('importErrors', $importErrors);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SearchIndexJob extends ModelBase
 {
-
     const OBJECT = 'object';
 
     const STARTED_DATETIME = 'startedDatetime';
@@ -116,6 +115,4 @@ class SearchIndexJob extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
-
-
 }

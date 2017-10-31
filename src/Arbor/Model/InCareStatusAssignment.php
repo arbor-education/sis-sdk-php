@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InCareStatusAssignment extends ModelBase
 {
-
     const IN_CARE_STATUS = 'inCareStatus';
 
     const STUDENT = 'student';
@@ -134,6 +133,4 @@ class InCareStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
-
 }

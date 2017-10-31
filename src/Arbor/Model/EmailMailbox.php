@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmailMailbox extends ModelBase
 {
-
     const EMAIL_ACCOUNT = 'emailAccount';
 
     const MAILBOX_TYPE = 'mailboxType';
@@ -242,6 +241,4 @@ class EmailMailbox extends ModelBase
     {
         $this->setProperty('disabled', $disabled);
     }
-
-
 }
