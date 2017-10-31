@@ -10,9 +10,12 @@ use Arbor\Model\ModelBase;
 
 class Position extends ModelBase
 {
+
     const POSITION_CATEGORY = 'positionCategory';
 
     const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
+
+    const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
 
     protected $_resourceType = ResourceType::UK_DFE_POSITION;
 
@@ -83,4 +86,22 @@ class Position extends ModelBase
     {
         $this->setProperty('workforceVacancyPost', $workforceVacancyPost);
     }
+
+    /**
+     * @return string
+     */
+    public function getWorkforceCensusRoleIdentifier()
+    {
+        return $this->getProperty('workforceCensusRoleIdentifier');
+    }
+
+    /**
+     * @param string $workforceCensusRoleIdentifier
+     */
+    public function setWorkforceCensusRoleIdentifier($workforceCensusRoleIdentifier = null)
+    {
+        $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
+    }
+
+
 }

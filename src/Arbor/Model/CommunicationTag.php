@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CommunicationTag extends ModelBase
 {
+
     const COMMUNICATION = 'communication';
 
     const TAGGED_ENTITY = 'taggedEntity';
@@ -97,4 +98,6 @@ class CommunicationTag extends ModelBase
     {
         $this->setProperty('isShared', $isShared);
     }
+
+
 }

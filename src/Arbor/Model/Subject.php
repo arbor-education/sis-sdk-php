@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Subject extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -205,4 +206,6 @@ class Subject extends ModelBase
     {
         $this->setProperty('d00220', $d00220);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AdHocAssessmentBatch extends ModelBase
 {
+
     const AD_HOC_ASSESSMENT = 'adHocAssessment';
 
     const ASSESSMENT_REFERENCE_DATE = 'assessmentReferenceDate';
@@ -79,4 +80,6 @@ class AdHocAssessmentBatch extends ModelBase
     {
         $this->setProperty('assessmentReferenceDate', $assessmentReferenceDate);
     }
+
+
 }

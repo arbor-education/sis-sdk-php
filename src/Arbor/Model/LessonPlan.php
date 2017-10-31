@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class LessonPlan extends ModelBase
 {
+
     const TITLE = 'title';
 
     const SUMMARY = 'summary';
@@ -79,4 +80,6 @@ class LessonPlan extends ModelBase
     {
         $this->setProperty('summary', $summary);
     }
+
+
 }

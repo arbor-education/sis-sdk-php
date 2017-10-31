@@ -11,6 +11,7 @@ use Arbor\Model\Student;
 
 class UciAssignment extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const UCI = 'uci';
@@ -192,4 +193,6 @@ class UciAssignment extends ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
+
+
 }

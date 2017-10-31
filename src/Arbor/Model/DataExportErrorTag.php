@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DataExportErrorTag extends ModelBase
 {
+
     const DATA_EXPORT_ERROR = 'dataExportError';
 
     const TAGGED_ENTITY = 'taggedEntity';
@@ -133,4 +134,6 @@ class DataExportErrorTag extends ModelBase
     {
         $this->setProperty('tagUrl', $tagUrl);
     }
+
+
 }

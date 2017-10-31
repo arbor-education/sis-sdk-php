@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RoomAsset extends ModelBase
 {
+
     const ROOM_ASSET_NAME = 'roomAssetName';
 
     const ASSIGN_TO_PEOPLE = 'assignToPeople';
@@ -79,4 +80,6 @@ class RoomAsset extends ModelBase
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }
+
+
 }

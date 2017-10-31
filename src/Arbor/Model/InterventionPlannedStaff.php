@@ -6,11 +6,14 @@ use Arbor\Query\Query;
 
 class InterventionPlannedStaff extends ModelBase
 {
+
     const INTERVENTION = 'intervention';
 
     const STAFF = 'staff';
 
     const PLANNED_HOURS = 'plannedHours';
+
+    const PRICE_PER_HOUR = 'pricePerHour';
 
     protected $_resourceType = ResourceType::INTERVENTION_PLANNED_STAFF;
 
@@ -97,4 +100,22 @@ class InterventionPlannedStaff extends ModelBase
     {
         $this->setProperty('plannedHours', $plannedHours);
     }
+
+    /**
+     * @return string
+     */
+    public function getPricePerHour()
+    {
+        return $this->getProperty('pricePerHour');
+    }
+
+    /**
+     * @param string $pricePerHour
+     */
+    public function setPricePerHour($pricePerHour = null)
+    {
+        $this->setProperty('pricePerHour', $pricePerHour);
+    }
+
+
 }

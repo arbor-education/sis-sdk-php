@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class PersonIdentificationDocument extends ModelBase
 {
+
     const PERSON = 'person';
 
     const DOCUMENT_TYPE = 'documentType';
@@ -169,4 +170,6 @@ class PersonIdentificationDocument extends ModelBase
     {
         $this->setProperty('issuingCountry', $issuingCountry);
     }
+
+
 }

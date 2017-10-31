@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class LocalAuthority extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -17,6 +18,10 @@ class LocalAuthority extends ModelBase
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
+
+    const AUTHORITY_CODE = 'authorityCode';
+
+    const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
 
     protected $_resourceType = ResourceType::LOCAL_AUTHORITY;
 
@@ -151,4 +156,38 @@ class LocalAuthority extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
+
+    /**
+     * @return string
+     */
+    public function getAuthorityCode()
+    {
+        return $this->getProperty('authorityCode');
+    }
+
+    /**
+     * @param string $authorityCode
+     */
+    public function setAuthorityCode($authorityCode = null)
+    {
+        $this->setProperty('authorityCode', $authorityCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthorityCodePre2011()
+    {
+        return $this->getProperty('authorityCodePre2011');
+    }
+
+    /**
+     * @param string $authorityCodePre2011
+     */
+    public function setAuthorityCodePre2011($authorityCodePre2011 = null)
+    {
+        $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
+    }
+
+
 }

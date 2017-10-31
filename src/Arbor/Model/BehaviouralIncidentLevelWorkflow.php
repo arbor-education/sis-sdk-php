@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
+
     const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     const AUTO_CLOSE = 'autoClose';
@@ -41,6 +42,8 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     const ALLOW_ADD_DEDUCT_POINTS = 'allowAddDeductPoints';
 
     const EMAIL_ASSIGNEE = 'emailAssignee';
+
+    const ALLOW_ASSIGN_INTERNAL_EXCLUSION = 'allowAssignInternalExclusion';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW;
 
@@ -367,4 +370,22 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     {
         $this->setProperty('emailAssignee', $emailAssignee);
     }
+
+    /**
+     * @return bool
+     */
+    public function getAllowAssignInternalExclusion()
+    {
+        return $this->getProperty('allowAssignInternalExclusion');
+    }
+
+    /**
+     * @param bool $allowAssignInternalExclusion
+     */
+    public function setAllowAssignInternalExclusion($allowAssignInternalExclusion = null)
+    {
+        $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
+    }
+
+
 }

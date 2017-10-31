@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Club extends ModelBase
 {
+
     const NAME = 'name';
 
     const DESCRIPTION = 'description';
@@ -151,4 +152,6 @@ class Club extends ModelBase
     {
         $this->setProperty('copiedToClub', $copiedToClub);
     }
+
+
 }

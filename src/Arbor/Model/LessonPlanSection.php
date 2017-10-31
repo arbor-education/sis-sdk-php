@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class LessonPlanSection extends ModelBase
 {
+
     const LESSON_PLAN = 'lessonPlan';
 
     const NARRATIVE = 'narrative';
@@ -151,4 +152,6 @@ class LessonPlanSection extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
+
+
 }

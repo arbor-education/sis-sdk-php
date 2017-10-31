@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IdentityCard extends ModelBase
 {
+
     const OWNER = 'owner';
 
     const CARD_NUMBER = 'cardNumber';
@@ -133,4 +134,6 @@ class IdentityCard extends ModelBase
     {
         $this->setProperty('lostDatetime', $lostDatetime);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BusinessRoleDefaultUserRole extends ModelBase
 {
+
     const BUSINESS_ROLE = 'businessRole';
 
     const USER_ROLE = 'userRole';
@@ -79,4 +80,6 @@ class BusinessRoleDefaultUserRole extends ModelBase
     {
         $this->setProperty('userRole', $userRole);
     }
+
+
 }

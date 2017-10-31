@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Note extends ModelBase
 {
+
     const NOTE = 'note';
 
     const REFERENCE_OBJECT = 'referenceObject';
@@ -97,4 +98,6 @@ class Note extends ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
+
+
 }

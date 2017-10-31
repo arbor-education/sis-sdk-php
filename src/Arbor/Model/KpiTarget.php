@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class KpiTarget extends ModelBase
 {
+
     const KPI = 'kpi';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -187,4 +188,6 @@ class KpiTarget extends ModelBase
     {
         $this->setProperty('basis', $basis);
     }
+
+
 }

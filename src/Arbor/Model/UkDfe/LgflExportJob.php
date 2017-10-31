@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class LgflExportJob extends ModelBase
 {
+
     const STARTED_DATETIME = 'startedDatetime';
 
     const COMPLETED_DATETIME = 'completedDatetime';
@@ -119,4 +120,6 @@ class LgflExportJob extends ModelBase
     {
         $this->setProperty('errorLog', $errorLog);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IncomingDirectDebitTransaction extends ModelBase
 {
+
     const INCOMING_DIRECT_DEBIT_AGREEMENT = 'incomingDirectDebitAgreement';
 
     const PAYMENT_PROVIDER_PAYOUT = 'paymentProviderPayout';
@@ -259,4 +260,6 @@ class IncomingDirectDebitTransaction extends ModelBase
     {
         $this->setProperty('customerNotificationDatetime', $customerNotificationDatetime);
     }
+
+
 }

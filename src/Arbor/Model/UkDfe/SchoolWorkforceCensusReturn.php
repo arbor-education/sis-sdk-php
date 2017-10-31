@@ -11,6 +11,7 @@ use Arbor\Model\EducationalInstitution;
 
 class SchoolWorkforceCensusReturn extends ModelBase
 {
+
     const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -282,4 +283,6 @@ class SchoolWorkforceCensusReturn extends ModelBase
     {
         $this->setProperty('localAuthorityAcceptedDatetime', $localAuthorityAcceptedDatetime);
     }
+
+
 }

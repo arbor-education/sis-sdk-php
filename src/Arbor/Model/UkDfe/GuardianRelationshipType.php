@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class GuardianRelationshipType extends ModelBase
 {
+
     const D00033 = 'd00033';
 
     const D00034 = 'd00034';
@@ -101,4 +102,6 @@ class GuardianRelationshipType extends ModelBase
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }
+
+
 }

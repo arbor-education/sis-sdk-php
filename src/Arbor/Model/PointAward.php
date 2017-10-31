@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class PointAward extends ModelBase
 {
+
     const POINT_AWARD_SCALE = 'pointAwardScale';
 
     const STUDENT = 'student';
@@ -205,4 +206,6 @@ class PointAward extends ModelBase
     {
         $this->setProperty('event', $event);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InterventionStaff extends ModelBase
 {
+
     const INTERVENTION = 'intervention';
 
     const BUSINESS_ROLE = 'businessRole';
@@ -133,4 +134,6 @@ class InterventionStaff extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

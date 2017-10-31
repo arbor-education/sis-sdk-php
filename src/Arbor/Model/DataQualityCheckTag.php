@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DataQualityCheckTag extends ModelBase
 {
+
     const DATA_QUALITY_CHECK_RESULT = 'dataQualityCheckResult';
 
     const TAGGED = 'tagged';
@@ -79,4 +80,6 @@ class DataQualityCheckTag extends ModelBase
     {
         $this->setProperty('tagged', $tagged);
     }
+
+
 }

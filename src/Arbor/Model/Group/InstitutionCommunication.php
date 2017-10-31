@@ -11,6 +11,7 @@ use Arbor\Model\Email;
 
 class InstitutionCommunication extends ModelBase
 {
+
     const ENTITY = 'entity';
 
     const EMAIL = 'email';
@@ -84,4 +85,6 @@ class InstitutionCommunication extends ModelBase
     {
         $this->setProperty('email', $email);
     }
+
+
 }

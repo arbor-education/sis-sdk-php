@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationTimetableSessionType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -169,4 +170,6 @@ class QualificationTimetableSessionType extends ModelBase
     {
         $this->setProperty('startTimeUntil', $startTimeUntil);
     }
+
+
 }

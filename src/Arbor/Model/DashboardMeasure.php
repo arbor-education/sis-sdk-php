@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DashboardMeasure extends ModelBase
 {
+
     const DASHBOARD_SECTION = 'dashboardSection';
 
     const KPI = 'kpi';
@@ -151,4 +152,6 @@ class DashboardMeasure extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
+
+
 }

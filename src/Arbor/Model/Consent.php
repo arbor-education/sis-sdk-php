@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Consent extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const CONSENT_TYPE = 'consentType';
@@ -187,4 +188,6 @@ class Consent extends ModelBase
     {
         $this->setProperty('respondee', $respondee);
     }
+
+
 }

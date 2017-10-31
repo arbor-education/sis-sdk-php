@@ -6,11 +6,16 @@ use Arbor\Query\Query;
 
 class SmsMessageDraft extends ModelBase
 {
+
     const SENDING_PROFILE = 'sendingProfile';
 
     const MESSAGE_TEXT = 'messageText';
 
     const CUSTOM_REPORT = 'customReport';
+
+    const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
+
+    const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
 
     const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
@@ -105,6 +110,38 @@ class SmsMessageDraft extends ModelBase
     }
 
     /**
+     * @return bool
+     */
+    public function getCombineMessagesToSameRecipient()
+    {
+        return $this->getProperty('combineMessagesToSameRecipient');
+    }
+
+    /**
+     * @param bool $combineMessagesToSameRecipient
+     */
+    public function setCombineMessagesToSameRecipient($combineMessagesToSameRecipient = null)
+    {
+        $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCombineMessagesToSameHousehold()
+    {
+        return $this->getProperty('combineMessagesToSameHousehold');
+    }
+
+    /**
+     * @param bool $combineMessagesToSameHousehold
+     */
+    public function setCombineMessagesToSameHousehold($combineMessagesToSameHousehold = null)
+    {
+        $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getSendingStartedDatetime()
@@ -151,4 +188,6 @@ class SmsMessageDraft extends ModelBase
     {
         $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
     }
+
+
 }

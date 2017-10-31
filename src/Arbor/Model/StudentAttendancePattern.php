@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentAttendancePattern extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const STUDENT = 'student';
@@ -133,4 +134,6 @@ class StudentAttendancePattern extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

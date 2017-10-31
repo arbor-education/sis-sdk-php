@@ -6,11 +6,14 @@ use Arbor\Query\Query;
 
 class StudentInterventionReview extends ModelBase
 {
+
     const STUDENT_INTERVENTION = 'studentIntervention';
 
     const INTERVENTION_REVIEW = 'interventionReview';
 
     const REVIEW = 'review';
+
+    const REVIEW_DATE = 'reviewDate';
 
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION_REVIEW;
 
@@ -97,4 +100,22 @@ class StudentInterventionReview extends ModelBase
     {
         $this->setProperty('review', $review);
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getReviewDate()
+    {
+        return $this->getProperty('reviewDate');
+    }
+
+    /**
+     * @param \DateTime $reviewDate
+     */
+    public function setReviewDate(\DateTime $reviewDate = null)
+    {
+        $this->setProperty('reviewDate', $reviewDate);
+    }
+
+
 }

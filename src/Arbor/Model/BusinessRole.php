@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BusinessRole extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -25,10 +26,6 @@ class BusinessRole extends ModelBase
     const TEACHING_STAFF = 'teachingStaff';
 
     const CUSTOMER_MANAGES_DEFAULT_USER_ROLES = 'customerManagesDefaultUserRoles';
-
-    const SWF_CENSUS_IDENTIFIER = 'swfCensusIdentifier';
-
-    const MANAGED_BY_CLIENT = 'managedByClient';
 
     protected $_resourceType = ResourceType::BUSINESS_ROLE;
 
@@ -228,35 +225,5 @@ class BusinessRole extends ModelBase
         $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
     }
 
-    /**
-     * @return string
-     */
-    public function getSwfCensusIdentifier()
-    {
-        return $this->getProperty('swfCensusIdentifier');
-    }
 
-    /**
-     * @param string $swfCensusIdentifier
-     */
-    public function setSwfCensusIdentifier($swfCensusIdentifier = null)
-    {
-        $this->setProperty('swfCensusIdentifier', $swfCensusIdentifier);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getManagedByClient()
-    {
-        return $this->getProperty('managedByClient');
-    }
-
-    /**
-     * @param bool $managedByClient
-     */
-    public function setManagedByClient($managedByClient = null)
-    {
-        $this->setProperty('managedByClient', $managedByClient);
-    }
 }

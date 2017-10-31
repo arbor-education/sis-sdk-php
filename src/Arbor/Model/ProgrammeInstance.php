@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ProgrammeInstance extends ModelBase
 {
+
     const PROGRAMME = 'programme';
 
     const NAME = 'name';
@@ -115,4 +116,6 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty('plannedEndDate', $plannedEndDate);
     }
+
+
 }

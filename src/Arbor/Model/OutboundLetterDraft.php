@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class OutboundLetterDraft extends ModelBase
 {
+
     const DOCUMENT_LAYOUT = 'documentLayout';
 
     const SENDING_PROFILE = 'sendingProfile';
@@ -14,7 +15,9 @@ class OutboundLetterDraft extends ModelBase
 
     const CUSTOM_REPORT = 'customReport';
 
-    const REMOVE_DUPLICATE_MESSAGES = 'removeDuplicateMessages';
+    const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
+
+    const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
 
     const GENERATION_STARTED_DATETIME = 'generationStartedDatetime';
 
@@ -125,17 +128,33 @@ class OutboundLetterDraft extends ModelBase
     /**
      * @return bool
      */
-    public function getRemoveDuplicateMessages()
+    public function getCombineMessagesToSameRecipient()
     {
-        return $this->getProperty('removeDuplicateMessages');
+        return $this->getProperty('combineMessagesToSameRecipient');
     }
 
     /**
-     * @param bool $removeDuplicateMessages
+     * @param bool $combineMessagesToSameRecipient
      */
-    public function setRemoveDuplicateMessages($removeDuplicateMessages = null)
+    public function setCombineMessagesToSameRecipient($combineMessagesToSameRecipient = null)
     {
-        $this->setProperty('removeDuplicateMessages', $removeDuplicateMessages);
+        $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCombineMessagesToSameHousehold()
+    {
+        return $this->getProperty('combineMessagesToSameHousehold');
+    }
+
+    /**
+     * @param bool $combineMessagesToSameHousehold
+     */
+    public function setCombineMessagesToSameHousehold($combineMessagesToSameHousehold = null)
+    {
+        $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }
 
     /**
@@ -169,4 +188,6 @@ class OutboundLetterDraft extends ModelBase
     {
         $this->setProperty('generationCompletedDatetime', $generationCompletedDatetime);
     }
+
+
 }

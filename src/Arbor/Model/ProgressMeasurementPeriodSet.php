@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ProgressMeasurementPeriodSet extends ModelBase
 {
+
     const PERIOD_FREQUENCY = 'periodFrequency';
 
     const SET_NAME = 'setName';
@@ -97,4 +98,6 @@ class ProgressMeasurementPeriodSet extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
+
+
 }
