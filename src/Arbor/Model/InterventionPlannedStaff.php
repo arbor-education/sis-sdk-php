@@ -12,6 +12,8 @@ class InterventionPlannedStaff extends ModelBase
 
     const PLANNED_HOURS = 'plannedHours';
 
+    const PRICE_PER_HOUR = 'pricePerHour';
+
     protected $_resourceType = ResourceType::INTERVENTION_PLANNED_STAFF;
 
     /**
@@ -96,5 +98,21 @@ class InterventionPlannedStaff extends ModelBase
     public function setPlannedHours($plannedHours = null)
     {
         $this->setProperty('plannedHours', $plannedHours);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPricePerHour()
+    {
+        return $this->getProperty('pricePerHour');
+    }
+
+    /**
+     * @param string $pricePerHour
+     */
+    public function setPricePerHour($pricePerHour = null)
+    {
+        $this->setProperty('pricePerHour', $pricePerHour);
     }
 }

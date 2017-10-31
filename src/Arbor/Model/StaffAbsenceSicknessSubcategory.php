@@ -4,7 +4,7 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LocalAuthority extends ModelBase
+class StaffAbsenceSicknessSubcategory extends ModelBase
 {
     const CODE = 'code';
 
@@ -12,21 +12,15 @@ class LocalAuthority extends ModelBase
 
     const DATA_ORDER = 'dataOrder';
 
-    const COUNTRY = 'country';
+    const STAFF_ABSENCE_SICKNESS_CATEGORY = 'staffAbsenceSicknessCategory';
 
     const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
-
-    const AUTHORITY_CODE = 'authorityCode';
-
-    const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
-
-    protected $_resourceType = ResourceType::LOCAL_AUTHORITY;
+    protected $_resourceType = ResourceType::STAFF_ABSENCE_SICKNESS_SUBCATEGORY;
 
     /**
      * @param Query $query
-     * @return LocalAuthority[] | Collection
+     * @return StaffAbsenceSicknessSubcategory[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -40,14 +34,14 @@ class LocalAuthority extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::LOCAL_AUTHORITY);
+        $query->setResourceType(ResourceType::STAFF_ABSENCE_SICKNESS_SUBCATEGORY);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return LocalAuthority
+     * @return StaffAbsenceSicknessSubcategory
      * @throws Exception
      */
     public static function retrieve($id)
@@ -57,7 +51,7 @@ class LocalAuthority extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::LOCAL_AUTHORITY, $id);
+        return $gateway->retrieve(ResourceType::STAFF_ABSENCE_SICKNESS_SUBCATEGORY, $id);
     }
 
     /**
@@ -109,19 +103,19 @@ class LocalAuthority extends ModelBase
     }
 
     /**
-     * @return Country
+     * @return StaffAbsenceSicknessCategory
      */
-    public function getCountry()
+    public function getStaffAbsenceSicknessCategory()
     {
-        return $this->getProperty('country');
+        return $this->getProperty('staffAbsenceSicknessCategory');
     }
 
     /**
-     * @param Country $country
+     * @param StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory
      */
-    public function setCountry(Country $country = null)
+    public function setStaffAbsenceSicknessCategory(StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory = null)
     {
-        $this->setProperty('country', $country);
+        $this->setProperty('staffAbsenceSicknessCategory', $staffAbsenceSicknessCategory);
     }
 
     /**
@@ -138,53 +132,5 @@ class LocalAuthority extends ModelBase
     public function setName($name = null)
     {
         $this->setProperty('name', $name);
-    }
-
-    /**
-     * @return string
-     */
-    public function getShortName()
-    {
-        return $this->getProperty('shortName');
-    }
-
-    /**
-     * @param string $shortName
-     */
-    public function setShortName($shortName = null)
-    {
-        $this->setProperty('shortName', $shortName);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAuthorityCode()
-    {
-        return $this->getProperty('authorityCode');
-    }
-
-    /**
-     * @param string $authorityCode
-     */
-    public function setAuthorityCode($authorityCode = null)
-    {
-        $this->setProperty('authorityCode', $authorityCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAuthorityCodePre2011()
-    {
-        return $this->getProperty('authorityCodePre2011');
-    }
-
-    /**
-     * @param string $authorityCodePre2011
-     */
-    public function setAuthorityCodePre2011($authorityCodePre2011 = null)
-    {
-        $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }
 }

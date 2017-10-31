@@ -10,7 +10,7 @@ class IncomingBankTransaction extends ModelBase
 
     const RECEIVED_DATE = 'receivedDate';
 
-    const CANCELLED_DATE = 'cancelledDate';
+    const CANCELLED_DATETIME = 'cancelledDatetime';
 
     const PAYMENT = 'payment';
 
@@ -87,17 +87,17 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @return \DateTime
      */
-    public function getCancelledDate()
+    public function getCancelledDatetime()
     {
-        return $this->getProperty('cancelledDate');
+        return $this->getProperty('cancelledDatetime');
     }
 
     /**
-     * @param \DateTime $cancelledDate
+     * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDate(\DateTime $cancelledDate = null)
+    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
     {
-        $this->setProperty('cancelledDate', $cancelledDate);
+        $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
 
     /**

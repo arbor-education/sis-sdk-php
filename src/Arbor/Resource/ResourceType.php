@@ -20,6 +20,7 @@ class ResourceType
     const ACADEMIC_UNIT_COHORT = 'AcademicUnitCohort';
     const ACADEMIC_UNIT_COHORT_MEMBERSHIP = 'AcademicUnitCohortMembership';
     const ACADEMIC_UNIT_CURRICULUM = 'AcademicUnitCurriculum';
+    const ACADEMIC_UNIT_DEPARTMENT = 'AcademicUnitDepartment';
     const ACADEMIC_UNIT_ENROLMENT = 'AcademicUnitEnrolment';
     const ACADEMIC_UNIT_LEAD = 'AcademicUnitLead';
     const ACADEMIC_UNIT_QUALIFICATION_LINK = 'AcademicUnitQualificationLink';
@@ -191,6 +192,10 @@ class ResourceType
     const DATA_SET_SUBSCRIPTION = 'DataSetSubscription';
     const DATA_SOURCE = 'DataSource';
     const DELIVERY_ADDRESS = 'DeliveryAddress';
+    const DEPARTMENT = 'Department';
+    const DEPARTMENT_MEMBERSHIP = 'DepartmentMembership';
+    const DEPARTMENT_RESPONSIBILITY = 'DepartmentResponsibility';
+    const DEPARTMENT_RESPONSIBILITY_TYPE = 'DepartmentResponsibilityType';
     const DETENTION = 'Detention';
     const DETENTION_SESSION = 'DetentionSession';
     const DETENTION_TYPE = 'DetentionType';
@@ -228,7 +233,11 @@ class ResourceType
     const EXCLUSION_REASON = 'ExclusionReason';
     const EXTERNAL_ADMINISTRATOR = 'ExternalAdministrator';
     const FACULTY = 'Faculty';
+    const FACULTY_DEPARTMENT = 'FacultyDepartment';
     const FACULTY_MEMBER = 'FacultyMember';
+    const FACULTY_MEMBERSHIP = 'FacultyMembership';
+    const FACULTY_RESPONSIBILITY = 'FacultyResponsibility';
+    const FACULTY_RESPONSIBILITY_TYPE = 'FacultyResponsibilityType';
     const FILE = 'File';
     const FINAL_ASSESSMENT_TARGET = 'FinalAssessmentTarget';
     const FIXED_PERIOD_EXCLUSION = 'FixedPeriodExclusion';
@@ -260,6 +269,7 @@ class ResourceType
     const INCOMING_CARD_TRANSACTION = 'IncomingCardTransaction';
     const INCOMING_DIRECT_DEBIT_AGREEMENT = 'IncomingDirectDebitAgreement';
     const INCOMING_DIRECT_DEBIT_TRANSACTION = 'IncomingDirectDebitTransaction';
+    const INSIGHT_REPORT = 'InsightReport';
     const INSTITUTION_TYPE = 'InstitutionType';
     const INTAKE_SEASON = 'IntakeSeason';
     const INTAKE_SEASON_APPLICANT_BUCKET = 'IntakeSeasonApplicantBucket';
@@ -378,6 +388,9 @@ class ResourceType
     const PROFESSIONAL_QUALIFICATION_CLASS = 'ProfessionalQualificationClass';
     const PROFESSIONAL_QUALIFICATION_SUBJECT = 'ProfessionalQualificationSubject';
     const PROFESSIONAL_QUALIFICATION_TYPE = 'ProfessionalQualificationType';
+    const PROFILE_PICTURE_IMPORT_JOB = 'ProfilePictureImportJob';
+    const PROFILE_PICTURE_IMPORT_JOB_FILE = 'ProfilePictureImportJobFile';
+    const PROFILE_PICTURE_IMPORT_JOB_FILE_MATCH = 'ProfilePictureImportJobFileMatch';
     const PROGRAMME = 'Programme';
     const PROGRAMME_ACADEMIC_UNIT = 'ProgrammeAcademicUnit';
     const PROGRAMME_ENROLMENT = 'ProgrammeEnrolment';
@@ -472,6 +485,8 @@ class ResourceType
     const STAFF = 'Staff';
     const STAFF_ABSENCE = 'StaffAbsence';
     const STAFF_ABSENCE_CATEGORY = 'StaffAbsenceCategory';
+    const STAFF_ABSENCE_SICKNESS_CATEGORY = 'StaffAbsenceSicknessCategory';
+    const STAFF_ABSENCE_SICKNESS_SUBCATEGORY = 'StaffAbsenceSicknessSubcategory';
     const STAFF_ATTENDANCE_MARK = 'StaffAttendanceMark';
     const STAFF_ATTENDANCE_RECORD = 'StaffAttendanceRecord';
     const STAFF_CONTRACT = 'StaffContract';
@@ -565,7 +580,6 @@ class ResourceType
     const UNIVERSITY_STAFF = 'UniversityStaff';
     const USAGE_LOG_ENTRY = 'UsageLogEntry';
     const USER = 'User';
-    const USER_ACTIVITY = 'UserActivity';
     const USER_DEFINED_FIELD = 'UserDefinedField';
     const USER_DEFINED_RECORD = 'UserDefinedRecord';
     const USER_NOTIFICATION = 'UserNotification';

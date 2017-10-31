@@ -42,6 +42,8 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
 
     const EMAIL_ASSIGNEE = 'emailAssignee';
 
+    const ALLOW_ASSIGN_INTERNAL_EXCLUSION = 'allowAssignInternalExclusion';
+
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW;
 
     /**
@@ -366,5 +368,21 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     public function setEmailAssignee($emailAssignee = null)
     {
         $this->setProperty('emailAssignee', $emailAssignee);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowAssignInternalExclusion()
+    {
+        return $this->getProperty('allowAssignInternalExclusion');
+    }
+
+    /**
+     * @param bool $allowAssignInternalExclusion
+     */
+    public function setAllowAssignInternalExclusion($allowAssignInternalExclusion = null)
+    {
+        $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
 }

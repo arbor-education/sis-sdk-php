@@ -12,6 +12,8 @@ class StudentInterventionReview extends ModelBase
 
     const REVIEW = 'review';
 
+    const REVIEW_DATE = 'reviewDate';
+
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION_REVIEW;
 
     /**
@@ -96,5 +98,21 @@ class StudentInterventionReview extends ModelBase
     public function setReview($review = null)
     {
         $this->setProperty('review', $review);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getReviewDate()
+    {
+        return $this->getProperty('reviewDate');
+    }
+
+    /**
+     * @param \DateTime $reviewDate
+     */
+    public function setReviewDate(\DateTime $reviewDate = null)
+    {
+        $this->setProperty('reviewDate', $reviewDate);
     }
 }

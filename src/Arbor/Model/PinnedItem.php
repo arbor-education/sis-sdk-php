@@ -10,6 +10,8 @@ class PinnedItem extends ModelBase
 
     const TARGET = 'target';
 
+    const PINNED_UNTIL_DATETIME = 'pinnedUntilDatetime';
+
     protected $_resourceType = ResourceType::PINNED_ITEM;
 
     /**
@@ -78,5 +80,21 @@ class PinnedItem extends ModelBase
     public function setTarget(ModelBase $target = null)
     {
         $this->setProperty('target', $target);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPinnedUntilDatetime()
+    {
+        return $this->getProperty('pinnedUntilDatetime');
+    }
+
+    /**
+     * @param \DateTime $pinnedUntilDatetime
+     */
+    public function setPinnedUntilDatetime(\DateTime $pinnedUntilDatetime = null)
+    {
+        $this->setProperty('pinnedUntilDatetime', $pinnedUntilDatetime);
     }
 }

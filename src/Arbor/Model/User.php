@@ -44,6 +44,12 @@ class User extends ModelBase
 
     const TWO_FACTOR_DEVICE_IDENTIFIER = 'twoFactorDeviceIdentifier';
 
+    const DELETED_ENTITY_TYPE = 'deletedEntityType';
+
+    const DELETED_OBJECT_ID = 'deletedObjectId';
+
+    const DELETED_DISPLAY_NAME = 'deletedDisplayName';
+
     protected $_resourceType = ResourceType::USER;
 
     /**
@@ -384,5 +390,53 @@ class User extends ModelBase
     public function setTwoFactorDeviceIdentifier($twoFactorDeviceIdentifier = null)
     {
         $this->setProperty('twoFactorDeviceIdentifier', $twoFactorDeviceIdentifier);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDeletedEntityType()
+    {
+        return $this->getProperty('deletedEntityType');
+    }
+
+    /**
+     * @param int $deletedEntityType
+     */
+    public function setDeletedEntityType($deletedEntityType = null)
+    {
+        $this->setProperty('deletedEntityType', $deletedEntityType);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDeletedObjectId()
+    {
+        return $this->getProperty('deletedObjectId');
+    }
+
+    /**
+     * @param int $deletedObjectId
+     */
+    public function setDeletedObjectId($deletedObjectId = null)
+    {
+        $this->setProperty('deletedObjectId', $deletedObjectId);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeletedDisplayName()
+    {
+        return $this->getProperty('deletedDisplayName');
+    }
+
+    /**
+     * @param string $deletedDisplayName
+     */
+    public function setDeletedDisplayName($deletedDisplayName = null)
+    {
+        $this->setProperty('deletedDisplayName', $deletedDisplayName);
     }
 }

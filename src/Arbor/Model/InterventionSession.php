@@ -26,6 +26,12 @@ class InterventionSession extends ModelBase
 
     const INTERVENTION_GROUP = 'interventionGroup';
 
+    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+
+    const ATTENDANCE_REGISTER_OPENED_DATETIME = 'attendanceRegisterOpenedDatetime';
+
+    const ATTENDANCE_REGISTER_CLOSED_DATETIME = 'attendanceRegisterClosedDatetime';
+
     protected $_resourceType = ResourceType::INTERVENTION_SESSION;
 
     /**
@@ -222,5 +228,53 @@ class InterventionSession extends ModelBase
     public function setInterventionGroup(InterventionGroup $interventionGroup = null)
     {
         $this->setProperty('interventionGroup', $interventionGroup);
+    }
+
+    /**
+     * @return AttendanceRegisterType
+     */
+    public function getAttendanceRegisterType()
+    {
+        return $this->getProperty('attendanceRegisterType');
+    }
+
+    /**
+     * @param AttendanceRegisterType $attendanceRegisterType
+     */
+    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    {
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAttendanceRegisterOpenedDatetime()
+    {
+        return $this->getProperty('attendanceRegisterOpenedDatetime');
+    }
+
+    /**
+     * @param \DateTime $attendanceRegisterOpenedDatetime
+     */
+    public function setAttendanceRegisterOpenedDatetime(\DateTime $attendanceRegisterOpenedDatetime = null)
+    {
+        $this->setProperty('attendanceRegisterOpenedDatetime', $attendanceRegisterOpenedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAttendanceRegisterClosedDatetime()
+    {
+        return $this->getProperty('attendanceRegisterClosedDatetime');
+    }
+
+    /**
+     * @param \DateTime $attendanceRegisterClosedDatetime
+     */
+    public function setAttendanceRegisterClosedDatetime(\DateTime $attendanceRegisterClosedDatetime = null)
+    {
+        $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }
 }

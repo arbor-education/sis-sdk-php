@@ -6,7 +6,6 @@ class ResourceType
 {
     const UK_DFE_ATF_IMPORT_JOB = 'UkDfe_AtfImportJob';
     const UK_DFE_ATF_IMPORT_JOB_STUDENT = 'UkDfe_AtfImportJobStudent';
-    const UK_DFE_BUSINESS_ROLE = 'UkDfe_BusinessRole';
     const UK_DFE_CAPITA_ONE_STUDENT_EXPORT_JOB = 'UkDfe_CapitaOneStudentExportJob';
     const UK_DFE_CENSUS_SCHOOL_PHASE = 'UkDfe_CensusSchoolPhase';
     const UK_DFE_CHILD_CARE_PLACE = 'UkDfe_ChildCarePlace';
@@ -26,7 +25,6 @@ class ResourceType
     const UK_DFE_IN_CARE_STATUS_ASSIGNMENT = 'UkDfe_InCareStatusAssignment';
     const UK_DFE_LANGUAGE = 'UkDfe_Language';
     const UK_DFE_LGFL_EXPORT_JOB = 'UkDfe_LgflExportJob';
-    const UK_DFE_LOCAL_AUTHORITY = 'UkDfe_LocalAuthority';
     const UK_DFE_OFSTED_GRADE = 'UkDfe_OfstedGrade';
     const UK_DFE_PAY_SCALE = 'UkDfe_PayScale';
     const UK_DFE_PAY_SCALE_CATEGORY = 'UkDfe_PayScaleCategory';
@@ -62,7 +60,6 @@ class ResourceType
     const UK_DFE_TRAVELLER_STATUS_ASSIGNMENT = 'UkDfe_TravellerStatusAssignment';
     const UK_DFE_TWO_YEAR_OLD_FUNDING_BASIS = 'UkDfe_TwoYearOldFundingBasis';
     const UK_DFE_UCI_ASSIGNMENT = 'UkDfe_UciAssignment';
-    const UK_DFE_UK_COUNTRY = 'UkDfe_UkCountry';
     const UK_DFE_UNENROLMENT_REASON = 'UkDfe_UnenrolmentReason';
     const UK_DFE_UPN_ASSIGNMENT = 'UkDfe_UpnAssignment';
 }

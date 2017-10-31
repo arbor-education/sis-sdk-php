@@ -30,9 +30,14 @@ class Query
     const OPERATOR_SEARCH = "search";
     const OPERATOR_IN = "in";
 
-    public function __construct($resourceType=null, $propertyFilters=[], $userTagFilters=[], $pageNumber=null,
-                                $pageSize=null, $taggingsFilter = [])
-    {
+    public function __construct(
+        $resourceType=null,
+        $propertyFilters=[],
+        $userTagFilters=[],
+        $pageNumber=null,
+                                $pageSize=null,
+        $taggingsFilter = []
+    ) {
         $this->setResourceType($resourceType);
         $this->setPropertyFilters($propertyFilters);
         $this->setUserTagFilters($userTagFilters);

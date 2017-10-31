@@ -1,14 +1,10 @@
 <?php
+namespace Arbor\Model;
 
-namespace Arbor\Model\UkDfe;
-
-use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
-use Arbor\Model\Collection;
-use Arbor\Model\Exception;
-use Arbor\Model\ModelBase;
 
-class UkCountry extends ModelBase
+class StaffAbsenceSicknessCategory extends ModelBase
 {
     const CODE = 'code';
 
@@ -16,13 +12,13 @@ class UkCountry extends ModelBase
 
     const DATA_ORDER = 'dataOrder';
 
-    const COUNTRY_NAME = 'countryName';
+    const NAME = 'name';
 
-    protected $_resourceType = ResourceType::UK_DFE_UK_COUNTRY;
+    protected $_resourceType = ResourceType::STAFF_ABSENCE_SICKNESS_CATEGORY;
 
     /**
      * @param Query $query
-     * @return UkCountry[] | Collection
+     * @return StaffAbsenceSicknessCategory[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -36,14 +32,14 @@ class UkCountry extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::UK_DFE_UK_COUNTRY);
+        $query->setResourceType(ResourceType::STAFF_ABSENCE_SICKNESS_CATEGORY);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return UkCountry
+     * @return StaffAbsenceSicknessCategory
      * @throws Exception
      */
     public static function retrieve($id)
@@ -53,7 +49,7 @@ class UkCountry extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::UK_DFE_UK_COUNTRY, $id);
+        return $gateway->retrieve(ResourceType::STAFF_ABSENCE_SICKNESS_CATEGORY, $id);
     }
 
     /**
@@ -107,16 +103,16 @@ class UkCountry extends ModelBase
     /**
      * @return string
      */
-    public function getCountryName()
+    public function getName()
     {
-        return $this->getProperty('countryName');
+        return $this->getProperty('name');
     }
 
     /**
-     * @param string $countryName
+     * @param string $name
      */
-    public function setCountryName($countryName = null)
+    public function setName($name = null)
     {
-        $this->setProperty('countryName', $countryName);
+        $this->setProperty('name', $name);
     }
 }

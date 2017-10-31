@@ -14,21 +14,25 @@ class StaffAbsence extends ModelBase
 
     const STAFF_ABSENCE_CATEGORY = 'staffAbsenceCategory';
 
+    const SICKNESS_CATEGORY = 'sicknessCategory';
+
+    const SICKNESS_SUBCATEGORY = 'sicknessSubcategory';
+
     const APPROVED_DATETIME = 'approvedDatetime';
 
     const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const PAID_SICK_LEAVE_USED = 'paidSickLeaveUsed';
+    const CALCULATED_WORKING_DAYS = 'calculatedWorkingDays';
 
-    const UNPAID_SICK_LEAVE_USED = 'unpaidSickLeaveUsed';
+    const ACTUAL_WORKING_DAYS = 'actualWorkingDays';
 
-    const PAID_HOLIDAY_USED = 'paidHolidayUsed';
+    const WORKING_DAYS = 'workingDays';
 
-    const UNPAID_HOLIDAY_USED = 'unpaidHolidayUsed';
+    const CALCULATED_WORKING_HOURS = 'calculatedWorkingHours';
 
-    const PAID_OTHER_LEAVE = 'paidOtherLeave';
+    const ACTUAL_WORKING_HOURS = 'actualWorkingHours';
 
-    const UNPAID_OTHER_LEAVE = 'unpaidOtherLeave';
+    const WORKING_HOURS = 'workingHours';
 
     const NARRATIVE = 'narrative';
 
@@ -135,6 +139,38 @@ class StaffAbsence extends ModelBase
     }
 
     /**
+     * @return StaffAbsenceSicknessCategory
+     */
+    public function getSicknessCategory()
+    {
+        return $this->getProperty('sicknessCategory');
+    }
+
+    /**
+     * @param StaffAbsenceSicknessCategory $sicknessCategory
+     */
+    public function setSicknessCategory(StaffAbsenceSicknessCategory $sicknessCategory = null)
+    {
+        $this->setProperty('sicknessCategory', $sicknessCategory);
+    }
+
+    /**
+     * @return StaffAbsenceSicknessSubcategory
+     */
+    public function getSicknessSubcategory()
+    {
+        return $this->getProperty('sicknessSubcategory');
+    }
+
+    /**
+     * @param StaffAbsenceSicknessSubcategory $sicknessSubcategory
+     */
+    public function setSicknessSubcategory(StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
+    {
+        $this->setProperty('sicknessSubcategory', $sicknessSubcategory);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getApprovedDatetime()
@@ -169,97 +205,97 @@ class StaffAbsence extends ModelBase
     /**
      * @return float
      */
-    public function getPaidSickLeaveUsed()
+    public function getCalculatedWorkingDays()
     {
-        return $this->getProperty('paidSickLeaveUsed');
+        return $this->getProperty('calculatedWorkingDays');
     }
 
     /**
-     * @param float $paidSickLeaveUsed
+     * @param float $calculatedWorkingDays
      */
-    public function setPaidSickLeaveUsed($paidSickLeaveUsed = null)
+    public function setCalculatedWorkingDays($calculatedWorkingDays = null)
     {
-        $this->setProperty('paidSickLeaveUsed', $paidSickLeaveUsed);
-    }
-
-    /**
-     * @return float
-     */
-    public function getUnpaidSickLeaveUsed()
-    {
-        return $this->getProperty('unpaidSickLeaveUsed');
-    }
-
-    /**
-     * @param float $unpaidSickLeaveUsed
-     */
-    public function setUnpaidSickLeaveUsed($unpaidSickLeaveUsed = null)
-    {
-        $this->setProperty('unpaidSickLeaveUsed', $unpaidSickLeaveUsed);
+        $this->setProperty('calculatedWorkingDays', $calculatedWorkingDays);
     }
 
     /**
      * @return float
      */
-    public function getPaidHolidayUsed()
+    public function getActualWorkingDays()
     {
-        return $this->getProperty('paidHolidayUsed');
+        return $this->getProperty('actualWorkingDays');
     }
 
     /**
-     * @param float $paidHolidayUsed
+     * @param float $actualWorkingDays
      */
-    public function setPaidHolidayUsed($paidHolidayUsed = null)
+    public function setActualWorkingDays($actualWorkingDays = null)
     {
-        $this->setProperty('paidHolidayUsed', $paidHolidayUsed);
-    }
-
-    /**
-     * @return float
-     */
-    public function getUnpaidHolidayUsed()
-    {
-        return $this->getProperty('unpaidHolidayUsed');
-    }
-
-    /**
-     * @param float $unpaidHolidayUsed
-     */
-    public function setUnpaidHolidayUsed($unpaidHolidayUsed = null)
-    {
-        $this->setProperty('unpaidHolidayUsed', $unpaidHolidayUsed);
+        $this->setProperty('actualWorkingDays', $actualWorkingDays);
     }
 
     /**
      * @return float
      */
-    public function getPaidOtherLeave()
+    public function getWorkingDays()
     {
-        return $this->getProperty('paidOtherLeave');
+        return $this->getProperty('workingDays');
     }
 
     /**
-     * @param float $paidOtherLeave
+     * @param float $workingDays
      */
-    public function setPaidOtherLeave($paidOtherLeave = null)
+    public function setWorkingDays($workingDays = null)
     {
-        $this->setProperty('paidOtherLeave', $paidOtherLeave);
+        $this->setProperty('workingDays', $workingDays);
     }
 
     /**
      * @return float
      */
-    public function getUnpaidOtherLeave()
+    public function getCalculatedWorkingHours()
     {
-        return $this->getProperty('unpaidOtherLeave');
+        return $this->getProperty('calculatedWorkingHours');
     }
 
     /**
-     * @param float $unpaidOtherLeave
+     * @param float $calculatedWorkingHours
      */
-    public function setUnpaidOtherLeave($unpaidOtherLeave = null)
+    public function setCalculatedWorkingHours($calculatedWorkingHours = null)
     {
-        $this->setProperty('unpaidOtherLeave', $unpaidOtherLeave);
+        $this->setProperty('calculatedWorkingHours', $calculatedWorkingHours);
+    }
+
+    /**
+     * @return float
+     */
+    public function getActualWorkingHours()
+    {
+        return $this->getProperty('actualWorkingHours');
+    }
+
+    /**
+     * @param float $actualWorkingHours
+     */
+    public function setActualWorkingHours($actualWorkingHours = null)
+    {
+        $this->setProperty('actualWorkingHours', $actualWorkingHours);
+    }
+
+    /**
+     * @return float
+     */
+    public function getWorkingHours()
+    {
+        return $this->getProperty('workingHours');
+    }
+
+    /**
+     * @param float $workingHours
+     */
+    public function setWorkingHours($workingHours = null)
+    {
+        $this->setProperty('workingHours', $workingHours);
     }
 
     /**

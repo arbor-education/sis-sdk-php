@@ -8,7 +8,6 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\EducationalInstitution;
-use Arbor\Model\BusinessRole;
 
 class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
 {
@@ -16,7 +15,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const BUSINESS_ROLE = 'businessRole';
+    const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
 
     const AGENCY_TP_SUPPORT_CATEGORY = 'agencyTpSupportCategory';
 
@@ -93,19 +92,19 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     }
 
     /**
-     * @return BusinessRole
+     * @return string
      */
-    public function getBusinessRole()
+    public function getWorkforceCensusRoleIdentifier()
     {
-        return $this->getProperty('businessRole');
+        return $this->getProperty('workforceCensusRoleIdentifier');
     }
 
     /**
-     * @param BusinessRole $businessRole
+     * @param string $workforceCensusRoleIdentifier
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setWorkforceCensusRoleIdentifier($workforceCensusRoleIdentifier = null)
     {
-        $this->setProperty('businessRole', $businessRole);
+        $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }
 
     /**

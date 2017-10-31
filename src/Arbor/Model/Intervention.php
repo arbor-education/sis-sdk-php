@@ -14,9 +14,9 @@ class Intervention extends ModelBase
 
     const TERM = 'term';
 
-    const START_DATE = 'startDate';
+    const START_DATETIME = 'startDatetime';
 
-    const END_DATE = 'endDate';
+    const END_DATETIME = 'endDatetime';
 
     const MONITORING = 'monitoring';
 
@@ -35,6 +35,8 @@ class Intervention extends ModelBase
     const CATEGORY = 'category';
 
     const IS_COMPLETED = 'isCompleted';
+
+    const LOCATION = 'location';
 
     protected $_resourceType = ResourceType::INTERVENTION;
 
@@ -141,33 +143,33 @@ class Intervention extends ModelBase
     /**
      * @return \DateTime
      */
-    public function getStartDate()
+    public function getStartDatetime()
     {
-        return $this->getProperty('startDate');
+        return $this->getProperty('startDatetime');
     }
 
     /**
-     * @param \DateTime $startDate
+     * @param \DateTime $startDatetime
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty('startDate', $startDate);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
      * @return \DateTime
      */
-    public function getEndDate()
+    public function getEndDatetime()
     {
-        return $this->getProperty('endDate');
+        return $this->getProperty('endDatetime');
     }
 
     /**
-     * @param \DateTime $endDate
+     * @param \DateTime $endDatetime
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDatetime(\DateTime $endDatetime = null)
     {
-        $this->setProperty('endDate', $endDate);
+        $this->setProperty('endDatetime', $endDatetime);
     }
 
     /**
@@ -312,5 +314,21 @@ class Intervention extends ModelBase
     public function setIsCompleted($isCompleted = null)
     {
         $this->setProperty('isCompleted', $isCompleted);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getLocation()
+    {
+        return $this->getProperty('location');
+    }
+
+    /**
+     * @param ModelBase $location
+     */
+    public function setLocation(ModelBase $location = null)
+    {
+        $this->setProperty('location', $location);
     }
 }

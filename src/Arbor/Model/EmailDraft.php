@@ -14,6 +14,10 @@ class EmailDraft extends ModelBase
 
     const CUSTOM_REPORT = 'customReport';
 
+    const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
+
+    const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
+
     const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
     const RECIPIENTS_RESOLVED_DATETIME = 'recipientsResolvedDatetime';
@@ -120,6 +124,38 @@ class EmailDraft extends ModelBase
     public function setCustomReport(CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCombineMessagesToSameRecipient()
+    {
+        return $this->getProperty('combineMessagesToSameRecipient');
+    }
+
+    /**
+     * @param bool $combineMessagesToSameRecipient
+     */
+    public function setCombineMessagesToSameRecipient($combineMessagesToSameRecipient = null)
+    {
+        $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCombineMessagesToSameHousehold()
+    {
+        return $this->getProperty('combineMessagesToSameHousehold');
+    }
+
+    /**
+     * @param bool $combineMessagesToSameHousehold
+     */
+    public function setCombineMessagesToSameHousehold($combineMessagesToSameHousehold = null)
+    {
+        $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }
 
     /**

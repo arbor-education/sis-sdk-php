@@ -8,6 +8,8 @@ class InternalExclusion extends ModelBase
 {
     const STUDENT = 'student';
 
+    const ISSUED_BY_STAFF = 'issuedByStaff';
+
     const INTERNAL_EXCLUSION_SESSION = 'internalExclusionSession';
 
     const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
@@ -70,6 +72,22 @@ class InternalExclusion extends ModelBase
     public function setStudent(Student $student = null)
     {
         $this->setProperty('student', $student);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getIssuedByStaff()
+    {
+        return $this->getProperty('issuedByStaff');
+    }
+
+    /**
+     * @param Staff $issuedByStaff
+     */
+    public function setIssuedByStaff(Staff $issuedByStaff = null)
+    {
+        $this->setProperty('issuedByStaff', $issuedByStaff);
     }
 
     /**

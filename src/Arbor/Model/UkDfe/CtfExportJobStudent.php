@@ -15,6 +15,8 @@ class CtfExportJobStudent extends ModelBase
 
     const STUDENT = 'student';
 
+    const CML_REMOVAL_GROUNDS = 'cmlRemovalGrounds';
+
     protected $_resourceType = ResourceType::UK_DFE_CTF_EXPORT_JOB_STUDENT;
 
     /**
@@ -83,5 +85,21 @@ class CtfExportJobStudent extends ModelBase
     public function setStudent(Student $student = null)
     {
         $this->setProperty('student', $student);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCmlRemovalGrounds()
+    {
+        return $this->getProperty('cmlRemovalGrounds');
+    }
+
+    /**
+     * @param string $cmlRemovalGrounds
+     */
+    public function setCmlRemovalGrounds($cmlRemovalGrounds = null)
+    {
+        $this->setProperty('cmlRemovalGrounds', $cmlRemovalGrounds);
     }
 }
