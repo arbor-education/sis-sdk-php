@@ -11,7 +11,6 @@ use Arbor\Model\InstitutionType;
 
 class InstitutionTypeAssignment extends ModelBase
 {
-
     const INSTITUTION = 'institution';
 
     const INSTITUTION_TYPE = 'institutionType';
@@ -121,6 +120,4 @@ class InstitutionTypeAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
-
 }

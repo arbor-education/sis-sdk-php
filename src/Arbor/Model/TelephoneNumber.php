@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TelephoneNumber extends ModelBase
 {
-
     const NUMBER_OWNER = 'numberOwner';
 
     const TELEPHONE_NUMBER_TYPE = 'telephoneNumberType';
@@ -152,6 +151,4 @@ class TelephoneNumber extends ModelBase
     {
         $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }
-
-
 }

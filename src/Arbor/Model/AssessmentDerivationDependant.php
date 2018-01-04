@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentDerivationDependant extends ModelBase
 {
-
     const ASSESSMENT_DERIVATION = 'assessmentDerivation';
 
     const DEPENDANT_ASSESSMENT = 'dependantAssessment';
@@ -98,6 +97,4 @@ class AssessmentDerivationDependant extends ModelBase
     {
         $this->setProperty('weighting', $weighting);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviouralNote extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const SUMMARY = 'summary';
@@ -116,6 +115,4 @@ class BehaviouralNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
-
-
 }

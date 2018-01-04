@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomReportOrdering extends ModelBase
 {
-
     const CUSTOM_REPORT = 'customReport';
 
     const FIELD_CLASS = 'fieldClass';
@@ -152,6 +151,4 @@ class CustomReportOrdering extends ModelBase
     {
         $this->setProperty('targetGrouping', $targetGrouping);
     }
-
-
 }

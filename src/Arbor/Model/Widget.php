@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Widget extends ModelBase
 {
-
     const ZONE_IDENTIFIER = 'zoneIdentifier';
 
     const OBJECT = 'object';
@@ -152,6 +151,4 @@ class Widget extends ModelBase
     {
         $this->setProperty('positionRow', $positionRow);
     }
-
-
 }

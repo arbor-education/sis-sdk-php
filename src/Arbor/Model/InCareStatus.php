@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InCareStatus extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,4 @@ class InCareStatus extends ModelBase
     {
         $this->setProperty('countsAsInCareStatus', $countsAsInCareStatus);
     }
-
-
 }

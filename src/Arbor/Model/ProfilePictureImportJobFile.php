@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProfilePictureImportJobFile extends ModelBase
 {
-
     const PROFILE_PICTURE_IMPORT_JOB = 'profilePictureImportJob';
 
     const VALID_IMAGE = 'validImage';
@@ -134,6 +133,4 @@ class ProfilePictureImportJobFile extends ModelBase
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
-
-
 }

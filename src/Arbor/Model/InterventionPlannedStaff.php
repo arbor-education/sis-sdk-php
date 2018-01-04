@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InterventionPlannedStaff extends ModelBase
 {
-
     const INTERVENTION = 'intervention';
 
     const STAFF = 'staff';
@@ -116,6 +115,4 @@ class InterventionPlannedStaff extends ModelBase
     {
         $this->setProperty('pricePerHour', $pricePerHour);
     }
-
-
 }

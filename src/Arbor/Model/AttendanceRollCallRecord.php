@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AttendanceRollCallRecord extends ModelBase
 {
-
     const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
     const RECORD_DATE = 'recordDate';
@@ -170,6 +169,4 @@ class AttendanceRollCallRecord extends ModelBase
     {
         $this->setProperty('validationError', $validationError);
     }
-
-
 }

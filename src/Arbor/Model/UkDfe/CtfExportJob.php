@@ -10,7 +10,6 @@ use Arbor\Model\ModelBase;
 
 class CtfExportJob extends ModelBase
 {
-
     const EXPORT_TYPE = 'exportType';
 
     const LA_SEND = 'laSend';
@@ -282,6 +281,4 @@ class CtfExportJob extends ModelBase
     {
         $this->setProperty('dataErrorMessage', $dataErrorMessage);
     }
-
-
 }

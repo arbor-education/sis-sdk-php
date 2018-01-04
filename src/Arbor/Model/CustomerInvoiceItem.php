@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomerInvoiceItem extends ModelBase
 {
-
     const CUSTOMER_INVOICE = 'customerInvoice';
 
     const ITEM_UNIT = 'itemUnit';
@@ -224,6 +223,4 @@ class CustomerInvoiceItem extends ModelBase
     {
         $this->setProperty('fullyPaidDate', $fullyPaidDate);
     }
-
-
 }

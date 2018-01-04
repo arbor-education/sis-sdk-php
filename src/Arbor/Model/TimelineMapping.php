@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TimelineMapping extends ModelBase
 {
-
     const PERSON = 'person';
 
     const NEWS_STORY = 'newsStory';
@@ -80,6 +79,4 @@ class TimelineMapping extends ModelBase
     {
         $this->setProperty('newsStory', $newsStory);
     }
-
-
 }

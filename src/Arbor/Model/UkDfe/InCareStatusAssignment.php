@@ -11,7 +11,6 @@ use Arbor\Model\LocalAuthority;
 
 class InCareStatusAssignment extends ModelBase
 {
-
     const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::UK_DFE_IN_CARE_STATUS_ASSIGNMENT;
@@ -67,6 +66,4 @@ class InCareStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
-
 }

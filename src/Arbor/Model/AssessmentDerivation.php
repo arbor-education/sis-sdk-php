@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentDerivation extends ModelBase
 {
-
     const ASSESSMENT = 'assessment';
 
     const CALCULATOR_CLASS = 'calculatorClass';
@@ -80,6 +79,4 @@ class AssessmentDerivation extends ModelBase
     {
         $this->setProperty('calculatorClass', $calculatorClass);
     }
-
-
 }

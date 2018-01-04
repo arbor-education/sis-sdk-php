@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicNote extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ACADEMIC_UNIT = 'academicUnit';
@@ -134,6 +133,4 @@ class AcademicNote extends ModelBase
     {
         $this->setProperty('noteCreatedDatetime', $noteCreatedDatetime);
     }
-
-
 }

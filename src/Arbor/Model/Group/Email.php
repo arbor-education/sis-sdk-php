@@ -10,7 +10,6 @@ use Arbor\Model\ModelBase;
 
 class Email extends ModelBase
 {
-
     const CONTEXT = 'context';
 
     protected $_resourceType = ResourceType::GROUP_EMAIL;
@@ -66,6 +65,4 @@ class Email extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
-
 }

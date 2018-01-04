@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TimetableSlotStaff extends ModelBase
 {
-
     const TIMETABLE_SLOT = 'timetableSlot';
 
     const STAFF = 'staff';
@@ -116,6 +115,4 @@ class TimetableSlotStaff extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
-
 }

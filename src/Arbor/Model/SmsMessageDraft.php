@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SmsMessageDraft extends ModelBase
 {
-
     const SENDING_PROFILE = 'sendingProfile';
 
     const MESSAGE_TEXT = 'messageText';
@@ -188,6 +187,4 @@ class SmsMessageDraft extends ModelBase
     {
         $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
     }
-
-
 }

@@ -13,7 +13,6 @@ use Arbor\Model\IntakeSeason;
 
 class CtfImportJob extends ModelBase
 {
-
     const SOURCE_LOCAL_AUTHORITY_CODE = 'sourceLocalAuthorityCode';
 
     const SOURCE_LOCAL_AUTHORITY = 'sourceLocalAuthority';
@@ -267,6 +266,4 @@ class CtfImportJob extends ModelBase
     {
         $this->setProperty('isQueuedForAllStudentImport', $isQueuedForAllStudentImport);
     }
-
-
 }

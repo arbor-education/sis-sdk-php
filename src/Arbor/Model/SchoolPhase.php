@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SchoolPhase extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class SchoolPhase extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
-
 }

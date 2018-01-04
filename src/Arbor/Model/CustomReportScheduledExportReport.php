@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomReportScheduledExportReport extends ModelBase
 {
-
     const CUSTOM_REPORT_SCHEDULED_EXPORT = 'customReportScheduledExport';
 
     const CUSTOM_REPORT = 'customReport';
@@ -116,6 +115,4 @@ class CustomReportScheduledExportReport extends ModelBase
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }
-
-
 }

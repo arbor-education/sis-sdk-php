@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
-
     const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     const AUTO_CLOSE = 'autoClose';
@@ -386,6 +385,4 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
-
-
 }

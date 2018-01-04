@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CommunicationAction extends ModelBase
 {
-
     const COMMUNICATION = 'communication';
 
     const ACTION_TAKEN = 'actionTaken';
@@ -116,6 +115,4 @@ class CommunicationAction extends ModelBase
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }
-
-
 }

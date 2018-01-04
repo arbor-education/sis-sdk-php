@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProgressAssessmentBatch extends ModelBase
 {
-
     const BATCH_NAME = 'batchName';
 
     const ASSESSMENT = 'assessment';
@@ -116,6 +115,4 @@ class ProgressAssessmentBatch extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
-
 }

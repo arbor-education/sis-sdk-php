@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AttendanceMark extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -512,6 +511,4 @@ class AttendanceMark extends ModelBase
     {
         $this->setProperty('isExcluded', $isExcluded);
     }
-
-
 }

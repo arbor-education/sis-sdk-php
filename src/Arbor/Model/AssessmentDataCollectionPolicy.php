@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionPolicy extends ModelBase
 {
-
     const POLICY_NAME = 'policyName';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -134,6 +133,4 @@ class AssessmentDataCollectionPolicy extends ModelBase
     {
         $this->setProperty('levelTwoApprovalDeadlineOffsetDays', $levelTwoApprovalDeadlineOffsetDays);
     }
-
-
 }

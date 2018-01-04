@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BillPayer extends ModelBase
 {
-
     const LEGAL_ENTITY = 'legalEntity';
 
     const DELETED_LEGAL_ENTITY_NAME = 'deletedLegalEntityName';
@@ -98,6 +97,4 @@ class BillPayer extends ModelBase
     {
         $this->setProperty('stripeCustomerId', $stripeCustomerId);
     }
-
-
 }

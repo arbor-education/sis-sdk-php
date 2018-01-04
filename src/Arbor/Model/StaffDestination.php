@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StaffDestination extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class StaffDestination extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
-
 }

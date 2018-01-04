@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionPolicyProgressAssessmentRule extends ModelBase
 {
-
     const ASSESSMENT_DATA_COLLECTION_POLICY = 'assessmentDataCollectionPolicy';
 
     const INPUT_STAFF_TYPE = 'inputStaffType';
@@ -188,6 +187,4 @@ class AssessmentDataCollectionPolicyProgressAssessmentRule extends ModelBase
     {
         $this->setProperty('collectPredictedMark', $collectPredictedMark);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class OutboundLetterDraft extends ModelBase
 {
-
     const DOCUMENT_LAYOUT = 'documentLayout';
 
     const SENDING_PROFILE = 'sendingProfile';
@@ -188,6 +187,4 @@ class OutboundLetterDraft extends ModelBase
     {
         $this->setProperty('generationCompletedDatetime', $generationCompletedDatetime);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DataExportError extends ModelBase
 {
-
     const EXPORT_JOB = 'exportJob';
 
     const ERROR_MESSAGE = 'errorMessage';
@@ -80,6 +79,4 @@ class DataExportError extends ModelBase
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
-
-
 }

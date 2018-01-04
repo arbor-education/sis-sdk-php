@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ChildProtectionStatusAssignment extends ModelBase
 {
-
     const CHILD_PROTECTION_STATUS = 'childProtectionStatus';
 
     const STUDENT = 'student';
@@ -152,6 +151,4 @@ class ChildProtectionStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
-
 }

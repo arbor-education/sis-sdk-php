@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ImportRecord extends ModelBase
 {
-
     const IMPORTER = 'importer';
 
     const IMPORTER_NAME = 'importerName';
@@ -116,6 +115,4 @@ class ImportRecord extends ModelBase
     {
         $this->setProperty('importedRecord', $importedRecord);
     }
-
-
 }

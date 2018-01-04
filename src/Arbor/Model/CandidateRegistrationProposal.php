@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CandidateRegistrationProposal extends ModelBase
 {
-
     const CANDIDATE_PROPOSAL = 'candidateProposal';
 
     const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
@@ -170,6 +169,4 @@ class CandidateRegistrationProposal extends ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
-
-
 }
