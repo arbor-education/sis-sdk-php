@@ -14,8 +14,6 @@ class ProgressAssessmentBatch extends ModelBase
 
     const ACADEMIC_YEAR = 'academicYear';
 
-    const ACADEMIC_YEAR_ASSESSMENT = 'academicYearAssessment';
-
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
     /**
@@ -116,21 +114,5 @@ class ProgressAssessmentBatch extends ModelBase
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
-    }
-
-    /**
-     * @return AcademicYearAssessment
-     */
-    public function getAcademicYearAssessment()
-    {
-        return $this->getProperty('academicYearAssessment');
-    }
-
-    /**
-     * @param AcademicYearAssessment $academicYearAssessment
-     */
-    public function setAcademicYearAssessment(AcademicYearAssessment $academicYearAssessment = null)
-    {
-        $this->setProperty('academicYearAssessment', $academicYearAssessment);
     }
 }

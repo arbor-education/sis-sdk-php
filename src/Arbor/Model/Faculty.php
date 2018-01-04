@@ -10,6 +10,8 @@ class Faculty extends ModelBase
 
     const FACULTY_NAME = 'facultyName';
 
+    const IS_ACTIVE = 'isActive';
+
     protected $_resourceType = ResourceType::FACULTY;
 
     /**
@@ -78,5 +80,21 @@ class Faculty extends ModelBase
     public function setFacultyName($facultyName = null)
     {
         $this->setProperty('facultyName', $facultyName);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->getProperty('isActive');
+    }
+
+    /**
+     * @param bool $isActive
+     */
+    public function setIsActive($isActive = null)
+    {
+        $this->setProperty('isActive', $isActive);
     }
 }

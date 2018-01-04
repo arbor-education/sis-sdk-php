@@ -16,9 +16,7 @@ class CustomReportPostGroupingFilter extends ModelBase
 
     const CONDITION_PARAMS = 'conditionParams';
 
-    const TARGET_TYPE = 'targetType';
-
-    const TARGET_INDEX = 'targetIndex';
+    const TARGET_GROUPING = 'targetGrouping';
 
     const FILTER_GROUP_INDEX = 'filterGroupIndex';
 
@@ -141,35 +139,19 @@ class CustomReportPostGroupingFilter extends ModelBase
     }
 
     /**
-     * @return string
+     * @return CustomReportGrouping
      */
-    public function getTargetType()
+    public function getTargetGrouping()
     {
-        return $this->getProperty('targetType');
+        return $this->getProperty('targetGrouping');
     }
 
     /**
-     * @param string $targetType
+     * @param CustomReportGrouping $targetGrouping
      */
-    public function setTargetType($targetType = null)
+    public function setTargetGrouping(CustomReportGrouping $targetGrouping = null)
     {
-        $this->setProperty('targetType', $targetType);
-    }
-
-    /**
-     * @return int
-     */
-    public function getTargetIndex()
-    {
-        return $this->getProperty('targetIndex');
-    }
-
-    /**
-     * @param int $targetIndex
-     */
-    public function setTargetIndex($targetIndex = null)
-    {
-        $this->setProperty('targetIndex', $targetIndex);
+        $this->setProperty('targetGrouping', $targetGrouping);
     }
 
     /**

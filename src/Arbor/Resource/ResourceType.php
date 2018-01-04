@@ -124,6 +124,7 @@ class ResourceType
     const CHECK_TYPE = 'CheckType';
     const CHEQUE = 'Cheque';
     const CHEQUE_BOOK = 'ChequeBook';
+    const CHILD_PROTECTION_NOTE = 'ChildProtectionNote';
     const CHILD_PROTECTION_STATUS = 'ChildProtectionStatus';
     const CHILD_PROTECTION_STATUS_ASSIGNMENT = 'ChildProtectionStatusAssignment';
     const CLUB = 'Club';
@@ -157,6 +158,7 @@ class ResourceType
     const CURRICULUM_TIER = 'CurriculumTier';
     const CUSTOM_GROUP = 'CustomGroup';
     const CUSTOM_GROUP_MEMBERSHIP = 'CustomGroupMembership';
+    const CUSTOM_GROUP_MEMBERSHIP_CRITERION = 'CustomGroupMembershipCriterion';
     const CUSTOM_REPORT = 'CustomReport';
     const CUSTOM_REPORT_COLUMN = 'CustomReportColumn';
     const CUSTOM_REPORT_EMAIL_LOG = 'CustomReportEmailLog';
@@ -204,7 +206,6 @@ class ResourceType
     const DOCUMENT_LAYOUT = 'DocumentLayout';
     const EDUCATION_PLAN = 'EducationPlan';
     const EDUCATION_PLAN_CONTRIBUTOR = 'EducationPlanContributor';
-    const EDUCATION_RECORD_TYPE = 'EducationRecordType';
     const EDUCATIONAL_INSTITUTION = 'EducationalInstitution';
     const EDUCATIONAL_INSTITUTION_ENROLMENT = 'EducationalInstitutionEnrolment';
     const EDUCATIONAL_INSTITUTION_STAFF = 'EducationalInstitutionStaff';
@@ -262,6 +263,7 @@ class ResourceType
     const IMMUNIZATION_TYPE = 'ImmunizationType';
     const IMPAIRMENT_CATEGORY = 'ImpairmentCategory';
     const IMPORT_RECORD = 'ImportRecord';
+    const IN_CARE_NOTE = 'InCareNote';
     const IN_CARE_STATUS = 'InCareStatus';
     const IN_CARE_STATUS_ASSIGNMENT = 'InCareStatusAssignment';
     const INBOUND_SMS_MESSAGE = 'InboundSmsMessage';
@@ -355,6 +357,7 @@ class ResourceType
     const NOTICE = 'Notice';
     const OUTBOUND_LETTER = 'OutboundLetter';
     const OUTBOUND_LETTER_DRAFT = 'OutboundLetterDraft';
+    const OUTBOUND_LETTER_RECIPIENT = 'OutboundLetterRecipient';
     const PASSWORD_RULE = 'PasswordRule';
     const PASTORAL_NOTE = 'PastoralNote';
     const PAY_SCALE = 'PayScale';
@@ -582,6 +585,7 @@ class ResourceType
     const USER = 'User';
     const USER_DEFINED_FIELD = 'UserDefinedField';
     const USER_DEFINED_RECORD = 'UserDefinedRecord';
+    const USER_LOGIN = 'UserLogin';
     const USER_NOTIFICATION = 'UserNotification';
     const USER_ROLE = 'UserRole';
     const USER_ROLE_ASSIGNMENT = 'UserRoleAssignment';

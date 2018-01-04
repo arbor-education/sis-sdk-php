@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportOrdering extends ModelBase
+class CustomGroupMembershipCriterion extends ModelBase
 {
-    const CUSTOM_REPORT = 'customReport';
+    const CUSTOM_GROUP = 'customGroup';
 
     const FIELD_CLASS = 'fieldClass';
 
@@ -14,15 +14,15 @@ class CustomReportOrdering extends ModelBase
 
     const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const DIRECTION = 'direction';
+    const CONDITION_CLASS = 'conditionClass';
 
-    const TARGET_GROUPING = 'targetGrouping';
+    const CONDITION_PARAMS = 'conditionParams';
 
-    protected $_resourceType = ResourceType::CUSTOM_REPORT_ORDERING;
+    protected $_resourceType = ResourceType::CUSTOM_GROUP_MEMBERSHIP_CRITERION;
 
     /**
      * @param Query $query
-     * @return CustomReportOrdering[] | Collection
+     * @return CustomGroupMembershipCriterion[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -36,14 +36,14 @@ class CustomReportOrdering extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::CUSTOM_REPORT_ORDERING);
+        $query->setResourceType(ResourceType::CUSTOM_GROUP_MEMBERSHIP_CRITERION);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return CustomReportOrdering
+     * @return CustomGroupMembershipCriterion
      * @throws Exception
      */
     public static function retrieve($id)
@@ -53,23 +53,23 @@ class CustomReportOrdering extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::CUSTOM_REPORT_ORDERING, $id);
+        return $gateway->retrieve(ResourceType::CUSTOM_GROUP_MEMBERSHIP_CRITERION, $id);
     }
 
     /**
-     * @return CustomReport
+     * @return CustomGroup
      */
-    public function getCustomReport()
+    public function getCustomGroup()
     {
-        return $this->getProperty('customReport');
+        return $this->getProperty('customGroup');
     }
 
     /**
-     * @param CustomReport $customReport
+     * @param CustomGroup $customGroup
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomGroup(CustomGroup $customGroup = null)
     {
-        $this->setProperty('customReport', $customReport);
+        $this->setProperty('customGroup', $customGroup);
     }
 
     /**
@@ -123,32 +123,32 @@ class CustomReportOrdering extends ModelBase
     /**
      * @return string
      */
-    public function getDirection()
+    public function getConditionClass()
     {
-        return $this->getProperty('direction');
+        return $this->getProperty('conditionClass');
     }
 
     /**
-     * @param string $direction
+     * @param string $conditionClass
      */
-    public function setDirection($direction = null)
+    public function setConditionClass($conditionClass = null)
     {
-        $this->setProperty('direction', $direction);
+        $this->setProperty('conditionClass', $conditionClass);
     }
 
     /**
-     * @return CustomReportGrouping
+     * @return string
      */
-    public function getTargetGrouping()
+    public function getConditionParams()
     {
-        return $this->getProperty('targetGrouping');
+        return $this->getProperty('conditionParams');
     }
 
     /**
-     * @param CustomReportGrouping $targetGrouping
+     * @param string $conditionParams
      */
-    public function setTargetGrouping(CustomReportGrouping $targetGrouping = null)
+    public function setConditionParams($conditionParams = null)
     {
-        $this->setProperty('targetGrouping', $targetGrouping);
+        $this->setProperty('conditionParams', $conditionParams);
     }
 }

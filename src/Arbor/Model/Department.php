@@ -10,6 +10,8 @@ class Department extends ModelBase
 
     const DEPARTMENT_NAME = 'departmentName';
 
+    const IS_ACTIVE = 'isActive';
+
     protected $_resourceType = ResourceType::DEPARTMENT;
 
     /**
@@ -78,5 +80,21 @@ class Department extends ModelBase
     public function setDepartmentName($departmentName = null)
     {
         $this->setProperty('departmentName', $departmentName);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->getProperty('isActive');
+    }
+
+    /**
+     * @param bool $isActive
+     */
+    public function setIsActive($isActive = null)
+    {
+        $this->setProperty('isActive', $isActive);
     }
 }

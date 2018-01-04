@@ -6,6 +6,12 @@ use Arbor\Query\Query;
 
 class FacultyResponsibilityType extends ModelBase
 {
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
     const RESPONSIBILITY_TYPE_NAME = 'responsibilityTypeName';
 
     protected $_resourceType = ResourceType::FACULTY_RESPONSIBILITY_TYPE;
@@ -44,6 +50,54 @@ class FacultyResponsibilityType extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::FACULTY_RESPONSIBILITY_TYPE, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**

@@ -12,7 +12,7 @@ class FacultyDepartment extends ModelBase
 
     const START_DATE = 'startDate';
 
-    const END_DATETIME = 'endDatetime';
+    const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::FACULTY_DEPARTMENT;
 
@@ -103,16 +103,16 @@ class FacultyDepartment extends ModelBase
     /**
      * @return \DateTime
      */
-    public function getEndDatetime()
+    public function getEndDate()
     {
-        return $this->getProperty('endDatetime');
+        return $this->getProperty('endDate');
     }
 
     /**
-     * @param \DateTime $endDatetime
+     * @param \DateTime $endDate
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty('endDatetime', $endDatetime);
+        $this->setProperty('endDate', $endDate);
     }
 }

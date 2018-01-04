@@ -10,6 +10,8 @@ class CustomReportShare extends ModelBase
 
     const SHARED_WITH = 'sharedWith';
 
+    const PERMISSION_LEVEL = 'permissionLevel';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SHARE;
 
     /**
@@ -78,5 +80,21 @@ class CustomReportShare extends ModelBase
     public function setSharedWith(ModelBase $sharedWith = null)
     {
         $this->setProperty('sharedWith', $sharedWith);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPermissionLevel()
+    {
+        return $this->getProperty('permissionLevel');
+    }
+
+    /**
+     * @param string $permissionLevel
+     */
+    public function setPermissionLevel($permissionLevel = null)
+    {
+        $this->setProperty('permissionLevel', $permissionLevel);
     }
 }

@@ -14,6 +14,8 @@ class EnrolmentModeAssignment extends ModelBase
 
     const END_DATE = 'endDate';
 
+    const OTHER_EDUCATIONAL_INSTITUTION = 'otherEducationalInstitution';
+
     protected $_resourceType = ResourceType::ENROLMENT_MODE_ASSIGNMENT;
 
     /**
@@ -114,5 +116,21 @@ class EnrolmentModeAssignment extends ModelBase
     public function setEndDate(\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return EducationalInstitution
+     */
+    public function getOtherEducationalInstitution()
+    {
+        return $this->getProperty('otherEducationalInstitution');
+    }
+
+    /**
+     * @param EducationalInstitution $otherEducationalInstitution
+     */
+    public function setOtherEducationalInstitution(EducationalInstitution $otherEducationalInstitution = null)
+    {
+        $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
     }
 }

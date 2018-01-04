@@ -38,6 +38,8 @@ class DocumentLayout extends ModelBase
 
     const SHOW_ADDRESS_ENVELOPE_SIZE = 'showAddressEnvelopeSize';
 
+    const ARCHIVED = 'archived';
+
     protected $_resourceType = ResourceType::DOCUMENT_LAYOUT;
 
     /**
@@ -330,5 +332,21 @@ class DocumentLayout extends ModelBase
     public function setShowAddressEnvelopeSize($showAddressEnvelopeSize = null)
     {
         $this->setProperty('showAddressEnvelopeSize', $showAddressEnvelopeSize);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getArchived()
+    {
+        return $this->getProperty('archived');
+    }
+
+    /**
+     * @param bool $archived
+     */
+    public function setArchived($archived = null)
+    {
+        $this->setProperty('archived', $archived);
     }
 }

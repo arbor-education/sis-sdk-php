@@ -18,6 +18,8 @@ class CustomGroup extends ModelBase
 
     const CONTAINS_STAFF = 'containsStaff';
 
+    const IS_DYNAMIC = 'isDynamic';
+
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
@@ -154,6 +156,22 @@ class CustomGroup extends ModelBase
     public function setContainsStaff($containsStaff = null)
     {
         $this->setProperty('containsStaff', $containsStaff);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsDynamic()
+    {
+        return $this->getProperty('isDynamic');
+    }
+
+    /**
+     * @param bool $isDynamic
+     */
+    public function setIsDynamic($isDynamic = null)
+    {
+        $this->setProperty('isDynamic', $isDynamic);
     }
 
     /**
