@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeInstance extends ModelBase
 {
+
     const PARTNER_UKPRN = 'partnerUkprn';
 
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_INSTANCE;
@@ -65,4 +66,6 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty('partnerUkprn', $partnerUkprn);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Cheque extends ModelBase
 {
+
     const CHEQUE_BOOK = 'chequeBook';
 
     const CHEQUE_NUMBER = 'chequeNumber';
@@ -79,4 +80,6 @@ class Cheque extends ModelBase
     {
         $this->setProperty('chequeNumber', $chequeNumber);
     }
+
+
 }

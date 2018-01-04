@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InterventionStaffCost extends ModelBase
 {
+
     const STAFF = 'staff';
 
     const COST_PER_HOUR = 'costPerHour';
@@ -151,4 +152,6 @@ class InterventionStaffCost extends ModelBase
     {
         $this->setProperty('minimumCharge', $minimumCharge);
     }
+
+
 }

@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class UnenrolmentReason extends ModelBase
 {
+
     const D00206 = 'd00206';
 
     protected $_resourceType = ResourceType::UK_DFE_UNENROLMENT_REASON;
@@ -65,4 +66,6 @@ class UnenrolmentReason extends ModelBase
     {
         $this->setProperty('d00206', $d00206);
     }
+
+
 }

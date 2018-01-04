@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class PastoralNote extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const SUMMARY = 'summary';
@@ -115,4 +116,6 @@ class PastoralNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentCurriculumAchievement extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const CURRICULUM_STATEMENT = 'curriculumStatement';
@@ -151,4 +152,6 @@ class StudentCurriculumAchievement extends ModelBase
     {
         $this->setProperty('achievementDate', $achievementDate);
     }
+
+
 }

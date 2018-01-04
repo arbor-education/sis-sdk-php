@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DataItemSubscription extends ModelBase
 {
+
     const ENTITY_TYPE = 'entityType';
 
     const URL = 'url';
@@ -133,4 +134,6 @@ class DataItemSubscription extends ModelBase
     {
         $this->setProperty('doNotUpdate', $doNotUpdate);
     }
+
+
 }

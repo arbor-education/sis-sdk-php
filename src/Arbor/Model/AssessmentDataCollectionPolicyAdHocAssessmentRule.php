@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionPolicyAdHocAssessmentRule extends ModelBase
 {
+
     const ASSESSMENT_DATA_COLLECTION_POLICY = 'assessmentDataCollectionPolicy';
 
     const INPUT_STAFF_TYPE = 'inputStaffType';
@@ -169,4 +170,6 @@ class AssessmentDataCollectionPolicyAdHocAssessmentRule extends ModelBase
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
+
+
 }

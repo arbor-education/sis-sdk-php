@@ -11,6 +11,7 @@ use Arbor\Model\LocalAuthority;
 
 class Student extends ModelBase
 {
+
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
@@ -228,4 +229,6 @@ class Student extends ModelBase
     {
         $this->setProperty('thirtyHourCode', $thirtyHourCode);
     }
+
+
 }

@@ -12,6 +12,7 @@ use Arbor\Model\Subject;
 
 class SchoolWorkforceCensusVacancy extends ModelBase
 {
+
     const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -175,4 +176,6 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     {
         $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }
+
+
 }

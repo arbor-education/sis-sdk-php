@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class NextOfKinRelationship extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class NextOfKinRelationship extends ModelBase
     {
         $this->setProperty('relationshipName', $relationshipName);
     }
+
+
 }

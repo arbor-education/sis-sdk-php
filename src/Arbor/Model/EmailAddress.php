@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmailAddress extends ModelBase
 {
+
     const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
 
     const EMAIL_ADDRESS_TYPE = 'emailAddressType';
@@ -169,4 +170,6 @@ class EmailAddress extends ModelBase
     {
         $this->setProperty('disposable', $disposable);
     }
+
+
 }

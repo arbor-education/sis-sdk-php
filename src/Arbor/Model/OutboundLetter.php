@@ -6,13 +6,10 @@ use Arbor\Query\Query;
 
 class OutboundLetter extends ModelBase
 {
+
     const OUTBOUND_LETTER_DRAFT = 'outboundLetterDraft';
 
     const SENDER = 'sender';
-
-    const RECIPIENT = 'recipient';
-
-    const DRAFT_RECIPIENT = 'draftRecipient';
 
     const DOCUMENT_LAYOUT = 'documentLayout';
 
@@ -93,38 +90,6 @@ class OutboundLetter extends ModelBase
     }
 
     /**
-     * @return ModelBase
-     */
-    public function getRecipient()
-    {
-        return $this->getProperty('recipient');
-    }
-
-    /**
-     * @param ModelBase $recipient
-     */
-    public function setRecipient(ModelBase $recipient = null)
-    {
-        $this->setProperty('recipient', $recipient);
-    }
-
-    /**
-     * @return MessageDraftRecipient
-     */
-    public function getDraftRecipient()
-    {
-        return $this->getProperty('draftRecipient');
-    }
-
-    /**
-     * @param MessageDraftRecipient $draftRecipient
-     */
-    public function setDraftRecipient(MessageDraftRecipient $draftRecipient = null)
-    {
-        $this->setProperty('draftRecipient', $draftRecipient);
-    }
-
-    /**
      * @return DocumentLayout
      */
     public function getDocumentLayout()
@@ -187,4 +152,6 @@ class OutboundLetter extends ModelBase
     {
         $this->setProperty('actionRequiredDatetime', $actionRequiredDatetime);
     }
+
+
 }

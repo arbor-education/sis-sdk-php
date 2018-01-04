@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MealSittingAutomaticAttendeeTarget extends ModelBase
 {
+
     const MEAL_SITTING = 'mealSitting';
 
     const AUTOMATIC_ATTENDEE_TARGET = 'automaticAttendeeTarget';
@@ -79,4 +80,6 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }
+
+
 }

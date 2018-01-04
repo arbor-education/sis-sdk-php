@@ -11,6 +11,7 @@ use Arbor\Model\SchoolPhase;
 
 class SchoolPhaseAssignment extends ModelBase
 {
+
     const INSTITUTION = 'institution';
 
     const SCHOOL_PHASE = 'schoolPhase';
@@ -120,4 +121,6 @@ class SchoolPhaseAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

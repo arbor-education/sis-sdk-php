@@ -7,6 +7,7 @@ use Arbor\Model\UkDfe\PayScaleCategory;
 
 class PayScale extends ModelBase
 {
+
     const PAY_SCALE_CODE = 'payScaleCode';
 
     const PAY_SCALE_NAME = 'payScaleName';
@@ -188,4 +189,6 @@ class PayScale extends ModelBase
     {
         $this->setProperty('payScaleCategory', $payScaleCategory);
     }
+
+
 }

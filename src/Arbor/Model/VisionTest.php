@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class VisionTest extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const TEST_DATE = 'testDate';
@@ -115,4 +116,6 @@ class VisionTest extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
+
+
 }

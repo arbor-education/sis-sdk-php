@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class NewsStoryComment extends ModelBase
 {
+
     const NEWS_STORY = 'newsStory';
 
     const TEXT = 'text';
@@ -79,4 +80,6 @@ class NewsStoryComment extends ModelBase
     {
         $this->setProperty('text', $text);
     }
+
+
 }

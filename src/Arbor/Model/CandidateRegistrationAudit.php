@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CandidateRegistrationAudit extends ModelBase
 {
+
     const CANDIDATE_REGISTRATION = 'candidateRegistration';
 
     const TYPE = 'type';
@@ -97,4 +98,6 @@ class CandidateRegistrationAudit extends ModelBase
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }
+
+
 }

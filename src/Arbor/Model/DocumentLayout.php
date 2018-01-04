@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DocumentLayout extends ModelBase
 {
+
     const NAME = 'name';
 
     const FIRST_PAGE_HEADER_HTML = 'firstPageHeaderHtml';
@@ -37,6 +38,8 @@ class DocumentLayout extends ModelBase
     const DEFAULT_FONT_SIZE = 'defaultFontSize';
 
     const SHOW_ADDRESS_ENVELOPE_SIZE = 'showAddressEnvelopeSize';
+
+    const ARCHIVED = 'archived';
 
     protected $_resourceType = ResourceType::DOCUMENT_LAYOUT;
 
@@ -331,4 +334,22 @@ class DocumentLayout extends ModelBase
     {
         $this->setProperty('showAddressEnvelopeSize', $showAddressEnvelopeSize);
     }
+
+    /**
+     * @return bool
+     */
+    public function getArchived()
+    {
+        return $this->getProperty('archived');
+    }
+
+    /**
+     * @param bool $archived
+     */
+    public function setArchived($archived = null)
+    {
+        $this->setProperty('archived', $archived);
+    }
+
+
 }

@@ -6,9 +6,12 @@ use Arbor\Query\Query;
 
 class Department extends ModelBase
 {
+
     const DEPARTMENT_CODE = 'departmentCode';
 
     const DEPARTMENT_NAME = 'departmentName';
+
+    const IS_ACTIVE = 'isActive';
 
     protected $_resourceType = ResourceType::DEPARTMENT;
 
@@ -79,4 +82,22 @@ class Department extends ModelBase
     {
         $this->setProperty('departmentName', $departmentName);
     }
+
+    /**
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->getProperty('isActive');
+    }
+
+    /**
+     * @param bool $isActive
+     */
+    public function setIsActive($isActive = null)
+    {
+        $this->setProperty('isActive', $isActive);
+    }
+
+
 }

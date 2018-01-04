@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InvigilationSession extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -115,4 +116,6 @@ class InvigilationSession extends ModelBase
     {
         $this->setProperty('location', $location);
     }
+
+
 }

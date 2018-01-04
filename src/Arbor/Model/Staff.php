@@ -7,6 +7,7 @@ use Arbor\Model\UkDfe\QualifiedTeacherRoute;
 
 class Staff extends ModelBase
 {
+
     const PERSON = 'person';
 
     const ETHNICITY = 'ethnicity';
@@ -260,4 +261,6 @@ class Staff extends ModelBase
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
+
+
 }

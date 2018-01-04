@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ProgressAssessmentBatch extends ModelBase
 {
+
     const BATCH_NAME = 'batchName';
 
     const ASSESSMENT = 'assessment';
@@ -13,8 +14,6 @@ class ProgressAssessmentBatch extends ModelBase
     const PROGRESS_MEASUREMENT_PERIOD_SET = 'progressMeasurementPeriodSet';
 
     const ACADEMIC_YEAR = 'academicYear';
-
-    const ACADEMIC_YEAR_ASSESSMENT = 'academicYearAssessment';
 
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
@@ -118,19 +117,5 @@ class ProgressAssessmentBatch extends ModelBase
         $this->setProperty('academicYear', $academicYear);
     }
 
-    /**
-     * @return AcademicYearAssessment
-     */
-    public function getAcademicYearAssessment()
-    {
-        return $this->getProperty('academicYearAssessment');
-    }
 
-    /**
-     * @param AcademicYearAssessment $academicYearAssessment
-     */
-    public function setAcademicYearAssessment(AcademicYearAssessment $academicYearAssessment = null)
-    {
-        $this->setProperty('academicYearAssessment', $academicYearAssessment);
-    }
 }

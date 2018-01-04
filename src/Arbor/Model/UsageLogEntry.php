@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UsageLogEntry extends ModelBase
 {
+
     const TIMESTAMP = 'timestamp';
 
     const USER = 'user';
@@ -25,6 +26,10 @@ class UsageLogEntry extends ModelBase
     const CONTROLLER = 'controller';
 
     const ACTION = 'action';
+
+    const CLIENT_IP = 'clientIp';
+
+    const USER_AGENT = 'userAgent';
 
     protected $_resourceType = ResourceType::USAGE_LOG_ENTRY;
 
@@ -223,4 +228,38 @@ class UsageLogEntry extends ModelBase
     {
         $this->setProperty('action', $action);
     }
+
+    /**
+     * @return string
+     */
+    public function getClientIp()
+    {
+        return $this->getProperty('clientIp');
+    }
+
+    /**
+     * @param string $clientIp
+     */
+    public function setClientIp($clientIp = null)
+    {
+        $this->setProperty('clientIp', $clientIp);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserAgent()
+    {
+        return $this->getProperty('userAgent');
+    }
+
+    /**
+     * @param string $userAgent
+     */
+    public function setUserAgent($userAgent = null)
+    {
+        $this->setProperty('userAgent', $userAgent);
+    }
+
+
 }

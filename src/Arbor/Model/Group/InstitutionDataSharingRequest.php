@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class InstitutionDataSharingRequest extends ModelBase
 {
+
     const GROUP_INSTITUTION = 'groupInstitution';
 
     const APPROVED_DATETIME = 'approvedDatetime';
@@ -137,4 +138,6 @@ class InstitutionDataSharingRequest extends ModelBase
     {
         $this->setProperty('declinedBySchoolUser', $declinedBySchoolUser);
     }
+
+
 }

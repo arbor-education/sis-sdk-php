@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EnrolmentModeAssignment extends ModelBase
 {
+
     const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
 
     const ENROLMENT_MODE = 'enrolmentMode';
@@ -13,6 +14,8 @@ class EnrolmentModeAssignment extends ModelBase
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
+
+    const OTHER_EDUCATIONAL_INSTITUTION = 'otherEducationalInstitution';
 
     protected $_resourceType = ResourceType::ENROLMENT_MODE_ASSIGNMENT;
 
@@ -115,4 +118,22 @@ class EnrolmentModeAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+    /**
+     * @return EducationalInstitution
+     */
+    public function getOtherEducationalInstitution()
+    {
+        return $this->getProperty('otherEducationalInstitution');
+    }
+
+    /**
+     * @param EducationalInstitution $otherEducationalInstitution
+     */
+    public function setOtherEducationalInstitution(EducationalInstitution $otherEducationalInstitution = null)
+    {
+        $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
+    }
+
+
 }

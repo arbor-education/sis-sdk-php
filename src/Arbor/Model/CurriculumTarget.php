@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CurriculumTarget extends ModelBase
 {
+
     const CURRICULUM_TARGET_SET = 'curriculumTargetSet';
 
     const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
@@ -115,4 +116,6 @@ class CurriculumTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
+
+
 }

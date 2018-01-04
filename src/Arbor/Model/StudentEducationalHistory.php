@@ -6,21 +6,18 @@ use Arbor\Query\Query;
 
 class StudentEducationalHistory extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const EDUCATION_RECORD_TYPE = 'educationRecordType';
+    const EXPECTED_ENTRY_DATE = 'expectedEntryDate';
 
-    const ARRIVAL_DATE = 'arrivalDate';
+    const ACTUAL_ENTRY_DATE = 'actualEntryDate';
 
     const LEAVING_DATE = 'leavingDate';
 
     const UNENROLMENT_REASON = 'unenrolmentReason';
-
-    const ENROLMENT_MODE = 'enrolmentMode';
-
-    const ATTENDANCE_MODE = 'attendanceMode';
 
     protected $_resourceType = ResourceType::STUDENT_EDUCATIONAL_HISTORY;
 
@@ -93,35 +90,35 @@ class StudentEducationalHistory extends ModelBase
     }
 
     /**
-     * @return EducationRecordType
+     * @return \DateTime
      */
-    public function getEducationRecordType()
+    public function getExpectedEntryDate()
     {
-        return $this->getProperty('educationRecordType');
+        return $this->getProperty('expectedEntryDate');
     }
 
     /**
-     * @param EducationRecordType $educationRecordType
+     * @param \DateTime $expectedEntryDate
      */
-    public function setEducationRecordType(EducationRecordType $educationRecordType = null)
+    public function setExpectedEntryDate(\DateTime $expectedEntryDate = null)
     {
-        $this->setProperty('educationRecordType', $educationRecordType);
+        $this->setProperty('expectedEntryDate', $expectedEntryDate);
     }
 
     /**
      * @return \DateTime
      */
-    public function getArrivalDate()
+    public function getActualEntryDate()
     {
-        return $this->getProperty('arrivalDate');
+        return $this->getProperty('actualEntryDate');
     }
 
     /**
-     * @param \DateTime $arrivalDate
+     * @param \DateTime $actualEntryDate
      */
-    public function setArrivalDate(\DateTime $arrivalDate = null)
+    public function setActualEntryDate(\DateTime $actualEntryDate = null)
     {
-        $this->setProperty('arrivalDate', $arrivalDate);
+        $this->setProperty('actualEntryDate', $actualEntryDate);
     }
 
     /**
@@ -156,35 +153,5 @@ class StudentEducationalHistory extends ModelBase
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
 
-    /**
-     * @return EnrolmentMode
-     */
-    public function getEnrolmentMode()
-    {
-        return $this->getProperty('enrolmentMode');
-    }
 
-    /**
-     * @param EnrolmentMode $enrolmentMode
-     */
-    public function setEnrolmentMode(EnrolmentMode $enrolmentMode = null)
-    {
-        $this->setProperty('enrolmentMode', $enrolmentMode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAttendanceMode()
-    {
-        return $this->getProperty('attendanceMode');
-    }
-
-    /**
-     * @param string $attendanceMode
-     */
-    public function setAttendanceMode($attendanceMode = null)
-    {
-        $this->setProperty('attendanceMode', $attendanceMode);
-    }
 }

@@ -6,9 +6,12 @@ use Arbor\Query\Query;
 
 class Faculty extends ModelBase
 {
+
     const CODE = 'code';
 
     const FACULTY_NAME = 'facultyName';
+
+    const IS_ACTIVE = 'isActive';
 
     protected $_resourceType = ResourceType::FACULTY;
 
@@ -79,4 +82,22 @@ class Faculty extends ModelBase
     {
         $this->setProperty('facultyName', $facultyName);
     }
+
+    /**
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->getProperty('isActive');
+    }
+
+    /**
+     * @param bool $isActive
+     */
+    public function setIsActive($isActive = null)
+    {
+        $this->setProperty('isActive', $isActive);
+    }
+
+
 }

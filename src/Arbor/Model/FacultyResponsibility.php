@@ -6,13 +6,14 @@ use Arbor\Query\Query;
 
 class FacultyResponsibility extends ModelBase
 {
+
     const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
 
     const FACULTY = 'faculty';
 
     const START_DATE = 'startDate';
 
-    const END_DATETIME = 'endDatetime';
+    const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::FACULTY_RESPONSIBILITY;
 
@@ -103,16 +104,18 @@ class FacultyResponsibility extends ModelBase
     /**
      * @return \DateTime
      */
-    public function getEndDatetime()
+    public function getEndDate()
     {
-        return $this->getProperty('endDatetime');
+        return $this->getProperty('endDate');
     }
 
     /**
-     * @param \DateTime $endDatetime
+     * @param \DateTime $endDate
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty('endDatetime', $endDatetime);
+        $this->setProperty('endDate', $endDate);
     }
+
+
 }

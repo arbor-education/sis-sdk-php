@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SuspectedDuplicate extends ModelBase
 {
+
     const SUSPECT_ONE = 'suspectOne';
 
     const SUSPECT_TWO = 'suspectTwo';
@@ -169,4 +170,6 @@ class SuspectedDuplicate extends ModelBase
     {
         $this->setProperty('resolution', $resolution);
     }
+
+
 }

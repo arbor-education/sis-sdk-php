@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentTemplateAssessment extends ModelBase
 {
+
     const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
     const ASSESSMENT = 'assessment';
@@ -97,4 +98,6 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
+
 }

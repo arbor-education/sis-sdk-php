@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmailDraft extends ModelBase
 {
+
     const SENDING_PROFILE = 'sendingProfile';
 
     const SUBJECT = 'subject';
@@ -205,4 +206,6 @@ class EmailDraft extends ModelBase
     {
         $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
     }
+
+
 }

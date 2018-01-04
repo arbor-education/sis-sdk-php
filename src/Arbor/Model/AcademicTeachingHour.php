@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicTeachingHour extends ModelBase
 {
+
     const EFFECTIVE_DATE = 'effectiveDate';
 
     const END_DATE = 'endDate';
@@ -133,4 +134,6 @@ class AcademicTeachingHour extends ModelBase
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
+
+
 }

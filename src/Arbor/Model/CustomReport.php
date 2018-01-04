@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomReport extends ModelBase
 {
+
     const TITLE = 'title';
 
     const REPORT_CLASS = 'reportClass';
@@ -169,4 +170,6 @@ class CustomReport extends ModelBase
     {
         $this->setProperty('setupCompletedDatetime', $setupCompletedDatetime);
     }
+
+
 }

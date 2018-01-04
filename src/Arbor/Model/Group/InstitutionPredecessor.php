@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class InstitutionPredecessor extends ModelBase
 {
+
     const INSTITUTION = 'institution';
 
     const PREDECESSOR_INSTITUTION = 'predecessorInstitution';
@@ -101,4 +102,6 @@ class InstitutionPredecessor extends ModelBase
     {
         $this->setProperty('fromDate', $fromDate);
     }
+
+
 }

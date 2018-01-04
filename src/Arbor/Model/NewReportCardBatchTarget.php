@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class NewReportCardBatchTarget extends ModelBase
 {
+
     const REPORT_CARD_BATCH = 'reportCardBatch';
 
     const TARGET = 'target';
@@ -97,4 +98,6 @@ class NewReportCardBatchTarget extends ModelBase
     {
         $this->setProperty('reportsGenerating', $reportsGenerating);
     }
+
+
 }

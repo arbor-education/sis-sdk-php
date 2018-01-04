@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Person extends ModelBase
 {
+
     const GENDER = 'gender';
 
     const TITLE = 'title';
@@ -259,4 +260,6 @@ class Person extends ModelBase
     {
         $this->setProperty('dateOfDeath', $dateOfDeath);
     }
+
+
 }

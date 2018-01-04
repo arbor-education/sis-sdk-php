@@ -11,6 +11,7 @@ use Arbor\Model\CurriculumTier;
 
 class InstitutionCurriculumTierAssignment extends ModelBase
 {
+
     const INSTITUTION = 'institution';
 
     const CURRICULUM_TIER = 'curriculumTier';
@@ -120,4 +121,6 @@ class InstitutionCurriculumTierAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

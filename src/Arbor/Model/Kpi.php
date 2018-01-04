@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Kpi extends ModelBase
 {
+
     const CODE = 'code';
 
     const KPI_NAME = 'kpiName';
@@ -367,4 +368,6 @@ class Kpi extends ModelBase
     {
         $this->setProperty('calculateForStudentAcademicUnitEnrolments', $calculateForStudentAcademicUnitEnrolments);
     }
+
+
 }

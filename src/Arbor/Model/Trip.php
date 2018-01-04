@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Trip extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -277,4 +278,6 @@ class Trip extends ModelBase
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DeliveryAddress extends ModelBase
 {
+
     const DELIVERY_ADDRESS_NAME = 'deliveryAddressName';
 
     const OWNER = 'owner';
@@ -187,4 +188,6 @@ class DeliveryAddress extends ModelBase
     {
         $this->setProperty('isAddressForReuse', $isAddressForReuse);
     }
+
+
 }

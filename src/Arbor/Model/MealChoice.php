@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MealChoice extends ModelBase
 {
+
     const ATTENDEE = 'attendee';
 
     const MEAL = 'meal';
@@ -259,4 +260,6 @@ class MealChoice extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

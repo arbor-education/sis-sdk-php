@@ -11,6 +11,7 @@ use Arbor\Model\EducationalInstitution;
 
 class SchoolWorkforceCensusReturn extends ModelBase
 {
+
     const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -36,6 +37,8 @@ class SchoolWorkforceCensusReturn extends ModelBase
     const LOCAL_AUTHORITY_REJECTED_DATETIME = 'localAuthorityRejectedDatetime';
 
     const LOCAL_AUTHORITY_ACCEPTED_DATETIME = 'localAuthorityAcceptedDatetime';
+
+    const IS_STAFF_CONTRACT_INFORMATION_EXCLUDED = 'isStaffContractInformationExcluded';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN;
 
@@ -282,4 +285,22 @@ class SchoolWorkforceCensusReturn extends ModelBase
     {
         $this->setProperty('localAuthorityAcceptedDatetime', $localAuthorityAcceptedDatetime);
     }
+
+    /**
+     * @return bool
+     */
+    public function getIsStaffContractInformationExcluded()
+    {
+        return $this->getProperty('isStaffContractInformationExcluded');
+    }
+
+    /**
+     * @param bool $isStaffContractInformationExcluded
+     */
+    public function setIsStaffContractInformationExcluded($isStaffContractInformationExcluded = null)
+    {
+        $this->setProperty('isStaffContractInformationExcluded', $isStaffContractInformationExcluded);
+    }
+
+
 }

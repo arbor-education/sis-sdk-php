@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviourFollowUp extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const STAFF = 'staff';
@@ -115,4 +116,6 @@ class BehaviourFollowUp extends ModelBase
     {
         $this->setProperty('summary', $summary);
     }
+
+
 }

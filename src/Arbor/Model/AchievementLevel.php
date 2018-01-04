@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AchievementLevel extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACHIEVEMENT_LEVEL_SET = 'achievementLevelSet';
@@ -241,4 +242,6 @@ class AchievementLevel extends ModelBase
     {
         $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
+
+
 }

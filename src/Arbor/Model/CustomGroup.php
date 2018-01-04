@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomGroup extends ModelBase
 {
+
     const CUSTOM_GROUP_NAME = 'customGroupName';
 
     const DESCRIPTION = 'description';
@@ -17,6 +18,8 @@ class CustomGroup extends ModelBase
     const CONTAINS_GUARDIANS = 'containsGuardians';
 
     const CONTAINS_STAFF = 'containsStaff';
+
+    const IS_DYNAMIC = 'isDynamic';
 
     const START_DATE = 'startDate';
 
@@ -157,6 +160,22 @@ class CustomGroup extends ModelBase
     }
 
     /**
+     * @return bool
+     */
+    public function getIsDynamic()
+    {
+        return $this->getProperty('isDynamic');
+    }
+
+    /**
+     * @param bool $isDynamic
+     */
+    public function setIsDynamic($isDynamic = null)
+    {
+        $this->setProperty('isDynamic', $isDynamic);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getStartDate()
@@ -187,4 +206,6 @@ class CustomGroup extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

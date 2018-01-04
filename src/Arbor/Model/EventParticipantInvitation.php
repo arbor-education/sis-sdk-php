@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EventParticipantInvitation extends ModelBase
 {
+
     const EVENT_PARTICIPANT = 'eventParticipant';
 
     const INVITEE = 'invitee';
@@ -169,4 +170,6 @@ class EventParticipantInvitation extends ModelBase
     {
         $this->setProperty('invitationReply', $invitationReply);
     }
+
+
 }

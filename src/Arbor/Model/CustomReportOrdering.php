@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomReportOrdering extends ModelBase
 {
+
     const CUSTOM_REPORT = 'customReport';
 
     const FIELD_CLASS = 'fieldClass';
@@ -16,9 +17,7 @@ class CustomReportOrdering extends ModelBase
 
     const DIRECTION = 'direction';
 
-    const TARGET_TYPE = 'targetType';
-
-    const TARGET_INDEX = 'targetIndex';
+    const TARGET_GROUPING = 'targetGrouping';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_ORDERING;
 
@@ -139,34 +138,20 @@ class CustomReportOrdering extends ModelBase
     }
 
     /**
-     * @return string
+     * @return CustomReportGrouping
      */
-    public function getTargetType()
+    public function getTargetGrouping()
     {
-        return $this->getProperty('targetType');
+        return $this->getProperty('targetGrouping');
     }
 
     /**
-     * @param string $targetType
+     * @param CustomReportGrouping $targetGrouping
      */
-    public function setTargetType($targetType = null)
+    public function setTargetGrouping(CustomReportGrouping $targetGrouping = null)
     {
-        $this->setProperty('targetType', $targetType);
+        $this->setProperty('targetGrouping', $targetGrouping);
     }
 
-    /**
-     * @return int
-     */
-    public function getTargetIndex()
-    {
-        return $this->getProperty('targetIndex');
-    }
 
-    /**
-     * @param int $targetIndex
-     */
-    public function setTargetIndex($targetIndex = null)
-    {
-        $this->setProperty('targetIndex', $targetIndex);
-    }
 }

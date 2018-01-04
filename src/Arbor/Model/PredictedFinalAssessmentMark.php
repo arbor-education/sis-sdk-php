@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class PredictedFinalAssessmentMark extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const ASSESSMENT = 'assessment';
@@ -169,4 +170,6 @@ class PredictedFinalAssessmentMark extends ModelBase
     {
         $this->setProperty('recordedDate', $recordedDate);
     }
+
+
 }

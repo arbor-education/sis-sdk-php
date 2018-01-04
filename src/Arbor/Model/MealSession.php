@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MealSession extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -205,4 +206,6 @@ class MealSession extends ModelBase
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
+
+
 }
