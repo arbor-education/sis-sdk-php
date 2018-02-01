@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class SenStatusAssignment extends ModelBase
 {
+
     const IS_MEMBER_OF_SEN_UNIT = 'isMemberOfSenUnit';
 
     const HAS_RESOURCED_PROVISION = 'hasResourcedProvision';
@@ -83,4 +84,6 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty('hasResourcedProvision', $hasResourcedProvision);
     }
+
+
 }

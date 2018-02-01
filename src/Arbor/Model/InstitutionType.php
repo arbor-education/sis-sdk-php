@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InstitutionType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class InstitutionType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
+
+
 }

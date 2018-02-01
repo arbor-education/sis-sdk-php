@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationAspect extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -295,4 +296,6 @@ class QualificationAspect extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MedicalConditionType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class MedicalConditionType extends ModelBase
     {
         $this->setProperty('isAllergy', $isAllergy);
     }
+
+
 }

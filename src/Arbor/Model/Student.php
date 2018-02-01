@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Student extends ModelBase
 {
+
     const PERSON = 'person';
 
     const RELIGION = 'religion';
@@ -30,11 +31,7 @@ class Student extends ModelBase
 
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
-
     const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
-
-    const TRAVELLER_STATUS = 'travellerStatus';
 
     const YOUTH_SUPPORT_SERVICES_AGREEMENT = 'youthSupportServicesAgreement';
 
@@ -281,22 +278,6 @@ class Student extends ModelBase
     /**
      * @return LocalAuthority
      */
-    public function getResponsibleLocalAuthority()
-    {
-        return $this->getProperty('responsibleLocalAuthority');
-    }
-
-    /**
-     * @param LocalAuthority $responsibleLocalAuthority
-     */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
-    {
-        $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
-    }
-
-    /**
-     * @return LocalAuthority
-     */
     public function getHomeLocalAuthority()
     {
         return $this->getProperty('homeLocalAuthority');
@@ -308,22 +289,6 @@ class Student extends ModelBase
     public function setHomeLocalAuthority(LocalAuthority $homeLocalAuthority = null)
     {
         $this->setProperty('homeLocalAuthority', $homeLocalAuthority);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getTravellerStatus()
-    {
-        return $this->getProperty('travellerStatus');
-    }
-
-    /**
-     * @param bool $travellerStatus
-     */
-    public function setTravellerStatus($travellerStatus = null)
-    {
-        $this->setProperty('travellerStatus', $travellerStatus);
     }
 
     /**
@@ -421,4 +386,6 @@ class Student extends ModelBase
     {
         $this->setProperty('thirtyHourCode', $thirtyHourCode);
     }
+
+
 }

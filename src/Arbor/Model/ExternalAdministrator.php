@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ExternalAdministrator extends ModelBase
 {
+
     const FIRST_NAME = 'firstName';
 
     const LAST_NAME = 'lastName';
@@ -115,4 +116,6 @@ class ExternalAdministrator extends ModelBase
     {
         $this->setProperty('application', $application);
     }
+
+
 }

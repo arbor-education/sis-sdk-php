@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class KpiCalculationJob extends ModelBase
 {
+
     const KPI = 'kpi';
 
     const REFERENCE_DATE = 'referenceDate';
@@ -151,4 +152,6 @@ class KpiCalculationJob extends ModelBase
     {
         $this->setProperty('threadId', $threadId);
     }
+
+
 }

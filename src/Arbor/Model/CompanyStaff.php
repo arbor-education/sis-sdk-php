@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CompanyStaff extends ModelBase
 {
+
     const COMPANY = 'company';
 
     const PERSON = 'person';
@@ -97,4 +98,6 @@ class CompanyStaff extends ModelBase
     {
         $this->setProperty('position', $position);
     }
+
+
 }

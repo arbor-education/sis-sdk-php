@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomReportScope extends ModelBase
 {
+
     const CUSTOM_REPORT = 'customReport';
 
     const BASE_ENTITY_TYPE = 'baseEntityType';
@@ -169,4 +170,6 @@ class CustomReportScope extends ModelBase
     {
         $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }
+
+
 }

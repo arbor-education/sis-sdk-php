@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class Position extends ModelBase
 {
+
     const POSITION_CATEGORY = 'positionCategory';
 
     const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
@@ -101,4 +102,6 @@ class Position extends ModelBase
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }
+
+
 }

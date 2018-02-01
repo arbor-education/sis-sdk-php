@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ThirdPartySite extends ModelBase
 {
+
     const CODE = 'code';
 
     const NAME = 'name';
@@ -79,4 +80,6 @@ class ThirdPartySite extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

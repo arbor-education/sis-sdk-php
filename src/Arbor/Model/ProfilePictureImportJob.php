@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ProfilePictureImportJob extends ModelBase
 {
+
     const NAME = 'name';
 
     const IMPORT_TYPE = 'importType';
@@ -115,4 +116,6 @@ class ProfilePictureImportJob extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
+
+
 }

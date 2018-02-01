@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class WidgetType extends ModelBase
 {
+
     const WIDGET_TYPE_IDENTIFIER = 'widgetTypeIdentifier';
 
     const WIDGET_TYPE_NAME = 'widgetTypeName';
@@ -79,4 +80,6 @@ class WidgetType extends ModelBase
     {
         $this->setProperty('widgetTypeName', $widgetTypeName);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SchoolworkAspect extends ModelBase
 {
+
     const SCHOOLWORK = 'schoolwork';
 
     const ASPECT_NAME = 'aspectName';
@@ -169,4 +170,6 @@ class SchoolworkAspect extends ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
+
+
 }

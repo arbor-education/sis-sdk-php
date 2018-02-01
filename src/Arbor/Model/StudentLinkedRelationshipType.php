@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentLinkedRelationshipType extends ModelBase
 {
+
     const STUDENT_LINKED_RELATIONSHIP_TYPE_NAME = 'studentLinkedRelationshipTypeName';
 
     const IS_MEDICAL = 'isMedical';
@@ -97,4 +98,6 @@ class StudentLinkedRelationshipType extends ModelBase
     {
         $this->setProperty('isAcademic', $isAcademic);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Employer extends ModelBase
 {
+
     const NAME = 'name';
 
     protected $_resourceType = ResourceType::EMPLOYER;
@@ -61,4 +62,6 @@ class Employer extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

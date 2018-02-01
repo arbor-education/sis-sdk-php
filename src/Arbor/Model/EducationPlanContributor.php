@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EducationPlanContributor extends ModelBase
 {
+
     const EDUCATION_PLAN = 'educationPlan';
 
     const CONTRIBUTOR = 'contributor';
@@ -79,4 +80,6 @@ class EducationPlanContributor extends ModelBase
     {
         $this->setProperty('contributor', $contributor);
     }
+
+
 }

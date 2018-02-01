@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CourtOrderParty extends ModelBase
 {
+
     const COURT_ORDER = 'courtOrder';
 
     const PARTY = 'party';
@@ -79,4 +80,6 @@ class CourtOrderParty extends ModelBase
     {
         $this->setProperty('party', $party);
     }
+
+
 }

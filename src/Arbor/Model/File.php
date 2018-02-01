@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class File extends ModelBase
 {
+
     const CONTENT = 'content';
 
     const URL = 'url';
@@ -187,4 +188,6 @@ class File extends ModelBase
     {
         $this->setProperty('compressed', $compressed);
     }
+
+
 }

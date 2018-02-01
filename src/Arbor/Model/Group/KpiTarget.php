@@ -12,6 +12,7 @@ use Arbor\Model\AcademicYear;
 
 class KpiTarget extends ModelBase
 {
+
     const KPI = 'kpi';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -121,4 +122,6 @@ class KpiTarget extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
+
+
 }

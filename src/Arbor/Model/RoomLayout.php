@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RoomLayout extends ModelBase
 {
+
     const ROOM = 'room';
 
     protected $_resourceType = ResourceType::ROOM_LAYOUT;
@@ -61,4 +62,6 @@ class RoomLayout extends ModelBase
     {
         $this->setProperty('room', $room);
     }
+
+
 }

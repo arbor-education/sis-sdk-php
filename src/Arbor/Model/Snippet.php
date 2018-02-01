@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Snippet extends ModelBase
 {
+
     const SNIPPET_NAME = 'snippetName';
 
     const SNIPPET_TEXT = 'snippetText';
@@ -151,4 +152,6 @@ class Snippet extends ModelBase
     {
         $this->setProperty('isShared', $isShared);
     }
+
+
 }

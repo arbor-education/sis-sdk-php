@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RoomRoomAsset extends ModelBase
 {
+
     const ROOM = 'room';
 
     const ROOM_ASSET = 'roomAsset';
@@ -97,4 +98,6 @@ class RoomRoomAsset extends ModelBase
     {
         $this->setProperty('quantity', $quantity);
     }
+
+
 }

@@ -11,6 +11,7 @@ use Arbor\Model\EducationalInstitution;
 
 class SchoolCensusReturn extends ModelBase
 {
+
     const SCHOOL_CENSUS = 'schoolCensus';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -300,4 +301,6 @@ class SchoolCensusReturn extends ModelBase
     {
         $this->setProperty('isDryRun', $isDryRun);
     }
+
+
 }

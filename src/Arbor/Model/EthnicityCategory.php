@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EthnicityCategory extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class EthnicityCategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }
