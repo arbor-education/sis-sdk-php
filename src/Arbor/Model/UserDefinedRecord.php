@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UserDefinedRecord extends ModelBase
 {
+
     const ENTITY = 'entity';
 
     const USER_DEFINED_FIELD = 'userDefinedField';
@@ -97,4 +98,6 @@ class UserDefinedRecord extends ModelBase
     {
         $this->setProperty('value', $value);
     }
+
+
 }

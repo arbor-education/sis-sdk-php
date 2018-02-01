@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationScheme extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -151,4 +152,6 @@ class QualificationScheme extends ModelBase
     {
         $this->setProperty('title', $title);
     }
+
+
 }

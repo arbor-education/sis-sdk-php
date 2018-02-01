@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SchoolTrip extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -151,4 +152,6 @@ class SchoolTrip extends ModelBase
     {
         $this->setProperty('description', $description);
     }
+
+
 }

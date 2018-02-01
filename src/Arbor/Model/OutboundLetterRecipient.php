@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class OutboundLetterRecipient extends ModelBase
 {
+
     const OUTBOUND_LETTER = 'outboundLetter';
 
     const RECIPIENT_NAME = 'recipientName';
@@ -133,4 +134,6 @@ class OutboundLetterRecipient extends ModelBase
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }
+
+
 }

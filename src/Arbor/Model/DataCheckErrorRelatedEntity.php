@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DataCheckErrorRelatedEntity extends ModelBase
 {
+
     const DATA_CHECK_ERROR = 'dataCheckError';
 
     const RELATED_ENTITY = 'relatedEntity';
@@ -79,4 +80,6 @@ class DataCheckErrorRelatedEntity extends ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
+
+
 }

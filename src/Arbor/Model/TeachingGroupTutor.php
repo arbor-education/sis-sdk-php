@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TeachingGroupTutor extends ModelBase
 {
+
     const TEACHING_GROUP = 'teachingGroup';
 
     const STAFF = 'staff';
@@ -115,4 +116,6 @@ class TeachingGroupTutor extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentCurriculumScore extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const CURRICULUM_ENTITY = 'curriculumEntity';
@@ -223,4 +224,6 @@ class StudentCurriculumScore extends ModelBase
     {
         $this->setProperty('date', $date);
     }
+
+
 }

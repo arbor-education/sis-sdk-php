@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AchievementLevelSet extends ModelBase
 {
+
     const CODE = 'code';
 
     const NAME = 'name';
@@ -133,4 +134,6 @@ class AchievementLevelSet extends ModelBase
     {
         $this->setProperty('curriculum', $curriculum);
     }
+
+
 }

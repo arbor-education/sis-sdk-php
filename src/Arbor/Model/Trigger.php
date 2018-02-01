@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Trigger extends ModelBase
 {
+
     const CODE = 'code';
 
     const TRIGGER_CATEGORY = 'triggerCategory';
@@ -241,4 +242,6 @@ class Trigger extends ModelBase
     {
         $this->setProperty('testForStudentAcademicUnitEnrolments', $testForStudentAcademicUnitEnrolments);
     }
+
+
 }

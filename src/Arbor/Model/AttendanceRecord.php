@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AttendanceRecord extends ModelBase
 {
+
     const ATTENDANCE_MARK = 'attendanceMark';
 
     const ATTENDANCE_REGISTER = 'attendanceRegister';
@@ -25,6 +26,8 @@ class AttendanceRecord extends ModelBase
     const STUDENT_ABSENCE_NOTE = 'studentAbsenceNote';
 
     const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
+
+    const SOURCE = 'source';
 
     protected $_resourceType = ResourceType::ATTENDANCE_RECORD;
 
@@ -223,4 +226,22 @@ class AttendanceRecord extends ModelBase
     {
         $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->getProperty('source');
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource($source = null)
+    {
+        $this->setProperty('source', $source);
+    }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Schoolwork extends ModelBase
 {
+
     const TITLE = 'title';
 
     const STUDENT_INSTRUCTIONS = 'studentInstructions';
@@ -223,4 +224,6 @@ class Schoolwork extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
+
+
 }

@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class Staff extends ModelBase
 {
+
     const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
 
     const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
@@ -119,4 +120,6 @@ class Staff extends ModelBase
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
+
+
 }

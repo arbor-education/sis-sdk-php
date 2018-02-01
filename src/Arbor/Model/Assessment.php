@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Assessment extends ModelBase
 {
+
     const ASSESSMENT_NAME = 'assessmentName';
 
     const ASSESSMENT_SHORT_NAME = 'assessmentShortName';
@@ -277,4 +278,6 @@ class Assessment extends ModelBase
     {
         $this->setProperty('order', $order);
     }
+
+
 }

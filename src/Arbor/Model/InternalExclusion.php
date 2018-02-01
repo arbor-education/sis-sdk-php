@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InternalExclusion extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const ISSUED_BY_STAFF = 'issuedByStaff';
@@ -169,4 +170,6 @@ class InternalExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
+
 }

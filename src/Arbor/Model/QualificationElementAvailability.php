@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationElementAvailability extends ModelBase
 {
+
     const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
     const QUALIFICATION_ELEMENT = 'qualificationElement';
@@ -79,4 +80,6 @@ class QualificationElementAvailability extends ModelBase
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
+
+
 }

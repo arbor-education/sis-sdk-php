@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicCalendarDate extends ModelBase
 {
+
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
@@ -385,4 +386,6 @@ class AcademicCalendarDate extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
+
 }

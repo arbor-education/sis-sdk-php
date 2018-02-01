@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class Operator extends ModelBase
 {
+
     const NAME = 'name';
 
     const ARBOR_IDENTIFIER = 'arborIdentifier';
@@ -83,4 +84,6 @@ class Operator extends ModelBase
     {
         $this->setProperty('arborIdentifier', $arborIdentifier);
     }
+
+
 }

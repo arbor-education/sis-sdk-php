@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AccessArrangement extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class AccessArrangement extends ModelBase
     {
         $this->setProperty('defaultExtraTimePercentage', $defaultExtraTimePercentage);
     }
+
+
 }

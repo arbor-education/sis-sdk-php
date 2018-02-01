@@ -8,6 +8,7 @@ use Arbor\Model\UkDfe\SchoolWorkforceVacancyPost;
 
 class Position extends ModelBase
 {
+
     const START_DATE = 'startDate';
 
     const EXPECTED_END_DATE = 'expectedEndDate';
@@ -261,4 +262,6 @@ class Position extends ModelBase
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }
+
+
 }

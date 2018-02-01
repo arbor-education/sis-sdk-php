@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BoardingPattern extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -241,4 +242,6 @@ class BoardingPattern extends ModelBase
     {
         $this->setProperty('accommodationRoom', $accommodationRoom);
     }
+
+
 }

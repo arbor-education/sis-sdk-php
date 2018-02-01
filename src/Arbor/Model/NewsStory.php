@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class NewsStory extends ModelBase
 {
+
     const REFERENCE_DATETIME = 'referenceDatetime';
 
     const TITLE = 'title';
@@ -277,4 +278,6 @@ class NewsStory extends ModelBase
     {
         $this->setProperty('commentCount', $commentCount);
     }
+
+
 }

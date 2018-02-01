@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
 {
+
     const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
     const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
@@ -79,4 +80,6 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
+
+
 }

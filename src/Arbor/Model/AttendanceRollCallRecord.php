@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AttendanceRollCallRecord extends ModelBase
 {
+
     const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
     const RECORD_DATE = 'recordDate';
@@ -19,6 +20,8 @@ class AttendanceRollCallRecord extends ModelBase
     const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
 
     const VALIDATION_ERROR = 'validationError';
+
+    const SOURCE = 'source';
 
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL_RECORD;
 
@@ -169,4 +172,22 @@ class AttendanceRollCallRecord extends ModelBase
     {
         $this->setProperty('validationError', $validationError);
     }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->getProperty('source');
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource($source = null)
+    {
+        $this->setProperty('source', $source);
+    }
+
+
 }

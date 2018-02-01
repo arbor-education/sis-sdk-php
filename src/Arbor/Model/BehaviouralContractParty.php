@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralContractParty extends ModelBase
 {
+
     const BEHAVIOURAL_CONTRACT = 'behaviouralContract';
 
     const PARTY = 'party';
@@ -97,4 +98,6 @@ class BehaviouralContractParty extends ModelBase
     {
         $this->setProperty('responsible', $responsible);
     }
+
+
 }

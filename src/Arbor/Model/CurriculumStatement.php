@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CurriculumStatement extends ModelBase
 {
+
     const CURRICULUM_SECTION = 'curriculumSection';
 
     const CURRICULUM_STATEMENT_BAND = 'curriculumStatementBand';
@@ -223,4 +224,6 @@ class CurriculumStatement extends ModelBase
     {
         $this->setProperty('order', $order);
     }
+
+
 }

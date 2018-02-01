@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Intervention extends ModelBase
 {
+
     const INTERVENTION_DEFINITION = 'interventionDefinition';
 
     const NAME = 'name';
@@ -331,4 +332,6 @@ class Intervention extends ModelBase
     {
         $this->setProperty('location', $location);
     }
+
+
 }

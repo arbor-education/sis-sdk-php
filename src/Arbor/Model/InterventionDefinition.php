@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InterventionDefinition extends ModelBase
 {
+
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
@@ -133,4 +134,6 @@ class InterventionDefinition extends ModelBase
     {
         $this->setProperty('highestCurriculumGrade', $highestCurriculumGrade);
     }
+
+
 }

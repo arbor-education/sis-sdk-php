@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TripPrice extends ModelBase
 {
+
     const TRIP = 'trip';
 
     const APPLICABLE = 'applicable';
@@ -133,4 +134,6 @@ class TripPrice extends ModelBase
     {
         $this->setProperty('voluntaryContribution', $voluntaryContribution);
     }
+
+
 }

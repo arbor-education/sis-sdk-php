@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicYearAssessment extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const ASSESSMENT_NAME = 'assessmentName';
@@ -187,4 +188,6 @@ class AcademicYearAssessment extends ModelBase
     {
         $this->setProperty('setupCompletionStartedDatetime', $setupCompletionStartedDatetime);
     }
+
+
 }

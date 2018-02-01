@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InterventionCost extends ModelBase
 {
+
     const INTERVENTION = 'intervention';
 
     const AMOUNT = 'amount';
@@ -97,4 +98,6 @@ class InterventionCost extends ModelBase
     {
         $this->setProperty('description', $description);
     }
+
+
 }

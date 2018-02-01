@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ConsentType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -151,4 +152,6 @@ class ConsentType extends ModelBase
     {
         $this->setProperty('autoRequestFromGuardians', $autoRequestFromGuardians);
     }
+
+
 }

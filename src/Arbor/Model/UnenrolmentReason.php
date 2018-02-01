@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UnenrolmentReason extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class UnenrolmentReason extends ModelBase
     {
         $this->setProperty('d00206', $d00206);
     }
+
+
 }

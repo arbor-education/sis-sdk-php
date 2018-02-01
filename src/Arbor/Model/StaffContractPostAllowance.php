@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StaffContractPostAllowance extends ModelBase
 {
+
     const STAFF_CONTRACT_POST = 'staffContractPost';
 
     const LINKED_ALLOWANCE = 'linkedAllowance';
@@ -241,4 +242,6 @@ class StaffContractPostAllowance extends ModelBase
     {
         $this->setProperty('benefitInKind', $benefitInKind);
     }
+
+
 }

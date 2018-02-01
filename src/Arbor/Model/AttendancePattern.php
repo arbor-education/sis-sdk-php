@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AttendancePattern extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -169,4 +170,6 @@ class AttendancePattern extends ModelBase
     {
         $this->setProperty('isAfternoonOnly', $isAfternoonOnly);
     }
+
+
 }

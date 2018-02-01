@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Behaviour extends ModelBase
 {
+
     const BEHAVIOUR_NAME = 'behaviourName';
 
     const DESCRIPTION = 'description';
@@ -115,4 +116,6 @@ class Behaviour extends ModelBase
     {
         $this->setProperty('active', $active);
     }
+
+
 }

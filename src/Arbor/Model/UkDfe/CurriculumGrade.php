@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class CurriculumGrade extends ModelBase
 {
+
     const D00020 = 'd00020';
 
     const D00020_ORDER = 'd00020Order';
@@ -83,4 +84,6 @@ class CurriculumGrade extends ModelBase
     {
         $this->setProperty('d00020Order', $d00020Order);
     }
+
+
 }

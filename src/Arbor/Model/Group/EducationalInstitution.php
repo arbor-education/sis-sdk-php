@@ -10,6 +10,7 @@ use Arbor\Model\ModelBase;
 
 class EducationalInstitution extends ModelBase
 {
+
     const TYPE = 'type';
 
     protected $_resourceType = ResourceType::GROUP_EDUCATIONAL_INSTITUTION;
@@ -65,4 +66,6 @@ class EducationalInstitution extends ModelBase
     {
         $this->setProperty('type', $type);
     }
+
+
 }
