@@ -4,7 +4,7 @@
     "description": "Arbor Education PHP SDK",
     "keywords": ["arbor", "mis", "library", "SDK", "REST api"],
     "homepage": "https://github.com/arbor-education/sis-sdk-php",
-    "license": "Commercial",
+    "license": "Apache-2.0",
     "repositories": [
         {
             "type": "vcs",
