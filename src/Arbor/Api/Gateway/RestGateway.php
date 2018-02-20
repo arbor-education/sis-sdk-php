@@ -422,8 +422,19 @@ class RestGateway implements GatewayInterface
             if ($this->getBaseUrl() === 'https://api.uk.arbor.sc/rest-v2' && $this->getApplicationId()) {
                 $options['headers']['x-mis-application-id'] = $this->getApplicationId();
             }
-
-            $response = $this->getHttpClient()->request($method, $url, $options);
+            try {
+                $response = $this->getHttpClient()->request($method, $url, $options);
+            } catch (\Throwable $e) {
+                $usingPassword = !$this->getAuthPassword()?'No':'Yes';
+                throw new \Arbor\Exception(
+                    sprintf(
+                        "Invalid credentials. Endpoint: %s, Username: %s, Using password: %s",
+                        $this->getBaseUrl(),
+                        $this->getAuthUser(),
+                        $usingPassword
+                        )
+                );
+            }
 
             //Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
             $code = $response->getStatusCode();
