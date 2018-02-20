@@ -422,6 +422,7 @@ class RestGateway implements GatewayInterface
             if ($this->getBaseUrl() === 'https://api.uk.arbor.sc/rest-v2' && $this->getApplicationId()) {
                 $options['headers']['x-mis-application-id'] = $this->getApplicationId();
             }
+            
             try {
                 $response = $this->getHttpClient()->request($method, $url, $options);
             } catch (\Throwable $e) {
