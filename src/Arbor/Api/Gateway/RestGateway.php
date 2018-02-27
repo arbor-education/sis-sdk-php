@@ -428,6 +428,7 @@ class RestGateway implements GatewayInterface
             } catch (\Throwable $e) {
                 $response_code = $e->getResponse()->getStatusCode();
                 if ($response_code == 403 || $response_code == 401) {
+
                     $usingPassword = !$this->getAuthPassword()?'No':'Yes';
                     throw new \Arbor\Exception(
                         sprintf(
