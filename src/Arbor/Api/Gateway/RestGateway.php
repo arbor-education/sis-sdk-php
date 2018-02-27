@@ -426,15 +426,20 @@ class RestGateway implements GatewayInterface
             try {
                 $response = $this->getHttpClient()->request($method, $url, $options);
             } catch (\Throwable $e) {
-                $usingPassword = !$this->getAuthPassword()?'No':'Yes';
-                throw new \Arbor\Exception(
-                    sprintf(
-                        "Invalid credentials. Endpoint: %s, Username: %s, Using password: %s",
-                        $this->getBaseUrl(),
-                        $this->getAuthUser(),
-                        $usingPassword
+                $response_code = $e->getResponse()->getStatusCode();
+                if ($response_code == 403 || $response_code == 401) {
+
+                    $usingPassword = !$this->getAuthPassword()?'No':'Yes';
+                    throw new \Arbor\Exception(
+                        sprintf(
+                            "Anauthorized, possibly wrong credentials. Endpoint: %s, Username: %s, Using password: %s",
+                            $this->getBaseUrl(),
+                            $this->getAuthUser(),
+                            $usingPassword
                         )
-                );
+                    );
+                }
+                throw $e;
             }
 
             //Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
