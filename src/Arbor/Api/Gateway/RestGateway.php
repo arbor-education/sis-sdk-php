@@ -425,7 +425,7 @@ class RestGateway implements GatewayInterface
 
             try {
                 $response = $this->getHttpClient()->request($method, $url, $options);
-            } catch (\Throwable $e) {
+            } catch (\GuzzleHttp\Exception\ClientException $e) {
                 $response_code = $e->getResponse()->getStatusCode();
                 if ($response_code == 401) {
                     $usingPassword = !$this->getAuthPassword()?'No':'Yes';
