@@ -29,16 +29,20 @@ class RestGateway implements GatewayInterface
 
     const MAX_RETRIES = 5;
 
-    /**@var string $_baseUrl */
+    /** @var string $_baseUrl */
     protected $_baseUrl;
-    /**@var string $_authUser */
+    /** @var string $_authUser */
     protected $_authUser;
-    /**@var string $_authPassword */
+    /** @var string $_authPassword */
     protected $_authPassword;
-    /**@var \GuzzleHttp\Client $_httpClient */
+    /** @var \GuzzleHttp\Client $_httpClient */
     protected $_httpClient;
-    /**@var string $_applicationId */
+    /** @var string $_applicationId */
     protected $_applicationId;
+    /** @var HandlerStack **/
+    protected $handlerStack;
+    /** @var string */
+    protected $userAgent;
 
     /**
      * @var PluralizeFilter
@@ -59,24 +63,54 @@ class RestGateway implements GatewayInterface
      */
     public function __construct($baseUrl = '', $authUser = '', $authPassword = '', $userAgent = 'Arbor PHP SDK', $autoRetry = true)
     {
-        $handlerStack = HandlerStack::create(new CurlHandler());
+        $this->handlerStack = HandlerStack::create(new CurlHandler());
 
         if ($autoRetry) {
-            $handlerStack->push(Middleware::retry($this->createRetryHandler()));
+            $this->handlerStack->push(Middleware::retry($this->createRetryHandler()));
         }
 
-        $this->_httpClient = new Client([
-            'handler' => $handlerStack,
-            'base_uri' => $baseUrl,
-            'auth' => [$authUser, $authPassword],
-            'headers' => [
-                'User-Agent' => $userAgent,
-            ],
-        ]);
 
         $this->setBaseUrl($baseUrl);
         $this->setAuthUser($authUser);
         $this->setAuthPassword($authPassword);
+        $this->setUserAgent($userAgent);
+        $this->initClient();
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserAgent(): string
+    {
+        return $this->userAgent;
+    }
+
+    /**
+     * @param string $userAgent
+     *
+     * @return static
+     */
+    public function setUserAgent(string $userAgent)
+    {
+        $this->userAgent = $userAgent;
+        return $this;
+    }
+
+    /**
+     * @method initClient
+     * @return static
+     */
+    public function initClient()
+    {
+        $this->_httpClient = new Client([
+            'handler'  => $this->handlerStack,
+            'base_uri' => $this->getBaseUrl(),
+            'auth'     => [$this->getAuthUser(), $this->getAuthPassword()],
+            'headers' => [
+                'User-Agent' => $this->getUserAgent(),
+            ],
+        ]);
+        return $this;
     }
 
     /**
