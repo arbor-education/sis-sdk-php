@@ -37,18 +37,32 @@ class AttendanceRollCallRegistration
      * @param \DateTime $rollCallDateTime
      * @param AttendanceMark $attendanceMark
      * @param int|null $minutesLate
-     * @param \DateTime|null $recordDate
-     * @param string|null $rollCall
      */
-    public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark, $minutesLate = null, $recordDate = null, $rollCall = null)
+    public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark, $minutesLate = null)
     {
         $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_ROLL_CALL_DATE_TIME => $rollCallDateTime,
             self::MARK_MARK => $attendanceMark,
             self::MARK_MINUTES_LATE => $minutesLate,
+        ];
+    }
+
+    /**
+     * @param Student $student
+     * @param string $recordDate
+     * @param string $rollCall
+     * @param AttendanceMark $attendanceMark
+     * @param int|null $minutesLate
+     */
+    public function awardAttendanceMarkWithRecordDate($student, $recordDate, $rollCall, $attendanceMark, $minutesLate = null)
+    {
+        $this->_marks[] = [
+            self::MARK_STUDENT => $student,
             self::MARK_RECORD_DATE => $recordDate,
             self::MARK_ROLL_CALL => $rollCall,
+            self::MARK_MARK => $attendanceMark,
+            self::MARK_MINUTES_LATE => $minutesLate,
         ];
     }
 
@@ -65,16 +79,18 @@ class AttendanceRollCallRegistration
             $markPayload[self::MARK_STUDENT] = $this->getHydrator()->extractArray($mark[self::MARK_STUDENT], true);
             $markPayload[self::MARK_MARK] = $this->getHydrator()->extractArray($mark[self::MARK_MARK], true);
             $markPayload[self::MARK_MINUTES_LATE] = $mark[self::MARK_MINUTES_LATE];
-            $markPayload[self::MARK_RECORD_DATE] = $mark[self::MARK_RECORD_DATE];
-            $markPayload[self::MARK_ROLL_CALL] = $mark[self::MARK_ROLL_CALL];
+            $markPayload[self::MARK_RECORD_DATE] = isset($mark[self::MARK_RECORD_DATE]) ? $mark[self::MARK_RECORD_DATE] : null;
+            $markPayload[self::MARK_ROLL_CALL] = isset($mark[self::MARK_ROLL_CALL]) ? $mark[self::MARK_ROLL_CALL] : null;
 
-            //Convert date to Y-m-d H:i:s string
-            /**@var \DateTime $rollCallDateTime*/
-            $rollCallDateTime = $mark[self::MARK_ROLL_CALL_DATE_TIME];
-            if (!$rollCallDateTime instanceof \DateTime) {
-                throw new \InvalidArgumentException("RollCallDateTime must be an PHP DateTime object");
+            if (isset($mark[self::MARK_ROLL_CALL_DATE_TIME])) {
+                //Convert date to Y-m-d H:i:s string
+                /**@var \DateTime $rollCallDateTime */
+                $rollCallDateTime = $mark[self::MARK_ROLL_CALL_DATE_TIME];
+                if (!$rollCallDateTime instanceof \DateTime) {
+                    throw new \InvalidArgumentException("RollCallDateTime must be an PHP DateTime object");
+                }
+                $markPayload[self::MARK_ROLL_CALL_DATE_TIME] = $rollCallDateTime->format("Y-m-d H:i:s");
             }
-            $markPayload[self::MARK_ROLL_CALL_DATE_TIME] = $rollCallDateTime->format("Y-m-d H:i:s");
 
             $payload['request']['marks'][] = $markPayload;
         }
