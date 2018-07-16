@@ -10,10 +10,12 @@ use Arbor\Model\Student;
 
 class AttendanceRollCallRegistration
 {
-    const MARK_STUDENT = "student";
-    const MARK_MARK = "attendanceMark";
-    const MARK_ROLL_CALL_DATE_TIME = "rollCallDateTime";
-    const MARK_MINUTES_LATE = "minutesLate";
+    const MARK_STUDENT = 'student';
+    const MARK_MARK = 'attendanceMark';
+    const MARK_ROLL_CALL_DATE_TIME = 'rollCallDateTime';
+    const MARK_MINUTES_LATE = 'minutesLate';
+    const MARK_RECORD_DATE = 'recordDate';
+    const MARK_ROLL_CALL = 'rollCall';
 
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
@@ -35,14 +37,18 @@ class AttendanceRollCallRegistration
      * @param \DateTime $rollCallDateTime
      * @param AttendanceMark $attendanceMark
      * @param int|null $minutesLate
+     * @param \DateTime|null $recordDate
+     * @param string|null $rollCall
      */
-    public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark, $minutesLate = null)
+    public function awardAttendanceMark($student, $rollCallDateTime, $attendanceMark, $minutesLate = null, $recordDate = null, $rollCall = null)
     {
         $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_ROLL_CALL_DATE_TIME => $rollCallDateTime,
             self::MARK_MARK => $attendanceMark,
             self::MARK_MINUTES_LATE => $minutesLate,
+            self::MARK_RECORD_DATE => $recordDate,
+            self::MARK_ROLL_CALL => $rollCall,
         ];
     }
 
@@ -59,6 +65,8 @@ class AttendanceRollCallRegistration
             $markPayload[self::MARK_STUDENT] = $this->getHydrator()->extractArray($mark[self::MARK_STUDENT], true);
             $markPayload[self::MARK_MARK] = $this->getHydrator()->extractArray($mark[self::MARK_MARK], true);
             $markPayload[self::MARK_MINUTES_LATE] = $mark[self::MARK_MINUTES_LATE];
+            $markPayload[self::MARK_RECORD_DATE] = $mark[self::MARK_RECORD_DATE];
+            $markPayload[self::MARK_ROLL_CALL] = $mark[self::MARK_ROLL_CALL];
 
             //Convert date to Y-m-d H:i:s string
             /**@var \DateTime $rollCallDateTime*/
