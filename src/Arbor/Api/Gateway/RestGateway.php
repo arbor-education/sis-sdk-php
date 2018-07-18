@@ -441,7 +441,7 @@ class RestGateway implements GatewayInterface
         $code = 0;
 
         if (!isset($options['headers']['User-Agent'])) {
-            $options['headers']['User-Agent'] = '"Arbor PHP SDK';
+            $options['headers']['User-Agent'] = 'Arbor PHP SDK';
         }
 
         if (isset($options['body'])) {
