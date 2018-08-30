@@ -477,10 +477,12 @@ class RestGateway implements GatewayInterface
 
             //Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
             $code = $response->getStatusCode();
+            $response->getBody()->rewind();
             $responsePayload = json_decode($response->getBody()->getContents(), true);
         } catch (BadResponseException $e) {
             //Default to using the code and message from the Guzzle exception.
             //This is useful in case the response does not contain valid json
+            $e->getResponse()->getBody()->rewind();
             $responsePayload = json_decode($e->getResponse()->getBody()->getContents(), true);
         } catch (\RuntimeException $e) {
             throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
