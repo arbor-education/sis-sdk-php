@@ -1,0 +1,85 @@
+<?php
+namespace Arbor\Model;
+
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
+
+class MeetingTopic extends ModelBase
+{
+
+    const MEETING = 'meeting';
+
+    const TOPIC = 'topic';
+
+    protected $_resourceType = ResourceType::MEETING_TOPIC;
+
+    /**
+     * @param Query $query
+     * @return MeetingTopic[] | Collection
+     * @throws Exception
+     */
+    public static function query(Query $query = null)
+    {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::MEETING_TOPIC);
+
+        return $gateway->query($query);
+    }
+
+    /**
+     * @param int $id
+     * @return MeetingTopic
+     * @throws Exception
+     */
+    public static function retrieve($id)
+    {
+        $gateway = self::getDefaultGateway();
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::MEETING_TOPIC, $id);
+    }
+
+    /**
+     * @return Meeting
+     */
+    public function getMeeting()
+    {
+        return $this->getProperty('meeting');
+    }
+
+    /**
+     * @param Meeting $meeting
+     */
+    public function setMeeting(Meeting $meeting = null)
+    {
+        $this->setProperty('meeting', $meeting);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getTopic()
+    {
+        return $this->getProperty('topic');
+    }
+
+    /**
+     * @param ModelBase $topic
+     */
+    public function setTopic(ModelBase $topic = null)
+    {
+        $this->setProperty('topic', $topic);
+    }
+
+
+}
