@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/example-bootstrap.php';
 
-$currentAcademicYear = $api->retrieve(Arbor\Resource\ResourceType::ACADEMIC_YEAR, '2016-2017');
+$currentAcademicYear = $api->retrieve(Arbor\Resource\ResourceType::ACADEMIC_YEAR, '2018-2019');
 $academicUnitQuery = new Arbor\Query\Query(Arbor\Resource\ResourceType::ACADEMIC_UNIT);
 $academicUnitQuery->addPropertyFilter(Arbor\Model\AcademicUnit::ACADEMIC_YEAR, Arbor\Query\Query::OPERATOR_EQUALS, $currentAcademicYear);
 

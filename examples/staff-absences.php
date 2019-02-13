@@ -17,6 +17,10 @@ $staff->getPerson()->connect($api);
 $staff->getPerson()->save();
 $staff->save();
 
+$start = new DateTime('2019-02-14');
+$end = new DateTime('2019-02-16');
+$daysLost = 2.5;
+
 $staffAbsence = new \Arbor\Model\StaffAbsence();
 $staffAbsence->setStaff($staff);
 $staffAbsence->setStartDatetime($start);

@@ -8,6 +8,7 @@ $results = \Arbor\Model\LocalAuthority::query(
         [],
         [
             ['tagName' => 'colour', 'value' => 'green']
+            //['tagName' => null, 'value' => null]
         ]
     )
 );

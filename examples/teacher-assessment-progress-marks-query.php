@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/example-bootstrap.php';
 
-$student = \Arbor\Model\Student::retrieve(710);
+$student = \Arbor\Model\Student::retrieve(101);
 
 $query = new \Arbor\Query\Query(Arbor\Resource\ResourceType::STUDENT_PROGRESS_ASSESSMENT_MARK);
 $query->addPropertyFilter(\Arbor\Model\StudentProgressAssessmentMark::STUDENT, \Arbor\Query\Query::OPERATOR_EQUALS, $student);

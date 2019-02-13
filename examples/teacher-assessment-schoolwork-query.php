@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/example-bootstrap.php';
 
-$student = \Arbor\Model\Student::retrieve(710);
+$student = \Arbor\Model\Student::retrieve(27);
 $schoolworkQuery = new \Arbor\Query\Query(Arbor\Resource\ResourceType::STUDENT_SCHOOLWORK);
 $schoolworkQuery->addPropertyFilter(\Arbor\Model\StudentSchoolwork::STUDENT, \Arbor\Query\Query::OPERATOR_EQUALS, $student);
 
