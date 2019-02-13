@@ -9,7 +9,7 @@ class OutboundLetterDraft extends ModelBase
 
     const DOCUMENT_LAYOUT = 'documentLayout';
 
-    const SENDING_PROFILE = 'sendingProfile';
+    const SENDER = 'sender';
 
     const BODY = 'body';
 
@@ -22,6 +22,8 @@ class OutboundLetterDraft extends ModelBase
     const GENERATION_STARTED_DATETIME = 'generationStartedDatetime';
 
     const GENERATION_COMPLETED_DATETIME = 'generationCompletedDatetime';
+
+    const CONTEXT = 'context';
 
     protected $_resourceType = ResourceType::OUTBOUND_LETTER_DRAFT;
 
@@ -78,19 +80,19 @@ class OutboundLetterDraft extends ModelBase
     }
 
     /**
-     * @return SendingProfile
+     * @return ModelBase
      */
-    public function getSendingProfile()
+    public function getSender()
     {
-        return $this->getProperty('sendingProfile');
+        return $this->getProperty('sender');
     }
 
     /**
-     * @param SendingProfile $sendingProfile
+     * @param ModelBase $sender
      */
-    public function setSendingProfile(SendingProfile $sendingProfile = null)
+    public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty('sendingProfile', $sendingProfile);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -187,6 +189,22 @@ class OutboundLetterDraft extends ModelBase
     public function setGenerationCompletedDatetime(\DateTime $generationCompletedDatetime = null)
     {
         $this->setProperty('generationCompletedDatetime', $generationCompletedDatetime);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getContext()
+    {
+        return $this->getProperty('context');
+    }
+
+    /**
+     * @param ModelBase $context
+     */
+    public function setContext(ModelBase $context = null)
+    {
+        $this->setProperty('context', $context);
     }
 
 

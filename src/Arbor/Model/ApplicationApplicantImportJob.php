@@ -1,46 +1,72 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\IntakeSeason;
-use \Arbor\Model\IntakeSeasonApplicantBucket;
-use \Arbor\Model\IntakeSeasonGroup;
-use \Arbor\Model\Gender;
-use \Arbor\Model\AcademicLevel;
-use \Arbor\Model\RegistrationForm;
-use \Arbor\Model\House;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ApplicationApplicantImportJob extends ModelBase
 {
 
+    const INTAKE_SEASON = 'intakeSeason';
+
+    const INTAKE_SEASON_APPLICANT_BUCKET = 'intakeSeasonApplicantBucket';
+
+    const INTAKE_SEASON_GROUP = 'intakeSeasonGroup';
+
+    const GENDER = 'gender';
+
+    const ACADEMIC_LEVEL = 'academicLevel';
+
+    const REGISTRATION_FORM = 'registrationForm';
+
+    const HOUSE = 'house';
+
+    const APPLICATION_DATE = 'applicationDate';
+
+    const EXPECTED_ADMISSION_DATE = 'expectedAdmissionDate';
+
+    const BUCKET_SCORE = 'bucketScore';
+
+    const START_DATETIME = 'startDatetime';
+
+    const COMPLETED_DATETIME = 'completedDatetime';
+
     protected $_resourceType = ResourceType::APPLICATION_APPLICANT_IMPORT_JOB;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\ApplicationApplicantImportJob[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return ApplicationApplicantImportJob[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("ApplicationApplicantImportJob");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::APPLICATION_APPLICANT_IMPORT_JOB);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\ApplicationApplicantImportJob
+     * @param int $id
+     * @return ApplicationApplicantImportJob
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("ApplicationApplicantImportJob", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::APPLICATION_APPLICANT_IMPORT_JOB, $id);
     }
 
     /**
@@ -48,7 +74,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getIntakeSeason()
     {
-        return $this->getProperty("intakeSeason");
+        return $this->getProperty('intakeSeason');
     }
 
     /**
@@ -56,7 +82,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setIntakeSeason(IntakeSeason $intakeSeason = null)
     {
-        $this->setProperty("intakeSeason", $intakeSeason);
+        $this->setProperty('intakeSeason', $intakeSeason);
     }
 
     /**
@@ -64,7 +90,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getIntakeSeasonApplicantBucket()
     {
-        return $this->getProperty("intakeSeasonApplicantBucket");
+        return $this->getProperty('intakeSeasonApplicantBucket');
     }
 
     /**
@@ -72,7 +98,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setIntakeSeasonApplicantBucket(IntakeSeasonApplicantBucket $intakeSeasonApplicantBucket = null)
     {
-        $this->setProperty("intakeSeasonApplicantBucket", $intakeSeasonApplicantBucket);
+        $this->setProperty('intakeSeasonApplicantBucket', $intakeSeasonApplicantBucket);
     }
 
     /**
@@ -80,7 +106,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getIntakeSeasonGroup()
     {
-        return $this->getProperty("intakeSeasonGroup");
+        return $this->getProperty('intakeSeasonGroup');
     }
 
     /**
@@ -88,7 +114,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setIntakeSeasonGroup(IntakeSeasonGroup $intakeSeasonGroup = null)
     {
-        $this->setProperty("intakeSeasonGroup", $intakeSeasonGroup);
+        $this->setProperty('intakeSeasonGroup', $intakeSeasonGroup);
     }
 
     /**
@@ -96,7 +122,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getGender()
     {
-        return $this->getProperty("gender");
+        return $this->getProperty('gender');
     }
 
     /**
@@ -104,7 +130,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setGender(Gender $gender = null)
     {
-        $this->setProperty("gender", $gender);
+        $this->setProperty('gender', $gender);
     }
 
     /**
@@ -112,7 +138,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getAcademicLevel()
     {
-        return $this->getProperty("academicLevel");
+        return $this->getProperty('academicLevel');
     }
 
     /**
@@ -120,7 +146,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setAcademicLevel(AcademicLevel $academicLevel = null)
     {
-        $this->setProperty("academicLevel", $academicLevel);
+        $this->setProperty('academicLevel', $academicLevel);
     }
 
     /**
@@ -128,7 +154,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getRegistrationForm()
     {
-        return $this->getProperty("registrationForm");
+        return $this->getProperty('registrationForm');
     }
 
     /**
@@ -136,7 +162,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setRegistrationForm(RegistrationForm $registrationForm = null)
     {
-        $this->setProperty("registrationForm", $registrationForm);
+        $this->setProperty('registrationForm', $registrationForm);
     }
 
     /**
@@ -144,7 +170,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getHouse()
     {
-        return $this->getProperty("house");
+        return $this->getProperty('house');
     }
 
     /**
@@ -152,7 +178,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setHouse(House $house = null)
     {
-        $this->setProperty("house", $house);
+        $this->setProperty('house', $house);
     }
 
     /**
@@ -160,7 +186,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getApplicationDate()
     {
-        return $this->getProperty("applicationDate");
+        return $this->getProperty('applicationDate');
     }
 
     /**
@@ -168,7 +194,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setApplicationDate(\DateTime $applicationDate = null)
     {
-        $this->setProperty("applicationDate", $applicationDate);
+        $this->setProperty('applicationDate', $applicationDate);
     }
 
     /**
@@ -176,7 +202,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getExpectedAdmissionDate()
     {
-        return $this->getProperty("expectedAdmissionDate");
+        return $this->getProperty('expectedAdmissionDate');
     }
 
     /**
@@ -184,7 +210,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setExpectedAdmissionDate(\DateTime $expectedAdmissionDate = null)
     {
-        $this->setProperty("expectedAdmissionDate", $expectedAdmissionDate);
+        $this->setProperty('expectedAdmissionDate', $expectedAdmissionDate);
     }
 
     /**
@@ -192,7 +218,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getBucketScore()
     {
-        return $this->getProperty("bucketScore");
+        return $this->getProperty('bucketScore');
     }
 
     /**
@@ -200,7 +226,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setBucketScore($bucketScore = null)
     {
-        $this->setProperty("bucketScore", $bucketScore);
+        $this->setProperty('bucketScore', $bucketScore);
     }
 
     /**
@@ -208,7 +234,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -216,7 +242,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -224,7 +250,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function getCompletedDatetime()
     {
-        return $this->getProperty("completedDatetime");
+        return $this->getProperty('completedDatetime');
     }
 
     /**
@@ -232,7 +258,7 @@ class ApplicationApplicantImportJob extends ModelBase
      */
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
-        $this->setProperty("completedDatetime", $completedDatetime);
+        $this->setProperty('completedDatetime', $completedDatetime);
     }
 
 

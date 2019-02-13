@@ -66,7 +66,7 @@ class AssessmentDataCollectionPolicyStudentGroup extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return AcademicLevel
      */
     public function getStudentGroup()
     {
@@ -74,9 +74,9 @@ class AssessmentDataCollectionPolicyStudentGroup extends ModelBase
     }
 
     /**
-     * @param ModelBase $studentGroup
+     * @param AcademicLevel $studentGroup
      */
-    public function setStudentGroup(ModelBase $studentGroup = null)
+    public function setStudentGroup(AcademicLevel $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
