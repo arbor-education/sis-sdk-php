@@ -9,7 +9,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
 
     const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
-    const ASSESSMENT = 'assessment';
+    const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
 
     const DATA_ORDER = 'dataOrder';
 
@@ -68,19 +68,19 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return StandardizedAssessment
      */
-    public function getAssessment()
+    public function getStandardizedAssessment()
     {
-        return $this->getProperty('assessment');
+        return $this->getProperty('standardizedAssessment');
     }
 
     /**
-     * @param Assessment $assessment
+     * @param StandardizedAssessment $standardizedAssessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setStandardizedAssessment(StandardizedAssessment $standardizedAssessment = null)
     {
-        $this->setProperty('assessment', $assessment);
+        $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
 
     /**

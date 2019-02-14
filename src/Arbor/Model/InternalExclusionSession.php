@@ -130,7 +130,7 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Room
      */
     public function getLocation()
     {
@@ -138,9 +138,9 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param Room $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(Room $location = null)
     {
         $this->setProperty('location', $location);
     }

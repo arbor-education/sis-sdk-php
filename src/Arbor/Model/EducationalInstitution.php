@@ -61,6 +61,8 @@ class EducationalInstitution extends ModelBase
 
     const SPECIAL_SCHOOL_SEN_PROVISIONS = 'specialSchoolSenProvisions';
 
+    const CENSUS_SCHOOL_OPENING_DATE = 'censusSchoolOpeningDate';
+
     protected $_resourceType = ResourceType::EDUCATIONAL_INSTITUTION;
 
     /**
@@ -497,6 +499,22 @@ class EducationalInstitution extends ModelBase
     public function setSpecialSchoolSenProvisions($specialSchoolSenProvisions = null)
     {
         $this->setProperty('specialSchoolSenProvisions', $specialSchoolSenProvisions);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCensusSchoolOpeningDate()
+    {
+        return $this->getProperty('censusSchoolOpeningDate');
+    }
+
+    /**
+     * @param \DateTime $censusSchoolOpeningDate
+     */
+    public function setCensusSchoolOpeningDate(\DateTime $censusSchoolOpeningDate = null)
+    {
+        $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
     }
 
 

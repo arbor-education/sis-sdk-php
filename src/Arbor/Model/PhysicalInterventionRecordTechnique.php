@@ -1,42 +1,52 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\PhysicalInterventionRecord;
-use \Arbor\Model\PhysicalInterventionTechnique;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PhysicalInterventionRecordTechnique extends ModelBase
 {
 
+    const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
+
+    const PHYSICAL_INTERVENTION_TECHNIQUE = 'physicalInterventionTechnique';
+
     protected $_resourceType = ResourceType::PHYSICAL_INTERVENTION_RECORD_TECHNIQUE;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return
-     * \Arbor\Model\PhysicalInterventionRecordTechnique[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return PhysicalInterventionRecordTechnique[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("PhysicalInterventionRecordTechnique");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::PHYSICAL_INTERVENTION_RECORD_TECHNIQUE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\PhysicalInterventionRecordTechnique
+     * @param int $id
+     * @return PhysicalInterventionRecordTechnique
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("PhysicalInterventionRecordTechnique", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::PHYSICAL_INTERVENTION_RECORD_TECHNIQUE, $id);
     }
 
     /**
@@ -44,7 +54,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
      */
     public function getPhysicalInterventionRecord()
     {
-        return $this->getProperty("physicalInterventionRecord");
+        return $this->getProperty('physicalInterventionRecord');
     }
 
     /**
@@ -52,7 +62,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
      */
     public function setPhysicalInterventionRecord(PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
-        $this->setProperty("physicalInterventionRecord", $physicalInterventionRecord);
+        $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
 
     /**
@@ -60,7 +70,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
      */
     public function getPhysicalInterventionTechnique()
     {
-        return $this->getProperty("physicalInterventionTechnique");
+        return $this->getProperty('physicalInterventionTechnique');
     }
 
     /**
@@ -68,7 +78,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
      */
     public function setPhysicalInterventionTechnique(PhysicalInterventionTechnique $physicalInterventionTechnique = null)
     {
-        $this->setProperty("physicalInterventionTechnique", $physicalInterventionTechnique);
+        $this->setProperty('physicalInterventionTechnique', $physicalInterventionTechnique);
     }
 
 

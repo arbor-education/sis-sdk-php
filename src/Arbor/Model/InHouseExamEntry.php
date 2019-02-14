@@ -1,44 +1,66 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\InHouseExam;
-use \Arbor\Model\InHouseExamInstance;
-use \Arbor\Model\InHouseCandidate;
-use \Arbor\Model\InvigilationSession;
-use \Arbor\Model\RoomLayoutSeat;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseExamEntry extends ModelBase
 {
 
+    const IN_HOUSE_EXAM = 'inHouseExam';
+
+    const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
+
+    const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
+
+    const INVIGILATION_SESSION = 'invigilationSession';
+
+    const SEAT = 'seat';
+
+    const START_DATETIME = 'startDatetime';
+
+    const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
+
+    const ATTENDANCE_MARK = 'attendanceMark';
+
+    const MINUTES_LATE = 'minutesLate';
+
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_ENTRY;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseExamEntry[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseExamEntry[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseExamEntry");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_EXAM_ENTRY);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseExamEntry
+     * @param int $id
+     * @return InHouseExamEntry
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseExamEntry", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_EXAM_ENTRY, $id);
     }
 
     /**
@@ -46,7 +68,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getInHouseExam()
     {
-        return $this->getProperty("inHouseExam");
+        return $this->getProperty('inHouseExam');
     }
 
     /**
@@ -54,7 +76,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setInHouseExam(InHouseExam $inHouseExam = null)
     {
-        $this->setProperty("inHouseExam", $inHouseExam);
+        $this->setProperty('inHouseExam', $inHouseExam);
     }
 
     /**
@@ -62,7 +84,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getInHouseExamInstance()
     {
-        return $this->getProperty("inHouseExamInstance");
+        return $this->getProperty('inHouseExamInstance');
     }
 
     /**
@@ -70,7 +92,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setInHouseExamInstance(InHouseExamInstance $inHouseExamInstance = null)
     {
-        $this->setProperty("inHouseExamInstance", $inHouseExamInstance);
+        $this->setProperty('inHouseExamInstance', $inHouseExamInstance);
     }
 
     /**
@@ -78,7 +100,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getInHouseCandidate()
     {
-        return $this->getProperty("inHouseCandidate");
+        return $this->getProperty('inHouseCandidate');
     }
 
     /**
@@ -86,7 +108,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setInHouseCandidate(InHouseCandidate $inHouseCandidate = null)
     {
-        $this->setProperty("inHouseCandidate", $inHouseCandidate);
+        $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
 
     /**
@@ -94,7 +116,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getInvigilationSession()
     {
-        return $this->getProperty("invigilationSession");
+        return $this->getProperty('invigilationSession');
     }
 
     /**
@@ -102,7 +124,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setInvigilationSession(InvigilationSession $invigilationSession = null)
     {
-        $this->setProperty("invigilationSession", $invigilationSession);
+        $this->setProperty('invigilationSession', $invigilationSession);
     }
 
     /**
@@ -110,7 +132,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getSeat()
     {
-        return $this->getProperty("seat");
+        return $this->getProperty('seat');
     }
 
     /**
@@ -118,7 +140,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setSeat(RoomLayoutSeat $seat = null)
     {
-        $this->setProperty("seat", $seat);
+        $this->setProperty('seat', $seat);
     }
 
     /**
@@ -126,7 +148,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getStartDatetime()
     {
-        return $this->getProperty("startDatetime");
+        return $this->getProperty('startDatetime');
     }
 
     /**
@@ -134,7 +156,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setStartDatetime(\DateTime $startDatetime = null)
     {
-        $this->setProperty("startDatetime", $startDatetime);
+        $this->setProperty('startDatetime', $startDatetime);
     }
 
     /**
@@ -142,7 +164,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getExtraTimePercentage()
     {
-        return $this->getProperty("extraTimePercentage");
+        return $this->getProperty('extraTimePercentage');
     }
 
     /**
@@ -150,7 +172,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setExtraTimePercentage($extraTimePercentage = null)
     {
-        $this->setProperty("extraTimePercentage", $extraTimePercentage);
+        $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
 
     /**
@@ -158,7 +180,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getAttendanceMark()
     {
-        return $this->getProperty("attendanceMark");
+        return $this->getProperty('attendanceMark');
     }
 
     /**
@@ -166,7 +188,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setAttendanceMark($attendanceMark = null)
     {
-        $this->setProperty("attendanceMark", $attendanceMark);
+        $this->setProperty('attendanceMark', $attendanceMark);
     }
 
     /**
@@ -174,7 +196,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function getMinutesLate()
     {
-        return $this->getProperty("minutesLate");
+        return $this->getProperty('minutesLate');
     }
 
     /**
@@ -182,7 +204,7 @@ class InHouseExamEntry extends ModelBase
      */
     public function setMinutesLate($minutesLate = null)
     {
-        $this->setProperty("minutesLate", $minutesLate);
+        $this->setProperty('minutesLate', $minutesLate);
     }
 
 

@@ -29,6 +29,8 @@ class StaffContract extends ModelBase
 
     const STAFF_DESTINATION = 'staffDestination';
 
+    const STAFF_LEAVING_REASON = 'staffLeavingReason';
+
     const SUPERANNUATION_SCHEME = 'superannuationScheme';
 
     const LAST_PAY_REVIEW_DATE = 'lastPayReviewDate';
@@ -245,6 +247,22 @@ class StaffContract extends ModelBase
     public function setStaffDestination(StaffDestination $staffDestination = null)
     {
         $this->setProperty('staffDestination', $staffDestination);
+    }
+
+    /**
+     * @return StaffLeavingReason
+     */
+    public function getStaffLeavingReason()
+    {
+        return $this->getProperty('staffLeavingReason');
+    }
+
+    /**
+     * @param StaffLeavingReason $staffLeavingReason
+     */
+    public function setStaffLeavingReason(StaffLeavingReason $staffLeavingReason = null)
+    {
+        $this->setProperty('staffLeavingReason', $staffLeavingReason);
     }
 
     /**

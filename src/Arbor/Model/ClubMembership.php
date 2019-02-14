@@ -21,6 +21,8 @@ class ClubMembership extends ModelBase
 
     const CUSTOMER_INVOICE = 'customerInvoice';
 
+    const CANCELLED_DATETIME = 'cancelledDatetime';
+
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP;
 
     /**
@@ -169,6 +171,22 @@ class ClubMembership extends ModelBase
     public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCancelledDatetime()
+    {
+        return $this->getProperty('cancelledDatetime');
+    }
+
+    /**
+     * @param \DateTime $cancelledDatetime
+     */
+    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    {
+        $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
 
 

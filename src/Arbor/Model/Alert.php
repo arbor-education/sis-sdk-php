@@ -7,19 +7,15 @@ use Arbor\Query\Query;
 class Alert extends ModelBase
 {
 
-    const TRIGGER = 'trigger';
+    const ALERT_RULE = 'alertRule';
 
-    const REFERENCE_DATE = 'referenceDate';
+    const TRIGGER_EVENT_TYPE = 'triggerEventType';
 
-    const OBJECT = 'object';
+    const TRIGGERED_BY = 'triggeredBy';
 
-    const SEVERITY = 'severity';
+    const REFERENCE = 'reference';
 
-    const ALERT_PARAMS = 'alertParams';
-
-    const SILENCED_DATETIME = 'silencedDatetime';
-
-    const ACTION_DATETIME = 'actionDatetime';
+    const TRIGGERED_DATETIME = 'triggeredDatetime';
 
     protected $_resourceType = ResourceType::ALERT;
 
@@ -60,115 +56,83 @@ class Alert extends ModelBase
     }
 
     /**
-     * @return Trigger
+     * @return AlertRule
      */
-    public function getTrigger()
+    public function getAlertRule()
     {
-        return $this->getProperty('trigger');
+        return $this->getProperty('alertRule');
     }
 
     /**
-     * @param Trigger $trigger
+     * @param AlertRule $alertRule
      */
-    public function setTrigger(Trigger $trigger = null)
+    public function setAlertRule(AlertRule $alertRule = null)
     {
-        $this->setProperty('trigger', $trigger);
+        $this->setProperty('alertRule', $alertRule);
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getReferenceDate()
+    public function getTriggerEventType()
     {
-        return $this->getProperty('referenceDate');
+        return $this->getProperty('triggerEventType');
     }
 
     /**
-     * @param \DateTime $referenceDate
+     * @param string $triggerEventType
      */
-    public function setReferenceDate(\DateTime $referenceDate = null)
+    public function setTriggerEventType($triggerEventType = null)
     {
-        $this->setProperty('referenceDate', $referenceDate);
+        $this->setProperty('triggerEventType', $triggerEventType);
     }
 
     /**
      * @return ModelBase
      */
-    public function getObject()
+    public function getTriggeredBy()
     {
-        return $this->getProperty('object');
+        return $this->getProperty('triggeredBy');
     }
 
     /**
-     * @param ModelBase $object
+     * @param ModelBase $triggeredBy
      */
-    public function setObject(ModelBase $object = null)
+    public function setTriggeredBy(ModelBase $triggeredBy = null)
     {
-        $this->setProperty('object', $object);
+        $this->setProperty('triggeredBy', $triggeredBy);
     }
 
     /**
-     * @return string
+     * @return ModelBase
      */
-    public function getSeverity()
+    public function getReference()
     {
-        return $this->getProperty('severity');
+        return $this->getProperty('reference');
     }
 
     /**
-     * @param string $severity
+     * @param ModelBase $reference
      */
-    public function setSeverity($severity = null)
+    public function setReference(ModelBase $reference = null)
     {
-        $this->setProperty('severity', $severity);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAlertParams()
-    {
-        return $this->getProperty('alertParams');
-    }
-
-    /**
-     * @param string $alertParams
-     */
-    public function setAlertParams($alertParams = null)
-    {
-        $this->setProperty('alertParams', $alertParams);
+        $this->setProperty('reference', $reference);
     }
 
     /**
      * @return \DateTime
      */
-    public function getSilencedDatetime()
+    public function getTriggeredDatetime()
     {
-        return $this->getProperty('silencedDatetime');
+        return $this->getProperty('triggeredDatetime');
     }
 
     /**
-     * @param \DateTime $silencedDatetime
+     * @param \DateTime $triggeredDatetime
      */
-    public function setSilencedDatetime(\DateTime $silencedDatetime = null)
+    public function setTriggeredDatetime(\DateTime $triggeredDatetime = null)
     {
-        $this->setProperty('silencedDatetime', $silencedDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getActionDatetime()
-    {
-        return $this->getProperty('actionDatetime');
-    }
-
-    /**
-     * @param \DateTime $actionDatetime
-     */
-    public function setActionDatetime(\DateTime $actionDatetime = null)
-    {
-        $this->setProperty('actionDatetime', $actionDatetime);
+        $this->setProperty('triggeredDatetime', $triggeredDatetime);
     }
 
 

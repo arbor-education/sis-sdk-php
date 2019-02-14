@@ -1,41 +1,60 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\InHouseCandidate;
-use \Arbor\Model\AccessArrangement;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseCandidateAccessArrangement extends ModelBase
 {
 
+    const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
+
+    const ACCESS_ARRANGEMENT = 'accessArrangement';
+
+    const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
+
+    const REASON = 'reason';
+
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
+
     protected $_resourceType = ResourceType::IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseCandidateAccessArrangement[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseCandidateAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseCandidateAccessArrangement");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseCandidateAccessArrangement
+     * @param int $id
+     * @return InHouseCandidateAccessArrangement
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseCandidateAccessArrangement", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT, $id);
     }
 
     /**
@@ -43,7 +62,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function getInHouseCandidate()
     {
-        return $this->getProperty("inHouseCandidate");
+        return $this->getProperty('inHouseCandidate');
     }
 
     /**
@@ -51,7 +70,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function setInHouseCandidate(InHouseCandidate $inHouseCandidate = null)
     {
-        $this->setProperty("inHouseCandidate", $inHouseCandidate);
+        $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
 
     /**
@@ -59,7 +78,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function getAccessArrangement()
     {
-        return $this->getProperty("accessArrangement");
+        return $this->getProperty('accessArrangement');
     }
 
     /**
@@ -67,7 +86,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function setAccessArrangement(AccessArrangement $accessArrangement = null)
     {
-        $this->setProperty("accessArrangement", $accessArrangement);
+        $this->setProperty('accessArrangement', $accessArrangement);
     }
 
     /**
@@ -75,7 +94,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function getExtraTimePercentage()
     {
-        return $this->getProperty("extraTimePercentage");
+        return $this->getProperty('extraTimePercentage');
     }
 
     /**
@@ -83,7 +102,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function setExtraTimePercentage($extraTimePercentage = null)
     {
-        $this->setProperty("extraTimePercentage", $extraTimePercentage);
+        $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
 
     /**
@@ -91,7 +110,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function getReason()
     {
-        return $this->getProperty("reason");
+        return $this->getProperty('reason');
     }
 
     /**
@@ -99,7 +118,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function setReason($reason = null)
     {
-        $this->setProperty("reason", $reason);
+        $this->setProperty('reason', $reason);
     }
 
     /**
@@ -107,7 +126,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -115,7 +134,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -123,7 +142,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -131,7 +150,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
 

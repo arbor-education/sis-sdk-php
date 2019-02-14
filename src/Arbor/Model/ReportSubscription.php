@@ -66,7 +66,7 @@ class ReportSubscription extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Staff
      */
     public function getSubscriber()
     {
@@ -74,9 +74,9 @@ class ReportSubscription extends ModelBase
     }
 
     /**
-     * @param ModelBase $subscriber
+     * @param Staff $subscriber
      */
-    public function setSubscriber(ModelBase $subscriber = null)
+    public function setSubscriber(Staff $subscriber = null)
     {
         $this->setProperty('subscriber', $subscriber);
     }

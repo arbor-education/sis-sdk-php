@@ -110,7 +110,7 @@ class Consent extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Staff
      */
     public function getRequestor()
     {
@@ -118,9 +118,9 @@ class Consent extends ModelBase
     }
 
     /**
-     * @param ModelBase $requestor
+     * @param Staff $requestor
      */
-    public function setRequestor(ModelBase $requestor = null)
+    public function setRequestor(Staff $requestor = null)
     {
         $this->setProperty('requestor', $requestor);
     }

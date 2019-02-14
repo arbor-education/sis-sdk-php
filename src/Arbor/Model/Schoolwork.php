@@ -27,6 +27,8 @@ class Schoolwork extends ModelBase
 
     const ACADEMIC_UNIT = 'academicUnit';
 
+    const SUBMIT_VIA_ARBOR = 'submitViaArbor';
+
     protected $_resourceType = ResourceType::SCHOOLWORK;
 
     /**
@@ -130,7 +132,7 @@ class Schoolwork extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Session
      */
     public function getDueEvent()
     {
@@ -138,9 +140,9 @@ class Schoolwork extends ModelBase
     }
 
     /**
-     * @param ModelBase $dueEvent
+     * @param Session $dueEvent
      */
-    public function setDueEvent(ModelBase $dueEvent = null)
+    public function setDueEvent(Session $dueEvent = null)
     {
         $this->setProperty('dueEvent', $dueEvent);
     }
@@ -223,6 +225,22 @@ class Schoolwork extends ModelBase
     public function setAcademicUnit(AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getSubmitViaArbor()
+    {
+        return $this->getProperty('submitViaArbor');
+    }
+
+    /**
+     * @param bool $submitViaArbor
+     */
+    public function setSubmitViaArbor($submitViaArbor = null)
+    {
+        $this->setProperty('submitViaArbor', $submitViaArbor);
     }
 
 

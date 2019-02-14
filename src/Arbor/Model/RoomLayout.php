@@ -9,6 +9,8 @@ class RoomLayout extends ModelBase
 
     const ROOM = 'room';
 
+    const MAIN_ENTRANCE_LOCATION = 'mainEntranceLocation';
+
     protected $_resourceType = ResourceType::ROOM_LAYOUT;
 
     /**
@@ -61,6 +63,22 @@ class RoomLayout extends ModelBase
     public function setRoom(Room $room = null)
     {
         $this->setProperty('room', $room);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMainEntranceLocation()
+    {
+        return $this->getProperty('mainEntranceLocation');
+    }
+
+    /**
+     * @param string $mainEntranceLocation
+     */
+    public function setMainEntranceLocation($mainEntranceLocation = null)
+    {
+        $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }
 
 

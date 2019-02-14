@@ -7,7 +7,7 @@ use Arbor\Query\Query;
 class SmsMessageDraft extends ModelBase
 {
 
-    const SENDING_PROFILE = 'sendingProfile';
+    const SENDER = 'sender';
 
     const MESSAGE_TEXT = 'messageText';
 
@@ -17,11 +17,15 @@ class SmsMessageDraft extends ModelBase
 
     const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
 
+    const SENDING_QUEUED_DATETIME = 'sendingQueuedDatetime';
+
     const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
     const RECIPIENTS_RESOLVED_DATETIME = 'recipientsResolvedDatetime';
 
     const SENDING_COMPLETED_DATETIME = 'sendingCompletedDatetime';
+
+    const CONTEXT = 'context';
 
     protected $_resourceType = ResourceType::SMS_MESSAGE_DRAFT;
 
@@ -62,19 +66,19 @@ class SmsMessageDraft extends ModelBase
     }
 
     /**
-     * @return SendingProfile
+     * @return ModelBase
      */
-    public function getSendingProfile()
+    public function getSender()
     {
-        return $this->getProperty('sendingProfile');
+        return $this->getProperty('sender');
     }
 
     /**
-     * @param SendingProfile $sendingProfile
+     * @param ModelBase $sender
      */
-    public function setSendingProfile(SendingProfile $sendingProfile = null)
+    public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty('sendingProfile', $sendingProfile);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -144,6 +148,22 @@ class SmsMessageDraft extends ModelBase
     /**
      * @return \DateTime
      */
+    public function getSendingQueuedDatetime()
+    {
+        return $this->getProperty('sendingQueuedDatetime');
+    }
+
+    /**
+     * @param \DateTime $sendingQueuedDatetime
+     */
+    public function setSendingQueuedDatetime(\DateTime $sendingQueuedDatetime = null)
+    {
+        $this->setProperty('sendingQueuedDatetime', $sendingQueuedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
     public function getSendingStartedDatetime()
     {
         return $this->getProperty('sendingStartedDatetime');
@@ -187,6 +207,22 @@ class SmsMessageDraft extends ModelBase
     public function setSendingCompletedDatetime(\DateTime $sendingCompletedDatetime = null)
     {
         $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getContext()
+    {
+        return $this->getProperty('context');
+    }
+
+    /**
+     * @param ModelBase $context
+     */
+    public function setContext(ModelBase $context = null)
+    {
+        $this->setProperty('context', $context);
     }
 
 

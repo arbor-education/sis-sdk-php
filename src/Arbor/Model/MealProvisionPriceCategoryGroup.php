@@ -1,40 +1,52 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\MealProvisionPriceCategory;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class MealProvisionPriceCategoryGroup extends ModelBase
 {
 
+    const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
+
+    const GROUP = 'group';
+
     protected $_resourceType = ResourceType::MEAL_PROVISION_PRICE_CATEGORY_GROUP;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\MealProvisionPriceCategoryGroup[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return MealProvisionPriceCategoryGroup[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("MealProvisionPriceCategoryGroup");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::MEAL_PROVISION_PRICE_CATEGORY_GROUP);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\MealProvisionPriceCategoryGroup
+     * @param int $id
+     * @return MealProvisionPriceCategoryGroup
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("MealProvisionPriceCategoryGroup", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::MEAL_PROVISION_PRICE_CATEGORY_GROUP, $id);
     }
 
     /**
@@ -42,7 +54,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
      */
     public function getMealProvisionPriceCategory()
     {
-        return $this->getProperty("mealProvisionPriceCategory");
+        return $this->getProperty('mealProvisionPriceCategory');
     }
 
     /**
@@ -50,7 +62,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
      */
     public function setMealProvisionPriceCategory(MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
-        $this->setProperty("mealProvisionPriceCategory", $mealProvisionPriceCategory);
+        $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
 
     /**
@@ -58,7 +70,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
      */
     public function getGroup()
     {
-        return $this->getProperty("group");
+        return $this->getProperty('group');
     }
 
     /**
@@ -66,7 +78,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
      */
     public function setGroup(ModelBase $group = null)
     {
-        $this->setProperty("group", $group);
+        $this->setProperty('group', $group);
     }
 
 

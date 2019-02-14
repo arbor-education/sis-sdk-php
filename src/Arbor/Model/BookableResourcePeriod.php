@@ -52,7 +52,7 @@ class BookableResourcePeriod extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Staff
      */
     public function getResource()
     {
@@ -60,9 +60,9 @@ class BookableResourcePeriod extends ModelBase
     }
 
     /**
-     * @param ModelBase $resource
+     * @param Staff $resource
      */
-    public function setResource(ModelBase $resource = null)
+    public function setResource(Staff $resource = null)
     {
         $this->setProperty('resource', $resource);
     }

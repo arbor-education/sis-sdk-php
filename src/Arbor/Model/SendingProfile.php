@@ -102,7 +102,7 @@ class SendingProfile extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Staff
      */
     public function getPermittedSender()
     {
@@ -110,9 +110,9 @@ class SendingProfile extends ModelBase
     }
 
     /**
-     * @param ModelBase $permittedSender
+     * @param Staff $permittedSender
      */
-    public function setPermittedSender(ModelBase $permittedSender = null)
+    public function setPermittedSender(Staff $permittedSender = null)
     {
         $this->setProperty('permittedSender', $permittedSender);
     }

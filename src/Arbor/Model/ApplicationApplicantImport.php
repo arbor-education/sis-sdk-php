@@ -1,41 +1,58 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\ApplicationApplicantImportJob;
-use \Arbor\Model\Application;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class ApplicationApplicantImport extends ModelBase
 {
 
+    const APPLICATION_APPLICANT_IMPORT_JOB = 'applicationApplicantImportJob';
+
+    const APPLICATION = 'application';
+
+    const ROW_INDEX = 'rowIndex';
+
+    const ERRORS = 'errors';
+
+    const REQUIRED_ERRORS = 'requiredErrors';
+
     protected $_resourceType = ResourceType::APPLICATION_APPLICANT_IMPORT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\ApplicationApplicantImport[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return ApplicationApplicantImport[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("ApplicationApplicantImport");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::APPLICATION_APPLICANT_IMPORT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\ApplicationApplicantImport
+     * @param int $id
+     * @return ApplicationApplicantImport
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("ApplicationApplicantImport", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::APPLICATION_APPLICANT_IMPORT, $id);
     }
 
     /**
@@ -43,7 +60,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function getApplicationApplicantImportJob()
     {
-        return $this->getProperty("applicationApplicantImportJob");
+        return $this->getProperty('applicationApplicantImportJob');
     }
 
     /**
@@ -51,7 +68,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function setApplicationApplicantImportJob(ApplicationApplicantImportJob $applicationApplicantImportJob = null)
     {
-        $this->setProperty("applicationApplicantImportJob", $applicationApplicantImportJob);
+        $this->setProperty('applicationApplicantImportJob', $applicationApplicantImportJob);
     }
 
     /**
@@ -59,7 +76,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function getApplication()
     {
-        return $this->getProperty("application");
+        return $this->getProperty('application');
     }
 
     /**
@@ -67,7 +84,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function setApplication(Application $application = null)
     {
-        $this->setProperty("application", $application);
+        $this->setProperty('application', $application);
     }
 
     /**
@@ -75,7 +92,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function getRowIndex()
     {
-        return $this->getProperty("rowIndex");
+        return $this->getProperty('rowIndex');
     }
 
     /**
@@ -83,7 +100,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function setRowIndex($rowIndex = null)
     {
-        $this->setProperty("rowIndex", $rowIndex);
+        $this->setProperty('rowIndex', $rowIndex);
     }
 
     /**
@@ -91,7 +108,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function getErrors()
     {
-        return $this->getProperty("errors");
+        return $this->getProperty('errors');
     }
 
     /**
@@ -99,7 +116,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function setErrors($errors = null)
     {
-        $this->setProperty("errors", $errors);
+        $this->setProperty('errors', $errors);
     }
 
     /**
@@ -107,7 +124,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function getRequiredErrors()
     {
-        return $this->getProperty("requiredErrors");
+        return $this->getProperty('requiredErrors');
     }
 
     /**
@@ -115,7 +132,7 @@ class ApplicationApplicantImport extends ModelBase
      */
     public function setRequiredErrors($requiredErrors = null)
     {
-        $this->setProperty("requiredErrors", $requiredErrors);
+        $this->setProperty('requiredErrors', $requiredErrors);
     }
 
 

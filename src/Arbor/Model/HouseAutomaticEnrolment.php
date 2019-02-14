@@ -1,41 +1,52 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\House;
-use \Arbor\Model\RegistrationForm;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class HouseAutomaticEnrolment extends ModelBase
 {
 
+    const HOUSE = 'house';
+
+    const TRIGGER = 'trigger';
+
     protected $_resourceType = ResourceType::HOUSE_AUTOMATIC_ENROLMENT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\HouseAutomaticEnrolment[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return HouseAutomaticEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("HouseAutomaticEnrolment");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::HOUSE_AUTOMATIC_ENROLMENT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\HouseAutomaticEnrolment
+     * @param int $id
+     * @return HouseAutomaticEnrolment
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("HouseAutomaticEnrolment", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::HOUSE_AUTOMATIC_ENROLMENT, $id);
     }
 
     /**
@@ -43,7 +54,7 @@ class HouseAutomaticEnrolment extends ModelBase
      */
     public function getHouse()
     {
-        return $this->getProperty("house");
+        return $this->getProperty('house');
     }
 
     /**
@@ -51,7 +62,7 @@ class HouseAutomaticEnrolment extends ModelBase
      */
     public function setHouse(House $house = null)
     {
-        $this->setProperty("house", $house);
+        $this->setProperty('house', $house);
     }
 
     /**
@@ -59,7 +70,7 @@ class HouseAutomaticEnrolment extends ModelBase
      */
     public function getTrigger()
     {
-        return $this->getProperty("trigger");
+        return $this->getProperty('trigger');
     }
 
     /**
@@ -67,7 +78,7 @@ class HouseAutomaticEnrolment extends ModelBase
      */
     public function setTrigger(RegistrationForm $trigger = null)
     {
-        $this->setProperty("trigger", $trigger);
+        $this->setProperty('trigger', $trigger);
     }
 
 

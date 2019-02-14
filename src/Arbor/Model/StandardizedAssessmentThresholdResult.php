@@ -1,42 +1,62 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\StandardizedAssessmentThreshold;
-use \Arbor\Model\Grade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class StandardizedAssessmentThresholdResult extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
+    const STANDARDIZED_ASSESSMENT_THRESHOLD = 'standardizedAssessmentThreshold';
+
+    const LOWER_RESULT_VALUE = 'lowerResultValue';
+
+    const UPPER_RESULT_VALUE = 'upperResultValue';
+
+    const GRADE = 'grade';
+
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return
-     * \Arbor\Model\StandardizedAssessmentThresholdResult[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return StandardizedAssessmentThresholdResult[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("StandardizedAssessmentThresholdResult");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\StandardizedAssessmentThresholdResult
+     * @param int $id
+     * @return StandardizedAssessmentThresholdResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("StandardizedAssessmentThresholdResult", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT, $id);
     }
 
     /**
@@ -44,7 +64,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -52,7 +72,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -60,7 +80,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -68,7 +88,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -76,7 +96,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -84,7 +104,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -92,7 +112,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getStandardizedAssessmentThreshold()
     {
-        return $this->getProperty("standardizedAssessmentThreshold");
+        return $this->getProperty('standardizedAssessmentThreshold');
     }
 
     /**
@@ -100,7 +120,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setStandardizedAssessmentThreshold(StandardizedAssessmentThreshold $standardizedAssessmentThreshold = null)
     {
-        $this->setProperty("standardizedAssessmentThreshold", $standardizedAssessmentThreshold);
+        $this->setProperty('standardizedAssessmentThreshold', $standardizedAssessmentThreshold);
     }
 
     /**
@@ -108,7 +128,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getLowerResultValue()
     {
-        return $this->getProperty("lowerResultValue");
+        return $this->getProperty('lowerResultValue');
     }
 
     /**
@@ -116,7 +136,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setLowerResultValue($lowerResultValue = null)
     {
-        $this->setProperty("lowerResultValue", $lowerResultValue);
+        $this->setProperty('lowerResultValue', $lowerResultValue);
     }
 
     /**
@@ -124,7 +144,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getUpperResultValue()
     {
-        return $this->getProperty("upperResultValue");
+        return $this->getProperty('upperResultValue');
     }
 
     /**
@@ -132,7 +152,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setUpperResultValue($upperResultValue = null)
     {
-        $this->setProperty("upperResultValue", $upperResultValue);
+        $this->setProperty('upperResultValue', $upperResultValue);
     }
 
     /**
@@ -140,7 +160,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function getGrade()
     {
-        return $this->getProperty("grade");
+        return $this->getProperty('grade');
     }
 
     /**
@@ -148,7 +168,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      */
     public function setGrade(Grade $grade = null)
     {
-        $this->setProperty("grade", $grade);
+        $this->setProperty('grade', $grade);
     }
 
 

@@ -9,8 +9,6 @@ class BankDeposit extends ModelBase
 
     const BANK_ACCOUNT = 'bankAccount';
 
-    const PAID_TO_BANK_DATE = 'paidToBankDate';
-
     const PAID_BY_STAFF = 'paidByStaff';
 
     const DEPOSIT_DATETIME = 'depositDatetime';
@@ -73,22 +71,6 @@ class BankDeposit extends ModelBase
     public function setBankAccount(BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getPaidToBankDate()
-    {
-        return $this->getProperty('paidToBankDate');
-    }
-
-    /**
-     * @param \DateTime $paidToBankDate
-     */
-    public function setPaidToBankDate(\DateTime $paidToBankDate = null)
-    {
-        $this->setProperty('paidToBankDate', $paidToBankDate);
     }
 
     /**

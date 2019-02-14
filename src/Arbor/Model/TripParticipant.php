@@ -15,6 +15,8 @@ class TripParticipant extends ModelBase
 
     const CONSENT_RECEIVED = 'consentReceived';
 
+    const STATUS = 'status';
+
     protected $_resourceType = ResourceType::TRIP_PARTICIPANT;
 
     /**
@@ -115,6 +117,22 @@ class TripParticipant extends ModelBase
     public function setConsentReceived($consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->getProperty('status');
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus($status = null)
+    {
+        $this->setProperty('status', $status);
     }
 
 

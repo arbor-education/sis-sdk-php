@@ -1,40 +1,52 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseCandidate extends ModelBase
 {
 
+    const STUDENT = 'student';
+
+    const CANDIDATE_NUMBER = 'candidateNumber';
+
     protected $_resourceType = ResourceType::IN_HOUSE_CANDIDATE;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseCandidate[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseCandidate[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseCandidate");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_CANDIDATE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseCandidate
+     * @param int $id
+     * @return InHouseCandidate
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseCandidate", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_CANDIDATE, $id);
     }
 
     /**
@@ -42,7 +54,7 @@ class InHouseCandidate extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -50,7 +62,7 @@ class InHouseCandidate extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -58,7 +70,7 @@ class InHouseCandidate extends ModelBase
      */
     public function getCandidateNumber()
     {
-        return $this->getProperty("candidateNumber");
+        return $this->getProperty('candidateNumber');
     }
 
     /**
@@ -66,7 +78,7 @@ class InHouseCandidate extends ModelBase
      */
     public function setCandidateNumber($candidateNumber = null)
     {
-        $this->setProperty("candidateNumber", $candidateNumber);
+        $this->setProperty('candidateNumber', $candidateNumber);
     }
 
 

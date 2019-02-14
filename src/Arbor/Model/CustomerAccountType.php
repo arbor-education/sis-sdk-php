@@ -21,6 +21,8 @@ class CustomerAccountType extends ModelBase
 
     const AUTO_CREATE_FOR_STAFF = 'autoCreateForStaff';
 
+    const CARD_PAYMENTS_ENABLED = 'cardPaymentsEnabled';
+
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT_TYPE;
 
     /**
@@ -169,6 +171,22 @@ class CustomerAccountType extends ModelBase
     public function setAutoCreateForStaff($autoCreateForStaff = null)
     {
         $this->setProperty('autoCreateForStaff', $autoCreateForStaff);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCardPaymentsEnabled()
+    {
+        return $this->getProperty('cardPaymentsEnabled');
+    }
+
+    /**
+     * @param bool $cardPaymentsEnabled
+     */
+    public function setCardPaymentsEnabled($cardPaymentsEnabled = null)
+    {
+        $this->setProperty('cardPaymentsEnabled', $cardPaymentsEnabled);
     }
 
 

@@ -7,7 +7,15 @@ use Arbor\Query\Query;
 class AssessmentDerivationDependant extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
     const ASSESSMENT_DERIVATION = 'assessmentDerivation';
+
+    const DESCRIPTION = 'description';
 
     const DEPENDANT_ASSESSMENT = 'dependantAssessment';
 
@@ -52,6 +60,54 @@ class AssessmentDerivationDependant extends ModelBase
     }
 
     /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
+    }
+
+    /**
      * @return AssessmentDerivation
      */
     public function getAssessmentDerivation()
@@ -68,7 +124,23 @@ class AssessmentDerivationDependant extends ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->getProperty('description');
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description = null)
+    {
+        $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return ModelBase
      */
     public function getDependantAssessment()
     {
@@ -76,9 +148,9 @@ class AssessmentDerivationDependant extends ModelBase
     }
 
     /**
-     * @param Assessment $dependantAssessment
+     * @param ModelBase $dependantAssessment
      */
-    public function setDependantAssessment(Assessment $dependantAssessment = null)
+    public function setDependantAssessment(ModelBase $dependantAssessment = null)
     {
         $this->setProperty('dependantAssessment', $dependantAssessment);
     }

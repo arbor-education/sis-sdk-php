@@ -21,6 +21,8 @@ class ClubSession extends ModelBase
 
     const TIMETABLE_SLOT = 'timetableSlot';
 
+    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+
     protected $_resourceType = ResourceType::CLUB_SESSION;
 
     /**
@@ -169,6 +171,22 @@ class ClubSession extends ModelBase
     public function setTimetableSlot(TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
+    }
+
+    /**
+     * @return AttendanceRegisterType
+     */
+    public function getAttendanceRegisterType()
+    {
+        return $this->getProperty('attendanceRegisterType');
+    }
+
+    /**
+     * @param AttendanceRegisterType $attendanceRegisterType
+     */
+    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    {
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
 

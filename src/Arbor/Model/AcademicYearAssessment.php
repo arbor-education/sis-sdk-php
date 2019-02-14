@@ -23,6 +23,8 @@ class AcademicYearAssessment extends ModelBase
 
     const SETUP_COMPLETION_STARTED_DATETIME = 'setupCompletionStartedDatetime';
 
+    const ALLOW_COMMENTS = 'allowComments';
+
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_ASSESSMENT;
 
     /**
@@ -187,6 +189,22 @@ class AcademicYearAssessment extends ModelBase
     public function setSetupCompletionStartedDatetime(\DateTime $setupCompletionStartedDatetime = null)
     {
         $this->setProperty('setupCompletionStartedDatetime', $setupCompletionStartedDatetime);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowComments()
+    {
+        return $this->getProperty('allowComments');
+    }
+
+    /**
+     * @param bool $allowComments
+     */
+    public function setAllowComments($allowComments = null)
+    {
+        $this->setProperty('allowComments', $allowComments);
     }
 
 

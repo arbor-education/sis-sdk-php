@@ -130,7 +130,7 @@ class InboundSmsMessage extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return EducationalInstitution
      */
     public function getRecipient()
     {
@@ -138,9 +138,9 @@ class InboundSmsMessage extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param EducationalInstitution $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(EducationalInstitution $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }

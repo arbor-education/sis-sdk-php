@@ -11,6 +11,8 @@ class SuspectedDuplicate extends ModelBase
 
     const SUSPECT_TWO = 'suspectTwo';
 
+    const UNIQUE_KEY = 'uniqueKey';
+
     const TOTAL_DUPLICATE_SCORE = 'totalDuplicateScore';
 
     const DUPLICATE_SCORES = 'duplicateScores';
@@ -89,6 +91,22 @@ class SuspectedDuplicate extends ModelBase
     public function setSuspectTwo(ModelBase $suspectTwo = null)
     {
         $this->setProperty('suspectTwo', $suspectTwo);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUniqueKey()
+    {
+        return $this->getProperty('uniqueKey');
+    }
+
+    /**
+     * @param string $uniqueKey
+     */
+    public function setUniqueKey($uniqueKey = null)
+    {
+        $this->setProperty('uniqueKey', $uniqueKey);
     }
 
     /**

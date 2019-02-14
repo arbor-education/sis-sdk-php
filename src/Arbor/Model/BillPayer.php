@@ -13,6 +13,8 @@ class BillPayer extends ModelBase
 
     const STRIPE_CUSTOMER_ID = 'stripeCustomerId';
 
+    const NEW_STRIPE_CUSTOMER_ID = 'newStripeCustomerId';
+
     protected $_resourceType = ResourceType::BILL_PAYER;
 
     /**
@@ -97,6 +99,22 @@ class BillPayer extends ModelBase
     public function setStripeCustomerId($stripeCustomerId = null)
     {
         $this->setProperty('stripeCustomerId', $stripeCustomerId);
+    }
+
+    /**
+     * @return string
+     */
+    public function getNewStripeCustomerId()
+    {
+        return $this->getProperty('newStripeCustomerId');
+    }
+
+    /**
+     * @param string $newStripeCustomerId
+     */
+    public function setNewStripeCustomerId($newStripeCustomerId = null)
+    {
+        $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }
 
 

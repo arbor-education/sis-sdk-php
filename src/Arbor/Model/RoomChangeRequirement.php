@@ -104,7 +104,7 @@ class RoomChangeRequirement extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return RoomUnavailability
      */
     public function getUnavailabilityEvent()
     {
@@ -112,9 +112,9 @@ class RoomChangeRequirement extends ModelBase
     }
 
     /**
-     * @param ModelBase $unavailabilityEvent
+     * @param RoomUnavailability $unavailabilityEvent
      */
-    public function setUnavailabilityEvent(ModelBase $unavailabilityEvent = null)
+    public function setUnavailabilityEvent(RoomUnavailability $unavailabilityEvent = null)
     {
         $this->setProperty('unavailabilityEvent', $unavailabilityEvent);
     }

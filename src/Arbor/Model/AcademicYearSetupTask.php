@@ -13,6 +13,8 @@ class AcademicYearSetupTask extends ModelBase
 
     const APPROVED_DATETIME = 'approvedDatetime';
 
+    const SKIPPED_DATETIME = 'skippedDatetime';
+
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_SETUP_TASK;
 
     /**
@@ -97,6 +99,22 @@ class AcademicYearSetupTask extends ModelBase
     public function setApprovedDatetime(\DateTime $approvedDatetime = null)
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getSkippedDatetime()
+    {
+        return $this->getProperty('skippedDatetime');
+    }
+
+    /**
+     * @param \DateTime $skippedDatetime
+     */
+    public function setSkippedDatetime(\DateTime $skippedDatetime = null)
+    {
+        $this->setProperty('skippedDatetime', $skippedDatetime);
     }
 
 

@@ -19,6 +19,8 @@ class UserRole extends ModelBase
 
     const PERMISSION_NAME = 'permissionName';
 
+    const PERMISSION_CATEGORY = 'permissionCategory';
+
     const DESCRIPTION = 'description';
 
     protected $_resourceType = ResourceType::USER_ROLE;
@@ -153,6 +155,22 @@ class UserRole extends ModelBase
     public function setPermissionName($permissionName = null)
     {
         $this->setProperty('permissionName', $permissionName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPermissionCategory()
+    {
+        return $this->getProperty('permissionCategory');
+    }
+
+    /**
+     * @param string $permissionCategory
+     */
+    public function setPermissionCategory($permissionCategory = null)
+    {
+        $this->setProperty('permissionCategory', $permissionCategory);
     }
 
     /**

@@ -3,6 +3,7 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\UkJcq\QualificationResultImportJob;
 
 class QualificationResult extends ModelBase
 {
@@ -198,7 +199,7 @@ class QualificationResult extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return QualificationResultImportJob
      */
     public function getImportJob()
     {
@@ -206,9 +207,9 @@ class QualificationResult extends ModelBase
     }
 
     /**
-     * @param ModelBase $importJob
+     * @param QualificationResultImportJob $importJob
      */
-    public function setImportJob(ModelBase $importJob = null)
+    public function setImportJob(QualificationResultImportJob $importJob = null)
     {
         $this->setProperty('importJob', $importJob);
     }

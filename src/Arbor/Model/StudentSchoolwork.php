@@ -17,7 +17,7 @@ class StudentSchoolwork extends ModelBase
 
     const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
-    const REVIEWED_DATETIME = 'reviewedDatetime';
+    const NOT_SUBMITTED_DATETIME = 'notSubmittedDatetime';
 
     protected $_resourceType = ResourceType::STUDENT_SCHOOLWORK;
 
@@ -140,17 +140,17 @@ class StudentSchoolwork extends ModelBase
     /**
      * @return \DateTime
      */
-    public function getReviewedDatetime()
+    public function getNotSubmittedDatetime()
     {
-        return $this->getProperty('reviewedDatetime');
+        return $this->getProperty('notSubmittedDatetime');
     }
 
     /**
-     * @param \DateTime $reviewedDatetime
+     * @param \DateTime $notSubmittedDatetime
      */
-    public function setReviewedDatetime(\DateTime $reviewedDatetime = null)
+    public function setNotSubmittedDatetime(\DateTime $notSubmittedDatetime = null)
     {
-        $this->setProperty('reviewedDatetime', $reviewedDatetime);
+        $this->setProperty('notSubmittedDatetime', $notSubmittedDatetime);
     }
 
 

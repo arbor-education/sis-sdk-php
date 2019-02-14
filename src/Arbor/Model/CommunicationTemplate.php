@@ -21,6 +21,8 @@ class CommunicationTemplate extends ModelBase
 
     const COMMUNICATION_TEMPLATE_DEFINITION_CLASS = 'communicationTemplateDefinitionClass';
 
+    const CUSTOM_REPORT = 'customReport';
+
     protected $_resourceType = ResourceType::COMMUNICATION_TEMPLATE;
 
     /**
@@ -169,6 +171,22 @@ class CommunicationTemplate extends ModelBase
     public function setCommunicationTemplateDefinitionClass($communicationTemplateDefinitionClass = null)
     {
         $this->setProperty('communicationTemplateDefinitionClass', $communicationTemplateDefinitionClass);
+    }
+
+    /**
+     * @return CustomReport
+     */
+    public function getCustomReport()
+    {
+        return $this->getProperty('customReport');
+    }
+
+    /**
+     * @param CustomReport $customReport
+     */
+    public function setCustomReport(CustomReport $customReport = null)
+    {
+        $this->setProperty('customReport', $customReport);
     }
 
 

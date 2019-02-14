@@ -15,6 +15,12 @@ class CustomerAccountRefund extends ModelBase
 
     const TRANSACTION = 'transaction';
 
+    const STRIPE_REFUND_TRANSACTION = 'stripeRefundTransaction';
+
+    const REFUND_SUCCEEDED_DATETIME = 'refundSucceededDatetime';
+
+    const REFUND_FAILED_DATETIME = 'refundFailedDatetime';
+
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT_REFUND;
 
     /**
@@ -115,6 +121,54 @@ class CustomerAccountRefund extends ModelBase
     public function setTransaction(ModelBase $transaction = null)
     {
         $this->setProperty('transaction', $transaction);
+    }
+
+    /**
+     * @return StripeRefundTransaction
+     */
+    public function getStripeRefundTransaction()
+    {
+        return $this->getProperty('stripeRefundTransaction');
+    }
+
+    /**
+     * @param StripeRefundTransaction $stripeRefundTransaction
+     */
+    public function setStripeRefundTransaction(StripeRefundTransaction $stripeRefundTransaction = null)
+    {
+        $this->setProperty('stripeRefundTransaction', $stripeRefundTransaction);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getRefundSucceededDatetime()
+    {
+        return $this->getProperty('refundSucceededDatetime');
+    }
+
+    /**
+     * @param \DateTime $refundSucceededDatetime
+     */
+    public function setRefundSucceededDatetime(\DateTime $refundSucceededDatetime = null)
+    {
+        $this->setProperty('refundSucceededDatetime', $refundSucceededDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getRefundFailedDatetime()
+    {
+        return $this->getProperty('refundFailedDatetime');
+    }
+
+    /**
+     * @param \DateTime $refundFailedDatetime
+     */
+    public function setRefundFailedDatetime(\DateTime $refundFailedDatetime = null)
+    {
+        $this->setProperty('refundFailedDatetime', $refundFailedDatetime);
     }
 
 

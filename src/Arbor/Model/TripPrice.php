@@ -17,6 +17,12 @@ class TripPrice extends ModelBase
 
     const VOLUNTARY_CONTRIBUTION = 'voluntaryContribution';
 
+    const INSTALMENTS_PERMITTED = 'instalmentsPermitted';
+
+    const MINIMUM_INSTALMENT_AMOUNT = 'minimumInstalmentAmount';
+
+    const AUTO_CONFIRM_INSTALMENT_THRESHOLD = 'autoConfirmInstalmentThreshold';
+
     protected $_resourceType = ResourceType::TRIP_PRICE;
 
     /**
@@ -133,6 +139,54 @@ class TripPrice extends ModelBase
     public function setVoluntaryContribution($voluntaryContribution = null)
     {
         $this->setProperty('voluntaryContribution', $voluntaryContribution);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getInstalmentsPermitted()
+    {
+        return $this->getProperty('instalmentsPermitted');
+    }
+
+    /**
+     * @param bool $instalmentsPermitted
+     */
+    public function setInstalmentsPermitted($instalmentsPermitted = null)
+    {
+        $this->setProperty('instalmentsPermitted', $instalmentsPermitted);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMinimumInstalmentAmount()
+    {
+        return $this->getProperty('minimumInstalmentAmount');
+    }
+
+    /**
+     * @param string $minimumInstalmentAmount
+     */
+    public function setMinimumInstalmentAmount($minimumInstalmentAmount = null)
+    {
+        $this->setProperty('minimumInstalmentAmount', $minimumInstalmentAmount);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAutoConfirmInstalmentThreshold()
+    {
+        return $this->getProperty('autoConfirmInstalmentThreshold');
+    }
+
+    /**
+     * @param string $autoConfirmInstalmentThreshold
+     */
+    public function setAutoConfirmInstalmentThreshold($autoConfirmInstalmentThreshold = null)
+    {
+        $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }
 
 

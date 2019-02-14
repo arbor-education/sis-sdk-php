@@ -1,40 +1,58 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\PhysicalInterventionRecord;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class PhysicalInterventionRecordWitness extends ModelBase
 {
 
+    const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
+
+    const WITNESS = 'witness';
+
+    const NARRATIVE = 'narrative';
+
+    const CONFIRMED_DATETIME = 'confirmedDatetime';
+
+    const REJECTED_DATETIME = 'rejectedDatetime';
+
     protected $_resourceType = ResourceType::PHYSICAL_INTERVENTION_RECORD_WITNESS;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\PhysicalInterventionRecordWitness[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return PhysicalInterventionRecordWitness[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("PhysicalInterventionRecordWitness");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::PHYSICAL_INTERVENTION_RECORD_WITNESS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\PhysicalInterventionRecordWitness
+     * @param int $id
+     * @return PhysicalInterventionRecordWitness
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("PhysicalInterventionRecordWitness", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::PHYSICAL_INTERVENTION_RECORD_WITNESS, $id);
     }
 
     /**
@@ -42,7 +60,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function getPhysicalInterventionRecord()
     {
-        return $this->getProperty("physicalInterventionRecord");
+        return $this->getProperty('physicalInterventionRecord');
     }
 
     /**
@@ -50,7 +68,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function setPhysicalInterventionRecord(PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
-        $this->setProperty("physicalInterventionRecord", $physicalInterventionRecord);
+        $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
 
     /**
@@ -58,7 +76,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function getWitness()
     {
-        return $this->getProperty("witness");
+        return $this->getProperty('witness');
     }
 
     /**
@@ -66,7 +84,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function setWitness(ModelBase $witness = null)
     {
-        $this->setProperty("witness", $witness);
+        $this->setProperty('witness', $witness);
     }
 
     /**
@@ -74,7 +92,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -82,7 +100,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -90,7 +108,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function getConfirmedDatetime()
     {
-        return $this->getProperty("confirmedDatetime");
+        return $this->getProperty('confirmedDatetime');
     }
 
     /**
@@ -98,7 +116,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function setConfirmedDatetime(\DateTime $confirmedDatetime = null)
     {
-        $this->setProperty("confirmedDatetime", $confirmedDatetime);
+        $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
 
     /**
@@ -106,7 +124,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function getRejectedDatetime()
     {
-        return $this->getProperty("rejectedDatetime");
+        return $this->getProperty('rejectedDatetime');
     }
 
     /**
@@ -114,7 +132,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      */
     public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
     {
-        $this->setProperty("rejectedDatetime", $rejectedDatetime);
+        $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
 
 

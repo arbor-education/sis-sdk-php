@@ -25,6 +25,8 @@ class BusinessRole extends ModelBase
 
     const TEACHING_STAFF = 'teachingStaff';
 
+    const BUSINESS_ROLE_CATEGORY = 'businessRoleCategory';
+
     const CUSTOMER_MANAGES_DEFAULT_USER_ROLES = 'customerManagesDefaultUserRoles';
 
     protected $_resourceType = ResourceType::BUSINESS_ROLE;
@@ -207,6 +209,22 @@ class BusinessRole extends ModelBase
     public function setTeachingStaff($teachingStaff = null)
     {
         $this->setProperty('teachingStaff', $teachingStaff);
+    }
+
+    /**
+     * @return string
+     */
+    public function getBusinessRoleCategory()
+    {
+        return $this->getProperty('businessRoleCategory');
+    }
+
+    /**
+     * @param string $businessRoleCategory
+     */
+    public function setBusinessRoleCategory($businessRoleCategory = null)
+    {
+        $this->setProperty('businessRoleCategory', $businessRoleCategory);
     }
 
     /**

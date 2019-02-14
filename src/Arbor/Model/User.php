@@ -21,6 +21,8 @@ class User extends ModelBase
 
     const PASSWORD_HASH = 'passwordHash';
 
+    const PASSWORD_RESET_HASH = 'passwordResetHash';
+
     const AUTHENTICATION_TYPE = 'authenticationType';
 
     const AUTHENTICATION_TOKEN = 'authenticationToken';
@@ -199,6 +201,22 @@ class User extends ModelBase
     public function setPasswordHash($passwordHash = null)
     {
         $this->setProperty('passwordHash', $passwordHash);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPasswordResetHash()
+    {
+        return $this->getProperty('passwordResetHash');
+    }
+
+    /**
+     * @param string $passwordResetHash
+     */
+    public function setPasswordResetHash($passwordResetHash = null)
+    {
+        $this->setProperty('passwordResetHash', $passwordResetHash);
     }
 
     /**

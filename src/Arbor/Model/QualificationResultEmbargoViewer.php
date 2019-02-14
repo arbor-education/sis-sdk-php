@@ -1,39 +1,50 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class QualificationResultEmbargoViewer extends ModelBase
 {
 
+    const VIEWER = 'viewer';
+
     protected $_resourceType = ResourceType::QUALIFICATION_RESULT_EMBARGO_VIEWER;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\QualificationResultEmbargoViewer[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return QualificationResultEmbargoViewer[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("QualificationResultEmbargoViewer");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::QUALIFICATION_RESULT_EMBARGO_VIEWER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\QualificationResultEmbargoViewer
+     * @param int $id
+     * @return QualificationResultEmbargoViewer
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("QualificationResultEmbargoViewer", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::QUALIFICATION_RESULT_EMBARGO_VIEWER, $id);
     }
 
     /**
@@ -41,7 +52,7 @@ class QualificationResultEmbargoViewer extends ModelBase
      */
     public function getViewer()
     {
-        return $this->getProperty("viewer");
+        return $this->getProperty('viewer');
     }
 
     /**
@@ -49,7 +60,7 @@ class QualificationResultEmbargoViewer extends ModelBase
      */
     public function setViewer(ModelBase $viewer = null)
     {
-        $this->setProperty("viewer", $viewer);
+        $this->setProperty('viewer', $viewer);
     }
 
 

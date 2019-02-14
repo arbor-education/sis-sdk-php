@@ -1,41 +1,56 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\QualificationAssessable;
-use \Arbor\Model\QualificationLearningUnit;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseExam extends ModelBase
 {
 
+    const MOCK_QUALIFICATION_ASSESSABLE = 'mockQualificationAssessable';
+
+    const MOCK_QUALIFICATION_LEARNING_UNIT = 'mockQualificationLearningUnit';
+
+    const DURATION = 'duration';
+
+    const NAME = 'name';
+
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseExam[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseExam[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseExam");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_EXAM);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseExam
+     * @param int $id
+     * @return InHouseExam
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseExam", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_EXAM, $id);
     }
 
     /**
@@ -43,7 +58,7 @@ class InHouseExam extends ModelBase
      */
     public function getMockQualificationAssessable()
     {
-        return $this->getProperty("mockQualificationAssessable");
+        return $this->getProperty('mockQualificationAssessable');
     }
 
     /**
@@ -51,7 +66,7 @@ class InHouseExam extends ModelBase
      */
     public function setMockQualificationAssessable(QualificationAssessable $mockQualificationAssessable = null)
     {
-        $this->setProperty("mockQualificationAssessable", $mockQualificationAssessable);
+        $this->setProperty('mockQualificationAssessable', $mockQualificationAssessable);
     }
 
     /**
@@ -59,7 +74,7 @@ class InHouseExam extends ModelBase
      */
     public function getMockQualificationLearningUnit()
     {
-        return $this->getProperty("mockQualificationLearningUnit");
+        return $this->getProperty('mockQualificationLearningUnit');
     }
 
     /**
@@ -67,7 +82,7 @@ class InHouseExam extends ModelBase
      */
     public function setMockQualificationLearningUnit(QualificationLearningUnit $mockQualificationLearningUnit = null)
     {
-        $this->setProperty("mockQualificationLearningUnit", $mockQualificationLearningUnit);
+        $this->setProperty('mockQualificationLearningUnit', $mockQualificationLearningUnit);
     }
 
     /**
@@ -75,7 +90,7 @@ class InHouseExam extends ModelBase
      */
     public function getDuration()
     {
-        return $this->getProperty("duration");
+        return $this->getProperty('duration');
     }
 
     /**
@@ -83,7 +98,7 @@ class InHouseExam extends ModelBase
      */
     public function setDuration($duration = null)
     {
-        $this->setProperty("duration", $duration);
+        $this->setProperty('duration', $duration);
     }
 
     /**
@@ -91,7 +106,7 @@ class InHouseExam extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -99,7 +114,7 @@ class InHouseExam extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
 

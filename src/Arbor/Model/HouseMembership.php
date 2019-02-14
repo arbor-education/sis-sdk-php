@@ -15,6 +15,10 @@ class HouseMembership extends ModelBase
 
     const END_DATE = 'endDate';
 
+    const HOUSE_AUTOMATIC_ENROLMENT = 'houseAutomaticEnrolment';
+
+    const ENROLMENT_DEPENDENCY = 'enrolmentDependency';
+
     protected $_resourceType = ResourceType::HOUSE_MEMBERSHIP;
 
     /**
@@ -115,6 +119,38 @@ class HouseMembership extends ModelBase
     public function setEndDate(\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return HouseAutomaticEnrolment
+     */
+    public function getHouseAutomaticEnrolment()
+    {
+        return $this->getProperty('houseAutomaticEnrolment');
+    }
+
+    /**
+     * @param HouseAutomaticEnrolment $houseAutomaticEnrolment
+     */
+    public function setHouseAutomaticEnrolment(HouseAutomaticEnrolment $houseAutomaticEnrolment = null)
+    {
+        $this->setProperty('houseAutomaticEnrolment', $houseAutomaticEnrolment);
+    }
+
+    /**
+     * @return RegistrationFormMembership
+     */
+    public function getEnrolmentDependency()
+    {
+        return $this->getProperty('enrolmentDependency');
+    }
+
+    /**
+     * @param RegistrationFormMembership $enrolmentDependency
+     */
+    public function setEnrolmentDependency(RegistrationFormMembership $enrolmentDependency = null)
+    {
+        $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
 
 

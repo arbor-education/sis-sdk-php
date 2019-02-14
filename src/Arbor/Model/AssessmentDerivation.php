@@ -7,7 +7,19 @@ use Arbor\Query\Query;
 class AssessmentDerivation extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
     const ASSESSMENT = 'assessment';
+
+    const ACADEMIC_YEAR = 'academicYear';
+
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
 
     const CALCULATOR_CLASS = 'calculatorClass';
 
@@ -50,7 +62,55 @@ class AssessmentDerivation extends ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
+    }
+
+    /**
+     * @return ModelBase
      */
     public function getAssessment()
     {
@@ -58,11 +118,59 @@ class AssessmentDerivation extends ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param ModelBase $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
+    }
+
+    /**
+     * @return AcademicYear
+     */
+    public function getAcademicYear()
+    {
+        return $this->getProperty('academicYear');
+    }
+
+    /**
+     * @param AcademicYear $academicYear
+     */
+    public function setAcademicYear(AcademicYear $academicYear = null)
+    {
+        $this->setProperty('academicYear', $academicYear);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->getProperty('effectiveDate');
+    }
+
+    /**
+     * @param \DateTime $effectiveDate
+     */
+    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    {
+        $this->setProperty('effectiveDate', $effectiveDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty('endDate');
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty('endDate', $endDate);
     }
 
     /**

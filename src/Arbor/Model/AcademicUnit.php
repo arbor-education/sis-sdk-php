@@ -496,14 +496,6 @@ class AcademicUnit extends ModelBase
     }
 
     /**
-     * @return Collection|\Arbor\Model\AcademicUnitCohort[]
-     */
-    public function getAcademicUnitCohorts()
-    {
-        return $this->getCollectionProperty('academicUnitCohorts');
-    }
-
-    /**
      * @return Collection|\Arbor\Model\AcademicUnitCurriculum[]
      */
     public function getAcademicUnitCurriculums()

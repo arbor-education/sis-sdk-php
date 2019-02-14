@@ -60,7 +60,7 @@ class BankDetail extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Staff
      */
     public function getAccountHolder()
     {
@@ -68,9 +68,9 @@ class BankDetail extends ModelBase
     }
 
     /**
-     * @param ModelBase $accountHolder
+     * @param Staff $accountHolder
      */
-    public function setAccountHolder(ModelBase $accountHolder = null)
+    public function setAccountHolder(Staff $accountHolder = null)
     {
         $this->setProperty('accountHolder', $accountHolder);
     }

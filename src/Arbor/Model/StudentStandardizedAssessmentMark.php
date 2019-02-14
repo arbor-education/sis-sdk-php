@@ -9,7 +9,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
 
     const STUDENT = 'student';
 
-    const ASSESSMENT = 'assessment';
+    const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
 
     const STUDENT_STANDARDIZED_ASSESSMENT = 'studentStandardizedAssessment';
 
@@ -22,6 +22,10 @@ class StudentStandardizedAssessmentMark extends ModelBase
     const MARK_GRADE = 'markGrade';
 
     const ASSESSMENT_DATE = 'assessmentDate';
+
+    const COMPLETED_DATETIME = 'completedDatetime';
+
+    const COMPLETED_STAFF = 'completedStaff';
 
     protected $_resourceType = ResourceType::STUDENT_STANDARDIZED_ASSESSMENT_MARK;
 
@@ -78,19 +82,19 @@ class StudentStandardizedAssessmentMark extends ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return StandardizedAssessment
      */
-    public function getAssessment()
+    public function getStandardizedAssessment()
     {
-        return $this->getProperty('assessment');
+        return $this->getProperty('standardizedAssessment');
     }
 
     /**
-     * @param Assessment $assessment
+     * @param StandardizedAssessment $standardizedAssessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setStandardizedAssessment(StandardizedAssessment $standardizedAssessment = null)
     {
-        $this->setProperty('assessment', $assessment);
+        $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
 
     /**
@@ -187,6 +191,38 @@ class StudentStandardizedAssessmentMark extends ModelBase
     public function setAssessmentDate(\DateTime $assessmentDate = null)
     {
         $this->setProperty('assessmentDate', $assessmentDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCompletedDatetime()
+    {
+        return $this->getProperty('completedDatetime');
+    }
+
+    /**
+     * @param \DateTime $completedDatetime
+     */
+    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    {
+        $this->setProperty('completedDatetime', $completedDatetime);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getCompletedStaff()
+    {
+        return $this->getProperty('completedStaff');
+    }
+
+    /**
+     * @param Staff $completedStaff
+     */
+    public function setCompletedStaff(Staff $completedStaff = null)
+    {
+        $this->setProperty('completedStaff', $completedStaff);
     }
 
 

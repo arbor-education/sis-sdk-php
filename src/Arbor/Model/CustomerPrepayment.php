@@ -21,6 +21,8 @@ class CustomerPrepayment extends ModelBase
 
     const CASH_RECEIPT = 'cashReceipt';
 
+    const STRIPE_INCOMING_CARD_TRANSACTION = 'stripeIncomingCardTransaction';
+
     const PREPAYMENT_AMOUNT = 'prepaymentAmount';
 
     const PREPAYMENT_DATETIME = 'prepaymentDatetime';
@@ -181,6 +183,22 @@ class CustomerPrepayment extends ModelBase
     public function setCashReceipt(CashReceipt $cashReceipt = null)
     {
         $this->setProperty('cashReceipt', $cashReceipt);
+    }
+
+    /**
+     * @return StripeIncomingCardTransaction
+     */
+    public function getStripeIncomingCardTransaction()
+    {
+        return $this->getProperty('stripeIncomingCardTransaction');
+    }
+
+    /**
+     * @param StripeIncomingCardTransaction $stripeIncomingCardTransaction
+     */
+    public function setStripeIncomingCardTransaction(StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
+    {
+        $this->setProperty('stripeIncomingCardTransaction', $stripeIncomingCardTransaction);
     }
 
     /**

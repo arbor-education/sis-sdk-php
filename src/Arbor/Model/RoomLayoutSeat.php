@@ -13,8 +13,6 @@ class RoomLayoutSeat extends ModelBase
 
     const Y = 'y';
 
-    const SEQUENCE_NUMBER = 'sequenceNumber';
-
     protected $_resourceType = ResourceType::ROOM_LAYOUT_SEAT;
 
     /**
@@ -70,7 +68,7 @@ class RoomLayoutSeat extends ModelBase
     }
 
     /**
-     * @return float
+     * @return int
      */
     public function getX()
     {
@@ -78,7 +76,7 @@ class RoomLayoutSeat extends ModelBase
     }
 
     /**
-     * @param float $x
+     * @param int $x
      */
     public function setX($x = null)
     {
@@ -86,7 +84,7 @@ class RoomLayoutSeat extends ModelBase
     }
 
     /**
-     * @return float
+     * @return int
      */
     public function getY()
     {
@@ -94,27 +92,11 @@ class RoomLayoutSeat extends ModelBase
     }
 
     /**
-     * @param float $y
+     * @param int $y
      */
     public function setY($y = null)
     {
         $this->setProperty('y', $y);
-    }
-
-    /**
-     * @return int
-     */
-    public function getSequenceNumber()
-    {
-        return $this->getProperty('sequenceNumber');
-    }
-
-    /**
-     * @param int $sequenceNumber
-     */
-    public function setSequenceNumber($sequenceNumber = null)
-    {
-        $this->setProperty('sequenceNumber', $sequenceNumber);
     }
 
 

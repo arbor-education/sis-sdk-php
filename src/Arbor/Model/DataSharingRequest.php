@@ -1,40 +1,60 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\User;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class DataSharingRequest extends ModelBase
 {
 
+    const GROUP_APPLICATION_ID = 'groupApplicationId';
+
+    const PERMISSION_LEVEL = 'permissionLevel';
+
+    const STATUS = 'status';
+
+    const REQUESTED_DATETIME = 'requestedDatetime';
+
+    const STATUS_UPDATED_BY_USER = 'statusUpdatedByUser';
+
+    const STATUS_UPDATED_DATETIME = 'statusUpdatedDatetime';
+
     protected $_resourceType = ResourceType::DATA_SHARING_REQUEST;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\DataSharingRequest[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return DataSharingRequest[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("DataSharingRequest");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::DATA_SHARING_REQUEST);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\DataSharingRequest
+     * @param int $id
+     * @return DataSharingRequest
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("DataSharingRequest", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::DATA_SHARING_REQUEST, $id);
     }
 
     /**
@@ -42,7 +62,7 @@ class DataSharingRequest extends ModelBase
      */
     public function getGroupApplicationId()
     {
-        return $this->getProperty("groupApplicationId");
+        return $this->getProperty('groupApplicationId');
     }
 
     /**
@@ -50,7 +70,7 @@ class DataSharingRequest extends ModelBase
      */
     public function setGroupApplicationId($groupApplicationId = null)
     {
-        $this->setProperty("groupApplicationId", $groupApplicationId);
+        $this->setProperty('groupApplicationId', $groupApplicationId);
     }
 
     /**
@@ -58,7 +78,7 @@ class DataSharingRequest extends ModelBase
      */
     public function getPermissionLevel()
     {
-        return $this->getProperty("permissionLevel");
+        return $this->getProperty('permissionLevel');
     }
 
     /**
@@ -66,7 +86,7 @@ class DataSharingRequest extends ModelBase
      */
     public function setPermissionLevel($permissionLevel = null)
     {
-        $this->setProperty("permissionLevel", $permissionLevel);
+        $this->setProperty('permissionLevel', $permissionLevel);
     }
 
     /**
@@ -74,7 +94,7 @@ class DataSharingRequest extends ModelBase
      */
     public function getStatus()
     {
-        return $this->getProperty("status");
+        return $this->getProperty('status');
     }
 
     /**
@@ -82,7 +102,7 @@ class DataSharingRequest extends ModelBase
      */
     public function setStatus($status = null)
     {
-        $this->setProperty("status", $status);
+        $this->setProperty('status', $status);
     }
 
     /**
@@ -90,7 +110,7 @@ class DataSharingRequest extends ModelBase
      */
     public function getRequestedDatetime()
     {
-        return $this->getProperty("requestedDatetime");
+        return $this->getProperty('requestedDatetime');
     }
 
     /**
@@ -98,7 +118,7 @@ class DataSharingRequest extends ModelBase
      */
     public function setRequestedDatetime(\DateTime $requestedDatetime = null)
     {
-        $this->setProperty("requestedDatetime", $requestedDatetime);
+        $this->setProperty('requestedDatetime', $requestedDatetime);
     }
 
     /**
@@ -106,7 +126,7 @@ class DataSharingRequest extends ModelBase
      */
     public function getStatusUpdatedByUser()
     {
-        return $this->getProperty("statusUpdatedByUser");
+        return $this->getProperty('statusUpdatedByUser');
     }
 
     /**
@@ -114,7 +134,7 @@ class DataSharingRequest extends ModelBase
      */
     public function setStatusUpdatedByUser(User $statusUpdatedByUser = null)
     {
-        $this->setProperty("statusUpdatedByUser", $statusUpdatedByUser);
+        $this->setProperty('statusUpdatedByUser', $statusUpdatedByUser);
     }
 
     /**
@@ -122,7 +142,7 @@ class DataSharingRequest extends ModelBase
      */
     public function getStatusUpdatedDatetime()
     {
-        return $this->getProperty("statusUpdatedDatetime");
+        return $this->getProperty('statusUpdatedDatetime');
     }
 
     /**
@@ -130,7 +150,7 @@ class DataSharingRequest extends ModelBase
      */
     public function setStatusUpdatedDatetime(\DateTime $statusUpdatedDatetime = null)
     {
-        $this->setProperty("statusUpdatedDatetime", $statusUpdatedDatetime);
+        $this->setProperty('statusUpdatedDatetime', $statusUpdatedDatetime);
     }
 
 

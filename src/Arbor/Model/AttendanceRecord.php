@@ -21,6 +21,10 @@ class AttendanceRecord extends ModelBase
 
     const END_DATETIME = 'endDatetime';
 
+    const EVENT = 'event';
+
+    const EVENT_GROUP = 'eventGroup';
+
     const ATTENDANCE_FOLLOW_UP = 'attendanceFollowUp';
 
     const STUDENT_ABSENCE_NOTE = 'studentAbsenceNote';
@@ -177,6 +181,38 @@ class AttendanceRecord extends ModelBase
     public function setEndDatetime(\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getEvent()
+    {
+        return $this->getProperty('event');
+    }
+
+    /**
+     * @param ModelBase $event
+     */
+    public function setEvent(ModelBase $event = null)
+    {
+        $this->setProperty('event', $event);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getEventGroup()
+    {
+        return $this->getProperty('eventGroup');
+    }
+
+    /**
+     * @param ModelBase $eventGroup
+     */
+    public function setEventGroup(ModelBase $eventGroup = null)
+    {
+        $this->setProperty('eventGroup', $eventGroup);
     }
 
     /**

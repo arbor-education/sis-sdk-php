@@ -11,6 +11,8 @@ class ApplicationSetting extends ModelBase
 
     const SETTING_VALUE = 'settingValue';
 
+    const SETTING_CLASS = 'settingClass';
+
     protected $_resourceType = ResourceType::APPLICATION_SETTING;
 
     /**
@@ -79,6 +81,22 @@ class ApplicationSetting extends ModelBase
     public function setSettingValue($settingValue = null)
     {
         $this->setProperty('settingValue', $settingValue);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSettingClass()
+    {
+        return $this->getProperty('settingClass');
+    }
+
+    /**
+     * @param string $settingClass
+     */
+    public function setSettingClass($settingClass = null)
+    {
+        $this->setProperty('settingClass', $settingClass);
     }
 
 

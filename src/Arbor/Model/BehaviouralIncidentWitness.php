@@ -1,40 +1,56 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\BehaviouralIncident;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class BehaviouralIncidentWitness extends ModelBase
 {
 
+    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+
+    const WITNESS = 'witness';
+
+    const NARRATIVE = 'narrative';
+
+    const CONFIRMED_DATETIME = 'confirmedDatetime';
+
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_WITNESS;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\BehaviouralIncidentWitness[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return BehaviouralIncidentWitness[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("BehaviouralIncidentWitness");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::BEHAVIOURAL_INCIDENT_WITNESS);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\BehaviouralIncidentWitness
+     * @param int $id
+     * @return BehaviouralIncidentWitness
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("BehaviouralIncidentWitness", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_WITNESS, $id);
     }
 
     /**
@@ -42,7 +58,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function getBehaviouralIncident()
     {
-        return $this->getProperty("behaviouralIncident");
+        return $this->getProperty('behaviouralIncident');
     }
 
     /**
@@ -50,7 +66,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
     {
-        $this->setProperty("behaviouralIncident", $behaviouralIncident);
+        $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
@@ -58,7 +74,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function getWitness()
     {
-        return $this->getProperty("witness");
+        return $this->getProperty('witness');
     }
 
     /**
@@ -66,7 +82,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function setWitness(ModelBase $witness = null)
     {
-        $this->setProperty("witness", $witness);
+        $this->setProperty('witness', $witness);
     }
 
     /**
@@ -74,7 +90,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function getNarrative()
     {
-        return $this->getProperty("narrative");
+        return $this->getProperty('narrative');
     }
 
     /**
@@ -82,7 +98,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function setNarrative($narrative = null)
     {
-        $this->setProperty("narrative", $narrative);
+        $this->setProperty('narrative', $narrative);
     }
 
     /**
@@ -90,7 +106,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function getConfirmedDatetime()
     {
-        return $this->getProperty("confirmedDatetime");
+        return $this->getProperty('confirmedDatetime');
     }
 
     /**
@@ -98,7 +114,7 @@ class BehaviouralIncidentWitness extends ModelBase
      */
     public function setConfirmedDatetime(\DateTime $confirmedDatetime = null)
     {
-        $this->setProperty("confirmedDatetime", $confirmedDatetime);
+        $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
 
 

@@ -23,10 +23,6 @@ class Student extends ModelBase
 
     const STUDENT_NUMBER = 'studentNumber';
 
-    const PRIMARY_GUARDIANS_SALUTATION = 'primaryGuardiansSalutation';
-
-    const PRIMARY_GUARDIANS_ADDRESSEE = 'primaryGuardiansAddressee';
-
     const LEGACY_SYSTEM_ID = 'legacySystemId';
 
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
@@ -40,6 +36,8 @@ class Student extends ModelBase
     const FUNDED_HOURS = 'fundedHours';
 
     const ETHNICITY_SOURCE = 'ethnicitySource';
+
+    const NHS_NUMBER = 'nhsNumber';
 
     const EXTENDED_HOURS = 'extendedHours';
 
@@ -214,38 +212,6 @@ class Student extends ModelBase
     /**
      * @return string
      */
-    public function getPrimaryGuardiansSalutation()
-    {
-        return $this->getProperty('primaryGuardiansSalutation');
-    }
-
-    /**
-     * @param string $primaryGuardiansSalutation
-     */
-    public function setPrimaryGuardiansSalutation($primaryGuardiansSalutation = null)
-    {
-        $this->setProperty('primaryGuardiansSalutation', $primaryGuardiansSalutation);
-    }
-
-    /**
-     * @return string
-     */
-    public function getPrimaryGuardiansAddressee()
-    {
-        return $this->getProperty('primaryGuardiansAddressee');
-    }
-
-    /**
-     * @param string $primaryGuardiansAddressee
-     */
-    public function setPrimaryGuardiansAddressee($primaryGuardiansAddressee = null)
-    {
-        $this->setProperty('primaryGuardiansAddressee', $primaryGuardiansAddressee);
-    }
-
-    /**
-     * @return string
-     */
     public function getLegacySystemId()
     {
         return $this->getProperty('legacySystemId');
@@ -353,6 +319,22 @@ class Student extends ModelBase
     public function setEthnicitySource($ethnicitySource = null)
     {
         $this->setProperty('ethnicitySource', $ethnicitySource);
+    }
+
+    /**
+     * @return string
+     */
+    public function getNhsNumber()
+    {
+        return $this->getProperty('nhsNumber');
+    }
+
+    /**
+     * @param string $nhsNumber
+     */
+    public function setNhsNumber($nhsNumber = null)
+    {
+        $this->setProperty('nhsNumber', $nhsNumber);
     }
 
     /**

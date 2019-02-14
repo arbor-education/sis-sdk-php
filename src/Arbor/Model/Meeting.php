@@ -254,7 +254,7 @@ class Meeting extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return Room
      */
     public function getScheduleLocation()
     {
@@ -262,9 +262,9 @@ class Meeting extends ModelBase
     }
 
     /**
-     * @param ModelBase $scheduleLocation
+     * @param Room $scheduleLocation
      */
-    public function setScheduleLocation(ModelBase $scheduleLocation = null)
+    public function setScheduleLocation(Room $scheduleLocation = null)
     {
         $this->setProperty('scheduleLocation', $scheduleLocation);
     }

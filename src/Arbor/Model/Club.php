@@ -19,6 +19,12 @@ class Club extends ModelBase
 
     const COPIED_TO_CLUB = 'copiedToClub';
 
+    const FREE = 'free';
+
+    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+
+    const ATTENDANCE_REGISTER_EFFECTIVE_DATE = 'attendanceRegisterEffectiveDate';
+
     protected $_resourceType = ResourceType::CLUB;
 
     /**
@@ -151,6 +157,54 @@ class Club extends ModelBase
     public function setCopiedToClub(Club $copiedToClub = null)
     {
         $this->setProperty('copiedToClub', $copiedToClub);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFree()
+    {
+        return $this->getProperty('free');
+    }
+
+    /**
+     * @param bool $free
+     */
+    public function setFree($free = null)
+    {
+        $this->setProperty('free', $free);
+    }
+
+    /**
+     * @return AttendanceRegisterType
+     */
+    public function getAttendanceRegisterType()
+    {
+        return $this->getProperty('attendanceRegisterType');
+    }
+
+    /**
+     * @param AttendanceRegisterType $attendanceRegisterType
+     */
+    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    {
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAttendanceRegisterEffectiveDate()
+    {
+        return $this->getProperty('attendanceRegisterEffectiveDate');
+    }
+
+    /**
+     * @param \DateTime $attendanceRegisterEffectiveDate
+     */
+    public function setAttendanceRegisterEffectiveDate(\DateTime $attendanceRegisterEffectiveDate = null)
+    {
+        $this->setProperty('attendanceRegisterEffectiveDate', $attendanceRegisterEffectiveDate);
     }
 
 

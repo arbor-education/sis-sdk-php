@@ -7,31 +7,27 @@ use Arbor\Query\Query;
 class Assessment extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
     const ASSESSMENT_NAME = 'assessmentName';
 
     const ASSESSMENT_SHORT_NAME = 'assessmentShortName';
 
-    const PARENT_ASSESSMENT = 'parentAssessment';
+    const USER_DEFINED_NAME = 'userDefinedName';
 
-    const ASSESSMENT_CODE = 'assessmentCode';
-
-    const STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = 'studentProgressBaselineCalculatorClassName';
-
-    const EFFECTIVE_DATE = 'effectiveDate';
-
-    const END_DATE = 'endDate';
-
-    const MARK_TYPE = 'markType';
+    const USER_DEFINED_SHORT_NAME = 'userDefinedShortName';
 
     const SUBJECT = 'subject';
 
+    const CURRICULUM_TIER = 'curriculumTier';
+
     const GRADE_POINT_SCALE = 'gradePointScale';
 
-    const MARK_MIN_VALUE = 'markMinValue';
-
-    const MARK_MAX_VALUE = 'markMaxValue';
-
-    const ORDER = 'order';
+    const STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = 'studentProgressBaselineCalculatorClassName';
 
     protected $_resourceType = ResourceType::ASSESSMENT;
 
@@ -74,6 +70,54 @@ class Assessment extends ModelBase
     /**
      * @return string
      */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
+    }
+
+    /**
+     * @return string
+     */
     public function getAssessmentName()
     {
         return $this->getProperty('assessmentName');
@@ -104,99 +148,35 @@ class Assessment extends ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return string
      */
-    public function getParentAssessment()
+    public function getUserDefinedName()
     {
-        return $this->getProperty('parentAssessment');
+        return $this->getProperty('userDefinedName');
     }
 
     /**
-     * @param Assessment $parentAssessment
+     * @param string $userDefinedName
      */
-    public function setParentAssessment(Assessment $parentAssessment = null)
+    public function setUserDefinedName($userDefinedName = null)
     {
-        $this->setProperty('parentAssessment', $parentAssessment);
+        $this->setProperty('userDefinedName', $userDefinedName);
     }
 
     /**
      * @return string
      */
-    public function getAssessmentCode()
+    public function getUserDefinedShortName()
     {
-        return $this->getProperty('assessmentCode');
+        return $this->getProperty('userDefinedShortName');
     }
 
     /**
-     * @param string $assessmentCode
+     * @param string $userDefinedShortName
      */
-    public function setAssessmentCode($assessmentCode = null)
+    public function setUserDefinedShortName($userDefinedShortName = null)
     {
-        $this->setProperty('assessmentCode', $assessmentCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getStudentProgressBaselineCalculatorClassName()
-    {
-        return $this->getProperty('studentProgressBaselineCalculatorClassName');
-    }
-
-    /**
-     * @param string $studentProgressBaselineCalculatorClassName
-     */
-    public function setStudentProgressBaselineCalculatorClassName($studentProgressBaselineCalculatorClassName = null)
-    {
-        $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEffectiveDate()
-    {
-        return $this->getProperty('effectiveDate');
-    }
-
-    /**
-     * @param \DateTime $effectiveDate
-     */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
-    {
-        $this->setProperty('effectiveDate', $effectiveDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->getProperty('endDate');
-    }
-
-    /**
-     * @param \DateTime $endDate
-     */
-    public function setEndDate(\DateTime $endDate = null)
-    {
-        $this->setProperty('endDate', $endDate);
-    }
-
-    /**
-     * @return string
-     */
-    public function getMarkType()
-    {
-        return $this->getProperty('markType');
-    }
-
-    /**
-     * @param string $markType
-     */
-    public function setMarkType($markType = null)
-    {
-        $this->setProperty('markType', $markType);
+        $this->setProperty('userDefinedShortName', $userDefinedShortName);
     }
 
     /**
@@ -216,6 +196,22 @@ class Assessment extends ModelBase
     }
 
     /**
+     * @return CurriculumTier
+     */
+    public function getCurriculumTier()
+    {
+        return $this->getProperty('curriculumTier');
+    }
+
+    /**
+     * @param CurriculumTier $curriculumTier
+     */
+    public function setCurriculumTier(CurriculumTier $curriculumTier = null)
+    {
+        $this->setProperty('curriculumTier', $curriculumTier);
+    }
+
+    /**
      * @return GradePointScale
      */
     public function getGradePointScale()
@@ -232,51 +228,19 @@ class Assessment extends ModelBase
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getMarkMinValue()
+    public function getStudentProgressBaselineCalculatorClassName()
     {
-        return $this->getProperty('markMinValue');
+        return $this->getProperty('studentProgressBaselineCalculatorClassName');
     }
 
     /**
-     * @param float $markMinValue
+     * @param string $studentProgressBaselineCalculatorClassName
      */
-    public function setMarkMinValue($markMinValue = null)
+    public function setStudentProgressBaselineCalculatorClassName($studentProgressBaselineCalculatorClassName = null)
     {
-        $this->setProperty('markMinValue', $markMinValue);
-    }
-
-    /**
-     * @return float
-     */
-    public function getMarkMaxValue()
-    {
-        return $this->getProperty('markMaxValue');
-    }
-
-    /**
-     * @param float $markMaxValue
-     */
-    public function setMarkMaxValue($markMaxValue = null)
-    {
-        $this->setProperty('markMaxValue', $markMaxValue);
-    }
-
-    /**
-     * @return int
-     */
-    public function getOrder()
-    {
-        return $this->getProperty('order');
-    }
-
-    /**
-     * @param int $order
-     */
-    public function setOrder($order = null)
-    {
-        $this->setProperty('order', $order);
+        $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
     }
 
 

@@ -15,6 +15,8 @@ class House extends ModelBase
 
     const DISPLAY_ORDER = 'displayOrder';
 
+    const COPIED_TO_HOUSE = 'copiedToHouse';
+
     protected $_resourceType = ResourceType::HOUSE;
 
     /**
@@ -115,6 +117,22 @@ class House extends ModelBase
     public function setDisplayOrder($displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
+    }
+
+    /**
+     * @return House
+     */
+    public function getCopiedToHouse()
+    {
+        return $this->getProperty('copiedToHouse');
+    }
+
+    /**
+     * @param House $copiedToHouse
+     */
+    public function setCopiedToHouse(House $copiedToHouse = null)
+    {
+        $this->setProperty('copiedToHouse', $copiedToHouse);
     }
 
 

@@ -1,104 +1,54 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\Staff;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class SmsMessagePermittedSender extends ModelBase
 {
 
+    const ACTION_TAKER = 'actionTaker';
+
+    const SENDER = 'sender';
+
+    const ALLOW = 'allow';
+
     protected $_resourceType = ResourceType::SMS_MESSAGE_PERMITTED_SENDER;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\SmsMessagePermittedSender[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return SmsMessagePermittedSender[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("SmsMessagePermittedSender");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::SMS_MESSAGE_PERMITTED_SENDER);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\SmsMessagePermittedSender
+     * @param int $id
+     * @return SmsMessagePermittedSender
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("SmsMessagePermittedSender", $id);
-    }
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
 
-    /**
-     * @return \DateTime
-     */
-    public function getStartDatetime()
-    {
-        return $this->getProperty("startDatetime");
-    }
-
-    /**
-     * @param \DateTime $startDatetime
-     */
-    public function setStartDatetime(\DateTime $startDatetime = null)
-    {
-        $this->setProperty("startDatetime", $startDatetime);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEndDatetime()
-    {
-        return $this->getProperty("endDatetime");
-    }
-
-    /**
-     * @param \DateTime $endDatetime
-     */
-    public function setEndDatetime(\DateTime $endDatetime = null)
-    {
-        $this->setProperty("endDatetime", $endDatetime);
-    }
-
-    /**
-     * @return string
-     */
-    public function getLocationText()
-    {
-        return $this->getProperty("locationText");
-    }
-
-    /**
-     * @param string $locationText
-     */
-    public function setLocationText($locationText = null)
-    {
-        $this->setProperty("locationText", $locationText);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getLocation()
-    {
-        return $this->getProperty("location");
-    }
-
-    /**
-     * @param ModelBase $location
-     */
-    public function setLocation(ModelBase $location = null)
-    {
-        $this->setProperty("location", $location);
+        return $gateway->retrieve(ResourceType::SMS_MESSAGE_PERMITTED_SENDER, $id);
     }
 
     /**
@@ -106,7 +56,7 @@ class SmsMessagePermittedSender extends ModelBase
      */
     public function getActionTaker()
     {
-        return $this->getProperty("actionTaker");
+        return $this->getProperty('actionTaker');
     }
 
     /**
@@ -114,7 +64,7 @@ class SmsMessagePermittedSender extends ModelBase
      */
     public function setActionTaker(Staff $actionTaker = null)
     {
-        $this->setProperty("actionTaker", $actionTaker);
+        $this->setProperty('actionTaker', $actionTaker);
     }
 
     /**
@@ -122,7 +72,7 @@ class SmsMessagePermittedSender extends ModelBase
      */
     public function getSender()
     {
-        return $this->getProperty("sender");
+        return $this->getProperty('sender');
     }
 
     /**
@@ -130,7 +80,7 @@ class SmsMessagePermittedSender extends ModelBase
      */
     public function setSender(ModelBase $sender = null)
     {
-        $this->setProperty("sender", $sender);
+        $this->setProperty('sender', $sender);
     }
 
     /**
@@ -138,7 +88,7 @@ class SmsMessagePermittedSender extends ModelBase
      */
     public function getAllow()
     {
-        return $this->getProperty("allow");
+        return $this->getProperty('allow');
     }
 
     /**
@@ -146,7 +96,7 @@ class SmsMessagePermittedSender extends ModelBase
      */
     public function setAllow($allow = null)
     {
-        $this->setProperty("allow", $allow);
+        $this->setProperty('allow', $allow);
     }
 
 

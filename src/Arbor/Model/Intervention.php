@@ -39,6 +39,8 @@ class Intervention extends ModelBase
 
     const LOCATION = 'location';
 
+    const COPIED_TO_INTERVENTION = 'copiedToIntervention';
+
     protected $_resourceType = ResourceType::INTERVENTION;
 
     /**
@@ -331,6 +333,22 @@ class Intervention extends ModelBase
     public function setLocation(ModelBase $location = null)
     {
         $this->setProperty('location', $location);
+    }
+
+    /**
+     * @return Intervention
+     */
+    public function getCopiedToIntervention()
+    {
+        return $this->getProperty('copiedToIntervention');
+    }
+
+    /**
+     * @param Intervention $copiedToIntervention
+     */
+    public function setCopiedToIntervention(Intervention $copiedToIntervention = null)
+    {
+        $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }
 
 

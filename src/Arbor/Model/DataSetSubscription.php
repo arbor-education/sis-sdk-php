@@ -17,8 +17,6 @@ class DataSetSubscription extends ModelBase
 
     const CURRENT_DATA_SET_VERSION = 'currentDataSetVersion';
 
-    const FILTERS = 'filters';
-
     const LAST_UPDATED_DATETIME = 'lastUpdatedDatetime';
 
     protected $_resourceType = ResourceType::DATA_SET_SUBSCRIPTION;
@@ -137,22 +135,6 @@ class DataSetSubscription extends ModelBase
     public function setCurrentDataSetVersion($currentDataSetVersion = null)
     {
         $this->setProperty('currentDataSetVersion', $currentDataSetVersion);
-    }
-
-    /**
-     * @return string
-     */
-    public function getFilters()
-    {
-        return $this->getProperty('filters');
-    }
-
-    /**
-     * @param string $filters
-     */
-    public function setFilters($filters = null)
-    {
-        $this->setProperty('filters', $filters);
     }
 
     /**

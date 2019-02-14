@@ -28,6 +28,10 @@ class Staff extends ModelBase
 
     const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
 
+    const QUALIFIED_TEACHER_LEARNING_AND_SKILLS_STATUS = 'qualifiedTeacherLearningAndSkillsStatus';
+
+    const EARLY_YEARS_TEACHER_STATUS = 'earlyYearsTeacherStatus';
+
     const QUALIFIED_TEACHER_ROUTE = 'qualifiedTeacherRoute';
 
     const HLTA_STATUS = 'hltaStatus';
@@ -228,6 +232,38 @@ class Staff extends ModelBase
     public function setQualifiedTeacherStatus($qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getQualifiedTeacherLearningAndSkillsStatus()
+    {
+        return $this->getProperty('qualifiedTeacherLearningAndSkillsStatus');
+    }
+
+    /**
+     * @param bool $qualifiedTeacherLearningAndSkillsStatus
+     */
+    public function setQualifiedTeacherLearningAndSkillsStatus($qualifiedTeacherLearningAndSkillsStatus = null)
+    {
+        $this->setProperty('qualifiedTeacherLearningAndSkillsStatus', $qualifiedTeacherLearningAndSkillsStatus);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getEarlyYearsTeacherStatus()
+    {
+        return $this->getProperty('earlyYearsTeacherStatus');
+    }
+
+    /**
+     * @param bool $earlyYearsTeacherStatus
+     */
+    public function setEarlyYearsTeacherStatus($earlyYearsTeacherStatus = null)
+    {
+        $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
 
     /**

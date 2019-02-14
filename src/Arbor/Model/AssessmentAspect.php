@@ -1,40 +1,70 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\GradeSet;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AssessmentAspect extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
+    const ASSESSMENT = 'assessment';
+
+    const EFFECTIVE_DATE = 'effectiveDate';
+
+    const END_DATE = 'endDate';
+
+    const MARK_TYPE = 'markType';
+
+    const MARK_MIN_VALUE = 'markMinValue';
+
+    const MARK_MAX_VALUE = 'markMaxValue';
+
+    const GRADE_SET = 'gradeSet';
+
+    const DEFAULT_GRADE_SET = 'defaultGradeSet';
+
     protected $_resourceType = ResourceType::ASSESSMENT_ASPECT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\AssessmentAspect[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return AssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("AssessmentAspect");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::ASSESSMENT_ASPECT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\AssessmentAspect
+     * @param int $id
+     * @return AssessmentAspect
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("AssessmentAspect", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::ASSESSMENT_ASPECT, $id);
     }
 
     /**
@@ -42,7 +72,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getCode()
     {
-        return $this->getProperty("code");
+        return $this->getProperty('code');
     }
 
     /**
@@ -50,7 +80,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setCode($code = null)
     {
-        $this->setProperty("code", $code);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -58,7 +88,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -66,7 +96,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
     /**
@@ -74,7 +104,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getDataOrder()
     {
-        return $this->getProperty("dataOrder");
+        return $this->getProperty('dataOrder');
     }
 
     /**
@@ -82,7 +112,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setDataOrder($dataOrder = null)
     {
-        $this->setProperty("dataOrder", $dataOrder);
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -90,7 +120,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getAssessment()
     {
-        return $this->getProperty("assessment");
+        return $this->getProperty('assessment');
     }
 
     /**
@@ -98,7 +128,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setAssessment(ModelBase $assessment = null)
     {
-        $this->setProperty("assessment", $assessment);
+        $this->setProperty('assessment', $assessment);
     }
 
     /**
@@ -106,7 +136,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getEffectiveDate()
     {
-        return $this->getProperty("effectiveDate");
+        return $this->getProperty('effectiveDate');
     }
 
     /**
@@ -114,7 +144,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setEffectiveDate(\DateTime $effectiveDate = null)
     {
-        $this->setProperty("effectiveDate", $effectiveDate);
+        $this->setProperty('effectiveDate', $effectiveDate);
     }
 
     /**
@@ -122,7 +152,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getEndDate()
     {
-        return $this->getProperty("endDate");
+        return $this->getProperty('endDate');
     }
 
     /**
@@ -130,7 +160,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setEndDate(\DateTime $endDate = null)
     {
-        $this->setProperty("endDate", $endDate);
+        $this->setProperty('endDate', $endDate);
     }
 
     /**
@@ -138,7 +168,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getMarkType()
     {
-        return $this->getProperty("markType");
+        return $this->getProperty('markType');
     }
 
     /**
@@ -146,7 +176,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setMarkType($markType = null)
     {
-        $this->setProperty("markType", $markType);
+        $this->setProperty('markType', $markType);
     }
 
     /**
@@ -154,7 +184,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getMarkMinValue()
     {
-        return $this->getProperty("markMinValue");
+        return $this->getProperty('markMinValue');
     }
 
     /**
@@ -162,7 +192,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setMarkMinValue($markMinValue = null)
     {
-        $this->setProperty("markMinValue", $markMinValue);
+        $this->setProperty('markMinValue', $markMinValue);
     }
 
     /**
@@ -170,7 +200,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getMarkMaxValue()
     {
-        return $this->getProperty("markMaxValue");
+        return $this->getProperty('markMaxValue');
     }
 
     /**
@@ -178,7 +208,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setMarkMaxValue($markMaxValue = null)
     {
-        $this->setProperty("markMaxValue", $markMaxValue);
+        $this->setProperty('markMaxValue', $markMaxValue);
     }
 
     /**
@@ -186,7 +216,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getGradeSet()
     {
-        return $this->getProperty("gradeSet");
+        return $this->getProperty('gradeSet');
     }
 
     /**
@@ -194,7 +224,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setGradeSet(GradeSet $gradeSet = null)
     {
-        $this->setProperty("gradeSet", $gradeSet);
+        $this->setProperty('gradeSet', $gradeSet);
     }
 
     /**
@@ -202,7 +232,7 @@ class AssessmentAspect extends ModelBase
      */
     public function getDefaultGradeSet()
     {
-        return $this->getProperty("defaultGradeSet");
+        return $this->getProperty('defaultGradeSet');
     }
 
     /**
@@ -210,7 +240,7 @@ class AssessmentAspect extends ModelBase
      */
     public function setDefaultGradeSet(GradeSet $defaultGradeSet = null)
     {
-        $this->setProperty("defaultGradeSet", $defaultGradeSet);
+        $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }
 
 

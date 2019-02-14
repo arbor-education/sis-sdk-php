@@ -19,6 +19,8 @@ class CustomReportOrdering extends ModelBase
 
     const TARGET_GROUPING = 'targetGrouping';
 
+    const CUSTOM_REPORT_COLUMN = 'customReportColumn';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT_ORDERING;
 
     /**
@@ -151,6 +153,22 @@ class CustomReportOrdering extends ModelBase
     public function setTargetGrouping(CustomReportGrouping $targetGrouping = null)
     {
         $this->setProperty('targetGrouping', $targetGrouping);
+    }
+
+    /**
+     * @return CustomReportColumn
+     */
+    public function getCustomReportColumn()
+    {
+        return $this->getProperty('customReportColumn');
+    }
+
+    /**
+     * @param CustomReportColumn $customReportColumn
+     */
+    public function setCustomReportColumn(CustomReportColumn $customReportColumn = null)
+    {
+        $this->setProperty('customReportColumn', $customReportColumn);
     }
 
 

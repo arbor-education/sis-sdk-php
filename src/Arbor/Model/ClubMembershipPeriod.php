@@ -17,7 +17,9 @@ class ClubMembershipPeriod extends ModelBase
 
     const MEMBERSHIP_PERIOD_TYPE = 'membershipPeriodType';
 
-    const ALLOW_GUARDIAN_PORTAL_SIGNUP = 'allowGuardianPortalSignup';
+    const GUARDIAN_SIGNUP_START_DATETIME = 'guardianSignupStartDatetime';
+
+    const GUARDIAN_SIGNUP_END_DATETIME = 'guardianSignupEndDatetime';
 
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP_PERIOD;
 
@@ -138,19 +140,35 @@ class ClubMembershipPeriod extends ModelBase
     }
 
     /**
-     * @return bool
+     * @return \DateTime
      */
-    public function getAllowGuardianPortalSignup()
+    public function getGuardianSignupStartDatetime()
     {
-        return $this->getProperty('allowGuardianPortalSignup');
+        return $this->getProperty('guardianSignupStartDatetime');
     }
 
     /**
-     * @param bool $allowGuardianPortalSignup
+     * @param \DateTime $guardianSignupStartDatetime
      */
-    public function setAllowGuardianPortalSignup($allowGuardianPortalSignup = null)
+    public function setGuardianSignupStartDatetime(\DateTime $guardianSignupStartDatetime = null)
     {
-        $this->setProperty('allowGuardianPortalSignup', $allowGuardianPortalSignup);
+        $this->setProperty('guardianSignupStartDatetime', $guardianSignupStartDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getGuardianSignupEndDatetime()
+    {
+        return $this->getProperty('guardianSignupEndDatetime');
+    }
+
+    /**
+     * @param \DateTime $guardianSignupEndDatetime
+     */
+    public function setGuardianSignupEndDatetime(\DateTime $guardianSignupEndDatetime = null)
+    {
+        $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
 
 

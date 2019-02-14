@@ -1,40 +1,54 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\InHouseExam;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseExamInstance extends ModelBase
 {
 
+    const IN_HOUSE_EXAM = 'inHouseExam';
+
+    const EXPECTED_START_DATETIME = 'expectedStartDatetime';
+
+    const EXPECTED_END_DATETIME = 'expectedEndDatetime';
+
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_INSTANCE;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseExamInstance[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseExamInstance[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseExamInstance");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_EXAM_INSTANCE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseExamInstance
+     * @param int $id
+     * @return InHouseExamInstance
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseExamInstance", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_EXAM_INSTANCE, $id);
     }
 
     /**
@@ -42,7 +56,7 @@ class InHouseExamInstance extends ModelBase
      */
     public function getInHouseExam()
     {
-        return $this->getProperty("inHouseExam");
+        return $this->getProperty('inHouseExam');
     }
 
     /**
@@ -50,7 +64,7 @@ class InHouseExamInstance extends ModelBase
      */
     public function setInHouseExam(InHouseExam $inHouseExam = null)
     {
-        $this->setProperty("inHouseExam", $inHouseExam);
+        $this->setProperty('inHouseExam', $inHouseExam);
     }
 
     /**
@@ -58,7 +72,7 @@ class InHouseExamInstance extends ModelBase
      */
     public function getExpectedStartDatetime()
     {
-        return $this->getProperty("expectedStartDatetime");
+        return $this->getProperty('expectedStartDatetime');
     }
 
     /**
@@ -66,7 +80,7 @@ class InHouseExamInstance extends ModelBase
      */
     public function setExpectedStartDatetime(\DateTime $expectedStartDatetime = null)
     {
-        $this->setProperty("expectedStartDatetime", $expectedStartDatetime);
+        $this->setProperty('expectedStartDatetime', $expectedStartDatetime);
     }
 
     /**
@@ -74,7 +88,7 @@ class InHouseExamInstance extends ModelBase
      */
     public function getExpectedEndDatetime()
     {
-        return $this->getProperty("expectedEndDatetime");
+        return $this->getProperty('expectedEndDatetime');
     }
 
     /**
@@ -82,7 +96,7 @@ class InHouseExamInstance extends ModelBase
      */
     public function setExpectedEndDatetime(\DateTime $expectedEndDatetime = null)
     {
-        $this->setProperty("expectedEndDatetime", $expectedEndDatetime);
+        $this->setProperty('expectedEndDatetime', $expectedEndDatetime);
     }
 
 

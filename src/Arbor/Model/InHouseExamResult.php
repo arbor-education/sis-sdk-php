@@ -1,43 +1,60 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\InHouseExam;
-use \Arbor\Model\Student;
-use \Arbor\Model\InHouseExamEntry;
-use \Arbor\Model\InHouseExamGrade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseExamResult extends ModelBase
 {
 
+    const IN_HOUSE_EXAM = 'inHouseExam';
+
+    const STUDENT = 'student';
+
+    const IN_HOUSE_EXAM_ENTRY = 'inHouseExamEntry';
+
+    const NUMERIC_VALUE = 'numericValue';
+
+    const IN_HOUSE_EXAM_GRADE = 'inHouseExamGrade';
+
+    const RESULT_DATE = 'resultDate';
+
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_RESULT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseExamResult[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseExamResult[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseExamResult");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_EXAM_RESULT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseExamResult
+     * @param int $id
+     * @return InHouseExamResult
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseExamResult", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_EXAM_RESULT, $id);
     }
 
     /**
@@ -45,7 +62,7 @@ class InHouseExamResult extends ModelBase
      */
     public function getInHouseExam()
     {
-        return $this->getProperty("inHouseExam");
+        return $this->getProperty('inHouseExam');
     }
 
     /**
@@ -53,7 +70,7 @@ class InHouseExamResult extends ModelBase
      */
     public function setInHouseExam(InHouseExam $inHouseExam = null)
     {
-        $this->setProperty("inHouseExam", $inHouseExam);
+        $this->setProperty('inHouseExam', $inHouseExam);
     }
 
     /**
@@ -61,7 +78,7 @@ class InHouseExamResult extends ModelBase
      */
     public function getStudent()
     {
-        return $this->getProperty("student");
+        return $this->getProperty('student');
     }
 
     /**
@@ -69,7 +86,7 @@ class InHouseExamResult extends ModelBase
      */
     public function setStudent(Student $student = null)
     {
-        $this->setProperty("student", $student);
+        $this->setProperty('student', $student);
     }
 
     /**
@@ -77,7 +94,7 @@ class InHouseExamResult extends ModelBase
      */
     public function getInHouseExamEntry()
     {
-        return $this->getProperty("inHouseExamEntry");
+        return $this->getProperty('inHouseExamEntry');
     }
 
     /**
@@ -85,7 +102,7 @@ class InHouseExamResult extends ModelBase
      */
     public function setInHouseExamEntry(InHouseExamEntry $inHouseExamEntry = null)
     {
-        $this->setProperty("inHouseExamEntry", $inHouseExamEntry);
+        $this->setProperty('inHouseExamEntry', $inHouseExamEntry);
     }
 
     /**
@@ -93,7 +110,7 @@ class InHouseExamResult extends ModelBase
      */
     public function getNumericValue()
     {
-        return $this->getProperty("numericValue");
+        return $this->getProperty('numericValue');
     }
 
     /**
@@ -101,7 +118,7 @@ class InHouseExamResult extends ModelBase
      */
     public function setNumericValue($numericValue = null)
     {
-        $this->setProperty("numericValue", $numericValue);
+        $this->setProperty('numericValue', $numericValue);
     }
 
     /**
@@ -109,7 +126,7 @@ class InHouseExamResult extends ModelBase
      */
     public function getInHouseExamGrade()
     {
-        return $this->getProperty("inHouseExamGrade");
+        return $this->getProperty('inHouseExamGrade');
     }
 
     /**
@@ -117,7 +134,7 @@ class InHouseExamResult extends ModelBase
      */
     public function setInHouseExamGrade(InHouseExamGrade $inHouseExamGrade = null)
     {
-        $this->setProperty("inHouseExamGrade", $inHouseExamGrade);
+        $this->setProperty('inHouseExamGrade', $inHouseExamGrade);
     }
 
     /**
@@ -125,7 +142,7 @@ class InHouseExamResult extends ModelBase
      */
     public function getResultDate()
     {
-        return $this->getProperty("resultDate");
+        return $this->getProperty('resultDate');
     }
 
     /**
@@ -133,7 +150,7 @@ class InHouseExamResult extends ModelBase
      */
     public function setResultDate(\DateTime $resultDate = null)
     {
-        $this->setProperty("resultDate", $resultDate);
+        $this->setProperty('resultDate', $resultDate);
     }
 
 

@@ -7,6 +7,12 @@ use Arbor\Query\Query;
 class GradePointScaleLevelGradeSet extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
     const GRADE_POINT_SCALE = 'gradePointScale';
 
     const GRADE_SET = 'gradeSet';
@@ -51,6 +57,54 @@ class GradePointScaleLevelGradeSet extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::GRADE_POINT_SCALE_LEVEL_GRADE_SET, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**

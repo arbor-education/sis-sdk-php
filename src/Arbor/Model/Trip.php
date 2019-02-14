@@ -33,6 +33,10 @@ class Trip extends ModelBase
 
     const GUARDIAN_SIGNUP_END_DATETIME = 'guardianSignupEndDatetime';
 
+    const FREE = 'free';
+
+    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+
     protected $_resourceType = ResourceType::TRIP;
 
     /**
@@ -277,6 +281,38 @@ class Trip extends ModelBase
     public function setGuardianSignupEndDatetime(\DateTime $guardianSignupEndDatetime = null)
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFree()
+    {
+        return $this->getProperty('free');
+    }
+
+    /**
+     * @param bool $free
+     */
+    public function setFree($free = null)
+    {
+        $this->setProperty('free', $free);
+    }
+
+    /**
+     * @return AttendanceRegisterType
+     */
+    public function getAttendanceRegisterType()
+    {
+        return $this->getProperty('attendanceRegisterType');
+    }
+
+    /**
+     * @param AttendanceRegisterType $attendanceRegisterType
+     */
+    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    {
+        $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
 

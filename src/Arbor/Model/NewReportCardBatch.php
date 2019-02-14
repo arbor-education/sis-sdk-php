@@ -29,6 +29,8 @@ class NewReportCardBatch extends ModelBase
 
     const INCLUDE_TEACHER_NAME = 'includeTeacherName';
 
+    const INCLUDE_STUDENT_PHOTO = 'includeStudentPhoto';
+
     const INCLUDE_BASELINE = 'includeBaseline';
 
     const INCLUDE_WORKING_AT_CURRENT_PERIOD = 'includeWorkingAtCurrentPeriod';
@@ -265,6 +267,22 @@ class NewReportCardBatch extends ModelBase
     public function setIncludeTeacherName($includeTeacherName = null)
     {
         $this->setProperty('includeTeacherName', $includeTeacherName);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIncludeStudentPhoto()
+    {
+        return $this->getProperty('includeStudentPhoto');
+    }
+
+    /**
+     * @param bool $includeStudentPhoto
+     */
+    public function setIncludeStudentPhoto($includeStudentPhoto = null)
+    {
+        $this->setProperty('includeStudentPhoto', $includeStudentPhoto);
     }
 
     /**

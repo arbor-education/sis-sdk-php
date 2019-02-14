@@ -1,41 +1,60 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\InHouseExam;
-use \Arbor\Model\QualificationGrade;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class InHouseExamGrade extends ModelBase
 {
 
+    const IN_HOUSE_EXAM = 'inHouseExam';
+
+    const QUALIFICATION_GRADE = 'qualificationGrade';
+
+    const SHORT_NAME = 'shortName';
+
+    const LONG_NAME = 'longName';
+
+    const GRADE_VALUE = 'gradeValue';
+
+    const ACTIVE = 'active';
+
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_GRADE;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\InHouseExamGrade[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return InHouseExamGrade[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("InHouseExamGrade");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::IN_HOUSE_EXAM_GRADE);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\InHouseExamGrade
+     * @param int $id
+     * @return InHouseExamGrade
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("InHouseExamGrade", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::IN_HOUSE_EXAM_GRADE, $id);
     }
 
     /**
@@ -43,7 +62,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function getInHouseExam()
     {
-        return $this->getProperty("inHouseExam");
+        return $this->getProperty('inHouseExam');
     }
 
     /**
@@ -51,7 +70,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function setInHouseExam(InHouseExam $inHouseExam = null)
     {
-        $this->setProperty("inHouseExam", $inHouseExam);
+        $this->setProperty('inHouseExam', $inHouseExam);
     }
 
     /**
@@ -59,7 +78,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function getQualificationGrade()
     {
-        return $this->getProperty("qualificationGrade");
+        return $this->getProperty('qualificationGrade');
     }
 
     /**
@@ -67,7 +86,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
     {
-        $this->setProperty("qualificationGrade", $qualificationGrade);
+        $this->setProperty('qualificationGrade', $qualificationGrade);
     }
 
     /**
@@ -75,7 +94,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function getShortName()
     {
-        return $this->getProperty("shortName");
+        return $this->getProperty('shortName');
     }
 
     /**
@@ -83,7 +102,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function setShortName($shortName = null)
     {
-        $this->setProperty("shortName", $shortName);
+        $this->setProperty('shortName', $shortName);
     }
 
     /**
@@ -91,7 +110,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function getLongName()
     {
-        return $this->getProperty("longName");
+        return $this->getProperty('longName');
     }
 
     /**
@@ -99,7 +118,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function setLongName($longName = null)
     {
-        $this->setProperty("longName", $longName);
+        $this->setProperty('longName', $longName);
     }
 
     /**
@@ -107,7 +126,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function getGradeValue()
     {
-        return $this->getProperty("gradeValue");
+        return $this->getProperty('gradeValue');
     }
 
     /**
@@ -115,55 +134,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function setGradeValue($gradeValue = null)
     {
-        $this->setProperty("gradeValue", $gradeValue);
-    }
-
-    /**
-     * @return string
-     */
-    public function getGradeIdentifier()
-    {
-        return $this->getProperty("gradeIdentifier");
-    }
-
-    /**
-     * @param string $gradeIdentifier
-     */
-    public function setGradeIdentifier($gradeIdentifier = null)
-    {
-        $this->setProperty("gradeIdentifier", $gradeIdentifier);
-    }
-
-    /**
-     * @return float
-     */
-    public function getLowerGradePointScaleValue()
-    {
-        return $this->getProperty("lowerGradePointScaleValue");
-    }
-
-    /**
-     * @param float $lowerGradePointScaleValue
-     */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
-    {
-        $this->setProperty("lowerGradePointScaleValue", $lowerGradePointScaleValue);
-    }
-
-    /**
-     * @return float
-     */
-    public function getUpperGradePointScaleValue()
-    {
-        return $this->getProperty("upperGradePointScaleValue");
-    }
-
-    /**
-     * @param float $upperGradePointScaleValue
-     */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
-    {
-        $this->setProperty("upperGradePointScaleValue", $upperGradePointScaleValue);
+        $this->setProperty('gradeValue', $gradeValue);
     }
 
     /**
@@ -171,7 +142,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function getActive()
     {
-        return $this->getProperty("active");
+        return $this->getProperty('active');
     }
 
     /**
@@ -179,7 +150,7 @@ class InHouseExamGrade extends ModelBase
      */
     public function setActive($active = null)
     {
-        $this->setProperty("active", $active);
+        $this->setProperty('active', $active);
     }
 
 

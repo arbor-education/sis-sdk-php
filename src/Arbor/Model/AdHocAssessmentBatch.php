@@ -9,6 +9,8 @@ class AdHocAssessmentBatch extends ModelBase
 
     const AD_HOC_ASSESSMENT = 'adHocAssessment';
 
+    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
+
     const ASSESSMENT_REFERENCE_DATE = 'assessmentReferenceDate';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH;
@@ -63,6 +65,22 @@ class AdHocAssessmentBatch extends ModelBase
     public function setAdHocAssessment(AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
+    }
+
+    /**
+     * @return ProgressMeasurementPeriod
+     */
+    public function getProgressMeasurementPeriod()
+    {
+        return $this->getProperty('progressMeasurementPeriod');
+    }
+
+    /**
+     * @param ProgressMeasurementPeriod $progressMeasurementPeriod
+     */
+    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    {
+        $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
 
     /**

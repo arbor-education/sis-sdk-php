@@ -1,40 +1,60 @@
 <?php
 namespace Arbor\Model;
 
-use \Arbor\Resource\ResourceType;
-use \Arbor\Api\Gateway\GatewayInterface;
-use \Arbor\Query\Query;
-use \Arbor\Model\Collection;
-use \Arbor\Model\AcademicYear;
+use Arbor\Resource\ResourceType;
+use Arbor\Query\Query;
 
 class AcademicUnitEnrolmentImport extends ModelBase
 {
 
+    const NAME = 'name';
+
+    const ACADEMIC_YEAR = 'academicYear';
+
+    const IMPORT_STARTED_DATETIME = 'importStartedDatetime';
+
+    const IMPORT_COMPLETED_DATETIME = 'importCompletedDatetime';
+
+    const ENROLMENT_START_DATE = 'enrolmentStartDate';
+
+    const ENROLMENT_END_DATE = 'enrolmentEndDate';
+
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_ENROLMENT_IMPORT;
 
     /**
-     * @param \Arbor\Query\Query $query
-     * @return \Arbor\Model\AcademicUnitEnrolmentImport[]|\Arbor\Model\Collection
+     * @param Query $query
+     * @return AcademicUnitEnrolmentImport[] | Collection
      * @throws Exception
      */
-    public static function query($query)
+    public static function query(Query $query = null)
     {
-        $query->setResourceType("AcademicUnitEnrolmentImport");
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::query()');
+        }
+
+        if ($query === null) {
+            $query = new Query();
+        }
+
+        $query->setResourceType(ResourceType::ACADEMIC_UNIT_ENROLMENT_IMPORT);
+
         return $gateway->query($query);
     }
 
     /**
-     * @param mixed $id
-     * @return \Arbor\Model\AcademicUnitEnrolmentImport
+     * @param int $id
+     * @return AcademicUnitEnrolmentImport
      * @throws Exception
      */
     public static function retrieve($id)
     {
         $gateway = self::getDefaultGateway();
-        if(!$gateway) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        return $gateway->retrieve("AcademicUnitEnrolmentImport", $id);
+        if ($gateway === null) {
+            throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
+        }
+
+        return $gateway->retrieve(ResourceType::ACADEMIC_UNIT_ENROLMENT_IMPORT, $id);
     }
 
     /**
@@ -42,7 +62,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function getName()
     {
-        return $this->getProperty("name");
+        return $this->getProperty('name');
     }
 
     /**
@@ -50,7 +70,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function setName($name = null)
     {
-        $this->setProperty("name", $name);
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -58,7 +78,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function getAcademicYear()
     {
-        return $this->getProperty("academicYear");
+        return $this->getProperty('academicYear');
     }
 
     /**
@@ -66,7 +86,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
-        $this->setProperty("academicYear", $academicYear);
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -74,7 +94,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function getImportStartedDatetime()
     {
-        return $this->getProperty("importStartedDatetime");
+        return $this->getProperty('importStartedDatetime');
     }
 
     /**
@@ -82,7 +102,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function setImportStartedDatetime(\DateTime $importStartedDatetime = null)
     {
-        $this->setProperty("importStartedDatetime", $importStartedDatetime);
+        $this->setProperty('importStartedDatetime', $importStartedDatetime);
     }
 
     /**
@@ -90,7 +110,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function getImportCompletedDatetime()
     {
-        return $this->getProperty("importCompletedDatetime");
+        return $this->getProperty('importCompletedDatetime');
     }
 
     /**
@@ -98,7 +118,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function setImportCompletedDatetime(\DateTime $importCompletedDatetime = null)
     {
-        $this->setProperty("importCompletedDatetime", $importCompletedDatetime);
+        $this->setProperty('importCompletedDatetime', $importCompletedDatetime);
     }
 
     /**
@@ -106,7 +126,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function getEnrolmentStartDate()
     {
-        return $this->getProperty("enrolmentStartDate");
+        return $this->getProperty('enrolmentStartDate');
     }
 
     /**
@@ -114,7 +134,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function setEnrolmentStartDate(\DateTime $enrolmentStartDate = null)
     {
-        $this->setProperty("enrolmentStartDate", $enrolmentStartDate);
+        $this->setProperty('enrolmentStartDate', $enrolmentStartDate);
     }
 
     /**
@@ -122,7 +142,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function getEnrolmentEndDate()
     {
-        return $this->getProperty("enrolmentEndDate");
+        return $this->getProperty('enrolmentEndDate');
     }
 
     /**
@@ -130,7 +150,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      */
     public function setEnrolmentEndDate(\DateTime $enrolmentEndDate = null)
     {
-        $this->setProperty("enrolmentEndDate", $enrolmentEndDate);
+        $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }
 
 

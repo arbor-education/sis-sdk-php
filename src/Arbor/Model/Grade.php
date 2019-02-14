@@ -7,7 +7,7 @@ use Arbor\Query\Query;
 class Grade extends ModelBase
 {
 
-    const GRADE_CODE = 'gradeCode';
+    const CODE = 'code';
 
     const ACTIVE = 'active';
 
@@ -24,6 +24,8 @@ class Grade extends ModelBase
     const USER_DEFINED_LONG_NAME = 'userDefinedLongName';
 
     const USER_DEFINED_GRADE_DESCRIPTION = 'userDefinedGradeDescription';
+
+    const GRADE_IDENTIFIER = 'gradeIdentifier';
 
     const GRADE_VALUE = 'gradeValue';
 
@@ -76,17 +78,17 @@ class Grade extends ModelBase
     /**
      * @return string
      */
-    public function getGradeCode()
+    public function getCode()
     {
-        return $this->getProperty('gradeCode');
+        return $this->getProperty('code');
     }
 
     /**
-     * @param string $gradeCode
+     * @param string $code
      */
-    public function setGradeCode($gradeCode = null)
+    public function setCode($code = null)
     {
-        $this->setProperty('gradeCode', $gradeCode);
+        $this->setProperty('code', $code);
     }
 
     /**
@@ -215,6 +217,22 @@ class Grade extends ModelBase
     public function setUserDefinedGradeDescription($userDefinedGradeDescription = null)
     {
         $this->setProperty('userDefinedGradeDescription', $userDefinedGradeDescription);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGradeIdentifier()
+    {
+        return $this->getProperty('gradeIdentifier');
+    }
+
+    /**
+     * @param string $gradeIdentifier
+     */
+    public function setGradeIdentifier($gradeIdentifier = null)
+    {
+        $this->setProperty('gradeIdentifier', $gradeIdentifier);
     }
 
     /**
