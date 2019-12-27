@@ -17,6 +17,8 @@ class RoomChangeRequirement extends ModelBase
 
     const ROOM_CHANGED_DATETIME = 'roomChangedDatetime';
 
+    const IGNORED_DATETIME = 'ignoredDatetime';
+
     protected $_resourceType = ResourceType::ROOM_CHANGE_REQUIREMENT;
 
     /**
@@ -133,6 +135,22 @@ class RoomChangeRequirement extends ModelBase
     public function setRoomChangedDatetime(\DateTime $roomChangedDatetime = null)
     {
         $this->setProperty('roomChangedDatetime', $roomChangedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getIgnoredDatetime()
+    {
+        return $this->getProperty('ignoredDatetime');
+    }
+
+    /**
+     * @param \DateTime $ignoredDatetime
+     */
+    public function setIgnoredDatetime(\DateTime $ignoredDatetime = null)
+    {
+        $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
 
 

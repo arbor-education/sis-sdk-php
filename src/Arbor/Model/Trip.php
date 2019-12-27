@@ -37,6 +37,8 @@ class Trip extends ModelBase
 
     const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
+    const ACCOUNTING_CODE = 'accountingCode';
+
     protected $_resourceType = ResourceType::TRIP;
 
     /**
@@ -313,6 +315,22 @@ class Trip extends ModelBase
     public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccountingCode()
+    {
+        return $this->getProperty('accountingCode');
+    }
+
+    /**
+     * @param string $accountingCode
+     */
+    public function setAccountingCode($accountingCode = null)
+    {
+        $this->setProperty('accountingCode', $accountingCode);
     }
 
 

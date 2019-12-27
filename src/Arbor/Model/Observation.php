@@ -17,6 +17,10 @@ class Observation extends ModelBase
 
     const OBSERVATION_END_DATETIME = 'observationEndDatetime';
 
+    const SUBMITTED_DATETIME = 'submittedDatetime';
+
+    const OBSERVATION_FOCUS = 'observationFocus';
+
     protected $_resourceType = ResourceType::OBSERVATION;
 
     /**
@@ -133,6 +137,38 @@ class Observation extends ModelBase
     public function setObservationEndDatetime(\DateTime $observationEndDatetime = null)
     {
         $this->setProperty('observationEndDatetime', $observationEndDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getSubmittedDatetime()
+    {
+        return $this->getProperty('submittedDatetime');
+    }
+
+    /**
+     * @param \DateTime $submittedDatetime
+     */
+    public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
+    {
+        $this->setProperty('submittedDatetime', $submittedDatetime);
+    }
+
+    /**
+     * @return string
+     */
+    public function getObservationFocus()
+    {
+        return $this->getProperty('observationFocus');
+    }
+
+    /**
+     * @param string $observationFocus
+     */
+    public function setObservationFocus($observationFocus = null)
+    {
+        $this->setProperty('observationFocus', $observationFocus);
     }
 
 

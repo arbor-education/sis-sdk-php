@@ -21,6 +21,8 @@ class CustomReport extends ModelBase
 
     const SETUP_COMPLETED_DATETIME = 'setupCompletedDatetime';
 
+    const TRANSIENT = 'transient';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT;
 
     /**
@@ -169,6 +171,22 @@ class CustomReport extends ModelBase
     public function setSetupCompletedDatetime(\DateTime $setupCompletedDatetime = null)
     {
         $this->setProperty('setupCompletedDatetime', $setupCompletedDatetime);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getTransient()
+    {
+        return $this->getProperty('transient');
+    }
+
+    /**
+     * @param bool $transient
+     */
+    public function setTransient($transient = null)
+    {
+        $this->setProperty('transient', $transient);
     }
 
 

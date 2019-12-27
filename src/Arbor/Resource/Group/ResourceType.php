@@ -15,4 +15,12 @@ class ResourceType
 	const GROUP_EDUCATIONAL_INSTITUTION = 'Group_EducationalInstitution';
 	const GROUP_INSTITUTION_DATA_SHARING_REQUEST = 'Group_InstitutionDataSharingRequest';
 	const GROUP_INSTITUTION_COMMUNICATION = 'Group_InstitutionCommunication';
+	const GROUP_ASSESSMENT = 'Group_Assessment';
+	const GROUP_ASSESSMENT_ASPECT = 'Group_AssessmentAspect';
+	const GROUP_ASSESSMENT_DERIVATION = 'Group_AssessmentDerivation';
+	const GROUP_ASSESSMENT_DERIVATION_DEPENDANT = 'Group_AssessmentDerivationDependant';
+	const GROUP_ASSESSMENT_GRADE_SET = 'Group_AssessmentGradeSet';
+	const GROUP_GRADE_POINT_SCALE = 'Group_GradePointScale';
+	const GROUP_GRADE_SET = 'Group_GradeSet';
+	const GROUP_GRADE = 'Group_Grade';
 }

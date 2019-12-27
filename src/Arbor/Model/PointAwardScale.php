@@ -27,6 +27,12 @@ class PointAwardScale extends ModelBase
 
     const DIRECTIONALITY = 'directionality';
 
+    const SHOW_IN_PARENT_PORTAL = 'showInParentPortal';
+
+    const SHOW_NARRATIVE_IN_PARENT_PORTAL = 'showNarrativeInParentPortal';
+
+    const SHOW_AWARDED_BY_IN_PARENT_PORTAL = 'showAwardedByInParentPortal';
+
     protected $_resourceType = ResourceType::POINT_AWARD_SCALE;
 
     /**
@@ -223,6 +229,54 @@ class PointAwardScale extends ModelBase
     public function setDirectionality($directionality = null)
     {
         $this->setProperty('directionality', $directionality);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowInParentPortal()
+    {
+        return $this->getProperty('showInParentPortal');
+    }
+
+    /**
+     * @param bool $showInParentPortal
+     */
+    public function setShowInParentPortal($showInParentPortal = null)
+    {
+        $this->setProperty('showInParentPortal', $showInParentPortal);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowNarrativeInParentPortal()
+    {
+        return $this->getProperty('showNarrativeInParentPortal');
+    }
+
+    /**
+     * @param bool $showNarrativeInParentPortal
+     */
+    public function setShowNarrativeInParentPortal($showNarrativeInParentPortal = null)
+    {
+        $this->setProperty('showNarrativeInParentPortal', $showNarrativeInParentPortal);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowAwardedByInParentPortal()
+    {
+        return $this->getProperty('showAwardedByInParentPortal');
+    }
+
+    /**
+     * @param bool $showAwardedByInParentPortal
+     */
+    public function setShowAwardedByInParentPortal($showAwardedByInParentPortal = null)
+    {
+        $this->setProperty('showAwardedByInParentPortal', $showAwardedByInParentPortal);
     }
 
 

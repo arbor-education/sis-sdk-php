@@ -9,6 +9,8 @@ class CustomerCreditNoteItem extends ModelBase
 
     const CUSTOMER_CREDIT_NOTE = 'customerCreditNote';
 
+    const CUSTOMER_INVOICE = 'customerInvoice';
+
     const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
 
     const CREDIT_AMOUNT = 'creditAmount';
@@ -69,6 +71,22 @@ class CustomerCreditNoteItem extends ModelBase
     public function setCustomerCreditNote(CustomerCreditNote $customerCreditNote = null)
     {
         $this->setProperty('customerCreditNote', $customerCreditNote);
+    }
+
+    /**
+     * @return CustomerInvoice
+     */
+    public function getCustomerInvoice()
+    {
+        return $this->getProperty('customerInvoice');
+    }
+
+    /**
+     * @param CustomerInvoice $customerInvoice
+     */
+    public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
+    {
+        $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**

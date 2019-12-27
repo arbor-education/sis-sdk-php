@@ -9,6 +9,8 @@ class Demographic extends ModelBase
 
     const LABEL = 'label';
 
+    const SHORT_NAME = 'shortName';
+
     const TYPE = 'type';
 
     const HAS_INVERSE = 'hasInverse';
@@ -83,6 +85,22 @@ class Demographic extends ModelBase
     public function setLabel($label = null)
     {
         $this->setProperty('label', $label);
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortName()
+    {
+        return $this->getProperty('shortName');
+    }
+
+    /**
+     * @param string $shortName
+     */
+    public function setShortName($shortName = null)
+    {
+        $this->setProperty('shortName', $shortName);
     }
 
     /**

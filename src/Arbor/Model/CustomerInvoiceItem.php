@@ -27,6 +27,8 @@ class CustomerInvoiceItem extends ModelBase
 
     const FULLY_PAID_DATE = 'fullyPaidDate';
 
+    const ITEM_STATUS = 'itemStatus';
+
     protected $_resourceType = ResourceType::CUSTOMER_INVOICE_ITEM;
 
     /**
@@ -223,6 +225,22 @@ class CustomerInvoiceItem extends ModelBase
     public function setFullyPaidDate(\DateTime $fullyPaidDate = null)
     {
         $this->setProperty('fullyPaidDate', $fullyPaidDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getItemStatus()
+    {
+        return $this->getProperty('itemStatus');
+    }
+
+    /**
+     * @param string $itemStatus
+     */
+    public function setItemStatus($itemStatus = null)
+    {
+        $this->setProperty('itemStatus', $itemStatus);
     }
 
 

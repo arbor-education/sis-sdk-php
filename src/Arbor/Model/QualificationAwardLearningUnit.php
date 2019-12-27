@@ -11,6 +11,8 @@ class QualificationAwardLearningUnit extends ModelBase
 
     const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
+    const IS_USER_DEFINED = 'isUserDefined';
+
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD_LEARNING_UNIT;
 
     /**
@@ -79,6 +81,22 @@ class QualificationAwardLearningUnit extends ModelBase
     public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsUserDefined()
+    {
+        return $this->getProperty('isUserDefined');
+    }
+
+    /**
+     * @param bool $isUserDefined
+     */
+    public function setIsUserDefined($isUserDefined = null)
+    {
+        $this->setProperty('isUserDefined', $isUserDefined);
     }
 
 

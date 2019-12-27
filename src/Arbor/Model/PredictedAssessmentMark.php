@@ -4,12 +4,16 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PredictedFinalAssessmentMark extends ModelBase
+class PredictedAssessmentMark extends ModelBase
 {
+
+    const ACADEMIC_YEAR = 'academicYear';
 
     const STUDENT = 'student';
 
     const ASSESSMENT = 'assessment';
+
+    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
     const GRADE = 'grade';
 
@@ -19,13 +23,15 @@ class PredictedFinalAssessmentMark extends ModelBase
 
     const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
 
-    const RECORDED_DATE = 'recordedDate';
+    const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
 
-    protected $_resourceType = ResourceType::PREDICTED_FINAL_ASSESSMENT_MARK;
+    const IS_CALCULATED_GRADE = 'isCalculatedGrade';
+
+    protected $_resourceType = ResourceType::PREDICTED_ASSESSMENT_MARK;
 
     /**
      * @param Query $query
-     * @return PredictedFinalAssessmentMark[] | Collection
+     * @return PredictedAssessmentMark[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -39,14 +45,14 @@ class PredictedFinalAssessmentMark extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::PREDICTED_FINAL_ASSESSMENT_MARK);
+        $query->setResourceType(ResourceType::PREDICTED_ASSESSMENT_MARK);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return PredictedFinalAssessmentMark
+     * @return PredictedAssessmentMark
      * @throws Exception
      */
     public static function retrieve($id)
@@ -56,7 +62,23 @@ class PredictedFinalAssessmentMark extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::PREDICTED_FINAL_ASSESSMENT_MARK, $id);
+        return $gateway->retrieve(ResourceType::PREDICTED_ASSESSMENT_MARK, $id);
+    }
+
+    /**
+     * @return AcademicYear
+     */
+    public function getAcademicYear()
+    {
+        return $this->getProperty('academicYear');
+    }
+
+    /**
+     * @param AcademicYear $academicYear
+     */
+    public function setAcademicYear(AcademicYear $academicYear = null)
+    {
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**
@@ -89,6 +111,22 @@ class PredictedFinalAssessmentMark extends ModelBase
     public function setAssessment(Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
+    }
+
+    /**
+     * @return ProgressMeasurementPeriod
+     */
+    public function getProgressMeasurementPeriod()
+    {
+        return $this->getProperty('progressMeasurementPeriod');
+    }
+
+    /**
+     * @param ProgressMeasurementPeriod $progressMeasurementPeriod
+     */
+    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    {
+        $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
 
     /**
@@ -156,19 +194,35 @@ class PredictedFinalAssessmentMark extends ModelBase
     }
 
     /**
-     * @return \DateTime
+     * @return AssessmentMarkNonSubmissionReason
      */
-    public function getRecordedDate()
+    public function getAssessmentMarkNonSubmissionReason()
     {
-        return $this->getProperty('recordedDate');
+        return $this->getProperty('assessmentMarkNonSubmissionReason');
     }
 
     /**
-     * @param \DateTime $recordedDate
+     * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
      */
-    public function setRecordedDate(\DateTime $recordedDate = null)
+    public function setAssessmentMarkNonSubmissionReason(AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
     {
-        $this->setProperty('recordedDate', $recordedDate);
+        $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsCalculatedGrade()
+    {
+        return $this->getProperty('isCalculatedGrade');
+    }
+
+    /**
+     * @param bool $isCalculatedGrade
+     */
+    public function setIsCalculatedGrade($isCalculatedGrade = null)
+    {
+        $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
 
 

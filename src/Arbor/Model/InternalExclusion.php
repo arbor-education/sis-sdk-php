@@ -17,6 +17,8 @@ class InternalExclusion extends ModelBase
 
     const EXCLUSION_REASON = 'exclusionReason';
 
+    const INTERNAL_EXCLUSION_REASON = 'internalExclusionReason';
+
     const ISSUED_DATETIME = 'issuedDatetime';
 
     const NARRATIVE = 'narrative';
@@ -137,6 +139,22 @@ class InternalExclusion extends ModelBase
     public function setExclusionReason(ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
+    }
+
+    /**
+     * @return InternalExclusionReason
+     */
+    public function getInternalExclusionReason()
+    {
+        return $this->getProperty('internalExclusionReason');
+    }
+
+    /**
+     * @param InternalExclusionReason $internalExclusionReason
+     */
+    public function setInternalExclusionReason(InternalExclusionReason $internalExclusionReason = null)
+    {
+        $this->setProperty('internalExclusionReason', $internalExclusionReason);
     }
 
     /**

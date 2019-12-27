@@ -53,6 +53,10 @@ class User extends ModelBase
 
     const DELETED_DISPLAY_NAME = 'deletedDisplayName';
 
+    const GOOGLE_TWO_FACTOR_SECRET = 'googleTwoFactorSecret';
+
+    const SSO_TWO_FACTOR_ACTIVATED = 'ssoTwoFactorActivated';
+
     protected $_resourceType = ResourceType::USER;
 
     /**
@@ -457,6 +461,38 @@ class User extends ModelBase
     public function setDeletedDisplayName($deletedDisplayName = null)
     {
         $this->setProperty('deletedDisplayName', $deletedDisplayName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGoogleTwoFactorSecret()
+    {
+        return $this->getProperty('googleTwoFactorSecret');
+    }
+
+    /**
+     * @param string $googleTwoFactorSecret
+     */
+    public function setGoogleTwoFactorSecret($googleTwoFactorSecret = null)
+    {
+        $this->setProperty('googleTwoFactorSecret', $googleTwoFactorSecret);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getSsoTwoFactorActivated()
+    {
+        return $this->getProperty('ssoTwoFactorActivated');
+    }
+
+    /**
+     * @param bool $ssoTwoFactorActivated
+     */
+    public function setSsoTwoFactorActivated($ssoTwoFactorActivated = null)
+    {
+        $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
     }
 
 

@@ -19,6 +19,8 @@ class CustomerPaymentRefund extends ModelBase
 
     const REFUND_FAILED_DATETIME = 'refundFailedDatetime';
 
+    const CUSTOMER_PAYMENT_REFUND_METHOD = 'customerPaymentRefundMethod';
+
     protected $_resourceType = ResourceType::CUSTOMER_PAYMENT_REFUND;
 
     /**
@@ -151,6 +153,22 @@ class CustomerPaymentRefund extends ModelBase
     public function setRefundFailedDatetime(\DateTime $refundFailedDatetime = null)
     {
         $this->setProperty('refundFailedDatetime', $refundFailedDatetime);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomerPaymentRefundMethod()
+    {
+        return $this->getProperty('customerPaymentRefundMethod');
+    }
+
+    /**
+     * @param string $customerPaymentRefundMethod
+     */
+    public function setCustomerPaymentRefundMethod($customerPaymentRefundMethod = null)
+    {
+        $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }
 
 

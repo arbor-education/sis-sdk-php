@@ -34,6 +34,8 @@ class UkDfe_SchoolCensusSchoolDetail extends ModelBase
 
     const QUALIFICATION_RESULTS_JSON = 'qualificationResultsJson';
 
+    const PREVIOUS_YEAR_QUALIFICATION_RESULTS_JSON = 'previousYearQualificationResultsJson';
+
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL;
 
     /**
@@ -262,6 +264,22 @@ class UkDfe_SchoolCensusSchoolDetail extends ModelBase
     public function setQualificationResultsJson($qualificationResultsJson = null)
     {
         $this->setProperty('qualificationResultsJson', $qualificationResultsJson);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPreviousYearQualificationResultsJson()
+    {
+        return $this->getProperty('previousYearQualificationResultsJson');
+    }
+
+    /**
+     * @param string $previousYearQualificationResultsJson
+     */
+    public function setPreviousYearQualificationResultsJson($previousYearQualificationResultsJson = null)
+    {
+        $this->setProperty('previousYearQualificationResultsJson', $previousYearQualificationResultsJson);
     }
 
 
