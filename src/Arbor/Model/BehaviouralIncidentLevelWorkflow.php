@@ -23,6 +23,18 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
 
     const MESSAGE_CHANNEL = 'messageChannel';
 
+    const BEHAVIOURAL_INCIDENT_SMS_GUARDIAN = 'behaviouralIncidentSmsGuardian';
+
+    const BEHAVIOURAL_INCIDENT_EMAIL_GUARDIAN = 'behaviouralIncidentEmailGuardian';
+
+    const DETENTION_SMS_GUARDIAN = 'detentionSmsGuardian';
+
+    const DETENTION_EMAIL_GUARDIAN = 'detentionEmailGuardian';
+
+    const BEHAVIOURAL_INCIDENT_SMS_TEMPLATE = 'behaviouralIncidentSmsTemplate';
+
+    const BEHAVIOURAL_INCIDENT_EMAIL_TEMPLATE = 'behaviouralIncidentEmailTemplate';
+
     const DEFAULT_ASSIGNEE = 'defaultAssignee';
 
     const SPECIFIC_ASSIGNEE = 'specificAssignee';
@@ -30,6 +42,14 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     const DETENTION_TYPE = 'detentionType';
 
     const DETENTION_TIME_FRAME = 'detentionTimeFrame';
+
+    const ASSIGNMENT_POLICY = 'assignmentPolicy';
+
+    const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
+
+    const INTERNAL_EXCLUSION_TIME_FRAME = 'internalExclusionTimeFrame';
+
+    const NUMBER_OF_SESSIONS = 'numberOfSessions';
 
     const POINT_AWARD_SCALE = 'pointAwardScale';
 
@@ -212,6 +232,102 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     }
 
     /**
+     * @return bool
+     */
+    public function getBehaviouralIncidentSmsGuardian()
+    {
+        return $this->getProperty('behaviouralIncidentSmsGuardian');
+    }
+
+    /**
+     * @param bool $behaviouralIncidentSmsGuardian
+     */
+    public function setBehaviouralIncidentSmsGuardian($behaviouralIncidentSmsGuardian = null)
+    {
+        $this->setProperty('behaviouralIncidentSmsGuardian', $behaviouralIncidentSmsGuardian);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getBehaviouralIncidentEmailGuardian()
+    {
+        return $this->getProperty('behaviouralIncidentEmailGuardian');
+    }
+
+    /**
+     * @param bool $behaviouralIncidentEmailGuardian
+     */
+    public function setBehaviouralIncidentEmailGuardian($behaviouralIncidentEmailGuardian = null)
+    {
+        $this->setProperty('behaviouralIncidentEmailGuardian', $behaviouralIncidentEmailGuardian);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDetentionSmsGuardian()
+    {
+        return $this->getProperty('detentionSmsGuardian');
+    }
+
+    /**
+     * @param bool $detentionSmsGuardian
+     */
+    public function setDetentionSmsGuardian($detentionSmsGuardian = null)
+    {
+        $this->setProperty('detentionSmsGuardian', $detentionSmsGuardian);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDetentionEmailGuardian()
+    {
+        return $this->getProperty('detentionEmailGuardian');
+    }
+
+    /**
+     * @param bool $detentionEmailGuardian
+     */
+    public function setDetentionEmailGuardian($detentionEmailGuardian = null)
+    {
+        $this->setProperty('detentionEmailGuardian', $detentionEmailGuardian);
+    }
+
+    /**
+     * @return CommunicationTemplate
+     */
+    public function getBehaviouralIncidentSmsTemplate()
+    {
+        return $this->getProperty('behaviouralIncidentSmsTemplate');
+    }
+
+    /**
+     * @param CommunicationTemplate $behaviouralIncidentSmsTemplate
+     */
+    public function setBehaviouralIncidentSmsTemplate(CommunicationTemplate $behaviouralIncidentSmsTemplate = null)
+    {
+        $this->setProperty('behaviouralIncidentSmsTemplate', $behaviouralIncidentSmsTemplate);
+    }
+
+    /**
+     * @return CommunicationTemplate
+     */
+    public function getBehaviouralIncidentEmailTemplate()
+    {
+        return $this->getProperty('behaviouralIncidentEmailTemplate');
+    }
+
+    /**
+     * @param CommunicationTemplate $behaviouralIncidentEmailTemplate
+     */
+    public function setBehaviouralIncidentEmailTemplate(CommunicationTemplate $behaviouralIncidentEmailTemplate = null)
+    {
+        $this->setProperty('behaviouralIncidentEmailTemplate', $behaviouralIncidentEmailTemplate);
+    }
+
+    /**
      * @return string
      */
     public function getDefaultAssignee()
@@ -273,6 +389,70 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     public function setDetentionTimeFrame($detentionTimeFrame = null)
     {
         $this->setProperty('detentionTimeFrame', $detentionTimeFrame);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAssignmentPolicy()
+    {
+        return $this->getProperty('assignmentPolicy');
+    }
+
+    /**
+     * @param string $assignmentPolicy
+     */
+    public function setAssignmentPolicy($assignmentPolicy = null)
+    {
+        $this->setProperty('assignmentPolicy', $assignmentPolicy);
+    }
+
+    /**
+     * @return InternalExclusionType
+     */
+    public function getInternalExclusionType()
+    {
+        return $this->getProperty('internalExclusionType');
+    }
+
+    /**
+     * @param InternalExclusionType $internalExclusionType
+     */
+    public function setInternalExclusionType(InternalExclusionType $internalExclusionType = null)
+    {
+        $this->setProperty('internalExclusionType', $internalExclusionType);
+    }
+
+    /**
+     * @return string
+     */
+    public function getInternalExclusionTimeFrame()
+    {
+        return $this->getProperty('internalExclusionTimeFrame');
+    }
+
+    /**
+     * @param string $internalExclusionTimeFrame
+     */
+    public function setInternalExclusionTimeFrame($internalExclusionTimeFrame = null)
+    {
+        $this->setProperty('internalExclusionTimeFrame', $internalExclusionTimeFrame);
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberOfSessions()
+    {
+        return $this->getProperty('numberOfSessions');
+    }
+
+    /**
+     * @param int $numberOfSessions
+     */
+    public function setNumberOfSessions($numberOfSessions = null)
+    {
+        $this->setProperty('numberOfSessions', $numberOfSessions);
     }
 
     /**

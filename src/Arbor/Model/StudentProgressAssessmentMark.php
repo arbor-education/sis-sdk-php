@@ -23,6 +23,8 @@ class StudentProgressAssessmentMark extends ModelBase
 
     const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
 
+    const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
+
     const ASSESSMENT_DATE = 'assessmentDate';
 
     const MARKING_STAFF = 'markingStaff';
@@ -199,6 +201,22 @@ class StudentProgressAssessmentMark extends ModelBase
     public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
+    }
+
+    /**
+     * @return AssessmentMarkNonSubmissionReason
+     */
+    public function getAssessmentMarkNonSubmissionReason()
+    {
+        return $this->getProperty('assessmentMarkNonSubmissionReason');
+    }
+
+    /**
+     * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
+     */
+    public function setAssessmentMarkNonSubmissionReason(AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    {
+        $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
 
     /**

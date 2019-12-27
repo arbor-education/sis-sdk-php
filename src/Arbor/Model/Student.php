@@ -25,6 +25,8 @@ class Student extends ModelBase
 
     const LEGACY_SYSTEM_ID = 'legacySystemId';
 
+    const MINIMUM_DATA_RETENTION_DATE = 'minimumDataRetentionDate';
+
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
@@ -223,6 +225,22 @@ class Student extends ModelBase
     public function setLegacySystemId($legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getMinimumDataRetentionDate()
+    {
+        return $this->getProperty('minimumDataRetentionDate');
+    }
+
+    /**
+     * @param \DateTime $minimumDataRetentionDate
+     */
+    public function setMinimumDataRetentionDate(\DateTime $minimumDataRetentionDate = null)
+    {
+        $this->setProperty('minimumDataRetentionDate', $minimumDataRetentionDate);
     }
 
     /**

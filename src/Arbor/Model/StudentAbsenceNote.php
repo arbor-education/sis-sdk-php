@@ -23,6 +23,8 @@ class StudentAbsenceNote extends ModelBase
 
     const FIXED_PERIOD_EXCLUSION = 'fixedPeriodExclusion';
 
+    const STUDENT_REPEATING_ABSENCE_NOTE = 'studentRepeatingAbsenceNote';
+
     protected $_resourceType = ResourceType::STUDENT_ABSENCE_NOTE;
 
     /**
@@ -187,6 +189,22 @@ class StudentAbsenceNote extends ModelBase
     public function setFixedPeriodExclusion(FixedPeriodExclusion $fixedPeriodExclusion = null)
     {
         $this->setProperty('fixedPeriodExclusion', $fixedPeriodExclusion);
+    }
+
+    /**
+     * @return StudentRepeatingAbsenceNote
+     */
+    public function getStudentRepeatingAbsenceNote()
+    {
+        return $this->getProperty('studentRepeatingAbsenceNote');
+    }
+
+    /**
+     * @param StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote
+     */
+    public function setStudentRepeatingAbsenceNote(StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote = null)
+    {
+        $this->setProperty('studentRepeatingAbsenceNote', $studentRepeatingAbsenceNote);
     }
 
 

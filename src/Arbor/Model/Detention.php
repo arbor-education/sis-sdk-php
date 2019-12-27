@@ -33,6 +33,8 @@ class Detention extends ModelBase
 
     const ABSENTEES_DETENTION_ACTION = 'absenteesDetentionAction';
 
+    const EVENT = 'event';
+
     protected $_resourceType = ResourceType::DETENTION;
 
     /**
@@ -277,6 +279,22 @@ class Detention extends ModelBase
     public function setAbsenteesDetentionAction(ModelBase $absenteesDetentionAction = null)
     {
         $this->setProperty('absenteesDetentionAction', $absenteesDetentionAction);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getEvent()
+    {
+        return $this->getProperty('event');
+    }
+
+    /**
+     * @param ModelBase $event
+     */
+    public function setEvent(ModelBase $event = null)
+    {
+        $this->setProperty('event', $event);
     }
 
 

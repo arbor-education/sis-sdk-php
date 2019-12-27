@@ -23,6 +23,10 @@ class CustomerAccountType extends ModelBase
 
     const CARD_PAYMENTS_ENABLED = 'cardPaymentsEnabled';
 
+    const SHOW_IN_PARENT_PORTAL = 'showInParentPortal';
+
+    const ACCOUNTING_CODE = 'accountingCode';
+
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT_TYPE;
 
     /**
@@ -187,6 +191,38 @@ class CustomerAccountType extends ModelBase
     public function setCardPaymentsEnabled($cardPaymentsEnabled = null)
     {
         $this->setProperty('cardPaymentsEnabled', $cardPaymentsEnabled);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowInParentPortal()
+    {
+        return $this->getProperty('showInParentPortal');
+    }
+
+    /**
+     * @param bool $showInParentPortal
+     */
+    public function setShowInParentPortal($showInParentPortal = null)
+    {
+        $this->setProperty('showInParentPortal', $showInParentPortal);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccountingCode()
+    {
+        return $this->getProperty('accountingCode');
+    }
+
+    /**
+     * @param string $accountingCode
+     */
+    public function setAccountingCode($accountingCode = null)
+    {
+        $this->setProperty('accountingCode', $accountingCode);
     }
 
 

@@ -7,7 +7,11 @@ use Arbor\Query\Query;
 class ObservationGradeSet extends ModelBase
 {
 
-    const OBSERVATION_TYPE = 'observationType';
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
 
     const NAME = 'name';
 
@@ -52,19 +56,51 @@ class ObservationGradeSet extends ModelBase
     }
 
     /**
-     * @return ObservationType
+     * @return string
      */
-    public function getObservationType()
+    public function getCode()
     {
-        return $this->getProperty('observationType');
+        return $this->getProperty('code');
     }
 
     /**
-     * @param ObservationType $observationType
+     * @param string $code
      */
-    public function setObservationType(ObservationType $observationType = null)
+    public function setCode($code = null)
     {
-        $this->setProperty('observationType', $observationType);
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**

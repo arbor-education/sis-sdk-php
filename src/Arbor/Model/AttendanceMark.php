@@ -59,6 +59,8 @@ class AttendanceMark extends ModelBase
 
     const IS_EXCLUDED = 'isExcluded';
 
+    const SHOW_IN_REGISTER = 'showInRegister';
+
     protected $_resourceType = ResourceType::ATTENDANCE_MARK;
 
     /**
@@ -511,6 +513,22 @@ class AttendanceMark extends ModelBase
     public function setIsExcluded($isExcluded = null)
     {
         $this->setProperty('isExcluded', $isExcluded);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowInRegister()
+    {
+        return $this->getProperty('showInRegister');
+    }
+
+    /**
+     * @param bool $showInRegister
+     */
+    public function setShowInRegister($showInRegister = null)
+    {
+        $this->setProperty('showInRegister', $showInRegister);
     }
 
 

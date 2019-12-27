@@ -39,6 +39,8 @@ class UkDfe_SchoolCensusReturn extends ModelBase
 
     const IS_DRY_RUN = 'isDryRun';
 
+    const SUBMITTED_DATETIME = 'submittedDatetime';
+
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_RETURN;
 
     /**
@@ -299,6 +301,22 @@ class UkDfe_SchoolCensusReturn extends ModelBase
     public function setIsDryRun($isDryRun = null)
     {
         $this->setProperty('isDryRun', $isDryRun);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getSubmittedDatetime()
+    {
+        return $this->getProperty('submittedDatetime');
+    }
+
+    /**
+     * @param \DateTime $submittedDatetime
+     */
+    public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
+    {
+        $this->setProperty('submittedDatetime', $submittedDatetime);
     }
 
 
