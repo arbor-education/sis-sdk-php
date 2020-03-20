@@ -15,9 +15,7 @@ class StudentEmploymentRecord extends ModelBase
 
     const END_DATE = 'endDate';
 
-    const MIN_HOURS_PER_WEEK = 'minHoursPerWeek';
-
-    const MAX_HOURS_PER_WEEK = 'maxHoursPerWeek';
+    const HOURS_PER_WEEK = 'hoursPerWeek';
 
     const INFORMATION_COLLECTED_DATE = 'informationCollectedDate';
 
@@ -128,33 +126,17 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @return string
      */
-    public function getMinHoursPerWeek()
+    public function getHoursPerWeek()
     {
-        return $this->getProperty('minHoursPerWeek');
+        return $this->getProperty('hoursPerWeek');
     }
 
     /**
-     * @param string $minHoursPerWeek
+     * @param string $hoursPerWeek
      */
-    public function setMinHoursPerWeek($minHoursPerWeek = null)
+    public function setHoursPerWeek($hoursPerWeek = null)
     {
-        $this->setProperty('minHoursPerWeek', $minHoursPerWeek);
-    }
-
-    /**
-     * @return string
-     */
-    public function getMaxHoursPerWeek()
-    {
-        return $this->getProperty('maxHoursPerWeek');
-    }
-
-    /**
-     * @param string $maxHoursPerWeek
-     */
-    public function setMaxHoursPerWeek($maxHoursPerWeek = null)
-    {
-        $this->setProperty('maxHoursPerWeek', $maxHoursPerWeek);
+        $this->setProperty('hoursPerWeek', $hoursPerWeek);
     }
 
     /**

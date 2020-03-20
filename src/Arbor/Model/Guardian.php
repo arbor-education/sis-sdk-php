@@ -25,6 +25,8 @@ class Guardian extends ModelBase
 
     const LEGACY_SYSTEM_ID = 'legacySystemId';
 
+    const IS_KEY_WORKER = 'isKeyWorker';
+
     protected $_resourceType = ResourceType::GUARDIAN;
 
     /**
@@ -205,6 +207,22 @@ class Guardian extends ModelBase
     public function setLegacySystemId($legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsKeyWorker()
+    {
+        return $this->getProperty('isKeyWorker');
+    }
+
+    /**
+     * @param bool $isKeyWorker
+     */
+    public function setIsKeyWorker($isKeyWorker = null)
+    {
+        $this->setProperty('isKeyWorker', $isKeyWorker);
     }
 
 

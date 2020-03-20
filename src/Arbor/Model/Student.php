@@ -3,6 +3,10 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\UkDfe\GcseEnglishAchievementType;
+use Arbor\Model\UkDfe\GcseEnglishFundingExemptionType;
+use Arbor\Model\UkDfe\GcseMathsAchievementType;
+use Arbor\Model\UkDfe\GcseMathsFundingExemptionType;
 
 class Student extends ModelBase
 {
@@ -44,6 +48,22 @@ class Student extends ModelBase
     const EXTENDED_HOURS = 'extendedHours';
 
     const THIRTY_HOUR_CODE = 'thirtyHourCode';
+
+    const GCSE_ENGLISH_GRADE = 'gcseEnglishGrade';
+
+    const GCSE_ENGLISH_GRADE_PRIOR = 'gcseEnglishGradePrior';
+
+    const GCSE_ENGLISH_ACHIEVEMENT_TYPE = 'gcseEnglishAchievementType';
+
+    const GCSE_ENGLISH_FUNDING_EXEMPTION_TYPE = 'gcseEnglishFundingExemptionType';
+
+    const GCSE_MATHS_GRADE = 'gcseMathsGrade';
+
+    const GCSE_MATHS_GRADE_PRIOR = 'gcseMathsGradePrior';
+
+    const GCSE_MATHS_ACHIEVEMENT_TYPE = 'gcseMathsAchievementType';
+
+    const GCSE_MATHS_FUNDING_EXEMPTION_TYPE = 'gcseMathsFundingExemptionType';
 
     protected $_resourceType = ResourceType::STUDENT;
 
@@ -385,6 +405,134 @@ class Student extends ModelBase
     public function setThirtyHourCode($thirtyHourCode = null)
     {
         $this->setProperty('thirtyHourCode', $thirtyHourCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGcseEnglishGrade()
+    {
+        return $this->getProperty('gcseEnglishGrade');
+    }
+
+    /**
+     * @param string $gcseEnglishGrade
+     */
+    public function setGcseEnglishGrade($gcseEnglishGrade = null)
+    {
+        $this->setProperty('gcseEnglishGrade', $gcseEnglishGrade);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGcseEnglishGradePrior()
+    {
+        return $this->getProperty('gcseEnglishGradePrior');
+    }
+
+    /**
+     * @param string $gcseEnglishGradePrior
+     */
+    public function setGcseEnglishGradePrior($gcseEnglishGradePrior = null)
+    {
+        $this->setProperty('gcseEnglishGradePrior', $gcseEnglishGradePrior);
+    }
+
+    /**
+     * @return GcseEnglishAchievementType
+     */
+    public function getGcseEnglishAchievementType()
+    {
+        return $this->getProperty('gcseEnglishAchievementType');
+    }
+
+    /**
+     * @param GcseEnglishAchievementType $gcseEnglishAchievementType
+     */
+    public function setGcseEnglishAchievementType(GcseEnglishAchievementType $gcseEnglishAchievementType = null)
+    {
+        $this->setProperty('gcseEnglishAchievementType', $gcseEnglishAchievementType);
+    }
+
+    /**
+     * @return GcseEnglishFundingExemptionType
+     */
+    public function getGcseEnglishFundingExemptionType()
+    {
+        return $this->getProperty('gcseEnglishFundingExemptionType');
+    }
+
+    /**
+     * @param GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType
+     */
+    public function setGcseEnglishFundingExemptionType(GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType = null)
+    {
+        $this->setProperty('gcseEnglishFundingExemptionType', $gcseEnglishFundingExemptionType);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGcseMathsGrade()
+    {
+        return $this->getProperty('gcseMathsGrade');
+    }
+
+    /**
+     * @param string $gcseMathsGrade
+     */
+    public function setGcseMathsGrade($gcseMathsGrade = null)
+    {
+        $this->setProperty('gcseMathsGrade', $gcseMathsGrade);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGcseMathsGradePrior()
+    {
+        return $this->getProperty('gcseMathsGradePrior');
+    }
+
+    /**
+     * @param string $gcseMathsGradePrior
+     */
+    public function setGcseMathsGradePrior($gcseMathsGradePrior = null)
+    {
+        $this->setProperty('gcseMathsGradePrior', $gcseMathsGradePrior);
+    }
+
+    /**
+     * @return GcseMathsAchievementType
+     */
+    public function getGcseMathsAchievementType()
+    {
+        return $this->getProperty('gcseMathsAchievementType');
+    }
+
+    /**
+     * @param GcseMathsAchievementType $gcseMathsAchievementType
+     */
+    public function setGcseMathsAchievementType(GcseMathsAchievementType $gcseMathsAchievementType = null)
+    {
+        $this->setProperty('gcseMathsAchievementType', $gcseMathsAchievementType);
+    }
+
+    /**
+     * @return GcseMathsFundingExemptionType
+     */
+    public function getGcseMathsFundingExemptionType()
+    {
+        return $this->getProperty('gcseMathsFundingExemptionType');
+    }
+
+    /**
+     * @param GcseMathsFundingExemptionType $gcseMathsFundingExemptionType
+     */
+    public function setGcseMathsFundingExemptionType(GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
+    {
+        $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
 
 

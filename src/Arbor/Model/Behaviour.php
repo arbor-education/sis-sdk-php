@@ -15,6 +15,8 @@ class Behaviour extends ModelBase
 
     const ACTIVE = 'active';
 
+    const IS_MY_CLASSROOM_DEFAULT = 'isMyClassroomDefault';
+
     protected $_resourceType = ResourceType::BEHAVIOUR;
 
     /**
@@ -115,6 +117,22 @@ class Behaviour extends ModelBase
     public function setActive($active = null)
     {
         $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsMyClassroomDefault()
+    {
+        return $this->getProperty('isMyClassroomDefault');
+    }
+
+    /**
+     * @param bool $isMyClassroomDefault
+     */
+    public function setIsMyClassroomDefault($isMyClassroomDefault = null)
+    {
+        $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }
 
 

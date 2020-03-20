@@ -17,7 +17,13 @@ class ConsentType extends ModelBase
 
     const DESCRIPTION = 'description';
 
+    const DEFAULT_DESCRIPTION = 'defaultDescription';
+
     const AUTO_REQUEST_FROM_GUARDIANS = 'autoRequestFromGuardians';
+
+    const CONSENTED_BY_STUDENT = 'consentedByStudent';
+
+    const CONSENTED_BY_GUARDIAN = 'consentedByGuardian';
 
     protected $_resourceType = ResourceType::CONSENT_TYPE;
 
@@ -138,6 +144,22 @@ class ConsentType extends ModelBase
     }
 
     /**
+     * @return string
+     */
+    public function getDefaultDescription()
+    {
+        return $this->getProperty('defaultDescription');
+    }
+
+    /**
+     * @param string $defaultDescription
+     */
+    public function setDefaultDescription($defaultDescription = null)
+    {
+        $this->setProperty('defaultDescription', $defaultDescription);
+    }
+
+    /**
      * @return bool
      */
     public function getAutoRequestFromGuardians()
@@ -151,6 +173,38 @@ class ConsentType extends ModelBase
     public function setAutoRequestFromGuardians($autoRequestFromGuardians = null)
     {
         $this->setProperty('autoRequestFromGuardians', $autoRequestFromGuardians);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getConsentedByStudent()
+    {
+        return $this->getProperty('consentedByStudent');
+    }
+
+    /**
+     * @param bool $consentedByStudent
+     */
+    public function setConsentedByStudent($consentedByStudent = null)
+    {
+        $this->setProperty('consentedByStudent', $consentedByStudent);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getConsentedByGuardian()
+    {
+        return $this->getProperty('consentedByGuardian');
+    }
+
+    /**
+     * @param bool $consentedByGuardian
+     */
+    public function setConsentedByGuardian($consentedByGuardian = null)
+    {
+        $this->setProperty('consentedByGuardian', $consentedByGuardian);
     }
 
 

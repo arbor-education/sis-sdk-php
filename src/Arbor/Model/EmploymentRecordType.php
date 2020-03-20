@@ -15,6 +15,8 @@ class EmploymentRecordType extends ModelBase
 
     const NAME = 'name';
 
+    const EMPLOYER_REQUIRED = 'employer_required';
+
     protected $_resourceType = ResourceType::EMPLOYMENT_RECORD_TYPE;
 
     /**
@@ -115,6 +117,22 @@ class EmploymentRecordType extends ModelBase
     public function setName($name = null)
     {
         $this->setProperty('name', $name);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getEmployer_required()
+    {
+        return $this->getProperty('employer_required');
+    }
+
+    /**
+     * @param bool $employer_required
+     */
+    public function setEmployer_required($employer_required = null)
+    {
+        $this->setProperty('employer_required', $employer_required);
     }
 
 
