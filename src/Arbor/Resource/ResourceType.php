@@ -21,6 +21,7 @@ class ResourceType
 	const ACADEMIC_UNIT_ENROLMENT = 'AcademicUnitEnrolment';
 	const ACADEMIC_UNIT_ENROLMENT_IMPORT = 'AcademicUnitEnrolmentImport';
 	const ACADEMIC_UNIT_LEAD = 'AcademicUnitLead';
+	const ACADEMIC_UNIT_QUALIFICATION_AWARD = 'AcademicUnitQualificationAward';
 	const ACADEMIC_UNIT_QUALIFICATION_LINK = 'AcademicUnitQualificationLink';
 	const ACADEMIC_UNIT_TAG = 'AcademicUnitTag';
 	const ACADEMIC_UNIT_DEPARTMENT = 'AcademicUnitDepartment';
@@ -52,9 +53,17 @@ class ResourceType
 	const ASSESSMENT_GRADE_SET = 'AssessmentGradeSet';
 	const ASSESSMENT_FRAMEWORK_ASSESSMENT = 'AssessmentFrameworkAssessment';
 	const ASSESSMENT_STUDENT_GROUP = 'AssessmentStudentGroup';
+	const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'AssessmentMarkNonSubmissionReason';
 	const ACADEMIC_YEAR_ASSESSMENT = 'AcademicYearAssessment';
 	const ASSESSMENT_DATA_COLLECTION = 'AssessmentDataCollection';
 	const ASSESSMENT_DATA_COLLECTION_ITEM = 'AssessmentDataCollectionItem';
+	const ASSESSMENT_METRIC = 'AssessmentMetric';
+	const ASSESSMENT_METRIC_ASSESSMENT = 'AssessmentMetricAssessment';
+	const ASSESSMENT_METRIC_RULE = 'AssessmentMetricRule';
+	const ASSESSMENT_METRIC_RULE_STUDENT_GROUP = 'AssessmentMetricRuleStudentGroup';
+	const ASSESSMENT_METRIC_RULE_GRADE_ITEM = 'AssessmentMetricRuleGradeItem';
+	const ASSESSMENT_METRIC_RULE_TARGET_ITEM = 'AssessmentMetricRuleTargetItem';
+	const ASSESSMENT_METRIC_SET = 'AssessmentMetricSet';
 	const ASSESSMENT_DERIVATION = 'AssessmentDerivation';
 	const ASSESSMENT_DERIVATION_DEPENDANT = 'AssessmentDerivationDependant';
 	const ASSESSMENT_PROVIDER = 'AssessmentProvider';
@@ -167,8 +176,6 @@ class ResourceType
 	const CURRICULUM_TIER = 'CurriculumTier';
 	const CURRICULUM_TARGET = 'CurriculumTarget';
 	const CURRICULUM_TARGET_SET = 'CurriculumTargetSet';
-	const DATA_CHECK_ERROR = 'DataCheckError';
-	const DATA_CHECK_ERROR_RELATED_ENTITY = 'DataCheckErrorRelatedEntity';
 	const DATA_EXPORT = 'DataExport';
 	const DATA_SET_SUBSCRIPTION = 'DataSetSubscription';
 	const DATA_SOURCE = 'DataSource';
@@ -212,6 +219,8 @@ class ResourceType
 	const EVENT_PARTICIPANT = 'EventParticipant';
 	const EVENT_PARTICIPANT_INVITATION = 'EventParticipantInvitation';
 	const EXCLUSION_REASON = 'ExclusionReason';
+	const EXCLUSION_REVIEW = 'ExclusionReview';
+	const EXCLUSION_REVIEW_OUTCOME = 'ExclusionReviewOutcome';
 	const EXTERNAL_ADMINISTRATOR = 'ExternalAdministrator';
 	const VISION_TEST = 'VisionTest';
 	const FACULTY = 'Faculty';
@@ -239,7 +248,11 @@ class ResourceType
 	const IMMUNIZATION_TYPE = 'ImmunizationType';
 	const IMMUNIZATION = 'Immunization';
 	const IMPAIRMENT_CATEGORY = 'ImpairmentCategory';
+	const IN_APP_MESSAGE_PERMITTED_SENDER = 'InAppMessagePermittedSender';
+	const IN_APP_MESSAGE_NOTIFICATION = 'InAppMessageNotification';
+	const INBOUND_IN_APP_MESSAGE = 'InboundInAppMessage';
 	const INBOUND_SMS_MESSAGE = 'InboundSmsMessage';
+	const INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT = 'InboundNotificationAutomaticRecipient';
 	const INTAKE_SEASON = 'IntakeSeason';
 	const INTAKE_SEASON_APPLICANT_BUCKET = 'IntakeSeasonApplicantBucket';
 	const INTAKE_SEASON_GROUP = 'IntakeSeasonGroup';
@@ -257,6 +270,7 @@ class ResourceType
 	const INTERVENTION_PLANNED_STAFF = 'InterventionPlannedStaff';
 	const INTERVENTION_FILTER = 'InterventionFilter';
 	const INTERNAL_EXCLUSION_TYPE = 'InternalExclusionType';
+	const INTERNAL_EXCLUSION_REASON = 'InternalExclusionReason';
 	const INTERNAL_EXCLUSION_SESSION = 'InternalExclusionSession';
 	const INTERNAL_EXCLUSION = 'InternalExclusion';
 	const STUDENT_INTERVENTION_GOAL = 'StudentInterventionGoal';
@@ -322,6 +336,8 @@ class ResourceType
 	const OUTBOUND_LETTER = 'OutboundLetter';
 	const OUTBOUND_LETTER_RECIPIENT = 'OutboundLetterRecipient';
 	const OUTBOUND_LETTER_PERMITTED_SENDER = 'OutboundLetterPermittedSender';
+	const OUTBOUND_IN_APP_MESSAGE = 'OutboundInAppMessage';
+	const OUTBOUND_IN_APP_MESSAGE_DRAFT = 'OutboundInAppMessageDraft';
 	const PERSON = 'Person';
 	const PASTORAL_NOTE = 'PastoralNote';
 	const PAY_SCALE = 'PayScale';
@@ -350,7 +366,7 @@ class ResourceType
 	const POSITION_BUSINESS_ROLE = 'PositionBusinessRole';
 	const POSTAL_ADDRESS_OCCUPANCY = 'PostalAddressOccupancy';
 	const POSTAL_ADDRESS = 'PostalAddress';
-	const PREDICTED_FINAL_ASSESSMENT_MARK = 'PredictedFinalAssessmentMark';
+	const PREDICTED_ASSESSMENT_MARK = 'PredictedAssessmentMark';
 	const PROFESSIONAL_QUALIFICATION_CLASS = 'ProfessionalQualificationClass';
 	const PROFESSIONAL_QUALIFICATION_SUBJECT = 'ProfessionalQualificationSubject';
 	const PROFESSIONAL_QUALIFICATION_TYPE = 'ProfessionalQualificationType';
@@ -361,15 +377,18 @@ class ResourceType
 	const PROGRAMME_QUALIFICATION_AWARD = 'ProgrammeQualificationAward';
 	const PROGRAMME_LEAD = 'ProgrammeLead';
 	const PROGRAMME_WITHDRAWAL_REASON = 'ProgrammeWithdrawalReason';
+	const PROGRESS_GOAL_TYPE = 'ProgressGoalType';
 	const PROGRESS_ASSESSMENT_BATCH = 'ProgressAssessmentBatch';
 	const PROGRESS_ASSESSMENT_BATCH_MEASUREMENT_PERIOD = 'ProgressAssessmentBatchMeasurementPeriod';
 	const PROGRESS_ASSESSMENT_BATCH_TARGET = 'ProgressAssessmentBatchTarget';
 	const PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD = 'ProgressAssessmentBatchTargetMeasurementPeriod';
 	const PROGRESS_MEASUREMENT_PERIOD = 'ProgressMeasurementPeriod';
 	const PROGRESS_MEASUREMENT_PERIOD_SET = 'ProgressMeasurementPeriodSet';
+	const PUSH_NOTIFICATION_TOKEN = 'PushNotificationToken';
 	const QUALIFICATION_ASPECT = 'QualificationAspect';
 	const QUALIFICATION_AVAILABILITY_INSTANCE = 'QualificationAvailabilityInstance';
 	const QUALIFICATION_AWARD = 'QualificationAward';
+	const QUALIFICATION_AWARD_DISCOUNT_CODE = 'QualificationAwardDiscountCode';
 	const QUALIFICATION_AWARD_LEARNING_UNIT = 'QualificationAwardLearningUnit';
 	const QUALIFICATION_AWARD_SUBTYPE = 'QualificationAwardSubtype';
 	const QUALIFICATION_AWARD_TYPE = 'QualificationAwardType';
@@ -421,6 +440,7 @@ class ResourceType
 	const ROOM_LAYOUT_SEAT = 'RoomLayoutSeat';
 	const ROOM_ROOM_FEATURE = 'RoomRoomFeature';
 	const ROOM = 'Room';
+	const SAFEGUARDING_NOTE = 'SafeguardingNote';
 	const SCHOOL_EVENT = 'SchoolEvent';
 	const SCHOOL_EVENT_TYPE = 'SchoolEventType';
 	const ACADEMIC_YEAR_ENROLMENT = 'AcademicYearEnrolment';
@@ -493,6 +513,7 @@ class ResourceType
 	const STUDENT_STANDARDIZED_ASSESSMENT_MARK = 'StudentStandardizedAssessmentMark';
 	const STUDENT_ATTENDANCE_PATTERN = 'StudentAttendancePattern';
 	const STUDENT_ABSENCE_NOTE = 'StudentAbsenceNote';
+	const STUDENT_REPEATING_ABSENCE_NOTE = 'StudentRepeatingAbsenceNote';
 	const STUDENT_EDUCATIONAL_HISTORY = 'StudentEducationalHistory';
 	const STUDENT_GIFT = 'StudentGift';
 	const STUDENT_TALENT = 'StudentTalent';
@@ -515,9 +536,6 @@ class ResourceType
 	const STUDENT_EMPLOYMENT_RECORD = 'StudentEmploymentRecord';
 	const STUDENT_ROOM_FEATURE_REQUIREMENT = 'StudentRoomFeatureRequirement';
 	const STUDENT_RECORD_CHANGE = 'StudentRecordChange';
-	const STRIPE_PAYOUT_TRANSACTION = 'StripePayoutTransaction';
-	const STRIPE_INCOMING_CARD_TRANSACTION = 'StripeIncomingCardTransaction';
-	const STRIPE_REFUND_TRANSACTION = 'StripeRefundTransaction';
 	const SUBJECT = 'Subject';
 	const SUPERANNUATION_SCHEME = 'SuperannuationScheme';
 	const SUPERANNUATION_SCHEME_VALUE = 'SuperannuationSchemeValue';
@@ -525,6 +543,8 @@ class ResourceType
 	const TAG = 'Tag';
 	const TAGGING = 'Tagging';
 	const TALENT = 'Talent';
+	const TARGET_JUDGEMENT_RULE = 'TargetJudgementRule';
+	const TARGET_JUDGEMENT = 'TargetJudgement';
 	const TEACHING_ASSISTANT_ALLOCATION = 'TeachingAssistantAllocation';
 	const TEACHING_GROUP = 'TeachingGroup';
 	const TEACHING_GROUP_MEMBERSHIP = 'TeachingGroupMembership';
@@ -619,4 +639,12 @@ class ResourceType
 	const OBSERVATION_FRAMEWORK_STRAND = 'ObservationFrameworkStrand';
 	const OBSERVATION = 'Observation';
 	const OBSERVATION_JUDGEMENT = 'ObservationJudgement';
+	const OBSERVATION_TYPE_GRADE_SET = 'ObservationTypeGradeSet';
+	const CLASSROOM_EQUIPMENT = 'ClassroomEquipment';
+	const CLASSROOM_LAYOUT_EQUIPMENT = 'ClassroomLayoutEquipment';
+	const CLASSROOM_LAYOUT_SEAT = 'ClassroomLayoutSeat';
+	const CLASSROOM_SEATING_PLAN = 'ClassroomSeatingPlan';
+	const CLASSROOM_SEATING_PLAN_EVENT = 'ClassroomSeatingPlanEvent';
+	const CLASSROOM_EVENT_EQUIPMENT = 'ClassroomEventEquipment';
+	const CLASSROOM_EVENT_SEAT = 'ClassroomEventSeat';
 }

@@ -11,6 +11,8 @@ class EnabledFeature extends ModelBase
 
     const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
 
+    const BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = 'billingServiceContractSubscriptionId';
+
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
@@ -83,6 +85,22 @@ class EnabledFeature extends ModelBase
     public function setCrmContractServiceSubscriptionId($crmContractServiceSubscriptionId = null)
     {
         $this->setProperty('crmContractServiceSubscriptionId', $crmContractServiceSubscriptionId);
+    }
+
+    /**
+     * @return int
+     */
+    public function getBillingServiceContractSubscriptionId()
+    {
+        return $this->getProperty('billingServiceContractSubscriptionId');
+    }
+
+    /**
+     * @param int $billingServiceContractSubscriptionId
+     */
+    public function setBillingServiceContractSubscriptionId($billingServiceContractSubscriptionId = null)
+    {
+        $this->setProperty('billingServiceContractSubscriptionId', $billingServiceContractSubscriptionId);
     }
 
     /**

@@ -21,6 +21,8 @@ class StudentAdHocAssessmentMark extends ModelBase
 
     const NUMBER = 'number';
 
+    const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
+
     const MARKING_STAFF = 'markingStaff';
 
     const COMPLETED_DATETIME = 'completedDatetime';
@@ -179,6 +181,22 @@ class StudentAdHocAssessmentMark extends ModelBase
     public function setNumber($number = null)
     {
         $this->setProperty('number', $number);
+    }
+
+    /**
+     * @return AssessmentMarkNonSubmissionReason
+     */
+    public function getAssessmentMarkNonSubmissionReason()
+    {
+        return $this->getProperty('assessmentMarkNonSubmissionReason');
+    }
+
+    /**
+     * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
+     */
+    public function setAssessmentMarkNonSubmissionReason(AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    {
+        $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
 
     /**

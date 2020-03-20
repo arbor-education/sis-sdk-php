@@ -23,6 +23,8 @@ class InterventionGroup extends ModelBase
 
     const STAFF = 'staff';
 
+    const IS_ATTENDANCE_REGISTERED = 'isAttendanceRegistered';
+
     protected $_resourceType = ResourceType::INTERVENTION_GROUP;
 
     /**
@@ -187,6 +189,22 @@ class InterventionGroup extends ModelBase
     public function setStaff(Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsAttendanceRegistered()
+    {
+        return $this->getProperty('isAttendanceRegistered');
+    }
+
+    /**
+     * @param bool $isAttendanceRegistered
+     */
+    public function setIsAttendanceRegistered($isAttendanceRegistered = null)
+    {
+        $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }
 
 

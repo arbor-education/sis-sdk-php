@@ -19,6 +19,8 @@ class BankDeposit extends ModelBase
 
     const DEPOSIT_REFERENCE = 'depositReference';
 
+    const REFUND_ADJUSTMENT_AMOUNT = 'refundAdjustmentAmount';
+
     protected $_resourceType = ResourceType::BANK_DEPOSIT;
 
     /**
@@ -151,6 +153,22 @@ class BankDeposit extends ModelBase
     public function setDepositReference($depositReference = null)
     {
         $this->setProperty('depositReference', $depositReference);
+    }
+
+    /**
+     * @return string
+     */
+    public function getRefundAdjustmentAmount()
+    {
+        return $this->getProperty('refundAdjustmentAmount');
+    }
+
+    /**
+     * @param string $refundAdjustmentAmount
+     */
+    public function setRefundAdjustmentAmount($refundAdjustmentAmount = null)
+    {
+        $this->setProperty('refundAdjustmentAmount', $refundAdjustmentAmount);
     }
 
 

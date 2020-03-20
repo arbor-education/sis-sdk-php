@@ -19,6 +19,8 @@ class SenStatus extends ModelBase
 
     const COUNTS_AS_SEN_STATUS = 'countsAsSenStatus';
 
+    const EXPORT_CODE = 'exportCode';
+
     const D00229 = 'd00229';
 
     protected $_resourceType = ResourceType::SEN_STATUS;
@@ -153,6 +155,22 @@ class SenStatus extends ModelBase
     public function setCountsAsSenStatus($countsAsSenStatus = null)
     {
         $this->setProperty('countsAsSenStatus', $countsAsSenStatus);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode($exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**

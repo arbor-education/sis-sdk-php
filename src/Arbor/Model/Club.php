@@ -25,6 +25,8 @@ class Club extends ModelBase
 
     const ATTENDANCE_REGISTER_EFFECTIVE_DATE = 'attendanceRegisterEffectiveDate';
 
+    const ACCOUNTING_CODE = 'accountingCode';
+
     protected $_resourceType = ResourceType::CLUB;
 
     /**
@@ -205,6 +207,22 @@ class Club extends ModelBase
     public function setAttendanceRegisterEffectiveDate(\DateTime $attendanceRegisterEffectiveDate = null)
     {
         $this->setProperty('attendanceRegisterEffectiveDate', $attendanceRegisterEffectiveDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccountingCode()
+    {
+        return $this->getProperty('accountingCode');
+    }
+
+    /**
+     * @param string $accountingCode
+     */
+    public function setAccountingCode($accountingCode = null)
+    {
+        $this->setProperty('accountingCode', $accountingCode);
     }
 
 

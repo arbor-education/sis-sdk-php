@@ -7,6 +7,12 @@ use Arbor\Query\Query;
 class ObservationGrade extends ModelBase
 {
 
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
+    const DATA_ORDER = 'dataOrder';
+
     const OBSERVATION_GRADE_SET = 'observationGradeSet';
 
     const SHORT_NAME = 'shortName';
@@ -14,6 +20,14 @@ class ObservationGrade extends ModelBase
     const NAME = 'name';
 
     const OBSERVATION_GRADE_VALUE = 'observationGradeValue';
+
+    const LOWER_VALUE = 'lowerValue';
+
+    const UPPER_VALUE = 'upperValue';
+
+    const STATISTICAL_VALUE = 'statisticalValue';
+
+    const GRADE_ORDER = 'gradeOrder';
 
     protected $_resourceType = ResourceType::OBSERVATION_GRADE;
 
@@ -51,6 +65,54 @@ class ObservationGrade extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::OBSERVATION_GRADE, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder($dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -115,6 +177,70 @@ class ObservationGrade extends ModelBase
     public function setObservationGradeValue($observationGradeValue = null)
     {
         $this->setProperty('observationGradeValue', $observationGradeValue);
+    }
+
+    /**
+     * @return float
+     */
+    public function getLowerValue()
+    {
+        return $this->getProperty('lowerValue');
+    }
+
+    /**
+     * @param float $lowerValue
+     */
+    public function setLowerValue($lowerValue = null)
+    {
+        $this->setProperty('lowerValue', $lowerValue);
+    }
+
+    /**
+     * @return float
+     */
+    public function getUpperValue()
+    {
+        return $this->getProperty('upperValue');
+    }
+
+    /**
+     * @param float $upperValue
+     */
+    public function setUpperValue($upperValue = null)
+    {
+        $this->setProperty('upperValue', $upperValue);
+    }
+
+    /**
+     * @return float
+     */
+    public function getStatisticalValue()
+    {
+        return $this->getProperty('statisticalValue');
+    }
+
+    /**
+     * @param float $statisticalValue
+     */
+    public function setStatisticalValue($statisticalValue = null)
+    {
+        $this->setProperty('statisticalValue', $statisticalValue);
+    }
+
+    /**
+     * @return int
+     */
+    public function getGradeOrder()
+    {
+        return $this->getProperty('gradeOrder');
+    }
+
+    /**
+     * @param int $gradeOrder
+     */
+    public function setGradeOrder($gradeOrder = null)
+    {
+        $this->setProperty('gradeOrder', $gradeOrder);
     }
 
 

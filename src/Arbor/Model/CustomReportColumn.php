@@ -25,6 +25,8 @@ class CustomReportColumn extends ModelBase
 
     const CUSTOM_LABEL = 'customLabel';
 
+    const SUMMARY_ROW_FORMULA_CLASS = 'summaryRowFormulaClass';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT_COLUMN;
 
     /**
@@ -205,6 +207,22 @@ class CustomReportColumn extends ModelBase
     public function setCustomLabel($customLabel = null)
     {
         $this->setProperty('customLabel', $customLabel);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSummaryRowFormulaClass()
+    {
+        return $this->getProperty('summaryRowFormulaClass');
+    }
+
+    /**
+     * @param string $summaryRowFormulaClass
+     */
+    public function setSummaryRowFormulaClass($summaryRowFormulaClass = null)
+    {
+        $this->setProperty('summaryRowFormulaClass', $summaryRowFormulaClass);
     }
 
 

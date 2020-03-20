@@ -19,11 +19,15 @@ class UkDfe_SchoolCensusClass extends ModelBase
 
     const NON_TEACHERS = 'nonTeachers';
 
+    const PPA_TEACHERS = 'ppaTeachers';
+
     const ASC_ACTIVITY = 'ascActivity';
 
     const HOME_PUPILS = 'homePupils';
 
     const GUEST_PUPILS = 'guestPupils';
+
+    const INFANT_PUPIL_EXCEPTIONS = 'infantPupilExceptions';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_CLASS;
 
@@ -128,6 +132,22 @@ class UkDfe_SchoolCensusClass extends ModelBase
     }
 
     /**
+     * @return int
+     */
+    public function getPpaTeachers()
+    {
+        return $this->getProperty('ppaTeachers');
+    }
+
+    /**
+     * @param int $ppaTeachers
+     */
+    public function setPpaTeachers($ppaTeachers = null)
+    {
+        $this->setProperty('ppaTeachers', $ppaTeachers);
+    }
+
+    /**
      * @return string
      */
     public function getAscActivity()
@@ -173,6 +193,22 @@ class UkDfe_SchoolCensusClass extends ModelBase
     public function setGuestPupils($guestPupils = null)
     {
         $this->setProperty('guestPupils', $guestPupils);
+    }
+
+    /**
+     * @return string
+     */
+    public function getInfantPupilExceptions()
+    {
+        return $this->getProperty('infantPupilExceptions');
+    }
+
+    /**
+     * @param string $infantPupilExceptions
+     */
+    public function setInfantPupilExceptions($infantPupilExceptions = null)
+    {
+        $this->setProperty('infantPupilExceptions', $infantPupilExceptions);
     }
 
 

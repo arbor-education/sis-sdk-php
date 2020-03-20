@@ -19,9 +19,15 @@ class ClubMembership extends ModelBase
 
     const CONSENT_RECEIVED = 'consentReceived';
 
+    const ACTIVATED_DATETIME = 'activatedDatetime';
+
     const CUSTOMER_INVOICE = 'customerInvoice';
 
+    const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
+
     const CANCELLED_DATETIME = 'cancelledDatetime';
+
+    const DISABLED_DATETIME = 'disabledDatetime';
 
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP;
 
@@ -158,6 +164,22 @@ class ClubMembership extends ModelBase
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getActivatedDatetime()
+    {
+        return $this->getProperty('activatedDatetime');
+    }
+
+    /**
+     * @param \DateTime $activatedDatetime
+     */
+    public function setActivatedDatetime(\DateTime $activatedDatetime = null)
+    {
+        $this->setProperty('activatedDatetime', $activatedDatetime);
+    }
+
+    /**
      * @return CustomerInvoice
      */
     public function getCustomerInvoice()
@@ -174,6 +196,22 @@ class ClubMembership extends ModelBase
     }
 
     /**
+     * @return CustomerInvoiceItem
+     */
+    public function getCustomerInvoiceItem()
+    {
+        return $this->getProperty('customerInvoiceItem');
+    }
+
+    /**
+     * @param CustomerInvoiceItem $customerInvoiceItem
+     */
+    public function setCustomerInvoiceItem(CustomerInvoiceItem $customerInvoiceItem = null)
+    {
+        $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getCancelledDatetime()
@@ -187,6 +225,22 @@ class ClubMembership extends ModelBase
     public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDisabledDatetime()
+    {
+        return $this->getProperty('disabledDatetime');
+    }
+
+    /**
+     * @param \DateTime $disabledDatetime
+     */
+    public function setDisabledDatetime(\DateTime $disabledDatetime = null)
+    {
+        $this->setProperty('disabledDatetime', $disabledDatetime);
     }
 
 
