@@ -223,7 +223,6 @@ class ResourceType
 	const EXCLUSION_REVIEW_OUTCOME = 'ExclusionReviewOutcome';
 	const EXTERNAL_ADMINISTRATOR = 'ExternalAdministrator';
 	const VISION_TEST = 'VisionTest';
-	const FAILED_IMAP_IMPORT = 'FailedImapImport';
 	const FACULTY = 'Faculty';
 	const FACULTY_MEMBER = 'FacultyMember';
 	const FACULTY_MEMBERSHIP = 'FacultyMembership';

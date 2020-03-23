@@ -8,7 +8,7 @@ foreach ($permanentExclusions as $permanentExclusion)
 {
     printf(
         '
-        Permanent Exclusion Display Name:  %s
+        Permanent Exclusion Display Name: %s
         Permanent Exclusion from date: %s
         Permanent Exclusion narrative: %s
         Exclusion Reason Id: %s
@@ -17,6 +17,7 @@ foreach ($permanentExclusions as $permanentExclusion)
         Student Id: %s
         Student First Name: %s
         Student Last Name: %s
+        %s
         ',
         $permanentExclusion->getDisplayName(),
         $permanentExclusion->getFromDate(),
