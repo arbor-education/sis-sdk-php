@@ -13,6 +13,8 @@ class ProgrammeEnrolment extends ModelBase
 
     const MAIN_PROGRAMME = 'mainProgramme';
 
+    const PROGRAMME_CLASSIFICATION = 'programmeClassification';
+
     const PLANNED_START_DATE = 'plannedStartDate';
 
     const PLANNED_END_DATE = 'plannedEndDate';
@@ -107,6 +109,22 @@ class ProgrammeEnrolment extends ModelBase
     public function setMainProgramme($mainProgramme = null)
     {
         $this->setProperty('mainProgramme', $mainProgramme);
+    }
+
+    /**
+     * @return ProgrammeClassification
+     */
+    public function getProgrammeClassification()
+    {
+        return $this->getProperty('programmeClassification');
+    }
+
+    /**
+     * @param ProgrammeClassification $programmeClassification
+     */
+    public function setProgrammeClassification(ProgrammeClassification $programmeClassification = null)
+    {
+        $this->setProperty('programmeClassification', $programmeClassification);
     }
 
     /**

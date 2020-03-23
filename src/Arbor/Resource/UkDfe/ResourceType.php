@@ -61,4 +61,8 @@ class ResourceType
 	const UK_DFE_PUPIL_PREMIUM_RECIPIENT = 'UkDfe_PupilPremiumRecipient';
 	const UK_DFE_PUPIL_PREMIUM_RECIPIENT_TYPE = 'UkDfe_PupilPremiumRecipientType';
 	const UK_DFE_SERVICE_CHILD_CONCERN = 'UkDfe_ServiceChildConcern';
+	const UK_DFE_GCSE_ENGLISH_ACHIEVEMENT_TYPE = 'UkDfe_GcseEnglishAchievementType';
+	const UK_DFE_GCSE_ENGLISH_FUNDING_EXEMPTION_TYPE = 'UkDfe_GcseEnglishFundingExemptionType';
+	const UK_DFE_GCSE_MATHS_ACHIEVEMENT_TYPE = 'UkDfe_GcseMathsAchievementType';
+	const UK_DFE_GCSE_MATHS_FUNDING_EXEMPTION_TYPE = 'UkDfe_GcseMathsFundingExemptionType';
 }

@@ -19,6 +19,10 @@ class DataExport extends ModelBase
 
     const HASH = 'hash';
 
+    const LABEL = 'label';
+
+    const REQUIRES_AUTHENTICATION = 'requiresAuthentication';
+
     const LAST_EXPORT_DATETIME = 'lastExportDatetime';
 
     const LAST_EXPORT_TITLE = 'lastExportTitle';
@@ -155,6 +159,38 @@ class DataExport extends ModelBase
     public function setHash($hash = null)
     {
         $this->setProperty('hash', $hash);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->getProperty('label');
+    }
+
+    /**
+     * @param string $label
+     */
+    public function setLabel($label = null)
+    {
+        $this->setProperty('label', $label);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getRequiresAuthentication()
+    {
+        return $this->getProperty('requiresAuthentication');
+    }
+
+    /**
+     * @param bool $requiresAuthentication
+     */
+    public function setRequiresAuthentication($requiresAuthentication = null)
+    {
+        $this->setProperty('requiresAuthentication', $requiresAuthentication);
     }
 
     /**

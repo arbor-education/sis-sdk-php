@@ -374,6 +374,7 @@ class ResourceType
 	const PROGRAMME_ACADEMIC_UNIT = 'ProgrammeAcademicUnit';
 	const PROGRAMME_ENROLMENT = 'ProgrammeEnrolment';
 	const PROGRAMME_INSTANCE = 'ProgrammeInstance';
+	const PROGRAMME_CLASSIFICATION = 'ProgrammeClassification';
 	const PROGRAMME_QUALIFICATION_AWARD = 'ProgrammeQualificationAward';
 	const PROGRAMME_LEAD = 'ProgrammeLead';
 	const PROGRAMME_WITHDRAWAL_REASON = 'ProgrammeWithdrawalReason';
@@ -640,11 +641,6 @@ class ResourceType
 	const OBSERVATION = 'Observation';
 	const OBSERVATION_JUDGEMENT = 'ObservationJudgement';
 	const OBSERVATION_TYPE_GRADE_SET = 'ObservationTypeGradeSet';
-	const CLASSROOM_EQUIPMENT = 'ClassroomEquipment';
-	const CLASSROOM_LAYOUT_EQUIPMENT = 'ClassroomLayoutEquipment';
-	const CLASSROOM_LAYOUT_SEAT = 'ClassroomLayoutSeat';
-	const CLASSROOM_SEATING_PLAN = 'ClassroomSeatingPlan';
-	const CLASSROOM_SEATING_PLAN_EVENT = 'ClassroomSeatingPlanEvent';
-	const CLASSROOM_EVENT_EQUIPMENT = 'ClassroomEventEquipment';
-	const CLASSROOM_EVENT_SEAT = 'ClassroomEventSeat';
+	const PERSON_BENEFIT_RECORD = 'PersonBenefitRecord';
+	const BENEFIT_RECORD_TYPE = 'BenefitRecordType';
 }
