@@ -7,35 +7,35 @@ use Arbor\Model\ModelBase;
 class Query
 {
     protected $_resourceType = null;
-    /**@var array $_propertyFilters*/
+    /** @var array $_propertyFilters */
     protected $_propertyFilters = [];
-    /**@var array $_userTagFilters*/
+    /** @var array $_userTagFilters */
     protected $_userTagFilters = [];
-    /**@var int $_pageNumber*/
+    /** @var int $_pageNumber */
     protected $_pageNumber = null;
-    /**@var int $_pageSize*/
+    /** @var int $_pageSize */
     protected $_pageSize = null;
-    /**@var string $_orderProperty*/
+    /** @var string $_orderProperty */
     protected $_orderProperty = null;
-    /**@var string $_orderDirection*/
+    /** @var string $_orderDirection */
     protected $_orderDirection = null;
-    /**@var array $_taggings*/
+    /** @var array $_taggings */
     protected $_taggings = [];
 
-    const OPERATOR_EQUALS = "equals";
-    const OPERATOR_FROM = "from";
-    const OPERATOR_TO = "to";
-    const OPERATOR_AFTER = "after";
-    const OPERATOR_BEFORE = "before";
-    const OPERATOR_SEARCH = "search";
-    const OPERATOR_IN = "in";
+    public const OPERATOR_EQUALS = 'equals';
+    public const OPERATOR_FROM = 'from';
+    public const OPERATOR_TO = 'to';
+    public const OPERATOR_AFTER = 'after';
+    public const OPERATOR_BEFORE = 'before';
+    public const OPERATOR_SEARCH = 'search';
+    public const OPERATOR_IN = 'in';
 
     public function __construct(
         $resourceType=null,
         $propertyFilters=[],
         $userTagFilters=[],
         $pageNumber=null,
-                                $pageSize=null,
+        $pageSize=null,
         $taggingsFilter = []
     ) {
         $this->setResourceType($resourceType);
@@ -43,6 +43,7 @@ class Query
         $this->setUserTagFilters($userTagFilters);
         $this->setPageNumber($pageNumber);
         $this->setTaggings($taggingsFilter);
+        $this->setPageSize($pageSize);
     }
     /**
      * @param string $orderDirection
@@ -125,37 +126,17 @@ class Query
     }
 
     /**
-     * @param string $propertyName
-     * @param string $operator
-     * @param mixed $value
-     * @throws Exception
+     * @param $propertyName
+     * @param $operator
+     * @param $value
      */
     public function addPropertyFilter($propertyName, $operator, $value)
     {
-        /* Moved to get query string method
-        //Allow the value to be another model
-        if($value instanceof ModelBase)
-        {
-            $resourceUrl = $value->getResourceUrl();
-            if(empty($resourceUrl))
-            {
-                throw new Exception("Model user in filters must be connected and have a resource URL set");
-            }
-            $value = $resourceUrl;
-        }
-        elseif($value instanceof \DateTime)
-        {
-            $value = $value->format("Y-m-d H:i:s");
-        }
-        $value = urlencode($value);
-        $propertyName = urlencode($propertyName);
-        */
-        //Add filter
         $this->_propertyFilters[] =
             [
-                "propertyName"=>$propertyName,
-                "operator"=>$operator,
-                'value'=>$value
+                'propertyName' => $propertyName,
+                'operator' => $operator,
+                'value' => $value,
             ];
     }
 
@@ -166,13 +147,13 @@ class Query
     public function addUserTagFilter($tagName, $value)
     {
         if ($value instanceof \DateTime) {
-            $value = $value->format("Y-m-d H:i:s");
+            $value = $value->format('Y-m-d H:i:s');
         }
 
         $this->_userTagFilters[] =
             [
-                "tagName"=>$tagName,
-                'value'=>$value
+                'tagName' => $tagName,
+                'value' => $value,
             ];
     }
 
@@ -208,12 +189,12 @@ class Query
                 }
                 $propertyFilter['value'] = $resourceUrl;
             } elseif ($propertyFilter['value'] instanceof \DateTime) {
-                $propertyFilter['value'] = $propertyFilter['value']->format("Y-m-d H:i:s");
+                $propertyFilter['value'] = $propertyFilter['value']->format('Y-m-d H:i:s');
             } elseif (null === $propertyFilter['value']) {
                 $propertyFilter['value']='NULL';
             }
 
-            $key = 'filters.' . $propertyFilter['propertyName'] . "." . $propertyFilter['operator'];
+            $key = 'filters.' . $propertyFilter['propertyName'] . '.' . $propertyFilter['operator'];
             $queryString[$key] = $propertyFilter['value'];
         }
 
