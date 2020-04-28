@@ -4,8 +4,7 @@ require_once __DIR__ . '/example-bootstrap.php';
 
 $permanentExclusions = $api->query(new \Arbor\Query\Query(\Arbor\Resource\ResourceType::PERMANENT_EXCLUSION));
 
-foreach ($permanentExclusions as $permanentExclusion)
-{
+foreach ($permanentExclusions as $permanentExclusion) {
     printf(
         '
         Permanent Exclusion Display Name: %s

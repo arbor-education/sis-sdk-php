@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class RegistrationForm extends ModelBase
 {
-
     const CODE = 'code';
 
     const REGISTRATION_FORM_NAME = 'registrationFormName';
@@ -240,6 +239,4 @@ class RegistrationForm extends ModelBase
     {
         return $this->getCollectionProperty('studentMemberships');
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitCurriculum extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const CURRICULUM = 'curriculum';
@@ -80,6 +79,4 @@ class AcademicUnitCurriculum extends ModelBase
     {
         $this->setProperty('curriculum', $curriculum);
     }
-
-
 }

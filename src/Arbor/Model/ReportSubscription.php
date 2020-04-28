@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ReportSubscription extends ModelBase
 {
-
     const REPORT_IDENTIFIER = 'reportIdentifier';
 
     const SUBSCRIBER = 'subscriber';
@@ -80,6 +79,4 @@ class ReportSubscription extends ModelBase
     {
         $this->setProperty('subscriber', $subscriber);
     }
-
-
 }

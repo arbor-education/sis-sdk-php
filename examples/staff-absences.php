@@ -38,6 +38,5 @@ $staffAbsence->save();
 
 $staffAbsenceCopy = $api->retrieve(\Arbor\Resource\ResourceType::STAFF_ABSENCE, $staffAbsence->getResourceId());
 
-
 $hydrator = new \Arbor\Model\Hydrator();
 print_r($hydrator->extractArray($staffAbsenceCopy));

@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class LocalAuthority extends ModelBase
 {
-
     const AUTHORITY_CODE = 'authorityCode';
 
     const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
@@ -83,6 +82,4 @@ class LocalAuthority extends ModelBase
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }
-
-
 }

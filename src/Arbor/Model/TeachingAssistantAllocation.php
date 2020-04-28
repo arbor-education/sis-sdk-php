@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TeachingAssistantAllocation extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const DAY_OF_CYCLE = 'dayOfCycle';
@@ -170,6 +169,4 @@ class TeachingAssistantAllocation extends ModelBase
     {
         $this->setProperty('allocatedTo', $allocatedTo);
     }
-
-
 }

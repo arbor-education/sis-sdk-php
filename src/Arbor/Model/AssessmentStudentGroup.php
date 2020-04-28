@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentStudentGroup extends ModelBase
 {
-
     const ACADEMIC_YEAR_ASSESSMENT = 'academicYearAssessment';
 
     const STUDENT_GROUP = 'studentGroup';
@@ -80,6 +79,4 @@ class AssessmentStudentGroup extends ModelBase
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
-
-
 }

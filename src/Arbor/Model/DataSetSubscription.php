@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DataSetSubscription extends ModelBase
 {
-
     const DATA_SET_NAME = 'dataSetName';
 
     const DATA_SET_IDENTIFIER = 'dataSetIdentifier';
@@ -152,6 +151,4 @@ class DataSetSubscription extends ModelBase
     {
         $this->setProperty('lastUpdatedDatetime', $lastUpdatedDatetime);
     }
-
-
 }

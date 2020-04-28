@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Observation extends ModelBase
 {
-
     const OBSERVING_STAFF = 'observingStaff';
 
     const OBSERVED_STAFF = 'observedStaff';
@@ -170,6 +169,4 @@ class Observation extends ModelBase
     {
         $this->setProperty('observationFocus', $observationFocus);
     }
-
-
 }

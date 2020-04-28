@@ -69,7 +69,6 @@ class RestGateway implements GatewayInterface
             $this->handlerStack->push(Middleware::retry($this->createRetryHandler()));
         }
 
-
         $this->setBaseUrl($baseUrl);
         $this->setAuthUser($authUser);
         $this->setAuthPassword($authPassword);

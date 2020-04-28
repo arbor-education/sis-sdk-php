@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomReportScopeFilter extends ModelBase
 {
-
     const CUSTOM_REPORT_SCOPE = 'customReportScope';
 
     const FIELD_CLASS = 'fieldClass';
@@ -170,6 +169,4 @@ class CustomReportScopeFilter extends ModelBase
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BoardingStatus extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class BoardingStatus extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
-
 }

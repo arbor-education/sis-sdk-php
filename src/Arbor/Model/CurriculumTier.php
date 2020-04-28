@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CurriculumTier extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class CurriculumTier extends ModelBase
     {
         $this->setProperty('curriculumTierName', $curriculumTierName);
     }
-
-
 }

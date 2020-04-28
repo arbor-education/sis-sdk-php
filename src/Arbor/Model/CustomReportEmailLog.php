@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomReportEmailLog extends ModelBase
 {
-
     const CUSTOM_REPORT = 'customReport';
 
     const EMAIL_ADDRESS = 'emailAddress';
@@ -98,6 +97,4 @@ class CustomReportEmailLog extends ModelBase
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PositionBusinessRole extends ModelBase
 {
-
     const POSITION = 'position';
 
     const BUSINESS_ROLE = 'businessRole';
@@ -98,6 +97,4 @@ class PositionBusinessRole extends ModelBase
     {
         $this->setProperty('ranking', $ranking);
     }
-
-
 }

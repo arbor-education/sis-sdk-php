@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmploymentRecordType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,4 @@ class EmploymentRecordType extends ModelBase
     {
         $this->setProperty('employer_required', $employer_required);
     }
-
-
 }

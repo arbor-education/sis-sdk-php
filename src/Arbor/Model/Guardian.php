@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Guardian extends ModelBase
 {
-
     const PERSON = 'person';
 
     const EMPLOYER = 'employer';
@@ -224,6 +223,4 @@ class Guardian extends ModelBase
     {
         $this->setProperty('isKeyWorker', $isKeyWorker);
     }
-
-
 }
