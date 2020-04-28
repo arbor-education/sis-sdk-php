@@ -32,8 +32,8 @@ Use `Arbor\Api\Gateway\RestGateway` to make GET, POST, PUT and DELETE requests a
 #### GET request:
 ```php
 $student = \Arbor\Model\Student::retrieve(16);
-// or use examples/student-retrieve.php
 ```
+or use [examples/student-retrieve.php](https://github.com/arbor-education/sis-sdk-php/blob/master/examples/student-retrieve.php) to see how to retrieve a record.
 
 #### POST request:
 
@@ -46,13 +46,22 @@ use [examples/staff-create.php](https://github.com/arbor-education/sis-sdk-php/b
 #### DELETE request:
 
 ```php
-$api->delete($staff->getPerson()); // assuming that you are deleting the newly created staff record
+$api->delete($staff->getPerson()); // assuming that you are deleting your newly created staff record
 ```
 
 #### Query filters: 
 List of filters can be found in `Arbor\Query\Query`
 
 ```php
+$query = new \Arbor\Query\Query(Arbor\Resource\ResourceType::ARBOR_MODEL);
 $query->addPropertyFilter(ArborModel::PROPERTY_NAME, OPERATOR, $value);
+$query->addPropertyFilter(ArborModel::PROPERTY_NAME, SECOND_OPERATOR, $value);
+... 
+
+$records = \Arbor\Model\ArborModel::query($query); // will return an array of records
+
+foreach ($records as $record) {
+    // e.g. $record->getDisplayName();
+}
 ```
 Check `examples` directory to see usages of filters.
