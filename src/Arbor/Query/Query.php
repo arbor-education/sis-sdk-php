@@ -36,7 +36,8 @@ class Query
         $userTagFilters=[],
         $pageNumber=null,
         $pageSize=null,
-        $taggingsFilter = []
+        $taggingsFilter = [],
+        $orderProperty=null
     ) {
         $this->setResourceType($resourceType);
         $this->setPropertyFilters($propertyFilters);
@@ -44,6 +45,7 @@ class Query
         $this->setPageNumber($pageNumber);
         $this->setTaggings($taggingsFilter);
         $this->setPageSize($pageSize);
+        $this->setOrderProperty($orderProperty);
     }
     /**
      * @param string $orderDirection
@@ -204,10 +206,13 @@ class Query
         }
 
         if (null !== $this->getPageNumber()) {
-            $queryString['page'] = $this->getPageNumber();
+            $queryString['page-number'] = $this->getPageNumber();
         }
         if (null !== $this->getPageSize()) {
             $queryString['page-size'] = $this->getPageSize();
+        }
+        if (null !== $this->getOrderProperty()) {
+            $queryString['order-property'] = $this->getOrderProperty();
         }
 
         foreach ($this->getTaggings() as $tag) {
