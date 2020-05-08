@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentInterventionGoal extends ModelBase
 {
-
     const STUDENT_INTERVENTION = 'studentIntervention';
 
     const TARGET_DATE = 'targetDate';
@@ -98,6 +97,4 @@ class StudentInterventionGoal extends ModelBase
     {
         $this->setProperty('objectives', $objectives);
     }
-
-
 }

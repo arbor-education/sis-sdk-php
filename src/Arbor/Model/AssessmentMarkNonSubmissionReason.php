@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentMarkNonSubmissionReason extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -152,6 +151,4 @@ class AssessmentMarkNonSubmissionReason extends ModelBase
     {
         $this->setProperty('assessmentType', $assessmentType);
     }
-
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\UkJcq\QualificationResultImportJob;
 
 class QualificationResult extends ModelBase
 {
-
     const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -261,6 +260,4 @@ class QualificationResult extends ModelBase
     {
         $this->setProperty('endorsementGrade', $endorsementGrade);
     }
-
-
 }

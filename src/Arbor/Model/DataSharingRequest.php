@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DataSharingRequest extends ModelBase
 {
-
     const GROUP_APPLICATION_ID = 'groupApplicationId';
 
     const PERMISSION_LEVEL = 'permissionLevel';
@@ -152,6 +151,4 @@ class DataSharingRequest extends ModelBase
     {
         $this->setProperty('statusUpdatedDatetime', $statusUpdatedDatetime);
     }
-
-
 }

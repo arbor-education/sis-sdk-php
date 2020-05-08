@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class QualificationAvailabilityInstance extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -188,6 +187,4 @@ class QualificationAvailabilityInstance extends ModelBase
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }
-
-
 }

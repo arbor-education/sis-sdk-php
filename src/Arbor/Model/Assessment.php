@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Assessment extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -242,6 +241,4 @@ class Assessment extends ModelBase
     {
         $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
     }
-
-
 }

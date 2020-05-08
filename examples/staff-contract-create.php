@@ -17,7 +17,6 @@ $staff->getPerson()->connect($api);
 $staff->getPerson()->save();
 $staff->save();
 
-
 /** create contract **/
 $staffEmloymentType = $api->retrieve(\Arbor\Resource\ResourceType::STAFF_EMPLOYMENT_TYPE, 'PERMANENT');
 $staffContract = new \Arbor\Model\StaffContract();
@@ -34,7 +33,6 @@ $staffContract->connect($api);
 $staffContract->save();
 
 $staffContractCopy = $api->retrieve(\Arbor\Resource\ResourceType::STAFF_CONTRACT, $staffContract->getResourceId());
-
 
 $hydrator = new \Arbor\Model\Hydrator();
 print_r($hydrator->extractArray($staffContractCopy));

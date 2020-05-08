@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class OutboundLetterPermittedSender extends ModelBase
 {
-
     const ACTION_TAKER = 'actionTaker';
 
     const SENDER = 'sender';
@@ -98,6 +97,4 @@ class OutboundLetterPermittedSender extends ModelBase
     {
         $this->setProperty('allow', $allow);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DataExport extends ModelBase
 {
-
     const USER = 'user';
 
     const MODULE = 'module';
@@ -224,6 +223,4 @@ class DataExport extends ModelBase
     {
         $this->setProperty('lastExportTitle', $lastExportTitle);
     }
-
-
 }

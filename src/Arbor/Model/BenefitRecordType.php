@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BenefitRecordType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -170,6 +169,4 @@ class BenefitRecordType extends ModelBase
     {
         $this->setProperty('appliesToGuardian', $appliesToGuardian);
     }
-
-
 }

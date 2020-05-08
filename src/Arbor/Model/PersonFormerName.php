@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PersonFormerName extends ModelBase
 {
-
     const PERSON = 'person';
 
     const FROM_DATE = 'fromDate';
@@ -152,6 +151,4 @@ class PersonFormerName extends ModelBase
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Alert extends ModelBase
 {
-
     const ALERT_RULE = 'alertRule';
 
     const TRIGGER_EVENT_TYPE = 'triggerEventType';
@@ -134,6 +133,4 @@ class Alert extends ModelBase
     {
         $this->setProperty('triggeredDatetime', $triggeredDatetime);
     }
-
-
 }

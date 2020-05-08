@@ -6,7 +6,7 @@ $date = new \DateTime();
 
 $contracts = new \Arbor\Query\Query(Arbor\Resource\ResourceType::STAFF_CONTRACT);
 $contracts->addPropertyFilter(\Arbor\Model\StaffContract::START_DATE, \Arbor\Query\Query::OPERATOR_BEFORE, $date);
-$contracts->addPropertyFilter(\Arbor\Model\StaffContract::END_DATE, \Arbor\Query\Query::OPERATOR_EQUALS, NULL);
+$contracts->addPropertyFilter(\Arbor\Model\StaffContract::END_DATE, \Arbor\Query\Query::OPERATOR_EQUALS, null);
 
 $current_staff = \Arbor\Model\StaffContract::query($contracts);
 

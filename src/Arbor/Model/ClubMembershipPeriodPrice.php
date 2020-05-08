@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ClubMembershipPeriodPrice extends ModelBase
 {
-
     const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
 
     const PRICING_BASIS = 'pricingBasis';
@@ -152,6 +151,4 @@ class ClubMembershipPeriodPrice extends ModelBase
     {
         $this->setProperty('variableContribution', $variableContribution);
     }
-
-
 }

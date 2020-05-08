@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class QualificationCenterAssessedOutcome extends ModelBase
 {
-
     const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -170,6 +169,4 @@ class QualificationCenterAssessedOutcome extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
-
 }

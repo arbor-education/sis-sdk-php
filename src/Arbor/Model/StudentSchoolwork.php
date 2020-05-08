@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentSchoolwork extends ModelBase
 {
-
     const SCHOOLWORK = 'schoolwork';
 
     const STUDENT = 'student';
@@ -152,6 +151,4 @@ class StudentSchoolwork extends ModelBase
     {
         $this->setProperty('notSubmittedDatetime', $notSubmittedDatetime);
     }
-
-
 }

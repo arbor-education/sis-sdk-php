@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class GradePointScaleLevelGradeSet extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -170,6 +169,4 @@ class GradePointScaleLevelGradeSet extends ModelBase
     {
         $this->setProperty('appliesToSenStudentOnly', $appliesToSenStudentOnly);
     }
-
-
 }

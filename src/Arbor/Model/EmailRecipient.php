@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmailRecipient extends ModelBase
 {
-
     const EMAIL = 'email';
 
     const RECIPIENT_TYPE = 'recipientType';
@@ -224,6 +223,4 @@ class EmailRecipient extends ModelBase
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
-
-
 }

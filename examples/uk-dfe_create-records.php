@@ -14,7 +14,6 @@ $pupilPremium->setRecipientForOtherReasons(false);
 $pupilPremium->connect($api);
 $pupilPremium->save();
 
-
 $br = $api->retrieve(
     Arbor\Resource\UkDfe\ResourceType::UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_RECIPIENT,
     $pupilPremium->getResourceId()

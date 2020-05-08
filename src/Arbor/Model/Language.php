@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Language extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -224,6 +223,4 @@ class Language extends ModelBase
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Eligibility extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class Eligibility extends ModelBase
     {
         $this->setProperty('eligibilityName', $eligibilityName);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class MeetingNote extends ModelBase
 {
-
     const MEETING = 'meeting';
 
     const NOTE_TEXT = 'noteText';
@@ -116,6 +115,4 @@ class MeetingNote extends ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
-
-
 }
