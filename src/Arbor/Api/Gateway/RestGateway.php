@@ -405,8 +405,6 @@ class RestGateway implements GatewayInterface
         $pluralResource = self::getPluralizeFilter()->filter($query->getResourceType());
         $resourceRoot = lcfirst($pluralResource);
         $url = "/rest-v2/$pluralResource";
-        print_r($query->getQueryOptions());
-        die;
         $options = ['query' => $query->getQueryOptions()];
 
         $arrayRepresentation = $this->sendRequest(self::HTTP_METHOD_GET, $url, $options);
