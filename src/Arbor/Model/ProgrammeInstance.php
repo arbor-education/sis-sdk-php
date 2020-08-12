@@ -14,6 +14,8 @@ class ProgrammeInstance extends ModelBase
 
     const PLANNED_END_DATE = 'plannedEndDate';
 
+    const PARTNER_UKPRN = 'partnerUkprn';
+
     protected $_resourceType = ResourceType::PROGRAMME_INSTANCE;
 
     /**
@@ -114,5 +116,21 @@ class ProgrammeInstance extends ModelBase
     public function setPlannedEndDate(\DateTime $plannedEndDate = null)
     {
         $this->setProperty('plannedEndDate', $plannedEndDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPartnerUkprn()
+    {
+        return $this->getProperty('partnerUkprn');
+    }
+
+    /**
+     * @param string $partnerUkprn
+     */
+    public function setPartnerUkprn($partnerUkprn = null)
+    {
+        $this->setProperty('partnerUkprn', $partnerUkprn);
     }
 }
