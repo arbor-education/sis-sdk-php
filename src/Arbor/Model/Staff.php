@@ -23,6 +23,8 @@ class Staff extends ModelBase
 
     const LEGACY_SYSTEM_ID = 'legacySystemId';
 
+    const EXTERNAL_PERSON_ID = 'externalPersonId';
+
     const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
 
     const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
@@ -199,6 +201,22 @@ class Staff extends ModelBase
     public function setLegacySystemId($legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExternalPersonId()
+    {
+        return $this->getProperty('externalPersonId');
+    }
+
+    /**
+     * @param string $externalPersonId
+     */
+    public function setExternalPersonId($externalPersonId = null)
+    {
+        $this->setProperty('externalPersonId', $externalPersonId);
     }
 
     /**

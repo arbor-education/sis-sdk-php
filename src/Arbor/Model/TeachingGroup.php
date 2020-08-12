@@ -14,6 +14,16 @@ class TeachingGroup extends ModelBase
 
     const PROGRAMME_INSTANCE = 'programmeInstance';
 
+    const COPIED_TO_TEACHING_GROUP = 'copiedToTeachingGroup';
+
+    const PROMOTED_TO_TEACHING_GROUP = 'promotedToTeachingGroup';
+
+    const PROMOTED_DATETIME = 'promotedDatetime';
+
+    const PROMOTED_ENROLMENT_START_DATE = 'promotedEnrolmentStartDate';
+
+    const PROMOTED_ENROLMENT_END_DATE = 'promotedEnrolmentEndDate';
+
     protected $_resourceType = ResourceType::TEACHING_GROUP;
 
     /**
@@ -114,5 +124,85 @@ class TeachingGroup extends ModelBase
     public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
+    }
+
+    /**
+     * @return TeachingGroup
+     */
+    public function getCopiedToTeachingGroup()
+    {
+        return $this->getProperty('copiedToTeachingGroup');
+    }
+
+    /**
+     * @param TeachingGroup $copiedToTeachingGroup
+     */
+    public function setCopiedToTeachingGroup(TeachingGroup $copiedToTeachingGroup = null)
+    {
+        $this->setProperty('copiedToTeachingGroup', $copiedToTeachingGroup);
+    }
+
+    /**
+     * @return TeachingGroup
+     */
+    public function getPromotedToTeachingGroup()
+    {
+        return $this->getProperty('promotedToTeachingGroup');
+    }
+
+    /**
+     * @param TeachingGroup $promotedToTeachingGroup
+     */
+    public function setPromotedToTeachingGroup(TeachingGroup $promotedToTeachingGroup = null)
+    {
+        $this->setProperty('promotedToTeachingGroup', $promotedToTeachingGroup);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPromotedDatetime()
+    {
+        return $this->getProperty('promotedDatetime');
+    }
+
+    /**
+     * @param \DateTime $promotedDatetime
+     */
+    public function setPromotedDatetime(\DateTime $promotedDatetime = null)
+    {
+        $this->setProperty('promotedDatetime', $promotedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPromotedEnrolmentStartDate()
+    {
+        return $this->getProperty('promotedEnrolmentStartDate');
+    }
+
+    /**
+     * @param \DateTime $promotedEnrolmentStartDate
+     */
+    public function setPromotedEnrolmentStartDate(\DateTime $promotedEnrolmentStartDate = null)
+    {
+        $this->setProperty('promotedEnrolmentStartDate', $promotedEnrolmentStartDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPromotedEnrolmentEndDate()
+    {
+        return $this->getProperty('promotedEnrolmentEndDate');
+    }
+
+    /**
+     * @param \DateTime $promotedEnrolmentEndDate
+     */
+    public function setPromotedEnrolmentEndDate(\DateTime $promotedEnrolmentEndDate = null)
+    {
+        $this->setProperty('promotedEnrolmentEndDate', $promotedEnrolmentEndDate);
     }
 }

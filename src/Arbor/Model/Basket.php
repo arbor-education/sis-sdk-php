@@ -4,17 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Employer extends ModelBase
+class Basket extends ModelBase
 {
-    const NAME = 'name';
+    const GUARDIAN = 'guardian';
 
-    const IDENTIFIER = 'identifier';
-
-    protected $_resourceType = ResourceType::EMPLOYER;
+    protected $_resourceType = ResourceType::BASKET;
 
     /**
      * @param Query $query
-     * @return Employer[] | Collection
+     * @return Basket[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -28,14 +26,14 @@ class Employer extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::EMPLOYER);
+        $query->setResourceType(ResourceType::BASKET);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return Employer
+     * @return Basket
      * @throws Exception
      */
     public static function retrieve($id)
@@ -45,38 +43,22 @@ class Employer extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::EMPLOYER, $id);
+        return $gateway->retrieve(ResourceType::BASKET, $id);
     }
 
     /**
-     * @return string
+     * @return Guardian
      */
-    public function getName()
+    public function getGuardian()
     {
-        return $this->getProperty('name');
+        return $this->getProperty('guardian');
     }
 
     /**
-     * @param string $name
+     * @param Guardian $guardian
      */
-    public function setName($name = null)
+    public function setGuardian(Guardian $guardian = null)
     {
-        $this->setProperty('name', $name);
-    }
-
-    /**
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->getProperty('identifier');
-    }
-
-    /**
-     * @param string $identifier
-     */
-    public function setIdentifier($identifier = null)
-    {
-        $this->setProperty('identifier', $identifier);
+        $this->setProperty('guardian', $guardian);
     }
 }

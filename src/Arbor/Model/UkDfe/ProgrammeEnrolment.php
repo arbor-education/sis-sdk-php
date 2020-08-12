@@ -7,17 +7,15 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ProgrammeInstance extends ModelBase
+class ProgrammeEnrolment extends ModelBase
 {
-    const PARTNER_UKPRN = 'partnerUkprn';
-
     const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
-    protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_INSTANCE;
+    protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_ENROLMENT;
 
     /**
      * @param Query $query
-     * @return ProgrammeInstance[] | Collection
+     * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -31,14 +29,14 @@ class ProgrammeInstance extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::UK_DFE_PROGRAMME_INSTANCE);
+        $query->setResourceType(ResourceType::UK_DFE_PROGRAMME_ENROLMENT);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return ProgrammeInstance
+     * @return ProgrammeEnrolment
      * @throws Exception
      */
     public static function retrieve($id)
@@ -48,23 +46,7 @@ class ProgrammeInstance extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::UK_DFE_PROGRAMME_INSTANCE, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getPartnerUkprn()
-    {
-        return $this->getProperty('partnerUkprn');
-    }
-
-    /**
-     * @param string $partnerUkprn
-     */
-    public function setPartnerUkprn($partnerUkprn = null)
-    {
-        $this->setProperty('partnerUkprn', $partnerUkprn);
+        return $gateway->retrieve(ResourceType::UK_DFE_PROGRAMME_ENROLMENT, $id);
     }
 
     /**

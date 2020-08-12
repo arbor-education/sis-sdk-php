@@ -18,6 +18,8 @@ class StaffAbsence extends ModelBase
 
     const SICKNESS_SUBCATEGORY = 'sicknessSubcategory';
 
+    const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
+
     const APPROVED_DATETIME = 'approvedDatetime';
 
     const APPROVED_BY_STAFF = 'approvedByStaff';
@@ -168,6 +170,22 @@ class StaffAbsence extends ModelBase
     public function setSicknessSubcategory(StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
     {
         $this->setProperty('sicknessSubcategory', $sicknessSubcategory);
+    }
+
+    /**
+     * @return IntegrationsHrFinanceProvider
+     */
+    public function getIntegrationsHrFinanceProvider()
+    {
+        return $this->getProperty('integrationsHrFinanceProvider');
+    }
+
+    /**
+     * @param IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
+     */
+    public function setIntegrationsHrFinanceProvider(IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
+    {
+        $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
 
     /**

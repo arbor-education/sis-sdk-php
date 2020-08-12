@@ -24,10 +24,6 @@ class AcademicUnitEnrolment extends ModelBase
 
     const STUDENT_ATTENDANCE_PATTERN_DEPENDENCY = 'studentAttendancePatternDependency';
 
-    const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
-
-    const PLANNED_EEP_HOURS = 'plannedEepHours';
-
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_ENROLMENT;
 
     /**
@@ -208,37 +204,5 @@ class AcademicUnitEnrolment extends ModelBase
     public function setStudentAttendancePatternDependency(StudentAttendancePattern $studentAttendancePatternDependency = null)
     {
         $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
-    }
-
-    /**
-     * @return int
-     */
-    public function getPlannedLearningHours()
-    {
-        return $this->getProperty('plannedLearningHours');
-    }
-
-    /**
-     * @param int $plannedLearningHours
-     */
-    public function setPlannedLearningHours($plannedLearningHours = null)
-    {
-        $this->setProperty('plannedLearningHours', $plannedLearningHours);
-    }
-
-    /**
-     * @return int
-     */
-    public function getPlannedEepHours()
-    {
-        return $this->getProperty('plannedEepHours');
-    }
-
-    /**
-     * @param int $plannedEepHours
-     */
-    public function setPlannedEepHours($plannedEepHours = null)
-    {
-        $this->setProperty('plannedEepHours', $plannedEepHours);
     }
 }

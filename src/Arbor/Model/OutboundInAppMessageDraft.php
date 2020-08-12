@@ -16,6 +16,8 @@ class OutboundInAppMessageDraft extends ModelBase
 
     const GENERATED_DATETIME = 'generatedDatetime';
 
+    const CONTEXT = 'context';
+
     protected $_resourceType = ResourceType::OUTBOUND_IN_APP_MESSAGE_DRAFT;
 
     /**
@@ -132,5 +134,21 @@ class OutboundInAppMessageDraft extends ModelBase
     public function setGeneratedDatetime(\DateTime $generatedDatetime = null)
     {
         $this->setProperty('generatedDatetime', $generatedDatetime);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getContext()
+    {
+        return $this->getProperty('context');
+    }
+
+    /**
+     * @param ModelBase $context
+     */
+    public function setContext(ModelBase $context = null)
+    {
+        $this->setProperty('context', $context);
     }
 }

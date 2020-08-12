@@ -35,6 +35,7 @@ class ResourceType
     const AD_HOC_ASSESSMENT = 'AdHocAssessment';
     const AD_HOC_ASSESSMENT_BATCH = 'AdHocAssessmentBatch';
     const AD_HOC_ASSESSMENT_BATCH_TARGET = 'AdHocAssessmentBatchTarget';
+    const AD_HOC_ASSESSMENT_BATCH_TARGET_SUBJECT = 'AdHocAssessmentBatchTargetSubject';
     const AD_HOC_ASSESSMENT_CATEGORY = 'AdHocAssessmentCategory';
     const ALERT = 'Alert';
     const ALERT_RULE = 'AlertRule';
@@ -85,6 +86,8 @@ class ResourceType
     const ATTENDANCE_PATTERN_PERIOD = 'AttendancePatternPeriod';
     const AWARDING_ORGANIZATION = 'AwardingOrganization';
     const BANK_DETAIL = 'BankDetail';
+    const BASKET = 'Basket';
+    const BASKET_ITEM = 'BasketItem';
     const BEHAVIOUR = 'Behaviour';
     const BEHAVIOUR_FOLLOW_UP = 'BehaviourFollowUp';
     const BEHAVIOUR_LOCATION = 'BehaviourLocation';
@@ -219,6 +222,7 @@ class ResourceType
     const EVENT_PARTICIPANT = 'EventParticipant';
     const EVENT_PARTICIPANT_INVITATION = 'EventParticipantInvitation';
     const EXCLUSION_REASON = 'ExclusionReason';
+    const EXCLUSION_EXCLUSION_REASON = 'ExclusionExclusionReason';
     const EXCLUSION_REVIEW = 'ExclusionReview';
     const EXCLUSION_REVIEW_OUTCOME = 'ExclusionReviewOutcome';
     const EXTERNAL_ADMINISTRATOR = 'ExternalAdministrator';
@@ -515,6 +519,8 @@ class ResourceType
     const STUDENT_ATTENDANCE_PATTERN = 'StudentAttendancePattern';
     const STUDENT_ABSENCE_NOTE = 'StudentAbsenceNote';
     const STUDENT_REPEATING_ABSENCE_NOTE = 'StudentRepeatingAbsenceNote';
+    const STUDENT_DESTINATION = 'StudentDestination';
+    const STUDENT_DESTINATION_TYPE = 'StudentDestinationType';
     const STUDENT_EDUCATIONAL_HISTORY = 'StudentEducationalHistory';
     const STUDENT_GIFT = 'StudentGift';
     const STUDENT_TALENT = 'StudentTalent';
@@ -643,4 +649,7 @@ class ResourceType
     const OBSERVATION_TYPE_GRADE_SET = 'ObservationTypeGradeSet';
     const PERSON_BENEFIT_RECORD = 'PersonBenefitRecord';
     const BENEFIT_RECORD_TYPE = 'BenefitRecordType';
+    const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
+    const USER_DEFINED_FIELD_IMPORT = 'UserDefinedFieldImport';
+    const INTEGRATIONS_HR_FINANCE_PROVIDER = 'IntegrationsHrFinanceProvider';
 }

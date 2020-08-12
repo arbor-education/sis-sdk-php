@@ -28,6 +28,10 @@ class Assessment extends ModelBase
 
     const STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = 'studentProgressBaselineCalculatorClassName';
 
+    const IS_BASELINE_LOCKED = 'isBaselineLocked';
+
+    const IS_TARGET_LOCKED = 'isTargetLocked';
+
     protected $_resourceType = ResourceType::ASSESSMENT;
 
     /**
@@ -240,5 +244,37 @@ class Assessment extends ModelBase
     public function setStudentProgressBaselineCalculatorClassName($studentProgressBaselineCalculatorClassName = null)
     {
         $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsBaselineLocked()
+    {
+        return $this->getProperty('isBaselineLocked');
+    }
+
+    /**
+     * @param bool $isBaselineLocked
+     */
+    public function setIsBaselineLocked($isBaselineLocked = null)
+    {
+        $this->setProperty('isBaselineLocked', $isBaselineLocked);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsTargetLocked()
+    {
+        return $this->getProperty('isTargetLocked');
+    }
+
+    /**
+     * @param bool $isTargetLocked
+     */
+    public function setIsTargetLocked($isTargetLocked = null)
+    {
+        $this->setProperty('isTargetLocked', $isTargetLocked);
     }
 }

@@ -14,7 +14,15 @@ class ProgrammeInstance extends ModelBase
 
     const PLANNED_END_DATE = 'plannedEndDate';
 
+    const PLACEHOLDER_QUALIFICATION_AWARD_NAME = 'placeholderQualificationAwardName';
+
+    const PLACEHOLDER_QUALIFICATION_AWARD_REFERENCE = 'placeholderQualificationAwardReference';
+
+    const PROGRAMME_CLASSIFICATION = 'programmeClassification';
+
     const PARTNER_UKPRN = 'partnerUkprn';
+
+    const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
     protected $_resourceType = ResourceType::PROGRAMME_INSTANCE;
 
@@ -121,6 +129,54 @@ class ProgrammeInstance extends ModelBase
     /**
      * @return string
      */
+    public function getPlaceholderQualificationAwardName()
+    {
+        return $this->getProperty('placeholderQualificationAwardName');
+    }
+
+    /**
+     * @param string $placeholderQualificationAwardName
+     */
+    public function setPlaceholderQualificationAwardName($placeholderQualificationAwardName = null)
+    {
+        $this->setProperty('placeholderQualificationAwardName', $placeholderQualificationAwardName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlaceholderQualificationAwardReference()
+    {
+        return $this->getProperty('placeholderQualificationAwardReference');
+    }
+
+    /**
+     * @param string $placeholderQualificationAwardReference
+     */
+    public function setPlaceholderQualificationAwardReference($placeholderQualificationAwardReference = null)
+    {
+        $this->setProperty('placeholderQualificationAwardReference', $placeholderQualificationAwardReference);
+    }
+
+    /**
+     * @return ProgrammeClassification
+     */
+    public function getProgrammeClassification()
+    {
+        return $this->getProperty('programmeClassification');
+    }
+
+    /**
+     * @param ProgrammeClassification $programmeClassification
+     */
+    public function setProgrammeClassification(ProgrammeClassification $programmeClassification = null)
+    {
+        $this->setProperty('programmeClassification', $programmeClassification);
+    }
+
+    /**
+     * @return string
+     */
     public function getPartnerUkprn()
     {
         return $this->getProperty('partnerUkprn');
@@ -132,5 +188,21 @@ class ProgrammeInstance extends ModelBase
     public function setPartnerUkprn($partnerUkprn = null)
     {
         $this->setProperty('partnerUkprn', $partnerUkprn);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlannedLearningHours()
+    {
+        return $this->getProperty('plannedLearningHours');
+    }
+
+    /**
+     * @param int $plannedLearningHours
+     */
+    public function setPlannedLearningHours($plannedLearningHours = null)
+    {
+        $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
 }

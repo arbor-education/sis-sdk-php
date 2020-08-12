@@ -48,6 +48,7 @@ class ResourceType
     const UK_DFE_SERVICE_CHILD_STATUS_ASSIGNMENT = 'UkDfe_ServiceChildStatusAssignment';
     const UK_DFE_PROGRAMME = 'UkDfe_Programme';
     const UK_DFE_PROGRAMME_INSTANCE = 'UkDfe_ProgrammeInstance';
+    const UK_DFE_PROGRAMME_ENROLMENT = 'UkDfe_ProgrammeEnrolment';
     const UK_DFE_CHILD_CARE_PLACE = 'UkDfe_ChildCarePlace';
     const UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_ELIGIBILITY = 'UkDfe_EarlyYearsPupilPremiumEligibility';
     const UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_RECIPIENT = 'UkDfe_EarlyYearsPupilPremiumRecipient';

@@ -4,27 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class WorkPlacement extends ModelBase
+class StudentDestination extends ModelBase
 {
     const STUDENT = 'student';
 
-    const EMPLOYER = 'employer';
+    const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
 
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
 
-    const WORK_PLACEMENT_MODE = 'workPlacementMode';
+    const VERIFIED_DATE = 'verifiedDate';
 
-    const PLANNED_HOURS = 'plannedHours';
+    const LINKED_RECORD = 'linkedRecord';
 
-    const PROGRAMME_ENROLMENT = 'programmeEnrolment';
-
-    protected $_resourceType = ResourceType::WORK_PLACEMENT;
+    protected $_resourceType = ResourceType::STUDENT_DESTINATION;
 
     /**
      * @param Query $query
-     * @return WorkPlacement[] | Collection
+     * @return StudentDestination[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -38,14 +36,14 @@ class WorkPlacement extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::WORK_PLACEMENT);
+        $query->setResourceType(ResourceType::STUDENT_DESTINATION);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return WorkPlacement
+     * @return StudentDestination
      * @throws Exception
      */
     public static function retrieve($id)
@@ -55,7 +53,7 @@ class WorkPlacement extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::WORK_PLACEMENT, $id);
+        return $gateway->retrieve(ResourceType::STUDENT_DESTINATION, $id);
     }
 
     /**
@@ -75,19 +73,19 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @return Employer
+     * @return StudentDestinationType
      */
-    public function getEmployer()
+    public function getStudentDestinationType()
     {
-        return $this->getProperty('employer');
+        return $this->getProperty('studentDestinationType');
     }
 
     /**
-     * @param Employer $employer
+     * @param StudentDestinationType $studentDestinationType
      */
-    public function setEmployer(Employer $employer = null)
+    public function setStudentDestinationType(StudentDestinationType $studentDestinationType = null)
     {
-        $this->setProperty('employer', $employer);
+        $this->setProperty('studentDestinationType', $studentDestinationType);
     }
 
     /**
@@ -123,50 +121,34 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
-    public function getWorkPlacementMode()
+    public function getVerifiedDate()
     {
-        return $this->getProperty('workPlacementMode');
+        return $this->getProperty('verifiedDate');
     }
 
     /**
-     * @param string $workPlacementMode
+     * @param \DateTime $verifiedDate
      */
-    public function setWorkPlacementMode($workPlacementMode = null)
+    public function setVerifiedDate(\DateTime $verifiedDate = null)
     {
-        $this->setProperty('workPlacementMode', $workPlacementMode);
+        $this->setProperty('verifiedDate', $verifiedDate);
     }
 
     /**
-     * @return string
+     * @return ModelBase
      */
-    public function getPlannedHours()
+    public function getLinkedRecord()
     {
-        return $this->getProperty('plannedHours');
+        return $this->getProperty('linkedRecord');
     }
 
     /**
-     * @param string $plannedHours
+     * @param ModelBase $linkedRecord
      */
-    public function setPlannedHours($plannedHours = null)
+    public function setLinkedRecord(ModelBase $linkedRecord = null)
     {
-        $this->setProperty('plannedHours', $plannedHours);
-    }
-
-    /**
-     * @return ProgrammeEnrolment
-     */
-    public function getProgrammeEnrolment()
-    {
-        return $this->getProperty('programmeEnrolment');
-    }
-
-    /**
-     * @param ProgrammeEnrolment $programmeEnrolment
-     */
-    public function setProgrammeEnrolment(ProgrammeEnrolment $programmeEnrolment = null)
-    {
-        $this->setProperty('programmeEnrolment', $programmeEnrolment);
+        $this->setProperty('linkedRecord', $linkedRecord);
     }
 }

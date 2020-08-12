@@ -4,7 +4,7 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmploymentRecordType extends ModelBase
+class StudentDestinationType extends ModelBase
 {
     const CODE = 'code';
 
@@ -12,17 +12,19 @@ class EmploymentRecordType extends ModelBase
 
     const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    const LABEL = 'label';
 
-    const IS_EMPLOYED = 'isEmployed';
+    const IS_EDUCATION = 'isEducation';
 
-    const EMPLOYER_REQUIRED = 'employerRequired';
+    const IS_EMPLOYMENT = 'isEmployment';
 
-    protected $_resourceType = ResourceType::EMPLOYMENT_RECORD_TYPE;
+    const LINKED_ENTITY_TYPE = 'linkedEntityType';
+
+    protected $_resourceType = ResourceType::STUDENT_DESTINATION_TYPE;
 
     /**
      * @param Query $query
-     * @return EmploymentRecordType[] | Collection
+     * @return StudentDestinationType[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -36,14 +38,14 @@ class EmploymentRecordType extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::EMPLOYMENT_RECORD_TYPE);
+        $query->setResourceType(ResourceType::STUDENT_DESTINATION_TYPE);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return EmploymentRecordType
+     * @return StudentDestinationType
      * @throws Exception
      */
     public static function retrieve($id)
@@ -53,7 +55,7 @@ class EmploymentRecordType extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::EMPLOYMENT_RECORD_TYPE, $id);
+        return $gateway->retrieve(ResourceType::STUDENT_DESTINATION_TYPE, $id);
     }
 
     /**
@@ -107,48 +109,64 @@ class EmploymentRecordType extends ModelBase
     /**
      * @return string
      */
-    public function getName()
+    public function getLabel()
     {
-        return $this->getProperty('name');
+        return $this->getProperty('label');
     }
 
     /**
-     * @param string $name
+     * @param string $label
      */
-    public function setName($name = null)
+    public function setLabel($label = null)
     {
-        $this->setProperty('name', $name);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getIsEmployed()
-    {
-        return $this->getProperty('isEmployed');
-    }
-
-    /**
-     * @param bool $isEmployed
-     */
-    public function setIsEmployed($isEmployed = null)
-    {
-        $this->setProperty('isEmployed', $isEmployed);
+        $this->setProperty('label', $label);
     }
 
     /**
      * @return bool
      */
-    public function getEmployerRequired()
+    public function getIsEducation()
     {
-        return $this->getProperty('employerRequired');
+        return $this->getProperty('isEducation');
     }
 
     /**
-     * @param bool $employerRequired
+     * @param bool $isEducation
      */
-    public function setEmployerRequired($employerRequired = null)
+    public function setIsEducation($isEducation = null)
     {
-        $this->setProperty('employerRequired', $employerRequired);
+        $this->setProperty('isEducation', $isEducation);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsEmployment()
+    {
+        return $this->getProperty('isEmployment');
+    }
+
+    /**
+     * @param bool $isEmployment
+     */
+    public function setIsEmployment($isEmployment = null)
+    {
+        $this->setProperty('isEmployment', $isEmployment);
+    }
+
+    /**
+     * @return int
+     */
+    public function getLinkedEntityType()
+    {
+        return $this->getProperty('linkedEntityType');
+    }
+
+    /**
+     * @param int $linkedEntityType
+     */
+    public function setLinkedEntityType($linkedEntityType = null)
+    {
+        $this->setProperty('linkedEntityType', $linkedEntityType);
     }
 }
