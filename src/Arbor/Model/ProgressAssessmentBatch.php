@@ -14,6 +14,10 @@ class ProgressAssessmentBatch extends ModelBase
 
     const ACADEMIC_YEAR = 'academicYear';
 
+    const IS_BASELINE_LOCKED = 'isBaselineLocked';
+
+    const IS_TARGET_LOCKED = 'isTargetLocked';
+
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
     /**
@@ -114,5 +118,37 @@ class ProgressAssessmentBatch extends ModelBase
     public function setAcademicYear(AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsBaselineLocked()
+    {
+        return $this->getProperty('isBaselineLocked');
+    }
+
+    /**
+     * @param bool $isBaselineLocked
+     */
+    public function setIsBaselineLocked($isBaselineLocked = null)
+    {
+        $this->setProperty('isBaselineLocked', $isBaselineLocked);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsTargetLocked()
+    {
+        return $this->getProperty('isTargetLocked');
+    }
+
+    /**
+     * @param bool $isTargetLocked
+     */
+    public function setIsTargetLocked($isTargetLocked = null)
+    {
+        $this->setProperty('isTargetLocked', $isTargetLocked);
     }
 }

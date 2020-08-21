@@ -19,6 +19,8 @@ class QualificationResult extends ModelBase
 
     const CANDIDATE_ENTRY = 'candidateEntry';
 
+    const CANDIDATE_ASSESSABLE_ENTRY = 'candidateAssessableEntry';
+
     const RESULT_DATETIME = 'resultDatetime';
 
     const EMBARGO_DATETIME = 'embargoDatetime';
@@ -163,6 +165,22 @@ class QualificationResult extends ModelBase
     public function setCandidateEntry(CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
+    }
+
+    /**
+     * @return CandidateAssessableEntry
+     */
+    public function getCandidateAssessableEntry()
+    {
+        return $this->getProperty('candidateAssessableEntry');
+    }
+
+    /**
+     * @param CandidateAssessableEntry $candidateAssessableEntry
+     */
+    public function setCandidateAssessableEntry(CandidateAssessableEntry $candidateAssessableEntry = null)
+    {
+        $this->setProperty('candidateAssessableEntry', $candidateAssessableEntry);
     }
 
     /**

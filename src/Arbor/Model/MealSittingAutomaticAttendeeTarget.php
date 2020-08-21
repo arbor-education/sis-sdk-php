@@ -65,7 +65,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     }
 
     /**
-     * @return RegistrationForm
+     * @return ModelBase
      */
     public function getAutomaticAttendeeTarget()
     {
@@ -73,9 +73,9 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     }
 
     /**
-     * @param RegistrationForm $automaticAttendeeTarget
+     * @param ModelBase $automaticAttendeeTarget
      */
-    public function setAutomaticAttendeeTarget(RegistrationForm $automaticAttendeeTarget = null)
+    public function setAutomaticAttendeeTarget(ModelBase $automaticAttendeeTarget = null)
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }

@@ -4,7 +4,7 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmploymentRecordType extends ModelBase
+class IntegrationsHrFinanceProvider extends ModelBase
 {
     const CODE = 'code';
 
@@ -14,15 +14,15 @@ class EmploymentRecordType extends ModelBase
 
     const NAME = 'name';
 
-    const IS_EMPLOYED = 'isEmployed';
+    const CONFIGURATION = 'configuration';
 
-    const EMPLOYER_REQUIRED = 'employerRequired';
+    const ENABLED = 'enabled';
 
-    protected $_resourceType = ResourceType::EMPLOYMENT_RECORD_TYPE;
+    protected $_resourceType = ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER;
 
     /**
      * @param Query $query
-     * @return EmploymentRecordType[] | Collection
+     * @return IntegrationsHrFinanceProvider[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -36,14 +36,14 @@ class EmploymentRecordType extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::EMPLOYMENT_RECORD_TYPE);
+        $query->setResourceType(ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return EmploymentRecordType
+     * @return IntegrationsHrFinanceProvider
      * @throws Exception
      */
     public static function retrieve($id)
@@ -53,7 +53,7 @@ class EmploymentRecordType extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::EMPLOYMENT_RECORD_TYPE, $id);
+        return $gateway->retrieve(ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER, $id);
     }
 
     /**
@@ -121,34 +121,34 @@ class EmploymentRecordType extends ModelBase
     }
 
     /**
+     * @return string
+     */
+    public function getConfiguration()
+    {
+        return $this->getProperty('configuration');
+    }
+
+    /**
+     * @param string $configuration
+     */
+    public function setConfiguration($configuration = null)
+    {
+        $this->setProperty('configuration', $configuration);
+    }
+
+    /**
      * @return bool
      */
-    public function getIsEmployed()
+    public function getEnabled()
     {
-        return $this->getProperty('isEmployed');
+        return $this->getProperty('enabled');
     }
 
     /**
-     * @param bool $isEmployed
+     * @param bool $enabled
      */
-    public function setIsEmployed($isEmployed = null)
+    public function setEnabled($enabled = null)
     {
-        $this->setProperty('isEmployed', $isEmployed);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getEmployerRequired()
-    {
-        return $this->getProperty('employerRequired');
-    }
-
-    /**
-     * @param bool $employerRequired
-     */
-    public function setEmployerRequired($employerRequired = null)
-    {
-        $this->setProperty('employerRequired', $employerRequired);
+        $this->setProperty('enabled', $enabled);
     }
 }

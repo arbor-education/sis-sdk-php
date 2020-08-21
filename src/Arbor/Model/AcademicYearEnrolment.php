@@ -18,6 +18,10 @@ class AcademicYearEnrolment extends ModelBase
 
     const ENROLMENT_NOTES = 'enrolmentNotes';
 
+    const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
+
+    const PLANNED_EEP_HOURS = 'plannedEepHours';
+
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_ENROLMENT;
 
     /**
@@ -150,5 +154,37 @@ class AcademicYearEnrolment extends ModelBase
     public function setEnrolmentNotes($enrolmentNotes = null)
     {
         $this->setProperty('enrolmentNotes', $enrolmentNotes);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlannedLearningHours()
+    {
+        return $this->getProperty('plannedLearningHours');
+    }
+
+    /**
+     * @param int $plannedLearningHours
+     */
+    public function setPlannedLearningHours($plannedLearningHours = null)
+    {
+        $this->setProperty('plannedLearningHours', $plannedLearningHours);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlannedEepHours()
+    {
+        return $this->getProperty('plannedEepHours');
+    }
+
+    /**
+     * @param int $plannedEepHours
+     */
+    public function setPlannedEepHours($plannedEepHours = null)
+    {
+        $this->setProperty('plannedEepHours', $plannedEepHours);
     }
 }

@@ -56,6 +56,10 @@ class AcademicUnit extends ModelBase
 
     const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
+    const PROMOTED_ENROLMENT_START_DATE = 'promotedEnrolmentStartDate';
+
+    const PROMOTED_ENROLMENT_END_DATE = 'promotedEnrolmentEndDate';
+
     protected $_resourceType = ResourceType::ACADEMIC_UNIT;
 
     /**
@@ -492,6 +496,38 @@ class AcademicUnit extends ModelBase
     public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPromotedEnrolmentStartDate()
+    {
+        return $this->getProperty('promotedEnrolmentStartDate');
+    }
+
+    /**
+     * @param \DateTime $promotedEnrolmentStartDate
+     */
+    public function setPromotedEnrolmentStartDate(\DateTime $promotedEnrolmentStartDate = null)
+    {
+        $this->setProperty('promotedEnrolmentStartDate', $promotedEnrolmentStartDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPromotedEnrolmentEndDate()
+    {
+        return $this->getProperty('promotedEnrolmentEndDate');
+    }
+
+    /**
+     * @param \DateTime $promotedEnrolmentEndDate
+     */
+    public function setPromotedEnrolmentEndDate(\DateTime $promotedEnrolmentEndDate = null)
+    {
+        $this->setProperty('promotedEnrolmentEndDate', $promotedEnrolmentEndDate);
     }
 
     /**

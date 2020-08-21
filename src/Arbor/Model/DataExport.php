@@ -22,6 +22,8 @@ class DataExport extends ModelBase
 
     const REQUIRES_AUTHENTICATION = 'requiresAuthentication';
 
+    const DEFAULT_EXPORT_TYPE = 'defaultExportType';
+
     const LAST_EXPORT_DATETIME = 'lastExportDatetime';
 
     const LAST_EXPORT_TITLE = 'lastExportTitle';
@@ -190,6 +192,22 @@ class DataExport extends ModelBase
     public function setRequiresAuthentication($requiresAuthentication = null)
     {
         $this->setProperty('requiresAuthentication', $requiresAuthentication);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultExportType()
+    {
+        return $this->getProperty('defaultExportType');
+    }
+
+    /**
+     * @param string $defaultExportType
+     */
+    public function setDefaultExportType($defaultExportType = null)
+    {
+        $this->setProperty('defaultExportType', $defaultExportType);
     }
 
     /**

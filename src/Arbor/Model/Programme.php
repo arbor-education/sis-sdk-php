@@ -14,6 +14,8 @@ class Programme extends ModelBase
 
     const FACULTY = 'faculty';
 
+    const IS_TRAINEESHIP = 'isTraineeship';
+
     protected $_resourceType = ResourceType::PROGRAMME;
 
     /**
@@ -114,5 +116,21 @@ class Programme extends ModelBase
     public function setFaculty(Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsTraineeship()
+    {
+        return $this->getProperty('isTraineeship');
+    }
+
+    /**
+     * @param bool $isTraineeship
+     */
+    public function setIsTraineeship($isTraineeship = null)
+    {
+        $this->setProperty('isTraineeship', $isTraineeship);
     }
 }

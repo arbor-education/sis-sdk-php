@@ -8,6 +8,8 @@ class TargetJudgement extends ModelBase
 {
     const NAME = 'name';
 
+    const COLOR = 'color';
+
     const TYPE = 'type';
 
     const ORDER = 'order';
@@ -64,6 +66,22 @@ class TargetJudgement extends ModelBase
     public function setName($name = null)
     {
         $this->setProperty('name', $name);
+    }
+
+    /**
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->getProperty('color');
+    }
+
+    /**
+     * @param string $color
+     */
+    public function setColor($color = null)
+    {
+        $this->setProperty('color', $color);
     }
 
     /**
