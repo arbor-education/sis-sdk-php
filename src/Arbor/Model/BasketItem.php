@@ -14,6 +14,8 @@ class BasketItem extends ModelBase
 
     const PAYING_FOR = 'payingFor';
 
+    const STUDENT = 'student';
+
     protected $_resourceType = ResourceType::BASKET_ITEM;
 
     /**
@@ -114,5 +116,21 @@ class BasketItem extends ModelBase
     public function setPayingFor(ModelBase $payingFor = null)
     {
         $this->setProperty('payingFor', $payingFor);
+    }
+
+    /**
+     * @return Student
+     */
+    public function getStudent()
+    {
+        return $this->getProperty('student');
+    }
+
+    /**
+     * @param Student $student
+     */
+    public function setStudent(Student $student = null)
+    {
+        $this->setProperty('student', $student);
     }
 }

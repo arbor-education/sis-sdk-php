@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricAssessment extends ModelBase
+class AssessmentMetricAssessmentBatch extends ModelBase
 {
     const ASSESSMENT_METRIC = 'assessmentMetric';
 
-    const ASSESSMENT = 'assessment';
+    const OPERATOR = 'operator';
 
-    const ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'assessmentMetricAssessmentBatch';
+    const PARENT_ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'parentAssessmentMetricAssessmentBatch';
 
-    protected $_resourceType = ResourceType::ASSESSMENT_METRIC_ASSESSMENT;
+    protected $_resourceType = ResourceType::ASSESSMENT_METRIC_ASSESSMENT_BATCH;
 
     /**
      * @param Query $query
-     * @return AssessmentMetricAssessment[] | Collection
+     * @return AssessmentMetricAssessmentBatch[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -30,14 +30,14 @@ class AssessmentMetricAssessment extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::ASSESSMENT_METRIC_ASSESSMENT);
+        $query->setResourceType(ResourceType::ASSESSMENT_METRIC_ASSESSMENT_BATCH);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return AssessmentMetricAssessment
+     * @return AssessmentMetricAssessmentBatch
      * @throws Exception
      */
     public static function retrieve($id)
@@ -47,7 +47,7 @@ class AssessmentMetricAssessment extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::ASSESSMENT_METRIC_ASSESSMENT, $id);
+        return $gateway->retrieve(ResourceType::ASSESSMENT_METRIC_ASSESSMENT_BATCH, $id);
     }
 
     /**
@@ -67,34 +67,34 @@ class AssessmentMetricAssessment extends ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return string
      */
-    public function getAssessment()
+    public function getOperator()
     {
-        return $this->getProperty('assessment');
+        return $this->getProperty('operator');
     }
 
     /**
-     * @param Assessment $assessment
+     * @param string $operator
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setOperator($operator = null)
     {
-        $this->setProperty('assessment', $assessment);
+        $this->setProperty('operator', $operator);
     }
 
     /**
      * @return AssessmentMetricAssessmentBatch
      */
-    public function getAssessmentMetricAssessmentBatch()
+    public function getParentAssessmentMetricAssessmentBatch()
     {
-        return $this->getProperty('assessmentMetricAssessmentBatch');
+        return $this->getProperty('parentAssessmentMetricAssessmentBatch');
     }
 
     /**
-     * @param AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch
+     * @param AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch
      */
-    public function setAssessmentMetricAssessmentBatch(AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
+    public function setParentAssessmentMetricAssessmentBatch(AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch = null)
     {
-        $this->setProperty('assessmentMetricAssessmentBatch', $assessmentMetricAssessmentBatch);
+        $this->setProperty('parentAssessmentMetricAssessmentBatch', $parentAssessmentMetricAssessmentBatch);
     }
 }
