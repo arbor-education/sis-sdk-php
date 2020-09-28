@@ -65,6 +65,7 @@ class ResourceType
     const ASSESSMENT_METRIC_RULE_GRADE_ITEM = 'AssessmentMetricRuleGradeItem';
     const ASSESSMENT_METRIC_RULE_TARGET_ITEM = 'AssessmentMetricRuleTargetItem';
     const ASSESSMENT_METRIC_SET = 'AssessmentMetricSet';
+    const ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'AssessmentMetricAssessmentBatch';
     const ASSESSMENT_DERIVATION = 'AssessmentDerivation';
     const ASSESSMENT_DERIVATION_DEPENDANT = 'AssessmentDerivationDependant';
     const ASSESSMENT_PROVIDER = 'AssessmentProvider';
@@ -88,6 +89,7 @@ class ResourceType
     const BANK_DETAIL = 'BankDetail';
     const BASKET = 'Basket';
     const BASKET_ITEM = 'BasketItem';
+    const BASKET_ITEM_PAYMENT_DATA = 'BasketItemPaymentData';
     const BEHAVIOUR = 'Behaviour';
     const BEHAVIOUR_FOLLOW_UP = 'BehaviourFollowUp';
     const BEHAVIOUR_LOCATION = 'BehaviourLocation';
@@ -652,4 +654,13 @@ class ResourceType
     const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
     const USER_DEFINED_FIELD_IMPORT = 'UserDefinedFieldImport';
     const INTEGRATIONS_HR_FINANCE_PROVIDER = 'IntegrationsHrFinanceProvider';
+    const BURSARY_TYPE = 'BursaryType';
+    const BURSARY_LEVEL = 'BursaryLevel';
+    const BURSARY_LEVEL_AMOUNT = 'BursaryLevelAmount';
+    const BURSARY_PAYMENT_DATE = 'BursaryPaymentDate';
+    const STUDENT_BURSARY_LEVEL = 'StudentBursaryLevel';
+    const BURSARY_PAYMENT = 'BursaryPayment';
+    const BURSARY_PAYMENT_CRITERION = 'BursaryPaymentCriterion';
+    const AD_HOC_BURSARY_PAYMENT = 'AdHocBursaryPayment';
+    const ATTENDANCE_ROLL_CALL_TIME_GROUP = 'AttendanceRollCallTimeGroup';
 }
