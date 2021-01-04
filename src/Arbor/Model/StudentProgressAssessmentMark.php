@@ -12,8 +12,6 @@ class StudentProgressAssessmentMark extends ModelBase
 
     const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
-    const STUDENT_PROGRESS_ASSESSMENT = 'studentProgressAssessment';
-
     const GRADE = 'grade';
 
     const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
@@ -120,22 +118,6 @@ class StudentProgressAssessmentMark extends ModelBase
     public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
-    }
-
-    /**
-     * @return StudentProgressAssessment
-     */
-    public function getStudentProgressAssessment()
-    {
-        return $this->getProperty('studentProgressAssessment');
-    }
-
-    /**
-     * @param StudentProgressAssessment $studentProgressAssessment
-     */
-    public function setStudentProgressAssessment(StudentProgressAssessment $studentProgressAssessment = null)
-    {
-        $this->setProperty('studentProgressAssessment', $studentProgressAssessment);
     }
 
     /**

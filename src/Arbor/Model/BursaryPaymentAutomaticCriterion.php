@@ -4,7 +4,7 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryPaymentCriterion extends ModelBase
+class BursaryPaymentAutomaticCriterion extends ModelBase
 {
     const BURSARY_TYPE = 'bursaryType';
 
@@ -20,11 +20,15 @@ class BursaryPaymentCriterion extends ModelBase
 
     const CONDITION_PARAMS = 'conditionParams';
 
-    protected $_resourceType = ResourceType::BURSARY_PAYMENT_CRITERION;
+    const START_DATE = 'startDate';
+
+    const END_DATE = 'endDate';
+
+    protected $_resourceType = ResourceType::BURSARY_PAYMENT_AUTOMATIC_CRITERION;
 
     /**
      * @param Query $query
-     * @return BursaryPaymentCriterion[] | Collection
+     * @return BursaryPaymentAutomaticCriterion[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -38,14 +42,14 @@ class BursaryPaymentCriterion extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::BURSARY_PAYMENT_CRITERION);
+        $query->setResourceType(ResourceType::BURSARY_PAYMENT_AUTOMATIC_CRITERION);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return BursaryPaymentCriterion
+     * @return BursaryPaymentAutomaticCriterion
      * @throws Exception
      */
     public static function retrieve($id)
@@ -55,7 +59,7 @@ class BursaryPaymentCriterion extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::BURSARY_PAYMENT_CRITERION, $id);
+        return $gateway->retrieve(ResourceType::BURSARY_PAYMENT_AUTOMATIC_CRITERION, $id);
     }
 
     /**
@@ -168,5 +172,37 @@ class BursaryPaymentCriterion extends ModelBase
     public function setConditionParams($conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->getProperty('startDate');
+    }
+
+    /**
+     * @param \DateTime $startDate
+     */
+    public function setStartDate(\DateTime $startDate = null)
+    {
+        $this->setProperty('startDate', $startDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->getProperty('endDate');
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate(\DateTime $endDate = null)
+    {
+        $this->setProperty('endDate', $endDate);
     }
 }

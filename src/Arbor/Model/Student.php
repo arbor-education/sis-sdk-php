@@ -30,6 +30,8 @@ class Student extends ModelBase
 
     const MINIMUM_DATA_RETENTION_DATE = 'minimumDataRetentionDate';
 
+    const SUSPEND_CALENDAR_ENTRY_MAPPINGS = 'suspendCalendarEntryMappings';
+
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
@@ -43,6 +45,8 @@ class Student extends ModelBase
     const ETHNICITY_SOURCE = 'ethnicitySource';
 
     const NHS_NUMBER = 'nhsNumber';
+
+    const UCAS_PERSONAL_IDENTIFIER = 'ucasPersonalIdentifier';
 
     const EXTENDED_HOURS = 'extendedHours';
 
@@ -263,6 +267,22 @@ class Student extends ModelBase
     }
 
     /**
+     * @return bool
+     */
+    public function getSuspendCalendarEntryMappings()
+    {
+        return $this->getProperty('suspendCalendarEntryMappings');
+    }
+
+    /**
+     * @param bool $suspendCalendarEntryMappings
+     */
+    public function setSuspendCalendarEntryMappings($suspendCalendarEntryMappings = null)
+    {
+        $this->setProperty('suspendCalendarEntryMappings', $suspendCalendarEntryMappings);
+    }
+
+    /**
      * @return int
      */
     public function getUniqueLearnerNumber()
@@ -372,6 +392,22 @@ class Student extends ModelBase
     public function setNhsNumber($nhsNumber = null)
     {
         $this->setProperty('nhsNumber', $nhsNumber);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUcasPersonalIdentifier()
+    {
+        return $this->getProperty('ucasPersonalIdentifier');
+    }
+
+    /**
+     * @param string $ucasPersonalIdentifier
+     */
+    public function setUcasPersonalIdentifier($ucasPersonalIdentifier = null)
+    {
+        $this->setProperty('ucasPersonalIdentifier', $ucasPersonalIdentifier);
     }
 
     /**

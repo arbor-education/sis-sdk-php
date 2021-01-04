@@ -66,4 +66,7 @@ class ResourceType
     const UK_DFE_GCSE_ENGLISH_FUNDING_EXEMPTION_TYPE = 'UkDfe_GcseEnglishFundingExemptionType';
     const UK_DFE_GCSE_MATHS_ACHIEVEMENT_TYPE = 'UkDfe_GcseMathsAchievementType';
     const UK_DFE_GCSE_MATHS_FUNDING_EXEMPTION_TYPE = 'UkDfe_GcseMathsFundingExemptionType';
+    const UK_DFE_UCAS_IMPORT = 'UkDfe_UcasImport';
+    const UK_DFE_UCAS_IMPORT_RECORD = 'UkDfe_UcasImportRecord';
+    const UK_DFE_ATTENDANCE_API_SUBMISSION = 'UkDfe_AttendanceApiSubmission';
 }
