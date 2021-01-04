@@ -22,6 +22,8 @@ class UserRole extends ModelBase
 
     const DESCRIPTION = 'description';
 
+    const IS_EXTERNAL_ADMINISTRATOR_ROLE = 'isExternalAdministratorRole';
+
     protected $_resourceType = ResourceType::USER_ROLE;
 
     /**
@@ -186,5 +188,21 @@ class UserRole extends ModelBase
     public function setDescription($description = null)
     {
         $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsExternalAdministratorRole()
+    {
+        return $this->getProperty('isExternalAdministratorRole');
+    }
+
+    /**
+     * @param bool $isExternalAdministratorRole
+     */
+    public function setIsExternalAdministratorRole($isExternalAdministratorRole = null)
+    {
+        $this->setProperty('isExternalAdministratorRole', $isExternalAdministratorRole);
     }
 }

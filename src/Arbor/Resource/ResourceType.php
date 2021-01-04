@@ -267,7 +267,6 @@ class ResourceType
     const INTERVENTION_DEFINITION = 'InterventionDefinition';
     const INTERVENTION_GROUP = 'InterventionGroup';
     const INTERVENTION_REVIEW = 'InterventionReview';
-    const INTERVENTION_STAFF = 'InterventionStaff';
     const INTERVENTION_SESSION = 'InterventionSession';
     const INTERVENTION_STAFF_COST = 'InterventionStaffCost';
     const INTERVENTION_COST = 'InterventionCost';
@@ -535,7 +534,6 @@ class ResourceType
     const STUDENT_LINKED_RELATIONSHIP_TYPE = 'StudentLinkedRelationshipType';
     const STUDENT_MEDICAL_RELATIONSHIP = 'StudentMedicalRelationship';
     const STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD = 'StudentOtherSchoolAttendanceRecord';
-    const STUDENT_PROGRESS_ASSESSMENT = 'StudentProgressAssessment';
     const STUDENT_PROGRESS_ASSESSMENT_MARK = 'StudentProgressAssessmentMark';
     const STUDENT_PROGRESS_BASELINE = 'StudentProgressBaseline';
     const STUDENT_PROGRESS_GOAL = 'StudentProgressGoal';
@@ -654,13 +652,17 @@ class ResourceType
     const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
     const USER_DEFINED_FIELD_IMPORT = 'UserDefinedFieldImport';
     const INTEGRATIONS_HR_FINANCE_PROVIDER = 'IntegrationsHrFinanceProvider';
+    const STUDENT_ALERT = 'StudentAlert';
     const BURSARY_TYPE = 'BursaryType';
     const BURSARY_LEVEL = 'BursaryLevel';
     const BURSARY_LEVEL_AMOUNT = 'BursaryLevelAmount';
     const BURSARY_PAYMENT_DATE = 'BursaryPaymentDate';
     const STUDENT_BURSARY_LEVEL = 'StudentBursaryLevel';
     const BURSARY_PAYMENT = 'BursaryPayment';
-    const BURSARY_PAYMENT_CRITERION = 'BursaryPaymentCriterion';
     const AD_HOC_BURSARY_PAYMENT = 'AdHocBursaryPayment';
+    const BURSARY_PAYMENT_AUTOMATIC_CRITERION = 'BursaryPaymentAutomaticCriterion';
+    const BURSARY_PAYMENT_MANUAL_CRITERION = 'BursaryPaymentManualCriterion';
+    const BURSARY_PAYMENT_MANUAL_CRITERION_STATUS = 'BursaryPaymentManualCriterionStatus';
     const ATTENDANCE_ROLL_CALL_TIME_GROUP = 'AttendanceRollCallTimeGroup';
+    const SUSPENDED_CALENDAR_ENTRY_MAPPING = 'SuspendedCalendarEntryMapping';
 }

@@ -24,6 +24,8 @@ class Student extends ModelBase
 
     const NHS_NUMBER = 'nhsNumber';
 
+    const UCAS_PERSONAL_IDENTIFIER = 'ucasPersonalIdentifier';
+
     const EXTENDED_HOURS = 'extendedHours';
 
     const THIRTY_HOUR_CODE = 'thirtyHourCode';
@@ -192,6 +194,22 @@ class Student extends ModelBase
     public function setNhsNumber($nhsNumber = null)
     {
         $this->setProperty('nhsNumber', $nhsNumber);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUcasPersonalIdentifier()
+    {
+        return $this->getProperty('ucasPersonalIdentifier');
+    }
+
+    /**
+     * @param string $ucasPersonalIdentifier
+     */
+    public function setUcasPersonalIdentifier($ucasPersonalIdentifier = null)
+    {
+        $this->setProperty('ucasPersonalIdentifier', $ucasPersonalIdentifier);
     }
 
     /**

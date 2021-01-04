@@ -4,23 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InterventionStaff extends ModelBase
+class BursaryPaymentManualCriterion extends ModelBase
 {
-    const INTERVENTION = 'intervention';
+    const BURSARY_TYPE = 'bursaryType';
 
-    const BUSINESS_ROLE = 'businessRole';
-
-    const STAFF = 'staff';
+    const NAME = 'name';
 
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
 
-    protected $_resourceType = ResourceType::INTERVENTION_STAFF;
+    protected $_resourceType = ResourceType::BURSARY_PAYMENT_MANUAL_CRITERION;
 
     /**
      * @param Query $query
-     * @return InterventionStaff[] | Collection
+     * @return BursaryPaymentManualCriterion[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -34,14 +32,14 @@ class InterventionStaff extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::INTERVENTION_STAFF);
+        $query->setResourceType(ResourceType::BURSARY_PAYMENT_MANUAL_CRITERION);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return InterventionStaff
+     * @return BursaryPaymentManualCriterion
      * @throws Exception
      */
     public static function retrieve($id)
@@ -51,55 +49,39 @@ class InterventionStaff extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::INTERVENTION_STAFF, $id);
+        return $gateway->retrieve(ResourceType::BURSARY_PAYMENT_MANUAL_CRITERION, $id);
     }
 
     /**
-     * @return Intervention
+     * @return BursaryType
      */
-    public function getIntervention()
+    public function getBursaryType()
     {
-        return $this->getProperty('intervention');
+        return $this->getProperty('bursaryType');
     }
 
     /**
-     * @param Intervention $intervention
+     * @param BursaryType $bursaryType
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setBursaryType(BursaryType $bursaryType = null)
     {
-        $this->setProperty('intervention', $intervention);
+        $this->setProperty('bursaryType', $bursaryType);
     }
 
     /**
-     * @return BusinessRole
+     * @return string
      */
-    public function getBusinessRole()
+    public function getName()
     {
-        return $this->getProperty('businessRole');
+        return $this->getProperty('name');
     }
 
     /**
-     * @param BusinessRole $businessRole
+     * @param string $name
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setName($name = null)
     {
-        $this->setProperty('businessRole', $businessRole);
-    }
-
-    /**
-     * @return Staff
-     */
-    public function getStaff()
-    {
-        return $this->getProperty('staff');
-    }
-
-    /**
-     * @param Staff $staff
-     */
-    public function setStaff(Staff $staff = null)
-    {
-        $this->setProperty('staff', $staff);
+        $this->setProperty('name', $name);
     }
 
     /**
