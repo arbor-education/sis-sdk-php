@@ -1,4 +1,5 @@
 <?php
+
 namespace Arbor\Api\Gateway;
 
 use Arbor\Api\ResourceNotFoundException;
@@ -39,7 +40,7 @@ class RestGateway implements GatewayInterface
     protected $_httpClient;
     /** @var string $_applicationId */
     protected $_applicationId;
-    /** @var HandlerStack **/
+    /** @var HandlerStack * */
     protected $handlerStack;
     /** @var string */
     protected $userAgent;
@@ -102,9 +103,9 @@ class RestGateway implements GatewayInterface
     public function initClient()
     {
         $this->_httpClient = new Client([
-            'handler'  => $this->handlerStack,
+            'handler' => $this->handlerStack,
             'base_uri' => $this->getBaseUrl(),
-            'auth'     => [$this->getAuthUser(), $this->getAuthPassword()],
+            'auth' => [$this->getAuthUser(), $this->getAuthPassword()],
             'headers' => [
                 'User-Agent' => $this->getUserAgent(),
             ],
@@ -220,6 +221,50 @@ class RestGateway implements GatewayInterface
     }
 
     /**
+     * @param Collection $collection
+     * @param string $resource
+     */
+    public function bulkCreate($resource, Collection $collection)
+    {
+        $pluralResource = self::getPluralizeFilter()->filter($resource);
+        $resource = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
+
+        $hydrator = new Hydrator();
+        $options = ['body' => ['request' => []]];
+
+        foreach ($collection as $model) {
+            $arrayRepresentation = $hydrator->extractArray($model);
+            $resourceRoot = lcfirst($model->getResourceType());
+            $options['body']['request'][] = [$resourceRoot => $arrayRepresentation];
+        }
+
+        try {
+            $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_POST, "/rest-v2/$resource", $options);
+        } catch (ServerErrorException $e) {
+            $responseRepresentation = $e->getResponsePayload();
+        }
+
+        foreach ($responseRepresentation['results'] as $key => $result) {
+            if (!$result['status']['success']) {
+                continue;
+            }
+
+            /** @var ModelBase $model */
+            $model = $collection[$key];
+            $resourceRoot = lcfirst($model->getResourceType());
+
+            $resultingModelRepresentation = $result[$resourceRoot];
+            $hydrator->hydrateModel($model, $resultingModelRepresentation);
+        }
+
+        if (isset($e)) {
+            throw $e;
+        }
+
+        return $collection;
+    }
+
+    /**
      * @param ModelBase $model
      * @return ModelBase
      * @throws Exception|\RuntimeException
@@ -316,7 +361,7 @@ class RestGateway implements GatewayInterface
             return $model;
         }
 
-        $options = ['body' => ['request' => [ $resourceRoot => $modelDiff]]];
+        $options = ['body' => ['request' => [$resourceRoot => $modelDiff]]];
         $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_PUT, $url, $options);
 
         //Revision ID is a read-only property so lets remove it before sending the update request to the API
@@ -359,8 +404,8 @@ class RestGateway implements GatewayInterface
      * @param string $resourceType
      * @param int $fromRevision
      * @param int $toRevision
-     * @throws ResourceNotFoundException|ServerErrorException|\RuntimeException
      * @return \Arbor\ChangeLog\Change[]
+     * @throws ResourceNotFoundException|ServerErrorException|\RuntimeException
      */
     public function getChanges($resourceType, $fromRevision = 0, $toRevision = -1)
     {
@@ -428,8 +473,8 @@ class RestGateway implements GatewayInterface
      * @param $method
      * @param $url
      * @param array $options
-     * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
      * @return array
+     * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException
      */
     public function sendRequest($method, $url, array $options = [])
     {
@@ -443,7 +488,10 @@ class RestGateway implements GatewayInterface
             $options['headers']['User-Agent'] = 'Arbor PHP SDK';
         }
 
+        $requestPayload = null;
+
         if (isset($options['body'])) {
+            $requestPayload = $options['body'];
             if (is_array($options['body'])) {
                 $options['body'] = json_encode($options['body']);
             }
@@ -461,7 +509,7 @@ class RestGateway implements GatewayInterface
             } catch (\GuzzleHttp\Exception\ClientException $e) {
                 $response_code = $e->getResponse()->getStatusCode();
                 if ($response_code == 401) {
-                    $usingPassword = !$this->getAuthPassword()?'No':'Yes';
+                    $usingPassword = !$this->getAuthPassword() ? 'No' : 'Yes';
                     throw new \Arbor\Exception(
                         sprintf(
                             "Anauthorized, possibly wrong credentials. Endpoint: %s, Username: %s, Using password: %s",
@@ -487,8 +535,8 @@ class RestGateway implements GatewayInterface
             throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
         }
 
-        if (! is_array($responsePayload)) {
-            throw new ServerErrorException('Server responded with an invalid response');
+        if (!is_array($responsePayload)) {
+            throw new ServerErrorException('Server responded with an invalid response', 0, null, $requestPayload);
         }
 
         //If the response has a code property
@@ -525,7 +573,7 @@ class RestGateway implements GatewayInterface
                 $exception = new ResourceNotFoundException($message);
                 break;
             default:
-                $exception = new ServerErrorException($message);
+                $exception = new ServerErrorException($message, 0, null, $requestPayload, $responsePayload);
                 if (null !== $serverException) {
                     $exception->setServerExceptionClass($serverException);
                     $exception->setServerExceptionMessage($serverMessage);
@@ -557,7 +605,7 @@ class RestGateway implements GatewayInterface
                 } elseif (!is_array($array2[$key])) {
                     $difference[$key] = $value;
                 } else { // This is some of MIS model types
-                    if (! ($new_diff = $this->diffArrayRepresentationRecursive($value, $array2[$key]))) {
+                    if (!($new_diff = $this->diffArrayRepresentationRecursive($value, $array2[$key]))) {
                         continue;
                     }
 
