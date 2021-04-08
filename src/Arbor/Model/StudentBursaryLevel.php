@@ -10,6 +10,8 @@ class StudentBursaryLevel extends ModelBase
 
     const BURSARY_LEVEL = 'bursaryLevel';
 
+    const STUDENT_FUNDING = 'studentFunding';
+
     const EFFECTIVE_DATE = 'effectiveDate';
 
     const END_DATE = 'endDate';
@@ -82,6 +84,22 @@ class StudentBursaryLevel extends ModelBase
     public function setBursaryLevel(BursaryLevel $bursaryLevel = null)
     {
         $this->setProperty('bursaryLevel', $bursaryLevel);
+    }
+
+    /**
+     * @return StudentFunding
+     */
+    public function getStudentFunding()
+    {
+        return $this->getProperty('studentFunding');
+    }
+
+    /**
+     * @param StudentFunding $studentFunding
+     */
+    public function setStudentFunding(StudentFunding $studentFunding = null)
+    {
+        $this->setProperty('studentFunding', $studentFunding);
     }
 
     /**

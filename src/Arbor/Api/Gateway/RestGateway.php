@@ -8,6 +8,7 @@ use Arbor\Filter\CamelCaseToDash;
 use Arbor\Model\Collection;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
+use Arbor\Query\Query;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ConnectException;
@@ -266,6 +267,47 @@ class RestGateway implements GatewayInterface
         $model->initialArrayRepresentation = $arrayRepresentation;
 
         return $model;
+    }
+
+    public function findOne(string $resourceType, array $propertyFilters, array $userTags)
+    {
+        if (0 === count($propertyFilters) && 0 === count($userTags)) {
+            return null;
+        }
+
+        $models = $this->findAll($resourceType, $propertyFilters, $userTags);
+
+        if (count($models) > 0) {
+            return current($models);
+        }
+
+        return null;
+    }
+
+    public function findAll(string $resourceType, array $propertyFilters, array $userTags): array
+    {
+        $query = new Query();
+
+        $query->setResourceType($resourceType);
+        foreach ($propertyFilters as $propertyName => $value) {
+            if (is_array($value)) {
+                $operator = $value[0];
+                $value = $value[1];
+            } else {
+                $operator = Query::OPERATOR_EQUALS;
+            }
+            $query->addPropertyFilter($propertyName, $operator, $value);
+        }
+//        foreach ($userTags as $key => $value) {
+//            $query->addUserTagFilter($key, $value);
+//        }
+        return $this->query($query)->getArrayCopy();
+    }
+
+    public function findByProperty()
+    {
+        // implement find by a single property
+        // ?filter.propertyName.equals=propertyValue
     }
 
     /**

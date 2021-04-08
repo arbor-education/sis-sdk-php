@@ -11,6 +11,8 @@ class ProgrammeEnrolment extends ModelBase
 {
     const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
+    const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
+
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_ENROLMENT;
 
     /**
@@ -63,5 +65,21 @@ class ProgrammeEnrolment extends ModelBase
     public function setPlannedLearningHours($plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlannedLearningHoursSecondYear()
+    {
+        return $this->getProperty('plannedLearningHoursSecondYear');
+    }
+
+    /**
+     * @param int $plannedLearningHoursSecondYear
+     */
+    public function setPlannedLearningHoursSecondYear($plannedLearningHoursSecondYear = null)
+    {
+        $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
 }

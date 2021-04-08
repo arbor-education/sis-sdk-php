@@ -16,6 +16,8 @@ class TrainingEvent extends ModelBase
 
     const TRAINING_EVENT_TITLE = 'trainingEventTitle';
 
+    const EXPIRY_DATE = 'expiryDate';
+
     const TRAINING_COURSE = 'trainingCourse';
 
     protected $_resourceType = ResourceType::TRAINING_EVENT;
@@ -134,6 +136,22 @@ class TrainingEvent extends ModelBase
     public function setTrainingEventTitle($trainingEventTitle = null)
     {
         $this->setProperty('trainingEventTitle', $trainingEventTitle);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getExpiryDate()
+    {
+        return $this->getProperty('expiryDate');
+    }
+
+    /**
+     * @param \DateTime $expiryDate
+     */
+    public function setExpiryDate(\DateTime $expiryDate = null)
+    {
+        $this->setProperty('expiryDate', $expiryDate);
     }
 
     /**
