@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class UcasImport extends ModelBase
 {
+
     const NAME = 'name';
 
     const FILE_DATE = 'fileDate';
@@ -82,4 +83,6 @@ class UcasImport extends ModelBase
     {
         $this->setProperty('fileDate', $fileDate);
     }
+
+
 }

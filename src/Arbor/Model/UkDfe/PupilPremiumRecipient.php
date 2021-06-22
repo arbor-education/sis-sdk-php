@@ -11,6 +11,7 @@ use Arbor\Model\CurriculumGrade;
 
 class PupilPremiumRecipient extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const CURRICULUM_GRADE = 'curriculumGrade';
@@ -22,6 +23,8 @@ class PupilPremiumRecipient extends ModelBase
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
+
+    const LAST_FSM = 'lastFsm';
 
     protected $_resourceType = ResourceType::UK_DFE_PUPIL_PREMIUM_RECIPIENT;
 
@@ -156,4 +159,22 @@ class PupilPremiumRecipient extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+    /**
+     * @return string
+     */
+    public function getLastFsm()
+    {
+        return $this->getProperty('lastFsm');
+    }
+
+    /**
+     * @param string $lastFsm
+     */
+    public function setLastFsm($lastFsm = null)
+    {
+        $this->setProperty('lastFsm', $lastFsm);
+    }
+
+
 }

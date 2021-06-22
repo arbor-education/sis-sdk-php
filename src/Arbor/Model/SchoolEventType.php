@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SchoolEventType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class SchoolEventType extends ModelBase
     {
         $this->setProperty('schoolEventTypeName', $schoolEventTypeName);
     }
+
+
 }

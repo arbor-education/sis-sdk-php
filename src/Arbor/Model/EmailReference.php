@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmailReference extends ModelBase
 {
+
     const EMAIL = 'email';
 
     const REFERENCE_TYPE = 'referenceType';
@@ -133,4 +134,6 @@ class EmailReference extends ModelBase
     {
         $this->setProperty('referenceIndex', $referenceIndex);
     }
+
+
 }

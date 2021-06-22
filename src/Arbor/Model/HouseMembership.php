@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class HouseMembership extends ModelBase
 {
+
     const HOUSE = 'house';
 
     const STUDENT = 'student';
@@ -151,4 +152,6 @@ class HouseMembership extends ModelBase
     {
         $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
+
+
 }

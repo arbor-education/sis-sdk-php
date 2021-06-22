@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UserRoleAssignment extends ModelBase
 {
+
     const USER = 'user';
 
     const USER_ROLE = 'userRole';
@@ -133,4 +134,6 @@ class UserRoleAssignment extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
+
+
 }

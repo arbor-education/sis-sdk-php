@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentProvider extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class AssessmentProvider extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ItemUnit extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class ItemUnit extends ModelBase
     {
         $this->setProperty('itemUnitName', $itemUnitName);
     }
+
+
 }

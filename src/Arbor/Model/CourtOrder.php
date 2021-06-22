@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CourtOrder extends ModelBase
 {
+
     const SUMMARY = 'summary';
 
     const CONTENT = 'content';
@@ -115,4 +116,6 @@ class CourtOrder extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

@@ -6,13 +6,12 @@ use Arbor\Query\Query;
 
 class QualificationAssessableInstance extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
 
     const DATA_ORDER = 'dataOrder';
-
-    const ASSESSABLE_INSTANCE_IDENTIFIER = 'assessableInstanceIdentifier';
 
     const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
@@ -118,22 +117,6 @@ class QualificationAssessableInstance extends ModelBase
     public function setDataOrder($dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAssessableInstanceIdentifier()
-    {
-        return $this->getProperty('assessableInstanceIdentifier');
-    }
-
-    /**
-     * @param string $assessableInstanceIdentifier
-     */
-    public function setAssessableInstanceIdentifier($assessableInstanceIdentifier = null)
-    {
-        $this->setProperty('assessableInstanceIdentifier', $assessableInstanceIdentifier);
     }
 
     /**
@@ -295,4 +278,6 @@ class QualificationAssessableInstance extends ModelBase
     {
         $this->setProperty('isProvisional', $isProvisional);
     }
+
+
 }

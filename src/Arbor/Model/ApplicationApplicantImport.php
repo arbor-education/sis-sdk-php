@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ApplicationApplicantImport extends ModelBase
 {
+
     const APPLICATION_APPLICANT_IMPORT_JOB = 'applicationApplicantImportJob';
 
     const APPLICATION = 'application';
@@ -133,4 +134,6 @@ class ApplicationApplicantImport extends ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
+
+
 }

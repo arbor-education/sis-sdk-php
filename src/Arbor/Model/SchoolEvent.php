@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SchoolEvent extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -23,6 +24,8 @@ class SchoolEvent extends ModelBase
     const TIMETABLE_SLOT = 'timetableSlot';
 
     const NARRATIVE = 'narrative';
+
+    const COVER_REQUIRED = 'coverRequired';
 
     protected $_resourceType = ResourceType::SCHOOL_EVENT;
 
@@ -205,4 +208,22 @@ class SchoolEvent extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
+    /**
+     * @return bool
+     */
+    public function getCoverRequired()
+    {
+        return $this->getProperty('coverRequired');
+    }
+
+    /**
+     * @param bool $coverRequired
+     */
+    public function setCoverRequired($coverRequired = null)
+    {
+        $this->setProperty('coverRequired', $coverRequired);
+    }
+
+
 }

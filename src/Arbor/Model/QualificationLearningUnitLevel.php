@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationLearningUnitLevel extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class QualificationLearningUnitLevel extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

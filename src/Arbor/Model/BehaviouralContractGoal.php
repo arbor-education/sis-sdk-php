@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralContractGoal extends ModelBase
 {
+
     const BEHAVIOURAL_CONTRACT = 'behaviouralContract';
 
     const DESCRIPTION = 'description';
@@ -115,4 +116,6 @@ class BehaviouralContractGoal extends ModelBase
     {
         $this->setProperty('behaviour', $behaviour);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class PersonTransportationMethod extends ModelBase
 {
+
     const PERSON = 'person';
 
     const TRANSPORTATION_METHOD = 'transportationMethod';
@@ -97,4 +98,6 @@ class PersonTransportationMethod extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
+
+
 }

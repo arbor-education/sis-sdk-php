@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IntegrationsHrFinanceProvider extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -151,4 +152,6 @@ class IntegrationsHrFinanceProvider extends ModelBase
     {
         $this->setProperty('enabled', $enabled);
     }
+
+
 }

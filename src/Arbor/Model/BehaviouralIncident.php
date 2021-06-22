@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralIncident extends ModelBase
 {
+
     const BEHAVIOUR = 'behaviour';
 
     const INCIDENT_NAME = 'incidentName';
@@ -21,6 +22,8 @@ class BehaviouralIncident extends ModelBase
     const LOCATION = 'location';
 
     const RESOLVED_DATETIME = 'resolvedDatetime';
+
+    const LOGGED_BY_STAFF = 'loggedByStaff';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT;
 
@@ -187,4 +190,22 @@ class BehaviouralIncident extends ModelBase
     {
         $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
+
+    /**
+     * @return Staff
+     */
+    public function getLoggedByStaff()
+    {
+        return $this->getProperty('loggedByStaff');
+    }
+
+    /**
+     * @param Staff $loggedByStaff
+     */
+    public function setLoggedByStaff(Staff $loggedByStaff = null)
+    {
+        $this->setProperty('loggedByStaff', $loggedByStaff);
+    }
+
+
 }

@@ -7,6 +7,7 @@ use Arbor\Model\UkDfe\QualifiedTeacherRoute;
 
 class Staff extends ModelBase
 {
+
     const PERSON = 'person';
 
     const ETHNICITY = 'ethnicity';
@@ -16,6 +17,8 @@ class Staff extends ModelBase
     const BLOOD_GROUP = 'bloodGroup';
 
     const STAFF_NUMBER = 'staffNumber';
+
+    const CONTINUOUS_SERVICE_START_DATE = 'continuousServiceStartDate';
 
     const ZENDESK_USER = 'zendeskUser';
 
@@ -153,6 +156,22 @@ class Staff extends ModelBase
     public function setStaffNumber($staffNumber = null)
     {
         $this->setProperty('staffNumber', $staffNumber);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getContinuousServiceStartDate()
+    {
+        return $this->getProperty('continuousServiceStartDate');
+    }
+
+    /**
+     * @param \DateTime $continuousServiceStartDate
+     */
+    public function setContinuousServiceStartDate(\DateTime $continuousServiceStartDate = null)
+    {
+        $this->setProperty('continuousServiceStartDate', $continuousServiceStartDate);
     }
 
     /**
@@ -314,4 +333,6 @@ class Staff extends ModelBase
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
+
+
 }

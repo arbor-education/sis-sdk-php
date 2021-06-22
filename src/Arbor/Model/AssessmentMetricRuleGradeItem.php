@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentMetricRuleGradeItem extends ModelBase
 {
+
     const OPERATOR = 'operator';
 
     const GRADE = 'grade';
@@ -133,4 +134,6 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     {
         $this->setProperty('assessment', $assessment);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class OutboundLetter extends ModelBase
 {
+
     const OUTBOUND_LETTER_DRAFT = 'outboundLetterDraft';
 
     const SENDER = 'sender';
@@ -151,4 +152,6 @@ class OutboundLetter extends ModelBase
     {
         $this->setProperty('actionRequiredDatetime', $actionRequiredDatetime);
     }
+
+
 }

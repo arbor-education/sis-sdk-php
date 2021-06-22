@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class EducationalInstitutionEnrolment extends ModelBase
 {
+
     const REMOVAL_GROUNDS = 'removalGrounds';
 
     protected $_resourceType = ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
@@ -64,4 +65,6 @@ class EducationalInstitutionEnrolment extends ModelBase
     {
         $this->setProperty('removalGrounds', $removalGrounds);
     }
+
+
 }

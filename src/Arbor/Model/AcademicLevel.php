@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicLevel extends ModelBase
 {
+
     const ACADEMIC_LEVEL_NAME = 'academicLevelName';
 
     const SHORT_NAME = 'shortName';
@@ -213,4 +214,6 @@ class AcademicLevel extends ModelBase
     {
         return $this->getCollectionProperty('tutorMemberships');
     }
+
+
 }

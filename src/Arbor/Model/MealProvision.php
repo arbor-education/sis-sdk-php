@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MealProvision extends ModelBase
 {
+
     const MEAL = 'meal';
 
     const MEAL_PROVISION_NAME = 'mealProvisionName';
@@ -241,4 +242,6 @@ class MealProvision extends ModelBase
     {
         $this->setProperty('copiedToMealProvision', $copiedToMealProvision);
     }
+
+
 }

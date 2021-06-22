@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationSubscription extends ModelBase
 {
+
     const QUALIFICATION_ELEMENT_TYPE = 'qualificationElementType';
 
     const QUALIFICATION_ELEMENT_CODE = 'qualificationElementCode';
@@ -97,4 +98,6 @@ class QualificationSubscription extends ModelBase
     {
         $this->setProperty('hash', $hash);
     }
+
+
 }

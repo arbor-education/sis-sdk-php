@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmailAccountAccessPermission extends ModelBase
 {
+
     const EMAIL_ACCOUNT = 'emailAccount';
 
     const BUSINESS_ROLE = 'businessRole';
@@ -79,4 +80,6 @@ class EmailAccountAccessPermission extends ModelBase
     {
         $this->setProperty('businessRole', $businessRole);
     }
+
+
 }

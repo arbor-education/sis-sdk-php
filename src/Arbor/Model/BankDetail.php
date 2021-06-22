@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BankDetail extends ModelBase
 {
+
     const ACCOUNT_HOLDER = 'accountHolder';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -169,4 +170,6 @@ class BankDetail extends ModelBase
     {
         $this->setProperty('sortCode', $sortCode);
     }
+
+
 }

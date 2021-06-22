@@ -10,6 +10,7 @@ use Arbor\Model\Student;
 
 class UcasImportRecord extends ModelBase
 {
+
     const UCAS_IMPORT = 'ucasImport';
 
     const CSV_ROW = 'csvRow';
@@ -227,4 +228,6 @@ class UcasImportRecord extends ModelBase
     {
         $this->setProperty('campusCode', $campusCode);
     }
+
+
 }

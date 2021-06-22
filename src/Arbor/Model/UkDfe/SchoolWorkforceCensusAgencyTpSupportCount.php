@@ -10,6 +10,7 @@ use Arbor\Model\EducationalInstitution;
 
 class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
 {
+
     const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -137,4 +138,6 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     {
         $this->setProperty('supHeadCount', $supHeadCount);
     }
+
+
 }

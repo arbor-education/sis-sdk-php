@@ -6,9 +6,12 @@ use Arbor\Query\Query;
 
 class TimetablerImportResult extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const STEPS_COMPLETED = 'stepsCompleted';
+
+    const STEP_IN_PROGRESS = 'stepInProgress';
 
     const STARTED_DATETIME = 'startedDatetime';
 
@@ -87,6 +90,22 @@ class TimetablerImportResult extends ModelBase
     }
 
     /**
+     * @return int
+     */
+    public function getStepInProgress()
+    {
+        return $this->getProperty('stepInProgress');
+    }
+
+    /**
+     * @param int $stepInProgress
+     */
+    public function setStepInProgress($stepInProgress = null)
+    {
+        $this->setProperty('stepInProgress', $stepInProgress);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getStartedDatetime()
@@ -133,4 +152,6 @@ class TimetablerImportResult extends ModelBase
     {
         $this->setProperty('fileHash', $fileHash);
     }
+
+
 }

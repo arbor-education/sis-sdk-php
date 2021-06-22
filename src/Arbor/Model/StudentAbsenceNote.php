@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentAbsenceNote extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const ABSENCE_START_DATETIME = 'absenceStartDatetime';
@@ -205,4 +206,6 @@ class StudentAbsenceNote extends ModelBase
     {
         $this->setProperty('studentRepeatingAbsenceNote', $studentRepeatingAbsenceNote);
     }
+
+
 }

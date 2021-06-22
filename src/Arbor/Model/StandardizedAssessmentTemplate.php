@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentTemplate extends ModelBase
 {
+
     const TEMPLATE_NAME = 'templateName';
 
     const CODE = 'code';
@@ -115,4 +116,6 @@ class StandardizedAssessmentTemplate extends ModelBase
     {
         $this->setProperty('validityEndDate', $validityEndDate);
     }
+
+
 }

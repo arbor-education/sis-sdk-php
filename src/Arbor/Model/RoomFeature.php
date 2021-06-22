@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RoomFeature extends ModelBase
 {
+
     const ROOM_FEATURE_NAME = 'roomFeatureName';
 
     const ASSIGN_TO_PEOPLE = 'assignToPeople';
@@ -79,4 +80,6 @@ class RoomFeature extends ModelBase
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UserRole extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -205,4 +206,6 @@ class UserRole extends ModelBase
     {
         $this->setProperty('isExternalAdministratorRole', $isExternalAdministratorRole);
     }
+
+
 }

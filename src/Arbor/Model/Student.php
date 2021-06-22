@@ -10,6 +10,7 @@ use Arbor\Model\UkDfe\GcseMathsFundingExemptionType;
 
 class Student extends ModelBase
 {
+
     const PERSON = 'person';
 
     const RELIGION = 'religion';
@@ -569,4 +570,6 @@ class Student extends ModelBase
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
+
+
 }

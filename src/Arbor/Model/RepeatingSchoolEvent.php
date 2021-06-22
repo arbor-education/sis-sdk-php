@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RepeatingSchoolEvent extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const SCHOOL_EVENT_TYPE = 'schoolEventType';
@@ -13,6 +14,8 @@ class RepeatingSchoolEvent extends ModelBase
     const SCHOOL_EVENT_NAME = 'schoolEventName';
 
     const NARRATIVE = 'narrative';
+
+    const COVER_REQUIRED = 'coverRequired';
 
     protected $_resourceType = ResourceType::REPEATING_SCHOOL_EVENT;
 
@@ -115,4 +118,22 @@ class RepeatingSchoolEvent extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
+    /**
+     * @return bool
+     */
+    public function getCoverRequired()
+    {
+        return $this->getProperty('coverRequired');
+    }
+
+    /**
+     * @param bool $coverRequired
+     */
+    public function setCoverRequired($coverRequired = null)
+    {
+        $this->setProperty('coverRequired', $coverRequired);
+    }
+
+
 }

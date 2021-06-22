@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentMetric extends ModelBase
 {
+
     const ASSESSMENT_METRIC_SET = 'assessmentMetricSet';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -79,4 +80,6 @@ class AssessmentMetric extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomGroupMembershipCriterion extends ModelBase
 {
+
     const CUSTOM_GROUP = 'customGroup';
 
     const FIELD_CLASS = 'fieldClass';
@@ -151,4 +152,6 @@ class CustomGroupMembershipCriterion extends ModelBase
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class OutboundInAppMessage extends ModelBase
 {
+
     const SENDER = 'sender';
 
     const RECIPIENT = 'recipient';
@@ -187,4 +188,6 @@ class OutboundInAppMessage extends ModelBase
     {
         $this->setProperty('inboundInAppMessageRepliedTo', $inboundInAppMessageRepliedTo);
     }
+
+
 }

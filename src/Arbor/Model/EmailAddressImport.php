@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmailAddressImport extends ModelBase
 {
+
     const EMAIL_ADDRESS_IMPORT_JOB = 'emailAddressImportJob';
 
     const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
@@ -169,4 +170,6 @@ class EmailAddressImport extends ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
+
+
 }

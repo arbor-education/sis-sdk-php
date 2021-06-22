@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InterventionGroup extends ModelBase
 {
+
     const NAME = 'name';
 
     const INTERVENTION = 'intervention';
@@ -205,4 +206,6 @@ class InterventionGroup extends ModelBase
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RoomLayoutSeat extends ModelBase
 {
+
     const ROOM_LAYOUT = 'roomLayout';
 
     const X = 'x';
@@ -97,4 +98,6 @@ class RoomLayoutSeat extends ModelBase
     {
         $this->setProperty('y', $y);
     }
+
+
 }

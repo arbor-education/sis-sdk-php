@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ExclusionReview extends ModelBase
 {
+
     const COMMENT = 'comment';
 
     const EXCLUSION_REVIEW_OUTCOME = 'exclusionReviewOutcome';
@@ -169,4 +170,6 @@ class ExclusionReview extends ModelBase
     {
         $this->setProperty('senExpertRequested', $senExpertRequested);
     }
+
+
 }

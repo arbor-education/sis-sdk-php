@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Application extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const APPLICATION_DATETIME = 'applicationDatetime';
@@ -349,4 +350,6 @@ class Application extends ModelBase
     {
         $this->setProperty('enrolledDatetime', $enrolledDatetime);
     }
+
+
 }
