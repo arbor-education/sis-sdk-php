@@ -565,6 +565,7 @@ class ResourceType
     const TIMETABLER_IMPORT_RESULT = 'TimetablerImportResult';
     const TIMETABLER_IMPORT_RESULT_ERROR = 'TimetablerImportResultError';
     const TIMETABLER_IMPORT_RESULT_UPDATE = 'TimetablerImportResultUpdate';
+    const TIMETABLER_IMPORT_STEP_OUTCOME = 'TimetablerImportStepOutcome';
     const TRIP = 'Trip';
     const TRIP_ELIGIBILITY = 'TripEligibility';
     const TRIP_LOCATION = 'TripLocation';
@@ -665,4 +666,6 @@ class ResourceType
     const BURSARY_PAYMENT_MANUAL_CRITERION_STATUS = 'BursaryPaymentManualCriterionStatus';
     const ATTENDANCE_ROLL_CALL_TIME_GROUP = 'AttendanceRollCallTimeGroup';
     const SUSPENDED_CALENDAR_ENTRY_MAPPING = 'SuspendedCalendarEntryMapping';
+    const COVID_TESTING_TEST = 'CovidTestingTest';
+    const INTEGRATION_VLE_PROVIDER = 'IntegrationVleProvider';
 }

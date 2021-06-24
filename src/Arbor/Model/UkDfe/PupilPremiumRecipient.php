@@ -23,6 +23,8 @@ class PupilPremiumRecipient extends ModelBase
 
     const END_DATE = 'endDate';
 
+    const LAST_FSM = 'lastFsm';
+
     protected $_resourceType = ResourceType::UK_DFE_PUPIL_PREMIUM_RECIPIENT;
 
     /**
@@ -155,5 +157,21 @@ class PupilPremiumRecipient extends ModelBase
     public function setEndDate(\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastFsm()
+    {
+        return $this->getProperty('lastFsm');
+    }
+
+    /**
+     * @param string $lastFsm
+     */
+    public function setLastFsm($lastFsm = null)
+    {
+        $this->setProperty('lastFsm', $lastFsm);
     }
 }
