@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Room extends ModelBase
 {
-
     const SITE = 'site';
 
     const ROOM_NAME = 'roomName';
@@ -152,6 +151,4 @@ class Room extends ModelBase
     {
         $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }
-
-
 }

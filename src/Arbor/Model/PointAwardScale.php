@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PointAwardScale extends ModelBase
 {
-
     const POINT_AWARD_SCALE_NAME = 'pointAwardScaleName';
 
     const SINGULAR_POINT_NAME = 'singularPointName';
@@ -278,6 +277,4 @@ class PointAwardScale extends ModelBase
     {
         $this->setProperty('showAwardedByInParentPortal', $showAwardedByInParentPortal);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ContentTag extends ModelBase
 {
-
     const CONTENT = 'content';
 
     const TAGGED = 'tagged';
@@ -116,6 +115,4 @@ class ContentTag extends ModelBase
     {
         $this->setProperty('tagValue', $tagValue);
     }
-
-
 }

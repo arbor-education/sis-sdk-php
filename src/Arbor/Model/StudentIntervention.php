@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentIntervention extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const INTERVENTION = 'intervention';
@@ -350,6 +349,4 @@ class StudentIntervention extends ModelBase
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentBatchTarget extends ModelBase
 {
-
     const STANDARDIZED_ASSESSMENT_BATCH = 'standardizedAssessmentBatch';
 
     const TARGET = 'target';
@@ -80,6 +79,4 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
-
 }

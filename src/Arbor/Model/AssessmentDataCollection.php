@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollection extends ModelBase
 {
-
     const ASSESSMENT_DATA_COLLECTION_POLICY = 'assessmentDataCollectionPolicy';
 
     const DEADLINE_DATE = 'deadlineDate';
@@ -116,6 +115,4 @@ class AssessmentDataCollection extends ModelBase
     {
         $this->setProperty('collectionRangeEndDate', $collectionRangeEndDate);
     }
-
-
 }

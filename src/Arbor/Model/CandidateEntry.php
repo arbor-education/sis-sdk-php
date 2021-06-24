@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CandidateEntry extends ModelBase
 {
-
     const CANDIDATE = 'candidate';
 
     const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
@@ -134,6 +133,4 @@ class CandidateEntry extends ModelBase
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }
-
-
 }

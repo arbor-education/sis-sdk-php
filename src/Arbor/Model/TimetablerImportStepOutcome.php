@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TimetablerImportStepOutcome extends ModelBase
 {
-
     const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
     const IDENTIFIER = 'identifier';
@@ -152,6 +151,4 @@ class TimetablerImportStepOutcome extends ModelBase
     {
         $this->setProperty('stepType', $stepType);
     }
-
-
 }

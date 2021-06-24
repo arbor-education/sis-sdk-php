@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SessionRoomAssetRequirement extends ModelBase
 {
-
     const SESSION = 'session';
 
     const ROOM_ASSET = 'roomAsset';
@@ -98,6 +97,4 @@ class SessionRoomAssetRequirement extends ModelBase
     {
         $this->setProperty('quantity', $quantity);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SenStatus extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -188,6 +187,4 @@ class SenStatus extends ModelBase
     {
         $this->setProperty('d00229', $d00229);
     }
-
-
 }

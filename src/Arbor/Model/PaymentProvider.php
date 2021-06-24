@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PaymentProvider extends ModelBase
 {
-
     const PAYMENT_PROVIDER_NAME = 'paymentProviderName';
 
     const PROVIDER_CODE = 'providerCode';
@@ -152,6 +151,4 @@ class PaymentProvider extends ModelBase
     {
         $this->setProperty('minimumTransactionAmount', $minimumTransactionAmount);
     }
-
-
 }

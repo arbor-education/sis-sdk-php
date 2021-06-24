@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ObservationTypeGradeSet extends ModelBase
 {
-
     const OBSERVATION_TYPE = 'observationType';
 
     const OBSERVATION_GRADE_SET = 'observationGradeSet';
@@ -80,6 +79,4 @@ class ObservationTypeGradeSet extends ModelBase
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PersonCheck extends ModelBase
 {
-
     const PERSON = 'person';
 
     const CHECK_TYPE = 'checkType';
@@ -242,6 +241,4 @@ class PersonCheck extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
-
 }

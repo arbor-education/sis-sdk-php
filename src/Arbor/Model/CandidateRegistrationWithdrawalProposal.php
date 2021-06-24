@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CandidateRegistrationWithdrawalProposal extends ModelBase
 {
-
     const CANDIDATE_PROPOSAL = 'candidateProposal';
 
     const CANDIDATE_REGISTRATION = 'candidateRegistration';
@@ -152,6 +151,4 @@ class CandidateRegistrationWithdrawalProposal extends ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
-
-
 }

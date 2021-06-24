@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentAlert extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const STUDENT = 'student';
@@ -134,6 +133,4 @@ class StudentAlert extends ModelBase
     {
         $this->setProperty('params', $params);
     }
-
-
 }

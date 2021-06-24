@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviouralContractPeriod extends ModelBase
 {
-
     const BEHAVIOURAL_CONTRACT = 'behaviouralContract';
 
     const BEHAVIOURAL_CONTRACT_GOAL = 'behaviouralContractGoal';
@@ -206,6 +205,4 @@ class BehaviouralContractPeriod extends ModelBase
     {
         $this->setProperty('signedPerson', $signedPerson);
     }
-
-
 }
