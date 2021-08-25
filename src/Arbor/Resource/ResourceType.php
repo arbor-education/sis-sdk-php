@@ -90,6 +90,8 @@ class ResourceType
     const BASKET = 'Basket';
     const BASKET_ITEM = 'BasketItem';
     const BASKET_ITEM_PAYMENT_DATA = 'BasketItemPaymentData';
+    const LEDGER_ENTRY = 'LedgerEntry';
+    const INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = 'IncomingCashlessCateringSystemTransaction';
     const BEHAVIOUR = 'Behaviour';
     const BEHAVIOUR_FOLLOW_UP = 'BehaviourFollowUp';
     const BEHAVIOUR_LOCATION = 'BehaviourLocation';
@@ -144,6 +146,10 @@ class ResourceType
     const CLUB_MEMBERSHIP_PERIOD = 'ClubMembershipPeriod';
     const CLUB_MEMBERSHIP_PERIOD_PRICE = 'ClubMembershipPeriodPrice';
     const CLUB_SESSION = 'ClubSession';
+    const CLUB_SESSION_INTERVAL = 'ClubSessionInterval';
+    const CLUB_MEMBERSHIP_PERIOD_RULE = 'ClubMembershipPeriodRule';
+    const CLUB_SESSION_INTERVAL_PRICE = 'ClubSessionIntervalPrice';
+    const STUDENT_CLUB_SESSION_INTERVAL = 'StudentClubSessionInterval';
     const COMPANY = 'Company';
     const COMPANY_STAFF = 'CompanyStaff';
     const COMMUNICATION_ACTION = 'CommunicationAction';
@@ -163,6 +169,7 @@ class ResourceType
     const CUSTOM_GROUP_MEMBERSHIP_CRITERION = 'CustomGroupMembershipCriterion';
     const CUSTOM_REPORT = 'CustomReport';
     const CUSTOM_REPORT_COLUMN = 'CustomReportColumn';
+    const CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER = 'CustomReportColumnConditionalFormatter';
     const CUSTOM_REPORT_GROUPING = 'CustomReportGrouping';
     const CUSTOM_REPORT_ORDERING = 'CustomReportOrdering';
     const CUSTOM_REPORT_POST_GROUPING_FILTER = 'CustomReportPostGroupingFilter';
@@ -417,6 +424,8 @@ class ResourceType
     const QUALIFICATION_SUBJECT = 'QualificationSubject';
     const QUALIFICATION_SUBSCRIPTION = 'QualificationSubscription';
     const QUALIFICATION_RESULT_EMBARGO_VIEWER = 'QualificationResultEmbargoViewer';
+    const QUALIFICATION_TRANSPORT_CERTIFICATE = 'QualificationTransportCertificate';
+    const QUALIFICATION_TRANSPORT_MESSAGE = 'QualificationTransportMessage';
     const IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT = 'InHouseCandidateAccessArrangement';
     const IN_HOUSE_CANDIDATE = 'InHouseCandidate';
     const IN_HOUSE_EXAM_ENTRY = 'InHouseExamEntry';
@@ -653,6 +662,9 @@ class ResourceType
     const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
     const USER_DEFINED_FIELD_IMPORT = 'UserDefinedFieldImport';
     const INTEGRATIONS_HR_FINANCE_PROVIDER = 'IntegrationsHrFinanceProvider';
+    const INTEGRATIONS_HR_FINANCE_MAPPING_STATUS = 'IntegrationsHrFinanceMappingStatus';
+    const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'IntegrationsHrFinanceTestRun';
+    const INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT = 'IntegrationsHrFinanceTestRunResult';
     const STUDENT_ALERT = 'StudentAlert';
     const BURSARY_TYPE = 'BursaryType';
     const BURSARY_LEVEL = 'BursaryLevel';
