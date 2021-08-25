@@ -14,6 +14,12 @@ class UserDefinedField extends ModelBase
 
     const FIELD_TYPE = 'fieldType';
 
+    const SOURCE = 'source';
+
+    const CODE = 'code';
+
+    const ACTIVE = 'active';
+
     protected $_resourceType = ResourceType::USER_DEFINED_FIELD;
 
     /**
@@ -114,5 +120,53 @@ class UserDefinedField extends ModelBase
     public function setFieldType($fieldType = null)
     {
         $this->setProperty('fieldType', $fieldType);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->getProperty('source');
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource($source = null)
+    {
+        $this->setProperty('source', $source);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive($active = null)
+    {
+        $this->setProperty('active', $active);
     }
 }

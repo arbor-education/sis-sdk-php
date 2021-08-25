@@ -39,6 +39,8 @@ class Staff extends ModelBase
 
     const HLTA_STATUS = 'hltaStatus';
 
+    const NEWLY_QUALIFIED_TEACHER_DATE = 'newlyQualifiedTeacherDate';
+
     protected $_resourceType = ResourceType::STAFF;
 
     /**
@@ -331,5 +333,21 @@ class Staff extends ModelBase
     public function setHltaStatus($hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getNewlyQualifiedTeacherDate()
+    {
+        return $this->getProperty('newlyQualifiedTeacherDate');
+    }
+
+    /**
+     * @param \DateTime $newlyQualifiedTeacherDate
+     */
+    public function setNewlyQualifiedTeacherDate(\DateTime $newlyQualifiedTeacherDate = null)
+    {
+        $this->setProperty('newlyQualifiedTeacherDate', $newlyQualifiedTeacherDate);
     }
 }

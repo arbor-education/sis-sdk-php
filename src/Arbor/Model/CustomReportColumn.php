@@ -26,6 +26,10 @@ class CustomReportColumn extends ModelBase
 
     const SUMMARY_ROW_FORMULA_CLASS = 'summaryRowFormulaClass';
 
+    const IS_HIDDEN = 'isHidden';
+
+    const IS_SOURCE_UPDATE_PERMITTED = 'isSourceUpdatePermitted';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT_COLUMN;
 
     /**
@@ -222,5 +226,37 @@ class CustomReportColumn extends ModelBase
     public function setSummaryRowFormulaClass($summaryRowFormulaClass = null)
     {
         $this->setProperty('summaryRowFormulaClass', $summaryRowFormulaClass);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsHidden()
+    {
+        return $this->getProperty('isHidden');
+    }
+
+    /**
+     * @param bool $isHidden
+     */
+    public function setIsHidden($isHidden = null)
+    {
+        $this->setProperty('isHidden', $isHidden);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsSourceUpdatePermitted()
+    {
+        return $this->getProperty('isSourceUpdatePermitted');
+    }
+
+    /**
+     * @param bool $isSourceUpdatePermitted
+     */
+    public function setIsSourceUpdatePermitted($isSourceUpdatePermitted = null)
+    {
+        $this->setProperty('isSourceUpdatePermitted', $isSourceUpdatePermitted);
     }
 }

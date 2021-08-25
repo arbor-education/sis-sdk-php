@@ -26,6 +26,14 @@ class Club extends ModelBase
 
     const ACCOUNTING_CODE = 'accountingCode';
 
+    const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
+
+    const HAS_MEALS = 'hasMeals';
+
+    const IS_WRAPAROUND_CHILDCARE_CLUB = 'isWraparoundChildcareClub';
+
+    const CHARGE_STUDENTS_BASED_ON_ATTENDANCE_MARK = 'chargeStudentsBasedOnAttendanceMark';
+
     protected $_resourceType = ResourceType::CLUB;
 
     /**
@@ -222,5 +230,69 @@ class Club extends ModelBase
     public function setAccountingCode($accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
+    }
+
+    /**
+     * @return CustomerAccountType
+     */
+    public function getCustomerAccountType()
+    {
+        return $this->getProperty('customerAccountType');
+    }
+
+    /**
+     * @param CustomerAccountType $customerAccountType
+     */
+    public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
+    {
+        $this->setProperty('customerAccountType', $customerAccountType);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getHasMeals()
+    {
+        return $this->getProperty('hasMeals');
+    }
+
+    /**
+     * @param bool $hasMeals
+     */
+    public function setHasMeals($hasMeals = null)
+    {
+        $this->setProperty('hasMeals', $hasMeals);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsWraparoundChildcareClub()
+    {
+        return $this->getProperty('isWraparoundChildcareClub');
+    }
+
+    /**
+     * @param bool $isWraparoundChildcareClub
+     */
+    public function setIsWraparoundChildcareClub($isWraparoundChildcareClub = null)
+    {
+        $this->setProperty('isWraparoundChildcareClub', $isWraparoundChildcareClub);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getChargeStudentsBasedOnAttendanceMark()
+    {
+        return $this->getProperty('chargeStudentsBasedOnAttendanceMark');
+    }
+
+    /**
+     * @param bool $chargeStudentsBasedOnAttendanceMark
+     */
+    public function setChargeStudentsBasedOnAttendanceMark($chargeStudentsBasedOnAttendanceMark = null)
+    {
+        $this->setProperty('chargeStudentsBasedOnAttendanceMark', $chargeStudentsBasedOnAttendanceMark);
     }
 }
