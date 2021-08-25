@@ -11,6 +11,8 @@ class EducationalInstitutionEnrolment extends ModelBase
 {
     const REMOVAL_GROUNDS = 'removalGrounds';
 
+    const ALTERNATIVE_PROVISION_REASON = 'alternativeProvisionReason';
+
     protected $_resourceType = ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
 
     /**
@@ -63,5 +65,21 @@ class EducationalInstitutionEnrolment extends ModelBase
     public function setRemovalGrounds($removalGrounds = null)
     {
         $this->setProperty('removalGrounds', $removalGrounds);
+    }
+
+    /**
+     * @return AlternativeProvisionReason
+     */
+    public function getAlternativeProvisionReason()
+    {
+        return $this->getProperty('alternativeProvisionReason');
+    }
+
+    /**
+     * @param AlternativeProvisionReason $alternativeProvisionReason
+     */
+    public function setAlternativeProvisionReason(AlternativeProvisionReason $alternativeProvisionReason = null)
+    {
+        $this->setProperty('alternativeProvisionReason', $alternativeProvisionReason);
     }
 }

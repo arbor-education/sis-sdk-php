@@ -14,6 +14,8 @@ class CustomerPayment extends ModelBase
 
     const INCOMING_CARD_TRANSACTION = 'incomingCardTransaction';
 
+    const INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = 'incomingCashlessCateringSystemTransaction';
+
     const INCOMING_BANK_TRANSACTION = 'incomingBankTransaction';
 
     const RECEIVED_CHEQUE = 'receivedCheque';
@@ -134,6 +136,23 @@ class CustomerPayment extends ModelBase
     public function setIncomingCardTransaction(IncomingCardTransaction $incomingCardTransaction = null)
     {
         $this->setProperty('incomingCardTransaction', $incomingCardTransaction);
+    }
+
+    /**
+     * @return IncomingCashlessCateringSystemTransaction
+     */
+    public function getIncomingCashlessCateringSystemTransaction()
+    {
+        return $this->getProperty('incomingCashlessCateringSystemTransaction');
+    }
+
+    /**
+     * @param IncomingCashlessCateringSystemTransaction
+     * $incomingCashlessCateringSystemTransaction
+     */
+    public function setIncomingCashlessCateringSystemTransaction(IncomingCashlessCateringSystemTransaction $incomingCashlessCateringSystemTransaction = null)
+    {
+        $this->setProperty('incomingCashlessCateringSystemTransaction', $incomingCashlessCateringSystemTransaction);
     }
 
     /**

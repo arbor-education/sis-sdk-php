@@ -10,6 +10,8 @@ class TimetablerImportResult extends ModelBase
 
     const STEPS_COMPLETED = 'stepsCompleted';
 
+    const STEP_IN_PROGRESS = 'stepInProgress';
+
     const STARTED_DATETIME = 'startedDatetime';
 
     const COMPLETED_DATETIME = 'completedDatetime';
@@ -84,6 +86,22 @@ class TimetablerImportResult extends ModelBase
     public function setStepsCompleted($stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
+    }
+
+    /**
+     * @return int
+     */
+    public function getStepInProgress()
+    {
+        return $this->getProperty('stepInProgress');
+    }
+
+    /**
+     * @param int $stepInProgress
+     */
+    public function setStepInProgress($stepInProgress = null)
+    {
+        $this->setProperty('stepInProgress', $stepInProgress);
     }
 
     /**
