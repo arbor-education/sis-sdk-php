@@ -92,6 +92,7 @@ class ResourceType
     const BASKET_ITEM_PAYMENT_DATA = 'BasketItemPaymentData';
     const LEDGER_ENTRY = 'LedgerEntry';
     const INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = 'IncomingCashlessCateringSystemTransaction';
+    const INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER = 'IntegrationsCashlessCateringSystemProvider';
     const BEHAVIOUR = 'Behaviour';
     const BEHAVIOUR_FOLLOW_UP = 'BehaviourFollowUp';
     const BEHAVIOUR_LOCATION = 'BehaviourLocation';

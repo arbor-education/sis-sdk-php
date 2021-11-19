@@ -16,6 +16,8 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
 
     const MARKING_FINALIZED_DATETIME = 'markingFinalizedDatetime';
 
+    const ALL_MARKS_APPROVED = 'allMarksApproved';
+
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD;
 
     /**
@@ -132,5 +134,21 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     public function setMarkingFinalizedDatetime(\DateTime $markingFinalizedDatetime = null)
     {
         $this->setProperty('markingFinalizedDatetime', $markingFinalizedDatetime);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllMarksApproved()
+    {
+        return $this->getProperty('allMarksApproved');
+    }
+
+    /**
+     * @param bool $allMarksApproved
+     */
+    public function setAllMarksApproved($allMarksApproved = null)
+    {
+        $this->setProperty('allMarksApproved', $allMarksApproved);
     }
 }
