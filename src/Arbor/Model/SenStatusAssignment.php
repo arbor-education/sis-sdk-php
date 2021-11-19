@@ -14,10 +14,6 @@ class SenStatusAssignment extends ModelBase
 
     const END_DATE = 'endDate';
 
-    const IS_MEMBER_OF_SEN_UNIT = 'isMemberOfSenUnit';
-
-    const HAS_RESOURCED_PROVISION = 'hasResourcedProvision';
-
     protected $_resourceType = ResourceType::SEN_STATUS_ASSIGNMENT;
 
     /**
@@ -118,37 +114,5 @@ class SenStatusAssignment extends ModelBase
     public function setEndDate(\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getIsMemberOfSenUnit()
-    {
-        return $this->getProperty('isMemberOfSenUnit');
-    }
-
-    /**
-     * @param bool $isMemberOfSenUnit
-     */
-    public function setIsMemberOfSenUnit($isMemberOfSenUnit = null)
-    {
-        $this->setProperty('isMemberOfSenUnit', $isMemberOfSenUnit);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHasResourcedProvision()
-    {
-        return $this->getProperty('hasResourcedProvision');
-    }
-
-    /**
-     * @param bool $hasResourcedProvision
-     */
-    public function setHasResourcedProvision($hasResourcedProvision = null)
-    {
-        $this->setProperty('hasResourcedProvision', $hasResourcedProvision);
     }
 }

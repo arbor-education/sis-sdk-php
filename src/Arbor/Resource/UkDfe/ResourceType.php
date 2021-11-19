@@ -73,4 +73,5 @@ class ResourceType
     const UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT_REASON = 'UkDfe_AlternativeProvisionPlacementReason';
     const UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT = 'UkDfe_AlternativeProvisionPlacement';
     const UK_DFE_PERMANENT_EXCLUSION = 'UkDfe_PermanentExclusion';
+    const UK_DFE_ACADEMIC_UNIT_ENROLMENT = 'UkDfe_AcademicUnitEnrolment';
 }
