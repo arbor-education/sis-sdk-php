@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Bank extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,5 @@ class Bank extends ModelBase
     {
         $this->setProperty('countryCode', $countryCode);
     }
-
 
 }

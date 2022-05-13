@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CandidateProposalComment extends ModelBase
 {
-
     const CANDIDATE_PROPOSAL = 'candidateProposal';
 
     const AUTHOR_STAFF = 'authorStaff';
@@ -116,6 +115,5 @@ class CandidateProposalComment extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 
 }

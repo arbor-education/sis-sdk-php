@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Region extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,5 @@ class Region extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 
 }

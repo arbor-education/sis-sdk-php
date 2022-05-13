@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Term extends ModelBase
 {
-
     const ACADEMIC_YEAR = 'academicYear';
 
     const TERM_NAME = 'termName';
@@ -152,6 +151,5 @@ class Term extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

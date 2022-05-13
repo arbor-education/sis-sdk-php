@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IntakeSeasonGroup extends ModelBase
 {
-
     const GROUP_NAME = 'groupName';
 
     const INTAKE_SEASON = 'intakeSeason';
@@ -98,6 +97,5 @@ class IntakeSeasonGroup extends ModelBase
     {
         $this->setProperty('expectedAdmissionDate', $expectedAdmissionDate);
     }
-
 
 }

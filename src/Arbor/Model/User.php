@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class User extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const STUDENT = 'student';
@@ -494,6 +493,5 @@ class User extends ModelBase
     {
         $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
     }
-
 
 }

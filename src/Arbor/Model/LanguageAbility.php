@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class LanguageAbility extends ModelBase
 {
-
     const PERSON = 'person';
 
     const LANGUAGE = 'language';
@@ -188,6 +187,5 @@ class LanguageAbility extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 
 }

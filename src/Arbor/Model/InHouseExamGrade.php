@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InHouseExamGrade extends ModelBase
 {
-
     const IN_HOUSE_EXAM = 'inHouseExam';
 
     const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -152,6 +151,5 @@ class InHouseExamGrade extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 
 }

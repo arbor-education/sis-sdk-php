@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class MedicalRelationshipType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,5 @@ class MedicalRelationshipType extends ModelBase
     {
         $this->setProperty('medicalRelationshipTypeName', $medicalRelationshipTypeName);
     }
-
 
 }

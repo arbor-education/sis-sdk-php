@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Voucher extends ModelBase
 {
-
     const BILL_PAYER = 'billPayer';
 
     const PAYMENT_RECEIVED_DATE = 'paymentReceivedDate';
@@ -134,6 +133,5 @@ class Voucher extends ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
-
 
 }

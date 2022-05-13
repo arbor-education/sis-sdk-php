@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentWatcher extends ModelBase
 {
-
     const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     const STAFF = 'staff';
@@ -80,6 +79,5 @@ class BehaviouralIncidentWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InterventionFundingSource extends ModelBase
 {
-
     const NAME = 'name';
 
     const CODE = 'code';
@@ -116,6 +115,5 @@ class InterventionFundingSource extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 
 }

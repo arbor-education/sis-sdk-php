@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TransportationMethod extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,5 @@ class TransportationMethod extends ModelBase
     {
         $this->setProperty('routeNumber', $routeNumber);
     }
-
 
 }

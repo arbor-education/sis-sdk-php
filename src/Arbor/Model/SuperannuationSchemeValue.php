@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SuperannuationSchemeValue extends ModelBase
 {
-
     const SUPERANNUATION_SCHEME = 'superannuationScheme';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -116,6 +115,5 @@ class SuperannuationSchemeValue extends ModelBase
     {
         $this->setProperty('value', $value);
     }
-
 
 }

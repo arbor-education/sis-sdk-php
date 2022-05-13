@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CurriculumSection extends ModelBase
 {
-
     const CURRICULUM = 'curriculum';
 
     const CODE = 'code';
@@ -170,6 +169,5 @@ class CurriculumSection extends ModelBase
     {
         $this->setProperty('weighting', $weighting);
     }
-
 
 }

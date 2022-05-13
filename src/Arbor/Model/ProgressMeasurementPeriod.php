@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProgressMeasurementPeriod extends ModelBase
 {
-
     const PROGRESS_MEASUREMENT_PERIOD_SET = 'progressMeasurementPeriodSet';
 
     const PERIOD_NAME = 'periodName';
@@ -152,6 +151,5 @@ class ProgressMeasurementPeriod extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

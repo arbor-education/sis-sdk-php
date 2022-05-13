@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ClubSessionInterval extends ModelBase
 {
-
     const CLUB = 'club';
 
     const TIMETABLE_SLOT = 'timetableSlot';
@@ -134,6 +133,5 @@ class ClubSessionInterval extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 
 }

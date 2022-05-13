@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentMedicalRelationship extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const MEDICAL_INSTITUTION = 'medicalInstitution';
@@ -170,6 +169,5 @@ class StudentMedicalRelationship extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 
 }

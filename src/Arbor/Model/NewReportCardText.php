@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class NewReportCardText extends ModelBase
 {
-
     const NEW_REPORT_CARD_BATCH = 'newReportCardBatch';
 
     const TITLE = 'title';
@@ -116,6 +115,5 @@ class NewReportCardText extends ModelBase
     {
         $this->setProperty('body', $body);
     }
-
 
 }

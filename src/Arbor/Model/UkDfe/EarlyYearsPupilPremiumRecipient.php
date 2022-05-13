@@ -10,7 +10,6 @@ use Arbor\Model\Student;
 
 class EarlyYearsPupilPremiumRecipient extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const START_DATE = 'startDate';
@@ -138,6 +137,5 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     {
         $this->setProperty('recipientForOtherReasons', $recipientForOtherReasons);
     }
-
 
 }

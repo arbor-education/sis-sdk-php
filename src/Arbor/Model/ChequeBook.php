@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ChequeBook extends ModelBase
 {
-
     const BANK_ACCOUNT = 'bankAccount';
 
     const CHEQUE_NUMBER_LENGTH = 'chequeNumberLength';
@@ -134,6 +133,5 @@ class ChequeBook extends ModelBase
     {
         $this->setProperty('nextChequeNumber', $nextChequeNumber);
     }
-
 
 }

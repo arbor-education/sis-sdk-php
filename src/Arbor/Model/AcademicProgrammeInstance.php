@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicProgrammeInstance extends ModelBase
 {
-
     const ACADEMIC_PROGRAMME = 'academicProgramme';
 
     const INSTANCE_NAME = 'instanceName';
@@ -106,6 +105,5 @@ class AcademicProgrammeInstance extends ModelBase
     {
         return $this->getCollectionProperty('topLevelAcademicUnits');
     }
-
 
 }

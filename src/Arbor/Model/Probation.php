@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Probation extends ModelBase
 {
-
     const STAFF_CONTRACT = 'staffContract';
 
     const START_DATE = 'startDate';
@@ -134,6 +133,5 @@ class Probation extends ModelBase
     {
         $this->setProperty('probationDecision', $probationDecision);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StaffContractPostEndReason extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,5 @@ class StaffContractPostEndReason extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 
 }

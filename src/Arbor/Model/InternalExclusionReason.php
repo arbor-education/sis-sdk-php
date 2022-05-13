@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InternalExclusionReason extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,5 @@ class InternalExclusionReason extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 
 }

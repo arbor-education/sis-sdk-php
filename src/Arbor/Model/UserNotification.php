@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class UserNotification extends ModelBase
 {
-
     const USER = 'user';
 
     const IS_READ = 'isRead';
@@ -260,6 +259,5 @@ class UserNotification extends ModelBase
     {
         $this->setProperty('subject', $subject);
     }
-
 
 }

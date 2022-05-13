@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BusinessRole extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -242,6 +241,5 @@ class BusinessRole extends ModelBase
     {
         $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
     }
-
 
 }

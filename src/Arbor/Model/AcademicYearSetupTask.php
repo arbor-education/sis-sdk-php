@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicYearSetupTask extends ModelBase
 {
-
     const ACADEMIC_YEAR = 'academicYear';
 
     const TYPE = 'type';
@@ -116,6 +115,5 @@ class AcademicYearSetupTask extends ModelBase
     {
         $this->setProperty('skippedDatetime', $skippedDatetime);
     }
-
 
 }

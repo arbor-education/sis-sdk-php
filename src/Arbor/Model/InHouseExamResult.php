@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InHouseExamResult extends ModelBase
 {
-
     const IN_HOUSE_EXAM = 'inHouseExam';
 
     const STUDENT = 'student';
@@ -152,6 +151,5 @@ class InHouseExamResult extends ModelBase
     {
         $this->setProperty('resultDate', $resultDate);
     }
-
 
 }

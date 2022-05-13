@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TimetablerImportResultUpdate extends ModelBase
 {
-
     const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
     const UPDATED = 'updated';
@@ -80,6 +79,5 @@ class TimetablerImportResultUpdate extends ModelBase
     {
         $this->setProperty('updated', $updated);
     }
-
 
 }

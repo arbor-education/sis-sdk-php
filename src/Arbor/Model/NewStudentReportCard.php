@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class NewStudentReportCard extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const REPORT_CARD_BATCH = 'reportCardBatch';
@@ -116,6 +115,5 @@ class NewStudentReportCard extends ModelBase
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
-
 
 }

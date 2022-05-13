@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BursaryPaymentManualCriterion extends ModelBase
 {
-
     const BURSARY_TYPE = 'bursaryType';
 
     const NAME = 'name';
@@ -116,6 +115,5 @@ class BursaryPaymentManualCriterion extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

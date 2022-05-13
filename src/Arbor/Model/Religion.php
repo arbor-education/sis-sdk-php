@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Religion extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -152,6 +151,5 @@ class Religion extends ModelBase
     {
         $this->setProperty('d00195', $d00195);
     }
-
 
 }

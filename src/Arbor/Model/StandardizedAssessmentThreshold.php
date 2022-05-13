@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentThreshold extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -188,6 +187,5 @@ class StandardizedAssessmentThreshold extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

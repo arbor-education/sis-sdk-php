@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SenStatus extends ModelBase
 {
-
     const D00229 = 'd00229';
 
     protected $_resourceType = ResourceType::UK_DFE_SEN_STATUS;
@@ -65,6 +64,5 @@ class SenStatus extends ModelBase
     {
         $this->setProperty('d00229', $d00229);
     }
-
 
 }

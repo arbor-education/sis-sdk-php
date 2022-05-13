@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PersonNextOfKin extends ModelBase
 {
-
     const PERSON = 'person';
 
     const RELATED_PERSON = 'relatedPerson';
@@ -98,6 +97,5 @@ class PersonNextOfKin extends ModelBase
     {
         $this->setProperty('relationship', $relationship);
     }
-
 
 }

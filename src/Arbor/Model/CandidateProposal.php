@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CandidateProposal extends ModelBase
 {
-
     const CANDIDATE = 'candidate';
 
     const SUGGESTED_BY_STAFF = 'suggestedByStaff';
@@ -98,6 +97,5 @@ class CandidateProposal extends ModelBase
     {
         $this->setProperty('suggestedDatetime', $suggestedDatetime);
     }
-
 
 }

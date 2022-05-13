@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviourLocation extends ModelBase
 {
-
     const NAME = 'name';
 
     protected $_resourceType = ResourceType::BEHAVIOUR_LOCATION;
@@ -62,6 +61,5 @@ class BehaviourLocation extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 
 }

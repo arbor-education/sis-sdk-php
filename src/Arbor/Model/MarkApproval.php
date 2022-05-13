@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class MarkApproval extends ModelBase
 {
-
     const MARK = 'mark';
 
     const APPROVAL_LEVEL = 'approvalLevel';
@@ -98,6 +97,5 @@ class MarkApproval extends ModelBase
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }
-
 
 }

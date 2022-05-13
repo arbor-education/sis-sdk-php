@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class FinalAssessmentTarget extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ASSESSMENT = 'assessment';
@@ -170,6 +169,5 @@ class FinalAssessmentTarget extends ModelBase
     {
         $this->setProperty('locked', $locked);
     }
-
 
 }

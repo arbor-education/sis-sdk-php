@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class RegistrationFormMembership extends ModelBase
 {
-
     const REGISTRATION_FORM = 'registrationForm';
 
     const STUDENT = 'student';
@@ -116,6 +115,5 @@ class RegistrationFormMembership extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

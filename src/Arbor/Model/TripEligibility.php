@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TripEligibility extends ModelBase
 {
-
     const TRIP = 'trip';
 
     const ELIGIBILE = 'eligibile';
@@ -80,6 +79,5 @@ class TripEligibility extends ModelBase
     {
         $this->setProperty('eligibile', $eligibile);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentWitness extends ModelBase
 {
-
     const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     const WITNESS = 'witness';
@@ -116,6 +115,5 @@ class BehaviouralIncidentWitness extends ModelBase
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
-
 
 }

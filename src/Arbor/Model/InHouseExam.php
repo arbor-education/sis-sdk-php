@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InHouseExam extends ModelBase
 {
-
     const MOCK_QUALIFICATION_ASSESSABLE = 'mockQualificationAssessable';
 
     const MOCK_QUALIFICATION_LEARNING_UNIT = 'mockQualificationLearningUnit';
@@ -116,6 +115,5 @@ class InHouseExam extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 
 }

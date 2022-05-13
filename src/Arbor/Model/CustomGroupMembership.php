@@ -8,7 +8,6 @@ use Arbor\Model\Group\Institution;
 
 class CustomGroupMembership extends ModelBase
 {
-
     const CUSTOM_GROUP = 'customGroup';
 
     const PERSON = 'person';
@@ -136,6 +135,5 @@ class CustomGroupMembership extends ModelBase
     {
         $this->setProperty('groupInstitution', $groupInstitution);
     }
-
 
 }

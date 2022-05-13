@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class PupilPremiumRecipientType extends ModelBase
 {
-
     const PUPIL_PREMIUM_RECIPIENT = 'pupilPremiumRecipient';
 
     const PUPIL_PREMIUM_TYPE = 'pupilPremiumType';
@@ -83,6 +82,5 @@ class PupilPremiumRecipientType extends ModelBase
     {
         $this->setProperty('pupilPremiumType', $pupilPremiumType);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ImmunizationType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,5 @@ class ImmunizationType extends ModelBase
     {
         $this->setProperty('immunizationTypeName', $immunizationTypeName);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ReportCardBatchAdHocAssessment extends ModelBase
 {
-
     const REPORT_CARD_BATCH = 'reportCardBatch';
 
     const AD_HOC_ASSESSMENT = 'adHocAssessment';
@@ -116,6 +115,5 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 
 }

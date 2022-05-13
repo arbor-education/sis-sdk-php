@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProfessionalQualificationType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,5 @@ class ProfessionalQualificationType extends ModelBase
     {
         $this->setProperty('isVocationalQualification', $isVocationalQualification);
     }
-
 
 }

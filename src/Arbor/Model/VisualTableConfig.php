@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class VisualTableConfig extends ModelBase
 {
-
     const PAGE_CONTEXT = 'pageContext';
 
     const TABLE_URL = 'tableUrl';
@@ -134,6 +133,5 @@ class VisualTableConfig extends ModelBase
     {
         $this->setProperty('config', $config);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class QualificationAssessableInstance extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -278,6 +277,5 @@ class QualificationAssessableInstance extends ModelBase
     {
         $this->setProperty('isProvisional', $isProvisional);
     }
-
 
 }

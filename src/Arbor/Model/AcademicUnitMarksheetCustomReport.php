@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitMarksheetCustomReport extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const CUSTOM_REPORT = 'customReport';
@@ -80,6 +79,5 @@ class AcademicUnitMarksheetCustomReport extends ModelBase
     {
         $this->setProperty('customReport', $customReport);
     }
-
 
 }

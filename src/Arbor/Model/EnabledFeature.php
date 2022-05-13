@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EnabledFeature extends ModelBase
 {
-
     const FEATURE_IDENTIFIER = 'featureIdentifier';
 
     const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
@@ -134,6 +133,5 @@ class EnabledFeature extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

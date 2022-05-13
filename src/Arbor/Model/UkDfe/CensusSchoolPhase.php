@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class CensusSchoolPhase extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -119,6 +118,5 @@ class CensusSchoolPhase extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 
 }

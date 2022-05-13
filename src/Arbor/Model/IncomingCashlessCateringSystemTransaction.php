@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IncomingCashlessCateringSystemTransaction extends ModelBase
 {
-
     const BILL_PAYER = 'billPayer';
 
     const SOURCE = 'source';
@@ -224,6 +223,5 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Site extends ModelBase
 {
-
     const SITE_NAME = 'siteName';
 
     const SHORT_NAME = 'shortName';
@@ -98,6 +97,5 @@ class Site extends ModelBase
     {
         $this->setProperty('siteDisplayOrder', $siteDisplayOrder);
     }
-
 
 }

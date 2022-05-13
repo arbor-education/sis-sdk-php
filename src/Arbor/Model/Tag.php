@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Tag extends ModelBase
 {
-
     const TAG_NAME = 'tagName';
 
     const TAG_IDENTIFIER = 'tagIdentifier';
@@ -80,6 +79,5 @@ class Tag extends ModelBase
     {
         $this->setProperty('tagIdentifier', $tagIdentifier);
     }
-
 
 }

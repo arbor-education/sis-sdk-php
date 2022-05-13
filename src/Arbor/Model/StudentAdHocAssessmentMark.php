@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentAdHocAssessmentMark extends ModelBase
 {
-
     const AD_HOC_ASSESSMENT_BATCH = 'adHocAssessmentBatch';
 
     const STUDENT = 'student';
@@ -278,6 +277,5 @@ class StudentAdHocAssessmentMark extends ModelBase
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
-
 
 }

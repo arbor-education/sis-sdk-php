@@ -10,7 +10,6 @@ use Arbor\Model\LocalAuthority;
 
 class Student extends ModelBase
 {
-
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
@@ -372,6 +371,5 @@ class Student extends ModelBase
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
-
 
 }

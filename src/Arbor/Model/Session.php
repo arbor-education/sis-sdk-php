@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Session extends ModelBase
 {
-
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -224,6 +223,5 @@ class Session extends ModelBase
     {
         $this->setProperty('isSuspended', $isSuspended);
     }
-
 
 }

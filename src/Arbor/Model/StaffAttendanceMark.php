@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StaffAttendanceMark extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -350,6 +349,5 @@ class StaffAttendanceMark extends ModelBase
     {
         $this->setProperty('isPhysicalNotRequired', $isPhysicalNotRequired);
     }
-
 
 }

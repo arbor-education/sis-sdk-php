@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationAward extends ModelBase
 {
-
     const QCA_ACCREDITATION_NUMBER = 'qcaAccreditationNumber';
 
     const KS4_DISCOUNT_CODE2014 = 'ks4DiscountCode2014';
@@ -155,6 +154,5 @@ class QualificationAward extends ModelBase
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }
-
 
 }

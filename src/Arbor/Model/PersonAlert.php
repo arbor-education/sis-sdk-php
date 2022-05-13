@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PersonAlert extends ModelBase
 {
-
     const PERSON = 'person';
 
     const CONTEXT_PERSON = 'contextPerson';
@@ -134,6 +133,5 @@ class PersonAlert extends ModelBase
     {
         $this->setProperty('alertDatetime', $alertDatetime);
     }
-
 
 }

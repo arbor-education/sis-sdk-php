@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class MealPattern extends ModelBase
 {
-
     const ATTENDEE = 'attendee';
 
     const MEAL = 'meal';
@@ -314,6 +313,5 @@ class MealPattern extends ModelBase
     {
         $this->setProperty('groupMembership', $groupMembership);
     }
-
 
 }

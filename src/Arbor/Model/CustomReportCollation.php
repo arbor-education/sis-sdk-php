@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomReportCollation extends ModelBase
 {
-
     const CUSTOM_REPORT = 'customReport';
 
     const FIELD_CLASS = 'fieldClass';
@@ -134,6 +133,5 @@ class CustomReportCollation extends ModelBase
     {
         $this->setProperty('customLabel', $customLabel);
     }
-
 
 }

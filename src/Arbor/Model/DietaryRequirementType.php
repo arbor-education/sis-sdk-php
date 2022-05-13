@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DietaryRequirementType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,5 @@ class DietaryRequirementType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 
 }

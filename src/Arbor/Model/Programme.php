@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Programme extends ModelBase
 {
-
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
@@ -134,6 +133,5 @@ class Programme extends ModelBase
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }
-
 
 }

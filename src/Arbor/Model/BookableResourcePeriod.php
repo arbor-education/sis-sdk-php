@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BookableResourcePeriod extends ModelBase
 {
-
     const RESOURCE = 'resource';
 
     const START_DATETIME = 'startDatetime';
@@ -98,6 +97,5 @@ class BookableResourcePeriod extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 
 }

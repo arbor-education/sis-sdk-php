@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InterventionFilter extends ModelBase
 {
-
     const INTERVENTION = 'intervention';
 
     const FIELD_CLASS = 'fieldClass';
@@ -188,6 +187,5 @@ class InterventionFilter extends ModelBase
     {
         $this->setProperty('isOutcome', $isOutcome);
     }
-
 
 }

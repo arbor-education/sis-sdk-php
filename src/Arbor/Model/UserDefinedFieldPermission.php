@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class UserDefinedFieldPermission extends ModelBase
 {
-
     const USER_DEFINED_FIELD = 'userDefinedField';
 
     const IDENTIFIER = 'identifier';
@@ -116,6 +115,5 @@ class UserDefinedFieldPermission extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 
 }

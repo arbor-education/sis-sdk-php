@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ReceivedCheque extends ModelBase
 {
-
     const BILL_PAYER = 'billPayer';
 
     const BANK_DEPOSIT = 'bankDeposit';
@@ -134,6 +133,5 @@ class ReceivedCheque extends ModelBase
     {
         $this->setProperty('chequeAmount', $chequeAmount);
     }
-
 
 }

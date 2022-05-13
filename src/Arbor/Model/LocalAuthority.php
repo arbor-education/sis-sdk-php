@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class LocalAuthority extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -188,6 +187,5 @@ class LocalAuthority extends ModelBase
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }
-
 
 }

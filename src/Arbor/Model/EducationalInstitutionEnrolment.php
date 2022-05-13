@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EducationalInstitutionEnrolment extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ENTRY_DATE = 'entryDate';
@@ -116,6 +115,5 @@ class EducationalInstitutionEnrolment extends ModelBase
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
-
 
 }

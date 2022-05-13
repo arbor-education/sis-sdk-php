@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PayScaleGrade extends ModelBase
 {
-
     const PAY_SCALE = 'payScale';
 
     const GRADE_NAME = 'gradeName';
@@ -98,6 +97,5 @@ class PayScaleGrade extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 
 }

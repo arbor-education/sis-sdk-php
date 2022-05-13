@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EligibilityRecord extends ModelBase
 {
-
     const ELIGIBILITY = 'eligibility';
 
     const PERSON = 'person';
@@ -152,6 +151,5 @@ class EligibilityRecord extends ModelBase
     {
         $this->setProperty('nextCheckDate', $nextCheckDate);
     }
-
 
 }

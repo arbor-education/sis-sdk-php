@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InvigilationDuty extends ModelBase
 {
-
     const INVIGILATION_SESSION = 'invigilationSession';
 
     const STAFF = 'staff';
@@ -134,6 +133,5 @@ class InvigilationDuty extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 
 }

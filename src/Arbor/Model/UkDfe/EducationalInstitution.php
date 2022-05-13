@@ -10,7 +10,6 @@ use Arbor\Model\LocalAuthority;
 
 class EducationalInstitution extends ModelBase
 {
-
     const LOCAL_AUTHORITY = 'localAuthority';
 
     const ESTABLISHMENT_NUMBER = 'establishmentNumber';
@@ -426,6 +425,5 @@ class EducationalInstitution extends ModelBase
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
     }
-
 
 }

@@ -10,7 +10,6 @@ use Arbor\Model\Student;
 
 class UpnAssignment extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ISSUED_YEAR = 'issuedYear';
@@ -210,6 +209,5 @@ class UpnAssignment extends ModelBase
     {
         $this->setProperty('isTemporary', $isTemporary);
     }
-
 
 }

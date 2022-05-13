@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ExclusionReviewOutcome extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -170,6 +169,5 @@ class ExclusionReviewOutcome extends ModelBase
     {
         $this->setProperty('isStudentReinstated', $isStudentReinstated);
     }
-
 
 }

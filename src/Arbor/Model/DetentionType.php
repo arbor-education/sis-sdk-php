@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class DetentionType extends ModelBase
 {
-
     const DETENTION_TYPE_NAME = 'detentionTypeName';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -80,6 +79,5 @@ class DetentionType extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 
 }

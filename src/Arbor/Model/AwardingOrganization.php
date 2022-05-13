@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AwardingOrganization extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -206,6 +205,5 @@ class AwardingOrganization extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

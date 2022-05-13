@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IdentityCardReader extends ModelBase
 {
-
     const READER_NUMBER = 'readerNumber';
 
     const ROOM = 'room';
@@ -80,6 +79,5 @@ class IdentityCardReader extends ModelBase
     {
         $this->setProperty('room', $room);
     }
-
 
 }

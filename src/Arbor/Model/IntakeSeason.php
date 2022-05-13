@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IntakeSeason extends ModelBase
 {
-
     const INTAKE_SEASON_NAME = 'intakeSeasonName';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -152,6 +151,5 @@ class IntakeSeason extends ModelBase
     {
         $this->setProperty('targetApplicationNumber', $targetApplicationNumber);
     }
-
 
 }

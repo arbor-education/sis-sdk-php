@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CovidTestingTest extends ModelBase
 {
-
     const PERSON = 'person';
 
     const TEST_TYPE = 'testType';
@@ -170,6 +169,5 @@ class CovidTestingTest extends ModelBase
     {
         $this->setProperty('administeredDatetime', $administeredDatetime);
     }
-
 
 }

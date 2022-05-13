@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EducationPlan extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const EDUCATION_PLAN_TYPE = 'educationPlanType';
@@ -170,6 +169,5 @@ class EducationPlan extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

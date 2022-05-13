@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class MeetingTopic extends ModelBase
 {
-
     const MEETING = 'meeting';
 
     const TOPIC = 'topic';
@@ -80,6 +79,5 @@ class MeetingTopic extends ModelBase
     {
         $this->setProperty('topic', $topic);
     }
-
 
 }

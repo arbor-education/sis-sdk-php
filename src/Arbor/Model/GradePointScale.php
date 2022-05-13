@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class GradePointScale extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -224,6 +223,5 @@ class GradePointScale extends ModelBase
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }
-
 
 }

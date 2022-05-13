@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class House extends ModelBase
 {
-
     const HOUSE_NAME = 'houseName';
 
     const SHORT_NAME = 'shortName';
@@ -134,6 +133,5 @@ class House extends ModelBase
     {
         $this->setProperty('copiedToHouse', $copiedToHouse);
     }
-
 
 }

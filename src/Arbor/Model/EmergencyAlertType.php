@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmergencyAlertType extends ModelBase
 {
-
     const NAME = 'name';
 
     const ACTIVE = 'active';
@@ -80,6 +79,5 @@ class EmergencyAlertType extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 
 }

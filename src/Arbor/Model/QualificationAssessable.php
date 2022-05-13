@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class QualificationAssessable extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -188,6 +187,5 @@ class QualificationAssessable extends ModelBase
     {
         $this->setProperty('centerAssessed', $centerAssessed);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentMetricSet extends ModelBase
 {
-
     const NAME = 'name';
 
     const IS_KEY_METRIC = 'isKeyMetric';
@@ -116,6 +115,5 @@ class AssessmentMetricSet extends ModelBase
     {
         $this->setProperty('upwardTrend', $upwardTrend);
     }
-
 
 }

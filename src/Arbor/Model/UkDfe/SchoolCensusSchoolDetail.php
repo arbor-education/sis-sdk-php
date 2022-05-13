@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolCensusSchoolDetail extends ModelBase
 {
-
     const SCHOOL_CENSUS = 'schoolCensus';
 
     const TEEN_MOTHER_PLACES = 'teenMotherPlaces';
@@ -281,6 +280,5 @@ class SchoolCensusSchoolDetail extends ModelBase
     {
         $this->setProperty('previousYearQualificationResultsJson', $previousYearQualificationResultsJson);
     }
-
 
 }

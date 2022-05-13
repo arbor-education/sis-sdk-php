@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PhysicalInterventionRecordTechnique extends ModelBase
 {
-
     const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
     const PHYSICAL_INTERVENTION_TECHNIQUE = 'physicalInterventionTechnique';
@@ -80,6 +79,5 @@ class PhysicalInterventionRecordTechnique extends ModelBase
     {
         $this->setProperty('physicalInterventionTechnique', $physicalInterventionTechnique);
     }
-
 
 }

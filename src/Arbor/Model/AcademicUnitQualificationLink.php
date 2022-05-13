@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitQualificationLink extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -134,6 +133,5 @@ class AcademicUnitQualificationLink extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 
 }

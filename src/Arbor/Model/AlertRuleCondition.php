@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AlertRuleCondition extends ModelBase
 {
-
     const ALERT_RULE = 'alertRule';
 
     const TRIGGER_FIELD = 'triggerField';
@@ -134,6 +133,5 @@ class AlertRuleCondition extends ModelBase
     {
         $this->setProperty('conditionResolver', $conditionResolver);
     }
-
 
 }

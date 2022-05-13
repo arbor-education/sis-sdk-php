@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class TargetJudgement extends ModelBase
 {
-
     const NAME = 'name';
 
     const COLOR = 'color';
@@ -116,6 +115,5 @@ class TargetJudgement extends ModelBase
     {
         $this->setProperty('order', $order);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InboundSmsMessage extends ModelBase
 {
-
     const MESSAGE_TYPE = 'messageType';
 
     const SENDER_NUMBER = 'senderNumber';
@@ -224,6 +223,5 @@ class InboundSmsMessage extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 
 }

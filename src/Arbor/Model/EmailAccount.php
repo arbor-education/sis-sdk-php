@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmailAccount extends ModelBase
 {
-
     const SERVER_TYPE = 'serverType';
 
     const SERVER_HOST = 'serverHost';
@@ -170,6 +169,5 @@ class EmailAccount extends ModelBase
     {
         $this->setProperty('owner', $owner);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class NewUserRequest extends ModelBase
 {
-
     const BUSINESS_ROLE = 'businessRole';
 
     const TITLE = 'title';
@@ -224,6 +223,5 @@ class NewUserRequest extends ModelBase
     {
         $this->setProperty('approversExist', $approversExist);
     }
-
 
 }

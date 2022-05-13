@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ProbationReview extends ModelBase
 {
-
     const PROBATION = 'probation';
 
     const REVIEW_DATE = 'reviewDate';
@@ -116,6 +115,5 @@ class ProbationReview extends ModelBase
     {
         $this->setProperty('reviewNotes', $reviewNotes);
     }
-
 
 }

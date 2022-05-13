@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ClubEligibility extends ModelBase
 {
-
     const CLUB = 'club';
 
     const ELIGIBLE = 'eligible';
@@ -80,6 +79,5 @@ class ClubEligibility extends ModelBase
     {
         $this->setProperty('eligible', $eligible);
     }
-
 
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitEnrolment extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const STUDENT = 'student';
@@ -206,6 +205,5 @@ class AcademicUnitEnrolment extends ModelBase
     {
         $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
     }
-
 
 }

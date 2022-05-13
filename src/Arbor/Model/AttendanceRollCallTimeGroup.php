@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AttendanceRollCallTimeGroup extends ModelBase
 {
-
     const ATTENDANCE_ROLL_CALL_TIME = 'attendanceRollCallTime';
 
     const STUDENT_GROUP = 'studentGroup';
@@ -80,6 +79,5 @@ class AttendanceRollCallTimeGroup extends ModelBase
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
-
 
 }

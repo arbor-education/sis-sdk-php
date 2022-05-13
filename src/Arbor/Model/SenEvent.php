@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SenEvent extends ModelBase
 {
-
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -188,6 +187,5 @@ class SenEvent extends ModelBase
     {
         $this->setProperty('senEventDescription', $senEventDescription);
     }
-
 
 }

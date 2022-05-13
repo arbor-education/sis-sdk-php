@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PersonTrainingCourse extends ModelBase
 {
-
     const TRAINING_COURSE = 'trainingCourse';
 
     const TRAINED_PERSON = 'trainedPerson';
@@ -98,6 +97,5 @@ class PersonTrainingCourse extends ModelBase
     {
         $this->setProperty('feeCosts', $feeCosts);
     }
-
 
 }

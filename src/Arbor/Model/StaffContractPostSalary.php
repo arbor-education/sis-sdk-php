@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StaffContractPostSalary extends ModelBase
 {
-
     const STAFF_CONTRACT_POST = 'staffContractPost';
 
     const GROSS_SALARY = 'grossSalary';
@@ -278,6 +277,5 @@ class StaffContractPostSalary extends ModelBase
     {
         $this->setProperty('safeguardedPeriodEndDate', $safeguardedPeriodEndDate);
     }
-
 
 }

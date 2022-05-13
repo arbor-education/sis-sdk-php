@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentDestinationType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -170,6 +169,5 @@ class StudentDestinationType extends ModelBase
     {
         $this->setProperty('linkedEntityType', $linkedEntityType);
     }
-
 
 }

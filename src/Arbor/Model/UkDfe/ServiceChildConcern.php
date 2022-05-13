@@ -10,7 +10,6 @@ use Arbor\Model\Student;
 
 class ServiceChildConcern extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const MOVE_CONCERN = 'moveConcern';
@@ -192,6 +191,5 @@ class ServiceChildConcern extends ModelBase
     {
         $this->setProperty('ctfImportJobStudent', $ctfImportJobStudent);
     }
-
 
 }

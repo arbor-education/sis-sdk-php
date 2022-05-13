@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AttainmentGroup extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,5 @@ class AttainmentGroup extends ModelBase
     {
         $this->setProperty('calculationClass', $calculationClass);
     }
-
 
 }
