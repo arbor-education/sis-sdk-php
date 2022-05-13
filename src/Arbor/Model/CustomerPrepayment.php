@@ -24,6 +24,8 @@ class CustomerPrepayment extends ModelBase
 
     const STRIPE_INCOMING_CARD_TRANSACTION = 'stripeIncomingCardTransaction';
 
+    const VOUCHER = 'voucher';
+
     const PREPAYMENT_AMOUNT = 'prepaymentAmount';
 
     const PREPAYMENT_DATETIME = 'prepaymentDatetime';
@@ -217,6 +219,22 @@ class CustomerPrepayment extends ModelBase
     public function setStripeIncomingCardTransaction(StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
     {
         $this->setProperty('stripeIncomingCardTransaction', $stripeIncomingCardTransaction);
+    }
+
+    /**
+     * @return Voucher
+     */
+    public function getVoucher()
+    {
+        return $this->getProperty('voucher');
+    }
+
+    /**
+     * @param Voucher $voucher
+     */
+    public function setVoucher(Voucher $voucher = null)
+    {
+        $this->setProperty('voucher', $voucher);
     }
 
     /**

@@ -38,6 +38,8 @@ class SchoolWorkforceCensusReturn extends ModelBase
 
     const IS_STAFF_CONTRACT_INFORMATION_EXCLUDED = 'isStaffContractInformationExcluded';
 
+    const SUBMITTED_DATETIME = 'submittedDatetime';
+
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN;
 
     /**
@@ -298,5 +300,21 @@ class SchoolWorkforceCensusReturn extends ModelBase
     public function setIsStaffContractInformationExcluded($isStaffContractInformationExcluded = null)
     {
         $this->setProperty('isStaffContractInformationExcluded', $isStaffContractInformationExcluded);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getSubmittedDatetime()
+    {
+        return $this->getProperty('submittedDatetime');
+    }
+
+    /**
+     * @param \DateTime $submittedDatetime
+     */
+    public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
+    {
+        $this->setProperty('submittedDatetime', $submittedDatetime);
     }
 }

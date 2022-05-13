@@ -18,6 +18,8 @@ class ProgressAssessmentBatch extends ModelBase
 
     const IS_TARGET_LOCKED = 'isTargetLocked';
 
+    const SHOW_RANK_ORDER = 'showRankOrder';
+
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
     /**
@@ -150,5 +152,21 @@ class ProgressAssessmentBatch extends ModelBase
     public function setIsTargetLocked($isTargetLocked = null)
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowRankOrder()
+    {
+        return $this->getProperty('showRankOrder');
+    }
+
+    /**
+     * @param bool $showRankOrder
+     */
+    public function setShowRankOrder($showRankOrder = null)
+    {
+        $this->setProperty('showRankOrder', $showRankOrder);
     }
 }

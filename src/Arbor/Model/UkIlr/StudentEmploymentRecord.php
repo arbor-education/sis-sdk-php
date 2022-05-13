@@ -10,7 +10,6 @@ use Arbor\Model\StudentEmploymentRecord;
 
 class StudentEmploymentRecord extends ModelBase
 {
-
     const BSI1 = 'bsi1';
 
     const BSI2 = 'bsi2';
@@ -156,6 +155,4 @@ class StudentEmploymentRecord extends ModelBase
     {
         $this->setProperty('madeRedundantStudentEmploymentRecord', $madeRedundantStudentEmploymentRecord);
     }
-
-
 }

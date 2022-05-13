@@ -16,8 +16,6 @@ class CovidTestingTest extends ModelBase
 
     const RESULT_DATETIME = 'resultDatetime';
 
-    const ADMINISTERED_BY_STAFF = 'administeredByStaff';
-
     const ADMINISTERED_BY = 'administeredBy';
 
     const ADMINISTERED_DATETIME = 'administeredDatetime';
@@ -138,22 +136,6 @@ class CovidTestingTest extends ModelBase
     public function setResultDatetime(\DateTime $resultDatetime = null)
     {
         $this->setProperty('resultDatetime', $resultDatetime);
-    }
-
-    /**
-     * @return Staff
-     */
-    public function getAdministeredByStaff()
-    {
-        return $this->getProperty('administeredByStaff');
-    }
-
-    /**
-     * @param Staff $administeredByStaff
-     */
-    public function setAdministeredByStaff(Staff $administeredByStaff = null)
-    {
-        $this->setProperty('administeredByStaff', $administeredByStaff);
     }
 
     /**

@@ -24,6 +24,8 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
 
     const TRANSACTION_DATE = 'transactionDate';
 
+    const RELATED_ENTITY = 'relatedEntity';
+
     protected $_resourceType = ResourceType::INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
 
     /**
@@ -204,5 +206,21 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     public function setTransactionDate(\DateTime $transactionDate = null)
     {
         $this->setProperty('transactionDate', $transactionDate);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getRelatedEntity()
+    {
+        return $this->getProperty('relatedEntity');
+    }
+
+    /**
+     * @param ModelBase $relatedEntity
+     */
+    public function setRelatedEntity(ModelBase $relatedEntity = null)
+    {
+        $this->setProperty('relatedEntity', $relatedEntity);
     }
 }
