@@ -169,5 +169,4 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     {
         $this->setProperty('grade', $grade);
     }
-
 }

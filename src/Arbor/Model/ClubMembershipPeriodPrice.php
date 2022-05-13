@@ -151,5 +151,4 @@ class ClubMembershipPeriodPrice extends ModelBase
     {
         $this->setProperty('variableContribution', $variableContribution);
     }
-
 }

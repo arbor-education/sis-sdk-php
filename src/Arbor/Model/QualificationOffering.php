@@ -79,5 +79,4 @@ class QualificationOffering extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

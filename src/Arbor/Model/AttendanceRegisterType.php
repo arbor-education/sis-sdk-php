@@ -169,5 +169,4 @@ class AttendanceRegisterType extends ModelBase
     {
         $this->setProperty('eventObjectTypeId', $eventObjectTypeId);
     }
-
 }

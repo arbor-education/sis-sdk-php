@@ -79,5 +79,4 @@ class AssessmentImportRow extends ModelBase
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
-
 }

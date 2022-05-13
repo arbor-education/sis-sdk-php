@@ -209,5 +209,4 @@ class SchoolCensusClass extends ModelBase
     {
         $this->setProperty('infantPupilExceptions', $infantPupilExceptions);
     }
-
 }

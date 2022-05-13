@@ -115,5 +115,4 @@ class ProbationReview extends ModelBase
     {
         $this->setProperty('reviewNotes', $reviewNotes);
     }
-
 }

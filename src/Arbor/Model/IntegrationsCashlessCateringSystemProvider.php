@@ -115,5 +115,4 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     {
         $this->setProperty('enabled', $enabled);
     }
-
 }

@@ -115,5 +115,4 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

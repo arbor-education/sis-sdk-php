@@ -169,5 +169,4 @@ class EmailSender extends ModelBase
     {
         $this->setProperty('senderIndex', $senderIndex);
     }
-
 }

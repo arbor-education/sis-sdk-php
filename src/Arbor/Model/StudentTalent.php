@@ -133,5 +133,4 @@ class StudentTalent extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

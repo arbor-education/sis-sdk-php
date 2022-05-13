@@ -97,5 +97,4 @@ class StudentLinkedRelationshipType extends ModelBase
     {
         $this->setProperty('isAcademic', $isAcademic);
     }
-
 }

@@ -205,5 +205,4 @@ class StaffAttendanceRecord extends ModelBase
     {
         $this->setProperty('staffAbsence', $staffAbsence);
     }
-
 }

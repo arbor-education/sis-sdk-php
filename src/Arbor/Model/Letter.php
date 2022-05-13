@@ -241,5 +241,4 @@ class Letter extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

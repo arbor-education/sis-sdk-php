@@ -205,5 +205,4 @@ class StudentAbsenceNote extends ModelBase
     {
         $this->setProperty('studentRepeatingAbsenceNote', $studentRepeatingAbsenceNote);
     }
-
 }

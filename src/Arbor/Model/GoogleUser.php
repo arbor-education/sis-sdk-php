@@ -133,5 +133,4 @@ class GoogleUser extends ModelBase
     {
         $this->setProperty('matchedPerson', $matchedPerson);
     }
-
 }

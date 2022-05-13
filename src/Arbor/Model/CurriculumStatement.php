@@ -223,5 +223,4 @@ class CurriculumStatement extends ModelBase
     {
         $this->setProperty('order', $order);
     }
-
 }

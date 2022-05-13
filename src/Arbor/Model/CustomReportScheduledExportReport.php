@@ -115,5 +115,4 @@ class CustomReportScheduledExportReport extends ModelBase
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }
-
 }

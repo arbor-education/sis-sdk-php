@@ -151,5 +151,4 @@ class DetentionSession extends ModelBase
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
-
 }

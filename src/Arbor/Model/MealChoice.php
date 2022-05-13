@@ -259,5 +259,4 @@ class MealChoice extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

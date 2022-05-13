@@ -64,5 +64,4 @@ class AcademicYearEnrolment extends ModelBase
     {
         $this->setProperty('learningSupportCost', $learningSupportCost);
     }
-
 }

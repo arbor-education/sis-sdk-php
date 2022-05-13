@@ -151,5 +151,4 @@ class IntakeSeason extends ModelBase
     {
         $this->setProperty('targetApplicationNumber', $targetApplicationNumber);
     }
-
 }

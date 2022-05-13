@@ -169,5 +169,4 @@ class AttendancePattern extends ModelBase
     {
         $this->setProperty('isAfternoonOnly', $isAfternoonOnly);
     }
-
 }

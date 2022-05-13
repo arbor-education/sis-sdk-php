@@ -151,5 +151,4 @@ class EmploymentRecordType extends ModelBase
     {
         $this->setProperty('employerRequired', $employerRequired);
     }
-
 }

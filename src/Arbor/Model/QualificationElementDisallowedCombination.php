@@ -79,5 +79,4 @@ class QualificationElementDisallowedCombination extends ModelBase
     {
         $this->setProperty('secondElement', $secondElement);
     }
-
 }

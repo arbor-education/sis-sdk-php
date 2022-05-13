@@ -241,5 +241,4 @@ class BoardingPattern extends ModelBase
     {
         $this->setProperty('accommodationRoom', $accommodationRoom);
     }
-
 }

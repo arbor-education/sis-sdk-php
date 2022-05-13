@@ -209,5 +209,4 @@ class UpnAssignment extends ModelBase
     {
         $this->setProperty('isTemporary', $isTemporary);
     }
-
 }

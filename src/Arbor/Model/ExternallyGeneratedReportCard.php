@@ -97,5 +97,4 @@ class ExternallyGeneratedReportCard extends ModelBase
     {
         $this->setProperty('student', $student);
     }
-
 }

@@ -133,5 +133,4 @@ class CheckClearanceLevel extends ModelBase
     {
         $this->setProperty('checkType', $checkType);
     }
-
 }

@@ -191,5 +191,4 @@ class UciAssignment extends ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
-
 }

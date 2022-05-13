@@ -115,5 +115,4 @@ class AssessmentImportItem extends ModelBase
     {
         $this->setProperty('importedDatetime', $importedDatetime);
     }
-
 }

@@ -115,5 +115,4 @@ class InterventionFundingSource extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

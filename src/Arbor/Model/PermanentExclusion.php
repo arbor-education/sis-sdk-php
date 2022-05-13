@@ -169,5 +169,4 @@ class PermanentExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

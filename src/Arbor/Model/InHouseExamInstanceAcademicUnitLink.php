@@ -79,5 +79,4 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
-
 }

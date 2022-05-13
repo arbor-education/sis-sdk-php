@@ -133,5 +133,4 @@ class EnabledFeature extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

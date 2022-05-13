@@ -244,5 +244,4 @@ class IlrReturn extends ModelBase
     {
         $this->setProperty('efaFunded', $efaFunded);
     }
-
 }

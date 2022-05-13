@@ -133,5 +133,4 @@ class TransportationMethod extends ModelBase
     {
         $this->setProperty('routeNumber', $routeNumber);
     }
-
 }

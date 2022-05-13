@@ -115,5 +115,4 @@ class Talent extends ModelBase
     {
         $this->setProperty('talentName', $talentName);
     }
-
 }

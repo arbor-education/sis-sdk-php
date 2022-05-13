@@ -97,5 +97,4 @@ class Site extends ModelBase
     {
         $this->setProperty('siteDisplayOrder', $siteDisplayOrder);
     }
-
 }

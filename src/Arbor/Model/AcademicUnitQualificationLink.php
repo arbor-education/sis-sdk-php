@@ -133,5 +133,4 @@ class AcademicUnitQualificationLink extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

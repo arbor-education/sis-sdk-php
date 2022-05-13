@@ -241,5 +241,4 @@ class BusinessRole extends ModelBase
     {
         $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
     }
-
 }

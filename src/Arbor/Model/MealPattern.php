@@ -313,5 +313,4 @@ class MealPattern extends ModelBase
     {
         $this->setProperty('groupMembership', $groupMembership);
     }
-
 }

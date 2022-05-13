@@ -115,5 +115,4 @@ class AcademicUnitDepartment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

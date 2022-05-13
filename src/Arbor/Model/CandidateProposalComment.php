@@ -115,5 +115,4 @@ class CandidateProposalComment extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 }

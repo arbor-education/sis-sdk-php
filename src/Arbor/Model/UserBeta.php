@@ -97,5 +97,4 @@ class UserBeta extends ModelBase
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
-
 }

@@ -97,5 +97,4 @@ class PersonNationality extends ModelBase
     {
         $this->setProperty('nationalityStatus', $nationalityStatus);
     }
-
 }

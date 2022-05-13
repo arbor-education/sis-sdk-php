@@ -100,5 +100,4 @@ class ProgrammeEnrolment extends ModelBase
     {
         $this->setProperty('programmeAimType', $programmeAimType);
     }
-
 }

@@ -79,5 +79,4 @@ class ObservationFrameworkStrand extends ModelBase
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
-
 }

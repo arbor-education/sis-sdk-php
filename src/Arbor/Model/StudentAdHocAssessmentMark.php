@@ -277,5 +277,4 @@ class StudentAdHocAssessmentMark extends ModelBase
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
-
 }

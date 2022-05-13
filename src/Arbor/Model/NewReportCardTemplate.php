@@ -205,5 +205,4 @@ class NewReportCardTemplate extends ModelBase
     {
         $this->setProperty('isCustom', $isCustom);
     }
-
 }

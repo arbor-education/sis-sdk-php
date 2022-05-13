@@ -79,5 +79,4 @@ class LessonPlan extends ModelBase
     {
         $this->setProperty('summary', $summary);
     }
-
 }

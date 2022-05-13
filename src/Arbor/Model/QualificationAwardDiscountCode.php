@@ -169,5 +169,4 @@ class QualificationAwardDiscountCode extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

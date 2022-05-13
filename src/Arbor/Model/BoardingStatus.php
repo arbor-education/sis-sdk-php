@@ -115,5 +115,4 @@ class BoardingStatus extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

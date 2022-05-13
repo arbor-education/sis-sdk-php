@@ -115,5 +115,4 @@ class CashPayout extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

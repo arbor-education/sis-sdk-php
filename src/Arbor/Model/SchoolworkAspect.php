@@ -169,5 +169,4 @@ class SchoolworkAspect extends ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
-
 }

@@ -100,5 +100,4 @@ class GuardianRelationshipType extends ModelBase
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }
-
 }

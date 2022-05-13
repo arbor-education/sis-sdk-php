@@ -241,5 +241,4 @@ class TimetableSlot extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
 }

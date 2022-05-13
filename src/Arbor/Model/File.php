@@ -187,5 +187,4 @@ class File extends ModelBase
     {
         $this->setProperty('compressed', $compressed);
     }
-
 }

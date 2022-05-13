@@ -97,5 +97,4 @@ class PositionBusinessRole extends ModelBase
     {
         $this->setProperty('ranking', $ranking);
     }
-
 }

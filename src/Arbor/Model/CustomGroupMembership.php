@@ -135,5 +135,4 @@ class CustomGroupMembership extends ModelBase
     {
         $this->setProperty('groupInstitution', $groupInstitution);
     }
-
 }

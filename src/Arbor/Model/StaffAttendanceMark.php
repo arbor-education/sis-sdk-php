@@ -349,5 +349,4 @@ class StaffAttendanceMark extends ModelBase
     {
         $this->setProperty('isPhysicalNotRequired', $isPhysicalNotRequired);
     }
-
 }

@@ -133,5 +133,4 @@ class Alert extends ModelBase
     {
         $this->setProperty('triggeredDatetime', $triggeredDatetime);
     }
-
 }

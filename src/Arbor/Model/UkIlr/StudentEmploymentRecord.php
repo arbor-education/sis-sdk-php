@@ -155,5 +155,4 @@ class StudentEmploymentRecord extends ModelBase
     {
         $this->setProperty('madeRedundantStudentEmploymentRecord', $madeRedundantStudentEmploymentRecord);
     }
-
 }

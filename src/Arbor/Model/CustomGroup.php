@@ -223,5 +223,4 @@ class CustomGroup extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

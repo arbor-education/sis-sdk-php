@@ -79,5 +79,4 @@ class InHouseCandidate extends ModelBase
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }
-
 }

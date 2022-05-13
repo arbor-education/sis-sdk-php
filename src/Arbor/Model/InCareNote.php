@@ -115,5 +115,4 @@ class InCareNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
-
 }

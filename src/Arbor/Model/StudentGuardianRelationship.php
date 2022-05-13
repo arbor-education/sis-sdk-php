@@ -223,5 +223,4 @@ class StudentGuardianRelationship extends ModelBase
     {
         $this->setProperty('accessNotes', $accessNotes);
     }
-
 }

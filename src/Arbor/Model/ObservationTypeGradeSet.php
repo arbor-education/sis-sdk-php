@@ -79,5 +79,4 @@ class ObservationTypeGradeSet extends ModelBase
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
-
 }

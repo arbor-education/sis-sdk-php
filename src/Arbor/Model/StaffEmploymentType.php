@@ -115,5 +115,4 @@ class StaffEmploymentType extends ModelBase
     {
         $this->setProperty('employmentTypeName', $employmentTypeName);
     }
-
 }

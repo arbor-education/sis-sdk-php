@@ -187,5 +187,4 @@ class KpiRange extends ModelBase
     {
         $this->setProperty('color', $color);
     }
-
 }

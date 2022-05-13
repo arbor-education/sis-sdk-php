@@ -187,5 +187,4 @@ class StandardizedAssessmentThreshold extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

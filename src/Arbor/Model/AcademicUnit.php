@@ -545,5 +545,4 @@ class AcademicUnit extends ModelBase
     {
         return $this->getCollectionProperty('timetableSlots');
     }
-
 }

@@ -97,5 +97,4 @@ class BehaviourTime extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

@@ -115,5 +115,4 @@ class ProgrammeLead extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

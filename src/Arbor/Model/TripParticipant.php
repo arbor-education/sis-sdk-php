@@ -133,5 +133,4 @@ class TripParticipant extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
 }

@@ -187,5 +187,4 @@ class AcademicYearEnrolment extends ModelBase
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
-
 }

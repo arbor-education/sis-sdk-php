@@ -115,5 +115,4 @@ class TargetJudgementRule extends ModelBase
     {
         $this->setProperty('amountUnit', $amountUnit);
     }
-
 }

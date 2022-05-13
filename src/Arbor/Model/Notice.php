@@ -97,5 +97,4 @@ class Notice extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 }

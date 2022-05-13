@@ -79,5 +79,4 @@ class CourtOrderParty extends ModelBase
     {
         $this->setProperty('party', $party);
     }
-
 }

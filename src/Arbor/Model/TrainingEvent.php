@@ -169,5 +169,4 @@ class TrainingEvent extends ModelBase
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }
-
 }

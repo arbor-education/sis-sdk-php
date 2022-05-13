@@ -97,5 +97,4 @@ class MarkApproval extends ModelBase
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }
-
 }

@@ -187,5 +187,4 @@ class CustomReport extends ModelBase
     {
         $this->setProperty('transient', $transient);
     }
-
 }

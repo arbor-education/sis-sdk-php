@@ -133,5 +133,4 @@ class Behaviour extends ModelBase
     {
         $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }
-
 }

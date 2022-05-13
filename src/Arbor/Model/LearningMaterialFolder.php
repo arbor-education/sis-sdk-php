@@ -79,5 +79,4 @@ class LearningMaterialFolder extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

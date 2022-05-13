@@ -115,5 +115,4 @@ class CustomGroupNotificationSetting extends ModelBase
     {
         $this->setProperty('sendEmail', $sendEmail);
     }
-
 }

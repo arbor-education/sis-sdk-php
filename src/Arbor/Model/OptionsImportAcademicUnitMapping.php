@@ -115,5 +115,4 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     {
         $this->setProperty('mappedAcademicUnit', $mappedAcademicUnit);
     }
-
 }

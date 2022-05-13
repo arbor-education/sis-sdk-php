@@ -154,5 +154,4 @@ class SchoolCensusPupilReconciliation extends ModelBase
     {
         $this->setProperty('fECollege', $fECollege);
     }
-
 }

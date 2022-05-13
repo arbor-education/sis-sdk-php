@@ -97,5 +97,4 @@ class IntakeSeasonGroup extends ModelBase
     {
         $this->setProperty('expectedAdmissionDate', $expectedAdmissionDate);
     }
-
 }

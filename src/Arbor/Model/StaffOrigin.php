@@ -115,5 +115,4 @@ class StaffOrigin extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

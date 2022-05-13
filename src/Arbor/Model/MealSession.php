@@ -205,5 +205,4 @@ class MealSession extends ModelBase
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
-
 }

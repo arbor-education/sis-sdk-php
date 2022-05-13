@@ -205,5 +205,4 @@ class CandidateAssessableEntry extends ModelBase
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
-
 }

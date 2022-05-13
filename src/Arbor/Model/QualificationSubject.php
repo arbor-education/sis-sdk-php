@@ -151,5 +151,4 @@ class QualificationSubject extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

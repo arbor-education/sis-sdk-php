@@ -115,5 +115,4 @@ class BursaryType extends ModelBase
     {
         $this->setProperty('allocatedAmount', $allocatedAmount);
     }
-
 }

@@ -151,5 +151,4 @@ class StudentEducationalHistory extends ModelBase
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
-
 }

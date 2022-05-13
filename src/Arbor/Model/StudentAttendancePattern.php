@@ -133,5 +133,4 @@ class StudentAttendancePattern extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

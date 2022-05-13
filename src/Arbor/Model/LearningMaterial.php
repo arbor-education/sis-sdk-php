@@ -169,5 +169,4 @@ class LearningMaterial extends ModelBase
     {
         $this->setProperty('authoredDatetime', $authoredDatetime);
     }
-
 }

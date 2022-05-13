@@ -115,5 +115,4 @@ class BehaviouralIncidentWitness extends ModelBase
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
-
 }

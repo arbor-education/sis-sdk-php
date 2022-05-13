@@ -115,5 +115,4 @@ class ApplicationWithdrawalReason extends ModelBase
     {
         $this->setProperty('applicationWithdrawalReasonName', $applicationWithdrawalReasonName);
     }
-
 }

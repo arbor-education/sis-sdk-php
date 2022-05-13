@@ -115,5 +115,4 @@ class ImmunizationType extends ModelBase
     {
         $this->setProperty('immunizationTypeName', $immunizationTypeName);
     }
-
 }

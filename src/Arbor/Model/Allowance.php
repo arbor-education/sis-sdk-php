@@ -79,5 +79,4 @@ class Allowance extends ModelBase
     {
         $this->setProperty('allowanceCode', $allowanceCode);
     }
-
 }

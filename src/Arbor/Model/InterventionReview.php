@@ -133,5 +133,4 @@ class InterventionReview extends ModelBase
     {
         $this->setProperty('recommendations', $recommendations);
     }
-
 }

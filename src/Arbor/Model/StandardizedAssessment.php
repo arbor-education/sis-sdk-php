@@ -169,5 +169,4 @@ class StandardizedAssessment extends ModelBase
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
-
 }

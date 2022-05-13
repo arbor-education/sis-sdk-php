@@ -79,5 +79,4 @@ class HouseAutomaticEnrolment extends ModelBase
     {
         $this->setProperty('trigger', $trigger);
     }
-
 }

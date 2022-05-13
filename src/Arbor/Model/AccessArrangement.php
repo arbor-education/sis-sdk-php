@@ -133,5 +133,4 @@ class AccessArrangement extends ModelBase
     {
         $this->setProperty('defaultExtraTimePercentage', $defaultExtraTimePercentage);
     }
-
 }

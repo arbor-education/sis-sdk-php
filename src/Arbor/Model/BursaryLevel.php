@@ -79,5 +79,4 @@ class BursaryLevel extends ModelBase
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
-
 }

@@ -79,5 +79,4 @@ class TimetablerImportResultError extends ModelBase
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
-
 }

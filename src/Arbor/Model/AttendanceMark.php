@@ -529,5 +529,4 @@ class AttendanceMark extends ModelBase
     {
         $this->setProperty('showInRegister', $showInRegister);
     }
-
 }

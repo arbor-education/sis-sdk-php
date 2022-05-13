@@ -115,5 +115,4 @@ class MedicalRelationshipType extends ModelBase
     {
         $this->setProperty('medicalRelationshipTypeName', $medicalRelationshipTypeName);
     }
-
 }

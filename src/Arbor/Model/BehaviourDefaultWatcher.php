@@ -97,5 +97,4 @@ class BehaviourDefaultWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
 }

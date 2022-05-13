@@ -82,5 +82,4 @@ class PupilPremiumRecipientType extends ModelBase
     {
         $this->setProperty('pupilPremiumType', $pupilPremiumType);
     }
-
 }

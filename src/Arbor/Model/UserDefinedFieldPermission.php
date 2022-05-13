@@ -115,5 +115,4 @@ class UserDefinedFieldPermission extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

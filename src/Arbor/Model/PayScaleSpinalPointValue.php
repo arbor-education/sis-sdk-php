@@ -115,5 +115,4 @@ class PayScaleSpinalPointValue extends ModelBase
     {
         $this->setProperty('grossSalary', $grossSalary);
     }
-
 }

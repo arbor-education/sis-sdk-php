@@ -115,5 +115,4 @@ class RegistrationFormMembership extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

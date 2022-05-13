@@ -100,5 +100,4 @@ class Student extends ModelBase
     {
         $this->setProperty('primaryLlddAndHealthProblem', $primaryLlddAndHealthProblem);
     }
-
 }

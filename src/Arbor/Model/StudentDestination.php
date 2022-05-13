@@ -151,5 +151,4 @@ class StudentDestination extends ModelBase
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }
-
 }

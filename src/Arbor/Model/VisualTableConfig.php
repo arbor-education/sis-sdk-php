@@ -133,5 +133,4 @@ class VisualTableConfig extends ModelBase
     {
         $this->setProperty('config', $config);
     }
-
 }

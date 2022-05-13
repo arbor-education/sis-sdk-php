@@ -169,5 +169,4 @@ class OutgoingEntityTransfer extends ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
-
 }

@@ -115,5 +115,4 @@ class CurriculumTier extends ModelBase
     {
         $this->setProperty('curriculumTierName', $curriculumTierName);
     }
-
 }

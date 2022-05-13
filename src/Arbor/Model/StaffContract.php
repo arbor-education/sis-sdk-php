@@ -295,5 +295,4 @@ class StaffContract extends ModelBase
     {
         $this->setProperty('lastPayReviewDate', $lastPayReviewDate);
     }
-
 }

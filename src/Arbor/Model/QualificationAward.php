@@ -493,5 +493,4 @@ class QualificationAward extends ModelBase
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }
-
 }

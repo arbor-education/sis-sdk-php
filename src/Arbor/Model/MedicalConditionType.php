@@ -133,5 +133,4 @@ class MedicalConditionType extends ModelBase
     {
         $this->setProperty('isAllergy', $isAllergy);
     }
-
 }

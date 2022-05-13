@@ -97,5 +97,4 @@ class CandidateProposal extends ModelBase
     {
         $this->setProperty('suggestedDatetime', $suggestedDatetime);
     }
-
 }

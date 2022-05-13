@@ -205,5 +205,4 @@ class AcademicUnitEnrolment extends ModelBase
     {
         $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
     }
-
 }

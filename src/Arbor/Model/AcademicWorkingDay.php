@@ -151,5 +151,4 @@ class AcademicWorkingDay extends ModelBase
     {
         $this->setProperty('dayOfCalendarWeek', $dayOfCalendarWeek);
     }
-
 }

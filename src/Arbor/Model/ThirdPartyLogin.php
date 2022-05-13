@@ -151,5 +151,4 @@ class ThirdPartyLogin extends ModelBase
     {
         $this->setProperty('person', $person);
     }
-
 }

@@ -133,5 +133,4 @@ class CandidateRegistration extends ModelBase
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }
-
 }

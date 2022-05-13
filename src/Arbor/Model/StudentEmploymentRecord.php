@@ -169,5 +169,4 @@ class StudentEmploymentRecord extends ModelBase
     {
         $this->setProperty('employmentRecordType', $employmentRecordType);
     }
-
 }

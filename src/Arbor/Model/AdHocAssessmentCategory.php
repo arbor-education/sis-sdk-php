@@ -61,5 +61,4 @@ class AdHocAssessmentCategory extends ModelBase
     {
         $this->setProperty('categoryName', $categoryName);
     }
-
 }

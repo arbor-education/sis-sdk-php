@@ -169,5 +169,4 @@ class CustomReportScope extends ModelBase
     {
         $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }
-
 }

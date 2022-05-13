@@ -115,5 +115,4 @@ class ClubSessionIntervalPrice extends ModelBase
     {
         $this->setProperty('vatRate', $vatRate);
     }
-
 }

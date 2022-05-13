@@ -100,5 +100,4 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
-
 }

@@ -97,5 +97,4 @@ class CustomGroupNotificationRecipient extends ModelBase
     {
         $this->setProperty('staffType', $staffType);
     }
-
 }

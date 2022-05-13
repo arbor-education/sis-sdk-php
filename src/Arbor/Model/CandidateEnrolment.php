@@ -115,5 +115,4 @@ class CandidateEnrolment extends ModelBase
     {
         $this->setProperty('enrolmentConfirmedDatetime', $enrolmentConfirmedDatetime);
     }
-
 }

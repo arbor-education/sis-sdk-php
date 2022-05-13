@@ -79,5 +79,4 @@ class MealProvisionPriceCategoryGroup extends ModelBase
     {
         $this->setProperty('group', $group);
     }
-
 }

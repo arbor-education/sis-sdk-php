@@ -259,5 +259,4 @@ class ReportCardBatchCurriculum extends ModelBase
     {
         $this->setProperty('summativeGradeAchievementLevelSet', $summativeGradeAchievementLevelSet);
     }
-
 }

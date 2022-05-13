@@ -226,5 +226,4 @@ class ChildCarePlace extends ModelBase
     {
         $this->setProperty('childCareWeeksOpen', $childCareWeeksOpen);
     }
-
 }

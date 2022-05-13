@@ -331,5 +331,4 @@ class Intervention extends ModelBase
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }
-
 }

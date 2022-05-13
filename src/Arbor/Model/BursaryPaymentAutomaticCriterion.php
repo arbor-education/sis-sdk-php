@@ -205,5 +205,4 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

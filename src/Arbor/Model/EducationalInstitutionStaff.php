@@ -97,5 +97,4 @@ class EducationalInstitutionStaff extends ModelBase
     {
         $this->setProperty('position', $position);
     }
-
 }

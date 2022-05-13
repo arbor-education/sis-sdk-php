@@ -82,5 +82,4 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty('hasResourcedProvision', $hasResourcedProvision);
     }
-
 }

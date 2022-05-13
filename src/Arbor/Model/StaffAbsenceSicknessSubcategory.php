@@ -133,5 +133,4 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

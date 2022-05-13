@@ -115,5 +115,4 @@ class ProgrammeWithdrawalReason extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

@@ -151,5 +151,4 @@ class AcademicUnitEnrolmentImport extends ModelBase
     {
         $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }
-
 }

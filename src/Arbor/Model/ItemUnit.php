@@ -115,5 +115,4 @@ class ItemUnit extends ModelBase
     {
         $this->setProperty('itemUnitName', $itemUnitName);
     }
-
 }

@@ -79,5 +79,4 @@ class AcademicUnitMarksheetCustomReport extends ModelBase
     {
         $this->setProperty('customReport', $customReport);
     }
-
 }

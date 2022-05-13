@@ -115,5 +115,4 @@ class TimetableSlotStaff extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

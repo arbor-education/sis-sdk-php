@@ -169,5 +169,4 @@ class OptionsImportResult extends ModelBase
     {
         $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }
-
 }

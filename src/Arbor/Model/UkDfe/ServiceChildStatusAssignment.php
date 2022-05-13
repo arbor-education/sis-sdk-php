@@ -101,5 +101,4 @@ class ServiceChildStatusAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

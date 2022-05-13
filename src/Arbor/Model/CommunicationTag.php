@@ -97,5 +97,4 @@ class CommunicationTag extends ModelBase
     {
         $this->setProperty('isShared', $isShared);
     }
-
 }

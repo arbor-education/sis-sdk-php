@@ -133,5 +133,4 @@ class PhysicalInterventionRecord extends ModelBase
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
-
 }

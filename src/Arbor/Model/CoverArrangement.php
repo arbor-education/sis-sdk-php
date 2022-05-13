@@ -151,5 +151,4 @@ class CoverArrangement extends ModelBase
     {
         $this->setProperty('notAgreedDatetime', $notAgreedDatetime);
     }
-
 }

@@ -79,5 +79,4 @@ class QualificationLearningUnitAssessable extends ModelBase
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
-
 }

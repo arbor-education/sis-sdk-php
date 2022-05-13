@@ -79,5 +79,4 @@ class ThirdPartySite extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

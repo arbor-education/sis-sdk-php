@@ -79,5 +79,4 @@ class TripEligibility extends ModelBase
     {
         $this->setProperty('eligibile', $eligibile);
     }
-
 }

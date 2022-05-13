@@ -169,5 +169,4 @@ class CovidTestingTest extends ModelBase
     {
         $this->setProperty('administeredDatetime', $administeredDatetime);
     }
-
 }

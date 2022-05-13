@@ -79,5 +79,4 @@ class DataSource extends ModelBase
     {
         $this->setProperty('provider', $provider);
     }
-
 }

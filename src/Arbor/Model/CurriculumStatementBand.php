@@ -115,5 +115,4 @@ class CurriculumStatementBand extends ModelBase
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
-
 }

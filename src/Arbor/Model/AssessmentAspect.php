@@ -241,5 +241,4 @@ class AssessmentAspect extends ModelBase
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }
-
 }

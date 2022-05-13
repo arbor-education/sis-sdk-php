@@ -239,5 +239,4 @@ class RegistrationForm extends ModelBase
     {
         return $this->getCollectionProperty('studentMemberships');
     }
-
 }

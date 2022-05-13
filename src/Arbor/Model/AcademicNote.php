@@ -133,5 +133,4 @@ class AcademicNote extends ModelBase
     {
         $this->setProperty('noteCreatedDatetime', $noteCreatedDatetime);
     }
-
 }

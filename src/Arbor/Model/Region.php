@@ -133,5 +133,4 @@ class Region extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

@@ -97,5 +97,4 @@ class CustomReportScheduledExportRecipient extends ModelBase
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
-
 }

@@ -277,5 +277,4 @@ class IncomingCardTransaction extends ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
-
 }

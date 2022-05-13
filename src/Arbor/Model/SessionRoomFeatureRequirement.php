@@ -79,5 +79,4 @@ class SessionRoomFeatureRequirement extends ModelBase
     {
         $this->setProperty('roomFeature', $roomFeature);
     }
-
 }

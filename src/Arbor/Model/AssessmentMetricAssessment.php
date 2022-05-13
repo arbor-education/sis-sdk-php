@@ -97,5 +97,4 @@ class AssessmentMetricAssessment extends ModelBase
     {
         $this->setProperty('assessmentMetricAssessmentBatch', $assessmentMetricAssessmentBatch);
     }
-
 }

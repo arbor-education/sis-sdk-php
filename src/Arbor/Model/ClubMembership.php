@@ -241,5 +241,4 @@ class ClubMembership extends ModelBase
     {
         $this->setProperty('disabledDatetime', $disabledDatetime);
     }
-
 }

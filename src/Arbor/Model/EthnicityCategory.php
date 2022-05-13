@@ -115,5 +115,4 @@ class EthnicityCategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

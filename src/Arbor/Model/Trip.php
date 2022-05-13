@@ -331,5 +331,4 @@ class Trip extends ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
-
 }

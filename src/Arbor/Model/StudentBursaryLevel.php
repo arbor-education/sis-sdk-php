@@ -133,5 +133,4 @@ class StudentBursaryLevel extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

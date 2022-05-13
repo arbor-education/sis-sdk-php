@@ -241,5 +241,4 @@ class PersonCheck extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 }

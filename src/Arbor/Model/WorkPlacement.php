@@ -169,5 +169,4 @@ class WorkPlacement extends ModelBase
     {
         $this->setProperty('programmeEnrolment', $programmeEnrolment);
     }
-
 }

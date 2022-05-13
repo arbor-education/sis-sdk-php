@@ -317,5 +317,4 @@ class SchoolWorkforceCensusReturn extends ModelBase
     {
         $this->setProperty('submittedDatetime', $submittedDatetime);
     }
-
 }

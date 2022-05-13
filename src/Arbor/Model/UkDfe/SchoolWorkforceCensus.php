@@ -173,5 +173,4 @@ class SchoolWorkforceCensus extends ModelBase
     {
         $this->setProperty('censusSubmissionDeadlineDate', $censusSubmissionDeadlineDate);
     }
-
 }

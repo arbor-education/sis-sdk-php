@@ -61,5 +61,4 @@ class AlertRule extends ModelBase
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }
-
 }

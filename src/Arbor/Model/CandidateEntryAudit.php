@@ -97,5 +97,4 @@ class CandidateEntryAudit extends ModelBase
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }
-
 }

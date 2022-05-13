@@ -169,5 +169,4 @@ class EmailAddressImport extends ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
-
 }

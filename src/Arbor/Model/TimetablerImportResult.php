@@ -151,5 +151,4 @@ class TimetablerImportResult extends ModelBase
     {
         $this->setProperty('fileHash', $fileHash);
     }
-
 }

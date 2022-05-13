@@ -133,5 +133,4 @@ class MealSitting extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

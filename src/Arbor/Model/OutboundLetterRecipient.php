@@ -133,5 +133,4 @@ class OutboundLetterRecipient extends ModelBase
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }
-
 }

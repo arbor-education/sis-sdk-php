@@ -187,5 +187,4 @@ class SenEvent extends ModelBase
     {
         $this->setProperty('senEventDescription', $senEventDescription);
     }
-
 }

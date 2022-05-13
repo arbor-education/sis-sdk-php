@@ -115,5 +115,4 @@ class StaffContractPostEndReason extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

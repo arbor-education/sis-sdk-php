@@ -169,5 +169,4 @@ class TeachingAssistantAllocation extends ModelBase
     {
         $this->setProperty('allocatedTo', $allocatedTo);
     }
-
 }

@@ -136,5 +136,4 @@ class OfstedGrade extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

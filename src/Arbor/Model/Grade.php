@@ -313,5 +313,4 @@ class Grade extends ModelBase
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }
-
 }

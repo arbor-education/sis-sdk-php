@@ -151,5 +151,4 @@ class AdHocBursaryPayment extends ModelBase
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
-
 }

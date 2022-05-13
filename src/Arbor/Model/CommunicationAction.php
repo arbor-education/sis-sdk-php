@@ -115,5 +115,4 @@ class CommunicationAction extends ModelBase
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }
-
 }

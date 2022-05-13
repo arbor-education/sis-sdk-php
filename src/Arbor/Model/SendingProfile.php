@@ -115,5 +115,4 @@ class SendingProfile extends ModelBase
     {
         $this->setProperty('permittedSender', $permittedSender);
     }
-
 }

@@ -79,5 +79,4 @@ class QualificationElementAvailability extends ModelBase
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
-
 }

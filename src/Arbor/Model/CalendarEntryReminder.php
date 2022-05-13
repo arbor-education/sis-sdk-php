@@ -79,5 +79,4 @@ class CalendarEntryReminder extends ModelBase
     {
         $this->setProperty('reminderSentDatetime', $reminderSentDatetime);
     }
-
 }

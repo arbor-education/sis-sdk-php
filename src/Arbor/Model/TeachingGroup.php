@@ -205,5 +205,4 @@ class TeachingGroup extends ModelBase
     {
         $this->setProperty('promotedEnrolmentEndDate', $promotedEnrolmentEndDate);
     }
-
 }

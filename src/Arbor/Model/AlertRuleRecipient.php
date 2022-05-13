@@ -133,5 +133,4 @@ class AlertRuleRecipient extends ModelBase
     {
         $this->setProperty('recipientResolver', $recipientResolver);
     }
-
 }

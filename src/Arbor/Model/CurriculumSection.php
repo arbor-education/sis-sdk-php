@@ -169,5 +169,4 @@ class CurriculumSection extends ModelBase
     {
         $this->setProperty('weighting', $weighting);
     }
-
 }

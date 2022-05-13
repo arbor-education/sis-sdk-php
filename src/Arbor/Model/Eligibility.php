@@ -115,5 +115,4 @@ class Eligibility extends ModelBase
     {
         $this->setProperty('eligibilityName', $eligibilityName);
     }
-
 }

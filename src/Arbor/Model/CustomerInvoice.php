@@ -277,5 +277,4 @@ class CustomerInvoice extends ModelBase
     {
         $this->setProperty('reissuedDate', $reissuedDate);
     }
-
 }

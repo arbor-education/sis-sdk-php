@@ -187,5 +187,4 @@ class InterventionFilter extends ModelBase
     {
         $this->setProperty('isOutcome', $isOutcome);
     }
-
 }

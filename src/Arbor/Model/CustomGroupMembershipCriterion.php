@@ -151,5 +151,4 @@ class CustomGroupMembershipCriterion extends ModelBase
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
-
 }

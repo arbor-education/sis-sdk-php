@@ -187,5 +187,4 @@ class AttendanceRollCallRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
-
 }

@@ -223,5 +223,4 @@ class PostalAddress extends ModelBase
     {
         $this->setProperty('geocodeType', $geocodeType);
     }
-
 }

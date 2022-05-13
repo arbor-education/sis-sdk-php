@@ -133,5 +133,4 @@ class StandardizedAssessmentBatch extends ModelBase
     {
         $this->setProperty('senStudentsOnly', $senStudentsOnly);
     }
-
 }

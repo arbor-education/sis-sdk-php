@@ -241,5 +241,4 @@ class EmailDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
 }

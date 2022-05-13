@@ -151,5 +151,4 @@ class TelephoneNumber extends ModelBase
     {
         $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }
-
 }

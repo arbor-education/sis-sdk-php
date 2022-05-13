@@ -187,5 +187,4 @@ class AssessmentDerivation extends ModelBase
     {
         $this->setProperty('calculatorClass', $calculatorClass);
     }
-
 }

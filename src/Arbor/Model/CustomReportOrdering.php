@@ -169,5 +169,4 @@ class CustomReportOrdering extends ModelBase
     {
         $this->setProperty('customReportColumn', $customReportColumn);
     }
-
 }

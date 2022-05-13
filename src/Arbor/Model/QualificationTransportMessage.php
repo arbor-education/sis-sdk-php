@@ -187,5 +187,4 @@ class QualificationTransportMessage extends ModelBase
     {
         $this->setProperty('rawContent', $rawContent);
     }
-
 }

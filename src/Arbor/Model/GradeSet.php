@@ -187,5 +187,4 @@ class GradeSet extends ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
-
 }

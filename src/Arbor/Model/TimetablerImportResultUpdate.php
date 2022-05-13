@@ -79,5 +79,4 @@ class TimetablerImportResultUpdate extends ModelBase
     {
         $this->setProperty('updated', $updated);
     }
-
 }

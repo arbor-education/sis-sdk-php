@@ -97,5 +97,4 @@ class InHouseExamInstance extends ModelBase
     {
         $this->setProperty('expectedEndDatetime', $expectedEndDatetime);
     }
-
 }

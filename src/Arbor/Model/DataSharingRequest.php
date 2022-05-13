@@ -151,5 +151,4 @@ class DataSharingRequest extends ModelBase
     {
         $this->setProperty('statusUpdatedDatetime', $statusUpdatedDatetime);
     }
-
 }

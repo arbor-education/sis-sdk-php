@@ -115,5 +115,4 @@ class StaffLeavingReason extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

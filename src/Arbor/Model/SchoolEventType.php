@@ -115,5 +115,4 @@ class SchoolEventType extends ModelBase
     {
         $this->setProperty('schoolEventTypeName', $schoolEventTypeName);
     }
-
 }

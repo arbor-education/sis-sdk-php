@@ -151,5 +151,4 @@ class ProgrammeClassification extends ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
-
 }

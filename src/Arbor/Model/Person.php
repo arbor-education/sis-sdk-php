@@ -259,5 +259,4 @@ class Person extends ModelBase
     {
         $this->setProperty('dateOfDeath', $dateOfDeath);
     }
-
 }

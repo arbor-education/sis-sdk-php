@@ -97,5 +97,4 @@ class PhantomModel extends ModelBase
     {
         $this->setProperty('modelCreatedDatetime', $modelCreatedDatetime);
     }
-
 }

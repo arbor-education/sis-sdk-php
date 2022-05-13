@@ -119,5 +119,4 @@ class SchoolLedTutoringHour extends ModelBase
     {
         $this->setProperty('hours', $hours);
     }
-
 }

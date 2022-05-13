@@ -188,5 +188,4 @@ class PayScale extends ModelBase
     {
         $this->setProperty('payScaleCategory', $payScaleCategory);
     }
-
 }

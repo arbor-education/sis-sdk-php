@@ -79,5 +79,4 @@ class PhysicalInterventionTechnique extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

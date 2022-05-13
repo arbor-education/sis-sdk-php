@@ -151,5 +151,4 @@ class PaymentProvider extends ModelBase
     {
         $this->setProperty('minimumTransactionAmount', $minimumTransactionAmount);
     }
-
 }

@@ -187,5 +187,4 @@ class AssessmentDataCollectionItem extends ModelBase
     {
         $this->setProperty('completionDenominator', $completionDenominator);
     }
-
 }

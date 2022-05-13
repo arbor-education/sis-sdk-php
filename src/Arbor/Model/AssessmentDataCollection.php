@@ -115,5 +115,4 @@ class AssessmentDataCollection extends ModelBase
     {
         $this->setProperty('collectionRangeEndDate', $collectionRangeEndDate);
     }
-
 }

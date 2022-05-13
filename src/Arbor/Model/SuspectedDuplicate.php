@@ -241,5 +241,4 @@ class SuspectedDuplicate extends ModelBase
     {
         $this->setProperty('resolution', $resolution);
     }
-
 }

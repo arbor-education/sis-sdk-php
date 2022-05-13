@@ -133,5 +133,4 @@ class EmailReference extends ModelBase
     {
         $this->setProperty('referenceIndex', $referenceIndex);
     }
-
 }

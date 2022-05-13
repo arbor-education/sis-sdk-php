@@ -151,5 +151,4 @@ class Religion extends ModelBase
     {
         $this->setProperty('d00195', $d00195);
     }
-
 }

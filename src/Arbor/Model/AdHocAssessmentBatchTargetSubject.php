@@ -79,5 +79,4 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     {
         $this->setProperty('subject', $subject);
     }
-
 }

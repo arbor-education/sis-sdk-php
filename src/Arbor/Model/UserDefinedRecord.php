@@ -97,5 +97,4 @@ class UserDefinedRecord extends ModelBase
     {
         $this->setProperty('value', $value);
     }
-
 }

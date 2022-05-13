@@ -79,5 +79,4 @@ class EmailAccountAccessPermission extends ModelBase
     {
         $this->setProperty('businessRole', $businessRole);
     }
-
 }

@@ -64,5 +64,4 @@ class ExclusionReason extends ModelBase
     {
         $this->setProperty('d00024', $d00024);
     }
-
 }

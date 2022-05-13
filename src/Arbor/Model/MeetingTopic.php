@@ -79,5 +79,4 @@ class MeetingTopic extends ModelBase
     {
         $this->setProperty('topic', $topic);
     }
-
 }

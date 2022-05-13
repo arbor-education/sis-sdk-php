@@ -187,5 +187,4 @@ class StudentCurriculumEvidence extends ModelBase
     {
         $this->setProperty('evidence', $evidence);
     }
-
 }

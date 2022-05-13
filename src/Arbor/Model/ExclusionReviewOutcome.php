@@ -169,5 +169,4 @@ class ExclusionReviewOutcome extends ModelBase
     {
         $this->setProperty('isStudentReinstated', $isStudentReinstated);
     }
-
 }

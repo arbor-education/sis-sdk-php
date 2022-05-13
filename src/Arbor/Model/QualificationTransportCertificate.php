@@ -169,5 +169,4 @@ class QualificationTransportCertificate extends ModelBase
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }
-
 }

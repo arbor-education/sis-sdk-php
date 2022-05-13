@@ -79,5 +79,4 @@ class BehaviouralIncidentWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
 }

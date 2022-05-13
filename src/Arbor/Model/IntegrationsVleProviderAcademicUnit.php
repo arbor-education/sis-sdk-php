@@ -61,5 +61,4 @@ class IntegrationsVleProviderAcademicUnit extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
-
 }

@@ -115,5 +115,4 @@ class NationalityStatus extends ModelBase
     {
         $this->setProperty('nationalityStatus', $nationalityStatus);
     }
-
 }

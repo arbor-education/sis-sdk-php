@@ -169,5 +169,4 @@ class CustomerPaymentRefund extends ModelBase
     {
         $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }
-
 }

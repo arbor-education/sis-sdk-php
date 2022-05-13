@@ -79,5 +79,4 @@ class AttendanceRegisterTypeMark extends ModelBase
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
-
 }

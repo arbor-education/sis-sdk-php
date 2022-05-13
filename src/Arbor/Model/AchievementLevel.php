@@ -241,5 +241,4 @@ class AchievementLevel extends ModelBase
     {
         $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
-
 }

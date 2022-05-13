@@ -115,5 +115,4 @@ class VisionTest extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

@@ -187,5 +187,4 @@ class SenStatus extends ModelBase
     {
         $this->setProperty('d00229', $d00229);
     }
-
 }

@@ -493,5 +493,4 @@ class NewReportCardBatch extends ModelBase
     {
         $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }
-
 }

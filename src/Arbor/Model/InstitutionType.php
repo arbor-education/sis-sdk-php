@@ -115,5 +115,4 @@ class InstitutionType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

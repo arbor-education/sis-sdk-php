@@ -151,5 +151,4 @@ class RoomChangeRequirement extends ModelBase
     {
         $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
-
 }

@@ -385,5 +385,4 @@ class AcademicCalendarDate extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

@@ -169,5 +169,4 @@ class IncomingDirectDebitAgreement extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

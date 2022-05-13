@@ -151,5 +151,4 @@ class OutboundLetter extends ModelBase
     {
         $this->setProperty('actionRequiredDatetime', $actionRequiredDatetime);
     }
-
 }

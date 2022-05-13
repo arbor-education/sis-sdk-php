@@ -79,5 +79,4 @@ class Employer extends ModelBase
     {
         $this->setProperty('identifier', $identifier);
     }
-
 }

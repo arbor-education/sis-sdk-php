@@ -64,5 +64,4 @@ class PermanentExclusion extends ModelBase
     {
         $this->setProperty('excludeFromSchoolCensus', $excludeFromSchoolCensus);
     }
-
 }

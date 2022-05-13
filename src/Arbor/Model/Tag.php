@@ -79,5 +79,4 @@ class Tag extends ModelBase
     {
         $this->setProperty('tagIdentifier', $tagIdentifier);
     }
-
 }

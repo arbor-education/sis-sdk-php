@@ -61,5 +61,4 @@ class TripLocation extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

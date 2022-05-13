@@ -151,5 +151,4 @@ class StudentCurriculumAchievement extends ModelBase
     {
         $this->setProperty('achievementDate', $achievementDate);
     }
-
 }

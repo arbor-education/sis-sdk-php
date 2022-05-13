@@ -79,5 +79,4 @@ class AssessmentImportError extends ModelBase
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
-
 }

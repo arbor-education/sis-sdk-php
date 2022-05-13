@@ -259,5 +259,4 @@ class UsageLogEntry extends ModelBase
     {
         $this->setProperty('userAgent', $userAgent);
     }
-
 }

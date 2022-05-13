@@ -115,5 +115,4 @@ class DepartmentResponsibility extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

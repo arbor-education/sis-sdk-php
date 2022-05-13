@@ -169,5 +169,4 @@ class QualificationCenterAssessedOutcome extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

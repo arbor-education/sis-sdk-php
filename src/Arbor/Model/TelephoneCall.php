@@ -277,5 +277,4 @@ class TelephoneCall extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

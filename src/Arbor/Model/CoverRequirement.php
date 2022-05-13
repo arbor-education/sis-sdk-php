@@ -151,5 +151,4 @@ class CoverRequirement extends ModelBase
     {
         $this->setProperty('coverNotRequiredDatetime', $coverNotRequiredDatetime);
     }
-
 }

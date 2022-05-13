@@ -79,5 +79,4 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }
-
 }

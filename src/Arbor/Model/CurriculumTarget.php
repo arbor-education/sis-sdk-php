@@ -115,5 +115,4 @@ class CurriculumTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
 }

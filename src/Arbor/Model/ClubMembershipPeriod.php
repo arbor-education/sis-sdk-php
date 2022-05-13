@@ -169,5 +169,4 @@ class ClubMembershipPeriod extends ModelBase
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
-
 }

@@ -223,5 +223,4 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     {
         $this->setProperty('attendanceMarks', $attendanceMarks);
     }
-
 }

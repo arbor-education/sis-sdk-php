@@ -115,5 +115,4 @@ class AcademicLevelTutor extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

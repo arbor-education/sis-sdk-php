@@ -223,5 +223,4 @@ class InboundSmsMessage extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

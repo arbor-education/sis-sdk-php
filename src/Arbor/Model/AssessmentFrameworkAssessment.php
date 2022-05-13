@@ -97,5 +97,4 @@ class AssessmentFrameworkAssessment extends ModelBase
     {
         $this->setProperty('setupCompleted', $setupCompleted);
     }
-
 }

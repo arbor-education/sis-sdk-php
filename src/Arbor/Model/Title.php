@@ -151,5 +151,4 @@ class Title extends ModelBase
     {
         $this->setProperty('isFemale', $isFemale);
     }
-
 }

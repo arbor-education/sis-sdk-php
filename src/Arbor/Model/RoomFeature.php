@@ -79,5 +79,4 @@ class RoomFeature extends ModelBase
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }
-
 }

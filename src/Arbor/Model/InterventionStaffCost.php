@@ -151,5 +151,4 @@ class InterventionStaffCost extends ModelBase
     {
         $this->setProperty('minimumCharge', $minimumCharge);
     }
-
 }

@@ -115,5 +115,4 @@ class NewStudentReportCard extends ModelBase
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
-
 }

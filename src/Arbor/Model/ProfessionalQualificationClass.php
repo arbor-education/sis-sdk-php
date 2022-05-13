@@ -133,5 +133,4 @@ class ProfessionalQualificationClass extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

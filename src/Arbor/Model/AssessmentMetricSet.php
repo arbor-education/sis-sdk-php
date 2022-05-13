@@ -115,5 +115,4 @@ class AssessmentMetricSet extends ModelBase
     {
         $this->setProperty('upwardTrend', $upwardTrend);
     }
-
 }

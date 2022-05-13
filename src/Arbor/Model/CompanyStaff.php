@@ -97,5 +97,4 @@ class CompanyStaff extends ModelBase
     {
         $this->setProperty('position', $position);
     }
-
 }

@@ -69,5 +69,4 @@ class AcademicProgramme extends ModelBase
     {
         return $this->getCollectionProperty('instances');
     }
-
 }

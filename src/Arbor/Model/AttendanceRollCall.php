@@ -169,5 +169,4 @@ class AttendanceRollCall extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

@@ -115,5 +115,4 @@ class InternalExclusionReason extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

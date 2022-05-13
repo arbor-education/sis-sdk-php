@@ -79,5 +79,4 @@ class ProgressAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
 }

@@ -115,5 +115,4 @@ class BehaviouralNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
-
 }

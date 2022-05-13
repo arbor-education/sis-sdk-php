@@ -151,5 +151,4 @@ class SenNeed extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

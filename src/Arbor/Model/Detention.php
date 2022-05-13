@@ -295,5 +295,4 @@ class Detention extends ModelBase
     {
         $this->setProperty('event', $event);
     }
-
 }

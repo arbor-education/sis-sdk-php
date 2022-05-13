@@ -118,5 +118,4 @@ class Ethnicity extends ModelBase
     {
         $this->setProperty('d00250', $d00250);
     }
-
 }

@@ -133,5 +133,4 @@ class GuardianConsultation extends ModelBase
     {
         $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
-
 }

@@ -151,5 +151,4 @@ class SiteOperatingPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

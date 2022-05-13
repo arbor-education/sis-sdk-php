@@ -259,5 +259,4 @@ class UserNotification extends ModelBase
     {
         $this->setProperty('subject', $subject);
     }
-
 }

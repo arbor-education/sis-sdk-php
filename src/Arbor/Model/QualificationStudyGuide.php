@@ -151,5 +151,4 @@ class QualificationStudyGuide extends ModelBase
     {
         $this->setProperty('studyGuideMediumType', $studyGuideMediumType);
     }
-
 }

@@ -213,5 +213,4 @@ class AcademicLevel extends ModelBase
     {
         return $this->getCollectionProperty('tutorMemberships');
     }
-
 }

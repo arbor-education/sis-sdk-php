@@ -277,5 +277,4 @@ class StaffContractPostSalary extends ModelBase
     {
         $this->setProperty('safeguardedPeriodEndDate', $safeguardedPeriodEndDate);
     }
-
 }

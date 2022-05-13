@@ -151,5 +151,4 @@ class MealProvisionPriceCategory extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

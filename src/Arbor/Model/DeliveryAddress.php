@@ -187,5 +187,4 @@ class DeliveryAddress extends ModelBase
     {
         $this->setProperty('isAddressForReuse', $isAddressForReuse);
     }
-
 }

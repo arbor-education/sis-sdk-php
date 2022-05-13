@@ -133,5 +133,4 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     {
         $this->setProperty('assessment', $assessment);
     }
-
 }

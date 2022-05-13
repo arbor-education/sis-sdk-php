@@ -97,5 +97,4 @@ class RoomLayoutSeat extends ModelBase
     {
         $this->setProperty('y', $y);
     }
-
 }

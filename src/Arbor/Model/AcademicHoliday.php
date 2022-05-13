@@ -115,5 +115,4 @@ class AcademicHoliday extends ModelBase
     {
         $this->setProperty('holidayLabel', $holidayLabel);
     }
-
 }

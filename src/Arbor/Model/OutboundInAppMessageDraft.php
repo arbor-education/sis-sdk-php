@@ -151,5 +151,4 @@ class OutboundInAppMessageDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
 }

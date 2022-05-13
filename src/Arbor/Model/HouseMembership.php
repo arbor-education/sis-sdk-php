@@ -151,5 +151,4 @@ class HouseMembership extends ModelBase
     {
         $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
-
 }

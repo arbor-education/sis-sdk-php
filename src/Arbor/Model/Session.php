@@ -223,5 +223,4 @@ class Session extends ModelBase
     {
         $this->setProperty('isSuspended', $isSuspended);
     }
-
 }

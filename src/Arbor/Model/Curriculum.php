@@ -367,5 +367,4 @@ class Curriculum extends ModelBase
     {
         $this->setProperty('validUntilDate', $validUntilDate);
     }
-
 }

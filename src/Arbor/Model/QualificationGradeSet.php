@@ -151,5 +151,4 @@ class QualificationGradeSet extends ModelBase
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
-
 }

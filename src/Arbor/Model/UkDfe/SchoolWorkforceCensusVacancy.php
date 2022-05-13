@@ -174,5 +174,4 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     {
         $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }
-
 }

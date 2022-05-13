@@ -133,5 +133,4 @@ class LessonPlanSectionItem extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
-
 }

@@ -223,5 +223,4 @@ class NewUserRequest extends ModelBase
     {
         $this->setProperty('approversExist', $approversExist);
     }
-
 }

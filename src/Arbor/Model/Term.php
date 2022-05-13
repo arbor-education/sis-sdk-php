@@ -151,5 +151,4 @@ class Term extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -83,5 +83,4 @@ class EdiExportJobCandidateEntry extends ModelBase
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
-
 }

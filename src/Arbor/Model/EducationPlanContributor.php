@@ -79,5 +79,4 @@ class EducationPlanContributor extends ModelBase
     {
         $this->setProperty('contributor', $contributor);
     }
-
 }

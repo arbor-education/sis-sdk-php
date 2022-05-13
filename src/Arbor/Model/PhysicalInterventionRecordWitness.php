@@ -133,5 +133,4 @@ class PhysicalInterventionRecordWitness extends ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
-
 }

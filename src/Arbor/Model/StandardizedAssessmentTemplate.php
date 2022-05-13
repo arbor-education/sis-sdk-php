@@ -115,5 +115,4 @@ class StandardizedAssessmentTemplate extends ModelBase
     {
         $this->setProperty('validityEndDate', $validityEndDate);
     }
-
 }

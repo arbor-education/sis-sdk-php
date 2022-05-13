@@ -187,5 +187,4 @@ class Consent extends ModelBase
     {
         $this->setProperty('respondee', $respondee);
     }
-
 }

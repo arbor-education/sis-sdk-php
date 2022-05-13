@@ -115,5 +115,4 @@ class ProfessionalQualificationSubject extends ModelBase
     {
         $this->setProperty('subjectName', $subjectName);
     }
-
 }

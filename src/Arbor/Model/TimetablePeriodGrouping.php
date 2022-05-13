@@ -115,5 +115,4 @@ class TimetablePeriodGrouping extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
-
 }

@@ -349,5 +349,4 @@ class Application extends ModelBase
     {
         $this->setProperty('enrolledDatetime', $enrolledDatetime);
     }
-
 }

@@ -79,5 +79,4 @@ class AssessmentStudentGroup extends ModelBase
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
-
 }

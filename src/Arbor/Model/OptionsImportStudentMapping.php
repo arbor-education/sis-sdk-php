@@ -133,5 +133,4 @@ class OptionsImportStudentMapping extends ModelBase
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
-
 }

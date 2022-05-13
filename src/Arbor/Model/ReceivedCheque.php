@@ -133,5 +133,4 @@ class ReceivedCheque extends ModelBase
     {
         $this->setProperty('chequeAmount', $chequeAmount);
     }
-
 }

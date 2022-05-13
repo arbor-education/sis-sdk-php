@@ -169,5 +169,4 @@ class StudentSchoolworkMark extends ModelBase
     {
         $this->setProperty('markDate', $markDate);
     }
-
 }

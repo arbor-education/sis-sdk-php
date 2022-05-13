@@ -82,5 +82,4 @@ class UcasImport extends ModelBase
     {
         $this->setProperty('fileDate', $fileDate);
     }
-
 }

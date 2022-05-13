@@ -79,5 +79,4 @@ class ObservationTheme extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

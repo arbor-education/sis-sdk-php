@@ -151,5 +151,4 @@ class PersonFormerName extends ModelBase
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
-
 }

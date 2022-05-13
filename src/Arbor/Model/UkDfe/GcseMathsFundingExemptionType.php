@@ -136,5 +136,4 @@ class GcseMathsFundingExemptionType extends ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
-
 }

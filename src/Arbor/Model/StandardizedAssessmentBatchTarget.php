@@ -79,5 +79,4 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
 }

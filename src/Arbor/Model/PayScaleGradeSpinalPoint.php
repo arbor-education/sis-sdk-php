@@ -79,5 +79,4 @@ class PayScaleGradeSpinalPoint extends ModelBase
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
-
 }

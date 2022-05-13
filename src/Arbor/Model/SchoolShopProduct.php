@@ -187,5 +187,4 @@ class SchoolShopProduct extends ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
-
 }

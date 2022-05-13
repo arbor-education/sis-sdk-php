@@ -259,5 +259,4 @@ class IncomingDirectDebitTransaction extends ModelBase
     {
         $this->setProperty('customerNotificationDatetime', $customerNotificationDatetime);
     }
-
 }

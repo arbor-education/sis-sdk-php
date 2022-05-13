@@ -115,5 +115,4 @@ class ChildProtectionNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
-
 }

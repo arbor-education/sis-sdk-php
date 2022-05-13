@@ -241,5 +241,4 @@ class DataExport extends ModelBase
     {
         $this->setProperty('lastExportTitle', $lastExportTitle);
     }
-
 }

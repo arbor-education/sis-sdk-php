@@ -97,5 +97,4 @@ class CustomReportEmailLog extends ModelBase
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }
-
 }

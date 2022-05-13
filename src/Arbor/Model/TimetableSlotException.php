@@ -133,5 +133,4 @@ class TimetableSlotException extends ModelBase
     {
         $this->setProperty('timeException', $timeException);
     }
-
 }

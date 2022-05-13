@@ -133,5 +133,4 @@ class ChequeBook extends ModelBase
     {
         $this->setProperty('nextChequeNumber', $nextChequeNumber);
     }
-
 }

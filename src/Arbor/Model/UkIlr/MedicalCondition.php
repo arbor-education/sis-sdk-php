@@ -65,5 +65,4 @@ class MedicalCondition extends ModelBase
     {
         $this->setProperty('ilrReturnSenNeedType', $ilrReturnSenNeedType);
     }
-
 }

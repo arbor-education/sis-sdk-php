@@ -97,5 +97,4 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
-
 }

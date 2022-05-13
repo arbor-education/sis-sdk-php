@@ -259,5 +259,4 @@ class StaffContractPost extends ModelBase
     {
         $this->setProperty('endReason', $endReason);
     }
-
 }

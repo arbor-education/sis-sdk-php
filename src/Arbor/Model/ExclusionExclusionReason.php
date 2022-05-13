@@ -79,5 +79,4 @@ class ExclusionExclusionReason extends ModelBase
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
-
 }

@@ -105,5 +105,4 @@ class AcademicProgrammeInstance extends ModelBase
     {
         return $this->getCollectionProperty('topLevelAcademicUnits');
     }
-
 }

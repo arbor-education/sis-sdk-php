@@ -169,5 +169,4 @@ class UserDefinedField extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

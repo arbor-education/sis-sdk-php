@@ -79,5 +79,4 @@ class EmergencyAlertType extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

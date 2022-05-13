@@ -187,5 +187,4 @@ class OutboundInAppMessage extends ModelBase
     {
         $this->setProperty('inboundInAppMessageRepliedTo', $inboundInAppMessageRepliedTo);
     }
-
 }

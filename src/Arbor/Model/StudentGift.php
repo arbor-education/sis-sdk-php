@@ -133,5 +133,4 @@ class StudentGift extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

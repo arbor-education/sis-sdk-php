@@ -118,5 +118,4 @@ class SchoolWorkforceVacancyPost extends ModelBase
     {
         $this->setProperty('post', $post);
     }
-
 }

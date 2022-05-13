@@ -205,5 +205,4 @@ class VatRate extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

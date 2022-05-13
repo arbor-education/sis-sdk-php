@@ -169,5 +169,4 @@ class FinalAssessmentTarget extends ModelBase
     {
         $this->setProperty('locked', $locked);
     }
-
 }

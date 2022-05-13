@@ -187,5 +187,4 @@ class KpiTarget extends ModelBase
     {
         $this->setProperty('basis', $basis);
     }
-
 }

@@ -133,5 +133,4 @@ class CalendarType extends ModelBase
     {
         $this->setProperty('calendarTypeColor', $calendarTypeColor);
     }
-
 }

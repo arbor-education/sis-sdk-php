@@ -79,5 +79,4 @@ class SchoolShopProductEligibility extends ModelBase
     {
         $this->setProperty('eligible', $eligible);
     }
-
 }

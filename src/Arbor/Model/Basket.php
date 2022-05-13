@@ -61,5 +61,4 @@ class Basket extends ModelBase
     {
         $this->setProperty('guardian', $guardian);
     }
-
 }

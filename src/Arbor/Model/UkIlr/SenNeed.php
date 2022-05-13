@@ -64,5 +64,4 @@ class SenNeed extends ModelBase
     {
         $this->setProperty('isAgreedWithStudent', $isAgreedWithStudent);
     }
-
 }

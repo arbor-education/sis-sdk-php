@@ -533,5 +533,4 @@ class EducationalInstitution extends ModelBase
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
     }
-
 }

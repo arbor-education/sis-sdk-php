@@ -205,5 +205,4 @@ class QualificationLearningUnit extends ModelBase
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }
-
 }

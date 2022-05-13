@@ -115,5 +115,4 @@ class DietaryRequirementType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

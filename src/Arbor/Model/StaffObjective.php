@@ -223,5 +223,4 @@ class StaffObjective extends ModelBase
     {
         $this->setProperty('outcome', $outcome);
     }
-
 }

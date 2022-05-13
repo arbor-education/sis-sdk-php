@@ -115,5 +115,4 @@ class AcademicYearSetupTask extends ModelBase
     {
         $this->setProperty('skippedDatetime', $skippedDatetime);
     }
-
 }

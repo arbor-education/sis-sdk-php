@@ -133,5 +133,4 @@ class CustomReportCollation extends ModelBase
     {
         $this->setProperty('customLabel', $customLabel);
     }
-
 }

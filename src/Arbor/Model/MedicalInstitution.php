@@ -79,5 +79,4 @@ class MedicalInstitution extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
-
 }

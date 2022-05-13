@@ -115,5 +115,4 @@ class CustomReportGrouping extends ModelBase
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
-
 }

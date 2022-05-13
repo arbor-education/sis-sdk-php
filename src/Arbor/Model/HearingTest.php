@@ -97,5 +97,4 @@ class HearingTest extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

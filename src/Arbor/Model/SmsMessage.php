@@ -367,5 +367,4 @@ class SmsMessage extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

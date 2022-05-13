@@ -205,5 +205,4 @@ class BehaviouralIncident extends ModelBase
     {
         $this->setProperty('loggedByStaff', $loggedByStaff);
     }
-
 }

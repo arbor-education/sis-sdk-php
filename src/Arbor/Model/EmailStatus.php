@@ -187,5 +187,4 @@ class EmailStatus extends ModelBase
     {
         $this->setProperty('deliveryAttemptNumber', $deliveryAttemptNumber);
     }
-
 }

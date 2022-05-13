@@ -187,5 +187,4 @@ class QualificationAssessable extends ModelBase
     {
         $this->setProperty('centerAssessed', $centerAssessed);
     }
-
 }

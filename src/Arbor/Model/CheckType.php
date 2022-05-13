@@ -241,5 +241,4 @@ class CheckType extends ModelBase
     {
         $this->setProperty('requestFromTeachingStaff', $requestFromTeachingStaff);
     }
-
 }

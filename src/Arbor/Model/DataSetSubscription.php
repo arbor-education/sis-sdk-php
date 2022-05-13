@@ -151,5 +151,4 @@ class DataSetSubscription extends ModelBase
     {
         $this->setProperty('lastUpdatedDatetime', $lastUpdatedDatetime);
     }
-
 }

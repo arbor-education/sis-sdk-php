@@ -133,5 +133,4 @@ class InCareStatus extends ModelBase
     {
         $this->setProperty('countsAsInCareStatus', $countsAsInCareStatus);
     }
-
 }

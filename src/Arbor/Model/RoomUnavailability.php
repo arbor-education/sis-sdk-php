@@ -115,5 +115,4 @@ class RoomUnavailability extends ModelBase
     {
         $this->setProperty('reason', $reason);
     }
-
 }

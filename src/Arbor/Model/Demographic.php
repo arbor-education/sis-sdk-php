@@ -277,5 +277,4 @@ class Demographic extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

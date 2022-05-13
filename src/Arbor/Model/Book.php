@@ -169,5 +169,4 @@ class Book extends ModelBase
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
-
 }

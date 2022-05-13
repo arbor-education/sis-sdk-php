@@ -277,5 +277,4 @@ class StaffAbsenceCategory extends ModelBase
     {
         $this->setProperty('isAuthorizedAbsence', $isAuthorizedAbsence);
     }
-
 }

@@ -223,5 +223,4 @@ class StudentStandardizedAssessmentMark extends ModelBase
     {
         $this->setProperty('completedStaff', $completedStaff);
     }
-
 }

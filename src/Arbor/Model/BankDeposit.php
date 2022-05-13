@@ -169,5 +169,4 @@ class BankDeposit extends ModelBase
     {
         $this->setProperty('refundAdjustmentAmount', $refundAdjustmentAmount);
     }
-
 }

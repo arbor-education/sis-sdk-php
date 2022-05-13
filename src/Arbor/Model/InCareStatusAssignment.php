@@ -133,5 +133,4 @@ class InCareStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
 }

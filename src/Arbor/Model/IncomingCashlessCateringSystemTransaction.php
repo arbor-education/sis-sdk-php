@@ -223,5 +223,4 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
-
 }

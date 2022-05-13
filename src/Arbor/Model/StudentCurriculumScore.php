@@ -223,5 +223,4 @@ class StudentCurriculumScore extends ModelBase
     {
         $this->setProperty('date', $date);
     }
-
 }

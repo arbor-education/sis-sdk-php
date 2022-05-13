@@ -133,5 +133,4 @@ class CurriculumTargetSet extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

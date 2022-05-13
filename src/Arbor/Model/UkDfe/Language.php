@@ -82,5 +82,4 @@ class Language extends ModelBase
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }
-
 }

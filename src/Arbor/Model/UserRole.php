@@ -205,5 +205,4 @@ class UserRole extends ModelBase
     {
         $this->setProperty('isExternalAdministratorRole', $isExternalAdministratorRole);
     }
-
 }

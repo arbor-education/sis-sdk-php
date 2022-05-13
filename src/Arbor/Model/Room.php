@@ -151,5 +151,4 @@ class Room extends ModelBase
     {
         $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }
-
 }

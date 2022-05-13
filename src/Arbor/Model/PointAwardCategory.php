@@ -97,5 +97,4 @@ class PointAwardCategory extends ModelBase
     {
         $this->setProperty('defaultPoints', $defaultPoints);
     }
-
 }

@@ -205,5 +205,4 @@ class InHouseExamEntry extends ModelBase
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
-
 }

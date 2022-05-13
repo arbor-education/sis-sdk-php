@@ -169,5 +169,4 @@ class CustomReportScopeFilter extends ModelBase
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
-
 }

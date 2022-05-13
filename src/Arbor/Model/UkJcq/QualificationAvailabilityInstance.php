@@ -64,5 +64,4 @@ class QualificationAvailabilityInstance extends ModelBase
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }
-
 }

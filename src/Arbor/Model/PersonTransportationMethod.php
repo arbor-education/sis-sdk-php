@@ -97,5 +97,4 @@ class PersonTransportationMethod extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

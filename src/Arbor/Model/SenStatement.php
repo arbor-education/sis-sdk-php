@@ -259,5 +259,4 @@ class SenStatement extends ModelBase
     {
         $this->setProperty('comments', $comments);
     }
-
 }

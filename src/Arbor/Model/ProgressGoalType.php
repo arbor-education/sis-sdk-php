@@ -79,5 +79,4 @@ class ProgressGoalType extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

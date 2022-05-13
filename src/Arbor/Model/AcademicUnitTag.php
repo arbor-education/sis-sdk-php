@@ -79,5 +79,4 @@ class AcademicUnitTag extends ModelBase
     {
         $this->setProperty('relatedObject', $relatedObject);
     }
-
 }

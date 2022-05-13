@@ -118,5 +118,4 @@ class PayScaleCategory extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

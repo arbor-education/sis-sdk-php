@@ -187,5 +187,4 @@ class AttendanceFollowUp extends ModelBase
     {
         $this->setProperty('telephoneCallDatetime', $telephoneCallDatetime);
     }
-
 }

@@ -137,5 +137,4 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     {
         $this->setProperty('eligibleForOtherReasons', $eligibleForOtherReasons);
     }
-
 }

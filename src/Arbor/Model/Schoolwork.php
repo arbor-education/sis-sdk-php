@@ -241,5 +241,4 @@ class Schoolwork extends ModelBase
     {
         $this->setProperty('submitViaArbor', $submitViaArbor);
     }
-
 }

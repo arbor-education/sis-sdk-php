@@ -151,5 +151,4 @@ class InHouseExamGrade extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

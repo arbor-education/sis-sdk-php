@@ -79,5 +79,4 @@ class SuspendedCalendarEntryMapping extends ModelBase
     {
         $this->setProperty('suspendedEvent', $suspendedEvent);
     }
-
 }

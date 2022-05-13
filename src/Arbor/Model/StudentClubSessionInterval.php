@@ -187,5 +187,4 @@ class StudentClubSessionInterval extends ModelBase
     {
         $this->setProperty('hasMeals', $hasMeals);
     }
-
 }

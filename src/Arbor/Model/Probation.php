@@ -133,5 +133,4 @@ class Probation extends ModelBase
     {
         $this->setProperty('probationDecision', $probationDecision);
     }
-
 }

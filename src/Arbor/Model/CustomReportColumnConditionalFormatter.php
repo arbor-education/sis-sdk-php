@@ -115,5 +115,4 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     {
         $this->setProperty('color', $color);
     }
-
 }

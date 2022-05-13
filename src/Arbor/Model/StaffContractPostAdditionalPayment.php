@@ -151,5 +151,4 @@ class StaffContractPostAdditionalPayment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

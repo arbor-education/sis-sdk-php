@@ -97,5 +97,4 @@ class PersonNextOfKin extends ModelBase
     {
         $this->setProperty('relationship', $relationship);
     }
-
 }

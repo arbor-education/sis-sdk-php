@@ -97,5 +97,4 @@ class BehaviouralIncidentBehaviour extends ModelBase
     {
         $this->setProperty('behaviour', $behaviour);
     }
-
 }

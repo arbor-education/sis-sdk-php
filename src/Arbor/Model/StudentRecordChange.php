@@ -205,5 +205,4 @@ class StudentRecordChange extends ModelBase
     {
         $this->setProperty('newData', $newData);
     }
-
 }

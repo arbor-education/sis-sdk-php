@@ -169,5 +169,4 @@ class InsightReport extends ModelBase
     {
         $this->setProperty('reportFile', $reportFile);
     }
-
 }

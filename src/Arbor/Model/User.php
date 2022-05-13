@@ -493,5 +493,4 @@ class User extends ModelBase
     {
         $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
     }
-
 }

@@ -133,5 +133,4 @@ class AcademicYear extends ModelBase
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }
-
 }

@@ -115,5 +115,4 @@ class ExternalAdministrator extends ModelBase
     {
         $this->setProperty('application', $application);
     }
-
 }

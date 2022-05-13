@@ -241,5 +241,4 @@ class KpiValue extends ModelBase
     {
         $this->setProperty('lastCalculatedDatetime', $lastCalculatedDatetime);
     }
-
 }

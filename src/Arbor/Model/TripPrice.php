@@ -187,5 +187,4 @@ class TripPrice extends ModelBase
     {
         $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }
-
 }

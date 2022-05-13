@@ -79,5 +79,4 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
-
 }

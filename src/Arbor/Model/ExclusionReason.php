@@ -115,5 +115,4 @@ class ExclusionReason extends ModelBase
     {
         $this->setProperty('exclusionReasonName', $exclusionReasonName);
     }
-
 }

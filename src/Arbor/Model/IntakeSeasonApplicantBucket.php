@@ -79,5 +79,4 @@ class IntakeSeasonApplicantBucket extends ModelBase
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }
-
 }

@@ -97,5 +97,4 @@ class SiteTravelTime extends ModelBase
     {
         $this->setProperty('travelTime', $travelTime);
     }
-
 }

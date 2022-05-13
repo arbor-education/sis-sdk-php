@@ -151,5 +151,4 @@ class TimetablerImportStepOutcome extends ModelBase
     {
         $this->setProperty('stepType', $stepType);
     }
-
 }

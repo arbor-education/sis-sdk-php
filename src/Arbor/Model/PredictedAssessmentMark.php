@@ -223,5 +223,4 @@ class PredictedAssessmentMark extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
-
 }

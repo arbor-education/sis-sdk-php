@@ -169,5 +169,4 @@ class StandardizedAssessmentSuite extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
-
 }

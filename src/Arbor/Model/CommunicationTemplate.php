@@ -187,5 +187,4 @@ class CommunicationTemplate extends ModelBase
     {
         $this->setProperty('customReport', $customReport);
     }
-
 }

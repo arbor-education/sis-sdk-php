@@ -97,5 +97,4 @@ class NewReportCardBatchTarget extends ModelBase
     {
         $this->setProperty('reportsGenerating', $reportsGenerating);
     }
-
 }

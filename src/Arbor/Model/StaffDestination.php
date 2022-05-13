@@ -115,5 +115,4 @@ class StaffDestination extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

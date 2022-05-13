@@ -278,5 +278,4 @@ class QualificationResult extends ModelBase
     {
         $this->setProperty('endorsementGrade', $endorsementGrade);
     }
-
 }

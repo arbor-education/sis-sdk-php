@@ -115,5 +115,4 @@ class MedicalEventType extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

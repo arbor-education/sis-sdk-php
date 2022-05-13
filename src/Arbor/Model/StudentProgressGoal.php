@@ -223,5 +223,4 @@ class StudentProgressGoal extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
-
 }

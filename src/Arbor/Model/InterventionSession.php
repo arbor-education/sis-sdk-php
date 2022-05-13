@@ -277,5 +277,4 @@ class InterventionSession extends ModelBase
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }
-
 }

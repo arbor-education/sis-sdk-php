@@ -151,5 +151,4 @@ class SmsMessagePart extends ModelBase
     {
         $this->setProperty('cost', $cost);
     }
-
 }

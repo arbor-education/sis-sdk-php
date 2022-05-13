@@ -151,5 +151,4 @@ class PostalAddressOccupancy extends ModelBase
     {
         $this->setProperty('isCorrespondenceAddress', $isCorrespondenceAddress);
     }
-
 }

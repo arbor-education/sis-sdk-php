@@ -97,5 +97,4 @@ class LessonPlanObjective extends ModelBase
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
-
 }

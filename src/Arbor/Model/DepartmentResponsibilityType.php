@@ -115,5 +115,4 @@ class DepartmentResponsibilityType extends ModelBase
     {
         $this->setProperty('responsibilityTypeName', $responsibilityTypeName);
     }
-
 }

@@ -133,5 +133,4 @@ class QualificationAwardSubtype extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

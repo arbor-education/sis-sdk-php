@@ -187,5 +187,4 @@ class LanguageAbility extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

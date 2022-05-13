@@ -169,5 +169,4 @@ class ApplicationAppeal extends ModelBase
     {
         $this->setProperty('decision', $decision);
     }
-
 }

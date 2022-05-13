@@ -79,5 +79,4 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
-
 }

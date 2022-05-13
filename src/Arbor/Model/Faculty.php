@@ -97,5 +97,4 @@ class Faculty extends ModelBase
     {
         $this->setProperty('isActive', $isActive);
     }
-
 }

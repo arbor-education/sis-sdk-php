@@ -97,5 +97,4 @@ class QualificationSubscription extends ModelBase
     {
         $this->setProperty('hash', $hash);
     }
-
 }

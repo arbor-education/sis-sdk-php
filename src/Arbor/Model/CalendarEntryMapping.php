@@ -151,5 +151,4 @@ class CalendarEntryMapping extends ModelBase
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }
-
 }

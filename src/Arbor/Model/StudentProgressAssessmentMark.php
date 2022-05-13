@@ -295,5 +295,4 @@ class StudentProgressAssessmentMark extends ModelBase
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
-
 }

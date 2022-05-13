@@ -133,5 +133,4 @@ class StudentLinkedRelationship extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

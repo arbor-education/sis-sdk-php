@@ -154,5 +154,4 @@ class GcseMathsAchievementType extends ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
-
 }

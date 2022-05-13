@@ -79,5 +79,4 @@ class InAppMessageNotification extends ModelBase
     {
         $this->setProperty('notificationChannel', $notificationChannel);
     }
-
 }

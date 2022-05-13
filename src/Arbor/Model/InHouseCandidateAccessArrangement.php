@@ -151,5 +151,4 @@ class InHouseCandidateAccessArrangement extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

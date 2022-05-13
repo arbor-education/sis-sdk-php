@@ -241,5 +241,4 @@ class ObservationGrade extends ModelBase
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }
-
 }

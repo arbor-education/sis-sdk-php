@@ -133,5 +133,4 @@ class Voucher extends ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
-
 }

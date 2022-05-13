@@ -259,5 +259,4 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

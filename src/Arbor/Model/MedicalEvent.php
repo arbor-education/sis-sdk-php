@@ -151,5 +151,4 @@ class MedicalEvent extends ModelBase
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
-
 }

@@ -151,5 +151,4 @@ class MealPrice extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

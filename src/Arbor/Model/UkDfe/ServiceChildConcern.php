@@ -191,5 +191,4 @@ class ServiceChildConcern extends ModelBase
     {
         $this->setProperty('ctfImportJobStudent', $ctfImportJobStudent);
     }
-
 }

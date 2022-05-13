@@ -97,5 +97,4 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
-
 }

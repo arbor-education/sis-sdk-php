@@ -97,5 +97,4 @@ class DietaryRequirement extends ModelBase
     {
         $this->setProperty('note', $note);
     }
-
 }

@@ -172,5 +172,4 @@ class Staff extends ModelBase
     {
         $this->setProperty('newlyQualifiedTeacherDate', $newlyQualifiedTeacherDate);
     }
-
 }

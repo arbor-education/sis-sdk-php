@@ -205,5 +205,4 @@ class AcademicYearAssessment extends ModelBase
     {
         $this->setProperty('allowComments', $allowComments);
     }
-
 }

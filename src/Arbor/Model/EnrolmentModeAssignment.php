@@ -133,5 +133,4 @@ class EnrolmentModeAssignment extends ModelBase
     {
         $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
     }
-
 }

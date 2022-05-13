@@ -79,5 +79,4 @@ class RepeatingSchoolEventParticipant extends ModelBase
     {
         $this->setProperty('participant', $participant);
     }
-
 }

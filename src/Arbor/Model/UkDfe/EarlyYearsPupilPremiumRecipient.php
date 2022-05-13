@@ -137,5 +137,4 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     {
         $this->setProperty('recipientForOtherReasons', $recipientForOtherReasons);
     }
-
 }

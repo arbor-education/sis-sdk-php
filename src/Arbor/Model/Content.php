@@ -79,5 +79,4 @@ class Content extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

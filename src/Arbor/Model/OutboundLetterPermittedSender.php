@@ -97,5 +97,4 @@ class OutboundLetterPermittedSender extends ModelBase
     {
         $this->setProperty('allow', $allow);
     }
-
 }

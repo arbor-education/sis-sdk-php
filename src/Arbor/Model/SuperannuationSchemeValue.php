@@ -115,5 +115,4 @@ class SuperannuationSchemeValue extends ModelBase
     {
         $this->setProperty('value', $value);
     }
-
 }

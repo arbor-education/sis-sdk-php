@@ -241,5 +241,4 @@ class MealProvision extends ModelBase
     {
         $this->setProperty('copiedToMealProvision', $copiedToMealProvision);
     }
-
 }

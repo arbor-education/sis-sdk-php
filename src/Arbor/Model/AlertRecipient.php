@@ -133,5 +133,4 @@ class AlertRecipient extends ModelBase
     {
         $this->setProperty('message', $message);
     }
-
 }

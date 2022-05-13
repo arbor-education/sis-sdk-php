@@ -79,5 +79,4 @@ class IdentityCardReader extends ModelBase
     {
         $this->setProperty('room', $room);
     }
-
 }

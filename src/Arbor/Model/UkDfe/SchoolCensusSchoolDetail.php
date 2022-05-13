@@ -280,5 +280,4 @@ class SchoolCensusSchoolDetail extends ModelBase
     {
         $this->setProperty('previousYearQualificationResultsJson', $previousYearQualificationResultsJson);
     }
-
 }

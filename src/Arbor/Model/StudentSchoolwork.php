@@ -151,5 +151,4 @@ class StudentSchoolwork extends ModelBase
     {
         $this->setProperty('notSubmittedDatetime', $notSubmittedDatetime);
     }
-
 }

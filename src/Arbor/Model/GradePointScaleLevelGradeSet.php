@@ -169,5 +169,4 @@ class GradePointScaleLevelGradeSet extends ModelBase
     {
         $this->setProperty('appliesToSenStudentOnly', $appliesToSenStudentOnly);
     }
-
 }

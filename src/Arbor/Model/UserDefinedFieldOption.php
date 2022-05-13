@@ -115,5 +115,4 @@ class UserDefinedFieldOption extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

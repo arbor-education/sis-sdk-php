@@ -151,5 +151,4 @@ class ProgressMeasurementPeriod extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

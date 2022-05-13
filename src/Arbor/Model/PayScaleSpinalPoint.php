@@ -115,5 +115,4 @@ class PayScaleSpinalPoint extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

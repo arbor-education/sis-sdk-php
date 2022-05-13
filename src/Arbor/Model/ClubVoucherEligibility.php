@@ -79,5 +79,4 @@ class ClubVoucherEligibility extends ModelBase
     {
         $this->setProperty('group', $group);
     }
-
 }

@@ -97,5 +97,4 @@ class ProgressMeasurementPeriodSet extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

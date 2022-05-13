@@ -169,5 +169,4 @@ class QualificationTimetableSessionType extends ModelBase
     {
         $this->setProperty('startTimeUntil', $startTimeUntil);
     }
-
 }

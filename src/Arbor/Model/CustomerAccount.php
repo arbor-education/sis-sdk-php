@@ -277,5 +277,4 @@ class CustomerAccount extends ModelBase
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }
-
 }

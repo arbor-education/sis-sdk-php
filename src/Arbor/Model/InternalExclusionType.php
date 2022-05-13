@@ -79,5 +79,4 @@ class InternalExclusionType extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

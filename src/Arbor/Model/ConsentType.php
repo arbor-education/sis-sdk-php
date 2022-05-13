@@ -205,5 +205,4 @@ class ConsentType extends ModelBase
     {
         $this->setProperty('consentedByGuardian', $consentedByGuardian);
     }
-
 }

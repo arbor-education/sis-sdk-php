@@ -133,5 +133,4 @@ class InterventionFunding extends ModelBase
     {
         $this->setProperty('fundingPercentage', $fundingPercentage);
     }
-
 }

@@ -133,5 +133,4 @@ class AssessmentProvider extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
-
 }

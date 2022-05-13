@@ -169,5 +169,4 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     {
         $this->setProperty('assignee', $assignee);
     }
-
 }

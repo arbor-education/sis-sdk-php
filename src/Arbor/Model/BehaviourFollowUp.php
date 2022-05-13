@@ -115,5 +115,4 @@ class BehaviourFollowUp extends ModelBase
     {
         $this->setProperty('summary', $summary);
     }
-
 }

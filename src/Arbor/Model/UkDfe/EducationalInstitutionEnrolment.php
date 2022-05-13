@@ -82,5 +82,4 @@ class EducationalInstitutionEnrolment extends ModelBase
     {
         $this->setProperty('alternativeProvisionReason', $alternativeProvisionReason);
     }
-
 }

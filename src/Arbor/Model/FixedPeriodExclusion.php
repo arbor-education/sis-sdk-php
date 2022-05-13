@@ -241,5 +241,4 @@ class FixedPeriodExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

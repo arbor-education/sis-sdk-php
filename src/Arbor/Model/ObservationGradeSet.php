@@ -133,5 +133,4 @@ class ObservationGradeSet extends ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
-
 }

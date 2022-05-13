@@ -79,5 +79,4 @@ class ClubEligibility extends ModelBase
     {
         $this->setProperty('eligible', $eligible);
     }
-
 }

@@ -169,5 +169,4 @@ class EmailAddress extends ModelBase
     {
         $this->setProperty('disposable', $disposable);
     }
-
 }

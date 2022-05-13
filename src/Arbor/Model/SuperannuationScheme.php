@@ -79,5 +79,4 @@ class SuperannuationScheme extends ModelBase
     {
         $this->setProperty('code', $code);
     }
-
 }

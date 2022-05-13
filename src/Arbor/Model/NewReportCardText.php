@@ -115,5 +115,4 @@ class NewReportCardText extends ModelBase
     {
         $this->setProperty('body', $body);
     }
-
 }

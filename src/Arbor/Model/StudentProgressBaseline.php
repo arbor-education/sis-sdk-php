@@ -187,5 +187,4 @@ class StudentProgressBaseline extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
-
 }

@@ -133,5 +133,4 @@ class UnenrolmentReason extends ModelBase
     {
         $this->setProperty('d00206', $d00206);
     }
-
 }

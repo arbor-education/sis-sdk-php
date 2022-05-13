@@ -241,5 +241,4 @@ class CustomerInvoiceItem extends ModelBase
     {
         $this->setProperty('itemStatus', $itemStatus);
     }
-
 }

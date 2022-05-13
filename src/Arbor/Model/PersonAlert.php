@@ -133,5 +133,4 @@ class PersonAlert extends ModelBase
     {
         $this->setProperty('alertDatetime', $alertDatetime);
     }
-
 }

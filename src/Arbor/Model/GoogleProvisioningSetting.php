@@ -133,5 +133,4 @@ class GoogleProvisioningSetting extends ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
-
 }

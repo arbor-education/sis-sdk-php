@@ -79,5 +79,4 @@ class BusinessRoleDefaultUserRole extends ModelBase
     {
         $this->setProperty('userRole', $userRole);
     }
-
 }

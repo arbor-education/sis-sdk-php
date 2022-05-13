@@ -151,5 +151,4 @@ class EligibilityRecord extends ModelBase
     {
         $this->setProperty('nextCheckDate', $nextCheckDate);
     }
-
 }

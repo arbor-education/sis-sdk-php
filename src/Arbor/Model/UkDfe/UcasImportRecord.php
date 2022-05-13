@@ -227,5 +227,4 @@ class UcasImportRecord extends ModelBase
     {
         $this->setProperty('campusCode', $campusCode);
     }
-
 }

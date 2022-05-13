@@ -169,5 +169,4 @@ class MotorVehicle extends ModelBase
     {
         $this->setProperty('parkingAllocationProvided', $parkingAllocationProvided);
     }
-
 }

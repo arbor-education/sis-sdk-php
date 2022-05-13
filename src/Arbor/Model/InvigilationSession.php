@@ -115,5 +115,4 @@ class InvigilationSession extends ModelBase
     {
         $this->setProperty('location', $location);
     }
-
 }

@@ -79,5 +79,4 @@ class DetentionType extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

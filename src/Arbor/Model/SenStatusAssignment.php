@@ -115,5 +115,4 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

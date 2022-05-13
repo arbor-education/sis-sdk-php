@@ -137,5 +137,4 @@ class TravellerStatusAssignment extends ModelBase
     {
         $this->setProperty('informationSource', $informationSource);
     }
-
 }

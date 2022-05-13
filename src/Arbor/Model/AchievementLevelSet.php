@@ -133,5 +133,4 @@ class AchievementLevelSet extends ModelBase
     {
         $this->setProperty('curriculum', $curriculum);
     }
-
 }

@@ -118,5 +118,4 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     {
         $this->setProperty('occasionalsNotKnown', $occasionalsNotKnown);
     }
-
 }

@@ -115,5 +115,4 @@ class SchoolShopProductPrice extends ModelBase
     {
         $this->setProperty('vatRate', $vatRate);
     }
-
 }

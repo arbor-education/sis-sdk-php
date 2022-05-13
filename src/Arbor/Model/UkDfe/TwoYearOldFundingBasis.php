@@ -83,5 +83,4 @@ class TwoYearOldFundingBasis extends ModelBase
     {
         $this->setProperty('fundingBasis', $fundingBasis);
     }
-
 }

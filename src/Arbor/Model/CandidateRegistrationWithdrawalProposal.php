@@ -151,5 +151,4 @@ class CandidateRegistrationWithdrawalProposal extends ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
-
 }

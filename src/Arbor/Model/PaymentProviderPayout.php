@@ -205,5 +205,4 @@ class PaymentProviderPayout extends ModelBase
     {
         $this->setProperty('payoutSourceType', $payoutSourceType);
     }
-
 }

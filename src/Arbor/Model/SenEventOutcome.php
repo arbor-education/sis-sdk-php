@@ -97,5 +97,4 @@ class SenEventOutcome extends ModelBase
     {
         $this->setProperty('comments', $comments);
     }
-
 }

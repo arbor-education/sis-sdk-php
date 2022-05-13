@@ -79,5 +79,4 @@ class RoomAsset extends ModelBase
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }
-
 }

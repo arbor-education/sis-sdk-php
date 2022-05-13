@@ -118,5 +118,4 @@ class TravellerStatus extends ModelBase
     {
         $this->setProperty('travellerStatusName', $travellerStatusName);
     }
-
 }

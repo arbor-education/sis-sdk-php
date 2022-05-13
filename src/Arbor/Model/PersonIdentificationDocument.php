@@ -169,5 +169,4 @@ class PersonIdentificationDocument extends ModelBase
     {
         $this->setProperty('issuingCountry', $issuingCountry);
     }
-
 }

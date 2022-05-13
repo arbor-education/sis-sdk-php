@@ -115,5 +115,4 @@ class AdditionalPaymentReason extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

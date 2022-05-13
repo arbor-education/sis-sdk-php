@@ -169,5 +169,4 @@ class QualificationForecastResult extends ModelBase
     {
         $this->setProperty('inputDatetime', $inputDatetime);
     }
-
 }

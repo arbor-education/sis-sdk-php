@@ -115,5 +115,4 @@ class ObservationJudgement extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 }

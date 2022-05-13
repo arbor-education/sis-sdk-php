@@ -115,5 +115,4 @@ class Medication extends ModelBase
     {
         $this->setProperty('medicationName', $medicationName);
     }
-
 }

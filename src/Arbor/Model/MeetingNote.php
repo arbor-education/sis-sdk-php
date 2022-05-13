@@ -115,5 +115,4 @@ class MeetingNote extends ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
-
 }

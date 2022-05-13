@@ -133,5 +133,4 @@ class ApplicationApplicantImport extends ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
-
 }

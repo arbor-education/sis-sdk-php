@@ -61,5 +61,4 @@ class QualificationResultEmbargoViewer extends ModelBase
     {
         $this->setProperty('viewer', $viewer);
     }
-
 }

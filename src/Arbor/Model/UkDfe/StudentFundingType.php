@@ -64,5 +64,4 @@ class StudentFundingType extends ModelBase
     {
         $this->setProperty('d00209', $d00209);
     }
-
 }

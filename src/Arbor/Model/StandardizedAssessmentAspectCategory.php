@@ -133,5 +133,4 @@ class StandardizedAssessmentAspectCategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

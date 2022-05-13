@@ -277,5 +277,4 @@ class QualificationAssessableInstance extends ModelBase
     {
         $this->setProperty('isProvisional', $isProvisional);
     }
-
 }

@@ -169,5 +169,4 @@ class StandardizedAssessmentComponent extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

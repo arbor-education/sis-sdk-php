@@ -332,5 +332,4 @@ class CustomerPayment extends ModelBase
     {
         $this->setProperty('paymentCancelledDatetime', $paymentCancelledDatetime);
     }
-
 }

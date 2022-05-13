@@ -133,5 +133,4 @@ class ProfessionalQualificationType extends ModelBase
     {
         $this->setProperty('isVocationalQualification', $isVocationalQualification);
     }
-
 }

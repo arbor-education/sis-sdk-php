@@ -101,5 +101,4 @@ class EnglishProficiency extends ModelBase
     {
         $this->setProperty('proficiencyDate', $proficiencyDate);
     }
-
 }

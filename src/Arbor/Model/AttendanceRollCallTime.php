@@ -151,5 +151,4 @@ class AttendanceRollCallTime extends ModelBase
     {
         $this->setProperty('rollCallPeriodEndTime', $rollCallPeriodEndTime);
     }
-
 }

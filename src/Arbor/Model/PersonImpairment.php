@@ -133,5 +133,4 @@ class PersonImpairment extends ModelBase
     {
         $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }
-
 }

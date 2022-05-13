@@ -133,5 +133,4 @@ class EnrolmentMode extends ModelBase
     {
         $this->setProperty('d00018', $d00018);
     }
-
 }

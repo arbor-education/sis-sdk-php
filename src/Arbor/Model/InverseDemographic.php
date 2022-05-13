@@ -61,5 +61,4 @@ class InverseDemographic extends ModelBase
     {
         $this->setProperty('demographic', $demographic);
     }
-
 }

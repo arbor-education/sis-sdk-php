@@ -223,5 +223,4 @@ class SmsMessageDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
 }

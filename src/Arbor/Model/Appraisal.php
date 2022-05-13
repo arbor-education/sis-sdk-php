@@ -133,5 +133,4 @@ class Appraisal extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
-
 }

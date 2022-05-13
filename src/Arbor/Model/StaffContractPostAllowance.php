@@ -241,5 +241,4 @@ class StaffContractPostAllowance extends ModelBase
     {
         $this->setProperty('benefitInKind', $benefitInKind);
     }
-
 }

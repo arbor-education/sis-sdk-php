@@ -97,5 +97,4 @@ class SmsMessagePermittedSender extends ModelBase
     {
         $this->setProperty('allow', $allow);
     }
-
 }

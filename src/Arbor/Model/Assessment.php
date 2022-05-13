@@ -277,5 +277,4 @@ class Assessment extends ModelBase
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
     }
-
 }

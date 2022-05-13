@@ -115,5 +115,4 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
     {
         $this->setProperty('mappingType', $mappingType);
     }
-
 }

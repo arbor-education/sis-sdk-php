@@ -118,5 +118,4 @@ class SchoolType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

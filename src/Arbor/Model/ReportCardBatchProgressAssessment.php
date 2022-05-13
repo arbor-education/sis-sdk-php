@@ -133,5 +133,4 @@ class ReportCardBatchProgressAssessment extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

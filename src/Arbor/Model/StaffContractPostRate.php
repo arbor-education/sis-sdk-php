@@ -133,5 +133,4 @@ class StaffContractPostRate extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

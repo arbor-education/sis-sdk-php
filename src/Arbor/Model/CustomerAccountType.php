@@ -223,5 +223,4 @@ class CustomerAccountType extends ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
-
 }

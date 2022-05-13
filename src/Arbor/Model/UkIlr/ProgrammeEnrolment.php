@@ -424,5 +424,4 @@ class ProgrammeEnrolment extends ModelBase
     {
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
     }
-
 }

@@ -205,5 +205,4 @@ class Subject extends ModelBase
     {
         $this->setProperty('d00220', $d00220);
     }
-
 }

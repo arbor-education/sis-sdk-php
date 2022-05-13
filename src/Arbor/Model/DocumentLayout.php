@@ -349,5 +349,4 @@ class DocumentLayout extends ModelBase
     {
         $this->setProperty('archived', $archived);
     }
-
 }

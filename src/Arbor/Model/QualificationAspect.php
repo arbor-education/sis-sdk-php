@@ -295,5 +295,4 @@ class QualificationAspect extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

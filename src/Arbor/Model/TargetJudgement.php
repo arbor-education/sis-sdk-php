@@ -115,5 +115,4 @@ class TargetJudgement extends ModelBase
     {
         $this->setProperty('order', $order);
     }
-
 }

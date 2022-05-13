@@ -259,5 +259,4 @@ class CustomReportColumn extends ModelBase
     {
         $this->setProperty('isSourceUpdatePermitted', $isSourceUpdatePermitted);
     }
-
 }

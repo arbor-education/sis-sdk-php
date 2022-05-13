@@ -331,5 +331,4 @@ class Meeting extends ModelBase
     {
         $this->setProperty('outcomes', $outcomes);
     }
-
 }

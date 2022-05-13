@@ -115,5 +115,4 @@ class AcademicLevelMembership extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

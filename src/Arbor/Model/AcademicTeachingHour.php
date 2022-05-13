@@ -133,5 +133,4 @@ class AcademicTeachingHour extends ModelBase
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
-
 }

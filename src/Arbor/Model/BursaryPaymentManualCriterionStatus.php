@@ -97,5 +97,4 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     {
         $this->setProperty('isMet', $isMet);
     }
-
 }

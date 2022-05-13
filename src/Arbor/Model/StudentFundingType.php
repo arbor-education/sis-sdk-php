@@ -115,5 +115,4 @@ class StudentFundingType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

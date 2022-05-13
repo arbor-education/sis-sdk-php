@@ -187,5 +187,4 @@ class ClubSession extends ModelBase
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
-
 }

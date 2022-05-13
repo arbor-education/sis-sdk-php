@@ -223,5 +223,4 @@ class CurriculumGrade extends ModelBase
     {
         $this->setProperty('d00020Order', $d00020Order);
     }
-
 }

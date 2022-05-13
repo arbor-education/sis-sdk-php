@@ -169,5 +169,4 @@ class EventParticipantInvitation extends ModelBase
     {
         $this->setProperty('invitationReply', $invitationReply);
     }
-
 }

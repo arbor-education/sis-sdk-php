@@ -133,5 +133,4 @@ class AttainmentGroup extends ModelBase
     {
         $this->setProperty('calculationClass', $calculationClass);
     }
-
 }

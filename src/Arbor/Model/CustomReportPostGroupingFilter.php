@@ -169,5 +169,4 @@ class CustomReportPostGroupingFilter extends ModelBase
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
-
 }

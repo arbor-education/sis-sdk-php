@@ -223,5 +223,4 @@ class InternalExclusionSession extends ModelBase
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }
-
 }

@@ -151,5 +151,4 @@ class BasketItem extends ModelBase
     {
         $this->setProperty('student', $student);
     }
-
 }

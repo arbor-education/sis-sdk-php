@@ -151,5 +151,4 @@ class InHouseExamResult extends ModelBase
     {
         $this->setProperty('resultDate', $resultDate);
     }
-
 }

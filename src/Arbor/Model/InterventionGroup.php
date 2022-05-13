@@ -187,5 +187,4 @@ class InterventionGroup extends ModelBase
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }
-
 }

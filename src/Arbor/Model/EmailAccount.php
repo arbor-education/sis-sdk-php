@@ -169,5 +169,4 @@ class EmailAccount extends ModelBase
     {
         $this->setProperty('owner', $owner);
     }
-
 }

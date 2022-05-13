@@ -169,5 +169,4 @@ class CustomerAccountRefund extends ModelBase
     {
         $this->setProperty('refundFailedDatetime', $refundFailedDatetime);
     }
-
 }

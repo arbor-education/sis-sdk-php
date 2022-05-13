@@ -115,5 +115,4 @@ class BursaryLevelAmount extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

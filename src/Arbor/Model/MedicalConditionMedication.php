@@ -151,5 +151,4 @@ class MedicalConditionMedication extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

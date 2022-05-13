@@ -97,5 +97,4 @@ class PinnedItem extends ModelBase
     {
         $this->setProperty('pinnedUntilDatetime', $pinnedUntilDatetime);
     }
-
 }

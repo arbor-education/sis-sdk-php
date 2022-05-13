@@ -169,5 +169,4 @@ class AssessmentDerivationDependant extends ModelBase
     {
         $this->setProperty('weighting', $weighting);
     }
-
 }

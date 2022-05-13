@@ -151,5 +151,4 @@ class ChildProtectionStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
 }

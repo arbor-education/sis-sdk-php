@@ -261,5 +261,4 @@ class Position extends ModelBase
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }
-
 }

@@ -97,5 +97,4 @@ class SiteOperatingPeriodException extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

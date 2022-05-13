@@ -241,5 +241,4 @@ class PersonProfessionalQualification extends ModelBase
     {
         $this->setProperty('isVerified', $isVerified);
     }
-
 }

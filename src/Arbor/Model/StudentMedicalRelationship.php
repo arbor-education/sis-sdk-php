@@ -169,5 +169,4 @@ class StudentMedicalRelationship extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

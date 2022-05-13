@@ -133,5 +133,4 @@ class StudentFunding extends ModelBase
     {
         $this->setProperty('note', $note);
     }
-
 }

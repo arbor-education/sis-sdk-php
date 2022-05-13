@@ -79,5 +79,4 @@ class AssessmentImportColumn extends ModelBase
     {
         $this->setProperty('mappedAssessmentAspect', $mappedAssessmentAspect);
     }
-
 }

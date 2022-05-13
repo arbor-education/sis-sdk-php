@@ -133,5 +133,4 @@ class House extends ModelBase
     {
         $this->setProperty('copiedToHouse', $copiedToHouse);
     }
-
 }

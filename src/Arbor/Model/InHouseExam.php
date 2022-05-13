@@ -115,5 +115,4 @@ class InHouseExam extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

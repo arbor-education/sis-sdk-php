@@ -97,5 +97,4 @@ class IntegrationsHrFinanceTestRun extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
-
 }

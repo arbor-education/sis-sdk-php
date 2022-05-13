@@ -115,5 +115,4 @@ class AllowanceAmount extends ModelBase
     {
         $this->setProperty('allowanceAmount', $allowanceAmount);
     }
-
 }

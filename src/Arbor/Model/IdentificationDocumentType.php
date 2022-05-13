@@ -115,5 +115,4 @@ class IdentificationDocumentType extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

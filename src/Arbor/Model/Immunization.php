@@ -115,5 +115,4 @@ class Immunization extends ModelBase
     {
         $this->setProperty('administeredByMedicalInstitution', $administeredByMedicalInstitution);
     }
-
 }

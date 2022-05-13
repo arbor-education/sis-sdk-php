@@ -192,5 +192,4 @@ class AlternativeProvisionPlacement extends ModelBase
     {
         $this->setProperty('sessionsPerWeek', $sessionsPerWeek);
     }
-
 }

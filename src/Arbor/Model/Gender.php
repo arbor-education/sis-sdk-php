@@ -133,5 +133,4 @@ class Gender extends ModelBase
     {
         $this->setProperty('longName', $longName);
     }
-
 }

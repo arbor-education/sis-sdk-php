@@ -97,5 +97,4 @@ class AdHocAssessmentBatch extends ModelBase
     {
         $this->setProperty('assessmentReferenceDate', $assessmentReferenceDate);
     }
-
 }

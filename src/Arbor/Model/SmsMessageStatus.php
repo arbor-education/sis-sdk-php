@@ -133,5 +133,4 @@ class SmsMessageStatus extends ModelBase
     {
         $this->setProperty('errorType', $errorType);
     }
-
 }

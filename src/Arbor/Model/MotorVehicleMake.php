@@ -115,5 +115,4 @@ class MotorVehicleMake extends ModelBase
     {
         $this->setProperty('motorVehicleMake', $motorVehicleMake);
     }
-
 }

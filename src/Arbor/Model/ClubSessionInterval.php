@@ -133,5 +133,4 @@ class ClubSessionInterval extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

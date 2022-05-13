@@ -133,5 +133,4 @@ class CashReceipt extends ModelBase
     {
         $this->setProperty('receivedPayment', $receivedPayment);
     }
-
 }

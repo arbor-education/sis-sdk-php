@@ -115,5 +115,4 @@ class StudentStandardizedAssessment extends ModelBase
     {
         $this->setProperty('completedDate', $completedDate);
     }
-
 }

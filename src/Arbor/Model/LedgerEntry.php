@@ -97,5 +97,4 @@ class LedgerEntry extends ModelBase
     {
         $this->setProperty('transaction', $transaction);
     }
-
 }

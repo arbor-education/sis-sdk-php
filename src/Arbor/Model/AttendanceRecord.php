@@ -277,5 +277,4 @@ class AttendanceRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
-
 }

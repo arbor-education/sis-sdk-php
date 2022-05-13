@@ -115,5 +115,4 @@ class BillPayer extends ModelBase
     {
         $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }
-
 }

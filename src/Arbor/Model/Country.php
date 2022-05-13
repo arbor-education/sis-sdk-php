@@ -223,5 +223,4 @@ class Country extends ModelBase
     {
         $this->setProperty('appliesToPostalAddress', $appliesToPostalAddress);
     }
-
 }

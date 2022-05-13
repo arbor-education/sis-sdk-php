@@ -133,5 +133,4 @@ class InvigilationDuty extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 }

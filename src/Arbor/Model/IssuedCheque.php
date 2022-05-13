@@ -115,5 +115,4 @@ class IssuedCheque extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

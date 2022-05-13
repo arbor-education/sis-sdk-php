@@ -205,5 +205,4 @@ class EmailPart extends ModelBase
     {
         $this->setProperty('parentEmailPart', $parentEmailPart);
     }
-
 }

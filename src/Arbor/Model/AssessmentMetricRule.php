@@ -61,5 +61,4 @@ class AssessmentMetricRule extends ModelBase
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
-
 }

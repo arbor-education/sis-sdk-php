@@ -97,5 +97,4 @@ class BookableResourcePeriod extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 }

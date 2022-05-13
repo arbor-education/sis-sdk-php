@@ -115,5 +115,4 @@ class FacultyMember extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

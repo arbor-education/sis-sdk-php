@@ -169,5 +169,4 @@ class StudentDestinationType extends ModelBase
     {
         $this->setProperty('linkedEntityType', $linkedEntityType);
     }
-
 }

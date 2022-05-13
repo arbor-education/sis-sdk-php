@@ -133,5 +133,4 @@ class UserRoleAssignment extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 }

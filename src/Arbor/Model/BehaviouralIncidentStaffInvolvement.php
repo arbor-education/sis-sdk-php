@@ -79,5 +79,4 @@ class BehaviouralIncidentStaffInvolvement extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
 }

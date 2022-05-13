@@ -79,5 +79,4 @@ class AcademicUnitAssessment extends ModelBase
     {
         $this->setProperty('assessment', $assessment);
     }
-
 }

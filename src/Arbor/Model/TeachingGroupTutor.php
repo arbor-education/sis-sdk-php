@@ -115,5 +115,4 @@ class TeachingGroupTutor extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -133,5 +133,4 @@ class Bank extends ModelBase
     {
         $this->setProperty('countryCode', $countryCode);
     }
-
 }

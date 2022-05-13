@@ -169,5 +169,4 @@ class Observation extends ModelBase
     {
         $this->setProperty('observationFocus', $observationFocus);
     }
-
 }

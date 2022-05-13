@@ -97,5 +97,4 @@ class SessionRoomAssetRequirement extends ModelBase
     {
         $this->setProperty('quantity', $quantity);
     }
-
 }

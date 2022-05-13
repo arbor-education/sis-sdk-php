@@ -115,5 +115,4 @@ class SenEventOutcomeType extends ModelBase
     {
         $this->setProperty('senEventOutcomeType', $senEventOutcomeType);
     }
-
 }

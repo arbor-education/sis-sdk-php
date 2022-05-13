@@ -367,5 +367,4 @@ class Kpi extends ModelBase
     {
         $this->setProperty('calculateForStudentAcademicUnitEnrolments', $calculateForStudentAcademicUnitEnrolments);
     }
-
 }

@@ -187,5 +187,4 @@ class BankAccount extends ModelBase
     {
         $this->setProperty('bacsUserNumber', $bacsUserNumber);
     }
-
 }

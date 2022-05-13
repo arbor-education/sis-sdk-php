@@ -97,5 +97,4 @@ class EventParticipant extends ModelBase
     {
         $this->setProperty('attendanceRequirement', $attendanceRequirement);
     }
-
 }

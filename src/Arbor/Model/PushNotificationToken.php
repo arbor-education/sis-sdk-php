@@ -151,5 +151,4 @@ class PushNotificationToken extends ModelBase
     {
         $this->setProperty('deviceId', $deviceId);
     }
-
 }

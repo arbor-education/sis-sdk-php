@@ -151,5 +151,4 @@ class Tagging extends ModelBase
     {
         $this->setProperty('link2', $link2);
     }
-
 }

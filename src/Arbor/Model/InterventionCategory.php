@@ -133,5 +133,4 @@ class InterventionCategory extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

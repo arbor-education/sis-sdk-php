@@ -97,5 +97,4 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

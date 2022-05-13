@@ -151,5 +151,4 @@ class QualificationScheme extends ModelBase
     {
         $this->setProperty('title', $title);
     }
-
 }

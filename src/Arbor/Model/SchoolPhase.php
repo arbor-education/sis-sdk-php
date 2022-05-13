@@ -115,5 +115,4 @@ class SchoolPhase extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

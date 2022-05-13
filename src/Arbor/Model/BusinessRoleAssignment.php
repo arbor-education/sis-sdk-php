@@ -133,5 +133,4 @@ class BusinessRoleAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

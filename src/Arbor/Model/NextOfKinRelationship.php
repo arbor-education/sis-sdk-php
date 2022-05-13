@@ -115,5 +115,4 @@ class NextOfKinRelationship extends ModelBase
     {
         $this->setProperty('relationshipName', $relationshipName);
     }
-
 }

@@ -115,5 +115,4 @@ class ContentTag extends ModelBase
     {
         $this->setProperty('tagValue', $tagValue);
     }
-
 }

@@ -151,5 +151,4 @@ class CustomerCreditNote extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

@@ -82,5 +82,4 @@ class SenNeedType extends ModelBase
     {
         $this->setProperty('exportCode', $exportCode);
     }
-
 }

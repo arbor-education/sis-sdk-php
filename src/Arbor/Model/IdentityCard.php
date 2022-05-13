@@ -133,5 +133,4 @@ class IdentityCard extends ModelBase
     {
         $this->setProperty('lostDatetime', $lostDatetime);
     }
-
 }

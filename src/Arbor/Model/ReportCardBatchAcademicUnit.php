@@ -115,5 +115,4 @@ class ReportCardBatchAcademicUnit extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

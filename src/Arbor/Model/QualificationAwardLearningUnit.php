@@ -97,5 +97,4 @@ class QualificationAwardLearningUnit extends ModelBase
     {
         $this->setProperty('isUserDefined', $isUserDefined);
     }
-
 }

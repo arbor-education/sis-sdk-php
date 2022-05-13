@@ -115,5 +115,4 @@ class RoomLayout extends ModelBase
     {
         $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }
-
 }

@@ -205,5 +205,4 @@ class AwardingOrganization extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -331,5 +331,4 @@ class StaffAbsence extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

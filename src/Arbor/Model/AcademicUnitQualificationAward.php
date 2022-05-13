@@ -79,5 +79,4 @@ class AcademicUnitQualificationAward extends ModelBase
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
-
 }

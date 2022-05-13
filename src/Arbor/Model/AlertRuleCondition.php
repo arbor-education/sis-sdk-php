@@ -133,5 +133,4 @@ class AlertRuleCondition extends ModelBase
     {
         $this->setProperty('conditionResolver', $conditionResolver);
     }
-
 }

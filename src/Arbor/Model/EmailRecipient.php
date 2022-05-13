@@ -223,5 +223,4 @@ class EmailRecipient extends ModelBase
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
-
 }

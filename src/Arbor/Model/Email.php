@@ -313,5 +313,4 @@ class Email extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

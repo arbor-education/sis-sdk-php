@@ -115,5 +115,4 @@ class SenNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
-
 }

@@ -169,5 +169,4 @@ class ProgressAssessmentBatch extends ModelBase
     {
         $this->setProperty('showRankOrder', $showRankOrder);
     }
-
 }

@@ -118,5 +118,4 @@ class SchoolGovernanceType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

@@ -223,5 +223,4 @@ class GradePointScale extends ModelBase
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }
-
 }

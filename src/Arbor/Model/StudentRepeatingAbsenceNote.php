@@ -169,5 +169,4 @@ class StudentRepeatingAbsenceNote extends ModelBase
     {
         $this->setProperty('maxOccurrence', $maxOccurrence);
     }
-
 }

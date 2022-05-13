@@ -61,5 +61,4 @@ class InboundNotificationAutomaticRecipient extends ModelBase
     {
         $this->setProperty('automaticRecipient', $automaticRecipient);
     }
-
 }

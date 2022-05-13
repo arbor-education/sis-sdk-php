@@ -115,5 +115,4 @@ class MaritalStatus extends ModelBase
     {
         $this->setProperty('fullTitle', $fullTitle);
     }
-
 }

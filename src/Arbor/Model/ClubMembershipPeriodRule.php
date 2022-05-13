@@ -97,5 +97,4 @@ class ClubMembershipPeriodRule extends ModelBase
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
-
 }

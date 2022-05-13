@@ -115,5 +115,4 @@ class IntegrationVleProvider extends ModelBase
     {
         $this->setProperty('code', $code);
     }
-
 }

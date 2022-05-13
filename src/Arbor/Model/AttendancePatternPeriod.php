@@ -115,5 +115,4 @@ class AttendancePatternPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

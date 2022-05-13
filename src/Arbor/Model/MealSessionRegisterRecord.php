@@ -151,5 +151,4 @@ class MealSessionRegisterRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
-
 }

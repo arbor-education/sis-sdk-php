@@ -118,5 +118,4 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }
-
 }

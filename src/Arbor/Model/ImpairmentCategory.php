@@ -115,5 +115,4 @@ class ImpairmentCategory extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

@@ -115,5 +115,4 @@ class AssessmentGradeSet extends ModelBase
     {
         $this->setProperty('isOriginal', $isOriginal);
     }
-
 }

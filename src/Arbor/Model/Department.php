@@ -97,5 +97,4 @@ class Department extends ModelBase
     {
         $this->setProperty('isActive', $isActive);
     }
-
 }

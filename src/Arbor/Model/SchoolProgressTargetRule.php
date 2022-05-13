@@ -223,5 +223,4 @@ class SchoolProgressTargetRule extends ModelBase
     {
         $this->setProperty('academicYearsOffset', $academicYearsOffset);
     }
-
 }

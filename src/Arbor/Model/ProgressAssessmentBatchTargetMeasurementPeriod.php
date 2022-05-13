@@ -151,5 +151,4 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     {
         $this->setProperty('allMarksApproved', $allMarksApproved);
     }
-
 }

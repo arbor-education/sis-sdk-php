@@ -187,5 +187,4 @@ class StandardizedAssessmentMark extends ModelBase
     {
         $this->setProperty('assessmentImportItem', $assessmentImportItem);
     }
-
 }

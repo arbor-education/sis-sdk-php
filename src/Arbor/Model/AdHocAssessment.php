@@ -241,5 +241,4 @@ class AdHocAssessment extends ModelBase
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }
-
 }

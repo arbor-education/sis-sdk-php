@@ -115,5 +115,4 @@ class Company extends ModelBase
     {
         $this->setProperty('vatIdentificationNumber', $vatIdentificationNumber);
     }
-
 }

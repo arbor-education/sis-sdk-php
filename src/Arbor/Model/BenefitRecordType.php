@@ -169,5 +169,4 @@ class BenefitRecordType extends ModelBase
     {
         $this->setProperty('appliesToGuardian', $appliesToGuardian);
     }
-
 }

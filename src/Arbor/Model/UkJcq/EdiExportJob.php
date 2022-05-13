@@ -174,5 +174,4 @@ class EdiExportJob extends ModelBase
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
-
 }

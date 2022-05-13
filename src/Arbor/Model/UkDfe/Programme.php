@@ -64,5 +64,4 @@ class Programme extends ModelBase
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }
-
 }

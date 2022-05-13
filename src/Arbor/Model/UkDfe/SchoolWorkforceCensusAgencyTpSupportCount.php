@@ -137,5 +137,4 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     {
         $this->setProperty('supHeadCount', $supHeadCount);
     }
-
 }

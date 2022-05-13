@@ -118,5 +118,4 @@ class PositionCategory extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

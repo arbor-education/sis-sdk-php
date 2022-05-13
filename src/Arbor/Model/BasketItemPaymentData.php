@@ -97,5 +97,4 @@ class BasketItemPaymentData extends ModelBase
     {
         $this->setProperty('value', $value);
     }
-
 }

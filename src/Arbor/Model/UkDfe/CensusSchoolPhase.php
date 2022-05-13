@@ -118,5 +118,4 @@ class CensusSchoolPhase extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

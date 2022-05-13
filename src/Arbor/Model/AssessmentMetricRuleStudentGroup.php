@@ -79,5 +79,4 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
-
 }

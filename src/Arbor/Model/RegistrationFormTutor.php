@@ -115,5 +115,4 @@ class RegistrationFormTutor extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -97,5 +97,4 @@ class PersonTrainingCourse extends ModelBase
     {
         $this->setProperty('feeCosts', $feeCosts);
     }
-
 }

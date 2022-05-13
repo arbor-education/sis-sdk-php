@@ -79,5 +79,4 @@ class AssessmentMetric extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

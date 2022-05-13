@@ -115,5 +115,4 @@ class AdHocAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

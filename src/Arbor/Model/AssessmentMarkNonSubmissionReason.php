@@ -151,5 +151,4 @@ class AssessmentMarkNonSubmissionReason extends ModelBase
     {
         $this->setProperty('assessmentType', $assessmentType);
     }
-
 }

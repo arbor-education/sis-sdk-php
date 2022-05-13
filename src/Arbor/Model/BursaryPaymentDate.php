@@ -97,5 +97,4 @@ class BursaryPaymentDate extends ModelBase
     {
         $this->setProperty('paymentDate', $paymentDate);
     }
-
 }

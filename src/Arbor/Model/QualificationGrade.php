@@ -241,5 +241,4 @@ class QualificationGrade extends ModelBase
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }
-
 }

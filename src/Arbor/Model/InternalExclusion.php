@@ -187,5 +187,4 @@ class InternalExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

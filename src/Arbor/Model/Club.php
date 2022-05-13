@@ -295,5 +295,4 @@ class Club extends ModelBase
     {
         $this->setProperty('chargeStudentsBasedOnAttendanceMark', $chargeStudentsBasedOnAttendanceMark);
     }
-
 }

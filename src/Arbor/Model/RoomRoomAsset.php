@@ -97,5 +97,4 @@ class RoomRoomAsset extends ModelBase
     {
         $this->setProperty('quantity', $quantity);
     }
-
 }

@@ -97,5 +97,4 @@ class InAppMessagePermittedSender extends ModelBase
     {
         $this->setProperty('allow', $allow);
     }
-
 }

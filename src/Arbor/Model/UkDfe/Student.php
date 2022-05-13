@@ -371,5 +371,4 @@ class Student extends ModelBase
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
-
 }

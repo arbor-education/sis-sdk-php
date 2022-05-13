@@ -151,5 +151,4 @@ class Snippet extends ModelBase
     {
         $this->setProperty('isShared', $isShared);
     }
-
 }

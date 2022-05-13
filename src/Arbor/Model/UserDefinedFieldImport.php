@@ -151,5 +151,4 @@ class UserDefinedFieldImport extends ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
-
 }

@@ -115,5 +115,4 @@ class SafeguardingNote extends ModelBase
     {
         $this->setProperty('content', $content);
     }
-
 }

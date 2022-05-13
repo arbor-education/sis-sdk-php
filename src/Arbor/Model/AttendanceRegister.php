@@ -151,5 +151,4 @@ class AttendanceRegister extends ModelBase
     {
         $this->setProperty('closedDatetime', $closedDatetime);
     }
-
 }

@@ -97,5 +97,4 @@ class Note extends ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
-
 }

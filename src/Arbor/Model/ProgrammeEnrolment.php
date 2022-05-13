@@ -205,5 +205,4 @@ class ProgrammeEnrolment extends ModelBase
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }
-
 }

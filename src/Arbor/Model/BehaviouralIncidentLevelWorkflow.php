@@ -565,5 +565,4 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
-
 }

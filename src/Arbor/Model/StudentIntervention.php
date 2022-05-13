@@ -349,5 +349,4 @@ class StudentIntervention extends ModelBase
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
-
 }

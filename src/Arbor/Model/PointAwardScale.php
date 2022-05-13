@@ -295,5 +295,4 @@ class PointAwardScale extends ModelBase
     {
         $this->setProperty('showEventInParentPortal', $showEventInParentPortal);
     }
-
 }

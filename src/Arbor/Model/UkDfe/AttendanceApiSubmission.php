@@ -172,5 +172,4 @@ class AttendanceApiSubmission extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
 }

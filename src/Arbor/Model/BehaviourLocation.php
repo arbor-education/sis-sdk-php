@@ -61,5 +61,4 @@ class BehaviourLocation extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

@@ -79,5 +79,4 @@ class Candidate extends ModelBase
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }
-
 }

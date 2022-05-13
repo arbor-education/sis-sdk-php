@@ -115,5 +115,4 @@ class PastoralNote extends ModelBase
     {
         $this->setProperty('noteDate', $noteDate);
     }
-
 }

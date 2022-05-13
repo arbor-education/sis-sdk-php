@@ -174,5 +174,4 @@ class PupilPremiumRecipient extends ModelBase
     {
         $this->setProperty('lastFsm', $lastFsm);
     }
-
 }

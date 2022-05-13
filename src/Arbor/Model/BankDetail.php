@@ -169,5 +169,4 @@ class BankDetail extends ModelBase
     {
         $this->setProperty('sortCode', $sortCode);
     }
-
 }

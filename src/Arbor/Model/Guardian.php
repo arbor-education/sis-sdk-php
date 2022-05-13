@@ -259,5 +259,4 @@ class Guardian extends ModelBase
     {
         $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }
-
 }

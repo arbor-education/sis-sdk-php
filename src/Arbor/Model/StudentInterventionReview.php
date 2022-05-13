@@ -115,5 +115,4 @@ class StudentInterventionReview extends ModelBase
     {
         $this->setProperty('reviewDate', $reviewDate);
     }
-
 }

@@ -133,5 +133,4 @@ class TimetablePeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

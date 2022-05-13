@@ -151,5 +151,4 @@ class IntegrationsHrFinanceProvider extends ModelBase
     {
         $this->setProperty('enabled', $enabled);
     }
-
 }

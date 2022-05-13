@@ -133,5 +133,4 @@ class RepeatingSchoolEvent extends ModelBase
     {
         $this->setProperty('coverRequired', $coverRequired);
     }
-
 }

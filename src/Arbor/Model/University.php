@@ -79,5 +79,4 @@ class University extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
-
 }

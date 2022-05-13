@@ -97,5 +97,4 @@ class PayScaleGrade extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

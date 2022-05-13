@@ -133,5 +133,4 @@ class TrainingCourse extends ModelBase
     {
         $this->setProperty('otherCosts', $otherCosts);
     }
-
 }

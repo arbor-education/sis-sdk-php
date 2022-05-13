@@ -169,5 +169,4 @@ class EducationPlan extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

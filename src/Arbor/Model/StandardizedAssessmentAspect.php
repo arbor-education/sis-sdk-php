@@ -242,5 +242,4 @@ class StandardizedAssessmentAspect extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

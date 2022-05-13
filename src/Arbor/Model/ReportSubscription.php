@@ -79,5 +79,4 @@ class ReportSubscription extends ModelBase
     {
         $this->setProperty('subscriber', $subscriber);
     }
-
 }

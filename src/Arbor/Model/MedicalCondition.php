@@ -187,5 +187,4 @@ class MedicalCondition extends ModelBase
     {
         $this->setProperty('treatment', $treatment);
     }
-
 }

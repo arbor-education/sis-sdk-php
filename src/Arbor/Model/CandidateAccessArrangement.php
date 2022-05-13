@@ -151,5 +151,4 @@ class CandidateAccessArrangement extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

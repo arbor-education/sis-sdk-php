@@ -151,5 +151,4 @@ class UserLogin extends ModelBase
     {
         $this->setProperty('identityProvider', $identityProvider);
     }
-
 }

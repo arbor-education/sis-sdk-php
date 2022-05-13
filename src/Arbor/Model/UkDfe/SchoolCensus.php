@@ -227,5 +227,4 @@ class SchoolCensus extends ModelBase
     {
         $this->setProperty('schoolCensusSpecificTime', $schoolCensusSpecificTime);
     }
-
 }

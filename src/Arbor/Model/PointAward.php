@@ -205,5 +205,4 @@ class PointAward extends ModelBase
     {
         $this->setProperty('event', $event);
     }
-
 }

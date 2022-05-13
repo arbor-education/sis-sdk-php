@@ -115,5 +115,4 @@ class IncomingBankTransaction extends ModelBase
     {
         $this->setProperty('payment', $payment);
     }
-
 }

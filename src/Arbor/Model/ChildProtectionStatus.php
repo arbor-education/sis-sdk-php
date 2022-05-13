@@ -115,5 +115,4 @@ class ChildProtectionStatus extends ModelBase
     {
         $this->setProperty('childProtectionStatusName', $childProtectionStatusName);
     }
-
 }

@@ -115,5 +115,4 @@ class SchoolShopOrderItem extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 }

@@ -118,5 +118,4 @@ class QualifiedTeacherRoute extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

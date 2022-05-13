@@ -79,5 +79,4 @@ class PhysicalInterventionRecordTechnique extends ModelBase
     {
         $this->setProperty('physicalInterventionTechnique', $physicalInterventionTechnique);
     }
-
 }
