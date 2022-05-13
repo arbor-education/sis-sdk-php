@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BasketItem extends ModelBase
 {
+
     const BASKET = 'basket';
 
     const PAYMENT_AMOUNT = 'paymentAmount';
@@ -13,6 +14,8 @@ class BasketItem extends ModelBase
     const ADDED_DATETIME = 'addedDatetime';
 
     const PAYING_FOR = 'payingFor';
+
+    const QUANTITY = 'quantity';
 
     const STUDENT = 'student';
 
@@ -119,6 +122,22 @@ class BasketItem extends ModelBase
     }
 
     /**
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->getProperty('quantity');
+    }
+
+    /**
+     * @param int $quantity
+     */
+    public function setQuantity($quantity = null)
+    {
+        $this->setProperty('quantity', $quantity);
+    }
+
+    /**
      * @return Student
      */
     public function getStudent()
@@ -133,4 +152,6 @@ class BasketItem extends ModelBase
     {
         $this->setProperty('student', $student);
     }
+
+
 }

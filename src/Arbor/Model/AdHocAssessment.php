@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AdHocAssessment extends ModelBase
 {
+
     const AD_HOC_ASSESSMENT_CATEGORY = 'adHocAssessmentCategory';
 
     const ASSESSMENT_NAME = 'assessmentName';
@@ -241,4 +242,6 @@ class AdHocAssessment extends ModelBase
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }
+
+
 }

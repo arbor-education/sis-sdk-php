@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class OfstedGrade extends ModelBase
 {
+
     const LABEL = 'label';
 
     const CODE = 'code';
@@ -136,4 +137,6 @@ class OfstedGrade extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
+
 }

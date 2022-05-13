@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CovidTestingTest extends ModelBase
 {
+
     const PERSON = 'person';
 
     const TEST_TYPE = 'testType';
@@ -15,8 +16,6 @@ class CovidTestingTest extends ModelBase
     const RESULT = 'result';
 
     const RESULT_DATETIME = 'resultDatetime';
-
-    const ADMINISTERED_BY_STAFF = 'administeredByStaff';
 
     const ADMINISTERED_BY = 'administeredBy';
 
@@ -141,22 +140,6 @@ class CovidTestingTest extends ModelBase
     }
 
     /**
-     * @return Staff
-     */
-    public function getAdministeredByStaff()
-    {
-        return $this->getProperty('administeredByStaff');
-    }
-
-    /**
-     * @param Staff $administeredByStaff
-     */
-    public function setAdministeredByStaff(Staff $administeredByStaff = null)
-    {
-        $this->setProperty('administeredByStaff', $administeredByStaff);
-    }
-
-    /**
      * @return ModelBase
      */
     public function getAdministeredBy()
@@ -187,4 +170,6 @@ class CovidTestingTest extends ModelBase
     {
         $this->setProperty('administeredDatetime', $administeredDatetime);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RoomLayout extends ModelBase
 {
+
     const ROOM = 'room';
 
     const STAFF = 'staff';
@@ -115,4 +116,6 @@ class RoomLayout extends ModelBase
     {
         $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }
+
+
 }

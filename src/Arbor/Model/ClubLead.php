@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ClubLead extends ModelBase
 {
+
     const CLUB = 'club';
 
     const STAFF = 'staff';
@@ -115,4 +116,6 @@ class ClubLead extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

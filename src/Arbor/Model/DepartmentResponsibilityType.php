@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DepartmentResponsibilityType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class DepartmentResponsibilityType extends ModelBase
     {
         $this->setProperty('responsibilityTypeName', $responsibilityTypeName);
     }
+
+
 }

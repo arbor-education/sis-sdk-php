@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionItem extends ModelBase
 {
+
     const ASSESSMENT_DATA_COLLECTION = 'assessmentDataCollection';
 
     const ASSESSMENT_ENTITY = 'assessmentEntity';
@@ -187,4 +188,6 @@ class AssessmentDataCollectionItem extends ModelBase
     {
         $this->setProperty('completionDenominator', $completionDenominator);
     }
+
+
 }

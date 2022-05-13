@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TrainingCourse extends ModelBase
 {
+
     const TRAINING_COURSE_TITLE = 'trainingCourseTitle';
 
     const TRAINING_COURSE_DESCRIPTION = 'trainingCourseDescription';
@@ -133,4 +134,6 @@ class TrainingCourse extends ModelBase
     {
         $this->setProperty('otherCosts', $otherCosts);
     }
+
+
 }

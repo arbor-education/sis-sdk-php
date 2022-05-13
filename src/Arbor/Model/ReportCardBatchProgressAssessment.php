@@ -6,11 +6,14 @@ use Arbor\Query\Query;
 
 class ReportCardBatchProgressAssessment extends ModelBase
 {
+
     const REPORT_CARD_BATCH = 'reportCardBatch';
 
     const ORDER = 'order';
 
     const ASSESSMENT = 'assessment';
+
+    const DISPLAY_GRADE_SET = 'displayGradeSet';
 
     const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
@@ -101,6 +104,22 @@ class ReportCardBatchProgressAssessment extends ModelBase
     }
 
     /**
+     * @return GradeSet
+     */
+    public function getDisplayGradeSet()
+    {
+        return $this->getProperty('displayGradeSet');
+    }
+
+    /**
+     * @param GradeSet $displayGradeSet
+     */
+    public function setDisplayGradeSet(GradeSet $displayGradeSet = null)
+    {
+        $this->setProperty('displayGradeSet', $displayGradeSet);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getMarkingCompletedDatetime()
@@ -115,4 +134,6 @@ class ReportCardBatchProgressAssessment extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InHouseExamInstanceAcademicUnitLink extends ModelBase
 {
+
     const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
 
     const ACADEMIC_UNIT = 'academicUnit';
@@ -79,4 +80,6 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
+
+
 }

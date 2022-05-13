@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class GuardianConsultation extends ModelBase
 {
+
     const GUARDIAN_CONSULTATION_NAME = 'guardianConsultationName';
 
     const START_DATETIME = 'startDatetime';
@@ -133,4 +134,6 @@ class GuardianConsultation extends ModelBase
     {
         $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
+
+
 }

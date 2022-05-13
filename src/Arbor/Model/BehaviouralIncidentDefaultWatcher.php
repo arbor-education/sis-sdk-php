@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentDefaultWatcher extends ModelBase
 {
+
     const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     const RELATION_TO_STUDENT = 'relationToStudent';
@@ -97,4 +98,6 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
+
+
 }

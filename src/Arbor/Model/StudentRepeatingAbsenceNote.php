@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentRepeatingAbsenceNote extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const START_DATE = 'startDate';
@@ -169,4 +170,6 @@ class StudentRepeatingAbsenceNote extends ModelBase
     {
         $this->setProperty('maxOccurrence', $maxOccurrence);
     }
+
+
 }

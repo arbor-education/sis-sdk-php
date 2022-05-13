@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicYear extends ModelBase
 {
+
     const ACADEMIC_YEAR_NAME = 'academicYearName';
 
     const CODE = 'code';
@@ -133,4 +134,6 @@ class AcademicYear extends ModelBase
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }
+
+
 }

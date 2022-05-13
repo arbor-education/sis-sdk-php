@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitEnrolment extends ModelBase
 {
+
     const PLANNED_EEP_HOURS = 'plannedEepHours';
 
     protected $_resourceType = ResourceType::UK_DFE_ACADEMIC_UNIT_ENROLMENT;
@@ -64,4 +65,6 @@ class AcademicUnitEnrolment extends ModelBase
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
+
+
 }

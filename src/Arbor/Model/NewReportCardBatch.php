@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class NewReportCardBatch extends ModelBase
 {
+
     const REPORT_CARD_TEMPLATE = 'reportCardTemplate';
 
     const REPORT_CARD_TITLE = 'reportCardTitle';
@@ -45,6 +46,8 @@ class NewReportCardBatch extends ModelBase
     const FINALIZATION_IN_PROGRESS = 'finalizationInProgress';
 
     const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
+
+    const SHARED_WITH_STUDENTS = 'sharedWithStudents';
 
     const BEHAVIOUR_FIELDS = 'behaviourFields';
 
@@ -413,6 +416,22 @@ class NewReportCardBatch extends ModelBase
     }
 
     /**
+     * @return bool
+     */
+    public function getSharedWithStudents()
+    {
+        return $this->getProperty('sharedWithStudents');
+    }
+
+    /**
+     * @param bool $sharedWithStudents
+     */
+    public function setSharedWithStudents($sharedWithStudents = null)
+    {
+        $this->setProperty('sharedWithStudents', $sharedWithStudents);
+    }
+
+    /**
      * @return string
      */
     public function getBehaviourFields()
@@ -475,4 +494,6 @@ class NewReportCardBatch extends ModelBase
     {
         $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }
+
+
 }

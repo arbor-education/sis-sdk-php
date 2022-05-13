@@ -6,11 +6,10 @@ use Arbor\Query\Query;
 
 class InterventionGroup extends ModelBase
 {
+
     const NAME = 'name';
 
     const INTERVENTION = 'intervention';
-
-    const GROUP = 'group';
 
     const START_DATE = 'startDate';
 
@@ -92,22 +91,6 @@ class InterventionGroup extends ModelBase
     public function setIntervention(Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getGroup()
-    {
-        return $this->getProperty('group');
-    }
-
-    /**
-     * @param ModelBase $group
-     */
-    public function setGroup(ModelBase $group = null)
-    {
-        $this->setProperty('group', $group);
     }
 
     /**
@@ -205,4 +188,6 @@ class InterventionGroup extends ModelBase
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }
+
+
 }

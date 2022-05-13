@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Email extends ModelBase
 {
+
     const EMAIL_MAILBOX = 'emailMailbox';
 
     const EMAIL_DRAFT = 'emailDraft';
@@ -313,4 +314,6 @@ class Email extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
+
+
 }

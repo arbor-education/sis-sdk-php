@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentProgressBaseline extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -187,4 +188,6 @@ class StudentProgressBaseline extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
+
+
 }

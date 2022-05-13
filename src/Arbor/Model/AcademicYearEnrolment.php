@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicYearEnrolment extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const STUDENT = 'student';
@@ -187,4 +188,6 @@ class AcademicYearEnrolment extends ModelBase
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
+
+
 }

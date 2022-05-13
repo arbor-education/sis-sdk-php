@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ObservationTheme extends ModelBase
 {
+
     const OBSERVATION_TYPE = 'observationType';
 
     const NAME = 'name';
@@ -79,4 +80,6 @@ class ObservationTheme extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

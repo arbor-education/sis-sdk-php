@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ChildProtectionStatus extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class ChildProtectionStatus extends ModelBase
     {
         $this->setProperty('childProtectionStatusName', $childProtectionStatusName);
     }
+
+
 }

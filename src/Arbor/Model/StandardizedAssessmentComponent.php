@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentComponent extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -169,4 +170,6 @@ class StandardizedAssessmentComponent extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

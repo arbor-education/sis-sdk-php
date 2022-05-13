@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IntakeSeasonApplicantBucket extends ModelBase
 {
+
     const APPLICANT_BUCKET_NAME = 'applicantBucketName';
 
     const INTAKE_SEASON = 'intakeSeason';
@@ -79,4 +80,6 @@ class IntakeSeasonApplicantBucket extends ModelBase
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }
+
+
 }

@@ -10,6 +10,7 @@ use Arbor\Model\LocalAuthority;
 
 class ChildProtectionStatusAssignment extends ModelBase
 {
+
     const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::UK_DFE_CHILD_PROTECTION_STATUS_ASSIGNMENT;
@@ -65,4 +66,6 @@ class ChildProtectionStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
+
+
 }

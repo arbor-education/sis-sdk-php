@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SiteOperatingPeriodException extends ModelBase
 {
+
     const SITE = 'site';
 
     const START_DATE = 'startDate';
@@ -97,4 +98,6 @@ class SiteOperatingPeriodException extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

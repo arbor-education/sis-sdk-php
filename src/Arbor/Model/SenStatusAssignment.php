@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SenStatusAssignment extends ModelBase
 {
+
     const SEN_STATUS = 'senStatus';
 
     const STUDENT = 'student';
@@ -115,4 +116,6 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

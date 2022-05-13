@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Session extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -23,6 +24,8 @@ class Session extends ModelBase
     const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
     const LESSON_PLAN = 'lessonPlan';
+
+    const IS_SUSPENDED = 'isSuspended';
 
     protected $_resourceType = ResourceType::SESSION;
 
@@ -205,4 +208,22 @@ class Session extends ModelBase
     {
         $this->setProperty('lessonPlan', $lessonPlan);
     }
+
+    /**
+     * @return bool
+     */
+    public function getIsSuspended()
+    {
+        return $this->getProperty('isSuspended');
+    }
+
+    /**
+     * @param bool $isSuspended
+     */
+    public function setIsSuspended($isSuspended = null)
+    {
+        $this->setProperty('isSuspended', $isSuspended);
+    }
+
+
 }

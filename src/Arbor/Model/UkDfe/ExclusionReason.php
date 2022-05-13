@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class ExclusionReason extends ModelBase
 {
+
     const D00024 = 'd00024';
 
     protected $_resourceType = ResourceType::UK_DFE_EXCLUSION_REASON;
@@ -64,4 +65,6 @@ class ExclusionReason extends ModelBase
     {
         $this->setProperty('d00024', $d00024);
     }
+
+
 }

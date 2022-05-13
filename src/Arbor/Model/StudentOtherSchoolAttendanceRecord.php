@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentOtherSchoolAttendanceRecord extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -223,4 +224,6 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     {
         $this->setProperty('attendanceMarks', $attendanceMarks);
     }
+
+
 }

@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class Programme extends ModelBase
 {
+
     const IS_TRAINEESHIP = 'isTraineeship';
 
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME;
@@ -64,4 +65,6 @@ class Programme extends ModelBase
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }
+
+
 }

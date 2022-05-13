@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BasketItemPaymentData extends ModelBase
 {
+
     const BASKET_ITEM = 'basketItem';
 
     const NAME = 'name';
@@ -97,4 +98,6 @@ class BasketItemPaymentData extends ModelBase
     {
         $this->setProperty('value', $value);
     }
+
+
 }

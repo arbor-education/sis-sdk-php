@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Intervention extends ModelBase
 {
-    const INTERVENTION_DEFINITION = 'interventionDefinition';
 
     const NAME = 'name';
 
@@ -76,22 +75,6 @@ class Intervention extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::INTERVENTION, $id);
-    }
-
-    /**
-     * @return InterventionDefinition
-     */
-    public function getInterventionDefinition()
-    {
-        return $this->getProperty('interventionDefinition');
-    }
-
-    /**
-     * @param InterventionDefinition $interventionDefinition
-     */
-    public function setInterventionDefinition(InterventionDefinition $interventionDefinition = null)
-    {
-        $this->setProperty('interventionDefinition', $interventionDefinition);
     }
 
     /**
@@ -349,4 +332,6 @@ class Intervention extends ModelBase
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }
+
+
 }

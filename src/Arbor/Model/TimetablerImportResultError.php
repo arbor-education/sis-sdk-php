@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TimetablerImportResultError extends ModelBase
 {
+
     const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
     const ERROR_MESSAGE = 'errorMessage';
@@ -79,4 +80,6 @@ class TimetablerImportResultError extends ModelBase
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
+
+
 }

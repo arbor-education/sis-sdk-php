@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Guardian extends ModelBase
 {
+
     const PERSON = 'person';
 
     const EMPLOYER = 'employer';
@@ -25,6 +26,10 @@ class Guardian extends ModelBase
     const LEGACY_SYSTEM_ID = 'legacySystemId';
 
     const IS_KEY_WORKER = 'isKeyWorker';
+
+    const IS_ACTIVE_OUTGOING_SYNC = 'isActiveOutgoingSync';
+
+    const IS_ACTIVE_INCOMING_SYNC = 'isActiveIncomingSync';
 
     protected $_resourceType = ResourceType::GUARDIAN;
 
@@ -223,4 +228,38 @@ class Guardian extends ModelBase
     {
         $this->setProperty('isKeyWorker', $isKeyWorker);
     }
+
+    /**
+     * @return bool
+     */
+    public function getIsActiveOutgoingSync()
+    {
+        return $this->getProperty('isActiveOutgoingSync');
+    }
+
+    /**
+     * @param bool $isActiveOutgoingSync
+     */
+    public function setIsActiveOutgoingSync($isActiveOutgoingSync = null)
+    {
+        $this->setProperty('isActiveOutgoingSync', $isActiveOutgoingSync);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActiveIncomingSync()
+    {
+        return $this->getProperty('isActiveIncomingSync');
+    }
+
+    /**
+     * @param bool $isActiveIncomingSync
+     */
+    public function setIsActiveIncomingSync($isActiveIncomingSync = null)
+    {
+        $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
+    }
+
+
 }

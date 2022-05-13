@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ClubMembership extends ModelBase
 {
+
     const CLUB = 'club';
 
     const START_DATE = 'startDate';
@@ -241,4 +242,6 @@ class ClubMembership extends ModelBase
     {
         $this->setProperty('disabledDatetime', $disabledDatetime);
     }
+
+
 }

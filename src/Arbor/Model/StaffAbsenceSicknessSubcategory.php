@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StaffAbsenceSicknessSubcategory extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

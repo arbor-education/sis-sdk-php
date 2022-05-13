@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class GoogleProvisioningSetting extends ModelBase
 {
+
     const PROVISION_STAFF_USERS = 'provisionStaffUsers';
 
     const PROVISION_STUDENT_USERS = 'provisionStudentUsers';
@@ -133,4 +134,6 @@ class GoogleProvisioningSetting extends ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
+
+
 }

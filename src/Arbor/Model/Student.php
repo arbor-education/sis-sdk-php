@@ -10,6 +10,7 @@ use Arbor\Model\UkDfe\GcseMathsFundingExemptionType;
 
 class Student extends ModelBase
 {
+
     const PERSON = 'person';
 
     const RELIGION = 'religion';
@@ -31,6 +32,10 @@ class Student extends ModelBase
     const MINIMUM_DATA_RETENTION_DATE = 'minimumDataRetentionDate';
 
     const SUSPEND_CALENDAR_ENTRY_MAPPINGS = 'suspendCalendarEntryMappings';
+
+    const IS_ACTIVE_OUTGOING_SYNC = 'isActiveOutgoingSync';
+
+    const IS_ACTIVE_INCOMING_SYNC = 'isActiveIncomingSync';
 
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
@@ -280,6 +285,38 @@ class Student extends ModelBase
     public function setSuspendCalendarEntryMappings($suspendCalendarEntryMappings = null)
     {
         $this->setProperty('suspendCalendarEntryMappings', $suspendCalendarEntryMappings);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActiveOutgoingSync()
+    {
+        return $this->getProperty('isActiveOutgoingSync');
+    }
+
+    /**
+     * @param bool $isActiveOutgoingSync
+     */
+    public function setIsActiveOutgoingSync($isActiveOutgoingSync = null)
+    {
+        $this->setProperty('isActiveOutgoingSync', $isActiveOutgoingSync);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActiveIncomingSync()
+    {
+        return $this->getProperty('isActiveIncomingSync');
+    }
+
+    /**
+     * @param bool $isActiveIncomingSync
+     */
+    public function setIsActiveIncomingSync($isActiveIncomingSync = null)
+    {
+        $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }
 
     /**
@@ -569,4 +606,6 @@ class Student extends ModelBase
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
+
+
 }

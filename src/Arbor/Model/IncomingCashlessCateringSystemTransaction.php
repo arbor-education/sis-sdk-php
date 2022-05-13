@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IncomingCashlessCateringSystemTransaction extends ModelBase
 {
+
     const BILL_PAYER = 'billPayer';
 
     const SOURCE = 'source';
@@ -23,6 +24,8 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     const VAT_AMOUNT = 'vatAmount';
 
     const TRANSACTION_DATE = 'transactionDate';
+
+    const RELATED_ENTITY = 'relatedEntity';
 
     protected $_resourceType = ResourceType::INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
 
@@ -205,4 +208,22 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     {
         $this->setProperty('transactionDate', $transactionDate);
     }
+
+    /**
+     * @return ModelBase
+     */
+    public function getRelatedEntity()
+    {
+        return $this->getProperty('relatedEntity');
+    }
+
+    /**
+     * @param ModelBase $relatedEntity
+     */
+    public function setRelatedEntity(ModelBase $relatedEntity = null)
+    {
+        $this->setProperty('relatedEntity', $relatedEntity);
+    }
+
+
 }

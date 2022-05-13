@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AttendanceRegister extends ModelBase
 {
+
     const EVENT = 'event';
 
     const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
@@ -151,4 +152,6 @@ class AttendanceRegister extends ModelBase
     {
         $this->setProperty('closedDatetime', $closedDatetime);
     }
+
+
 }

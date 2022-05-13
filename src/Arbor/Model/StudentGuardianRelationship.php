@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentGuardianRelationship extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const GUARDIAN = 'guardian';
@@ -223,4 +224,6 @@ class StudentGuardianRelationship extends ModelBase
     {
         $this->setProperty('accessNotes', $accessNotes);
     }
+
+
 }

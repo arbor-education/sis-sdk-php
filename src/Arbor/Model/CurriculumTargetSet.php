@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CurriculumTargetSet extends ModelBase
 {
+
     const CURRICULUM = 'curriculum';
 
     const TYPE = 'type';
@@ -133,4 +134,6 @@ class CurriculumTargetSet extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

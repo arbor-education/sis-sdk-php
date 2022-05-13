@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class PointAwardScale extends ModelBase
 {
+
     const POINT_AWARD_SCALE_NAME = 'pointAwardScaleName';
 
     const SINGULAR_POINT_NAME = 'singularPointName';
@@ -31,6 +32,8 @@ class PointAwardScale extends ModelBase
     const SHOW_NARRATIVE_IN_PARENT_PORTAL = 'showNarrativeInParentPortal';
 
     const SHOW_AWARDED_BY_IN_PARENT_PORTAL = 'showAwardedByInParentPortal';
+
+    const SHOW_EVENT_IN_PARENT_PORTAL = 'showEventInParentPortal';
 
     protected $_resourceType = ResourceType::POINT_AWARD_SCALE;
 
@@ -277,4 +280,22 @@ class PointAwardScale extends ModelBase
     {
         $this->setProperty('showAwardedByInParentPortal', $showAwardedByInParentPortal);
     }
+
+    /**
+     * @return bool
+     */
+    public function getShowEventInParentPortal()
+    {
+        return $this->getProperty('showEventInParentPortal');
+    }
+
+    /**
+     * @param bool $showEventInParentPortal
+     */
+    public function setShowEventInParentPortal($showEventInParentPortal = null)
+    {
+        $this->setProperty('showEventInParentPortal', $showEventInParentPortal);
+    }
+
+
 }

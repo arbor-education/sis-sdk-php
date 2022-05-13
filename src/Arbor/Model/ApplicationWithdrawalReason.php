@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ApplicationWithdrawalReason extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class ApplicationWithdrawalReason extends ModelBase
     {
         $this->setProperty('applicationWithdrawalReasonName', $applicationWithdrawalReasonName);
     }
+
+
 }

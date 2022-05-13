@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicWorkingDay extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -151,4 +152,6 @@ class AcademicWorkingDay extends ModelBase
     {
         $this->setProperty('dayOfCalendarWeek', $dayOfCalendarWeek);
     }
+
+
 }

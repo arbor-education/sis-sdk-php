@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ClubSessionIntervalPrice extends ModelBase
 {
+
     const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
 
     const GROUP = 'group';
@@ -115,4 +116,6 @@ class ClubSessionIntervalPrice extends ModelBase
     {
         $this->setProperty('vatRate', $vatRate);
     }
+
+
 }

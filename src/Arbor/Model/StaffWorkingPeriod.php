@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StaffWorkingPeriod extends ModelBase
 {
+
     const STAFF = 'staff';
 
     const EFFECTIVE_DATE = 'effectiveDate';
@@ -259,4 +260,6 @@ class StaffWorkingPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
+
+
 }

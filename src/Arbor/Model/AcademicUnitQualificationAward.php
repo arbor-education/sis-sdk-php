@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicUnitQualificationAward extends ModelBase
 {
+
     const ACADEMIC_UNIT = 'academicUnit';
 
     const QUALIFICATION_AWARD = 'qualificationAward';
@@ -79,4 +80,6 @@ class AcademicUnitQualificationAward extends ModelBase
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
+
+
 }

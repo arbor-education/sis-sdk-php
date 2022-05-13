@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomerPayment extends ModelBase
 {
+
     const CUSTOMER_INVOICE = 'customerInvoice';
 
     const BILL_PAYER = 'billPayer';
@@ -23,6 +24,8 @@ class CustomerPayment extends ModelBase
     const CASH_RECEIPT = 'cashReceipt';
 
     const STRIPE_INCOMING_CARD_TRANSACTION = 'stripeIncomingCardTransaction';
+
+    const VOUCHER = 'voucher';
 
     const PAYMENT_AMOUNT = 'paymentAmount';
 
@@ -220,6 +223,22 @@ class CustomerPayment extends ModelBase
     }
 
     /**
+     * @return Voucher
+     */
+    public function getVoucher()
+    {
+        return $this->getProperty('voucher');
+    }
+
+    /**
+     * @param Voucher $voucher
+     */
+    public function setVoucher(Voucher $voucher = null)
+    {
+        $this->setProperty('voucher', $voucher);
+    }
+
+    /**
      * @return string
      */
     public function getPaymentAmount()
@@ -314,4 +333,6 @@ class CustomerPayment extends ModelBase
     {
         $this->setProperty('paymentCancelledDatetime', $paymentCancelledDatetime);
     }
+
+
 }

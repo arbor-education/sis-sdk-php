@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class SenNeedType extends ModelBase
 {
+
     const LLDD_CODE = 'llddCode';
 
     const ILR_RETURN_VALUE = 'ilrReturnValue';
@@ -82,4 +83,6 @@ class SenNeedType extends ModelBase
     {
         $this->setProperty('ilrReturnValue', $ilrReturnValue);
     }
+
+
 }

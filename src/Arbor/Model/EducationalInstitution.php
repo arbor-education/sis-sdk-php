@@ -10,6 +10,7 @@ use Arbor\Model\UkDfe\SchoolIntakeType;
 
 class EducationalInstitution extends ModelBase
 {
+
     const EDUCATIONAL_INSTITUTION_NAME = 'educationalInstitutionName';
 
     const SHORT_NAME = 'shortName';
@@ -533,4 +534,6 @@ class EducationalInstitution extends ModelBase
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
     }
+
+
 }
