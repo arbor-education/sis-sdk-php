@@ -13,6 +13,8 @@ class Employer extends ModelBase
 
     const SMALL_EMPLOYER = 'smallEmployer';
 
+    const SMALL_MEDIUM_EMPLOYER = 'smallMediumEmployer';
+
     protected $_resourceType = ResourceType::UK_ILR_EMPLOYER;
 
     /**
@@ -81,5 +83,21 @@ class Employer extends ModelBase
     public function setSmallEmployer($smallEmployer = null)
     {
         $this->setProperty('smallEmployer', $smallEmployer);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getSmallMediumEmployer()
+    {
+        return $this->getProperty('smallMediumEmployer');
+    }
+
+    /**
+     * @param bool $smallMediumEmployer
+     */
+    public function setSmallMediumEmployer($smallMediumEmployer = null)
+    {
+        $this->setProperty('smallMediumEmployer', $smallMediumEmployer);
     }
 }

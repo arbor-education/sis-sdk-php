@@ -18,6 +18,8 @@ class CommunicationTemplate extends ModelBase
 
     const LETTER_BODY = 'letterBody';
 
+    const IN_APP_MESSAGE_BODY = 'inAppMessageBody';
+
     const COMMUNICATION_TEMPLATE_DEFINITION_CLASS = 'communicationTemplateDefinitionClass';
 
     const CUSTOM_REPORT = 'customReport';
@@ -154,6 +156,22 @@ class CommunicationTemplate extends ModelBase
     public function setLetterBody($letterBody = null)
     {
         $this->setProperty('letterBody', $letterBody);
+    }
+
+    /**
+     * @return string
+     */
+    public function getInAppMessageBody()
+    {
+        return $this->getProperty('inAppMessageBody');
+    }
+
+    /**
+     * @param string $inAppMessageBody
+     */
+    public function setInAppMessageBody($inAppMessageBody = null)
+    {
+        $this->setProperty('inAppMessageBody', $inAppMessageBody);
     }
 
     /**

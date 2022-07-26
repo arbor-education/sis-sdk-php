@@ -64,6 +64,8 @@ class EducationalInstitution extends ModelBase
 
     const CENSUS_SCHOOL_OPENING_DATE = 'censusSchoolOpeningDate';
 
+    const WEEKLY_HOURS_OPEN = 'weeklyHoursOpen';
+
     protected $_resourceType = ResourceType::EDUCATIONAL_INSTITUTION;
 
     /**
@@ -532,5 +534,21 @@ class EducationalInstitution extends ModelBase
     public function setCensusSchoolOpeningDate(\DateTime $censusSchoolOpeningDate = null)
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getWeeklyHoursOpen()
+    {
+        return $this->getProperty('weeklyHoursOpen');
+    }
+
+    /**
+     * @param string $weeklyHoursOpen
+     */
+    public function setWeeklyHoursOpen($weeklyHoursOpen = null)
+    {
+        $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }
 }

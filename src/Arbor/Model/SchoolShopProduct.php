@@ -16,6 +16,8 @@ class SchoolShopProduct extends ModelBase
 
     const QUANTITY = 'quantity';
 
+    const MAX_ITEMS_PER_STUDENT = 'maxItemsPerStudent';
+
     const IS_PUBLISHED = 'isPublished';
 
     const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
@@ -138,6 +140,22 @@ class SchoolShopProduct extends ModelBase
     public function setQuantity($quantity = null)
     {
         $this->setProperty('quantity', $quantity);
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxItemsPerStudent()
+    {
+        return $this->getProperty('maxItemsPerStudent');
+    }
+
+    /**
+     * @param int $maxItemsPerStudent
+     */
+    public function setMaxItemsPerStudent($maxItemsPerStudent = null)
+    {
+        $this->setProperty('maxItemsPerStudent', $maxItemsPerStudent);
     }
 
     /**
