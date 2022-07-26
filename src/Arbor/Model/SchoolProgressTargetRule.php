@@ -26,6 +26,8 @@ class SchoolProgressTargetRule extends ModelBase
 
     const ACADEMIC_YEARS_OFFSET = 'academicYearsOffset';
 
+    const HAS_SAME_ATTAINMENT_TARGET_FOR_EACH_PERIOD = 'hasSameAttainmentTargetForEachPeriod';
+
     protected $_resourceType = ResourceType::SCHOOL_PROGRESS_TARGET_RULE;
 
     /**
@@ -222,5 +224,21 @@ class SchoolProgressTargetRule extends ModelBase
     public function setAcademicYearsOffset($academicYearsOffset = null)
     {
         $this->setProperty('academicYearsOffset', $academicYearsOffset);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getHasSameAttainmentTargetForEachPeriod()
+    {
+        return $this->getProperty('hasSameAttainmentTargetForEachPeriod');
+    }
+
+    /**
+     * @param bool $hasSameAttainmentTargetForEachPeriod
+     */
+    public function setHasSameAttainmentTargetForEachPeriod($hasSameAttainmentTargetForEachPeriod = null)
+    {
+        $this->setProperty('hasSameAttainmentTargetForEachPeriod', $hasSameAttainmentTargetForEachPeriod);
     }
 }

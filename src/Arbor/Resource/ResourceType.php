@@ -17,6 +17,8 @@ class ResourceType
 	const ACADEMIC_UNIT = 'AcademicUnit';
 	const ACADEMIC_UNIT_ASSESSMENT = 'AcademicUnitAssessment';
 	const ACADEMIC_UNIT_AUTOMATIC_ENROLMENT = 'AcademicUnitAutomaticEnrolment';
+	const ACADEMIC_UNIT_BAND_ASSIGNMENT = 'AcademicUnitBandAssignment';
+	const ACADEMIC_UNIT_BLOCK_ASSIGNMENT = 'AcademicUnitBlockAssignment';
 	const ACADEMIC_UNIT_CURRICULUM = 'AcademicUnitCurriculum';
 	const ACADEMIC_UNIT_ENROLMENT = 'AcademicUnitEnrolment';
 	const ACADEMIC_UNIT_ENROLMENT_IMPORT = 'AcademicUnitEnrolmentImport';
@@ -53,6 +55,7 @@ class ResourceType
 	const APPRAISAL = 'Appraisal';
 	const ASSESSMENT = 'Assessment';
 	const ASSESSMENT_ASPECT = 'AssessmentAspect';
+	const ASSESSMENT_DEFAULT_DISPLAY_GRADE_SET = 'AssessmentDefaultDisplayGradeSet';
 	const ASSESSMENT_GRADE_SET = 'AssessmentGradeSet';
 	const ASSESSMENT_FRAMEWORK_ASSESSMENT = 'AssessmentFrameworkAssessment';
 	const ASSESSMENT_STUDENT_GROUP = 'AssessmentStudentGroup';
@@ -223,6 +226,9 @@ class ResourceType
 	const EMAIL_RECIPIENT = 'EmailRecipient';
 	const EMAIL_REFERENCE = 'EmailReference';
 	const EMERGENCY_ALERT_TYPE = 'EmergencyAlertType';
+	const EMERGENCY_ALERT = 'EmergencyAlert';
+	const EMERGENCY_ALERT_STUDENT = 'EmergencyAlertStudent';
+	const EMERGENCY_ALERT_ASSIGNED_STAFF = 'EmergencyAlertAssignedStaff';
 	const EMPLOYER = 'Employer';
 	const EMPLOYMENT_RECORD_TYPE = 'EmploymentRecordType';
 	const ENROLMENT_MODE = 'EnrolmentMode';
@@ -325,6 +331,7 @@ class ResourceType
 	const MEDICAL_EVENT_TYPE = 'MedicalEventType';
 	const MEDICAL_INSTITUTION = 'MedicalInstitution';
 	const MEDICAL_INSTITUTION_STAFF = 'MedicalInstitutionStaff';
+	const MEDICAL_NOTE = 'MedicalNote';
 	const MEDICAL_PLAN = 'MedicalPlan';
 	const MEDICAL_RELATIONSHIP_TYPE = 'MedicalRelationshipType';
 	const MEETING = 'Meeting';
