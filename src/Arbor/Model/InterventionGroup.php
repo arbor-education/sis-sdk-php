@@ -10,8 +10,6 @@ class InterventionGroup extends ModelBase
 
     const INTERVENTION = 'intervention';
 
-    const GROUP = 'group';
-
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
@@ -92,22 +90,6 @@ class InterventionGroup extends ModelBase
     public function setIntervention(Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
-    }
-
-    /**
-     * @return ModelBase
-     */
-    public function getGroup()
-    {
-        return $this->getProperty('group');
-    }
-
-    /**
-     * @param ModelBase $group
-     */
-    public function setGroup(ModelBase $group = null)
-    {
-        $this->setProperty('group', $group);
     }
 
     /**

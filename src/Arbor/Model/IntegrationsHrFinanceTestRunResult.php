@@ -12,7 +12,15 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
 
     const ACTION = 'action';
 
-    const ENTITY = 'entity';
+    const EXTERNAL_PERSON_IDENTIFIER = 'externalPersonIdentifier';
+
+    const EXTERNAL_CONTRACT_IDENTIFIER = 'externalContractIdentifier';
+
+    const PERSON_NAME = 'personName';
+
+    const ENTITY_OBJECT_TYPE_ID = 'entityObjectTypeId';
+
+    const ENTITY_OBJECT_ID = 'entityObjectId';
 
     const OLD_DATA = 'oldData';
 
@@ -109,19 +117,83 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return string
      */
-    public function getEntity()
+    public function getExternalPersonIdentifier()
     {
-        return $this->getProperty('entity');
+        return $this->getProperty('externalPersonIdentifier');
     }
 
     /**
-     * @param ModelBase $entity
+     * @param string $externalPersonIdentifier
      */
-    public function setEntity(ModelBase $entity = null)
+    public function setExternalPersonIdentifier($externalPersonIdentifier = null)
     {
-        $this->setProperty('entity', $entity);
+        $this->setProperty('externalPersonIdentifier', $externalPersonIdentifier);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExternalContractIdentifier()
+    {
+        return $this->getProperty('externalContractIdentifier');
+    }
+
+    /**
+     * @param string $externalContractIdentifier
+     */
+    public function setExternalContractIdentifier($externalContractIdentifier = null)
+    {
+        $this->setProperty('externalContractIdentifier', $externalContractIdentifier);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPersonName()
+    {
+        return $this->getProperty('personName');
+    }
+
+    /**
+     * @param string $personName
+     */
+    public function setPersonName($personName = null)
+    {
+        $this->setProperty('personName', $personName);
+    }
+
+    /**
+     * @return int
+     */
+    public function getEntityObjectTypeId()
+    {
+        return $this->getProperty('entityObjectTypeId');
+    }
+
+    /**
+     * @param int $entityObjectTypeId
+     */
+    public function setEntityObjectTypeId($entityObjectTypeId = null)
+    {
+        $this->setProperty('entityObjectTypeId', $entityObjectTypeId);
+    }
+
+    /**
+     * @return int
+     */
+    public function getEntityObjectId()
+    {
+        return $this->getProperty('entityObjectId');
+    }
+
+    /**
+     * @param int $entityObjectId
+     */
+    public function setEntityObjectId($entityObjectId = null)
+    {
+        $this->setProperty('entityObjectId', $entityObjectId);
     }
 
     /**

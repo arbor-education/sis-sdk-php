@@ -12,6 +12,8 @@ class ReportCardBatchProgressAssessment extends ModelBase
 
     const ASSESSMENT = 'assessment';
 
+    const DISPLAY_GRADE_SET = 'displayGradeSet';
+
     const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_PROGRESS_ASSESSMENT;
@@ -98,6 +100,22 @@ class ReportCardBatchProgressAssessment extends ModelBase
     public function setAssessment(Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
+    }
+
+    /**
+     * @return GradeSet
+     */
+    public function getDisplayGradeSet()
+    {
+        return $this->getProperty('displayGradeSet');
+    }
+
+    /**
+     * @param GradeSet $displayGradeSet
+     */
+    public function setDisplayGradeSet(GradeSet $displayGradeSet = null)
+    {
+        $this->setProperty('displayGradeSet', $displayGradeSet);
     }
 
     /**
