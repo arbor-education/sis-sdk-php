@@ -278,4 +278,28 @@ class ModelBase implements \Serializable
         $hydrator = new Hydrator();
         $hydrator->hydrateModel($this, unserialize($serialized));
     }
+
+
+    /**
+     * Magic method for serialization following the deprecation of \Serializable
+     * @return string
+     */
+    public function __serialize()
+    {
+        $hydrator = new Hydrator();
+        return serialize($hydrator->extractArray($this));
+    }
+
+    /**
+     * Magic method for unserialization following the deprecation of \Serializable
+     * @param $serialized
+     * @return void
+     * @throws Exception
+     */
+    public function __unserialize($serialized)
+    {
+        $this->connect(self::getDefaultGateway());
+        $hydrator = new Hydrator();
+        $hydrator->hydrateModel($this, unserialize($serialized));
+    }
 }
