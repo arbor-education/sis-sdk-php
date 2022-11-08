@@ -18,6 +18,8 @@ class TimetablerImportStepOutcome extends ModelBase
 
     const STEP_TYPE = 'stepType';
 
+    const IS_DRAFT = 'isDraft';
+
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_STEP_OUTCOME;
 
     /**
@@ -150,5 +152,21 @@ class TimetablerImportStepOutcome extends ModelBase
     public function setStepType($stepType = null)
     {
         $this->setProperty('stepType', $stepType);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsDraft()
+    {
+        return $this->getProperty('isDraft');
+    }
+
+    /**
+     * @param bool $isDraft
+     */
+    public function setIsDraft($isDraft = null)
+    {
+        $this->setProperty('isDraft', $isDraft);
     }
 }

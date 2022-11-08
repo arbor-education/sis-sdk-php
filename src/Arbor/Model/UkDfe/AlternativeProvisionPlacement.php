@@ -8,12 +8,15 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 use Arbor\Model\EducationalInstitution;
+use Arbor\Model\Company;
 
 class AlternativeProvisionPlacement extends ModelBase
 {
     const STUDENT = 'student';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+
+    const COMPANY = 'company';
 
     const ALTERNATIVE_PROVISION_PLACEMENT_REASON = 'alternativeProvisionPlacementReason';
 
@@ -95,6 +98,22 @@ class AlternativeProvisionPlacement extends ModelBase
     public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
+    }
+
+    /**
+     * @return Company
+     */
+    public function getCompany()
+    {
+        return $this->getProperty('company');
+    }
+
+    /**
+     * @param Company $company
+     */
+    public function setCompany(Company $company = null)
+    {
+        $this->setProperty('company', $company);
     }
 
     /**

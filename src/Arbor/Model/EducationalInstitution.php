@@ -22,6 +22,8 @@ class EducationalInstitution extends ModelBase
 
     const WEBSITE = 'website';
 
+    const PREVIOUS_EDUCATIONAL_INSTITUTION = 'previousEducationalInstitution';
+
     const LOCAL_AUTHORITY = 'localAuthority';
 
     const ESTABLISHMENT_NUMBER = 'establishmentNumber';
@@ -198,6 +200,22 @@ class EducationalInstitution extends ModelBase
     public function setWebsite($website = null)
     {
         $this->setProperty('website', $website);
+    }
+
+    /**
+     * @return EducationalInstitution
+     */
+    public function getPreviousEducationalInstitution()
+    {
+        return $this->getProperty('previousEducationalInstitution');
+    }
+
+    /**
+     * @param EducationalInstitution $previousEducationalInstitution
+     */
+    public function setPreviousEducationalInstitution(EducationalInstitution $previousEducationalInstitution = null)
+    {
+        $this->setProperty('previousEducationalInstitution', $previousEducationalInstitution);
     }
 
     /**
