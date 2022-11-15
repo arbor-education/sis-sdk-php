@@ -20,6 +20,8 @@ class ProgressAssessmentBatch extends ModelBase
 
     const SHOW_RANK_ORDER = 'showRankOrder';
 
+    const SHOW_CURRENT_VS_BASELINE = 'showCurrentVsBaseline';
+
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
     /**
@@ -168,5 +170,21 @@ class ProgressAssessmentBatch extends ModelBase
     public function setShowRankOrder($showRankOrder = null)
     {
         $this->setProperty('showRankOrder', $showRankOrder);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsBaseline()
+    {
+        return $this->getProperty('showCurrentVsBaseline');
+    }
+
+    /**
+     * @param bool $showCurrentVsBaseline
+     */
+    public function setShowCurrentVsBaseline($showCurrentVsBaseline = null)
+    {
+        $this->setProperty('showCurrentVsBaseline', $showCurrentVsBaseline);
     }
 }

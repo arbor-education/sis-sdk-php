@@ -72,6 +72,8 @@ class Student extends ModelBase
 
     const GCSE_MATHS_FUNDING_EXEMPTION_TYPE = 'gcseMathsFundingExemptionType';
 
+    const T_LEVEL_PLANNED_EEP_HOURS = 'tLevelPlannedEepHours';
+
     protected $_resourceType = ResourceType::STUDENT;
 
     /**
@@ -604,5 +606,21 @@ class Student extends ModelBase
     public function setGcseMathsFundingExemptionType(GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
+    }
+
+    /**
+     * @return int
+     */
+    public function getTLevelPlannedEepHours()
+    {
+        return $this->getProperty('tLevelPlannedEepHours');
+    }
+
+    /**
+     * @param int $tLevelPlannedEepHours
+     */
+    public function setTLevelPlannedEepHours($tLevelPlannedEepHours = null)
+    {
+        $this->setProperty('tLevelPlannedEepHours', $tLevelPlannedEepHours);
     }
 }
