@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class IlrReturn extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -244,4 +245,6 @@ class IlrReturn extends ModelBase
     {
         $this->setProperty('efaFunded', $efaFunded);
     }
+
+
 }

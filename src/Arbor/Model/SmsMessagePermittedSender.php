@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SmsMessagePermittedSender extends ModelBase
 {
+
     const ACTION_TAKER = 'actionTaker';
 
     const SENDER = 'sender';
@@ -97,4 +98,6 @@ class SmsMessagePermittedSender extends ModelBase
     {
         $this->setProperty('allow', $allow);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AlertRule extends ModelBase
 {
+
     const TRIGGER_EVENT_TYPE = 'triggerEventType';
 
     protected $_resourceType = ResourceType::ALERT_RULE;
@@ -61,4 +62,6 @@ class AlertRule extends ModelBase
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }
+
+
 }

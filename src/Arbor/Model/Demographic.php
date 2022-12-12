@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Demographic extends ModelBase
 {
+
     const LABEL = 'label';
 
     const SHORT_NAME = 'shortName';
@@ -277,4 +278,6 @@ class Demographic extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
+
 }

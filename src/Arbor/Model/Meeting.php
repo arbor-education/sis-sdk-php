@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Meeting extends ModelBase
 {
+
     const START_DATETIME = 'startDatetime';
 
     const END_DATETIME = 'endDatetime';
@@ -331,4 +332,6 @@ class Meeting extends ModelBase
     {
         $this->setProperty('outcomes', $outcomes);
     }
+
+
 }

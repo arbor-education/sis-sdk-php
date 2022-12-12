@@ -10,6 +10,7 @@ use Arbor\Model\AcademicYear;
 
 class SchoolCensus extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -227,4 +228,6 @@ class SchoolCensus extends ModelBase
     {
         $this->setProperty('schoolCensusSpecificTime', $schoolCensusSpecificTime);
     }
+
+
 }

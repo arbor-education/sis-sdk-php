@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentClubSessionInterval extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
@@ -187,4 +188,6 @@ class StudentClubSessionInterval extends ModelBase
     {
         $this->setProperty('hasMeals', $hasMeals);
     }
+
+
 }

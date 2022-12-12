@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentCurriculumEvidence extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const CURRICULUM_STATEMENT = 'curriculumStatement';
@@ -187,4 +188,6 @@ class StudentCurriculumEvidence extends ModelBase
     {
         $this->setProperty('evidence', $evidence);
     }
+
+
 }

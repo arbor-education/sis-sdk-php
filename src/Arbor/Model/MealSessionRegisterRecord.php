@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MealSessionRegisterRecord extends ModelBase
 {
+
     const MEAL_SESSION = 'mealSession';
 
     const PERSON = 'person';
@@ -151,4 +152,6 @@ class MealSessionRegisterRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
+
+
 }

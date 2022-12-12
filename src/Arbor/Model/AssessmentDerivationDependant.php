@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentDerivationDependant extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -187,4 +188,6 @@ class AssessmentDerivationDependant extends ModelBase
     {
         $this->setProperty('maxGradePointScaleValue', $maxGradePointScaleValue);
     }
+
+
 }

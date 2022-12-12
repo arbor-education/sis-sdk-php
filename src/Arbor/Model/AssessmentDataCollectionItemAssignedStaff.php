@@ -4,18 +4,18 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmergencyAlertAssignedStaff extends ModelBase
+class AssessmentDataCollectionItemAssignedStaff extends ModelBase
 {
 
-    const EMERGENCY_ALERT = 'emergencyAlert';
+    const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
 
     const ASSIGNED_STAFF = 'assignedStaff';
 
-    protected $_resourceType = ResourceType::EMERGENCY_ALERT_ASSIGNED_STAFF;
+    protected $_resourceType = ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF;
 
     /**
      * @param Query $query
-     * @return EmergencyAlertAssignedStaff[] | Collection
+     * @return AssessmentDataCollectionItemAssignedStaff[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -29,14 +29,14 @@ class EmergencyAlertAssignedStaff extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::EMERGENCY_ALERT_ASSIGNED_STAFF);
+        $query->setResourceType(ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return EmergencyAlertAssignedStaff
+     * @return AssessmentDataCollectionItemAssignedStaff
      * @throws Exception
      */
     public static function retrieve($id)
@@ -46,23 +46,23 @@ class EmergencyAlertAssignedStaff extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::EMERGENCY_ALERT_ASSIGNED_STAFF, $id);
+        return $gateway->retrieve(ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF, $id);
     }
 
     /**
-     * @return EmergencyAlert
+     * @return AssessmentDataCollectionItem
      */
-    public function getEmergencyAlert()
+    public function getAssessmentDataCollectionItem()
     {
-        return $this->getProperty('emergencyAlert');
+        return $this->getProperty('assessmentDataCollectionItem');
     }
 
     /**
-     * @param EmergencyAlert $emergencyAlert
+     * @param AssessmentDataCollectionItem $assessmentDataCollectionItem
      */
-    public function setEmergencyAlert(EmergencyAlert $emergencyAlert = null)
+    public function setAssessmentDataCollectionItem(AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
     {
-        $this->setProperty('emergencyAlert', $emergencyAlert);
+        $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }
 
     /**

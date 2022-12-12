@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionItem extends ModelBase
 {
+
     const ASSESSMENT_DATA_COLLECTION = 'assessmentDataCollection';
 
     const ASSESSMENT_ENTITY = 'assessmentEntity';
@@ -21,6 +22,8 @@ class AssessmentDataCollectionItem extends ModelBase
     const COMPLETION_NUMERATOR = 'completionNumerator';
 
     const COMPLETION_DENOMINATOR = 'completionDenominator';
+
+    const DERIVE_ASSIGNED_STAFF = 'deriveAssignedStaff';
 
     protected $_resourceType = ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM;
 
@@ -187,4 +190,22 @@ class AssessmentDataCollectionItem extends ModelBase
     {
         $this->setProperty('completionDenominator', $completionDenominator);
     }
+
+    /**
+     * @return bool
+     */
+    public function getDeriveAssignedStaff()
+    {
+        return $this->getProperty('deriveAssignedStaff');
+    }
+
+    /**
+     * @param bool $deriveAssignedStaff
+     */
+    public function setDeriveAssignedStaff($deriveAssignedStaff = null)
+    {
+        $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
+    }
+
+
 }

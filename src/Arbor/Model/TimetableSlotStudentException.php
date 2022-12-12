@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TimetableSlotStudentException extends ModelBase
 {
+
     const TIMETABLE_SLOT = 'timetableSlot';
 
     const STUDENT = 'student';
@@ -115,4 +116,6 @@ class TimetableSlotStudentException extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

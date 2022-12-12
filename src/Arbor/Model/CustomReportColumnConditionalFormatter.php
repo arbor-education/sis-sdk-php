@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomReportColumnConditionalFormatter extends ModelBase
 {
+
     const CUSTOM_REPORT_COLUMN = 'customReportColumn';
 
     const CONDITION_CLASS = 'conditionClass';
@@ -115,4 +116,6 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     {
         $this->setProperty('color', $color);
     }
+
+
 }

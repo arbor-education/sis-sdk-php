@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MedicalCondition extends ModelBase
 {
+
     const PERSON = 'person';
 
     const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
@@ -187,4 +188,6 @@ class MedicalCondition extends ModelBase
     {
         $this->setProperty('treatment', $treatment);
     }
+
+
 }

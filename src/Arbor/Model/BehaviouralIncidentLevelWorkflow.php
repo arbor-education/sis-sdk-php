@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
+
     const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     const AUTO_CLOSE = 'autoClose';
@@ -33,6 +34,10 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     const BEHAVIOURAL_INCIDENT_SMS_TEMPLATE = 'behaviouralIncidentSmsTemplate';
 
     const BEHAVIOURAL_INCIDENT_EMAIL_TEMPLATE = 'behaviouralIncidentEmailTemplate';
+
+    const DETENTION_EMAIL_TEMPLATE = 'detentionEmailTemplate';
+
+    const DETENTION_SMS_TEMPLATE = 'detentionSmsTemplate';
 
     const DEFAULT_ASSIGNEE = 'defaultAssignee';
 
@@ -327,6 +332,38 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     }
 
     /**
+     * @return CommunicationTemplate
+     */
+    public function getDetentionEmailTemplate()
+    {
+        return $this->getProperty('detentionEmailTemplate');
+    }
+
+    /**
+     * @param CommunicationTemplate $detentionEmailTemplate
+     */
+    public function setDetentionEmailTemplate(CommunicationTemplate $detentionEmailTemplate = null)
+    {
+        $this->setProperty('detentionEmailTemplate', $detentionEmailTemplate);
+    }
+
+    /**
+     * @return CommunicationTemplate
+     */
+    public function getDetentionSmsTemplate()
+    {
+        return $this->getProperty('detentionSmsTemplate');
+    }
+
+    /**
+     * @param CommunicationTemplate $detentionSmsTemplate
+     */
+    public function setDetentionSmsTemplate(CommunicationTemplate $detentionSmsTemplate = null)
+    {
+        $this->setProperty('detentionSmsTemplate', $detentionSmsTemplate);
+    }
+
+    /**
      * @return string
      */
     public function getDefaultAssignee()
@@ -565,4 +602,6 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
+
+
 }

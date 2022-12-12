@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentFunding extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const STUDENT_FUNDING_TYPE = 'studentFundingType';
@@ -133,4 +134,6 @@ class StudentFunding extends ModelBase
     {
         $this->setProperty('note', $note);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentEmploymentRecord extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const EMPLOYER = 'employer';
@@ -169,4 +170,6 @@ class StudentEmploymentRecord extends ModelBase
     {
         $this->setProperty('employmentRecordType', $employmentRecordType);
     }
+
+
 }

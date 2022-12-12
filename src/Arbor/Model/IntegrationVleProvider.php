@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IntegrationVleProvider extends ModelBase
 {
+
     const NAME = 'name';
 
     const CONFIGURATION = 'configuration';
@@ -115,4 +116,6 @@ class IntegrationVleProvider extends ModelBase
     {
         $this->setProperty('code', $code);
     }
+
+
 }

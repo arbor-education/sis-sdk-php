@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicUnitTag extends ModelBase
 {
+
     const ACADEMIC_UNIT = 'academicUnit';
 
     const RELATED_OBJECT = 'relatedObject';
@@ -79,4 +80,6 @@ class AcademicUnitTag extends ModelBase
     {
         $this->setProperty('relatedObject', $relatedObject);
     }
+
+
 }

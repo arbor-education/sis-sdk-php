@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentDestination extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
@@ -151,4 +152,6 @@ class StudentDestination extends ModelBase
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }
+
+
 }

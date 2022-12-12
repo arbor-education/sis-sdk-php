@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class GenderIdentity extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class GenderIdentity extends ModelBase
     {
         $this->setProperty('longName', $longName);
     }
+
+
 }

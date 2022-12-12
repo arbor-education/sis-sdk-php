@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StaffContractPostAdditionalPayment extends ModelBase
 {
+
     const STAFF_CONTRACT_POST = 'staffContractPost';
 
     const ADDITIONAL_PAYMENT = 'additionalPayment';
@@ -151,4 +152,6 @@ class StaffContractPostAdditionalPayment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

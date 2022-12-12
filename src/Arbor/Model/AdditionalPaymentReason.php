@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AdditionalPaymentReason extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class AdditionalPaymentReason extends ModelBase
     {
         $this->setProperty('description', $description);
     }
+
+
 }

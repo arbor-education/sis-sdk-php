@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class LearningMaterialFolder extends ModelBase
 {
+
     const PARENT_LEARNING_MATERIAL_FOLDER = 'parentLearningMaterialFolder';
 
     const NAME = 'name';
@@ -79,4 +80,6 @@ class LearningMaterialFolder extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

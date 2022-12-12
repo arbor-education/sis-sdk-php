@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationTransportCertificate extends ModelBase
 {
+
     const AWARDING_ORGANIZATION = 'awardingOrganization';
 
     const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -169,4 +170,6 @@ class QualificationTransportCertificate extends ModelBase
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }
+
+
 }

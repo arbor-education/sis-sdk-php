@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AlertRuleRecipient extends ModelBase
 {
+
     const ALERT_RULE = 'alertRule';
 
     const CHANNEL = 'channel';
@@ -133,4 +134,6 @@ class AlertRuleRecipient extends ModelBase
     {
         $this->setProperty('recipientResolver', $recipientResolver);
     }
+
+
 }

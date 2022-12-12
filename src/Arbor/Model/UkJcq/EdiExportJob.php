@@ -11,6 +11,7 @@ use Arbor\Model\QualificationAvailabilityInstance;
 
 class EdiExportJob extends ModelBase
 {
+
     const FILE_NAME = 'fileName';
 
     const FILE_TYPE = 'fileType';
@@ -174,4 +175,6 @@ class EdiExportJob extends ModelBase
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
+
+
 }

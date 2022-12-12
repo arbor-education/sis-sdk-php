@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class LearningMaterial extends ModelBase
 {
+
     const LEARNING_MATERIAL_FOLDER = 'learningMaterialFolder';
 
     const TITLE = 'title';
@@ -169,4 +170,6 @@ class LearningMaterial extends ModelBase
     {
         $this->setProperty('authoredDatetime', $authoredDatetime);
     }
+
+
 }

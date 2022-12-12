@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmergencyAlert extends ModelBase
 {
+
     const DATETIME = 'datetime';
 
     const TRIGGERED_BY_STAFF = 'triggeredByStaff';
@@ -205,4 +206,6 @@ class EmergencyAlert extends ModelBase
     {
         $this->setProperty('statusModifiedDatetime', $statusModifiedDatetime);
     }
+
+
 }

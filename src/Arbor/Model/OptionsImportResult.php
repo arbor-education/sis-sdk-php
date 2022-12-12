@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class OptionsImportResult extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const STEPS_COMPLETED = 'stepsCompleted';
@@ -169,4 +170,6 @@ class OptionsImportResult extends ModelBase
     {
         $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }
+
+
 }

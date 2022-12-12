@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationStudyGuide extends ModelBase
 {
+
     const RELATED_QUALIFICATION_AWARD = 'relatedQualificationAward';
 
     const STUDY_GUIDE_TITLE = 'studyGuideTitle';
@@ -151,4 +152,6 @@ class QualificationStudyGuide extends ModelBase
     {
         $this->setProperty('studyGuideMediumType', $studyGuideMediumType);
     }
+
+
 }

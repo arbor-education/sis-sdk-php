@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class DataSource extends ModelBase
 {
+
     const DOMAIN = 'domain';
 
     const PROVIDER = 'provider';
@@ -79,4 +80,6 @@ class DataSource extends ModelBase
     {
         $this->setProperty('provider', $provider);
     }
+
+
 }

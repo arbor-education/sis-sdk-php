@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class GoogleUser extends ModelBase
 {
+
     const GIVEN_NAME = 'givenName';
 
     const FAMILY_NAME = 'familyName';
@@ -133,4 +134,6 @@ class GoogleUser extends ModelBase
     {
         $this->setProperty('matchedPerson', $matchedPerson);
     }
+
+
 }

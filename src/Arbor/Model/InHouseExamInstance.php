@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InHouseExamInstance extends ModelBase
 {
+
     const IN_HOUSE_EXAM = 'inHouseExam';
 
     const EXPECTED_START_DATETIME = 'expectedStartDatetime';
@@ -97,4 +98,6 @@ class InHouseExamInstance extends ModelBase
     {
         $this->setProperty('expectedEndDatetime', $expectedEndDatetime);
     }
+
+
 }

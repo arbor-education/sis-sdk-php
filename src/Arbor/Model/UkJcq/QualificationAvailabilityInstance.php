@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class QualificationAvailabilityInstance extends ModelBase
 {
+
     const EDI_AWARDING_BODY_IDENTIFIER = 'ediAwardingBodyIdentifier';
 
     protected $_resourceType = ResourceType::UK_JCQ_QUALIFICATION_AVAILABILITY_INSTANCE;
@@ -64,4 +65,6 @@ class QualificationAvailabilityInstance extends ModelBase
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }
+
+
 }

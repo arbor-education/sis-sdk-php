@@ -10,6 +10,7 @@ use Arbor\Model\Student;
 
 class EnglishProficiency extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const PROFICIENCY = 'proficiency';
@@ -101,4 +102,6 @@ class EnglishProficiency extends ModelBase
     {
         $this->setProperty('proficiencyDate', $proficiencyDate);
     }
+
+
 }

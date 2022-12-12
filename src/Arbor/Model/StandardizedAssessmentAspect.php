@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentAspect extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -242,4 +243,6 @@ class StandardizedAssessmentAspect extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }

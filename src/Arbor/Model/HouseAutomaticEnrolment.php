@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class HouseAutomaticEnrolment extends ModelBase
 {
+
     const HOUSE = 'house';
 
     const TRIGGER = 'trigger';
@@ -79,4 +80,6 @@ class HouseAutomaticEnrolment extends ModelBase
     {
         $this->setProperty('trigger', $trigger);
     }
+
+
 }

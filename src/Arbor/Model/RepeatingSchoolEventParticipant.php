@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class RepeatingSchoolEventParticipant extends ModelBase
 {
+
     const REPEATING_SCHOOL_EVENT = 'repeatingSchoolEvent';
 
     const PARTICIPANT = 'participant';
@@ -79,4 +80,6 @@ class RepeatingSchoolEventParticipant extends ModelBase
     {
         $this->setProperty('participant', $participant);
     }
+
+
 }

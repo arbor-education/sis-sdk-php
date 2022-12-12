@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MaritalStatus extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class MaritalStatus extends ModelBase
     {
         $this->setProperty('fullTitle', $fullTitle);
     }
+
+
 }

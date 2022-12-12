@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StaffObjective extends ModelBase
 {
+
     const STAFF = 'staff';
 
     const APPRAISAL = 'appraisal';
@@ -223,4 +224,6 @@ class StaffObjective extends ModelBase
     {
         $this->setProperty('outcome', $outcome);
     }
+
+
 }

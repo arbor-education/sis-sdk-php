@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CoverRequirement extends ModelBase
 {
+
     const COVER_EVENT = 'coverEvent';
 
     const ABSENT_STAFF = 'absentStaff';
@@ -151,4 +152,6 @@ class CoverRequirement extends ModelBase
     {
         $this->setProperty('coverNotRequiredDatetime', $coverNotRequiredDatetime);
     }
+
+
 }

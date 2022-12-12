@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EnrolmentMode extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -133,4 +134,6 @@ class EnrolmentMode extends ModelBase
     {
         $this->setProperty('d00018', $d00018);
     }
+
+
 }

@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class Religion extends ModelBase
 {
+
     const D00009 = 'd00009';
 
     const D00195 = 'd00195';
@@ -82,4 +83,6 @@ class Religion extends ModelBase
     {
         $this->setProperty('d00195', $d00195);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomReportColumn extends ModelBase
 {
+
     const CUSTOM_REPORT = 'customReport';
 
     const FIELD_CLASS = 'fieldClass';
@@ -259,4 +260,6 @@ class CustomReportColumn extends ModelBase
     {
         $this->setProperty('isSourceUpdatePermitted', $isSourceUpdatePermitted);
     }
+
+
 }

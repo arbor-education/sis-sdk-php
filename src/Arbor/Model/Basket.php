@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Basket extends ModelBase
 {
+
     const GUARDIAN = 'guardian';
 
     protected $_resourceType = ResourceType::BASKET;
@@ -61,4 +62,6 @@ class Basket extends ModelBase
     {
         $this->setProperty('guardian', $guardian);
     }
+
+
 }

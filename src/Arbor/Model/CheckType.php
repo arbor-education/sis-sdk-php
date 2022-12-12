@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CheckType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -241,4 +242,6 @@ class CheckType extends ModelBase
     {
         $this->setProperty('requestFromTeachingStaff', $requestFromTeachingStaff);
     }
+
+
 }

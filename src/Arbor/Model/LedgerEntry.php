@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class LedgerEntry extends ModelBase
 {
+
     const AMOUNT = 'amount';
 
     const CUSTOMER_ACCOUNT = 'customerAccount';
@@ -97,4 +98,6 @@ class LedgerEntry extends ModelBase
     {
         $this->setProperty('transaction', $transaction);
     }
+
+
 }

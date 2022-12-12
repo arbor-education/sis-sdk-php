@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Employer extends ModelBase
 {
+
     const NAME = 'name';
 
     const IDENTIFIER = 'identifier';
@@ -79,4 +80,6 @@ class Employer extends ModelBase
     {
         $this->setProperty('identifier', $identifier);
     }
+
+
 }

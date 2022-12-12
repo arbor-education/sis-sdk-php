@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Allowance extends ModelBase
 {
+
     const ALLOWANCE_NAME = 'allowanceName';
 
     const ALLOWANCE_CODE = 'allowanceCode';
@@ -79,4 +80,6 @@ class Allowance extends ModelBase
     {
         $this->setProperty('allowanceCode', $allowanceCode);
     }
+
+
 }
