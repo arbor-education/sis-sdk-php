@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentMetricRule extends ModelBase
 {
-
     const ASSESSMENT_METRIC = 'assessmentMetric';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_RULE;
@@ -62,6 +61,4 @@ class AssessmentMetricRule extends ModelBase
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
-
-
 }

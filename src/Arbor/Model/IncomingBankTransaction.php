@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IncomingBankTransaction extends ModelBase
 {
-
     const BILL_PAYER = 'billPayer';
 
     const RECEIVED_DATE = 'receivedDate';
@@ -116,6 +115,4 @@ class IncomingBankTransaction extends ModelBase
     {
         $this->setProperty('payment', $payment);
     }
-
-
 }

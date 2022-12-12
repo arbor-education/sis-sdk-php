@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Talent extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class Talent extends ModelBase
     {
         $this->setProperty('talentName', $talentName);
     }
-
-
 }

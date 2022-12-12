@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SenNeed extends ModelBase
 {
-
     const IS_AGREED_WITH_STUDENT = 'isAgreedWithStudent';
 
     protected $_resourceType = ResourceType::UK_ILR_SEN_NEED;
@@ -65,6 +64,4 @@ class SenNeed extends ModelBase
     {
         $this->setProperty('isAgreedWithStudent', $isAgreedWithStudent);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class KpiValue extends ModelBase
 {
-
     const KPI = 'kpi';
 
     const KPI_CATEGORY = 'kpiCategory';
@@ -242,6 +241,4 @@ class KpiValue extends ModelBase
     {
         $this->setProperty('lastCalculatedDatetime', $lastCalculatedDatetime);
     }
-
-
 }

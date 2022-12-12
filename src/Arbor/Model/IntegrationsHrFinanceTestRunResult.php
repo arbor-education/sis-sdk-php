@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IntegrationsHrFinanceTestRunResult extends ModelBase
 {
-
     const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'integrationsHrFinanceTestRun';
 
     const TYPE = 'type';
@@ -260,6 +259,4 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
-
 }

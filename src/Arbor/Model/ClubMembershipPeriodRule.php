@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ClubMembershipPeriodRule extends ModelBase
 {
-
     const RULE_IDENTIFIER = 'ruleIdentifier';
 
     const RULE_VALUE = 'ruleValue';
@@ -98,6 +97,4 @@ class ClubMembershipPeriodRule extends ModelBase
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
-
-
 }

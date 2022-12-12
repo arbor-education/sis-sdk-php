@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IntegrationsCashlessCateringSystemProvider extends ModelBase
 {
-
     const NAME = 'name';
 
     const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
@@ -116,6 +115,4 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     {
         $this->setProperty('enabled', $enabled);
     }
-
-
 }

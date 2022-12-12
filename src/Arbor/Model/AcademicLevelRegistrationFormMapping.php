@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicLevelRegistrationFormMapping extends ModelBase
 {
-
     const ACADEMIC_LEVEL = 'academicLevel';
 
     const REGISTRATION_FORM = 'registrationForm';
@@ -80,6 +79,4 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Detention extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ISSUED_BY_STAFF = 'issuedByStaff';
@@ -296,6 +295,4 @@ class Detention extends ModelBase
     {
         $this->setProperty('event', $event);
     }
-
-
 }

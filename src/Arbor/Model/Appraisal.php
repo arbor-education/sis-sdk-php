@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class Appraisal extends ModelBase
 {
-
     const APPRAISEE = 'appraisee';
 
     const APPRAISAL_DATE = 'appraisalDate';
@@ -134,6 +133,4 @@ class Appraisal extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
-
-
 }

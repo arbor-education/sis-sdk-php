@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AttendancePatternPeriod extends ModelBase
 {
-
     const ATTENDANCE_PATTERN = 'attendancePattern';
 
     const DAY_OF_CYCLE = 'dayOfCycle';
@@ -116,6 +115,4 @@ class AttendancePatternPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
-
 }

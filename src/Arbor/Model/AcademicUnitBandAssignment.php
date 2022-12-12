@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AcademicUnitBandAssignment extends ModelBase
 {
-
     const ACADEMIC_UNIT = 'academicUnit';
 
     const BAND_NAME = 'bandName';
@@ -80,6 +79,4 @@ class AcademicUnitBandAssignment extends ModelBase
     {
         $this->setProperty('bandName', $bandName);
     }
-
-
 }

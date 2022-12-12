@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentProgressAssessmentMark extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const ASSESSMENT = 'assessment';
@@ -296,6 +295,4 @@ class StudentProgressAssessmentMark extends ModelBase
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
-
-
 }

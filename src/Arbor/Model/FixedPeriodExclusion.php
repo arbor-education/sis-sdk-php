@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class FixedPeriodExclusion extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const EXCLUSION_REASON = 'exclusionReason';
@@ -242,6 +241,4 @@ class FixedPeriodExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
-
 }

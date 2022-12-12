@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AdHocAssessmentBatchTargetSubject extends ModelBase
 {
-
     const AD_HOC_ASSESSMENT_BATCH_TARGET = 'adHocAssessmentBatchTarget';
 
     const SUBJECT = 'subject';
@@ -80,6 +79,4 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     {
         $this->setProperty('subject', $subject);
     }
-
-
 }

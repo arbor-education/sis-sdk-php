@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AttendanceRollCall extends ModelBase
 {
-
     const NAME = 'name';
 
     const SHORT_NAME = 'shortName';
@@ -170,6 +169,4 @@ class AttendanceRollCall extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
-
 }

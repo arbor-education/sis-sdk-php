@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class NewReportCardTemplate extends ModelBase
 {
-
     const TEMPLATE_NAME = 'templateName';
 
     const TEMPLATE_FILENAME = 'templateFilename';
@@ -206,6 +205,4 @@ class NewReportCardTemplate extends ModelBase
     {
         $this->setProperty('isCustom', $isCustom);
     }
-
-
 }

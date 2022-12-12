@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class MotorVehicleMake extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -116,6 +115,4 @@ class MotorVehicleMake extends ModelBase
     {
         $this->setProperty('motorVehicleMake', $motorVehicleMake);
     }
-
-
 }

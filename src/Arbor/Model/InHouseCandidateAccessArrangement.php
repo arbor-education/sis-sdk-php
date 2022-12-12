@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class InHouseCandidateAccessArrangement extends ModelBase
 {
-
     const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
 
     const ACCESS_ARRANGEMENT = 'accessArrangement';
@@ -152,6 +151,4 @@ class InHouseCandidateAccessArrangement extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
-
 }

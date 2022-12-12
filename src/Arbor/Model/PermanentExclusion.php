@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PermanentExclusion extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const EXCLUSION_REASON = 'exclusionReason';
@@ -170,6 +169,4 @@ class PermanentExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
-
 }

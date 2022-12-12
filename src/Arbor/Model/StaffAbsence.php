@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StaffAbsence extends ModelBase
 {
-
     const STAFF = 'staff';
 
     const START_DATETIME = 'startDatetime';
@@ -332,6 +331,4 @@ class StaffAbsence extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
-
 }

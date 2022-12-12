@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class BehaviourDefaultWatcher extends ModelBase
 {
-
     const BEHAVIOUR = 'behaviour';
 
     const RELATION_TO_STUDENT = 'relationToStudent';
@@ -98,6 +97,4 @@ class BehaviourDefaultWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
-
 }

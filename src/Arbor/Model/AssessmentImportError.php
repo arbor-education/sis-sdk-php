@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AssessmentImportError extends ModelBase
 {
-
     const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
 
     const ERROR_MESSAGE = 'errorMessage';
@@ -80,6 +79,4 @@ class AssessmentImportError extends ModelBase
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
-
-
 }

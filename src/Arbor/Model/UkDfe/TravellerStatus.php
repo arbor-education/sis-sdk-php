@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class TravellerStatus extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -119,6 +118,4 @@ class TravellerStatus extends ModelBase
     {
         $this->setProperty('travellerStatusName', $travellerStatusName);
     }
-
-
 }

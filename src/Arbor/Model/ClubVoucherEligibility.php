@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ClubVoucherEligibility extends ModelBase
 {
-
     const CLUB = 'club';
 
     const GROUP = 'group';
@@ -80,6 +79,4 @@ class ClubVoucherEligibility extends ModelBase
     {
         $this->setProperty('group', $group);
     }
-
-
 }
