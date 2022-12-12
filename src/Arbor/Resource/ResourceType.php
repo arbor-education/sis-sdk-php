@@ -63,6 +63,7 @@ class ResourceType
     const ACADEMIC_YEAR_ASSESSMENT = 'AcademicYearAssessment';
     const ASSESSMENT_DATA_COLLECTION = 'AssessmentDataCollection';
     const ASSESSMENT_DATA_COLLECTION_ITEM = 'AssessmentDataCollectionItem';
+    const ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF = 'AssessmentDataCollectionItemAssignedStaff';
     const ASSESSMENT_METRIC = 'AssessmentMetric';
     const ASSESSMENT_METRIC_ASSESSMENT = 'AssessmentMetricAssessment';
     const ASSESSMENT_METRIC_RULE = 'AssessmentMetricRule';

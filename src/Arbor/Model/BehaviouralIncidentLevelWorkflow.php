@@ -34,6 +34,10 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
 
     const BEHAVIOURAL_INCIDENT_EMAIL_TEMPLATE = 'behaviouralIncidentEmailTemplate';
 
+    const DETENTION_EMAIL_TEMPLATE = 'detentionEmailTemplate';
+
+    const DETENTION_SMS_TEMPLATE = 'detentionSmsTemplate';
+
     const DEFAULT_ASSIGNEE = 'defaultAssignee';
 
     const SPECIFIC_ASSIGNEE = 'specificAssignee';
@@ -324,6 +328,38 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     public function setBehaviouralIncidentEmailTemplate(CommunicationTemplate $behaviouralIncidentEmailTemplate = null)
     {
         $this->setProperty('behaviouralIncidentEmailTemplate', $behaviouralIncidentEmailTemplate);
+    }
+
+    /**
+     * @return CommunicationTemplate
+     */
+    public function getDetentionEmailTemplate()
+    {
+        return $this->getProperty('detentionEmailTemplate');
+    }
+
+    /**
+     * @param CommunicationTemplate $detentionEmailTemplate
+     */
+    public function setDetentionEmailTemplate(CommunicationTemplate $detentionEmailTemplate = null)
+    {
+        $this->setProperty('detentionEmailTemplate', $detentionEmailTemplate);
+    }
+
+    /**
+     * @return CommunicationTemplate
+     */
+    public function getDetentionSmsTemplate()
+    {
+        return $this->getProperty('detentionSmsTemplate');
+    }
+
+    /**
+     * @param CommunicationTemplate $detentionSmsTemplate
+     */
+    public function setDetentionSmsTemplate(CommunicationTemplate $detentionSmsTemplate = null)
+    {
+        $this->setProperty('detentionSmsTemplate', $detentionSmsTemplate);
     }
 
     /**

@@ -22,6 +22,12 @@ class ProgressAssessmentBatch extends ModelBase
 
     const SHOW_CURRENT_VS_BASELINE = 'showCurrentVsBaseline';
 
+    const SHOW_CURRENT_VS_YEAR_TARGET = 'showCurrentVsYearTarget';
+
+    const SHOW_CURRENT_VS_PREDICTED = 'showCurrentVsPredicted';
+
+    const SHOW_CURRENT_VS_PREVIOUS = 'showCurrentVsPrevious';
+
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
     /**
@@ -186,5 +192,53 @@ class ProgressAssessmentBatch extends ModelBase
     public function setShowCurrentVsBaseline($showCurrentVsBaseline = null)
     {
         $this->setProperty('showCurrentVsBaseline', $showCurrentVsBaseline);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsYearTarget()
+    {
+        return $this->getProperty('showCurrentVsYearTarget');
+    }
+
+    /**
+     * @param bool $showCurrentVsYearTarget
+     */
+    public function setShowCurrentVsYearTarget($showCurrentVsYearTarget = null)
+    {
+        $this->setProperty('showCurrentVsYearTarget', $showCurrentVsYearTarget);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsPredicted()
+    {
+        return $this->getProperty('showCurrentVsPredicted');
+    }
+
+    /**
+     * @param bool $showCurrentVsPredicted
+     */
+    public function setShowCurrentVsPredicted($showCurrentVsPredicted = null)
+    {
+        $this->setProperty('showCurrentVsPredicted', $showCurrentVsPredicted);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsPrevious()
+    {
+        return $this->getProperty('showCurrentVsPrevious');
+    }
+
+    /**
+     * @param bool $showCurrentVsPrevious
+     */
+    public function setShowCurrentVsPrevious($showCurrentVsPrevious = null)
+    {
+        $this->setProperty('showCurrentVsPrevious', $showCurrentVsPrevious);
     }
 }

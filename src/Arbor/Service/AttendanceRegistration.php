@@ -67,7 +67,7 @@ class AttendanceRegistration
 
             $academicUnit = null;
 
-            if($includeAcademicUnit && isset($mark[self::ACADEMIC_UNIT]) && !is_null($mark[self::ACADEMIC_UNIT])){
+            if ($includeAcademicUnit && isset($mark[self::ACADEMIC_UNIT]) && !is_null($mark[self::ACADEMIC_UNIT])) {
                 $academicUnit = $this->getHydrator()->extractArray($mark[self::ACADEMIC_UNIT], true);
             }
 
