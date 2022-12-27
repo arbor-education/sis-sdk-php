@@ -6,9 +6,12 @@ use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
+use Arbor\Filter\PluralizeFilter;
 use Arbor\Model\Collection;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
+use Arbor\Query\Exception;
+use Arbor\Query\Query;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ConnectException;
@@ -18,8 +21,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Arbor\Filter\PluralizeFilter;
-use Arbor\Query\Exception;
 
 class RestGateway implements GatewayInterface
 {
@@ -32,16 +33,22 @@ class RestGateway implements GatewayInterface
 
     /** @var string $_baseUrl */
     protected $_baseUrl;
+
     /** @var string $_authUser */
     protected $_authUser;
+
     /** @var string $_authPassword */
     protected $_authPassword;
+
     /** @var \GuzzleHttp\Client $_httpClient */
     protected $_httpClient;
+
     /** @var string $_applicationId */
     protected $_applicationId;
-    /** @var HandlerStack * */
+
+    /** @var HandlerStack */
     protected $handlerStack;
+
     /** @var string */
     protected $userAgent;
 
@@ -221,27 +228,77 @@ class RestGateway implements GatewayInterface
     }
 
     /**
-     * @param Collection $collection
+     * Currently meant for use with following entities:
+     * - Students
+     * - StudentMemberhhip
+     * - StudentSecondaryMembership
+     * - Staff
+     * - Exams
+     * - Documents
+     *
      * @param string $resource
+     * @param Collection $collection
+     * @param bool $checkForPersistance
+     * @return Collection
+     * @throws ServerErrorException|Exception|\Arbor\Model\Exception
      */
-    public function bulkCreate($resource, Collection $collection)
+    public function bulkCreate($resource, Collection $collection, $checkForPersistance = true)
     {
-        $pluralResource = self::getPluralizeFilter()->filter($resource);
-        $resource = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
+        $resourceInPlural = self::getPluralizeFilter()->filter($resource);
+        $resourceUrl = strtolower(self::getCamelToDashFilter()->filter($resourceInPlural));
+        $resourceRoot = lcfirst($resource);
 
         $hydrator = new Hydrator();
+        $createCollection = new Collection();
         $options = ['body' => ['request' => []]];
 
+        /** @var ModelBase $model */
         foreach ($collection as $model) {
+            if ($resource !== $model->getResourceType()) {
+                throw new Exception(sprintf('Not all elements of collection are of type "%s"', $resource));
+            }
+        }
+
+        /** @var ModelBase $model */
+        foreach ($collection as $model) {
+            if ($model->getResourceUrl() !== null) {
+                throw new Exception(
+                    sprintf('Model you want to create already exists on "%s"', $model->getResourceUrl())
+                );
+            }
+
+            $userTags = $model->getUserTags();
+
+            if ($checkForPersistance && $userTags && $userTags->count() > 0) {
+                $query = new Query();
+                $query->setResourceType($resource);
+
+                foreach ($userTags as $tagName => $tagValue) {
+                    $query->addUserTagFilter($tagName, $tagValue);
+                }
+
+                $models = $this->query($query)->getArrayCopy();
+
+                if (count($models) > 0) {
+                    $foundModel = current($models);
+
+                    throw new Exception(
+                        sprintf('Model you want to create already exists on "%s"', $foundModel->getResourceUrl())
+                    );
+                }
+            }
+
+            $createCollection->add($model);
             $arrayRepresentation = $hydrator->extractArray($model);
-            $resourceRoot = lcfirst($model->getResourceType());
             $options['body']['request'][] = [$resourceRoot => $arrayRepresentation];
         }
 
+        $exception = null;
+
         try {
-            $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_POST, "/rest-v2/$resource", $options);
-        } catch (ServerErrorException $e) {
-            $responseRepresentation = $e->getResponsePayload();
+            $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_POST, "/rest-v2/$resourceUrl", $options);
+        } catch (ServerErrorException $exception) {
+            $responseRepresentation = $exception->getResponsePayload();
         }
 
         foreach ($responseRepresentation['results'] as $key => $result) {
@@ -250,18 +307,16 @@ class RestGateway implements GatewayInterface
             }
 
             /** @var ModelBase $model */
-            $model = $collection[$key];
-            $resourceRoot = lcfirst($model->getResourceType());
-
+            $model = $createCollection[$key];
             $resultingModelRepresentation = $result[$resourceRoot];
             $hydrator->hydrateModel($model, $resultingModelRepresentation);
         }
 
-        if (isset($e)) {
-            throw $e;
+        if (isset($exception)) {
+            throw $exception;
         }
 
-        return $collection;
+        return $createCollection;
     }
 
     /**
@@ -291,7 +346,7 @@ class RestGateway implements GatewayInterface
      * @param string $resource
      * @param string $id
      * @return \Arbor\Model\ModelBase
-     * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException
+     * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException|\Arbor\Model\Exception
      */
     public function retrieve($resource, $id)
     {
@@ -478,10 +533,10 @@ class RestGateway implements GatewayInterface
      */
     public function sendRequest($method, $url, array $options = [])
     {
-        //Set a generic error message
+        // Set a generic error message
         $message = 'API Error';
-        //Uncomment this line to allow you to trigger a debug session in the Mis project
-        //$url = $url . "?XDEBUG_SESSION_START=yes";
+        // NOTE: Uncomment this line to allow you to trigger a debug session in the Mis project
+        // $url .= '?XDEBUG_SESSION_START=0';
         $code = 0;
 
         if (!isset($options['headers']['User-Agent'])) {
@@ -498,6 +553,8 @@ class RestGateway implements GatewayInterface
         }
 
         $method = strtoupper($method);
+
+        $responsePayload = null;
 
         try {
             if ($this->getBaseUrl() === 'https://api.uk.arbor.sc/rest-v2' && $this->getApplicationId()) {
@@ -522,13 +579,13 @@ class RestGateway implements GatewayInterface
                 throw $e;
             }
 
-            //Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
+            // Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
             $code = $response->getStatusCode();
             $response->getBody()->rewind();
             $responsePayload = json_decode($response->getBody()->getContents(), true);
         } catch (BadResponseException $e) {
-            //Default to using the code and message from the Guzzle exception.
-            //This is useful in case the response does not contain valid json
+            // Default to using the code and message from the Guzzle exception.
+            // This is useful in case the response does not contain valid json
             $e->getResponse()->getBody()->rewind();
             $responsePayload = json_decode($e->getResponse()->getBody()->getContents(), true);
         } catch (\RuntimeException $e) {
@@ -539,17 +596,17 @@ class RestGateway implements GatewayInterface
             throw new ServerErrorException('Server responded with an invalid response', 0, null, $requestPayload);
         }
 
-        //If the response has a code property
+        // If the response has a code property
         if (isset($responsePayload['response']['code'])) {
             $code = $responsePayload['response']['code'];
         }
 
-        //If available use the reason phrase
+        // If available use the reason phrase
         if (isset($responsePayload['response']['reason'])) {
             $message = $responsePayload['response']['reason'];
         }
 
-        //If available use a specific error message
+        // If available use a specific error message
         $serverMessage = $serverTrace = $serverException = null;
 
         if (isset($responsePayload['response']['errors']) &&
@@ -563,11 +620,10 @@ class RestGateway implements GatewayInterface
         }
 
         switch ($code) {
-            case 422:
             case 200:
             case 201:
-                // The request succeeded or failed due to validation errors.
-                // This is not an exception so return the response
+            case 422:
+                // Request succeeded or failed due to validation error(s), this is not an exception (return the response)
                 return $responsePayload;
             case 404:
                 $exception = new ResourceNotFoundException($message);
