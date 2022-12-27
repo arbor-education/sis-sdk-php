@@ -2,7 +2,9 @@
 
 namespace Arbor\Api;
 
-class ServerErrorException extends \Arbor\Exception
+use Arbor\Exception;
+
+class ServerErrorException extends Exception
 {
     protected $requestPayload;
     protected $responsePayload;
