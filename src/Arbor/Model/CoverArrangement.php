@@ -18,6 +18,8 @@ class CoverArrangement extends ModelBase
 
     const NOT_AGREED_DATETIME = 'notAgreedDatetime';
 
+    const IS_SEND_CREATION_NOTIFICATION = 'isSendCreationNotification';
+
     protected $_resourceType = ResourceType::COVER_ARRANGEMENT;
 
     /**
@@ -150,5 +152,21 @@ class CoverArrangement extends ModelBase
     public function setNotAgreedDatetime(\DateTime $notAgreedDatetime = null)
     {
         $this->setProperty('notAgreedDatetime', $notAgreedDatetime);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsSendCreationNotification()
+    {
+        return $this->getProperty('isSendCreationNotification');
+    }
+
+    /**
+     * @param bool $isSendCreationNotification
+     */
+    public function setIsSendCreationNotification($isSendCreationNotification = null)
+    {
+        $this->setProperty('isSendCreationNotification', $isSendCreationNotification);
     }
 }

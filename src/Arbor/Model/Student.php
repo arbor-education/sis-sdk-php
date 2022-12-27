@@ -32,6 +32,10 @@ class Student extends ModelBase
 
     const SUSPEND_CALENDAR_ENTRY_MAPPINGS = 'suspendCalendarEntryMappings';
 
+    const IS_ACTIVE_OUTGOING_SYNC = 'isActiveOutgoingSync';
+
+    const IS_ACTIVE_INCOMING_SYNC = 'isActiveIncomingSync';
+
     const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
@@ -67,6 +71,8 @@ class Student extends ModelBase
     const GCSE_MATHS_ACHIEVEMENT_TYPE = 'gcseMathsAchievementType';
 
     const GCSE_MATHS_FUNDING_EXEMPTION_TYPE = 'gcseMathsFundingExemptionType';
+
+    const T_LEVEL_PLANNED_EEP_HOURS = 'tLevelPlannedEepHours';
 
     protected $_resourceType = ResourceType::STUDENT;
 
@@ -280,6 +286,38 @@ class Student extends ModelBase
     public function setSuspendCalendarEntryMappings($suspendCalendarEntryMappings = null)
     {
         $this->setProperty('suspendCalendarEntryMappings', $suspendCalendarEntryMappings);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActiveOutgoingSync()
+    {
+        return $this->getProperty('isActiveOutgoingSync');
+    }
+
+    /**
+     * @param bool $isActiveOutgoingSync
+     */
+    public function setIsActiveOutgoingSync($isActiveOutgoingSync = null)
+    {
+        $this->setProperty('isActiveOutgoingSync', $isActiveOutgoingSync);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActiveIncomingSync()
+    {
+        return $this->getProperty('isActiveIncomingSync');
+    }
+
+    /**
+     * @param bool $isActiveIncomingSync
+     */
+    public function setIsActiveIncomingSync($isActiveIncomingSync = null)
+    {
+        $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }
 
     /**
@@ -568,5 +606,21 @@ class Student extends ModelBase
     public function setGcseMathsFundingExemptionType(GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
+    }
+
+    /**
+     * @return int
+     */
+    public function getTLevelPlannedEepHours()
+    {
+        return $this->getProperty('tLevelPlannedEepHours');
+    }
+
+    /**
+     * @param int $tLevelPlannedEepHours
+     */
+    public function setTLevelPlannedEepHours($tLevelPlannedEepHours = null)
+    {
+        $this->setProperty('tLevelPlannedEepHours', $tLevelPlannedEepHours);
     }
 }

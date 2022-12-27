@@ -22,6 +22,8 @@ class AcademicYearEnrolment extends ModelBase
 
     const PLANNED_EEP_HOURS = 'plannedEepHours';
 
+    const T_LEVEL_PLANNED_LEARNING_HOURS = 'tLevelPlannedLearningHours';
+
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_ENROLMENT;
 
     /**
@@ -186,5 +188,21 @@ class AcademicYearEnrolment extends ModelBase
     public function setPlannedEepHours($plannedEepHours = null)
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
+    }
+
+    /**
+     * @return int
+     */
+    public function getTLevelPlannedLearningHours()
+    {
+        return $this->getProperty('tLevelPlannedLearningHours');
+    }
+
+    /**
+     * @param int $tLevelPlannedLearningHours
+     */
+    public function setTLevelPlannedLearningHours($tLevelPlannedLearningHours = null)
+    {
+        $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }
 }

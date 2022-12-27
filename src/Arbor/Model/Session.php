@@ -24,6 +24,8 @@ class Session extends ModelBase
 
     const LESSON_PLAN = 'lessonPlan';
 
+    const IS_SUSPENDED = 'isSuspended';
+
     protected $_resourceType = ResourceType::SESSION;
 
     /**
@@ -204,5 +206,21 @@ class Session extends ModelBase
     public function setLessonPlan(LessonPlan $lessonPlan = null)
     {
         $this->setProperty('lessonPlan', $lessonPlan);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsSuspended()
+    {
+        return $this->getProperty('isSuspended');
+    }
+
+    /**
+     * @param bool $isSuspended
+     */
+    public function setIsSuspended($isSuspended = null)
+    {
+        $this->setProperty('isSuspended', $isSuspended);
     }
 }

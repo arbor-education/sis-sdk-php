@@ -18,6 +18,12 @@ class SuspectedDuplicate extends ModelBase
 
     const RESOLVED_DATETIME = 'resolvedDatetime';
 
+    const RESOLUTION_APPROVAL_REQUESTED_BY_STAFF = 'resolutionApprovalRequestedByStaff';
+
+    const RESOLUTION_APPROVAL_REQUESTED_FROM_STAFF = 'resolutionApprovalRequestedFromStaff';
+
+    const RESOLUTION_APPROVED_BY_STAFF = 'resolutionApprovedByStaff';
+
     const RESOLVED_BY_STAFF = 'resolvedByStaff';
 
     const RESOLUTION = 'resolution';
@@ -154,6 +160,54 @@ class SuspectedDuplicate extends ModelBase
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
         $this->setProperty('resolvedDatetime', $resolvedDatetime);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getResolutionApprovalRequestedByStaff()
+    {
+        return $this->getProperty('resolutionApprovalRequestedByStaff');
+    }
+
+    /**
+     * @param Staff $resolutionApprovalRequestedByStaff
+     */
+    public function setResolutionApprovalRequestedByStaff(Staff $resolutionApprovalRequestedByStaff = null)
+    {
+        $this->setProperty('resolutionApprovalRequestedByStaff', $resolutionApprovalRequestedByStaff);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getResolutionApprovalRequestedFromStaff()
+    {
+        return $this->getProperty('resolutionApprovalRequestedFromStaff');
+    }
+
+    /**
+     * @param Staff $resolutionApprovalRequestedFromStaff
+     */
+    public function setResolutionApprovalRequestedFromStaff(Staff $resolutionApprovalRequestedFromStaff = null)
+    {
+        $this->setProperty('resolutionApprovalRequestedFromStaff', $resolutionApprovalRequestedFromStaff);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getResolutionApprovedByStaff()
+    {
+        return $this->getProperty('resolutionApprovedByStaff');
+    }
+
+    /**
+     * @param Staff $resolutionApprovedByStaff
+     */
+    public function setResolutionApprovedByStaff(Staff $resolutionApprovedByStaff = null)
+    {
+        $this->setProperty('resolutionApprovedByStaff', $resolutionApprovedByStaff);
     }
 
     /**

@@ -38,7 +38,7 @@ class User extends ModelBase
 
     const VERIFIED_DATETIME = 'verifiedDatetime';
 
-    const TERMS_ACCEPTED_DATETIME = 'termsAcceptedDatetime';
+    const TERMS_OF_USE_ACCEPTED_DATETIME = 'termsOfUseAcceptedDatetime';
 
     const WELCOME_MESSAGE_DATETIME = 'welcomeMessageDatetime';
 
@@ -55,6 +55,8 @@ class User extends ModelBase
     const GOOGLE_TWO_FACTOR_SECRET = 'googleTwoFactorSecret';
 
     const SSO_TWO_FACTOR_ACTIVATED = 'ssoTwoFactorActivated';
+
+    const ACCEPT_SAAS_TERMS_AND_CONDITIONS_BY_DATETIME = 'acceptSaasTermsAndConditionsByDatetime';
 
     protected $_resourceType = ResourceType::USER;
 
@@ -353,17 +355,17 @@ class User extends ModelBase
     /**
      * @return \DateTime
      */
-    public function getTermsAcceptedDatetime()
+    public function getTermsOfUseAcceptedDatetime()
     {
-        return $this->getProperty('termsAcceptedDatetime');
+        return $this->getProperty('termsOfUseAcceptedDatetime');
     }
 
     /**
-     * @param \DateTime $termsAcceptedDatetime
+     * @param \DateTime $termsOfUseAcceptedDatetime
      */
-    public function setTermsAcceptedDatetime(\DateTime $termsAcceptedDatetime = null)
+    public function setTermsOfUseAcceptedDatetime(\DateTime $termsOfUseAcceptedDatetime = null)
     {
-        $this->setProperty('termsAcceptedDatetime', $termsAcceptedDatetime);
+        $this->setProperty('termsOfUseAcceptedDatetime', $termsOfUseAcceptedDatetime);
     }
 
     /**
@@ -492,5 +494,21 @@ class User extends ModelBase
     public function setSsoTwoFactorActivated($ssoTwoFactorActivated = null)
     {
         $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAcceptSaasTermsAndConditionsByDatetime()
+    {
+        return $this->getProperty('acceptSaasTermsAndConditionsByDatetime');
+    }
+
+    /**
+     * @param \DateTime $acceptSaasTermsAndConditionsByDatetime
+     */
+    public function setAcceptSaasTermsAndConditionsByDatetime(\DateTime $acceptSaasTermsAndConditionsByDatetime = null)
+    {
+        $this->setProperty('acceptSaasTermsAndConditionsByDatetime', $acceptSaasTermsAndConditionsByDatetime);
     }
 }

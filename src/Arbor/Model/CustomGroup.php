@@ -20,6 +20,8 @@ class CustomGroup extends ModelBase
 
     const IS_DYNAMIC = 'isDynamic';
 
+    const IDENTIFIER = 'identifier';
+
     const START_DATE = 'startDate';
 
     const END_DATE = 'endDate';
@@ -172,6 +174,22 @@ class CustomGroup extends ModelBase
     public function setIsDynamic($isDynamic = null)
     {
         $this->setProperty('isDynamic', $isDynamic);
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->getProperty('identifier');
+    }
+
+    /**
+     * @param string $identifier
+     */
+    public function setIdentifier($identifier = null)
+    {
+        $this->setProperty('identifier', $identifier);
     }
 
     /**

@@ -17,9 +17,12 @@ class ResourceType
     const ACADEMIC_UNIT = 'AcademicUnit';
     const ACADEMIC_UNIT_ASSESSMENT = 'AcademicUnitAssessment';
     const ACADEMIC_UNIT_AUTOMATIC_ENROLMENT = 'AcademicUnitAutomaticEnrolment';
+    const ACADEMIC_UNIT_BAND_ASSIGNMENT = 'AcademicUnitBandAssignment';
+    const ACADEMIC_UNIT_BLOCK_ASSIGNMENT = 'AcademicUnitBlockAssignment';
     const ACADEMIC_UNIT_CURRICULUM = 'AcademicUnitCurriculum';
     const ACADEMIC_UNIT_ENROLMENT = 'AcademicUnitEnrolment';
     const ACADEMIC_UNIT_ENROLMENT_IMPORT = 'AcademicUnitEnrolmentImport';
+    const ACADEMIC_UNIT_MARKSHEET_CUSTOM_REPORT = 'AcademicUnitMarksheetCustomReport';
     const ACADEMIC_UNIT_LEAD = 'AcademicUnitLead';
     const ACADEMIC_UNIT_QUALIFICATION_AWARD = 'AcademicUnitQualificationAward';
     const ACADEMIC_UNIT_QUALIFICATION_LINK = 'AcademicUnitQualificationLink';
@@ -30,6 +33,7 @@ class ResourceType
     const ACHIEVEMENT_LEVEL = 'AchievementLevel';
     const ACCESS_ARRANGEMENT = 'AccessArrangement';
     const CANDIDATE_ACCESS_ARRANGEMENT = 'CandidateAccessArrangement';
+    const CANDIDATE_DISAPPLIED_ACCESS_ARRANGEMENT = 'CandidateDisappliedAccessArrangement';
     const ACHIEVEMENT_LEVEL_SET = 'AchievementLevelSet';
     const ADDITIONAL_PAYMENT_REASON = 'AdditionalPaymentReason';
     const AD_HOC_ASSESSMENT = 'AdHocAssessment';
@@ -51,6 +55,7 @@ class ResourceType
     const APPRAISAL = 'Appraisal';
     const ASSESSMENT = 'Assessment';
     const ASSESSMENT_ASPECT = 'AssessmentAspect';
+    const ASSESSMENT_DEFAULT_DISPLAY_GRADE_SET = 'AssessmentDefaultDisplayGradeSet';
     const ASSESSMENT_GRADE_SET = 'AssessmentGradeSet';
     const ASSESSMENT_FRAMEWORK_ASSESSMENT = 'AssessmentFrameworkAssessment';
     const ASSESSMENT_STUDENT_GROUP = 'AssessmentStudentGroup';
@@ -58,6 +63,7 @@ class ResourceType
     const ACADEMIC_YEAR_ASSESSMENT = 'AcademicYearAssessment';
     const ASSESSMENT_DATA_COLLECTION = 'AssessmentDataCollection';
     const ASSESSMENT_DATA_COLLECTION_ITEM = 'AssessmentDataCollectionItem';
+    const ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF = 'AssessmentDataCollectionItemAssignedStaff';
     const ASSESSMENT_METRIC = 'AssessmentMetric';
     const ASSESSMENT_METRIC_ASSESSMENT = 'AssessmentMetricAssessment';
     const ASSESSMENT_METRIC_RULE = 'AssessmentMetricRule';
@@ -90,14 +96,13 @@ class ResourceType
     const BASKET = 'Basket';
     const BASKET_ITEM = 'BasketItem';
     const BASKET_ITEM_PAYMENT_DATA = 'BasketItemPaymentData';
+    const LEDGER_ENTRY = 'LedgerEntry';
+    const INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = 'IncomingCashlessCateringSystemTransaction';
+    const INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER = 'IntegrationsCashlessCateringSystemProvider';
     const BEHAVIOUR = 'Behaviour';
     const BEHAVIOUR_FOLLOW_UP = 'BehaviourFollowUp';
     const BEHAVIOUR_LOCATION = 'BehaviourLocation';
     const BEHAVIOUR_TIME = 'BehaviourTime';
-    const BEHAVIOURAL_CONTRACT = 'BehaviouralContract';
-    const BEHAVIOURAL_CONTRACT_GOAL = 'BehaviouralContractGoal';
-    const BEHAVIOURAL_CONTRACT_PARTY = 'BehaviouralContractParty';
-    const BEHAVIOURAL_CONTRACT_PERIOD = 'BehaviouralContractPeriod';
     const BEHAVIOURAL_INCIDENT_ACTION = 'BehaviouralIncidentAction';
     const BEHAVIOURAL_INCIDENT = 'BehaviouralIncident';
     const BEHAVIOURAL_INCIDENT_BEHAVIOUR = 'BehaviouralIncidentBehaviour';
@@ -144,6 +149,10 @@ class ResourceType
     const CLUB_MEMBERSHIP_PERIOD = 'ClubMembershipPeriod';
     const CLUB_MEMBERSHIP_PERIOD_PRICE = 'ClubMembershipPeriodPrice';
     const CLUB_SESSION = 'ClubSession';
+    const CLUB_SESSION_INTERVAL = 'ClubSessionInterval';
+    const CLUB_MEMBERSHIP_PERIOD_RULE = 'ClubMembershipPeriodRule';
+    const CLUB_SESSION_INTERVAL_PRICE = 'ClubSessionIntervalPrice';
+    const STUDENT_CLUB_SESSION_INTERVAL = 'StudentClubSessionInterval';
     const COMPANY = 'Company';
     const COMPANY_STAFF = 'CompanyStaff';
     const COMMUNICATION_ACTION = 'CommunicationAction';
@@ -161,8 +170,11 @@ class ResourceType
     const CUSTOM_GROUP = 'CustomGroup';
     const CUSTOM_GROUP_MEMBERSHIP = 'CustomGroupMembership';
     const CUSTOM_GROUP_MEMBERSHIP_CRITERION = 'CustomGroupMembershipCriterion';
+    const CUSTOM_GROUP_NOTIFICATION_SETTING = 'CustomGroupNotificationSetting';
+    const CUSTOM_GROUP_NOTIFICATION_RECIPIENT = 'CustomGroupNotificationRecipient';
     const CUSTOM_REPORT = 'CustomReport';
     const CUSTOM_REPORT_COLUMN = 'CustomReportColumn';
+    const CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER = 'CustomReportColumnConditionalFormatter';
     const CUSTOM_REPORT_GROUPING = 'CustomReportGrouping';
     const CUSTOM_REPORT_ORDERING = 'CustomReportOrdering';
     const CUSTOM_REPORT_POST_GROUPING_FILTER = 'CustomReportPostGroupingFilter';
@@ -214,6 +226,10 @@ class ResourceType
     const EMAIL_STATUS = 'EmailStatus';
     const EMAIL_RECIPIENT = 'EmailRecipient';
     const EMAIL_REFERENCE = 'EmailReference';
+    const EMERGENCY_ALERT_TYPE = 'EmergencyAlertType';
+    const EMERGENCY_ALERT = 'EmergencyAlert';
+    const EMERGENCY_ALERT_STUDENT = 'EmergencyAlertStudent';
+    const EMERGENCY_ALERT_ASSIGNED_STAFF = 'EmergencyAlertAssignedStaff';
     const EMPLOYER = 'Employer';
     const EMPLOYMENT_RECORD_TYPE = 'EmploymentRecordType';
     const ENROLMENT_MODE = 'EnrolmentMode';
@@ -237,6 +253,7 @@ class ResourceType
     const FILE = 'File';
     const FINAL_ASSESSMENT_TARGET = 'FinalAssessmentTarget';
     const GENDER = 'Gender';
+    const GENDER_IDENTITY = 'GenderIdentity';
     const GRADE = 'Grade';
     const GRADE_SET = 'GradeSet';
     const GRADE_POINT_SCALE = 'GradePointScale';
@@ -264,7 +281,6 @@ class ResourceType
     const INTAKE_SEASON_GROUP = 'IntakeSeasonGroup';
     const INTERVENTION = 'Intervention';
     const INTERVENTION_CATEGORY = 'InterventionCategory';
-    const INTERVENTION_DEFINITION = 'InterventionDefinition';
     const INTERVENTION_GROUP = 'InterventionGroup';
     const INTERVENTION_REVIEW = 'InterventionReview';
     const INTERVENTION_SESSION = 'InterventionSession';
@@ -272,13 +288,11 @@ class ResourceType
     const INTERVENTION_COST = 'InterventionCost';
     const INTERVENTION_FUNDING_SOURCE = 'InterventionFundingSource';
     const INTERVENTION_FUNDING = 'InterventionFunding';
-    const INTERVENTION_PLANNED_STAFF = 'InterventionPlannedStaff';
     const INTERVENTION_FILTER = 'InterventionFilter';
     const INTERNAL_EXCLUSION_TYPE = 'InternalExclusionType';
     const INTERNAL_EXCLUSION_REASON = 'InternalExclusionReason';
     const INTERNAL_EXCLUSION_SESSION = 'InternalExclusionSession';
     const INTERNAL_EXCLUSION = 'InternalExclusion';
-    const STUDENT_INTERVENTION_GOAL = 'StudentInterventionGoal';
     const IN_CARE_NOTE = 'InCareNote';
     const IN_CARE_STATUS = 'InCareStatus';
     const IN_CARE_STATUS_ASSIGNMENT = 'InCareStatusAssignment';
@@ -311,6 +325,10 @@ class ResourceType
     const MEAL_SESSION_REGISTER_RECORD = 'MealSessionRegisterRecord';
     const MEAL_SITTING = 'MealSitting';
     const MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET = 'MealSittingAutomaticAttendeeTarget';
+    const MEAL_ROTATION_MENU = 'MealRotationMenu';
+    const MEAL_SCHEDULE = 'MealSchedule';
+    const MEAL_SCHEDULE_ITEM = 'MealScheduleItem';
+    const MEAL_ROTATION_MENU_CHOICE = 'MealRotationMenuChoice';
     const MEDICAL_CONDITION = 'MedicalCondition';
     const MEDICAL_CONDITION_MEDICATION = 'MedicalConditionMedication';
     const MEDICATION = 'Medication';
@@ -319,6 +337,7 @@ class ResourceType
     const MEDICAL_EVENT_TYPE = 'MedicalEventType';
     const MEDICAL_INSTITUTION = 'MedicalInstitution';
     const MEDICAL_INSTITUTION_STAFF = 'MedicalInstitutionStaff';
+    const MEDICAL_NOTE = 'MedicalNote';
     const MEDICAL_PLAN = 'MedicalPlan';
     const MEDICAL_RELATIONSHIP_TYPE = 'MedicalRelationshipType';
     const MEETING = 'Meeting';
@@ -338,6 +357,9 @@ class ResourceType
     const NEW_USER_REQUEST = 'NewUserRequest';
     const NOTE = 'Note';
     const NOTICE = 'Notice';
+    const OPTIONS_IMPORT_RESULT = 'OptionsImportResult';
+    const OPTIONS_IMPORT_STUDENT_MAPPING = 'OptionsImportStudentMapping';
+    const OPTIONS_IMPORT_ACADEMIC_UNIT_MAPPING = 'OptionsImportAcademicUnitMapping';
     const OUTBOUND_LETTER = 'OutboundLetter';
     const OUTBOUND_LETTER_RECIPIENT = 'OutboundLetterRecipient';
     const OUTBOUND_LETTER_PERMITTED_SENDER = 'OutboundLetterPermittedSender';
@@ -360,6 +382,8 @@ class ResourceType
     const PERSON_NEXT_OF_KIN = 'PersonNextOfKin';
     const USER_DEFINED_RECORD = 'UserDefinedRecord';
     const USER_DEFINED_FIELD = 'UserDefinedField';
+    const USER_DEFINED_FIELD_OPTION = 'UserDefinedFieldOption';
+    const USER_DEFINED_FIELD_PERMISSION = 'UserDefinedFieldPermission';
     const PERSON_PROFESSIONAL_QUALIFICATION = 'PersonProfessionalQualification';
     const PERSON_TRAINING_COURSE = 'PersonTrainingCourse';
     const PERSON_TRANSPORTATION_METHOD = 'PersonTransportationMethod';
@@ -417,6 +441,8 @@ class ResourceType
     const QUALIFICATION_SUBJECT = 'QualificationSubject';
     const QUALIFICATION_SUBSCRIPTION = 'QualificationSubscription';
     const QUALIFICATION_RESULT_EMBARGO_VIEWER = 'QualificationResultEmbargoViewer';
+    const QUALIFICATION_TRANSPORT_CERTIFICATE = 'QualificationTransportCertificate';
+    const QUALIFICATION_TRANSPORT_MESSAGE = 'QualificationTransportMessage';
     const IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT = 'InHouseCandidateAccessArrangement';
     const IN_HOUSE_CANDIDATE = 'InHouseCandidate';
     const IN_HOUSE_EXAM_ENTRY = 'InHouseExamEntry';
@@ -436,6 +462,7 @@ class ResourceType
     const REPORT_CARD_BATCH_PROGRESS_ASSESSMENT = 'ReportCardBatchProgressAssessment';
     const REPORT_CARD_BATCH_ACADEMIC_UNIT = 'ReportCardBatchAcademicUnit';
     const REPORT_CARD_BATCH_AD_HOC_ASSESSMENT = 'ReportCardBatchAdHocAssessment';
+    const EXTERNALLY_GENERATED_REPORT_CARD = 'ExternallyGeneratedReportCard';
     const REPORT_SUBSCRIPTION = 'ReportSubscription';
     const ROOM_ASSET = 'RoomAsset';
     const ROOM_UNAVAILABILITY = 'RoomUnavailability';
@@ -565,6 +592,7 @@ class ResourceType
     const TIMETABLER_IMPORT_RESULT = 'TimetablerImportResult';
     const TIMETABLER_IMPORT_RESULT_ERROR = 'TimetablerImportResultError';
     const TIMETABLER_IMPORT_RESULT_UPDATE = 'TimetablerImportResultUpdate';
+    const TIMETABLER_IMPORT_STEP_OUTCOME = 'TimetablerImportStepOutcome';
     const TRIP = 'Trip';
     const TRIP_ELIGIBILITY = 'TripEligibility';
     const TRIP_LOCATION = 'TripLocation';
@@ -576,6 +604,7 @@ class ResourceType
     const TIMETABLE_SLOT_EXCEPTION = 'TimetableSlotException';
     const TIMETABLE_SLOT_LOCATION = 'TimetableSlotLocation';
     const TIMETABLE_SLOT_STAFF = 'TimetableSlotStaff';
+    const TIMETABLE_SLOT_STUDENT_EXCEPTION = 'TimetableSlotStudentException';
     const TITLE = 'Title';
     const TRAINING_COURSE = 'TrainingCourse';
     const TRAINING_EVENT = 'TrainingEvent';
@@ -589,6 +618,8 @@ class ResourceType
     const USER_ROLE_ASSIGNMENT = 'UserRoleAssignment';
     const UNIVERSITY = 'University';
     const UNIVERSITY_STAFF = 'UniversityStaff';
+    const VOUCHER = 'Voucher';
+    const CLUB_VOUCHER_ELIGIBILITY = 'ClubVoucherEligibility';
     const WORK_PLACEMENT = 'WorkPlacement';
     const PINNED_ITEM = 'PinnedItem';
     const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'BehaviouralIncidentLevelWorkflow';
@@ -652,7 +683,10 @@ class ResourceType
     const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
     const USER_DEFINED_FIELD_IMPORT = 'UserDefinedFieldImport';
     const INTEGRATIONS_HR_FINANCE_PROVIDER = 'IntegrationsHrFinanceProvider';
-    const STUDENT_ALERT = 'StudentAlert';
+    const INTEGRATIONS_HR_FINANCE_MAPPING_STATUS = 'IntegrationsHrFinanceMappingStatus';
+    const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'IntegrationsHrFinanceTestRun';
+    const INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT = 'IntegrationsHrFinanceTestRunResult';
+    const PERSON_ALERT = 'PersonAlert';
     const BURSARY_TYPE = 'BursaryType';
     const BURSARY_LEVEL = 'BursaryLevel';
     const BURSARY_LEVEL_AMOUNT = 'BursaryLevelAmount';
@@ -665,4 +699,15 @@ class ResourceType
     const BURSARY_PAYMENT_MANUAL_CRITERION_STATUS = 'BursaryPaymentManualCriterionStatus';
     const ATTENDANCE_ROLL_CALL_TIME_GROUP = 'AttendanceRollCallTimeGroup';
     const SUSPENDED_CALENDAR_ENTRY_MAPPING = 'SuspendedCalendarEntryMapping';
+    const COVID_TESTING_TEST = 'CovidTestingTest';
+    const INTEGRATION_VLE_PROVIDER = 'IntegrationVleProvider';
+    const VISUAL_TABLE_CONFIG = 'VisualTableConfig';
+    const OUTGOING_ENTITY_TRANSFER = 'OutgoingEntityTransfer';
+    const INCOMING_ENTITY_TRANSFER = 'IncomingEntityTransfer';
+    const INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT = 'IntegrationsVleProviderAcademicUnit';
+    const USER_BETA = 'UserBeta';
+    const SCHOOL_SHOP_PRODUCT = 'SchoolShopProduct';
+    const SCHOOL_SHOP_PRODUCT_PRICE = 'SchoolShopProductPrice';
+    const SCHOOL_SHOP_PRODUCT_ELIGIBILITY = 'SchoolShopProductEligibility';
+    const SCHOOL_SHOP_ORDER_ITEM = 'SchoolShopOrderItem';
 }

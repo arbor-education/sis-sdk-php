@@ -69,4 +69,11 @@ class ResourceType
     const UK_DFE_UCAS_IMPORT = 'UkDfe_UcasImport';
     const UK_DFE_UCAS_IMPORT_RECORD = 'UkDfe_UcasImportRecord';
     const UK_DFE_ATTENDANCE_API_SUBMISSION = 'UkDfe_AttendanceApiSubmission';
+    const UK_DFE_ALTERNATIVE_PROVISION_REASON = 'UkDfe_AlternativeProvisionReason';
+    const UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT_REASON = 'UkDfe_AlternativeProvisionPlacementReason';
+    const UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT = 'UkDfe_AlternativeProvisionPlacement';
+    const UK_DFE_PERMANENT_EXCLUSION = 'UkDfe_PermanentExclusion';
+    const UK_DFE_ACADEMIC_UNIT_ENROLMENT = 'UkDfe_AcademicUnitEnrolment';
+    const UK_DFE_SCHOOL_LED_TUTORING_HOUR = 'UkDfe_SchoolLedTutoringHour';
+    const UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT = 'UkDfe_YoungCarerStatusAssignment';
 }
