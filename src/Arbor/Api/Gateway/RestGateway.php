@@ -302,7 +302,7 @@ class RestGateway implements GatewayInterface
         }
 
         if (isset($exception)) {
-            $failedResponses = array_reduce($responseRepresentation, static function ($responses, $item) {
+            $failedResponses = array_reduce($responseRepresentation['results'], static function ($responses, $item) {
                 if (isset($item['status']) && $item['status']['success'] === false) {
                     $responses[] = $item['status'];
                 }
@@ -311,7 +311,7 @@ class RestGateway implements GatewayInterface
             }, []);
 
             throw new ServerErrorException(
-                $exception->getMessage() . (count($failedResponses) ? PHP_EOL . var_export($failedResponses, true) : ''),
+                $exception->getMessage() . (count($failedResponses) ? PHP_EOL . json_encode($failedResponses) : ''),
                 $exception->getCode(),
                 $exception->getPrevious(),
                 $exception->getRequestPayload(),
