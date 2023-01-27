@@ -269,7 +269,7 @@ class RestGateway implements GatewayInterface
 
             $userTags = $model->getUserTags();
 
-            if ($checkForPersistance && $userTags && $userTags->count() > 0) {
+            if ($checkForPersistance && $userTags && count($userTags) > 0) {
                 $query = new Query();
                 $query->setResourceType($resource);
 
@@ -301,6 +301,27 @@ class RestGateway implements GatewayInterface
             $responseRepresentation = $exception->getResponsePayload();
         }
 
+        if (isset($exception)) {
+            $failedResponses = array_reduce($responseRepresentation, static function ($responses, $item) {
+                if (isset($item['status']) && $item['status']['success'] === false) {
+                    $responses[] = $item['status'];
+                }
+
+                return $responses;
+            }, []);
+
+            throw new ServerErrorException(
+                $exception->getMessage() . (count($failedResponses) ? PHP_EOL . var_export($failedResponses, true) : ''),
+                $exception->getCode(),
+                $exception->getPrevious(),
+                $exception->getRequestPayload(),
+                $exception->getResponsePayload(),
+                $exception->getServerExceptionClass(),
+                $exception->getServerExceptionMessage(),
+                $exception->getServerExceptionTrace()
+            );
+        }
+
         foreach ($responseRepresentation['results'] as $key => $result) {
             if (!$result['status']['success']) {
                 continue;
@@ -310,10 +331,6 @@ class RestGateway implements GatewayInterface
             $model = $createCollection[$key];
             $resultingModelRepresentation = $result[$resourceRoot];
             $hydrator->hydrateModel($model, $resultingModelRepresentation);
-        }
-
-        if (isset($exception)) {
-            throw $exception;
         }
 
         return $createCollection;
