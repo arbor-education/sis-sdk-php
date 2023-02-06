@@ -13,3 +13,5 @@ $api = new \Arbor\Api\Gateway\RestGateway(
 \Arbor\Model\ModelBase::setDefaultGateway($api);
 
 date_default_timezone_set('Europe/London');
+
+return $api;

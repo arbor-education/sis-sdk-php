@@ -3,26 +3,30 @@
 namespace Arbor\Model;
 
 use Arbor\Api\Gateway\GatewayInterface;
-use Arbor\Api\Gateway\RestGateway;
 
+/**
+ * @method string getId()
+ * @method string getUniqueObjectId()
+ */
 class ModelBase implements \Serializable
 {
-    /**@var array $_properties*/
+    /** @var array $_properties*/
     protected $_properties = [];
 
-    /**@var \Arbor\Api\Gateway\GatewayInterface $_apiGateway*/
+    /** @var \Arbor\Api\Gateway\GatewayInterface $_apiGateway*/
     protected $_apiGateway;
 
-    /**@var string $_resourceUrl */
+    /** @var string $_resourceUrl */
     protected $_resourceUrl;
 
-    /**@var string $_resourceType*/
+    /** @var string $_resourceType*/
     protected $_resourceType;
 
-    /**@var string $_displayName*/
+    /** @var string $_displayName*/
     protected $_displayName;
 
     protected static $_defaultGateway = null;
+
     /**
      * @param string $resourceType
      * @param array $properties
@@ -165,16 +169,18 @@ class ModelBase implements \Serializable
     }
 
     /**
-     *
+     * @return ModelBase
+     * @throws Exception
      */
     public function refresh()
     {
         if ($this->getApiGateway()) {
-            return  $this->getApiGateway()->refresh($this);
-        } else {
-            throw new Exception("Trying to refresh an unconnected model: ".$this->getResourceUrl());
+            return $this->getApiGateway()->refresh($this);
         }
+
+        throw new Exception('Trying to refresh an unconnected model: ' . $this->getResourceUrl());
     }
+
     /**
      * @param string $propertyName
      * @param mixed $propertyValue

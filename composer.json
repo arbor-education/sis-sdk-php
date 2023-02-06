@@ -13,11 +13,13 @@
     ],
     "require": {
         "php": ">=7.1.0",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.7",
-        "arbor-education/php-coding-standard": "@dev"
+        "arbor-education/php-coding-standard": "@dev",
+        "fzaninotto/faker": "^1.9"
     },
     "autoload": {
         "psr-0": {
