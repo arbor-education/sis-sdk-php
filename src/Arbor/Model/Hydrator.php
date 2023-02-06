@@ -90,7 +90,7 @@ class Hydrator implements HydratorInterface
                 if ($propertyValue instanceof ModelBase) {
                     $relatedModel = $propertyValue;
                     $representation[$propertyName] = $this->extractArray($relatedModel);
-                } elseif ($propertyValue instanceof \DateTime) {
+                } elseif ($propertyValue instanceof \DateTimeInterface) {
                     $representation[$propertyName] = [
                             "entityType"=>"date",
                             "date"=>$propertyValue->format("Y-m-d H:i:s"),
