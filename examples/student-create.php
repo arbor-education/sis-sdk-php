@@ -29,7 +29,7 @@ try {
     $api->create($person);
 } catch (ServerErrorException $exception) {
     $result = $exception->getResponsePayload();
-    printf('Failed to insert student: %s%s', $result['status']['errors'][0], PHP_EOL);
+    printf('Failed to insert person: %s%s', $result['status']['errors'][0], PHP_EOL);
 }
 
 print_r($hydrator->extractArray($person));
