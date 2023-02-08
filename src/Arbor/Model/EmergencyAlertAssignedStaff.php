@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class EmergencyAlertAssignedStaff extends ModelBase
 {
-
     const EMERGENCY_ALERT = 'emergencyAlert';
 
     const ASSIGNED_STAFF = 'assignedStaff';
@@ -80,6 +79,4 @@ class EmergencyAlertAssignedStaff extends ModelBase
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }
-
-
 }

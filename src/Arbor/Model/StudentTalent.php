@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StudentTalent extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const TALENT = 'talent';
@@ -134,6 +133,4 @@ class StudentTalent extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
-
 }

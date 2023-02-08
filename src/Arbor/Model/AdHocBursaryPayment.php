@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AdHocBursaryPayment extends ModelBase
 {
-
     const STUDENT = 'student';
 
     const BURSARY_TYPE = 'bursaryType';
@@ -152,6 +151,4 @@ class AdHocBursaryPayment extends ModelBase
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
-
-
 }

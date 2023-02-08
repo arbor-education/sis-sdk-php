@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SchoolShopOrderItem extends ModelBase
 {
-
     const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
     const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
@@ -116,6 +115,4 @@ class SchoolShopOrderItem extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
-
 }

@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class UserDefinedField extends ModelBase
 {
-
     const FIELD_NAME = 'fieldName';
 
     const IDENTIFIER = 'identifier';
@@ -170,6 +169,4 @@ class UserDefinedField extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
-
 }

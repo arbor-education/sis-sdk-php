@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ReportCardBatchCurriculum extends ModelBase
 {
-
     const REPORT_CARD_BATCH = 'reportCardBatch';
 
     const ORDER = 'order';
@@ -260,6 +259,4 @@ class ReportCardBatchCurriculum extends ModelBase
     {
         $this->setProperty('summativeGradeAchievementLevelSet', $summativeGradeAchievementLevelSet);
     }
-
-
 }

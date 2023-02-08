@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class AllowanceAmount extends ModelBase
 {
-
     const ALLOWANCE = 'allowance';
 
     const START_DATE = 'startDate';
@@ -116,6 +115,4 @@ class AllowanceAmount extends ModelBase
     {
         $this->setProperty('allowanceAmount', $allowanceAmount);
     }
-
-
 }

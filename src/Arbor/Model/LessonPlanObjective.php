@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class LessonPlanObjective extends ModelBase
 {
-
     const OBJECTIVE_TITLE = 'objectiveTitle';
 
     const OBJECTIVE_DESCRIPTION = 'objectiveDescription';
@@ -98,6 +97,4 @@ class LessonPlanObjective extends ModelBase
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
-
-
 }

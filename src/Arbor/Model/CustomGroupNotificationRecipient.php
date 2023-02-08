@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class CustomGroupNotificationRecipient extends ModelBase
 {
-
     const CUSTOM_GROUP_NOTIFICATION_SETTING = 'customGroupNotificationSetting';
 
     const STAFF = 'staff';
@@ -98,6 +97,4 @@ class CustomGroupNotificationRecipient extends ModelBase
     {
         $this->setProperty('staffType', $staffType);
     }
-
-
 }

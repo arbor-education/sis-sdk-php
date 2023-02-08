@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class Employer extends ModelBase
 {
-
     const EDS_EMPLOYER_ID = 'edsEmployerId';
 
     const SMALL_EMPLOYER = 'smallEmployer';
@@ -101,6 +100,4 @@ class Employer extends ModelBase
     {
         $this->setProperty('smallMediumEmployer', $smallMediumEmployer);
     }
-
-
 }

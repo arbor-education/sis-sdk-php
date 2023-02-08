@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class SenNeedType extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -152,6 +151,4 @@ class SenNeedType extends ModelBase
     {
         $this->setProperty('exportCode', $exportCode);
     }
-
-
 }

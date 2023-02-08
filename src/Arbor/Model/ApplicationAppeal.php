@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class ApplicationAppeal extends ModelBase
 {
-
     const APPLICATION = 'application';
 
     const NARRATIVE = 'narrative';
@@ -170,6 +169,4 @@ class ApplicationAppeal extends ModelBase
     {
         $this->setProperty('decision', $decision);
     }
-
-
 }

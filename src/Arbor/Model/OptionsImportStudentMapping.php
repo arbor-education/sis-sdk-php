@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class OptionsImportStudentMapping extends ModelBase
 {
-
     const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
     const STUDENT_NAME = 'studentName';
@@ -134,6 +133,4 @@ class OptionsImportStudentMapping extends ModelBase
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
-
-
 }

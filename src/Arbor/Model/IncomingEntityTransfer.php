@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class IncomingEntityTransfer extends ModelBase
 {
-
     const SOURCE_APPLICATION_ID = 'sourceApplicationId';
 
     const SOURCE_ENTITY = 'sourceEntity';
@@ -188,6 +187,4 @@ class IncomingEntityTransfer extends ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
-
-
 }

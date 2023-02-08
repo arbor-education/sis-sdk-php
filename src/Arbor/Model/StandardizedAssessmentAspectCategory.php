@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class StandardizedAssessmentAspectCategory extends ModelBase
 {
-
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -134,6 +133,4 @@ class StandardizedAssessmentAspectCategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
-
 }

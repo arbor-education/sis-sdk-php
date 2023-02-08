@@ -6,7 +6,6 @@ use Arbor\Query\Query;
 
 class PhysicalInterventionRecordWitness extends ModelBase
 {
-
     const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
     const WITNESS = 'witness';
@@ -134,6 +133,4 @@ class PhysicalInterventionRecordWitness extends ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
-
-
 }
