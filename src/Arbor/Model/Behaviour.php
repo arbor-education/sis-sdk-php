@@ -10,6 +10,8 @@ class Behaviour extends ModelBase
 
     const DESCRIPTION = 'description';
 
+    const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
+
     const SEVERITY = 'severity';
 
     const ACTIVE = 'active';
@@ -84,6 +86,22 @@ class Behaviour extends ModelBase
     public function setDescription($description = null)
     {
         $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return BehaviouralIncidentLevelWorkflow
+     */
+    public function getBehaviouralIncidentLevelWorkflow()
+    {
+        return $this->getProperty('behaviouralIncidentLevelWorkflow');
+    }
+
+    /**
+     * @param BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow
+     */
+    public function setBehaviouralIncidentLevelWorkflow(BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    {
+        $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
 
     /**

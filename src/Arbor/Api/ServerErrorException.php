@@ -24,8 +24,7 @@ class ServerErrorException extends Exception
         $serverExceptionClass = null,
         $serverExceptionMessage = null,
         $serverExceptionTrace = null
-    )
-    {
+    ) {
         parent::__construct($message, $code, $previous);
         $this->requestPayload = $requestPayload;
         $this->responsePayload = $responsePayload;
