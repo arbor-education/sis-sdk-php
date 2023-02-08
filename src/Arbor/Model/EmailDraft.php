@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class EmailDraft extends ModelBase
 {
+
     const SENDER = 'sender';
 
     const SUBJECT = 'subject';
@@ -241,4 +242,6 @@ class EmailDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
+
+
 }

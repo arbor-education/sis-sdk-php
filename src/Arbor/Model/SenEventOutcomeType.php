@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SenEventOutcomeType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -115,4 +116,6 @@ class SenEventOutcomeType extends ModelBase
     {
         $this->setProperty('senEventOutcomeType', $senEventOutcomeType);
     }
+
+
 }

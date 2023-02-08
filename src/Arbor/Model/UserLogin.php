@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UserLogin extends ModelBase
 {
+
     const USER = 'user';
 
     const LOGIN_DATETIME = 'loginDatetime';
@@ -151,4 +152,6 @@ class UserLogin extends ModelBase
     {
         $this->setProperty('identityProvider', $identityProvider);
     }
+
+
 }

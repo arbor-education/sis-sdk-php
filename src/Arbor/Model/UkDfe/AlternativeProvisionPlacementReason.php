@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class AlternativeProvisionPlacementReason extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -118,4 +119,6 @@ class AlternativeProvisionPlacementReason extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

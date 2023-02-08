@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SafeguardingNote extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const DATE_LOGGED = 'dateLogged';
@@ -115,4 +116,6 @@ class SafeguardingNote extends ModelBase
     {
         $this->setProperty('content', $content);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class IntegrationsVleProviderAcademicUnit extends ModelBase
 {
+
     const ACADEMIC_UNIT = 'academicUnit';
 
     protected $_resourceType = ResourceType::INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT;
@@ -61,4 +62,6 @@ class IntegrationsVleProviderAcademicUnit extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
+
+
 }

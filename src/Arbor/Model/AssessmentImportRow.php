@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentImportRow extends ModelBase
 {
+
     const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
 
     const MAPPED_STUDENT = 'mappedStudent';
@@ -79,4 +80,6 @@ class AssessmentImportRow extends ModelBase
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
+
+
 }

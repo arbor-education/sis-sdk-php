@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TripParticipant extends ModelBase
 {
+
     const TRIP = 'trip';
 
     const STUDENT = 'student';
@@ -133,4 +134,6 @@ class TripParticipant extends ModelBase
     {
         $this->setProperty('status', $status);
     }
+
+
 }

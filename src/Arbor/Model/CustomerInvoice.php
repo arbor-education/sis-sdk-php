@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class CustomerInvoice extends ModelBase
 {
+
     const PREVIOUS_CUSTOMER_INVOICE = 'previousCustomerInvoice';
 
     const CUSTOMER_ACCOUNT = 'customerAccount';
@@ -277,4 +278,6 @@ class CustomerInvoice extends ModelBase
     {
         $this->setProperty('reissuedDate', $reissuedDate);
     }
+
+
 }

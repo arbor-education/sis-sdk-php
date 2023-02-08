@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TargetJudgementRule extends ModelBase
 {
+
     const ASSESSMENT_ASPECT = 'assessmentAspect';
 
     const TARGET_JUDGEMENT = 'targetJudgement';
@@ -115,4 +116,6 @@ class TargetJudgementRule extends ModelBase
     {
         $this->setProperty('amountUnit', $amountUnit);
     }
+
+
 }

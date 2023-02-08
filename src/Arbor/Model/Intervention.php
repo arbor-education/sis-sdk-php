@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Intervention extends ModelBase
 {
+
     const NAME = 'name';
 
     const ACADEMIC_YEAR = 'academicYear';
@@ -331,4 +332,6 @@ class Intervention extends ModelBase
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }
+
+
 }

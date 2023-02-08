@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class GcseMathsAchievementType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -154,4 +155,6 @@ class GcseMathsAchievementType extends ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
+
+
 }

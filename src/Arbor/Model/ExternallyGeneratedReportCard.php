@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ExternallyGeneratedReportCard extends ModelBase
 {
+
     const CONTENT = 'content';
 
     const REPORT_CARD_BATCH = 'reportCardBatch';
@@ -97,4 +98,6 @@ class ExternallyGeneratedReportCard extends ModelBase
     {
         $this->setProperty('student', $student);
     }
+
+
 }

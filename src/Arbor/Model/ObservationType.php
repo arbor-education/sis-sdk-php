@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ObservationType extends ModelBase
 {
+
     const NAME = 'name';
 
     protected $_resourceType = ResourceType::OBSERVATION_TYPE;
@@ -61,4 +62,6 @@ class ObservationType extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

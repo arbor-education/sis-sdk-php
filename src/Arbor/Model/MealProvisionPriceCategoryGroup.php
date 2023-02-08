@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MealProvisionPriceCategoryGroup extends ModelBase
 {
+
     const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
 
     const GROUP = 'group';
@@ -79,4 +80,6 @@ class MealProvisionPriceCategoryGroup extends ModelBase
     {
         $this->setProperty('group', $group);
     }
+
+
 }

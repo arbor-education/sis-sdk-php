@@ -6,6 +6,9 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
+
+    const NAME = 'name';
+
     const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     const AUTO_CLOSE = 'autoClose';
@@ -104,6 +107,22 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->getProperty('name');
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name = null)
+    {
+        $this->setProperty('name', $name);
     }
 
     /**
@@ -601,4 +620,6 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
+
+
 }

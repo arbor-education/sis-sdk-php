@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class AcademicYearEnrolment extends ModelBase
 {
+
     const LEARNING_SUPPORT_COST = 'learningSupportCost';
 
     protected $_resourceType = ResourceType::UK_ILR_ACADEMIC_YEAR_ENROLMENT;
@@ -64,4 +65,6 @@ class AcademicYearEnrolment extends ModelBase
     {
         $this->setProperty('learningSupportCost', $learningSupportCost);
     }
+
+
 }

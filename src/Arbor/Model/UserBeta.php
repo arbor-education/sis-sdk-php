@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class UserBeta extends ModelBase
 {
+
     const USER = 'user';
 
     const IS_ELIGIBLE = 'isEligible';
@@ -97,4 +98,6 @@ class UserBeta extends ModelBase
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
+
+
 }

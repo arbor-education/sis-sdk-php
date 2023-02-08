@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class Language extends ModelBase
 {
+
     const D00011_ALPHA3 = 'd00011Alpha3';
 
     const D00011_ALPHA4 = 'd00011Alpha4';
@@ -82,4 +83,6 @@ class Language extends ModelBase
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }
+
+
 }

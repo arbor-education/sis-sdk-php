@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Content extends ModelBase
 {
+
     const CONTENT_NAME = 'contentName';
 
     const DESCRIPTION = 'description';
@@ -79,4 +80,6 @@ class Content extends ModelBase
     {
         $this->setProperty('description', $description);
     }
+
+
 }

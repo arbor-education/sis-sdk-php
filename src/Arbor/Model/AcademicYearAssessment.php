@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AcademicYearAssessment extends ModelBase
 {
+
     const ACADEMIC_YEAR = 'academicYear';
 
     const ASSESSMENT_NAME = 'assessmentName';
@@ -21,6 +22,8 @@ class AcademicYearAssessment extends ModelBase
     const SETUP_COMPLETED_DATETIME = 'setupCompletedDatetime';
 
     const SETUP_COMPLETION_STARTED_DATETIME = 'setupCompletionStartedDatetime';
+
+    const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
 
     const ALLOW_COMMENTS = 'allowComments';
 
@@ -191,6 +194,22 @@ class AcademicYearAssessment extends ModelBase
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getDeletionStartedDatetime()
+    {
+        return $this->getProperty('deletionStartedDatetime');
+    }
+
+    /**
+     * @param \DateTime $deletionStartedDatetime
+     */
+    public function setDeletionStartedDatetime(\DateTime $deletionStartedDatetime = null)
+    {
+        $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
+    }
+
+    /**
      * @return bool
      */
     public function getAllowComments()
@@ -205,4 +224,6 @@ class AcademicYearAssessment extends ModelBase
     {
         $this->setProperty('allowComments', $allowComments);
     }
+
+
 }

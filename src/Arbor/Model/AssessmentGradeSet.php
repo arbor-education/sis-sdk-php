@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentGradeSet extends ModelBase
 {
+
     const ASSESSMENT = 'assessment';
 
     const GRADE_SET = 'gradeSet';
@@ -115,4 +116,6 @@ class AssessmentGradeSet extends ModelBase
     {
         $this->setProperty('isOriginal', $isOriginal);
     }
+
+
 }

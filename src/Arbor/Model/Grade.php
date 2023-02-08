@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Grade extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -313,4 +314,6 @@ class Grade extends ModelBase
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }
+
+
 }

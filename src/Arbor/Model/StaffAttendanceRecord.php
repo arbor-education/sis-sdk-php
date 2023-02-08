@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StaffAttendanceRecord extends ModelBase
 {
+
     const STAFF = 'staff';
 
     const ATTENDANCE_PERIOD_DATE = 'attendancePeriodDate';
@@ -205,4 +206,6 @@ class StaffAttendanceRecord extends ModelBase
     {
         $this->setProperty('staffAbsence', $staffAbsence);
     }
+
+
 }

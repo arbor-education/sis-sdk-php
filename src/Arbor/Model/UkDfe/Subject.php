@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class Subject extends ModelBase
 {
+
     const USED_IN_SWF_ONLY = 'usedInSwfOnly';
 
     const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
@@ -118,4 +119,6 @@ class Subject extends ModelBase
     {
         $this->setProperty('d00220', $d00220);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InboundNotificationAutomaticRecipient extends ModelBase
 {
+
     const AUTOMATIC_RECIPIENT = 'automaticRecipient';
 
     protected $_resourceType = ResourceType::INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT;
@@ -61,4 +62,6 @@ class InboundNotificationAutomaticRecipient extends ModelBase
     {
         $this->setProperty('automaticRecipient', $automaticRecipient);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentMetricAssessment extends ModelBase
 {
+
     const ASSESSMENT_METRIC = 'assessmentMetric';
 
     const ASSESSMENT = 'assessment';
@@ -97,4 +98,6 @@ class AssessmentMetricAssessment extends ModelBase
     {
         $this->setProperty('assessmentMetricAssessmentBatch', $assessmentMetricAssessmentBatch);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class InsightReport extends ModelBase
 {
+
     const REPORT_TYPE = 'reportType';
 
     const SUB_REPORT_TYPE = 'subReportType';
@@ -169,4 +170,6 @@ class InsightReport extends ModelBase
     {
         $this->setProperty('reportFile', $reportFile);
     }
+
+
 }

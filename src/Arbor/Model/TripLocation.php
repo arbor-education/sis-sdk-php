@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class TripLocation extends ModelBase
 {
+
     const NAME = 'name';
 
     protected $_resourceType = ResourceType::TRIP_LOCATION;
@@ -61,4 +62,6 @@ class TripLocation extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

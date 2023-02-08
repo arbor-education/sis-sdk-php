@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class QualificationLearningUnit extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -205,4 +206,6 @@ class QualificationLearningUnit extends ModelBase
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }
+
+
 }

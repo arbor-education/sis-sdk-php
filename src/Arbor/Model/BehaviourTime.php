@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviourTime extends ModelBase
 {
+
     const START_TIME = 'startTime';
 
     const END_TIME = 'endTime';
@@ -97,4 +98,6 @@ class BehaviourTime extends ModelBase
     {
         $this->setProperty('name', $name);
     }
+
+
 }

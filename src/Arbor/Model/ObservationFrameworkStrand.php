@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class ObservationFrameworkStrand extends ModelBase
 {
+
     const OBSERVATION_FRAMEWORK = 'observationFramework';
 
     const OBSERVATION_STRAND = 'observationStrand';
@@ -79,4 +80,6 @@ class ObservationFrameworkStrand extends ModelBase
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AttendanceRegisterType extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -169,4 +170,6 @@ class AttendanceRegisterType extends ModelBase
     {
         $this->setProperty('eventObjectTypeId', $eventObjectTypeId);
     }
+
+
 }

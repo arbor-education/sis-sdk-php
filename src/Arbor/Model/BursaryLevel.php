@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BursaryLevel extends ModelBase
 {
+
     const NAME = 'name';
 
     const BURSARY_TYPE = 'bursaryType';
@@ -79,4 +80,6 @@ class BursaryLevel extends ModelBase
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
+
+
 }

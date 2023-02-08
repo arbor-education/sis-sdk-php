@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class Title extends ModelBase
 {
+
     const CODE = 'code';
 
     const ACTIVE = 'active';
@@ -151,4 +152,6 @@ class Title extends ModelBase
     {
         $this->setProperty('isFemale', $isFemale);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class SchoolShopProduct extends ModelBase
 {
+
     const NAME = 'name';
 
     const DESCRIPTION = 'description';
@@ -205,4 +206,6 @@ class SchoolShopProduct extends ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
+
+
 }

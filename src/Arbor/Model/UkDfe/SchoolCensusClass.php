@@ -10,6 +10,7 @@ use Arbor\Model\Session;
 
 class SchoolCensusClass extends ModelBase
 {
+
     const SCHOOL_CENSUS = 'schoolCensus';
 
     const SESSION = 'session';
@@ -209,4 +210,6 @@ class SchoolCensusClass extends ModelBase
     {
         $this->setProperty('infantPupilExceptions', $infantPupilExceptions);
     }
+
+
 }

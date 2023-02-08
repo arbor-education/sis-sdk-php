@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BehaviouralIncidentStudentInvolvement extends ModelBase
 {
+
     const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     const STUDENT = 'student';
@@ -169,4 +170,6 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     {
         $this->setProperty('assignee', $assignee);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class BankAccount extends ModelBase
 {
+
     const BANK = 'bank';
 
     const PAYMENT_PROVIDER = 'paymentProvider';
@@ -187,4 +188,6 @@ class BankAccount extends ModelBase
     {
         $this->setProperty('bacsUserNumber', $bacsUserNumber);
     }
+
+
 }

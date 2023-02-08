@@ -9,6 +9,7 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeEnrolment extends ModelBase
 {
+
     const PROGRAMME_TYPE = 'programmeType';
 
     const FUNDING_MODEL = 'fundingModel';
@@ -424,4 +425,6 @@ class ProgrammeEnrolment extends ModelBase
     {
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
     }
+
+
 }

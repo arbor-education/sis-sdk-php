@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class KpiRange extends ModelBase
 {
+
     const KPI = 'kpi';
 
     const KPI_TARGET = 'kpiTarget';
@@ -187,4 +188,6 @@ class KpiRange extends ModelBase
     {
         $this->setProperty('color', $color);
     }
+
+
 }

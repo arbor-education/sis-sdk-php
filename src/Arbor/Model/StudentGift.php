@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class StudentGift extends ModelBase
 {
+
     const STUDENT = 'student';
 
     const SUBJECT = 'subject';
@@ -133,4 +134,6 @@ class StudentGift extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
+
 }

@@ -6,9 +6,12 @@ use Arbor\Query\Query;
 
 class Behaviour extends ModelBase
 {
+
     const BEHAVIOUR_NAME = 'behaviourName';
 
     const DESCRIPTION = 'description';
+
+    const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
 
     const SEVERITY = 'severity';
 
@@ -87,6 +90,22 @@ class Behaviour extends ModelBase
     }
 
     /**
+     * @return BehaviouralIncidentLevelWorkflow
+     */
+    public function getBehaviouralIncidentLevelWorkflow()
+    {
+        return $this->getProperty('behaviouralIncidentLevelWorkflow');
+    }
+
+    /**
+     * @param BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow
+     */
+    public function setBehaviouralIncidentLevelWorkflow(BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    {
+        $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
+    }
+
+    /**
      * @return string
      */
     public function getSeverity()
@@ -133,4 +152,6 @@ class Behaviour extends ModelBase
     {
         $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }
+
+
 }

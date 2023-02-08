@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class AssessmentDataCollectionItemAssignedStaff extends ModelBase
 {
+
     const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
 
     const ASSIGNED_STAFF = 'assignedStaff';
@@ -79,4 +80,6 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }
+
+
 }

@@ -6,6 +6,7 @@ use Arbor\Query\Query;
 
 class MedicalConditionMedication extends ModelBase
 {
+
     const MEDICAL_CONDITION = 'medicalCondition';
 
     const MEDICATION = 'medication';
@@ -151,4 +152,6 @@ class MedicalConditionMedication extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
+
 }
