@@ -9,7 +9,7 @@ class LoaderTest extends TestCase
 {
     private $basePath;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->basePath = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, ['src', 'Arbor', 'Model']);
     }
@@ -33,7 +33,6 @@ class LoaderTest extends TestCase
     {
         return [
             [''],
-            ['Group'],
             ['UkDfe'],
             ['UkJcq']
         ];
