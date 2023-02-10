@@ -8,6 +8,10 @@ class Person extends ModelBase
 {
     const GENDER = 'gender';
 
+    const GENDER_IDENTITY = 'genderIdentity';
+
+    const GENDER_IDENTITY_PREFERRED_TERM = 'genderIdentityPreferredTerm';
+
     const TITLE = 'title';
 
     const MARITAL_STATUS = 'maritalStatus';
@@ -82,6 +86,38 @@ class Person extends ModelBase
     public function setGender(Gender $gender = null)
     {
         $this->setProperty('gender', $gender);
+    }
+
+    /**
+     * @return GenderIdentity
+     */
+    public function getGenderIdentity()
+    {
+        return $this->getProperty('genderIdentity');
+    }
+
+    /**
+     * @param GenderIdentity $genderIdentity
+     */
+    public function setGenderIdentity(GenderIdentity $genderIdentity = null)
+    {
+        $this->setProperty('genderIdentity', $genderIdentity);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGenderIdentityPreferredTerm()
+    {
+        return $this->getProperty('genderIdentityPreferredTerm');
+    }
+
+    /**
+     * @param string $genderIdentityPreferredTerm
+     */
+    public function setGenderIdentityPreferredTerm($genderIdentityPreferredTerm = null)
+    {
+        $this->setProperty('genderIdentityPreferredTerm', $genderIdentityPreferredTerm);
     }
 
     /**

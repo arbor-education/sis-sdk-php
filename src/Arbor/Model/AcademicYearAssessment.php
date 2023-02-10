@@ -22,6 +22,8 @@ class AcademicYearAssessment extends ModelBase
 
     const SETUP_COMPLETION_STARTED_DATETIME = 'setupCompletionStartedDatetime';
 
+    const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
+
     const ALLOW_COMMENTS = 'allowComments';
 
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_ASSESSMENT;
@@ -188,6 +190,22 @@ class AcademicYearAssessment extends ModelBase
     public function setSetupCompletionStartedDatetime(\DateTime $setupCompletionStartedDatetime = null)
     {
         $this->setProperty('setupCompletionStartedDatetime', $setupCompletionStartedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDeletionStartedDatetime()
+    {
+        return $this->getProperty('deletionStartedDatetime');
+    }
+
+    /**
+     * @param \DateTime $deletionStartedDatetime
+     */
+    public function setDeletionStartedDatetime(\DateTime $deletionStartedDatetime = null)
+    {
+        $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }
 
     /**

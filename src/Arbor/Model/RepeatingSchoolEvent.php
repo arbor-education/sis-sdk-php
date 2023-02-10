@@ -14,6 +14,8 @@ class RepeatingSchoolEvent extends ModelBase
 
     const NARRATIVE = 'narrative';
 
+    const COVER_REQUIRED = 'coverRequired';
+
     protected $_resourceType = ResourceType::REPEATING_SCHOOL_EVENT;
 
     /**
@@ -114,5 +116,21 @@ class RepeatingSchoolEvent extends ModelBase
     public function setNarrative($narrative = null)
     {
         $this->setProperty('narrative', $narrative);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCoverRequired()
+    {
+        return $this->getProperty('coverRequired');
+    }
+
+    /**
+     * @param bool $coverRequired
+     */
+    public function setCoverRequired($coverRequired = null)
+    {
+        $this->setProperty('coverRequired', $coverRequired);
     }
 }

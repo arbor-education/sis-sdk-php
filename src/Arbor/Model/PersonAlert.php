@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentAlert extends ModelBase
+class PersonAlert extends ModelBase
 {
-    const STAFF = 'staff';
+    const PERSON = 'person';
 
-    const STUDENT = 'student';
+    const CONTEXT_PERSON = 'contextPerson';
+
+    const CONTEXT_OBJECT = 'contextObject';
 
     const TYPE = 'type';
 
     const ALERT_DATETIME = 'alertDatetime';
 
-    const PARAMS = 'params';
-
-    protected $_resourceType = ResourceType::STUDENT_ALERT;
+    protected $_resourceType = ResourceType::PERSON_ALERT;
 
     /**
      * @param Query $query
-     * @return StudentAlert[] | Collection
+     * @return PersonAlert[] | Collection
      * @throws Exception
      */
     public static function query(Query $query = null)
@@ -34,14 +34,14 @@ class StudentAlert extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::STUDENT_ALERT);
+        $query->setResourceType(ResourceType::PERSON_ALERT);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return StudentAlert
+     * @return PersonAlert
      * @throws Exception
      */
     public static function retrieve($id)
@@ -51,39 +51,55 @@ class StudentAlert extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::STUDENT_ALERT, $id);
+        return $gateway->retrieve(ResourceType::PERSON_ALERT, $id);
     }
 
     /**
-     * @return Staff
+     * @return ModelBase
      */
-    public function getStaff()
+    public function getPerson()
     {
-        return $this->getProperty('staff');
+        return $this->getProperty('person');
     }
 
     /**
-     * @param Staff $staff
+     * @param ModelBase $person
      */
-    public function setStaff(Staff $staff = null)
+    public function setPerson(ModelBase $person = null)
     {
-        $this->setProperty('staff', $staff);
+        $this->setProperty('person', $person);
     }
 
     /**
-     * @return Student
+     * @return ModelBase
      */
-    public function getStudent()
+    public function getContextPerson()
     {
-        return $this->getProperty('student');
+        return $this->getProperty('contextPerson');
     }
 
     /**
-     * @param Student $student
+     * @param ModelBase $contextPerson
      */
-    public function setStudent(Student $student = null)
+    public function setContextPerson(ModelBase $contextPerson = null)
     {
-        $this->setProperty('student', $student);
+        $this->setProperty('contextPerson', $contextPerson);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getContextObject()
+    {
+        return $this->getProperty('contextObject');
+    }
+
+    /**
+     * @param ModelBase $contextObject
+     */
+    public function setContextObject(ModelBase $contextObject = null)
+    {
+        $this->setProperty('contextObject', $contextObject);
     }
 
     /**
@@ -116,21 +132,5 @@ class StudentAlert extends ModelBase
     public function setAlertDatetime(\DateTime $alertDatetime = null)
     {
         $this->setProperty('alertDatetime', $alertDatetime);
-    }
-
-    /**
-     * @return string
-     */
-    public function getParams()
-    {
-        return $this->getProperty('params');
-    }
-
-    /**
-     * @param string $params
-     */
-    public function setParams($params = null)
-    {
-        $this->setProperty('params', $params);
     }
 }

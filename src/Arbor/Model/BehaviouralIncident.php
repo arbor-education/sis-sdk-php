@@ -22,6 +22,8 @@ class BehaviouralIncident extends ModelBase
 
     const RESOLVED_DATETIME = 'resolvedDatetime';
 
+    const LOGGED_BY_STAFF = 'loggedByStaff';
+
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT;
 
     /**
@@ -186,5 +188,21 @@ class BehaviouralIncident extends ModelBase
     public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
     {
         $this->setProperty('resolvedDatetime', $resolvedDatetime);
+    }
+
+    /**
+     * @return Staff
+     */
+    public function getLoggedByStaff()
+    {
+        return $this->getProperty('loggedByStaff');
+    }
+
+    /**
+     * @param Staff $loggedByStaff
+     */
+    public function setLoggedByStaff(Staff $loggedByStaff = null)
+    {
+        $this->setProperty('loggedByStaff', $loggedByStaff);
     }
 }

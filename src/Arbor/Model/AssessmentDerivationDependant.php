@@ -20,6 +20,8 @@ class AssessmentDerivationDependant extends ModelBase
 
     const WEIGHTING = 'weighting';
 
+    const MAX_GRADE_POINT_SCALE_VALUE = 'maxGradePointScaleValue';
+
     protected $_resourceType = ResourceType::ASSESSMENT_DERIVATION_DEPENDANT;
 
     /**
@@ -168,5 +170,21 @@ class AssessmentDerivationDependant extends ModelBase
     public function setWeighting($weighting = null)
     {
         $this->setProperty('weighting', $weighting);
+    }
+
+    /**
+     * @return float
+     */
+    public function getMaxGradePointScaleValue()
+    {
+        return $this->getProperty('maxGradePointScaleValue');
+    }
+
+    /**
+     * @param float $maxGradePointScaleValue
+     */
+    public function setMaxGradePointScaleValue($maxGradePointScaleValue = null)
+    {
+        $this->setProperty('maxGradePointScaleValue', $maxGradePointScaleValue);
     }
 }

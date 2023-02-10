@@ -12,8 +12,6 @@ class QualificationAssessableInstance extends ModelBase
 
     const DATA_ORDER = 'dataOrder';
 
-    const ASSESSABLE_INSTANCE_IDENTIFIER = 'assessableInstanceIdentifier';
-
     const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
     const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
@@ -118,22 +116,6 @@ class QualificationAssessableInstance extends ModelBase
     public function setDataOrder($dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAssessableInstanceIdentifier()
-    {
-        return $this->getProperty('assessableInstanceIdentifier');
-    }
-
-    /**
-     * @param string $assessableInstanceIdentifier
-     */
-    public function setAssessableInstanceIdentifier($assessableInstanceIdentifier = null)
-    {
-        $this->setProperty('assessableInstanceIdentifier', $assessableInstanceIdentifier);
     }
 
     /**

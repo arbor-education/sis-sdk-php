@@ -13,6 +13,8 @@ class ProgrammeEnrolment extends ModelBase
 
     const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
 
+    const PROGRAMME_AIM_TYPE = 'programmeAimType';
+
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_ENROLMENT;
 
     /**
@@ -81,5 +83,21 @@ class ProgrammeEnrolment extends ModelBase
     public function setPlannedLearningHoursSecondYear($plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
+    }
+
+    /**
+     * @return string
+     */
+    public function getProgrammeAimType()
+    {
+        return $this->getProperty('programmeAimType');
+    }
+
+    /**
+     * @param string $programmeAimType
+     */
+    public function setProgrammeAimType($programmeAimType = null)
+    {
+        $this->setProperty('programmeAimType', $programmeAimType);
     }
 }

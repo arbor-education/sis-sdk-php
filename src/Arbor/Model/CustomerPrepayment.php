@@ -16,11 +16,15 @@ class CustomerPrepayment extends ModelBase
 
     const INCOMING_BANK_TRANSACTION = 'incomingBankTransaction';
 
+    const INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = 'incomingCashlessCateringSystemTransaction';
+
     const RECEIVED_CHEQUE = 'receivedCheque';
 
     const CASH_RECEIPT = 'cashReceipt';
 
     const STRIPE_INCOMING_CARD_TRANSACTION = 'stripeIncomingCardTransaction';
+
+    const VOUCHER = 'voucher';
 
     const PREPAYMENT_AMOUNT = 'prepaymentAmount';
 
@@ -153,6 +157,23 @@ class CustomerPrepayment extends ModelBase
     }
 
     /**
+     * @return IncomingCashlessCateringSystemTransaction
+     */
+    public function getIncomingCashlessCateringSystemTransaction()
+    {
+        return $this->getProperty('incomingCashlessCateringSystemTransaction');
+    }
+
+    /**
+     * @param IncomingCashlessCateringSystemTransaction
+     * $incomingCashlessCateringSystemTransaction
+     */
+    public function setIncomingCashlessCateringSystemTransaction(IncomingCashlessCateringSystemTransaction $incomingCashlessCateringSystemTransaction = null)
+    {
+        $this->setProperty('incomingCashlessCateringSystemTransaction', $incomingCashlessCateringSystemTransaction);
+    }
+
+    /**
      * @return ReceivedCheque
      */
     public function getReceivedCheque()
@@ -198,6 +219,22 @@ class CustomerPrepayment extends ModelBase
     public function setStripeIncomingCardTransaction(StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
     {
         $this->setProperty('stripeIncomingCardTransaction', $stripeIncomingCardTransaction);
+    }
+
+    /**
+     * @return Voucher
+     */
+    public function getVoucher()
+    {
+        return $this->getProperty('voucher');
+    }
+
+    /**
+     * @param Voucher $voucher
+     */
+    public function setVoucher(Voucher $voucher = null)
+    {
+        $this->setProperty('voucher', $voucher);
     }
 
     /**

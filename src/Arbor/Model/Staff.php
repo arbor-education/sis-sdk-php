@@ -17,6 +17,8 @@ class Staff extends ModelBase
 
     const STAFF_NUMBER = 'staffNumber';
 
+    const CONTINUOUS_SERVICE_START_DATE = 'continuousServiceStartDate';
+
     const ZENDESK_USER = 'zendeskUser';
 
     const TIMETABLE_ABBREVIATION = 'timetableAbbreviation';
@@ -36,6 +38,8 @@ class Staff extends ModelBase
     const QUALIFIED_TEACHER_ROUTE = 'qualifiedTeacherRoute';
 
     const HLTA_STATUS = 'hltaStatus';
+
+    const NEWLY_QUALIFIED_TEACHER_DATE = 'newlyQualifiedTeacherDate';
 
     protected $_resourceType = ResourceType::STAFF;
 
@@ -153,6 +157,22 @@ class Staff extends ModelBase
     public function setStaffNumber($staffNumber = null)
     {
         $this->setProperty('staffNumber', $staffNumber);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getContinuousServiceStartDate()
+    {
+        return $this->getProperty('continuousServiceStartDate');
+    }
+
+    /**
+     * @param \DateTime $continuousServiceStartDate
+     */
+    public function setContinuousServiceStartDate(\DateTime $continuousServiceStartDate = null)
+    {
+        $this->setProperty('continuousServiceStartDate', $continuousServiceStartDate);
     }
 
     /**
@@ -313,5 +333,21 @@ class Staff extends ModelBase
     public function setHltaStatus($hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getNewlyQualifiedTeacherDate()
+    {
+        return $this->getProperty('newlyQualifiedTeacherDate');
+    }
+
+    /**
+     * @param \DateTime $newlyQualifiedTeacherDate
+     */
+    public function setNewlyQualifiedTeacherDate(\DateTime $newlyQualifiedTeacherDate = null)
+    {
+        $this->setProperty('newlyQualifiedTeacherDate', $newlyQualifiedTeacherDate);
     }
 }

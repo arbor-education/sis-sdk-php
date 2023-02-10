@@ -22,6 +22,8 @@ class AssessmentDataCollectionItem extends ModelBase
 
     const COMPLETION_DENOMINATOR = 'completionDenominator';
 
+    const DERIVE_ASSIGNED_STAFF = 'deriveAssignedStaff';
+
     protected $_resourceType = ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM;
 
     /**
@@ -186,5 +188,21 @@ class AssessmentDataCollectionItem extends ModelBase
     public function setCompletionDenominator($completionDenominator = null)
     {
         $this->setProperty('completionDenominator', $completionDenominator);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDeriveAssignedStaff()
+    {
+        return $this->getProperty('deriveAssignedStaff');
+    }
+
+    /**
+     * @param bool $deriveAssignedStaff
+     */
+    public function setDeriveAssignedStaff($deriveAssignedStaff = null)
+    {
+        $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
     }
 }
