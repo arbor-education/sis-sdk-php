@@ -3,12 +3,13 @@
 namespace Arbor\Model;
 
 use Arbor\Api\Gateway\GatewayInterface;
+use Serializable;
 
 /**
  * @method string getId()
  * @method string getUniqueObjectId()
  */
-class ModelBase implements \Serializable
+class ModelBase implements Serializable
 {
     /** @var array $_properties*/
     protected $_properties = [];
@@ -255,6 +256,30 @@ class ModelBase implements \Serializable
     public function tag($tagName, $value)
     {
         $this->getUserTags()->offsetSet($tagName, $value);
+    }
+
+    /**
+     * Needed as a temporary measure to allow SDK to be used on PHP 7.x and 8.x versions without generating deprecation
+     * warnings. More about the issue can be read here:
+     * https://www.php.net/manual/en/class.serializable.php
+     *
+     * @return string
+     */
+    public function __serialize()
+    {
+        return $this->serialize();
+    }
+
+    /**
+     * Needed as a temporary measure to allow SDK to be used on PHP 7.x and 8.x versions without generating deprecation
+     * warnings. More about the issue can be read here:
+     * https://www.php.net/manual/en/class.serializable.php
+     *
+     * @return void
+     */
+    public function __unserialize($serialized)
+    {
+        $this->unserialize($serialized);
     }
 
     /**
