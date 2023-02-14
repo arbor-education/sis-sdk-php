@@ -17,6 +17,8 @@ class GcseMathsAchievementType extends ModelBase
 
     const LABEL = 'label';
 
+    const SHORT_LABEL = 'shortLabel';
+
     const EXPORT_VALUE = 'exportValue';
 
     protected $_resourceType = ResourceType::UK_DFE_GCSE_MATHS_ACHIEVEMENT_TYPE;
@@ -119,6 +121,22 @@ class GcseMathsAchievementType extends ModelBase
     public function setLabel($label = null)
     {
         $this->setProperty('label', $label);
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortLabel()
+    {
+        return $this->getProperty('shortLabel');
+    }
+
+    /**
+     * @param string $shortLabel
+     */
+    public function setShortLabel($shortLabel = null)
+    {
+        $this->setProperty('shortLabel', $shortLabel);
     }
 
     /**

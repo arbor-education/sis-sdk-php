@@ -18,6 +18,16 @@ class ProgressAssessmentBatch extends ModelBase
 
     const IS_TARGET_LOCKED = 'isTargetLocked';
 
+    const SHOW_RANK_ORDER = 'showRankOrder';
+
+    const SHOW_CURRENT_VS_BASELINE = 'showCurrentVsBaseline';
+
+    const SHOW_CURRENT_VS_YEAR_TARGET = 'showCurrentVsYearTarget';
+
+    const SHOW_CURRENT_VS_PREDICTED = 'showCurrentVsPredicted';
+
+    const SHOW_CURRENT_VS_PREVIOUS = 'showCurrentVsPrevious';
+
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
     /**
@@ -150,5 +160,85 @@ class ProgressAssessmentBatch extends ModelBase
     public function setIsTargetLocked($isTargetLocked = null)
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowRankOrder()
+    {
+        return $this->getProperty('showRankOrder');
+    }
+
+    /**
+     * @param bool $showRankOrder
+     */
+    public function setShowRankOrder($showRankOrder = null)
+    {
+        $this->setProperty('showRankOrder', $showRankOrder);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsBaseline()
+    {
+        return $this->getProperty('showCurrentVsBaseline');
+    }
+
+    /**
+     * @param bool $showCurrentVsBaseline
+     */
+    public function setShowCurrentVsBaseline($showCurrentVsBaseline = null)
+    {
+        $this->setProperty('showCurrentVsBaseline', $showCurrentVsBaseline);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsYearTarget()
+    {
+        return $this->getProperty('showCurrentVsYearTarget');
+    }
+
+    /**
+     * @param bool $showCurrentVsYearTarget
+     */
+    public function setShowCurrentVsYearTarget($showCurrentVsYearTarget = null)
+    {
+        $this->setProperty('showCurrentVsYearTarget', $showCurrentVsYearTarget);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsPredicted()
+    {
+        return $this->getProperty('showCurrentVsPredicted');
+    }
+
+    /**
+     * @param bool $showCurrentVsPredicted
+     */
+    public function setShowCurrentVsPredicted($showCurrentVsPredicted = null)
+    {
+        $this->setProperty('showCurrentVsPredicted', $showCurrentVsPredicted);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getShowCurrentVsPrevious()
+    {
+        return $this->getProperty('showCurrentVsPrevious');
+    }
+
+    /**
+     * @param bool $showCurrentVsPrevious
+     */
+    public function setShowCurrentVsPrevious($showCurrentVsPrevious = null)
+    {
+        $this->setProperty('showCurrentVsPrevious', $showCurrentVsPrevious);
     }
 }

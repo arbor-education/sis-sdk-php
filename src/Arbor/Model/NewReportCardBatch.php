@@ -46,6 +46,8 @@ class NewReportCardBatch extends ModelBase
 
     const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
 
+    const SHARED_WITH_STUDENTS = 'sharedWithStudents';
+
     const BEHAVIOUR_FIELDS = 'behaviourFields';
 
     const ATTENDANCE_FIELDS = 'attendanceFields';
@@ -410,6 +412,22 @@ class NewReportCardBatch extends ModelBase
     public function setSharedWithGuardians($sharedWithGuardians = null)
     {
         $this->setProperty('sharedWithGuardians', $sharedWithGuardians);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getSharedWithStudents()
+    {
+        return $this->getProperty('sharedWithStudents');
+    }
+
+    /**
+     * @param bool $sharedWithStudents
+     */
+    public function setSharedWithStudents($sharedWithStudents = null)
+    {
+        $this->setProperty('sharedWithStudents', $sharedWithStudents);
     }
 
     /**

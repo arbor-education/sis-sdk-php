@@ -2,27 +2,51 @@
 
 namespace Arbor\Api;
 
-class ServerErrorException extends \Arbor\Exception
+use Arbor\Exception;
+
+class ServerErrorException extends Exception
 {
-    /**@var string $_serverExceptionClass*/
+    protected $requestPayload;
+    protected $responsePayload;
+    /**@var string $_serverExceptionClass */
     protected $_serverExceptionClass;
-    /**@var string $_serverExceptionMessage*/
+    /**@var string $_serverExceptionMessage */
     protected $_serverExceptionMessage;
-    /**@var string $_serverExceptionTrace*/
+    /**@var string $_serverExceptionTrace */
     protected $_serverExceptionTrace;
 
     public function __construct(
         $message = "",
         $code = 0,
         $previous = null,
-        $serverExceptionClass=null,
-        $serverExceptionMessage=null,
-        $serverExceptionTrace=null
+        $requestPayload = null,
+        $responsePayload = null,
+        $serverExceptionClass = null,
+        $serverExceptionMessage = null,
+        $serverExceptionTrace = null
     ) {
         parent::__construct($message, $code, $previous);
+        $this->requestPayload = $requestPayload;
+        $this->responsePayload = $responsePayload;
         $this->setServerExceptionClass($serverExceptionClass);
         $this->setServerExceptionMessage($serverExceptionMessage);
         $this->setServerExceptionTrace($serverExceptionTrace);
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getRequestPayload()
+    {
+        return $this->requestPayload;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getResponsePayload()
+    {
+        return $this->responsePayload;
     }
 
     /**

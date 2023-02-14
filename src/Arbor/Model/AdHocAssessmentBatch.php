@@ -12,6 +12,8 @@ class AdHocAssessmentBatch extends ModelBase
 
     const ASSESSMENT_REFERENCE_DATE = 'assessmentReferenceDate';
 
+    const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
+
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH;
 
     /**
@@ -96,5 +98,21 @@ class AdHocAssessmentBatch extends ModelBase
     public function setAssessmentReferenceDate(\DateTime $assessmentReferenceDate = null)
     {
         $this->setProperty('assessmentReferenceDate', $assessmentReferenceDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDeletionStartedDatetime()
+    {
+        return $this->getProperty('deletionStartedDatetime');
+    }
+
+    /**
+     * @param \DateTime $deletionStartedDatetime
+     */
+    public function setDeletionStartedDatetime(\DateTime $deletionStartedDatetime = null)
+    {
+        $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }
 }

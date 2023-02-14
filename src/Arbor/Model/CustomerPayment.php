@@ -14,6 +14,8 @@ class CustomerPayment extends ModelBase
 
     const INCOMING_CARD_TRANSACTION = 'incomingCardTransaction';
 
+    const INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = 'incomingCashlessCateringSystemTransaction';
+
     const INCOMING_BANK_TRANSACTION = 'incomingBankTransaction';
 
     const RECEIVED_CHEQUE = 'receivedCheque';
@@ -21,6 +23,8 @@ class CustomerPayment extends ModelBase
     const CASH_RECEIPT = 'cashReceipt';
 
     const STRIPE_INCOMING_CARD_TRANSACTION = 'stripeIncomingCardTransaction';
+
+    const VOUCHER = 'voucher';
 
     const PAYMENT_AMOUNT = 'paymentAmount';
 
@@ -137,6 +141,23 @@ class CustomerPayment extends ModelBase
     }
 
     /**
+     * @return IncomingCashlessCateringSystemTransaction
+     */
+    public function getIncomingCashlessCateringSystemTransaction()
+    {
+        return $this->getProperty('incomingCashlessCateringSystemTransaction');
+    }
+
+    /**
+     * @param IncomingCashlessCateringSystemTransaction
+     * $incomingCashlessCateringSystemTransaction
+     */
+    public function setIncomingCashlessCateringSystemTransaction(IncomingCashlessCateringSystemTransaction $incomingCashlessCateringSystemTransaction = null)
+    {
+        $this->setProperty('incomingCashlessCateringSystemTransaction', $incomingCashlessCateringSystemTransaction);
+    }
+
+    /**
      * @return IncomingBankTransaction
      */
     public function getIncomingBankTransaction()
@@ -198,6 +219,22 @@ class CustomerPayment extends ModelBase
     public function setStripeIncomingCardTransaction(StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
     {
         $this->setProperty('stripeIncomingCardTransaction', $stripeIncomingCardTransaction);
+    }
+
+    /**
+     * @return Voucher
+     */
+    public function getVoucher()
+    {
+        return $this->getProperty('voucher');
+    }
+
+    /**
+     * @param Voucher $voucher
+     */
+    public function setVoucher(Voucher $voucher = null)
+    {
+        $this->setProperty('voucher', $voucher);
     }
 
     /**

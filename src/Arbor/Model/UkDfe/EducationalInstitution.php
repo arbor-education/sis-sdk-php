@@ -26,6 +26,8 @@ class EducationalInstitution extends ModelBase
 
     const URN = 'urn';
 
+    const UKPRN = 'ukprn';
+
     const HAS_CHILD_MOTHER_PROVISION = 'hasChildMotherProvision';
 
     const HAS_CHILDCARE_PLACES = 'hasChildcarePlaces';
@@ -49,6 +51,8 @@ class EducationalInstitution extends ModelBase
     const SPECIAL_SCHOOL_SEN_PROVISIONS = 'specialSchoolSenProvisions';
 
     const CENSUS_SCHOOL_OPENING_DATE = 'censusSchoolOpeningDate';
+
+    const WEEKLY_HOURS_OPEN = 'weeklyHoursOpen';
 
     protected $_resourceType = ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION;
 
@@ -214,6 +218,22 @@ class EducationalInstitution extends ModelBase
     public function setUrn($urn = null)
     {
         $this->setProperty('urn', $urn);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUkprn()
+    {
+        return $this->getProperty('ukprn');
+    }
+
+    /**
+     * @param string $ukprn
+     */
+    public function setUkprn($ukprn = null)
+    {
+        $this->setProperty('ukprn', $ukprn);
     }
 
     /**
@@ -406,5 +426,21 @@ class EducationalInstitution extends ModelBase
     public function setCensusSchoolOpeningDate(\DateTime $censusSchoolOpeningDate = null)
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getWeeklyHoursOpen()
+    {
+        return $this->getProperty('weeklyHoursOpen');
+    }
+
+    /**
+     * @param string $weeklyHoursOpen
+     */
+    public function setWeeklyHoursOpen($weeklyHoursOpen = null)
+    {
+        $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }
 }

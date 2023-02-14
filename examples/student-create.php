@@ -1,24 +1,44 @@
 <?php
 
-require_once __DIR__ . '/example-bootstrap.php';
+use Arbor\Api\Gateway\RestGateway;
+use Arbor\Api\ServerErrorException;
+use Arbor\Model\Gender;
+use Arbor\Model\Hydrator;
+use Arbor\Model\Person;
+use Arbor\Model\Student;
+use Arbor\Resource\ResourceType;
+use Faker\Factory;
 
-$student = new \Arbor\Model\Student();
-$student->setPerson(new \Arbor\Model\Person());
-$student->getPerson()->setDateOfBirth(new DateTime('2000-01-01'));
-$student->getPerson()->setLegalFirstName('Simbad');
-$student->getPerson()->setLegalLastName('Sailor');
-$student->getPerson()->setGender($api->retrieve(\Arbor\Resource\ResourceType::GENDER, 'MALE'));
-$student->getPerson()->setTitle($api->retrieve(\Arbor\Resource\ResourceType::TITLE, 'MR'));
-$student->setEthnicity($api->retrieve(\Arbor\Resource\ResourceType::ETHNICITY, 'AAFR'));
-$student->setReligion($api->retrieve(\Arbor\Resource\ResourceType::RELIGION, 'CHRISTIAN'));
-$student->tag('sims-id', 123);
-$student->connect($api);
-$student->getPerson()->connect($api);
+/** @var RestGateway $api */
+$api = require_once __DIR__ . '/example-bootstrap.php';
 
-$student->getPerson()->save();
-$student->save();
+$faker = Factory::create();
+$hydrator = new Hydrator();
 
-$studentCopy2 = $api->retrieve(\Arbor\Resource\ResourceType::STUDENT, $student->getResourceId());
+$person = new Person();
+$person->setLegalFirstName($faker->firstName('male'));
+$person->setLegalLastName($faker->lastName);
 
-$hydrator = new \Arbor\Model\Hydrator();
-print_r($hydrator->extractArray($studentCopy2));
+$student = new Student();
+$student->setPerson($person);
+/** @var Gender $gender */
+$gender = $api->retrieve(ResourceType::GENDER, 'MALE');
+$person->setGender($gender);
+
+try {
+    $api->create($person);
+} catch (ServerErrorException $exception) {
+    $result = $exception->getResponsePayload();
+    printf('Failed to insert person: %s%s', $result['status']['errors'][0], PHP_EOL);
+}
+
+print_r($hydrator->extractArray($person));
+
+try {
+    $api->create($student);
+} catch (ServerErrorException $exception) {
+    $result = $exception->getResponsePayload();
+    printf('Failed to insert student: %s%s', $result['status']['errors'][0], PHP_EOL);
+}
+
+print_r($hydrator->extractArray($student));

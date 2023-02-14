@@ -15,6 +15,8 @@ class AttendanceRegistration
     const MARK_NOTE = "note";
     const MARK_MINUTES_LATE = "minutesLate";
     const MARK_SESSION_START_TIME = "sessionStartTime";
+    const ACADEMIC_UNIT= "academicUnit";
+    const INCLUDE_ACADEMIC_UNIT= "includeAcademicUnit";
 
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
@@ -38,18 +40,19 @@ class AttendanceRegistration
      * @param int $minutesLate
      * @param string $note
      */
-    public function awardAttendanceMark($student, $sessionStartTime, $attendanceMark, $minutesLate=null, $note=null)
+    public function awardAttendanceMark($student, $sessionStartTime, $attendanceMark, $minutesLate=null, $note=null, $academicUnit=null)
     {
         $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_SESSION_START_TIME => $sessionStartTime,
             self::MARK_MARK => $attendanceMark,
             self::MARK_MINUTES_LATE =>$minutesLate,
-            self::MARK_NOTE => $note
+            self::MARK_NOTE => $note,
+            self::ACADEMIC_UNIT => $academicUnit
         ];
     }
 
-    public function saveMarks()
+    public function saveMarks($includeAcademicUnit = false)
     {
         $payload = [];
 
@@ -61,6 +64,16 @@ class AttendanceRegistration
             //Convert models to REST representations
             $markPayload[self::MARK_STUDENT] = $this->getHydrator()->extractArray($mark[self::MARK_STUDENT], true);
             $markPayload[self::MARK_MARK] = $this->getHydrator()->extractArray($mark[self::MARK_MARK], true);
+
+            $academicUnit = null;
+
+            if ($includeAcademicUnit && isset($mark[self::ACADEMIC_UNIT]) && !is_null($mark[self::ACADEMIC_UNIT])) {
+                $academicUnit = $this->getHydrator()->extractArray($mark[self::ACADEMIC_UNIT], true);
+            }
+
+            $markPayload[self::ACADEMIC_UNIT] = $academicUnit;
+
+            $markPayload[self::INCLUDE_ACADEMIC_UNIT] = $includeAcademicUnit;
 
             //Convert date to Y-m-d H:i:s string
             /**@var \DateTime $sessionStartTime*/

@@ -22,6 +22,8 @@ class EducationalInstitution extends ModelBase
 
     const WEBSITE = 'website';
 
+    const PREVIOUS_EDUCATIONAL_INSTITUTION = 'previousEducationalInstitution';
+
     const LOCAL_AUTHORITY = 'localAuthority';
 
     const ESTABLISHMENT_NUMBER = 'establishmentNumber';
@@ -37,6 +39,8 @@ class EducationalInstitution extends ModelBase
     const INTAKE_TYPE = 'intakeType';
 
     const URN = 'urn';
+
+    const UKPRN = 'ukprn';
 
     const HAS_CHILD_MOTHER_PROVISION = 'hasChildMotherProvision';
 
@@ -61,6 +65,8 @@ class EducationalInstitution extends ModelBase
     const SPECIAL_SCHOOL_SEN_PROVISIONS = 'specialSchoolSenProvisions';
 
     const CENSUS_SCHOOL_OPENING_DATE = 'censusSchoolOpeningDate';
+
+    const WEEKLY_HOURS_OPEN = 'weeklyHoursOpen';
 
     protected $_resourceType = ResourceType::EDUCATIONAL_INSTITUTION;
 
@@ -197,6 +203,22 @@ class EducationalInstitution extends ModelBase
     }
 
     /**
+     * @return EducationalInstitution
+     */
+    public function getPreviousEducationalInstitution()
+    {
+        return $this->getProperty('previousEducationalInstitution');
+    }
+
+    /**
+     * @param EducationalInstitution $previousEducationalInstitution
+     */
+    public function setPreviousEducationalInstitution(EducationalInstitution $previousEducationalInstitution = null)
+    {
+        $this->setProperty('previousEducationalInstitution', $previousEducationalInstitution);
+    }
+
+    /**
      * @return LocalAuthority
      */
     public function getLocalAuthority()
@@ -322,6 +344,22 @@ class EducationalInstitution extends ModelBase
     public function setUrn($urn = null)
     {
         $this->setProperty('urn', $urn);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUkprn()
+    {
+        return $this->getProperty('ukprn');
+    }
+
+    /**
+     * @param string $ukprn
+     */
+    public function setUkprn($ukprn = null)
+    {
+        $this->setProperty('ukprn', $ukprn);
     }
 
     /**
@@ -514,5 +552,21 @@ class EducationalInstitution extends ModelBase
     public function setCensusSchoolOpeningDate(\DateTime $censusSchoolOpeningDate = null)
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getWeeklyHoursOpen()
+    {
+        return $this->getProperty('weeklyHoursOpen');
+    }
+
+    /**
+     * @param string $weeklyHoursOpen
+     */
+    public function setWeeklyHoursOpen($weeklyHoursOpen = null)
+    {
+        $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }
 }
