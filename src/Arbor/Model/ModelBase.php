@@ -263,11 +263,11 @@ class ModelBase implements Serializable
      * warnings. More about the issue can be read here:
      * https://www.php.net/manual/en/class.serializable.php
      *
-     * @return string
+     * @return array
      */
     public function __serialize()
     {
-        return $this->serialize();
+        return (new Hydrator())->extractArray($this);
     }
 
     /**
@@ -275,11 +275,13 @@ class ModelBase implements Serializable
      * warnings. More about the issue can be read here:
      * https://www.php.net/manual/en/class.serializable.php
      *
+     * @param array $serialized
      * @return void
+     * @throws Exception
      */
-    public function __unserialize($serialized)
+    public function __unserialize(array $serialized)
     {
-        $this->unserialize($serialized);
+        (new Hydrator())->hydrateModel($this, $serialized);
     }
 
     /**
@@ -302,6 +304,7 @@ class ModelBase implements Serializable
      * The string representation of the object.
      * </p>
      * @return void
+     * @throws Exception
      */
     public function unserialize($serialized)
     {
