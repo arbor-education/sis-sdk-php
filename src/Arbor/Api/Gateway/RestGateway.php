@@ -238,11 +238,11 @@ class RestGateway implements GatewayInterface
      *
      * @param string $resource
      * @param Collection $collection
-     * @param bool $checkForPersistance
+     * @param bool $checkForPersistence
      * @return Collection
      * @throws ServerErrorException|Exception|\Arbor\Model\Exception
      */
-    public function bulkCreate($resource, Collection $collection, $checkForPersistance = true)
+    public function bulkCreate(string $resource, Collection $collection, bool $checkForPersistence = true): Collection
     {
         $resourceInPlural = self::getPluralizeFilter()->filter($resource);
         $resourceUrl = strtolower(self::getCamelToDashFilter()->filter($resourceInPlural));
@@ -269,7 +269,7 @@ class RestGateway implements GatewayInterface
 
             $userTags = $model->getUserTags();
 
-            if ($checkForPersistance && $userTags && count($userTags) > 0) {
+            if ($checkForPersistence && $userTags && count($userTags) > 0) {
                 $query = new Query();
                 $query->setResourceType($resource);
 

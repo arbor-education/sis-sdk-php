@@ -63,10 +63,10 @@ interface GatewayInterface
     /**
      * @param string $resource
      * @param Collection $collection
-     * @param bool $checkForPersistance
+     * @param bool $checkForPersistence
      * @return Collection
      */
-    public function bulkCreate($resource, Collection $collection, $checkForPersistance = true);
+    public function bulkCreate(string $resource, Collection $collection, bool $checkForPersistence = true): Collection;
 
     /**
      * @param string $applicationId
