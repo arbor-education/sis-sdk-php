@@ -2,11 +2,9 @@
 
 namespace Arbor\Api\Gateway;
 
-use Arbor\Api\ServerErrorException;
-use Arbor\Changelog\Change;
+use Arbor\ChangeLog\Change;
 use Arbor\Model\Collection;
 use Arbor\Model\ModelBase;
-use Arbor\Query\Exception;
 use Arbor\Query\Query;
 
 interface GatewayInterface
