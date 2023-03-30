@@ -18,6 +18,8 @@ class PostalAddress extends ModelBase
 
     const POSTAL_CODE = 'postalCode';
 
+    const UNIQUE_PROPERTY_REFERENCE_NUMBER = 'uniquePropertyReferenceNumber';
+
     const COUNTRY = 'country';
 
     const LAT = 'lat';
@@ -158,6 +160,22 @@ class PostalAddress extends ModelBase
     public function setPostalCode($postalCode = null)
     {
         $this->setProperty('postalCode', $postalCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUniquePropertyReferenceNumber()
+    {
+        return $this->getProperty('uniquePropertyReferenceNumber');
+    }
+
+    /**
+     * @param string $uniquePropertyReferenceNumber
+     */
+    public function setUniquePropertyReferenceNumber($uniquePropertyReferenceNumber = null)
+    {
+        $this->setProperty('uniquePropertyReferenceNumber', $uniquePropertyReferenceNumber);
     }
 
     /**
