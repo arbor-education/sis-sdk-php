@@ -8,6 +8,8 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
 {
     const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
+    const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
+
     const RELATION_TO_STUDENT = 'relationToStudent';
 
     const STAFF = 'staff';
@@ -64,6 +66,22 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     public function setLevelOfIncident($levelOfIncident = null)
     {
         $this->setProperty('levelOfIncident', $levelOfIncident);
+    }
+
+    /**
+     * @return BehaviouralIncidentLevelWorkflow
+     */
+    public function getBehaviouralIncidentLevelWorkflow()
+    {
+        return $this->getProperty('behaviouralIncidentLevelWorkflow');
+    }
+
+    /**
+     * @param BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow
+     */
+    public function setBehaviouralIncidentLevelWorkflow(BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    {
+        $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
 
     /**

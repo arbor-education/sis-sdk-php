@@ -18,6 +18,8 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
 
     const ESCALATE_TO_LEVEL = 'escalateToLevel';
 
+    const ESCALATE_NUMBER_OF_LEVELS = 'escalateNumberOfLevels';
+
     const RESET_TO_ZERO = 'resetToZero';
 
     const GUARDIAN_EMAIL_TEMPLATE = 'guardianEmailTemplate';
@@ -202,6 +204,22 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     public function setEscalateToLevel($escalateToLevel = null)
     {
         $this->setProperty('escalateToLevel', $escalateToLevel);
+    }
+
+    /**
+     * @return int
+     */
+    public function getEscalateNumberOfLevels()
+    {
+        return $this->getProperty('escalateNumberOfLevels');
+    }
+
+    /**
+     * @param int $escalateNumberOfLevels
+     */
+    public function setEscalateNumberOfLevels($escalateNumberOfLevels = null)
+    {
+        $this->setProperty('escalateNumberOfLevels', $escalateNumberOfLevels);
     }
 
     /**

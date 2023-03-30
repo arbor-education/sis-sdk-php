@@ -26,8 +26,6 @@ class QualificationAssessableInstance extends ModelBase
 
     const IS_CENTRE_SPECIFIED_TIMETABLE = 'isCentreSpecifiedTimetable';
 
-    const CENTRE_SPECIFIED_DATETIME = 'centreSpecifiedDatetime';
-
     const CENTRE_SPECIFIED_DURATION = 'centreSpecifiedDuration';
 
     const IS_PROVISIONAL = 'isProvisional';
@@ -228,22 +226,6 @@ class QualificationAssessableInstance extends ModelBase
     public function setIsCentreSpecifiedTimetable($isCentreSpecifiedTimetable = null)
     {
         $this->setProperty('isCentreSpecifiedTimetable', $isCentreSpecifiedTimetable);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getCentreSpecifiedDatetime()
-    {
-        return $this->getProperty('centreSpecifiedDatetime');
-    }
-
-    /**
-     * @param \DateTime $centreSpecifiedDatetime
-     */
-    public function setCentreSpecifiedDatetime(\DateTime $centreSpecifiedDatetime = null)
-    {
-        $this->setProperty('centreSpecifiedDatetime', $centreSpecifiedDatetime);
     }
 
     /**

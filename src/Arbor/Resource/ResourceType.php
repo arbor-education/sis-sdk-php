@@ -463,6 +463,9 @@ class ResourceType
     const REPORT_CARD_BATCH_ACADEMIC_UNIT = 'ReportCardBatchAcademicUnit';
     const REPORT_CARD_BATCH_AD_HOC_ASSESSMENT = 'ReportCardBatchAdHocAssessment';
     const EXTERNALLY_GENERATED_REPORT_CARD = 'ExternallyGeneratedReportCard';
+    const CUSTOM_REPORT_CARD = 'CustomReportCard';
+    const CUSTOM_REPORT_CARD_STUDENT_GROUP = 'CustomReportCardStudentGroup';
+    const CUSTOM_REPORT_CARD_STUDENT = 'CustomReportCardStudent';
     const REPORT_SUBSCRIPTION = 'ReportSubscription';
     const ROOM_ASSET = 'RoomAsset';
     const ROOM_UNAVAILABILITY = 'RoomUnavailability';
