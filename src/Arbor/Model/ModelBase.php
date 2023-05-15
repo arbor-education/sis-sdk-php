@@ -281,6 +281,7 @@ class ModelBase implements Serializable
      */
     public function __unserialize(array $serialized)
     {
+        $this->connect(self::getDefaultGateway());
         (new Hydrator())->hydrateModel($this, $serialized);
     }
 
