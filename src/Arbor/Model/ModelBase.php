@@ -3,12 +3,13 @@
 namespace Arbor\Model;
 
 use Arbor\Api\Gateway\GatewayInterface;
+use Serializable;
 
 /**
  * @method string getId()
  * @method string getUniqueObjectId()
  */
-class ModelBase implements \Serializable
+class ModelBase implements Serializable
 {
     /** @var array $_properties*/
     protected $_properties = [];
@@ -258,6 +259,33 @@ class ModelBase implements \Serializable
     }
 
     /**
+     * Needed as a temporary measure to allow SDK to be used on PHP 7.x and 8.x versions without generating deprecation
+     * warnings. More about the issue can be read here:
+     * https://www.php.net/manual/en/class.serializable.php
+     *
+     * @return array
+     */
+    public function __serialize()
+    {
+        return (new Hydrator())->extractArray($this);
+    }
+
+    /**
+     * Needed as a temporary measure to allow SDK to be used on PHP 7.x and 8.x versions without generating deprecation
+     * warnings. More about the issue can be read here:
+     * https://www.php.net/manual/en/class.serializable.php
+     *
+     * @param array $serialized
+     * @return void
+     * @throws Exception
+     */
+    public function __unserialize(array $serialized)
+    {
+        $this->connect(self::getDefaultGateway());
+        (new Hydrator())->hydrateModel($this, $serialized);
+    }
+
+    /**
      * (PHP 5 &gt;= 5.1.0)<br/>
      * String representation of object
      * @link http://php.net/manual/en/serializable.serialize.php
@@ -277,6 +305,7 @@ class ModelBase implements \Serializable
      * The string representation of the object.
      * </p>
      * @return void
+     * @throws Exception
      */
     public function unserialize($serialized)
     {

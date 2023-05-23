@@ -2,11 +2,9 @@
 
 namespace Arbor\Api\Gateway;
 
-use Arbor\Api\ServerErrorException;
-use Arbor\Changelog\Change;
+use Arbor\ChangeLog\Change;
 use Arbor\Model\Collection;
 use Arbor\Model\ModelBase;
-use Arbor\Query\Exception;
 use Arbor\Query\Query;
 
 interface GatewayInterface
@@ -63,10 +61,10 @@ interface GatewayInterface
     /**
      * @param string $resource
      * @param Collection $collection
-     * @param bool $checkForPersistance
+     * @param bool $checkForPersistence
      * @return Collection
      */
-    public function bulkCreate($resource, Collection $collection, $checkForPersistance = true);
+    public function bulkCreate(string $resource, Collection $collection, bool $checkForPersistence = true): Collection;
 
     /**
      * @param string $applicationId
