@@ -302,6 +302,10 @@ class RestGateway implements GatewayInterface
         }
 
         if (isset($exception)) {
+            if (!isset($responseRepresentation['results'])) {
+                $responseRepresentation['results'] = [];
+            }
+
             $failedResponses = array_reduce($responseRepresentation['results'], static function ($responses, $item) {
                 if (isset($item['status']) && $item['status']['success'] === false) {
                     $responses[] = $item['status'];
