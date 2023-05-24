@@ -11,14 +11,16 @@ permissions:
 
 jobs:
   build:
-
+    strategy:
+      matrix:
+        phpVersion: ['7.3', '7.4', '8.1']
     runs-on: ubuntu-latest
 
     steps:
     - name: Setup PHP with specific version of PECL extension
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.3'       
+        php-version: ${{ matrix.phpVersion }}
 
     - name: Setup authentication
       run: |
