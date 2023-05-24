@@ -1,4 +1,4 @@
-name: PHP 7.3 tests
+name: PHP tests
 
 on:
   push:
