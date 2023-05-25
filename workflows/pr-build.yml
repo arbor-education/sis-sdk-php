@@ -1,0 +1,50 @@
+name: PHP tests
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        phpVersion: ['7.3', '7.4', '8.1']
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup PHP with specific version of PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.phpVersion }}
+
+    - name: Setup authentication
+      run: |
+        composer config --global --auth http-basic.repo.packagist.com token ${{ secrets.PACKGIST_TOKEN }}
+
+    - uses: actions/checkout@v3
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Install dependencies
+      run: composer show
+
+    - name: Run test suite
+      run: vendor/bin/phpunit
