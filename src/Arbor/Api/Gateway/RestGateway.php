@@ -116,6 +116,7 @@ class RestGateway implements GatewayInterface
             'headers' => [
                 'User-Agent' => $this->getUserAgent(),
             ],
+            'allow_redirects' => ['strict' => true],
         ]);
         return $this;
     }
