@@ -293,15 +293,11 @@ class RestGateway implements GatewayInterface
             $options['body']['request'][] = [$resourceRoot => $arrayRepresentation];
         }
 
-        $exception = null;
-
         try {
             $responseRepresentation = $this->sendRequest(self::HTTP_METHOD_POST, "/rest-v2/$resourceUrl", $options);
         } catch (ServerErrorException $exception) {
             $responseRepresentation = $exception->getResponsePayload();
-        }
 
-        if (isset($exception)) {
             $failedResponses = array_reduce($responseRepresentation['results'] ?? [], static function ($responses, $item) {
                 if (isset($item['status']) && $item['status']['success'] === false) {
                     $responses[] = $item['status'];
