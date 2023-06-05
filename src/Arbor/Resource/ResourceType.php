@@ -708,6 +708,7 @@ class ResourceType
     const OUTGOING_ENTITY_TRANSFER = 'OutgoingEntityTransfer';
     const INCOMING_ENTITY_TRANSFER = 'IncomingEntityTransfer';
     const INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT = 'IntegrationsVleProviderAcademicUnit';
+    const AI_REQUEST = 'AiRequest';
     const USER_BETA = 'UserBeta';
     const SCHOOL_SHOP_PRODUCT = 'SchoolShopProduct';
     const SCHOOL_SHOP_PRODUCT_PRICE = 'SchoolShopProductPrice';
