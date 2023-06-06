@@ -14,4 +14,5 @@ class ResourceType
     const UK_ILR_ACADEMIC_YEAR_ENROLMENT = 'UkIlr_AcademicYearEnrolment';
     const UK_ILR_MEDICAL_CONDITION = 'UkIlr_MedicalCondition';
     const UK_ILR_PROGRAMME_INSTANCE = 'UkIlr_ProgrammeInstance';
+    const UK_ILR_LEARNER_PRIOR_ATTAINMENT = 'UkIlr_LearnerPriorAttainment';
 }
