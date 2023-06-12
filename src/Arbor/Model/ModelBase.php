@@ -43,7 +43,7 @@ class ModelBase implements Serializable
             $apiGateway = static::getDefaultGateway();
         }
         $this->connect($apiGateway);
-//        $this->setProperty("userTags", new \ArrayObject());
+        //        $this->setProperty("userTags", new \ArrayObject());
     }
 
     /**

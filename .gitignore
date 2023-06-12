@@ -1,7 +1,7 @@
 /vendor
 /examples/config.php
 composer.lock
-.php_cs.cache
+.php-cs-fixer.cache
 .idea
 phpunit.xml
 /nbproject/

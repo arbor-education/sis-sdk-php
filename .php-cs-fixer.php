@@ -10,7 +10,9 @@ $finder = Symfony\Component\Finder\Finder::create()
     ->exclude('vendor')
 ;
 
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+
+return $config
     ->setRules($rules)
     ->setFinder($finder)
 ;

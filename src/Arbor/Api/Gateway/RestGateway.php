@@ -411,9 +411,9 @@ class RestGateway implements GatewayInterface
             }
             $query->addPropertyFilter($propertyName, $operator, $value);
         }
-//        foreach ($userTags as $key => $value) {
-//            $query->addUserTagFilter($key, $value);
-//        }
+        //foreach ($userTags as $key => $value) {
+        //    $query->addUserTagFilter($key, $value);
+        //}
         return $this->query($query)->getArrayCopy();
     }
 
