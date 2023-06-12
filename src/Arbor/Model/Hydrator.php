@@ -21,17 +21,17 @@ class Hydrator implements HydratorInterface
             switch ($propertyName) {
                 case 'entityType':
                     $model->setResourceType($propertyValue);
-                break;
+                    break;
                 case 'href':
                     //this is a special property
                     $model->setResourceUrl($propertyValue);
-                break;
+                    break;
                 case 'displayName':
                     $model->setDisplayName($propertyValue);
-                break;
+                    break;
                 case 'userTags':
                     $model->setUserTags(new \ArrayObject($propertyValue));
-                break;
+                    break;
                 default: //This is a normal property
                     //If the property value is another representation then parse it recursivly
                     if (is_array($propertyValue)&&(isset($propertyValue['entityType']))) {
@@ -39,7 +39,7 @@ class Hydrator implements HydratorInterface
                             case 'date':
                                 /**@var \DateTime $propertyValue*/
                                 $model->setProperty($propertyName, new \DateTime($propertyValue['date']));
-                            break;
+                                break;
                             default:
                                 $relateModelRepresentation = $propertyValue;
 
@@ -47,7 +47,7 @@ class Hydrator implements HydratorInterface
                                     ->instantiateModel($propertyValue['entityType']);
                                 $this->hydrateModel($relatedModel, $relateModelRepresentation);
                                 $model->setProperty($propertyName, $relatedModel);
-                            break;
+                                break;
                         }
                     } elseif (is_array($propertyValue)) {
                         //This is a collection returned by a collection property
@@ -65,7 +65,7 @@ class Hydrator implements HydratorInterface
                         //This is a normal model property so add it to the properties array
                         $model->setProperty($propertyName, $propertyValue);
                     }
-                break;
+                    break;
             }
         }
         return $model;

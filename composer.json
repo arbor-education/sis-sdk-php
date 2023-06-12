@@ -14,7 +14,7 @@
     "require": {
         "php": ">=7.1.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.0"
+        "guzzlehttp/guzzle": "^6.0 || ^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.7",
@@ -32,9 +32,9 @@
         }
     },
     "scripts": {
-        "cs-check": "php-cs-fixer fix --config=.php_cs -v --diff --dry-run",
-        "cs-fix": "php-cs-fixer fix --config=.php_cs",
-        "ci-cs": "git fetch; php-cs-fixer fix --config=.php_cs -v --dry-run --using-cache=no --path-mode=intersection `git diff --name-only --diff-filter=d origin/master | xargs`"
+        "cs-check": "php-cs-fixer fix -v --diff --dry-run",
+        "cs-fix": "php-cs-fixer fix",
+        "ci-cs": "git fetch; php-cs-fixer fix -v --dry-run --using-cache=no --path-mode=intersection `git diff --name-only --diff-filter=d origin/master | xargs`"
     },
     "extra": {
         "branch-alias": {
