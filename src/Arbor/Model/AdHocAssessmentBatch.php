@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AdHocAssessmentBatch extends ModelBase
+class AdHocAssessmentBatch extends \ModelBase
 {
-    const AD_HOC_ASSESSMENT = 'adHocAssessment';
+    public const AD_HOC_ASSESSMENT = 'adHocAssessment';
 
-    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
+    public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
-    const ASSESSMENT_REFERENCE_DATE = 'assessmentReferenceDate';
+    public const ASSESSMENT_REFERENCE_DATE = 'assessmentReferenceDate';
 
-    const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
+    public const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH;
 
@@ -21,7 +21,7 @@ class AdHocAssessmentBatch extends ModelBase
      * @return AdHocAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AdHocAssessmentBatch extends ModelBase
     /**
      * @param AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -79,7 +79,7 @@ class AdHocAssessmentBatch extends ModelBase
     /**
      * @param ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }

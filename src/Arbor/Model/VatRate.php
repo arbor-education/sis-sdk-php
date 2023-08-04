@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class VatRate extends ModelBase
+class VatRate extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const IS_DEFAULT_VAT_RATE = 'isDefaultVatRate';
+    public const IS_DEFAULT_VAT_RATE = 'isDefaultVatRate';
 
-    const VAT_RATE_NAME = 'vatRateName';
+    public const VAT_RATE_NAME = 'vatRateName';
 
-    const VAT_RATE_SHORT_NAME = 'vatRateShortName';
+    public const VAT_RATE_SHORT_NAME = 'vatRateShortName';
 
-    const RATE = 'rate';
+    public const RATE = 'rate';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::VAT_RATE;
 
@@ -31,7 +31,7 @@ class VatRate extends ModelBase
      * @return VatRate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class VatRate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -89,7 +89,7 @@ class VatRate extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -105,7 +105,7 @@ class VatRate extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -121,7 +121,7 @@ class VatRate extends ModelBase
     /**
      * @param bool $isDefaultVatRate
      */
-    public function setIsDefaultVatRate($isDefaultVatRate = null)
+    public function setIsDefaultVatRate(bool $isDefaultVatRate = null)
     {
         $this->setProperty('isDefaultVatRate', $isDefaultVatRate);
     }
@@ -137,7 +137,7 @@ class VatRate extends ModelBase
     /**
      * @param string $vatRateName
      */
-    public function setVatRateName($vatRateName = null)
+    public function setVatRateName(string $vatRateName = null)
     {
         $this->setProperty('vatRateName', $vatRateName);
     }
@@ -153,7 +153,7 @@ class VatRate extends ModelBase
     /**
      * @param string $vatRateShortName
      */
-    public function setVatRateShortName($vatRateShortName = null)
+    public function setVatRateShortName(string $vatRateShortName = null)
     {
         $this->setProperty('vatRateShortName', $vatRateShortName);
     }
@@ -169,7 +169,7 @@ class VatRate extends ModelBase
     /**
      * @param float $rate
      */
-    public function setRate($rate = null)
+    public function setRate(float $rate = null)
     {
         $this->setProperty('rate', $rate);
     }

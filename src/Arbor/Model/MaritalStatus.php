@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MaritalStatus extends ModelBase
+class MaritalStatus extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const FULL_TITLE = 'fullTitle';
+    public const FULL_TITLE = 'fullTitle';
 
     protected $_resourceType = ResourceType::MARITAL_STATUS;
 
@@ -21,7 +21,7 @@ class MaritalStatus extends ModelBase
      * @return MaritalStatus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class MaritalStatus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -79,7 +79,7 @@ class MaritalStatus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -95,7 +95,7 @@ class MaritalStatus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -111,7 +111,7 @@ class MaritalStatus extends ModelBase
     /**
      * @param string $fullTitle
      */
-    public function setFullTitle($fullTitle = null)
+    public function setFullTitle(string $fullTitle = null)
     {
         $this->setProperty('fullTitle', $fullTitle);
     }

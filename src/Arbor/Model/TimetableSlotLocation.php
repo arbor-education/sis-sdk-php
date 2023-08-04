@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TimetableSlotLocation extends ModelBase
+class TimetableSlotLocation extends \ModelBase
 {
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::TIMETABLE_SLOT_LOCATION;
 
@@ -21,7 +21,7 @@ class TimetableSlotLocation extends ModelBase
      * @return TimetableSlotLocation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class TimetableSlotLocation extends ModelBase
     /**
      * @param TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -79,7 +79,7 @@ class TimetableSlotLocation extends ModelBase
     /**
      * @param Room $location
      */
-    public function setLocation(Room $location = null)
+    public function setLocation(\Room $location = null)
     {
         $this->setProperty('location', $location);
     }

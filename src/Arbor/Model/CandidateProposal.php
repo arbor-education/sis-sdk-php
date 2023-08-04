@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CandidateProposal extends ModelBase
+class CandidateProposal extends \ModelBase
 {
-    const CANDIDATE = 'candidate';
+    public const CANDIDATE = 'candidate';
 
-    const SUGGESTED_BY_STAFF = 'suggestedByStaff';
+    public const SUGGESTED_BY_STAFF = 'suggestedByStaff';
 
-    const SUGGESTED_DATETIME = 'suggestedDatetime';
+    public const SUGGESTED_DATETIME = 'suggestedDatetime';
 
     protected $_resourceType = ResourceType::CANDIDATE_PROPOSAL;
 
@@ -19,7 +19,7 @@ class CandidateProposal extends ModelBase
      * @return CandidateProposal[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class CandidateProposal extends ModelBase
     /**
      * @param Candidate $candidate
      */
-    public function setCandidate(Candidate $candidate = null)
+    public function setCandidate(\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -77,7 +77,7 @@ class CandidateProposal extends ModelBase
     /**
      * @param Staff $suggestedByStaff
      */
-    public function setSuggestedByStaff(Staff $suggestedByStaff = null)
+    public function setSuggestedByStaff(\Staff $suggestedByStaff = null)
     {
         $this->setProperty('suggestedByStaff', $suggestedByStaff);
     }

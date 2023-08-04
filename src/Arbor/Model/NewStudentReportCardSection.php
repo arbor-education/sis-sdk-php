@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class NewStudentReportCardSection extends ModelBase
+class NewStudentReportCardSection extends \ModelBase
 {
-    const STUDENT_REPORT_CARD = 'studentReportCard';
+    public const STUDENT_REPORT_CARD = 'studentReportCard';
 
-    const LINKED_ENTITY = 'linkedEntity';
+    public const LINKED_ENTITY = 'linkedEntity';
 
-    const COMPLETED_DATETIME = 'completedDatetime';
+    public const COMPLETED_DATETIME = 'completedDatetime';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
     protected $_resourceType = ResourceType::NEW_STUDENT_REPORT_CARD_SECTION;
 
@@ -21,7 +21,7 @@ class NewStudentReportCardSection extends ModelBase
      * @return NewStudentReportCardSection[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class NewStudentReportCardSection extends ModelBase
     /**
      * @param NewStudentReportCard $studentReportCard
      */
-    public function setStudentReportCard(NewStudentReportCard $studentReportCard = null)
+    public function setStudentReportCard(\NewStudentReportCard $studentReportCard = null)
     {
         $this->setProperty('studentReportCard', $studentReportCard);
     }
@@ -79,7 +79,7 @@ class NewStudentReportCardSection extends ModelBase
     /**
      * @param ModelBase $linkedEntity
      */
-    public function setLinkedEntity(ModelBase $linkedEntity = null)
+    public function setLinkedEntity(\ModelBase $linkedEntity = null)
     {
         $this->setProperty('linkedEntity', $linkedEntity);
     }

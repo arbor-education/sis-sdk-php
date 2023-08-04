@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class OutboundLetter extends ModelBase
+class OutboundLetter extends \ModelBase
 {
-    const OUTBOUND_LETTER_DRAFT = 'outboundLetterDraft';
+    public const OUTBOUND_LETTER_DRAFT = 'outboundLetterDraft';
 
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const DOCUMENT_LAYOUT = 'documentLayout';
+    public const DOCUMENT_LAYOUT = 'documentLayout';
 
-    const BODY = 'body';
+    public const BODY = 'body';
 
-    const GENERATED_DATETIME = 'generatedDatetime';
+    public const GENERATED_DATETIME = 'generatedDatetime';
 
-    const ACTION_REQUIRED_DATETIME = 'actionRequiredDatetime';
+    public const ACTION_REQUIRED_DATETIME = 'actionRequiredDatetime';
 
     protected $_resourceType = ResourceType::OUTBOUND_LETTER;
 
@@ -25,7 +25,7 @@ class OutboundLetter extends ModelBase
      * @return OutboundLetter[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param OutboundLetterDraft $outboundLetterDraft
      */
-    public function setOutboundLetterDraft(OutboundLetterDraft $outboundLetterDraft = null)
+    public function setOutboundLetterDraft(\OutboundLetterDraft $outboundLetterDraft = null)
     {
         $this->setProperty('outboundLetterDraft', $outboundLetterDraft);
     }
@@ -83,7 +83,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -99,7 +99,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param DocumentLayout $documentLayout
      */
-    public function setDocumentLayout(DocumentLayout $documentLayout = null)
+    public function setDocumentLayout(\DocumentLayout $documentLayout = null)
     {
         $this->setProperty('documentLayout', $documentLayout);
     }
@@ -115,7 +115,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody($body = null)
+    public function setBody(string $body = null)
     {
         $this->setProperty('body', $body);
     }

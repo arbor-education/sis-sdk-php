@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Observation extends ModelBase
+class Observation extends \ModelBase
 {
-    const OBSERVING_STAFF = 'observingStaff';
+    public const OBSERVING_STAFF = 'observingStaff';
 
-    const OBSERVED_STAFF = 'observedStaff';
+    public const OBSERVED_STAFF = 'observedStaff';
 
-    const SESSION = 'session';
+    public const SESSION = 'session';
 
-    const OBSERVATION_START_DATETIME = 'observationStartDatetime';
+    public const OBSERVATION_START_DATETIME = 'observationStartDatetime';
 
-    const OBSERVATION_END_DATETIME = 'observationEndDatetime';
+    public const OBSERVATION_END_DATETIME = 'observationEndDatetime';
 
-    const SUBMITTED_DATETIME = 'submittedDatetime';
+    public const SUBMITTED_DATETIME = 'submittedDatetime';
 
-    const OBSERVATION_FOCUS = 'observationFocus';
+    public const OBSERVATION_FOCUS = 'observationFocus';
 
     protected $_resourceType = ResourceType::OBSERVATION;
 
@@ -27,7 +27,7 @@ class Observation extends ModelBase
      * @return Observation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class Observation extends ModelBase
     /**
      * @param Staff $observingStaff
      */
-    public function setObservingStaff(Staff $observingStaff = null)
+    public function setObservingStaff(\Staff $observingStaff = null)
     {
         $this->setProperty('observingStaff', $observingStaff);
     }
@@ -85,7 +85,7 @@ class Observation extends ModelBase
     /**
      * @param Staff $observedStaff
      */
-    public function setObservedStaff(Staff $observedStaff = null)
+    public function setObservedStaff(\Staff $observedStaff = null)
     {
         $this->setProperty('observedStaff', $observedStaff);
     }
@@ -101,7 +101,7 @@ class Observation extends ModelBase
     /**
      * @param Session $session
      */
-    public function setSession(Session $session = null)
+    public function setSession(\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -165,7 +165,7 @@ class Observation extends ModelBase
     /**
      * @param string $observationFocus
      */
-    public function setObservationFocus($observationFocus = null)
+    public function setObservationFocus(string $observationFocus = null)
     {
         $this->setProperty('observationFocus', $observationFocus);
     }

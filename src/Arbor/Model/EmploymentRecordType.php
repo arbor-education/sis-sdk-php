@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmploymentRecordType extends ModelBase
+class EmploymentRecordType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const IS_EMPLOYED = 'isEmployed';
+    public const IS_EMPLOYED = 'isEmployed';
 
-    const EMPLOYER_REQUIRED = 'employerRequired';
+    public const EMPLOYER_REQUIRED = 'employerRequired';
 
     protected $_resourceType = ResourceType::EMPLOYMENT_RECORD_TYPE;
 
@@ -25,7 +25,7 @@ class EmploymentRecordType extends ModelBase
      * @return EmploymentRecordType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +83,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +99,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -115,7 +115,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -131,7 +131,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param bool $isEmployed
      */
-    public function setIsEmployed($isEmployed = null)
+    public function setIsEmployed(bool $isEmployed = null)
     {
         $this->setProperty('isEmployed', $isEmployed);
     }
@@ -147,7 +147,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param bool $employerRequired
      */
-    public function setEmployerRequired($employerRequired = null)
+    public function setEmployerRequired(bool $employerRequired = null)
     {
         $this->setProperty('employerRequired', $employerRequired);
     }

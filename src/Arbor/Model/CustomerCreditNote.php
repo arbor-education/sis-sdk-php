@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomerCreditNote extends ModelBase
+class CustomerCreditNote extends \ModelBase
 {
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const CREDIT_NOTE_DATE = 'creditNoteDate';
+    public const CREDIT_NOTE_DATE = 'creditNoteDate';
 
-    const TOTAL_AMOUNT_CREDITED = 'totalAmountCredited';
+    public const TOTAL_AMOUNT_CREDITED = 'totalAmountCredited';
 
-    const CREDIT_NOTE_NUMBER = 'creditNoteNumber';
+    public const CREDIT_NOTE_NUMBER = 'creditNoteNumber';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::CUSTOMER_CREDIT_NOTE;
 
@@ -25,7 +25,7 @@ class CustomerCreditNote extends ModelBase
      * @return CustomerCreditNote[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -83,7 +83,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -115,7 +115,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $totalAmountCredited
      */
-    public function setTotalAmountCredited($totalAmountCredited = null)
+    public function setTotalAmountCredited(string $totalAmountCredited = null)
     {
         $this->setProperty('totalAmountCredited', $totalAmountCredited);
     }
@@ -131,7 +131,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $creditNoteNumber
      */
-    public function setCreditNoteNumber($creditNoteNumber = null)
+    public function setCreditNoteNumber(string $creditNoteNumber = null)
     {
         $this->setProperty('creditNoteNumber', $creditNoteNumber);
     }
@@ -147,7 +147,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

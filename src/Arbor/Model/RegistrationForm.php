@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class RegistrationForm extends ModelBase
+class RegistrationForm extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const REGISTRATION_FORM_NAME = 'registrationFormName';
+    public const REGISTRATION_FORM_NAME = 'registrationFormName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const ROOM = 'room';
+    public const ROOM = 'room';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const PROMOTED_TO_REGISTRATION_FORM = 'promotedToRegistrationForm';
+    public const PROMOTED_TO_REGISTRATION_FORM = 'promotedToRegistrationForm';
 
-    const PROMOTED_DATETIME = 'promotedDatetime';
+    public const PROMOTED_DATETIME = 'promotedDatetime';
 
-    const COPIED_TO_REGISTRATION_FORM = 'copiedToRegistrationForm';
+    public const COPIED_TO_REGISTRATION_FORM = 'copiedToRegistrationForm';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
-    const TARGET_ENROLMENT = 'targetEnrolment';
+    public const TARGET_ENROLMENT = 'targetEnrolment';
 
     protected $_resourceType = ResourceType::REGISTRATION_FORM;
 
@@ -33,7 +33,7 @@ class RegistrationForm extends ModelBase
      * @return RegistrationForm[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -91,7 +91,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param string $registrationFormName
      */
-    public function setRegistrationFormName($registrationFormName = null)
+    public function setRegistrationFormName(string $registrationFormName = null)
     {
         $this->setProperty('registrationFormName', $registrationFormName);
     }
@@ -107,7 +107,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -123,7 +123,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param Room $room
      */
-    public function setRoom(Room $room = null)
+    public function setRoom(\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -139,7 +139,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -155,7 +155,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param RegistrationForm $promotedToRegistrationForm
      */
-    public function setPromotedToRegistrationForm(RegistrationForm $promotedToRegistrationForm = null)
+    public function setPromotedToRegistrationForm(\RegistrationForm $promotedToRegistrationForm = null)
     {
         $this->setProperty('promotedToRegistrationForm', $promotedToRegistrationForm);
     }
@@ -187,7 +187,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param RegistrationForm $copiedToRegistrationForm
      */
-    public function setCopiedToRegistrationForm(RegistrationForm $copiedToRegistrationForm = null)
+    public function setCopiedToRegistrationForm(\RegistrationForm $copiedToRegistrationForm = null)
     {
         $this->setProperty('copiedToRegistrationForm', $copiedToRegistrationForm);
     }
@@ -203,7 +203,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -219,7 +219,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param int $targetEnrolment
      */
-    public function setTargetEnrolment($targetEnrolment = null)
+    public function setTargetEnrolment(int $targetEnrolment = null)
     {
         $this->setProperty('targetEnrolment', $targetEnrolment);
     }

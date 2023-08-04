@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendanceRollCallRecord extends ModelBase
+class AttendanceRollCallRecord extends \ModelBase
 {
-    const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
+    public const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
-    const RECORD_DATE = 'recordDate';
+    public const RECORD_DATE = 'recordDate';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const MINUTES_LATE = 'minutesLate';
+    public const MINUTES_LATE = 'minutesLate';
 
-    const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
+    public const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
 
-    const VALIDATION_ERROR = 'validationError';
+    public const VALIDATION_ERROR = 'validationError';
 
-    const SOURCE = 'source';
+    public const SOURCE = 'source';
 
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL_RECORD;
 
@@ -29,7 +29,7 @@ class AttendanceRollCallRecord extends ModelBase
      * @return AttendanceRollCallRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param AttendanceRollCall $attendanceRollCall
      */
-    public function setAttendanceRollCall(AttendanceRollCall $attendanceRollCall = null)
+    public function setAttendanceRollCall(\AttendanceRollCall $attendanceRollCall = null)
     {
         $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
@@ -103,7 +103,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -119,7 +119,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -135,7 +135,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate($minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
@@ -151,7 +151,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param AttendanceRecord $sourceAttendanceRecord
      */
-    public function setSourceAttendanceRecord(AttendanceRecord $sourceAttendanceRecord = null)
+    public function setSourceAttendanceRecord(\AttendanceRecord $sourceAttendanceRecord = null)
     {
         $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
@@ -167,7 +167,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param string $validationError
      */
-    public function setValidationError($validationError = null)
+    public function setValidationError(string $validationError = null)
     {
         $this->setProperty('validationError', $validationError);
     }
@@ -183,7 +183,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource($source = null)
+    public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
     }

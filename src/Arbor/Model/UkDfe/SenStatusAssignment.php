@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SenStatusAssignment extends ModelBase
+class SenStatusAssignment extends \ModelBase
 {
-    const IS_MEMBER_OF_SEN_UNIT = 'isMemberOfSenUnit';
+    public const IS_MEMBER_OF_SEN_UNIT = 'isMemberOfSenUnit';
 
-    const HAS_RESOURCED_PROVISION = 'hasResourcedProvision';
+    public const HAS_RESOURCED_PROVISION = 'hasResourcedProvision';
 
     protected $_resourceType = ResourceType::UK_DFE_SEN_STATUS_ASSIGNMENT;
 
@@ -20,7 +20,7 @@ class SenStatusAssignment extends ModelBase
      * @return SenStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param bool $isMemberOfSenUnit
      */
-    public function setIsMemberOfSenUnit($isMemberOfSenUnit = null)
+    public function setIsMemberOfSenUnit(bool $isMemberOfSenUnit = null)
     {
         $this->setProperty('isMemberOfSenUnit', $isMemberOfSenUnit);
     }
@@ -78,7 +78,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param bool $hasResourcedProvision
      */
-    public function setHasResourcedProvision($hasResourcedProvision = null)
+    public function setHasResourcedProvision(bool $hasResourcedProvision = null)
     {
         $this->setProperty('hasResourcedProvision', $hasResourcedProvision);
     }

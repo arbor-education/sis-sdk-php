@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Detention extends ModelBase
+class Detention extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ISSUED_BY_STAFF = 'issuedByStaff';
+    public const ISSUED_BY_STAFF = 'issuedByStaff';
 
-    const DETENTION_SESSION = 'detentionSession';
+    public const DETENTION_SESSION = 'detentionSession';
 
-    const DETENTION_TYPE = 'detentionType';
+    public const DETENTION_TYPE = 'detentionType';
 
-    const DECISION_DATETIME = 'decisionDatetime';
+    public const DECISION_DATETIME = 'decisionDatetime';
 
-    const NOTIFIED_STUDENT_DATETIME = 'notifiedStudentDatetime';
+    public const NOTIFIED_STUDENT_DATETIME = 'notifiedStudentDatetime';
 
-    const NOTIFIED_GUARDIANS_DATETIME = 'notifiedGuardiansDatetime';
+    public const NOTIFIED_GUARDIANS_DATETIME = 'notifiedGuardiansDatetime';
 
-    const NOTIFIED_TUTORS_DATETIME = 'notifiedTutorsDatetime';
+    public const NOTIFIED_TUTORS_DATETIME = 'notifiedTutorsDatetime';
 
-    const DETENTION_DURATION = 'detentionDuration';
+    public const DETENTION_DURATION = 'detentionDuration';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
-    const REASON_FOR_DETENTION = 'reasonForDetention';
+    public const REASON_FOR_DETENTION = 'reasonForDetention';
 
-    const ABSENTEES_DETENTION_ACTION = 'absenteesDetentionAction';
+    public const ABSENTEES_DETENTION_ACTION = 'absenteesDetentionAction';
 
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
     protected $_resourceType = ResourceType::DETENTION;
 
@@ -41,7 +41,7 @@ class Detention extends ModelBase
      * @return Detention[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class Detention extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -99,7 +99,7 @@ class Detention extends ModelBase
     /**
      * @param Staff $issuedByStaff
      */
-    public function setIssuedByStaff(Staff $issuedByStaff = null)
+    public function setIssuedByStaff(\Staff $issuedByStaff = null)
     {
         $this->setProperty('issuedByStaff', $issuedByStaff);
     }
@@ -115,7 +115,7 @@ class Detention extends ModelBase
     /**
      * @param DetentionSession $detentionSession
      */
-    public function setDetentionSession(DetentionSession $detentionSession = null)
+    public function setDetentionSession(\DetentionSession $detentionSession = null)
     {
         $this->setProperty('detentionSession', $detentionSession);
     }
@@ -131,7 +131,7 @@ class Detention extends ModelBase
     /**
      * @param DetentionType $detentionType
      */
-    public function setDetentionType(DetentionType $detentionType = null)
+    public function setDetentionType(\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
@@ -211,7 +211,7 @@ class Detention extends ModelBase
     /**
      * @param string $detentionDuration
      */
-    public function setDetentionDuration($detentionDuration = null)
+    public function setDetentionDuration(string $detentionDuration = null)
     {
         $this->setProperty('detentionDuration', $detentionDuration);
     }
@@ -227,7 +227,7 @@ class Detention extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark($attendanceMark = null)
+    public function setAttendanceMark(string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -243,7 +243,7 @@ class Detention extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -259,7 +259,7 @@ class Detention extends ModelBase
     /**
      * @param Behaviour $reasonForDetention
      */
-    public function setReasonForDetention(Behaviour $reasonForDetention = null)
+    public function setReasonForDetention(\Behaviour $reasonForDetention = null)
     {
         $this->setProperty('reasonForDetention', $reasonForDetention);
     }
@@ -275,7 +275,7 @@ class Detention extends ModelBase
     /**
      * @param ModelBase $absenteesDetentionAction
      */
-    public function setAbsenteesDetentionAction(ModelBase $absenteesDetentionAction = null)
+    public function setAbsenteesDetentionAction(\ModelBase $absenteesDetentionAction = null)
     {
         $this->setProperty('absenteesDetentionAction', $absenteesDetentionAction);
     }
@@ -291,7 +291,7 @@ class Detention extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }

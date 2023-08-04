@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AlertRuleCondition extends ModelBase
+class AlertRuleCondition extends \ModelBase
 {
-    const ALERT_RULE = 'alertRule';
+    public const ALERT_RULE = 'alertRule';
 
-    const TRIGGER_FIELD = 'triggerField';
+    public const TRIGGER_FIELD = 'triggerField';
 
-    const CONDITION_GROUP = 'conditionGroup';
+    public const CONDITION_GROUP = 'conditionGroup';
 
-    const CONDITION = 'condition';
+    public const CONDITION = 'condition';
 
-    const CONDITION_RESOLVER = 'conditionResolver';
+    public const CONDITION_RESOLVER = 'conditionResolver';
 
     protected $_resourceType = ResourceType::ALERT_RULE_CONDITION;
 
@@ -23,7 +23,7 @@ class AlertRuleCondition extends ModelBase
      * @return AlertRuleCondition[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param AlertRule $alertRule
      */
-    public function setAlertRule(AlertRule $alertRule = null)
+    public function setAlertRule(\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -81,7 +81,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param string $triggerField
      */
-    public function setTriggerField($triggerField = null)
+    public function setTriggerField(string $triggerField = null)
     {
         $this->setProperty('triggerField', $triggerField);
     }
@@ -97,7 +97,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param bool $conditionGroup
      */
-    public function setConditionGroup($conditionGroup = null)
+    public function setConditionGroup(bool $conditionGroup = null)
     {
         $this->setProperty('conditionGroup', $conditionGroup);
     }
@@ -113,7 +113,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param ModelBase $condition
      */
-    public function setCondition(ModelBase $condition = null)
+    public function setCondition(\ModelBase $condition = null)
     {
         $this->setProperty('condition', $condition);
     }
@@ -129,7 +129,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param string $conditionResolver
      */
-    public function setConditionResolver($conditionResolver = null)
+    public function setConditionResolver(string $conditionResolver = null)
     {
         $this->setProperty('conditionResolver', $conditionResolver);
     }

@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PermanentExclusion extends ModelBase
+class PermanentExclusion extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EXCLUSION_REASON = 'exclusionReason';
+    public const EXCLUSION_REASON = 'exclusionReason';
 
-    const FROM_DATE = 'fromDate';
+    public const FROM_DATE = 'fromDate';
 
-    const DECISION_DATETIME = 'decisionDatetime';
+    public const DECISION_DATETIME = 'decisionDatetime';
 
-    const NOTIFIED_STUDENT_DATETIME = 'notifiedStudentDatetime';
+    public const NOTIFIED_STUDENT_DATETIME = 'notifiedStudentDatetime';
 
-    const NOTIFIED_GUARDIANS_DATETIME = 'notifiedGuardiansDatetime';
+    public const NOTIFIED_GUARDIANS_DATETIME = 'notifiedGuardiansDatetime';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::PERMANENT_EXCLUSION;
 
@@ -27,7 +27,7 @@ class PermanentExclusion extends ModelBase
      * @return PermanentExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -85,7 +85,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -165,7 +165,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

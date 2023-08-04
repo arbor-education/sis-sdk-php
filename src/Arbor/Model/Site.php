@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Site extends ModelBase
+class Site extends \ModelBase
 {
-    const SITE_NAME = 'siteName';
+    public const SITE_NAME = 'siteName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const SITE_DISPLAY_ORDER = 'siteDisplayOrder';
+    public const SITE_DISPLAY_ORDER = 'siteDisplayOrder';
 
     protected $_resourceType = ResourceType::SITE;
 
@@ -19,7 +19,7 @@ class Site extends ModelBase
      * @return Site[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class Site extends ModelBase
     /**
      * @param string $siteName
      */
-    public function setSiteName($siteName = null)
+    public function setSiteName(string $siteName = null)
     {
         $this->setProperty('siteName', $siteName);
     }
@@ -77,7 +77,7 @@ class Site extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -93,7 +93,7 @@ class Site extends ModelBase
     /**
      * @param int $siteDisplayOrder
      */
-    public function setSiteDisplayOrder($siteDisplayOrder = null)
+    public function setSiteDisplayOrder(int $siteDisplayOrder = null)
     {
         $this->setProperty('siteDisplayOrder', $siteDisplayOrder);
     }

@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgrammeEnrolment extends ModelBase
+class ProgrammeEnrolment extends \ModelBase
 {
-    const PROGRAMME_INSTANCE = 'programmeInstance';
+    public const PROGRAMME_INSTANCE = 'programmeInstance';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const MAIN_PROGRAMME = 'mainProgramme';
+    public const MAIN_PROGRAMME = 'mainProgramme';
 
-    const PROGRAMME_CLASSIFICATION = 'programmeClassification';
+    public const PROGRAMME_CLASSIFICATION = 'programmeClassification';
 
-    const PLANNED_START_DATE = 'plannedStartDate';
+    public const PLANNED_START_DATE = 'plannedStartDate';
 
-    const PLANNED_END_DATE = 'plannedEndDate';
+    public const PLANNED_END_DATE = 'plannedEndDate';
 
-    const ACTUAL_END_DATE = 'actualEndDate';
+    public const ACTUAL_END_DATE = 'actualEndDate';
 
-    const COMPLETION_STATUS = 'completionStatus';
+    public const COMPLETION_STATUS = 'completionStatus';
 
-    const WITHDRAWAL_REASON = 'withdrawalReason';
+    public const WITHDRAWAL_REASON = 'withdrawalReason';
 
     protected $_resourceType = ResourceType::PROGRAMME_ENROLMENT;
 
@@ -31,7 +31,7 @@ class ProgrammeEnrolment extends ModelBase
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
@@ -89,7 +89,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -105,7 +105,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $mainProgramme
      */
-    public function setMainProgramme($mainProgramme = null)
+    public function setMainProgramme(bool $mainProgramme = null)
     {
         $this->setProperty('mainProgramme', $mainProgramme);
     }
@@ -121,7 +121,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param ProgrammeClassification $programmeClassification
      */
-    public function setProgrammeClassification(ProgrammeClassification $programmeClassification = null)
+    public function setProgrammeClassification(\ProgrammeClassification $programmeClassification = null)
     {
         $this->setProperty('programmeClassification', $programmeClassification);
     }
@@ -185,7 +185,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $completionStatus
      */
-    public function setCompletionStatus($completionStatus = null)
+    public function setCompletionStatus(string $completionStatus = null)
     {
         $this->setProperty('completionStatus', $completionStatus);
     }
@@ -201,7 +201,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param ProgrammeWithdrawalReason $withdrawalReason
      */
-    public function setWithdrawalReason(ProgrammeWithdrawalReason $withdrawalReason = null)
+    public function setWithdrawalReason(\ProgrammeWithdrawalReason $withdrawalReason = null)
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryType extends ModelBase
+class BursaryType extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const STUDENT_FUNDING_TYPE = 'studentFundingType';
+    public const STUDENT_FUNDING_TYPE = 'studentFundingType';
 
-    const ALLOCATED_AMOUNT = 'allocatedAmount';
+    public const ALLOCATED_AMOUNT = 'allocatedAmount';
 
     protected $_resourceType = ResourceType::BURSARY_TYPE;
 
@@ -21,7 +21,7 @@ class BursaryType extends ModelBase
      * @return BursaryType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class BursaryType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class BursaryType extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -95,7 +95,7 @@ class BursaryType extends ModelBase
     /**
      * @param StudentFundingType $studentFundingType
      */
-    public function setStudentFundingType(StudentFundingType $studentFundingType = null)
+    public function setStudentFundingType(\StudentFundingType $studentFundingType = null)
     {
         $this->setProperty('studentFundingType', $studentFundingType);
     }
@@ -111,7 +111,7 @@ class BursaryType extends ModelBase
     /**
      * @param string $allocatedAmount
      */
-    public function setAllocatedAmount($allocatedAmount = null)
+    public function setAllocatedAmount(string $allocatedAmount = null)
     {
         $this->setProperty('allocatedAmount', $allocatedAmount);
     }

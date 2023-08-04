@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentLinkedRelationshipType extends ModelBase
+class StudentLinkedRelationshipType extends \ModelBase
 {
-    const STUDENT_LINKED_RELATIONSHIP_TYPE_NAME = 'studentLinkedRelationshipTypeName';
+    public const STUDENT_LINKED_RELATIONSHIP_TYPE_NAME = 'studentLinkedRelationshipTypeName';
 
-    const IS_MEDICAL = 'isMedical';
+    public const IS_MEDICAL = 'isMedical';
 
-    const IS_ACADEMIC = 'isAcademic';
+    public const IS_ACADEMIC = 'isAcademic';
 
     protected $_resourceType = ResourceType::STUDENT_LINKED_RELATIONSHIP_TYPE;
 
@@ -19,7 +19,7 @@ class StudentLinkedRelationshipType extends ModelBase
      * @return StudentLinkedRelationshipType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class StudentLinkedRelationshipType extends ModelBase
     /**
      * @param string $studentLinkedRelationshipTypeName
      */
-    public function setStudentLinkedRelationshipTypeName($studentLinkedRelationshipTypeName = null)
+    public function setStudentLinkedRelationshipTypeName(string $studentLinkedRelationshipTypeName = null)
     {
         $this->setProperty('studentLinkedRelationshipTypeName', $studentLinkedRelationshipTypeName);
     }
@@ -77,7 +77,7 @@ class StudentLinkedRelationshipType extends ModelBase
     /**
      * @param bool $isMedical
      */
-    public function setIsMedical($isMedical = null)
+    public function setIsMedical(bool $isMedical = null)
     {
         $this->setProperty('isMedical', $isMedical);
     }
@@ -93,7 +93,7 @@ class StudentLinkedRelationshipType extends ModelBase
     /**
      * @param bool $isAcademic
      */
-    public function setIsAcademic($isAcademic = null)
+    public function setIsAcademic(bool $isAcademic = null)
     {
         $this->setProperty('isAcademic', $isAcademic);
     }

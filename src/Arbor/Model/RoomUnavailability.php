@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class RoomUnavailability extends ModelBase
+class RoomUnavailability extends \ModelBase
 {
-    const ROOM = 'room';
+    public const ROOM = 'room';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const REASON = 'reason';
+    public const REASON = 'reason';
 
     protected $_resourceType = ResourceType::ROOM_UNAVAILABILITY;
 
@@ -21,7 +21,7 @@ class RoomUnavailability extends ModelBase
      * @return RoomUnavailability[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class RoomUnavailability extends ModelBase
     /**
      * @param Room $room
      */
-    public function setRoom(Room $room = null)
+    public function setRoom(\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -111,7 +111,7 @@ class RoomUnavailability extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason($reason = null)
+    public function setReason(string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }

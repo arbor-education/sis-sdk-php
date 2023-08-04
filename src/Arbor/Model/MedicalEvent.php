@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MedicalEvent extends ModelBase
+class MedicalEvent extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const MEDICAL_EVENT_TYPE = 'medicalEventType';
+    public const MEDICAL_EVENT_TYPE = 'medicalEventType';
 
-    const MEDICAL_EVENT_DESCRIPTION = 'medicalEventDescription';
+    public const MEDICAL_EVENT_DESCRIPTION = 'medicalEventDescription';
 
-    const MEDICAL_CONDITION = 'medicalCondition';
+    public const MEDICAL_CONDITION = 'medicalCondition';
 
     protected $_resourceType = ResourceType::MEDICAL_EVENT;
 
@@ -25,7 +25,7 @@ class MedicalEvent extends ModelBase
      * @return MedicalEvent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class MedicalEvent extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -115,7 +115,7 @@ class MedicalEvent extends ModelBase
     /**
      * @param MedicalEventType $medicalEventType
      */
-    public function setMedicalEventType(MedicalEventType $medicalEventType = null)
+    public function setMedicalEventType(\MedicalEventType $medicalEventType = null)
     {
         $this->setProperty('medicalEventType', $medicalEventType);
     }
@@ -131,7 +131,7 @@ class MedicalEvent extends ModelBase
     /**
      * @param string $medicalEventDescription
      */
-    public function setMedicalEventDescription($medicalEventDescription = null)
+    public function setMedicalEventDescription(string $medicalEventDescription = null)
     {
         $this->setProperty('medicalEventDescription', $medicalEventDescription);
     }
@@ -147,7 +147,7 @@ class MedicalEvent extends ModelBase
     /**
      * @param MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }

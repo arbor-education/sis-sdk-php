@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationScheme extends ModelBase
+class QualificationScheme extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const AWARDING_ORGANIZATION = 'awardingOrganization';
+    public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const SCHEME_IDENTIFIER = 'schemeIdentifier';
+    public const SCHEME_IDENTIFIER = 'schemeIdentifier';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
     protected $_resourceType = ResourceType::QUALIFICATION_SCHEME;
 
@@ -25,7 +25,7 @@ class QualificationScheme extends ModelBase
      * @return QualificationScheme[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +83,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +99,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -115,7 +115,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -131,7 +131,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param string $schemeIdentifier
      */
-    public function setSchemeIdentifier($schemeIdentifier = null)
+    public function setSchemeIdentifier(string $schemeIdentifier = null)
     {
         $this->setProperty('schemeIdentifier', $schemeIdentifier);
     }
@@ -147,7 +147,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }

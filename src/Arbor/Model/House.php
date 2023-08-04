@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class House extends ModelBase
+class House extends \ModelBase
 {
-    const HOUSE_NAME = 'houseName';
+    public const HOUSE_NAME = 'houseName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
-    const COPIED_TO_HOUSE = 'copiedToHouse';
+    public const COPIED_TO_HOUSE = 'copiedToHouse';
 
     protected $_resourceType = ResourceType::HOUSE;
 
@@ -23,7 +23,7 @@ class House extends ModelBase
      * @return House[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class House extends ModelBase
     /**
      * @param string $houseName
      */
-    public function setHouseName($houseName = null)
+    public function setHouseName(string $houseName = null)
     {
         $this->setProperty('houseName', $houseName);
     }
@@ -81,7 +81,7 @@ class House extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -97,7 +97,7 @@ class House extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -113,7 +113,7 @@ class House extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -129,7 +129,7 @@ class House extends ModelBase
     /**
      * @param House $copiedToHouse
      */
-    public function setCopiedToHouse(House $copiedToHouse = null)
+    public function setCopiedToHouse(\House $copiedToHouse = null)
     {
         $this->setProperty('copiedToHouse', $copiedToHouse);
     }

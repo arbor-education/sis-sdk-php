@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviouralIncidentStaffInvolvement extends ModelBase
+class BehaviouralIncidentStaffInvolvement extends \ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_STAFF_INVOLVEMENT;
 
@@ -17,7 +17,7 @@ class BehaviouralIncidentStaffInvolvement extends ModelBase
      * @return BehaviouralIncidentStaffInvolvement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class BehaviouralIncidentStaffInvolvement extends ModelBase
     /**
      * @param BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -75,7 +75,7 @@ class BehaviouralIncidentStaffInvolvement extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

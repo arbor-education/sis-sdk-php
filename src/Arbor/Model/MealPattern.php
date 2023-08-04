@@ -4,37 +4,37 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealPattern extends ModelBase
+class MealPattern extends \ModelBase
 {
-    const ATTENDEE = 'attendee';
+    public const ATTENDEE = 'attendee';
 
-    const MEAL = 'meal';
+    public const MEAL = 'meal';
 
-    const MEAL_SITTING = 'mealSitting';
+    public const MEAL_SITTING = 'mealSitting';
 
-    const APPLIES_MONDAY = 'appliesMonday';
+    public const APPLIES_MONDAY = 'appliesMonday';
 
-    const APPLIES_TUESDAY = 'appliesTuesday';
+    public const APPLIES_TUESDAY = 'appliesTuesday';
 
-    const APPLIES_WEDNESDAY = 'appliesWednesday';
+    public const APPLIES_WEDNESDAY = 'appliesWednesday';
 
-    const APPLIES_THURSDAY = 'appliesThursday';
+    public const APPLIES_THURSDAY = 'appliesThursday';
 
-    const APPLIES_FRIDAY = 'appliesFriday';
+    public const APPLIES_FRIDAY = 'appliesFriday';
 
-    const APPLIES_SATURDAY = 'appliesSaturday';
+    public const APPLIES_SATURDAY = 'appliesSaturday';
 
-    const APPLIES_SUNDAY = 'appliesSunday';
+    public const APPLIES_SUNDAY = 'appliesSunday';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET = 'mealSittingAutomaticAttendeeTarget';
+    public const MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET = 'mealSittingAutomaticAttendeeTarget';
 
-    const GROUP_MEMBERSHIP = 'groupMembership';
+    public const GROUP_MEMBERSHIP = 'groupMembership';
 
     protected $_resourceType = ResourceType::MEAL_PATTERN;
 
@@ -43,7 +43,7 @@ class MealPattern extends ModelBase
      * @return MealPattern[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -85,7 +85,7 @@ class MealPattern extends ModelBase
     /**
      * @param ModelBase $attendee
      */
-    public function setAttendee(ModelBase $attendee = null)
+    public function setAttendee(\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }
@@ -101,7 +101,7 @@ class MealPattern extends ModelBase
     /**
      * @param Meal $meal
      */
-    public function setMeal(Meal $meal = null)
+    public function setMeal(\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -117,7 +117,7 @@ class MealPattern extends ModelBase
     /**
      * @param MealSitting $mealSitting
      */
-    public function setMealSitting(MealSitting $mealSitting = null)
+    public function setMealSitting(\MealSitting $mealSitting = null)
     {
         $this->setProperty('mealSitting', $mealSitting);
     }
@@ -133,7 +133,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesMonday
      */
-    public function setAppliesMonday($appliesMonday = null)
+    public function setAppliesMonday(bool $appliesMonday = null)
     {
         $this->setProperty('appliesMonday', $appliesMonday);
     }
@@ -149,7 +149,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesTuesday
      */
-    public function setAppliesTuesday($appliesTuesday = null)
+    public function setAppliesTuesday(bool $appliesTuesday = null)
     {
         $this->setProperty('appliesTuesday', $appliesTuesday);
     }
@@ -165,7 +165,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesWednesday
      */
-    public function setAppliesWednesday($appliesWednesday = null)
+    public function setAppliesWednesday(bool $appliesWednesday = null)
     {
         $this->setProperty('appliesWednesday', $appliesWednesday);
     }
@@ -181,7 +181,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesThursday
      */
-    public function setAppliesThursday($appliesThursday = null)
+    public function setAppliesThursday(bool $appliesThursday = null)
     {
         $this->setProperty('appliesThursday', $appliesThursday);
     }
@@ -197,7 +197,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesFriday
      */
-    public function setAppliesFriday($appliesFriday = null)
+    public function setAppliesFriday(bool $appliesFriday = null)
     {
         $this->setProperty('appliesFriday', $appliesFriday);
     }
@@ -213,7 +213,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesSaturday
      */
-    public function setAppliesSaturday($appliesSaturday = null)
+    public function setAppliesSaturday(bool $appliesSaturday = null)
     {
         $this->setProperty('appliesSaturday', $appliesSaturday);
     }
@@ -229,7 +229,7 @@ class MealPattern extends ModelBase
     /**
      * @param bool $appliesSunday
      */
-    public function setAppliesSunday($appliesSunday = null)
+    public function setAppliesSunday(bool $appliesSunday = null)
     {
         $this->setProperty('appliesSunday', $appliesSunday);
     }
@@ -245,7 +245,7 @@ class MealPattern extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -293,7 +293,7 @@ class MealPattern extends ModelBase
     /**
      * @param MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget
      */
-    public function setMealSittingAutomaticAttendeeTarget(MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget = null)
+    public function setMealSittingAutomaticAttendeeTarget(\MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget = null)
     {
         $this->setProperty('mealSittingAutomaticAttendeeTarget', $mealSittingAutomaticAttendeeTarget);
     }
@@ -309,7 +309,7 @@ class MealPattern extends ModelBase
     /**
      * @param ModelBase $groupMembership
      */
-    public function setGroupMembership(ModelBase $groupMembership = null)
+    public function setGroupMembership(\ModelBase $groupMembership = null)
     {
         $this->setProperty('groupMembership', $groupMembership);
     }

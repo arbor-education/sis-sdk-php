@@ -6,31 +6,31 @@ use Arbor\Query\Query;
 use Arbor\Model\UkDfe\PositionCategory;
 use Arbor\Model\UkDfe\SchoolWorkforceVacancyPost;
 
-class Position extends ModelBase
+class Position extends \ModelBase
 {
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const EXPECTED_END_DATE = 'expectedEndDate';
+    public const EXPECTED_END_DATE = 'expectedEndDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const POSITION_NAME = 'positionName';
+    public const POSITION_NAME = 'positionName';
 
-    const POSITION_REFERENCE = 'positionReference';
+    public const POSITION_REFERENCE = 'positionReference';
 
-    const SUPERVISOR_POSITION = 'supervisorPosition';
+    public const SUPERVISOR_POSITION = 'supervisorPosition';
 
-    const EXPECTED_HOURS_PER_WEEK = 'expectedHoursPerWeek';
+    public const EXPECTED_HOURS_PER_WEEK = 'expectedHoursPerWeek';
 
-    const EXPECTED_WEEKS_PER_YEAR = 'expectedWeeksPerYear';
+    public const EXPECTED_WEEKS_PER_YEAR = 'expectedWeeksPerYear';
 
-    const FTE_HOURS_PER_WEEK = 'fteHoursPerWeek';
+    public const FTE_HOURS_PER_WEEK = 'fteHoursPerWeek';
 
-    const POSITION_CATEGORY = 'positionCategory';
+    public const POSITION_CATEGORY = 'positionCategory';
 
-    const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
+    public const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
 
-    const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
+    public const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
 
     protected $_resourceType = ResourceType::POSITION;
 
@@ -39,7 +39,7 @@ class Position extends ModelBase
      * @return Position[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -129,7 +129,7 @@ class Position extends ModelBase
     /**
      * @param string $positionName
      */
-    public function setPositionName($positionName = null)
+    public function setPositionName(string $positionName = null)
     {
         $this->setProperty('positionName', $positionName);
     }
@@ -145,7 +145,7 @@ class Position extends ModelBase
     /**
      * @param string $positionReference
      */
-    public function setPositionReference($positionReference = null)
+    public function setPositionReference(string $positionReference = null)
     {
         $this->setProperty('positionReference', $positionReference);
     }
@@ -161,7 +161,7 @@ class Position extends ModelBase
     /**
      * @param Position $supervisorPosition
      */
-    public function setSupervisorPosition(Position $supervisorPosition = null)
+    public function setSupervisorPosition(\Position $supervisorPosition = null)
     {
         $this->setProperty('supervisorPosition', $supervisorPosition);
     }
@@ -177,7 +177,7 @@ class Position extends ModelBase
     /**
      * @param string $expectedHoursPerWeek
      */
-    public function setExpectedHoursPerWeek($expectedHoursPerWeek = null)
+    public function setExpectedHoursPerWeek(string $expectedHoursPerWeek = null)
     {
         $this->setProperty('expectedHoursPerWeek', $expectedHoursPerWeek);
     }
@@ -193,7 +193,7 @@ class Position extends ModelBase
     /**
      * @param float $expectedWeeksPerYear
      */
-    public function setExpectedWeeksPerYear($expectedWeeksPerYear = null)
+    public function setExpectedWeeksPerYear(float $expectedWeeksPerYear = null)
     {
         $this->setProperty('expectedWeeksPerYear', $expectedWeeksPerYear);
     }
@@ -209,7 +209,7 @@ class Position extends ModelBase
     /**
      * @param string $fteHoursPerWeek
      */
-    public function setFteHoursPerWeek($fteHoursPerWeek = null)
+    public function setFteHoursPerWeek(string $fteHoursPerWeek = null)
     {
         $this->setProperty('fteHoursPerWeek', $fteHoursPerWeek);
     }
@@ -225,7 +225,7 @@ class Position extends ModelBase
     /**
      * @param PositionCategory $positionCategory
      */
-    public function setPositionCategory(PositionCategory $positionCategory = null)
+    public function setPositionCategory(\PositionCategory $positionCategory = null)
     {
         $this->setProperty('positionCategory', $positionCategory);
     }
@@ -241,7 +241,7 @@ class Position extends ModelBase
     /**
      * @param SchoolWorkforceVacancyPost $workforceVacancyPost
      */
-    public function setWorkforceVacancyPost(SchoolWorkforceVacancyPost $workforceVacancyPost = null)
+    public function setWorkforceVacancyPost(\SchoolWorkforceVacancyPost $workforceVacancyPost = null)
     {
         $this->setProperty('workforceVacancyPost', $workforceVacancyPost);
     }
@@ -257,7 +257,7 @@ class Position extends ModelBase
     /**
      * @param string $workforceCensusRoleIdentifier
      */
-    public function setWorkforceCensusRoleIdentifier($workforceCensusRoleIdentifier = null)
+    public function setWorkforceCensusRoleIdentifier(string $workforceCensusRoleIdentifier = null)
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }

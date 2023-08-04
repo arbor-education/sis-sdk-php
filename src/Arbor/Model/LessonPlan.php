@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LessonPlan extends ModelBase
+class LessonPlan extends \ModelBase
 {
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
     protected $_resourceType = ResourceType::LESSON_PLAN;
 
@@ -17,7 +17,7 @@ class LessonPlan extends ModelBase
      * @return LessonPlan[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class LessonPlan extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -75,7 +75,7 @@ class LessonPlan extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

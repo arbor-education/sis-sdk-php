@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntegrationsHrFinanceTestRunResult extends ModelBase
+class IntegrationsHrFinanceTestRunResult extends \ModelBase
 {
-    const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'integrationsHrFinanceTestRun';
+    public const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'integrationsHrFinanceTestRun';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const ACTION = 'action';
+    public const ACTION = 'action';
 
-    const EXTERNAL_PERSON_IDENTIFIER = 'externalPersonIdentifier';
+    public const EXTERNAL_PERSON_IDENTIFIER = 'externalPersonIdentifier';
 
-    const EXTERNAL_CONTRACT_IDENTIFIER = 'externalContractIdentifier';
+    public const EXTERNAL_CONTRACT_IDENTIFIER = 'externalContractIdentifier';
 
-    const PERSON_NAME = 'personName';
+    public const PERSON_NAME = 'personName';
 
-    const ENTITY_OBJECT_TYPE_ID = 'entityObjectTypeId';
+    public const ENTITY_OBJECT_TYPE_ID = 'entityObjectTypeId';
 
-    const ENTITY_OBJECT_ID = 'entityObjectId';
+    public const ENTITY_OBJECT_ID = 'entityObjectId';
 
-    const OLD_DATA = 'oldData';
+    public const OLD_DATA = 'oldData';
 
-    const NEW_DATA = 'newData';
+    public const NEW_DATA = 'newData';
 
-    const EXTERNAL_ENTITY_IDENTIFIER = 'externalEntityIdentifier';
+    public const EXTERNAL_ENTITY_IDENTIFIER = 'externalEntityIdentifier';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
     protected $_resourceType = ResourceType::INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT;
 
@@ -37,7 +37,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
      * @return IntegrationsHrFinanceTestRunResult[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun
      */
-    public function setIntegrationsHrFinanceTestRun(IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun = null)
+    public function setIntegrationsHrFinanceTestRun(\IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun = null)
     {
         $this->setProperty('integrationsHrFinanceTestRun', $integrationsHrFinanceTestRun);
     }
@@ -95,7 +95,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -111,7 +111,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $action
      */
-    public function setAction($action = null)
+    public function setAction(string $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -127,7 +127,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $externalPersonIdentifier
      */
-    public function setExternalPersonIdentifier($externalPersonIdentifier = null)
+    public function setExternalPersonIdentifier(string $externalPersonIdentifier = null)
     {
         $this->setProperty('externalPersonIdentifier', $externalPersonIdentifier);
     }
@@ -143,7 +143,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $externalContractIdentifier
      */
-    public function setExternalContractIdentifier($externalContractIdentifier = null)
+    public function setExternalContractIdentifier(string $externalContractIdentifier = null)
     {
         $this->setProperty('externalContractIdentifier', $externalContractIdentifier);
     }
@@ -159,7 +159,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $personName
      */
-    public function setPersonName($personName = null)
+    public function setPersonName(string $personName = null)
     {
         $this->setProperty('personName', $personName);
     }
@@ -175,7 +175,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param int $entityObjectTypeId
      */
-    public function setEntityObjectTypeId($entityObjectTypeId = null)
+    public function setEntityObjectTypeId(int $entityObjectTypeId = null)
     {
         $this->setProperty('entityObjectTypeId', $entityObjectTypeId);
     }
@@ -191,7 +191,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param int $entityObjectId
      */
-    public function setEntityObjectId($entityObjectId = null)
+    public function setEntityObjectId(int $entityObjectId = null)
     {
         $this->setProperty('entityObjectId', $entityObjectId);
     }
@@ -207,7 +207,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $oldData
      */
-    public function setOldData($oldData = null)
+    public function setOldData(string $oldData = null)
     {
         $this->setProperty('oldData', $oldData);
     }
@@ -223,7 +223,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $newData
      */
-    public function setNewData($newData = null)
+    public function setNewData(string $newData = null)
     {
         $this->setProperty('newData', $newData);
     }
@@ -239,7 +239,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $externalEntityIdentifier
      */
-    public function setExternalEntityIdentifier($externalEntityIdentifier = null)
+    public function setExternalEntityIdentifier(string $externalEntityIdentifier = null)
     {
         $this->setProperty('externalEntityIdentifier', $externalEntityIdentifier);
     }
@@ -255,7 +255,7 @@ class IntegrationsHrFinanceTestRunResult extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }

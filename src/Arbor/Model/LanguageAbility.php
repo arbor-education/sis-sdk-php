@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LanguageAbility extends ModelBase
+class LanguageAbility extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const LANGUAGE = 'language';
+    public const LANGUAGE = 'language';
 
-    const IS_NATIVE_LANGUAGE = 'isNativeLanguage';
+    public const IS_NATIVE_LANGUAGE = 'isNativeLanguage';
 
-    const SPEAKS_LANGUAGE = 'speaksLanguage';
+    public const SPEAKS_LANGUAGE = 'speaksLanguage';
 
-    const UNDERSTANDS_LANGUAGE = 'understandsLanguage';
+    public const UNDERSTANDS_LANGUAGE = 'understandsLanguage';
 
-    const IS_SPOKEN_AT_HOME = 'isSpokenAtHome';
+    public const IS_SPOKEN_AT_HOME = 'isSpokenAtHome';
 
-    const LANGUAGE_PROFICIENCY = 'languageProficiency';
+    public const LANGUAGE_PROFICIENCY = 'languageProficiency';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
     protected $_resourceType = ResourceType::LANGUAGE_ABILITY;
 
@@ -29,7 +29,7 @@ class LanguageAbility extends ModelBase
      * @return LanguageAbility[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -87,7 +87,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param Language $language
      */
-    public function setLanguage(Language $language = null)
+    public function setLanguage(\Language $language = null)
     {
         $this->setProperty('language', $language);
     }
@@ -103,7 +103,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $isNativeLanguage
      */
-    public function setIsNativeLanguage($isNativeLanguage = null)
+    public function setIsNativeLanguage(bool $isNativeLanguage = null)
     {
         $this->setProperty('isNativeLanguage', $isNativeLanguage);
     }
@@ -119,7 +119,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $speaksLanguage
      */
-    public function setSpeaksLanguage($speaksLanguage = null)
+    public function setSpeaksLanguage(bool $speaksLanguage = null)
     {
         $this->setProperty('speaksLanguage', $speaksLanguage);
     }
@@ -135,7 +135,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $understandsLanguage
      */
-    public function setUnderstandsLanguage($understandsLanguage = null)
+    public function setUnderstandsLanguage(bool $understandsLanguage = null)
     {
         $this->setProperty('understandsLanguage', $understandsLanguage);
     }
@@ -151,7 +151,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $isSpokenAtHome
      */
-    public function setIsSpokenAtHome($isSpokenAtHome = null)
+    public function setIsSpokenAtHome(bool $isSpokenAtHome = null)
     {
         $this->setProperty('isSpokenAtHome', $isSpokenAtHome);
     }
@@ -167,7 +167,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param string $languageProficiency
      */
-    public function setLanguageProficiency($languageProficiency = null)
+    public function setLanguageProficiency(string $languageProficiency = null)
     {
         $this->setProperty('languageProficiency', $languageProficiency);
     }
@@ -183,7 +183,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

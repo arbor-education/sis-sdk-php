@@ -7,9 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Programme extends ModelBase
+class Programme extends \ModelBase
 {
-    const IS_TRAINEESHIP = 'isTraineeship';
+    public const IS_TRAINEESHIP = 'isTraineeship';
 
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME;
 
@@ -18,7 +18,7 @@ class Programme extends ModelBase
      * @return Programme[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Programme extends ModelBase
     /**
      * @param bool $isTraineeship
      */
-    public function setIsTraineeship($isTraineeship = null)
+    public function setIsTraineeship(bool $isTraineeship = null)
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }

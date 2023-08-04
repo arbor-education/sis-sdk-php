@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IncomingEntityTransfer extends ModelBase
+class IncomingEntityTransfer extends \ModelBase
 {
-    const SOURCE_APPLICATION_ID = 'sourceApplicationId';
+    public const SOURCE_APPLICATION_ID = 'sourceApplicationId';
 
-    const SOURCE_ENTITY = 'sourceEntity';
+    public const SOURCE_ENTITY = 'sourceEntity';
 
-    const TRANSFER_CLASS_NAME = 'transferClassName';
+    public const TRANSFER_CLASS_NAME = 'transferClassName';
 
-    const IMPORTED_ENTITY = 'importedEntity';
+    public const IMPORTED_ENTITY = 'importedEntity';
 
-    const SYNC_EFFECTIVE_DATE = 'syncEffectiveDate';
+    public const SYNC_EFFECTIVE_DATE = 'syncEffectiveDate';
 
-    const SYNC_END_DATE = 'syncEndDate';
+    public const SYNC_END_DATE = 'syncEndDate';
 
-    const SYNC_DISABLED = 'syncDisabled';
+    public const SYNC_DISABLED = 'syncDisabled';
 
-    const LAST_SYNC_DATETIME = 'lastSyncDatetime';
+    public const LAST_SYNC_DATETIME = 'lastSyncDatetime';
 
     protected $_resourceType = ResourceType::INCOMING_ENTITY_TRANSFER;
 
@@ -29,7 +29,7 @@ class IncomingEntityTransfer extends ModelBase
      * @return IncomingEntityTransfer[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $sourceApplicationId
      */
-    public function setSourceApplicationId($sourceApplicationId = null)
+    public function setSourceApplicationId(string $sourceApplicationId = null)
     {
         $this->setProperty('sourceApplicationId', $sourceApplicationId);
     }
@@ -87,7 +87,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $sourceEntity
      */
-    public function setSourceEntity($sourceEntity = null)
+    public function setSourceEntity(string $sourceEntity = null)
     {
         $this->setProperty('sourceEntity', $sourceEntity);
     }
@@ -103,7 +103,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $transferClassName
      */
-    public function setTransferClassName($transferClassName = null)
+    public function setTransferClassName(string $transferClassName = null)
     {
         $this->setProperty('transferClassName', $transferClassName);
     }
@@ -119,7 +119,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param ModelBase $importedEntity
      */
-    public function setImportedEntity(ModelBase $importedEntity = null)
+    public function setImportedEntity(\ModelBase $importedEntity = null)
     {
         $this->setProperty('importedEntity', $importedEntity);
     }
@@ -167,7 +167,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param bool $syncDisabled
      */
-    public function setSyncDisabled($syncDisabled = null)
+    public function setSyncDisabled(bool $syncDisabled = null)
     {
         $this->setProperty('syncDisabled', $syncDisabled);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgrammeAcademicUnit extends ModelBase
+class ProgrammeAcademicUnit extends \ModelBase
 {
-    const PROGRAMME_INSTANCE = 'programmeInstance';
+    public const PROGRAMME_INSTANCE = 'programmeInstance';
 
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
     protected $_resourceType = ResourceType::PROGRAMME_ACADEMIC_UNIT;
 
@@ -17,7 +17,7 @@ class ProgrammeAcademicUnit extends ModelBase
      * @return ProgrammeAcademicUnit[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ProgrammeAcademicUnit extends ModelBase
     /**
      * @param ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
@@ -75,7 +75,7 @@ class ProgrammeAcademicUnit extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }

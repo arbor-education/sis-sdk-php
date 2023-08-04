@@ -9,21 +9,21 @@ use Arbor\Model\ModelBase;
 use Arbor\Model\EducationalInstitution;
 use Arbor\Model\Subject;
 
-class SchoolWorkforceCensusVacancy extends ModelBase
+class SchoolWorkforceCensusVacancy extends \ModelBase
 {
-    const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
+    public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const SCHOOL_WORKFORCE_VACANCY_POST = 'schoolWorkforceVacancyPost';
+    public const SCHOOL_WORKFORCE_VACANCY_POST = 'schoolWorkforceVacancyPost';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const TENURE = 'tenure';
+    public const TENURE = 'tenure';
 
-    const VACANCY_TEMPORARILY_FILLED = 'vacancyTemporarilyFilled';
+    public const VACANCY_TEMPORARILY_FILLED = 'vacancyTemporarilyFilled';
 
-    const VACANCY_ADVERTISED = 'vacancyAdvertised';
+    public const VACANCY_ADVERTISED = 'vacancyAdvertised';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY;
 
@@ -32,7 +32,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      * @return SchoolWorkforceCensusVacancy[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
@@ -90,7 +90,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -106,7 +106,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost
      */
-    public function setSchoolWorkforceVacancyPost(SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost = null)
+    public function setSchoolWorkforceVacancyPost(\SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost = null)
     {
         $this->setProperty('schoolWorkforceVacancyPost', $schoolWorkforceVacancyPost);
     }
@@ -122,7 +122,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -138,7 +138,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure($tenure = null)
+    public function setTenure(string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -154,7 +154,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $vacancyTemporarilyFilled
      */
-    public function setVacancyTemporarilyFilled($vacancyTemporarilyFilled = null)
+    public function setVacancyTemporarilyFilled(string $vacancyTemporarilyFilled = null)
     {
         $this->setProperty('vacancyTemporarilyFilled', $vacancyTemporarilyFilled);
     }
@@ -170,7 +170,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $vacancyAdvertised
      */
-    public function setVacancyAdvertised($vacancyAdvertised = null)
+    public function setVacancyAdvertised(string $vacancyAdvertised = null)
     {
         $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }

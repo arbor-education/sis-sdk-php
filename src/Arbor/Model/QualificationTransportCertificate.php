@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationTransportCertificate extends ModelBase
+class QualificationTransportCertificate extends \ModelBase
 {
-    const AWARDING_ORGANIZATION = 'awardingOrganization';
+    public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const PRIVATE_KEY = 'privateKey';
+    public const PRIVATE_KEY = 'privateKey';
 
-    const PUBLIC_KEY = 'publicKey';
+    public const PUBLIC_KEY = 'publicKey';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const LAST_SEQUENCE_NUMBER = 'lastSequenceNumber';
+    public const LAST_SEQUENCE_NUMBER = 'lastSequenceNumber';
 
     protected $_resourceType = ResourceType::QUALIFICATION_TRANSPORT_CERTIFICATE;
 
@@ -27,7 +27,7 @@ class QualificationTransportCertificate extends ModelBase
      * @return QualificationTransportCertificate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -85,7 +85,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -101,7 +101,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param string $privateKey
      */
-    public function setPrivateKey($privateKey = null)
+    public function setPrivateKey(string $privateKey = null)
     {
         $this->setProperty('privateKey', $privateKey);
     }
@@ -117,7 +117,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param string $publicKey
      */
-    public function setPublicKey($publicKey = null)
+    public function setPublicKey(string $publicKey = null)
     {
         $this->setProperty('publicKey', $publicKey);
     }
@@ -165,7 +165,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param int $lastSequenceNumber
      */
-    public function setLastSequenceNumber($lastSequenceNumber = null)
+    public function setLastSequenceNumber(int $lastSequenceNumber = null)
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }

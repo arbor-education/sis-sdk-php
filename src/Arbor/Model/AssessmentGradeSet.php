@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentGradeSet extends ModelBase
+class AssessmentGradeSet extends \ModelBase
 {
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
-    const IS_DEFAULT = 'isDefault';
+    public const IS_DEFAULT = 'isDefault';
 
-    const IS_ORIGINAL = 'isOriginal';
+    public const IS_ORIGINAL = 'isOriginal';
 
     protected $_resourceType = ResourceType::ASSESSMENT_GRADE_SET;
 
@@ -21,7 +21,7 @@ class AssessmentGradeSet extends ModelBase
      * @return AssessmentGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -79,7 +79,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -95,7 +95,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param bool $isDefault
      */
-    public function setIsDefault($isDefault = null)
+    public function setIsDefault(bool $isDefault = null)
     {
         $this->setProperty('isDefault', $isDefault);
     }
@@ -111,7 +111,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param bool $isOriginal
      */
-    public function setIsOriginal($isOriginal = null)
+    public function setIsOriginal(bool $isOriginal = null)
     {
         $this->setProperty('isOriginal', $isOriginal);
     }

@@ -7,27 +7,27 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ChildCarePlace extends ModelBase
+class ChildCarePlace extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const CHILD_CARE_ON_SITE = 'childCareOnSite';
+    public const CHILD_CARE_ON_SITE = 'childCareOnSite';
 
-    const CHILD_CARE_SIGNPOSTING = 'childCareSignposting';
+    public const CHILD_CARE_SIGNPOSTING = 'childCareSignposting';
 
-    const CHILD_CARE_TYPE = 'childCareType';
+    public const CHILD_CARE_TYPE = 'childCareType';
 
-    const CHILD_CARE_OPENING_TIME = 'childCareOpeningTime';
+    public const CHILD_CARE_OPENING_TIME = 'childCareOpeningTime';
 
-    const CHILD_CARE_CLOSING_TIME = 'childCareClosingTime';
+    public const CHILD_CARE_CLOSING_TIME = 'childCareClosingTime';
 
-    const CHILD_CARE_NUMBER_OF_PLACES = 'childCareNumberOfPlaces';
+    public const CHILD_CARE_NUMBER_OF_PLACES = 'childCareNumberOfPlaces';
 
-    const CHILD_CARE_PROVIDER = 'childCareProvider';
+    public const CHILD_CARE_PROVIDER = 'childCareProvider';
 
-    const CHILD_CARE_OTHER_SCHOOLS = 'childCareOtherSchools';
+    public const CHILD_CARE_OTHER_SCHOOLS = 'childCareOtherSchools';
 
-    const CHILD_CARE_WEEKS_OPEN = 'childCareWeeksOpen';
+    public const CHILD_CARE_WEEKS_OPEN = 'childCareWeeksOpen';
 
     protected $_resourceType = ResourceType::UK_DFE_CHILD_CARE_PLACE;
 
@@ -36,7 +36,7 @@ class ChildCarePlace extends ModelBase
      * @return ChildCarePlace[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -94,7 +94,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param bool $childCareOnSite
      */
-    public function setChildCareOnSite($childCareOnSite = null)
+    public function setChildCareOnSite(bool $childCareOnSite = null)
     {
         $this->setProperty('childCareOnSite', $childCareOnSite);
     }
@@ -110,7 +110,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareSignposting
      */
-    public function setChildCareSignposting($childCareSignposting = null)
+    public function setChildCareSignposting(string $childCareSignposting = null)
     {
         $this->setProperty('childCareSignposting', $childCareSignposting);
     }
@@ -126,7 +126,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareType
      */
-    public function setChildCareType($childCareType = null)
+    public function setChildCareType(string $childCareType = null)
     {
         $this->setProperty('childCareType', $childCareType);
     }
@@ -142,7 +142,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareOpeningTime
      */
-    public function setChildCareOpeningTime($childCareOpeningTime = null)
+    public function setChildCareOpeningTime(string $childCareOpeningTime = null)
     {
         $this->setProperty('childCareOpeningTime', $childCareOpeningTime);
     }
@@ -158,7 +158,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareClosingTime
      */
-    public function setChildCareClosingTime($childCareClosingTime = null)
+    public function setChildCareClosingTime(string $childCareClosingTime = null)
     {
         $this->setProperty('childCareClosingTime', $childCareClosingTime);
     }
@@ -174,7 +174,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param int $childCareNumberOfPlaces
      */
-    public function setChildCareNumberOfPlaces($childCareNumberOfPlaces = null)
+    public function setChildCareNumberOfPlaces(int $childCareNumberOfPlaces = null)
     {
         $this->setProperty('childCareNumberOfPlaces', $childCareNumberOfPlaces);
     }
@@ -190,7 +190,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareProvider
      */
-    public function setChildCareProvider($childCareProvider = null)
+    public function setChildCareProvider(string $childCareProvider = null)
     {
         $this->setProperty('childCareProvider', $childCareProvider);
     }
@@ -206,7 +206,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareOtherSchools
      */
-    public function setChildCareOtherSchools($childCareOtherSchools = null)
+    public function setChildCareOtherSchools(string $childCareOtherSchools = null)
     {
         $this->setProperty('childCareOtherSchools', $childCareOtherSchools);
     }
@@ -222,7 +222,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param int $childCareWeeksOpen
      */
-    public function setChildCareWeeksOpen($childCareWeeksOpen = null)
+    public function setChildCareWeeksOpen(int $childCareWeeksOpen = null)
     {
         $this->setProperty('childCareWeeksOpen', $childCareWeeksOpen);
     }

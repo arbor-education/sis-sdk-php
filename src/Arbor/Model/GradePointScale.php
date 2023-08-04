@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class GradePointScale extends ModelBase
+class GradePointScale extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const GRADE_POINT_SCALE_NAME = 'gradePointScaleName';
+    public const GRADE_POINT_SCALE_NAME = 'gradePointScaleName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const POINT_NAME = 'pointName';
+    public const POINT_NAME = 'pointName';
 
-    const MINIMUM_VALUE = 'minimumValue';
+    public const MINIMUM_VALUE = 'minimumValue';
 
-    const MAXIMUM_VALUE = 'maximumValue';
+    public const MAXIMUM_VALUE = 'maximumValue';
 
-    const SCALE_INCREMENT = 'scaleIncrement';
+    public const SCALE_INCREMENT = 'scaleIncrement';
 
-    const DEFAULT_GRADE_SET = 'defaultGradeSet';
+    public const DEFAULT_GRADE_SET = 'defaultGradeSet';
 
     protected $_resourceType = ResourceType::GRADE_POINT_SCALE;
 
@@ -33,7 +33,7 @@ class GradePointScale extends ModelBase
      * @return GradePointScale[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -91,7 +91,7 @@ class GradePointScale extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -107,7 +107,7 @@ class GradePointScale extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -123,7 +123,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $gradePointScaleName
      */
-    public function setGradePointScaleName($gradePointScaleName = null)
+    public function setGradePointScaleName(string $gradePointScaleName = null)
     {
         $this->setProperty('gradePointScaleName', $gradePointScaleName);
     }
@@ -139,7 +139,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -155,7 +155,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $pointName
      */
-    public function setPointName($pointName = null)
+    public function setPointName(string $pointName = null)
     {
         $this->setProperty('pointName', $pointName);
     }
@@ -171,7 +171,7 @@ class GradePointScale extends ModelBase
     /**
      * @param int $minimumValue
      */
-    public function setMinimumValue($minimumValue = null)
+    public function setMinimumValue(int $minimumValue = null)
     {
         $this->setProperty('minimumValue', $minimumValue);
     }
@@ -187,7 +187,7 @@ class GradePointScale extends ModelBase
     /**
      * @param int $maximumValue
      */
-    public function setMaximumValue($maximumValue = null)
+    public function setMaximumValue(int $maximumValue = null)
     {
         $this->setProperty('maximumValue', $maximumValue);
     }
@@ -203,7 +203,7 @@ class GradePointScale extends ModelBase
     /**
      * @param float $scaleIncrement
      */
-    public function setScaleIncrement($scaleIncrement = null)
+    public function setScaleIncrement(float $scaleIncrement = null)
     {
         $this->setProperty('scaleIncrement', $scaleIncrement);
     }
@@ -219,7 +219,7 @@ class GradePointScale extends ModelBase
     /**
      * @param GradeSet $defaultGradeSet
      */
-    public function setDefaultGradeSet(GradeSet $defaultGradeSet = null)
+    public function setDefaultGradeSet(\GradeSet $defaultGradeSet = null)
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }

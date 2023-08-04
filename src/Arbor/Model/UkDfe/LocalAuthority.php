@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class LocalAuthority extends ModelBase
+class LocalAuthority extends \ModelBase
 {
-    const AUTHORITY_CODE = 'authorityCode';
+    public const AUTHORITY_CODE = 'authorityCode';
 
-    const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
+    public const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
 
     protected $_resourceType = ResourceType::UK_DFE_LOCAL_AUTHORITY;
 
@@ -20,7 +20,7 @@ class LocalAuthority extends ModelBase
      * @return LocalAuthority[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCode
      */
-    public function setAuthorityCode($authorityCode = null)
+    public function setAuthorityCode(string $authorityCode = null)
     {
         $this->setProperty('authorityCode', $authorityCode);
     }
@@ -78,7 +78,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCodePre2011
      */
-    public function setAuthorityCodePre2011($authorityCodePre2011 = null)
+    public function setAuthorityCodePre2011(string $authorityCodePre2011 = null)
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }

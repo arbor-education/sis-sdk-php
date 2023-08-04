@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class RepeatingSchoolEvent extends ModelBase
+class RepeatingSchoolEvent extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const SCHOOL_EVENT_TYPE = 'schoolEventType';
+    public const SCHOOL_EVENT_TYPE = 'schoolEventType';
 
-    const SCHOOL_EVENT_NAME = 'schoolEventName';
+    public const SCHOOL_EVENT_NAME = 'schoolEventName';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const COVER_REQUIRED = 'coverRequired';
+    public const COVER_REQUIRED = 'coverRequired';
 
     protected $_resourceType = ResourceType::REPEATING_SCHOOL_EVENT;
 
@@ -23,7 +23,7 @@ class RepeatingSchoolEvent extends ModelBase
      * @return RepeatingSchoolEvent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -81,7 +81,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param SchoolEventType $schoolEventType
      */
-    public function setSchoolEventType(SchoolEventType $schoolEventType = null)
+    public function setSchoolEventType(\SchoolEventType $schoolEventType = null)
     {
         $this->setProperty('schoolEventType', $schoolEventType);
     }
@@ -97,7 +97,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param string $schoolEventName
      */
-    public function setSchoolEventName($schoolEventName = null)
+    public function setSchoolEventName(string $schoolEventName = null)
     {
         $this->setProperty('schoolEventName', $schoolEventName);
     }
@@ -113,7 +113,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -129,7 +129,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param bool $coverRequired
      */
-    public function setCoverRequired($coverRequired = null)
+    public function setCoverRequired(bool $coverRequired = null)
     {
         $this->setProperty('coverRequired', $coverRequired);
     }

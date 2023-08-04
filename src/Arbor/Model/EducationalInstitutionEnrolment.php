@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EducationalInstitutionEnrolment extends ModelBase
+class EducationalInstitutionEnrolment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ENTRY_DATE = 'entryDate';
+    public const ENTRY_DATE = 'entryDate';
 
-    const LEAVING_DATE = 'leavingDate';
+    public const LEAVING_DATE = 'leavingDate';
 
-    const UNENROLMENT_REASON = 'unenrolmentReason';
+    public const UNENROLMENT_REASON = 'unenrolmentReason';
 
     protected $_resourceType = ResourceType::EDUCATIONAL_INSTITUTION_ENROLMENT;
 
@@ -21,7 +21,7 @@ class EducationalInstitutionEnrolment extends ModelBase
      * @return EducationalInstitutionEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -111,7 +111,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }

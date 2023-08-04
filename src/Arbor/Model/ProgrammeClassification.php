@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgrammeClassification extends ModelBase
+class ProgrammeClassification extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const IS_MAIN_PROGRAMME = 'isMainProgramme';
+    public const IS_MAIN_PROGRAMME = 'isMainProgramme';
 
-    const EXPORT_VALUE = 'exportValue';
+    public const EXPORT_VALUE = 'exportValue';
 
     protected $_resourceType = ResourceType::PROGRAMME_CLASSIFICATION;
 
@@ -25,7 +25,7 @@ class ProgrammeClassification extends ModelBase
      * @return ProgrammeClassification[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class ProgrammeClassification extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +83,7 @@ class ProgrammeClassification extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +99,7 @@ class ProgrammeClassification extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -115,7 +115,7 @@ class ProgrammeClassification extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -131,7 +131,7 @@ class ProgrammeClassification extends ModelBase
     /**
      * @param bool $isMainProgramme
      */
-    public function setIsMainProgramme($isMainProgramme = null)
+    public function setIsMainProgramme(bool $isMainProgramme = null)
     {
         $this->setProperty('isMainProgramme', $isMainProgramme);
     }
@@ -147,7 +147,7 @@ class ProgrammeClassification extends ModelBase
     /**
      * @param string $exportValue
      */
-    public function setExportValue($exportValue = null)
+    public function setExportValue(string $exportValue = null)
     {
         $this->setProperty('exportValue', $exportValue);
     }

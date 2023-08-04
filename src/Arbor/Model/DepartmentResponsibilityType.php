@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class DepartmentResponsibilityType extends ModelBase
+class DepartmentResponsibilityType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const RESPONSIBILITY_TYPE_NAME = 'responsibilityTypeName';
+    public const RESPONSIBILITY_TYPE_NAME = 'responsibilityTypeName';
 
     protected $_resourceType = ResourceType::DEPARTMENT_RESPONSIBILITY_TYPE;
 
@@ -21,7 +21,7 @@ class DepartmentResponsibilityType extends ModelBase
      * @return DepartmentResponsibilityType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class DepartmentResponsibilityType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -79,7 +79,7 @@ class DepartmentResponsibilityType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -95,7 +95,7 @@ class DepartmentResponsibilityType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -111,7 +111,7 @@ class DepartmentResponsibilityType extends ModelBase
     /**
      * @param string $responsibilityTypeName
      */
-    public function setResponsibilityTypeName($responsibilityTypeName = null)
+    public function setResponsibilityTypeName(string $responsibilityTypeName = null)
     {
         $this->setProperty('responsibilityTypeName', $responsibilityTypeName);
     }

@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CheckType extends ModelBase
+class CheckType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const CHECK_NAME = 'checkName';
+    public const CHECK_NAME = 'checkName';
 
-    const IS_REQUESTED = 'isRequested';
+    public const IS_REQUESTED = 'isRequested';
 
-    const HAS_EXPIRY_DATE = 'hasExpiryDate';
+    public const HAS_EXPIRY_DATE = 'hasExpiryDate';
 
-    const HAS_REFERENCE_NUMBER = 'hasReferenceNumber';
+    public const HAS_REFERENCE_NUMBER = 'hasReferenceNumber';
 
-    const EVIDENCE_REQUIRED = 'evidenceRequired';
+    public const EVIDENCE_REQUIRED = 'evidenceRequired';
 
-    const RELATED_ENTITY_TYPE = 'relatedEntityType';
+    public const RELATED_ENTITY_TYPE = 'relatedEntityType';
 
-    const REQUEST_FROM_ALL_STAFF = 'requestFromAllStaff';
+    public const REQUEST_FROM_ALL_STAFF = 'requestFromAllStaff';
 
-    const REQUEST_FROM_TEACHING_STAFF = 'requestFromTeachingStaff';
+    public const REQUEST_FROM_TEACHING_STAFF = 'requestFromTeachingStaff';
 
     protected $_resourceType = ResourceType::CHECK_TYPE;
 
@@ -35,7 +35,7 @@ class CheckType extends ModelBase
      * @return CheckType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class CheckType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -93,7 +93,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -109,7 +109,7 @@ class CheckType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -125,7 +125,7 @@ class CheckType extends ModelBase
     /**
      * @param string $checkName
      */
-    public function setCheckName($checkName = null)
+    public function setCheckName(string $checkName = null)
     {
         $this->setProperty('checkName', $checkName);
     }
@@ -141,7 +141,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $isRequested
      */
-    public function setIsRequested($isRequested = null)
+    public function setIsRequested(bool $isRequested = null)
     {
         $this->setProperty('isRequested', $isRequested);
     }
@@ -157,7 +157,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $hasExpiryDate
      */
-    public function setHasExpiryDate($hasExpiryDate = null)
+    public function setHasExpiryDate(bool $hasExpiryDate = null)
     {
         $this->setProperty('hasExpiryDate', $hasExpiryDate);
     }
@@ -173,7 +173,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $hasReferenceNumber
      */
-    public function setHasReferenceNumber($hasReferenceNumber = null)
+    public function setHasReferenceNumber(bool $hasReferenceNumber = null)
     {
         $this->setProperty('hasReferenceNumber', $hasReferenceNumber);
     }
@@ -189,7 +189,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $evidenceRequired
      */
-    public function setEvidenceRequired($evidenceRequired = null)
+    public function setEvidenceRequired(bool $evidenceRequired = null)
     {
         $this->setProperty('evidenceRequired', $evidenceRequired);
     }
@@ -205,7 +205,7 @@ class CheckType extends ModelBase
     /**
      * @param string $relatedEntityType
      */
-    public function setRelatedEntityType($relatedEntityType = null)
+    public function setRelatedEntityType(string $relatedEntityType = null)
     {
         $this->setProperty('relatedEntityType', $relatedEntityType);
     }
@@ -221,7 +221,7 @@ class CheckType extends ModelBase
     /**
      * @param string $requestFromAllStaff
      */
-    public function setRequestFromAllStaff($requestFromAllStaff = null)
+    public function setRequestFromAllStaff(string $requestFromAllStaff = null)
     {
         $this->setProperty('requestFromAllStaff', $requestFromAllStaff);
     }
@@ -237,7 +237,7 @@ class CheckType extends ModelBase
     /**
      * @param string $requestFromTeachingStaff
      */
-    public function setRequestFromTeachingStaff($requestFromTeachingStaff = null)
+    public function setRequestFromTeachingStaff(string $requestFromTeachingStaff = null)
     {
         $this->setProperty('requestFromTeachingStaff', $requestFromTeachingStaff);
     }

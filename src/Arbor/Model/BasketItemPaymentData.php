@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BasketItemPaymentData extends ModelBase
+class BasketItemPaymentData extends \ModelBase
 {
-    const BASKET_ITEM = 'basketItem';
+    public const BASKET_ITEM = 'basketItem';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const VALUE = 'value';
+    public const VALUE = 'value';
 
     protected $_resourceType = ResourceType::BASKET_ITEM_PAYMENT_DATA;
 
@@ -19,7 +19,7 @@ class BasketItemPaymentData extends ModelBase
      * @return BasketItemPaymentData[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class BasketItemPaymentData extends ModelBase
     /**
      * @param BasketItem $basketItem
      */
-    public function setBasketItem(BasketItem $basketItem = null)
+    public function setBasketItem(\BasketItem $basketItem = null)
     {
         $this->setProperty('basketItem', $basketItem);
     }
@@ -77,7 +77,7 @@ class BasketItemPaymentData extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -93,7 +93,7 @@ class BasketItemPaymentData extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue($value = null)
+    public function setValue(string $value = null)
     {
         $this->setProperty('value', $value);
     }

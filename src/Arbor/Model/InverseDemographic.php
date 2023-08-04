@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InverseDemographic extends ModelBase
+class InverseDemographic extends \ModelBase
 {
-    const DEMOGRAPHIC = 'demographic';
+    public const DEMOGRAPHIC = 'demographic';
 
     protected $_resourceType = ResourceType::INVERSE_DEMOGRAPHIC;
 
@@ -15,7 +15,7 @@ class InverseDemographic extends ModelBase
      * @return InverseDemographic[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class InverseDemographic extends ModelBase
     /**
      * @param Demographic $demographic
      */
-    public function setDemographic(Demographic $demographic = null)
+    public function setDemographic(\Demographic $demographic = null)
     {
         $this->setProperty('demographic', $demographic);
     }

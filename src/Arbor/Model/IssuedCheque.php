@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IssuedCheque extends ModelBase
+class IssuedCheque extends \ModelBase
 {
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const ISSUED_DATETIME = 'issuedDatetime';
+    public const ISSUED_DATETIME = 'issuedDatetime';
 
-    const ISSUED = 'issued';
+    public const ISSUED = 'issued';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::ISSUED_CHEQUE;
 
@@ -21,7 +21,7 @@ class IssuedCheque extends ModelBase
      * @return IssuedCheque[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -95,7 +95,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param string $issued
      */
-    public function setIssued($issued = null)
+    public function setIssued(string $issued = null)
     {
         $this->setProperty('issued', $issued);
     }
@@ -111,7 +111,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

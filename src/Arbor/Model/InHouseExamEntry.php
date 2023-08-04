@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InHouseExamEntry extends ModelBase
+class InHouseExamEntry extends \ModelBase
 {
-    const IN_HOUSE_EXAM = 'inHouseExam';
+    public const IN_HOUSE_EXAM = 'inHouseExam';
 
-    const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
+    public const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
 
-    const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
+    public const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
 
-    const INVIGILATION_SESSION = 'invigilationSession';
+    public const INVIGILATION_SESSION = 'invigilationSession';
 
-    const SEAT = 'seat';
+    public const SEAT = 'seat';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
+    public const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const MINUTES_LATE = 'minutesLate';
+    public const MINUTES_LATE = 'minutesLate';
 
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_ENTRY;
 
@@ -31,7 +31,7 @@ class InHouseExamEntry extends ModelBase
      * @return InHouseExamEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param InHouseExam $inHouseExam
      */
-    public function setInHouseExam(InHouseExam $inHouseExam = null)
+    public function setInHouseExam(\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
@@ -89,7 +89,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param InHouseExamInstance $inHouseExamInstance
      */
-    public function setInHouseExamInstance(InHouseExamInstance $inHouseExamInstance = null)
+    public function setInHouseExamInstance(\InHouseExamInstance $inHouseExamInstance = null)
     {
         $this->setProperty('inHouseExamInstance', $inHouseExamInstance);
     }
@@ -105,7 +105,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param InHouseCandidate $inHouseCandidate
      */
-    public function setInHouseCandidate(InHouseCandidate $inHouseCandidate = null)
+    public function setInHouseCandidate(\InHouseCandidate $inHouseCandidate = null)
     {
         $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
@@ -121,7 +121,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
@@ -137,7 +137,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param RoomLayoutSeat $seat
      */
-    public function setSeat(RoomLayoutSeat $seat = null)
+    public function setSeat(\RoomLayoutSeat $seat = null)
     {
         $this->setProperty('seat', $seat);
     }
@@ -169,7 +169,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage($extraTimePercentage = null)
+    public function setExtraTimePercentage(float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -185,7 +185,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark($attendanceMark = null)
+    public function setAttendanceMark(string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -201,7 +201,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate($minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }

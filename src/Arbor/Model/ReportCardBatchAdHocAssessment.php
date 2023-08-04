@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ReportCardBatchAdHocAssessment extends ModelBase
+class ReportCardBatchAdHocAssessment extends \ModelBase
 {
-    const REPORT_CARD_BATCH = 'reportCardBatch';
+    public const REPORT_CARD_BATCH = 'reportCardBatch';
 
-    const AD_HOC_ASSESSMENT = 'adHocAssessment';
+    public const AD_HOC_ASSESSMENT = 'adHocAssessment';
 
-    const ORDER = 'order';
+    public const ORDER = 'order';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_AD_HOC_ASSESSMENT;
 
@@ -21,7 +21,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      * @return ReportCardBatchAdHocAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -79,7 +79,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -95,7 +95,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder($order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicLevelMembership extends ModelBase
+class AcademicLevelMembership extends \ModelBase
 {
-    const ACADEMIC_LEVEL = 'academicLevel';
+    public const ACADEMIC_LEVEL = 'academicLevel';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::ACADEMIC_LEVEL_MEMBERSHIP;
 
@@ -21,7 +21,7 @@ class AcademicLevelMembership extends ModelBase
      * @return AcademicLevelMembership[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AcademicLevelMembership extends ModelBase
     /**
      * @param AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
@@ -79,7 +79,7 @@ class AcademicLevelMembership extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

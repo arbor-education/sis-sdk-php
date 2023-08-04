@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UnenrolmentReason extends ModelBase
+class UnenrolmentReason extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const UNENROLMENT_REASON = 'unenrolmentReason';
+    public const UNENROLMENT_REASON = 'unenrolmentReason';
 
-    const D00206 = 'd00206';
+    public const D00206 = 'd00206';
 
     protected $_resourceType = ResourceType::UNENROLMENT_REASON;
 
@@ -23,7 +23,7 @@ class UnenrolmentReason extends ModelBase
      * @return UnenrolmentReason[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +81,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +97,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +113,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param string $unenrolmentReason
      */
-    public function setUnenrolmentReason($unenrolmentReason = null)
+    public function setUnenrolmentReason(string $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
@@ -129,7 +129,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param string $d00206
      */
-    public function setD00206($d00206 = null)
+    public function setD00206(string $d00206 = null)
     {
         $this->setProperty('d00206', $d00206);
     }

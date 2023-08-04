@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentDerivationDependant extends ModelBase
+class AssessmentDerivationDependant extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ASSESSMENT_DERIVATION = 'assessmentDerivation';
+    public const ASSESSMENT_DERIVATION = 'assessmentDerivation';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const DEPENDANT_ASSESSMENT = 'dependantAssessment';
+    public const DEPENDANT_ASSESSMENT = 'dependantAssessment';
 
-    const WEIGHTING = 'weighting';
+    public const WEIGHTING = 'weighting';
 
-    const MAX_GRADE_POINT_SCALE_VALUE = 'maxGradePointScaleValue';
+    public const MAX_GRADE_POINT_SCALE_VALUE = 'maxGradePointScaleValue';
 
     protected $_resourceType = ResourceType::ASSESSMENT_DERIVATION_DEPENDANT;
 
@@ -29,7 +29,7 @@ class AssessmentDerivationDependant extends ModelBase
      * @return AssessmentDerivationDependant[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +87,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,7 +103,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -119,7 +119,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param AssessmentDerivation $assessmentDerivation
      */
-    public function setAssessmentDerivation(AssessmentDerivation $assessmentDerivation = null)
+    public function setAssessmentDerivation(\AssessmentDerivation $assessmentDerivation = null)
     {
         $this->setProperty('assessmentDerivation', $assessmentDerivation);
     }
@@ -135,7 +135,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -151,7 +151,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param ModelBase $dependantAssessment
      */
-    public function setDependantAssessment(ModelBase $dependantAssessment = null)
+    public function setDependantAssessment(\ModelBase $dependantAssessment = null)
     {
         $this->setProperty('dependantAssessment', $dependantAssessment);
     }
@@ -167,7 +167,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param int $weighting
      */
-    public function setWeighting($weighting = null)
+    public function setWeighting(int $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }
@@ -183,7 +183,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param float $maxGradePointScaleValue
      */
-    public function setMaxGradePointScaleValue($maxGradePointScaleValue = null)
+    public function setMaxGradePointScaleValue(float $maxGradePointScaleValue = null)
     {
         $this->setProperty('maxGradePointScaleValue', $maxGradePointScaleValue);
     }

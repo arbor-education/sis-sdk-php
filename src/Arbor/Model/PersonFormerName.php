@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonFormerName extends ModelBase
+class PersonFormerName extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const FROM_DATE = 'fromDate';
+    public const FROM_DATE = 'fromDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const LEGAL_FIRST_NAME = 'legalFirstName';
+    public const LEGAL_FIRST_NAME = 'legalFirstName';
 
-    const LEGAL_MIDDLE_NAMES = 'legalMiddleNames';
+    public const LEGAL_MIDDLE_NAMES = 'legalMiddleNames';
 
-    const LEGAL_LAST_NAME = 'legalLastName';
+    public const LEGAL_LAST_NAME = 'legalLastName';
 
     protected $_resourceType = ResourceType::PERSON_FORMER_NAME;
 
@@ -25,7 +25,7 @@ class PersonFormerName extends ModelBase
      * @return PersonFormerName[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param Person $person
      */
-    public function setPerson(Person $person = null)
+    public function setPerson(\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -115,7 +115,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalFirstName
      */
-    public function setLegalFirstName($legalFirstName = null)
+    public function setLegalFirstName(string $legalFirstName = null)
     {
         $this->setProperty('legalFirstName', $legalFirstName);
     }
@@ -131,7 +131,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalMiddleNames
      */
-    public function setLegalMiddleNames($legalMiddleNames = null)
+    public function setLegalMiddleNames(string $legalMiddleNames = null)
     {
         $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
@@ -147,7 +147,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalLastName
      */
-    public function setLegalLastName($legalLastName = null)
+    public function setLegalLastName(string $legalLastName = null)
     {
         $this->setProperty('legalLastName', $legalLastName);
     }

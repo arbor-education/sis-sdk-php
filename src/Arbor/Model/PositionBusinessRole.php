@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PositionBusinessRole extends ModelBase
+class PositionBusinessRole extends \ModelBase
 {
-    const POSITION = 'position';
+    public const POSITION = 'position';
 
-    const BUSINESS_ROLE = 'businessRole';
+    public const BUSINESS_ROLE = 'businessRole';
 
-    const RANKING = 'ranking';
+    public const RANKING = 'ranking';
 
     protected $_resourceType = ResourceType::POSITION_BUSINESS_ROLE;
 
@@ -19,7 +19,7 @@ class PositionBusinessRole extends ModelBase
      * @return PositionBusinessRole[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param Position $position
      */
-    public function setPosition(Position $position = null)
+    public function setPosition(\Position $position = null)
     {
         $this->setProperty('position', $position);
     }
@@ -77,7 +77,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param BusinessRole $businessRole
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setBusinessRole(\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
@@ -93,7 +93,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param int $ranking
      */
-    public function setRanking($ranking = null)
+    public function setRanking(int $ranking = null)
     {
         $this->setProperty('ranking', $ranking);
     }

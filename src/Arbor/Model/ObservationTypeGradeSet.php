@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ObservationTypeGradeSet extends ModelBase
+class ObservationTypeGradeSet extends \ModelBase
 {
-    const OBSERVATION_TYPE = 'observationType';
+    public const OBSERVATION_TYPE = 'observationType';
 
-    const OBSERVATION_GRADE_SET = 'observationGradeSet';
+    public const OBSERVATION_GRADE_SET = 'observationGradeSet';
 
     protected $_resourceType = ResourceType::OBSERVATION_TYPE_GRADE_SET;
 
@@ -17,7 +17,7 @@ class ObservationTypeGradeSet extends ModelBase
      * @return ObservationTypeGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ObservationTypeGradeSet extends ModelBase
     /**
      * @param ObservationType $observationType
      */
-    public function setObservationType(ObservationType $observationType = null)
+    public function setObservationType(\ObservationType $observationType = null)
     {
         $this->setProperty('observationType', $observationType);
     }
@@ -75,7 +75,7 @@ class ObservationTypeGradeSet extends ModelBase
     /**
      * @param ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }

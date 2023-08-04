@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffRoomFeatureRequirement extends ModelBase
+class StaffRoomFeatureRequirement extends \ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const ROOM_FEATURE = 'roomFeature';
+    public const ROOM_FEATURE = 'roomFeature';
 
     protected $_resourceType = ResourceType::STAFF_ROOM_FEATURE_REQUIREMENT;
 
@@ -17,7 +17,7 @@ class StaffRoomFeatureRequirement extends ModelBase
      * @return StaffRoomFeatureRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class StaffRoomFeatureRequirement extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -75,7 +75,7 @@ class StaffRoomFeatureRequirement extends ModelBase
     /**
      * @param RoomFeature $roomFeature
      */
-    public function setRoomFeature(RoomFeature $roomFeature = null)
+    public function setRoomFeature(\RoomFeature $roomFeature = null)
     {
         $this->setProperty('roomFeature', $roomFeature);
     }

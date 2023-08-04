@@ -7,13 +7,13 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ProgrammeEnrolment extends ModelBase
+class ProgrammeEnrolment extends \ModelBase
 {
-    const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
+    public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
-    const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
+    public const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
 
-    const PROGRAMME_AIM_TYPE = 'programmeAimType';
+    public const PROGRAMME_AIM_TYPE = 'programmeAimType';
 
     protected $_resourceType = ResourceType::UK_DFE_PROGRAMME_ENROLMENT;
 
@@ -22,7 +22,7 @@ class ProgrammeEnrolment extends ModelBase
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours($plannedLearningHours = null)
+    public function setPlannedLearningHours(int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -80,7 +80,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear($plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
@@ -96,7 +96,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $programmeAimType
      */
-    public function setProgrammeAimType($programmeAimType = null)
+    public function setProgrammeAimType(string $programmeAimType = null)
     {
         $this->setProperty('programmeAimType', $programmeAimType);
     }

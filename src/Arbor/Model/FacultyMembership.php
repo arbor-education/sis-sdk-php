@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class FacultyMembership extends ModelBase
+class FacultyMembership extends \ModelBase
 {
-    const FACULTY_RESPONSIBILITY = 'facultyResponsibility';
+    public const FACULTY_RESPONSIBILITY = 'facultyResponsibility';
 
-    const FACULTY = 'faculty';
+    public const FACULTY = 'faculty';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::FACULTY_MEMBERSHIP;
 
@@ -23,7 +23,7 @@ class FacultyMembership extends ModelBase
      * @return FacultyMembership[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param FacultyResponsibility $facultyResponsibility
      */
-    public function setFacultyResponsibility(FacultyResponsibility $facultyResponsibility = null)
+    public function setFacultyResponsibility(\FacultyResponsibility $facultyResponsibility = null)
     {
         $this->setProperty('facultyResponsibility', $facultyResponsibility);
     }
@@ -81,7 +81,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param Faculty $faculty
      */
-    public function setFaculty(Faculty $faculty = null)
+    public function setFaculty(\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -97,7 +97,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

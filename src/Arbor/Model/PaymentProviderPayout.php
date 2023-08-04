@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PaymentProviderPayout extends ModelBase
+class PaymentProviderPayout extends \ModelBase
 {
-    const BANK_ACCOUNT = 'bankAccount';
+    public const BANK_ACCOUNT = 'bankAccount';
 
-    const PAYMENT_PROVIDER = 'paymentProvider';
+    public const PAYMENT_PROVIDER = 'paymentProvider';
 
-    const PAYMENT_PROVIDER_PAYOUT_IDENTIFIER = 'paymentProviderPayoutIdentifier';
+    public const PAYMENT_PROVIDER_PAYOUT_IDENTIFIER = 'paymentProviderPayoutIdentifier';
 
-    const PAYOUT_AMOUNT = 'payoutAmount';
+    public const PAYOUT_AMOUNT = 'payoutAmount';
 
-    const PAYOUT_REFERENCE = 'payoutReference';
+    public const PAYOUT_REFERENCE = 'payoutReference';
 
-    const PAYOUT_INITIATED_DATETIME = 'payoutInitiatedDatetime';
+    public const PAYOUT_INITIATED_DATETIME = 'payoutInitiatedDatetime';
 
-    const PAYOUT_SUCCEEDED_DATETIME = 'payoutSucceededDatetime';
+    public const PAYOUT_SUCCEEDED_DATETIME = 'payoutSucceededDatetime';
 
-    const PAYOUT_FAILED_DATETIME = 'payoutFailedDatetime';
+    public const PAYOUT_FAILED_DATETIME = 'payoutFailedDatetime';
 
-    const PAYOUT_SOURCE_TYPE = 'payoutSourceType';
+    public const PAYOUT_SOURCE_TYPE = 'payoutSourceType';
 
     protected $_resourceType = ResourceType::PAYMENT_PROVIDER_PAYOUT;
 
@@ -31,7 +31,7 @@ class PaymentProviderPayout extends ModelBase
      * @return PaymentProviderPayout[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param BankAccount $bankAccount
      */
-    public function setBankAccount(BankAccount $bankAccount = null)
+    public function setBankAccount(\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
@@ -89,7 +89,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -105,7 +105,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $paymentProviderPayoutIdentifier
      */
-    public function setPaymentProviderPayoutIdentifier($paymentProviderPayoutIdentifier = null)
+    public function setPaymentProviderPayoutIdentifier(string $paymentProviderPayoutIdentifier = null)
     {
         $this->setProperty('paymentProviderPayoutIdentifier', $paymentProviderPayoutIdentifier);
     }
@@ -121,7 +121,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $payoutAmount
      */
-    public function setPayoutAmount($payoutAmount = null)
+    public function setPayoutAmount(string $payoutAmount = null)
     {
         $this->setProperty('payoutAmount', $payoutAmount);
     }
@@ -137,7 +137,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $payoutReference
      */
-    public function setPayoutReference($payoutReference = null)
+    public function setPayoutReference(string $payoutReference = null)
     {
         $this->setProperty('payoutReference', $payoutReference);
     }
@@ -201,7 +201,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $payoutSourceType
      */
-    public function setPayoutSourceType($payoutSourceType = null)
+    public function setPayoutSourceType(string $payoutSourceType = null)
     {
         $this->setProperty('payoutSourceType', $payoutSourceType);
     }

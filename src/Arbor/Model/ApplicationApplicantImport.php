@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ApplicationApplicantImport extends ModelBase
+class ApplicationApplicantImport extends \ModelBase
 {
-    const APPLICATION_APPLICANT_IMPORT_JOB = 'applicationApplicantImportJob';
+    public const APPLICATION_APPLICANT_IMPORT_JOB = 'applicationApplicantImportJob';
 
-    const APPLICATION = 'application';
+    public const APPLICATION = 'application';
 
-    const ROW_INDEX = 'rowIndex';
+    public const ROW_INDEX = 'rowIndex';
 
-    const ERRORS = 'errors';
+    public const ERRORS = 'errors';
 
-    const REQUIRED_ERRORS = 'requiredErrors';
+    public const REQUIRED_ERRORS = 'requiredErrors';
 
     protected $_resourceType = ResourceType::APPLICATION_APPLICANT_IMPORT;
 
@@ -23,7 +23,7 @@ class ApplicationApplicantImport extends ModelBase
      * @return ApplicationApplicantImport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param ApplicationApplicantImportJob $applicationApplicantImportJob
      */
-    public function setApplicationApplicantImportJob(ApplicationApplicantImportJob $applicationApplicantImportJob = null)
+    public function setApplicationApplicantImportJob(\ApplicationApplicantImportJob $applicationApplicantImportJob = null)
     {
         $this->setProperty('applicationApplicantImportJob', $applicationApplicantImportJob);
     }
@@ -81,7 +81,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param Application $application
      */
-    public function setApplication(Application $application = null)
+    public function setApplication(\Application $application = null)
     {
         $this->setProperty('application', $application);
     }
@@ -97,7 +97,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param int $rowIndex
      */
-    public function setRowIndex($rowIndex = null)
+    public function setRowIndex(int $rowIndex = null)
     {
         $this->setProperty('rowIndex', $rowIndex);
     }
@@ -113,7 +113,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors($errors = null)
+    public function setErrors(string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -129,7 +129,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param string $requiredErrors
      */
-    public function setRequiredErrors($requiredErrors = null)
+    public function setRequiredErrors(string $requiredErrors = null)
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }

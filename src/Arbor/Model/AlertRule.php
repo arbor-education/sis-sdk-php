@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AlertRule extends ModelBase
+class AlertRule extends \ModelBase
 {
-    const TRIGGER_EVENT_TYPE = 'triggerEventType';
+    public const TRIGGER_EVENT_TYPE = 'triggerEventType';
 
     protected $_resourceType = ResourceType::ALERT_RULE;
 
@@ -15,7 +15,7 @@ class AlertRule extends ModelBase
      * @return AlertRule[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class AlertRule extends ModelBase
     /**
      * @param string $triggerEventType
      */
-    public function setTriggerEventType($triggerEventType = null)
+    public function setTriggerEventType(string $triggerEventType = null)
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }

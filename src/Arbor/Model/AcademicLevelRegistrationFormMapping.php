@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicLevelRegistrationFormMapping extends ModelBase
+class AcademicLevelRegistrationFormMapping extends \ModelBase
 {
-    const ACADEMIC_LEVEL = 'academicLevel';
+    public const ACADEMIC_LEVEL = 'academicLevel';
 
-    const REGISTRATION_FORM = 'registrationForm';
+    public const REGISTRATION_FORM = 'registrationForm';
 
     protected $_resourceType = ResourceType::ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING;
 
@@ -17,7 +17,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      * @return AcademicLevelRegistrationFormMapping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     /**
      * @param AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
@@ -75,7 +75,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     /**
      * @param RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }

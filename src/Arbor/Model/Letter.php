@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Letter extends ModelBase
+class Letter extends \ModelBase
 {
-    const LETTER_DATE = 'letterDate';
+    public const LETTER_DATE = 'letterDate';
 
-    const RECEIVED_DATE = 'receivedDate';
+    public const RECEIVED_DATE = 'receivedDate';
 
-    const PREPARED_DATETIME = 'preparedDatetime';
+    public const PREPARED_DATETIME = 'preparedDatetime';
 
-    const SENT_DATETIME = 'sentDatetime';
+    public const SENT_DATETIME = 'sentDatetime';
 
-    const SENDER_NAME = 'senderName';
+    public const SENDER_NAME = 'senderName';
 
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const DRAFT_RECIPIENT = 'draftRecipient';
+    public const DRAFT_RECIPIENT = 'draftRecipient';
 
-    const RECIPIENT_NAME = 'recipientName';
+    public const RECIPIENT_NAME = 'recipientName';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
+    public const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
 
     protected $_resourceType = ResourceType::LETTER;
 
@@ -35,7 +35,7 @@ class Letter extends ModelBase
      * @return Letter[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -141,7 +141,7 @@ class Letter extends ModelBase
     /**
      * @param string $senderName
      */
-    public function setSenderName($senderName = null)
+    public function setSenderName(string $senderName = null)
     {
         $this->setProperty('senderName', $senderName);
     }
@@ -157,7 +157,7 @@ class Letter extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -173,7 +173,7 @@ class Letter extends ModelBase
     /**
      * @param MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -189,7 +189,7 @@ class Letter extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName($recipientName = null)
+    public function setRecipientName(string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -205,7 +205,7 @@ class Letter extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -221,7 +221,7 @@ class Letter extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class DataSetSubscription extends ModelBase
+class DataSetSubscription extends \ModelBase
 {
-    const DATA_SET_NAME = 'dataSetName';
+    public const DATA_SET_NAME = 'dataSetName';
 
-    const DATA_SET_IDENTIFIER = 'dataSetIdentifier';
+    public const DATA_SET_IDENTIFIER = 'dataSetIdentifier';
 
-    const SUPPLIER_IDENTIFIER = 'supplierIdentifier';
+    public const SUPPLIER_IDENTIFIER = 'supplierIdentifier';
 
-    const ENTITY_TYPE = 'entityType';
+    public const ENTITY_TYPE = 'entityType';
 
-    const CURRENT_DATA_SET_VERSION = 'currentDataSetVersion';
+    public const CURRENT_DATA_SET_VERSION = 'currentDataSetVersion';
 
-    const LAST_UPDATED_DATETIME = 'lastUpdatedDatetime';
+    public const LAST_UPDATED_DATETIME = 'lastUpdatedDatetime';
 
     protected $_resourceType = ResourceType::DATA_SET_SUBSCRIPTION;
 
@@ -25,7 +25,7 @@ class DataSetSubscription extends ModelBase
      * @return DataSetSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param string $dataSetName
      */
-    public function setDataSetName($dataSetName = null)
+    public function setDataSetName(string $dataSetName = null)
     {
         $this->setProperty('dataSetName', $dataSetName);
     }
@@ -83,7 +83,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param string $dataSetIdentifier
      */
-    public function setDataSetIdentifier($dataSetIdentifier = null)
+    public function setDataSetIdentifier(string $dataSetIdentifier = null)
     {
         $this->setProperty('dataSetIdentifier', $dataSetIdentifier);
     }
@@ -99,7 +99,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param string $supplierIdentifier
      */
-    public function setSupplierIdentifier($supplierIdentifier = null)
+    public function setSupplierIdentifier(string $supplierIdentifier = null)
     {
         $this->setProperty('supplierIdentifier', $supplierIdentifier);
     }
@@ -115,7 +115,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param int $entityType
      */
-    public function setEntityType($entityType = null)
+    public function setEntityType(int $entityType = null)
     {
         $this->setProperty('entityType', $entityType);
     }
@@ -131,7 +131,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param int $currentDataSetVersion
      */
-    public function setCurrentDataSetVersion($currentDataSetVersion = null)
+    public function setCurrentDataSetVersion(int $currentDataSetVersion = null)
     {
         $this->setProperty('currentDataSetVersion', $currentDataSetVersion);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricSet extends ModelBase
+class AssessmentMetricSet extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const IS_KEY_METRIC = 'isKeyMetric';
+    public const IS_KEY_METRIC = 'isKeyMetric';
 
-    const RULE_ITEM_TYPE = 'ruleItemType';
+    public const RULE_ITEM_TYPE = 'ruleItemType';
 
-    const UPWARD_TREND = 'upwardTrend';
+    public const UPWARD_TREND = 'upwardTrend';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_SET;
 
@@ -21,7 +21,7 @@ class AssessmentMetricSet extends ModelBase
      * @return AssessmentMetricSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param bool $isKeyMetric
      */
-    public function setIsKeyMetric($isKeyMetric = null)
+    public function setIsKeyMetric(bool $isKeyMetric = null)
     {
         $this->setProperty('isKeyMetric', $isKeyMetric);
     }
@@ -95,7 +95,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param string $ruleItemType
      */
-    public function setRuleItemType($ruleItemType = null)
+    public function setRuleItemType(string $ruleItemType = null)
     {
         $this->setProperty('ruleItemType', $ruleItemType);
     }
@@ -111,7 +111,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param string $upwardTrend
      */
-    public function setUpwardTrend($upwardTrend = null)
+    public function setUpwardTrend(string $upwardTrend = null)
     {
         $this->setProperty('upwardTrend', $upwardTrend);
     }

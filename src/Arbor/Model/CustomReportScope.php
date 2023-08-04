@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportScope extends ModelBase
+class CustomReportScope extends \ModelBase
 {
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const BASE_ENTITY_TYPE = 'baseEntityType';
+    public const BASE_ENTITY_TYPE = 'baseEntityType';
 
-    const REFERENCE_DATE_RANGE_START_DATE = 'referenceDateRangeStartDate';
+    public const REFERENCE_DATE_RANGE_START_DATE = 'referenceDateRangeStartDate';
 
-    const REFERENCE_DATE_RANGE_END_DATE = 'referenceDateRangeEndDate';
+    public const REFERENCE_DATE_RANGE_END_DATE = 'referenceDateRangeEndDate';
 
-    const REFERENCE_DATE_RANGE_PERIOD_TYPE = 'referenceDateRangePeriodType';
+    public const REFERENCE_DATE_RANGE_PERIOD_TYPE = 'referenceDateRangePeriodType';
 
-    const REFERENCE_DATE_RANGE_PERIOD_COUNT = 'referenceDateRangePeriodCount';
+    public const REFERENCE_DATE_RANGE_PERIOD_COUNT = 'referenceDateRangePeriodCount';
 
-    const REFERENCE_DATE_RANGE_PERIOD_OFFSET = 'referenceDateRangePeriodOffset';
+    public const REFERENCE_DATE_RANGE_PERIOD_OFFSET = 'referenceDateRangePeriodOffset';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCOPE;
 
@@ -27,7 +27,7 @@ class CustomReportScope extends ModelBase
      * @return CustomReportScope[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -85,7 +85,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $baseEntityType
      */
-    public function setBaseEntityType($baseEntityType = null)
+    public function setBaseEntityType(int $baseEntityType = null)
     {
         $this->setProperty('baseEntityType', $baseEntityType);
     }
@@ -133,7 +133,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param string $referenceDateRangePeriodType
      */
-    public function setReferenceDateRangePeriodType($referenceDateRangePeriodType = null)
+    public function setReferenceDateRangePeriodType(string $referenceDateRangePeriodType = null)
     {
         $this->setProperty('referenceDateRangePeriodType', $referenceDateRangePeriodType);
     }
@@ -149,7 +149,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $referenceDateRangePeriodCount
      */
-    public function setReferenceDateRangePeriodCount($referenceDateRangePeriodCount = null)
+    public function setReferenceDateRangePeriodCount(int $referenceDateRangePeriodCount = null)
     {
         $this->setProperty('referenceDateRangePeriodCount', $referenceDateRangePeriodCount);
     }
@@ -165,7 +165,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $referenceDateRangePeriodOffset
      */
-    public function setReferenceDateRangePeriodOffset($referenceDateRangePeriodOffset = null)
+    public function setReferenceDateRangePeriodOffset(int $referenceDateRangePeriodOffset = null)
     {
         $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }

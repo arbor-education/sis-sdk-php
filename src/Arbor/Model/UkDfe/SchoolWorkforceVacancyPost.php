@@ -7,15 +7,15 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolWorkforceVacancyPost extends ModelBase
+class SchoolWorkforceVacancyPost extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const POST = 'post';
+    public const POST = 'post';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_VACANCY_POST;
 
@@ -24,7 +24,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
      * @return SchoolWorkforceVacancyPost[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class SchoolWorkforceVacancyPost extends ModelBase
     /**
      * @param string $post
      */
-    public function setPost($post = null)
+    public function setPost(string $post = null)
     {
         $this->setProperty('post', $post);
     }

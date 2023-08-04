@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TrainingEvent extends ModelBase
+class TrainingEvent extends \ModelBase
 {
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const TRAINING_EVENT_TITLE = 'trainingEventTitle';
+    public const TRAINING_EVENT_TITLE = 'trainingEventTitle';
 
-    const EXPIRY_DATE = 'expiryDate';
+    public const EXPIRY_DATE = 'expiryDate';
 
-    const TRAINING_COURSE = 'trainingCourse';
+    public const TRAINING_COURSE = 'trainingCourse';
 
     protected $_resourceType = ResourceType::TRAINING_EVENT;
 
@@ -27,7 +27,7 @@ class TrainingEvent extends ModelBase
      * @return TrainingEvent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -101,7 +101,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -117,7 +117,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -133,7 +133,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param string $trainingEventTitle
      */
-    public function setTrainingEventTitle($trainingEventTitle = null)
+    public function setTrainingEventTitle(string $trainingEventTitle = null)
     {
         $this->setProperty('trainingEventTitle', $trainingEventTitle);
     }
@@ -165,7 +165,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param TrainingCourse $trainingCourse
      */
-    public function setTrainingCourse(TrainingCourse $trainingCourse = null)
+    public function setTrainingCourse(\TrainingCourse $trainingCourse = null)
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }

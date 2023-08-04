@@ -8,11 +8,11 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\CandidateEntry;
 
-class EdiExportJobCandidateEntry extends ModelBase
+class EdiExportJobCandidateEntry extends \ModelBase
 {
-    const EDI_EXPORT_JOB = 'ediExportJob';
+    public const EDI_EXPORT_JOB = 'ediExportJob';
 
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
     protected $_resourceType = ResourceType::UK_JCQ_EDI_EXPORT_JOB_CANDIDATE_ENTRY;
 
@@ -21,7 +21,7 @@ class EdiExportJobCandidateEntry extends ModelBase
      * @return EdiExportJobCandidateEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class EdiExportJobCandidateEntry extends ModelBase
     /**
      * @param EdiExportJob $ediExportJob
      */
-    public function setEdiExportJob(EdiExportJob $ediExportJob = null)
+    public function setEdiExportJob(\EdiExportJob $ediExportJob = null)
     {
         $this->setProperty('ediExportJob', $ediExportJob);
     }
@@ -79,7 +79,7 @@ class EdiExportJobCandidateEntry extends ModelBase
     /**
      * @param CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }

@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentClubSessionInterval extends ModelBase
+class StudentClubSessionInterval extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
+    public const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
 
-    const CLUB_SESSION = 'clubSession';
+    public const CLUB_SESSION = 'clubSession';
 
-    const PRICE_EX_VAT = 'priceExVat';
+    public const PRICE_EX_VAT = 'priceExVat';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
-    const CUSTOMER_INVOICE = 'customerInvoice';
+    public const CUSTOMER_INVOICE = 'customerInvoice';
 
-    const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
+    public const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
 
-    const HAS_MEALS = 'hasMeals';
+    public const HAS_MEALS = 'hasMeals';
 
     protected $_resourceType = ResourceType::STUDENT_CLUB_SESSION_INTERVAL;
 
@@ -29,7 +29,7 @@ class StudentClubSessionInterval extends ModelBase
      * @return StudentClubSessionInterval[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -87,7 +87,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param ClubSessionInterval $clubSessionInterval
      */
-    public function setClubSessionInterval(ClubSessionInterval $clubSessionInterval = null)
+    public function setClubSessionInterval(\ClubSessionInterval $clubSessionInterval = null)
     {
         $this->setProperty('clubSessionInterval', $clubSessionInterval);
     }
@@ -103,7 +103,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param ClubSession $clubSession
      */
-    public function setClubSession(ClubSession $clubSession = null)
+    public function setClubSession(\ClubSession $clubSession = null)
     {
         $this->setProperty('clubSession', $clubSession);
     }
@@ -119,7 +119,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat($priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -135,7 +135,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -151,7 +151,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -167,7 +167,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -183,7 +183,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param bool $hasMeals
      */
-    public function setHasMeals($hasMeals = null)
+    public function setHasMeals(bool $hasMeals = null)
     {
         $this->setProperty('hasMeals', $hasMeals);
     }

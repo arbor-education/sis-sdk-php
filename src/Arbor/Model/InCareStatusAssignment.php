@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InCareStatusAssignment extends ModelBase
+class InCareStatusAssignment extends \ModelBase
 {
-    const IN_CARE_STATUS = 'inCareStatus';
+    public const IN_CARE_STATUS = 'inCareStatus';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
+    public const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::IN_CARE_STATUS_ASSIGNMENT;
 
@@ -23,7 +23,7 @@ class InCareStatusAssignment extends ModelBase
      * @return InCareStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class InCareStatusAssignment extends ModelBase
     /**
      * @param InCareStatus $inCareStatus
      */
-    public function setInCareStatus(InCareStatus $inCareStatus = null)
+    public function setInCareStatus(\InCareStatus $inCareStatus = null)
     {
         $this->setProperty('inCareStatus', $inCareStatus);
     }
@@ -81,7 +81,7 @@ class InCareStatusAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -129,7 +129,7 @@ class InCareStatusAssignment extends ModelBase
     /**
      * @param LocalAuthority $responsibleLocalAuthority
      */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
+    public function setResponsibleLocalAuthority(\LocalAuthority $responsibleLocalAuthority = null)
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }

@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PinnedItem extends ModelBase
+class PinnedItem extends \ModelBase
 {
-    const PINNED = 'pinned';
+    public const PINNED = 'pinned';
 
-    const TARGET = 'target';
+    public const TARGET = 'target';
 
-    const PINNED_UNTIL_DATETIME = 'pinnedUntilDatetime';
+    public const PINNED_UNTIL_DATETIME = 'pinnedUntilDatetime';
 
     protected $_resourceType = ResourceType::PINNED_ITEM;
 
@@ -19,7 +19,7 @@ class PinnedItem extends ModelBase
      * @return PinnedItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class PinnedItem extends ModelBase
     /**
      * @param ModelBase $pinned
      */
-    public function setPinned(ModelBase $pinned = null)
+    public function setPinned(\ModelBase $pinned = null)
     {
         $this->setProperty('pinned', $pinned);
     }
@@ -77,7 +77,7 @@ class PinnedItem extends ModelBase
     /**
      * @param ModelBase $target
      */
-    public function setTarget(ModelBase $target = null)
+    public function setTarget(\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AdHocAssessmentCategory extends ModelBase
+class AdHocAssessmentCategory extends \ModelBase
 {
-    const CATEGORY_NAME = 'categoryName';
+    public const CATEGORY_NAME = 'categoryName';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_CATEGORY;
 
@@ -15,7 +15,7 @@ class AdHocAssessmentCategory extends ModelBase
      * @return AdHocAssessmentCategory[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class AdHocAssessmentCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName($categoryName = null)
+    public function setCategoryName(string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }

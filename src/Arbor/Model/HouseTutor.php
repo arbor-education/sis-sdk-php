@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class HouseTutor extends ModelBase
+class HouseTutor extends \ModelBase
 {
-    const HOUSE = 'house';
+    public const HOUSE = 'house';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::HOUSE_TUTOR;
 
@@ -21,7 +21,7 @@ class HouseTutor extends ModelBase
      * @return HouseTutor[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class HouseTutor extends ModelBase
     /**
      * @param House $house
      */
-    public function setHouse(House $house = null)
+    public function setHouse(\House $house = null)
     {
         $this->setProperty('house', $house);
     }
@@ -79,7 +79,7 @@ class HouseTutor extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

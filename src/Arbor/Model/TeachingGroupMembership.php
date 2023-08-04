@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TeachingGroupMembership extends ModelBase
+class TeachingGroupMembership extends \ModelBase
 {
-    const TEACHING_GROUP = 'teachingGroup';
+    public const TEACHING_GROUP = 'teachingGroup';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::TEACHING_GROUP_MEMBERSHIP;
 
@@ -21,7 +21,7 @@ class TeachingGroupMembership extends ModelBase
      * @return TeachingGroupMembership[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class TeachingGroupMembership extends ModelBase
     /**
      * @param TeachingGroup $teachingGroup
      */
-    public function setTeachingGroup(TeachingGroup $teachingGroup = null)
+    public function setTeachingGroup(\TeachingGroup $teachingGroup = null)
     {
         $this->setProperty('teachingGroup', $teachingGroup);
     }
@@ -79,7 +79,7 @@ class TeachingGroupMembership extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

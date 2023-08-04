@@ -7,9 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class EnrolmentMode extends ModelBase
+class EnrolmentMode extends \ModelBase
 {
-    const D00018 = 'd00018';
+    public const D00018 = 'd00018';
 
     protected $_resourceType = ResourceType::UK_DFE_ENROLMENT_MODE;
 
@@ -18,7 +18,7 @@ class EnrolmentMode extends ModelBase
      * @return EnrolmentMode[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class EnrolmentMode extends ModelBase
     /**
      * @param string $d00018
      */
-    public function setD00018($d00018 = null)
+    public function setD00018(string $d00018 = null)
     {
         $this->setProperty('d00018', $d00018);
     }

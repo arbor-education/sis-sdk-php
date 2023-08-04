@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InHouseExamGrade extends ModelBase
+class InHouseExamGrade extends \ModelBase
 {
-    const IN_HOUSE_EXAM = 'inHouseExam';
+    public const IN_HOUSE_EXAM = 'inHouseExam';
 
-    const QUALIFICATION_GRADE = 'qualificationGrade';
+    public const QUALIFICATION_GRADE = 'qualificationGrade';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const LONG_NAME = 'longName';
+    public const LONG_NAME = 'longName';
 
-    const GRADE_VALUE = 'gradeValue';
+    public const GRADE_VALUE = 'gradeValue';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_GRADE;
 
@@ -25,7 +25,7 @@ class InHouseExamGrade extends ModelBase
      * @return InHouseExamGrade[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param InHouseExam $inHouseExam
      */
-    public function setInHouseExam(InHouseExam $inHouseExam = null)
+    public function setInHouseExam(\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
@@ -83,7 +83,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -99,7 +99,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -115,7 +115,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName($longName = null)
+    public function setLongName(string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -131,7 +131,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param float $gradeValue
      */
-    public function setGradeValue($gradeValue = null)
+    public function setGradeValue(float $gradeValue = null)
     {
         $this->setProperty('gradeValue', $gradeValue);
     }
@@ -147,7 +147,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Company extends ModelBase
+class Company extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const REGISTRATION_NUMBER = 'registrationNumber';
+    public const REGISTRATION_NUMBER = 'registrationNumber';
 
-    const VAT_IDENTIFICATION_NUMBER = 'vatIdentificationNumber';
+    public const VAT_IDENTIFICATION_NUMBER = 'vatIdentificationNumber';
 
     protected $_resourceType = ResourceType::COMPANY;
 
@@ -21,7 +21,7 @@ class Company extends ModelBase
      * @return Company[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class Company extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class Company extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -95,7 +95,7 @@ class Company extends ModelBase
     /**
      * @param string $registrationNumber
      */
-    public function setRegistrationNumber($registrationNumber = null)
+    public function setRegistrationNumber(string $registrationNumber = null)
     {
         $this->setProperty('registrationNumber', $registrationNumber);
     }
@@ -111,7 +111,7 @@ class Company extends ModelBase
     /**
      * @param string $vatIdentificationNumber
      */
-    public function setVatIdentificationNumber($vatIdentificationNumber = null)
+    public function setVatIdentificationNumber(string $vatIdentificationNumber = null)
     {
         $this->setProperty('vatIdentificationNumber', $vatIdentificationNumber);
     }

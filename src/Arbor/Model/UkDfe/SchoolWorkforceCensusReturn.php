@@ -8,37 +8,37 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\EducationalInstitution;
 
-class SchoolWorkforceCensusReturn extends ModelBase
+class SchoolWorkforceCensusReturn extends \ModelBase
 {
-    const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
+    public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const RETURN_FILENAME = 'returnFilename';
+    public const RETURN_FILENAME = 'returnFilename';
 
-    const STATUS_DESCRIPTION = 'statusDescription';
+    public const STATUS_DESCRIPTION = 'statusDescription';
 
-    const RETURN_FILENAME_SEQUENCE_NUMBER = 'returnFilenameSequenceNumber';
+    public const RETURN_FILENAME_SEQUENCE_NUMBER = 'returnFilenameSequenceNumber';
 
-    const XSLT_ERROR = 'xsltError';
+    public const XSLT_ERROR = 'xsltError';
 
-    const DATA_ERROR = 'dataError';
+    public const DATA_ERROR = 'dataError';
 
-    const IS_DRY_RUN = 'isDryRun';
+    public const IS_DRY_RUN = 'isDryRun';
 
-    const DATA_EXPORT_STARTED_DATETIME = 'dataExportStartedDatetime';
+    public const DATA_EXPORT_STARTED_DATETIME = 'dataExportStartedDatetime';
 
-    const DATA_EXPORT_COMPLETED_DATETIME = 'dataExportCompletedDatetime';
+    public const DATA_EXPORT_COMPLETED_DATETIME = 'dataExportCompletedDatetime';
 
-    const SCHOOL_APPROVED_DATETIME = 'schoolApprovedDatetime';
+    public const SCHOOL_APPROVED_DATETIME = 'schoolApprovedDatetime';
 
-    const LOCAL_AUTHORITY_REJECTED_DATETIME = 'localAuthorityRejectedDatetime';
+    public const LOCAL_AUTHORITY_REJECTED_DATETIME = 'localAuthorityRejectedDatetime';
 
-    const LOCAL_AUTHORITY_ACCEPTED_DATETIME = 'localAuthorityAcceptedDatetime';
+    public const LOCAL_AUTHORITY_ACCEPTED_DATETIME = 'localAuthorityAcceptedDatetime';
 
-    const IS_STAFF_CONTRACT_INFORMATION_EXCLUDED = 'isStaffContractInformationExcluded';
+    public const IS_STAFF_CONTRACT_INFORMATION_EXCLUDED = 'isStaffContractInformationExcluded';
 
-    const SUBMITTED_DATETIME = 'submittedDatetime';
+    public const SUBMITTED_DATETIME = 'submittedDatetime';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN;
 
@@ -47,7 +47,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      * @return SchoolWorkforceCensusReturn[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -89,7 +89,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
@@ -105,7 +105,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -121,7 +121,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $returnFilename
      */
-    public function setReturnFilename($returnFilename = null)
+    public function setReturnFilename(string $returnFilename = null)
     {
         $this->setProperty('returnFilename', $returnFilename);
     }
@@ -137,7 +137,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $statusDescription
      */
-    public function setStatusDescription($statusDescription = null)
+    public function setStatusDescription(string $statusDescription = null)
     {
         $this->setProperty('statusDescription', $statusDescription);
     }
@@ -153,7 +153,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param int $returnFilenameSequenceNumber
      */
-    public function setReturnFilenameSequenceNumber($returnFilenameSequenceNumber = null)
+    public function setReturnFilenameSequenceNumber(int $returnFilenameSequenceNumber = null)
     {
         $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
@@ -169,7 +169,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $xsltError
      */
-    public function setXsltError($xsltError = null)
+    public function setXsltError(bool $xsltError = null)
     {
         $this->setProperty('xsltError', $xsltError);
     }
@@ -185,7 +185,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $dataError
      */
-    public function setDataError($dataError = null)
+    public function setDataError(bool $dataError = null)
     {
         $this->setProperty('dataError', $dataError);
     }
@@ -201,7 +201,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isDryRun
      */
-    public function setIsDryRun($isDryRun = null)
+    public function setIsDryRun(bool $isDryRun = null)
     {
         $this->setProperty('isDryRun', $isDryRun);
     }
@@ -297,7 +297,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isStaffContractInformationExcluded
      */
-    public function setIsStaffContractInformationExcluded($isStaffContractInformationExcluded = null)
+    public function setIsStaffContractInformationExcluded(bool $isStaffContractInformationExcluded = null)
     {
         $this->setProperty('isStaffContractInformationExcluded', $isStaffContractInformationExcluded);
     }

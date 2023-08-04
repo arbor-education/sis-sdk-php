@@ -5,33 +5,35 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\UkJcq\QualificationResultImportJob;
 
-class QualificationResult extends ModelBase
+class QualificationResult extends \ModelBase
 {
-    const QUALIFICATION_ASPECT = 'qualificationAspect';
+    public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
-    const QUALIFICATION_GRADE = 'qualificationGrade';
+    public const QUALIFICATION_GRADE = 'qualificationGrade';
 
-    const NUMERIC_VALUE = 'numericValue';
+    public const NUMERIC_VALUE = 'numericValue';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CANDIDATE_REGISTRATION = 'candidateRegistration';
+    public const CANDIDATE_REGISTRATION = 'candidateRegistration';
 
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
-    const CANDIDATE_ASSESSABLE_ENTRY = 'candidateAssessableEntry';
+    public const CANDIDATE_ASSESSABLE_ENTRY = 'candidateAssessableEntry';
 
-    const RESULT_DATETIME = 'resultDatetime';
+    public const RESULT_DATETIME = 'resultDatetime';
 
-    const EMBARGO_DATETIME = 'embargoDatetime';
+    public const EMBARGO_DATETIME = 'embargoDatetime';
 
-    const IMPORT_JOB = 'importJob';
+    public const IMPORT_JOB = 'importJob';
 
-    const MISSING_RESULT_REASON = 'missingResultReason';
+    public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const PARTIAL_ABSENCE = 'partialAbsence';
+    public const MISSING_RESULT_REASON = 'missingResultReason';
 
-    const ENDORSEMENT_GRADE = 'endorsementGrade';
+    public const PARTIAL_ABSENCE = 'partialAbsence';
+
+    public const ENDORSEMENT_GRADE = 'endorsementGrade';
 
     protected $_resourceType = ResourceType::QUALIFICATION_RESULT;
 
@@ -40,7 +42,7 @@ class QualificationResult extends ModelBase
      * @return QualificationResult[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +84,7 @@ class QualificationResult extends ModelBase
     /**
      * @param QualificationAspect $qualificationAspect
      */
-    public function setQualificationAspect(QualificationAspect $qualificationAspect = null)
+    public function setQualificationAspect(\QualificationAspect $qualificationAspect = null)
     {
         $this->setProperty('qualificationAspect', $qualificationAspect);
     }
@@ -98,7 +100,7 @@ class QualificationResult extends ModelBase
     /**
      * @param QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -114,7 +116,7 @@ class QualificationResult extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue($numericValue = null)
+    public function setNumericValue(float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -130,7 +132,7 @@ class QualificationResult extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -146,7 +148,7 @@ class QualificationResult extends ModelBase
     /**
      * @param CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }
@@ -162,7 +164,7 @@ class QualificationResult extends ModelBase
     /**
      * @param CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -178,7 +180,7 @@ class QualificationResult extends ModelBase
     /**
      * @param CandidateAssessableEntry $candidateAssessableEntry
      */
-    public function setCandidateAssessableEntry(CandidateAssessableEntry $candidateAssessableEntry = null)
+    public function setCandidateAssessableEntry(\CandidateAssessableEntry $candidateAssessableEntry = null)
     {
         $this->setProperty('candidateAssessableEntry', $candidateAssessableEntry);
     }
@@ -226,9 +228,25 @@ class QualificationResult extends ModelBase
     /**
      * @param QualificationResultImportJob $importJob
      */
-    public function setImportJob(QualificationResultImportJob $importJob = null)
+    public function setImportJob(\QualificationResultImportJob $importJob = null)
     {
         $this->setProperty('importJob', $importJob);
+    }
+
+    /**
+     * @return QualificationAvailabilityInstance
+     */
+    public function getQualificationAvailabilityInstance()
+    {
+        return $this->getProperty('qualificationAvailabilityInstance');
+    }
+
+    /**
+     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     */
+    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    {
+        $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
@@ -242,7 +260,7 @@ class QualificationResult extends ModelBase
     /**
      * @param string $missingResultReason
      */
-    public function setMissingResultReason($missingResultReason = null)
+    public function setMissingResultReason(string $missingResultReason = null)
     {
         $this->setProperty('missingResultReason', $missingResultReason);
     }
@@ -258,7 +276,7 @@ class QualificationResult extends ModelBase
     /**
      * @param int $partialAbsence
      */
-    public function setPartialAbsence($partialAbsence = null)
+    public function setPartialAbsence(int $partialAbsence = null)
     {
         $this->setProperty('partialAbsence', $partialAbsence);
     }
@@ -274,7 +292,7 @@ class QualificationResult extends ModelBase
     /**
      * @param QualificationGrade $endorsementGrade
      */
-    public function setEndorsementGrade(QualificationGrade $endorsementGrade = null)
+    public function setEndorsementGrade(\QualificationGrade $endorsementGrade = null)
     {
         $this->setProperty('endorsementGrade', $endorsementGrade);
     }

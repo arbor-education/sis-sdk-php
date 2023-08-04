@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Alert extends ModelBase
+class Alert extends \ModelBase
 {
-    const ALERT_RULE = 'alertRule';
+    public const ALERT_RULE = 'alertRule';
 
-    const TRIGGER_EVENT_TYPE = 'triggerEventType';
+    public const TRIGGER_EVENT_TYPE = 'triggerEventType';
 
-    const TRIGGERED_BY = 'triggeredBy';
+    public const TRIGGERED_BY = 'triggeredBy';
 
-    const REFERENCE = 'reference';
+    public const REFERENCE = 'reference';
 
-    const TRIGGERED_DATETIME = 'triggeredDatetime';
+    public const TRIGGERED_DATETIME = 'triggeredDatetime';
 
     protected $_resourceType = ResourceType::ALERT;
 
@@ -23,7 +23,7 @@ class Alert extends ModelBase
      * @return Alert[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class Alert extends ModelBase
     /**
      * @param AlertRule $alertRule
      */
-    public function setAlertRule(AlertRule $alertRule = null)
+    public function setAlertRule(\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -81,7 +81,7 @@ class Alert extends ModelBase
     /**
      * @param string $triggerEventType
      */
-    public function setTriggerEventType($triggerEventType = null)
+    public function setTriggerEventType(string $triggerEventType = null)
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }
@@ -97,7 +97,7 @@ class Alert extends ModelBase
     /**
      * @param ModelBase $triggeredBy
      */
-    public function setTriggeredBy(ModelBase $triggeredBy = null)
+    public function setTriggeredBy(\ModelBase $triggeredBy = null)
     {
         $this->setProperty('triggeredBy', $triggeredBy);
     }
@@ -113,7 +113,7 @@ class Alert extends ModelBase
     /**
      * @param ModelBase $reference
      */
-    public function setReference(ModelBase $reference = null)
+    public function setReference(\ModelBase $reference = null)
     {
         $this->setProperty('reference', $reference);
     }

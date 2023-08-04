@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PayScaleGrade extends ModelBase
+class PayScaleGrade extends \ModelBase
 {
-    const PAY_SCALE = 'payScale';
+    public const PAY_SCALE = 'payScale';
 
-    const GRADE_NAME = 'gradeName';
+    public const GRADE_NAME = 'gradeName';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::PAY_SCALE_GRADE;
 
@@ -19,7 +19,7 @@ class PayScaleGrade extends ModelBase
      * @return PayScaleGrade[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param PayScale $payScale
      */
-    public function setPayScale(PayScale $payScale = null)
+    public function setPayScale(\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
@@ -77,7 +77,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param string $gradeName
      */
-    public function setGradeName($gradeName = null)
+    public function setGradeName(string $gradeName = null)
     {
         $this->setProperty('gradeName', $gradeName);
     }
@@ -93,7 +93,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgrammeQualificationAward extends ModelBase
+class ProgrammeQualificationAward extends \ModelBase
 {
-    const PROGRAMME_INSTANCE = 'programmeInstance';
+    public const PROGRAMME_INSTANCE = 'programmeInstance';
 
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
     protected $_resourceType = ResourceType::PROGRAMME_QUALIFICATION_AWARD;
 
@@ -17,7 +17,7 @@ class ProgrammeQualificationAward extends ModelBase
      * @return ProgrammeQualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ProgrammeQualificationAward extends ModelBase
     /**
      * @param ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
@@ -75,7 +75,7 @@ class ProgrammeQualificationAward extends ModelBase
     /**
      * @param QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }

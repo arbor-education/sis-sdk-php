@@ -7,17 +7,17 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class GcseMathsFundingExemptionType extends ModelBase
+class GcseMathsFundingExemptionType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const EXPORT_VALUE = 'exportValue';
+    public const EXPORT_VALUE = 'exportValue';
 
     protected $_resourceType = ResourceType::UK_DFE_GCSE_MATHS_FUNDING_EXEMPTION_TYPE;
 
@@ -26,7 +26,7 @@ class GcseMathsFundingExemptionType extends ModelBase
      * @return GcseMathsFundingExemptionType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class GcseMathsFundingExemptionType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class GcseMathsFundingExemptionType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class GcseMathsFundingExemptionType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -116,7 +116,7 @@ class GcseMathsFundingExemptionType extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -132,7 +132,7 @@ class GcseMathsFundingExemptionType extends ModelBase
     /**
      * @param string $exportValue
      */
-    public function setExportValue($exportValue = null)
+    public function setExportValue(string $exportValue = null)
     {
         $this->setProperty('exportValue', $exportValue);
     }

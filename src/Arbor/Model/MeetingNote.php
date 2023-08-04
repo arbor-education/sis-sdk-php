@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MeetingNote extends ModelBase
+class MeetingNote extends \ModelBase
 {
-    const MEETING = 'meeting';
+    public const MEETING = 'meeting';
 
-    const NOTE_TEXT = 'noteText';
+    public const NOTE_TEXT = 'noteText';
 
-    const NOTE_CREATED_DATETIME = 'noteCreatedDatetime';
+    public const NOTE_CREATED_DATETIME = 'noteCreatedDatetime';
 
-    const IS_SHARED_WITH_GUARDIANS = 'isSharedWithGuardians';
+    public const IS_SHARED_WITH_GUARDIANS = 'isSharedWithGuardians';
 
     protected $_resourceType = ResourceType::MEETING_NOTE;
 
@@ -21,7 +21,7 @@ class MeetingNote extends ModelBase
      * @return MeetingNote[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class MeetingNote extends ModelBase
     /**
      * @param Meeting $meeting
      */
-    public function setMeeting(Meeting $meeting = null)
+    public function setMeeting(\Meeting $meeting = null)
     {
         $this->setProperty('meeting', $meeting);
     }
@@ -79,7 +79,7 @@ class MeetingNote extends ModelBase
     /**
      * @param string $noteText
      */
-    public function setNoteText($noteText = null)
+    public function setNoteText(string $noteText = null)
     {
         $this->setProperty('noteText', $noteText);
     }
@@ -111,7 +111,7 @@ class MeetingNote extends ModelBase
     /**
      * @param bool $isSharedWithGuardians
      */
-    public function setIsSharedWithGuardians($isSharedWithGuardians = null)
+    public function setIsSharedWithGuardians(bool $isSharedWithGuardians = null)
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }

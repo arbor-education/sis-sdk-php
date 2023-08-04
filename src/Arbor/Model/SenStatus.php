@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SenStatus extends ModelBase
+class SenStatus extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const SEN_STATUS_NAME = 'senStatusName';
+    public const SEN_STATUS_NAME = 'senStatusName';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const COUNTS_AS_SEN_STATUS = 'countsAsSenStatus';
+    public const COUNTS_AS_SEN_STATUS = 'countsAsSenStatus';
 
-    const EXPORT_CODE = 'exportCode';
+    public const EXPORT_CODE = 'exportCode';
 
-    const D00229 = 'd00229';
+    public const D00229 = 'd00229';
 
     protected $_resourceType = ResourceType::SEN_STATUS;
 
@@ -29,7 +29,7 @@ class SenStatus extends ModelBase
      * @return SenStatus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +87,7 @@ class SenStatus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,7 +103,7 @@ class SenStatus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -119,7 +119,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $senStatusName
      */
-    public function setSenStatusName($senStatusName = null)
+    public function setSenStatusName(string $senStatusName = null)
     {
         $this->setProperty('senStatusName', $senStatusName);
     }
@@ -135,7 +135,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -151,7 +151,7 @@ class SenStatus extends ModelBase
     /**
      * @param bool $countsAsSenStatus
      */
-    public function setCountsAsSenStatus($countsAsSenStatus = null)
+    public function setCountsAsSenStatus(bool $countsAsSenStatus = null)
     {
         $this->setProperty('countsAsSenStatus', $countsAsSenStatus);
     }
@@ -167,7 +167,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode($exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -183,7 +183,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $d00229
      */
-    public function setD00229($d00229 = null)
+    public function setD00229(string $d00229 = null)
     {
         $this->setProperty('d00229', $d00229);
     }

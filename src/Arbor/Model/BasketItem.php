@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BasketItem extends ModelBase
+class BasketItem extends \ModelBase
 {
-    const BASKET = 'basket';
+    public const BASKET = 'basket';
 
-    const PAYMENT_AMOUNT = 'paymentAmount';
+    public const PAYMENT_AMOUNT = 'paymentAmount';
 
-    const ADDED_DATETIME = 'addedDatetime';
+    public const ADDED_DATETIME = 'addedDatetime';
 
-    const PAYING_FOR = 'payingFor';
+    public const PAYING_FOR = 'payingFor';
 
-    const QUANTITY = 'quantity';
+    public const QUANTITY = 'quantity';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
     protected $_resourceType = ResourceType::BASKET_ITEM;
 
@@ -25,7 +25,7 @@ class BasketItem extends ModelBase
      * @return BasketItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class BasketItem extends ModelBase
     /**
      * @param Basket $basket
      */
-    public function setBasket(Basket $basket = null)
+    public function setBasket(\Basket $basket = null)
     {
         $this->setProperty('basket', $basket);
     }
@@ -83,7 +83,7 @@ class BasketItem extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount($paymentAmount = null)
+    public function setPaymentAmount(string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }
@@ -115,7 +115,7 @@ class BasketItem extends ModelBase
     /**
      * @param ModelBase $payingFor
      */
-    public function setPayingFor(ModelBase $payingFor = null)
+    public function setPayingFor(\ModelBase $payingFor = null)
     {
         $this->setProperty('payingFor', $payingFor);
     }
@@ -131,7 +131,7 @@ class BasketItem extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity($quantity = null)
+    public function setQuantity(int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }
@@ -147,7 +147,7 @@ class BasketItem extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

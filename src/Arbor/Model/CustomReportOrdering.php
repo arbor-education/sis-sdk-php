@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportOrdering extends ModelBase
+class CustomReportOrdering extends \ModelBase
 {
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const FIELD_CLASS = 'fieldClass';
+    public const FIELD_CLASS = 'fieldClass';
 
-    const FIELD_PARAMS = 'fieldParams';
+    public const FIELD_PARAMS = 'fieldParams';
 
-    const TRANSFORMATION_CLASS = 'transformationClass';
+    public const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const DIRECTION = 'direction';
+    public const DIRECTION = 'direction';
 
-    const TARGET_GROUPING = 'targetGrouping';
+    public const TARGET_GROUPING = 'targetGrouping';
 
-    const CUSTOM_REPORT_COLUMN = 'customReportColumn';
+    public const CUSTOM_REPORT_COLUMN = 'customReportColumn';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_ORDERING;
 
@@ -27,7 +27,7 @@ class CustomReportOrdering extends ModelBase
      * @return CustomReportOrdering[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -85,7 +85,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass($fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -101,7 +101,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams($fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -117,7 +117,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass($transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -133,7 +133,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $direction
      */
-    public function setDirection($direction = null)
+    public function setDirection(string $direction = null)
     {
         $this->setProperty('direction', $direction);
     }
@@ -149,7 +149,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param CustomReportGrouping $targetGrouping
      */
-    public function setTargetGrouping(CustomReportGrouping $targetGrouping = null)
+    public function setTargetGrouping(\CustomReportGrouping $targetGrouping = null)
     {
         $this->setProperty('targetGrouping', $targetGrouping);
     }
@@ -165,7 +165,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param CustomReportColumn $customReportColumn
      */
-    public function setCustomReportColumn(CustomReportColumn $customReportColumn = null)
+    public function setCustomReportColumn(\CustomReportColumn $customReportColumn = null)
     {
         $this->setProperty('customReportColumn', $customReportColumn);
     }

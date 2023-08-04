@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffContractPostRate extends ModelBase
+class StaffContractPostRate extends \ModelBase
 {
-    const STAFF_CONTRACT_POST = 'staffContractPost';
+    public const STAFF_CONTRACT_POST = 'staffContractPost';
 
-    const RATE = 'rate';
+    public const RATE = 'rate';
 
-    const RATE_FREQUENCY = 'rateFrequency';
+    public const RATE_FREQUENCY = 'rateFrequency';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST_RATE;
 
@@ -23,7 +23,7 @@ class StaffContractPostRate extends ModelBase
      * @return StaffContractPostRate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -81,7 +81,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param string $rate
      */
-    public function setRate($rate = null)
+    public function setRate(string $rate = null)
     {
         $this->setProperty('rate', $rate);
     }
@@ -97,7 +97,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param string $rateFrequency
      */
-    public function setRateFrequency($rateFrequency = null)
+    public function setRateFrequency(string $rateFrequency = null)
     {
         $this->setProperty('rateFrequency', $rateFrequency);
     }

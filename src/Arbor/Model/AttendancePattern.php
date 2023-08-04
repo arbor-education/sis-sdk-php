@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendancePattern extends ModelBase
+class AttendancePattern extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ATTENDANCE_PATTERN_NAME = 'attendancePatternName';
+    public const ATTENDANCE_PATTERN_NAME = 'attendancePatternName';
 
-    const IS_PART_TIME = 'isPartTime';
+    public const IS_PART_TIME = 'isPartTime';
 
-    const IS_MORNING_ONLY = 'isMorningOnly';
+    public const IS_MORNING_ONLY = 'isMorningOnly';
 
-    const IS_AFTERNOON_ONLY = 'isAfternoonOnly';
+    public const IS_AFTERNOON_ONLY = 'isAfternoonOnly';
 
     protected $_resourceType = ResourceType::ATTENDANCE_PATTERN;
 
@@ -27,7 +27,7 @@ class AttendancePattern extends ModelBase
      * @return AttendancePattern[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param string $attendancePatternName
      */
-    public function setAttendancePatternName($attendancePatternName = null)
+    public function setAttendancePatternName(string $attendancePatternName = null)
     {
         $this->setProperty('attendancePatternName', $attendancePatternName);
     }
@@ -133,7 +133,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $isPartTime
      */
-    public function setIsPartTime($isPartTime = null)
+    public function setIsPartTime(bool $isPartTime = null)
     {
         $this->setProperty('isPartTime', $isPartTime);
     }
@@ -149,7 +149,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $isMorningOnly
      */
-    public function setIsMorningOnly($isMorningOnly = null)
+    public function setIsMorningOnly(bool $isMorningOnly = null)
     {
         $this->setProperty('isMorningOnly', $isMorningOnly);
     }
@@ -165,7 +165,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $isAfternoonOnly
      */
-    public function setIsAfternoonOnly($isAfternoonOnly = null)
+    public function setIsAfternoonOnly(bool $isAfternoonOnly = null)
     {
         $this->setProperty('isAfternoonOnly', $isAfternoonOnly);
     }

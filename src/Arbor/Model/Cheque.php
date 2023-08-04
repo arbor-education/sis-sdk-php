@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Cheque extends ModelBase
+class Cheque extends \ModelBase
 {
-    const CHEQUE_BOOK = 'chequeBook';
+    public const CHEQUE_BOOK = 'chequeBook';
 
-    const CHEQUE_NUMBER = 'chequeNumber';
+    public const CHEQUE_NUMBER = 'chequeNumber';
 
     protected $_resourceType = ResourceType::CHEQUE;
 
@@ -17,7 +17,7 @@ class Cheque extends ModelBase
      * @return Cheque[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class Cheque extends ModelBase
     /**
      * @param ChequeBook $chequeBook
      */
-    public function setChequeBook(ChequeBook $chequeBook = null)
+    public function setChequeBook(\ChequeBook $chequeBook = null)
     {
         $this->setProperty('chequeBook', $chequeBook);
     }
@@ -75,7 +75,7 @@ class Cheque extends ModelBase
     /**
      * @param string $chequeNumber
      */
-    public function setChequeNumber($chequeNumber = null)
+    public function setChequeNumber(string $chequeNumber = null)
     {
         $this->setProperty('chequeNumber', $chequeNumber);
     }

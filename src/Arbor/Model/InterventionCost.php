@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InterventionCost extends ModelBase
+class InterventionCost extends \ModelBase
 {
-    const INTERVENTION = 'intervention';
+    public const INTERVENTION = 'intervention';
 
-    const AMOUNT = 'amount';
+    public const AMOUNT = 'amount';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
     protected $_resourceType = ResourceType::INTERVENTION_COST;
 
@@ -19,7 +19,7 @@ class InterventionCost extends ModelBase
      * @return InterventionCost[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class InterventionCost extends ModelBase
     /**
      * @param Intervention $intervention
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setIntervention(\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -77,7 +77,7 @@ class InterventionCost extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount($amount = null)
+    public function setAmount(string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -93,7 +93,7 @@ class InterventionCost extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }

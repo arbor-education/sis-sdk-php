@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Tagging extends ModelBase
+class Tagging extends \ModelBase
 {
-    const TAG = 'tag';
+    public const TAG = 'tag';
 
-    const TAGGED_OBJECT = 'taggedObject';
+    public const TAGGED_OBJECT = 'taggedObject';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const LINK1 = 'link1';
+    public const LINK1 = 'link1';
 
-    const LINK2 = 'link2';
+    public const LINK2 = 'link2';
 
     protected $_resourceType = ResourceType::TAGGING;
 
@@ -25,7 +25,7 @@ class Tagging extends ModelBase
      * @return Tagging[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class Tagging extends ModelBase
     /**
      * @param Tag $tag
      */
-    public function setTag(Tag $tag = null)
+    public function setTag(\Tag $tag = null)
     {
         $this->setProperty('tag', $tag);
     }
@@ -83,7 +83,7 @@ class Tagging extends ModelBase
     /**
      * @param ModelBase $taggedObject
      */
-    public function setTaggedObject(ModelBase $taggedObject = null)
+    public function setTaggedObject(\ModelBase $taggedObject = null)
     {
         $this->setProperty('taggedObject', $taggedObject);
     }
@@ -131,7 +131,7 @@ class Tagging extends ModelBase
     /**
      * @param ModelBase $link1
      */
-    public function setLink1(ModelBase $link1 = null)
+    public function setLink1(\ModelBase $link1 = null)
     {
         $this->setProperty('link1', $link1);
     }
@@ -147,7 +147,7 @@ class Tagging extends ModelBase
     /**
      * @param ModelBase $link2
      */
-    public function setLink2(ModelBase $link2 = null)
+    public function setLink2(\ModelBase $link2 = null)
     {
         $this->setProperty('link2', $link2);
     }

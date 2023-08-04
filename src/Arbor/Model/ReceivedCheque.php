@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ReceivedCheque extends ModelBase
+class ReceivedCheque extends \ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const BANK_DEPOSIT = 'bankDeposit';
+    public const BANK_DEPOSIT = 'bankDeposit';
 
-    const RECEIVED_DATE = 'receivedDate';
+    public const RECEIVED_DATE = 'receivedDate';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
-    const CHEQUE_AMOUNT = 'chequeAmount';
+    public const CHEQUE_AMOUNT = 'chequeAmount';
 
     protected $_resourceType = ResourceType::RECEIVED_CHEQUE;
 
@@ -23,7 +23,7 @@ class ReceivedCheque extends ModelBase
      * @return ReceivedCheque[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class ReceivedCheque extends ModelBase
     /**
      * @param BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -81,7 +81,7 @@ class ReceivedCheque extends ModelBase
     /**
      * @param BankDeposit $bankDeposit
      */
-    public function setBankDeposit(BankDeposit $bankDeposit = null)
+    public function setBankDeposit(\BankDeposit $bankDeposit = null)
     {
         $this->setProperty('bankDeposit', $bankDeposit);
     }
@@ -129,7 +129,7 @@ class ReceivedCheque extends ModelBase
     /**
      * @param string $chequeAmount
      */
-    public function setChequeAmount($chequeAmount = null)
+    public function setChequeAmount(string $chequeAmount = null)
     {
         $this->setProperty('chequeAmount', $chequeAmount);
     }

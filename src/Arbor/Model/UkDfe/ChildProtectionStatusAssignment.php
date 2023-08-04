@@ -8,9 +8,9 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\LocalAuthority;
 
-class ChildProtectionStatusAssignment extends ModelBase
+class ChildProtectionStatusAssignment extends \ModelBase
 {
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
+    public const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::UK_DFE_CHILD_PROTECTION_STATUS_ASSIGNMENT;
 
@@ -19,7 +19,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      * @return ChildProtectionStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param LocalAuthority $responsibleLocalAuthority
      */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
+    public function setResponsibleLocalAuthority(\LocalAuthority $responsibleLocalAuthority = null)
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }

@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendanceFollowUp extends ModelBase
+class AttendanceFollowUp extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ATTENDANCE_DATE = 'attendanceDate';
+    public const ATTENDANCE_DATE = 'attendanceDate';
 
-    const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
+    public const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
-    const EMAIL_SENT_DATETIME = 'emailSentDatetime';
+    public const EMAIL_SENT_DATETIME = 'emailSentDatetime';
 
-    const EMAIL_FAILED_DATETIME = 'emailFailedDatetime';
+    public const EMAIL_FAILED_DATETIME = 'emailFailedDatetime';
 
-    const SMS_SENT_DATETIME = 'smsSentDatetime';
+    public const SMS_SENT_DATETIME = 'smsSentDatetime';
 
-    const SMS_FAILED_DATETIME = 'smsFailedDatetime';
+    public const SMS_FAILED_DATETIME = 'smsFailedDatetime';
 
-    const TELEPHONE_CALL_DATETIME = 'telephoneCallDatetime';
+    public const TELEPHONE_CALL_DATETIME = 'telephoneCallDatetime';
 
     protected $_resourceType = ResourceType::ATTENDANCE_FOLLOW_UP;
 
@@ -29,7 +29,7 @@ class AttendanceFollowUp extends ModelBase
      * @return AttendanceFollowUp[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

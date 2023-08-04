@@ -8,25 +8,25 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Session;
 
-class SchoolCensusClass extends ModelBase
+class SchoolCensusClass extends \ModelBase
 {
-    const SCHOOL_CENSUS = 'schoolCensus';
+    public const SCHOOL_CENSUS = 'schoolCensus';
 
-    const SESSION = 'session';
+    public const SESSION = 'session';
 
-    const TEACHERS = 'teachers';
+    public const TEACHERS = 'teachers';
 
-    const NON_TEACHERS = 'nonTeachers';
+    public const NON_TEACHERS = 'nonTeachers';
 
-    const PPA_TEACHERS = 'ppaTeachers';
+    public const PPA_TEACHERS = 'ppaTeachers';
 
-    const ASC_ACTIVITY = 'ascActivity';
+    public const ASC_ACTIVITY = 'ascActivity';
 
-    const HOME_PUPILS = 'homePupils';
+    public const HOME_PUPILS = 'homePupils';
 
-    const GUEST_PUPILS = 'guestPupils';
+    public const GUEST_PUPILS = 'guestPupils';
 
-    const INFANT_PUPIL_EXCEPTIONS = 'infantPupilExceptions';
+    public const INFANT_PUPIL_EXCEPTIONS = 'infantPupilExceptions';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_CLASS;
 
@@ -35,7 +35,7 @@ class SchoolCensusClass extends ModelBase
      * @return SchoolCensusClass[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
@@ -93,7 +93,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param Session $session
      */
-    public function setSession(Session $session = null)
+    public function setSession(\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -109,7 +109,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $teachers
      */
-    public function setTeachers($teachers = null)
+    public function setTeachers(int $teachers = null)
     {
         $this->setProperty('teachers', $teachers);
     }
@@ -125,7 +125,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $nonTeachers
      */
-    public function setNonTeachers($nonTeachers = null)
+    public function setNonTeachers(int $nonTeachers = null)
     {
         $this->setProperty('nonTeachers', $nonTeachers);
     }
@@ -141,7 +141,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $ppaTeachers
      */
-    public function setPpaTeachers($ppaTeachers = null)
+    public function setPpaTeachers(int $ppaTeachers = null)
     {
         $this->setProperty('ppaTeachers', $ppaTeachers);
     }
@@ -157,7 +157,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param string $ascActivity
      */
-    public function setAscActivity($ascActivity = null)
+    public function setAscActivity(string $ascActivity = null)
     {
         $this->setProperty('ascActivity', $ascActivity);
     }
@@ -173,7 +173,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $homePupils
      */
-    public function setHomePupils($homePupils = null)
+    public function setHomePupils(int $homePupils = null)
     {
         $this->setProperty('homePupils', $homePupils);
     }
@@ -189,7 +189,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $guestPupils
      */
-    public function setGuestPupils($guestPupils = null)
+    public function setGuestPupils(int $guestPupils = null)
     {
         $this->setProperty('guestPupils', $guestPupils);
     }
@@ -205,7 +205,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param string $infantPupilExceptions
      */
-    public function setInfantPupilExceptions($infantPupilExceptions = null)
+    public function setInfantPupilExceptions(string $infantPupilExceptions = null)
     {
         $this->setProperty('infantPupilExceptions', $infantPupilExceptions);
     }

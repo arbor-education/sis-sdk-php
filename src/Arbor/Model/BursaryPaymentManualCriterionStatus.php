@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryPaymentManualCriterionStatus extends ModelBase
+class BursaryPaymentManualCriterionStatus extends \ModelBase
 {
-    const BURSARY_PAYMENT = 'bursaryPayment';
+    public const BURSARY_PAYMENT = 'bursaryPayment';
 
-    const BURSARY_PAYMENT_MANUAL_CRITERION = 'bursaryPaymentManualCriterion';
+    public const BURSARY_PAYMENT_MANUAL_CRITERION = 'bursaryPaymentManualCriterion';
 
-    const IS_MET = 'isMet';
+    public const IS_MET = 'isMet';
 
     protected $_resourceType = ResourceType::BURSARY_PAYMENT_MANUAL_CRITERION_STATUS;
 
@@ -19,7 +19,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
      * @return BursaryPaymentManualCriterionStatus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param BursaryPayment $bursaryPayment
      */
-    public function setBursaryPayment(BursaryPayment $bursaryPayment = null)
+    public function setBursaryPayment(\BursaryPayment $bursaryPayment = null)
     {
         $this->setProperty('bursaryPayment', $bursaryPayment);
     }
@@ -77,7 +77,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param BursaryPaymentManualCriterion $bursaryPaymentManualCriterion
      */
-    public function setBursaryPaymentManualCriterion(BursaryPaymentManualCriterion $bursaryPaymentManualCriterion = null)
+    public function setBursaryPaymentManualCriterion(\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion = null)
     {
         $this->setProperty('bursaryPaymentManualCriterion', $bursaryPaymentManualCriterion);
     }
@@ -93,7 +93,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param bool $isMet
      */
-    public function setIsMet($isMet = null)
+    public function setIsMet(bool $isMet = null)
     {
         $this->setProperty('isMet', $isMet);
     }

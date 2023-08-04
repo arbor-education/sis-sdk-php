@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgressMeasurementPeriodSet extends ModelBase
+class ProgressMeasurementPeriodSet extends \ModelBase
 {
-    const PERIOD_FREQUENCY = 'periodFrequency';
+    public const PERIOD_FREQUENCY = 'periodFrequency';
 
-    const SET_NAME = 'setName';
+    public const SET_NAME = 'setName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
     protected $_resourceType = ResourceType::PROGRESS_MEASUREMENT_PERIOD_SET;
 
@@ -19,7 +19,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      * @return ProgressMeasurementPeriodSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param string $periodFrequency
      */
-    public function setPeriodFrequency($periodFrequency = null)
+    public function setPeriodFrequency(string $periodFrequency = null)
     {
         $this->setProperty('periodFrequency', $periodFrequency);
     }
@@ -77,7 +77,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param string $setName
      */
-    public function setSetName($setName = null)
+    public function setSetName(string $setName = null)
     {
         $this->setProperty('setName', $setName);
     }
@@ -93,7 +93,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

@@ -7,15 +7,15 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolWorkforceCensusStaffInformation extends ModelBase
+class SchoolWorkforceCensusStaffInformation extends \ModelBase
 {
-    const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
+    public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
-    const OCCASIONALS_QTS = 'occasionalsQts';
+    public const OCCASIONALS_QTS = 'occasionalsQts';
 
-    const OCCASIONALS_NOT_QTS = 'occasionalsNotQts';
+    public const OCCASIONALS_NOT_QTS = 'occasionalsNotQts';
 
-    const OCCASIONALS_NOT_KNOWN = 'occasionalsNotKnown';
+    public const OCCASIONALS_NOT_KNOWN = 'occasionalsNotKnown';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION;
 
@@ -24,7 +24,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
      * @return SchoolWorkforceCensusStaffInformation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
@@ -82,7 +82,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param int $occasionalsQts
      */
-    public function setOccasionalsQts($occasionalsQts = null)
+    public function setOccasionalsQts(int $occasionalsQts = null)
     {
         $this->setProperty('occasionalsQts', $occasionalsQts);
     }
@@ -98,7 +98,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param int $occasionalsNotQts
      */
-    public function setOccasionalsNotQts($occasionalsNotQts = null)
+    public function setOccasionalsNotQts(int $occasionalsNotQts = null)
     {
         $this->setProperty('occasionalsNotQts', $occasionalsNotQts);
     }
@@ -114,7 +114,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param int $occasionalsNotKnown
      */
-    public function setOccasionalsNotKnown($occasionalsNotKnown = null)
+    public function setOccasionalsNotKnown(int $occasionalsNotKnown = null)
     {
         $this->setProperty('occasionalsNotKnown', $occasionalsNotKnown);
     }

@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CandidateEntry extends ModelBase
+class CandidateEntry extends \ModelBase
 {
-    const CANDIDATE = 'candidate';
+    public const CANDIDATE = 'candidate';
 
-    const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
+    public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
-    const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
+    public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const ENTRY_STATUS = 'entryStatus';
+    public const ENTRY_STATUS = 'entryStatus';
 
-    const WITHDRAWAL_STATUS = 'withdrawalStatus';
+    public const WITHDRAWAL_STATUS = 'withdrawalStatus';
 
     protected $_resourceType = ResourceType::CANDIDATE_ENTRY;
 
@@ -23,7 +23,7 @@ class CandidateEntry extends ModelBase
      * @return CandidateEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param Candidate $candidate
      */
-    public function setCandidate(Candidate $candidate = null)
+    public function setCandidate(\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -81,7 +81,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -97,7 +97,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -113,7 +113,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param string $entryStatus
      */
-    public function setEntryStatus($entryStatus = null)
+    public function setEntryStatus(string $entryStatus = null)
     {
         $this->setProperty('entryStatus', $entryStatus);
     }
@@ -129,7 +129,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param string $withdrawalStatus
      */
-    public function setWithdrawalStatus($withdrawalStatus = null)
+    public function setWithdrawalStatus(string $withdrawalStatus = null)
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }

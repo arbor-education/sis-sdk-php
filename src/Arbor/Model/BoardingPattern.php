@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BoardingPattern extends ModelBase
+class BoardingPattern extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const MONDAY_BOARDING_STATUS = 'mondayBoardingStatus';
+    public const MONDAY_BOARDING_STATUS = 'mondayBoardingStatus';
 
-    const TUESDAY_BOARDING_STATUS = 'tuesdayBoardingStatus';
+    public const TUESDAY_BOARDING_STATUS = 'tuesdayBoardingStatus';
 
-    const WEDNESDAY_BOARDING_STATUS = 'wednesdayBoardingStatus';
+    public const WEDNESDAY_BOARDING_STATUS = 'wednesdayBoardingStatus';
 
-    const THURSDAY_BOARDING_STATUS = 'thursdayBoardingStatus';
+    public const THURSDAY_BOARDING_STATUS = 'thursdayBoardingStatus';
 
-    const FRIDAY_BOARDING_STATUS = 'fridayBoardingStatus';
+    public const FRIDAY_BOARDING_STATUS = 'fridayBoardingStatus';
 
-    const SATURDAY_BOARDING_STATUS = 'saturdayBoardingStatus';
+    public const SATURDAY_BOARDING_STATUS = 'saturdayBoardingStatus';
 
-    const SUNDAY_BOARDING_STATUS = 'sundayBoardingStatus';
+    public const SUNDAY_BOARDING_STATUS = 'sundayBoardingStatus';
 
-    const ACCOMMODATION_ROOM = 'accommodationRoom';
+    public const ACCOMMODATION_ROOM = 'accommodationRoom';
 
     protected $_resourceType = ResourceType::BOARDING_PATTERN;
 
@@ -35,7 +35,7 @@ class BoardingPattern extends ModelBase
      * @return BoardingPattern[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -125,7 +125,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $mondayBoardingStatus
      */
-    public function setMondayBoardingStatus(BoardingStatus $mondayBoardingStatus = null)
+    public function setMondayBoardingStatus(\BoardingStatus $mondayBoardingStatus = null)
     {
         $this->setProperty('mondayBoardingStatus', $mondayBoardingStatus);
     }
@@ -141,7 +141,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $tuesdayBoardingStatus
      */
-    public function setTuesdayBoardingStatus(BoardingStatus $tuesdayBoardingStatus = null)
+    public function setTuesdayBoardingStatus(\BoardingStatus $tuesdayBoardingStatus = null)
     {
         $this->setProperty('tuesdayBoardingStatus', $tuesdayBoardingStatus);
     }
@@ -157,7 +157,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $wednesdayBoardingStatus
      */
-    public function setWednesdayBoardingStatus(BoardingStatus $wednesdayBoardingStatus = null)
+    public function setWednesdayBoardingStatus(\BoardingStatus $wednesdayBoardingStatus = null)
     {
         $this->setProperty('wednesdayBoardingStatus', $wednesdayBoardingStatus);
     }
@@ -173,7 +173,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $thursdayBoardingStatus
      */
-    public function setThursdayBoardingStatus(BoardingStatus $thursdayBoardingStatus = null)
+    public function setThursdayBoardingStatus(\BoardingStatus $thursdayBoardingStatus = null)
     {
         $this->setProperty('thursdayBoardingStatus', $thursdayBoardingStatus);
     }
@@ -189,7 +189,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $fridayBoardingStatus
      */
-    public function setFridayBoardingStatus(BoardingStatus $fridayBoardingStatus = null)
+    public function setFridayBoardingStatus(\BoardingStatus $fridayBoardingStatus = null)
     {
         $this->setProperty('fridayBoardingStatus', $fridayBoardingStatus);
     }
@@ -205,7 +205,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $saturdayBoardingStatus
      */
-    public function setSaturdayBoardingStatus(BoardingStatus $saturdayBoardingStatus = null)
+    public function setSaturdayBoardingStatus(\BoardingStatus $saturdayBoardingStatus = null)
     {
         $this->setProperty('saturdayBoardingStatus', $saturdayBoardingStatus);
     }
@@ -221,7 +221,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param BoardingStatus $sundayBoardingStatus
      */
-    public function setSundayBoardingStatus(BoardingStatus $sundayBoardingStatus = null)
+    public function setSundayBoardingStatus(\BoardingStatus $sundayBoardingStatus = null)
     {
         $this->setProperty('sundayBoardingStatus', $sundayBoardingStatus);
     }
@@ -237,7 +237,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param Room $accommodationRoom
      */
-    public function setAccommodationRoom(Room $accommodationRoom = null)
+    public function setAccommodationRoom(\Room $accommodationRoom = null)
     {
         $this->setProperty('accommodationRoom', $accommodationRoom);
     }

@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TransportationMethod extends ModelBase
+class TransportationMethod extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const TRANSPORTATION_METHOD_NAME = 'transportationMethodName';
+    public const TRANSPORTATION_METHOD_NAME = 'transportationMethodName';
 
-    const ROUTE_NUMBER = 'routeNumber';
+    public const ROUTE_NUMBER = 'routeNumber';
 
     protected $_resourceType = ResourceType::TRANSPORTATION_METHOD;
 
@@ -23,7 +23,7 @@ class TransportationMethod extends ModelBase
      * @return TransportationMethod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +81,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +97,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +113,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param string $transportationMethodName
      */
-    public function setTransportationMethodName($transportationMethodName = null)
+    public function setTransportationMethodName(string $transportationMethodName = null)
     {
         $this->setProperty('transportationMethodName', $transportationMethodName);
     }
@@ -129,7 +129,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param string $routeNumber
      */
-    public function setRouteNumber($routeNumber = null)
+    public function setRouteNumber(string $routeNumber = null)
     {
         $this->setProperty('routeNumber', $routeNumber);
     }

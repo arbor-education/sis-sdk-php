@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PredictedAssessmentMark extends ModelBase
+class PredictedAssessmentMark extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
+    public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
-    const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
+    public const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
 
-    const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
+    public const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
 
-    const IS_CALCULATED_GRADE = 'isCalculatedGrade';
+    public const IS_CALCULATED_GRADE = 'isCalculatedGrade';
 
     protected $_resourceType = ResourceType::PREDICTED_ASSESSMENT_MARK;
 
@@ -33,7 +33,7 @@ class PredictedAssessmentMark extends ModelBase
      * @return PredictedAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -91,7 +91,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -107,7 +107,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -123,7 +123,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -139,7 +139,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param Grade $grade
      */
-    public function setGrade(Grade $grade = null)
+    public function setGrade(\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -155,7 +155,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -171,7 +171,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -187,7 +187,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -203,7 +203,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
      */
-    public function setAssessmentMarkNonSubmissionReason(AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    public function setAssessmentMarkNonSubmissionReason(\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
     {
         $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
@@ -219,7 +219,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param bool $isCalculatedGrade
      */
-    public function setIsCalculatedGrade($isCalculatedGrade = null)
+    public function setIsCalculatedGrade(bool $isCalculatedGrade = null)
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }

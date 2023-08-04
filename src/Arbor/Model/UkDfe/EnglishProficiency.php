@@ -8,13 +8,13 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class EnglishProficiency extends ModelBase
+class EnglishProficiency extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const PROFICIENCY = 'proficiency';
+    public const PROFICIENCY = 'proficiency';
 
-    const PROFICIENCY_DATE = 'proficiencyDate';
+    public const PROFICIENCY_DATE = 'proficiencyDate';
 
     protected $_resourceType = ResourceType::UK_DFE_ENGLISH_PROFICIENCY;
 
@@ -23,7 +23,7 @@ class EnglishProficiency extends ModelBase
      * @return EnglishProficiency[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class EnglishProficiency extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -81,7 +81,7 @@ class EnglishProficiency extends ModelBase
     /**
      * @param string $proficiency
      */
-    public function setProficiency($proficiency = null)
+    public function setProficiency(string $proficiency = null)
     {
         $this->setProperty('proficiency', $proficiency);
     }

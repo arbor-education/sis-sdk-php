@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmailAddressImport extends ModelBase
+class EmailAddressImport extends \ModelBase
 {
-    const EMAIL_ADDRESS_IMPORT_JOB = 'emailAddressImportJob';
+    public const EMAIL_ADDRESS_IMPORT_JOB = 'emailAddressImportJob';
 
-    const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
+    public const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
 
-    const EMAIL_ADDRESS_TYPE = 'emailAddressType';
+    public const EMAIL_ADDRESS_TYPE = 'emailAddressType';
 
-    const EMAIL_ADDRESS = 'emailAddress';
+    public const EMAIL_ADDRESS = 'emailAddress';
 
-    const ROW_INDEX = 'rowIndex';
+    public const ROW_INDEX = 'rowIndex';
 
-    const ERRORS = 'errors';
+    public const ERRORS = 'errors';
 
-    const REQUIRED_ERRORS = 'requiredErrors';
+    public const REQUIRED_ERRORS = 'requiredErrors';
 
     protected $_resourceType = ResourceType::EMAIL_ADDRESS_IMPORT;
 
@@ -27,7 +27,7 @@ class EmailAddressImport extends ModelBase
      * @return EmailAddressImport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param EmailAddressImportJob $emailAddressImportJob
      */
-    public function setEmailAddressImportJob(EmailAddressImportJob $emailAddressImportJob = null)
+    public function setEmailAddressImportJob(\EmailAddressImportJob $emailAddressImportJob = null)
     {
         $this->setProperty('emailAddressImportJob', $emailAddressImportJob);
     }
@@ -85,7 +85,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param ModelBase $emailAddressOwner
      */
-    public function setEmailAddressOwner(ModelBase $emailAddressOwner = null)
+    public function setEmailAddressOwner(\ModelBase $emailAddressOwner = null)
     {
         $this->setProperty('emailAddressOwner', $emailAddressOwner);
     }
@@ -101,7 +101,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $emailAddressType
      */
-    public function setEmailAddressType($emailAddressType = null)
+    public function setEmailAddressType(string $emailAddressType = null)
     {
         $this->setProperty('emailAddressType', $emailAddressType);
     }
@@ -117,7 +117,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress($emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -133,7 +133,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param int $rowIndex
      */
-    public function setRowIndex($rowIndex = null)
+    public function setRowIndex(int $rowIndex = null)
     {
         $this->setProperty('rowIndex', $rowIndex);
     }
@@ -149,7 +149,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors($errors = null)
+    public function setErrors(string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -165,7 +165,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $requiredErrors
      */
-    public function setRequiredErrors($requiredErrors = null)
+    public function setRequiredErrors(string $requiredErrors = null)
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }

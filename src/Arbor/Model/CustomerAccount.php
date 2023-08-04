@@ -4,33 +4,33 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomerAccount extends ModelBase
+class CustomerAccount extends \ModelBase
 {
-    const RELATED_ENTITY = 'relatedEntity';
+    public const RELATED_ENTITY = 'relatedEntity';
 
-    const DELETED_RELATED_ENTITY_NAME = 'deletedRelatedEntityName';
+    public const DELETED_RELATED_ENTITY_NAME = 'deletedRelatedEntityName';
 
-    const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
+    public const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
 
-    const BILL_PAYER1 = 'billPayer1';
+    public const BILL_PAYER1 = 'billPayer1';
 
-    const BILL_PAYER2 = 'billPayer2';
+    public const BILL_PAYER2 = 'billPayer2';
 
-    const BILL_PAYER3 = 'billPayer3';
+    public const BILL_PAYER3 = 'billPayer3';
 
-    const BILL_PAYER1_PROPORTION = 'billPayer1Proportion';
+    public const BILL_PAYER1_PROPORTION = 'billPayer1Proportion';
 
-    const BILL_PAYER2_PROPORTION = 'billPayer2Proportion';
+    public const BILL_PAYER2_PROPORTION = 'billPayer2Proportion';
 
-    const BILL_PAYER3_PROPORTION = 'billPayer3Proportion';
+    public const BILL_PAYER3_PROPORTION = 'billPayer3Proportion';
 
-    const ACCOUNT_BALANCE = 'accountBalance';
+    public const ACCOUNT_BALANCE = 'accountBalance';
 
-    const CREDIT_LIMIT = 'creditLimit';
+    public const CREDIT_LIMIT = 'creditLimit';
 
-    const OPENING_BALANCE_TRANSACTION_DATETIME = 'openingBalanceTransactionDatetime';
+    public const OPENING_BALANCE_TRANSACTION_DATETIME = 'openingBalanceTransactionDatetime';
 
-    const OPENING_BALANCE_TRANSACTION = 'openingBalanceTransaction';
+    public const OPENING_BALANCE_TRANSACTION = 'openingBalanceTransaction';
 
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT;
 
@@ -39,7 +39,7 @@ class CustomerAccount extends ModelBase
      * @return CustomerAccount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +81,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param ModelBase $relatedEntity
      */
-    public function setRelatedEntity(ModelBase $relatedEntity = null)
+    public function setRelatedEntity(\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
@@ -97,7 +97,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $deletedRelatedEntityName
      */
-    public function setDeletedRelatedEntityName($deletedRelatedEntityName = null)
+    public function setDeletedRelatedEntityName(string $deletedRelatedEntityName = null)
     {
         $this->setProperty('deletedRelatedEntityName', $deletedRelatedEntityName);
     }
@@ -113,7 +113,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -129,7 +129,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param BillPayer $billPayer1
      */
-    public function setBillPayer1(BillPayer $billPayer1 = null)
+    public function setBillPayer1(\BillPayer $billPayer1 = null)
     {
         $this->setProperty('billPayer1', $billPayer1);
     }
@@ -145,7 +145,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param BillPayer $billPayer2
      */
-    public function setBillPayer2(BillPayer $billPayer2 = null)
+    public function setBillPayer2(\BillPayer $billPayer2 = null)
     {
         $this->setProperty('billPayer2', $billPayer2);
     }
@@ -161,7 +161,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param BillPayer $billPayer3
      */
-    public function setBillPayer3(BillPayer $billPayer3 = null)
+    public function setBillPayer3(\BillPayer $billPayer3 = null)
     {
         $this->setProperty('billPayer3', $billPayer3);
     }
@@ -177,7 +177,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer1Proportion
      */
-    public function setBillPayer1Proportion($billPayer1Proportion = null)
+    public function setBillPayer1Proportion(float $billPayer1Proportion = null)
     {
         $this->setProperty('billPayer1Proportion', $billPayer1Proportion);
     }
@@ -193,7 +193,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer2Proportion
      */
-    public function setBillPayer2Proportion($billPayer2Proportion = null)
+    public function setBillPayer2Proportion(float $billPayer2Proportion = null)
     {
         $this->setProperty('billPayer2Proportion', $billPayer2Proportion);
     }
@@ -209,7 +209,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer3Proportion
      */
-    public function setBillPayer3Proportion($billPayer3Proportion = null)
+    public function setBillPayer3Proportion(float $billPayer3Proportion = null)
     {
         $this->setProperty('billPayer3Proportion', $billPayer3Proportion);
     }
@@ -225,7 +225,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $accountBalance
      */
-    public function setAccountBalance($accountBalance = null)
+    public function setAccountBalance(string $accountBalance = null)
     {
         $this->setProperty('accountBalance', $accountBalance);
     }
@@ -241,7 +241,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $creditLimit
      */
-    public function setCreditLimit($creditLimit = null)
+    public function setCreditLimit(string $creditLimit = null)
     {
         $this->setProperty('creditLimit', $creditLimit);
     }
@@ -273,7 +273,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param ModelBase $openingBalanceTransaction
      */
-    public function setOpeningBalanceTransaction(ModelBase $openingBalanceTransaction = null)
+    public function setOpeningBalanceTransaction(\ModelBase $openingBalanceTransaction = null)
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }

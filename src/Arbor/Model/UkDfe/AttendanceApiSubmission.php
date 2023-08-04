@@ -7,21 +7,21 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class AttendanceApiSubmission extends ModelBase
+class AttendanceApiSubmission extends \ModelBase
 {
-    const PAYLOAD = 'payload';
+    public const PAYLOAD = 'payload';
 
-    const PAYLOAD_SENT_DATETIME = 'payloadSentDatetime';
+    public const PAYLOAD_SENT_DATETIME = 'payloadSentDatetime';
 
-    const RESPONSE = 'response';
+    public const RESPONSE = 'response';
 
-    const RESPONSE_STATUS_CODE = 'responseStatusCode';
+    public const RESPONSE_STATUS_CODE = 'responseStatusCode';
 
-    const RESPONSE_RECEIVED_DATETIME = 'responseReceivedDatetime';
+    public const RESPONSE_RECEIVED_DATETIME = 'responseReceivedDatetime';
 
-    const RESPONSE_SUBMISSION_REFERENCE = 'responseSubmissionReference';
+    public const RESPONSE_SUBMISSION_REFERENCE = 'responseSubmissionReference';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
     protected $_resourceType = ResourceType::UK_DFE_ATTENDANCE_API_SUBMISSION;
 
@@ -30,7 +30,7 @@ class AttendanceApiSubmission extends ModelBase
      * @return AttendanceApiSubmission[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param string $payload
      */
-    public function setPayload($payload = null)
+    public function setPayload(string $payload = null)
     {
         $this->setProperty('payload', $payload);
     }
@@ -104,7 +104,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param string $response
      */
-    public function setResponse($response = null)
+    public function setResponse(string $response = null)
     {
         $this->setProperty('response', $response);
     }
@@ -120,7 +120,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param int $responseStatusCode
      */
-    public function setResponseStatusCode($responseStatusCode = null)
+    public function setResponseStatusCode(int $responseStatusCode = null)
     {
         $this->setProperty('responseStatusCode', $responseStatusCode);
     }
@@ -152,7 +152,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param string $responseSubmissionReference
      */
-    public function setResponseSubmissionReference($responseSubmissionReference = null)
+    public function setResponseSubmissionReference(string $responseSubmissionReference = null)
     {
         $this->setProperty('responseSubmissionReference', $responseSubmissionReference);
     }
@@ -168,7 +168,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param bool $status
      */
-    public function setStatus($status = null)
+    public function setStatus(bool $status = null)
     {
         $this->setProperty('status', $status);
     }

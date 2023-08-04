@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserNotification extends ModelBase
+class UserNotification extends \ModelBase
 {
-    const USER = 'user';
+    public const USER = 'user';
 
-    const IS_READ = 'isRead';
+    public const IS_READ = 'isRead';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const MODIFIED_GLOBAL_COUNTER = 'modifiedGlobalCounter';
+    public const MODIFIED_GLOBAL_COUNTER = 'modifiedGlobalCounter';
 
-    const CREATED_DATETIME = 'createdDatetime';
+    public const CREATED_DATETIME = 'createdDatetime';
 
-    const ACTION = 'action';
+    public const ACTION = 'action';
 
-    const ICON = 'icon';
+    public const ICON = 'icon';
 
-    const ORIGIN = 'origin';
+    public const ORIGIN = 'origin';
 
-    const PARAMETERS = 'parameters';
+    public const PARAMETERS = 'parameters';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
     protected $_resourceType = ResourceType::USER_NOTIFICATION;
 
@@ -37,7 +37,7 @@ class UserNotification extends ModelBase
      * @return UserNotification[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class UserNotification extends ModelBase
     /**
      * @param User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -95,7 +95,7 @@ class UserNotification extends ModelBase
     /**
      * @param bool $isRead
      */
-    public function setIsRead($isRead = null)
+    public function setIsRead(bool $isRead = null)
     {
         $this->setProperty('isRead', $isRead);
     }
@@ -111,7 +111,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -127,7 +127,7 @@ class UserNotification extends ModelBase
     /**
      * @param int $modifiedGlobalCounter
      */
-    public function setModifiedGlobalCounter($modifiedGlobalCounter = null)
+    public function setModifiedGlobalCounter(int $modifiedGlobalCounter = null)
     {
         $this->setProperty('modifiedGlobalCounter', $modifiedGlobalCounter);
     }
@@ -159,7 +159,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $action
      */
-    public function setAction($action = null)
+    public function setAction(string $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -175,7 +175,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $icon
      */
-    public function setIcon($icon = null)
+    public function setIcon(string $icon = null)
     {
         $this->setProperty('icon', $icon);
     }
@@ -191,7 +191,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $origin
      */
-    public function setOrigin($origin = null)
+    public function setOrigin(string $origin = null)
     {
         $this->setProperty('origin', $origin);
     }
@@ -207,7 +207,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $parameters
      */
-    public function setParameters($parameters = null)
+    public function setParameters(string $parameters = null)
     {
         $this->setProperty('parameters', $parameters);
     }
@@ -223,7 +223,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -239,7 +239,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -255,7 +255,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject($subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

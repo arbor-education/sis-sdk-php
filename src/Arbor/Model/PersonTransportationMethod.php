@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonTransportationMethod extends ModelBase
+class PersonTransportationMethod extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const TRANSPORTATION_METHOD = 'transportationMethod';
+    public const TRANSPORTATION_METHOD = 'transportationMethod';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
     protected $_resourceType = ResourceType::PERSON_TRANSPORTATION_METHOD;
 
@@ -19,7 +19,7 @@ class PersonTransportationMethod extends ModelBase
      * @return PersonTransportationMethod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class PersonTransportationMethod extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -77,7 +77,7 @@ class PersonTransportationMethod extends ModelBase
     /**
      * @param TransportationMethod $transportationMethod
      */
-    public function setTransportationMethod(TransportationMethod $transportationMethod = null)
+    public function setTransportationMethod(\TransportationMethod $transportationMethod = null)
     {
         $this->setProperty('transportationMethod', $transportationMethod);
     }
@@ -93,7 +93,7 @@ class PersonTransportationMethod extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

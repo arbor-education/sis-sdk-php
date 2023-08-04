@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ItemUnit extends ModelBase
+class ItemUnit extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ITEM_UNIT_NAME = 'itemUnitName';
+    public const ITEM_UNIT_NAME = 'itemUnitName';
 
     protected $_resourceType = ResourceType::ITEM_UNIT;
 
@@ -21,7 +21,7 @@ class ItemUnit extends ModelBase
      * @return ItemUnit[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ItemUnit extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -79,7 +79,7 @@ class ItemUnit extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -95,7 +95,7 @@ class ItemUnit extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -111,7 +111,7 @@ class ItemUnit extends ModelBase
     /**
      * @param string $itemUnitName
      */
-    public function setItemUnitName($itemUnitName = null)
+    public function setItemUnitName(string $itemUnitName = null)
     {
         $this->setProperty('itemUnitName', $itemUnitName);
     }

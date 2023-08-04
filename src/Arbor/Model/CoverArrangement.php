@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CoverArrangement extends ModelBase
+class CoverArrangement extends \ModelBase
 {
-    const COVER_REQUIREMENT = 'coverRequirement';
+    public const COVER_REQUIREMENT = 'coverRequirement';
 
-    const COVERING_STAFF = 'coveringStaff';
+    public const COVERING_STAFF = 'coveringStaff';
 
-    const COVER_START_DATETIME = 'coverStartDatetime';
+    public const COVER_START_DATETIME = 'coverStartDatetime';
 
-    const COVER_END_DATETIME = 'coverEndDatetime';
+    public const COVER_END_DATETIME = 'coverEndDatetime';
 
-    const AGREED_DATETIME = 'agreedDatetime';
+    public const AGREED_DATETIME = 'agreedDatetime';
 
-    const NOT_AGREED_DATETIME = 'notAgreedDatetime';
+    public const NOT_AGREED_DATETIME = 'notAgreedDatetime';
 
-    const IS_SEND_CREATION_NOTIFICATION = 'isSendCreationNotification';
+    public const IS_SEND_CREATION_NOTIFICATION = 'isSendCreationNotification';
 
     protected $_resourceType = ResourceType::COVER_ARRANGEMENT;
 
@@ -27,7 +27,7 @@ class CoverArrangement extends ModelBase
      * @return CoverArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param CoverRequirement $coverRequirement
      */
-    public function setCoverRequirement(CoverRequirement $coverRequirement = null)
+    public function setCoverRequirement(\CoverRequirement $coverRequirement = null)
     {
         $this->setProperty('coverRequirement', $coverRequirement);
     }
@@ -85,7 +85,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param Staff $coveringStaff
      */
-    public function setCoveringStaff(Staff $coveringStaff = null)
+    public function setCoveringStaff(\Staff $coveringStaff = null)
     {
         $this->setProperty('coveringStaff', $coveringStaff);
     }
@@ -165,7 +165,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param bool $isSendCreationNotification
      */
-    public function setIsSendCreationNotification($isSendCreationNotification = null)
+    public function setIsSendCreationNotification(bool $isSendCreationNotification = null)
     {
         $this->setProperty('isSendCreationNotification', $isSendCreationNotification);
     }

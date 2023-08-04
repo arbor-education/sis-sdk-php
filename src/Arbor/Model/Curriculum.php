@@ -4,43 +4,43 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Curriculum extends ModelBase
+class Curriculum extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const GRADE_POINT_SCALE = 'gradePointScale';
+    public const GRADE_POINT_SCALE = 'gradePointScale';
 
-    const CURRICULUM_TIER = 'curriculumTier';
+    public const CURRICULUM_TIER = 'curriculumTier';
 
-    const LOWER_CURRICULUM_GRADE = 'lowerCurriculumGrade';
+    public const LOWER_CURRICULUM_GRADE = 'lowerCurriculumGrade';
 
-    const UPPER_CURRICULUM_GRADE = 'upperCurriculumGrade';
+    public const UPPER_CURRICULUM_GRADE = 'upperCurriculumGrade';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const LOWER_BENCHMARK_GRADE = 'lowerBenchmarkGrade';
+    public const LOWER_BENCHMARK_GRADE = 'lowerBenchmarkGrade';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
-    const UPPER_BENCHMARK_GRADE = 'upperBenchmarkGrade';
+    public const UPPER_BENCHMARK_GRADE = 'upperBenchmarkGrade';
 
-    const ACHIEVEMENT_LEVEL_SET = 'achievementLevelSet';
+    public const ACHIEVEMENT_LEVEL_SET = 'achievementLevelSet';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const VALID_FROM_DATE = 'validFromDate';
+    public const VALID_FROM_DATE = 'validFromDate';
 
-    const VALID_UNTIL_DATE = 'validUntilDate';
+    public const VALID_UNTIL_DATE = 'validUntilDate';
 
     protected $_resourceType = ResourceType::CURRICULUM;
 
@@ -49,7 +49,7 @@ class Curriculum extends ModelBase
      * @return Curriculum[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -91,7 +91,7 @@ class Curriculum extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -107,7 +107,7 @@ class Curriculum extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -123,7 +123,7 @@ class Curriculum extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -139,7 +139,7 @@ class Curriculum extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -155,7 +155,7 @@ class Curriculum extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -171,7 +171,7 @@ class Curriculum extends ModelBase
     /**
      * @param GradePointScale $gradePointScale
      */
-    public function setGradePointScale(GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
@@ -187,7 +187,7 @@ class Curriculum extends ModelBase
     /**
      * @param CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -203,7 +203,7 @@ class Curriculum extends ModelBase
     /**
      * @param CurriculumGrade $lowerCurriculumGrade
      */
-    public function setLowerCurriculumGrade(CurriculumGrade $lowerCurriculumGrade = null)
+    public function setLowerCurriculumGrade(\CurriculumGrade $lowerCurriculumGrade = null)
     {
         $this->setProperty('lowerCurriculumGrade', $lowerCurriculumGrade);
     }
@@ -219,7 +219,7 @@ class Curriculum extends ModelBase
     /**
      * @param CurriculumGrade $upperCurriculumGrade
      */
-    public function setUpperCurriculumGrade(CurriculumGrade $upperCurriculumGrade = null)
+    public function setUpperCurriculumGrade(\CurriculumGrade $upperCurriculumGrade = null)
     {
         $this->setProperty('upperCurriculumGrade', $upperCurriculumGrade);
     }
@@ -235,7 +235,7 @@ class Curriculum extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -251,7 +251,7 @@ class Curriculum extends ModelBase
     /**
      * @param Grade $lowerBenchmarkGrade
      */
-    public function setLowerBenchmarkGrade(Grade $lowerBenchmarkGrade = null)
+    public function setLowerBenchmarkGrade(\Grade $lowerBenchmarkGrade = null)
     {
         $this->setProperty('lowerBenchmarkGrade', $lowerBenchmarkGrade);
     }
@@ -267,7 +267,7 @@ class Curriculum extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -283,7 +283,7 @@ class Curriculum extends ModelBase
     /**
      * @param Grade $upperBenchmarkGrade
      */
-    public function setUpperBenchmarkGrade(Grade $upperBenchmarkGrade = null)
+    public function setUpperBenchmarkGrade(\Grade $upperBenchmarkGrade = null)
     {
         $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
@@ -299,7 +299,7 @@ class Curriculum extends ModelBase
     /**
      * @param AchievementLevelSet $achievementLevelSet
      */
-    public function setAchievementLevelSet(AchievementLevelSet $achievementLevelSet = null)
+    public function setAchievementLevelSet(\AchievementLevelSet $achievementLevelSet = null)
     {
         $this->setProperty('achievementLevelSet', $achievementLevelSet);
     }
@@ -315,7 +315,7 @@ class Curriculum extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -331,7 +331,7 @@ class Curriculum extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

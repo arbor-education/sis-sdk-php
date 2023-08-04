@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Schoolwork extends ModelBase
+class Schoolwork extends \ModelBase
 {
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const STUDENT_INSTRUCTIONS = 'studentInstructions';
+    public const STUDENT_INSTRUCTIONS = 'studentInstructions';
 
-    const TEACHER_NOTES = 'teacherNotes';
+    public const TEACHER_NOTES = 'teacherNotes';
 
-    const SET_DATETIME = 'setDatetime';
+    public const SET_DATETIME = 'setDatetime';
 
-    const DUE_EVENT = 'dueEvent';
+    public const DUE_EVENT = 'dueEvent';
 
-    const DUE_DATETIME = 'dueDatetime';
+    public const DUE_DATETIME = 'dueDatetime';
 
-    const MARKING_STARTED_DATETIME = 'markingStartedDatetime';
+    public const MARKING_STARTED_DATETIME = 'markingStartedDatetime';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
-    const SESSION = 'session';
+    public const SESSION = 'session';
 
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const SUBMIT_VIA_ARBOR = 'submitViaArbor';
+    public const SUBMIT_VIA_ARBOR = 'submitViaArbor';
 
     protected $_resourceType = ResourceType::SCHOOLWORK;
 
@@ -35,7 +35,7 @@ class Schoolwork extends ModelBase
      * @return Schoolwork[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class Schoolwork extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -93,7 +93,7 @@ class Schoolwork extends ModelBase
     /**
      * @param string $studentInstructions
      */
-    public function setStudentInstructions($studentInstructions = null)
+    public function setStudentInstructions(string $studentInstructions = null)
     {
         $this->setProperty('studentInstructions', $studentInstructions);
     }
@@ -109,7 +109,7 @@ class Schoolwork extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes($teacherNotes = null)
+    public function setTeacherNotes(string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -141,7 +141,7 @@ class Schoolwork extends ModelBase
     /**
      * @param Session $dueEvent
      */
-    public function setDueEvent(Session $dueEvent = null)
+    public function setDueEvent(\Session $dueEvent = null)
     {
         $this->setProperty('dueEvent', $dueEvent);
     }
@@ -205,7 +205,7 @@ class Schoolwork extends ModelBase
     /**
      * @param Session $session
      */
-    public function setSession(Session $session = null)
+    public function setSession(\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -221,7 +221,7 @@ class Schoolwork extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -237,7 +237,7 @@ class Schoolwork extends ModelBase
     /**
      * @param bool $submitViaArbor
      */
-    public function setSubmitViaArbor($submitViaArbor = null)
+    public function setSubmitViaArbor(bool $submitViaArbor = null)
     {
         $this->setProperty('submitViaArbor', $submitViaArbor);
     }

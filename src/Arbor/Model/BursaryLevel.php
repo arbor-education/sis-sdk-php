@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryLevel extends ModelBase
+class BursaryLevel extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const BURSARY_TYPE = 'bursaryType';
+    public const BURSARY_TYPE = 'bursaryType';
 
     protected $_resourceType = ResourceType::BURSARY_LEVEL;
 
@@ -17,7 +17,7 @@ class BursaryLevel extends ModelBase
      * @return BursaryLevel[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class BursaryLevel extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -75,7 +75,7 @@ class BursaryLevel extends ModelBase
     /**
      * @param BursaryType $bursaryType
      */
-    public function setBursaryType(BursaryType $bursaryType = null)
+    public function setBursaryType(\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }

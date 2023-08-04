@@ -7,9 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class QualificationAvailabilityInstance extends ModelBase
+class QualificationAvailabilityInstance extends \ModelBase
 {
-    const EDI_AWARDING_BODY_IDENTIFIER = 'ediAwardingBodyIdentifier';
+    public const EDI_AWARDING_BODY_IDENTIFIER = 'ediAwardingBodyIdentifier';
 
     protected $_resourceType = ResourceType::UK_JCQ_QUALIFICATION_AVAILABILITY_INSTANCE;
 
@@ -18,7 +18,7 @@ class QualificationAvailabilityInstance extends ModelBase
      * @return QualificationAvailabilityInstance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $ediAwardingBodyIdentifier
      */
-    public function setEdiAwardingBodyIdentifier($ediAwardingBodyIdentifier = null)
+    public function setEdiAwardingBodyIdentifier(string $ediAwardingBodyIdentifier = null)
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }

@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LedgerEntry extends ModelBase
+class LedgerEntry extends \ModelBase
 {
-    const AMOUNT = 'amount';
+    public const AMOUNT = 'amount';
 
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const TRANSACTION = 'transaction';
+    public const TRANSACTION = 'transaction';
 
     protected $_resourceType = ResourceType::LEDGER_ENTRY;
 
@@ -19,7 +19,7 @@ class LedgerEntry extends ModelBase
      * @return LedgerEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount($amount = null)
+    public function setAmount(string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -77,7 +77,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -93,7 +93,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param ModelBase $transaction
      */
-    public function setTransaction(ModelBase $transaction = null)
+    public function setTransaction(\ModelBase $transaction = null)
     {
         $this->setProperty('transaction', $transaction);
     }

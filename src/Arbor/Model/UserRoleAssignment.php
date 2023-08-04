@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserRoleAssignment extends ModelBase
+class UserRoleAssignment extends \ModelBase
 {
-    const USER = 'user';
+    public const USER = 'user';
 
-    const USER_ROLE = 'userRole';
+    public const USER_ROLE = 'userRole';
 
-    const BUSINESS_ROLE_ASSIGNMENT = 'businessRoleAssignment';
+    public const BUSINESS_ROLE_ASSIGNMENT = 'businessRoleAssignment';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
     protected $_resourceType = ResourceType::USER_ROLE_ASSIGNMENT;
 
@@ -23,7 +23,7 @@ class UserRoleAssignment extends ModelBase
      * @return UserRoleAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -81,7 +81,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param UserRole $userRole
      */
-    public function setUserRole(UserRole $userRole = null)
+    public function setUserRole(\UserRole $userRole = null)
     {
         $this->setProperty('userRole', $userRole);
     }
@@ -97,7 +97,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param BusinessRoleAssignment $businessRoleAssignment
      */
-    public function setBusinessRoleAssignment(BusinessRoleAssignment $businessRoleAssignment = null)
+    public function setBusinessRoleAssignment(\BusinessRoleAssignment $businessRoleAssignment = null)
     {
         $this->setProperty('businessRoleAssignment', $businessRoleAssignment);
     }

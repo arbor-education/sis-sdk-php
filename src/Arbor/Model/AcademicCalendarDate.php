@@ -4,45 +4,45 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicCalendarDate extends ModelBase
+class AcademicCalendarDate extends \ModelBase
 {
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CALENDAR_YEAR = 'calendarYear';
+    public const CALENDAR_YEAR = 'calendarYear';
 
-    const CALENDAR_MONTH = 'calendarMonth';
+    public const CALENDAR_MONTH = 'calendarMonth';
 
-    const CALENDAR_WEEK = 'calendarWeek';
+    public const CALENDAR_WEEK = 'calendarWeek';
 
-    const CALENDAR_DAY = 'calendarDay';
+    public const CALENDAR_DAY = 'calendarDay';
 
-    const CALENDAR_DAY_OF_WEEK = 'calendarDayOfWeek';
+    public const CALENDAR_DAY_OF_WEEK = 'calendarDayOfWeek';
 
-    const IS_PUBLIC_HOLIDAY = 'isPublicHoliday';
+    public const IS_PUBLIC_HOLIDAY = 'isPublicHoliday';
 
-    const PUBLIC_HOLIDAY_NAME = 'publicHolidayName';
+    public const PUBLIC_HOLIDAY_NAME = 'publicHolidayName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const TERM = 'term';
+    public const TERM = 'term';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const DAY_OF_TERM = 'dayOfTerm';
+    public const DAY_OF_TERM = 'dayOfTerm';
 
-    const DAY_OF_ACADEMIC_YEAR = 'dayOfAcademicYear';
+    public const DAY_OF_ACADEMIC_YEAR = 'dayOfAcademicYear';
 
-    const ACADEMIC_HOLIDAY = 'academicHoliday';
+    public const ACADEMIC_HOLIDAY = 'academicHoliday';
 
-    const IS_GOOD_SCHOOL_DAY = 'isGoodSchoolDay';
+    public const IS_GOOD_SCHOOL_DAY = 'isGoodSchoolDay';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::ACADEMIC_CALENDAR_DATE;
 
@@ -51,7 +51,7 @@ class AcademicCalendarDate extends ModelBase
      * @return AcademicCalendarDate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -125,7 +125,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarYear
      */
-    public function setCalendarYear($calendarYear = null)
+    public function setCalendarYear(int $calendarYear = null)
     {
         $this->setProperty('calendarYear', $calendarYear);
     }
@@ -141,7 +141,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarMonth
      */
-    public function setCalendarMonth($calendarMonth = null)
+    public function setCalendarMonth(int $calendarMonth = null)
     {
         $this->setProperty('calendarMonth', $calendarMonth);
     }
@@ -157,7 +157,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarWeek
      */
-    public function setCalendarWeek($calendarWeek = null)
+    public function setCalendarWeek(int $calendarWeek = null)
     {
         $this->setProperty('calendarWeek', $calendarWeek);
     }
@@ -173,7 +173,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarDay
      */
-    public function setCalendarDay($calendarDay = null)
+    public function setCalendarDay(int $calendarDay = null)
     {
         $this->setProperty('calendarDay', $calendarDay);
     }
@@ -189,7 +189,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarDayOfWeek
      */
-    public function setCalendarDayOfWeek($calendarDayOfWeek = null)
+    public function setCalendarDayOfWeek(int $calendarDayOfWeek = null)
     {
         $this->setProperty('calendarDayOfWeek', $calendarDayOfWeek);
     }
@@ -205,7 +205,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param bool $isPublicHoliday
      */
-    public function setIsPublicHoliday($isPublicHoliday = null)
+    public function setIsPublicHoliday(bool $isPublicHoliday = null)
     {
         $this->setProperty('isPublicHoliday', $isPublicHoliday);
     }
@@ -221,7 +221,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param string $publicHolidayName
      */
-    public function setPublicHolidayName($publicHolidayName = null)
+    public function setPublicHolidayName(string $publicHolidayName = null)
     {
         $this->setProperty('publicHolidayName', $publicHolidayName);
     }
@@ -237,7 +237,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -253,7 +253,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param Term $term
      */
-    public function setTerm(Term $term = null)
+    public function setTerm(\Term $term = null)
     {
         $this->setProperty('term', $term);
     }
@@ -269,7 +269,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -285,7 +285,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dayOfTerm
      */
-    public function setDayOfTerm($dayOfTerm = null)
+    public function setDayOfTerm(int $dayOfTerm = null)
     {
         $this->setProperty('dayOfTerm', $dayOfTerm);
     }
@@ -301,7 +301,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dayOfAcademicYear
      */
-    public function setDayOfAcademicYear($dayOfAcademicYear = null)
+    public function setDayOfAcademicYear(int $dayOfAcademicYear = null)
     {
         $this->setProperty('dayOfAcademicYear', $dayOfAcademicYear);
     }
@@ -317,7 +317,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param AcademicHoliday $academicHoliday
      */
-    public function setAcademicHoliday(AcademicHoliday $academicHoliday = null)
+    public function setAcademicHoliday(\AcademicHoliday $academicHoliday = null)
     {
         $this->setProperty('academicHoliday', $academicHoliday);
     }
@@ -333,7 +333,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param bool $isGoodSchoolDay
      */
-    public function setIsGoodSchoolDay($isGoodSchoolDay = null)
+    public function setIsGoodSchoolDay(bool $isGoodSchoolDay = null)
     {
         $this->setProperty('isGoodSchoolDay', $isGoodSchoolDay);
     }
@@ -349,7 +349,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -365,7 +365,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -381,7 +381,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

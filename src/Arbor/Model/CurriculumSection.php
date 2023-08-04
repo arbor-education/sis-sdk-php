@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CurriculumSection extends ModelBase
+class CurriculumSection extends \ModelBase
 {
-    const CURRICULUM = 'curriculum';
+    public const CURRICULUM = 'curriculum';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const PARENT_CURRICULUM_SECTION = 'parentCurriculumSection';
+    public const PARENT_CURRICULUM_SECTION = 'parentCurriculumSection';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const WEIGHTING = 'weighting';
+    public const WEIGHTING = 'weighting';
 
     protected $_resourceType = ResourceType::CURRICULUM_SECTION;
 
@@ -27,7 +27,7 @@ class CurriculumSection extends ModelBase
      * @return CurriculumSection[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param Curriculum $curriculum
      */
-    public function setCurriculum(Curriculum $curriculum = null)
+    public function setCurriculum(\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -85,7 +85,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -101,7 +101,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -117,7 +117,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -133,7 +133,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param CurriculumSection $parentCurriculumSection
      */
-    public function setParentCurriculumSection(CurriculumSection $parentCurriculumSection = null)
+    public function setParentCurriculumSection(\CurriculumSection $parentCurriculumSection = null)
     {
         $this->setProperty('parentCurriculumSection', $parentCurriculumSection);
     }
@@ -149,7 +149,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -165,7 +165,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param float $weighting
      */
-    public function setWeighting($weighting = null)
+    public function setWeighting(float $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }

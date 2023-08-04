@@ -8,15 +8,15 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class SchoolLedTutoringHour extends ModelBase
+class SchoolLedTutoringHour extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const HOURS = 'hours';
+    public const HOURS = 'hours';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_LED_TUTORING_HOUR;
 
@@ -25,7 +25,7 @@ class SchoolLedTutoringHour extends ModelBase
      * @return SchoolLedTutoringHour[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class SchoolLedTutoringHour extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -115,7 +115,7 @@ class SchoolLedTutoringHour extends ModelBase
     /**
      * @param float $hours
      */
-    public function setHours($hours = null)
+    public function setHours(float $hours = null)
     {
         $this->setProperty('hours', $hours);
     }

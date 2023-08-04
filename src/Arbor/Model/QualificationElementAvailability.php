@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationElementAvailability extends ModelBase
+class QualificationElementAvailability extends \ModelBase
 {
-    const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
+    public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const QUALIFICATION_ELEMENT = 'qualificationElement';
+    public const QUALIFICATION_ELEMENT = 'qualificationElement';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ELEMENT_AVAILABILITY;
 
@@ -17,7 +17,7 @@ class QualificationElementAvailability extends ModelBase
      * @return QualificationElementAvailability[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -75,7 +75,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param ModelBase $qualificationElement
      */
-    public function setQualificationElement(ModelBase $qualificationElement = null)
+    public function setQualificationElement(\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }

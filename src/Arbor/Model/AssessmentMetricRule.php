@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricRule extends ModelBase
+class AssessmentMetricRule extends \ModelBase
 {
-    const ASSESSMENT_METRIC = 'assessmentMetric';
+    public const ASSESSMENT_METRIC = 'assessmentMetric';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_RULE;
 
@@ -15,7 +15,7 @@ class AssessmentMetricRule extends ModelBase
      * @return AssessmentMetricRule[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class AssessmentMetricRule extends ModelBase
     /**
      * @param AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }

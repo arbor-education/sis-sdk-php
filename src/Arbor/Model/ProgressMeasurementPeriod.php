@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgressMeasurementPeriod extends ModelBase
+class ProgressMeasurementPeriod extends \ModelBase
 {
-    const PROGRESS_MEASUREMENT_PERIOD_SET = 'progressMeasurementPeriodSet';
+    public const PROGRESS_MEASUREMENT_PERIOD_SET = 'progressMeasurementPeriodSet';
 
-    const PERIOD_NAME = 'periodName';
+    public const PERIOD_NAME = 'periodName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::PROGRESS_MEASUREMENT_PERIOD;
 
@@ -25,7 +25,7 @@ class ProgressMeasurementPeriod extends ModelBase
      * @return ProgressMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
      */
-    public function setProgressMeasurementPeriodSet(ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
+    public function setProgressMeasurementPeriodSet(\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
         $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
@@ -83,7 +83,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param string $periodName
      */
-    public function setPeriodName($periodName = null)
+    public function setPeriodName(string $periodName = null)
     {
         $this->setProperty('periodName', $periodName);
     }
@@ -99,7 +99,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -115,7 +115,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

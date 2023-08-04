@@ -4,33 +4,33 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TelephoneCall extends ModelBase
+class TelephoneCall extends \ModelBase
 {
-    const CALLER_NAME = 'callerName';
+    public const CALLER_NAME = 'callerName';
 
-    const CALLER = 'caller';
+    public const CALLER = 'caller';
 
-    const CALLER_TELEPHONE_NUMBER = 'callerTelephoneNumber';
+    public const CALLER_TELEPHONE_NUMBER = 'callerTelephoneNumber';
 
-    const CALLER_TELEPHONE_NUMBER_MODEL = 'callerTelephoneNumberModel';
+    public const CALLER_TELEPHONE_NUMBER_MODEL = 'callerTelephoneNumberModel';
 
-    const CALL_DATETIME = 'callDatetime';
+    public const CALL_DATETIME = 'callDatetime';
 
-    const CALL_DURATION = 'callDuration';
+    public const CALL_DURATION = 'callDuration';
 
-    const RECIPIENT_NAME = 'recipientName';
+    public const RECIPIENT_NAME = 'recipientName';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const RECIPIENT_TELEPHONE_NUMBER = 'recipientTelephoneNumber';
+    public const RECIPIENT_TELEPHONE_NUMBER = 'recipientTelephoneNumber';
 
-    const RECIPIENT_TELEPHONE_NUMBER_MODEL = 'recipientTelephoneNumberModel';
+    public const RECIPIENT_TELEPHONE_NUMBER_MODEL = 'recipientTelephoneNumberModel';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
+    public const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
 
     protected $_resourceType = ResourceType::TELEPHONE_CALL;
 
@@ -39,7 +39,7 @@ class TelephoneCall extends ModelBase
      * @return TelephoneCall[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +81,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callerName
      */
-    public function setCallerName($callerName = null)
+    public function setCallerName(string $callerName = null)
     {
         $this->setProperty('callerName', $callerName);
     }
@@ -97,7 +97,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param ModelBase $caller
      */
-    public function setCaller(ModelBase $caller = null)
+    public function setCaller(\ModelBase $caller = null)
     {
         $this->setProperty('caller', $caller);
     }
@@ -113,7 +113,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callerTelephoneNumber
      */
-    public function setCallerTelephoneNumber($callerTelephoneNumber = null)
+    public function setCallerTelephoneNumber(string $callerTelephoneNumber = null)
     {
         $this->setProperty('callerTelephoneNumber', $callerTelephoneNumber);
     }
@@ -129,7 +129,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param TelephoneNumber $callerTelephoneNumberModel
      */
-    public function setCallerTelephoneNumberModel(TelephoneNumber $callerTelephoneNumberModel = null)
+    public function setCallerTelephoneNumberModel(\TelephoneNumber $callerTelephoneNumberModel = null)
     {
         $this->setProperty('callerTelephoneNumberModel', $callerTelephoneNumberModel);
     }
@@ -161,7 +161,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callDuration
      */
-    public function setCallDuration($callDuration = null)
+    public function setCallDuration(string $callDuration = null)
     {
         $this->setProperty('callDuration', $callDuration);
     }
@@ -177,7 +177,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName($recipientName = null)
+    public function setRecipientName(string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -193,7 +193,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -209,7 +209,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $recipientTelephoneNumber
      */
-    public function setRecipientTelephoneNumber($recipientTelephoneNumber = null)
+    public function setRecipientTelephoneNumber(string $recipientTelephoneNumber = null)
     {
         $this->setProperty('recipientTelephoneNumber', $recipientTelephoneNumber);
     }
@@ -225,7 +225,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param TelephoneNumber $recipientTelephoneNumberModel
      */
-    public function setRecipientTelephoneNumberModel(TelephoneNumber $recipientTelephoneNumberModel = null)
+    public function setRecipientTelephoneNumberModel(\TelephoneNumber $recipientTelephoneNumberModel = null)
     {
         $this->setProperty('recipientTelephoneNumberModel', $recipientTelephoneNumberModel);
     }
@@ -241,7 +241,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject($subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -257,7 +257,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

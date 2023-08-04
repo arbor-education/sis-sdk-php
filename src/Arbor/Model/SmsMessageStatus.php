@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SmsMessageStatus extends ModelBase
+class SmsMessageStatus extends \ModelBase
 {
-    const SMS_MESSAGE = 'smsMessage';
+    public const SMS_MESSAGE = 'smsMessage';
 
-    const SMS_MESSAGE_PART = 'smsMessagePart';
+    public const SMS_MESSAGE_PART = 'smsMessagePart';
 
-    const STATUS_TYPE = 'statusType';
+    public const STATUS_TYPE = 'statusType';
 
-    const STATUS_DATETIME = 'statusDatetime';
+    public const STATUS_DATETIME = 'statusDatetime';
 
-    const ERROR_TYPE = 'errorType';
+    public const ERROR_TYPE = 'errorType';
 
     protected $_resourceType = ResourceType::SMS_MESSAGE_STATUS;
 
@@ -23,7 +23,7 @@ class SmsMessageStatus extends ModelBase
      * @return SmsMessageStatus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param SmsMessage $smsMessage
      */
-    public function setSmsMessage(SmsMessage $smsMessage = null)
+    public function setSmsMessage(\SmsMessage $smsMessage = null)
     {
         $this->setProperty('smsMessage', $smsMessage);
     }
@@ -81,7 +81,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param SmsMessagePart $smsMessagePart
      */
-    public function setSmsMessagePart(SmsMessagePart $smsMessagePart = null)
+    public function setSmsMessagePart(\SmsMessagePart $smsMessagePart = null)
     {
         $this->setProperty('smsMessagePart', $smsMessagePart);
     }
@@ -97,7 +97,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param string $statusType
      */
-    public function setStatusType($statusType = null)
+    public function setStatusType(string $statusType = null)
     {
         $this->setProperty('statusType', $statusType);
     }
@@ -129,7 +129,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param string $errorType
      */
-    public function setErrorType($errorType = null)
+    public function setErrorType(string $errorType = null)
     {
         $this->setProperty('errorType', $errorType);
     }

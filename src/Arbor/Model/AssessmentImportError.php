@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentImportError extends ModelBase
+class AssessmentImportError extends \ModelBase
 {
-    const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
+    public const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
 
-    const ERROR_MESSAGE = 'errorMessage';
+    public const ERROR_MESSAGE = 'errorMessage';
 
     protected $_resourceType = ResourceType::ASSESSMENT_IMPORT_ERROR;
 
@@ -17,7 +17,7 @@ class AssessmentImportError extends ModelBase
      * @return AssessmentImportError[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AssessmentImportError extends ModelBase
     /**
      * @param AssessmentImportJob $assessmentImportJob
      */
-    public function setAssessmentImportJob(AssessmentImportJob $assessmentImportJob = null)
+    public function setAssessmentImportJob(\AssessmentImportJob $assessmentImportJob = null)
     {
         $this->setProperty('assessmentImportJob', $assessmentImportJob);
     }
@@ -75,7 +75,7 @@ class AssessmentImportError extends ModelBase
     /**
      * @param string $errorMessage
      */
-    public function setErrorMessage($errorMessage = null)
+    public function setErrorMessage(string $errorMessage = null)
     {
         $this->setProperty('errorMessage', $errorMessage);
     }

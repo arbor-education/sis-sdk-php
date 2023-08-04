@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CommunicationTag extends ModelBase
+class CommunicationTag extends \ModelBase
 {
-    const COMMUNICATION = 'communication';
+    public const COMMUNICATION = 'communication';
 
-    const TAGGED_ENTITY = 'taggedEntity';
+    public const TAGGED_ENTITY = 'taggedEntity';
 
-    const IS_SHARED = 'isShared';
+    public const IS_SHARED = 'isShared';
 
     protected $_resourceType = ResourceType::COMMUNICATION_TAG;
 
@@ -19,7 +19,7 @@ class CommunicationTag extends ModelBase
      * @return CommunicationTag[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class CommunicationTag extends ModelBase
     /**
      * @param ModelBase $communication
      */
-    public function setCommunication(ModelBase $communication = null)
+    public function setCommunication(\ModelBase $communication = null)
     {
         $this->setProperty('communication', $communication);
     }
@@ -77,7 +77,7 @@ class CommunicationTag extends ModelBase
     /**
      * @param ModelBase $taggedEntity
      */
-    public function setTaggedEntity(ModelBase $taggedEntity = null)
+    public function setTaggedEntity(\ModelBase $taggedEntity = null)
     {
         $this->setProperty('taggedEntity', $taggedEntity);
     }
@@ -93,7 +93,7 @@ class CommunicationTag extends ModelBase
     /**
      * @param bool $isShared
      */
-    public function setIsShared($isShared = null)
+    public function setIsShared(bool $isShared = null)
     {
         $this->setProperty('isShared', $isShared);
     }

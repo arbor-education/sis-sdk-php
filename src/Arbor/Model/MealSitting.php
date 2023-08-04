@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealSitting extends ModelBase
+class MealSitting extends \ModelBase
 {
-    const MEAL = 'meal';
+    public const MEAL = 'meal';
 
-    const MEAL_SITTING_NAME = 'mealSittingName';
+    public const MEAL_SITTING_NAME = 'mealSittingName';
 
-    const ROOM = 'room';
+    public const ROOM = 'room';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::MEAL_SITTING;
 
@@ -23,7 +23,7 @@ class MealSitting extends ModelBase
      * @return MealSitting[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class MealSitting extends ModelBase
     /**
      * @param Meal $meal
      */
-    public function setMeal(Meal $meal = null)
+    public function setMeal(\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -81,7 +81,7 @@ class MealSitting extends ModelBase
     /**
      * @param string $mealSittingName
      */
-    public function setMealSittingName($mealSittingName = null)
+    public function setMealSittingName(string $mealSittingName = null)
     {
         $this->setProperty('mealSittingName', $mealSittingName);
     }
@@ -97,7 +97,7 @@ class MealSitting extends ModelBase
     /**
      * @param Room $room
      */
-    public function setRoom(Room $room = null)
+    public function setRoom(\Room $room = null)
     {
         $this->setProperty('room', $room);
     }

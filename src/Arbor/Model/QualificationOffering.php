@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationOffering extends ModelBase
+class QualificationOffering extends \ModelBase
 {
-    const QUALIFICATION_ELEMENT = 'qualificationElement';
+    public const QUALIFICATION_ELEMENT = 'qualificationElement';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
     protected $_resourceType = ResourceType::QUALIFICATION_OFFERING;
 
@@ -17,7 +17,7 @@ class QualificationOffering extends ModelBase
      * @return QualificationOffering[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class QualificationOffering extends ModelBase
     /**
      * @param ModelBase $qualificationElement
      */
-    public function setQualificationElement(ModelBase $qualificationElement = null)
+    public function setQualificationElement(\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
@@ -75,7 +75,7 @@ class QualificationOffering extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

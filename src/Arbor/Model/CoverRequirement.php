@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CoverRequirement extends ModelBase
+class CoverRequirement extends \ModelBase
 {
-    const COVER_EVENT = 'coverEvent';
+    public const COVER_EVENT = 'coverEvent';
 
-    const ABSENT_STAFF = 'absentStaff';
+    public const ABSENT_STAFF = 'absentStaff';
 
-    const ABSENCE_EVENT = 'absenceEvent';
+    public const ABSENCE_EVENT = 'absenceEvent';
 
-    const COVER_PROPOSED_DATETIME = 'coverProposedDatetime';
+    public const COVER_PROPOSED_DATETIME = 'coverProposedDatetime';
 
-    const COVER_ARRANGED_DATETIME = 'coverArrangedDatetime';
+    public const COVER_ARRANGED_DATETIME = 'coverArrangedDatetime';
 
-    const COVER_NOT_REQUIRED_DATETIME = 'coverNotRequiredDatetime';
+    public const COVER_NOT_REQUIRED_DATETIME = 'coverNotRequiredDatetime';
 
     protected $_resourceType = ResourceType::COVER_REQUIREMENT;
 
@@ -25,7 +25,7 @@ class CoverRequirement extends ModelBase
      * @return CoverRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class CoverRequirement extends ModelBase
     /**
      * @param ModelBase $coverEvent
      */
-    public function setCoverEvent(ModelBase $coverEvent = null)
+    public function setCoverEvent(\ModelBase $coverEvent = null)
     {
         $this->setProperty('coverEvent', $coverEvent);
     }
@@ -83,7 +83,7 @@ class CoverRequirement extends ModelBase
     /**
      * @param Staff $absentStaff
      */
-    public function setAbsentStaff(Staff $absentStaff = null)
+    public function setAbsentStaff(\Staff $absentStaff = null)
     {
         $this->setProperty('absentStaff', $absentStaff);
     }
@@ -99,7 +99,7 @@ class CoverRequirement extends ModelBase
     /**
      * @param ModelBase $absenceEvent
      */
-    public function setAbsenceEvent(ModelBase $absenceEvent = null)
+    public function setAbsenceEvent(\ModelBase $absenceEvent = null)
     {
         $this->setProperty('absenceEvent', $absenceEvent);
     }

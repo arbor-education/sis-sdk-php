@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Candidate extends ModelBase
+class Candidate extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CANDIDATE_NUMBER = 'candidateNumber';
+    public const CANDIDATE_NUMBER = 'candidateNumber';
 
     protected $_resourceType = ResourceType::CANDIDATE;
 
@@ -17,7 +17,7 @@ class Candidate extends ModelBase
      * @return Candidate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class Candidate extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -75,7 +75,7 @@ class Candidate extends ModelBase
     /**
      * @param int $candidateNumber
      */
-    public function setCandidateNumber($candidateNumber = null)
+    public function setCandidateNumber(int $candidateNumber = null)
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }

@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TripLocation extends ModelBase
+class TripLocation extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::TRIP_LOCATION;
 
@@ -15,7 +15,7 @@ class TripLocation extends ModelBase
      * @return TripLocation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class TripLocation extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviouralIncidentBehaviour extends ModelBase
+class BehaviouralIncidentBehaviour extends \ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const BEHAVIOUR = 'behaviour';
+    public const BEHAVIOUR = 'behaviour';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_BEHAVIOUR;
 
@@ -19,7 +19,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
      * @return BehaviouralIncidentBehaviour[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
     /**
      * @param BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -77,7 +77,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -93,7 +93,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
     /**
      * @param Behaviour $behaviour
      */
-    public function setBehaviour(Behaviour $behaviour = null)
+    public function setBehaviour(\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }

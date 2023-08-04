@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmailPart extends ModelBase
+class EmailPart extends \ModelBase
 {
-    const EMAIL = 'email';
+    public const EMAIL = 'email';
 
-    const MIME_CONTENT_ID = 'mimeContentId';
+    public const MIME_CONTENT_ID = 'mimeContentId';
 
-    const DISPOSITION = 'disposition';
+    public const DISPOSITION = 'disposition';
 
-    const FILENAME = 'filename';
+    public const FILENAME = 'filename';
 
-    const TYPE_MAJOR = 'typeMajor';
+    public const TYPE_MAJOR = 'typeMajor';
 
-    const TYPE_MINOR = 'typeMinor';
+    public const TYPE_MINOR = 'typeMinor';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const PARENT_EMAIL_PART = 'parentEmailPart';
+    public const PARENT_EMAIL_PART = 'parentEmailPart';
 
     protected $_resourceType = ResourceType::EMAIL_PART;
 
@@ -31,7 +31,7 @@ class EmailPart extends ModelBase
      * @return EmailPart[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class EmailPart extends ModelBase
     /**
      * @param Email $email
      */
-    public function setEmail(Email $email = null)
+    public function setEmail(\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -89,7 +89,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $mimeContentId
      */
-    public function setMimeContentId($mimeContentId = null)
+    public function setMimeContentId(string $mimeContentId = null)
     {
         $this->setProperty('mimeContentId', $mimeContentId);
     }
@@ -105,7 +105,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $disposition
      */
-    public function setDisposition($disposition = null)
+    public function setDisposition(string $disposition = null)
     {
         $this->setProperty('disposition', $disposition);
     }
@@ -121,7 +121,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $filename
      */
-    public function setFilename($filename = null)
+    public function setFilename(string $filename = null)
     {
         $this->setProperty('filename', $filename);
     }
@@ -137,7 +137,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $typeMajor
      */
-    public function setTypeMajor($typeMajor = null)
+    public function setTypeMajor(string $typeMajor = null)
     {
         $this->setProperty('typeMajor', $typeMajor);
     }
@@ -153,7 +153,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $typeMinor
      */
-    public function setTypeMinor($typeMinor = null)
+    public function setTypeMinor(string $typeMinor = null)
     {
         $this->setProperty('typeMinor', $typeMinor);
     }
@@ -169,7 +169,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -185,7 +185,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject($subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -201,7 +201,7 @@ class EmailPart extends ModelBase
     /**
      * @param EmailPart $parentEmailPart
      */
-    public function setParentEmailPart(EmailPart $parentEmailPart = null)
+    public function setParentEmailPart(\EmailPart $parentEmailPart = null)
     {
         $this->setProperty('parentEmailPart', $parentEmailPart);
     }

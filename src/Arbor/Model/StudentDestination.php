@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentDestination extends ModelBase
+class StudentDestination extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
+    public const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const VERIFIED_DATE = 'verifiedDate';
+    public const VERIFIED_DATE = 'verifiedDate';
 
-    const LINKED_RECORD = 'linkedRecord';
+    public const LINKED_RECORD = 'linkedRecord';
 
     protected $_resourceType = ResourceType::STUDENT_DESTINATION;
 
@@ -25,7 +25,7 @@ class StudentDestination extends ModelBase
      * @return StudentDestination[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class StudentDestination extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +83,7 @@ class StudentDestination extends ModelBase
     /**
      * @param StudentDestinationType $studentDestinationType
      */
-    public function setStudentDestinationType(StudentDestinationType $studentDestinationType = null)
+    public function setStudentDestinationType(\StudentDestinationType $studentDestinationType = null)
     {
         $this->setProperty('studentDestinationType', $studentDestinationType);
     }
@@ -147,7 +147,7 @@ class StudentDestination extends ModelBase
     /**
      * @param ModelBase $linkedRecord
      */
-    public function setLinkedRecord(ModelBase $linkedRecord = null)
+    public function setLinkedRecord(\ModelBase $linkedRecord = null)
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }

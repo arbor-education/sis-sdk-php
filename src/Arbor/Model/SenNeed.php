@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SenNeed extends ModelBase
+class SenNeed extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const SEN_NEED_TYPE = 'senNeedType';
+    public const SEN_NEED_TYPE = 'senNeedType';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const RANKING = 'ranking';
+    public const RANKING = 'ranking';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::SEN_NEED;
 
@@ -25,7 +25,7 @@ class SenNeed extends ModelBase
      * @return SenNeed[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class SenNeed extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +83,7 @@ class SenNeed extends ModelBase
     /**
      * @param SenNeedType $senNeedType
      */
-    public function setSenNeedType(SenNeedType $senNeedType = null)
+    public function setSenNeedType(\SenNeedType $senNeedType = null)
     {
         $this->setProperty('senNeedType', $senNeedType);
     }
@@ -99,7 +99,7 @@ class SenNeed extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -115,7 +115,7 @@ class SenNeed extends ModelBase
     /**
      * @param int $ranking
      */
-    public function setRanking($ranking = null)
+    public function setRanking(int $ranking = null)
     {
         $this->setProperty('ranking', $ranking);
     }

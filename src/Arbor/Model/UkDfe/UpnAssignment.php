@@ -8,25 +8,25 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class UpnAssignment extends ModelBase
+class UpnAssignment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ISSUED_YEAR = 'issuedYear';
+    public const ISSUED_YEAR = 'issuedYear';
 
-    const ISSUED_LOCAL_AUTHORITY = 'issuedLocalAuthority';
+    public const ISSUED_LOCAL_AUTHORITY = 'issuedLocalAuthority';
 
-    const ISSUED_ESTABLISHMENT_NUMBER = 'issuedEstablishmentNumber';
+    public const ISSUED_ESTABLISHMENT_NUMBER = 'issuedEstablishmentNumber';
 
-    const ISSUED_SERIAL_NUMBER = 'issuedSerialNumber';
+    public const ISSUED_SERIAL_NUMBER = 'issuedSerialNumber';
 
-    const UPN = 'upn';
+    public const UPN = 'upn';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const IS_TEMPORARY = 'isTemporary';
+    public const IS_TEMPORARY = 'isTemporary';
 
     protected $_resourceType = ResourceType::UK_DFE_UPN_ASSIGNMENT;
 
@@ -35,7 +35,7 @@ class UpnAssignment extends ModelBase
      * @return UpnAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -93,7 +93,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param int $issuedYear
      */
-    public function setIssuedYear($issuedYear = null)
+    public function setIssuedYear(int $issuedYear = null)
     {
         $this->setProperty('issuedYear', $issuedYear);
     }
@@ -109,7 +109,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param string $issuedLocalAuthority
      */
-    public function setIssuedLocalAuthority($issuedLocalAuthority = null)
+    public function setIssuedLocalAuthority(string $issuedLocalAuthority = null)
     {
         $this->setProperty('issuedLocalAuthority', $issuedLocalAuthority);
     }
@@ -125,7 +125,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param string $issuedEstablishmentNumber
      */
-    public function setIssuedEstablishmentNumber($issuedEstablishmentNumber = null)
+    public function setIssuedEstablishmentNumber(string $issuedEstablishmentNumber = null)
     {
         $this->setProperty('issuedEstablishmentNumber', $issuedEstablishmentNumber);
     }
@@ -141,7 +141,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param int $issuedSerialNumber
      */
-    public function setIssuedSerialNumber($issuedSerialNumber = null)
+    public function setIssuedSerialNumber(int $issuedSerialNumber = null)
     {
         $this->setProperty('issuedSerialNumber', $issuedSerialNumber);
     }
@@ -157,7 +157,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param string $upn
      */
-    public function setUpn($upn = null)
+    public function setUpn(string $upn = null)
     {
         $this->setProperty('upn', $upn);
     }
@@ -205,7 +205,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param bool $isTemporary
      */
-    public function setIsTemporary($isTemporary = null)
+    public function setIsTemporary(bool $isTemporary = null)
     {
         $this->setProperty('isTemporary', $isTemporary);
     }

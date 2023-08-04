@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentImportRow extends ModelBase
+class AssessmentImportRow extends \ModelBase
 {
-    const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
+    public const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
 
-    const MAPPED_STUDENT = 'mappedStudent';
+    public const MAPPED_STUDENT = 'mappedStudent';
 
     protected $_resourceType = ResourceType::ASSESSMENT_IMPORT_ROW;
 
@@ -17,7 +17,7 @@ class AssessmentImportRow extends ModelBase
      * @return AssessmentImportRow[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AssessmentImportRow extends ModelBase
     /**
      * @param AssessmentImportJob $assessmentImportJob
      */
-    public function setAssessmentImportJob(AssessmentImportJob $assessmentImportJob = null)
+    public function setAssessmentImportJob(\AssessmentImportJob $assessmentImportJob = null)
     {
         $this->setProperty('assessmentImportJob', $assessmentImportJob);
     }
@@ -75,7 +75,7 @@ class AssessmentImportRow extends ModelBase
     /**
      * @param Student $mappedStudent
      */
-    public function setMappedStudent(Student $mappedStudent = null)
+    public function setMappedStudent(\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }

@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricAssessment extends ModelBase
+class AssessmentMetricAssessment extends \ModelBase
 {
-    const ASSESSMENT_METRIC = 'assessmentMetric';
+    public const ASSESSMENT_METRIC = 'assessmentMetric';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'assessmentMetricAssessmentBatch';
+    public const ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'assessmentMetricAssessmentBatch';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_ASSESSMENT;
 
@@ -19,7 +19,7 @@ class AssessmentMetricAssessment extends ModelBase
      * @return AssessmentMetricAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class AssessmentMetricAssessment extends ModelBase
     /**
      * @param AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
@@ -77,7 +77,7 @@ class AssessmentMetricAssessment extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -93,7 +93,7 @@ class AssessmentMetricAssessment extends ModelBase
     /**
      * @param AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch
      */
-    public function setAssessmentMetricAssessmentBatch(AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
+    public function setAssessmentMetricAssessmentBatch(\AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
     {
         $this->setProperty('assessmentMetricAssessmentBatch', $assessmentMetricAssessmentBatch);
     }

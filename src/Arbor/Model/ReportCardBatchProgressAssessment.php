@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ReportCardBatchProgressAssessment extends ModelBase
+class ReportCardBatchProgressAssessment extends \ModelBase
 {
-    const REPORT_CARD_BATCH = 'reportCardBatch';
+    public const REPORT_CARD_BATCH = 'reportCardBatch';
 
-    const ORDER = 'order';
+    public const ORDER = 'order';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const DISPLAY_GRADE_SET = 'displayGradeSet';
+    public const DISPLAY_GRADE_SET = 'displayGradeSet';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_PROGRESS_ASSESSMENT;
 
@@ -23,7 +23,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
      * @return ReportCardBatchProgressAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -81,7 +81,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder($order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -97,7 +97,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -113,7 +113,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param GradeSet $displayGradeSet
      */
-    public function setDisplayGradeSet(GradeSet $displayGradeSet = null)
+    public function setDisplayGradeSet(\GradeSet $displayGradeSet = null)
     {
         $this->setProperty('displayGradeSet', $displayGradeSet);
     }

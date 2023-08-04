@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BankDetail extends ModelBase
+class BankDetail extends \ModelBase
 {
-    const ACCOUNT_HOLDER = 'accountHolder';
+    public const ACCOUNT_HOLDER = 'accountHolder';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const BANK = 'bank';
+    public const BANK = 'bank';
 
-    const ACCOUNT_NAME = 'accountName';
+    public const ACCOUNT_NAME = 'accountName';
 
-    const ACCOUNT_NUMBER = 'accountNumber';
+    public const ACCOUNT_NUMBER = 'accountNumber';
 
-    const SORT_CODE = 'sortCode';
+    public const SORT_CODE = 'sortCode';
 
     protected $_resourceType = ResourceType::BANK_DETAIL;
 
@@ -27,7 +27,7 @@ class BankDetail extends ModelBase
      * @return BankDetail[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class BankDetail extends ModelBase
     /**
      * @param Staff $accountHolder
      */
-    public function setAccountHolder(Staff $accountHolder = null)
+    public function setAccountHolder(\Staff $accountHolder = null)
     {
         $this->setProperty('accountHolder', $accountHolder);
     }
@@ -117,7 +117,7 @@ class BankDetail extends ModelBase
     /**
      * @param Bank $bank
      */
-    public function setBank(Bank $bank = null)
+    public function setBank(\Bank $bank = null)
     {
         $this->setProperty('bank', $bank);
     }
@@ -133,7 +133,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $accountName
      */
-    public function setAccountName($accountName = null)
+    public function setAccountName(string $accountName = null)
     {
         $this->setProperty('accountName', $accountName);
     }
@@ -149,7 +149,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $accountNumber
      */
-    public function setAccountNumber($accountNumber = null)
+    public function setAccountNumber(string $accountNumber = null)
     {
         $this->setProperty('accountNumber', $accountNumber);
     }
@@ -165,7 +165,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $sortCode
      */
-    public function setSortCode($sortCode = null)
+    public function setSortCode(string $sortCode = null)
     {
         $this->setProperty('sortCode', $sortCode);
     }

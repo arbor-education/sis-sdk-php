@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ClubLead extends ModelBase
+class ClubLead extends \ModelBase
 {
-    const CLUB = 'club';
+    public const CLUB = 'club';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::CLUB_LEAD;
 
@@ -21,7 +21,7 @@ class ClubLead extends ModelBase
      * @return ClubLead[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ClubLead extends ModelBase
     /**
      * @param Club $club
      */
-    public function setClub(Club $club = null)
+    public function setClub(\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -79,7 +79,7 @@ class ClubLead extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

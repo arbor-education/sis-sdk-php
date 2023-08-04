@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviouralIncidentWitness extends ModelBase
+class BehaviouralIncidentWitness extends \ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const WITNESS = 'witness';
+    public const WITNESS = 'witness';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const CONFIRMED_DATETIME = 'confirmedDatetime';
+    public const CONFIRMED_DATETIME = 'confirmedDatetime';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_WITNESS;
 
@@ -21,7 +21,7 @@ class BehaviouralIncidentWitness extends ModelBase
      * @return BehaviouralIncidentWitness[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class BehaviouralIncidentWitness extends ModelBase
     /**
      * @param BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -79,7 +79,7 @@ class BehaviouralIncidentWitness extends ModelBase
     /**
      * @param ModelBase $witness
      */
-    public function setWitness(ModelBase $witness = null)
+    public function setWitness(\ModelBase $witness = null)
     {
         $this->setProperty('witness', $witness);
     }
@@ -95,7 +95,7 @@ class BehaviouralIncidentWitness extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

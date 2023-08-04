@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentDerivation extends ModelBase
+class AssessmentDerivation extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CALCULATOR_CLASS = 'calculatorClass';
+    public const CALCULATOR_CLASS = 'calculatorClass';
 
     protected $_resourceType = ResourceType::ASSESSMENT_DERIVATION;
 
@@ -29,7 +29,7 @@ class AssessmentDerivation extends ModelBase
      * @return AssessmentDerivation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +87,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,7 +103,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -119,7 +119,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param ModelBase $assessment
      */
-    public function setAssessment(ModelBase $assessment = null)
+    public function setAssessment(\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -135,7 +135,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -183,7 +183,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param string $calculatorClass
      */
-    public function setCalculatorClass($calculatorClass = null)
+    public function setCalculatorClass(string $calculatorClass = null)
     {
         $this->setProperty('calculatorClass', $calculatorClass);
     }

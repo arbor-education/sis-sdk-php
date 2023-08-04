@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentRecordChange extends ModelBase
+class StudentRecordChange extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CHANGER_CLASS_NAME = 'changerClassName';
+    public const CHANGER_CLASS_NAME = 'changerClassName';
 
-    const CHANGE_TYPE = 'changeType';
+    public const CHANGE_TYPE = 'changeType';
 
-    const REFERENCE_OBJECT = 'referenceObject';
+    public const REFERENCE_OBJECT = 'referenceObject';
 
-    const ACCEPTED_DATETIME = 'acceptedDatetime';
+    public const ACCEPTED_DATETIME = 'acceptedDatetime';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
-    const ACTIONED_BY_STAFF = 'actionedByStaff';
+    public const ACTIONED_BY_STAFF = 'actionedByStaff';
 
-    const OLD_DATA = 'oldData';
+    public const OLD_DATA = 'oldData';
 
-    const NEW_DATA = 'newData';
+    public const NEW_DATA = 'newData';
 
     protected $_resourceType = ResourceType::STUDENT_RECORD_CHANGE;
 
@@ -31,7 +31,7 @@ class StudentRecordChange extends ModelBase
      * @return StudentRecordChange[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -89,7 +89,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $changerClassName
      */
-    public function setChangerClassName($changerClassName = null)
+    public function setChangerClassName(string $changerClassName = null)
     {
         $this->setProperty('changerClassName', $changerClassName);
     }
@@ -105,7 +105,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $changeType
      */
-    public function setChangeType($changeType = null)
+    public function setChangeType(string $changeType = null)
     {
         $this->setProperty('changeType', $changeType);
     }
@@ -121,7 +121,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param ModelBase $referenceObject
      */
-    public function setReferenceObject(ModelBase $referenceObject = null)
+    public function setReferenceObject(\ModelBase $referenceObject = null)
     {
         $this->setProperty('referenceObject', $referenceObject);
     }
@@ -169,7 +169,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param Staff $actionedByStaff
      */
-    public function setActionedByStaff(Staff $actionedByStaff = null)
+    public function setActionedByStaff(\Staff $actionedByStaff = null)
     {
         $this->setProperty('actionedByStaff', $actionedByStaff);
     }
@@ -185,7 +185,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $oldData
      */
-    public function setOldData($oldData = null)
+    public function setOldData(string $oldData = null)
     {
         $this->setProperty('oldData', $oldData);
     }
@@ -201,7 +201,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $newData
      */
-    public function setNewData($newData = null)
+    public function setNewData(string $newData = null)
     {
         $this->setProperty('newData', $newData);
     }

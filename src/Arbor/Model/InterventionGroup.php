@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InterventionGroup extends ModelBase
+class InterventionGroup extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const INTERVENTION = 'intervention';
+    public const INTERVENTION = 'intervention';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const AIMS = 'aims';
+    public const AIMS = 'aims';
 
-    const SUCCESS_CRITERIA = 'successCriteria';
+    public const SUCCESS_CRITERIA = 'successCriteria';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const IS_ATTENDANCE_REGISTERED = 'isAttendanceRegistered';
+    public const IS_ATTENDANCE_REGISTERED = 'isAttendanceRegistered';
 
     protected $_resourceType = ResourceType::INTERVENTION_GROUP;
 
@@ -29,7 +29,7 @@ class InterventionGroup extends ModelBase
      * @return InterventionGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -87,7 +87,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param Intervention $intervention
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setIntervention(\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -135,7 +135,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims($aims = null)
+    public function setAims(string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -151,7 +151,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria($successCriteria = null)
+    public function setSuccessCriteria(string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -167,7 +167,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -183,7 +183,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param bool $isAttendanceRegistered
      */
-    public function setIsAttendanceRegistered($isAttendanceRegistered = null)
+    public function setIsAttendanceRegistered(bool $isAttendanceRegistered = null)
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }

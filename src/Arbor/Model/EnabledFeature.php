@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EnabledFeature extends ModelBase
+class EnabledFeature extends \ModelBase
 {
-    const FEATURE_IDENTIFIER = 'featureIdentifier';
+    public const FEATURE_IDENTIFIER = 'featureIdentifier';
 
-    const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
+    public const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
 
-    const BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = 'billingServiceContractSubscriptionId';
+    public const BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = 'billingServiceContractSubscriptionId';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::ENABLED_FEATURE;
 
@@ -23,7 +23,7 @@ class EnabledFeature extends ModelBase
      * @return EnabledFeature[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $featureIdentifier
      */
-    public function setFeatureIdentifier($featureIdentifier = null)
+    public function setFeatureIdentifier(string $featureIdentifier = null)
     {
         $this->setProperty('featureIdentifier', $featureIdentifier);
     }
@@ -81,7 +81,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param int $crmContractServiceSubscriptionId
      */
-    public function setCrmContractServiceSubscriptionId($crmContractServiceSubscriptionId = null)
+    public function setCrmContractServiceSubscriptionId(int $crmContractServiceSubscriptionId = null)
     {
         $this->setProperty('crmContractServiceSubscriptionId', $crmContractServiceSubscriptionId);
     }
@@ -97,7 +97,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param int $billingServiceContractSubscriptionId
      */
-    public function setBillingServiceContractSubscriptionId($billingServiceContractSubscriptionId = null)
+    public function setBillingServiceContractSubscriptionId(int $billingServiceContractSubscriptionId = null)
     {
         $this->setProperty('billingServiceContractSubscriptionId', $billingServiceContractSubscriptionId);
     }

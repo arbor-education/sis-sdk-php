@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntegrationsHrFinanceProvider extends ModelBase
+class IntegrationsHrFinanceProvider extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const CONFIGURATION = 'configuration';
+    public const CONFIGURATION = 'configuration';
 
-    const ENABLED = 'enabled';
+    public const ENABLED = 'enabled';
 
     protected $_resourceType = ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER;
 
@@ -25,7 +25,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
      * @return IntegrationsHrFinanceProvider[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +83,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +99,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -115,7 +115,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -131,7 +131,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @param string $configuration
      */
-    public function setConfiguration($configuration = null)
+    public function setConfiguration(string $configuration = null)
     {
         $this->setProperty('configuration', $configuration);
     }
@@ -147,7 +147,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled($enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }

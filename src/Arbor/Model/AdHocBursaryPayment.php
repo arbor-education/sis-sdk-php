@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AdHocBursaryPayment extends ModelBase
+class AdHocBursaryPayment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const BURSARY_TYPE = 'bursaryType';
+    public const BURSARY_TYPE = 'bursaryType';
 
-    const AMOUNT = 'amount';
+    public const AMOUNT = 'amount';
 
-    const PAID_DATE = 'paidDate';
+    public const PAID_DATE = 'paidDate';
 
-    const APPROVED_DATE = 'approvedDate';
+    public const APPROVED_DATE = 'approvedDate';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
     protected $_resourceType = ResourceType::AD_HOC_BURSARY_PAYMENT;
 
@@ -25,7 +25,7 @@ class AdHocBursaryPayment extends ModelBase
      * @return AdHocBursaryPayment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +83,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param BursaryType $bursaryType
      */
-    public function setBursaryType(BursaryType $bursaryType = null)
+    public function setBursaryType(\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
@@ -99,7 +99,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount($amount = null)
+    public function setAmount(string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -147,7 +147,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }

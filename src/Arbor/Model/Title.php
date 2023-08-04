@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Title extends ModelBase
+class Title extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const IS_MALE = 'isMale';
+    public const IS_MALE = 'isMale';
 
-    const IS_FEMALE = 'isFemale';
+    public const IS_FEMALE = 'isFemale';
 
     protected $_resourceType = ResourceType::TITLE;
 
@@ -25,7 +25,7 @@ class Title extends ModelBase
      * @return Title[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class Title extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +83,7 @@ class Title extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +99,7 @@ class Title extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -115,7 +115,7 @@ class Title extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -131,7 +131,7 @@ class Title extends ModelBase
     /**
      * @param bool $isMale
      */
-    public function setIsMale($isMale = null)
+    public function setIsMale(bool $isMale = null)
     {
         $this->setProperty('isMale', $isMale);
     }
@@ -147,7 +147,7 @@ class Title extends ModelBase
     /**
      * @param bool $isFemale
      */
-    public function setIsFemale($isFemale = null)
+    public function setIsFemale(bool $isFemale = null)
     {
         $this->setProperty('isFemale', $isFemale);
     }

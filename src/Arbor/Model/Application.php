@@ -4,41 +4,41 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Application extends ModelBase
+class Application extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const APPLICATION_DATETIME = 'applicationDatetime';
+    public const APPLICATION_DATETIME = 'applicationDatetime';
 
-    const APPLICATION_REFERENCE_NUMBER = 'applicationReferenceNumber';
+    public const APPLICATION_REFERENCE_NUMBER = 'applicationReferenceNumber';
 
-    const INTAKE_SEASON = 'intakeSeason';
+    public const INTAKE_SEASON = 'intakeSeason';
 
-    const APPLICANT_BUCKET = 'applicantBucket';
+    public const APPLICANT_BUCKET = 'applicantBucket';
 
-    const BUCKET_SCORE = 'bucketScore';
+    public const BUCKET_SCORE = 'bucketScore';
 
-    const WITHDRAWN_DATETIME = 'withdrawnDatetime';
+    public const WITHDRAWN_DATETIME = 'withdrawnDatetime';
 
-    const WITHDRAWAL_REASON = 'withdrawalReason';
+    public const WITHDRAWAL_REASON = 'withdrawalReason';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
-    const INTAKE_SEASON_GROUP = 'intakeSeasonGroup';
+    public const INTAKE_SEASON_GROUP = 'intakeSeasonGroup';
 
-    const OFFERED_DATETIME = 'offeredDatetime';
+    public const OFFERED_DATETIME = 'offeredDatetime';
 
-    const ACCEPTED_DATETIME = 'acceptedDatetime';
+    public const ACCEPTED_DATETIME = 'acceptedDatetime';
 
-    const EXPECTED_ADMISSION_DATE = 'expectedAdmissionDate';
+    public const EXPECTED_ADMISSION_DATE = 'expectedAdmissionDate';
 
-    const EXPECTED_ACADEMIC_LEVEL = 'expectedAcademicLevel';
+    public const EXPECTED_ACADEMIC_LEVEL = 'expectedAcademicLevel';
 
-    const EXPECTED_REGISTRATION_FORM = 'expectedRegistrationForm';
+    public const EXPECTED_REGISTRATION_FORM = 'expectedRegistrationForm';
 
-    const EXPECTED_HOUSE = 'expectedHouse';
+    public const EXPECTED_HOUSE = 'expectedHouse';
 
-    const ENROLLED_DATETIME = 'enrolledDatetime';
+    public const ENROLLED_DATETIME = 'enrolledDatetime';
 
     protected $_resourceType = ResourceType::APPLICATION;
 
@@ -47,7 +47,7 @@ class Application extends ModelBase
      * @return Application[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -89,7 +89,7 @@ class Application extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -121,7 +121,7 @@ class Application extends ModelBase
     /**
      * @param string $applicationReferenceNumber
      */
-    public function setApplicationReferenceNumber($applicationReferenceNumber = null)
+    public function setApplicationReferenceNumber(string $applicationReferenceNumber = null)
     {
         $this->setProperty('applicationReferenceNumber', $applicationReferenceNumber);
     }
@@ -137,7 +137,7 @@ class Application extends ModelBase
     /**
      * @param IntakeSeason $intakeSeason
      */
-    public function setIntakeSeason(IntakeSeason $intakeSeason = null)
+    public function setIntakeSeason(\IntakeSeason $intakeSeason = null)
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }
@@ -153,7 +153,7 @@ class Application extends ModelBase
     /**
      * @param IntakeSeasonApplicantBucket $applicantBucket
      */
-    public function setApplicantBucket(IntakeSeasonApplicantBucket $applicantBucket = null)
+    public function setApplicantBucket(\IntakeSeasonApplicantBucket $applicantBucket = null)
     {
         $this->setProperty('applicantBucket', $applicantBucket);
     }
@@ -169,7 +169,7 @@ class Application extends ModelBase
     /**
      * @param float $bucketScore
      */
-    public function setBucketScore($bucketScore = null)
+    public function setBucketScore(float $bucketScore = null)
     {
         $this->setProperty('bucketScore', $bucketScore);
     }
@@ -201,7 +201,7 @@ class Application extends ModelBase
     /**
      * @param ApplicationWithdrawalReason $withdrawalReason
      */
-    public function setWithdrawalReason(ApplicationWithdrawalReason $withdrawalReason = null)
+    public function setWithdrawalReason(\ApplicationWithdrawalReason $withdrawalReason = null)
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }
@@ -233,7 +233,7 @@ class Application extends ModelBase
     /**
      * @param IntakeSeasonGroup $intakeSeasonGroup
      */
-    public function setIntakeSeasonGroup(IntakeSeasonGroup $intakeSeasonGroup = null)
+    public function setIntakeSeasonGroup(\IntakeSeasonGroup $intakeSeasonGroup = null)
     {
         $this->setProperty('intakeSeasonGroup', $intakeSeasonGroup);
     }
@@ -297,7 +297,7 @@ class Application extends ModelBase
     /**
      * @param AcademicLevel $expectedAcademicLevel
      */
-    public function setExpectedAcademicLevel(AcademicLevel $expectedAcademicLevel = null)
+    public function setExpectedAcademicLevel(\AcademicLevel $expectedAcademicLevel = null)
     {
         $this->setProperty('expectedAcademicLevel', $expectedAcademicLevel);
     }
@@ -313,7 +313,7 @@ class Application extends ModelBase
     /**
      * @param RegistrationForm $expectedRegistrationForm
      */
-    public function setExpectedRegistrationForm(RegistrationForm $expectedRegistrationForm = null)
+    public function setExpectedRegistrationForm(\RegistrationForm $expectedRegistrationForm = null)
     {
         $this->setProperty('expectedRegistrationForm', $expectedRegistrationForm);
     }
@@ -329,7 +329,7 @@ class Application extends ModelBase
     /**
      * @param House $expectedHouse
      */
-    public function setExpectedHouse(House $expectedHouse = null)
+    public function setExpectedHouse(\House $expectedHouse = null)
     {
         $this->setProperty('expectedHouse', $expectedHouse);
     }

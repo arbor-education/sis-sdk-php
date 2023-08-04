@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmailAddress extends ModelBase
+class EmailAddress extends \ModelBase
 {
-    const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
+    public const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
 
-    const EMAIL_ADDRESS_TYPE = 'emailAddressType';
+    public const EMAIL_ADDRESS_TYPE = 'emailAddressType';
 
-    const EMAIL_ADDRESS = 'emailAddress';
+    public const EMAIL_ADDRESS = 'emailAddress';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ROLE = 'role';
+    public const ROLE = 'role';
 
-    const FREE = 'free';
+    public const FREE = 'free';
 
-    const DISPOSABLE = 'disposable';
+    public const DISPOSABLE = 'disposable';
 
     protected $_resourceType = ResourceType::EMAIL_ADDRESS;
 
@@ -27,7 +27,7 @@ class EmailAddress extends ModelBase
      * @return EmailAddress[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class EmailAddress extends ModelBase
     /**
      * @param ModelBase $emailAddressOwner
      */
-    public function setEmailAddressOwner(ModelBase $emailAddressOwner = null)
+    public function setEmailAddressOwner(\ModelBase $emailAddressOwner = null)
     {
         $this->setProperty('emailAddressOwner', $emailAddressOwner);
     }
@@ -85,7 +85,7 @@ class EmailAddress extends ModelBase
     /**
      * @param string $emailAddressType
      */
-    public function setEmailAddressType($emailAddressType = null)
+    public function setEmailAddressType(string $emailAddressType = null)
     {
         $this->setProperty('emailAddressType', $emailAddressType);
     }
@@ -101,7 +101,7 @@ class EmailAddress extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress($emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -117,7 +117,7 @@ class EmailAddress extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -133,7 +133,7 @@ class EmailAddress extends ModelBase
     /**
      * @param bool $role
      */
-    public function setRole($role = null)
+    public function setRole(bool $role = null)
     {
         $this->setProperty('role', $role);
     }
@@ -149,7 +149,7 @@ class EmailAddress extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree($free = null)
+    public function setFree(bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -165,7 +165,7 @@ class EmailAddress extends ModelBase
     /**
      * @param bool $disposable
      */
-    public function setDisposable($disposable = null)
+    public function setDisposable(bool $disposable = null)
     {
         $this->setProperty('disposable', $disposable);
     }

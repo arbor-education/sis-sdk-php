@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ObservationJudgement extends ModelBase
+class ObservationJudgement extends \ModelBase
 {
-    const OBSERVATION = 'observation';
+    public const OBSERVATION = 'observation';
 
-    const OBSERVATION_STRAND = 'observationStrand';
+    public const OBSERVATION_STRAND = 'observationStrand';
 
-    const OBSERVATION_GRADE = 'observationGrade';
+    public const OBSERVATION_GRADE = 'observationGrade';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
     protected $_resourceType = ResourceType::OBSERVATION_JUDGEMENT;
 
@@ -21,7 +21,7 @@ class ObservationJudgement extends ModelBase
      * @return ObservationJudgement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param Observation $observation
      */
-    public function setObservation(Observation $observation = null)
+    public function setObservation(\Observation $observation = null)
     {
         $this->setProperty('observation', $observation);
     }
@@ -79,7 +79,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param ObservationStrand $observationStrand
      */
-    public function setObservationStrand(ObservationStrand $observationStrand = null)
+    public function setObservationStrand(\ObservationStrand $observationStrand = null)
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
@@ -95,7 +95,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param ObservationGrade $observationGrade
      */
-    public function setObservationGrade(ObservationGrade $observationGrade = null)
+    public function setObservationGrade(\ObservationGrade $observationGrade = null)
     {
         $this->setProperty('observationGrade', $observationGrade);
     }
@@ -111,7 +111,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

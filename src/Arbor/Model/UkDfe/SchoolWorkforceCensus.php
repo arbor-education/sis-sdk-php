@@ -8,21 +8,21 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\AcademicYear;
 
-class SchoolWorkforceCensus extends ModelBase
+class SchoolWorkforceCensus extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const CENSUS_YEAR = 'censusYear';
+    public const CENSUS_YEAR = 'censusYear';
 
-    const CENSUS_REFERENCE_DATE = 'censusReferenceDate';
+    public const CENSUS_REFERENCE_DATE = 'censusReferenceDate';
 
-    const CENSUS_SUBMISSION_DEADLINE_DATE = 'censusSubmissionDeadlineDate';
+    public const CENSUS_SUBMISSION_DEADLINE_DATE = 'censusSubmissionDeadlineDate';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS;
 
@@ -31,7 +31,7 @@ class SchoolWorkforceCensus extends ModelBase
      * @return SchoolWorkforceCensus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -89,7 +89,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -105,7 +105,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -121,7 +121,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -137,7 +137,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $censusYear
      */
-    public function setCensusYear($censusYear = null)
+    public function setCensusYear(string $censusYear = null)
     {
         $this->setProperty('censusYear', $censusYear);
     }

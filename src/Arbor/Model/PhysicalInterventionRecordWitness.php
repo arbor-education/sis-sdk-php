@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PhysicalInterventionRecordWitness extends ModelBase
+class PhysicalInterventionRecordWitness extends \ModelBase
 {
-    const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
+    public const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
-    const WITNESS = 'witness';
+    public const WITNESS = 'witness';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const CONFIRMED_DATETIME = 'confirmedDatetime';
+    public const CONFIRMED_DATETIME = 'confirmedDatetime';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
     protected $_resourceType = ResourceType::PHYSICAL_INTERVENTION_RECORD_WITNESS;
 
@@ -23,7 +23,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      * @return PhysicalInterventionRecordWitness[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param PhysicalInterventionRecord $physicalInterventionRecord
      */
-    public function setPhysicalInterventionRecord(PhysicalInterventionRecord $physicalInterventionRecord = null)
+    public function setPhysicalInterventionRecord(\PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
         $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
@@ -81,7 +81,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param ModelBase $witness
      */
-    public function setWitness(ModelBase $witness = null)
+    public function setWitness(\ModelBase $witness = null)
     {
         $this->setProperty('witness', $witness);
     }
@@ -97,7 +97,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

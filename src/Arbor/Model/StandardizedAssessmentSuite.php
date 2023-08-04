@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StandardizedAssessmentSuite extends ModelBase
+class StandardizedAssessmentSuite extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ASSESSMENT_PROVIDER = 'assessmentProvider';
+    public const ASSESSMENT_PROVIDER = 'assessmentProvider';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_SUITE;
 
@@ -27,7 +27,7 @@ class StandardizedAssessmentSuite extends ModelBase
      * @return StandardizedAssessmentSuite[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param AssessmentProvider $assessmentProvider
      */
-    public function setAssessmentProvider(AssessmentProvider $assessmentProvider = null)
+    public function setAssessmentProvider(\AssessmentProvider $assessmentProvider = null)
     {
         $this->setProperty('assessmentProvider', $assessmentProvider);
     }
@@ -133,7 +133,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -149,7 +149,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -165,7 +165,7 @@ class StandardizedAssessmentSuite extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }

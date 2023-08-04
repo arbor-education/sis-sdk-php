@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryLevelAmount extends ModelBase
+class BursaryLevelAmount extends \ModelBase
 {
-    const BURSARY_LEVEL = 'bursaryLevel';
+    public const BURSARY_LEVEL = 'bursaryLevel';
 
-    const AMOUNT = 'amount';
+    public const AMOUNT = 'amount';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::BURSARY_LEVEL_AMOUNT;
 
@@ -21,7 +21,7 @@ class BursaryLevelAmount extends ModelBase
      * @return BursaryLevelAmount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class BursaryLevelAmount extends ModelBase
     /**
      * @param BursaryLevel $bursaryLevel
      */
-    public function setBursaryLevel(BursaryLevel $bursaryLevel = null)
+    public function setBursaryLevel(\BursaryLevel $bursaryLevel = null)
     {
         $this->setProperty('bursaryLevel', $bursaryLevel);
     }
@@ -79,7 +79,7 @@ class BursaryLevelAmount extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount($amount = null)
+    public function setAmount(string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }

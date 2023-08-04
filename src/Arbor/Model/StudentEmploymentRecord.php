@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentEmploymentRecord extends ModelBase
+class StudentEmploymentRecord extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EMPLOYER = 'employer';
+    public const EMPLOYER = 'employer';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const HOURS_PER_WEEK = 'hoursPerWeek';
+    public const HOURS_PER_WEEK = 'hoursPerWeek';
 
-    const INFORMATION_COLLECTED_DATE = 'informationCollectedDate';
+    public const INFORMATION_COLLECTED_DATE = 'informationCollectedDate';
 
-    const EMPLOYMENT_RECORD_TYPE = 'employmentRecordType';
+    public const EMPLOYMENT_RECORD_TYPE = 'employmentRecordType';
 
     protected $_resourceType = ResourceType::STUDENT_EMPLOYMENT_RECORD;
 
@@ -27,7 +27,7 @@ class StudentEmploymentRecord extends ModelBase
      * @return StudentEmploymentRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -85,7 +85,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param Employer $employer
      */
-    public function setEmployer(Employer $employer = null)
+    public function setEmployer(\Employer $employer = null)
     {
         $this->setProperty('employer', $employer);
     }
@@ -133,7 +133,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param string $hoursPerWeek
      */
-    public function setHoursPerWeek($hoursPerWeek = null)
+    public function setHoursPerWeek(string $hoursPerWeek = null)
     {
         $this->setProperty('hoursPerWeek', $hoursPerWeek);
     }
@@ -165,7 +165,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param EmploymentRecordType $employmentRecordType
      */
-    public function setEmploymentRecordType(EmploymentRecordType $employmentRecordType = null)
+    public function setEmploymentRecordType(\EmploymentRecordType $employmentRecordType = null)
     {
         $this->setProperty('employmentRecordType', $employmentRecordType);
     }

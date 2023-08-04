@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentProgressAssessmentMark extends ModelBase
+class StudentProgressAssessmentMark extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
+    public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
-    const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
+    public const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
 
-    const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
+    public const ASSESSMENT_MARK_NON_SUBMISSION_REASON = 'assessmentMarkNonSubmissionReason';
 
-    const ASSESSMENT_DATE = 'assessmentDate';
+    public const ASSESSMENT_DATE = 'assessmentDate';
 
-    const MARKING_STAFF = 'markingStaff';
+    public const MARKING_STAFF = 'markingStaff';
 
-    const COMPLETED_DATETIME = 'completedDatetime';
+    public const COMPLETED_DATETIME = 'completedDatetime';
 
-    const COMPLETED_STAFF = 'completedStaff';
+    public const COMPLETED_STAFF = 'completedStaff';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
-    const APPROVED_STAFF = 'approvedStaff';
+    public const APPROVED_STAFF = 'approvedStaff';
 
     protected $_resourceType = ResourceType::STUDENT_PROGRESS_ASSESSMENT_MARK;
 
@@ -41,7 +41,7 @@ class StudentProgressAssessmentMark extends ModelBase
      * @return StudentProgressAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -99,7 +99,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -115,7 +115,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -131,7 +131,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param Grade $grade
      */
-    public function setGrade(Grade $grade = null)
+    public function setGrade(\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -147,7 +147,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -163,7 +163,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -179,7 +179,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -195,7 +195,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
      */
-    public function setAssessmentMarkNonSubmissionReason(AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    public function setAssessmentMarkNonSubmissionReason(\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
     {
         $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
@@ -227,7 +227,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param Staff $markingStaff
      */
-    public function setMarkingStaff(Staff $markingStaff = null)
+    public function setMarkingStaff(\Staff $markingStaff = null)
     {
         $this->setProperty('markingStaff', $markingStaff);
     }
@@ -259,7 +259,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param Staff $completedStaff
      */
-    public function setCompletedStaff(Staff $completedStaff = null)
+    public function setCompletedStaff(\Staff $completedStaff = null)
     {
         $this->setProperty('completedStaff', $completedStaff);
     }
@@ -291,7 +291,7 @@ class StudentProgressAssessmentMark extends ModelBase
     /**
      * @param Staff $approvedStaff
      */
-    public function setApprovedStaff(Staff $approvedStaff = null)
+    public function setApprovedStaff(\Staff $approvedStaff = null)
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }

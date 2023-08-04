@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PointAward extends ModelBase
+class PointAward extends \ModelBase
 {
-    const POINT_AWARD_SCALE = 'pointAwardScale';
+    public const POINT_AWARD_SCALE = 'pointAwardScale';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const POINT_AWARD_CATEGORY = 'pointAwardCategory';
+    public const POINT_AWARD_CATEGORY = 'pointAwardCategory';
 
-    const POINTS = 'points';
+    public const POINTS = 'points';
 
-    const AWARDED_DATETIME = 'awardedDatetime';
+    public const AWARDED_DATETIME = 'awardedDatetime';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const AWARDED_BY_STAFF = 'awardedByStaff';
+    public const AWARDED_BY_STAFF = 'awardedByStaff';
 
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
     protected $_resourceType = ResourceType::POINT_AWARD;
 
@@ -31,7 +31,7 @@ class PointAward extends ModelBase
      * @return PointAward[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class PointAward extends ModelBase
     /**
      * @param PointAwardScale $pointAwardScale
      */
-    public function setPointAwardScale(PointAwardScale $pointAwardScale = null)
+    public function setPointAwardScale(\PointAwardScale $pointAwardScale = null)
     {
         $this->setProperty('pointAwardScale', $pointAwardScale);
     }
@@ -89,7 +89,7 @@ class PointAward extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -105,7 +105,7 @@ class PointAward extends ModelBase
     /**
      * @param PointAwardCategory $pointAwardCategory
      */
-    public function setPointAwardCategory(PointAwardCategory $pointAwardCategory = null)
+    public function setPointAwardCategory(\PointAwardCategory $pointAwardCategory = null)
     {
         $this->setProperty('pointAwardCategory', $pointAwardCategory);
     }
@@ -121,7 +121,7 @@ class PointAward extends ModelBase
     /**
      * @param float $points
      */
-    public function setPoints($points = null)
+    public function setPoints(float $points = null)
     {
         $this->setProperty('points', $points);
     }
@@ -153,7 +153,7 @@ class PointAward extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -169,7 +169,7 @@ class PointAward extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -185,7 +185,7 @@ class PointAward extends ModelBase
     /**
      * @param Staff $awardedByStaff
      */
-    public function setAwardedByStaff(Staff $awardedByStaff = null)
+    public function setAwardedByStaff(\Staff $awardedByStaff = null)
     {
         $this->setProperty('awardedByStaff', $awardedByStaff);
     }
@@ -201,7 +201,7 @@ class PointAward extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }

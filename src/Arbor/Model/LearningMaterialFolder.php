@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LearningMaterialFolder extends ModelBase
+class LearningMaterialFolder extends \ModelBase
 {
-    const PARENT_LEARNING_MATERIAL_FOLDER = 'parentLearningMaterialFolder';
+    public const PARENT_LEARNING_MATERIAL_FOLDER = 'parentLearningMaterialFolder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::LEARNING_MATERIAL_FOLDER;
 
@@ -17,7 +17,7 @@ class LearningMaterialFolder extends ModelBase
      * @return LearningMaterialFolder[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class LearningMaterialFolder extends ModelBase
     /**
      * @param LearningMaterialFolder $parentLearningMaterialFolder
      */
-    public function setParentLearningMaterialFolder(LearningMaterialFolder $parentLearningMaterialFolder = null)
+    public function setParentLearningMaterialFolder(\LearningMaterialFolder $parentLearningMaterialFolder = null)
     {
         $this->setProperty('parentLearningMaterialFolder', $parentLearningMaterialFolder);
     }
@@ -75,7 +75,7 @@ class LearningMaterialFolder extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

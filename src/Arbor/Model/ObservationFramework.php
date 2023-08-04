@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ObservationFramework extends ModelBase
+class ObservationFramework extends \ModelBase
 {
-    const OBSERVATION_TYPE = 'observationType';
+    public const OBSERVATION_TYPE = 'observationType';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::OBSERVATION_FRAMEWORK;
 
@@ -17,7 +17,7 @@ class ObservationFramework extends ModelBase
      * @return ObservationFramework[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ObservationFramework extends ModelBase
     /**
      * @param ObservationType $observationType
      */
-    public function setObservationType(ObservationType $observationType = null)
+    public function setObservationType(\ObservationType $observationType = null)
     {
         $this->setProperty('observationType', $observationType);
     }
@@ -75,7 +75,7 @@ class ObservationFramework extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

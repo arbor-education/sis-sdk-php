@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class CurriculumGrade extends ModelBase
+class CurriculumGrade extends \ModelBase
 {
-    const D00020 = 'd00020';
+    public const D00020 = 'd00020';
 
-    const D00020_ORDER = 'd00020Order';
+    public const D00020_ORDER = 'd00020Order';
 
     protected $_resourceType = ResourceType::UK_DFE_CURRICULUM_GRADE;
 
@@ -20,7 +20,7 @@ class CurriculumGrade extends ModelBase
      * @return CurriculumGrade[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param string $d00020
      */
-    public function setD00020($d00020 = null)
+    public function setD00020(string $d00020 = null)
     {
         $this->setProperty('d00020', $d00020);
     }
@@ -78,7 +78,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param int $d00020Order
      */
-    public function setD00020Order($d00020Order = null)
+    public function setD00020Order(int $d00020Order = null)
     {
         $this->setProperty('d00020Order', $d00020Order);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SenStatusAssignment extends ModelBase
+class SenStatusAssignment extends \ModelBase
 {
-    const SEN_STATUS = 'senStatus';
+    public const SEN_STATUS = 'senStatus';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::SEN_STATUS_ASSIGNMENT;
 
@@ -21,7 +21,7 @@ class SenStatusAssignment extends ModelBase
      * @return SenStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param SenStatus $senStatus
      */
-    public function setSenStatus(SenStatus $senStatus = null)
+    public function setSenStatus(\SenStatus $senStatus = null)
     {
         $this->setProperty('senStatus', $senStatus);
     }
@@ -79,7 +79,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

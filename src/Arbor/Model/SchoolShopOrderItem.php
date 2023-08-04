@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SchoolShopOrderItem extends ModelBase
+class SchoolShopOrderItem extends \ModelBase
 {
-    const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
+    public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
-    const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
+    public const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
     protected $_resourceType = ResourceType::SCHOOL_SHOP_ORDER_ITEM;
 
@@ -21,7 +21,7 @@ class SchoolShopOrderItem extends ModelBase
      * @return SchoolShopOrderItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
@@ -79,7 +79,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -95,7 +95,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -111,7 +111,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

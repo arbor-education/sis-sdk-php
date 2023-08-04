@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonIdentificationDocument extends ModelBase
+class PersonIdentificationDocument extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const DOCUMENT_TYPE = 'documentType';
+    public const DOCUMENT_TYPE = 'documentType';
 
-    const DOCUMENT_NUMBER = 'documentNumber';
+    public const DOCUMENT_NUMBER = 'documentNumber';
 
-    const ISSUE_DATE = 'issueDate';
+    public const ISSUE_DATE = 'issueDate';
 
-    const EXPIRY_DATE = 'expiryDate';
+    public const EXPIRY_DATE = 'expiryDate';
 
-    const NAME_ON_DOCUMENT = 'nameOnDocument';
+    public const NAME_ON_DOCUMENT = 'nameOnDocument';
 
-    const ISSUING_COUNTRY = 'issuingCountry';
+    public const ISSUING_COUNTRY = 'issuingCountry';
 
     protected $_resourceType = ResourceType::PERSON_IDENTIFICATION_DOCUMENT;
 
@@ -27,7 +27,7 @@ class PersonIdentificationDocument extends ModelBase
      * @return PersonIdentificationDocument[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -85,7 +85,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param IdentificationDocumentType $documentType
      */
-    public function setDocumentType(IdentificationDocumentType $documentType = null)
+    public function setDocumentType(\IdentificationDocumentType $documentType = null)
     {
         $this->setProperty('documentType', $documentType);
     }
@@ -101,7 +101,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param string $documentNumber
      */
-    public function setDocumentNumber($documentNumber = null)
+    public function setDocumentNumber(string $documentNumber = null)
     {
         $this->setProperty('documentNumber', $documentNumber);
     }
@@ -149,7 +149,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param string $nameOnDocument
      */
-    public function setNameOnDocument($nameOnDocument = null)
+    public function setNameOnDocument(string $nameOnDocument = null)
     {
         $this->setProperty('nameOnDocument', $nameOnDocument);
     }
@@ -165,7 +165,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param Country $issuingCountry
      */
-    public function setIssuingCountry(Country $issuingCountry = null)
+    public function setIssuingCountry(\Country $issuingCountry = null)
     {
         $this->setProperty('issuingCountry', $issuingCountry);
     }

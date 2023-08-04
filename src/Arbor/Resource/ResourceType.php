@@ -462,6 +462,7 @@ class ResourceType
     const REPORT_CARD_BATCH_PROGRESS_ASSESSMENT = 'ReportCardBatchProgressAssessment';
     const REPORT_CARD_BATCH_ACADEMIC_UNIT = 'ReportCardBatchAcademicUnit';
     const REPORT_CARD_BATCH_AD_HOC_ASSESSMENT = 'ReportCardBatchAdHocAssessment';
+    const REPORT_CARD_BATCH_STANDARDIZED_ASSESSMENT = 'ReportCardBatchStandardizedAssessment';
     const EXTERNALLY_GENERATED_REPORT_CARD = 'ExternallyGeneratedReportCard';
     const CUSTOM_REPORT_CARD = 'CustomReportCard';
     const CUSTOM_REPORT_CARD_STUDENT_GROUP = 'CustomReportCardStudentGroup';
@@ -709,9 +710,15 @@ class ResourceType
     const INCOMING_ENTITY_TRANSFER = 'IncomingEntityTransfer';
     const INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT = 'IntegrationsVleProviderAcademicUnit';
     const AI_REQUEST = 'AiRequest';
+    const TIMETABLE_IMPORT_TIMETABLE_SLOT = 'TimetableImportTimetableSlot';
+    const TIMETABLE_IMPORT_TIMETABLE_SLOT_RELATED_ENTITY = 'TimetableImportTimetableSlotRelatedEntity';
     const USER_BETA = 'UserBeta';
     const SCHOOL_SHOP_PRODUCT = 'SchoolShopProduct';
     const SCHOOL_SHOP_PRODUCT_PRICE = 'SchoolShopProductPrice';
     const SCHOOL_SHOP_PRODUCT_ELIGIBILITY = 'SchoolShopProductEligibility';
     const SCHOOL_SHOP_ORDER_ITEM = 'SchoolShopOrderItem';
+    const ENTITY_PUSHDOWN = 'EntityPushdown';
+    const ENTITY_PUSHDOWN_SYNCED_ENTITY = 'EntityPushdownSyncedEntity';
+    const ENTITY_PUSHDOWN_VERSION = 'EntityPushdownVersion';
+    const ENTITY_PUSHDOWN_VERSION_STATUS = 'EntityPushdownVersionStatus';
 }

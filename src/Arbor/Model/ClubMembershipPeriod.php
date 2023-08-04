@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ClubMembershipPeriod extends ModelBase
+class ClubMembershipPeriod extends \ModelBase
 {
-    const CLUB = 'club';
+    public const CLUB = 'club';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const PURCHASE_START_DATE = 'purchaseStartDate';
+    public const PURCHASE_START_DATE = 'purchaseStartDate';
 
-    const PURCHASE_END_DATE = 'purchaseEndDate';
+    public const PURCHASE_END_DATE = 'purchaseEndDate';
 
-    const MEMBERSHIP_PERIOD_TYPE = 'membershipPeriodType';
+    public const MEMBERSHIP_PERIOD_TYPE = 'membershipPeriodType';
 
-    const GUARDIAN_SIGNUP_START_DATETIME = 'guardianSignupStartDatetime';
+    public const GUARDIAN_SIGNUP_START_DATETIME = 'guardianSignupStartDatetime';
 
-    const GUARDIAN_SIGNUP_END_DATETIME = 'guardianSignupEndDatetime';
+    public const GUARDIAN_SIGNUP_END_DATETIME = 'guardianSignupEndDatetime';
 
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP_PERIOD;
 
@@ -27,7 +27,7 @@ class ClubMembershipPeriod extends ModelBase
      * @return ClubMembershipPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param Club $club
      */
-    public function setClub(Club $club = null)
+    public function setClub(\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -85,7 +85,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -133,7 +133,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param string $membershipPeriodType
      */
-    public function setMembershipPeriodType($membershipPeriodType = null)
+    public function setMembershipPeriodType(string $membershipPeriodType = null)
     {
         $this->setProperty('membershipPeriodType', $membershipPeriodType);
     }

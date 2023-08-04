@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmergencyAlert extends ModelBase
+class EmergencyAlert extends \ModelBase
 {
-    const DATETIME = 'datetime';
+    public const DATETIME = 'datetime';
 
-    const TRIGGERED_BY_STAFF = 'triggeredByStaff';
+    public const TRIGGERED_BY_STAFF = 'triggeredByStaff';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
-    const EMERGENCY_ALERT_TYPE = 'emergencyAlertType';
+    public const EMERGENCY_ALERT_TYPE = 'emergencyAlertType';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const STATUS_MODIFIED_STAFF = 'statusModifiedStaff';
+    public const STATUS_MODIFIED_STAFF = 'statusModifiedStaff';
 
-    const STATUS_MODIFIED_DATETIME = 'statusModifiedDatetime';
+    public const STATUS_MODIFIED_DATETIME = 'statusModifiedDatetime';
 
     protected $_resourceType = ResourceType::EMERGENCY_ALERT;
 
@@ -31,7 +31,7 @@ class EmergencyAlert extends ModelBase
      * @return EmergencyAlert[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -89,7 +89,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param Staff $triggeredByStaff
      */
-    public function setTriggeredByStaff(Staff $triggeredByStaff = null)
+    public function setTriggeredByStaff(\Staff $triggeredByStaff = null)
     {
         $this->setProperty('triggeredByStaff', $triggeredByStaff);
     }
@@ -105,7 +105,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param Room $location
      */
-    public function setLocation(Room $location = null)
+    public function setLocation(\Room $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -121,7 +121,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -137,7 +137,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -153,7 +153,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param EmergencyAlertType $emergencyAlertType
      */
-    public function setEmergencyAlertType(EmergencyAlertType $emergencyAlertType = null)
+    public function setEmergencyAlertType(\EmergencyAlertType $emergencyAlertType = null)
     {
         $this->setProperty('emergencyAlertType', $emergencyAlertType);
     }
@@ -169,7 +169,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -185,7 +185,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param Staff $statusModifiedStaff
      */
-    public function setStatusModifiedStaff(Staff $statusModifiedStaff = null)
+    public function setStatusModifiedStaff(\Staff $statusModifiedStaff = null)
     {
         $this->setProperty('statusModifiedStaff', $statusModifiedStaff);
     }

@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricRuleGradeItem extends ModelBase
+class AssessmentMetricRuleGradeItem extends \ModelBase
 {
-    const OPERATOR = 'operator';
+    public const OPERATOR = 'operator';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
-    const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
+    public const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
 
-    const ASSESSMENT_METRIC_ASSESSMENT = 'assessmentMetricAssessment';
+    public const ASSESSMENT_METRIC_ASSESSMENT = 'assessmentMetricAssessment';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_RULE_GRADE_ITEM;
 
@@ -23,7 +23,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
      * @return AssessmentMetricRuleGradeItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     /**
      * @param string $operator
      */
-    public function setOperator($operator = null)
+    public function setOperator(string $operator = null)
     {
         $this->setProperty('operator', $operator);
     }
@@ -81,7 +81,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     /**
      * @param Grade $grade
      */
-    public function setGrade(Grade $grade = null)
+    public function setGrade(\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -97,7 +97,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     /**
      * @param AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
@@ -113,7 +113,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     /**
      * @param AssessmentMetricAssessment $assessmentMetricAssessment
      */
-    public function setAssessmentMetricAssessment(AssessmentMetricAssessment $assessmentMetricAssessment = null)
+    public function setAssessmentMetricAssessment(\AssessmentMetricAssessment $assessmentMetricAssessment = null)
     {
         $this->setProperty('assessmentMetricAssessment', $assessmentMetricAssessment);
     }
@@ -129,7 +129,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }

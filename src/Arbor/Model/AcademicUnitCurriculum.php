@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicUnitCurriculum extends ModelBase
+class AcademicUnitCurriculum extends \ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const CURRICULUM = 'curriculum';
+    public const CURRICULUM = 'curriculum';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_CURRICULUM;
 
@@ -17,7 +17,7 @@ class AcademicUnitCurriculum extends ModelBase
      * @return AcademicUnitCurriculum[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AcademicUnitCurriculum extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -75,7 +75,7 @@ class AcademicUnitCurriculum extends ModelBase
     /**
      * @param Curriculum $curriculum
      */
-    public function setCurriculum(Curriculum $curriculum = null)
+    public function setCurriculum(\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }

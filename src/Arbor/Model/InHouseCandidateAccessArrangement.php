@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InHouseCandidateAccessArrangement extends ModelBase
+class InHouseCandidateAccessArrangement extends \ModelBase
 {
-    const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
+    public const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
 
-    const ACCESS_ARRANGEMENT = 'accessArrangement';
+    public const ACCESS_ARRANGEMENT = 'accessArrangement';
 
-    const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
+    public const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
 
-    const REASON = 'reason';
+    public const REASON = 'reason';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT;
 
@@ -25,7 +25,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      * @return InHouseCandidateAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param InHouseCandidate $inHouseCandidate
      */
-    public function setInHouseCandidate(InHouseCandidate $inHouseCandidate = null)
+    public function setInHouseCandidate(\InHouseCandidate $inHouseCandidate = null)
     {
         $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
@@ -83,7 +83,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -99,7 +99,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage($extraTimePercentage = null)
+    public function setExtraTimePercentage(float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -115,7 +115,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason($reason = null)
+    public function setReason(string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TargetJudgement extends ModelBase
+class TargetJudgement extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const COLOR = 'color';
+    public const COLOR = 'color';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const ORDER = 'order';
+    public const ORDER = 'order';
 
     protected $_resourceType = ResourceType::TARGET_JUDGEMENT;
 
@@ -21,7 +21,7 @@ class TargetJudgement extends ModelBase
      * @return TargetJudgement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param string $color
      */
-    public function setColor($color = null)
+    public function setColor(string $color = null)
     {
         $this->setProperty('color', $color);
     }
@@ -95,7 +95,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -111,7 +111,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder($order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }

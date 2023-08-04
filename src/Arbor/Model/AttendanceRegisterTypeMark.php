@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendanceRegisterTypeMark extends ModelBase
+class AttendanceRegisterTypeMark extends \ModelBase
 {
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
     protected $_resourceType = ResourceType::ATTENDANCE_REGISTER_TYPE_MARK;
 
@@ -17,7 +17,7 @@ class AttendanceRegisterTypeMark extends ModelBase
      * @return AttendanceRegisterTypeMark[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AttendanceRegisterTypeMark extends ModelBase
     /**
      * @param AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -75,7 +75,7 @@ class AttendanceRegisterTypeMark extends ModelBase
     /**
      * @param AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }

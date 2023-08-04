@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MotorVehicle extends ModelBase
+class MotorVehicle extends \ModelBase
 {
-    const OWNER = 'owner';
+    public const OWNER = 'owner';
 
-    const MOTOR_VEHICLE_TYPE = 'motorVehicleType';
+    public const MOTOR_VEHICLE_TYPE = 'motorVehicleType';
 
-    const MOTOR_VEHICLE_MAKE = 'motorVehicleMake';
+    public const MOTOR_VEHICLE_MAKE = 'motorVehicleMake';
 
-    const MODEL = 'model';
+    public const MODEL = 'model';
 
-    const COLOUR = 'colour';
+    public const COLOUR = 'colour';
 
-    const REGISTRATION_NUMBER = 'registrationNumber';
+    public const REGISTRATION_NUMBER = 'registrationNumber';
 
-    const PARKING_ALLOCATION_PROVIDED = 'parkingAllocationProvided';
+    public const PARKING_ALLOCATION_PROVIDED = 'parkingAllocationProvided';
 
     protected $_resourceType = ResourceType::MOTOR_VEHICLE;
 
@@ -27,7 +27,7 @@ class MotorVehicle extends ModelBase
      * @return MotorVehicle[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(ModelBase $owner = null)
+    public function setOwner(\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
@@ -85,7 +85,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param string $motorVehicleType
      */
-    public function setMotorVehicleType($motorVehicleType = null)
+    public function setMotorVehicleType(string $motorVehicleType = null)
     {
         $this->setProperty('motorVehicleType', $motorVehicleType);
     }
@@ -101,7 +101,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param MotorVehicleMake $motorVehicleMake
      */
-    public function setMotorVehicleMake(MotorVehicleMake $motorVehicleMake = null)
+    public function setMotorVehicleMake(\MotorVehicleMake $motorVehicleMake = null)
     {
         $this->setProperty('motorVehicleMake', $motorVehicleMake);
     }
@@ -117,7 +117,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param string $model
      */
-    public function setModel($model = null)
+    public function setModel(string $model = null)
     {
         $this->setProperty('model', $model);
     }
@@ -133,7 +133,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param string $colour
      */
-    public function setColour($colour = null)
+    public function setColour(string $colour = null)
     {
         $this->setProperty('colour', $colour);
     }
@@ -149,7 +149,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param string $registrationNumber
      */
-    public function setRegistrationNumber($registrationNumber = null)
+    public function setRegistrationNumber(string $registrationNumber = null)
     {
         $this->setProperty('registrationNumber', $registrationNumber);
     }
@@ -165,7 +165,7 @@ class MotorVehicle extends ModelBase
     /**
      * @param bool $parkingAllocationProvided
      */
-    public function setParkingAllocationProvided($parkingAllocationProvided = null)
+    public function setParkingAllocationProvided(bool $parkingAllocationProvided = null)
     {
         $this->setProperty('parkingAllocationProvided', $parkingAllocationProvided);
     }

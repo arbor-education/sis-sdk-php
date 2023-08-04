@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BillPayer extends ModelBase
+class BillPayer extends \ModelBase
 {
-    const LEGAL_ENTITY = 'legalEntity';
+    public const LEGAL_ENTITY = 'legalEntity';
 
-    const DELETED_LEGAL_ENTITY_NAME = 'deletedLegalEntityName';
+    public const DELETED_LEGAL_ENTITY_NAME = 'deletedLegalEntityName';
 
-    const STRIPE_CUSTOMER_ID = 'stripeCustomerId';
+    public const STRIPE_CUSTOMER_ID = 'stripeCustomerId';
 
-    const NEW_STRIPE_CUSTOMER_ID = 'newStripeCustomerId';
+    public const NEW_STRIPE_CUSTOMER_ID = 'newStripeCustomerId';
 
     protected $_resourceType = ResourceType::BILL_PAYER;
 
@@ -21,7 +21,7 @@ class BillPayer extends ModelBase
      * @return BillPayer[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class BillPayer extends ModelBase
     /**
      * @param ModelBase $legalEntity
      */
-    public function setLegalEntity(ModelBase $legalEntity = null)
+    public function setLegalEntity(\ModelBase $legalEntity = null)
     {
         $this->setProperty('legalEntity', $legalEntity);
     }
@@ -79,7 +79,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $deletedLegalEntityName
      */
-    public function setDeletedLegalEntityName($deletedLegalEntityName = null)
+    public function setDeletedLegalEntityName(string $deletedLegalEntityName = null)
     {
         $this->setProperty('deletedLegalEntityName', $deletedLegalEntityName);
     }
@@ -95,7 +95,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $stripeCustomerId
      */
-    public function setStripeCustomerId($stripeCustomerId = null)
+    public function setStripeCustomerId(string $stripeCustomerId = null)
     {
         $this->setProperty('stripeCustomerId', $stripeCustomerId);
     }
@@ -111,7 +111,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $newStripeCustomerId
      */
-    public function setNewStripeCustomerId($newStripeCustomerId = null)
+    public function setNewStripeCustomerId(string $newStripeCustomerId = null)
     {
         $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }

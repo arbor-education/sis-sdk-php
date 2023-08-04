@@ -8,27 +8,27 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\AcademicYear;
 
-class SchoolCensus extends ModelBase
+class SchoolCensus extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const SCHOOL_CENSUS_YEAR = 'schoolCensusYear';
+    public const SCHOOL_CENSUS_YEAR = 'schoolCensusYear';
 
-    const SCHOOL_CENSUS_TERM = 'schoolCensusTerm';
+    public const SCHOOL_CENSUS_TERM = 'schoolCensusTerm';
 
-    const SCHOOL_CENSUS_REFERENCE_DATE = 'schoolCensusReferenceDate';
+    public const SCHOOL_CENSUS_REFERENCE_DATE = 'schoolCensusReferenceDate';
 
-    const SCHOOL_CENSUS_RETURN_DEADLINE_DATE = 'schoolCensusReturnDeadlineDate';
+    public const SCHOOL_CENSUS_RETURN_DEADLINE_DATE = 'schoolCensusReturnDeadlineDate';
 
-    const SCHOOL_CENSUS_DATABASE_CLOSURE_DATE = 'schoolCensusDatabaseClosureDate';
+    public const SCHOOL_CENSUS_DATABASE_CLOSURE_DATE = 'schoolCensusDatabaseClosureDate';
 
-    const SCHOOL_CENSUS_SPECIFIC_TIME = 'schoolCensusSpecificTime';
+    public const SCHOOL_CENSUS_SPECIFIC_TIME = 'schoolCensusSpecificTime';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS;
 
@@ -37,7 +37,7 @@ class SchoolCensus extends ModelBase
      * @return SchoolCensus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -95,7 +95,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -111,7 +111,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -127,7 +127,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -143,7 +143,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $schoolCensusYear
      */
-    public function setSchoolCensusYear($schoolCensusYear = null)
+    public function setSchoolCensusYear(string $schoolCensusYear = null)
     {
         $this->setProperty('schoolCensusYear', $schoolCensusYear);
     }
@@ -159,7 +159,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $schoolCensusTerm
      */
-    public function setSchoolCensusTerm($schoolCensusTerm = null)
+    public function setSchoolCensusTerm(string $schoolCensusTerm = null)
     {
         $this->setProperty('schoolCensusTerm', $schoolCensusTerm);
     }

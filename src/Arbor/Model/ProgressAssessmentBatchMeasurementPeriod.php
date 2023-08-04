@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
+class ProgressAssessmentBatchMeasurementPeriod extends \ModelBase
 {
-    const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
+    public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
-    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
+    public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH_MEASUREMENT_PERIOD;
 
@@ -17,7 +17,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
      * @return ProgressAssessmentBatchMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     /**
      * @param ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
@@ -75,7 +75,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     /**
      * @param ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }

@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MarkApproval extends ModelBase
+class MarkApproval extends \ModelBase
 {
-    const MARK = 'mark';
+    public const MARK = 'mark';
 
-    const APPROVAL_LEVEL = 'approvalLevel';
+    public const APPROVAL_LEVEL = 'approvalLevel';
 
-    const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
+    public const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
 
     protected $_resourceType = ResourceType::MARK_APPROVAL;
 
@@ -19,7 +19,7 @@ class MarkApproval extends ModelBase
      * @return MarkApproval[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class MarkApproval extends ModelBase
     /**
      * @param ModelBase $mark
      */
-    public function setMark(ModelBase $mark = null)
+    public function setMark(\ModelBase $mark = null)
     {
         $this->setProperty('mark', $mark);
     }
@@ -77,7 +77,7 @@ class MarkApproval extends ModelBase
     /**
      * @param string $approvalLevel
      */
-    public function setApprovalLevel($approvalLevel = null)
+    public function setApprovalLevel(string $approvalLevel = null)
     {
         $this->setProperty('approvalLevel', $approvalLevel);
     }
@@ -93,7 +93,7 @@ class MarkApproval extends ModelBase
     /**
      * @param AssessmentDataCollectionItem $assessmentDataCollectionItem
      */
-    public function setAssessmentDataCollectionItem(AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
+    public function setAssessmentDataCollectionItem(\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }

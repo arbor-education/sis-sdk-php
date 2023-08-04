@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CandidateDisappliedAccessArrangement extends ModelBase
+class CandidateDisappliedAccessArrangement extends \ModelBase
 {
-    const CANDIDATE = 'candidate';
+    public const CANDIDATE = 'candidate';
 
-    const ACCESS_ARRANGEMENT = 'accessArrangement';
+    public const ACCESS_ARRANGEMENT = 'accessArrangement';
 
-    const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
+    public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
     protected $_resourceType = ResourceType::CANDIDATE_DISAPPLIED_ACCESS_ARRANGEMENT;
 
@@ -19,7 +19,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
      * @return CandidateDisappliedAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param Candidate $candidate
      */
-    public function setCandidate(Candidate $candidate = null)
+    public function setCandidate(\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -77,7 +77,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -93,7 +93,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }

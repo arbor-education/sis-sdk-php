@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricRuleStudentGroup extends ModelBase
+class AssessmentMetricRuleStudentGroup extends \ModelBase
 {
-    const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
+    public const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
 
-    const ACADEMIC_LEVEL = 'academicLevel';
+    public const ACADEMIC_LEVEL = 'academicLevel';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_RULE_STUDENT_GROUP;
 
@@ -17,7 +17,7 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
      * @return AssessmentMetricRuleStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
     /**
      * @param AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
@@ -75,7 +75,7 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
     /**
      * @param AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }

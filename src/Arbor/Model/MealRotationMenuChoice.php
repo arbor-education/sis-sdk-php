@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealRotationMenuChoice extends ModelBase
+class MealRotationMenuChoice extends \ModelBase
 {
-    const ATTENDEE = 'attendee';
+    public const ATTENDEE = 'attendee';
 
-    const MEAL_PROVISION = 'mealProvision';
+    public const MEAL_PROVISION = 'mealProvision';
 
-    const MEAL_CHOICE_DATE = 'mealChoiceDate';
+    public const MEAL_CHOICE_DATE = 'mealChoiceDate';
 
     protected $_resourceType = ResourceType::MEAL_ROTATION_MENU_CHOICE;
 
@@ -19,7 +19,7 @@ class MealRotationMenuChoice extends ModelBase
      * @return MealRotationMenuChoice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class MealRotationMenuChoice extends ModelBase
     /**
      * @param ModelBase $attendee
      */
-    public function setAttendee(ModelBase $attendee = null)
+    public function setAttendee(\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }
@@ -77,7 +77,7 @@ class MealRotationMenuChoice extends ModelBase
     /**
      * @param MealProvision $mealProvision
      */
-    public function setMealProvision(MealProvision $mealProvision = null)
+    public function setMealProvision(\MealProvision $mealProvision = null)
     {
         $this->setProperty('mealProvision', $mealProvision);
     }

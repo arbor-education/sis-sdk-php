@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicUnitQualificationLink extends ModelBase
+class AcademicUnitQualificationLink extends \ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
+    public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
-    const AUTOMATIC_ENTRY = 'automaticEntry';
+    public const AUTOMATIC_ENTRY = 'automaticEntry';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_QUALIFICATION_LINK;
 
@@ -23,7 +23,7 @@ class AcademicUnitQualificationLink extends ModelBase
      * @return AcademicUnitQualificationLink[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AcademicUnitQualificationLink extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -81,7 +81,7 @@ class AcademicUnitQualificationLink extends ModelBase
     /**
      * @param QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
@@ -97,7 +97,7 @@ class AcademicUnitQualificationLink extends ModelBase
     /**
      * @param bool $automaticEntry
      */
-    public function setAutomaticEntry($automaticEntry = null)
+    public function setAutomaticEntry(bool $automaticEntry = null)
     {
         $this->setProperty('automaticEntry', $automaticEntry);
     }

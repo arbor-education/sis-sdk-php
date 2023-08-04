@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonAlert extends ModelBase
+class PersonAlert extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const CONTEXT_PERSON = 'contextPerson';
+    public const CONTEXT_PERSON = 'contextPerson';
 
-    const CONTEXT_OBJECT = 'contextObject';
+    public const CONTEXT_OBJECT = 'contextObject';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const ALERT_DATETIME = 'alertDatetime';
+    public const ALERT_DATETIME = 'alertDatetime';
 
     protected $_resourceType = ResourceType::PERSON_ALERT;
 
@@ -23,7 +23,7 @@ class PersonAlert extends ModelBase
      * @return PersonAlert[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class PersonAlert extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -81,7 +81,7 @@ class PersonAlert extends ModelBase
     /**
      * @param ModelBase $contextPerson
      */
-    public function setContextPerson(ModelBase $contextPerson = null)
+    public function setContextPerson(\ModelBase $contextPerson = null)
     {
         $this->setProperty('contextPerson', $contextPerson);
     }
@@ -97,7 +97,7 @@ class PersonAlert extends ModelBase
     /**
      * @param ModelBase $contextObject
      */
-    public function setContextObject(ModelBase $contextObject = null)
+    public function setContextObject(\ModelBase $contextObject = null)
     {
         $this->setProperty('contextObject', $contextObject);
     }
@@ -113,7 +113,7 @@ class PersonAlert extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }

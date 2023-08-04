@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Appraisal extends ModelBase
+class Appraisal extends \ModelBase
 {
-    const APPRAISEE = 'appraisee';
+    public const APPRAISEE = 'appraisee';
 
-    const APPRAISAL_DATE = 'appraisalDate';
+    public const APPRAISAL_DATE = 'appraisalDate';
 
-    const APPRAISER = 'appraiser';
+    public const APPRAISER = 'appraiser';
 
-    const APPRAISAL_NOTES = 'appraisalNotes';
+    public const APPRAISAL_NOTES = 'appraisalNotes';
 
-    const COMPLETED_DATETIME = 'completedDatetime';
+    public const COMPLETED_DATETIME = 'completedDatetime';
 
     protected $_resourceType = ResourceType::APPRAISAL;
 
@@ -23,7 +23,7 @@ class Appraisal extends ModelBase
      * @return Appraisal[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class Appraisal extends ModelBase
     /**
      * @param Staff $appraisee
      */
-    public function setAppraisee(Staff $appraisee = null)
+    public function setAppraisee(\Staff $appraisee = null)
     {
         $this->setProperty('appraisee', $appraisee);
     }
@@ -97,7 +97,7 @@ class Appraisal extends ModelBase
     /**
      * @param Staff $appraiser
      */
-    public function setAppraiser(Staff $appraiser = null)
+    public function setAppraiser(\Staff $appraiser = null)
     {
         $this->setProperty('appraiser', $appraiser);
     }
@@ -113,7 +113,7 @@ class Appraisal extends ModelBase
     /**
      * @param string $appraisalNotes
      */
-    public function setAppraisalNotes($appraisalNotes = null)
+    public function setAppraisalNotes(string $appraisalNotes = null)
     {
         $this->setProperty('appraisalNotes', $appraisalNotes);
     }

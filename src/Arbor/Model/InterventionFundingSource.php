@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InterventionFundingSource extends ModelBase
+class InterventionFundingSource extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::INTERVENTION_FUNDING_SOURCE;
 
@@ -21,7 +21,7 @@ class InterventionFundingSource extends ModelBase
      * @return InterventionFundingSource[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -95,7 +95,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -111,7 +111,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param bool $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(bool $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

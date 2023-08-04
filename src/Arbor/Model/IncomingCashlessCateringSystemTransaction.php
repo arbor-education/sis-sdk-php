@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IncomingCashlessCateringSystemTransaction extends ModelBase
+class IncomingCashlessCateringSystemTransaction extends \ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const SOURCE = 'source';
+    public const SOURCE = 'source';
 
-    const TRANSACTION_IDENTIFIER = 'transactionIdentifier';
+    public const TRANSACTION_IDENTIFIER = 'transactionIdentifier';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const TRANSACTION_AMOUNT = 'transactionAmount';
+    public const TRANSACTION_AMOUNT = 'transactionAmount';
 
-    const TRANSACTION_FEE_AMOUNT = 'transactionFeeAmount';
+    public const TRANSACTION_FEE_AMOUNT = 'transactionFeeAmount';
 
-    const VAT_AMOUNT = 'vatAmount';
+    public const VAT_AMOUNT = 'vatAmount';
 
-    const TRANSACTION_DATE = 'transactionDate';
+    public const TRANSACTION_DATE = 'transactionDate';
 
-    const RELATED_ENTITY = 'relatedEntity';
+    public const RELATED_ENTITY = 'relatedEntity';
 
     protected $_resourceType = ResourceType::INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
 
@@ -33,7 +33,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
      * @return IncomingCashlessCateringSystemTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -91,7 +91,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource($source = null)
+    public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -107,7 +107,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $transactionIdentifier
      */
-    public function setTransactionIdentifier($transactionIdentifier = null)
+    public function setTransactionIdentifier(string $transactionIdentifier = null)
     {
         $this->setProperty('transactionIdentifier', $transactionIdentifier);
     }
@@ -123,7 +123,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -139,7 +139,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -155,7 +155,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $transactionAmount
      */
-    public function setTransactionAmount($transactionAmount = null)
+    public function setTransactionAmount(string $transactionAmount = null)
     {
         $this->setProperty('transactionAmount', $transactionAmount);
     }
@@ -171,7 +171,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $transactionFeeAmount
      */
-    public function setTransactionFeeAmount($transactionFeeAmount = null)
+    public function setTransactionFeeAmount(string $transactionFeeAmount = null)
     {
         $this->setProperty('transactionFeeAmount', $transactionFeeAmount);
     }
@@ -187,7 +187,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $vatAmount
      */
-    public function setVatAmount($vatAmount = null)
+    public function setVatAmount(string $vatAmount = null)
     {
         $this->setProperty('vatAmount', $vatAmount);
     }
@@ -219,7 +219,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param ModelBase $relatedEntity
      */
-    public function setRelatedEntity(ModelBase $relatedEntity = null)
+    public function setRelatedEntity(\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }

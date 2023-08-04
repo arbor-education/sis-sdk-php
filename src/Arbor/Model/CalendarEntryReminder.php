@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CalendarEntryReminder extends ModelBase
+class CalendarEntryReminder extends \ModelBase
 {
-    const CALENDAR_ENTRY_MAPPING = 'calendarEntryMapping';
+    public const CALENDAR_ENTRY_MAPPING = 'calendarEntryMapping';
 
-    const REMINDER_SENT_DATETIME = 'reminderSentDatetime';
+    public const REMINDER_SENT_DATETIME = 'reminderSentDatetime';
 
     protected $_resourceType = ResourceType::CALENDAR_ENTRY_REMINDER;
 
@@ -17,7 +17,7 @@ class CalendarEntryReminder extends ModelBase
      * @return CalendarEntryReminder[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class CalendarEntryReminder extends ModelBase
     /**
      * @param CalendarEntryMapping $calendarEntryMapping
      */
-    public function setCalendarEntryMapping(CalendarEntryMapping $calendarEntryMapping = null)
+    public function setCalendarEntryMapping(\CalendarEntryMapping $calendarEntryMapping = null)
     {
         $this->setProperty('calendarEntryMapping', $calendarEntryMapping);
     }

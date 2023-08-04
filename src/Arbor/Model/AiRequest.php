@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AiRequest extends ModelBase
+class AiRequest extends \ModelBase
 {
-    const PROVIDER = 'provider';
+    public const PROVIDER = 'provider';
 
-    const MODEL = 'model';
+    public const MODEL = 'model';
 
-    const FEATURE = 'feature';
+    public const FEATURE = 'feature';
 
-    const USER_INPUT = 'userInput';
+    public const USER_INPUT = 'userInput';
 
-    const LINKED_ENTITY = 'linkedEntity';
+    public const LINKED_ENTITY = 'linkedEntity';
 
-    const REQUEST_PAYLOAD = 'requestPayload';
+    public const REQUEST_PAYLOAD = 'requestPayload';
 
-    const RESPONSE_PAYLOAD = 'responsePayload';
+    public const RESPONSE_PAYLOAD = 'responsePayload';
 
-    const CLEANED_RESPONSE = 'cleanedResponse';
+    public const CLEANED_RESPONSE = 'cleanedResponse';
 
-    const RESPONSE_IDENTIFIER = 'responseIdentifier';
+    public const RESPONSE_IDENTIFIER = 'responseIdentifier';
 
-    const PARENT_RESPONSE_IDENTIFIER = 'parentResponseIdentifier';
+    public const PARENT_RESPONSE_IDENTIFIER = 'parentResponseIdentifier';
 
-    const COST_UNIT = 'costUnit';
+    public const COST_UNIT = 'costUnit';
 
-    const COST = 'cost';
+    public const COST = 'cost';
 
-    const CUSTOMER_RATING = 'customerRating';
+    public const CUSTOMER_RATING = 'customerRating';
 
-    const CUSTOMER_RESPONSE = 'customerResponse';
+    public const CUSTOMER_RESPONSE = 'customerResponse';
 
     protected $_resourceType = ResourceType::AI_REQUEST;
 
@@ -41,7 +41,7 @@ class AiRequest extends ModelBase
      * @return AiRequest[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider($provider = null)
+    public function setProvider(string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -99,7 +99,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $model
      */
-    public function setModel($model = null)
+    public function setModel(string $model = null)
     {
         $this->setProperty('model', $model);
     }
@@ -115,7 +115,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $feature
      */
-    public function setFeature($feature = null)
+    public function setFeature(string $feature = null)
     {
         $this->setProperty('feature', $feature);
     }
@@ -131,7 +131,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $userInput
      */
-    public function setUserInput($userInput = null)
+    public function setUserInput(string $userInput = null)
     {
         $this->setProperty('userInput', $userInput);
     }
@@ -147,7 +147,7 @@ class AiRequest extends ModelBase
     /**
      * @param ModelBase $linkedEntity
      */
-    public function setLinkedEntity(ModelBase $linkedEntity = null)
+    public function setLinkedEntity(\ModelBase $linkedEntity = null)
     {
         $this->setProperty('linkedEntity', $linkedEntity);
     }
@@ -163,7 +163,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $requestPayload
      */
-    public function setRequestPayload($requestPayload = null)
+    public function setRequestPayload(string $requestPayload = null)
     {
         $this->setProperty('requestPayload', $requestPayload);
     }
@@ -179,7 +179,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $responsePayload
      */
-    public function setResponsePayload($responsePayload = null)
+    public function setResponsePayload(string $responsePayload = null)
     {
         $this->setProperty('responsePayload', $responsePayload);
     }
@@ -195,7 +195,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $cleanedResponse
      */
-    public function setCleanedResponse($cleanedResponse = null)
+    public function setCleanedResponse(string $cleanedResponse = null)
     {
         $this->setProperty('cleanedResponse', $cleanedResponse);
     }
@@ -211,7 +211,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $responseIdentifier
      */
-    public function setResponseIdentifier($responseIdentifier = null)
+    public function setResponseIdentifier(string $responseIdentifier = null)
     {
         $this->setProperty('responseIdentifier', $responseIdentifier);
     }
@@ -227,7 +227,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $parentResponseIdentifier
      */
-    public function setParentResponseIdentifier($parentResponseIdentifier = null)
+    public function setParentResponseIdentifier(string $parentResponseIdentifier = null)
     {
         $this->setProperty('parentResponseIdentifier', $parentResponseIdentifier);
     }
@@ -243,7 +243,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $costUnit
      */
-    public function setCostUnit($costUnit = null)
+    public function setCostUnit(string $costUnit = null)
     {
         $this->setProperty('costUnit', $costUnit);
     }
@@ -259,7 +259,7 @@ class AiRequest extends ModelBase
     /**
      * @param float $cost
      */
-    public function setCost($cost = null)
+    public function setCost(float $cost = null)
     {
         $this->setProperty('cost', $cost);
     }
@@ -275,7 +275,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $customerRating
      */
-    public function setCustomerRating($customerRating = null)
+    public function setCustomerRating(string $customerRating = null)
     {
         $this->setProperty('customerRating', $customerRating);
     }
@@ -291,7 +291,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $customerResponse
      */
-    public function setCustomerResponse($customerResponse = null)
+    public function setCustomerResponse(string $customerResponse = null)
     {
         $this->setProperty('customerResponse', $customerResponse);
     }

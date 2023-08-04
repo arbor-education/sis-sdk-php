@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CandidateProposalComment extends ModelBase
+class CandidateProposalComment extends \ModelBase
 {
-    const CANDIDATE_PROPOSAL = 'candidateProposal';
+    public const CANDIDATE_PROPOSAL = 'candidateProposal';
 
-    const AUTHOR_STAFF = 'authorStaff';
+    public const AUTHOR_STAFF = 'authorStaff';
 
-    const COMMENT_DATETIME = 'commentDatetime';
+    public const COMMENT_DATETIME = 'commentDatetime';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
     protected $_resourceType = ResourceType::CANDIDATE_PROPOSAL_COMMENT;
 
@@ -21,7 +21,7 @@ class CandidateProposalComment extends ModelBase
      * @return CandidateProposalComment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class CandidateProposalComment extends ModelBase
     /**
      * @param CandidateProposal $candidateProposal
      */
-    public function setCandidateProposal(CandidateProposal $candidateProposal = null)
+    public function setCandidateProposal(\CandidateProposal $candidateProposal = null)
     {
         $this->setProperty('candidateProposal', $candidateProposal);
     }
@@ -79,7 +79,7 @@ class CandidateProposalComment extends ModelBase
     /**
      * @param Staff $authorStaff
      */
-    public function setAuthorStaff(Staff $authorStaff = null)
+    public function setAuthorStaff(\Staff $authorStaff = null)
     {
         $this->setProperty('authorStaff', $authorStaff);
     }
@@ -111,7 +111,7 @@ class CandidateProposalComment extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

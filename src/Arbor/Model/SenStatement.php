@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SenStatement extends ModelBase
+class SenStatement extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const DATE_REQUESTED = 'dateRequested';
+    public const DATE_REQUESTED = 'dateRequested';
 
-    const DATE_PARENT_CONSULTED = 'dateParentConsulted';
+    public const DATE_PARENT_CONSULTED = 'dateParentConsulted';
 
-    const DISAPPLICATION_FROM_NC_PERMANENT_SUBJECTS = 'disapplicationFromNcPermanentSubjects';
+    public const DISAPPLICATION_FROM_NC_PERMANENT_SUBJECTS = 'disapplicationFromNcPermanentSubjects';
 
-    const DISAPPLICATION_FROM_NC_TEMPORARY_SUBJECTS = 'disapplicationFromNcTemporarySubjects';
+    public const DISAPPLICATION_FROM_NC_TEMPORARY_SUBJECTS = 'disapplicationFromNcTemporarySubjects';
 
-    const LOCAL_AUTHORITY_OFFICER = 'localAuthorityOfficer';
+    public const LOCAL_AUTHORITY_OFFICER = 'localAuthorityOfficer';
 
-    const DECISION_STATUS = 'decisionStatus';
+    public const DECISION_STATUS = 'decisionStatus';
 
-    const SUBJECT_TO_SEN_TRIBUNAL = 'subjectToSenTribunal';
+    public const SUBJECT_TO_SEN_TRIBUNAL = 'subjectToSenTribunal';
 
-    const APPEAL_NOTES = 'appealNotes';
+    public const APPEAL_NOTES = 'appealNotes';
 
-    const DATE_FINALIZED = 'dateFinalized';
+    public const DATE_FINALIZED = 'dateFinalized';
 
-    const DATE_CEASED = 'dateCeased';
+    public const DATE_CEASED = 'dateCeased';
 
-    const COMMENTS = 'comments';
+    public const COMMENTS = 'comments';
 
     protected $_resourceType = ResourceType::SEN_STATEMENT;
 
@@ -37,7 +37,7 @@ class SenStatement extends ModelBase
      * @return SenStatement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class SenStatement extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -127,7 +127,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $disapplicationFromNcPermanentSubjects
      */
-    public function setDisapplicationFromNcPermanentSubjects($disapplicationFromNcPermanentSubjects = null)
+    public function setDisapplicationFromNcPermanentSubjects(string $disapplicationFromNcPermanentSubjects = null)
     {
         $this->setProperty('disapplicationFromNcPermanentSubjects', $disapplicationFromNcPermanentSubjects);
     }
@@ -143,7 +143,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $disapplicationFromNcTemporarySubjects
      */
-    public function setDisapplicationFromNcTemporarySubjects($disapplicationFromNcTemporarySubjects = null)
+    public function setDisapplicationFromNcTemporarySubjects(string $disapplicationFromNcTemporarySubjects = null)
     {
         $this->setProperty('disapplicationFromNcTemporarySubjects', $disapplicationFromNcTemporarySubjects);
     }
@@ -159,7 +159,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $localAuthorityOfficer
      */
-    public function setLocalAuthorityOfficer($localAuthorityOfficer = null)
+    public function setLocalAuthorityOfficer(string $localAuthorityOfficer = null)
     {
         $this->setProperty('localAuthorityOfficer', $localAuthorityOfficer);
     }
@@ -175,7 +175,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $decisionStatus
      */
-    public function setDecisionStatus($decisionStatus = null)
+    public function setDecisionStatus(string $decisionStatus = null)
     {
         $this->setProperty('decisionStatus', $decisionStatus);
     }
@@ -191,7 +191,7 @@ class SenStatement extends ModelBase
     /**
      * @param bool $subjectToSenTribunal
      */
-    public function setSubjectToSenTribunal($subjectToSenTribunal = null)
+    public function setSubjectToSenTribunal(bool $subjectToSenTribunal = null)
     {
         $this->setProperty('subjectToSenTribunal', $subjectToSenTribunal);
     }
@@ -207,7 +207,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $appealNotes
      */
-    public function setAppealNotes($appealNotes = null)
+    public function setAppealNotes(string $appealNotes = null)
     {
         $this->setProperty('appealNotes', $appealNotes);
     }
@@ -255,7 +255,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments($comments = null)
+    public function setComments(string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }

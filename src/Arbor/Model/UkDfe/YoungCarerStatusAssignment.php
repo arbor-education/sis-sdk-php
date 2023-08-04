@@ -8,15 +8,15 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class YoungCarerStatusAssignment extends ModelBase
+class YoungCarerStatusAssignment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const IDENTIFIED_BY = 'identifiedBy';
+    public const IDENTIFIED_BY = 'identifiedBy';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT;
 
@@ -25,7 +25,7 @@ class YoungCarerStatusAssignment extends ModelBase
      * @return YoungCarerStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class YoungCarerStatusAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +83,7 @@ class YoungCarerStatusAssignment extends ModelBase
     /**
      * @param string $identifiedBy
      */
-    public function setIdentifiedBy($identifiedBy = null)
+    public function setIdentifiedBy(string $identifiedBy = null)
     {
         $this->setProperty('identifiedBy', $identifiedBy);
     }

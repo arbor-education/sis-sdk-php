@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffContractPostAllowance extends ModelBase
+class StaffContractPostAllowance extends \ModelBase
 {
-    const STAFF_CONTRACT_POST = 'staffContractPost';
+    public const STAFF_CONTRACT_POST = 'staffContractPost';
 
-    const LINKED_ALLOWANCE = 'linkedAllowance';
+    public const LINKED_ALLOWANCE = 'linkedAllowance';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const GROSS_ALLOWANCE = 'grossAllowance';
+    public const GROSS_ALLOWANCE = 'grossAllowance';
 
-    const REASON = 'reason';
+    public const REASON = 'reason';
 
-    const ALLOWANCE_TYPE = 'allowanceType';
+    public const ALLOWANCE_TYPE = 'allowanceType';
 
-    const PAY_FACTOR = 'payFactor';
+    public const PAY_FACTOR = 'payFactor';
 
-    const SUPERANNUATION = 'superannuation';
+    public const SUPERANNUATION = 'superannuation';
 
-    const NI_STATUS = 'niStatus';
+    public const NI_STATUS = 'niStatus';
 
-    const BENEFIT_IN_KIND = 'benefitInKind';
+    public const BENEFIT_IN_KIND = 'benefitInKind';
 
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST_ALLOWANCE;
 
@@ -35,7 +35,7 @@ class StaffContractPostAllowance extends ModelBase
      * @return StaffContractPostAllowance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -93,7 +93,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param Allowance $linkedAllowance
      */
-    public function setLinkedAllowance(Allowance $linkedAllowance = null)
+    public function setLinkedAllowance(\Allowance $linkedAllowance = null)
     {
         $this->setProperty('linkedAllowance', $linkedAllowance);
     }
@@ -141,7 +141,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param string $grossAllowance
      */
-    public function setGrossAllowance($grossAllowance = null)
+    public function setGrossAllowance(string $grossAllowance = null)
     {
         $this->setProperty('grossAllowance', $grossAllowance);
     }
@@ -157,7 +157,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason($reason = null)
+    public function setReason(string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -173,7 +173,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param string $allowanceType
      */
-    public function setAllowanceType($allowanceType = null)
+    public function setAllowanceType(string $allowanceType = null)
     {
         $this->setProperty('allowanceType', $allowanceType);
     }
@@ -189,7 +189,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param float $payFactor
      */
-    public function setPayFactor($payFactor = null)
+    public function setPayFactor(float $payFactor = null)
     {
         $this->setProperty('payFactor', $payFactor);
     }
@@ -205,7 +205,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param bool $superannuation
      */
-    public function setSuperannuation($superannuation = null)
+    public function setSuperannuation(bool $superannuation = null)
     {
         $this->setProperty('superannuation', $superannuation);
     }
@@ -221,7 +221,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param bool $niStatus
      */
-    public function setNiStatus($niStatus = null)
+    public function setNiStatus(bool $niStatus = null)
     {
         $this->setProperty('niStatus', $niStatus);
     }
@@ -237,7 +237,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param bool $benefitInKind
      */
-    public function setBenefitInKind($benefitInKind = null)
+    public function setBenefitInKind(bool $benefitInKind = null)
     {
         $this->setProperty('benefitInKind', $benefitInKind);
     }

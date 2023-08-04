@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StandardizedAssessmentThresholdResult extends ModelBase
+class StandardizedAssessmentThresholdResult extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const STANDARDIZED_ASSESSMENT_THRESHOLD = 'standardizedAssessmentThreshold';
+    public const STANDARDIZED_ASSESSMENT_THRESHOLD = 'standardizedAssessmentThreshold';
 
-    const LOWER_RESULT_VALUE = 'lowerResultValue';
+    public const LOWER_RESULT_VALUE = 'lowerResultValue';
 
-    const UPPER_RESULT_VALUE = 'upperResultValue';
+    public const UPPER_RESULT_VALUE = 'upperResultValue';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT;
 
@@ -27,7 +27,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
      * @return StandardizedAssessmentThresholdResult[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param StandardizedAssessmentThreshold $standardizedAssessmentThreshold
      */
-    public function setStandardizedAssessmentThreshold(StandardizedAssessmentThreshold $standardizedAssessmentThreshold = null)
+    public function setStandardizedAssessmentThreshold(\StandardizedAssessmentThreshold $standardizedAssessmentThreshold = null)
     {
         $this->setProperty('standardizedAssessmentThreshold', $standardizedAssessmentThreshold);
     }
@@ -133,7 +133,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param float $lowerResultValue
      */
-    public function setLowerResultValue($lowerResultValue = null)
+    public function setLowerResultValue(float $lowerResultValue = null)
     {
         $this->setProperty('lowerResultValue', $lowerResultValue);
     }
@@ -149,7 +149,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param float $upperResultValue
      */
-    public function setUpperResultValue($upperResultValue = null)
+    public function setUpperResultValue(float $upperResultValue = null)
     {
         $this->setProperty('upperResultValue', $upperResultValue);
     }
@@ -165,7 +165,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param Grade $grade
      */
-    public function setGrade(Grade $grade = null)
+    public function setGrade(\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }

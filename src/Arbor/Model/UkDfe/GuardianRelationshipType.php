@@ -7,13 +7,13 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class GuardianRelationshipType extends ModelBase
+class GuardianRelationshipType extends \ModelBase
 {
-    const D00033 = 'd00033';
+    public const D00033 = 'd00033';
 
-    const D00034 = 'd00034';
+    public const D00034 = 'd00034';
 
-    const CTF_EXPORT_CODE = 'ctfExportCode';
+    public const CTF_EXPORT_CODE = 'ctfExportCode';
 
     protected $_resourceType = ResourceType::UK_DFE_GUARDIAN_RELATIONSHIP_TYPE;
 
@@ -22,7 +22,7 @@ class GuardianRelationshipType extends ModelBase
      * @return GuardianRelationshipType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $d00033
      */
-    public function setD00033($d00033 = null)
+    public function setD00033(string $d00033 = null)
     {
         $this->setProperty('d00033', $d00033);
     }
@@ -80,7 +80,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $d00034
      */
-    public function setD00034($d00034 = null)
+    public function setD00034(string $d00034 = null)
     {
         $this->setProperty('d00034', $d00034);
     }
@@ -96,7 +96,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $ctfExportCode
      */
-    public function setCtfExportCode($ctfExportCode = null)
+    public function setCtfExportCode(string $ctfExportCode = null)
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }

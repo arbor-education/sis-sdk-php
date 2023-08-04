@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PointAwardScale extends ModelBase
+class PointAwardScale extends \ModelBase
 {
-    const POINT_AWARD_SCALE_NAME = 'pointAwardScaleName';
+    public const POINT_AWARD_SCALE_NAME = 'pointAwardScaleName';
 
-    const SINGULAR_POINT_NAME = 'singularPointName';
+    public const SINGULAR_POINT_NAME = 'singularPointName';
 
-    const PLURAL_POINT_NAME = 'pluralPointName';
+    public const PLURAL_POINT_NAME = 'pluralPointName';
 
-    const CYCLE_OPENING_POINTS_BALANCE = 'cycleOpeningPointsBalance';
+    public const CYCLE_OPENING_POINTS_BALANCE = 'cycleOpeningPointsBalance';
 
-    const TERM_OPENING_POINTS_BALANCE = 'termOpeningPointsBalance';
+    public const TERM_OPENING_POINTS_BALANCE = 'termOpeningPointsBalance';
 
-    const ACADEMIC_YEAR_OPENING_POINTS_BALANCE = 'academicYearOpeningPointsBalance';
+    public const ACADEMIC_YEAR_OPENING_POINTS_BALANCE = 'academicYearOpeningPointsBalance';
 
-    const LIFETIME_OPENING_POINTS_BALANCE = 'lifetimeOpeningPointsBalance';
+    public const LIFETIME_OPENING_POINTS_BALANCE = 'lifetimeOpeningPointsBalance';
 
-    const MIN_POINT_AWARD = 'minPointAward';
+    public const MIN_POINT_AWARD = 'minPointAward';
 
-    const MAX_POINT_AWARD = 'maxPointAward';
+    public const MAX_POINT_AWARD = 'maxPointAward';
 
-    const DIRECTIONALITY = 'directionality';
+    public const DIRECTIONALITY = 'directionality';
 
-    const SHOW_IN_PARENT_PORTAL = 'showInParentPortal';
+    public const SHOW_IN_PARENT_PORTAL = 'showInParentPortal';
 
-    const SHOW_NARRATIVE_IN_PARENT_PORTAL = 'showNarrativeInParentPortal';
+    public const SHOW_NARRATIVE_IN_PARENT_PORTAL = 'showNarrativeInParentPortal';
 
-    const SHOW_AWARDED_BY_IN_PARENT_PORTAL = 'showAwardedByInParentPortal';
+    public const SHOW_AWARDED_BY_IN_PARENT_PORTAL = 'showAwardedByInParentPortal';
 
-    const SHOW_EVENT_IN_PARENT_PORTAL = 'showEventInParentPortal';
+    public const SHOW_EVENT_IN_PARENT_PORTAL = 'showEventInParentPortal';
 
     protected $_resourceType = ResourceType::POINT_AWARD_SCALE;
 
@@ -41,7 +41,7 @@ class PointAwardScale extends ModelBase
      * @return PointAwardScale[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $pointAwardScaleName
      */
-    public function setPointAwardScaleName($pointAwardScaleName = null)
+    public function setPointAwardScaleName(string $pointAwardScaleName = null)
     {
         $this->setProperty('pointAwardScaleName', $pointAwardScaleName);
     }
@@ -99,7 +99,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $singularPointName
      */
-    public function setSingularPointName($singularPointName = null)
+    public function setSingularPointName(string $singularPointName = null)
     {
         $this->setProperty('singularPointName', $singularPointName);
     }
@@ -115,7 +115,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $pluralPointName
      */
-    public function setPluralPointName($pluralPointName = null)
+    public function setPluralPointName(string $pluralPointName = null)
     {
         $this->setProperty('pluralPointName', $pluralPointName);
     }
@@ -131,7 +131,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $cycleOpeningPointsBalance
      */
-    public function setCycleOpeningPointsBalance($cycleOpeningPointsBalance = null)
+    public function setCycleOpeningPointsBalance(float $cycleOpeningPointsBalance = null)
     {
         $this->setProperty('cycleOpeningPointsBalance', $cycleOpeningPointsBalance);
     }
@@ -147,7 +147,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $termOpeningPointsBalance
      */
-    public function setTermOpeningPointsBalance($termOpeningPointsBalance = null)
+    public function setTermOpeningPointsBalance(float $termOpeningPointsBalance = null)
     {
         $this->setProperty('termOpeningPointsBalance', $termOpeningPointsBalance);
     }
@@ -163,7 +163,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $academicYearOpeningPointsBalance
      */
-    public function setAcademicYearOpeningPointsBalance($academicYearOpeningPointsBalance = null)
+    public function setAcademicYearOpeningPointsBalance(float $academicYearOpeningPointsBalance = null)
     {
         $this->setProperty('academicYearOpeningPointsBalance', $academicYearOpeningPointsBalance);
     }
@@ -179,7 +179,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $lifetimeOpeningPointsBalance
      */
-    public function setLifetimeOpeningPointsBalance($lifetimeOpeningPointsBalance = null)
+    public function setLifetimeOpeningPointsBalance(float $lifetimeOpeningPointsBalance = null)
     {
         $this->setProperty('lifetimeOpeningPointsBalance', $lifetimeOpeningPointsBalance);
     }
@@ -195,7 +195,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $minPointAward
      */
-    public function setMinPointAward($minPointAward = null)
+    public function setMinPointAward(float $minPointAward = null)
     {
         $this->setProperty('minPointAward', $minPointAward);
     }
@@ -211,7 +211,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $maxPointAward
      */
-    public function setMaxPointAward($maxPointAward = null)
+    public function setMaxPointAward(float $maxPointAward = null)
     {
         $this->setProperty('maxPointAward', $maxPointAward);
     }
@@ -227,7 +227,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $directionality
      */
-    public function setDirectionality($directionality = null)
+    public function setDirectionality(string $directionality = null)
     {
         $this->setProperty('directionality', $directionality);
     }
@@ -243,7 +243,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showInParentPortal
      */
-    public function setShowInParentPortal($showInParentPortal = null)
+    public function setShowInParentPortal(bool $showInParentPortal = null)
     {
         $this->setProperty('showInParentPortal', $showInParentPortal);
     }
@@ -259,7 +259,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showNarrativeInParentPortal
      */
-    public function setShowNarrativeInParentPortal($showNarrativeInParentPortal = null)
+    public function setShowNarrativeInParentPortal(bool $showNarrativeInParentPortal = null)
     {
         $this->setProperty('showNarrativeInParentPortal', $showNarrativeInParentPortal);
     }
@@ -275,7 +275,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showAwardedByInParentPortal
      */
-    public function setShowAwardedByInParentPortal($showAwardedByInParentPortal = null)
+    public function setShowAwardedByInParentPortal(bool $showAwardedByInParentPortal = null)
     {
         $this->setProperty('showAwardedByInParentPortal', $showAwardedByInParentPortal);
     }
@@ -291,7 +291,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showEventInParentPortal
      */
-    public function setShowEventInParentPortal($showEventInParentPortal = null)
+    public function setShowEventInParentPortal(bool $showEventInParentPortal = null)
     {
         $this->setProperty('showEventInParentPortal', $showEventInParentPortal);
     }

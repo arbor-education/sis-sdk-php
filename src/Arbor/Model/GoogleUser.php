@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class GoogleUser extends ModelBase
+class GoogleUser extends \ModelBase
 {
-    const GIVEN_NAME = 'givenName';
+    public const GIVEN_NAME = 'givenName';
 
-    const FAMILY_NAME = 'familyName';
+    public const FAMILY_NAME = 'familyName';
 
-    const PRIMARY_EMAIL = 'primaryEmail';
+    public const PRIMARY_EMAIL = 'primaryEmail';
 
-    const GOOGLE_IDENTIFIER = 'googleIdentifier';
+    public const GOOGLE_IDENTIFIER = 'googleIdentifier';
 
-    const MATCHED_PERSON = 'matchedPerson';
+    public const MATCHED_PERSON = 'matchedPerson';
 
     protected $_resourceType = ResourceType::GOOGLE_USER;
 
@@ -23,7 +23,7 @@ class GoogleUser extends ModelBase
      * @return GoogleUser[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $givenName
      */
-    public function setGivenName($givenName = null)
+    public function setGivenName(string $givenName = null)
     {
         $this->setProperty('givenName', $givenName);
     }
@@ -81,7 +81,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $familyName
      */
-    public function setFamilyName($familyName = null)
+    public function setFamilyName(string $familyName = null)
     {
         $this->setProperty('familyName', $familyName);
     }
@@ -97,7 +97,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $primaryEmail
      */
-    public function setPrimaryEmail($primaryEmail = null)
+    public function setPrimaryEmail(string $primaryEmail = null)
     {
         $this->setProperty('primaryEmail', $primaryEmail);
     }
@@ -113,7 +113,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $googleIdentifier
      */
-    public function setGoogleIdentifier($googleIdentifier = null)
+    public function setGoogleIdentifier(string $googleIdentifier = null)
     {
         $this->setProperty('googleIdentifier', $googleIdentifier);
     }
@@ -129,7 +129,7 @@ class GoogleUser extends ModelBase
     /**
      * @param ModelBase $matchedPerson
      */
-    public function setMatchedPerson(ModelBase $matchedPerson = null)
+    public function setMatchedPerson(\ModelBase $matchedPerson = null)
     {
         $this->setProperty('matchedPerson', $matchedPerson);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentInterventionReview extends ModelBase
+class StudentInterventionReview extends \ModelBase
 {
-    const STUDENT_INTERVENTION = 'studentIntervention';
+    public const STUDENT_INTERVENTION = 'studentIntervention';
 
-    const INTERVENTION_REVIEW = 'interventionReview';
+    public const INTERVENTION_REVIEW = 'interventionReview';
 
-    const REVIEW = 'review';
+    public const REVIEW = 'review';
 
-    const REVIEW_DATE = 'reviewDate';
+    public const REVIEW_DATE = 'reviewDate';
 
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION_REVIEW;
 
@@ -21,7 +21,7 @@ class StudentInterventionReview extends ModelBase
      * @return StudentInterventionReview[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param StudentIntervention $studentIntervention
      */
-    public function setStudentIntervention(StudentIntervention $studentIntervention = null)
+    public function setStudentIntervention(\StudentIntervention $studentIntervention = null)
     {
         $this->setProperty('studentIntervention', $studentIntervention);
     }
@@ -79,7 +79,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param InterventionReview $interventionReview
      */
-    public function setInterventionReview(InterventionReview $interventionReview = null)
+    public function setInterventionReview(\InterventionReview $interventionReview = null)
     {
         $this->setProperty('interventionReview', $interventionReview);
     }
@@ -95,7 +95,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param string $review
      */
-    public function setReview($review = null)
+    public function setReview(string $review = null)
     {
         $this->setProperty('review', $review);
     }

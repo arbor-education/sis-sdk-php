@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SenNeedType extends ModelBase
+class SenNeedType extends \ModelBase
 {
-    const D00237 = 'd00237';
+    public const D00237 = 'd00237';
 
-    const EXPORT_CODE = 'exportCode';
+    public const EXPORT_CODE = 'exportCode';
 
     protected $_resourceType = ResourceType::UK_DFE_SEN_NEED_TYPE;
 
@@ -20,7 +20,7 @@ class SenNeedType extends ModelBase
      * @return SenNeedType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $d00237
      */
-    public function setD00237($d00237 = null)
+    public function setD00237(string $d00237 = null)
     {
         $this->setProperty('d00237', $d00237);
     }
@@ -78,7 +78,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode($exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }

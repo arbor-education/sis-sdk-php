@@ -6,17 +6,17 @@ use Arbor\Query\Query;
 use Arbor\Model\Group\CustomGroup;
 use Arbor\Model\Group\Institution;
 
-class CustomGroupMembership extends ModelBase
+class CustomGroupMembership extends \ModelBase
 {
-    const CUSTOM_GROUP = 'customGroup';
+    public const CUSTOM_GROUP = 'customGroup';
 
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const GROUP_INSTITUTION = 'groupInstitution';
+    public const GROUP_INSTITUTION = 'groupInstitution';
 
     protected $_resourceType = ResourceType::CUSTOM_GROUP_MEMBERSHIP;
 
@@ -25,7 +25,7 @@ class CustomGroupMembership extends ModelBase
      * @return CustomGroupMembership[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param CustomGroup $customGroup
      */
-    public function setCustomGroup(CustomGroup $customGroup = null)
+    public function setCustomGroup(\CustomGroup $customGroup = null)
     {
         $this->setProperty('customGroup', $customGroup);
     }
@@ -83,7 +83,7 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -131,7 +131,7 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param Institution $groupInstitution
      */
-    public function setGroupInstitution(Institution $groupInstitution = null)
+    public function setGroupInstitution(\Institution $groupInstitution = null)
     {
         $this->setProperty('groupInstitution', $groupInstitution);
     }

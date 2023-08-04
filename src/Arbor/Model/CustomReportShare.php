@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportShare extends ModelBase
+class CustomReportShare extends \ModelBase
 {
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const SHARED_WITH = 'sharedWith';
+    public const SHARED_WITH = 'sharedWith';
 
-    const PERMISSION_LEVEL = 'permissionLevel';
+    public const PERMISSION_LEVEL = 'permissionLevel';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SHARE;
 
@@ -19,7 +19,7 @@ class CustomReportShare extends ModelBase
      * @return CustomReportShare[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class CustomReportShare extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -77,7 +77,7 @@ class CustomReportShare extends ModelBase
     /**
      * @param ModelBase $sharedWith
      */
-    public function setSharedWith(ModelBase $sharedWith = null)
+    public function setSharedWith(\ModelBase $sharedWith = null)
     {
         $this->setProperty('sharedWith', $sharedWith);
     }
@@ -93,7 +93,7 @@ class CustomReportShare extends ModelBase
     /**
      * @param string $permissionLevel
      */
-    public function setPermissionLevel($permissionLevel = null)
+    public function setPermissionLevel(string $permissionLevel = null)
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }

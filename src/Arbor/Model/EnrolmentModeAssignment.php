@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EnrolmentModeAssignment extends ModelBase
+class EnrolmentModeAssignment extends \ModelBase
 {
-    const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
+    public const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
 
-    const ENROLMENT_MODE = 'enrolmentMode';
+    public const ENROLMENT_MODE = 'enrolmentMode';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const OTHER_EDUCATIONAL_INSTITUTION = 'otherEducationalInstitution';
+    public const OTHER_EDUCATIONAL_INSTITUTION = 'otherEducationalInstitution';
 
     protected $_resourceType = ResourceType::ENROLMENT_MODE_ASSIGNMENT;
 
@@ -23,7 +23,7 @@ class EnrolmentModeAssignment extends ModelBase
      * @return EnrolmentModeAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param AcademicYearEnrolment $academicYearEnrolment
      */
-    public function setAcademicYearEnrolment(AcademicYearEnrolment $academicYearEnrolment = null)
+    public function setAcademicYearEnrolment(\AcademicYearEnrolment $academicYearEnrolment = null)
     {
         $this->setProperty('academicYearEnrolment', $academicYearEnrolment);
     }
@@ -81,7 +81,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param EnrolmentMode $enrolmentMode
      */
-    public function setEnrolmentMode(EnrolmentMode $enrolmentMode = null)
+    public function setEnrolmentMode(\EnrolmentMode $enrolmentMode = null)
     {
         $this->setProperty('enrolmentMode', $enrolmentMode);
     }
@@ -129,7 +129,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param EducationalInstitution $otherEducationalInstitution
      */
-    public function setOtherEducationalInstitution(EducationalInstitution $otherEducationalInstitution = null)
+    public function setOtherEducationalInstitution(\EducationalInstitution $otherEducationalInstitution = null)
     {
         $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
     }
