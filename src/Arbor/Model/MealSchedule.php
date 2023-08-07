@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealSchedule extends ModelBase
+class MealSchedule extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const WEEK = 'week';
+    public const WEEK = 'week';
 
-    const MEAL_ROTATION_MENU = 'mealRotationMenu';
+    public const MEAL_ROTATION_MENU = 'mealRotationMenu';
 
     protected $_resourceType = ResourceType::MEAL_SCHEDULE;
 
@@ -19,7 +19,7 @@ class MealSchedule extends ModelBase
      * @return MealSchedule[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class MealSchedule extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -77,7 +77,7 @@ class MealSchedule extends ModelBase
     /**
      * @param int $week
      */
-    public function setWeek($week = null)
+    public function setWeek(int $week = null)
     {
         $this->setProperty('week', $week);
     }
@@ -93,7 +93,7 @@ class MealSchedule extends ModelBase
     /**
      * @param MealRotationMenu $mealRotationMenu
      */
-    public function setMealRotationMenu(MealRotationMenu $mealRotationMenu = null)
+    public function setMealRotationMenu(\MealRotationMenu $mealRotationMenu = null)
     {
         $this->setProperty('mealRotationMenu', $mealRotationMenu);
     }

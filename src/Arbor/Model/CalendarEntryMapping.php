@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CalendarEntryMapping extends ModelBase
+class CalendarEntryMapping extends \ModelBase
 {
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const MAPPED = 'mapped';
+    public const MAPPED = 'mapped';
 
-    const CALENDAR = 'calendar';
+    public const CALENDAR = 'calendar';
 
-    const TIMESLOT_BLOCKED = 'timeslotBlocked';
+    public const TIMESLOT_BLOCKED = 'timeslotBlocked';
 
     protected $_resourceType = ResourceType::CALENDAR_ENTRY_MAPPING;
 
@@ -25,7 +25,7 @@ class CalendarEntryMapping extends ModelBase
      * @return CalendarEntryMapping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -115,7 +115,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $mapped
      */
-    public function setMapped(ModelBase $mapped = null)
+    public function setMapped(\ModelBase $mapped = null)
     {
         $this->setProperty('mapped', $mapped);
     }
@@ -131,7 +131,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param Calendar $calendar
      */
-    public function setCalendar(Calendar $calendar = null)
+    public function setCalendar(\Calendar $calendar = null)
     {
         $this->setProperty('calendar', $calendar);
     }
@@ -147,7 +147,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param bool $timeslotBlocked
      */
-    public function setTimeslotBlocked($timeslotBlocked = null)
+    public function setTimeslotBlocked(bool $timeslotBlocked = null)
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }

@@ -7,9 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class PermanentExclusion extends ModelBase
+class PermanentExclusion extends \ModelBase
 {
-    const EXCLUDE_FROM_SCHOOL_CENSUS = 'excludeFromSchoolCensus';
+    public const EXCLUDE_FROM_SCHOOL_CENSUS = 'excludeFromSchoolCensus';
 
     protected $_resourceType = ResourceType::UK_DFE_PERMANENT_EXCLUSION;
 
@@ -18,7 +18,7 @@ class PermanentExclusion extends ModelBase
      * @return PermanentExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param bool $excludeFromSchoolCensus
      */
-    public function setExcludeFromSchoolCensus($excludeFromSchoolCensus = null)
+    public function setExcludeFromSchoolCensus(bool $excludeFromSchoolCensus = null)
     {
         $this->setProperty('excludeFromSchoolCensus', $excludeFromSchoolCensus);
     }

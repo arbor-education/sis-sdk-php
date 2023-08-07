@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportCardStudentGroup extends ModelBase
+class CustomReportCardStudentGroup extends \ModelBase
 {
-    const CUSTOM_REPORT_CARD = 'customReportCard';
+    public const CUSTOM_REPORT_CARD = 'customReportCard';
 
-    const STUDENT_GROUP = 'studentGroup';
+    public const STUDENT_GROUP = 'studentGroup';
 
-    const ENROLMENT_DATE = 'enrolmentDate';
+    public const ENROLMENT_DATE = 'enrolmentDate';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_CARD_STUDENT_GROUP;
 
@@ -19,7 +19,7 @@ class CustomReportCardStudentGroup extends ModelBase
      * @return CustomReportCardStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class CustomReportCardStudentGroup extends ModelBase
     /**
      * @param CustomReportCard $customReportCard
      */
-    public function setCustomReportCard(CustomReportCard $customReportCard = null)
+    public function setCustomReportCard(\CustomReportCard $customReportCard = null)
     {
         $this->setProperty('customReportCard', $customReportCard);
     }
@@ -77,7 +77,7 @@ class CustomReportCardStudentGroup extends ModelBase
     /**
      * @param ModelBase $studentGroup
      */
-    public function setStudentGroup(ModelBase $studentGroup = null)
+    public function setStudentGroup(\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

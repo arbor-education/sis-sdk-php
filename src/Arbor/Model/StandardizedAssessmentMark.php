@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StandardizedAssessmentMark extends ModelBase
+class StandardizedAssessmentMark extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STANDARDIZED_ASSESSMENT_ASPECT = 'standardizedAssessmentAspect';
+    public const STANDARDIZED_ASSESSMENT_ASPECT = 'standardizedAssessmentAspect';
 
-    const MARK_GRADE = 'markGrade';
+    public const MARK_GRADE = 'markGrade';
 
-    const MARK_INTEGER = 'markInteger';
+    public const MARK_INTEGER = 'markInteger';
 
-    const MARK_DECIMAL = 'markDecimal';
+    public const MARK_DECIMAL = 'markDecimal';
 
-    const MARK_COMMENT = 'markComment';
+    public const MARK_COMMENT = 'markComment';
 
-    const ASSESSMENT_DATE = 'assessmentDate';
+    public const ASSESSMENT_DATE = 'assessmentDate';
 
-    const ASSESSMENT_IMPORT_ITEM = 'assessmentImportItem';
+    public const ASSESSMENT_IMPORT_ITEM = 'assessmentImportItem';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_MARK;
 
@@ -29,7 +29,7 @@ class StandardizedAssessmentMark extends ModelBase
      * @return StandardizedAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -87,7 +87,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param StandardizedAssessmentAspect $standardizedAssessmentAspect
      */
-    public function setStandardizedAssessmentAspect(StandardizedAssessmentAspect $standardizedAssessmentAspect = null)
+    public function setStandardizedAssessmentAspect(\StandardizedAssessmentAspect $standardizedAssessmentAspect = null)
     {
         $this->setProperty('standardizedAssessmentAspect', $standardizedAssessmentAspect);
     }
@@ -103,7 +103,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param Grade $markGrade
      */
-    public function setMarkGrade(Grade $markGrade = null)
+    public function setMarkGrade(\Grade $markGrade = null)
     {
         $this->setProperty('markGrade', $markGrade);
     }
@@ -119,7 +119,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param int $markInteger
      */
-    public function setMarkInteger($markInteger = null)
+    public function setMarkInteger(int $markInteger = null)
     {
         $this->setProperty('markInteger', $markInteger);
     }
@@ -135,7 +135,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param float $markDecimal
      */
-    public function setMarkDecimal($markDecimal = null)
+    public function setMarkDecimal(float $markDecimal = null)
     {
         $this->setProperty('markDecimal', $markDecimal);
     }
@@ -151,7 +151,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param string $markComment
      */
-    public function setMarkComment($markComment = null)
+    public function setMarkComment(string $markComment = null)
     {
         $this->setProperty('markComment', $markComment);
     }
@@ -183,7 +183,7 @@ class StandardizedAssessmentMark extends ModelBase
     /**
      * @param AssessmentImportItem $assessmentImportItem
      */
-    public function setAssessmentImportItem(AssessmentImportItem $assessmentImportItem = null)
+    public function setAssessmentImportItem(\AssessmentImportItem $assessmentImportItem = null)
     {
         $this->setProperty('assessmentImportItem', $assessmentImportItem);
     }

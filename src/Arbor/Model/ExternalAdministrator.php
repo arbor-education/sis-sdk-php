@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ExternalAdministrator extends ModelBase
+class ExternalAdministrator extends \ModelBase
 {
-    const FIRST_NAME = 'firstName';
+    public const FIRST_NAME = 'firstName';
 
-    const LAST_NAME = 'lastName';
+    public const LAST_NAME = 'lastName';
 
-    const EMAIL = 'email';
+    public const EMAIL = 'email';
 
-    const APPLICATION = 'application';
+    public const APPLICATION = 'application';
 
     protected $_resourceType = ResourceType::EXTERNAL_ADMINISTRATOR;
 
@@ -21,7 +21,7 @@ class ExternalAdministrator extends ModelBase
      * @return ExternalAdministrator[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $firstName
      */
-    public function setFirstName($firstName = null)
+    public function setFirstName(string $firstName = null)
     {
         $this->setProperty('firstName', $firstName);
     }
@@ -79,7 +79,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $lastName
      */
-    public function setLastName($lastName = null)
+    public function setLastName(string $lastName = null)
     {
         $this->setProperty('lastName', $lastName);
     }
@@ -95,7 +95,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail($email = null)
+    public function setEmail(string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -111,7 +111,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $application
      */
-    public function setApplication($application = null)
+    public function setApplication(string $application = null)
     {
         $this->setProperty('application', $application);
     }

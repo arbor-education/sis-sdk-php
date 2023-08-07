@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgrammeLead extends ModelBase
+class ProgrammeLead extends \ModelBase
 {
-    const PROGRAMME = 'programme';
+    public const PROGRAMME = 'programme';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::PROGRAMME_LEAD;
 
@@ -21,7 +21,7 @@ class ProgrammeLead extends ModelBase
      * @return ProgrammeLead[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ProgrammeLead extends ModelBase
     /**
      * @param Programme $programme
      */
-    public function setProgramme(Programme $programme = null)
+    public function setProgramme(\Programme $programme = null)
     {
         $this->setProperty('programme', $programme);
     }
@@ -79,7 +79,7 @@ class ProgrammeLead extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffContractPostAdditionalPayment extends ModelBase
+class StaffContractPostAdditionalPayment extends \ModelBase
 {
-    const STAFF_CONTRACT_POST = 'staffContractPost';
+    public const STAFF_CONTRACT_POST = 'staffContractPost';
 
-    const ADDITIONAL_PAYMENT = 'additionalPayment';
+    public const ADDITIONAL_PAYMENT = 'additionalPayment';
 
-    const PAYMENT_DATE = 'paymentDate';
+    public const PAYMENT_DATE = 'paymentDate';
 
-    const ADDITIONAL_PAYMENT_REASON = 'additionalPaymentReason';
+    public const ADDITIONAL_PAYMENT_REASON = 'additionalPaymentReason';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT;
 
@@ -25,7 +25,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      * @return StaffContractPostAdditionalPayment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -83,7 +83,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param string $additionalPayment
      */
-    public function setAdditionalPayment($additionalPayment = null)
+    public function setAdditionalPayment(string $additionalPayment = null)
     {
         $this->setProperty('additionalPayment', $additionalPayment);
     }
@@ -115,7 +115,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param AdditionalPaymentReason $additionalPaymentReason
      */
-    public function setAdditionalPaymentReason(AdditionalPaymentReason $additionalPaymentReason = null)
+    public function setAdditionalPaymentReason(\AdditionalPaymentReason $additionalPaymentReason = null)
     {
         $this->setProperty('additionalPaymentReason', $additionalPaymentReason);
     }

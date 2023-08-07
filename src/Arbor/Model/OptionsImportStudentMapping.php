@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class OptionsImportStudentMapping extends ModelBase
+class OptionsImportStudentMapping extends \ModelBase
 {
-    const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
+    public const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
-    const STUDENT_NAME = 'studentName';
+    public const STUDENT_NAME = 'studentName';
 
-    const STUDENT_IDENTIFIER = 'studentIdentifier';
+    public const STUDENT_IDENTIFIER = 'studentIdentifier';
 
-    const MAPPING_ACTION = 'mappingAction';
+    public const MAPPING_ACTION = 'mappingAction';
 
-    const MAPPED_STUDENT = 'mappedStudent';
+    public const MAPPED_STUDENT = 'mappedStudent';
 
     protected $_resourceType = ResourceType::OPTIONS_IMPORT_STUDENT_MAPPING;
 
@@ -23,7 +23,7 @@ class OptionsImportStudentMapping extends ModelBase
      * @return OptionsImportStudentMapping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param OptionsImportResult $optionsImportResult
      */
-    public function setOptionsImportResult(OptionsImportResult $optionsImportResult = null)
+    public function setOptionsImportResult(\OptionsImportResult $optionsImportResult = null)
     {
         $this->setProperty('optionsImportResult', $optionsImportResult);
     }
@@ -81,7 +81,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $studentName
      */
-    public function setStudentName($studentName = null)
+    public function setStudentName(string $studentName = null)
     {
         $this->setProperty('studentName', $studentName);
     }
@@ -97,7 +97,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $studentIdentifier
      */
-    public function setStudentIdentifier($studentIdentifier = null)
+    public function setStudentIdentifier(string $studentIdentifier = null)
     {
         $this->setProperty('studentIdentifier', $studentIdentifier);
     }
@@ -113,7 +113,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $mappingAction
      */
-    public function setMappingAction($mappingAction = null)
+    public function setMappingAction(string $mappingAction = null)
     {
         $this->setProperty('mappingAction', $mappingAction);
     }
@@ -129,7 +129,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param Student $mappedStudent
      */
-    public function setMappedStudent(Student $mappedStudent = null)
+    public function setMappedStudent(\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }

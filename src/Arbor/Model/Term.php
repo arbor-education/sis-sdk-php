@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Term extends ModelBase
+class Term extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const TERM_NAME = 'termName';
+    public const TERM_NAME = 'termName';
 
-    const SHORT_TERM_NAME = 'shortTermName';
+    public const SHORT_TERM_NAME = 'shortTermName';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::TERM;
 
@@ -25,7 +25,7 @@ class Term extends ModelBase
      * @return Term[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class Term extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -83,7 +83,7 @@ class Term extends ModelBase
     /**
      * @param string $termName
      */
-    public function setTermName($termName = null)
+    public function setTermName(string $termName = null)
     {
         $this->setProperty('termName', $termName);
     }
@@ -99,7 +99,7 @@ class Term extends ModelBase
     /**
      * @param string $shortTermName
      */
-    public function setShortTermName($shortTermName = null)
+    public function setShortTermName(string $shortTermName = null)
     {
         $this->setProperty('shortTermName', $shortTermName);
     }
@@ -115,7 +115,7 @@ class Term extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }

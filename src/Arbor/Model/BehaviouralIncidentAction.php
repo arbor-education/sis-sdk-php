@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviouralIncidentAction extends ModelBase
+class BehaviouralIncidentAction extends \ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ACTION = 'action';
+    public const ACTION = 'action';
 
-    const IS_AUTOMATIC = 'isAutomatic';
+    public const IS_AUTOMATIC = 'isAutomatic';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_ACTION;
 
@@ -21,7 +21,7 @@ class BehaviouralIncidentAction extends ModelBase
      * @return BehaviouralIncidentAction[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -79,7 +79,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -95,7 +95,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param ModelBase $action
      */
-    public function setAction(ModelBase $action = null)
+    public function setAction(\ModelBase $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -111,7 +111,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param bool $isAutomatic
      */
-    public function setIsAutomatic($isAutomatic = null)
+    public function setIsAutomatic(bool $isAutomatic = null)
     {
         $this->setProperty('isAutomatic', $isAutomatic);
     }

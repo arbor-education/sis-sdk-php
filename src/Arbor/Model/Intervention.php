@@ -4,39 +4,39 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Intervention extends ModelBase
+class Intervention extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const TERM = 'term';
+    public const TERM = 'term';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const MONITORING = 'monitoring';
+    public const MONITORING = 'monitoring';
 
-    const AIMS_OF_INTERVENTION = 'aimsOfIntervention';
+    public const AIMS_OF_INTERVENTION = 'aimsOfIntervention';
 
-    const STRATEGIES = 'strategies';
+    public const STRATEGIES = 'strategies';
 
-    const SUCCESS_CRITERIA = 'successCriteria';
+    public const SUCCESS_CRITERIA = 'successCriteria';
 
-    const NEXT_REVIEW_DATE = 'nextReviewDate';
+    public const NEXT_REVIEW_DATE = 'nextReviewDate';
 
-    const ESTIMATED_DURATION = 'estimatedDuration';
+    public const ESTIMATED_DURATION = 'estimatedDuration';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const CATEGORY = 'category';
+    public const CATEGORY = 'category';
 
-    const IS_COMPLETED = 'isCompleted';
+    public const IS_COMPLETED = 'isCompleted';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const COPIED_TO_INTERVENTION = 'copiedToIntervention';
+    public const COPIED_TO_INTERVENTION = 'copiedToIntervention';
 
     protected $_resourceType = ResourceType::INTERVENTION;
 
@@ -45,7 +45,7 @@ class Intervention extends ModelBase
      * @return Intervention[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -87,7 +87,7 @@ class Intervention extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -103,7 +103,7 @@ class Intervention extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -119,7 +119,7 @@ class Intervention extends ModelBase
     /**
      * @param Term $term
      */
-    public function setTerm(Term $term = null)
+    public function setTerm(\Term $term = null)
     {
         $this->setProperty('term', $term);
     }
@@ -167,7 +167,7 @@ class Intervention extends ModelBase
     /**
      * @param string $monitoring
      */
-    public function setMonitoring($monitoring = null)
+    public function setMonitoring(string $monitoring = null)
     {
         $this->setProperty('monitoring', $monitoring);
     }
@@ -183,7 +183,7 @@ class Intervention extends ModelBase
     /**
      * @param string $aimsOfIntervention
      */
-    public function setAimsOfIntervention($aimsOfIntervention = null)
+    public function setAimsOfIntervention(string $aimsOfIntervention = null)
     {
         $this->setProperty('aimsOfIntervention', $aimsOfIntervention);
     }
@@ -199,7 +199,7 @@ class Intervention extends ModelBase
     /**
      * @param string $strategies
      */
-    public function setStrategies($strategies = null)
+    public function setStrategies(string $strategies = null)
     {
         $this->setProperty('strategies', $strategies);
     }
@@ -215,7 +215,7 @@ class Intervention extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria($successCriteria = null)
+    public function setSuccessCriteria(string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -247,7 +247,7 @@ class Intervention extends ModelBase
     /**
      * @param string $estimatedDuration
      */
-    public function setEstimatedDuration($estimatedDuration = null)
+    public function setEstimatedDuration(string $estimatedDuration = null)
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
@@ -263,7 +263,7 @@ class Intervention extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -279,7 +279,7 @@ class Intervention extends ModelBase
     /**
      * @param InterventionCategory $category
      */
-    public function setCategory(InterventionCategory $category = null)
+    public function setCategory(\InterventionCategory $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -295,7 +295,7 @@ class Intervention extends ModelBase
     /**
      * @param bool $isCompleted
      */
-    public function setIsCompleted($isCompleted = null)
+    public function setIsCompleted(bool $isCompleted = null)
     {
         $this->setProperty('isCompleted', $isCompleted);
     }
@@ -311,7 +311,7 @@ class Intervention extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -327,7 +327,7 @@ class Intervention extends ModelBase
     /**
      * @param Intervention $copiedToIntervention
      */
-    public function setCopiedToIntervention(Intervention $copiedToIntervention = null)
+    public function setCopiedToIntervention(\Intervention $copiedToIntervention = null)
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }

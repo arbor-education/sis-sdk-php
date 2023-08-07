@@ -7,13 +7,13 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Employer extends ModelBase
+class Employer extends \ModelBase
 {
-    const EDS_EMPLOYER_ID = 'edsEmployerId';
+    public const EDS_EMPLOYER_ID = 'edsEmployerId';
 
-    const SMALL_EMPLOYER = 'smallEmployer';
+    public const SMALL_EMPLOYER = 'smallEmployer';
 
-    const SMALL_MEDIUM_EMPLOYER = 'smallMediumEmployer';
+    public const SMALL_MEDIUM_EMPLOYER = 'smallMediumEmployer';
 
     protected $_resourceType = ResourceType::UK_ILR_EMPLOYER;
 
@@ -22,7 +22,7 @@ class Employer extends ModelBase
      * @return Employer[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class Employer extends ModelBase
     /**
      * @param string $edsEmployerId
      */
-    public function setEdsEmployerId($edsEmployerId = null)
+    public function setEdsEmployerId(string $edsEmployerId = null)
     {
         $this->setProperty('edsEmployerId', $edsEmployerId);
     }
@@ -80,7 +80,7 @@ class Employer extends ModelBase
     /**
      * @param bool $smallEmployer
      */
-    public function setSmallEmployer($smallEmployer = null)
+    public function setSmallEmployer(bool $smallEmployer = null)
     {
         $this->setProperty('smallEmployer', $smallEmployer);
     }
@@ -96,7 +96,7 @@ class Employer extends ModelBase
     /**
      * @param bool $smallMediumEmployer
      */
-    public function setSmallMediumEmployer($smallMediumEmployer = null)
+    public function setSmallMediumEmployer(bool $smallMediumEmployer = null)
     {
         $this->setProperty('smallMediumEmployer', $smallMediumEmployer);
     }

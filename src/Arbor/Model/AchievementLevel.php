@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AchievementLevel extends ModelBase
+class AchievementLevel extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACHIEVEMENT_LEVEL_SET = 'achievementLevelSet';
+    public const ACHIEVEMENT_LEVEL_SET = 'achievementLevelSet';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const ACHIEVEMENT_VALUE = 'achievementValue';
+    public const ACHIEVEMENT_VALUE = 'achievementValue';
 
-    const LOWER_ACHIEVEMENT_VALUE = 'lowerAchievementValue';
+    public const LOWER_ACHIEVEMENT_VALUE = 'lowerAchievementValue';
 
-    const UPPER_ACHIEVEMENT_VALUE = 'upperAchievementValue';
+    public const UPPER_ACHIEVEMENT_VALUE = 'upperAchievementValue';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const LOWER_BENCHMARK_GRADE = 'lowerBenchmarkGrade';
+    public const LOWER_BENCHMARK_GRADE = 'lowerBenchmarkGrade';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
-    const UPPER_BENCHMARK_GRADE = 'upperBenchmarkGrade';
+    public const UPPER_BENCHMARK_GRADE = 'upperBenchmarkGrade';
 
     protected $_resourceType = ResourceType::ACHIEVEMENT_LEVEL;
 
@@ -35,7 +35,7 @@ class AchievementLevel extends ModelBase
      * @return AchievementLevel[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -93,7 +93,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param AchievementLevelSet $achievementLevelSet
      */
-    public function setAchievementLevelSet(AchievementLevelSet $achievementLevelSet = null)
+    public function setAchievementLevelSet(\AchievementLevelSet $achievementLevelSet = null)
     {
         $this->setProperty('achievementLevelSet', $achievementLevelSet);
     }
@@ -109,7 +109,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -125,7 +125,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -141,7 +141,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $achievementValue
      */
-    public function setAchievementValue($achievementValue = null)
+    public function setAchievementValue(float $achievementValue = null)
     {
         $this->setProperty('achievementValue', $achievementValue);
     }
@@ -157,7 +157,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $lowerAchievementValue
      */
-    public function setLowerAchievementValue($lowerAchievementValue = null)
+    public function setLowerAchievementValue(float $lowerAchievementValue = null)
     {
         $this->setProperty('lowerAchievementValue', $lowerAchievementValue);
     }
@@ -173,7 +173,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $upperAchievementValue
      */
-    public function setUpperAchievementValue($upperAchievementValue = null)
+    public function setUpperAchievementValue(float $upperAchievementValue = null)
     {
         $this->setProperty('upperAchievementValue', $upperAchievementValue);
     }
@@ -189,7 +189,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -205,7 +205,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param Grade $lowerBenchmarkGrade
      */
-    public function setLowerBenchmarkGrade(Grade $lowerBenchmarkGrade = null)
+    public function setLowerBenchmarkGrade(\Grade $lowerBenchmarkGrade = null)
     {
         $this->setProperty('lowerBenchmarkGrade', $lowerBenchmarkGrade);
     }
@@ -221,7 +221,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -237,7 +237,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param Grade $upperBenchmarkGrade
      */
-    public function setUpperBenchmarkGrade(Grade $upperBenchmarkGrade = null)
+    public function setUpperBenchmarkGrade(\Grade $upperBenchmarkGrade = null)
     {
         $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }

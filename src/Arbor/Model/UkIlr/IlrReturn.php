@@ -7,29 +7,29 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class IlrReturn extends ModelBase
+class IlrReturn extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const RETURN_NUMBER = 'returnNumber';
+    public const RETURN_NUMBER = 'returnNumber';
 
-    const RETURN_DATE = 'returnDate';
+    public const RETURN_DATE = 'returnDate';
 
-    const REFERENCE_DATE = 'referenceDate';
+    public const REFERENCE_DATE = 'referenceDate';
 
-    const ADULT_SKILLS_BUDGET = 'adultSkillsBudget';
+    public const ADULT_SKILLS_BUDGET = 'adultSkillsBudget';
 
-    const APPRENTICESHIPS16_18 = 'apprenticeships16_18';
+    public const APPRENTICESHIPS16_18 = 'apprenticeships16_18';
 
-    const ESF_FUNDED = 'esfFunded';
+    public const ESF_FUNDED = 'esfFunded';
 
-    const COMMUNITY_LEARNING = 'communityLearning';
+    public const COMMUNITY_LEARNING = 'communityLearning';
 
-    const EFA_FUNDED = 'efaFunded';
+    public const EFA_FUNDED = 'efaFunded';
 
     protected $_resourceType = ResourceType::UK_ILR_ILR_RETURN;
 
@@ -38,7 +38,7 @@ class IlrReturn extends ModelBase
      * @return IlrReturn[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class IlrReturn extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class IlrReturn extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -128,7 +128,7 @@ class IlrReturn extends ModelBase
     /**
      * @param string $returnNumber
      */
-    public function setReturnNumber($returnNumber = null)
+    public function setReturnNumber(string $returnNumber = null)
     {
         $this->setProperty('returnNumber', $returnNumber);
     }
@@ -176,7 +176,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $adultSkillsBudget
      */
-    public function setAdultSkillsBudget($adultSkillsBudget = null)
+    public function setAdultSkillsBudget(bool $adultSkillsBudget = null)
     {
         $this->setProperty('adultSkillsBudget', $adultSkillsBudget);
     }
@@ -192,7 +192,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $apprenticeships16_18
      */
-    public function setApprenticeships16_18($apprenticeships16_18 = null)
+    public function setApprenticeships16_18(bool $apprenticeships16_18 = null)
     {
         $this->setProperty('apprenticeships16_18', $apprenticeships16_18);
     }
@@ -208,7 +208,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $esfFunded
      */
-    public function setEsfFunded($esfFunded = null)
+    public function setEsfFunded(bool $esfFunded = null)
     {
         $this->setProperty('esfFunded', $esfFunded);
     }
@@ -224,7 +224,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $communityLearning
      */
-    public function setCommunityLearning($communityLearning = null)
+    public function setCommunityLearning(bool $communityLearning = null)
     {
         $this->setProperty('communityLearning', $communityLearning);
     }
@@ -240,7 +240,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $efaFunded
      */
-    public function setEfaFunded($efaFunded = null)
+    public function setEfaFunded(bool $efaFunded = null)
     {
         $this->setProperty('efaFunded', $efaFunded);
     }

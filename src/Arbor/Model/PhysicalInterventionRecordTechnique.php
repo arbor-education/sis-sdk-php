@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PhysicalInterventionRecordTechnique extends ModelBase
+class PhysicalInterventionRecordTechnique extends \ModelBase
 {
-    const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
+    public const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
-    const PHYSICAL_INTERVENTION_TECHNIQUE = 'physicalInterventionTechnique';
+    public const PHYSICAL_INTERVENTION_TECHNIQUE = 'physicalInterventionTechnique';
 
     protected $_resourceType = ResourceType::PHYSICAL_INTERVENTION_RECORD_TECHNIQUE;
 
@@ -17,7 +17,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
      * @return PhysicalInterventionRecordTechnique[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
     /**
      * @param PhysicalInterventionRecord $physicalInterventionRecord
      */
-    public function setPhysicalInterventionRecord(PhysicalInterventionRecord $physicalInterventionRecord = null)
+    public function setPhysicalInterventionRecord(\PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
         $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
@@ -75,7 +75,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
     /**
      * @param PhysicalInterventionTechnique $physicalInterventionTechnique
      */
-    public function setPhysicalInterventionTechnique(PhysicalInterventionTechnique $physicalInterventionTechnique = null)
+    public function setPhysicalInterventionTechnique(\PhysicalInterventionTechnique $physicalInterventionTechnique = null)
     {
         $this->setProperty('physicalInterventionTechnique', $physicalInterventionTechnique);
     }

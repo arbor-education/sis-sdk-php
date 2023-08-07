@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ObservationStrand extends ModelBase
+class ObservationStrand extends \ModelBase
 {
-    const OBSERVATION_THEME = 'observationTheme';
+    public const OBSERVATION_THEME = 'observationTheme';
 
-    const OBSERVATION_GRADE_SET = 'observationGradeSet';
+    public const OBSERVATION_GRADE_SET = 'observationGradeSet';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const USE_COMMENT = 'useComment';
+    public const USE_COMMENT = 'useComment';
 
     protected $_resourceType = ResourceType::OBSERVATION_STRAND;
 
@@ -21,7 +21,7 @@ class ObservationStrand extends ModelBase
      * @return ObservationStrand[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param ObservationTheme $observationTheme
      */
-    public function setObservationTheme(ObservationTheme $observationTheme = null)
+    public function setObservationTheme(\ObservationTheme $observationTheme = null)
     {
         $this->setProperty('observationTheme', $observationTheme);
     }
@@ -79,7 +79,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
@@ -95,7 +95,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -111,7 +111,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param bool $useComment
      */
-    public function setUseComment($useComment = null)
+    public function setUseComment(bool $useComment = null)
     {
         $this->setProperty('useComment', $useComment);
     }

@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class OutboundInAppMessage extends ModelBase
+class OutboundInAppMessage extends \ModelBase
 {
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const MESSAGE = 'message';
+    public const MESSAGE = 'message';
 
-    const READ_DATETIME = 'readDatetime';
+    public const READ_DATETIME = 'readDatetime';
 
-    const OUTBOUND_IN_APP_MESSAGE_DRAFT = 'outboundInAppMessageDraft';
+    public const OUTBOUND_IN_APP_MESSAGE_DRAFT = 'outboundInAppMessageDraft';
 
-    const SENT_DATETIME = 'sentDatetime';
+    public const SENT_DATETIME = 'sentDatetime';
 
-    const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
+    public const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
 
-    const INBOUND_IN_APP_MESSAGE_REPLIED_TO = 'inboundInAppMessageRepliedTo';
+    public const INBOUND_IN_APP_MESSAGE_REPLIED_TO = 'inboundInAppMessageRepliedTo';
 
     protected $_resourceType = ResourceType::OUTBOUND_IN_APP_MESSAGE;
 
@@ -29,7 +29,7 @@ class OutboundInAppMessage extends ModelBase
      * @return OutboundInAppMessage[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -87,7 +87,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -103,7 +103,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage($message = null)
+    public function setMessage(string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -135,7 +135,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param OutboundInAppMessageDraft $outboundInAppMessageDraft
      */
-    public function setOutboundInAppMessageDraft(OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
+    public function setOutboundInAppMessageDraft(\OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
     {
         $this->setProperty('outboundInAppMessageDraft', $outboundInAppMessageDraft);
     }
@@ -183,7 +183,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param InboundInAppMessage $inboundInAppMessageRepliedTo
      */
-    public function setInboundInAppMessageRepliedTo(InboundInAppMessage $inboundInAppMessageRepliedTo = null)
+    public function setInboundInAppMessageRepliedTo(\InboundInAppMessage $inboundInAppMessageRepliedTo = null)
     {
         $this->setProperty('inboundInAppMessageRepliedTo', $inboundInAppMessageRepliedTo);
     }

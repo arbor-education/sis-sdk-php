@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ObservationFrameworkStrand extends ModelBase
+class ObservationFrameworkStrand extends \ModelBase
 {
-    const OBSERVATION_FRAMEWORK = 'observationFramework';
+    public const OBSERVATION_FRAMEWORK = 'observationFramework';
 
-    const OBSERVATION_STRAND = 'observationStrand';
+    public const OBSERVATION_STRAND = 'observationStrand';
 
     protected $_resourceType = ResourceType::OBSERVATION_FRAMEWORK_STRAND;
 
@@ -17,7 +17,7 @@ class ObservationFrameworkStrand extends ModelBase
      * @return ObservationFrameworkStrand[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ObservationFrameworkStrand extends ModelBase
     /**
      * @param ObservationFramework $observationFramework
      */
-    public function setObservationFramework(ObservationFramework $observationFramework = null)
+    public function setObservationFramework(\ObservationFramework $observationFramework = null)
     {
         $this->setProperty('observationFramework', $observationFramework);
     }
@@ -75,7 +75,7 @@ class ObservationFrameworkStrand extends ModelBase
     /**
      * @param ObservationStrand $observationStrand
      */
-    public function setObservationStrand(ObservationStrand $observationStrand = null)
+    public function setObservationStrand(\ObservationStrand $observationStrand = null)
     {
         $this->setProperty('observationStrand', $observationStrand);
     }

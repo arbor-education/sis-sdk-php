@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class RegistrationFormTutor extends ModelBase
+class RegistrationFormTutor extends \ModelBase
 {
-    const REGISTRATION_FORM = 'registrationForm';
+    public const REGISTRATION_FORM = 'registrationForm';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::REGISTRATION_FORM_TUTOR;
 
@@ -21,7 +21,7 @@ class RegistrationFormTutor extends ModelBase
      * @return RegistrationFormTutor[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class RegistrationFormTutor extends ModelBase
     /**
      * @param RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
@@ -79,7 +79,7 @@ class RegistrationFormTutor extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

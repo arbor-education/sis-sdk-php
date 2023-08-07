@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserDefinedField extends ModelBase
+class UserDefinedField extends \ModelBase
 {
-    const FIELD_NAME = 'fieldName';
+    public const FIELD_NAME = 'fieldName';
 
-    const IDENTIFIER = 'identifier';
+    public const IDENTIFIER = 'identifier';
 
-    const RELATED_ENTITY_TYPE = 'relatedEntityType';
+    public const RELATED_ENTITY_TYPE = 'relatedEntityType';
 
-    const FIELD_TYPE = 'fieldType';
+    public const FIELD_TYPE = 'fieldType';
 
-    const SOURCE = 'source';
+    public const SOURCE = 'source';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
     protected $_resourceType = ResourceType::USER_DEFINED_FIELD;
 
@@ -27,7 +27,7 @@ class UserDefinedField extends ModelBase
      * @return UserDefinedField[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $fieldName
      */
-    public function setFieldName($fieldName = null)
+    public function setFieldName(string $fieldName = null)
     {
         $this->setProperty('fieldName', $fieldName);
     }
@@ -85,7 +85,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -101,7 +101,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $relatedEntityType
      */
-    public function setRelatedEntityType($relatedEntityType = null)
+    public function setRelatedEntityType(string $relatedEntityType = null)
     {
         $this->setProperty('relatedEntityType', $relatedEntityType);
     }
@@ -117,7 +117,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $fieldType
      */
-    public function setFieldType($fieldType = null)
+    public function setFieldType(string $fieldType = null)
     {
         $this->setProperty('fieldType', $fieldType);
     }
@@ -133,7 +133,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource($source = null)
+    public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -149,7 +149,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -165,7 +165,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

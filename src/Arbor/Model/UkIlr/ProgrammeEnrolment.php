@@ -7,49 +7,49 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ProgrammeEnrolment extends ModelBase
+class ProgrammeEnrolment extends \ModelBase
 {
-    const PROGRAMME_TYPE = 'programmeType';
+    public const PROGRAMME_TYPE = 'programmeType';
 
-    const FUNDING_MODEL = 'fundingModel';
+    public const FUNDING_MODEL = 'fundingModel';
 
-    const PRIOR_LEARNING_FUNDING_ADJUSTMENT = 'priorLearningFundingAdjustment';
+    public const PRIOR_LEARNING_FUNDING_ADJUSTMENT = 'priorLearningFundingAdjustment';
 
-    const OTHER_FUNDING_ADJUSTMENT = 'otherFundingAdjustment';
+    public const OTHER_FUNDING_ADJUSTMENT = 'otherFundingAdjustment';
 
-    const OUTCOME = 'outcome';
+    public const OUTCOME = 'outcome';
 
-    const EMPLOYMENT_OUTCOME = 'employmentOutcome';
+    public const EMPLOYMENT_OUTCOME = 'employmentOutcome';
 
-    const SOURCE_OF_FUNDING = 'sourceOfFunding';
+    public const SOURCE_OF_FUNDING = 'sourceOfFunding';
 
-    const FULL_FUNDING_INDICATOR = 'fullFundingIndicator';
+    public const FULL_FUNDING_INDICATOR = 'fullFundingIndicator';
 
-    const WORKPLACE_LEARNING = 'workplaceLearning';
+    public const WORKPLACE_LEARNING = 'workplaceLearning';
 
-    const EEF_ELIGIBILITY = 'eefEligibility';
+    public const EEF_ELIGIBILITY = 'eefEligibility';
 
-    const LDM_CODE1 = 'ldmCode1';
+    public const LDM_CODE1 = 'ldmCode1';
 
-    const LDM_CODE2 = 'ldmCode2';
+    public const LDM_CODE2 = 'ldmCode2';
 
-    const LDM_CODE3 = 'ldmCode3';
+    public const LDM_CODE3 = 'ldmCode3';
 
-    const LDM_CODE4 = 'ldmCode4';
+    public const LDM_CODE4 = 'ldmCode4';
 
-    const SPECIAL_PROJECT_CODE = 'specialProjectCode';
+    public const SPECIAL_PROJECT_CODE = 'specialProjectCode';
 
-    const WORK_PROGRAMME_PARTICIPATION = 'workProgrammeParticipation';
+    public const WORK_PROGRAMME_PARTICIPATION = 'workProgrammeParticipation';
 
-    const PERCENTAGE_ONLINE_DELIVERY = 'percentageOnlineDelivery';
+    public const PERCENTAGE_ONLINE_DELIVERY = 'percentageOnlineDelivery';
 
-    const COMMUNITY_LEARNING_PROVISION_TYPE = 'communityLearningProvisionType';
+    public const COMMUNITY_LEARNING_PROVISION_TYPE = 'communityLearningProvisionType';
 
-    const SW_SUP_AIM_ID = 'swSupAimId';
+    public const SW_SUP_AIM_ID = 'swSupAimId';
 
-    const OUTCOME_GRADE = 'outcomeGrade';
+    public const OUTCOME_GRADE = 'outcomeGrade';
 
-    const DELIVERY_ORGANISATION = 'deliveryOrganisation';
+    public const DELIVERY_ORGANISATION = 'deliveryOrganisation';
 
     protected $_resourceType = ResourceType::UK_ILR_PROGRAMME_ENROLMENT;
 
@@ -58,7 +58,7 @@ class ProgrammeEnrolment extends ModelBase
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,7 +100,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $programmeType
      */
-    public function setProgrammeType($programmeType = null)
+    public function setProgrammeType(string $programmeType = null)
     {
         $this->setProperty('programmeType', $programmeType);
     }
@@ -116,7 +116,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $fundingModel
      */
-    public function setFundingModel($fundingModel = null)
+    public function setFundingModel(string $fundingModel = null)
     {
         $this->setProperty('fundingModel', $fundingModel);
     }
@@ -132,7 +132,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $priorLearningFundingAdjustment
      */
-    public function setPriorLearningFundingAdjustment($priorLearningFundingAdjustment = null)
+    public function setPriorLearningFundingAdjustment(int $priorLearningFundingAdjustment = null)
     {
         $this->setProperty('priorLearningFundingAdjustment', $priorLearningFundingAdjustment);
     }
@@ -148,7 +148,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $otherFundingAdjustment
      */
-    public function setOtherFundingAdjustment($otherFundingAdjustment = null)
+    public function setOtherFundingAdjustment(int $otherFundingAdjustment = null)
     {
         $this->setProperty('otherFundingAdjustment', $otherFundingAdjustment);
     }
@@ -164,7 +164,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $outcome
      */
-    public function setOutcome($outcome = null)
+    public function setOutcome(string $outcome = null)
     {
         $this->setProperty('outcome', $outcome);
     }
@@ -180,7 +180,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $employmentOutcome
      */
-    public function setEmploymentOutcome($employmentOutcome = null)
+    public function setEmploymentOutcome(string $employmentOutcome = null)
     {
         $this->setProperty('employmentOutcome', $employmentOutcome);
     }
@@ -196,7 +196,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $sourceOfFunding
      */
-    public function setSourceOfFunding($sourceOfFunding = null)
+    public function setSourceOfFunding(string $sourceOfFunding = null)
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }
@@ -212,7 +212,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $fullFundingIndicator
      */
-    public function setFullFundingIndicator($fullFundingIndicator = null)
+    public function setFullFundingIndicator(string $fullFundingIndicator = null)
     {
         $this->setProperty('fullFundingIndicator', $fullFundingIndicator);
     }
@@ -228,7 +228,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $workplaceLearning
      */
-    public function setWorkplaceLearning($workplaceLearning = null)
+    public function setWorkplaceLearning(bool $workplaceLearning = null)
     {
         $this->setProperty('workplaceLearning', $workplaceLearning);
     }
@@ -244,7 +244,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $eefEligibility
      */
-    public function setEefEligibility($eefEligibility = null)
+    public function setEefEligibility(string $eefEligibility = null)
     {
         $this->setProperty('eefEligibility', $eefEligibility);
     }
@@ -260,7 +260,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode1
      */
-    public function setLdmCode1($ldmCode1 = null)
+    public function setLdmCode1(string $ldmCode1 = null)
     {
         $this->setProperty('ldmCode1', $ldmCode1);
     }
@@ -276,7 +276,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode2
      */
-    public function setLdmCode2($ldmCode2 = null)
+    public function setLdmCode2(string $ldmCode2 = null)
     {
         $this->setProperty('ldmCode2', $ldmCode2);
     }
@@ -292,7 +292,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode3
      */
-    public function setLdmCode3($ldmCode3 = null)
+    public function setLdmCode3(string $ldmCode3 = null)
     {
         $this->setProperty('ldmCode3', $ldmCode3);
     }
@@ -308,7 +308,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode4
      */
-    public function setLdmCode4($ldmCode4 = null)
+    public function setLdmCode4(string $ldmCode4 = null)
     {
         $this->setProperty('ldmCode4', $ldmCode4);
     }
@@ -324,7 +324,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $specialProjectCode
      */
-    public function setSpecialProjectCode($specialProjectCode = null)
+    public function setSpecialProjectCode(string $specialProjectCode = null)
     {
         $this->setProperty('specialProjectCode', $specialProjectCode);
     }
@@ -340,7 +340,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $workProgrammeParticipation
      */
-    public function setWorkProgrammeParticipation($workProgrammeParticipation = null)
+    public function setWorkProgrammeParticipation(bool $workProgrammeParticipation = null)
     {
         $this->setProperty('workProgrammeParticipation', $workProgrammeParticipation);
     }
@@ -356,7 +356,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $percentageOnlineDelivery
      */
-    public function setPercentageOnlineDelivery($percentageOnlineDelivery = null)
+    public function setPercentageOnlineDelivery(string $percentageOnlineDelivery = null)
     {
         $this->setProperty('percentageOnlineDelivery', $percentageOnlineDelivery);
     }
@@ -372,7 +372,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $communityLearningProvisionType
      */
-    public function setCommunityLearningProvisionType($communityLearningProvisionType = null)
+    public function setCommunityLearningProvisionType(string $communityLearningProvisionType = null)
     {
         $this->setProperty('communityLearningProvisionType', $communityLearningProvisionType);
     }
@@ -388,7 +388,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $swSupAimId
      */
-    public function setSwSupAimId($swSupAimId = null)
+    public function setSwSupAimId(string $swSupAimId = null)
     {
         $this->setProperty('swSupAimId', $swSupAimId);
     }
@@ -404,7 +404,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $outcomeGrade
      */
-    public function setOutcomeGrade($outcomeGrade = null)
+    public function setOutcomeGrade(string $outcomeGrade = null)
     {
         $this->setProperty('outcomeGrade', $outcomeGrade);
     }
@@ -420,7 +420,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param ModelBase $deliveryOrganisation
      */
-    public function setDeliveryOrganisation(ModelBase $deliveryOrganisation = null)
+    public function setDeliveryOrganisation(\ModelBase $deliveryOrganisation = null)
     {
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
     }

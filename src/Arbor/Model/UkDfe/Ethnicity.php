@@ -7,15 +7,15 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Ethnicity extends ModelBase
+class Ethnicity extends \ModelBase
 {
-    const DFES_MAIN_CODE = 'dfesMainCode';
+    public const DFES_MAIN_CODE = 'dfesMainCode';
 
-    const D00005 = 'd00005';
+    public const D00005 = 'd00005';
 
-    const ONS_CODE = 'onsCode';
+    public const ONS_CODE = 'onsCode';
 
-    const D00250 = 'd00250';
+    public const D00250 = 'd00250';
 
     protected $_resourceType = ResourceType::UK_DFE_ETHNICITY;
 
@@ -24,7 +24,7 @@ class Ethnicity extends ModelBase
      * @return Ethnicity[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $dfesMainCode
      */
-    public function setDfesMainCode($dfesMainCode = null)
+    public function setDfesMainCode(string $dfesMainCode = null)
     {
         $this->setProperty('dfesMainCode', $dfesMainCode);
     }
@@ -82,7 +82,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00005
      */
-    public function setD00005($d00005 = null)
+    public function setD00005(string $d00005 = null)
     {
         $this->setProperty('d00005', $d00005);
     }
@@ -98,7 +98,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $onsCode
      */
-    public function setOnsCode($onsCode = null)
+    public function setOnsCode(string $onsCode = null)
     {
         $this->setProperty('onsCode', $onsCode);
     }
@@ -114,7 +114,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00250
      */
-    public function setD00250($d00250 = null)
+    public function setD00250(string $d00250 = null)
     {
         $this->setProperty('d00250', $d00250);
     }

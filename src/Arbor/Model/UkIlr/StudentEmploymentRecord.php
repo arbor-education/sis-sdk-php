@@ -8,19 +8,19 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\StudentEmploymentRecord;
 
-class StudentEmploymentRecord extends ModelBase
+class StudentEmploymentRecord extends \ModelBase
 {
-    const BSI1 = 'bsi1';
+    public const BSI1 = 'bsi1';
 
-    const BSI2 = 'bsi2';
+    public const BSI2 = 'bsi2';
 
-    const BSI3 = 'bsi3';
+    public const BSI3 = 'bsi3';
 
-    const BSI4 = 'bsi4';
+    public const BSI4 = 'bsi4';
 
-    const RON1 = 'ron1';
+    public const RON1 = 'ron1';
 
-    const MADE_REDUNDANT_STUDENT_EMPLOYMENT_RECORD = 'madeRedundantStudentEmploymentRecord';
+    public const MADE_REDUNDANT_STUDENT_EMPLOYMENT_RECORD = 'madeRedundantStudentEmploymentRecord';
 
     protected $_resourceType = ResourceType::UK_ILR_STUDENT_EMPLOYMENT_RECORD;
 
@@ -29,7 +29,7 @@ class StudentEmploymentRecord extends ModelBase
      * @return StudentEmploymentRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi1
      */
-    public function setBsi1($bsi1 = null)
+    public function setBsi1(bool $bsi1 = null)
     {
         $this->setProperty('bsi1', $bsi1);
     }
@@ -87,7 +87,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi2
      */
-    public function setBsi2($bsi2 = null)
+    public function setBsi2(bool $bsi2 = null)
     {
         $this->setProperty('bsi2', $bsi2);
     }
@@ -103,7 +103,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi3
      */
-    public function setBsi3($bsi3 = null)
+    public function setBsi3(bool $bsi3 = null)
     {
         $this->setProperty('bsi3', $bsi3);
     }
@@ -119,7 +119,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi4
      */
-    public function setBsi4($bsi4 = null)
+    public function setBsi4(bool $bsi4 = null)
     {
         $this->setProperty('bsi4', $bsi4);
     }
@@ -135,7 +135,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $ron1
      */
-    public function setRon1($ron1 = null)
+    public function setRon1(bool $ron1 = null)
     {
         $this->setProperty('ron1', $ron1);
     }
@@ -151,7 +151,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param StudentEmploymentRecord $madeRedundantStudentEmploymentRecord
      */
-    public function setMadeRedundantStudentEmploymentRecord(StudentEmploymentRecord $madeRedundantStudentEmploymentRecord = null)
+    public function setMadeRedundantStudentEmploymentRecord(\StudentEmploymentRecord $madeRedundantStudentEmploymentRecord = null)
     {
         $this->setProperty('madeRedundantStudentEmploymentRecord', $madeRedundantStudentEmploymentRecord);
     }

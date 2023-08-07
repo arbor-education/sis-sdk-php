@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Person extends ModelBase
+class Person extends \ModelBase
 {
-    const GENDER = 'gender';
+    public const GENDER = 'gender';
 
-    const GENDER_IDENTITY = 'genderIdentity';
+    public const GENDER_IDENTITY = 'genderIdentity';
 
-    const GENDER_IDENTITY_PREFERRED_TERM = 'genderIdentityPreferredTerm';
+    public const GENDER_IDENTITY_PREFERRED_TERM = 'genderIdentityPreferredTerm';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const MARITAL_STATUS = 'maritalStatus';
+    public const MARITAL_STATUS = 'maritalStatus';
 
-    const LEGAL_FIRST_NAME = 'legalFirstName';
+    public const LEGAL_FIRST_NAME = 'legalFirstName';
 
-    const LEGAL_MIDDLE_NAMES = 'legalMiddleNames';
+    public const LEGAL_MIDDLE_NAMES = 'legalMiddleNames';
 
-    const LEGAL_LAST_NAME = 'legalLastName';
+    public const LEGAL_LAST_NAME = 'legalLastName';
 
-    const PREFERRED_FIRST_NAME = 'preferredFirstName';
+    public const PREFERRED_FIRST_NAME = 'preferredFirstName';
 
-    const PREFERRED_LAST_NAME = 'preferredLastName';
+    public const PREFERRED_LAST_NAME = 'preferredLastName';
 
-    const DATE_OF_BIRTH = 'dateOfBirth';
+    public const DATE_OF_BIRTH = 'dateOfBirth';
 
-    const COUNTRY_OF_BIRTH = 'countryOfBirth';
+    public const COUNTRY_OF_BIRTH = 'countryOfBirth';
 
-    const DECEASED = 'deceased';
+    public const DECEASED = 'deceased';
 
-    const DATE_OF_DEATH = 'dateOfDeath';
+    public const DATE_OF_DEATH = 'dateOfDeath';
 
     protected $_resourceType = ResourceType::PERSON;
 
@@ -41,7 +41,7 @@ class Person extends ModelBase
      * @return Person[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class Person extends ModelBase
     /**
      * @param Gender $gender
      */
-    public function setGender(Gender $gender = null)
+    public function setGender(\Gender $gender = null)
     {
         $this->setProperty('gender', $gender);
     }
@@ -99,7 +99,7 @@ class Person extends ModelBase
     /**
      * @param GenderIdentity $genderIdentity
      */
-    public function setGenderIdentity(GenderIdentity $genderIdentity = null)
+    public function setGenderIdentity(\GenderIdentity $genderIdentity = null)
     {
         $this->setProperty('genderIdentity', $genderIdentity);
     }
@@ -115,7 +115,7 @@ class Person extends ModelBase
     /**
      * @param string $genderIdentityPreferredTerm
      */
-    public function setGenderIdentityPreferredTerm($genderIdentityPreferredTerm = null)
+    public function setGenderIdentityPreferredTerm(string $genderIdentityPreferredTerm = null)
     {
         $this->setProperty('genderIdentityPreferredTerm', $genderIdentityPreferredTerm);
     }
@@ -131,7 +131,7 @@ class Person extends ModelBase
     /**
      * @param Title $title
      */
-    public function setTitle(Title $title = null)
+    public function setTitle(\Title $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -147,7 +147,7 @@ class Person extends ModelBase
     /**
      * @param MaritalStatus $maritalStatus
      */
-    public function setMaritalStatus(MaritalStatus $maritalStatus = null)
+    public function setMaritalStatus(\MaritalStatus $maritalStatus = null)
     {
         $this->setProperty('maritalStatus', $maritalStatus);
     }
@@ -163,7 +163,7 @@ class Person extends ModelBase
     /**
      * @param string $legalFirstName
      */
-    public function setLegalFirstName($legalFirstName = null)
+    public function setLegalFirstName(string $legalFirstName = null)
     {
         $this->setProperty('legalFirstName', $legalFirstName);
     }
@@ -179,7 +179,7 @@ class Person extends ModelBase
     /**
      * @param string $legalMiddleNames
      */
-    public function setLegalMiddleNames($legalMiddleNames = null)
+    public function setLegalMiddleNames(string $legalMiddleNames = null)
     {
         $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
@@ -195,7 +195,7 @@ class Person extends ModelBase
     /**
      * @param string $legalLastName
      */
-    public function setLegalLastName($legalLastName = null)
+    public function setLegalLastName(string $legalLastName = null)
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
@@ -211,7 +211,7 @@ class Person extends ModelBase
     /**
      * @param string $preferredFirstName
      */
-    public function setPreferredFirstName($preferredFirstName = null)
+    public function setPreferredFirstName(string $preferredFirstName = null)
     {
         $this->setProperty('preferredFirstName', $preferredFirstName);
     }
@@ -227,7 +227,7 @@ class Person extends ModelBase
     /**
      * @param string $preferredLastName
      */
-    public function setPreferredLastName($preferredLastName = null)
+    public function setPreferredLastName(string $preferredLastName = null)
     {
         $this->setProperty('preferredLastName', $preferredLastName);
     }
@@ -259,7 +259,7 @@ class Person extends ModelBase
     /**
      * @param Country $countryOfBirth
      */
-    public function setCountryOfBirth(Country $countryOfBirth = null)
+    public function setCountryOfBirth(\Country $countryOfBirth = null)
     {
         $this->setProperty('countryOfBirth', $countryOfBirth);
     }
@@ -275,7 +275,7 @@ class Person extends ModelBase
     /**
      * @param bool $deceased
      */
-    public function setDeceased($deceased = null)
+    public function setDeceased(bool $deceased = null)
     {
         $this->setProperty('deceased', $deceased);
     }

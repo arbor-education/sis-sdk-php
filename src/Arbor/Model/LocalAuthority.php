@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LocalAuthority extends ModelBase
+class LocalAuthority extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const COUNTRY = 'country';
+    public const COUNTRY = 'country';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const AUTHORITY_CODE = 'authorityCode';
+    public const AUTHORITY_CODE = 'authorityCode';
 
-    const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
+    public const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
 
     protected $_resourceType = ResourceType::LOCAL_AUTHORITY;
 
@@ -29,7 +29,7 @@ class LocalAuthority extends ModelBase
      * @return LocalAuthority[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +87,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,7 +103,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -119,7 +119,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param Country $country
      */
-    public function setCountry(Country $country = null)
+    public function setCountry(\Country $country = null)
     {
         $this->setProperty('country', $country);
     }
@@ -135,7 +135,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -151,7 +151,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -167,7 +167,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCode
      */
-    public function setAuthorityCode($authorityCode = null)
+    public function setAuthorityCode(string $authorityCode = null)
     {
         $this->setProperty('authorityCode', $authorityCode);
     }
@@ -183,7 +183,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCodePre2011
      */
-    public function setAuthorityCodePre2011($authorityCodePre2011 = null)
+    public function setAuthorityCodePre2011(string $authorityCodePre2011 = null)
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }

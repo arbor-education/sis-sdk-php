@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ClubMembership extends ModelBase
+class ClubMembership extends \ModelBase
 {
-    const CLUB = 'club';
+    public const CLUB = 'club';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
+    public const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CONSENT_RECEIVED = 'consentReceived';
+    public const CONSENT_RECEIVED = 'consentReceived';
 
-    const ACTIVATED_DATETIME = 'activatedDatetime';
+    public const ACTIVATED_DATETIME = 'activatedDatetime';
 
-    const CUSTOMER_INVOICE = 'customerInvoice';
+    public const CUSTOMER_INVOICE = 'customerInvoice';
 
-    const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
+    public const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
-    const DISABLED_DATETIME = 'disabledDatetime';
+    public const DISABLED_DATETIME = 'disabledDatetime';
 
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP;
 
@@ -35,7 +35,7 @@ class ClubMembership extends ModelBase
      * @return ClubMembership[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class ClubMembership extends ModelBase
     /**
      * @param Club $club
      */
-    public function setClub(Club $club = null)
+    public function setClub(\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -125,7 +125,7 @@ class ClubMembership extends ModelBase
     /**
      * @param ClubMembershipPeriod $clubMembershipPeriod
      */
-    public function setClubMembershipPeriod(ClubMembershipPeriod $clubMembershipPeriod = null)
+    public function setClubMembershipPeriod(\ClubMembershipPeriod $clubMembershipPeriod = null)
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
@@ -141,7 +141,7 @@ class ClubMembership extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -157,7 +157,7 @@ class ClubMembership extends ModelBase
     /**
      * @param bool $consentReceived
      */
-    public function setConsentReceived($consentReceived = null)
+    public function setConsentReceived(bool $consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
     }
@@ -189,7 +189,7 @@ class ClubMembership extends ModelBase
     /**
      * @param CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -205,7 +205,7 @@ class ClubMembership extends ModelBase
     /**
      * @param CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }

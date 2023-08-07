@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ClubMembershipPeriodRule extends ModelBase
+class ClubMembershipPeriodRule extends \ModelBase
 {
-    const RULE_IDENTIFIER = 'ruleIdentifier';
+    public const RULE_IDENTIFIER = 'ruleIdentifier';
 
-    const RULE_VALUE = 'ruleValue';
+    public const RULE_VALUE = 'ruleValue';
 
-    const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
+    public const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
 
     protected $_resourceType = ResourceType::CLUB_MEMBERSHIP_PERIOD_RULE;
 
@@ -19,7 +19,7 @@ class ClubMembershipPeriodRule extends ModelBase
      * @return ClubMembershipPeriodRule[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param string $ruleIdentifier
      */
-    public function setRuleIdentifier($ruleIdentifier = null)
+    public function setRuleIdentifier(string $ruleIdentifier = null)
     {
         $this->setProperty('ruleIdentifier', $ruleIdentifier);
     }
@@ -77,7 +77,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param string $ruleValue
      */
-    public function setRuleValue($ruleValue = null)
+    public function setRuleValue(string $ruleValue = null)
     {
         $this->setProperty('ruleValue', $ruleValue);
     }
@@ -93,7 +93,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param ClubMembershipPeriod $clubMembershipPeriod
      */
-    public function setClubMembershipPeriod(ClubMembershipPeriod $clubMembershipPeriod = null)
+    public function setClubMembershipPeriod(\ClubMembershipPeriod $clubMembershipPeriod = null)
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }

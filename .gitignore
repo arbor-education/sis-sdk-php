@@ -2,6 +2,7 @@
 /examples/config.php
 composer.lock
 .php-cs-fixer.cache
+.php_cs.cache
 .idea
 phpunit.xml
 /nbproject/

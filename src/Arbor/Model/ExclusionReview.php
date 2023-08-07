@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ExclusionReview extends ModelBase
+class ExclusionReview extends \ModelBase
 {
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
-    const EXCLUSION_REVIEW_OUTCOME = 'exclusionReviewOutcome';
+    public const EXCLUSION_REVIEW_OUTCOME = 'exclusionReviewOutcome';
 
-    const PERMANENT_EXCLUSION = 'permanentExclusion';
+    public const PERMANENT_EXCLUSION = 'permanentExclusion';
 
-    const REVIEW_DATE = 'reviewDate';
+    public const REVIEW_DATE = 'reviewDate';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STUDENT_REINSTATEMENT_DATE = 'studentReinstatementDate';
+    public const STUDENT_REINSTATEMENT_DATE = 'studentReinstatementDate';
 
-    const SEN_EXPERT_REQUESTED = 'senExpertRequested';
+    public const SEN_EXPERT_REQUESTED = 'senExpertRequested';
 
     protected $_resourceType = ResourceType::EXCLUSION_REVIEW;
 
@@ -27,7 +27,7 @@ class ExclusionReview extends ModelBase
      * @return ExclusionReview[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -85,7 +85,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param ExclusionReviewOutcome $exclusionReviewOutcome
      */
-    public function setExclusionReviewOutcome(ExclusionReviewOutcome $exclusionReviewOutcome = null)
+    public function setExclusionReviewOutcome(\ExclusionReviewOutcome $exclusionReviewOutcome = null)
     {
         $this->setProperty('exclusionReviewOutcome', $exclusionReviewOutcome);
     }
@@ -101,7 +101,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param PermanentExclusion $permanentExclusion
      */
-    public function setPermanentExclusion(PermanentExclusion $permanentExclusion = null)
+    public function setPermanentExclusion(\PermanentExclusion $permanentExclusion = null)
     {
         $this->setProperty('permanentExclusion', $permanentExclusion);
     }
@@ -133,7 +133,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -165,7 +165,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param bool $senExpertRequested
      */
-    public function setSenExpertRequested($senExpertRequested = null)
+    public function setSenExpertRequested(bool $senExpertRequested = null)
     {
         $this->setProperty('senExpertRequested', $senExpertRequested);
     }

@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SchoolProgressTargetRule extends ModelBase
+class SchoolProgressTargetRule extends \ModelBase
 {
-    const RULE_NAME = 'ruleName';
+    public const RULE_NAME = 'ruleName';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CURRICULUM_GRADE = 'curriculumGrade';
+    public const CURRICULUM_GRADE = 'curriculumGrade';
 
-    const TERM_NUMBER = 'termNumber';
+    public const TERM_NUMBER = 'termNumber';
 
-    const PROGRESS_AMOUNT = 'progressAmount';
+    public const PROGRESS_AMOUNT = 'progressAmount';
 
-    const PROGRESS_AMOUNT_UNIT = 'progressAmountUnit';
+    public const PROGRESS_AMOUNT_UNIT = 'progressAmountUnit';
 
-    const PROGRESS_REFERENCE_MARK_TYPE = 'progressReferenceMarkType';
+    public const PROGRESS_REFERENCE_MARK_TYPE = 'progressReferenceMarkType';
 
-    const ACADEMIC_YEARS_OFFSET = 'academicYearsOffset';
+    public const ACADEMIC_YEARS_OFFSET = 'academicYearsOffset';
 
-    const HAS_SAME_ATTAINMENT_TARGET_FOR_EACH_PERIOD = 'hasSameAttainmentTargetForEachPeriod';
+    public const HAS_SAME_ATTAINMENT_TARGET_FOR_EACH_PERIOD = 'hasSameAttainmentTargetForEachPeriod';
 
     protected $_resourceType = ResourceType::SCHOOL_PROGRESS_TARGET_RULE;
 
@@ -35,7 +35,7 @@ class SchoolProgressTargetRule extends ModelBase
      * @return SchoolProgressTargetRule[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param string $ruleName
      */
-    public function setRuleName($ruleName = null)
+    public function setRuleName(string $ruleName = null)
     {
         $this->setProperty('ruleName', $ruleName);
     }
@@ -93,7 +93,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -141,7 +141,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -157,7 +157,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param int $termNumber
      */
-    public function setTermNumber($termNumber = null)
+    public function setTermNumber(int $termNumber = null)
     {
         $this->setProperty('termNumber', $termNumber);
     }
@@ -173,7 +173,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param float $progressAmount
      */
-    public function setProgressAmount($progressAmount = null)
+    public function setProgressAmount(float $progressAmount = null)
     {
         $this->setProperty('progressAmount', $progressAmount);
     }
@@ -189,7 +189,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param string $progressAmountUnit
      */
-    public function setProgressAmountUnit($progressAmountUnit = null)
+    public function setProgressAmountUnit(string $progressAmountUnit = null)
     {
         $this->setProperty('progressAmountUnit', $progressAmountUnit);
     }
@@ -205,7 +205,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param string $progressReferenceMarkType
      */
-    public function setProgressReferenceMarkType($progressReferenceMarkType = null)
+    public function setProgressReferenceMarkType(string $progressReferenceMarkType = null)
     {
         $this->setProperty('progressReferenceMarkType', $progressReferenceMarkType);
     }
@@ -221,7 +221,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param int $academicYearsOffset
      */
-    public function setAcademicYearsOffset($academicYearsOffset = null)
+    public function setAcademicYearsOffset(int $academicYearsOffset = null)
     {
         $this->setProperty('academicYearsOffset', $academicYearsOffset);
     }
@@ -237,7 +237,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param bool $hasSameAttainmentTargetForEachPeriod
      */
-    public function setHasSameAttainmentTargetForEachPeriod($hasSameAttainmentTargetForEachPeriod = null)
+    public function setHasSameAttainmentTargetForEachPeriod(bool $hasSameAttainmentTargetForEachPeriod = null)
     {
         $this->setProperty('hasSameAttainmentTargetForEachPeriod', $hasSameAttainmentTargetForEachPeriod);
     }

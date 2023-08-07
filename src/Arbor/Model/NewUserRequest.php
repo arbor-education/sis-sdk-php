@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class NewUserRequest extends ModelBase
+class NewUserRequest extends \ModelBase
 {
-    const BUSINESS_ROLE = 'businessRole';
+    public const BUSINESS_ROLE = 'businessRole';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const FIRST_NAME = 'firstName';
+    public const FIRST_NAME = 'firstName';
 
-    const LAST_NAME = 'lastName';
+    public const LAST_NAME = 'lastName';
 
-    const EMAIL = 'email';
+    public const EMAIL = 'email';
 
-    const MOBILE_NUMBER = 'mobileNumber';
+    public const MOBILE_NUMBER = 'mobileNumber';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
-    const SELECTED_APPROVER_STAFF = 'selectedApproverStaff';
+    public const SELECTED_APPROVER_STAFF = 'selectedApproverStaff';
 
-    const APPROVERS_EXIST = 'approversExist';
+    public const APPROVERS_EXIST = 'approversExist';
 
     protected $_resourceType = ResourceType::NEW_USER_REQUEST;
 
@@ -33,7 +33,7 @@ class NewUserRequest extends ModelBase
      * @return NewUserRequest[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param BusinessRole $businessRole
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setBusinessRole(\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
@@ -91,7 +91,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param Title $title
      */
-    public function setTitle(Title $title = null)
+    public function setTitle(\Title $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -107,7 +107,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param string $firstName
      */
-    public function setFirstName($firstName = null)
+    public function setFirstName(string $firstName = null)
     {
         $this->setProperty('firstName', $firstName);
     }
@@ -123,7 +123,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param string $lastName
      */
-    public function setLastName($lastName = null)
+    public function setLastName(string $lastName = null)
     {
         $this->setProperty('lastName', $lastName);
     }
@@ -139,7 +139,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail($email = null)
+    public function setEmail(string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -155,7 +155,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param string $mobileNumber
      */
-    public function setMobileNumber($mobileNumber = null)
+    public function setMobileNumber(string $mobileNumber = null)
     {
         $this->setProperty('mobileNumber', $mobileNumber);
     }
@@ -203,7 +203,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param Staff $selectedApproverStaff
      */
-    public function setSelectedApproverStaff(Staff $selectedApproverStaff = null)
+    public function setSelectedApproverStaff(\Staff $selectedApproverStaff = null)
     {
         $this->setProperty('selectedApproverStaff', $selectedApproverStaff);
     }
@@ -219,7 +219,7 @@ class NewUserRequest extends ModelBase
     /**
      * @param bool $approversExist
      */
-    public function setApproversExist($approversExist = null)
+    public function setApproversExist(bool $approversExist = null)
     {
         $this->setProperty('approversExist', $approversExist);
     }

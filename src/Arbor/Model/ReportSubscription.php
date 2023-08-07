@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ReportSubscription extends ModelBase
+class ReportSubscription extends \ModelBase
 {
-    const REPORT_IDENTIFIER = 'reportIdentifier';
+    public const REPORT_IDENTIFIER = 'reportIdentifier';
 
-    const SUBSCRIBER = 'subscriber';
+    public const SUBSCRIBER = 'subscriber';
 
     protected $_resourceType = ResourceType::REPORT_SUBSCRIPTION;
 
@@ -17,7 +17,7 @@ class ReportSubscription extends ModelBase
      * @return ReportSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ReportSubscription extends ModelBase
     /**
      * @param string $reportIdentifier
      */
-    public function setReportIdentifier($reportIdentifier = null)
+    public function setReportIdentifier(string $reportIdentifier = null)
     {
         $this->setProperty('reportIdentifier', $reportIdentifier);
     }
@@ -75,7 +75,7 @@ class ReportSubscription extends ModelBase
     /**
      * @param Staff $subscriber
      */
-    public function setSubscriber(Staff $subscriber = null)
+    public function setSubscriber(\Staff $subscriber = null)
     {
         $this->setProperty('subscriber', $subscriber);
     }

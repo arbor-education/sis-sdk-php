@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgressAssessmentBatch extends ModelBase
+class ProgressAssessmentBatch extends \ModelBase
 {
-    const BATCH_NAME = 'batchName';
+    public const BATCH_NAME = 'batchName';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const PROGRESS_MEASUREMENT_PERIOD_SET = 'progressMeasurementPeriodSet';
+    public const PROGRESS_MEASUREMENT_PERIOD_SET = 'progressMeasurementPeriodSet';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const IS_BASELINE_LOCKED = 'isBaselineLocked';
+    public const IS_BASELINE_LOCKED = 'isBaselineLocked';
 
-    const IS_TARGET_LOCKED = 'isTargetLocked';
+    public const IS_TARGET_LOCKED = 'isTargetLocked';
 
-    const SHOW_RANK_ORDER = 'showRankOrder';
+    public const SHOW_RANK_ORDER = 'showRankOrder';
 
-    const SHOW_CURRENT_VS_BASELINE = 'showCurrentVsBaseline';
+    public const SHOW_CURRENT_VS_BASELINE = 'showCurrentVsBaseline';
 
-    const SHOW_CURRENT_VS_YEAR_TARGET = 'showCurrentVsYearTarget';
+    public const SHOW_CURRENT_VS_YEAR_TARGET = 'showCurrentVsYearTarget';
 
-    const SHOW_CURRENT_VS_PREDICTED = 'showCurrentVsPredicted';
+    public const SHOW_CURRENT_VS_PREDICTED = 'showCurrentVsPredicted';
 
-    const SHOW_CURRENT_VS_PREVIOUS = 'showCurrentVsPrevious';
+    public const SHOW_CURRENT_VS_PREVIOUS = 'showCurrentVsPrevious';
 
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH;
 
@@ -35,7 +35,7 @@ class ProgressAssessmentBatch extends ModelBase
      * @return ProgressAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param string $batchName
      */
-    public function setBatchName($batchName = null)
+    public function setBatchName(string $batchName = null)
     {
         $this->setProperty('batchName', $batchName);
     }
@@ -93,7 +93,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -109,7 +109,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
      */
-    public function setProgressMeasurementPeriodSet(ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
+    public function setProgressMeasurementPeriodSet(\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
         $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
@@ -125,7 +125,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -141,7 +141,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $isBaselineLocked
      */
-    public function setIsBaselineLocked($isBaselineLocked = null)
+    public function setIsBaselineLocked(bool $isBaselineLocked = null)
     {
         $this->setProperty('isBaselineLocked', $isBaselineLocked);
     }
@@ -157,7 +157,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $isTargetLocked
      */
-    public function setIsTargetLocked($isTargetLocked = null)
+    public function setIsTargetLocked(bool $isTargetLocked = null)
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
     }
@@ -173,7 +173,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showRankOrder
      */
-    public function setShowRankOrder($showRankOrder = null)
+    public function setShowRankOrder(bool $showRankOrder = null)
     {
         $this->setProperty('showRankOrder', $showRankOrder);
     }
@@ -189,7 +189,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsBaseline
      */
-    public function setShowCurrentVsBaseline($showCurrentVsBaseline = null)
+    public function setShowCurrentVsBaseline(bool $showCurrentVsBaseline = null)
     {
         $this->setProperty('showCurrentVsBaseline', $showCurrentVsBaseline);
     }
@@ -205,7 +205,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsYearTarget
      */
-    public function setShowCurrentVsYearTarget($showCurrentVsYearTarget = null)
+    public function setShowCurrentVsYearTarget(bool $showCurrentVsYearTarget = null)
     {
         $this->setProperty('showCurrentVsYearTarget', $showCurrentVsYearTarget);
     }
@@ -221,7 +221,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsPredicted
      */
-    public function setShowCurrentVsPredicted($showCurrentVsPredicted = null)
+    public function setShowCurrentVsPredicted(bool $showCurrentVsPredicted = null)
     {
         $this->setProperty('showCurrentVsPredicted', $showCurrentVsPredicted);
     }
@@ -237,7 +237,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsPrevious
      */
-    public function setShowCurrentVsPrevious($showCurrentVsPrevious = null)
+    public function setShowCurrentVsPrevious(bool $showCurrentVsPrevious = null)
     {
         $this->setProperty('showCurrentVsPrevious', $showCurrentVsPrevious);
     }

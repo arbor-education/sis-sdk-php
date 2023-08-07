@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserDefinedFieldOption extends ModelBase
+class UserDefinedFieldOption extends \ModelBase
 {
-    const USER_DEFINED_FIELD = 'userDefinedField';
+    public const USER_DEFINED_FIELD = 'userDefinedField';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
     protected $_resourceType = ResourceType::USER_DEFINED_FIELD_OPTION;
 
@@ -21,7 +21,7 @@ class UserDefinedFieldOption extends ModelBase
      * @return UserDefinedFieldOption[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class UserDefinedFieldOption extends ModelBase
     /**
      * @param UserDefinedField $userDefinedField
      */
-    public function setUserDefinedField(UserDefinedField $userDefinedField = null)
+    public function setUserDefinedField(\UserDefinedField $userDefinedField = null)
     {
         $this->setProperty('userDefinedField', $userDefinedField);
     }
@@ -79,7 +79,7 @@ class UserDefinedFieldOption extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -95,7 +95,7 @@ class UserDefinedFieldOption extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -111,7 +111,7 @@ class UserDefinedFieldOption extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

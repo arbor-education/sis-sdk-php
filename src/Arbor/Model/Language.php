@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Language extends ModelBase
+class Language extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const ISO6391_ALPHA2 = 'iso6391Alpha2';
+    public const ISO6391_ALPHA2 = 'iso6391Alpha2';
 
-    const ISO6392_ALPHA3 = 'iso6392Alpha3';
+    public const ISO6392_ALPHA3 = 'iso6392Alpha3';
 
-    const ISO6392_ALPHA3_TERMINOLOGY = 'iso6392Alpha3Terminology';
+    public const ISO6392_ALPHA3_TERMINOLOGY = 'iso6392Alpha3Terminology';
 
-    const PARENT_CODE = 'parentCode';
+    public const PARENT_CODE = 'parentCode';
 
-    const D00011_ALPHA3 = 'd00011Alpha3';
+    public const D00011_ALPHA3 = 'd00011Alpha3';
 
-    const D00011_ALPHA4 = 'd00011Alpha4';
+    public const D00011_ALPHA4 = 'd00011Alpha4';
 
     protected $_resourceType = ResourceType::LANGUAGE;
 
@@ -33,7 +33,7 @@ class Language extends ModelBase
      * @return Language[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class Language extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -91,7 +91,7 @@ class Language extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -107,7 +107,7 @@ class Language extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -123,7 +123,7 @@ class Language extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -139,7 +139,7 @@ class Language extends ModelBase
     /**
      * @param string $iso6391Alpha2
      */
-    public function setIso6391Alpha2($iso6391Alpha2 = null)
+    public function setIso6391Alpha2(string $iso6391Alpha2 = null)
     {
         $this->setProperty('iso6391Alpha2', $iso6391Alpha2);
     }
@@ -155,7 +155,7 @@ class Language extends ModelBase
     /**
      * @param string $iso6392Alpha3
      */
-    public function setIso6392Alpha3($iso6392Alpha3 = null)
+    public function setIso6392Alpha3(string $iso6392Alpha3 = null)
     {
         $this->setProperty('iso6392Alpha3', $iso6392Alpha3);
     }
@@ -171,7 +171,7 @@ class Language extends ModelBase
     /**
      * @param string $iso6392Alpha3Terminology
      */
-    public function setIso6392Alpha3Terminology($iso6392Alpha3Terminology = null)
+    public function setIso6392Alpha3Terminology(string $iso6392Alpha3Terminology = null)
     {
         $this->setProperty('iso6392Alpha3Terminology', $iso6392Alpha3Terminology);
     }
@@ -187,7 +187,7 @@ class Language extends ModelBase
     /**
      * @param string $parentCode
      */
-    public function setParentCode($parentCode = null)
+    public function setParentCode(string $parentCode = null)
     {
         $this->setProperty('parentCode', $parentCode);
     }
@@ -203,7 +203,7 @@ class Language extends ModelBase
     /**
      * @param string $d00011Alpha3
      */
-    public function setD00011Alpha3($d00011Alpha3 = null)
+    public function setD00011Alpha3(string $d00011Alpha3 = null)
     {
         $this->setProperty('d00011Alpha3', $d00011Alpha3);
     }
@@ -219,7 +219,7 @@ class Language extends ModelBase
     /**
      * @param string $d00011Alpha4
      */
-    public function setD00011Alpha4($d00011Alpha4 = null)
+    public function setD00011Alpha4(string $d00011Alpha4 = null)
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }

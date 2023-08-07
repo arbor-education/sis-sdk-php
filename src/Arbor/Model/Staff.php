@@ -5,41 +5,43 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\UkDfe\QualifiedTeacherRoute;
 
-class Staff extends ModelBase
+class Staff extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const ETHNICITY = 'ethnicity';
+    public const ETHNICITY = 'ethnicity';
 
-    const RELIGION = 'religion';
+    public const RELIGION = 'religion';
 
-    const BLOOD_GROUP = 'bloodGroup';
+    public const BLOOD_GROUP = 'bloodGroup';
 
-    const STAFF_NUMBER = 'staffNumber';
+    public const STAFF_NUMBER = 'staffNumber';
 
-    const CONTINUOUS_SERVICE_START_DATE = 'continuousServiceStartDate';
+    public const CONTINUOUS_SERVICE_START_DATE = 'continuousServiceStartDate';
 
-    const ZENDESK_USER = 'zendeskUser';
+    public const ZENDESK_USER = 'zendeskUser';
 
-    const TIMETABLE_ABBREVIATION = 'timetableAbbreviation';
+    public const TIMETABLE_ABBREVIATION = 'timetableAbbreviation';
 
-    const LEGACY_SYSTEM_ID = 'legacySystemId';
+    public const LEGACY_SYSTEM_ID = 'legacySystemId';
 
-    const EXTERNAL_PERSON_ID = 'externalPersonId';
+    public const EXTERNAL_PERSON_ID = 'externalPersonId';
 
-    const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
+    public const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
 
-    const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
+    public const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
 
-    const QUALIFIED_TEACHER_LEARNING_AND_SKILLS_STATUS = 'qualifiedTeacherLearningAndSkillsStatus';
+    public const QUALIFIED_TEACHER_LEARNING_AND_SKILLS_STATUS = 'qualifiedTeacherLearningAndSkillsStatus';
 
-    const EARLY_YEARS_TEACHER_STATUS = 'earlyYearsTeacherStatus';
+    public const EARLY_YEARS_TEACHER_STATUS = 'earlyYearsTeacherStatus';
 
-    const QUALIFIED_TEACHER_ROUTE = 'qualifiedTeacherRoute';
+    public const QUALIFIED_TEACHER_ROUTE = 'qualifiedTeacherRoute';
 
-    const HLTA_STATUS = 'hltaStatus';
+    public const HLTA_STATUS = 'hltaStatus';
 
-    const NEWLY_QUALIFIED_TEACHER_DATE = 'newlyQualifiedTeacherDate';
+    public const NEWLY_QUALIFIED_TEACHER_DATE = 'newlyQualifiedTeacherDate';
+
+    public const SLT_STATUS_FOR_SWC = 'sltStatusForSwc';
 
     protected $_resourceType = ResourceType::STAFF;
 
@@ -48,7 +50,7 @@ class Staff extends ModelBase
      * @return Staff[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -90,7 +92,7 @@ class Staff extends ModelBase
     /**
      * @param Person $person
      */
-    public function setPerson(Person $person = null)
+    public function setPerson(\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -106,7 +108,7 @@ class Staff extends ModelBase
     /**
      * @param Ethnicity $ethnicity
      */
-    public function setEthnicity(Ethnicity $ethnicity = null)
+    public function setEthnicity(\Ethnicity $ethnicity = null)
     {
         $this->setProperty('ethnicity', $ethnicity);
     }
@@ -122,7 +124,7 @@ class Staff extends ModelBase
     /**
      * @param Religion $religion
      */
-    public function setReligion(Religion $religion = null)
+    public function setReligion(\Religion $religion = null)
     {
         $this->setProperty('religion', $religion);
     }
@@ -138,7 +140,7 @@ class Staff extends ModelBase
     /**
      * @param string $bloodGroup
      */
-    public function setBloodGroup($bloodGroup = null)
+    public function setBloodGroup(string $bloodGroup = null)
     {
         $this->setProperty('bloodGroup', $bloodGroup);
     }
@@ -154,7 +156,7 @@ class Staff extends ModelBase
     /**
      * @param string $staffNumber
      */
-    public function setStaffNumber($staffNumber = null)
+    public function setStaffNumber(string $staffNumber = null)
     {
         $this->setProperty('staffNumber', $staffNumber);
     }
@@ -186,7 +188,7 @@ class Staff extends ModelBase
     /**
      * @param string $zendeskUser
      */
-    public function setZendeskUser($zendeskUser = null)
+    public function setZendeskUser(string $zendeskUser = null)
     {
         $this->setProperty('zendeskUser', $zendeskUser);
     }
@@ -202,7 +204,7 @@ class Staff extends ModelBase
     /**
      * @param string $timetableAbbreviation
      */
-    public function setTimetableAbbreviation($timetableAbbreviation = null)
+    public function setTimetableAbbreviation(string $timetableAbbreviation = null)
     {
         $this->setProperty('timetableAbbreviation', $timetableAbbreviation);
     }
@@ -218,7 +220,7 @@ class Staff extends ModelBase
     /**
      * @param string $legacySystemId
      */
-    public function setLegacySystemId($legacySystemId = null)
+    public function setLegacySystemId(string $legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
     }
@@ -234,7 +236,7 @@ class Staff extends ModelBase
     /**
      * @param string $externalPersonId
      */
-    public function setExternalPersonId($externalPersonId = null)
+    public function setExternalPersonId(string $externalPersonId = null)
     {
         $this->setProperty('externalPersonId', $externalPersonId);
     }
@@ -250,7 +252,7 @@ class Staff extends ModelBase
     /**
      * @param bool $eligibleForSchoolWorkforceReturn
      */
-    public function setEligibleForSchoolWorkforceReturn($eligibleForSchoolWorkforceReturn = null)
+    public function setEligibleForSchoolWorkforceReturn(bool $eligibleForSchoolWorkforceReturn = null)
     {
         $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
@@ -266,7 +268,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherStatus
      */
-    public function setQualifiedTeacherStatus($qualifiedTeacherStatus = null)
+    public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
@@ -282,7 +284,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherLearningAndSkillsStatus
      */
-    public function setQualifiedTeacherLearningAndSkillsStatus($qualifiedTeacherLearningAndSkillsStatus = null)
+    public function setQualifiedTeacherLearningAndSkillsStatus(bool $qualifiedTeacherLearningAndSkillsStatus = null)
     {
         $this->setProperty('qualifiedTeacherLearningAndSkillsStatus', $qualifiedTeacherLearningAndSkillsStatus);
     }
@@ -298,7 +300,7 @@ class Staff extends ModelBase
     /**
      * @param bool $earlyYearsTeacherStatus
      */
-    public function setEarlyYearsTeacherStatus($earlyYearsTeacherStatus = null)
+    public function setEarlyYearsTeacherStatus(bool $earlyYearsTeacherStatus = null)
     {
         $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
@@ -314,7 +316,7 @@ class Staff extends ModelBase
     /**
      * @param QualifiedTeacherRoute $qualifiedTeacherRoute
      */
-    public function setQualifiedTeacherRoute(QualifiedTeacherRoute $qualifiedTeacherRoute = null)
+    public function setQualifiedTeacherRoute(\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
     {
         $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
     }
@@ -330,7 +332,7 @@ class Staff extends ModelBase
     /**
      * @param bool $hltaStatus
      */
-    public function setHltaStatus($hltaStatus = null)
+    public function setHltaStatus(bool $hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
@@ -349,5 +351,21 @@ class Staff extends ModelBase
     public function setNewlyQualifiedTeacherDate(\DateTime $newlyQualifiedTeacherDate = null)
     {
         $this->setProperty('newlyQualifiedTeacherDate', $newlyQualifiedTeacherDate);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSltStatusForSwc()
+    {
+        return $this->getProperty('sltStatusForSwc');
+    }
+
+    /**
+     * @param string $sltStatusForSwc
+     */
+    public function setSltStatusForSwc(string $sltStatusForSwc = null)
+    {
+        $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }
 }

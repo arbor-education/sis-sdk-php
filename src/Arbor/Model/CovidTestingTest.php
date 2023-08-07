@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CovidTestingTest extends ModelBase
+class CovidTestingTest extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const TEST_TYPE = 'testType';
+    public const TEST_TYPE = 'testType';
 
-    const BARCODE = 'barcode';
+    public const BARCODE = 'barcode';
 
-    const RESULT = 'result';
+    public const RESULT = 'result';
 
-    const RESULT_DATETIME = 'resultDatetime';
+    public const RESULT_DATETIME = 'resultDatetime';
 
-    const ADMINISTERED_BY = 'administeredBy';
+    public const ADMINISTERED_BY = 'administeredBy';
 
-    const ADMINISTERED_DATETIME = 'administeredDatetime';
+    public const ADMINISTERED_DATETIME = 'administeredDatetime';
 
     protected $_resourceType = ResourceType::COVID_TESTING_TEST;
 
@@ -27,7 +27,7 @@ class CovidTestingTest extends ModelBase
      * @return CovidTestingTest[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -85,7 +85,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $testType
      */
-    public function setTestType($testType = null)
+    public function setTestType(string $testType = null)
     {
         $this->setProperty('testType', $testType);
     }
@@ -101,7 +101,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $barcode
      */
-    public function setBarcode($barcode = null)
+    public function setBarcode(string $barcode = null)
     {
         $this->setProperty('barcode', $barcode);
     }
@@ -117,7 +117,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $result
      */
-    public function setResult($result = null)
+    public function setResult(string $result = null)
     {
         $this->setProperty('result', $result);
     }
@@ -149,7 +149,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param ModelBase $administeredBy
      */
-    public function setAdministeredBy(ModelBase $administeredBy = null)
+    public function setAdministeredBy(\ModelBase $administeredBy = null)
     {
         $this->setProperty('administeredBy', $administeredBy);
     }

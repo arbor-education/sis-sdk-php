@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportScheduledExport extends ModelBase
+class CustomReportScheduledExport extends \ModelBase
 {
-    const EMAIL_ADDRESS = 'emailAddress';
+    public const EMAIL_ADDRESS = 'emailAddress';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const BODY = 'body';
+    public const BODY = 'body';
 
-    const EXECUTE_ON_MONDAY = 'executeOnMonday';
+    public const EXECUTE_ON_MONDAY = 'executeOnMonday';
 
-    const EXECUTE_ON_TUESDAY = 'executeOnTuesday';
+    public const EXECUTE_ON_TUESDAY = 'executeOnTuesday';
 
-    const EXECUTE_ON_WEDNESDAY = 'executeOnWednesday';
+    public const EXECUTE_ON_WEDNESDAY = 'executeOnWednesday';
 
-    const EXECUTE_ON_THURSDAY = 'executeOnThursday';
+    public const EXECUTE_ON_THURSDAY = 'executeOnThursday';
 
-    const EXECUTE_ON_FRIDAY = 'executeOnFriday';
+    public const EXECUTE_ON_FRIDAY = 'executeOnFriday';
 
-    const EXECUTE_ON_SATURDAY = 'executeOnSaturday';
+    public const EXECUTE_ON_SATURDAY = 'executeOnSaturday';
 
-    const EXECUTE_ON_SUNDAY = 'executeOnSunday';
+    public const EXECUTE_ON_SUNDAY = 'executeOnSunday';
 
-    const SCHEDULED_TIME = 'scheduledTime';
+    public const SCHEDULED_TIME = 'scheduledTime';
 
-    const SCHEDULED_FROM_DATE = 'scheduledFromDate';
+    public const SCHEDULED_FROM_DATE = 'scheduledFromDate';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT;
 
@@ -37,7 +37,7 @@ class CustomReportScheduledExport extends ModelBase
      * @return CustomReportScheduledExport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress($emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -95,7 +95,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject($subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -111,7 +111,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody($body = null)
+    public function setBody(string $body = null)
     {
         $this->setProperty('body', $body);
     }
@@ -127,7 +127,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnMonday
      */
-    public function setExecuteOnMonday($executeOnMonday = null)
+    public function setExecuteOnMonday(bool $executeOnMonday = null)
     {
         $this->setProperty('executeOnMonday', $executeOnMonday);
     }
@@ -143,7 +143,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnTuesday
      */
-    public function setExecuteOnTuesday($executeOnTuesday = null)
+    public function setExecuteOnTuesday(bool $executeOnTuesday = null)
     {
         $this->setProperty('executeOnTuesday', $executeOnTuesday);
     }
@@ -159,7 +159,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnWednesday
      */
-    public function setExecuteOnWednesday($executeOnWednesday = null)
+    public function setExecuteOnWednesday(bool $executeOnWednesday = null)
     {
         $this->setProperty('executeOnWednesday', $executeOnWednesday);
     }
@@ -175,7 +175,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnThursday
      */
-    public function setExecuteOnThursday($executeOnThursday = null)
+    public function setExecuteOnThursday(bool $executeOnThursday = null)
     {
         $this->setProperty('executeOnThursday', $executeOnThursday);
     }
@@ -191,7 +191,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnFriday
      */
-    public function setExecuteOnFriday($executeOnFriday = null)
+    public function setExecuteOnFriday(bool $executeOnFriday = null)
     {
         $this->setProperty('executeOnFriday', $executeOnFriday);
     }
@@ -207,7 +207,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnSaturday
      */
-    public function setExecuteOnSaturday($executeOnSaturday = null)
+    public function setExecuteOnSaturday(bool $executeOnSaturday = null)
     {
         $this->setProperty('executeOnSaturday', $executeOnSaturday);
     }
@@ -223,7 +223,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnSunday
      */
-    public function setExecuteOnSunday($executeOnSunday = null)
+    public function setExecuteOnSunday(bool $executeOnSunday = null)
     {
         $this->setProperty('executeOnSunday', $executeOnSunday);
     }
@@ -239,7 +239,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $scheduledTime
      */
-    public function setScheduledTime($scheduledTime = null)
+    public function setScheduledTime(string $scheduledTime = null)
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }

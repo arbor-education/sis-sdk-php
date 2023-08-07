@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class FacultyResponsibility extends ModelBase
+class FacultyResponsibility extends \ModelBase
 {
-    const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
+    public const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
 
-    const FACULTY = 'faculty';
+    public const FACULTY = 'faculty';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::FACULTY_RESPONSIBILITY;
 
@@ -21,7 +21,7 @@ class FacultyResponsibility extends ModelBase
      * @return FacultyResponsibility[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class FacultyResponsibility extends ModelBase
     /**
      * @param FacultyResponsibilityType $facultyResponsibilityType
      */
-    public function setFacultyResponsibilityType(FacultyResponsibilityType $facultyResponsibilityType = null)
+    public function setFacultyResponsibilityType(\FacultyResponsibilityType $facultyResponsibilityType = null)
     {
         $this->setProperty('facultyResponsibilityType', $facultyResponsibilityType);
     }
@@ -79,7 +79,7 @@ class FacultyResponsibility extends ModelBase
     /**
      * @param Faculty $faculty
      */
-    public function setFaculty(Faculty $faculty = null)
+    public function setFaculty(\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }

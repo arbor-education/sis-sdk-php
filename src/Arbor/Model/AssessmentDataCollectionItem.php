@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentDataCollectionItem extends ModelBase
+class AssessmentDataCollectionItem extends \ModelBase
 {
-    const ASSESSMENT_DATA_COLLECTION = 'assessmentDataCollection';
+    public const ASSESSMENT_DATA_COLLECTION = 'assessmentDataCollection';
 
-    const ASSESSMENT_ENTITY = 'assessmentEntity';
+    public const ASSESSMENT_ENTITY = 'assessmentEntity';
 
-    const STUDENT_GROUP = 'studentGroup';
+    public const STUDENT_GROUP = 'studentGroup';
 
-    const COLLECTION_TYPE = 'collectionType';
+    public const COLLECTION_TYPE = 'collectionType';
 
-    const ASSIGNED_STAFF = 'assignedStaff';
+    public const ASSIGNED_STAFF = 'assignedStaff';
 
-    const DEADLINE_DATE = 'deadlineDate';
+    public const DEADLINE_DATE = 'deadlineDate';
 
-    const COMPLETION_NUMERATOR = 'completionNumerator';
+    public const COMPLETION_NUMERATOR = 'completionNumerator';
 
-    const COMPLETION_DENOMINATOR = 'completionDenominator';
+    public const COMPLETION_DENOMINATOR = 'completionDenominator';
 
-    const DERIVE_ASSIGNED_STAFF = 'deriveAssignedStaff';
+    public const DERIVE_ASSIGNED_STAFF = 'deriveAssignedStaff';
 
     protected $_resourceType = ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM;
 
@@ -31,7 +31,7 @@ class AssessmentDataCollectionItem extends ModelBase
      * @return AssessmentDataCollectionItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param AssessmentDataCollection $assessmentDataCollection
      */
-    public function setAssessmentDataCollection(AssessmentDataCollection $assessmentDataCollection = null)
+    public function setAssessmentDataCollection(\AssessmentDataCollection $assessmentDataCollection = null)
     {
         $this->setProperty('assessmentDataCollection', $assessmentDataCollection);
     }
@@ -89,7 +89,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param ModelBase $assessmentEntity
      */
-    public function setAssessmentEntity(ModelBase $assessmentEntity = null)
+    public function setAssessmentEntity(\ModelBase $assessmentEntity = null)
     {
         $this->setProperty('assessmentEntity', $assessmentEntity);
     }
@@ -105,7 +105,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param ModelBase $studentGroup
      */
-    public function setStudentGroup(ModelBase $studentGroup = null)
+    public function setStudentGroup(\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
@@ -121,7 +121,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param string $collectionType
      */
-    public function setCollectionType($collectionType = null)
+    public function setCollectionType(string $collectionType = null)
     {
         $this->setProperty('collectionType', $collectionType);
     }
@@ -137,7 +137,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param Staff $assignedStaff
      */
-    public function setAssignedStaff(Staff $assignedStaff = null)
+    public function setAssignedStaff(\Staff $assignedStaff = null)
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }
@@ -169,7 +169,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param int $completionNumerator
      */
-    public function setCompletionNumerator($completionNumerator = null)
+    public function setCompletionNumerator(int $completionNumerator = null)
     {
         $this->setProperty('completionNumerator', $completionNumerator);
     }
@@ -185,7 +185,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param int $completionDenominator
      */
-    public function setCompletionDenominator($completionDenominator = null)
+    public function setCompletionDenominator(int $completionDenominator = null)
     {
         $this->setProperty('completionDenominator', $completionDenominator);
     }
@@ -201,7 +201,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param bool $deriveAssignedStaff
      */
-    public function setDeriveAssignedStaff($deriveAssignedStaff = null)
+    public function setDeriveAssignedStaff(bool $deriveAssignedStaff = null)
     {
         $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
     }

@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationSubscription extends ModelBase
+class QualificationSubscription extends \ModelBase
 {
-    const QUALIFICATION_ELEMENT_TYPE = 'qualificationElementType';
+    public const QUALIFICATION_ELEMENT_TYPE = 'qualificationElementType';
 
-    const QUALIFICATION_ELEMENT_CODE = 'qualificationElementCode';
+    public const QUALIFICATION_ELEMENT_CODE = 'qualificationElementCode';
 
-    const HASH = 'hash';
+    public const HASH = 'hash';
 
     protected $_resourceType = ResourceType::QUALIFICATION_SUBSCRIPTION;
 
@@ -19,7 +19,7 @@ class QualificationSubscription extends ModelBase
      * @return QualificationSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class QualificationSubscription extends ModelBase
     /**
      * @param string $qualificationElementType
      */
-    public function setQualificationElementType($qualificationElementType = null)
+    public function setQualificationElementType(string $qualificationElementType = null)
     {
         $this->setProperty('qualificationElementType', $qualificationElementType);
     }
@@ -77,7 +77,7 @@ class QualificationSubscription extends ModelBase
     /**
      * @param string $qualificationElementCode
      */
-    public function setQualificationElementCode($qualificationElementCode = null)
+    public function setQualificationElementCode(string $qualificationElementCode = null)
     {
         $this->setProperty('qualificationElementCode', $qualificationElementCode);
     }
@@ -93,7 +93,7 @@ class QualificationSubscription extends ModelBase
     /**
      * @param string $hash
      */
-    public function setHash($hash = null)
+    public function setHash(string $hash = null)
     {
         $this->setProperty('hash', $hash);
     }

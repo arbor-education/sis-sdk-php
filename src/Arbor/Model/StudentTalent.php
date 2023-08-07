@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentTalent extends ModelBase
+class StudentTalent extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const TALENT = 'talent';
+    public const TALENT = 'talent';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::STUDENT_TALENT;
 
@@ -23,7 +23,7 @@ class StudentTalent extends ModelBase
      * @return StudentTalent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class StudentTalent extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -81,7 +81,7 @@ class StudentTalent extends ModelBase
     /**
      * @param Talent $talent
      */
-    public function setTalent(Talent $talent = null)
+    public function setTalent(\Talent $talent = null)
     {
         $this->setProperty('talent', $talent);
     }
@@ -129,7 +129,7 @@ class StudentTalent extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

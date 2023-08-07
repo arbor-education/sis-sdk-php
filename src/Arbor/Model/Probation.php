@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Probation extends ModelBase
+class Probation extends \ModelBase
 {
-    const STAFF_CONTRACT = 'staffContract';
+    public const STAFF_CONTRACT = 'staffContract';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const ORIGINAL_END_DATE = 'originalEndDate';
+    public const ORIGINAL_END_DATE = 'originalEndDate';
 
-    const CURRENT_END_DATE = 'currentEndDate';
+    public const CURRENT_END_DATE = 'currentEndDate';
 
-    const PROBATION_DECISION = 'probationDecision';
+    public const PROBATION_DECISION = 'probationDecision';
 
     protected $_resourceType = ResourceType::PROBATION;
 
@@ -23,7 +23,7 @@ class Probation extends ModelBase
      * @return Probation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class Probation extends ModelBase
     /**
      * @param StaffContract $staffContract
      */
-    public function setStaffContract(StaffContract $staffContract = null)
+    public function setStaffContract(\StaffContract $staffContract = null)
     {
         $this->setProperty('staffContract', $staffContract);
     }
@@ -129,7 +129,7 @@ class Probation extends ModelBase
     /**
      * @param string $probationDecision
      */
-    public function setProbationDecision($probationDecision = null)
+    public function setProbationDecision(string $probationDecision = null)
     {
         $this->setProperty('probationDecision', $probationDecision);
     }

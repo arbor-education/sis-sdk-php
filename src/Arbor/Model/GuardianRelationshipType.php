@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class GuardianRelationshipType extends ModelBase
+class GuardianRelationshipType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const RELATIONSHIP_NAME = 'relationshipName';
+    public const RELATIONSHIP_NAME = 'relationshipName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const IS_MALE = 'isMale';
+    public const IS_MALE = 'isMale';
 
-    const IS_FEMALE = 'isFemale';
+    public const IS_FEMALE = 'isFemale';
 
-    const IS_SIBLING = 'isSibling';
+    public const IS_SIBLING = 'isSibling';
 
-    const D00033 = 'd00033';
+    public const D00033 = 'd00033';
 
-    const D00034 = 'd00034';
+    public const D00034 = 'd00034';
 
-    const CTF_EXPORT_CODE = 'ctfExportCode';
+    public const CTF_EXPORT_CODE = 'ctfExportCode';
 
     protected $_resourceType = ResourceType::GUARDIAN_RELATIONSHIP_TYPE;
 
@@ -35,7 +35,7 @@ class GuardianRelationshipType extends ModelBase
      * @return GuardianRelationshipType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -93,7 +93,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -109,7 +109,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -125,7 +125,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $relationshipName
      */
-    public function setRelationshipName($relationshipName = null)
+    public function setRelationshipName(string $relationshipName = null)
     {
         $this->setProperty('relationshipName', $relationshipName);
     }
@@ -141,7 +141,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -157,7 +157,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param bool $isMale
      */
-    public function setIsMale($isMale = null)
+    public function setIsMale(bool $isMale = null)
     {
         $this->setProperty('isMale', $isMale);
     }
@@ -173,7 +173,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param bool $isFemale
      */
-    public function setIsFemale($isFemale = null)
+    public function setIsFemale(bool $isFemale = null)
     {
         $this->setProperty('isFemale', $isFemale);
     }
@@ -189,7 +189,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param bool $isSibling
      */
-    public function setIsSibling($isSibling = null)
+    public function setIsSibling(bool $isSibling = null)
     {
         $this->setProperty('isSibling', $isSibling);
     }
@@ -205,7 +205,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $d00033
      */
-    public function setD00033($d00033 = null)
+    public function setD00033(string $d00033 = null)
     {
         $this->setProperty('d00033', $d00033);
     }
@@ -221,7 +221,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $d00034
      */
-    public function setD00034($d00034 = null)
+    public function setD00034(string $d00034 = null)
     {
         $this->setProperty('d00034', $d00034);
     }
@@ -237,7 +237,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $ctfExportCode
      */
-    public function setCtfExportCode($ctfExportCode = null)
+    public function setCtfExportCode(string $ctfExportCode = null)
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendancePatternPeriod extends ModelBase
+class AttendancePatternPeriod extends \ModelBase
 {
-    const ATTENDANCE_PATTERN = 'attendancePattern';
+    public const ATTENDANCE_PATTERN = 'attendancePattern';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
     protected $_resourceType = ResourceType::ATTENDANCE_PATTERN_PERIOD;
 
@@ -21,7 +21,7 @@ class AttendancePatternPeriod extends ModelBase
      * @return AttendancePatternPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param AttendancePattern $attendancePattern
      */
-    public function setAttendancePattern(AttendancePattern $attendancePattern = null)
+    public function setAttendancePattern(\AttendancePattern $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
@@ -79,7 +79,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -95,7 +95,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -111,7 +111,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }

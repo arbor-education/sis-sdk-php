@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmailAccountAccessPermission extends ModelBase
+class EmailAccountAccessPermission extends \ModelBase
 {
-    const EMAIL_ACCOUNT = 'emailAccount';
+    public const EMAIL_ACCOUNT = 'emailAccount';
 
-    const BUSINESS_ROLE = 'businessRole';
+    public const BUSINESS_ROLE = 'businessRole';
 
     protected $_resourceType = ResourceType::EMAIL_ACCOUNT_ACCESS_PERMISSION;
 
@@ -17,7 +17,7 @@ class EmailAccountAccessPermission extends ModelBase
      * @return EmailAccountAccessPermission[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class EmailAccountAccessPermission extends ModelBase
     /**
      * @param EmailAccount $emailAccount
      */
-    public function setEmailAccount(EmailAccount $emailAccount = null)
+    public function setEmailAccount(\EmailAccount $emailAccount = null)
     {
         $this->setProperty('emailAccount', $emailAccount);
     }
@@ -75,7 +75,7 @@ class EmailAccountAccessPermission extends ModelBase
     /**
      * @param BusinessRole $businessRole
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setBusinessRole(\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }

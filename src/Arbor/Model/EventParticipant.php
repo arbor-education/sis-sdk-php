@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EventParticipant extends ModelBase
+class EventParticipant extends \ModelBase
 {
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const PARTICIPANT = 'participant';
+    public const PARTICIPANT = 'participant';
 
-    const ATTENDANCE_REQUIREMENT = 'attendanceRequirement';
+    public const ATTENDANCE_REQUIREMENT = 'attendanceRequirement';
 
     protected $_resourceType = ResourceType::EVENT_PARTICIPANT;
 
@@ -19,7 +19,7 @@ class EventParticipant extends ModelBase
      * @return EventParticipant[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class EventParticipant extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -77,7 +77,7 @@ class EventParticipant extends ModelBase
     /**
      * @param ModelBase $participant
      */
-    public function setParticipant(ModelBase $participant = null)
+    public function setParticipant(\ModelBase $participant = null)
     {
         $this->setProperty('participant', $participant);
     }
@@ -93,7 +93,7 @@ class EventParticipant extends ModelBase
     /**
      * @param string $attendanceRequirement
      */
-    public function setAttendanceRequirement($attendanceRequirement = null)
+    public function setAttendanceRequirement(string $attendanceRequirement = null)
     {
         $this->setProperty('attendanceRequirement', $attendanceRequirement);
     }

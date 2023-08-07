@@ -7,9 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SenNeed extends ModelBase
+class SenNeed extends \ModelBase
 {
-    const IS_AGREED_WITH_STUDENT = 'isAgreedWithStudent';
+    public const IS_AGREED_WITH_STUDENT = 'isAgreedWithStudent';
 
     protected $_resourceType = ResourceType::UK_ILR_SEN_NEED;
 
@@ -18,7 +18,7 @@ class SenNeed extends ModelBase
      * @return SenNeed[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class SenNeed extends ModelBase
     /**
      * @param bool $isAgreedWithStudent
      */
-    public function setIsAgreedWithStudent($isAgreedWithStudent = null)
+    public function setIsAgreedWithStudent(bool $isAgreedWithStudent = null)
     {
         $this->setProperty('isAgreedWithStudent', $isAgreedWithStudent);
     }

@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PushNotificationToken extends ModelBase
+class PushNotificationToken extends \ModelBase
 {
-    const USER = 'user';
+    public const USER = 'user';
 
-    const TOKEN = 'token';
+    public const TOKEN = 'token';
 
-    const UNIQUE_IDENTIFIER = 'uniqueIdentifier';
+    public const UNIQUE_IDENTIFIER = 'uniqueIdentifier';
 
-    const DEVICE_OS = 'deviceOs';
+    public const DEVICE_OS = 'deviceOs';
 
-    const REAL_PUSH_TOKEN = 'realPushToken';
+    public const REAL_PUSH_TOKEN = 'realPushToken';
 
-    const DEVICE_ID = 'deviceId';
+    public const DEVICE_ID = 'deviceId';
 
     protected $_resourceType = ResourceType::PUSH_NOTIFICATION_TOKEN;
 
@@ -25,7 +25,7 @@ class PushNotificationToken extends ModelBase
      * @return PushNotificationToken[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -83,7 +83,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $token
      */
-    public function setToken($token = null)
+    public function setToken(string $token = null)
     {
         $this->setProperty('token', $token);
     }
@@ -99,7 +99,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $uniqueIdentifier
      */
-    public function setUniqueIdentifier($uniqueIdentifier = null)
+    public function setUniqueIdentifier(string $uniqueIdentifier = null)
     {
         $this->setProperty('uniqueIdentifier', $uniqueIdentifier);
     }
@@ -115,7 +115,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $deviceOs
      */
-    public function setDeviceOs($deviceOs = null)
+    public function setDeviceOs(string $deviceOs = null)
     {
         $this->setProperty('deviceOs', $deviceOs);
     }
@@ -131,7 +131,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $realPushToken
      */
-    public function setRealPushToken($realPushToken = null)
+    public function setRealPushToken(string $realPushToken = null)
     {
         $this->setProperty('realPushToken', $realPushToken);
     }
@@ -147,7 +147,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $deviceId
      */
-    public function setDeviceId($deviceId = null)
+    public function setDeviceId(string $deviceId = null)
     {
         $this->setProperty('deviceId', $deviceId);
     }

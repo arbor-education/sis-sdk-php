@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealProvisionPriceCategoryGroup extends ModelBase
+class MealProvisionPriceCategoryGroup extends \ModelBase
 {
-    const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
+    public const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
 
-    const GROUP = 'group';
+    public const GROUP = 'group';
 
     protected $_resourceType = ResourceType::MEAL_PROVISION_PRICE_CATEGORY_GROUP;
 
@@ -17,7 +17,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
      * @return MealProvisionPriceCategoryGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
     /**
      * @param MealProvisionPriceCategory $mealProvisionPriceCategory
      */
-    public function setMealProvisionPriceCategory(MealProvisionPriceCategory $mealProvisionPriceCategory = null)
+    public function setMealProvisionPriceCategory(\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
         $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
@@ -75,7 +75,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
     /**
      * @param ModelBase $group
      */
-    public function setGroup(ModelBase $group = null)
+    public function setGroup(\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }

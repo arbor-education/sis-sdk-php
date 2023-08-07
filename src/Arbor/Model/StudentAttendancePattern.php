@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentAttendancePattern extends ModelBase
+class StudentAttendancePattern extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ATTENDANCE_PATTERN = 'attendancePattern';
+    public const ATTENDANCE_PATTERN = 'attendancePattern';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STUDENT_ATTENDANCE_PATTERN;
 
@@ -23,7 +23,7 @@ class StudentAttendancePattern extends ModelBase
      * @return StudentAttendancePattern[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class StudentAttendancePattern extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -81,7 +81,7 @@ class StudentAttendancePattern extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -97,7 +97,7 @@ class StudentAttendancePattern extends ModelBase
     /**
      * @param AttendancePattern $attendancePattern
      */
-    public function setAttendancePattern(AttendancePattern $attendancePattern = null)
+    public function setAttendancePattern(\AttendancePattern $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }

@@ -4,57 +4,57 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class NewReportCardBatch extends ModelBase
+class NewReportCardBatch extends \ModelBase
 {
-    const REPORT_CARD_TEMPLATE = 'reportCardTemplate';
+    public const REPORT_CARD_TEMPLATE = 'reportCardTemplate';
 
-    const REPORT_CARD_TITLE = 'reportCardTitle';
+    public const REPORT_CARD_TITLE = 'reportCardTitle';
 
-    const GENERAL_SETTINGS_JSON = 'generalSettingsJson';
+    public const GENERAL_SETTINGS_JSON = 'generalSettingsJson';
 
-    const REPORT_CARD_DATE = 'reportCardDate';
+    public const REPORT_CARD_DATE = 'reportCardDate';
 
-    const ATTAINMENT_SETTINGS_JSON = 'attainmentSettingsJson';
+    public const ATTAINMENT_SETTINGS_JSON = 'attainmentSettingsJson';
 
-    const ASSESSMENT_PERIOD_START_DATE = 'assessmentPeriodStartDate';
+    public const ASSESSMENT_PERIOD_START_DATE = 'assessmentPeriodStartDate';
 
-    const ASSESSMENT_PERIOD_END_DATE = 'assessmentPeriodEndDate';
+    public const ASSESSMENT_PERIOD_END_DATE = 'assessmentPeriodEndDate';
 
-    const DUE_DATE = 'dueDate';
+    public const DUE_DATE = 'dueDate';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const INCLUDE_TEACHER_INITIALS = 'includeTeacherInitials';
+    public const INCLUDE_TEACHER_INITIALS = 'includeTeacherInitials';
 
-    const INCLUDE_TEACHER_NAME = 'includeTeacherName';
+    public const INCLUDE_TEACHER_NAME = 'includeTeacherName';
 
-    const INCLUDE_STUDENT_PHOTO = 'includeStudentPhoto';
+    public const INCLUDE_STUDENT_PHOTO = 'includeStudentPhoto';
 
-    const INCLUDE_BASELINE = 'includeBaseline';
+    public const INCLUDE_BASELINE = 'includeBaseline';
 
-    const INCLUDE_WORKING_AT_CURRENT_PERIOD = 'includeWorkingAtCurrentPeriod';
+    public const INCLUDE_WORKING_AT_CURRENT_PERIOD = 'includeWorkingAtCurrentPeriod';
 
-    const INCLUDE_WORKING_AT_PREVIOUS_PERIOD = 'includeWorkingAtPreviousPeriod';
+    public const INCLUDE_WORKING_AT_PREVIOUS_PERIOD = 'includeWorkingAtPreviousPeriod';
 
-    const PREVIOUS_PERIOD_MEANING = 'previousPeriodMeaning';
+    public const PREVIOUS_PERIOD_MEANING = 'previousPeriodMeaning';
 
-    const INCLUDE_TEACHER_TARGET = 'includeTeacherTarget';
+    public const INCLUDE_TEACHER_TARGET = 'includeTeacherTarget';
 
-    const FINALIZED_DATETIME = 'finalizedDatetime';
+    public const FINALIZED_DATETIME = 'finalizedDatetime';
 
-    const FINALIZATION_IN_PROGRESS = 'finalizationInProgress';
+    public const FINALIZATION_IN_PROGRESS = 'finalizationInProgress';
 
-    const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
+    public const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
 
-    const SHARED_WITH_STUDENTS = 'sharedWithStudents';
+    public const SHARED_WITH_STUDENTS = 'sharedWithStudents';
 
-    const BEHAVIOUR_FIELDS = 'behaviourFields';
+    public const BEHAVIOUR_FIELDS = 'behaviourFields';
 
-    const ATTENDANCE_FIELDS = 'attendanceFields';
+    public const ATTENDANCE_FIELDS = 'attendanceFields';
 
-    const SHOW_COMMENTS = 'showComments';
+    public const SHOW_COMMENTS = 'showComments';
 
-    const CUSTOM_DISPLAY_NAMES_JSON = 'customDisplayNamesJson';
+    public const CUSTOM_DISPLAY_NAMES_JSON = 'customDisplayNamesJson';
 
     protected $_resourceType = ResourceType::NEW_REPORT_CARD_BATCH;
 
@@ -63,7 +63,7 @@ class NewReportCardBatch extends ModelBase
      * @return NewReportCardBatch[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -105,7 +105,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param NewReportCardTemplate $reportCardTemplate
      */
-    public function setReportCardTemplate(NewReportCardTemplate $reportCardTemplate = null)
+    public function setReportCardTemplate(\NewReportCardTemplate $reportCardTemplate = null)
     {
         $this->setProperty('reportCardTemplate', $reportCardTemplate);
     }
@@ -121,7 +121,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $reportCardTitle
      */
-    public function setReportCardTitle($reportCardTitle = null)
+    public function setReportCardTitle(string $reportCardTitle = null)
     {
         $this->setProperty('reportCardTitle', $reportCardTitle);
     }
@@ -137,7 +137,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $generalSettingsJson
      */
-    public function setGeneralSettingsJson($generalSettingsJson = null)
+    public function setGeneralSettingsJson(string $generalSettingsJson = null)
     {
         $this->setProperty('generalSettingsJson', $generalSettingsJson);
     }
@@ -169,7 +169,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $attainmentSettingsJson
      */
-    public function setAttainmentSettingsJson($attainmentSettingsJson = null)
+    public function setAttainmentSettingsJson(string $attainmentSettingsJson = null)
     {
         $this->setProperty('attainmentSettingsJson', $attainmentSettingsJson);
     }
@@ -233,7 +233,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -249,7 +249,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeTeacherInitials
      */
-    public function setIncludeTeacherInitials($includeTeacherInitials = null)
+    public function setIncludeTeacherInitials(bool $includeTeacherInitials = null)
     {
         $this->setProperty('includeTeacherInitials', $includeTeacherInitials);
     }
@@ -265,7 +265,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeTeacherName
      */
-    public function setIncludeTeacherName($includeTeacherName = null)
+    public function setIncludeTeacherName(bool $includeTeacherName = null)
     {
         $this->setProperty('includeTeacherName', $includeTeacherName);
     }
@@ -281,7 +281,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeStudentPhoto
      */
-    public function setIncludeStudentPhoto($includeStudentPhoto = null)
+    public function setIncludeStudentPhoto(bool $includeStudentPhoto = null)
     {
         $this->setProperty('includeStudentPhoto', $includeStudentPhoto);
     }
@@ -297,7 +297,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeBaseline
      */
-    public function setIncludeBaseline($includeBaseline = null)
+    public function setIncludeBaseline(bool $includeBaseline = null)
     {
         $this->setProperty('includeBaseline', $includeBaseline);
     }
@@ -313,7 +313,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeWorkingAtCurrentPeriod
      */
-    public function setIncludeWorkingAtCurrentPeriod($includeWorkingAtCurrentPeriod = null)
+    public function setIncludeWorkingAtCurrentPeriod(bool $includeWorkingAtCurrentPeriod = null)
     {
         $this->setProperty('includeWorkingAtCurrentPeriod', $includeWorkingAtCurrentPeriod);
     }
@@ -329,7 +329,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeWorkingAtPreviousPeriod
      */
-    public function setIncludeWorkingAtPreviousPeriod($includeWorkingAtPreviousPeriod = null)
+    public function setIncludeWorkingAtPreviousPeriod(bool $includeWorkingAtPreviousPeriod = null)
     {
         $this->setProperty('includeWorkingAtPreviousPeriod', $includeWorkingAtPreviousPeriod);
     }
@@ -345,7 +345,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $previousPeriodMeaning
      */
-    public function setPreviousPeriodMeaning($previousPeriodMeaning = null)
+    public function setPreviousPeriodMeaning(string $previousPeriodMeaning = null)
     {
         $this->setProperty('previousPeriodMeaning', $previousPeriodMeaning);
     }
@@ -361,7 +361,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeTeacherTarget
      */
-    public function setIncludeTeacherTarget($includeTeacherTarget = null)
+    public function setIncludeTeacherTarget(bool $includeTeacherTarget = null)
     {
         $this->setProperty('includeTeacherTarget', $includeTeacherTarget);
     }
@@ -393,7 +393,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $finalizationInProgress
      */
-    public function setFinalizationInProgress($finalizationInProgress = null)
+    public function setFinalizationInProgress(bool $finalizationInProgress = null)
     {
         $this->setProperty('finalizationInProgress', $finalizationInProgress);
     }
@@ -409,7 +409,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $sharedWithGuardians
      */
-    public function setSharedWithGuardians($sharedWithGuardians = null)
+    public function setSharedWithGuardians(bool $sharedWithGuardians = null)
     {
         $this->setProperty('sharedWithGuardians', $sharedWithGuardians);
     }
@@ -425,7 +425,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $sharedWithStudents
      */
-    public function setSharedWithStudents($sharedWithStudents = null)
+    public function setSharedWithStudents(bool $sharedWithStudents = null)
     {
         $this->setProperty('sharedWithStudents', $sharedWithStudents);
     }
@@ -441,7 +441,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $behaviourFields
      */
-    public function setBehaviourFields($behaviourFields = null)
+    public function setBehaviourFields(string $behaviourFields = null)
     {
         $this->setProperty('behaviourFields', $behaviourFields);
     }
@@ -457,7 +457,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $attendanceFields
      */
-    public function setAttendanceFields($attendanceFields = null)
+    public function setAttendanceFields(string $attendanceFields = null)
     {
         $this->setProperty('attendanceFields', $attendanceFields);
     }
@@ -473,7 +473,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $showComments
      */
-    public function setShowComments($showComments = null)
+    public function setShowComments(bool $showComments = null)
     {
         $this->setProperty('showComments', $showComments);
     }
@@ -489,7 +489,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $customDisplayNamesJson
      */
-    public function setCustomDisplayNamesJson($customDisplayNamesJson = null)
+    public function setCustomDisplayNamesJson(string $customDisplayNamesJson = null)
     {
         $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }

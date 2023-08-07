@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BankDeposit extends ModelBase
+class BankDeposit extends \ModelBase
 {
-    const BANK_ACCOUNT = 'bankAccount';
+    public const BANK_ACCOUNT = 'bankAccount';
 
-    const PAID_BY_STAFF = 'paidByStaff';
+    public const PAID_BY_STAFF = 'paidByStaff';
 
-    const DEPOSIT_DATETIME = 'depositDatetime';
+    public const DEPOSIT_DATETIME = 'depositDatetime';
 
-    const TOTAL_CHEQUE_AMOUNT = 'totalChequeAmount';
+    public const TOTAL_CHEQUE_AMOUNT = 'totalChequeAmount';
 
-    const TOTAL_CASH_AMOUNT = 'totalCashAmount';
+    public const TOTAL_CASH_AMOUNT = 'totalCashAmount';
 
-    const DEPOSIT_REFERENCE = 'depositReference';
+    public const DEPOSIT_REFERENCE = 'depositReference';
 
-    const REFUND_ADJUSTMENT_AMOUNT = 'refundAdjustmentAmount';
+    public const REFUND_ADJUSTMENT_AMOUNT = 'refundAdjustmentAmount';
 
     protected $_resourceType = ResourceType::BANK_DEPOSIT;
 
@@ -27,7 +27,7 @@ class BankDeposit extends ModelBase
      * @return BankDeposit[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class BankDeposit extends ModelBase
     /**
      * @param BankAccount $bankAccount
      */
-    public function setBankAccount(BankAccount $bankAccount = null)
+    public function setBankAccount(\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
@@ -85,7 +85,7 @@ class BankDeposit extends ModelBase
     /**
      * @param Staff $paidByStaff
      */
-    public function setPaidByStaff(Staff $paidByStaff = null)
+    public function setPaidByStaff(\Staff $paidByStaff = null)
     {
         $this->setProperty('paidByStaff', $paidByStaff);
     }
@@ -117,7 +117,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $totalChequeAmount
      */
-    public function setTotalChequeAmount($totalChequeAmount = null)
+    public function setTotalChequeAmount(string $totalChequeAmount = null)
     {
         $this->setProperty('totalChequeAmount', $totalChequeAmount);
     }
@@ -133,7 +133,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $totalCashAmount
      */
-    public function setTotalCashAmount($totalCashAmount = null)
+    public function setTotalCashAmount(string $totalCashAmount = null)
     {
         $this->setProperty('totalCashAmount', $totalCashAmount);
     }
@@ -149,7 +149,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $depositReference
      */
-    public function setDepositReference($depositReference = null)
+    public function setDepositReference(string $depositReference = null)
     {
         $this->setProperty('depositReference', $depositReference);
     }
@@ -165,7 +165,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $refundAdjustmentAmount
      */
-    public function setRefundAdjustmentAmount($refundAdjustmentAmount = null)
+    public function setRefundAdjustmentAmount(string $refundAdjustmentAmount = null)
     {
         $this->setProperty('refundAdjustmentAmount', $refundAdjustmentAmount);
     }

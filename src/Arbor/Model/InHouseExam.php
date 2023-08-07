@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InHouseExam extends ModelBase
+class InHouseExam extends \ModelBase
 {
-    const MOCK_QUALIFICATION_ASSESSABLE = 'mockQualificationAssessable';
+    public const MOCK_QUALIFICATION_ASSESSABLE = 'mockQualificationAssessable';
 
-    const MOCK_QUALIFICATION_LEARNING_UNIT = 'mockQualificationLearningUnit';
+    public const MOCK_QUALIFICATION_LEARNING_UNIT = 'mockQualificationLearningUnit';
 
-    const DURATION = 'duration';
+    public const DURATION = 'duration';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM;
 
@@ -21,7 +21,7 @@ class InHouseExam extends ModelBase
      * @return InHouseExam[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class InHouseExam extends ModelBase
     /**
      * @param QualificationAssessable $mockQualificationAssessable
      */
-    public function setMockQualificationAssessable(QualificationAssessable $mockQualificationAssessable = null)
+    public function setMockQualificationAssessable(\QualificationAssessable $mockQualificationAssessable = null)
     {
         $this->setProperty('mockQualificationAssessable', $mockQualificationAssessable);
     }
@@ -79,7 +79,7 @@ class InHouseExam extends ModelBase
     /**
      * @param QualificationLearningUnit $mockQualificationLearningUnit
      */
-    public function setMockQualificationLearningUnit(QualificationLearningUnit $mockQualificationLearningUnit = null)
+    public function setMockQualificationLearningUnit(\QualificationLearningUnit $mockQualificationLearningUnit = null)
     {
         $this->setProperty('mockQualificationLearningUnit', $mockQualificationLearningUnit);
     }
@@ -95,7 +95,7 @@ class InHouseExam extends ModelBase
     /**
      * @param string $duration
      */
-    public function setDuration($duration = null)
+    public function setDuration(string $duration = null)
     {
         $this->setProperty('duration', $duration);
     }
@@ -111,7 +111,7 @@ class InHouseExam extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

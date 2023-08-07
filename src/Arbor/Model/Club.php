@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Club extends ModelBase
+class Club extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const MAX_MEMBERS_PER_SESSION = 'maxMembersPerSession';
+    public const MAX_MEMBERS_PER_SESSION = 'maxMembersPerSession';
 
-    const REQUIRE_CONSENT = 'requireConsent';
+    public const REQUIRE_CONSENT = 'requireConsent';
 
-    const COPIED_TO_CLUB = 'copiedToClub';
+    public const COPIED_TO_CLUB = 'copiedToClub';
 
-    const FREE = 'free';
+    public const FREE = 'free';
 
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const ATTENDANCE_REGISTER_EFFECTIVE_DATE = 'attendanceRegisterEffectiveDate';
+    public const ATTENDANCE_REGISTER_EFFECTIVE_DATE = 'attendanceRegisterEffectiveDate';
 
-    const ACCOUNTING_CODE = 'accountingCode';
+    public const ACCOUNTING_CODE = 'accountingCode';
 
-    const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
+    public const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
 
-    const HAS_MEALS = 'hasMeals';
+    public const HAS_MEALS = 'hasMeals';
 
-    const IS_WRAPAROUND_CHILDCARE_CLUB = 'isWraparoundChildcareClub';
+    public const IS_WRAPAROUND_CHILDCARE_CLUB = 'isWraparoundChildcareClub';
 
-    const CHARGE_STUDENTS_BASED_ON_ATTENDANCE_MARK = 'chargeStudentsBasedOnAttendanceMark';
+    public const CHARGE_STUDENTS_BASED_ON_ATTENDANCE_MARK = 'chargeStudentsBasedOnAttendanceMark';
 
     protected $_resourceType = ResourceType::CLUB;
 
@@ -41,7 +41,7 @@ class Club extends ModelBase
      * @return Club[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class Club extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -99,7 +99,7 @@ class Club extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -115,7 +115,7 @@ class Club extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -131,7 +131,7 @@ class Club extends ModelBase
     /**
      * @param int $maxMembersPerSession
      */
-    public function setMaxMembersPerSession($maxMembersPerSession = null)
+    public function setMaxMembersPerSession(int $maxMembersPerSession = null)
     {
         $this->setProperty('maxMembersPerSession', $maxMembersPerSession);
     }
@@ -147,7 +147,7 @@ class Club extends ModelBase
     /**
      * @param bool $requireConsent
      */
-    public function setRequireConsent($requireConsent = null)
+    public function setRequireConsent(bool $requireConsent = null)
     {
         $this->setProperty('requireConsent', $requireConsent);
     }
@@ -163,7 +163,7 @@ class Club extends ModelBase
     /**
      * @param Club $copiedToClub
      */
-    public function setCopiedToClub(Club $copiedToClub = null)
+    public function setCopiedToClub(\Club $copiedToClub = null)
     {
         $this->setProperty('copiedToClub', $copiedToClub);
     }
@@ -179,7 +179,7 @@ class Club extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree($free = null)
+    public function setFree(bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -195,7 +195,7 @@ class Club extends ModelBase
     /**
      * @param AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -227,7 +227,7 @@ class Club extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode($accountingCode = null)
+    public function setAccountingCode(string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
@@ -243,7 +243,7 @@ class Club extends ModelBase
     /**
      * @param CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -259,7 +259,7 @@ class Club extends ModelBase
     /**
      * @param bool $hasMeals
      */
-    public function setHasMeals($hasMeals = null)
+    public function setHasMeals(bool $hasMeals = null)
     {
         $this->setProperty('hasMeals', $hasMeals);
     }
@@ -275,7 +275,7 @@ class Club extends ModelBase
     /**
      * @param bool $isWraparoundChildcareClub
      */
-    public function setIsWraparoundChildcareClub($isWraparoundChildcareClub = null)
+    public function setIsWraparoundChildcareClub(bool $isWraparoundChildcareClub = null)
     {
         $this->setProperty('isWraparoundChildcareClub', $isWraparoundChildcareClub);
     }
@@ -291,7 +291,7 @@ class Club extends ModelBase
     /**
      * @param bool $chargeStudentsBasedOnAttendanceMark
      */
-    public function setChargeStudentsBasedOnAttendanceMark($chargeStudentsBasedOnAttendanceMark = null)
+    public function setChargeStudentsBasedOnAttendanceMark(bool $chargeStudentsBasedOnAttendanceMark = null)
     {
         $this->setProperty('chargeStudentsBasedOnAttendanceMark', $chargeStudentsBasedOnAttendanceMark);
     }

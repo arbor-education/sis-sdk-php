@@ -7,13 +7,13 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Student extends ModelBase
+class Student extends \ModelBase
 {
-    const MIGRATED_AS_PART_OF_PROVIDER_MERGER = 'migratedAsPartOfProviderMerger';
+    public const MIGRATED_AS_PART_OF_PROVIDER_MERGER = 'migratedAsPartOfProviderMerger';
 
-    const MOVED_DUE_TO_MINIMUM_CONTRACT_LEVEL = 'movedDueToMinimumContractLevel';
+    public const MOVED_DUE_TO_MINIMUM_CONTRACT_LEVEL = 'movedDueToMinimumContractLevel';
 
-    const PRIMARY_LLDD_AND_HEALTH_PROBLEM = 'primaryLlddAndHealthProblem';
+    public const PRIMARY_LLDD_AND_HEALTH_PROBLEM = 'primaryLlddAndHealthProblem';
 
     protected $_resourceType = ResourceType::UK_ILR_STUDENT;
 
@@ -22,7 +22,7 @@ class Student extends ModelBase
      * @return Student[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class Student extends ModelBase
     /**
      * @param bool $migratedAsPartOfProviderMerger
      */
-    public function setMigratedAsPartOfProviderMerger($migratedAsPartOfProviderMerger = null)
+    public function setMigratedAsPartOfProviderMerger(bool $migratedAsPartOfProviderMerger = null)
     {
         $this->setProperty('migratedAsPartOfProviderMerger', $migratedAsPartOfProviderMerger);
     }
@@ -80,7 +80,7 @@ class Student extends ModelBase
     /**
      * @param bool $movedDueToMinimumContractLevel
      */
-    public function setMovedDueToMinimumContractLevel($movedDueToMinimumContractLevel = null)
+    public function setMovedDueToMinimumContractLevel(bool $movedDueToMinimumContractLevel = null)
     {
         $this->setProperty('movedDueToMinimumContractLevel', $movedDueToMinimumContractLevel);
     }
@@ -96,7 +96,7 @@ class Student extends ModelBase
     /**
      * @param ModelBase $primaryLlddAndHealthProblem
      */
-    public function setPrimaryLlddAndHealthProblem(ModelBase $primaryLlddAndHealthProblem = null)
+    public function setPrimaryLlddAndHealthProblem(\ModelBase $primaryLlddAndHealthProblem = null)
     {
         $this->setProperty('primaryLlddAndHealthProblem', $primaryLlddAndHealthProblem);
     }

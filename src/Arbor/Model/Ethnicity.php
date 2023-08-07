@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Ethnicity extends ModelBase
+class Ethnicity extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ETHNICITY_NAME = 'ethnicityName';
+    public const ETHNICITY_NAME = 'ethnicityName';
 
-    const ETHNICITY_CATEGORY = 'ethnicityCategory';
+    public const ETHNICITY_CATEGORY = 'ethnicityCategory';
 
-    const APPLIES_TO_STUDENTS = 'appliesToStudents';
+    public const APPLIES_TO_STUDENTS = 'appliesToStudents';
 
-    const APPLIES_TO_STAFF = 'appliesToStaff';
+    public const APPLIES_TO_STAFF = 'appliesToStaff';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
-    const DFES_MAIN_CODE = 'dfesMainCode';
+    public const DFES_MAIN_CODE = 'dfesMainCode';
 
-    const D00005 = 'd00005';
+    public const D00005 = 'd00005';
 
-    const ONS_CODE = 'onsCode';
+    public const ONS_CODE = 'onsCode';
 
-    const D00250 = 'd00250';
+    public const D00250 = 'd00250';
 
     protected $_resourceType = ResourceType::ETHNICITY;
 
@@ -37,7 +37,7 @@ class Ethnicity extends ModelBase
      * @return Ethnicity[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -95,7 +95,7 @@ class Ethnicity extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -111,7 +111,7 @@ class Ethnicity extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -127,7 +127,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $ethnicityName
      */
-    public function setEthnicityName($ethnicityName = null)
+    public function setEthnicityName(string $ethnicityName = null)
     {
         $this->setProperty('ethnicityName', $ethnicityName);
     }
@@ -143,7 +143,7 @@ class Ethnicity extends ModelBase
     /**
      * @param EthnicityCategory $ethnicityCategory
      */
-    public function setEthnicityCategory(EthnicityCategory $ethnicityCategory = null)
+    public function setEthnicityCategory(\EthnicityCategory $ethnicityCategory = null)
     {
         $this->setProperty('ethnicityCategory', $ethnicityCategory);
     }
@@ -159,7 +159,7 @@ class Ethnicity extends ModelBase
     /**
      * @param bool $appliesToStudents
      */
-    public function setAppliesToStudents($appliesToStudents = null)
+    public function setAppliesToStudents(bool $appliesToStudents = null)
     {
         $this->setProperty('appliesToStudents', $appliesToStudents);
     }
@@ -175,7 +175,7 @@ class Ethnicity extends ModelBase
     /**
      * @param bool $appliesToStaff
      */
-    public function setAppliesToStaff($appliesToStaff = null)
+    public function setAppliesToStaff(bool $appliesToStaff = null)
     {
         $this->setProperty('appliesToStaff', $appliesToStaff);
     }
@@ -191,7 +191,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -207,7 +207,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $dfesMainCode
      */
-    public function setDfesMainCode($dfesMainCode = null)
+    public function setDfesMainCode(string $dfesMainCode = null)
     {
         $this->setProperty('dfesMainCode', $dfesMainCode);
     }
@@ -223,7 +223,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00005
      */
-    public function setD00005($d00005 = null)
+    public function setD00005(string $d00005 = null)
     {
         $this->setProperty('d00005', $d00005);
     }
@@ -239,7 +239,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $onsCode
      */
-    public function setOnsCode($onsCode = null)
+    public function setOnsCode(string $onsCode = null)
     {
         $this->setProperty('onsCode', $onsCode);
     }
@@ -255,7 +255,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00250
      */
-    public function setD00250($d00250 = null)
+    public function setD00250(string $d00250 = null)
     {
         $this->setProperty('d00250', $d00250);
     }

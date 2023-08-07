@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationElementDisallowedCombination extends ModelBase
+class QualificationElementDisallowedCombination extends \ModelBase
 {
-    const FIRST_ELEMENT = 'firstElement';
+    public const FIRST_ELEMENT = 'firstElement';
 
-    const SECOND_ELEMENT = 'secondElement';
+    public const SECOND_ELEMENT = 'secondElement';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION;
 
@@ -17,7 +17,7 @@ class QualificationElementDisallowedCombination extends ModelBase
      * @return QualificationElementDisallowedCombination[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     /**
      * @param ModelBase $firstElement
      */
-    public function setFirstElement(ModelBase $firstElement = null)
+    public function setFirstElement(\ModelBase $firstElement = null)
     {
         $this->setProperty('firstElement', $firstElement);
     }
@@ -75,7 +75,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     /**
      * @param ModelBase $secondElement
      */
-    public function setSecondElement(ModelBase $secondElement = null)
+    public function setSecondElement(\ModelBase $secondElement = null)
     {
         $this->setProperty('secondElement', $secondElement);
     }

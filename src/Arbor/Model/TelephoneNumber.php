@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TelephoneNumber extends ModelBase
+class TelephoneNumber extends \ModelBase
 {
-    const NUMBER_OWNER = 'numberOwner';
+    public const NUMBER_OWNER = 'numberOwner';
 
-    const TELEPHONE_NUMBER_TYPE = 'telephoneNumberType';
+    public const TELEPHONE_NUMBER_TYPE = 'telephoneNumberType';
 
-    const NUMBER = 'number';
+    public const NUMBER = 'number';
 
-    const EXTENSION_NUMBER = 'extensionNumber';
+    public const EXTENSION_NUMBER = 'extensionNumber';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
-    const TELEPHONE_NUMBER_RANKING = 'telephoneNumberRanking';
+    public const TELEPHONE_NUMBER_RANKING = 'telephoneNumberRanking';
 
     protected $_resourceType = ResourceType::TELEPHONE_NUMBER;
 
@@ -25,7 +25,7 @@ class TelephoneNumber extends ModelBase
      * @return TelephoneNumber[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param ModelBase $numberOwner
      */
-    public function setNumberOwner(ModelBase $numberOwner = null)
+    public function setNumberOwner(\ModelBase $numberOwner = null)
     {
         $this->setProperty('numberOwner', $numberOwner);
     }
@@ -83,7 +83,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $telephoneNumberType
      */
-    public function setTelephoneNumberType($telephoneNumberType = null)
+    public function setTelephoneNumberType(string $telephoneNumberType = null)
     {
         $this->setProperty('telephoneNumberType', $telephoneNumberType);
     }
@@ -99,7 +99,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $number
      */
-    public function setNumber($number = null)
+    public function setNumber(string $number = null)
     {
         $this->setProperty('number', $number);
     }
@@ -115,7 +115,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $extensionNumber
      */
-    public function setExtensionNumber($extensionNumber = null)
+    public function setExtensionNumber(string $extensionNumber = null)
     {
         $this->setProperty('extensionNumber', $extensionNumber);
     }
@@ -131,7 +131,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -147,7 +147,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param int $telephoneNumberRanking
      */
-    public function setTelephoneNumberRanking($telephoneNumberRanking = null)
+    public function setTelephoneNumberRanking(int $telephoneNumberRanking = null)
     {
         $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }

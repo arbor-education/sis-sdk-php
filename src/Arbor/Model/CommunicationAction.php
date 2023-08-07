@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CommunicationAction extends ModelBase
+class CommunicationAction extends \ModelBase
 {
-    const COMMUNICATION = 'communication';
+    public const COMMUNICATION = 'communication';
 
-    const ACTION_TAKEN = 'actionTaken';
+    public const ACTION_TAKEN = 'actionTaken';
 
-    const REPLY = 'reply';
+    public const REPLY = 'reply';
 
-    const ACTION_DATETIME = 'actionDatetime';
+    public const ACTION_DATETIME = 'actionDatetime';
 
     protected $_resourceType = ResourceType::COMMUNICATION_ACTION;
 
@@ -21,7 +21,7 @@ class CommunicationAction extends ModelBase
      * @return CommunicationAction[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param ModelBase $communication
      */
-    public function setCommunication(ModelBase $communication = null)
+    public function setCommunication(\ModelBase $communication = null)
     {
         $this->setProperty('communication', $communication);
     }
@@ -79,7 +79,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param string $actionTaken
      */
-    public function setActionTaken($actionTaken = null)
+    public function setActionTaken(string $actionTaken = null)
     {
         $this->setProperty('actionTaken', $actionTaken);
     }
@@ -95,7 +95,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param ModelBase $reply
      */
-    public function setReply(ModelBase $reply = null)
+    public function setReply(\ModelBase $reply = null)
     {
         $this->setProperty('reply', $reply);
     }

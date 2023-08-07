@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SmsMessagePermittedSender extends ModelBase
+class SmsMessagePermittedSender extends \ModelBase
 {
-    const ACTION_TAKER = 'actionTaker';
+    public const ACTION_TAKER = 'actionTaker';
 
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const ALLOW = 'allow';
+    public const ALLOW = 'allow';
 
     protected $_resourceType = ResourceType::SMS_MESSAGE_PERMITTED_SENDER;
 
@@ -19,7 +19,7 @@ class SmsMessagePermittedSender extends ModelBase
      * @return SmsMessagePermittedSender[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class SmsMessagePermittedSender extends ModelBase
     /**
      * @param Staff $actionTaker
      */
-    public function setActionTaker(Staff $actionTaker = null)
+    public function setActionTaker(\Staff $actionTaker = null)
     {
         $this->setProperty('actionTaker', $actionTaker);
     }
@@ -77,7 +77,7 @@ class SmsMessagePermittedSender extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -93,7 +93,7 @@ class SmsMessagePermittedSender extends ModelBase
     /**
      * @param bool $allow
      */
-    public function setAllow($allow = null)
+    public function setAllow(bool $allow = null)
     {
         $this->setProperty('allow', $allow);
     }

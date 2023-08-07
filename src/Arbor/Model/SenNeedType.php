@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SenNeedType extends ModelBase
+class SenNeedType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const D00237 = 'd00237';
+    public const D00237 = 'd00237';
 
-    const EXPORT_CODE = 'exportCode';
+    public const EXPORT_CODE = 'exportCode';
 
     protected $_resourceType = ResourceType::SEN_NEED_TYPE;
 
@@ -25,7 +25,7 @@ class SenNeedType extends ModelBase
      * @return SenNeedType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +83,7 @@ class SenNeedType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +99,7 @@ class SenNeedType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -115,7 +115,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -131,7 +131,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $d00237
      */
-    public function setD00237($d00237 = null)
+    public function setD00237(string $d00237 = null)
     {
         $this->setProperty('d00237', $d00237);
     }
@@ -147,7 +147,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode($exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }

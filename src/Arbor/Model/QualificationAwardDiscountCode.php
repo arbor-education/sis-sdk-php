@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationAwardDiscountCode extends ModelBase
+class QualificationAwardDiscountCode extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
-    const DISCOUNT_CODE = 'discountCode';
+    public const DISCOUNT_CODE = 'discountCode';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD_DISCOUNT_CODE;
 
@@ -27,7 +27,7 @@ class QualificationAwardDiscountCode extends ModelBase
      * @return QualificationAwardDiscountCode[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
@@ -133,7 +133,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param string $discountCode
      */
-    public function setDiscountCode($discountCode = null)
+    public function setDiscountCode(string $discountCode = null)
     {
         $this->setProperty('discountCode', $discountCode);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SessionRoomFeatureRequirement extends ModelBase
+class SessionRoomFeatureRequirement extends \ModelBase
 {
-    const SESSION = 'session';
+    public const SESSION = 'session';
 
-    const ROOM_FEATURE = 'roomFeature';
+    public const ROOM_FEATURE = 'roomFeature';
 
     protected $_resourceType = ResourceType::SESSION_ROOM_FEATURE_REQUIREMENT;
 
@@ -17,7 +17,7 @@ class SessionRoomFeatureRequirement extends ModelBase
      * @return SessionRoomFeatureRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class SessionRoomFeatureRequirement extends ModelBase
     /**
      * @param Session $session
      */
-    public function setSession(Session $session = null)
+    public function setSession(\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -75,7 +75,7 @@ class SessionRoomFeatureRequirement extends ModelBase
     /**
      * @param RoomFeature $roomFeature
      */
-    public function setRoomFeature(RoomFeature $roomFeature = null)
+    public function setRoomFeature(\RoomFeature $roomFeature = null)
     {
         $this->setProperty('roomFeature', $roomFeature);
     }

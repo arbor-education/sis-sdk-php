@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricRuleTargetItem extends ModelBase
+class AssessmentMetricRuleTargetItem extends \ModelBase
 {
-    const OPERATOR = 'operator';
+    public const OPERATOR = 'operator';
 
-    const TARGET_TYPE = 'targetType';
+    public const TARGET_TYPE = 'targetType';
 
-    const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
+    public const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
 
-    const ASSESSMENT_METRIC_ASSESSMENT = 'assessmentMetricAssessment';
+    public const ASSESSMENT_METRIC_ASSESSMENT = 'assessmentMetricAssessment';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_RULE_TARGET_ITEM;
 
@@ -23,7 +23,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
      * @return AssessmentMetricRuleTargetItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param string $operator
      */
-    public function setOperator($operator = null)
+    public function setOperator(string $operator = null)
     {
         $this->setProperty('operator', $operator);
     }
@@ -81,7 +81,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param string $targetType
      */
-    public function setTargetType($targetType = null)
+    public function setTargetType(string $targetType = null)
     {
         $this->setProperty('targetType', $targetType);
     }
@@ -97,7 +97,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
@@ -113,7 +113,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param AssessmentMetricAssessment $assessmentMetricAssessment
      */
-    public function setAssessmentMetricAssessment(AssessmentMetricAssessment $assessmentMetricAssessment = null)
+    public function setAssessmentMetricAssessment(\AssessmentMetricAssessment $assessmentMetricAssessment = null)
     {
         $this->setProperty('assessmentMetricAssessment', $assessmentMetricAssessment);
     }
@@ -129,7 +129,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }

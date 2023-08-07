@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SenNeedType extends ModelBase
+class SenNeedType extends \ModelBase
 {
-    const LLDD_CODE = 'llddCode';
+    public const LLDD_CODE = 'llddCode';
 
-    const ILR_RETURN_VALUE = 'ilrReturnValue';
+    public const ILR_RETURN_VALUE = 'ilrReturnValue';
 
     protected $_resourceType = ResourceType::UK_ILR_SEN_NEED_TYPE;
 
@@ -20,7 +20,7 @@ class SenNeedType extends ModelBase
      * @return SenNeedType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $llddCode
      */
-    public function setLlddCode($llddCode = null)
+    public function setLlddCode(string $llddCode = null)
     {
         $this->setProperty('llddCode', $llddCode);
     }
@@ -78,7 +78,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $ilrReturnValue
      */
-    public function setIlrReturnValue($ilrReturnValue = null)
+    public function setIlrReturnValue(string $ilrReturnValue = null)
     {
         $this->setProperty('ilrReturnValue', $ilrReturnValue);
     }

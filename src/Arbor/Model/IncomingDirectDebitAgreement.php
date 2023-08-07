@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IncomingDirectDebitAgreement extends ModelBase
+class IncomingDirectDebitAgreement extends \ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const PAYMENT_PROVIDER = 'paymentProvider';
+    public const PAYMENT_PROVIDER = 'paymentProvider';
 
-    const PAYMENT_PROVIDER_AGREEMENT_IDENTIFIER = 'paymentProviderAgreementIdentifier';
+    public const PAYMENT_PROVIDER_AGREEMENT_IDENTIFIER = 'paymentProviderAgreementIdentifier';
 
-    const AGREEMENT_START_DATE = 'agreementStartDate';
+    public const AGREEMENT_START_DATE = 'agreementStartDate';
 
-    const AGREEMENT_END_DATE = 'agreementEndDate';
+    public const AGREEMENT_END_DATE = 'agreementEndDate';
 
-    const AGREEMENT_REFERENCE = 'agreementReference';
+    public const AGREEMENT_REFERENCE = 'agreementReference';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::INCOMING_DIRECT_DEBIT_AGREEMENT;
 
@@ -27,7 +27,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      * @return IncomingDirectDebitAgreement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -85,7 +85,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -101,7 +101,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $paymentProviderAgreementIdentifier
      */
-    public function setPaymentProviderAgreementIdentifier($paymentProviderAgreementIdentifier = null)
+    public function setPaymentProviderAgreementIdentifier(string $paymentProviderAgreementIdentifier = null)
     {
         $this->setProperty('paymentProviderAgreementIdentifier', $paymentProviderAgreementIdentifier);
     }
@@ -149,7 +149,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $agreementReference
      */
-    public function setAgreementReference($agreementReference = null)
+    public function setAgreementReference(string $agreementReference = null)
     {
         $this->setProperty('agreementReference', $agreementReference);
     }
@@ -165,7 +165,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

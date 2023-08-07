@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendanceRollCallTime extends ModelBase
+class AttendanceRollCallTime extends \ModelBase
 {
-    const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
+    public const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const REGISTER_OPENS_TIME = 'registerOpensTime';
+    public const REGISTER_OPENS_TIME = 'registerOpensTime';
 
-    const REGISTER_CLOSES_TIME = 'registerClosesTime';
+    public const REGISTER_CLOSES_TIME = 'registerClosesTime';
 
-    const ROLL_CALL_PERIOD_END_TIME = 'rollCallPeriodEndTime';
+    public const ROLL_CALL_PERIOD_END_TIME = 'rollCallPeriodEndTime';
 
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL_TIME;
 
@@ -25,7 +25,7 @@ class AttendanceRollCallTime extends ModelBase
      * @return AttendanceRollCallTime[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param AttendanceRollCall $attendanceRollCall
      */
-    public function setAttendanceRollCall(AttendanceRollCall $attendanceRollCall = null)
+    public function setAttendanceRollCall(\AttendanceRollCall $attendanceRollCall = null)
     {
         $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
@@ -115,7 +115,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param string $registerOpensTime
      */
-    public function setRegisterOpensTime($registerOpensTime = null)
+    public function setRegisterOpensTime(string $registerOpensTime = null)
     {
         $this->setProperty('registerOpensTime', $registerOpensTime);
     }
@@ -131,7 +131,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param string $registerClosesTime
      */
-    public function setRegisterClosesTime($registerClosesTime = null)
+    public function setRegisterClosesTime(string $registerClosesTime = null)
     {
         $this->setProperty('registerClosesTime', $registerClosesTime);
     }
@@ -147,7 +147,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param string $rollCallPeriodEndTime
      */
-    public function setRollCallPeriodEndTime($rollCallPeriodEndTime = null)
+    public function setRollCallPeriodEndTime(string $rollCallPeriodEndTime = null)
     {
         $this->setProperty('rollCallPeriodEndTime', $rollCallPeriodEndTime);
     }

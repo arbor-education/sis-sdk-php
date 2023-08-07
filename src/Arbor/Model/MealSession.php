@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealSession extends ModelBase
+class MealSession extends \ModelBase
 {
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const MEAL_SITTING = 'mealSitting';
+    public const MEAL_SITTING = 'mealSitting';
 
-    const REGISTER_OPENED_DATETIME = 'registerOpenedDatetime';
+    public const REGISTER_OPENED_DATETIME = 'registerOpenedDatetime';
 
-    const REGISTER_CLOSED_DATETIME = 'registerClosedDatetime';
+    public const REGISTER_CLOSED_DATETIME = 'registerClosedDatetime';
 
-    const INVOICED_DATETIME = 'invoicedDatetime';
+    public const INVOICED_DATETIME = 'invoicedDatetime';
 
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
     protected $_resourceType = ResourceType::MEAL_SESSION;
 
@@ -31,7 +31,7 @@ class MealSession extends ModelBase
      * @return MealSession[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -105,7 +105,7 @@ class MealSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -121,7 +121,7 @@ class MealSession extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -137,7 +137,7 @@ class MealSession extends ModelBase
     /**
      * @param MealSitting $mealSitting
      */
-    public function setMealSitting(MealSitting $mealSitting = null)
+    public function setMealSitting(\MealSitting $mealSitting = null)
     {
         $this->setProperty('mealSitting', $mealSitting);
     }
@@ -201,7 +201,7 @@ class MealSession extends ModelBase
     /**
      * @param TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }

@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentEducationalHistory extends ModelBase
+class StudentEducationalHistory extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const EXPECTED_ENTRY_DATE = 'expectedEntryDate';
+    public const EXPECTED_ENTRY_DATE = 'expectedEntryDate';
 
-    const ACTUAL_ENTRY_DATE = 'actualEntryDate';
+    public const ACTUAL_ENTRY_DATE = 'actualEntryDate';
 
-    const LEAVING_DATE = 'leavingDate';
+    public const LEAVING_DATE = 'leavingDate';
 
-    const UNENROLMENT_REASON = 'unenrolmentReason';
+    public const UNENROLMENT_REASON = 'unenrolmentReason';
 
     protected $_resourceType = ResourceType::STUDENT_EDUCATIONAL_HISTORY;
 
@@ -25,7 +25,7 @@ class StudentEducationalHistory extends ModelBase
      * @return StudentEducationalHistory[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +83,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -147,7 +147,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }

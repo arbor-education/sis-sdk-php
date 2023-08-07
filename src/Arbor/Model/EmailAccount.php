@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmailAccount extends ModelBase
+class EmailAccount extends \ModelBase
 {
-    const SERVER_TYPE = 'serverType';
+    public const SERVER_TYPE = 'serverType';
 
-    const SERVER_HOST = 'serverHost';
+    public const SERVER_HOST = 'serverHost';
 
-    const SERVER_PORT = 'serverPort';
+    public const SERVER_PORT = 'serverPort';
 
-    const SERVER_ENCRYPTION = 'serverEncryption';
+    public const SERVER_ENCRYPTION = 'serverEncryption';
 
-    const USERNAME = 'username';
+    public const USERNAME = 'username';
 
-    const PASSWORD = 'password';
+    public const PASSWORD = 'password';
 
-    const OWNER = 'owner';
+    public const OWNER = 'owner';
 
     protected $_resourceType = ResourceType::EMAIL_ACCOUNT;
 
@@ -27,7 +27,7 @@ class EmailAccount extends ModelBase
      * @return EmailAccount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverType
      */
-    public function setServerType($serverType = null)
+    public function setServerType(string $serverType = null)
     {
         $this->setProperty('serverType', $serverType);
     }
@@ -85,7 +85,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverHost
      */
-    public function setServerHost($serverHost = null)
+    public function setServerHost(string $serverHost = null)
     {
         $this->setProperty('serverHost', $serverHost);
     }
@@ -101,7 +101,7 @@ class EmailAccount extends ModelBase
     /**
      * @param int $serverPort
      */
-    public function setServerPort($serverPort = null)
+    public function setServerPort(int $serverPort = null)
     {
         $this->setProperty('serverPort', $serverPort);
     }
@@ -117,7 +117,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverEncryption
      */
-    public function setServerEncryption($serverEncryption = null)
+    public function setServerEncryption(string $serverEncryption = null)
     {
         $this->setProperty('serverEncryption', $serverEncryption);
     }
@@ -133,7 +133,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername($username = null)
+    public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -149,7 +149,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $password
      */
-    public function setPassword($password = null)
+    public function setPassword(string $password = null)
     {
         $this->setProperty('password', $password);
     }
@@ -165,7 +165,7 @@ class EmailAccount extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(ModelBase $owner = null)
+    public function setOwner(\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }

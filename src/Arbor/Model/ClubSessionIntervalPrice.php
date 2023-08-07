@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ClubSessionIntervalPrice extends ModelBase
+class ClubSessionIntervalPrice extends \ModelBase
 {
-    const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
+    public const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
 
-    const GROUP = 'group';
+    public const GROUP = 'group';
 
-    const PRICE_EX_VAT = 'priceExVat';
+    public const PRICE_EX_VAT = 'priceExVat';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
     protected $_resourceType = ResourceType::CLUB_SESSION_INTERVAL_PRICE;
 
@@ -21,7 +21,7 @@ class ClubSessionIntervalPrice extends ModelBase
      * @return ClubSessionIntervalPrice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param ClubSessionInterval $clubSessionInterval
      */
-    public function setClubSessionInterval(ClubSessionInterval $clubSessionInterval = null)
+    public function setClubSessionInterval(\ClubSessionInterval $clubSessionInterval = null)
     {
         $this->setProperty('clubSessionInterval', $clubSessionInterval);
     }
@@ -79,7 +79,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param ModelBase $group
      */
-    public function setGroup(ModelBase $group = null)
+    public function setGroup(\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }
@@ -95,7 +95,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat($priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -111,7 +111,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }

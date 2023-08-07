@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PhysicalInterventionRecord extends ModelBase
+class PhysicalInterventionRecord extends \ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const CONFIRMED_DATETIME = 'confirmedDatetime';
+    public const CONFIRMED_DATETIME = 'confirmedDatetime';
 
     protected $_resourceType = ResourceType::PHYSICAL_INTERVENTION_RECORD;
 
@@ -23,7 +23,7 @@ class PhysicalInterventionRecord extends ModelBase
      * @return PhysicalInterventionRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -81,7 +81,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -97,7 +97,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -113,7 +113,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

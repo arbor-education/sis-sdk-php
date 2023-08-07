@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryPaymentAutomaticCriterion extends ModelBase
+class BursaryPaymentAutomaticCriterion extends \ModelBase
 {
-    const BURSARY_TYPE = 'bursaryType';
+    public const BURSARY_TYPE = 'bursaryType';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const FIELD_CLASS = 'fieldClass';
+    public const FIELD_CLASS = 'fieldClass';
 
-    const FIELD_PARAMS = 'fieldParams';
+    public const FIELD_PARAMS = 'fieldParams';
 
-    const TRANSFORMATION_CLASS = 'transformationClass';
+    public const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const CONDITION_CLASS = 'conditionClass';
+    public const CONDITION_CLASS = 'conditionClass';
 
-    const CONDITION_PARAMS = 'conditionParams';
+    public const CONDITION_PARAMS = 'conditionParams';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::BURSARY_PAYMENT_AUTOMATIC_CRITERION;
 
@@ -31,7 +31,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
      * @return BursaryPaymentAutomaticCriterion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param BursaryType $bursaryType
      */
-    public function setBursaryType(BursaryType $bursaryType = null)
+    public function setBursaryType(\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
@@ -89,7 +89,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -105,7 +105,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass($fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -121,7 +121,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams($fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -137,7 +137,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass($transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -153,7 +153,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass($conditionClass = null)
+    public function setConditionClass(string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -169,7 +169,7 @@ class BursaryPaymentAutomaticCriterion extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams($conditionParams = null)
+    public function setConditionParams(string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }

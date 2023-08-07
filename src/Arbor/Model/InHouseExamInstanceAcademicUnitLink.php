@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InHouseExamInstanceAcademicUnitLink extends ModelBase
+class InHouseExamInstanceAcademicUnitLink extends \ModelBase
 {
-    const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
+    public const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
 
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_INSTANCE_ACADEMIC_UNIT_LINK;
 
@@ -17,7 +17,7 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
      * @return InHouseExamInstanceAcademicUnitLink[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     /**
      * @param InHouseExamInstance $inHouseExamInstance
      */
-    public function setInHouseExamInstance(InHouseExamInstance $inHouseExamInstance = null)
+    public function setInHouseExamInstance(\InHouseExamInstance $inHouseExamInstance = null)
     {
         $this->setProperty('inHouseExamInstance', $inHouseExamInstance);
     }
@@ -75,7 +75,7 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }

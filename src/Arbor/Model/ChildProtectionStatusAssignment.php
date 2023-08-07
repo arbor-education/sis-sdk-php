@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ChildProtectionStatusAssignment extends ModelBase
+class ChildProtectionStatusAssignment extends \ModelBase
 {
-    const CHILD_PROTECTION_STATUS = 'childProtectionStatus';
+    public const CHILD_PROTECTION_STATUS = 'childProtectionStatus';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
+    public const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::CHILD_PROTECTION_STATUS_ASSIGNMENT;
 
@@ -25,7 +25,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      * @return ChildProtectionStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param ChildProtectionStatus $childProtectionStatus
      */
-    public function setChildProtectionStatus(ChildProtectionStatus $childProtectionStatus = null)
+    public function setChildProtectionStatus(\ChildProtectionStatus $childProtectionStatus = null)
     {
         $this->setProperty('childProtectionStatus', $childProtectionStatus);
     }
@@ -83,7 +83,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -131,7 +131,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -147,7 +147,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param LocalAuthority $responsibleLocalAuthority
      */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
+    public function setResponsibleLocalAuthority(\LocalAuthority $responsibleLocalAuthority = null)
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class OptionsImportAcademicUnitMapping extends ModelBase
+class OptionsImportAcademicUnitMapping extends \ModelBase
 {
-    const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
+    public const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
-    const ACADEMIC_UNIT_NAME = 'academicUnitName';
+    public const ACADEMIC_UNIT_NAME = 'academicUnitName';
 
-    const MAPPING_ACTION = 'mappingAction';
+    public const MAPPING_ACTION = 'mappingAction';
 
-    const MAPPED_ACADEMIC_UNIT = 'mappedAcademicUnit';
+    public const MAPPED_ACADEMIC_UNIT = 'mappedAcademicUnit';
 
     protected $_resourceType = ResourceType::OPTIONS_IMPORT_ACADEMIC_UNIT_MAPPING;
 
@@ -21,7 +21,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
      * @return OptionsImportAcademicUnitMapping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param OptionsImportResult $optionsImportResult
      */
-    public function setOptionsImportResult(OptionsImportResult $optionsImportResult = null)
+    public function setOptionsImportResult(\OptionsImportResult $optionsImportResult = null)
     {
         $this->setProperty('optionsImportResult', $optionsImportResult);
     }
@@ -79,7 +79,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param string $academicUnitName
      */
-    public function setAcademicUnitName($academicUnitName = null)
+    public function setAcademicUnitName(string $academicUnitName = null)
     {
         $this->setProperty('academicUnitName', $academicUnitName);
     }
@@ -95,7 +95,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param string $mappingAction
      */
-    public function setMappingAction($mappingAction = null)
+    public function setMappingAction(string $mappingAction = null)
     {
         $this->setProperty('mappingAction', $mappingAction);
     }
@@ -111,7 +111,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param AcademicUnit $mappedAcademicUnit
      */
-    public function setMappedAcademicUnit(AcademicUnit $mappedAcademicUnit = null)
+    public function setMappedAcademicUnit(\AcademicUnit $mappedAcademicUnit = null)
     {
         $this->setProperty('mappedAcademicUnit', $mappedAcademicUnit);
     }

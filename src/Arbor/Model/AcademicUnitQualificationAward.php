@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicUnitQualificationAward extends ModelBase
+class AcademicUnitQualificationAward extends \ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_QUALIFICATION_AWARD;
 
@@ -17,7 +17,7 @@ class AcademicUnitQualificationAward extends ModelBase
      * @return AcademicUnitQualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AcademicUnitQualificationAward extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -75,7 +75,7 @@ class AcademicUnitQualificationAward extends ModelBase
     /**
      * @param QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }

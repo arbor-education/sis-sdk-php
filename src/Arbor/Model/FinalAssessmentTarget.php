@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class FinalAssessmentTarget extends ModelBase
+class FinalAssessmentTarget extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
-    const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
+    public const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
 
-    const LOCKED = 'locked';
+    public const LOCKED = 'locked';
 
     protected $_resourceType = ResourceType::FINAL_ASSESSMENT_TARGET;
 
@@ -27,7 +27,7 @@ class FinalAssessmentTarget extends ModelBase
      * @return FinalAssessmentTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -85,7 +85,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -101,7 +101,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param Grade $grade
      */
-    public function setGrade(Grade $grade = null)
+    public function setGrade(\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -117,7 +117,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -133,7 +133,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -149,7 +149,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -165,7 +165,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param bool $locked
      */
-    public function setLocked($locked = null)
+    public function setLocked(bool $locked = null)
     {
         $this->setProperty('locked', $locked);
     }

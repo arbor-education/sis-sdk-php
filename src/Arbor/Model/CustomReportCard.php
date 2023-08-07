@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportCard extends ModelBase
+class CustomReportCard extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const DATE = 'date';
+    public const DATE = 'date';
 
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const ORIENTATION = 'orientation';
+    public const ORIENTATION = 'orientation';
 
-    const REMOVE_BLANK_ROWS = 'removeBlankRows';
+    public const REMOVE_BLANK_ROWS = 'removeBlankRows';
 
-    const TEMPLATE = 'template';
+    public const TEMPLATE = 'template';
 
-    const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
+    public const SHARED_WITH_GUARDIANS = 'sharedWithGuardians';
 
-    const SHARED_WITH_STUDENTS = 'sharedWithStudents';
+    public const SHARED_WITH_STUDENTS = 'sharedWithStudents';
 
-    const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
+    public const DELETION_STARTED_DATETIME = 'deletionStartedDatetime';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_CARD;
 
@@ -33,7 +33,7 @@ class CustomReportCard extends ModelBase
      * @return CustomReportCard[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -91,7 +91,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -123,7 +123,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -139,7 +139,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param string $orientation
      */
-    public function setOrientation($orientation = null)
+    public function setOrientation(string $orientation = null)
     {
         $this->setProperty('orientation', $orientation);
     }
@@ -155,7 +155,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param bool $removeBlankRows
      */
-    public function setRemoveBlankRows($removeBlankRows = null)
+    public function setRemoveBlankRows(bool $removeBlankRows = null)
     {
         $this->setProperty('removeBlankRows', $removeBlankRows);
     }
@@ -171,7 +171,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param string $template
      */
-    public function setTemplate($template = null)
+    public function setTemplate(string $template = null)
     {
         $this->setProperty('template', $template);
     }
@@ -187,7 +187,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param bool $sharedWithGuardians
      */
-    public function setSharedWithGuardians($sharedWithGuardians = null)
+    public function setSharedWithGuardians(bool $sharedWithGuardians = null)
     {
         $this->setProperty('sharedWithGuardians', $sharedWithGuardians);
     }
@@ -203,7 +203,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param bool $sharedWithStudents
      */
-    public function setSharedWithStudents($sharedWithStudents = null)
+    public function setSharedWithStudents(bool $sharedWithStudents = null)
     {
         $this->setProperty('sharedWithStudents', $sharedWithStudents);
     }

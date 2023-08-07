@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonImpairment extends ModelBase
+class PersonImpairment extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const PERSON_IMPAIRMENT_NAME = 'personImpairmentName';
+    public const PERSON_IMPAIRMENT_NAME = 'personImpairmentName';
 
-    const IMPAIRMENT_CATEGORY = 'impairmentCategory';
+    public const IMPAIRMENT_CATEGORY = 'impairmentCategory';
 
-    const DATE_ADVISED = 'dateAdvised';
+    public const DATE_ADVISED = 'dateAdvised';
 
-    const AFFECTS_WORKING_ABILITY = 'affectsWorkingAbility';
+    public const AFFECTS_WORKING_ABILITY = 'affectsWorkingAbility';
 
     protected $_resourceType = ResourceType::PERSON_IMPAIRMENT;
 
@@ -23,7 +23,7 @@ class PersonImpairment extends ModelBase
      * @return PersonImpairment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -81,7 +81,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param string $personImpairmentName
      */
-    public function setPersonImpairmentName($personImpairmentName = null)
+    public function setPersonImpairmentName(string $personImpairmentName = null)
     {
         $this->setProperty('personImpairmentName', $personImpairmentName);
     }
@@ -97,7 +97,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param ImpairmentCategory $impairmentCategory
      */
-    public function setImpairmentCategory(ImpairmentCategory $impairmentCategory = null)
+    public function setImpairmentCategory(\ImpairmentCategory $impairmentCategory = null)
     {
         $this->setProperty('impairmentCategory', $impairmentCategory);
     }
@@ -129,7 +129,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param bool $affectsWorkingAbility
      */
-    public function setAffectsWorkingAbility($affectsWorkingAbility = null)
+    public function setAffectsWorkingAbility(bool $affectsWorkingAbility = null)
     {
         $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }

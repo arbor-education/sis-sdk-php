@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TimetableSlot extends ModelBase
+class TimetableSlot extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const TIMETABLED_OBJECT = 'timetabledObject';
+    public const TIMETABLED_OBJECT = 'timetabledObject';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const DAY_OF_WEEK = 'dayOfWeek';
+    public const DAY_OF_WEEK = 'dayOfWeek';
 
-    const TERM_TIME_ONLY = 'termTimeOnly';
+    public const TERM_TIME_ONLY = 'termTimeOnly';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const FREQUENCY = 'frequency';
+    public const FREQUENCY = 'frequency';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
     protected $_resourceType = ResourceType::TIMETABLE_SLOT;
 
@@ -35,7 +35,7 @@ class TimetableSlot extends ModelBase
      * @return TimetableSlot[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -93,7 +93,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param ModelBase $timetabledObject
      */
-    public function setTimetabledObject(ModelBase $timetabledObject = null)
+    public function setTimetabledObject(\ModelBase $timetabledObject = null)
     {
         $this->setProperty('timetabledObject', $timetabledObject);
     }
@@ -109,7 +109,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -125,7 +125,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param int $dayOfWeek
      */
-    public function setDayOfWeek($dayOfWeek = null)
+    public function setDayOfWeek(int $dayOfWeek = null)
     {
         $this->setProperty('dayOfWeek', $dayOfWeek);
     }
@@ -141,7 +141,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param bool $termTimeOnly
      */
-    public function setTermTimeOnly($termTimeOnly = null)
+    public function setTermTimeOnly(bool $termTimeOnly = null)
     {
         $this->setProperty('termTimeOnly', $termTimeOnly);
     }
@@ -157,7 +157,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -173,7 +173,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -221,7 +221,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency($frequency = null)
+    public function setFrequency(string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }
@@ -237,7 +237,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

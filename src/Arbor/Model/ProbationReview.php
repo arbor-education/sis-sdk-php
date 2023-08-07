@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProbationReview extends ModelBase
+class ProbationReview extends \ModelBase
 {
-    const PROBATION = 'probation';
+    public const PROBATION = 'probation';
 
-    const REVIEW_DATE = 'reviewDate';
+    public const REVIEW_DATE = 'reviewDate';
 
-    const REVIEW_OUTCOME = 'reviewOutcome';
+    public const REVIEW_OUTCOME = 'reviewOutcome';
 
-    const REVIEW_NOTES = 'reviewNotes';
+    public const REVIEW_NOTES = 'reviewNotes';
 
     protected $_resourceType = ResourceType::PROBATION_REVIEW;
 
@@ -21,7 +21,7 @@ class ProbationReview extends ModelBase
      * @return ProbationReview[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ProbationReview extends ModelBase
     /**
      * @param Probation $probation
      */
-    public function setProbation(Probation $probation = null)
+    public function setProbation(\Probation $probation = null)
     {
         $this->setProperty('probation', $probation);
     }
@@ -95,7 +95,7 @@ class ProbationReview extends ModelBase
     /**
      * @param string $reviewOutcome
      */
-    public function setReviewOutcome($reviewOutcome = null)
+    public function setReviewOutcome(string $reviewOutcome = null)
     {
         $this->setProperty('reviewOutcome', $reviewOutcome);
     }
@@ -111,7 +111,7 @@ class ProbationReview extends ModelBase
     /**
      * @param string $reviewNotes
      */
-    public function setReviewNotes($reviewNotes = null)
+    public function setReviewNotes(string $reviewNotes = null)
     {
         $this->setProperty('reviewNotes', $reviewNotes);
     }

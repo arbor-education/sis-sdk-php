@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MedicalConditionType extends ModelBase
+class MedicalConditionType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
+    public const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
 
-    const IS_ALLERGY = 'isAllergy';
+    public const IS_ALLERGY = 'isAllergy';
 
     protected $_resourceType = ResourceType::MEDICAL_CONDITION_TYPE;
 
@@ -23,7 +23,7 @@ class MedicalConditionType extends ModelBase
      * @return MedicalConditionType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class MedicalConditionType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +81,7 @@ class MedicalConditionType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +97,7 @@ class MedicalConditionType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +113,7 @@ class MedicalConditionType extends ModelBase
     /**
      * @param string $medicalConditionType
      */
-    public function setMedicalConditionType($medicalConditionType = null)
+    public function setMedicalConditionType(string $medicalConditionType = null)
     {
         $this->setProperty('medicalConditionType', $medicalConditionType);
     }
@@ -129,7 +129,7 @@ class MedicalConditionType extends ModelBase
     /**
      * @param bool $isAllergy
      */
-    public function setIsAllergy($isAllergy = null)
+    public function setIsAllergy(bool $isAllergy = null)
     {
         $this->setProperty('isAllergy', $isAllergy);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SendingProfile extends ModelBase
+class SendingProfile extends \ModelBase
 {
-    const OWNER = 'owner';
+    public const OWNER = 'owner';
 
-    const EMAIL_ADDRESS = 'emailAddress';
+    public const EMAIL_ADDRESS = 'emailAddress';
 
-    const MOBILE_TELEPHONE_NUMBER = 'mobileTelephoneNumber';
+    public const MOBILE_TELEPHONE_NUMBER = 'mobileTelephoneNumber';
 
-    const PERMITTED_SENDER = 'permittedSender';
+    public const PERMITTED_SENDER = 'permittedSender';
 
     protected $_resourceType = ResourceType::SENDING_PROFILE;
 
@@ -21,7 +21,7 @@ class SendingProfile extends ModelBase
      * @return SendingProfile[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class SendingProfile extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(ModelBase $owner = null)
+    public function setOwner(\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
@@ -79,7 +79,7 @@ class SendingProfile extends ModelBase
     /**
      * @param EmailAddress $emailAddress
      */
-    public function setEmailAddress(EmailAddress $emailAddress = null)
+    public function setEmailAddress(\EmailAddress $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -95,7 +95,7 @@ class SendingProfile extends ModelBase
     /**
      * @param TelephoneNumber $mobileTelephoneNumber
      */
-    public function setMobileTelephoneNumber(TelephoneNumber $mobileTelephoneNumber = null)
+    public function setMobileTelephoneNumber(\TelephoneNumber $mobileTelephoneNumber = null)
     {
         $this->setProperty('mobileTelephoneNumber', $mobileTelephoneNumber);
     }
@@ -111,7 +111,7 @@ class SendingProfile extends ModelBase
     /**
      * @param Staff $permittedSender
      */
-    public function setPermittedSender(Staff $permittedSender = null)
+    public function setPermittedSender(\Staff $permittedSender = null)
     {
         $this->setProperty('permittedSender', $permittedSender);
     }

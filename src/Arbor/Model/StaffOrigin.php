@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffOrigin extends ModelBase
+class StaffOrigin extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
     protected $_resourceType = ResourceType::STAFF_ORIGIN;
 
@@ -21,7 +21,7 @@ class StaffOrigin extends ModelBase
      * @return StaffOrigin[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class StaffOrigin extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -79,7 +79,7 @@ class StaffOrigin extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -95,7 +95,7 @@ class StaffOrigin extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -111,7 +111,7 @@ class StaffOrigin extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }

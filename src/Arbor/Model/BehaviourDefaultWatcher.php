@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviourDefaultWatcher extends ModelBase
+class BehaviourDefaultWatcher extends \ModelBase
 {
-    const BEHAVIOUR = 'behaviour';
+    public const BEHAVIOUR = 'behaviour';
 
-    const RELATION_TO_STUDENT = 'relationToStudent';
+    public const RELATION_TO_STUDENT = 'relationToStudent';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
     protected $_resourceType = ResourceType::BEHAVIOUR_DEFAULT_WATCHER;
 
@@ -19,7 +19,7 @@ class BehaviourDefaultWatcher extends ModelBase
      * @return BehaviourDefaultWatcher[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param Behaviour $behaviour
      */
-    public function setBehaviour(Behaviour $behaviour = null)
+    public function setBehaviour(\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
@@ -77,7 +77,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent($relationToStudent = null)
+    public function setRelationToStudent(string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }
@@ -93,7 +93,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

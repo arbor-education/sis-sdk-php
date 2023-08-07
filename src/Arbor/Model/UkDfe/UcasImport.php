@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class UcasImport extends ModelBase
+class UcasImport extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const FILE_DATE = 'fileDate';
+    public const FILE_DATE = 'fileDate';
 
     protected $_resourceType = ResourceType::UK_DFE_UCAS_IMPORT;
 
@@ -20,7 +20,7 @@ class UcasImport extends ModelBase
      * @return UcasImport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UcasImport extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

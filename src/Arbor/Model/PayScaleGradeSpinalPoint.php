@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PayScaleGradeSpinalPoint extends ModelBase
+class PayScaleGradeSpinalPoint extends \ModelBase
 {
-    const PAY_SCALE_GRADE = 'payScaleGrade';
+    public const PAY_SCALE_GRADE = 'payScaleGrade';
 
-    const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
+    public const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
 
     protected $_resourceType = ResourceType::PAY_SCALE_GRADE_SPINAL_POINT;
 
@@ -17,7 +17,7 @@ class PayScaleGradeSpinalPoint extends ModelBase
      * @return PayScaleGradeSpinalPoint[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class PayScaleGradeSpinalPoint extends ModelBase
     /**
      * @param PayScaleGrade $payScaleGrade
      */
-    public function setPayScaleGrade(PayScaleGrade $payScaleGrade = null)
+    public function setPayScaleGrade(\PayScaleGrade $payScaleGrade = null)
     {
         $this->setProperty('payScaleGrade', $payScaleGrade);
     }
@@ -75,7 +75,7 @@ class PayScaleGradeSpinalPoint extends ModelBase
     /**
      * @param PayScaleSpinalPoint $payScaleSpinalPoint
      */
-    public function setPayScaleSpinalPoint(PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    public function setPayScaleSpinalPoint(\PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }

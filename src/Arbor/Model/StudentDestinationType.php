@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentDestinationType extends ModelBase
+class StudentDestinationType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const IS_EDUCATION = 'isEducation';
+    public const IS_EDUCATION = 'isEducation';
 
-    const IS_EMPLOYMENT = 'isEmployment';
+    public const IS_EMPLOYMENT = 'isEmployment';
 
-    const LINKED_ENTITY_TYPE = 'linkedEntityType';
+    public const LINKED_ENTITY_TYPE = 'linkedEntityType';
 
     protected $_resourceType = ResourceType::STUDENT_DESTINATION_TYPE;
 
@@ -27,7 +27,7 @@ class StudentDestinationType extends ModelBase
      * @return StudentDestinationType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -133,7 +133,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param bool $isEducation
      */
-    public function setIsEducation($isEducation = null)
+    public function setIsEducation(bool $isEducation = null)
     {
         $this->setProperty('isEducation', $isEducation);
     }
@@ -149,7 +149,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param bool $isEmployment
      */
-    public function setIsEmployment($isEmployment = null)
+    public function setIsEmployment(bool $isEmployment = null)
     {
         $this->setProperty('isEmployment', $isEmployment);
     }
@@ -165,7 +165,7 @@ class StudentDestinationType extends ModelBase
     /**
      * @param int $linkedEntityType
      */
-    public function setLinkedEntityType($linkedEntityType = null)
+    public function setLinkedEntityType(int $linkedEntityType = null)
     {
         $this->setProperty('linkedEntityType', $linkedEntityType);
     }

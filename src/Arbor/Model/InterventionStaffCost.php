@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InterventionStaffCost extends ModelBase
+class InterventionStaffCost extends \ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const COST_PER_HOUR = 'costPerHour';
+    public const COST_PER_HOUR = 'costPerHour';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const ROUND_TO_NEAREST = 'roundToNearest';
+    public const ROUND_TO_NEAREST = 'roundToNearest';
 
-    const MINIMUM_CHARGE = 'minimumCharge';
+    public const MINIMUM_CHARGE = 'minimumCharge';
 
     protected $_resourceType = ResourceType::INTERVENTION_STAFF_COST;
 
@@ -25,7 +25,7 @@ class InterventionStaffCost extends ModelBase
      * @return InterventionStaffCost[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param ModelBase $staff
      */
-    public function setStaff(ModelBase $staff = null)
+    public function setStaff(\ModelBase $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -83,7 +83,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $costPerHour
      */
-    public function setCostPerHour($costPerHour = null)
+    public function setCostPerHour(string $costPerHour = null)
     {
         $this->setProperty('costPerHour', $costPerHour);
     }
@@ -131,7 +131,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $roundToNearest
      */
-    public function setRoundToNearest($roundToNearest = null)
+    public function setRoundToNearest(string $roundToNearest = null)
     {
         $this->setProperty('roundToNearest', $roundToNearest);
     }
@@ -147,7 +147,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $minimumCharge
      */
-    public function setMinimumCharge($minimumCharge = null)
+    public function setMinimumCharge(string $minimumCharge = null)
     {
         $this->setProperty('minimumCharge', $minimumCharge);
     }

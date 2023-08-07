@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffAttendanceRecord extends ModelBase
+class StaffAttendanceRecord extends \ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const ATTENDANCE_PERIOD_DATE = 'attendancePeriodDate';
+    public const ATTENDANCE_PERIOD_DATE = 'attendancePeriodDate';
 
-    const ATTENDANCE_PERIOD_START_TIME = 'attendancePeriodStartTime';
+    public const ATTENDANCE_PERIOD_START_TIME = 'attendancePeriodStartTime';
 
-    const ATTENDANCE_PERIOD_END_TIME = 'attendancePeriodEndTime';
+    public const ATTENDANCE_PERIOD_END_TIME = 'attendancePeriodEndTime';
 
-    const ACTUAL_START_TIME = 'actualStartTime';
+    public const ACTUAL_START_TIME = 'actualStartTime';
 
-    const ACTUAL_END_TIME = 'actualEndTime';
+    public const ACTUAL_END_TIME = 'actualEndTime';
 
-    const STAFF_ATTENDANCE_MARK = 'staffAttendanceMark';
+    public const STAFF_ATTENDANCE_MARK = 'staffAttendanceMark';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const STAFF_ABSENCE = 'staffAbsence';
+    public const STAFF_ABSENCE = 'staffAbsence';
 
     protected $_resourceType = ResourceType::STAFF_ATTENDANCE_RECORD;
 
@@ -31,7 +31,7 @@ class StaffAttendanceRecord extends ModelBase
      * @return StaffAttendanceRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -105,7 +105,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $attendancePeriodStartTime
      */
-    public function setAttendancePeriodStartTime($attendancePeriodStartTime = null)
+    public function setAttendancePeriodStartTime(string $attendancePeriodStartTime = null)
     {
         $this->setProperty('attendancePeriodStartTime', $attendancePeriodStartTime);
     }
@@ -121,7 +121,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $attendancePeriodEndTime
      */
-    public function setAttendancePeriodEndTime($attendancePeriodEndTime = null)
+    public function setAttendancePeriodEndTime(string $attendancePeriodEndTime = null)
     {
         $this->setProperty('attendancePeriodEndTime', $attendancePeriodEndTime);
     }
@@ -137,7 +137,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $actualStartTime
      */
-    public function setActualStartTime($actualStartTime = null)
+    public function setActualStartTime(string $actualStartTime = null)
     {
         $this->setProperty('actualStartTime', $actualStartTime);
     }
@@ -153,7 +153,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $actualEndTime
      */
-    public function setActualEndTime($actualEndTime = null)
+    public function setActualEndTime(string $actualEndTime = null)
     {
         $this->setProperty('actualEndTime', $actualEndTime);
     }
@@ -169,7 +169,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param StaffAttendanceMark $staffAttendanceMark
      */
-    public function setStaffAttendanceMark(StaffAttendanceMark $staffAttendanceMark = null)
+    public function setStaffAttendanceMark(\StaffAttendanceMark $staffAttendanceMark = null)
     {
         $this->setProperty('staffAttendanceMark', $staffAttendanceMark);
     }
@@ -185,7 +185,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -201,7 +201,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param StaffAbsence $staffAbsence
      */
-    public function setStaffAbsence(StaffAbsence $staffAbsence = null)
+    public function setStaffAbsence(\StaffAbsence $staffAbsence = null)
     {
         $this->setProperty('staffAbsence', $staffAbsence);
     }

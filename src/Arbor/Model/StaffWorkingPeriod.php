@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffWorkingPeriod extends ModelBase
+class StaffWorkingPeriod extends \ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const APPLIES_ON_MONDAY = 'appliesOnMonday';
+    public const APPLIES_ON_MONDAY = 'appliesOnMonday';
 
-    const APPLIES_ON_TUESDAY = 'appliesOnTuesday';
+    public const APPLIES_ON_TUESDAY = 'appliesOnTuesday';
 
-    const APPLIES_ON_WEDNESDAY = 'appliesOnWednesday';
+    public const APPLIES_ON_WEDNESDAY = 'appliesOnWednesday';
 
-    const APPLIES_ON_THURSDAY = 'appliesOnThursday';
+    public const APPLIES_ON_THURSDAY = 'appliesOnThursday';
 
-    const APPLIES_ON_FRIDAY = 'appliesOnFriday';
+    public const APPLIES_ON_FRIDAY = 'appliesOnFriday';
 
-    const APPLIES_ON_SATURDAY = 'appliesOnSaturday';
+    public const APPLIES_ON_SATURDAY = 'appliesOnSaturday';
 
-    const APPLIES_ON_SUNDAY = 'appliesOnSunday';
+    public const APPLIES_ON_SUNDAY = 'appliesOnSunday';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
     protected $_resourceType = ResourceType::STAFF_WORKING_PERIOD;
 
@@ -37,7 +37,7 @@ class StaffWorkingPeriod extends ModelBase
      * @return StaffWorkingPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -127,7 +127,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnMonday
      */
-    public function setAppliesOnMonday($appliesOnMonday = null)
+    public function setAppliesOnMonday(bool $appliesOnMonday = null)
     {
         $this->setProperty('appliesOnMonday', $appliesOnMonday);
     }
@@ -143,7 +143,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnTuesday
      */
-    public function setAppliesOnTuesday($appliesOnTuesday = null)
+    public function setAppliesOnTuesday(bool $appliesOnTuesday = null)
     {
         $this->setProperty('appliesOnTuesday', $appliesOnTuesday);
     }
@@ -159,7 +159,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnWednesday
      */
-    public function setAppliesOnWednesday($appliesOnWednesday = null)
+    public function setAppliesOnWednesday(bool $appliesOnWednesday = null)
     {
         $this->setProperty('appliesOnWednesday', $appliesOnWednesday);
     }
@@ -175,7 +175,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnThursday
      */
-    public function setAppliesOnThursday($appliesOnThursday = null)
+    public function setAppliesOnThursday(bool $appliesOnThursday = null)
     {
         $this->setProperty('appliesOnThursday', $appliesOnThursday);
     }
@@ -191,7 +191,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnFriday
      */
-    public function setAppliesOnFriday($appliesOnFriday = null)
+    public function setAppliesOnFriday(bool $appliesOnFriday = null)
     {
         $this->setProperty('appliesOnFriday', $appliesOnFriday);
     }
@@ -207,7 +207,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnSaturday
      */
-    public function setAppliesOnSaturday($appliesOnSaturday = null)
+    public function setAppliesOnSaturday(bool $appliesOnSaturday = null)
     {
         $this->setProperty('appliesOnSaturday', $appliesOnSaturday);
     }
@@ -223,7 +223,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param bool $appliesOnSunday
      */
-    public function setAppliesOnSunday($appliesOnSunday = null)
+    public function setAppliesOnSunday(bool $appliesOnSunday = null)
     {
         $this->setProperty('appliesOnSunday', $appliesOnSunday);
     }
@@ -239,7 +239,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -255,7 +255,7 @@ class StaffWorkingPeriod extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }

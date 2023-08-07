@@ -4,39 +4,39 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Meeting extends ModelBase
+class Meeting extends \ModelBase
 {
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const MEETING_NAME = 'meetingName';
+    public const MEETING_NAME = 'meetingName';
 
-    const ALLOW_SELF_SERVICE_SCHEDULING = 'allowSelfServiceScheduling';
+    public const ALLOW_SELF_SERVICE_SCHEDULING = 'allowSelfServiceScheduling';
 
-    const SELF_SCHEDULING_OPENS_DATETIME = 'selfSchedulingOpensDatetime';
+    public const SELF_SCHEDULING_OPENS_DATETIME = 'selfSchedulingOpensDatetime';
 
-    const SELF_SCHEDULING_CLOSES_DATETIME = 'selfSchedulingClosesDatetime';
+    public const SELF_SCHEDULING_CLOSES_DATETIME = 'selfSchedulingClosesDatetime';
 
-    const SCHEDULE_MINIMUM_DURATION = 'scheduleMinimumDuration';
+    public const SCHEDULE_MINIMUM_DURATION = 'scheduleMinimumDuration';
 
-    const SCHEDULE_MAXIMUM_DURATION = 'scheduleMaximumDuration';
+    public const SCHEDULE_MAXIMUM_DURATION = 'scheduleMaximumDuration';
 
-    const SCHEDULE_SUGGESTED_DURATION = 'scheduleSuggestedDuration';
+    public const SCHEDULE_SUGGESTED_DURATION = 'scheduleSuggestedDuration';
 
-    const SCHEDULE_LOCATION = 'scheduleLocation';
+    public const SCHEDULE_LOCATION = 'scheduleLocation';
 
-    const ALLOW_DUPLICATE_SCHEDULING = 'allowDuplicateScheduling';
+    public const ALLOW_DUPLICATE_SCHEDULING = 'allowDuplicateScheduling';
 
-    const AIMS = 'aims';
+    public const AIMS = 'aims';
 
-    const AGENDA = 'agenda';
+    public const AGENDA = 'agenda';
 
-    const OUTCOMES = 'outcomes';
+    public const OUTCOMES = 'outcomes';
 
     protected $_resourceType = ResourceType::MEETING;
 
@@ -45,7 +45,7 @@ class Meeting extends ModelBase
      * @return Meeting[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -119,7 +119,7 @@ class Meeting extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -135,7 +135,7 @@ class Meeting extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -151,7 +151,7 @@ class Meeting extends ModelBase
     /**
      * @param string $meetingName
      */
-    public function setMeetingName($meetingName = null)
+    public function setMeetingName(string $meetingName = null)
     {
         $this->setProperty('meetingName', $meetingName);
     }
@@ -167,7 +167,7 @@ class Meeting extends ModelBase
     /**
      * @param bool $allowSelfServiceScheduling
      */
-    public function setAllowSelfServiceScheduling($allowSelfServiceScheduling = null)
+    public function setAllowSelfServiceScheduling(bool $allowSelfServiceScheduling = null)
     {
         $this->setProperty('allowSelfServiceScheduling', $allowSelfServiceScheduling);
     }
@@ -215,7 +215,7 @@ class Meeting extends ModelBase
     /**
      * @param string $scheduleMinimumDuration
      */
-    public function setScheduleMinimumDuration($scheduleMinimumDuration = null)
+    public function setScheduleMinimumDuration(string $scheduleMinimumDuration = null)
     {
         $this->setProperty('scheduleMinimumDuration', $scheduleMinimumDuration);
     }
@@ -231,7 +231,7 @@ class Meeting extends ModelBase
     /**
      * @param string $scheduleMaximumDuration
      */
-    public function setScheduleMaximumDuration($scheduleMaximumDuration = null)
+    public function setScheduleMaximumDuration(string $scheduleMaximumDuration = null)
     {
         $this->setProperty('scheduleMaximumDuration', $scheduleMaximumDuration);
     }
@@ -247,7 +247,7 @@ class Meeting extends ModelBase
     /**
      * @param string $scheduleSuggestedDuration
      */
-    public function setScheduleSuggestedDuration($scheduleSuggestedDuration = null)
+    public function setScheduleSuggestedDuration(string $scheduleSuggestedDuration = null)
     {
         $this->setProperty('scheduleSuggestedDuration', $scheduleSuggestedDuration);
     }
@@ -263,7 +263,7 @@ class Meeting extends ModelBase
     /**
      * @param Room $scheduleLocation
      */
-    public function setScheduleLocation(Room $scheduleLocation = null)
+    public function setScheduleLocation(\Room $scheduleLocation = null)
     {
         $this->setProperty('scheduleLocation', $scheduleLocation);
     }
@@ -279,7 +279,7 @@ class Meeting extends ModelBase
     /**
      * @param bool $allowDuplicateScheduling
      */
-    public function setAllowDuplicateScheduling($allowDuplicateScheduling = null)
+    public function setAllowDuplicateScheduling(bool $allowDuplicateScheduling = null)
     {
         $this->setProperty('allowDuplicateScheduling', $allowDuplicateScheduling);
     }
@@ -295,7 +295,7 @@ class Meeting extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims($aims = null)
+    public function setAims(string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -311,7 +311,7 @@ class Meeting extends ModelBase
     /**
      * @param string $agenda
      */
-    public function setAgenda($agenda = null)
+    public function setAgenda(string $agenda = null)
     {
         $this->setProperty('agenda', $agenda);
     }
@@ -327,7 +327,7 @@ class Meeting extends ModelBase
     /**
      * @param string $outcomes
      */
-    public function setOutcomes($outcomes = null)
+    public function setOutcomes(string $outcomes = null)
     {
         $this->setProperty('outcomes', $outcomes);
     }

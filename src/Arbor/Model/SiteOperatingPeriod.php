@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SiteOperatingPeriod extends ModelBase
+class SiteOperatingPeriod extends \ModelBase
 {
-    const SITE = 'site';
+    public const SITE = 'site';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
     protected $_resourceType = ResourceType::SITE_OPERATING_PERIOD;
 
@@ -25,7 +25,7 @@ class SiteOperatingPeriod extends ModelBase
      * @return SiteOperatingPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class SiteOperatingPeriod extends ModelBase
     /**
      * @param Site $site
      */
-    public function setSite(Site $site = null)
+    public function setSite(\Site $site = null)
     {
         $this->setProperty('site', $site);
     }
@@ -115,7 +115,7 @@ class SiteOperatingPeriod extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -131,7 +131,7 @@ class SiteOperatingPeriod extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -147,7 +147,7 @@ class SiteOperatingPeriod extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }

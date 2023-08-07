@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TimetableSlotStaff extends ModelBase
+class TimetableSlotStaff extends \ModelBase
 {
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::TIMETABLE_SLOT_STAFF;
 
@@ -21,7 +21,7 @@ class TimetableSlotStaff extends ModelBase
      * @return TimetableSlotStaff[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class TimetableSlotStaff extends ModelBase
     /**
      * @param TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -79,7 +79,7 @@ class TimetableSlotStaff extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserLogin extends ModelBase
+class UserLogin extends \ModelBase
 {
-    const USER = 'user';
+    public const USER = 'user';
 
-    const LOGIN_DATETIME = 'loginDatetime';
+    public const LOGIN_DATETIME = 'loginDatetime';
 
-    const IP_ADDRESS = 'ipAddress';
+    public const IP_ADDRESS = 'ipAddress';
 
-    const USER_AGENT = 'userAgent';
+    public const USER_AGENT = 'userAgent';
 
-    const TWO_FACTOR_AUTHENTICATION_METHOD = 'twoFactorAuthenticationMethod';
+    public const TWO_FACTOR_AUTHENTICATION_METHOD = 'twoFactorAuthenticationMethod';
 
-    const IDENTITY_PROVIDER = 'identityProvider';
+    public const IDENTITY_PROVIDER = 'identityProvider';
 
     protected $_resourceType = ResourceType::USER_LOGIN;
 
@@ -25,7 +25,7 @@ class UserLogin extends ModelBase
      * @return UserLogin[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class UserLogin extends ModelBase
     /**
      * @param User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -99,7 +99,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $ipAddress
      */
-    public function setIpAddress($ipAddress = null)
+    public function setIpAddress(string $ipAddress = null)
     {
         $this->setProperty('ipAddress', $ipAddress);
     }
@@ -115,7 +115,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $userAgent
      */
-    public function setUserAgent($userAgent = null)
+    public function setUserAgent(string $userAgent = null)
     {
         $this->setProperty('userAgent', $userAgent);
     }
@@ -131,7 +131,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $twoFactorAuthenticationMethod
      */
-    public function setTwoFactorAuthenticationMethod($twoFactorAuthenticationMethod = null)
+    public function setTwoFactorAuthenticationMethod(string $twoFactorAuthenticationMethod = null)
     {
         $this->setProperty('twoFactorAuthenticationMethod', $twoFactorAuthenticationMethod);
     }
@@ -147,7 +147,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $identityProvider
      */
-    public function setIdentityProvider($identityProvider = null)
+    public function setIdentityProvider(string $identityProvider = null)
     {
         $this->setProperty('identityProvider', $identityProvider);
     }

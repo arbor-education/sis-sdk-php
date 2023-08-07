@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserBeta extends ModelBase
+class UserBeta extends \ModelBase
 {
-    const USER = 'user';
+    public const USER = 'user';
 
-    const IS_ELIGIBLE = 'isEligible';
+    public const IS_ELIGIBLE = 'isEligible';
 
-    const IS_ENABLED = 'isEnabled';
+    public const IS_ENABLED = 'isEnabled';
 
     protected $_resourceType = ResourceType::USER_BETA;
 
@@ -19,7 +19,7 @@ class UserBeta extends ModelBase
      * @return UserBeta[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class UserBeta extends ModelBase
     /**
      * @param User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -77,7 +77,7 @@ class UserBeta extends ModelBase
     /**
      * @param bool $isEligible
      */
-    public function setIsEligible($isEligible = null)
+    public function setIsEligible(bool $isEligible = null)
     {
         $this->setProperty('isEligible', $isEligible);
     }
@@ -93,7 +93,7 @@ class UserBeta extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled($isEnabled = null)
+    public function setIsEnabled(bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }

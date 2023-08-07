@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportCardStudent extends ModelBase
+class CustomReportCardStudent extends \ModelBase
 {
-    const CUSTOM_REPORT_CARD = 'customReportCard';
+    public const CUSTOM_REPORT_CARD = 'customReportCard';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const GENERATED_DATETIME = 'generatedDatetime';
+    public const GENERATED_DATETIME = 'generatedDatetime';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_CARD_STUDENT;
 
@@ -21,7 +21,7 @@ class CustomReportCardStudent extends ModelBase
      * @return CustomReportCardStudent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param CustomReportCard $customReportCard
      */
-    public function setCustomReportCard(CustomReportCard $customReportCard = null)
+    public function setCustomReportCard(\CustomReportCard $customReportCard = null)
     {
         $this->setProperty('customReportCard', $customReportCard);
     }
@@ -79,7 +79,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -95,7 +95,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

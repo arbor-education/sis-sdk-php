@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InCareStatus extends ModelBase
+class InCareStatus extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const IN_CARE_STATUS_NAME = 'inCareStatusName';
+    public const IN_CARE_STATUS_NAME = 'inCareStatusName';
 
-    const COUNTS_AS_IN_CARE_STATUS = 'countsAsInCareStatus';
+    public const COUNTS_AS_IN_CARE_STATUS = 'countsAsInCareStatus';
 
     protected $_resourceType = ResourceType::IN_CARE_STATUS;
 
@@ -23,7 +23,7 @@ class InCareStatus extends ModelBase
      * @return InCareStatus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class InCareStatus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +81,7 @@ class InCareStatus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +97,7 @@ class InCareStatus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +113,7 @@ class InCareStatus extends ModelBase
     /**
      * @param string $inCareStatusName
      */
-    public function setInCareStatusName($inCareStatusName = null)
+    public function setInCareStatusName(string $inCareStatusName = null)
     {
         $this->setProperty('inCareStatusName', $inCareStatusName);
     }
@@ -129,7 +129,7 @@ class InCareStatus extends ModelBase
     /**
      * @param bool $countsAsInCareStatus
      */
-    public function setCountsAsInCareStatus($countsAsInCareStatus = null)
+    public function setCountsAsInCareStatus(bool $countsAsInCareStatus = null)
     {
         $this->setProperty('countsAsInCareStatus', $countsAsInCareStatus);
     }

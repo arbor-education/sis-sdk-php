@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentAbsenceNote extends ModelBase
+class StudentAbsenceNote extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ABSENCE_START_DATETIME = 'absenceStartDatetime';
+    public const ABSENCE_START_DATETIME = 'absenceStartDatetime';
 
-    const ABSENCE_END_DATETIME = 'absenceEndDatetime';
+    public const ABSENCE_END_DATETIME = 'absenceEndDatetime';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
-    const APPROVED_DATE = 'approvedDate';
+    public const APPROVED_DATE = 'approvedDate';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const FIXED_PERIOD_EXCLUSION = 'fixedPeriodExclusion';
+    public const FIXED_PERIOD_EXCLUSION = 'fixedPeriodExclusion';
 
-    const STUDENT_REPEATING_ABSENCE_NOTE = 'studentRepeatingAbsenceNote';
+    public const STUDENT_REPEATING_ABSENCE_NOTE = 'studentRepeatingAbsenceNote';
 
     protected $_resourceType = ResourceType::STUDENT_ABSENCE_NOTE;
 
@@ -31,7 +31,7 @@ class StudentAbsenceNote extends ModelBase
      * @return StudentAbsenceNote[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -121,7 +121,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -153,7 +153,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -169,7 +169,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -185,7 +185,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param FixedPeriodExclusion $fixedPeriodExclusion
      */
-    public function setFixedPeriodExclusion(FixedPeriodExclusion $fixedPeriodExclusion = null)
+    public function setFixedPeriodExclusion(\FixedPeriodExclusion $fixedPeriodExclusion = null)
     {
         $this->setProperty('fixedPeriodExclusion', $fixedPeriodExclusion);
     }
@@ -201,7 +201,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote
      */
-    public function setStudentRepeatingAbsenceNote(StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote = null)
+    public function setStudentRepeatingAbsenceNote(\StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote = null)
     {
         $this->setProperty('studentRepeatingAbsenceNote', $studentRepeatingAbsenceNote);
     }

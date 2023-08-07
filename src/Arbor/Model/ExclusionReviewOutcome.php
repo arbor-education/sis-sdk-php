@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ExclusionReviewOutcome extends ModelBase
+class ExclusionReviewOutcome extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const EXPORT_CODE = 'exportCode';
+    public const EXPORT_CODE = 'exportCode';
 
-    const IS_EXCLUSION_UPHELD = 'isExclusionUpheld';
+    public const IS_EXCLUSION_UPHELD = 'isExclusionUpheld';
 
-    const IS_STUDENT_REINSTATED = 'isStudentReinstated';
+    public const IS_STUDENT_REINSTATED = 'isStudentReinstated';
 
     protected $_resourceType = ResourceType::EXCLUSION_REVIEW_OUTCOME;
 
@@ -27,7 +27,7 @@ class ExclusionReviewOutcome extends ModelBase
      * @return ExclusionReviewOutcome[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -133,7 +133,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode($exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -149,7 +149,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param bool $isExclusionUpheld
      */
-    public function setIsExclusionUpheld($isExclusionUpheld = null)
+    public function setIsExclusionUpheld(bool $isExclusionUpheld = null)
     {
         $this->setProperty('isExclusionUpheld', $isExclusionUpheld);
     }
@@ -165,7 +165,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param bool $isStudentReinstated
      */
-    public function setIsStudentReinstated($isStudentReinstated = null)
+    public function setIsStudentReinstated(bool $isStudentReinstated = null)
     {
         $this->setProperty('isStudentReinstated', $isStudentReinstated);
     }

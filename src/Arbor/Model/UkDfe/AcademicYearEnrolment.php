@@ -7,13 +7,13 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class AcademicYearEnrolment extends ModelBase
+class AcademicYearEnrolment extends \ModelBase
 {
-    const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
+    public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
-    const PLANNED_EEP_HOURS = 'plannedEepHours';
+    public const PLANNED_EEP_HOURS = 'plannedEepHours';
 
-    const T_LEVEL_PLANNED_LEARNING_HOURS = 'tLevelPlannedLearningHours';
+    public const T_LEVEL_PLANNED_LEARNING_HOURS = 'tLevelPlannedLearningHours';
 
     protected $_resourceType = ResourceType::UK_DFE_ACADEMIC_YEAR_ENROLMENT;
 
@@ -22,7 +22,7 @@ class AcademicYearEnrolment extends ModelBase
      * @return AcademicYearEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours($plannedLearningHours = null)
+    public function setPlannedLearningHours(int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -80,7 +80,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $plannedEepHours
      */
-    public function setPlannedEepHours($plannedEepHours = null)
+    public function setPlannedEepHours(int $plannedEepHours = null)
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
@@ -96,7 +96,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $tLevelPlannedLearningHours
      */
-    public function setTLevelPlannedLearningHours($tLevelPlannedLearningHours = null)
+    public function setTLevelPlannedLearningHours(int $tLevelPlannedLearningHours = null)
     {
         $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }

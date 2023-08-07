@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CurriculumStatementBand extends ModelBase
+class CurriculumStatementBand extends \ModelBase
 {
-    const CURRICULUM = 'curriculum';
+    public const CURRICULUM = 'curriculum';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
     protected $_resourceType = ResourceType::CURRICULUM_STATEMENT_BAND;
 
@@ -21,7 +21,7 @@ class CurriculumStatementBand extends ModelBase
      * @return CurriculumStatementBand[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param Curriculum $curriculum
      */
-    public function setCurriculum(Curriculum $curriculum = null)
+    public function setCurriculum(\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -79,7 +79,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -95,7 +95,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -111,7 +111,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }

@@ -8,9 +8,9 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\SenNeedType;
 
-class MedicalCondition extends ModelBase
+class MedicalCondition extends \ModelBase
 {
-    const ILR_RETURN_SEN_NEED_TYPE = 'ilrReturnSenNeedType';
+    public const ILR_RETURN_SEN_NEED_TYPE = 'ilrReturnSenNeedType';
 
     protected $_resourceType = ResourceType::UK_ILR_MEDICAL_CONDITION;
 
@@ -19,7 +19,7 @@ class MedicalCondition extends ModelBase
      * @return MedicalCondition[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param SenNeedType $ilrReturnSenNeedType
      */
-    public function setIlrReturnSenNeedType(SenNeedType $ilrReturnSenNeedType = null)
+    public function setIlrReturnSenNeedType(\SenNeedType $ilrReturnSenNeedType = null)
     {
         $this->setProperty('ilrReturnSenNeedType', $ilrReturnSenNeedType);
     }

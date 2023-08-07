@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StandardizedAssessmentBatch extends ModelBase
+class StandardizedAssessmentBatch extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const BATCH_NAME = 'batchName';
+    public const BATCH_NAME = 'batchName';
 
-    const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
+    public const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
-    const ASSESSMENT_DATE = 'assessmentDate';
+    public const ASSESSMENT_DATE = 'assessmentDate';
 
-    const SEN_STUDENTS_ONLY = 'senStudentsOnly';
+    public const SEN_STUDENTS_ONLY = 'senStudentsOnly';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_BATCH;
 
@@ -23,7 +23,7 @@ class StandardizedAssessmentBatch extends ModelBase
      * @return StandardizedAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class StandardizedAssessmentBatch extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -81,7 +81,7 @@ class StandardizedAssessmentBatch extends ModelBase
     /**
      * @param string $batchName
      */
-    public function setBatchName($batchName = null)
+    public function setBatchName(string $batchName = null)
     {
         $this->setProperty('batchName', $batchName);
     }
@@ -97,7 +97,7 @@ class StandardizedAssessmentBatch extends ModelBase
     /**
      * @param StandardizedAssessmentTemplate $standardizedAssessmentTemplate
      */
-    public function setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
+    public function setStandardizedAssessmentTemplate(\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
         $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }
@@ -129,7 +129,7 @@ class StandardizedAssessmentBatch extends ModelBase
     /**
      * @param bool $senStudentsOnly
      */
-    public function setSenStudentsOnly($senStudentsOnly = null)
+    public function setSenStudentsOnly(bool $senStudentsOnly = null)
     {
         $this->setProperty('senStudentsOnly', $senStudentsOnly);
     }

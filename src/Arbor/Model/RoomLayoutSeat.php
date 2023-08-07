@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class RoomLayoutSeat extends ModelBase
+class RoomLayoutSeat extends \ModelBase
 {
-    const ROOM_LAYOUT = 'roomLayout';
+    public const ROOM_LAYOUT = 'roomLayout';
 
-    const X = 'x';
+    public const X = 'x';
 
-    const Y = 'y';
+    public const Y = 'y';
 
     protected $_resourceType = ResourceType::ROOM_LAYOUT_SEAT;
 
@@ -19,7 +19,7 @@ class RoomLayoutSeat extends ModelBase
      * @return RoomLayoutSeat[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param RoomLayout $roomLayout
      */
-    public function setRoomLayout(RoomLayout $roomLayout = null)
+    public function setRoomLayout(\RoomLayout $roomLayout = null)
     {
         $this->setProperty('roomLayout', $roomLayout);
     }
@@ -77,7 +77,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param int $x
      */
-    public function setX($x = null)
+    public function setX(int $x = null)
     {
         $this->setProperty('x', $x);
     }
@@ -93,7 +93,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param int $y
      */
-    public function setY($y = null)
+    public function setY(int $y = null)
     {
         $this->setProperty('y', $y);
     }

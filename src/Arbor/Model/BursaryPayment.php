@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryPayment extends ModelBase
+class BursaryPayment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const BURSARY_LEVEL_AMOUNT = 'bursaryLevelAmount';
+    public const BURSARY_LEVEL_AMOUNT = 'bursaryLevelAmount';
 
-    const BURSARY_PAYMENT_DATE = 'bursaryPaymentDate';
+    public const BURSARY_PAYMENT_DATE = 'bursaryPaymentDate';
 
-    const APPROVED_DATE = 'approvedDate';
+    public const APPROVED_DATE = 'approvedDate';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const REJECTED_DATE = 'rejectedDate';
+    public const REJECTED_DATE = 'rejectedDate';
 
-    const REJECTED_BY_STAFF = 'rejectedByStaff';
+    public const REJECTED_BY_STAFF = 'rejectedByStaff';
 
-    const PAID_DATE = 'paidDate';
+    public const PAID_DATE = 'paidDate';
 
     protected $_resourceType = ResourceType::BURSARY_PAYMENT;
 
@@ -29,7 +29,7 @@ class BursaryPayment extends ModelBase
      * @return BursaryPayment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -87,7 +87,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param BursaryLevelAmount $bursaryLevelAmount
      */
-    public function setBursaryLevelAmount(BursaryLevelAmount $bursaryLevelAmount = null)
+    public function setBursaryLevelAmount(\BursaryLevelAmount $bursaryLevelAmount = null)
     {
         $this->setProperty('bursaryLevelAmount', $bursaryLevelAmount);
     }
@@ -103,7 +103,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param BursaryPaymentDate $bursaryPaymentDate
      */
-    public function setBursaryPaymentDate(BursaryPaymentDate $bursaryPaymentDate = null)
+    public function setBursaryPaymentDate(\BursaryPaymentDate $bursaryPaymentDate = null)
     {
         $this->setProperty('bursaryPaymentDate', $bursaryPaymentDate);
     }
@@ -135,7 +135,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -167,7 +167,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }

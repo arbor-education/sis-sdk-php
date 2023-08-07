@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntakeSeasonGroup extends ModelBase
+class IntakeSeasonGroup extends \ModelBase
 {
-    const GROUP_NAME = 'groupName';
+    public const GROUP_NAME = 'groupName';
 
-    const INTAKE_SEASON = 'intakeSeason';
+    public const INTAKE_SEASON = 'intakeSeason';
 
-    const EXPECTED_ADMISSION_DATE = 'expectedAdmissionDate';
+    public const EXPECTED_ADMISSION_DATE = 'expectedAdmissionDate';
 
     protected $_resourceType = ResourceType::INTAKE_SEASON_GROUP;
 
@@ -19,7 +19,7 @@ class IntakeSeasonGroup extends ModelBase
      * @return IntakeSeasonGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class IntakeSeasonGroup extends ModelBase
     /**
      * @param string $groupName
      */
-    public function setGroupName($groupName = null)
+    public function setGroupName(string $groupName = null)
     {
         $this->setProperty('groupName', $groupName);
     }
@@ -77,7 +77,7 @@ class IntakeSeasonGroup extends ModelBase
     /**
      * @param IntakeSeason $intakeSeason
      */
-    public function setIntakeSeason(IntakeSeason $intakeSeason = null)
+    public function setIntakeSeason(\IntakeSeason $intakeSeason = null)
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }

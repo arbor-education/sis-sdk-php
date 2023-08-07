@@ -4,33 +4,33 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Demographic extends ModelBase
+class Demographic extends \ModelBase
 {
-    const LABEL = 'label';
+    public const LABEL = 'label';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const HAS_INVERSE = 'hasInverse';
+    public const HAS_INVERSE = 'hasInverse';
 
-    const INVERSE_LABEL = 'inverseLabel';
+    public const INVERSE_LABEL = 'inverseLabel';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const CALCULATION_CLASS = 'calculationClass';
+    public const CALCULATION_CLASS = 'calculationClass';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const CALCULATION_PARAMS = 'calculationParams';
+    public const CALCULATION_PARAMS = 'calculationParams';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::DEMOGRAPHIC;
 
@@ -39,7 +39,7 @@ class Demographic extends ModelBase
      * @return Demographic[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +81,7 @@ class Demographic extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel($label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -97,7 +97,7 @@ class Demographic extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -113,7 +113,7 @@ class Demographic extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -129,7 +129,7 @@ class Demographic extends ModelBase
     /**
      * @param bool $hasInverse
      */
-    public function setHasInverse($hasInverse = null)
+    public function setHasInverse(bool $hasInverse = null)
     {
         $this->setProperty('hasInverse', $hasInverse);
     }
@@ -145,7 +145,7 @@ class Demographic extends ModelBase
     /**
      * @param string $inverseLabel
      */
-    public function setInverseLabel($inverseLabel = null)
+    public function setInverseLabel(string $inverseLabel = null)
     {
         $this->setProperty('inverseLabel', $inverseLabel);
     }
@@ -161,7 +161,7 @@ class Demographic extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -177,7 +177,7 @@ class Demographic extends ModelBase
     /**
      * @param string $calculationClass
      */
-    public function setCalculationClass($calculationClass = null)
+    public function setCalculationClass(string $calculationClass = null)
     {
         $this->setProperty('calculationClass', $calculationClass);
     }
@@ -225,7 +225,7 @@ class Demographic extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -241,7 +241,7 @@ class Demographic extends ModelBase
     /**
      * @param string $calculationParams
      */
-    public function setCalculationParams($calculationParams = null)
+    public function setCalculationParams(string $calculationParams = null)
     {
         $this->setProperty('calculationParams', $calculationParams);
     }
@@ -257,7 +257,7 @@ class Demographic extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -273,7 +273,7 @@ class Demographic extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

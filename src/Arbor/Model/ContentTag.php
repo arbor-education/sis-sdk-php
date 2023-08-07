@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ContentTag extends ModelBase
+class ContentTag extends \ModelBase
 {
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const TAGGED = 'tagged';
+    public const TAGGED = 'tagged';
 
-    const TAG_NAME = 'tagName';
+    public const TAG_NAME = 'tagName';
 
-    const TAG_VALUE = 'tagValue';
+    public const TAG_VALUE = 'tagValue';
 
     protected $_resourceType = ResourceType::CONTENT_TAG;
 
@@ -21,7 +21,7 @@ class ContentTag extends ModelBase
      * @return ContentTag[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ContentTag extends ModelBase
     /**
      * @param Content $content
      */
-    public function setContent(Content $content = null)
+    public function setContent(\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -79,7 +79,7 @@ class ContentTag extends ModelBase
     /**
      * @param ModelBase $tagged
      */
-    public function setTagged(ModelBase $tagged = null)
+    public function setTagged(\ModelBase $tagged = null)
     {
         $this->setProperty('tagged', $tagged);
     }
@@ -95,7 +95,7 @@ class ContentTag extends ModelBase
     /**
      * @param string $tagName
      */
-    public function setTagName($tagName = null)
+    public function setTagName(string $tagName = null)
     {
         $this->setProperty('tagName', $tagName);
     }
@@ -111,7 +111,7 @@ class ContentTag extends ModelBase
     /**
      * @param string $tagValue
      */
-    public function setTagValue($tagValue = null)
+    public function setTagValue(string $tagValue = null)
     {
         $this->setProperty('tagValue', $tagValue);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PhysicalInterventionTechnique extends ModelBase
+class PhysicalInterventionTechnique extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
     protected $_resourceType = ResourceType::PHYSICAL_INTERVENTION_TECHNIQUE;
 
@@ -17,7 +17,7 @@ class PhysicalInterventionTechnique extends ModelBase
      * @return PhysicalInterventionTechnique[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class PhysicalInterventionTechnique extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -75,7 +75,7 @@ class PhysicalInterventionTechnique extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }

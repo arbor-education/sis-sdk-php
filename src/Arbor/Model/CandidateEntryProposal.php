@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CandidateEntryProposal extends ModelBase
+class CandidateEntryProposal extends \ModelBase
 {
-    const CANDIDATE_PROPOSAL = 'candidateProposal';
+    public const CANDIDATE_PROPOSAL = 'candidateProposal';
 
-    const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
+    public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
+    public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
-    const REJECTED_BY_STAFF = 'rejectedByStaff';
+    public const REJECTED_BY_STAFF = 'rejectedByStaff';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
     protected $_resourceType = ResourceType::CANDIDATE_ENTRY_PROPOSAL;
 
@@ -27,7 +27,7 @@ class CandidateEntryProposal extends ModelBase
      * @return CandidateEntryProposal[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class CandidateEntryProposal extends ModelBase
     /**
      * @param CandidateProposal $candidateProposal
      */
-    public function setCandidateProposal(CandidateProposal $candidateProposal = null)
+    public function setCandidateProposal(\CandidateProposal $candidateProposal = null)
     {
         $this->setProperty('candidateProposal', $candidateProposal);
     }
@@ -85,7 +85,7 @@ class CandidateEntryProposal extends ModelBase
     /**
      * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -101,7 +101,7 @@ class CandidateEntryProposal extends ModelBase
     /**
      * @param QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -117,7 +117,7 @@ class CandidateEntryProposal extends ModelBase
     /**
      * @param Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -149,7 +149,7 @@ class CandidateEntryProposal extends ModelBase
     /**
      * @param Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }

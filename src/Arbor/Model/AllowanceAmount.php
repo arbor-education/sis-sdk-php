@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AllowanceAmount extends ModelBase
+class AllowanceAmount extends \ModelBase
 {
-    const ALLOWANCE = 'allowance';
+    public const ALLOWANCE = 'allowance';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const ALLOWANCE_AMOUNT = 'allowanceAmount';
+    public const ALLOWANCE_AMOUNT = 'allowanceAmount';
 
     protected $_resourceType = ResourceType::ALLOWANCE_AMOUNT;
 
@@ -21,7 +21,7 @@ class AllowanceAmount extends ModelBase
      * @return AllowanceAmount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param Allowance $allowance
      */
-    public function setAllowance(Allowance $allowance = null)
+    public function setAllowance(\Allowance $allowance = null)
     {
         $this->setProperty('allowance', $allowance);
     }
@@ -111,7 +111,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param string $allowanceAmount
      */
-    public function setAllowanceAmount($allowanceAmount = null)
+    public function setAllowanceAmount(string $allowanceAmount = null)
     {
         $this->setProperty('allowanceAmount', $allowanceAmount);
     }

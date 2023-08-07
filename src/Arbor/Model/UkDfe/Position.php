@@ -7,13 +7,13 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Position extends ModelBase
+class Position extends \ModelBase
 {
-    const POSITION_CATEGORY = 'positionCategory';
+    public const POSITION_CATEGORY = 'positionCategory';
 
-    const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
+    public const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
 
-    const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
+    public const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
 
     protected $_resourceType = ResourceType::UK_DFE_POSITION;
 
@@ -22,7 +22,7 @@ class Position extends ModelBase
      * @return Position[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class Position extends ModelBase
     /**
      * @param PositionCategory $positionCategory
      */
-    public function setPositionCategory(PositionCategory $positionCategory = null)
+    public function setPositionCategory(\PositionCategory $positionCategory = null)
     {
         $this->setProperty('positionCategory', $positionCategory);
     }
@@ -80,7 +80,7 @@ class Position extends ModelBase
     /**
      * @param SchoolWorkforceVacancyPost $workforceVacancyPost
      */
-    public function setWorkforceVacancyPost(SchoolWorkforceVacancyPost $workforceVacancyPost = null)
+    public function setWorkforceVacancyPost(\SchoolWorkforceVacancyPost $workforceVacancyPost = null)
     {
         $this->setProperty('workforceVacancyPost', $workforceVacancyPost);
     }
@@ -96,7 +96,7 @@ class Position extends ModelBase
     /**
      * @param string $workforceCensusRoleIdentifier
      */
-    public function setWorkforceCensusRoleIdentifier($workforceCensusRoleIdentifier = null)
+    public function setWorkforceCensusRoleIdentifier(string $workforceCensusRoleIdentifier = null)
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }

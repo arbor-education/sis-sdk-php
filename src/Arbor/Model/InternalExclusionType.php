@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InternalExclusionType extends ModelBase
+class InternalExclusionType extends \ModelBase
 {
-    const INTERNAL_EXCLUSION_TYPE_NAME = 'internalExclusionTypeName';
+    public const INTERNAL_EXCLUSION_TYPE_NAME = 'internalExclusionTypeName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
     protected $_resourceType = ResourceType::INTERNAL_EXCLUSION_TYPE;
 
@@ -17,7 +17,7 @@ class InternalExclusionType extends ModelBase
      * @return InternalExclusionType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class InternalExclusionType extends ModelBase
     /**
      * @param string $internalExclusionTypeName
      */
-    public function setInternalExclusionTypeName($internalExclusionTypeName = null)
+    public function setInternalExclusionTypeName(string $internalExclusionTypeName = null)
     {
         $this->setProperty('internalExclusionTypeName', $internalExclusionTypeName);
     }
@@ -75,7 +75,7 @@ class InternalExclusionType extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

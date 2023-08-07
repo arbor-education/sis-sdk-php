@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentBursaryLevel extends ModelBase
+class StudentBursaryLevel extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const BURSARY_LEVEL = 'bursaryLevel';
+    public const BURSARY_LEVEL = 'bursaryLevel';
 
-    const STUDENT_FUNDING = 'studentFunding';
+    public const STUDENT_FUNDING = 'studentFunding';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STUDENT_BURSARY_LEVEL;
 
@@ -23,7 +23,7 @@ class StudentBursaryLevel extends ModelBase
      * @return StudentBursaryLevel[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -81,7 +81,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param BursaryLevel $bursaryLevel
      */
-    public function setBursaryLevel(BursaryLevel $bursaryLevel = null)
+    public function setBursaryLevel(\BursaryLevel $bursaryLevel = null)
     {
         $this->setProperty('bursaryLevel', $bursaryLevel);
     }
@@ -97,7 +97,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param StudentFunding $studentFunding
      */
-    public function setStudentFunding(StudentFunding $studentFunding = null)
+    public function setStudentFunding(\StudentFunding $studentFunding = null)
     {
         $this->setProperty('studentFunding', $studentFunding);
     }

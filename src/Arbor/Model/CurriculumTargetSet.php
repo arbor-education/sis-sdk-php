@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CurriculumTargetSet extends ModelBase
+class CurriculumTargetSet extends \ModelBase
 {
-    const CURRICULUM = 'curriculum';
+    public const CURRICULUM = 'curriculum';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::CURRICULUM_TARGET_SET;
 
@@ -23,7 +23,7 @@ class CurriculumTargetSet extends ModelBase
      * @return CurriculumTargetSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param Curriculum $curriculum
      */
-    public function setCurriculum(Curriculum $curriculum = null)
+    public function setCurriculum(\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -81,7 +81,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -97,7 +97,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

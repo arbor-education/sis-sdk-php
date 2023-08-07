@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CalendarType extends ModelBase
+class CalendarType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const CALENDAR_TYPE_NAME = 'calendarTypeName';
+    public const CALENDAR_TYPE_NAME = 'calendarTypeName';
 
-    const CALENDAR_TYPE_COLOR = 'calendarTypeColor';
+    public const CALENDAR_TYPE_COLOR = 'calendarTypeColor';
 
     protected $_resourceType = ResourceType::CALENDAR_TYPE;
 
@@ -23,7 +23,7 @@ class CalendarType extends ModelBase
      * @return CalendarType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class CalendarType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +81,7 @@ class CalendarType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +97,7 @@ class CalendarType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +113,7 @@ class CalendarType extends ModelBase
     /**
      * @param string $calendarTypeName
      */
-    public function setCalendarTypeName($calendarTypeName = null)
+    public function setCalendarTypeName(string $calendarTypeName = null)
     {
         $this->setProperty('calendarTypeName', $calendarTypeName);
     }
@@ -129,7 +129,7 @@ class CalendarType extends ModelBase
     /**
      * @param string $calendarTypeColor
      */
-    public function setCalendarTypeColor($calendarTypeColor = null)
+    public function setCalendarTypeColor(string $calendarTypeColor = null)
     {
         $this->setProperty('calendarTypeColor', $calendarTypeColor);
     }

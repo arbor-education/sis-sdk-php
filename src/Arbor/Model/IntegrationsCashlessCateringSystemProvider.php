@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntegrationsCashlessCateringSystemProvider extends ModelBase
+class IntegrationsCashlessCateringSystemProvider extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
+    public const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
 
-    const PROVIDER = 'provider';
+    public const PROVIDER = 'provider';
 
-    const ENABLED = 'enabled';
+    public const ENABLED = 'enabled';
 
     protected $_resourceType = ResourceType::INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER;
 
@@ -21,7 +21,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
      * @return IntegrationsCashlessCateringSystemProvider[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -95,7 +95,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider($provider = null)
+    public function setProvider(string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -111,7 +111,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled($enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }

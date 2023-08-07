@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntegrationsHrFinanceMappingStatus extends ModelBase
+class IntegrationsHrFinanceMappingStatus extends \ModelBase
 {
-    const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
+    public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
 
-    const ERRORS = 'errors';
+    public const ERRORS = 'errors';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const MAPPING_TYPE = 'mappingType';
+    public const MAPPING_TYPE = 'mappingType';
 
     protected $_resourceType = ResourceType::INTEGRATIONS_HR_FINANCE_MAPPING_STATUS;
 
@@ -21,7 +21,7 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
      * @return IntegrationsHrFinanceMappingStatus[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
     /**
      * @param IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
      */
-    public function setIntegrationsHrFinanceProvider(IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
+    public function setIntegrationsHrFinanceProvider(\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
     {
         $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
@@ -79,7 +79,7 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors($errors = null)
+    public function setErrors(string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -95,7 +95,7 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -111,7 +111,7 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
     /**
      * @param string $mappingType
      */
-    public function setMappingType($mappingType = null)
+    public function setMappingType(string $mappingType = null)
     {
         $this->setProperty('mappingType', $mappingType);
     }

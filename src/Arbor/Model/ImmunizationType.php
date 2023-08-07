@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ImmunizationType extends ModelBase
+class ImmunizationType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const IMMUNIZATION_TYPE_NAME = 'immunizationTypeName';
+    public const IMMUNIZATION_TYPE_NAME = 'immunizationTypeName';
 
     protected $_resourceType = ResourceType::IMMUNIZATION_TYPE;
 
@@ -21,7 +21,7 @@ class ImmunizationType extends ModelBase
      * @return ImmunizationType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class ImmunizationType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -79,7 +79,7 @@ class ImmunizationType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -95,7 +95,7 @@ class ImmunizationType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -111,7 +111,7 @@ class ImmunizationType extends ModelBase
     /**
      * @param string $immunizationTypeName
      */
-    public function setImmunizationTypeName($immunizationTypeName = null)
+    public function setImmunizationTypeName(string $immunizationTypeName = null)
     {
         $this->setProperty('immunizationTypeName', $immunizationTypeName);
     }

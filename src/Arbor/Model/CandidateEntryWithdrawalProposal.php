@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CandidateEntryWithdrawalProposal extends ModelBase
+class CandidateEntryWithdrawalProposal extends \ModelBase
 {
-    const CANDIDATE_PROPOSAL = 'candidateProposal';
+    public const CANDIDATE_PROPOSAL = 'candidateProposal';
 
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
-    const REJECTED_BY_STAFF = 'rejectedByStaff';
+    public const REJECTED_BY_STAFF = 'rejectedByStaff';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
     protected $_resourceType = ResourceType::CANDIDATE_ENTRY_WITHDRAWAL_PROPOSAL;
 
@@ -25,7 +25,7 @@ class CandidateEntryWithdrawalProposal extends ModelBase
      * @return CandidateEntryWithdrawalProposal[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class CandidateEntryWithdrawalProposal extends ModelBase
     /**
      * @param CandidateProposal $candidateProposal
      */
-    public function setCandidateProposal(CandidateProposal $candidateProposal = null)
+    public function setCandidateProposal(\CandidateProposal $candidateProposal = null)
     {
         $this->setProperty('candidateProposal', $candidateProposal);
     }
@@ -83,7 +83,7 @@ class CandidateEntryWithdrawalProposal extends ModelBase
     /**
      * @param Candidate $candidateEntry
      */
-    public function setCandidateEntry(Candidate $candidateEntry = null)
+    public function setCandidateEntry(\Candidate $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -99,7 +99,7 @@ class CandidateEntryWithdrawalProposal extends ModelBase
     /**
      * @param Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -131,7 +131,7 @@ class CandidateEntryWithdrawalProposal extends ModelBase
     /**
      * @param Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }

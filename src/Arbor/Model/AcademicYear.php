@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicYear extends ModelBase
+class AcademicYear extends \ModelBase
 {
-    const ACADEMIC_YEAR_NAME = 'academicYearName';
+    public const ACADEMIC_YEAR_NAME = 'academicYearName';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const TIMETABLE_CYCLE_LENGTH = 'timetableCycleLength';
+    public const TIMETABLE_CYCLE_LENGTH = 'timetableCycleLength';
 
     protected $_resourceType = ResourceType::ACADEMIC_YEAR;
 
@@ -23,7 +23,7 @@ class AcademicYear extends ModelBase
      * @return AcademicYear[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AcademicYear extends ModelBase
     /**
      * @param string $academicYearName
      */
-    public function setAcademicYearName($academicYearName = null)
+    public function setAcademicYearName(string $academicYearName = null)
     {
         $this->setProperty('academicYearName', $academicYearName);
     }
@@ -81,7 +81,7 @@ class AcademicYear extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -129,7 +129,7 @@ class AcademicYear extends ModelBase
     /**
      * @param int $timetableCycleLength
      */
-    public function setTimetableCycleLength($timetableCycleLength = null)
+    public function setTimetableCycleLength(int $timetableCycleLength = null)
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }

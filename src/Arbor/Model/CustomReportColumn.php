@@ -4,31 +4,31 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReportColumn extends ModelBase
+class CustomReportColumn extends \ModelBase
 {
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const FIELD_CLASS = 'fieldClass';
+    public const FIELD_CLASS = 'fieldClass';
 
-    const FIELD_PARAMS = 'fieldParams';
+    public const FIELD_PARAMS = 'fieldParams';
 
-    const TARGET_GROUPING = 'targetGrouping';
+    public const TARGET_GROUPING = 'targetGrouping';
 
-    const TRANSFORMATION_CLASS = 'transformationClass';
+    public const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
-    const FORMATTER_CLASS = 'formatterClass';
+    public const FORMATTER_CLASS = 'formatterClass';
 
-    const LOCKED = 'locked';
+    public const LOCKED = 'locked';
 
-    const CUSTOM_LABEL = 'customLabel';
+    public const CUSTOM_LABEL = 'customLabel';
 
-    const SUMMARY_ROW_FORMULA_CLASS = 'summaryRowFormulaClass';
+    public const SUMMARY_ROW_FORMULA_CLASS = 'summaryRowFormulaClass';
 
-    const IS_HIDDEN = 'isHidden';
+    public const IS_HIDDEN = 'isHidden';
 
-    const IS_SOURCE_UPDATE_PERMITTED = 'isSourceUpdatePermitted';
+    public const IS_SOURCE_UPDATE_PERMITTED = 'isSourceUpdatePermitted';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_COLUMN;
 
@@ -37,7 +37,7 @@ class CustomReportColumn extends ModelBase
      * @return CustomReportColumn[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -95,7 +95,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass($fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -111,7 +111,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams($fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -127,7 +127,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param CustomReportGrouping $targetGrouping
      */
-    public function setTargetGrouping(CustomReportGrouping $targetGrouping = null)
+    public function setTargetGrouping(\CustomReportGrouping $targetGrouping = null)
     {
         $this->setProperty('targetGrouping', $targetGrouping);
     }
@@ -143,7 +143,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass($transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -159,7 +159,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -175,7 +175,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param string $formatterClass
      */
-    public function setFormatterClass($formatterClass = null)
+    public function setFormatterClass(string $formatterClass = null)
     {
         $this->setProperty('formatterClass', $formatterClass);
     }
@@ -191,7 +191,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param bool $locked
      */
-    public function setLocked($locked = null)
+    public function setLocked(bool $locked = null)
     {
         $this->setProperty('locked', $locked);
     }
@@ -207,7 +207,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param string $customLabel
      */
-    public function setCustomLabel($customLabel = null)
+    public function setCustomLabel(string $customLabel = null)
     {
         $this->setProperty('customLabel', $customLabel);
     }
@@ -223,7 +223,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param string $summaryRowFormulaClass
      */
-    public function setSummaryRowFormulaClass($summaryRowFormulaClass = null)
+    public function setSummaryRowFormulaClass(string $summaryRowFormulaClass = null)
     {
         $this->setProperty('summaryRowFormulaClass', $summaryRowFormulaClass);
     }
@@ -239,7 +239,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param bool $isHidden
      */
-    public function setIsHidden($isHidden = null)
+    public function setIsHidden(bool $isHidden = null)
     {
         $this->setProperty('isHidden', $isHidden);
     }
@@ -255,7 +255,7 @@ class CustomReportColumn extends ModelBase
     /**
      * @param bool $isSourceUpdatePermitted
      */
-    public function setIsSourceUpdatePermitted($isSourceUpdatePermitted = null)
+    public function setIsSourceUpdatePermitted(bool $isSourceUpdatePermitted = null)
     {
         $this->setProperty('isSourceUpdatePermitted', $isSourceUpdatePermitted);
     }

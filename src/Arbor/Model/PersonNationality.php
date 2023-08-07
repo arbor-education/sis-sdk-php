@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonNationality extends ModelBase
+class PersonNationality extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const COUNTRY = 'country';
+    public const COUNTRY = 'country';
 
-    const NATIONALITY_STATUS = 'nationalityStatus';
+    public const NATIONALITY_STATUS = 'nationalityStatus';
 
     protected $_resourceType = ResourceType::PERSON_NATIONALITY;
 
@@ -19,7 +19,7 @@ class PersonNationality extends ModelBase
      * @return PersonNationality[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class PersonNationality extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -77,7 +77,7 @@ class PersonNationality extends ModelBase
     /**
      * @param Country $country
      */
-    public function setCountry(Country $country = null)
+    public function setCountry(\Country $country = null)
     {
         $this->setProperty('country', $country);
     }
@@ -93,7 +93,7 @@ class PersonNationality extends ModelBase
     /**
      * @param NationalityStatus $nationalityStatus
      */
-    public function setNationalityStatus(NationalityStatus $nationalityStatus = null)
+    public function setNationalityStatus(\NationalityStatus $nationalityStatus = null)
     {
         $this->setProperty('nationalityStatus', $nationalityStatus);
     }

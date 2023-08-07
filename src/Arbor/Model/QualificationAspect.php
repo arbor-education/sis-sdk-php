@@ -4,35 +4,35 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationAspect extends ModelBase
+class QualificationAspect extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const QUALIFICATION_ELEMENT = 'qualificationElement';
+    public const QUALIFICATION_ELEMENT = 'qualificationElement';
 
-    const GRADE_INDEX = 'gradeIndex';
+    public const GRADE_INDEX = 'gradeIndex';
 
-    const NUMERIC_MARK_TYPE = 'numericMarkType';
+    public const NUMERIC_MARK_TYPE = 'numericMarkType';
 
-    const DECIMAL_PLACES = 'decimalPlaces';
+    public const DECIMAL_PLACES = 'decimalPlaces';
 
-    const MINIMUM_NUMERIC_VALUE = 'minimumNumericValue';
+    public const MINIMUM_NUMERIC_VALUE = 'minimumNumericValue';
 
-    const MAXIMUM_NUMERIC_VALUE = 'maximumNumericValue';
+    public const MAXIMUM_NUMERIC_VALUE = 'maximumNumericValue';
 
-    const RESULT_GRADE_SET = 'resultGradeSet';
+    public const RESULT_GRADE_SET = 'resultGradeSet';
 
-    const FORECAST_GRADE_SET = 'forecastGradeSet';
+    public const FORECAST_GRADE_SET = 'forecastGradeSet';
 
-    const ENDORSEMENT_GRADE_SET = 'endorsementGradeSet';
+    public const ENDORSEMENT_GRADE_SET = 'endorsementGradeSet';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ASPECT;
 
@@ -41,7 +41,7 @@ class QualificationAspect extends ModelBase
      * @return QualificationAspect[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +83,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -99,7 +99,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -115,7 +115,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -131,7 +131,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param ModelBase $qualificationElement
      */
-    public function setQualificationElement(ModelBase $qualificationElement = null)
+    public function setQualificationElement(\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
@@ -147,7 +147,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $gradeIndex
      */
-    public function setGradeIndex($gradeIndex = null)
+    public function setGradeIndex(int $gradeIndex = null)
     {
         $this->setProperty('gradeIndex', $gradeIndex);
     }
@@ -163,7 +163,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param string $numericMarkType
      */
-    public function setNumericMarkType($numericMarkType = null)
+    public function setNumericMarkType(string $numericMarkType = null)
     {
         $this->setProperty('numericMarkType', $numericMarkType);
     }
@@ -179,7 +179,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $decimalPlaces
      */
-    public function setDecimalPlaces($decimalPlaces = null)
+    public function setDecimalPlaces(int $decimalPlaces = null)
     {
         $this->setProperty('decimalPlaces', $decimalPlaces);
     }
@@ -195,7 +195,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param float $minimumNumericValue
      */
-    public function setMinimumNumericValue($minimumNumericValue = null)
+    public function setMinimumNumericValue(float $minimumNumericValue = null)
     {
         $this->setProperty('minimumNumericValue', $minimumNumericValue);
     }
@@ -211,7 +211,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param float $maximumNumericValue
      */
-    public function setMaximumNumericValue($maximumNumericValue = null)
+    public function setMaximumNumericValue(float $maximumNumericValue = null)
     {
         $this->setProperty('maximumNumericValue', $maximumNumericValue);
     }
@@ -227,7 +227,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param QualificationGradeSet $resultGradeSet
      */
-    public function setResultGradeSet(QualificationGradeSet $resultGradeSet = null)
+    public function setResultGradeSet(\QualificationGradeSet $resultGradeSet = null)
     {
         $this->setProperty('resultGradeSet', $resultGradeSet);
     }
@@ -243,7 +243,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param QualificationGradeSet $forecastGradeSet
      */
-    public function setForecastGradeSet(QualificationGradeSet $forecastGradeSet = null)
+    public function setForecastGradeSet(\QualificationGradeSet $forecastGradeSet = null)
     {
         $this->setProperty('forecastGradeSet', $forecastGradeSet);
     }
@@ -259,7 +259,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param QualificationGradeSet $endorsementGradeSet
      */
-    public function setEndorsementGradeSet(QualificationGradeSet $endorsementGradeSet = null)
+    public function setEndorsementGradeSet(\QualificationGradeSet $endorsementGradeSet = null)
     {
         $this->setProperty('endorsementGradeSet', $endorsementGradeSet);
     }

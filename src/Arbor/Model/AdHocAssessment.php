@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AdHocAssessment extends ModelBase
+class AdHocAssessment extends \ModelBase
 {
-    const AD_HOC_ASSESSMENT_CATEGORY = 'adHocAssessmentCategory';
+    public const AD_HOC_ASSESSMENT_CATEGORY = 'adHocAssessmentCategory';
 
-    const ASSESSMENT_NAME = 'assessmentName';
+    public const ASSESSMENT_NAME = 'assessmentName';
 
-    const ASSESSMENT_CODE = 'assessmentCode';
+    public const ASSESSMENT_CODE = 'assessmentCode';
 
-    const MARK_DATA_TYPE = 'markDataType';
+    public const MARK_DATA_TYPE = 'markDataType';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
-    const NUMBER_FORMAT = 'numberFormat';
+    public const NUMBER_FORMAT = 'numberFormat';
 
-    const NUMBER_UNIT = 'numberUnit';
+    public const NUMBER_UNIT = 'numberUnit';
 
-    const CURRICULUM_TIER = 'curriculumTier';
+    public const CURRICULUM_TIER = 'curriculumTier';
 
-    const CURRICULUM_GRADE = 'curriculumGrade';
+    public const CURRICULUM_GRADE = 'curriculumGrade';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const ASSESSMENT_STRATEGY = 'assessmentStrategy';
+    public const ASSESSMENT_STRATEGY = 'assessmentStrategy';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT;
 
@@ -35,7 +35,7 @@ class AdHocAssessment extends ModelBase
      * @return AdHocAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param AdHocAssessmentCategory $adHocAssessmentCategory
      */
-    public function setAdHocAssessmentCategory(AdHocAssessmentCategory $adHocAssessmentCategory = null)
+    public function setAdHocAssessmentCategory(\AdHocAssessmentCategory $adHocAssessmentCategory = null)
     {
         $this->setProperty('adHocAssessmentCategory', $adHocAssessmentCategory);
     }
@@ -93,7 +93,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName($assessmentName = null)
+    public function setAssessmentName(string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -109,7 +109,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentCode
      */
-    public function setAssessmentCode($assessmentCode = null)
+    public function setAssessmentCode(string $assessmentCode = null)
     {
         $this->setProperty('assessmentCode', $assessmentCode);
     }
@@ -125,7 +125,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $markDataType
      */
-    public function setMarkDataType($markDataType = null)
+    public function setMarkDataType(string $markDataType = null)
     {
         $this->setProperty('markDataType', $markDataType);
     }
@@ -141,7 +141,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -157,7 +157,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $numberFormat
      */
-    public function setNumberFormat($numberFormat = null)
+    public function setNumberFormat(string $numberFormat = null)
     {
         $this->setProperty('numberFormat', $numberFormat);
     }
@@ -173,7 +173,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $numberUnit
      */
-    public function setNumberUnit($numberUnit = null)
+    public function setNumberUnit(string $numberUnit = null)
     {
         $this->setProperty('numberUnit', $numberUnit);
     }
@@ -189,7 +189,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -205,7 +205,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -221,7 +221,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -237,7 +237,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentStrategy
      */
-    public function setAssessmentStrategy($assessmentStrategy = null)
+    public function setAssessmentStrategy(string $assessmentStrategy = null)
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }

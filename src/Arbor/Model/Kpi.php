@@ -4,43 +4,43 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Kpi extends ModelBase
+class Kpi extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const KPI_NAME = 'kpiName';
+    public const KPI_NAME = 'kpiName';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const CATEGORY = 'category';
+    public const CATEGORY = 'category';
 
-    const CALCULATION_CLASS = 'calculationClass';
+    public const CALCULATION_CLASS = 'calculationClass';
 
-    const CALCULATION_CLASS_PARAMS = 'calculationClassParams';
+    public const CALCULATION_CLASS_PARAMS = 'calculationClassParams';
 
-    const DIRECTION = 'direction';
+    public const DIRECTION = 'direction';
 
-    const VALUE_TYPE = 'valueType';
+    public const VALUE_TYPE = 'valueType';
 
-    const DATE_RANGE_PERIOD_TYPE = 'dateRangePeriodType';
+    public const DATE_RANGE_PERIOD_TYPE = 'dateRangePeriodType';
 
-    const DATE_RANGE_PERIOD_COUNT = 'dateRangePeriodCount';
+    public const DATE_RANGE_PERIOD_COUNT = 'dateRangePeriodCount';
 
-    const DATE_RANGE_PERIOD_OFFSET = 'dateRangePeriodOffset';
+    public const DATE_RANGE_PERIOD_OFFSET = 'dateRangePeriodOffset';
 
-    const DECIMAL_PLACES = 'decimalPlaces';
+    public const DECIMAL_PLACES = 'decimalPlaces';
 
-    const SIGNIFICANT_FIGURES = 'significantFigures';
+    public const SIGNIFICANT_FIGURES = 'significantFigures';
 
-    const CALCULATE_FOR_SCHOOL = 'calculateForSchool';
+    public const CALCULATE_FOR_SCHOOL = 'calculateForSchool';
 
-    const CALCULATE_FOR_GROUPS = 'calculateForGroups';
+    public const CALCULATE_FOR_GROUPS = 'calculateForGroups';
 
-    const CALCULATE_FOR_ACADEMIC_UNITS = 'calculateForAcademicUnits';
+    public const CALCULATE_FOR_ACADEMIC_UNITS = 'calculateForAcademicUnits';
 
-    const CALCULATE_FOR_STUDENTS = 'calculateForStudents';
+    public const CALCULATE_FOR_STUDENTS = 'calculateForStudents';
 
-    const CALCULATE_FOR_STUDENT_ACADEMIC_UNIT_ENROLMENTS = 'calculateForStudentAcademicUnitEnrolments';
+    public const CALCULATE_FOR_STUDENT_ACADEMIC_UNIT_ENROLMENTS = 'calculateForStudentAcademicUnitEnrolments';
 
     protected $_resourceType = ResourceType::KPI;
 
@@ -49,7 +49,7 @@ class Kpi extends ModelBase
      * @return Kpi[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -91,7 +91,7 @@ class Kpi extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -107,7 +107,7 @@ class Kpi extends ModelBase
     /**
      * @param string $kpiName
      */
-    public function setKpiName($kpiName = null)
+    public function setKpiName(string $kpiName = null)
     {
         $this->setProperty('kpiName', $kpiName);
     }
@@ -123,7 +123,7 @@ class Kpi extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -139,7 +139,7 @@ class Kpi extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory($category = null)
+    public function setCategory(string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -155,7 +155,7 @@ class Kpi extends ModelBase
     /**
      * @param string $calculationClass
      */
-    public function setCalculationClass($calculationClass = null)
+    public function setCalculationClass(string $calculationClass = null)
     {
         $this->setProperty('calculationClass', $calculationClass);
     }
@@ -171,7 +171,7 @@ class Kpi extends ModelBase
     /**
      * @param string $calculationClassParams
      */
-    public function setCalculationClassParams($calculationClassParams = null)
+    public function setCalculationClassParams(string $calculationClassParams = null)
     {
         $this->setProperty('calculationClassParams', $calculationClassParams);
     }
@@ -187,7 +187,7 @@ class Kpi extends ModelBase
     /**
      * @param string $direction
      */
-    public function setDirection($direction = null)
+    public function setDirection(string $direction = null)
     {
         $this->setProperty('direction', $direction);
     }
@@ -203,7 +203,7 @@ class Kpi extends ModelBase
     /**
      * @param string $valueType
      */
-    public function setValueType($valueType = null)
+    public function setValueType(string $valueType = null)
     {
         $this->setProperty('valueType', $valueType);
     }
@@ -219,7 +219,7 @@ class Kpi extends ModelBase
     /**
      * @param string $dateRangePeriodType
      */
-    public function setDateRangePeriodType($dateRangePeriodType = null)
+    public function setDateRangePeriodType(string $dateRangePeriodType = null)
     {
         $this->setProperty('dateRangePeriodType', $dateRangePeriodType);
     }
@@ -235,7 +235,7 @@ class Kpi extends ModelBase
     /**
      * @param int $dateRangePeriodCount
      */
-    public function setDateRangePeriodCount($dateRangePeriodCount = null)
+    public function setDateRangePeriodCount(int $dateRangePeriodCount = null)
     {
         $this->setProperty('dateRangePeriodCount', $dateRangePeriodCount);
     }
@@ -251,7 +251,7 @@ class Kpi extends ModelBase
     /**
      * @param int $dateRangePeriodOffset
      */
-    public function setDateRangePeriodOffset($dateRangePeriodOffset = null)
+    public function setDateRangePeriodOffset(int $dateRangePeriodOffset = null)
     {
         $this->setProperty('dateRangePeriodOffset', $dateRangePeriodOffset);
     }
@@ -267,7 +267,7 @@ class Kpi extends ModelBase
     /**
      * @param int $decimalPlaces
      */
-    public function setDecimalPlaces($decimalPlaces = null)
+    public function setDecimalPlaces(int $decimalPlaces = null)
     {
         $this->setProperty('decimalPlaces', $decimalPlaces);
     }
@@ -283,7 +283,7 @@ class Kpi extends ModelBase
     /**
      * @param int $significantFigures
      */
-    public function setSignificantFigures($significantFigures = null)
+    public function setSignificantFigures(int $significantFigures = null)
     {
         $this->setProperty('significantFigures', $significantFigures);
     }
@@ -299,7 +299,7 @@ class Kpi extends ModelBase
     /**
      * @param bool $calculateForSchool
      */
-    public function setCalculateForSchool($calculateForSchool = null)
+    public function setCalculateForSchool(bool $calculateForSchool = null)
     {
         $this->setProperty('calculateForSchool', $calculateForSchool);
     }
@@ -315,7 +315,7 @@ class Kpi extends ModelBase
     /**
      * @param bool $calculateForGroups
      */
-    public function setCalculateForGroups($calculateForGroups = null)
+    public function setCalculateForGroups(bool $calculateForGroups = null)
     {
         $this->setProperty('calculateForGroups', $calculateForGroups);
     }
@@ -331,7 +331,7 @@ class Kpi extends ModelBase
     /**
      * @param bool $calculateForAcademicUnits
      */
-    public function setCalculateForAcademicUnits($calculateForAcademicUnits = null)
+    public function setCalculateForAcademicUnits(bool $calculateForAcademicUnits = null)
     {
         $this->setProperty('calculateForAcademicUnits', $calculateForAcademicUnits);
     }
@@ -347,7 +347,7 @@ class Kpi extends ModelBase
     /**
      * @param bool $calculateForStudents
      */
-    public function setCalculateForStudents($calculateForStudents = null)
+    public function setCalculateForStudents(bool $calculateForStudents = null)
     {
         $this->setProperty('calculateForStudents', $calculateForStudents);
     }
@@ -363,7 +363,7 @@ class Kpi extends ModelBase
     /**
      * @param bool $calculateForStudentAcademicUnitEnrolments
      */
-    public function setCalculateForStudentAcademicUnitEnrolments($calculateForStudentAcademicUnitEnrolments = null)
+    public function setCalculateForStudentAcademicUnitEnrolments(bool $calculateForStudentAcademicUnitEnrolments = null)
     {
         $this->setProperty('calculateForStudentAcademicUnitEnrolments', $calculateForStudentAcademicUnitEnrolments);
     }

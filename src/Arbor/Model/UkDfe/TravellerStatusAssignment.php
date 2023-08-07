@@ -8,17 +8,17 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class TravellerStatusAssignment extends ModelBase
+class TravellerStatusAssignment extends \ModelBase
 {
-    const TRAVELLER_STATUS = 'travellerStatus';
+    public const TRAVELLER_STATUS = 'travellerStatus';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const INFORMATION_SOURCE = 'informationSource';
+    public const INFORMATION_SOURCE = 'informationSource';
 
     protected $_resourceType = ResourceType::UK_DFE_TRAVELLER_STATUS_ASSIGNMENT;
 
@@ -27,7 +27,7 @@ class TravellerStatusAssignment extends ModelBase
      * @return TravellerStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class TravellerStatusAssignment extends ModelBase
     /**
      * @param TravellerStatus $travellerStatus
      */
-    public function setTravellerStatus(TravellerStatus $travellerStatus = null)
+    public function setTravellerStatus(\TravellerStatus $travellerStatus = null)
     {
         $this->setProperty('travellerStatus', $travellerStatus);
     }
@@ -85,7 +85,7 @@ class TravellerStatusAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -133,7 +133,7 @@ class TravellerStatusAssignment extends ModelBase
     /**
      * @param string $informationSource
      */
-    public function setInformationSource($informationSource = null)
+    public function setInformationSource(string $informationSource = null)
     {
         $this->setProperty('informationSource', $informationSource);
     }

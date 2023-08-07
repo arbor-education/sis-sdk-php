@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StandardizedAssessment extends ModelBase
+class StandardizedAssessment extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ASSESSMENT_NAME = 'assessmentName';
+    public const ASSESSMENT_NAME = 'assessmentName';
 
-    const ASSESSMENT_SHORT_NAME = 'assessmentShortName';
+    public const ASSESSMENT_SHORT_NAME = 'assessmentShortName';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const GRADE_POINT_SCALE = 'gradePointScale';
+    public const GRADE_POINT_SCALE = 'gradePointScale';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT;
 
@@ -27,7 +27,7 @@ class StandardizedAssessment extends ModelBase
      * @return StandardizedAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +85,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +101,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +117,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName($assessmentName = null)
+    public function setAssessmentName(string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -133,7 +133,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param string $assessmentShortName
      */
-    public function setAssessmentShortName($assessmentShortName = null)
+    public function setAssessmentShortName(string $assessmentShortName = null)
     {
         $this->setProperty('assessmentShortName', $assessmentShortName);
     }
@@ -149,7 +149,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -165,7 +165,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param GradePointScale $gradePointScale
      */
-    public function setGradePointScale(GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }

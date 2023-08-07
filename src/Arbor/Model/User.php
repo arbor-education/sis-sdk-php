@@ -4,59 +4,59 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class User extends ModelBase
+class User extends \ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const GUARDIAN = 'guardian';
+    public const GUARDIAN = 'guardian';
 
-    const EXTERNAL_ADMINISTRATOR = 'externalAdministrator';
+    public const EXTERNAL_ADMINISTRATOR = 'externalAdministrator';
 
-    const USERNAME = 'username';
+    public const USERNAME = 'username';
 
-    const EMAIL = 'email';
+    public const EMAIL = 'email';
 
-    const PASSWORD_HASH = 'passwordHash';
+    public const PASSWORD_HASH = 'passwordHash';
 
-    const PASSWORD_RESET_HASH = 'passwordResetHash';
+    public const PASSWORD_RESET_HASH = 'passwordResetHash';
 
-    const AUTHENTICATION_TYPE = 'authenticationType';
+    public const AUTHENTICATION_TYPE = 'authenticationType';
 
-    const AUTHENTICATION_TOKEN = 'authenticationToken';
+    public const AUTHENTICATION_TOKEN = 'authenticationToken';
 
-    const AUTHENTICATION_TOKEN_EXPIRY_DATETIME = 'authenticationTokenExpiryDatetime';
+    public const AUTHENTICATION_TOKEN_EXPIRY_DATETIME = 'authenticationTokenExpiryDatetime';
 
-    const CURRENT_IP_ADDRESS = 'currentIpAddress';
+    public const CURRENT_IP_ADDRESS = 'currentIpAddress';
 
-    const LAST_ACCESS_DATETIME = 'lastAccessDatetime';
+    public const LAST_ACCESS_DATETIME = 'lastAccessDatetime';
 
-    const PASSWORD_LAST_CHANGED_DATETIME = 'passwordLastChangedDatetime';
+    public const PASSWORD_LAST_CHANGED_DATETIME = 'passwordLastChangedDatetime';
 
-    const ENABLED = 'enabled';
+    public const ENABLED = 'enabled';
 
-    const VERIFIED_DATETIME = 'verifiedDatetime';
+    public const VERIFIED_DATETIME = 'verifiedDatetime';
 
-    const TERMS_OF_USE_ACCEPTED_DATETIME = 'termsOfUseAcceptedDatetime';
+    public const TERMS_OF_USE_ACCEPTED_DATETIME = 'termsOfUseAcceptedDatetime';
 
-    const WELCOME_MESSAGE_DATETIME = 'welcomeMessageDatetime';
+    public const WELCOME_MESSAGE_DATETIME = 'welcomeMessageDatetime';
 
-    const TWO_FACTOR_AUTH_METHOD = 'twoFactorAuthMethod';
+    public const TWO_FACTOR_AUTH_METHOD = 'twoFactorAuthMethod';
 
-    const TWO_FACTOR_DEVICE_IDENTIFIER = 'twoFactorDeviceIdentifier';
+    public const TWO_FACTOR_DEVICE_IDENTIFIER = 'twoFactorDeviceIdentifier';
 
-    const DELETED_ENTITY_TYPE = 'deletedEntityType';
+    public const DELETED_ENTITY_TYPE = 'deletedEntityType';
 
-    const DELETED_OBJECT_ID = 'deletedObjectId';
+    public const DELETED_OBJECT_ID = 'deletedObjectId';
 
-    const DELETED_DISPLAY_NAME = 'deletedDisplayName';
+    public const DELETED_DISPLAY_NAME = 'deletedDisplayName';
 
-    const GOOGLE_TWO_FACTOR_SECRET = 'googleTwoFactorSecret';
+    public const GOOGLE_TWO_FACTOR_SECRET = 'googleTwoFactorSecret';
 
-    const SSO_TWO_FACTOR_ACTIVATED = 'ssoTwoFactorActivated';
+    public const SSO_TWO_FACTOR_ACTIVATED = 'ssoTwoFactorActivated';
 
-    const ACCEPT_SAAS_TERMS_AND_CONDITIONS_BY_DATETIME = 'acceptSaasTermsAndConditionsByDatetime';
+    public const ACCEPT_SAAS_TERMS_AND_CONDITIONS_BY_DATETIME = 'acceptSaasTermsAndConditionsByDatetime';
 
     protected $_resourceType = ResourceType::USER;
 
@@ -65,7 +65,7 @@ class User extends ModelBase
      * @return User[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +107,7 @@ class User extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -123,7 +123,7 @@ class User extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -139,7 +139,7 @@ class User extends ModelBase
     /**
      * @param Guardian $guardian
      */
-    public function setGuardian(Guardian $guardian = null)
+    public function setGuardian(\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }
@@ -155,7 +155,7 @@ class User extends ModelBase
     /**
      * @param ExternalAdministrator $externalAdministrator
      */
-    public function setExternalAdministrator(ExternalAdministrator $externalAdministrator = null)
+    public function setExternalAdministrator(\ExternalAdministrator $externalAdministrator = null)
     {
         $this->setProperty('externalAdministrator', $externalAdministrator);
     }
@@ -171,7 +171,7 @@ class User extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername($username = null)
+    public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -187,7 +187,7 @@ class User extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail($email = null)
+    public function setEmail(string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -203,7 +203,7 @@ class User extends ModelBase
     /**
      * @param string $passwordHash
      */
-    public function setPasswordHash($passwordHash = null)
+    public function setPasswordHash(string $passwordHash = null)
     {
         $this->setProperty('passwordHash', $passwordHash);
     }
@@ -219,7 +219,7 @@ class User extends ModelBase
     /**
      * @param string $passwordResetHash
      */
-    public function setPasswordResetHash($passwordResetHash = null)
+    public function setPasswordResetHash(string $passwordResetHash = null)
     {
         $this->setProperty('passwordResetHash', $passwordResetHash);
     }
@@ -235,7 +235,7 @@ class User extends ModelBase
     /**
      * @param string $authenticationType
      */
-    public function setAuthenticationType($authenticationType = null)
+    public function setAuthenticationType(string $authenticationType = null)
     {
         $this->setProperty('authenticationType', $authenticationType);
     }
@@ -251,7 +251,7 @@ class User extends ModelBase
     /**
      * @param string $authenticationToken
      */
-    public function setAuthenticationToken($authenticationToken = null)
+    public function setAuthenticationToken(string $authenticationToken = null)
     {
         $this->setProperty('authenticationToken', $authenticationToken);
     }
@@ -283,7 +283,7 @@ class User extends ModelBase
     /**
      * @param string $currentIpAddress
      */
-    public function setCurrentIpAddress($currentIpAddress = null)
+    public function setCurrentIpAddress(string $currentIpAddress = null)
     {
         $this->setProperty('currentIpAddress', $currentIpAddress);
     }
@@ -331,7 +331,7 @@ class User extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled($enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }
@@ -395,7 +395,7 @@ class User extends ModelBase
     /**
      * @param string $twoFactorAuthMethod
      */
-    public function setTwoFactorAuthMethod($twoFactorAuthMethod = null)
+    public function setTwoFactorAuthMethod(string $twoFactorAuthMethod = null)
     {
         $this->setProperty('twoFactorAuthMethod', $twoFactorAuthMethod);
     }
@@ -411,7 +411,7 @@ class User extends ModelBase
     /**
      * @param string $twoFactorDeviceIdentifier
      */
-    public function setTwoFactorDeviceIdentifier($twoFactorDeviceIdentifier = null)
+    public function setTwoFactorDeviceIdentifier(string $twoFactorDeviceIdentifier = null)
     {
         $this->setProperty('twoFactorDeviceIdentifier', $twoFactorDeviceIdentifier);
     }
@@ -427,7 +427,7 @@ class User extends ModelBase
     /**
      * @param int $deletedEntityType
      */
-    public function setDeletedEntityType($deletedEntityType = null)
+    public function setDeletedEntityType(int $deletedEntityType = null)
     {
         $this->setProperty('deletedEntityType', $deletedEntityType);
     }
@@ -443,7 +443,7 @@ class User extends ModelBase
     /**
      * @param int $deletedObjectId
      */
-    public function setDeletedObjectId($deletedObjectId = null)
+    public function setDeletedObjectId(int $deletedObjectId = null)
     {
         $this->setProperty('deletedObjectId', $deletedObjectId);
     }
@@ -459,7 +459,7 @@ class User extends ModelBase
     /**
      * @param string $deletedDisplayName
      */
-    public function setDeletedDisplayName($deletedDisplayName = null)
+    public function setDeletedDisplayName(string $deletedDisplayName = null)
     {
         $this->setProperty('deletedDisplayName', $deletedDisplayName);
     }
@@ -475,7 +475,7 @@ class User extends ModelBase
     /**
      * @param string $googleTwoFactorSecret
      */
-    public function setGoogleTwoFactorSecret($googleTwoFactorSecret = null)
+    public function setGoogleTwoFactorSecret(string $googleTwoFactorSecret = null)
     {
         $this->setProperty('googleTwoFactorSecret', $googleTwoFactorSecret);
     }
@@ -491,7 +491,7 @@ class User extends ModelBase
     /**
      * @param bool $ssoTwoFactorActivated
      */
-    public function setSsoTwoFactorActivated($ssoTwoFactorActivated = null)
+    public function setSsoTwoFactorActivated(bool $ssoTwoFactorActivated = null)
     {
         $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
     }

@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomReport extends ModelBase
+class CustomReport extends \ModelBase
 {
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const REPORT_CLASS = 'reportClass';
+    public const REPORT_CLASS = 'reportClass';
 
-    const LAST_ACCESS_DATETIME = 'lastAccessDatetime';
+    public const LAST_ACCESS_DATETIME = 'lastAccessDatetime';
 
-    const LAST_DB_QUERIES = 'lastDbQueries';
+    public const LAST_DB_QUERIES = 'lastDbQueries';
 
-    const LAST_DB_TIME = 'lastDbTime';
+    public const LAST_DB_TIME = 'lastDbTime';
 
-    const LAST_TOTAL_TIME = 'lastTotalTime';
+    public const LAST_TOTAL_TIME = 'lastTotalTime';
 
-    const SETUP_COMPLETED_DATETIME = 'setupCompletedDatetime';
+    public const SETUP_COMPLETED_DATETIME = 'setupCompletedDatetime';
 
-    const TRANSIENT = 'transient';
+    public const TRANSIENT = 'transient';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT;
 
@@ -29,7 +29,7 @@ class CustomReport extends ModelBase
      * @return CustomReport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class CustomReport extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -87,7 +87,7 @@ class CustomReport extends ModelBase
     /**
      * @param string $reportClass
      */
-    public function setReportClass($reportClass = null)
+    public function setReportClass(string $reportClass = null)
     {
         $this->setProperty('reportClass', $reportClass);
     }
@@ -119,7 +119,7 @@ class CustomReport extends ModelBase
     /**
      * @param int $lastDbQueries
      */
-    public function setLastDbQueries($lastDbQueries = null)
+    public function setLastDbQueries(int $lastDbQueries = null)
     {
         $this->setProperty('lastDbQueries', $lastDbQueries);
     }
@@ -135,7 +135,7 @@ class CustomReport extends ModelBase
     /**
      * @param float $lastDbTime
      */
-    public function setLastDbTime($lastDbTime = null)
+    public function setLastDbTime(float $lastDbTime = null)
     {
         $this->setProperty('lastDbTime', $lastDbTime);
     }
@@ -151,7 +151,7 @@ class CustomReport extends ModelBase
     /**
      * @param float $lastTotalTime
      */
-    public function setLastTotalTime($lastTotalTime = null)
+    public function setLastTotalTime(float $lastTotalTime = null)
     {
         $this->setProperty('lastTotalTime', $lastTotalTime);
     }
@@ -183,7 +183,7 @@ class CustomReport extends ModelBase
     /**
      * @param bool $transient
      */
-    public function setTransient($transient = null)
+    public function setTransient(bool $transient = null)
     {
         $this->setProperty('transient', $transient);
     }

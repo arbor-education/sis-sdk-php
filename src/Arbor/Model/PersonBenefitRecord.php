@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonBenefitRecord extends ModelBase
+class PersonBenefitRecord extends \ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const BENEFIT_RECORD_TYPE = 'benefitRecordType';
+    public const BENEFIT_RECORD_TYPE = 'benefitRecordType';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::PERSON_BENEFIT_RECORD;
 
@@ -21,7 +21,7 @@ class PersonBenefitRecord extends ModelBase
      * @return PersonBenefitRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class PersonBenefitRecord extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -79,7 +79,7 @@ class PersonBenefitRecord extends ModelBase
     /**
      * @param BenefitRecordType $benefitRecordType
      */
-    public function setBenefitRecordType(BenefitRecordType $benefitRecordType = null)
+    public function setBenefitRecordType(\BenefitRecordType $benefitRecordType = null)
     {
         $this->setProperty('benefitRecordType', $benefitRecordType);
     }

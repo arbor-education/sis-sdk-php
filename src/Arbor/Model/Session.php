@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Session extends ModelBase
+class Session extends \ModelBase
 {
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const SESSION_NAME = 'sessionName';
+    public const SESSION_NAME = 'sessionName';
 
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const LESSON_PLAN = 'lessonPlan';
+    public const LESSON_PLAN = 'lessonPlan';
 
-    const IS_SUSPENDED = 'isSuspended';
+    public const IS_SUSPENDED = 'isSuspended';
 
     protected $_resourceType = ResourceType::SESSION;
 
@@ -33,7 +33,7 @@ class Session extends ModelBase
      * @return Session[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +107,7 @@ class Session extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -123,7 +123,7 @@ class Session extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -139,7 +139,7 @@ class Session extends ModelBase
     /**
      * @param string $sessionName
      */
-    public function setSessionName($sessionName = null)
+    public function setSessionName(string $sessionName = null)
     {
         $this->setProperty('sessionName', $sessionName);
     }
@@ -155,7 +155,7 @@ class Session extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -171,7 +171,7 @@ class Session extends ModelBase
     /**
      * @param TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -187,7 +187,7 @@ class Session extends ModelBase
     /**
      * @param AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -203,7 +203,7 @@ class Session extends ModelBase
     /**
      * @param LessonPlan $lessonPlan
      */
-    public function setLessonPlan(LessonPlan $lessonPlan = null)
+    public function setLessonPlan(\LessonPlan $lessonPlan = null)
     {
         $this->setProperty('lessonPlan', $lessonPlan);
     }
@@ -219,7 +219,7 @@ class Session extends ModelBase
     /**
      * @param bool $isSuspended
      */
-    public function setIsSuspended($isSuspended = null)
+    public function setIsSuspended(bool $isSuspended = null)
     {
         $this->setProperty('isSuspended', $isSuspended);
     }

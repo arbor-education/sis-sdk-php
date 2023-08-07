@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class KpiRange extends ModelBase
+class KpiRange extends \ModelBase
 {
-    const KPI = 'kpi';
+    public const KPI = 'kpi';
 
-    const KPI_TARGET = 'kpiTarget';
+    public const KPI_TARGET = 'kpiTarget';
 
-    const RANGE_NAME = 'rangeName';
+    public const RANGE_NAME = 'rangeName';
 
-    const ABBREVIATION = 'abbreviation';
+    public const ABBREVIATION = 'abbreviation';
 
-    const LOWER_VALUE = 'lowerValue';
+    public const LOWER_VALUE = 'lowerValue';
 
-    const UPPER_VALUE = 'upperValue';
+    public const UPPER_VALUE = 'upperValue';
 
-    const VALUE_TYPE = 'valueType';
+    public const VALUE_TYPE = 'valueType';
 
-    const COLOR = 'color';
+    public const COLOR = 'color';
 
     protected $_resourceType = ResourceType::KPI_RANGE;
 
@@ -29,7 +29,7 @@ class KpiRange extends ModelBase
      * @return KpiRange[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class KpiRange extends ModelBase
     /**
      * @param Kpi $kpi
      */
-    public function setKpi(Kpi $kpi = null)
+    public function setKpi(\Kpi $kpi = null)
     {
         $this->setProperty('kpi', $kpi);
     }
@@ -87,7 +87,7 @@ class KpiRange extends ModelBase
     /**
      * @param KpiTarget $kpiTarget
      */
-    public function setKpiTarget(KpiTarget $kpiTarget = null)
+    public function setKpiTarget(\KpiTarget $kpiTarget = null)
     {
         $this->setProperty('kpiTarget', $kpiTarget);
     }
@@ -103,7 +103,7 @@ class KpiRange extends ModelBase
     /**
      * @param string $rangeName
      */
-    public function setRangeName($rangeName = null)
+    public function setRangeName(string $rangeName = null)
     {
         $this->setProperty('rangeName', $rangeName);
     }
@@ -119,7 +119,7 @@ class KpiRange extends ModelBase
     /**
      * @param string $abbreviation
      */
-    public function setAbbreviation($abbreviation = null)
+    public function setAbbreviation(string $abbreviation = null)
     {
         $this->setProperty('abbreviation', $abbreviation);
     }
@@ -135,7 +135,7 @@ class KpiRange extends ModelBase
     /**
      * @param float $lowerValue
      */
-    public function setLowerValue($lowerValue = null)
+    public function setLowerValue(float $lowerValue = null)
     {
         $this->setProperty('lowerValue', $lowerValue);
     }
@@ -151,7 +151,7 @@ class KpiRange extends ModelBase
     /**
      * @param float $upperValue
      */
-    public function setUpperValue($upperValue = null)
+    public function setUpperValue(float $upperValue = null)
     {
         $this->setProperty('upperValue', $upperValue);
     }
@@ -167,7 +167,7 @@ class KpiRange extends ModelBase
     /**
      * @param string $valueType
      */
-    public function setValueType($valueType = null)
+    public function setValueType(string $valueType = null)
     {
         $this->setProperty('valueType', $valueType);
     }
@@ -183,7 +183,7 @@ class KpiRange extends ModelBase
     /**
      * @param string $color
      */
-    public function setColor($color = null)
+    public function setColor(string $color = null)
     {
         $this->setProperty('color', $color);
     }

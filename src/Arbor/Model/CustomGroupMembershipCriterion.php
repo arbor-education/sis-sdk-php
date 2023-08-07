@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomGroupMembershipCriterion extends ModelBase
+class CustomGroupMembershipCriterion extends \ModelBase
 {
-    const CUSTOM_GROUP = 'customGroup';
+    public const CUSTOM_GROUP = 'customGroup';
 
-    const FIELD_CLASS = 'fieldClass';
+    public const FIELD_CLASS = 'fieldClass';
 
-    const FIELD_PARAMS = 'fieldParams';
+    public const FIELD_PARAMS = 'fieldParams';
 
-    const TRANSFORMATION_CLASS = 'transformationClass';
+    public const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const CONDITION_CLASS = 'conditionClass';
+    public const CONDITION_CLASS = 'conditionClass';
 
-    const CONDITION_PARAMS = 'conditionParams';
+    public const CONDITION_PARAMS = 'conditionParams';
 
     protected $_resourceType = ResourceType::CUSTOM_GROUP_MEMBERSHIP_CRITERION;
 
@@ -25,7 +25,7 @@ class CustomGroupMembershipCriterion extends ModelBase
      * @return CustomGroupMembershipCriterion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param CustomGroup $customGroup
      */
-    public function setCustomGroup(CustomGroup $customGroup = null)
+    public function setCustomGroup(\CustomGroup $customGroup = null)
     {
         $this->setProperty('customGroup', $customGroup);
     }
@@ -83,7 +83,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass($fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -99,7 +99,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams($fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -115,7 +115,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass($transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -131,7 +131,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass($conditionClass = null)
+    public function setConditionClass(string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -147,7 +147,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams($conditionParams = null)
+    public function setConditionParams(string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }

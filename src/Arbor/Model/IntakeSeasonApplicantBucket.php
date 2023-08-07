@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntakeSeasonApplicantBucket extends ModelBase
+class IntakeSeasonApplicantBucket extends \ModelBase
 {
-    const APPLICANT_BUCKET_NAME = 'applicantBucketName';
+    public const APPLICANT_BUCKET_NAME = 'applicantBucketName';
 
-    const INTAKE_SEASON = 'intakeSeason';
+    public const INTAKE_SEASON = 'intakeSeason';
 
     protected $_resourceType = ResourceType::INTAKE_SEASON_APPLICANT_BUCKET;
 
@@ -17,7 +17,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
      * @return IntakeSeasonApplicantBucket[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
     /**
      * @param string $applicantBucketName
      */
-    public function setApplicantBucketName($applicantBucketName = null)
+    public function setApplicantBucketName(string $applicantBucketName = null)
     {
         $this->setProperty('applicantBucketName', $applicantBucketName);
     }
@@ -75,7 +75,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
     /**
      * @param IntakeSeason $intakeSeason
      */
-    public function setIntakeSeason(IntakeSeason $intakeSeason = null)
+    public function setIntakeSeason(\IntakeSeason $intakeSeason = null)
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MedicalInstitution extends ModelBase
+class MedicalInstitution extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
     protected $_resourceType = ResourceType::MEDICAL_INSTITUTION;
 
@@ -17,7 +17,7 @@ class MedicalInstitution extends ModelBase
      * @return MedicalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class MedicalInstitution extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -75,7 +75,7 @@ class MedicalInstitution extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }

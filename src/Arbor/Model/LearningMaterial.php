@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LearningMaterial extends ModelBase
+class LearningMaterial extends \ModelBase
 {
-    const LEARNING_MATERIAL_FOLDER = 'learningMaterialFolder';
+    public const LEARNING_MATERIAL_FOLDER = 'learningMaterialFolder';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const URL = 'url';
+    public const URL = 'url';
 
-    const EDIT_URL = 'editUrl';
+    public const EDIT_URL = 'editUrl';
 
-    const THIRD_PARTY_SITE = 'thirdPartySite';
+    public const THIRD_PARTY_SITE = 'thirdPartySite';
 
-    const AUTHORED_DATETIME = 'authoredDatetime';
+    public const AUTHORED_DATETIME = 'authoredDatetime';
 
     protected $_resourceType = ResourceType::LEARNING_MATERIAL;
 
@@ -27,7 +27,7 @@ class LearningMaterial extends ModelBase
      * @return LearningMaterial[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param LearningMaterialFolder $learningMaterialFolder
      */
-    public function setLearningMaterialFolder(LearningMaterialFolder $learningMaterialFolder = null)
+    public function setLearningMaterialFolder(\LearningMaterialFolder $learningMaterialFolder = null)
     {
         $this->setProperty('learningMaterialFolder', $learningMaterialFolder);
     }
@@ -85,7 +85,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -101,7 +101,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -117,7 +117,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $url
      */
-    public function setUrl($url = null)
+    public function setUrl(string $url = null)
     {
         $this->setProperty('url', $url);
     }
@@ -133,7 +133,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $editUrl
      */
-    public function setEditUrl($editUrl = null)
+    public function setEditUrl(string $editUrl = null)
     {
         $this->setProperty('editUrl', $editUrl);
     }
@@ -149,7 +149,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param ThirdPartySite $thirdPartySite
      */
-    public function setThirdPartySite(ThirdPartySite $thirdPartySite = null)
+    public function setThirdPartySite(\ThirdPartySite $thirdPartySite = null)
     {
         $this->setProperty('thirdPartySite', $thirdPartySite);
     }

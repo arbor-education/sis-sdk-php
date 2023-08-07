@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationStudyGuide extends ModelBase
+class QualificationStudyGuide extends \ModelBase
 {
-    const RELATED_QUALIFICATION_AWARD = 'relatedQualificationAward';
+    public const RELATED_QUALIFICATION_AWARD = 'relatedQualificationAward';
 
-    const STUDY_GUIDE_TITLE = 'studyGuideTitle';
+    public const STUDY_GUIDE_TITLE = 'studyGuideTitle';
 
-    const STUDY_GUIDE_PUBLISHER_NAME = 'studyGuidePublisherName';
+    public const STUDY_GUIDE_PUBLISHER_NAME = 'studyGuidePublisherName';
 
-    const STUDY_GUIDE_PUBLISHER_ISBN = 'studyGuidePublisherIsbn';
+    public const STUDY_GUIDE_PUBLISHER_ISBN = 'studyGuidePublisherIsbn';
 
-    const STUDY_GUIDE_PUBLISHER_URL = 'studyGuidePublisherUrl';
+    public const STUDY_GUIDE_PUBLISHER_URL = 'studyGuidePublisherUrl';
 
-    const STUDY_GUIDE_MEDIUM_TYPE = 'studyGuideMediumType';
+    public const STUDY_GUIDE_MEDIUM_TYPE = 'studyGuideMediumType';
 
     protected $_resourceType = ResourceType::QUALIFICATION_STUDY_GUIDE;
 
@@ -25,7 +25,7 @@ class QualificationStudyGuide extends ModelBase
      * @return QualificationStudyGuide[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param QualificationAward $relatedQualificationAward
      */
-    public function setRelatedQualificationAward(QualificationAward $relatedQualificationAward = null)
+    public function setRelatedQualificationAward(\QualificationAward $relatedQualificationAward = null)
     {
         $this->setProperty('relatedQualificationAward', $relatedQualificationAward);
     }
@@ -83,7 +83,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuideTitle
      */
-    public function setStudyGuideTitle($studyGuideTitle = null)
+    public function setStudyGuideTitle(string $studyGuideTitle = null)
     {
         $this->setProperty('studyGuideTitle', $studyGuideTitle);
     }
@@ -99,7 +99,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuidePublisherName
      */
-    public function setStudyGuidePublisherName($studyGuidePublisherName = null)
+    public function setStudyGuidePublisherName(string $studyGuidePublisherName = null)
     {
         $this->setProperty('studyGuidePublisherName', $studyGuidePublisherName);
     }
@@ -115,7 +115,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuidePublisherIsbn
      */
-    public function setStudyGuidePublisherIsbn($studyGuidePublisherIsbn = null)
+    public function setStudyGuidePublisherIsbn(string $studyGuidePublisherIsbn = null)
     {
         $this->setProperty('studyGuidePublisherIsbn', $studyGuidePublisherIsbn);
     }
@@ -131,7 +131,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuidePublisherUrl
      */
-    public function setStudyGuidePublisherUrl($studyGuidePublisherUrl = null)
+    public function setStudyGuidePublisherUrl(string $studyGuidePublisherUrl = null)
     {
         $this->setProperty('studyGuidePublisherUrl', $studyGuidePublisherUrl);
     }
@@ -147,7 +147,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuideMediumType
      */
-    public function setStudyGuideMediumType($studyGuideMediumType = null)
+    public function setStudyGuideMediumType(string $studyGuideMediumType = null)
     {
         $this->setProperty('studyGuideMediumType', $studyGuideMediumType);
     }

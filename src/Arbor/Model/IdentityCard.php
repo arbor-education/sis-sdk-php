@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IdentityCard extends ModelBase
+class IdentityCard extends \ModelBase
 {
-    const OWNER = 'owner';
+    public const OWNER = 'owner';
 
-    const CARD_NUMBER = 'cardNumber';
+    public const CARD_NUMBER = 'cardNumber';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const ISSUED_DATETIME = 'issuedDatetime';
+    public const ISSUED_DATETIME = 'issuedDatetime';
 
-    const LOST_DATETIME = 'lostDatetime';
+    public const LOST_DATETIME = 'lostDatetime';
 
     protected $_resourceType = ResourceType::IDENTITY_CARD;
 
@@ -23,7 +23,7 @@ class IdentityCard extends ModelBase
      * @return IdentityCard[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class IdentityCard extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(ModelBase $owner = null)
+    public function setOwner(\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
@@ -81,7 +81,7 @@ class IdentityCard extends ModelBase
     /**
      * @param string $cardNumber
      */
-    public function setCardNumber($cardNumber = null)
+    public function setCardNumber(string $cardNumber = null)
     {
         $this->setProperty('cardNumber', $cardNumber);
     }
@@ -97,7 +97,7 @@ class IdentityCard extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

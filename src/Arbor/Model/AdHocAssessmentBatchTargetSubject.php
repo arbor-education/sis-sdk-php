@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AdHocAssessmentBatchTargetSubject extends ModelBase
+class AdHocAssessmentBatchTargetSubject extends \ModelBase
 {
-    const AD_HOC_ASSESSMENT_BATCH_TARGET = 'adHocAssessmentBatchTarget';
+    public const AD_HOC_ASSESSMENT_BATCH_TARGET = 'adHocAssessmentBatchTarget';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH_TARGET_SUBJECT;
 
@@ -17,7 +17,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
      * @return AdHocAssessmentBatchTargetSubject[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     /**
      * @param AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget
      */
-    public function setAdHocAssessmentBatchTarget(AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget = null)
+    public function setAdHocAssessmentBatchTarget(\AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget = null)
     {
         $this->setProperty('adHocAssessmentBatchTarget', $adHocAssessmentBatchTarget);
     }
@@ -75,7 +75,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     /**
      * @param Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

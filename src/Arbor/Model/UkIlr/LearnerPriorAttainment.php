@@ -8,13 +8,13 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class LearnerPriorAttainment extends ModelBase
+class LearnerPriorAttainment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const PRIOR_LEVEL = 'priorLevel';
+    public const PRIOR_LEVEL = 'priorLevel';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
     protected $_resourceType = ResourceType::UK_ILR_LEARNER_PRIOR_ATTAINMENT;
 
@@ -23,7 +23,7 @@ class LearnerPriorAttainment extends ModelBase
      * @return LearnerPriorAttainment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class LearnerPriorAttainment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -81,7 +81,7 @@ class LearnerPriorAttainment extends ModelBase
     /**
      * @param string $priorLevel
      */
-    public function setPriorLevel($priorLevel = null)
+    public function setPriorLevel(string $priorLevel = null)
     {
         $this->setProperty('priorLevel', $priorLevel);
     }

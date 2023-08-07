@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SessionRoomAssetRequirement extends ModelBase
+class SessionRoomAssetRequirement extends \ModelBase
 {
-    const SESSION = 'session';
+    public const SESSION = 'session';
 
-    const ROOM_ASSET = 'roomAsset';
+    public const ROOM_ASSET = 'roomAsset';
 
-    const QUANTITY = 'quantity';
+    public const QUANTITY = 'quantity';
 
     protected $_resourceType = ResourceType::SESSION_ROOM_ASSET_REQUIREMENT;
 
@@ -19,7 +19,7 @@ class SessionRoomAssetRequirement extends ModelBase
      * @return SessionRoomAssetRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param Session $session
      */
-    public function setSession(Session $session = null)
+    public function setSession(\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -77,7 +77,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param RoomAsset $roomAsset
      */
-    public function setRoomAsset(RoomAsset $roomAsset = null)
+    public function setRoomAsset(\RoomAsset $roomAsset = null)
     {
         $this->setProperty('roomAsset', $roomAsset);
     }
@@ -93,7 +93,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity($quantity = null)
+    public function setQuantity(int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }

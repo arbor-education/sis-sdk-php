@@ -7,19 +7,19 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolCensusPupilReconciliation extends ModelBase
+class SchoolCensusPupilReconciliation extends \ModelBase
 {
-    const SCHOOL_CENSUS = 'schoolCensus';
+    public const SCHOOL_CENSUS = 'schoolCensus';
 
-    const PART_TIME_NOT_IN = 'partTimeNotIn';
+    public const PART_TIME_NOT_IN = 'partTimeNotIn';
 
-    const PRIVATE_STUDY = 'privateStudy';
+    public const PRIVATE_STUDY = 'privateStudy';
 
-    const AT_OTHER_SCHOOL = 'atOtherSchool';
+    public const AT_OTHER_SCHOOL = 'atOtherSchool';
 
-    const WORK_EXPERIENCE = 'workExperience';
+    public const WORK_EXPERIENCE = 'workExperience';
 
-    const F_E_COLLEGE = 'fECollege';
+    public const F_E_COLLEGE = 'fECollege';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION;
 
@@ -28,7 +28,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
      * @return SchoolCensusPupilReconciliation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
@@ -86,7 +86,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $partTimeNotIn
      */
-    public function setPartTimeNotIn($partTimeNotIn = null)
+    public function setPartTimeNotIn(int $partTimeNotIn = null)
     {
         $this->setProperty('partTimeNotIn', $partTimeNotIn);
     }
@@ -102,7 +102,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $privateStudy
      */
-    public function setPrivateStudy($privateStudy = null)
+    public function setPrivateStudy(int $privateStudy = null)
     {
         $this->setProperty('privateStudy', $privateStudy);
     }
@@ -118,7 +118,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $atOtherSchool
      */
-    public function setAtOtherSchool($atOtherSchool = null)
+    public function setAtOtherSchool(int $atOtherSchool = null)
     {
         $this->setProperty('atOtherSchool', $atOtherSchool);
     }
@@ -134,7 +134,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $workExperience
      */
-    public function setWorkExperience($workExperience = null)
+    public function setWorkExperience(int $workExperience = null)
     {
         $this->setProperty('workExperience', $workExperience);
     }
@@ -150,7 +150,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $fECollege
      */
-    public function setFECollege($fECollege = null)
+    public function setFECollege(int $fECollege = null)
     {
         $this->setProperty('fECollege', $fECollege);
     }

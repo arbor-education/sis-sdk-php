@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AdHocAssessmentBatchTarget extends ModelBase
+class AdHocAssessmentBatchTarget extends \ModelBase
 {
-    const AD_HOC_ASSESSMENT_BATCH = 'adHocAssessmentBatch';
+    public const AD_HOC_ASSESSMENT_BATCH = 'adHocAssessmentBatch';
 
-    const TARGET = 'target';
+    public const TARGET = 'target';
 
-    const MARKING_STARTED_DATETIME = 'markingStartedDatetime';
+    public const MARKING_STARTED_DATETIME = 'markingStartedDatetime';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH_TARGET;
 
@@ -21,7 +21,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      * @return AdHocAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
     /**
      * @param AdHocAssessmentBatch $adHocAssessmentBatch
      */
-    public function setAdHocAssessmentBatch(AdHocAssessmentBatch $adHocAssessmentBatch = null)
+    public function setAdHocAssessmentBatch(\AdHocAssessmentBatch $adHocAssessmentBatch = null)
     {
         $this->setProperty('adHocAssessmentBatch', $adHocAssessmentBatch);
     }
@@ -79,7 +79,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
     /**
      * @param ModelBase $target
      */
-    public function setTarget(ModelBase $target = null)
+    public function setTarget(\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

@@ -8,23 +8,23 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class UciAssignment extends ModelBase
+class UciAssignment extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const UCI = 'uci';
+    public const UCI = 'uci';
 
-    const ISSUED_YEAR = 'issuedYear';
+    public const ISSUED_YEAR = 'issuedYear';
 
-    const ISSUED_CENTER_NUMBER = 'issuedCenterNumber';
+    public const ISSUED_CENTER_NUMBER = 'issuedCenterNumber';
 
-    const ISSUED_AWARDING_ORGANIZATION_IDENTIFIER = 'issuedAwardingOrganizationIdentifier';
+    public const ISSUED_AWARDING_ORGANIZATION_IDENTIFIER = 'issuedAwardingOrganizationIdentifier';
 
-    const ISSUED_SERIAL_NUMBER = 'issuedSerialNumber';
+    public const ISSUED_SERIAL_NUMBER = 'issuedSerialNumber';
 
-    const ISSUED_DATETIME = 'issuedDatetime';
+    public const ISSUED_DATETIME = 'issuedDatetime';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
     protected $_resourceType = ResourceType::UK_DFE_UCI_ASSIGNMENT;
 
@@ -33,7 +33,7 @@ class UciAssignment extends ModelBase
      * @return UciAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class UciAssignment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -91,7 +91,7 @@ class UciAssignment extends ModelBase
     /**
      * @param string $uci
      */
-    public function setUci($uci = null)
+    public function setUci(string $uci = null)
     {
         $this->setProperty('uci', $uci);
     }
@@ -107,7 +107,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedYear
      */
-    public function setIssuedYear($issuedYear = null)
+    public function setIssuedYear(int $issuedYear = null)
     {
         $this->setProperty('issuedYear', $issuedYear);
     }
@@ -123,7 +123,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedCenterNumber
      */
-    public function setIssuedCenterNumber($issuedCenterNumber = null)
+    public function setIssuedCenterNumber(int $issuedCenterNumber = null)
     {
         $this->setProperty('issuedCenterNumber', $issuedCenterNumber);
     }
@@ -139,7 +139,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedAwardingOrganizationIdentifier
      */
-    public function setIssuedAwardingOrganizationIdentifier($issuedAwardingOrganizationIdentifier = null)
+    public function setIssuedAwardingOrganizationIdentifier(int $issuedAwardingOrganizationIdentifier = null)
     {
         $this->setProperty('issuedAwardingOrganizationIdentifier', $issuedAwardingOrganizationIdentifier);
     }
@@ -155,7 +155,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedSerialNumber
      */
-    public function setIssuedSerialNumber($issuedSerialNumber = null)
+    public function setIssuedSerialNumber(int $issuedSerialNumber = null)
     {
         $this->setProperty('issuedSerialNumber', $issuedSerialNumber);
     }

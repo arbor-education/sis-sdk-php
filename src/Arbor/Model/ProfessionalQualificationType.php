@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProfessionalQualificationType extends ModelBase
+class ProfessionalQualificationType extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const IS_VOCATIONAL_QUALIFICATION = 'isVocationalQualification';
+    public const IS_VOCATIONAL_QUALIFICATION = 'isVocationalQualification';
 
     protected $_resourceType = ResourceType::PROFESSIONAL_QUALIFICATION_TYPE;
 
@@ -23,7 +23,7 @@ class ProfessionalQualificationType extends ModelBase
      * @return ProfessionalQualificationType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class ProfessionalQualificationType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +81,7 @@ class ProfessionalQualificationType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +97,7 @@ class ProfessionalQualificationType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +113,7 @@ class ProfessionalQualificationType extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -129,7 +129,7 @@ class ProfessionalQualificationType extends ModelBase
     /**
      * @param bool $isVocationalQualification
      */
-    public function setIsVocationalQualification($isVocationalQualification = null)
+    public function setIsVocationalQualification(bool $isVocationalQualification = null)
     {
         $this->setProperty('isVocationalQualification', $isVocationalQualification);
     }

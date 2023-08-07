@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomerInvoiceItem extends ModelBase
+class CustomerInvoiceItem extends \ModelBase
 {
-    const CUSTOMER_INVOICE = 'customerInvoice';
+    public const CUSTOMER_INVOICE = 'customerInvoice';
 
-    const ITEM_UNIT = 'itemUnit';
+    public const ITEM_UNIT = 'itemUnit';
 
-    const ITEM_DESCRIPTION = 'itemDescription';
+    public const ITEM_DESCRIPTION = 'itemDescription';
 
-    const ITEM_PRICE_EX_VAT = 'itemPriceExVat';
+    public const ITEM_PRICE_EX_VAT = 'itemPriceExVat';
 
-    const QUANTITY_INVOICED = 'quantityInvoiced';
+    public const QUANTITY_INVOICED = 'quantityInvoiced';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
-    const ITEM_VAT_AMOUNT = 'itemVatAmount';
+    public const ITEM_VAT_AMOUNT = 'itemVatAmount';
 
-    const ITEM_TOTAL_AMOUNT = 'itemTotalAmount';
+    public const ITEM_TOTAL_AMOUNT = 'itemTotalAmount';
 
-    const LINE_NUMBER = 'lineNumber';
+    public const LINE_NUMBER = 'lineNumber';
 
-    const FULLY_PAID_DATE = 'fullyPaidDate';
+    public const FULLY_PAID_DATE = 'fullyPaidDate';
 
-    const ITEM_STATUS = 'itemStatus';
+    public const ITEM_STATUS = 'itemStatus';
 
     protected $_resourceType = ResourceType::CUSTOMER_INVOICE_ITEM;
 
@@ -35,7 +35,7 @@ class CustomerInvoiceItem extends ModelBase
      * @return CustomerInvoiceItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -93,7 +93,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param ItemUnit $itemUnit
      */
-    public function setItemUnit(ItemUnit $itemUnit = null)
+    public function setItemUnit(\ItemUnit $itemUnit = null)
     {
         $this->setProperty('itemUnit', $itemUnit);
     }
@@ -109,7 +109,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemDescription
      */
-    public function setItemDescription($itemDescription = null)
+    public function setItemDescription(string $itemDescription = null)
     {
         $this->setProperty('itemDescription', $itemDescription);
     }
@@ -125,7 +125,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemPriceExVat
      */
-    public function setItemPriceExVat($itemPriceExVat = null)
+    public function setItemPriceExVat(string $itemPriceExVat = null)
     {
         $this->setProperty('itemPriceExVat', $itemPriceExVat);
     }
@@ -141,7 +141,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param int $quantityInvoiced
      */
-    public function setQuantityInvoiced($quantityInvoiced = null)
+    public function setQuantityInvoiced(int $quantityInvoiced = null)
     {
         $this->setProperty('quantityInvoiced', $quantityInvoiced);
     }
@@ -157,7 +157,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -173,7 +173,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemVatAmount
      */
-    public function setItemVatAmount($itemVatAmount = null)
+    public function setItemVatAmount(string $itemVatAmount = null)
     {
         $this->setProperty('itemVatAmount', $itemVatAmount);
     }
@@ -189,7 +189,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemTotalAmount
      */
-    public function setItemTotalAmount($itemTotalAmount = null)
+    public function setItemTotalAmount(string $itemTotalAmount = null)
     {
         $this->setProperty('itemTotalAmount', $itemTotalAmount);
     }
@@ -205,7 +205,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param int $lineNumber
      */
-    public function setLineNumber($lineNumber = null)
+    public function setLineNumber(int $lineNumber = null)
     {
         $this->setProperty('lineNumber', $lineNumber);
     }
@@ -237,7 +237,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemStatus
      */
-    public function setItemStatus($itemStatus = null)
+    public function setItemStatus(string $itemStatus = null)
     {
         $this->setProperty('itemStatus', $itemStatus);
     }

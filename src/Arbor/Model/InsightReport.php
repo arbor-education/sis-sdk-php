@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InsightReport extends ModelBase
+class InsightReport extends \ModelBase
 {
-    const REPORT_TYPE = 'reportType';
+    public const REPORT_TYPE = 'reportType';
 
-    const SUB_REPORT_TYPE = 'subReportType';
+    public const SUB_REPORT_TYPE = 'subReportType';
 
-    const PERIOD = 'period';
+    public const PERIOD = 'period';
 
-    const REPORT_TITLE = 'reportTitle';
+    public const REPORT_TITLE = 'reportTitle';
 
-    const GENERATED_DATETIME = 'generatedDatetime';
+    public const GENERATED_DATETIME = 'generatedDatetime';
 
-    const QUEUED_DATETIME = 'queuedDatetime';
+    public const QUEUED_DATETIME = 'queuedDatetime';
 
-    const REPORT_FILE = 'reportFile';
+    public const REPORT_FILE = 'reportFile';
 
     protected $_resourceType = ResourceType::INSIGHT_REPORT;
 
@@ -27,7 +27,7 @@ class InsightReport extends ModelBase
      * @return InsightReport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class InsightReport extends ModelBase
     /**
      * @param string $reportType
      */
-    public function setReportType($reportType = null)
+    public function setReportType(string $reportType = null)
     {
         $this->setProperty('reportType', $reportType);
     }
@@ -85,7 +85,7 @@ class InsightReport extends ModelBase
     /**
      * @param string $subReportType
      */
-    public function setSubReportType($subReportType = null)
+    public function setSubReportType(string $subReportType = null)
     {
         $this->setProperty('subReportType', $subReportType);
     }
@@ -101,7 +101,7 @@ class InsightReport extends ModelBase
     /**
      * @param string $period
      */
-    public function setPeriod($period = null)
+    public function setPeriod(string $period = null)
     {
         $this->setProperty('period', $period);
     }
@@ -117,7 +117,7 @@ class InsightReport extends ModelBase
     /**
      * @param string $reportTitle
      */
-    public function setReportTitle($reportTitle = null)
+    public function setReportTitle(string $reportTitle = null)
     {
         $this->setProperty('reportTitle', $reportTitle);
     }
@@ -165,7 +165,7 @@ class InsightReport extends ModelBase
     /**
      * @param File $reportFile
      */
-    public function setReportFile(File $reportFile = null)
+    public function setReportFile(\File $reportFile = null)
     {
         $this->setProperty('reportFile', $reportFile);
     }

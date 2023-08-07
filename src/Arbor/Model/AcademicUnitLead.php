@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicUnitLead extends ModelBase
+class AcademicUnitLead extends \ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_LEAD;
 
@@ -21,7 +21,7 @@ class AcademicUnitLead extends ModelBase
      * @return AcademicUnitLead[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AcademicUnitLead extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -79,7 +79,7 @@ class AcademicUnitLead extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

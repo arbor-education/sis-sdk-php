@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class HearingTest extends ModelBase
+class HearingTest extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const TEST_DATE = 'testDate';
+    public const TEST_DATE = 'testDate';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
     protected $_resourceType = ResourceType::HEARING_TEST;
 
@@ -19,7 +19,7 @@ class HearingTest extends ModelBase
      * @return HearingTest[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class HearingTest extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -93,7 +93,7 @@ class HearingTest extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

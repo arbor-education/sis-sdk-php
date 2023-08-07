@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Basket extends ModelBase
+class Basket extends \ModelBase
 {
-    const GUARDIAN = 'guardian';
+    public const GUARDIAN = 'guardian';
 
     protected $_resourceType = ResourceType::BASKET;
 
@@ -15,7 +15,7 @@ class Basket extends ModelBase
      * @return Basket[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class Basket extends ModelBase
     /**
      * @param Guardian $guardian
      */
-    public function setGuardian(Guardian $guardian = null)
+    public function setGuardian(\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }

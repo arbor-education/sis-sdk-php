@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Faculty extends ModelBase
+class Faculty extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const FACULTY_NAME = 'facultyName';
+    public const FACULTY_NAME = 'facultyName';
 
-    const IS_ACTIVE = 'isActive';
+    public const IS_ACTIVE = 'isActive';
 
     protected $_resourceType = ResourceType::FACULTY;
 
@@ -19,7 +19,7 @@ class Faculty extends ModelBase
      * @return Faculty[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class Faculty extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -77,7 +77,7 @@ class Faculty extends ModelBase
     /**
      * @param string $facultyName
      */
-    public function setFacultyName($facultyName = null)
+    public function setFacultyName(string $facultyName = null)
     {
         $this->setProperty('facultyName', $facultyName);
     }
@@ -93,7 +93,7 @@ class Faculty extends ModelBase
     /**
      * @param bool $isActive
      */
-    public function setIsActive($isActive = null)
+    public function setIsActive(bool $isActive = null)
     {
         $this->setProperty('isActive', $isActive);
     }

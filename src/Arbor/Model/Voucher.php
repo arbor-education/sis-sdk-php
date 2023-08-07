@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Voucher extends ModelBase
+class Voucher extends \ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const PAYMENT_RECEIVED_DATE = 'paymentReceivedDate';
+    public const PAYMENT_RECEIVED_DATE = 'paymentReceivedDate';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const PAYMENT_AMOUNT = 'paymentAmount';
+    public const PAYMENT_AMOUNT = 'paymentAmount';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
     protected $_resourceType = ResourceType::VOUCHER;
 
@@ -23,7 +23,7 @@ class Voucher extends ModelBase
      * @return Voucher[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class Voucher extends ModelBase
     /**
      * @param BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -97,7 +97,7 @@ class Voucher extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -113,7 +113,7 @@ class Voucher extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount($paymentAmount = null)
+    public function setPaymentAmount(string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }

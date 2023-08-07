@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class NewReportCardTemplate extends ModelBase
+class NewReportCardTemplate extends \ModelBase
 {
-    const TEMPLATE_NAME = 'templateName';
+    public const TEMPLATE_NAME = 'templateName';
 
-    const TEMPLATE_FILENAME = 'templateFilename';
+    public const TEMPLATE_FILENAME = 'templateFilename';
 
-    const TEMPLATE_HTML = 'templateHtml';
+    public const TEMPLATE_HTML = 'templateHtml';
 
-    const CSS = 'css';
+    public const CSS = 'css';
 
-    const HELPER_CLASS_NAME = 'helperClassName';
+    public const HELPER_CLASS_NAME = 'helperClassName';
 
-    const VARIABLES = 'variables';
+    public const VARIABLES = 'variables';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ORIENTATION = 'orientation';
+    public const ORIENTATION = 'orientation';
 
-    const IS_CUSTOM = 'isCustom';
+    public const IS_CUSTOM = 'isCustom';
 
     protected $_resourceType = ResourceType::NEW_REPORT_CARD_TEMPLATE;
 
@@ -31,7 +31,7 @@ class NewReportCardTemplate extends ModelBase
      * @return NewReportCardTemplate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $templateName
      */
-    public function setTemplateName($templateName = null)
+    public function setTemplateName(string $templateName = null)
     {
         $this->setProperty('templateName', $templateName);
     }
@@ -89,7 +89,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $templateFilename
      */
-    public function setTemplateFilename($templateFilename = null)
+    public function setTemplateFilename(string $templateFilename = null)
     {
         $this->setProperty('templateFilename', $templateFilename);
     }
@@ -105,7 +105,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $templateHtml
      */
-    public function setTemplateHtml($templateHtml = null)
+    public function setTemplateHtml(string $templateHtml = null)
     {
         $this->setProperty('templateHtml', $templateHtml);
     }
@@ -121,7 +121,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $css
      */
-    public function setCss($css = null)
+    public function setCss(string $css = null)
     {
         $this->setProperty('css', $css);
     }
@@ -137,7 +137,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $helperClassName
      */
-    public function setHelperClassName($helperClassName = null)
+    public function setHelperClassName(string $helperClassName = null)
     {
         $this->setProperty('helperClassName', $helperClassName);
     }
@@ -153,7 +153,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $variables
      */
-    public function setVariables($variables = null)
+    public function setVariables(string $variables = null)
     {
         $this->setProperty('variables', $variables);
     }
@@ -169,7 +169,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -185,7 +185,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $orientation
      */
-    public function setOrientation($orientation = null)
+    public function setOrientation(string $orientation = null)
     {
         $this->setProperty('orientation', $orientation);
     }
@@ -201,7 +201,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param bool $isCustom
      */
-    public function setIsCustom($isCustom = null)
+    public function setIsCustom(bool $isCustom = null)
     {
         $this->setProperty('isCustom', $isCustom);
     }

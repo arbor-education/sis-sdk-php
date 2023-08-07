@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicHoliday extends ModelBase
+class AcademicHoliday extends \ModelBase
 {
-    const ACADEMIC_HOLIDAY_TYPE = 'academicHolidayType';
+    public const ACADEMIC_HOLIDAY_TYPE = 'academicHolidayType';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const HOLIDAY_LABEL = 'holidayLabel';
+    public const HOLIDAY_LABEL = 'holidayLabel';
 
     protected $_resourceType = ResourceType::ACADEMIC_HOLIDAY;
 
@@ -21,7 +21,7 @@ class AcademicHoliday extends ModelBase
      * @return AcademicHoliday[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param string $academicHolidayType
      */
-    public function setAcademicHolidayType($academicHolidayType = null)
+    public function setAcademicHolidayType(string $academicHolidayType = null)
     {
         $this->setProperty('academicHolidayType', $academicHolidayType);
     }
@@ -111,7 +111,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param string $holidayLabel
      */
-    public function setHolidayLabel($holidayLabel = null)
+    public function setHolidayLabel(string $holidayLabel = null)
     {
         $this->setProperty('holidayLabel', $holidayLabel);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SuspendedCalendarEntryMapping extends ModelBase
+class SuspendedCalendarEntryMapping extends \ModelBase
 {
-    const SUSPENDED_OBJECT = 'suspendedObject';
+    public const SUSPENDED_OBJECT = 'suspendedObject';
 
-    const SUSPENDED_EVENT = 'suspendedEvent';
+    public const SUSPENDED_EVENT = 'suspendedEvent';
 
     protected $_resourceType = ResourceType::SUSPENDED_CALENDAR_ENTRY_MAPPING;
 
@@ -17,7 +17,7 @@ class SuspendedCalendarEntryMapping extends ModelBase
      * @return SuspendedCalendarEntryMapping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class SuspendedCalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $suspendedObject
      */
-    public function setSuspendedObject(ModelBase $suspendedObject = null)
+    public function setSuspendedObject(\ModelBase $suspendedObject = null)
     {
         $this->setProperty('suspendedObject', $suspendedObject);
     }
@@ -75,7 +75,7 @@ class SuspendedCalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $suspendedEvent
      */
-    public function setSuspendedEvent(ModelBase $suspendedEvent = null)
+    public function setSuspendedEvent(\ModelBase $suspendedEvent = null)
     {
         $this->setProperty('suspendedEvent', $suspendedEvent);
     }

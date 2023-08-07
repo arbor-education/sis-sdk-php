@@ -4,61 +4,61 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendanceMark extends ModelBase
+class AttendanceMark extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const MARK_INDEX = 'markIndex';
+    public const MARK_INDEX = 'markIndex';
 
-    const MARK_DESCRIPTION = 'markDescription';
+    public const MARK_DESCRIPTION = 'markDescription';
 
-    const MARK_SHORT_DESCRIPTION = 'markShortDescription';
+    public const MARK_SHORT_DESCRIPTION = 'markShortDescription';
 
-    const IS_LEGAL_PRESENT = 'isLegalPresent';
+    public const IS_LEGAL_PRESENT = 'isLegalPresent';
 
-    const IS_LEGAL_APPROVED_EDUCATIONAL_ACTIVITY = 'isLegalApprovedEducationalActivity';
+    public const IS_LEGAL_APPROVED_EDUCATIONAL_ACTIVITY = 'isLegalApprovedEducationalActivity';
 
-    const IS_LEGAL_NOT_REQUIRED = 'isLegalNotRequired';
+    public const IS_LEGAL_NOT_REQUIRED = 'isLegalNotRequired';
 
-    const IS_LEGAL_ABSENT = 'isLegalAbsent';
+    public const IS_LEGAL_ABSENT = 'isLegalAbsent';
 
-    const IS_STATISTICAL_PRESENT = 'isStatisticalPresent';
+    public const IS_STATISTICAL_PRESENT = 'isStatisticalPresent';
 
-    const IS_STATISTICAL_AUTHORIZED_ABSENT = 'isStatisticalAuthorizedAbsent';
+    public const IS_STATISTICAL_AUTHORIZED_ABSENT = 'isStatisticalAuthorizedAbsent';
 
-    const IS_STATISTICAL_UNAUTHORIZED_ABSENT = 'isStatisticalUnauthorizedAbsent';
+    public const IS_STATISTICAL_UNAUTHORIZED_ABSENT = 'isStatisticalUnauthorizedAbsent';
 
-    const IS_STATISTICAL_APPROVED_EDUCATIONAL_ACTIVITY = 'isStatisticalApprovedEducationalActivity';
+    public const IS_STATISTICAL_APPROVED_EDUCATIONAL_ACTIVITY = 'isStatisticalApprovedEducationalActivity';
 
-    const IS_STATISTICAL_POSSIBLE_ATTENDANCE = 'isStatisticalPossibleAttendance';
+    public const IS_STATISTICAL_POSSIBLE_ATTENDANCE = 'isStatisticalPossibleAttendance';
 
-    const IS_DEFAULT_PRESENT = 'isDefaultPresent';
+    public const IS_DEFAULT_PRESENT = 'isDefaultPresent';
 
-    const IS_DEFAULT_LATE = 'isDefaultLate';
+    public const IS_DEFAULT_LATE = 'isDefaultLate';
 
-    const IS_DEFAULT_LATE_AFTER_REGISTER_CLOSED = 'isDefaultLateAfterRegisterClosed';
+    public const IS_DEFAULT_LATE_AFTER_REGISTER_CLOSED = 'isDefaultLateAfterRegisterClosed';
 
-    const IS_DEFAULT_ABSENT = 'isDefaultAbsent';
+    public const IS_DEFAULT_ABSENT = 'isDefaultAbsent';
 
-    const IS_PHYSICAL_PRESENT = 'isPhysicalPresent';
+    public const IS_PHYSICAL_PRESENT = 'isPhysicalPresent';
 
-    const IS_PHYSICAL_LATE = 'isPhysicalLate';
+    public const IS_PHYSICAL_LATE = 'isPhysicalLate';
 
-    const IS_PHYSICAL_ABSENT = 'isPhysicalAbsent';
+    public const IS_PHYSICAL_ABSENT = 'isPhysicalAbsent';
 
-    const IS_PHYSICAL_NOT_REQUIRED = 'isPhysicalNotRequired';
+    public const IS_PHYSICAL_NOT_REQUIRED = 'isPhysicalNotRequired';
 
-    const IS_PRESUMED_ABSENT = 'isPresumedAbsent';
+    public const IS_PRESUMED_ABSENT = 'isPresumedAbsent';
 
-    const IS_EXCLUDED = 'isExcluded';
+    public const IS_EXCLUDED = 'isExcluded';
 
-    const SHOW_IN_REGISTER = 'showInRegister';
+    public const SHOW_IN_REGISTER = 'showInRegister';
 
     protected $_resourceType = ResourceType::ATTENDANCE_MARK;
 
@@ -67,7 +67,7 @@ class AttendanceMark extends ModelBase
      * @return AttendanceMark[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -109,7 +109,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -125,7 +125,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -141,7 +141,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -157,7 +157,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark($attendanceMark = null)
+    public function setAttendanceMark(string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -173,7 +173,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param int $markIndex
      */
-    public function setMarkIndex($markIndex = null)
+    public function setMarkIndex(int $markIndex = null)
     {
         $this->setProperty('markIndex', $markIndex);
     }
@@ -189,7 +189,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param string $markDescription
      */
-    public function setMarkDescription($markDescription = null)
+    public function setMarkDescription(string $markDescription = null)
     {
         $this->setProperty('markDescription', $markDescription);
     }
@@ -205,7 +205,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param string $markShortDescription
      */
-    public function setMarkShortDescription($markShortDescription = null)
+    public function setMarkShortDescription(string $markShortDescription = null)
     {
         $this->setProperty('markShortDescription', $markShortDescription);
     }
@@ -221,7 +221,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isLegalPresent
      */
-    public function setIsLegalPresent($isLegalPresent = null)
+    public function setIsLegalPresent(bool $isLegalPresent = null)
     {
         $this->setProperty('isLegalPresent', $isLegalPresent);
     }
@@ -237,7 +237,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isLegalApprovedEducationalActivity
      */
-    public function setIsLegalApprovedEducationalActivity($isLegalApprovedEducationalActivity = null)
+    public function setIsLegalApprovedEducationalActivity(bool $isLegalApprovedEducationalActivity = null)
     {
         $this->setProperty('isLegalApprovedEducationalActivity', $isLegalApprovedEducationalActivity);
     }
@@ -253,7 +253,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isLegalNotRequired
      */
-    public function setIsLegalNotRequired($isLegalNotRequired = null)
+    public function setIsLegalNotRequired(bool $isLegalNotRequired = null)
     {
         $this->setProperty('isLegalNotRequired', $isLegalNotRequired);
     }
@@ -269,7 +269,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isLegalAbsent
      */
-    public function setIsLegalAbsent($isLegalAbsent = null)
+    public function setIsLegalAbsent(bool $isLegalAbsent = null)
     {
         $this->setProperty('isLegalAbsent', $isLegalAbsent);
     }
@@ -285,7 +285,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isStatisticalPresent
      */
-    public function setIsStatisticalPresent($isStatisticalPresent = null)
+    public function setIsStatisticalPresent(bool $isStatisticalPresent = null)
     {
         $this->setProperty('isStatisticalPresent', $isStatisticalPresent);
     }
@@ -301,7 +301,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isStatisticalAuthorizedAbsent
      */
-    public function setIsStatisticalAuthorizedAbsent($isStatisticalAuthorizedAbsent = null)
+    public function setIsStatisticalAuthorizedAbsent(bool $isStatisticalAuthorizedAbsent = null)
     {
         $this->setProperty('isStatisticalAuthorizedAbsent', $isStatisticalAuthorizedAbsent);
     }
@@ -317,7 +317,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isStatisticalUnauthorizedAbsent
      */
-    public function setIsStatisticalUnauthorizedAbsent($isStatisticalUnauthorizedAbsent = null)
+    public function setIsStatisticalUnauthorizedAbsent(bool $isStatisticalUnauthorizedAbsent = null)
     {
         $this->setProperty('isStatisticalUnauthorizedAbsent', $isStatisticalUnauthorizedAbsent);
     }
@@ -333,7 +333,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isStatisticalApprovedEducationalActivity
      */
-    public function setIsStatisticalApprovedEducationalActivity($isStatisticalApprovedEducationalActivity = null)
+    public function setIsStatisticalApprovedEducationalActivity(bool $isStatisticalApprovedEducationalActivity = null)
     {
         $this->setProperty('isStatisticalApprovedEducationalActivity', $isStatisticalApprovedEducationalActivity);
     }
@@ -349,7 +349,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isStatisticalPossibleAttendance
      */
-    public function setIsStatisticalPossibleAttendance($isStatisticalPossibleAttendance = null)
+    public function setIsStatisticalPossibleAttendance(bool $isStatisticalPossibleAttendance = null)
     {
         $this->setProperty('isStatisticalPossibleAttendance', $isStatisticalPossibleAttendance);
     }
@@ -365,7 +365,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isDefaultPresent
      */
-    public function setIsDefaultPresent($isDefaultPresent = null)
+    public function setIsDefaultPresent(bool $isDefaultPresent = null)
     {
         $this->setProperty('isDefaultPresent', $isDefaultPresent);
     }
@@ -381,7 +381,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isDefaultLate
      */
-    public function setIsDefaultLate($isDefaultLate = null)
+    public function setIsDefaultLate(bool $isDefaultLate = null)
     {
         $this->setProperty('isDefaultLate', $isDefaultLate);
     }
@@ -397,7 +397,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isDefaultLateAfterRegisterClosed
      */
-    public function setIsDefaultLateAfterRegisterClosed($isDefaultLateAfterRegisterClosed = null)
+    public function setIsDefaultLateAfterRegisterClosed(bool $isDefaultLateAfterRegisterClosed = null)
     {
         $this->setProperty('isDefaultLateAfterRegisterClosed', $isDefaultLateAfterRegisterClosed);
     }
@@ -413,7 +413,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isDefaultAbsent
      */
-    public function setIsDefaultAbsent($isDefaultAbsent = null)
+    public function setIsDefaultAbsent(bool $isDefaultAbsent = null)
     {
         $this->setProperty('isDefaultAbsent', $isDefaultAbsent);
     }
@@ -429,7 +429,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isPhysicalPresent
      */
-    public function setIsPhysicalPresent($isPhysicalPresent = null)
+    public function setIsPhysicalPresent(bool $isPhysicalPresent = null)
     {
         $this->setProperty('isPhysicalPresent', $isPhysicalPresent);
     }
@@ -445,7 +445,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isPhysicalLate
      */
-    public function setIsPhysicalLate($isPhysicalLate = null)
+    public function setIsPhysicalLate(bool $isPhysicalLate = null)
     {
         $this->setProperty('isPhysicalLate', $isPhysicalLate);
     }
@@ -461,7 +461,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isPhysicalAbsent
      */
-    public function setIsPhysicalAbsent($isPhysicalAbsent = null)
+    public function setIsPhysicalAbsent(bool $isPhysicalAbsent = null)
     {
         $this->setProperty('isPhysicalAbsent', $isPhysicalAbsent);
     }
@@ -477,7 +477,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isPhysicalNotRequired
      */
-    public function setIsPhysicalNotRequired($isPhysicalNotRequired = null)
+    public function setIsPhysicalNotRequired(bool $isPhysicalNotRequired = null)
     {
         $this->setProperty('isPhysicalNotRequired', $isPhysicalNotRequired);
     }
@@ -493,7 +493,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isPresumedAbsent
      */
-    public function setIsPresumedAbsent($isPresumedAbsent = null)
+    public function setIsPresumedAbsent(bool $isPresumedAbsent = null)
     {
         $this->setProperty('isPresumedAbsent', $isPresumedAbsent);
     }
@@ -509,7 +509,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $isExcluded
      */
-    public function setIsExcluded($isExcluded = null)
+    public function setIsExcluded(bool $isExcluded = null)
     {
         $this->setProperty('isExcluded', $isExcluded);
     }
@@ -525,7 +525,7 @@ class AttendanceMark extends ModelBase
     /**
      * @param bool $showInRegister
      */
-    public function setShowInRegister($showInRegister = null)
+    public function setShowInRegister(bool $showInRegister = null)
     {
         $this->setProperty('showInRegister', $showInRegister);
     }

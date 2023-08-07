@@ -4,9 +4,9 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviourLocation extends ModelBase
+class BehaviourLocation extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::BEHAVIOUR_LOCATION;
 
@@ -15,7 +15,7 @@ class BehaviourLocation extends ModelBase
      * @return BehaviourLocation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class BehaviourLocation extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

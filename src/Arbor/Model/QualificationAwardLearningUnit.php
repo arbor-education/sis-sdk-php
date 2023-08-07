@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationAwardLearningUnit extends ModelBase
+class QualificationAwardLearningUnit extends \ModelBase
 {
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
-    const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
+    public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
-    const IS_USER_DEFINED = 'isUserDefined';
+    public const IS_USER_DEFINED = 'isUserDefined';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD_LEARNING_UNIT;
 
@@ -19,7 +19,7 @@ class QualificationAwardLearningUnit extends ModelBase
      * @return QualificationAwardLearningUnit[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
@@ -77,7 +77,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -93,7 +93,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param bool $isUserDefined
      */
-    public function setIsUserDefined($isUserDefined = null)
+    public function setIsUserDefined(bool $isUserDefined = null)
     {
         $this->setProperty('isUserDefined', $isUserDefined);
     }

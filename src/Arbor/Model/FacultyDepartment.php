@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class FacultyDepartment extends ModelBase
+class FacultyDepartment extends \ModelBase
 {
-    const DEPARTMENT = 'department';
+    public const DEPARTMENT = 'department';
 
-    const FACULTY = 'faculty';
+    public const FACULTY = 'faculty';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::FACULTY_DEPARTMENT;
 
@@ -21,7 +21,7 @@ class FacultyDepartment extends ModelBase
      * @return FacultyDepartment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class FacultyDepartment extends ModelBase
     /**
      * @param Department $department
      */
-    public function setDepartment(Department $department = null)
+    public function setDepartment(\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
@@ -79,7 +79,7 @@ class FacultyDepartment extends ModelBase
     /**
      * @param Faculty $faculty
      */
-    public function setFaculty(Faculty $faculty = null)
+    public function setFaculty(\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }

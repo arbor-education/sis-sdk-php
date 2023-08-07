@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StaffObjective extends ModelBase
+class StaffObjective extends \ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const APPRAISAL = 'appraisal';
+    public const APPRAISAL = 'appraisal';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CRITERIA = 'criteria';
+    public const CRITERIA = 'criteria';
 
-    const WEIGHTING = 'weighting';
+    public const WEIGHTING = 'weighting';
 
-    const EVIDENCE = 'evidence';
+    public const EVIDENCE = 'evidence';
 
-    const COMMENTS = 'comments';
+    public const COMMENTS = 'comments';
 
-    const OUTCOME = 'outcome';
+    public const OUTCOME = 'outcome';
 
     protected $_resourceType = ResourceType::STAFF_OBJECTIVE;
 
@@ -33,7 +33,7 @@ class StaffObjective extends ModelBase
      * @return StaffObjective[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class StaffObjective extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -91,7 +91,7 @@ class StaffObjective extends ModelBase
     /**
      * @param Appraisal $appraisal
      */
-    public function setAppraisal(Appraisal $appraisal = null)
+    public function setAppraisal(\Appraisal $appraisal = null)
     {
         $this->setProperty('appraisal', $appraisal);
     }
@@ -107,7 +107,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -155,7 +155,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $criteria
      */
-    public function setCriteria($criteria = null)
+    public function setCriteria(string $criteria = null)
     {
         $this->setProperty('criteria', $criteria);
     }
@@ -171,7 +171,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $weighting
      */
-    public function setWeighting($weighting = null)
+    public function setWeighting(string $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }
@@ -187,7 +187,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $evidence
      */
-    public function setEvidence($evidence = null)
+    public function setEvidence(string $evidence = null)
     {
         $this->setProperty('evidence', $evidence);
     }
@@ -203,7 +203,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments($comments = null)
+    public function setComments(string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }
@@ -219,7 +219,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $outcome
      */
-    public function setOutcome($outcome = null)
+    public function setOutcome(string $outcome = null)
     {
         $this->setProperty('outcome', $outcome);
     }

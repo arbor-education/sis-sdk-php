@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MealSittingAutomaticAttendeeTarget extends ModelBase
+class MealSittingAutomaticAttendeeTarget extends \ModelBase
 {
-    const MEAL_SITTING = 'mealSitting';
+    public const MEAL_SITTING = 'mealSitting';
 
-    const AUTOMATIC_ATTENDEE_TARGET = 'automaticAttendeeTarget';
+    public const AUTOMATIC_ATTENDEE_TARGET = 'automaticAttendeeTarget';
 
     protected $_resourceType = ResourceType::MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET;
 
@@ -17,7 +17,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      * @return MealSittingAutomaticAttendeeTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     /**
      * @param MealSitting $mealSitting
      */
-    public function setMealSitting(MealSitting $mealSitting = null)
+    public function setMealSitting(\MealSitting $mealSitting = null)
     {
         $this->setProperty('mealSitting', $mealSitting);
     }
@@ -75,7 +75,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     /**
      * @param ModelBase $automaticAttendeeTarget
      */
-    public function setAutomaticAttendeeTarget(ModelBase $automaticAttendeeTarget = null)
+    public function setAutomaticAttendeeTarget(\ModelBase $automaticAttendeeTarget = null)
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }

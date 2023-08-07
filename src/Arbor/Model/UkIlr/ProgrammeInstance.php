@@ -7,15 +7,15 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ProgrammeInstance extends ModelBase
+class ProgrammeInstance extends \ModelBase
 {
-    const PROGRAMME_TYPE = 'programmeType';
+    public const PROGRAMME_TYPE = 'programmeType';
 
-    const FUNDING_MODEL = 'fundingModel';
+    public const FUNDING_MODEL = 'fundingModel';
 
-    const AIM_TYPE = 'aimType';
+    public const AIM_TYPE = 'aimType';
 
-    const SOURCE_OF_FUNDING = 'sourceOfFunding';
+    public const SOURCE_OF_FUNDING = 'sourceOfFunding';
 
     protected $_resourceType = ResourceType::UK_ILR_PROGRAMME_INSTANCE;
 
@@ -24,7 +24,7 @@ class ProgrammeInstance extends ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $programmeType
      */
-    public function setProgrammeType($programmeType = null)
+    public function setProgrammeType(string $programmeType = null)
     {
         $this->setProperty('programmeType', $programmeType);
     }
@@ -82,7 +82,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $fundingModel
      */
-    public function setFundingModel($fundingModel = null)
+    public function setFundingModel(string $fundingModel = null)
     {
         $this->setProperty('fundingModel', $fundingModel);
     }
@@ -98,7 +98,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $aimType
      */
-    public function setAimType($aimType = null)
+    public function setAimType(string $aimType = null)
     {
         $this->setProperty('aimType', $aimType);
     }
@@ -114,7 +114,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $sourceOfFunding
      */
-    public function setSourceOfFunding($sourceOfFunding = null)
+    public function setSourceOfFunding(string $sourceOfFunding = null)
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }

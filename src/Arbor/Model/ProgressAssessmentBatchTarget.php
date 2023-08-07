@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ProgressAssessmentBatchTarget extends ModelBase
+class ProgressAssessmentBatchTarget extends \ModelBase
 {
-    const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
+    public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
-    const TARGET = 'target';
+    public const TARGET = 'target';
 
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH_TARGET;
 
@@ -17,7 +17,7 @@ class ProgressAssessmentBatchTarget extends ModelBase
      * @return ProgressAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ProgressAssessmentBatchTarget extends ModelBase
     /**
      * @param ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
@@ -75,7 +75,7 @@ class ProgressAssessmentBatchTarget extends ModelBase
     /**
      * @param ModelBase $target
      */
-    public function setTarget(ModelBase $target = null)
+    public function setTarget(\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

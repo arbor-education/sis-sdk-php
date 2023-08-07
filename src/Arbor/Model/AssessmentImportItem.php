@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentImportItem extends ModelBase
+class AssessmentImportItem extends \ModelBase
 {
-    const ASSESSMENT_IMPORT_COLUMN = 'assessmentImportColumn';
+    public const ASSESSMENT_IMPORT_COLUMN = 'assessmentImportColumn';
 
-    const ASSESSMENT_IMPORT_ROW = 'assessmentImportRow';
+    public const ASSESSMENT_IMPORT_ROW = 'assessmentImportRow';
 
-    const DATA_VALUE = 'dataValue';
+    public const DATA_VALUE = 'dataValue';
 
-    const IMPORTED_DATETIME = 'importedDatetime';
+    public const IMPORTED_DATETIME = 'importedDatetime';
 
     protected $_resourceType = ResourceType::ASSESSMENT_IMPORT_ITEM;
 
@@ -21,7 +21,7 @@ class AssessmentImportItem extends ModelBase
      * @return AssessmentImportItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param AssessmentImportColumn $assessmentImportColumn
      */
-    public function setAssessmentImportColumn(AssessmentImportColumn $assessmentImportColumn = null)
+    public function setAssessmentImportColumn(\AssessmentImportColumn $assessmentImportColumn = null)
     {
         $this->setProperty('assessmentImportColumn', $assessmentImportColumn);
     }
@@ -79,7 +79,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param AssessmentImportRow $assessmentImportRow
      */
-    public function setAssessmentImportRow(AssessmentImportRow $assessmentImportRow = null)
+    public function setAssessmentImportRow(\AssessmentImportRow $assessmentImportRow = null)
     {
         $this->setProperty('assessmentImportRow', $assessmentImportRow);
     }
@@ -95,7 +95,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param string $dataValue
      */
-    public function setDataValue($dataValue = null)
+    public function setDataValue(string $dataValue = null)
     {
         $this->setProperty('dataValue', $dataValue);
     }

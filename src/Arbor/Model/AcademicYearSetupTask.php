@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicYearSetupTask extends ModelBase
+class AcademicYearSetupTask extends \ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
-    const SKIPPED_DATETIME = 'skippedDatetime';
+    public const SKIPPED_DATETIME = 'skippedDatetime';
 
     protected $_resourceType = ResourceType::ACADEMIC_YEAR_SETUP_TASK;
 
@@ -21,7 +21,7 @@ class AcademicYearSetupTask extends ModelBase
      * @return AcademicYearSetupTask[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class AcademicYearSetupTask extends ModelBase
     /**
      * @param AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -79,7 +79,7 @@ class AcademicYearSetupTask extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }

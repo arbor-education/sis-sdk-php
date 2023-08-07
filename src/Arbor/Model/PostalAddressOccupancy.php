@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PostalAddressOccupancy extends ModelBase
+class PostalAddressOccupancy extends \ModelBase
 {
-    const POSTAL_ADDRESS = 'postalAddress';
+    public const POSTAL_ADDRESS = 'postalAddress';
 
-    const OCCUPANT = 'occupant';
+    public const OCCUPANT = 'occupant';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const POSTAL_ADDRESS_TYPE = 'postalAddressType';
+    public const POSTAL_ADDRESS_TYPE = 'postalAddressType';
 
-    const IS_CORRESPONDENCE_ADDRESS = 'isCorrespondenceAddress';
+    public const IS_CORRESPONDENCE_ADDRESS = 'isCorrespondenceAddress';
 
     protected $_resourceType = ResourceType::POSTAL_ADDRESS_OCCUPANCY;
 
@@ -25,7 +25,7 @@ class PostalAddressOccupancy extends ModelBase
      * @return PostalAddressOccupancy[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class PostalAddressOccupancy extends ModelBase
     /**
      * @param PostalAddress $postalAddress
      */
-    public function setPostalAddress(PostalAddress $postalAddress = null)
+    public function setPostalAddress(\PostalAddress $postalAddress = null)
     {
         $this->setProperty('postalAddress', $postalAddress);
     }
@@ -83,7 +83,7 @@ class PostalAddressOccupancy extends ModelBase
     /**
      * @param ModelBase $occupant
      */
-    public function setOccupant(ModelBase $occupant = null)
+    public function setOccupant(\ModelBase $occupant = null)
     {
         $this->setProperty('occupant', $occupant);
     }
@@ -131,7 +131,7 @@ class PostalAddressOccupancy extends ModelBase
     /**
      * @param string $postalAddressType
      */
-    public function setPostalAddressType($postalAddressType = null)
+    public function setPostalAddressType(string $postalAddressType = null)
     {
         $this->setProperty('postalAddressType', $postalAddressType);
     }
@@ -147,7 +147,7 @@ class PostalAddressOccupancy extends ModelBase
     /**
      * @param bool $isCorrespondenceAddress
      */
-    public function setIsCorrespondenceAddress($isCorrespondenceAddress = null)
+    public function setIsCorrespondenceAddress(bool $isCorrespondenceAddress = null)
     {
         $this->setProperty('isCorrespondenceAddress', $isCorrespondenceAddress);
     }

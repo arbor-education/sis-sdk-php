@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PersonTrainingCourse extends ModelBase
+class PersonTrainingCourse extends \ModelBase
 {
-    const TRAINING_COURSE = 'trainingCourse';
+    public const TRAINING_COURSE = 'trainingCourse';
 
-    const TRAINED_PERSON = 'trainedPerson';
+    public const TRAINED_PERSON = 'trainedPerson';
 
-    const FEE_COSTS = 'feeCosts';
+    public const FEE_COSTS = 'feeCosts';
 
     protected $_resourceType = ResourceType::PERSON_TRAINING_COURSE;
 
@@ -19,7 +19,7 @@ class PersonTrainingCourse extends ModelBase
      * @return PersonTrainingCourse[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param TrainingCourse $trainingCourse
      */
-    public function setTrainingCourse(TrainingCourse $trainingCourse = null)
+    public function setTrainingCourse(\TrainingCourse $trainingCourse = null)
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }
@@ -77,7 +77,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param ModelBase $trainedPerson
      */
-    public function setTrainedPerson(ModelBase $trainedPerson = null)
+    public function setTrainedPerson(\ModelBase $trainedPerson = null)
     {
         $this->setProperty('trainedPerson', $trainedPerson);
     }
@@ -93,7 +93,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param float $feeCosts
      */
-    public function setFeeCosts($feeCosts = null)
+    public function setFeeCosts(float $feeCosts = null)
     {
         $this->setProperty('feeCosts', $feeCosts);
     }

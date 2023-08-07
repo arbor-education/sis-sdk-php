@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentCurriculumAchievement extends ModelBase
+class StudentCurriculumAchievement extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CURRICULUM_STATEMENT = 'curriculumStatement';
+    public const CURRICULUM_STATEMENT = 'curriculumStatement';
 
-    const ACHIEVEMENT_LEVEL = 'achievementLevel';
+    public const ACHIEVEMENT_LEVEL = 'achievementLevel';
 
-    const ACHIEVEMENT_VALUE = 'achievementValue';
+    public const ACHIEVEMENT_VALUE = 'achievementValue';
 
-    const ASSESSMENT_TYPE = 'assessmentType';
+    public const ASSESSMENT_TYPE = 'assessmentType';
 
-    const ACHIEVEMENT_DATE = 'achievementDate';
+    public const ACHIEVEMENT_DATE = 'achievementDate';
 
     protected $_resourceType = ResourceType::STUDENT_CURRICULUM_ACHIEVEMENT;
 
@@ -25,7 +25,7 @@ class StudentCurriculumAchievement extends ModelBase
      * @return StudentCurriculumAchievement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +83,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
@@ -99,7 +99,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param AchievementLevel $achievementLevel
      */
-    public function setAchievementLevel(AchievementLevel $achievementLevel = null)
+    public function setAchievementLevel(\AchievementLevel $achievementLevel = null)
     {
         $this->setProperty('achievementLevel', $achievementLevel);
     }
@@ -115,7 +115,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param float $achievementValue
      */
-    public function setAchievementValue($achievementValue = null)
+    public function setAchievementValue(float $achievementValue = null)
     {
         $this->setProperty('achievementValue', $achievementValue);
     }
@@ -131,7 +131,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param string $assessmentType
      */
-    public function setAssessmentType($assessmentType = null)
+    public function setAssessmentType(string $assessmentType = null)
     {
         $this->setProperty('assessmentType', $assessmentType);
     }

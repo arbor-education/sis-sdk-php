@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BusinessRoleAssignment extends ModelBase
+class BusinessRoleAssignment extends \ModelBase
 {
-    const BUSINESS_ROLE = 'businessRole';
+    public const BUSINESS_ROLE = 'businessRole';
 
-    const STAFF_CONTRACT_POST = 'staffContractPost';
+    public const STAFF_CONTRACT_POST = 'staffContractPost';
 
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::BUSINESS_ROLE_ASSIGNMENT;
 
@@ -23,7 +23,7 @@ class BusinessRoleAssignment extends ModelBase
      * @return BusinessRoleAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param BusinessRole $businessRole
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setBusinessRole(\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
@@ -81,7 +81,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -97,7 +97,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }

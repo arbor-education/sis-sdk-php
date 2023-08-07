@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CommunicationTemplate extends ModelBase
+class CommunicationTemplate extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const IDENTIFIER = 'identifier';
+    public const IDENTIFIER = 'identifier';
 
-    const EMAIL_SUBJECT = 'emailSubject';
+    public const EMAIL_SUBJECT = 'emailSubject';
 
-    const EMAIL_BODY = 'emailBody';
+    public const EMAIL_BODY = 'emailBody';
 
-    const SMS_BODY = 'smsBody';
+    public const SMS_BODY = 'smsBody';
 
-    const LETTER_BODY = 'letterBody';
+    public const LETTER_BODY = 'letterBody';
 
-    const IN_APP_MESSAGE_BODY = 'inAppMessageBody';
+    public const IN_APP_MESSAGE_BODY = 'inAppMessageBody';
 
-    const COMMUNICATION_TEMPLATE_DEFINITION_CLASS = 'communicationTemplateDefinitionClass';
+    public const COMMUNICATION_TEMPLATE_DEFINITION_CLASS = 'communicationTemplateDefinitionClass';
 
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
     protected $_resourceType = ResourceType::COMMUNICATION_TEMPLATE;
 
@@ -31,7 +31,7 @@ class CommunicationTemplate extends ModelBase
      * @return CommunicationTemplate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -89,7 +89,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -105,7 +105,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $emailSubject
      */
-    public function setEmailSubject($emailSubject = null)
+    public function setEmailSubject(string $emailSubject = null)
     {
         $this->setProperty('emailSubject', $emailSubject);
     }
@@ -121,7 +121,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $emailBody
      */
-    public function setEmailBody($emailBody = null)
+    public function setEmailBody(string $emailBody = null)
     {
         $this->setProperty('emailBody', $emailBody);
     }
@@ -137,7 +137,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $smsBody
      */
-    public function setSmsBody($smsBody = null)
+    public function setSmsBody(string $smsBody = null)
     {
         $this->setProperty('smsBody', $smsBody);
     }
@@ -153,7 +153,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $letterBody
      */
-    public function setLetterBody($letterBody = null)
+    public function setLetterBody(string $letterBody = null)
     {
         $this->setProperty('letterBody', $letterBody);
     }
@@ -169,7 +169,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $inAppMessageBody
      */
-    public function setInAppMessageBody($inAppMessageBody = null)
+    public function setInAppMessageBody(string $inAppMessageBody = null)
     {
         $this->setProperty('inAppMessageBody', $inAppMessageBody);
     }
@@ -185,7 +185,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $communicationTemplateDefinitionClass
      */
-    public function setCommunicationTemplateDefinitionClass($communicationTemplateDefinitionClass = null)
+    public function setCommunicationTemplateDefinitionClass(string $communicationTemplateDefinitionClass = null)
     {
         $this->setProperty('communicationTemplateDefinitionClass', $communicationTemplateDefinitionClass);
     }
@@ -201,7 +201,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }

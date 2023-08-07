@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AwardingOrganization extends ModelBase
+class AwardingOrganization extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const ISSUED_CENTER_NUMBER = 'issuedCenterNumber';
+    public const ISSUED_CENTER_NUMBER = 'issuedCenterNumber';
 
-    const CENTER_NUMBER_ISSUED_DATE = 'centerNumberIssuedDate';
+    public const CENTER_NUMBER_ISSUED_DATE = 'centerNumberIssuedDate';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::AWARDING_ORGANIZATION;
 
@@ -31,7 +31,7 @@ class AwardingOrganization extends ModelBase
      * @return AwardingOrganization[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -89,7 +89,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -105,7 +105,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -121,7 +121,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -137,7 +137,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -153,7 +153,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $issuedCenterNumber
      */
-    public function setIssuedCenterNumber($issuedCenterNumber = null)
+    public function setIssuedCenterNumber(string $issuedCenterNumber = null)
     {
         $this->setProperty('issuedCenterNumber', $issuedCenterNumber);
     }

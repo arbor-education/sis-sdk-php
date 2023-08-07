@@ -8,23 +8,23 @@ use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 use Arbor\Model\Student;
 
-class ServiceChildConcern extends ModelBase
+class ServiceChildConcern extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const MOVE_CONCERN = 'moveConcern';
+    public const MOVE_CONCERN = 'moveConcern';
 
-    const DEPLOYMENT_CONCERN = 'deploymentConcern';
+    public const DEPLOYMENT_CONCERN = 'deploymentConcern';
 
-    const SEPARATION_CONCERN = 'separationConcern';
+    public const SEPARATION_CONCERN = 'separationConcern';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
-    const ASSESSMENT_DATE = 'assessmentDate';
+    public const ASSESSMENT_DATE = 'assessmentDate';
 
-    const IMPORTED = 'imported';
+    public const IMPORTED = 'imported';
 
-    const CTF_IMPORT_JOB_STUDENT = 'ctfImportJobStudent';
+    public const CTF_IMPORT_JOB_STUDENT = 'ctfImportJobStudent';
 
     protected $_resourceType = ResourceType::UK_DFE_SERVICE_CHILD_CONCERN;
 
@@ -33,7 +33,7 @@ class ServiceChildConcern extends ModelBase
      * @return ServiceChildConcern[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -91,7 +91,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $moveConcern
      */
-    public function setMoveConcern($moveConcern = null)
+    public function setMoveConcern(string $moveConcern = null)
     {
         $this->setProperty('moveConcern', $moveConcern);
     }
@@ -107,7 +107,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $deploymentConcern
      */
-    public function setDeploymentConcern($deploymentConcern = null)
+    public function setDeploymentConcern(string $deploymentConcern = null)
     {
         $this->setProperty('deploymentConcern', $deploymentConcern);
     }
@@ -123,7 +123,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $separationConcern
      */
-    public function setSeparationConcern($separationConcern = null)
+    public function setSeparationConcern(string $separationConcern = null)
     {
         $this->setProperty('separationConcern', $separationConcern);
     }
@@ -139,7 +139,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -171,7 +171,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param bool $imported
      */
-    public function setImported($imported = null)
+    public function setImported(bool $imported = null)
     {
         $this->setProperty('imported', $imported);
     }
@@ -187,7 +187,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param CtfImportJobStudent $ctfImportJobStudent
      */
-    public function setCtfImportJobStudent(CtfImportJobStudent $ctfImportJobStudent = null)
+    public function setCtfImportJobStudent(\CtfImportJobStudent $ctfImportJobStudent = null)
     {
         $this->setProperty('ctfImportJobStudent', $ctfImportJobStudent);
     }

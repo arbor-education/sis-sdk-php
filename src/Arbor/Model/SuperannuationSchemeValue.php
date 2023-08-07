@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SuperannuationSchemeValue extends ModelBase
+class SuperannuationSchemeValue extends \ModelBase
 {
-    const SUPERANNUATION_SCHEME = 'superannuationScheme';
+    public const SUPERANNUATION_SCHEME = 'superannuationScheme';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const VALUE = 'value';
+    public const VALUE = 'value';
 
     protected $_resourceType = ResourceType::SUPERANNUATION_SCHEME_VALUE;
 
@@ -21,7 +21,7 @@ class SuperannuationSchemeValue extends ModelBase
      * @return SuperannuationSchemeValue[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param SuperannuationScheme $superannuationScheme
      */
-    public function setSuperannuationScheme(SuperannuationScheme $superannuationScheme = null)
+    public function setSuperannuationScheme(\SuperannuationScheme $superannuationScheme = null)
     {
         $this->setProperty('superannuationScheme', $superannuationScheme);
     }
@@ -111,7 +111,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param float $value
      */
-    public function setValue($value = null)
+    public function setValue(float $value = null)
     {
         $this->setProperty('value', $value);
     }

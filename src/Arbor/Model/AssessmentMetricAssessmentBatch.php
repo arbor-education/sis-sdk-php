@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentMetricAssessmentBatch extends ModelBase
+class AssessmentMetricAssessmentBatch extends \ModelBase
 {
-    const ASSESSMENT_METRIC = 'assessmentMetric';
+    public const ASSESSMENT_METRIC = 'assessmentMetric';
 
-    const OPERATOR = 'operator';
+    public const OPERATOR = 'operator';
 
-    const PARENT_ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'parentAssessmentMetricAssessmentBatch';
+    public const PARENT_ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'parentAssessmentMetricAssessmentBatch';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_ASSESSMENT_BATCH;
 
@@ -19,7 +19,7 @@ class AssessmentMetricAssessmentBatch extends ModelBase
      * @return AssessmentMetricAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class AssessmentMetricAssessmentBatch extends ModelBase
     /**
      * @param AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
@@ -77,7 +77,7 @@ class AssessmentMetricAssessmentBatch extends ModelBase
     /**
      * @param string $operator
      */
-    public function setOperator($operator = null)
+    public function setOperator(string $operator = null)
     {
         $this->setProperty('operator', $operator);
     }
@@ -93,7 +93,7 @@ class AssessmentMetricAssessmentBatch extends ModelBase
     /**
      * @param AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch
      */
-    public function setParentAssessmentMetricAssessmentBatch(AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch = null)
+    public function setParentAssessmentMetricAssessmentBatch(\AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch = null)
     {
         $this->setProperty('parentAssessmentMetricAssessmentBatch', $parentAssessmentMetricAssessmentBatch);
     }

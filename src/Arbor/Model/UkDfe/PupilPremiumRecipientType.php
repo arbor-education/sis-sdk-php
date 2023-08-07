@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class PupilPremiumRecipientType extends ModelBase
+class PupilPremiumRecipientType extends \ModelBase
 {
-    const PUPIL_PREMIUM_RECIPIENT = 'pupilPremiumRecipient';
+    public const PUPIL_PREMIUM_RECIPIENT = 'pupilPremiumRecipient';
 
-    const PUPIL_PREMIUM_TYPE = 'pupilPremiumType';
+    public const PUPIL_PREMIUM_TYPE = 'pupilPremiumType';
 
     protected $_resourceType = ResourceType::UK_DFE_PUPIL_PREMIUM_RECIPIENT_TYPE;
 
@@ -20,7 +20,7 @@ class PupilPremiumRecipientType extends ModelBase
      * @return PupilPremiumRecipientType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class PupilPremiumRecipientType extends ModelBase
     /**
      * @param PupilPremiumRecipient $pupilPremiumRecipient
      */
-    public function setPupilPremiumRecipient(PupilPremiumRecipient $pupilPremiumRecipient = null)
+    public function setPupilPremiumRecipient(\PupilPremiumRecipient $pupilPremiumRecipient = null)
     {
         $this->setProperty('pupilPremiumRecipient', $pupilPremiumRecipient);
     }
@@ -78,7 +78,7 @@ class PupilPremiumRecipientType extends ModelBase
     /**
      * @param string $pupilPremiumType
      */
-    public function setPupilPremiumType($pupilPremiumType = null)
+    public function setPupilPremiumType(string $pupilPremiumType = null)
     {
         $this->setProperty('pupilPremiumType', $pupilPremiumType);
     }

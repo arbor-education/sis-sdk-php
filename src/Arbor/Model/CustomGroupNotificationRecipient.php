@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CustomGroupNotificationRecipient extends ModelBase
+class CustomGroupNotificationRecipient extends \ModelBase
 {
-    const CUSTOM_GROUP_NOTIFICATION_SETTING = 'customGroupNotificationSetting';
+    public const CUSTOM_GROUP_NOTIFICATION_SETTING = 'customGroupNotificationSetting';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const STAFF_TYPE = 'staffType';
+    public const STAFF_TYPE = 'staffType';
 
     protected $_resourceType = ResourceType::CUSTOM_GROUP_NOTIFICATION_RECIPIENT;
 
@@ -19,7 +19,7 @@ class CustomGroupNotificationRecipient extends ModelBase
      * @return CustomGroupNotificationRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class CustomGroupNotificationRecipient extends ModelBase
     /**
      * @param CustomGroupNotificationSetting $customGroupNotificationSetting
      */
-    public function setCustomGroupNotificationSetting(CustomGroupNotificationSetting $customGroupNotificationSetting = null)
+    public function setCustomGroupNotificationSetting(\CustomGroupNotificationSetting $customGroupNotificationSetting = null)
     {
         $this->setProperty('customGroupNotificationSetting', $customGroupNotificationSetting);
     }
@@ -77,7 +77,7 @@ class CustomGroupNotificationRecipient extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -93,7 +93,7 @@ class CustomGroupNotificationRecipient extends ModelBase
     /**
      * @param string $staffType
      */
-    public function setStaffType($staffType = null)
+    public function setStaffType(string $staffType = null)
     {
         $this->setProperty('staffType', $staffType);
     }

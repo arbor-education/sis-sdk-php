@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InternalExclusion extends ModelBase
+class InternalExclusion extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ISSUED_BY_STAFF = 'issuedByStaff';
+    public const ISSUED_BY_STAFF = 'issuedByStaff';
 
-    const INTERNAL_EXCLUSION_SESSION = 'internalExclusionSession';
+    public const INTERNAL_EXCLUSION_SESSION = 'internalExclusionSession';
 
-    const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
+    public const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
 
-    const EXCLUSION_REASON = 'exclusionReason';
+    public const EXCLUSION_REASON = 'exclusionReason';
 
-    const INTERNAL_EXCLUSION_REASON = 'internalExclusionReason';
+    public const INTERNAL_EXCLUSION_REASON = 'internalExclusionReason';
 
-    const ISSUED_DATETIME = 'issuedDatetime';
+    public const ISSUED_DATETIME = 'issuedDatetime';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::INTERNAL_EXCLUSION;
 
@@ -29,7 +29,7 @@ class InternalExclusion extends ModelBase
      * @return InternalExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -87,7 +87,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param Staff $issuedByStaff
      */
-    public function setIssuedByStaff(Staff $issuedByStaff = null)
+    public function setIssuedByStaff(\Staff $issuedByStaff = null)
     {
         $this->setProperty('issuedByStaff', $issuedByStaff);
     }
@@ -103,7 +103,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param InternalExclusionSession $internalExclusionSession
      */
-    public function setInternalExclusionSession(InternalExclusionSession $internalExclusionSession = null)
+    public function setInternalExclusionSession(\InternalExclusionSession $internalExclusionSession = null)
     {
         $this->setProperty('internalExclusionSession', $internalExclusionSession);
     }
@@ -119,7 +119,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
@@ -135,7 +135,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -151,7 +151,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param InternalExclusionReason $internalExclusionReason
      */
-    public function setInternalExclusionReason(InternalExclusionReason $internalExclusionReason = null)
+    public function setInternalExclusionReason(\InternalExclusionReason $internalExclusionReason = null)
     {
         $this->setProperty('internalExclusionReason', $internalExclusionReason);
     }
@@ -183,7 +183,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

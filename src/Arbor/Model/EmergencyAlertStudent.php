@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EmergencyAlertStudent extends ModelBase
+class EmergencyAlertStudent extends \ModelBase
 {
-    const EMERGENCY_ALERT = 'emergencyAlert';
+    public const EMERGENCY_ALERT = 'emergencyAlert';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
     protected $_resourceType = ResourceType::EMERGENCY_ALERT_STUDENT;
 
@@ -17,7 +17,7 @@ class EmergencyAlertStudent extends ModelBase
      * @return EmergencyAlertStudent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class EmergencyAlertStudent extends ModelBase
     /**
      * @param EmergencyAlert $emergencyAlert
      */
-    public function setEmergencyAlert(EmergencyAlert $emergencyAlert = null)
+    public function setEmergencyAlert(\EmergencyAlert $emergencyAlert = null)
     {
         $this->setProperty('emergencyAlert', $emergencyAlert);
     }
@@ -75,7 +75,7 @@ class EmergencyAlertStudent extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

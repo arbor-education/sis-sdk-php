@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class UserRole extends ModelBase
+class UserRole extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const SECTION_NAME = 'sectionName';
+    public const SECTION_NAME = 'sectionName';
 
-    const FUNCTION_NAME = 'functionName';
+    public const FUNCTION_NAME = 'functionName';
 
-    const PERMISSION_NAME = 'permissionName';
+    public const PERMISSION_NAME = 'permissionName';
 
-    const PERMISSION_CATEGORY = 'permissionCategory';
+    public const PERMISSION_CATEGORY = 'permissionCategory';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const IS_EXTERNAL_ADMINISTRATOR_ROLE = 'isExternalAdministratorRole';
+    public const IS_EXTERNAL_ADMINISTRATOR_ROLE = 'isExternalAdministratorRole';
 
     protected $_resourceType = ResourceType::USER_ROLE;
 
@@ -31,7 +31,7 @@ class UserRole extends ModelBase
      * @return UserRole[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class UserRole extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -89,7 +89,7 @@ class UserRole extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -105,7 +105,7 @@ class UserRole extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -121,7 +121,7 @@ class UserRole extends ModelBase
     /**
      * @param string $sectionName
      */
-    public function setSectionName($sectionName = null)
+    public function setSectionName(string $sectionName = null)
     {
         $this->setProperty('sectionName', $sectionName);
     }
@@ -137,7 +137,7 @@ class UserRole extends ModelBase
     /**
      * @param string $functionName
      */
-    public function setFunctionName($functionName = null)
+    public function setFunctionName(string $functionName = null)
     {
         $this->setProperty('functionName', $functionName);
     }
@@ -153,7 +153,7 @@ class UserRole extends ModelBase
     /**
      * @param string $permissionName
      */
-    public function setPermissionName($permissionName = null)
+    public function setPermissionName(string $permissionName = null)
     {
         $this->setProperty('permissionName', $permissionName);
     }
@@ -169,7 +169,7 @@ class UserRole extends ModelBase
     /**
      * @param string $permissionCategory
      */
-    public function setPermissionCategory($permissionCategory = null)
+    public function setPermissionCategory(string $permissionCategory = null)
     {
         $this->setProperty('permissionCategory', $permissionCategory);
     }
@@ -185,7 +185,7 @@ class UserRole extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -201,7 +201,7 @@ class UserRole extends ModelBase
     /**
      * @param bool $isExternalAdministratorRole
      */
-    public function setIsExternalAdministratorRole($isExternalAdministratorRole = null)
+    public function setIsExternalAdministratorRole(bool $isExternalAdministratorRole = null)
     {
         $this->setProperty('isExternalAdministratorRole', $isExternalAdministratorRole);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SchoolShopProductPrice extends ModelBase
+class SchoolShopProductPrice extends \ModelBase
 {
-    const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
+    public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
-    const ELIGIBLE = 'eligible';
+    public const ELIGIBLE = 'eligible';
 
-    const PRICE_EX_VAT = 'priceExVat';
+    public const PRICE_EX_VAT = 'priceExVat';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
     protected $_resourceType = ResourceType::SCHOOL_SHOP_PRODUCT_PRICE;
 
@@ -21,7 +21,7 @@ class SchoolShopProductPrice extends ModelBase
      * @return SchoolShopProductPrice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
@@ -79,7 +79,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param ModelBase $eligible
      */
-    public function setEligible(ModelBase $eligible = null)
+    public function setEligible(\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }
@@ -95,7 +95,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat($priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -111,7 +111,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationLearningUnitAssessable extends ModelBase
+class QualificationLearningUnitAssessable extends \ModelBase
 {
-    const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
+    public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
-    const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
+    public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
     protected $_resourceType = ResourceType::QUALIFICATION_LEARNING_UNIT_ASSESSABLE;
 
@@ -17,7 +17,7 @@ class QualificationLearningUnitAssessable extends ModelBase
      * @return QualificationLearningUnitAssessable[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class QualificationLearningUnitAssessable extends ModelBase
     /**
      * @param QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -75,7 +75,7 @@ class QualificationLearningUnitAssessable extends ModelBase
     /**
      * @param QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }

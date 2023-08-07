@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentGuardianRelationship extends ModelBase
+class StudentGuardianRelationship extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const GUARDIAN = 'guardian';
+    public const GUARDIAN = 'guardian';
 
-    const GUARDIAN_RELATIONSHIP_TYPE = 'guardianRelationshipType';
+    public const GUARDIAN_RELATIONSHIP_TYPE = 'guardianRelationshipType';
 
-    const IS_LEGAL_GUARDIAN = 'isLegalGuardian';
+    public const IS_LEGAL_GUARDIAN = 'isLegalGuardian';
 
-    const IS_PRIMARY_GUARDIAN = 'isPrimaryGuardian';
+    public const IS_PRIMARY_GUARDIAN = 'isPrimaryGuardian';
 
-    const IS_AUTHORIZED_TO_COLLECT = 'isAuthorizedToCollect';
+    public const IS_AUTHORIZED_TO_COLLECT = 'isAuthorizedToCollect';
 
-    const EMERGENCY_CONTACT_PRIORITY = 'emergencyContactPriority';
+    public const EMERGENCY_CONTACT_PRIORITY = 'emergencyContactPriority';
 
-    const UNSUBSCRIBED_FROM_COMMS = 'unsubscribedFromComms';
+    public const UNSUBSCRIBED_FROM_COMMS = 'unsubscribedFromComms';
 
-    const GUARDIAN_USER_AUTHORIZED = 'guardianUserAuthorized';
+    public const GUARDIAN_USER_AUTHORIZED = 'guardianUserAuthorized';
 
-    const ACCESS_NOTES = 'accessNotes';
+    public const ACCESS_NOTES = 'accessNotes';
 
     protected $_resourceType = ResourceType::STUDENT_GUARDIAN_RELATIONSHIP;
 
@@ -33,7 +33,7 @@ class StudentGuardianRelationship extends ModelBase
      * @return StudentGuardianRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -91,7 +91,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param Guardian $guardian
      */
-    public function setGuardian(Guardian $guardian = null)
+    public function setGuardian(\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }
@@ -107,7 +107,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param GuardianRelationshipType $guardianRelationshipType
      */
-    public function setGuardianRelationshipType(GuardianRelationshipType $guardianRelationshipType = null)
+    public function setGuardianRelationshipType(\GuardianRelationshipType $guardianRelationshipType = null)
     {
         $this->setProperty('guardianRelationshipType', $guardianRelationshipType);
     }
@@ -123,7 +123,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isLegalGuardian
      */
-    public function setIsLegalGuardian($isLegalGuardian = null)
+    public function setIsLegalGuardian(bool $isLegalGuardian = null)
     {
         $this->setProperty('isLegalGuardian', $isLegalGuardian);
     }
@@ -139,7 +139,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isPrimaryGuardian
      */
-    public function setIsPrimaryGuardian($isPrimaryGuardian = null)
+    public function setIsPrimaryGuardian(bool $isPrimaryGuardian = null)
     {
         $this->setProperty('isPrimaryGuardian', $isPrimaryGuardian);
     }
@@ -155,7 +155,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isAuthorizedToCollect
      */
-    public function setIsAuthorizedToCollect($isAuthorizedToCollect = null)
+    public function setIsAuthorizedToCollect(bool $isAuthorizedToCollect = null)
     {
         $this->setProperty('isAuthorizedToCollect', $isAuthorizedToCollect);
     }
@@ -171,7 +171,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param string $emergencyContactPriority
      */
-    public function setEmergencyContactPriority($emergencyContactPriority = null)
+    public function setEmergencyContactPriority(string $emergencyContactPriority = null)
     {
         $this->setProperty('emergencyContactPriority', $emergencyContactPriority);
     }
@@ -187,7 +187,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $unsubscribedFromComms
      */
-    public function setUnsubscribedFromComms($unsubscribedFromComms = null)
+    public function setUnsubscribedFromComms(bool $unsubscribedFromComms = null)
     {
         $this->setProperty('unsubscribedFromComms', $unsubscribedFromComms);
     }
@@ -203,7 +203,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $guardianUserAuthorized
      */
-    public function setGuardianUserAuthorized($guardianUserAuthorized = null)
+    public function setGuardianUserAuthorized(bool $guardianUserAuthorized = null)
     {
         $this->setProperty('guardianUserAuthorized', $guardianUserAuthorized);
     }
@@ -219,7 +219,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param string $accessNotes
      */
-    public function setAccessNotes($accessNotes = null)
+    public function setAccessNotes(string $accessNotes = null)
     {
         $this->setProperty('accessNotes', $accessNotes);
     }

@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicUnitAssessment extends ModelBase
+class AcademicUnitAssessment extends \ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_ASSESSMENT;
 
@@ -17,7 +17,7 @@ class AcademicUnitAssessment extends ModelBase
      * @return AcademicUnitAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AcademicUnitAssessment extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -75,7 +75,7 @@ class AcademicUnitAssessment extends ModelBase
     /**
      * @param Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }

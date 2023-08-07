@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class EligibilityRecord extends ModelBase
+class EligibilityRecord extends \ModelBase
 {
-    const ELIGIBILITY = 'eligibility';
+    public const ELIGIBILITY = 'eligibility';
 
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const LAST_VERIFIED_DATE = 'lastVerifiedDate';
+    public const LAST_VERIFIED_DATE = 'lastVerifiedDate';
 
-    const NEXT_CHECK_DATE = 'nextCheckDate';
+    public const NEXT_CHECK_DATE = 'nextCheckDate';
 
     protected $_resourceType = ResourceType::ELIGIBILITY_RECORD;
 
@@ -25,7 +25,7 @@ class EligibilityRecord extends ModelBase
      * @return EligibilityRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param Eligibility $eligibility
      */
-    public function setEligibility(Eligibility $eligibility = null)
+    public function setEligibility(\Eligibility $eligibility = null)
     {
         $this->setProperty('eligibility', $eligibility);
     }
@@ -83,7 +83,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }

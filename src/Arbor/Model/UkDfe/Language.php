@@ -7,11 +7,11 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Language extends ModelBase
+class Language extends \ModelBase
 {
-    const D00011_ALPHA3 = 'd00011Alpha3';
+    public const D00011_ALPHA3 = 'd00011Alpha3';
 
-    const D00011_ALPHA4 = 'd00011Alpha4';
+    public const D00011_ALPHA4 = 'd00011Alpha4';
 
     protected $_resourceType = ResourceType::UK_DFE_LANGUAGE;
 
@@ -20,7 +20,7 @@ class Language extends ModelBase
      * @return Language[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class Language extends ModelBase
     /**
      * @param string $d00011Alpha3
      */
-    public function setD00011Alpha3($d00011Alpha3 = null)
+    public function setD00011Alpha3(string $d00011Alpha3 = null)
     {
         $this->setProperty('d00011Alpha3', $d00011Alpha3);
     }
@@ -78,7 +78,7 @@ class Language extends ModelBase
     /**
      * @param string $d00011Alpha4
      */
-    public function setD00011Alpha4($d00011Alpha4 = null)
+    public function setD00011Alpha4(string $d00011Alpha4 = null)
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }

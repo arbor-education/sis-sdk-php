@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TripPrice extends ModelBase
+class TripPrice extends \ModelBase
 {
-    const TRIP = 'trip';
+    public const TRIP = 'trip';
 
-    const APPLICABLE = 'applicable';
+    public const APPLICABLE = 'applicable';
 
-    const PRICE_EX_VAT = 'priceExVat';
+    public const PRICE_EX_VAT = 'priceExVat';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
-    const VOLUNTARY_CONTRIBUTION = 'voluntaryContribution';
+    public const VOLUNTARY_CONTRIBUTION = 'voluntaryContribution';
 
-    const INSTALMENTS_PERMITTED = 'instalmentsPermitted';
+    public const INSTALMENTS_PERMITTED = 'instalmentsPermitted';
 
-    const MINIMUM_INSTALMENT_AMOUNT = 'minimumInstalmentAmount';
+    public const MINIMUM_INSTALMENT_AMOUNT = 'minimumInstalmentAmount';
 
-    const AUTO_CONFIRM_INSTALMENT_THRESHOLD = 'autoConfirmInstalmentThreshold';
+    public const AUTO_CONFIRM_INSTALMENT_THRESHOLD = 'autoConfirmInstalmentThreshold';
 
     protected $_resourceType = ResourceType::TRIP_PRICE;
 
@@ -29,7 +29,7 @@ class TripPrice extends ModelBase
      * @return TripPrice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class TripPrice extends ModelBase
     /**
      * @param Trip $trip
      */
-    public function setTrip(Trip $trip = null)
+    public function setTrip(\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
@@ -87,7 +87,7 @@ class TripPrice extends ModelBase
     /**
      * @param ModelBase $applicable
      */
-    public function setApplicable(ModelBase $applicable = null)
+    public function setApplicable(\ModelBase $applicable = null)
     {
         $this->setProperty('applicable', $applicable);
     }
@@ -103,7 +103,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat($priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -119,7 +119,7 @@ class TripPrice extends ModelBase
     /**
      * @param VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -135,7 +135,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $voluntaryContribution
      */
-    public function setVoluntaryContribution($voluntaryContribution = null)
+    public function setVoluntaryContribution(bool $voluntaryContribution = null)
     {
         $this->setProperty('voluntaryContribution', $voluntaryContribution);
     }
@@ -151,7 +151,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $instalmentsPermitted
      */
-    public function setInstalmentsPermitted($instalmentsPermitted = null)
+    public function setInstalmentsPermitted(bool $instalmentsPermitted = null)
     {
         $this->setProperty('instalmentsPermitted', $instalmentsPermitted);
     }
@@ -167,7 +167,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $minimumInstalmentAmount
      */
-    public function setMinimumInstalmentAmount($minimumInstalmentAmount = null)
+    public function setMinimumInstalmentAmount(string $minimumInstalmentAmount = null)
     {
         $this->setProperty('minimumInstalmentAmount', $minimumInstalmentAmount);
     }
@@ -183,7 +183,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $autoConfirmInstalmentThreshold
      */
-    public function setAutoConfirmInstalmentThreshold($autoConfirmInstalmentThreshold = null)
+    public function setAutoConfirmInstalmentThreshold(string $autoConfirmInstalmentThreshold = null)
     {
         $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }

@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CurriculumTarget extends ModelBase
+class CurriculumTarget extends \ModelBase
 {
-    const CURRICULUM_TARGET_SET = 'curriculumTargetSet';
+    public const CURRICULUM_TARGET_SET = 'curriculumTargetSet';
 
-    const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
+    public const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
 
-    const ACADEMIC_YEAR_POINT = 'academicYearPoint';
+    public const ACADEMIC_YEAR_POINT = 'academicYearPoint';
 
-    const TARGET = 'target';
+    public const TARGET = 'target';
 
     protected $_resourceType = ResourceType::CURRICULUM_TARGET;
 
@@ -21,7 +21,7 @@ class CurriculumTarget extends ModelBase
      * @return CurriculumTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param CurriculumTargetSet $curriculumTargetSet
      */
-    public function setCurriculumTargetSet(CurriculumTargetSet $curriculumTargetSet = null)
+    public function setCurriculumTargetSet(\CurriculumTargetSet $curriculumTargetSet = null)
     {
         $this->setProperty('curriculumTargetSet', $curriculumTargetSet);
     }
@@ -79,7 +79,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param int $academicYearIndex
      */
-    public function setAcademicYearIndex($academicYearIndex = null)
+    public function setAcademicYearIndex(int $academicYearIndex = null)
     {
         $this->setProperty('academicYearIndex', $academicYearIndex);
     }
@@ -95,7 +95,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param float $academicYearPoint
      */
-    public function setAcademicYearPoint($academicYearPoint = null)
+    public function setAcademicYearPoint(float $academicYearPoint = null)
     {
         $this->setProperty('academicYearPoint', $academicYearPoint);
     }
@@ -111,7 +111,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param float $target
      */
-    public function setTarget($target = null)
+    public function setTarget(float $target = null)
     {
         $this->setProperty('target', $target);
     }

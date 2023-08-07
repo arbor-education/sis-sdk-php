@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class GradeSet extends ModelBase
+class GradeSet extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const GRADE_SET_NAME = 'gradeSetName';
+    public const GRADE_SET_NAME = 'gradeSetName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const GRADE_POINT_SCALE = 'gradePointScale';
+    public const GRADE_POINT_SCALE = 'gradePointScale';
 
-    const IS_DISPLAY_GRADE_SET = 'isDisplayGradeSet';
+    public const IS_DISPLAY_GRADE_SET = 'isDisplayGradeSet';
 
-    const SCALE_DIRECTION = 'scaleDirection';
+    public const SCALE_DIRECTION = 'scaleDirection';
 
     protected $_resourceType = ResourceType::GRADE_SET;
 
@@ -29,7 +29,7 @@ class GradeSet extends ModelBase
      * @return GradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +87,7 @@ class GradeSet extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,7 +103,7 @@ class GradeSet extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -119,7 +119,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $gradeSetName
      */
-    public function setGradeSetName($gradeSetName = null)
+    public function setGradeSetName(string $gradeSetName = null)
     {
         $this->setProperty('gradeSetName', $gradeSetName);
     }
@@ -135,7 +135,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -151,7 +151,7 @@ class GradeSet extends ModelBase
     /**
      * @param GradePointScale $gradePointScale
      */
-    public function setGradePointScale(GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
@@ -167,7 +167,7 @@ class GradeSet extends ModelBase
     /**
      * @param bool $isDisplayGradeSet
      */
-    public function setIsDisplayGradeSet($isDisplayGradeSet = null)
+    public function setIsDisplayGradeSet(bool $isDisplayGradeSet = null)
     {
         $this->setProperty('isDisplayGradeSet', $isDisplayGradeSet);
     }
@@ -183,7 +183,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $scaleDirection
      */
-    public function setScaleDirection($scaleDirection = null)
+    public function setScaleDirection(string $scaleDirection = null)
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }

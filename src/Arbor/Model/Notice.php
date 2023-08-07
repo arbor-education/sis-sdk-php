@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Notice extends ModelBase
+class Notice extends \ModelBase
 {
-    const NOTICE_HTML = 'noticeHtml';
+    public const NOTICE_HTML = 'noticeHtml';
 
-    const NOTICE_DATETIME = 'noticeDatetime';
+    public const NOTICE_DATETIME = 'noticeDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
     protected $_resourceType = ResourceType::NOTICE;
 
@@ -19,7 +19,7 @@ class Notice extends ModelBase
      * @return Notice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class Notice extends ModelBase
     /**
      * @param string $noticeHtml
      */
-    public function setNoticeHtml($noticeHtml = null)
+    public function setNoticeHtml(string $noticeHtml = null)
     {
         $this->setProperty('noticeHtml', $noticeHtml);
     }

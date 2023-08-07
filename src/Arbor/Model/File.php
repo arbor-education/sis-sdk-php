@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class File extends ModelBase
+class File extends \ModelBase
 {
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const URL = 'url';
+    public const URL = 'url';
 
-    const FILE_SIZE = 'fileSize';
+    public const FILE_SIZE = 'fileSize';
 
-    const MIME_TYPE = 'mimeType';
+    public const MIME_TYPE = 'mimeType';
 
-    const FILE_IDENTIFIER = 'fileIdentifier';
+    public const FILE_IDENTIFIER = 'fileIdentifier';
 
-    const FILE_METADATA = 'fileMetadata';
+    public const FILE_METADATA = 'fileMetadata';
 
-    const FILE_NAME = 'fileName';
+    public const FILE_NAME = 'fileName';
 
-    const COMPRESSED = 'compressed';
+    public const COMPRESSED = 'compressed';
 
     protected $_resourceType = ResourceType::FILE;
 
@@ -29,7 +29,7 @@ class File extends ModelBase
      * @return File[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class File extends ModelBase
     /**
      * @param Content $content
      */
-    public function setContent(Content $content = null)
+    public function setContent(\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -87,7 +87,7 @@ class File extends ModelBase
     /**
      * @param string $url
      */
-    public function setUrl($url = null)
+    public function setUrl(string $url = null)
     {
         $this->setProperty('url', $url);
     }
@@ -103,7 +103,7 @@ class File extends ModelBase
     /**
      * @param int $fileSize
      */
-    public function setFileSize($fileSize = null)
+    public function setFileSize(int $fileSize = null)
     {
         $this->setProperty('fileSize', $fileSize);
     }
@@ -119,7 +119,7 @@ class File extends ModelBase
     /**
      * @param string $mimeType
      */
-    public function setMimeType($mimeType = null)
+    public function setMimeType(string $mimeType = null)
     {
         $this->setProperty('mimeType', $mimeType);
     }
@@ -135,7 +135,7 @@ class File extends ModelBase
     /**
      * @param string $fileIdentifier
      */
-    public function setFileIdentifier($fileIdentifier = null)
+    public function setFileIdentifier(string $fileIdentifier = null)
     {
         $this->setProperty('fileIdentifier', $fileIdentifier);
     }
@@ -151,7 +151,7 @@ class File extends ModelBase
     /**
      * @param string $fileMetadata
      */
-    public function setFileMetadata($fileMetadata = null)
+    public function setFileMetadata(string $fileMetadata = null)
     {
         $this->setProperty('fileMetadata', $fileMetadata);
     }
@@ -167,7 +167,7 @@ class File extends ModelBase
     /**
      * @param string $fileName
      */
-    public function setFileName($fileName = null)
+    public function setFileName(string $fileName = null)
     {
         $this->setProperty('fileName', $fileName);
     }
@@ -183,7 +183,7 @@ class File extends ModelBase
     /**
      * @param bool $compressed
      */
-    public function setCompressed($compressed = null)
+    public function setCompressed(bool $compressed = null)
     {
         $this->setProperty('compressed', $compressed);
     }

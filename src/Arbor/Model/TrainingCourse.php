@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class TrainingCourse extends ModelBase
+class TrainingCourse extends \ModelBase
 {
-    const TRAINING_COURSE_TITLE = 'trainingCourseTitle';
+    public const TRAINING_COURSE_TITLE = 'trainingCourseTitle';
 
-    const TRAINING_COURSE_DESCRIPTION = 'trainingCourseDescription';
+    public const TRAINING_COURSE_DESCRIPTION = 'trainingCourseDescription';
 
-    const ORGANIZER = 'organizer';
+    public const ORGANIZER = 'organizer';
 
-    const COURSE_FEES = 'courseFees';
+    public const COURSE_FEES = 'courseFees';
 
-    const OTHER_COSTS = 'otherCosts';
+    public const OTHER_COSTS = 'otherCosts';
 
     protected $_resourceType = ResourceType::TRAINING_COURSE;
 
@@ -23,7 +23,7 @@ class TrainingCourse extends ModelBase
      * @return TrainingCourse[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param string $trainingCourseTitle
      */
-    public function setTrainingCourseTitle($trainingCourseTitle = null)
+    public function setTrainingCourseTitle(string $trainingCourseTitle = null)
     {
         $this->setProperty('trainingCourseTitle', $trainingCourseTitle);
     }
@@ -81,7 +81,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param string $trainingCourseDescription
      */
-    public function setTrainingCourseDescription($trainingCourseDescription = null)
+    public function setTrainingCourseDescription(string $trainingCourseDescription = null)
     {
         $this->setProperty('trainingCourseDescription', $trainingCourseDescription);
     }
@@ -97,7 +97,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param ModelBase $organizer
      */
-    public function setOrganizer(ModelBase $organizer = null)
+    public function setOrganizer(\ModelBase $organizer = null)
     {
         $this->setProperty('organizer', $organizer);
     }
@@ -113,7 +113,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param float $courseFees
      */
-    public function setCourseFees($courseFees = null)
+    public function setCourseFees(float $courseFees = null)
     {
         $this->setProperty('courseFees', $courseFees);
     }
@@ -129,7 +129,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param float $otherCosts
      */
-    public function setOtherCosts($otherCosts = null)
+    public function setOtherCosts(float $otherCosts = null)
     {
         $this->setProperty('otherCosts', $otherCosts);
     }

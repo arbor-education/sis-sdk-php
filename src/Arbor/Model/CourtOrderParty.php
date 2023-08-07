@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class CourtOrderParty extends ModelBase
+class CourtOrderParty extends \ModelBase
 {
-    const COURT_ORDER = 'courtOrder';
+    public const COURT_ORDER = 'courtOrder';
 
-    const PARTY = 'party';
+    public const PARTY = 'party';
 
     protected $_resourceType = ResourceType::COURT_ORDER_PARTY;
 
@@ -17,7 +17,7 @@ class CourtOrderParty extends ModelBase
      * @return CourtOrderParty[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class CourtOrderParty extends ModelBase
     /**
      * @param CourtOrder $courtOrder
      */
-    public function setCourtOrder(CourtOrder $courtOrder = null)
+    public function setCourtOrder(\CourtOrder $courtOrder = null)
     {
         $this->setProperty('courtOrder', $courtOrder);
     }
@@ -75,7 +75,7 @@ class CourtOrderParty extends ModelBase
     /**
      * @param ModelBase $party
      */
-    public function setParty(ModelBase $party = null)
+    public function setParty(\ModelBase $party = null)
     {
         $this->setProperty('party', $party);
     }

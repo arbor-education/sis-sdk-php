@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class ThirdPartySite extends ModelBase
+class ThirdPartySite extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::THIRD_PARTY_SITE;
 
@@ -17,7 +17,7 @@ class ThirdPartySite extends ModelBase
      * @return ThirdPartySite[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class ThirdPartySite extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -75,7 +75,7 @@ class ThirdPartySite extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

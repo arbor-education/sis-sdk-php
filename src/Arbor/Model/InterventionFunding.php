@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InterventionFunding extends ModelBase
+class InterventionFunding extends \ModelBase
 {
-    const INTERVENTION = 'intervention';
+    public const INTERVENTION = 'intervention';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const INTERVENTION_FUNDING_SOURCE = 'interventionFundingSource';
+    public const INTERVENTION_FUNDING_SOURCE = 'interventionFundingSource';
 
-    const FUNDING_AMOUNT = 'fundingAmount';
+    public const FUNDING_AMOUNT = 'fundingAmount';
 
-    const FUNDING_PERCENTAGE = 'fundingPercentage';
+    public const FUNDING_PERCENTAGE = 'fundingPercentage';
 
     protected $_resourceType = ResourceType::INTERVENTION_FUNDING;
 
@@ -23,7 +23,7 @@ class InterventionFunding extends ModelBase
      * @return InterventionFunding[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param Intervention $intervention
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setIntervention(\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -81,7 +81,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -97,7 +97,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param InterventionFundingSource $interventionFundingSource
      */
-    public function setInterventionFundingSource(InterventionFundingSource $interventionFundingSource = null)
+    public function setInterventionFundingSource(\InterventionFundingSource $interventionFundingSource = null)
     {
         $this->setProperty('interventionFundingSource', $interventionFundingSource);
     }
@@ -113,7 +113,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param string $fundingAmount
      */
-    public function setFundingAmount($fundingAmount = null)
+    public function setFundingAmount(string $fundingAmount = null)
     {
         $this->setProperty('fundingAmount', $fundingAmount);
     }
@@ -129,7 +129,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param float $fundingPercentage
      */
-    public function setFundingPercentage($fundingPercentage = null)
+    public function setFundingPercentage(float $fundingPercentage = null)
     {
         $this->setProperty('fundingPercentage', $fundingPercentage);
     }

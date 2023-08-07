@@ -4,13 +4,13 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BursaryPaymentDate extends ModelBase
+class BursaryPaymentDate extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const BURSARY_TYPE = 'bursaryType';
+    public const BURSARY_TYPE = 'bursaryType';
 
-    const PAYMENT_DATE = 'paymentDate';
+    public const PAYMENT_DATE = 'paymentDate';
 
     protected $_resourceType = ResourceType::BURSARY_PAYMENT_DATE;
 
@@ -19,7 +19,7 @@ class BursaryPaymentDate extends ModelBase
      * @return BursaryPaymentDate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +61,7 @@ class BursaryPaymentDate extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -77,7 +77,7 @@ class BursaryPaymentDate extends ModelBase
     /**
      * @param BursaryType $bursaryType
      */
-    public function setBursaryType(BursaryType $bursaryType = null)
+    public function setBursaryType(\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }

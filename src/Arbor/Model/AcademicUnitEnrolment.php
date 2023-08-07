@@ -4,25 +4,25 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AcademicUnitEnrolment extends ModelBase
+class AcademicUnitEnrolment extends \ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const ENROLMENT_STATUS = 'enrolmentStatus';
+    public const ENROLMENT_STATUS = 'enrolmentStatus';
 
-    const REPEAT_ENROLMENT = 'repeatEnrolment';
+    public const REPEAT_ENROLMENT = 'repeatEnrolment';
 
-    const ACADEMIC_UNIT_AUTOMATIC_ENROLMENT = 'academicUnitAutomaticEnrolment';
+    public const ACADEMIC_UNIT_AUTOMATIC_ENROLMENT = 'academicUnitAutomaticEnrolment';
 
-    const ENROLMENT_DEPENDENCY = 'enrolmentDependency';
+    public const ENROLMENT_DEPENDENCY = 'enrolmentDependency';
 
-    const STUDENT_ATTENDANCE_PATTERN_DEPENDENCY = 'studentAttendancePatternDependency';
+    public const STUDENT_ATTENDANCE_PATTERN_DEPENDENCY = 'studentAttendancePatternDependency';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_ENROLMENT;
 
@@ -31,7 +31,7 @@ class AcademicUnitEnrolment extends ModelBase
      * @return AcademicUnitEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -89,7 +89,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -137,7 +137,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param string $enrolmentStatus
      */
-    public function setEnrolmentStatus($enrolmentStatus = null)
+    public function setEnrolmentStatus(string $enrolmentStatus = null)
     {
         $this->setProperty('enrolmentStatus', $enrolmentStatus);
     }
@@ -153,7 +153,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param bool $repeatEnrolment
      */
-    public function setRepeatEnrolment($repeatEnrolment = null)
+    public function setRepeatEnrolment(bool $repeatEnrolment = null)
     {
         $this->setProperty('repeatEnrolment', $repeatEnrolment);
     }
@@ -169,7 +169,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param AcademicUnitAutomaticEnrolment $academicUnitAutomaticEnrolment
      */
-    public function setAcademicUnitAutomaticEnrolment(AcademicUnitAutomaticEnrolment $academicUnitAutomaticEnrolment = null)
+    public function setAcademicUnitAutomaticEnrolment(\AcademicUnitAutomaticEnrolment $academicUnitAutomaticEnrolment = null)
     {
         $this->setProperty('academicUnitAutomaticEnrolment', $academicUnitAutomaticEnrolment);
     }
@@ -185,7 +185,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param ModelBase $enrolmentDependency
      */
-    public function setEnrolmentDependency(ModelBase $enrolmentDependency = null)
+    public function setEnrolmentDependency(\ModelBase $enrolmentDependency = null)
     {
         $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
@@ -201,7 +201,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param StudentAttendancePattern $studentAttendancePatternDependency
      */
-    public function setStudentAttendancePatternDependency(StudentAttendancePattern $studentAttendancePatternDependency = null)
+    public function setStudentAttendancePatternDependency(\StudentAttendancePattern $studentAttendancePatternDependency = null)
     {
         $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
     }

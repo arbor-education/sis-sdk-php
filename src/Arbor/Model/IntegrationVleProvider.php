@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IntegrationVleProvider extends ModelBase
+class IntegrationVleProvider extends \ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const CONFIGURATION = 'configuration';
+    public const CONFIGURATION = 'configuration';
 
-    const ENABLED = 'enabled';
+    public const ENABLED = 'enabled';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
     protected $_resourceType = ResourceType::INTEGRATION_VLE_PROVIDER;
 
@@ -21,7 +21,7 @@ class IntegrationVleProvider extends ModelBase
      * @return IntegrationVleProvider[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class IntegrationVleProvider extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -79,7 +79,7 @@ class IntegrationVleProvider extends ModelBase
     /**
      * @param string $configuration
      */
-    public function setConfiguration($configuration = null)
+    public function setConfiguration(string $configuration = null)
     {
         $this->setProperty('configuration', $configuration);
     }
@@ -95,7 +95,7 @@ class IntegrationVleProvider extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled($enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }
@@ -111,7 +111,7 @@ class IntegrationVleProvider extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }

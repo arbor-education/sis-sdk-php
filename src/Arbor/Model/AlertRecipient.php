@@ -4,17 +4,17 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AlertRecipient extends ModelBase
+class AlertRecipient extends \ModelBase
 {
-    const ALERT = 'alert';
+    public const ALERT = 'alert';
 
-    const ALERT_RULE_RECIPIENT = 'alertRuleRecipient';
+    public const ALERT_RULE_RECIPIENT = 'alertRuleRecipient';
 
-    const CHANNEL = 'channel';
+    public const CHANNEL = 'channel';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const MESSAGE = 'message';
+    public const MESSAGE = 'message';
 
     protected $_resourceType = ResourceType::ALERT_RECIPIENT;
 
@@ -23,7 +23,7 @@ class AlertRecipient extends ModelBase
      * @return AlertRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param Alert $alert
      */
-    public function setAlert(Alert $alert = null)
+    public function setAlert(\Alert $alert = null)
     {
         $this->setProperty('alert', $alert);
     }
@@ -81,7 +81,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param AlertRuleRecipient $alertRuleRecipient
      */
-    public function setAlertRuleRecipient(AlertRuleRecipient $alertRuleRecipient = null)
+    public function setAlertRuleRecipient(\AlertRuleRecipient $alertRuleRecipient = null)
     {
         $this->setProperty('alertRuleRecipient', $alertRuleRecipient);
     }
@@ -97,7 +97,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel($channel = null)
+    public function setChannel(string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }
@@ -113,7 +113,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -129,7 +129,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param ModelBase $message
      */
-    public function setMessage(ModelBase $message = null)
+    public function setMessage(\ModelBase $message = null)
     {
         $this->setProperty('message', $message);
     }

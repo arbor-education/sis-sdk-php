@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Consent extends ModelBase
+class Consent extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CONSENT_TYPE = 'consentType';
+    public const CONSENT_TYPE = 'consentType';
 
-    const RELATED = 'related';
+    public const RELATED = 'related';
 
-    const REQUESTOR = 'requestor';
+    public const REQUESTOR = 'requestor';
 
-    const REQUESTED_DATETIME = 'requestedDatetime';
+    public const REQUESTED_DATETIME = 'requestedDatetime';
 
-    const REJECTED_DATETIME = 'rejectedDatetime';
+    public const REJECTED_DATETIME = 'rejectedDatetime';
 
-    const CONSENTED_DATETIME = 'consentedDatetime';
+    public const CONSENTED_DATETIME = 'consentedDatetime';
 
-    const RESPONDEE = 'respondee';
+    public const RESPONDEE = 'respondee';
 
     protected $_resourceType = ResourceType::CONSENT;
 
@@ -29,7 +29,7 @@ class Consent extends ModelBase
      * @return Consent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class Consent extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -87,7 +87,7 @@ class Consent extends ModelBase
     /**
      * @param ConsentType $consentType
      */
-    public function setConsentType(ConsentType $consentType = null)
+    public function setConsentType(\ConsentType $consentType = null)
     {
         $this->setProperty('consentType', $consentType);
     }
@@ -103,7 +103,7 @@ class Consent extends ModelBase
     /**
      * @param ModelBase $related
      */
-    public function setRelated(ModelBase $related = null)
+    public function setRelated(\ModelBase $related = null)
     {
         $this->setProperty('related', $related);
     }
@@ -119,7 +119,7 @@ class Consent extends ModelBase
     /**
      * @param Staff $requestor
      */
-    public function setRequestor(Staff $requestor = null)
+    public function setRequestor(\Staff $requestor = null)
     {
         $this->setProperty('requestor', $requestor);
     }
@@ -183,7 +183,7 @@ class Consent extends ModelBase
     /**
      * @param ModelBase $respondee
      */
-    public function setRespondee(ModelBase $respondee = null)
+    public function setRespondee(\ModelBase $respondee = null)
     {
         $this->setProperty('respondee', $respondee);
     }

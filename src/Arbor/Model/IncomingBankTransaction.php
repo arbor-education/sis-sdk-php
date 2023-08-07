@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class IncomingBankTransaction extends ModelBase
+class IncomingBankTransaction extends \ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const RECEIVED_DATE = 'receivedDate';
+    public const RECEIVED_DATE = 'receivedDate';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
-    const PAYMENT = 'payment';
+    public const PAYMENT = 'payment';
 
     protected $_resourceType = ResourceType::INCOMING_BANK_TRANSACTION;
 
@@ -21,7 +21,7 @@ class IncomingBankTransaction extends ModelBase
      * @return IncomingBankTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -111,7 +111,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param string $payment
      */
-    public function setPayment($payment = null)
+    public function setPayment(string $payment = null)
     {
         $this->setProperty('payment', $payment);
     }

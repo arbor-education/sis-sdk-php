@@ -4,23 +4,23 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StudentCurriculumEvidence extends ModelBase
+class StudentCurriculumEvidence extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CURRICULUM_STATEMENT = 'curriculumStatement';
+    public const CURRICULUM_STATEMENT = 'curriculumStatement';
 
-    const STUDENT_CURRICULUM_ACHIEVEMENT = 'studentCurriculumAchievement';
+    public const STUDENT_CURRICULUM_ACHIEVEMENT = 'studentCurriculumAchievement';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const DETAILS = 'details';
+    public const DETAILS = 'details';
 
-    const OBSERVATION_DATE = 'observationDate';
+    public const OBSERVATION_DATE = 'observationDate';
 
-    const OBSERVATION_STAFF = 'observationStaff';
+    public const OBSERVATION_STAFF = 'observationStaff';
 
-    const EVIDENCE = 'evidence';
+    public const EVIDENCE = 'evidence';
 
     protected $_resourceType = ResourceType::STUDENT_CURRICULUM_EVIDENCE;
 
@@ -29,7 +29,7 @@ class StudentCurriculumEvidence extends ModelBase
      * @return StudentCurriculumEvidence[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +71,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -87,7 +87,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
@@ -103,7 +103,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param StudentCurriculumAchievement $studentCurriculumAchievement
      */
-    public function setStudentCurriculumAchievement(StudentCurriculumAchievement $studentCurriculumAchievement = null)
+    public function setStudentCurriculumAchievement(\StudentCurriculumAchievement $studentCurriculumAchievement = null)
     {
         $this->setProperty('studentCurriculumAchievement', $studentCurriculumAchievement);
     }
@@ -119,7 +119,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -135,7 +135,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param string $details
      */
-    public function setDetails($details = null)
+    public function setDetails(string $details = null)
     {
         $this->setProperty('details', $details);
     }
@@ -167,7 +167,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param Staff $observationStaff
      */
-    public function setObservationStaff(Staff $observationStaff = null)
+    public function setObservationStaff(\Staff $observationStaff = null)
     {
         $this->setProperty('observationStaff', $observationStaff);
     }
@@ -183,7 +183,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param ModelBase $evidence
      */
-    public function setEvidence(ModelBase $evidence = null)
+    public function setEvidence(\ModelBase $evidence = null)
     {
         $this->setProperty('evidence', $evidence);
     }

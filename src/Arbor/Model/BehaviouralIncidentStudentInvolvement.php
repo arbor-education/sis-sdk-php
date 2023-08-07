@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class BehaviouralIncidentStudentInvolvement extends ModelBase
+class BehaviouralIncidentStudentInvolvement extends \ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const RESOLVED_BY = 'resolvedBy';
+    public const RESOLVED_BY = 'resolvedBy';
 
-    const RESOLVED_DATETIME = 'resolvedDatetime';
+    public const RESOLVED_DATETIME = 'resolvedDatetime';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
-    const SEVERITY = 'severity';
+    public const SEVERITY = 'severity';
 
-    const ASSIGNEE = 'assignee';
+    public const ASSIGNEE = 'assignee';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT;
 
@@ -27,7 +27,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      * @return BehaviouralIncidentStudentInvolvement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -85,7 +85,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -101,7 +101,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param Staff $resolvedBy
      */
-    public function setResolvedBy(Staff $resolvedBy = null)
+    public function setResolvedBy(\Staff $resolvedBy = null)
     {
         $this->setProperty('resolvedBy', $resolvedBy);
     }
@@ -133,7 +133,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -149,7 +149,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param int $severity
      */
-    public function setSeverity($severity = null)
+    public function setSeverity(int $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -165,7 +165,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param Staff $assignee
      */
-    public function setAssignee(Staff $assignee = null)
+    public function setAssignee(\Staff $assignee = null)
     {
         $this->setProperty('assignee', $assignee);
     }

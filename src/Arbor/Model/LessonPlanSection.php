@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class LessonPlanSection extends ModelBase
+class LessonPlanSection extends \ModelBase
 {
-    const LESSON_PLAN = 'lessonPlan';
+    public const LESSON_PLAN = 'lessonPlan';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const TEACHER_NOTES = 'teacherNotes';
+    public const TEACHER_NOTES = 'teacherNotes';
 
-    const SECTION_TYPE = 'sectionType';
+    public const SECTION_TYPE = 'sectionType';
 
-    const EXPECTED_DURATION = 'expectedDuration';
+    public const EXPECTED_DURATION = 'expectedDuration';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
     protected $_resourceType = ResourceType::LESSON_PLAN_SECTION;
 
@@ -25,7 +25,7 @@ class LessonPlanSection extends ModelBase
      * @return LessonPlanSection[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param LessonPlan $lessonPlan
      */
-    public function setLessonPlan(LessonPlan $lessonPlan = null)
+    public function setLessonPlan(\LessonPlan $lessonPlan = null)
     {
         $this->setProperty('lessonPlan', $lessonPlan);
     }
@@ -83,7 +83,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -99,7 +99,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes($teacherNotes = null)
+    public function setTeacherNotes(string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -115,7 +115,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $sectionType
      */
-    public function setSectionType($sectionType = null)
+    public function setSectionType(string $sectionType = null)
     {
         $this->setProperty('sectionType', $sectionType);
     }
@@ -131,7 +131,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $expectedDuration
      */
-    public function setExpectedDuration($expectedDuration = null)
+    public function setExpectedDuration(string $expectedDuration = null)
     {
         $this->setProperty('expectedDuration', $expectedDuration);
     }
@@ -147,7 +147,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

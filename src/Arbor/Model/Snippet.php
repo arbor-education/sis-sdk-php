@@ -4,19 +4,19 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class Snippet extends ModelBase
+class Snippet extends \ModelBase
 {
-    const SNIPPET_NAME = 'snippetName';
+    public const SNIPPET_NAME = 'snippetName';
 
-    const SNIPPET_TEXT = 'snippetText';
+    public const SNIPPET_TEXT = 'snippetText';
 
-    const CATEGORY = 'category';
+    public const CATEGORY = 'category';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const LINKED_TO_ENTITY = 'linkedToEntity';
+    public const LINKED_TO_ENTITY = 'linkedToEntity';
 
-    const IS_SHARED = 'isShared';
+    public const IS_SHARED = 'isShared';
 
     protected $_resourceType = ResourceType::SNIPPET;
 
@@ -25,7 +25,7 @@ class Snippet extends ModelBase
      * @return Snippet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class Snippet extends ModelBase
     /**
      * @param string $snippetName
      */
-    public function setSnippetName($snippetName = null)
+    public function setSnippetName(string $snippetName = null)
     {
         $this->setProperty('snippetName', $snippetName);
     }
@@ -83,7 +83,7 @@ class Snippet extends ModelBase
     /**
      * @param string $snippetText
      */
-    public function setSnippetText($snippetText = null)
+    public function setSnippetText(string $snippetText = null)
     {
         $this->setProperty('snippetText', $snippetText);
     }
@@ -99,7 +99,7 @@ class Snippet extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory($category = null)
+    public function setCategory(string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -115,7 +115,7 @@ class Snippet extends ModelBase
     /**
      * @param Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -131,7 +131,7 @@ class Snippet extends ModelBase
     /**
      * @param ModelBase $linkedToEntity
      */
-    public function setLinkedToEntity(ModelBase $linkedToEntity = null)
+    public function setLinkedToEntity(\ModelBase $linkedToEntity = null)
     {
         $this->setProperty('linkedToEntity', $linkedToEntity);
     }
@@ -147,7 +147,7 @@ class Snippet extends ModelBase
     /**
      * @param bool $isShared
      */
-    public function setIsShared($isShared = null)
+    public function setIsShared(bool $isShared = null)
     {
         $this->setProperty('isShared', $isShared);
     }

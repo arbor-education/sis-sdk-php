@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentDefaultDisplayGradeSet extends ModelBase
+class AssessmentDefaultDisplayGradeSet extends \ModelBase
 {
-    const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
+    public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
     protected $_resourceType = ResourceType::ASSESSMENT_DEFAULT_DISPLAY_GRADE_SET;
 
@@ -17,7 +17,7 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
      * @return AssessmentDefaultDisplayGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
     /**
      * @param ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
@@ -75,7 +75,7 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
     /**
      * @param GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }

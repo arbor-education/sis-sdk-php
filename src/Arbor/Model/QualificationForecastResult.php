@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class QualificationForecastResult extends ModelBase
+class QualificationForecastResult extends \ModelBase
 {
-    const QUALIFICATION_ASPECT = 'qualificationAspect';
+    public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
-    const QUALIFICATION_GRADE = 'qualificationGrade';
+    public const QUALIFICATION_GRADE = 'qualificationGrade';
 
-    const NUMERIC_VALUE = 'numericValue';
+    public const NUMERIC_VALUE = 'numericValue';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
-    const CANDIDATE_REGISTRATION = 'candidateRegistration';
+    public const CANDIDATE_REGISTRATION = 'candidateRegistration';
 
-    const INPUT_DATETIME = 'inputDatetime';
+    public const INPUT_DATETIME = 'inputDatetime';
 
     protected $_resourceType = ResourceType::QUALIFICATION_FORECAST_RESULT;
 
@@ -27,7 +27,7 @@ class QualificationForecastResult extends ModelBase
      * @return QualificationForecastResult[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param QualificationAspect $qualificationAspect
      */
-    public function setQualificationAspect(QualificationAspect $qualificationAspect = null)
+    public function setQualificationAspect(\QualificationAspect $qualificationAspect = null)
     {
         $this->setProperty('qualificationAspect', $qualificationAspect);
     }
@@ -85,7 +85,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -101,7 +101,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue($numericValue = null)
+    public function setNumericValue(float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -117,7 +117,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -133,7 +133,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -149,7 +149,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }

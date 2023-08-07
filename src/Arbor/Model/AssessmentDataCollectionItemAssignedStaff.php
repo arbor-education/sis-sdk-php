@@ -4,11 +4,11 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AssessmentDataCollectionItemAssignedStaff extends ModelBase
+class AssessmentDataCollectionItemAssignedStaff extends \ModelBase
 {
-    const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
+    public const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
 
-    const ASSIGNED_STAFF = 'assignedStaff';
+    public const ASSIGNED_STAFF = 'assignedStaff';
 
     protected $_resourceType = ResourceType::ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF;
 
@@ -17,7 +17,7 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
      * @return AssessmentDataCollectionItemAssignedStaff[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +59,7 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
     /**
      * @param AssessmentDataCollectionItem $assessmentDataCollectionItem
      */
-    public function setAssessmentDataCollectionItem(AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
+    public function setAssessmentDataCollectionItem(\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }
@@ -75,7 +75,7 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
     /**
      * @param Staff $assignedStaff
      */
-    public function setAssignedStaff(Staff $assignedStaff = null)
+    public function setAssignedStaff(\Staff $assignedStaff = null)
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }

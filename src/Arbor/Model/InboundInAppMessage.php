@@ -4,21 +4,21 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class InboundInAppMessage extends ModelBase
+class InboundInAppMessage extends \ModelBase
 {
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const MESSAGE = 'message';
+    public const MESSAGE = 'message';
 
-    const READ_DATETIME = 'readDatetime';
+    public const READ_DATETIME = 'readDatetime';
 
-    const RECEIVED_DATETIME = 'receivedDatetime';
+    public const RECEIVED_DATETIME = 'receivedDatetime';
 
-    const FIRST_READ_BY = 'firstReadBy';
+    public const FIRST_READ_BY = 'firstReadBy';
 
-    const OUTBOUND_IN_APP_MESSAGE_REPLIED_TO = 'outboundInAppMessageRepliedTo';
+    public const OUTBOUND_IN_APP_MESSAGE_REPLIED_TO = 'outboundInAppMessageRepliedTo';
 
     protected $_resourceType = ResourceType::INBOUND_IN_APP_MESSAGE;
 
@@ -27,7 +27,7 @@ class InboundInAppMessage extends ModelBase
      * @return InboundInAppMessage[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -85,7 +85,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -101,7 +101,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage($message = null)
+    public function setMessage(string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -149,7 +149,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param Staff $firstReadBy
      */
-    public function setFirstReadBy(Staff $firstReadBy = null)
+    public function setFirstReadBy(\Staff $firstReadBy = null)
     {
         $this->setProperty('firstReadBy', $firstReadBy);
     }
@@ -165,7 +165,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param OutboundInAppMessage $outboundInAppMessageRepliedTo
      */
-    public function setOutboundInAppMessageRepliedTo(OutboundInAppMessage $outboundInAppMessageRepliedTo = null)
+    public function setOutboundInAppMessageRepliedTo(\OutboundInAppMessage $outboundInAppMessageRepliedTo = null)
     {
         $this->setProperty('outboundInAppMessageRepliedTo', $outboundInAppMessageRepliedTo);
     }

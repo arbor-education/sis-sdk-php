@@ -4,27 +4,27 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class SmsMessageDraft extends ModelBase
+class SmsMessageDraft extends \ModelBase
 {
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const MESSAGE_TEXT = 'messageText';
+    public const MESSAGE_TEXT = 'messageText';
 
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
+    public const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
 
-    const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
+    public const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
 
-    const SENDING_QUEUED_DATETIME = 'sendingQueuedDatetime';
+    public const SENDING_QUEUED_DATETIME = 'sendingQueuedDatetime';
 
-    const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
+    public const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
-    const RECIPIENTS_RESOLVED_DATETIME = 'recipientsResolvedDatetime';
+    public const RECIPIENTS_RESOLVED_DATETIME = 'recipientsResolvedDatetime';
 
-    const SENDING_COMPLETED_DATETIME = 'sendingCompletedDatetime';
+    public const SENDING_COMPLETED_DATETIME = 'sendingCompletedDatetime';
 
-    const CONTEXT = 'context';
+    public const CONTEXT = 'context';
 
     protected $_resourceType = ResourceType::SMS_MESSAGE_DRAFT;
 
@@ -33,7 +33,7 @@ class SmsMessageDraft extends ModelBase
      * @return SmsMessageDraft[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +75,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -91,7 +91,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText($messageText = null)
+    public function setMessageText(string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -107,7 +107,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -123,7 +123,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient($combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -139,7 +139,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold($combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }
@@ -219,7 +219,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param ModelBase $context
      */
-    public function setContext(ModelBase $context = null)
+    public function setContext(\ModelBase $context = null)
     {
         $this->setProperty('context', $context);
     }

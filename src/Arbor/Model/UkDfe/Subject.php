@@ -7,15 +7,15 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Subject extends ModelBase
+class Subject extends \ModelBase
 {
-    const USED_IN_SWF_ONLY = 'usedInSwfOnly';
+    public const USED_IN_SWF_ONLY = 'usedInSwfOnly';
 
-    const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
+    public const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
 
-    const D00115 = 'd00115';
+    public const D00115 = 'd00115';
 
-    const D00220 = 'd00220';
+    public const D00220 = 'd00220';
 
     protected $_resourceType = ResourceType::UK_DFE_SUBJECT;
 
@@ -24,7 +24,7 @@ class Subject extends ModelBase
      * @return Subject[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInSwfOnly
      */
-    public function setUsedInSwfOnly($usedInSwfOnly = null)
+    public function setUsedInSwfOnly(bool $usedInSwfOnly = null)
     {
         $this->setProperty('usedInSwfOnly', $usedInSwfOnly);
     }
@@ -82,7 +82,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInCbdsOnly
      */
-    public function setUsedInCbdsOnly($usedInCbdsOnly = null)
+    public function setUsedInCbdsOnly(bool $usedInCbdsOnly = null)
     {
         $this->setProperty('usedInCbdsOnly', $usedInCbdsOnly);
     }
@@ -98,7 +98,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00115
      */
-    public function setD00115($d00115 = null)
+    public function setD00115(string $d00115 = null)
     {
         $this->setProperty('d00115', $d00115);
     }
@@ -114,7 +114,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00220
      */
-    public function setD00220($d00220 = null)
+    public function setD00220(string $d00220 = null)
     {
         $this->setProperty('d00220', $d00220);
     }

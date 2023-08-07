@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class StandardizedAssessmentAspect extends ModelBase
+class StandardizedAssessmentAspect extends \ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const STANDARDIZED_ASSESSMENT_ASPECT_CATEGORY = 'standardizedAssessmentAspectCategory';
+    public const STANDARDIZED_ASSESSMENT_ASPECT_CATEGORY = 'standardizedAssessmentAspectCategory';
 
-    const STANDARDIZED_ASSESSMENT_COMPONENT = 'standardizedAssessmentComponent';
+    public const STANDARDIZED_ASSESSMENT_COMPONENT = 'standardizedAssessmentComponent';
 
-    const MARK_TYPE = 'markType';
+    public const MARK_TYPE = 'markType';
 
-    const MARK_MIN_VALUE = 'markMinValue';
+    public const MARK_MIN_VALUE = 'markMinValue';
 
-    const MARK_MAX_VALUE = 'markMaxValue';
+    public const MARK_MAX_VALUE = 'markMaxValue';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_ASPECT;
 
@@ -35,7 +35,7 @@ class StandardizedAssessmentAspect extends ModelBase
      * @return StandardizedAssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -93,7 +93,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -109,7 +109,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -126,7 +126,7 @@ class StandardizedAssessmentAspect extends ModelBase
      * @param StandardizedAssessmentAspectCategory
      * $standardizedAssessmentAspectCategory
      */
-    public function setStandardizedAssessmentAspectCategory(StandardizedAssessmentAspectCategory $standardizedAssessmentAspectCategory = null)
+    public function setStandardizedAssessmentAspectCategory(\StandardizedAssessmentAspectCategory $standardizedAssessmentAspectCategory = null)
     {
         $this->setProperty('standardizedAssessmentAspectCategory', $standardizedAssessmentAspectCategory);
     }
@@ -142,7 +142,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param StandardizedAssessmentComponent $standardizedAssessmentComponent
      */
-    public function setStandardizedAssessmentComponent(StandardizedAssessmentComponent $standardizedAssessmentComponent = null)
+    public function setStandardizedAssessmentComponent(\StandardizedAssessmentComponent $standardizedAssessmentComponent = null)
     {
         $this->setProperty('standardizedAssessmentComponent', $standardizedAssessmentComponent);
     }
@@ -158,7 +158,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param string $markType
      */
-    public function setMarkType($markType = null)
+    public function setMarkType(string $markType = null)
     {
         $this->setProperty('markType', $markType);
     }
@@ -174,7 +174,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue($markMinValue = null)
+    public function setMarkMinValue(float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -190,7 +190,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue($markMaxValue = null)
+    public function setMarkMaxValue(float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }
@@ -206,7 +206,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }

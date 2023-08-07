@@ -4,29 +4,29 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class PostalAddress extends ModelBase
+class PostalAddress extends \ModelBase
 {
-    const ADDRESS1 = 'address1';
+    public const ADDRESS1 = 'address1';
 
-    const ADDRESS2 = 'address2';
+    public const ADDRESS2 = 'address2';
 
-    const ADDRESS3 = 'address3';
+    public const ADDRESS3 = 'address3';
 
-    const POSTAL_TOWN = 'postalTown';
+    public const POSTAL_TOWN = 'postalTown';
 
-    const POSTAL_STATE = 'postalState';
+    public const POSTAL_STATE = 'postalState';
 
-    const POSTAL_CODE = 'postalCode';
+    public const POSTAL_CODE = 'postalCode';
 
-    const UNIQUE_PROPERTY_REFERENCE_NUMBER = 'uniquePropertyReferenceNumber';
+    public const UNIQUE_PROPERTY_REFERENCE_NUMBER = 'uniquePropertyReferenceNumber';
 
-    const COUNTRY = 'country';
+    public const COUNTRY = 'country';
 
-    const LAT = 'lat';
+    public const LAT = 'lat';
 
-    const LNG = 'lng';
+    public const LNG = 'lng';
 
-    const GEOCODE_TYPE = 'geocodeType';
+    public const GEOCODE_TYPE = 'geocodeType';
 
     protected $_resourceType = ResourceType::POSTAL_ADDRESS;
 
@@ -35,7 +35,7 @@ class PostalAddress extends ModelBase
      * @return PostalAddress[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +77,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $address1
      */
-    public function setAddress1($address1 = null)
+    public function setAddress1(string $address1 = null)
     {
         $this->setProperty('address1', $address1);
     }
@@ -93,7 +93,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $address2
      */
-    public function setAddress2($address2 = null)
+    public function setAddress2(string $address2 = null)
     {
         $this->setProperty('address2', $address2);
     }
@@ -109,7 +109,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $address3
      */
-    public function setAddress3($address3 = null)
+    public function setAddress3(string $address3 = null)
     {
         $this->setProperty('address3', $address3);
     }
@@ -125,7 +125,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $postalTown
      */
-    public function setPostalTown($postalTown = null)
+    public function setPostalTown(string $postalTown = null)
     {
         $this->setProperty('postalTown', $postalTown);
     }
@@ -141,7 +141,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $postalState
      */
-    public function setPostalState($postalState = null)
+    public function setPostalState(string $postalState = null)
     {
         $this->setProperty('postalState', $postalState);
     }
@@ -157,7 +157,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $postalCode
      */
-    public function setPostalCode($postalCode = null)
+    public function setPostalCode(string $postalCode = null)
     {
         $this->setProperty('postalCode', $postalCode);
     }
@@ -173,7 +173,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $uniquePropertyReferenceNumber
      */
-    public function setUniquePropertyReferenceNumber($uniquePropertyReferenceNumber = null)
+    public function setUniquePropertyReferenceNumber(string $uniquePropertyReferenceNumber = null)
     {
         $this->setProperty('uniquePropertyReferenceNumber', $uniquePropertyReferenceNumber);
     }
@@ -189,7 +189,7 @@ class PostalAddress extends ModelBase
     /**
      * @param Country $country
      */
-    public function setCountry(Country $country = null)
+    public function setCountry(\Country $country = null)
     {
         $this->setProperty('country', $country);
     }
@@ -205,7 +205,7 @@ class PostalAddress extends ModelBase
     /**
      * @param float $lat
      */
-    public function setLat($lat = null)
+    public function setLat(float $lat = null)
     {
         $this->setProperty('lat', $lat);
     }
@@ -221,7 +221,7 @@ class PostalAddress extends ModelBase
     /**
      * @param float $lng
      */
-    public function setLng($lng = null)
+    public function setLng(float $lng = null)
     {
         $this->setProperty('lng', $lng);
     }
@@ -237,7 +237,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $geocodeType
      */
-    public function setGeocodeType($geocodeType = null)
+    public function setGeocodeType(string $geocodeType = null)
     {
         $this->setProperty('geocodeType', $geocodeType);
     }

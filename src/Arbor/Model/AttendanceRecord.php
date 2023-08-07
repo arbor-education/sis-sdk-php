@@ -4,33 +4,33 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class AttendanceRecord extends ModelBase
+class AttendanceRecord extends \ModelBase
 {
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const ATTENDANCE_REGISTER = 'attendanceRegister';
+    public const ATTENDANCE_REGISTER = 'attendanceRegister';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const MINUTES_LATE = 'minutesLate';
+    public const MINUTES_LATE = 'minutesLate';
 
-    const RECORD_NOTE = 'recordNote';
+    public const RECORD_NOTE = 'recordNote';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const EVENT_GROUP = 'eventGroup';
+    public const EVENT_GROUP = 'eventGroup';
 
-    const ATTENDANCE_FOLLOW_UP = 'attendanceFollowUp';
+    public const ATTENDANCE_FOLLOW_UP = 'attendanceFollowUp';
 
-    const STUDENT_ABSENCE_NOTE = 'studentAbsenceNote';
+    public const STUDENT_ABSENCE_NOTE = 'studentAbsenceNote';
 
-    const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
+    public const SOURCE_ATTENDANCE_RECORD = 'sourceAttendanceRecord';
 
-    const SOURCE = 'source';
+    public const SOURCE = 'source';
 
     protected $_resourceType = ResourceType::ATTENDANCE_RECORD;
 
@@ -39,7 +39,7 @@ class AttendanceRecord extends ModelBase
      * @return AttendanceRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +81,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -97,7 +97,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param AttendanceRegister $attendanceRegister
      */
-    public function setAttendanceRegister(AttendanceRegister $attendanceRegister = null)
+    public function setAttendanceRegister(\AttendanceRegister $attendanceRegister = null)
     {
         $this->setProperty('attendanceRegister', $attendanceRegister);
     }
@@ -113,7 +113,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -129,7 +129,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate($minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
@@ -145,7 +145,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param string $recordNote
      */
-    public function setRecordNote($recordNote = null)
+    public function setRecordNote(string $recordNote = null)
     {
         $this->setProperty('recordNote', $recordNote);
     }
@@ -193,7 +193,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -209,7 +209,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param ModelBase $eventGroup
      */
-    public function setEventGroup(ModelBase $eventGroup = null)
+    public function setEventGroup(\ModelBase $eventGroup = null)
     {
         $this->setProperty('eventGroup', $eventGroup);
     }
@@ -225,7 +225,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param AttendanceFollowUp $attendanceFollowUp
      */
-    public function setAttendanceFollowUp(AttendanceFollowUp $attendanceFollowUp = null)
+    public function setAttendanceFollowUp(\AttendanceFollowUp $attendanceFollowUp = null)
     {
         $this->setProperty('attendanceFollowUp', $attendanceFollowUp);
     }
@@ -241,7 +241,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param StudentAbsenceNote $studentAbsenceNote
      */
-    public function setStudentAbsenceNote(StudentAbsenceNote $studentAbsenceNote = null)
+    public function setStudentAbsenceNote(\StudentAbsenceNote $studentAbsenceNote = null)
     {
         $this->setProperty('studentAbsenceNote', $studentAbsenceNote);
     }
@@ -257,7 +257,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param AttendanceRecord $sourceAttendanceRecord
      */
-    public function setSourceAttendanceRecord(AttendanceRecord $sourceAttendanceRecord = null)
+    public function setSourceAttendanceRecord(\AttendanceRecord $sourceAttendanceRecord = null)
     {
         $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
@@ -273,7 +273,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource($source = null)
+    public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
     }

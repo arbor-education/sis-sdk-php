@@ -4,15 +4,15 @@ namespace Arbor\Model;
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 
-class MedicalNote extends ModelBase
+class MedicalNote extends \ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const NOTE_DATE = 'noteDate';
+    public const NOTE_DATE = 'noteDate';
 
     protected $_resourceType = ResourceType::MEDICAL_NOTE;
 
@@ -21,7 +21,7 @@ class MedicalNote extends ModelBase
      * @return MedicalNote[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class MedicalNote extends ModelBase
     /**
      * @param Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -79,7 +79,7 @@ class MedicalNote extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -95,7 +95,7 @@ class MedicalNote extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent($content = null)
+    public function setContent(string $content = null)
     {
         $this->setProperty('content', $content);
     }
