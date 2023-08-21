@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmailAddress extends \ModelBase
+class EmailAddress extends ModelBase
 {
+
     public const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
 
     public const EMAIL_ADDRESS_TYPE = 'emailAddressType';
@@ -27,7 +29,7 @@ class EmailAddress extends \ModelBase
      * @return EmailAddress[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -169,4 +171,5 @@ class EmailAddress extends \ModelBase
     {
         $this->setProperty('disposable', $disposable);
     }
+
 }

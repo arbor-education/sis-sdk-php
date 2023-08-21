@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class NewReportCardText extends \ModelBase
+class NewReportCardText extends ModelBase
 {
+
     public const NEW_REPORT_CARD_BATCH = 'newReportCardBatch';
 
     public const TITLE = 'title';
@@ -21,7 +23,7 @@ class NewReportCardText extends \ModelBase
      * @return NewReportCardText[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class NewReportCardText extends \ModelBase
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getNewReportCardBatch()
     {
@@ -61,9 +63,9 @@ class NewReportCardText extends \ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $newReportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $newReportCardBatch
      */
-    public function setNewReportCardBatch(\NewReportCardBatch $newReportCardBatch = null)
+    public function setNewReportCardBatch(\Arbor\Model\NewReportCardBatch $newReportCardBatch = null)
     {
         $this->setProperty('newReportCardBatch', $newReportCardBatch);
     }
@@ -115,4 +117,5 @@ class NewReportCardText extends \ModelBase
     {
         $this->setProperty('body', $body);
     }
+
 }

@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class GcseEnglishFundingExemptionType extends \ModelBase
+class GcseEnglishFundingExemptionType extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -26,7 +27,7 @@ class GcseEnglishFundingExemptionType extends \ModelBase
      * @return GcseEnglishFundingExemptionType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -136,4 +137,5 @@ class GcseEnglishFundingExemptionType extends \ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
+
 }

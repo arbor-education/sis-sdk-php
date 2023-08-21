@@ -3,13 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
-use Arbor\Model\UkDfe\CensusSchoolPhase;
-use Arbor\Model\UkDfe\SchoolType;
-use Arbor\Model\UkDfe\SchoolGovernanceType;
-use Arbor\Model\UkDfe\SchoolIntakeType;
+use Arbor\Model\ModelBase;
 
-class EducationalInstitution extends \ModelBase
+class EducationalInstitution extends ModelBase
 {
+
     public const EDUCATIONAL_INSTITUTION_NAME = 'educationalInstitutionName';
 
     public const SHORT_NAME = 'shortName';
@@ -75,7 +73,7 @@ class EducationalInstitution extends \ModelBase
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -203,7 +201,7 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getPreviousEducationalInstitution()
     {
@@ -211,15 +209,15 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $previousEducationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $previousEducationalInstitution
      */
-    public function setPreviousEducationalInstitution(\EducationalInstitution $previousEducationalInstitution = null)
+    public function setPreviousEducationalInstitution(\Arbor\Model\EducationalInstitution $previousEducationalInstitution = null)
     {
         $this->setProperty('previousEducationalInstitution', $previousEducationalInstitution);
     }
 
     /**
-     * @return LocalAuthority
+     * @return \Arbor\Model\LocalAuthority
      */
     public function getLocalAuthority()
     {
@@ -227,9 +225,9 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param LocalAuthority $localAuthority
+     * @param \Arbor\Model\LocalAuthority $localAuthority
      */
-    public function setLocalAuthority(\LocalAuthority $localAuthority = null)
+    public function setLocalAuthority(\Arbor\Model\LocalAuthority $localAuthority = null)
     {
         $this->setProperty('localAuthority', $localAuthority);
     }
@@ -251,7 +249,7 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @return CensusSchoolPhase
+     * @return \Arbor\Model\UkDfe\CensusSchoolPhase
      */
     public function getCensusSchoolPhase()
     {
@@ -259,15 +257,15 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param CensusSchoolPhase $censusSchoolPhase
+     * @param \Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase
      */
-    public function setCensusSchoolPhase(\CensusSchoolPhase $censusSchoolPhase = null)
+    public function setCensusSchoolPhase(\Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase = null)
     {
         $this->setProperty('censusSchoolPhase', $censusSchoolPhase);
     }
 
     /**
-     * @return SchoolType
+     * @return \Arbor\Model\UkDfe\SchoolType
      */
     public function getSchoolType()
     {
@@ -275,9 +273,9 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param SchoolType $schoolType
+     * @param \Arbor\Model\UkDfe\SchoolType $schoolType
      */
-    public function setSchoolType(\SchoolType $schoolType = null)
+    public function setSchoolType(\Arbor\Model\UkDfe\SchoolType $schoolType = null)
     {
         $this->setProperty('schoolType', $schoolType);
     }
@@ -299,7 +297,7 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @return SchoolGovernanceType
+     * @return \Arbor\Model\UkDfe\SchoolGovernanceType
      */
     public function getGovernanceType()
     {
@@ -307,15 +305,15 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param SchoolGovernanceType $governanceType
+     * @param \Arbor\Model\UkDfe\SchoolGovernanceType $governanceType
      */
-    public function setGovernanceType(\SchoolGovernanceType $governanceType = null)
+    public function setGovernanceType(\Arbor\Model\UkDfe\SchoolGovernanceType $governanceType = null)
     {
         $this->setProperty('governanceType', $governanceType);
     }
 
     /**
-     * @return SchoolIntakeType
+     * @return \Arbor\Model\UkDfe\SchoolIntakeType
      */
     public function getIntakeType()
     {
@@ -323,9 +321,9 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param SchoolIntakeType $intakeType
+     * @param \Arbor\Model\UkDfe\SchoolIntakeType $intakeType
      */
-    public function setIntakeType(\SchoolIntakeType $intakeType = null)
+    public function setIntakeType(\Arbor\Model\UkDfe\SchoolIntakeType $intakeType = null)
     {
         $this->setProperty('intakeType', $intakeType);
     }
@@ -569,4 +567,5 @@ class EducationalInstitution extends \ModelBase
     {
         $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }
+
 }

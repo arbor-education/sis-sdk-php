@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationAward extends \ModelBase
+class QualificationAward extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -63,7 +65,7 @@ class QualificationAward extends \ModelBase
      * @return QualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -143,7 +145,7 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @return QualificationScheme
+     * @return \Arbor\Model\QualificationScheme
      */
     public function getQualificationScheme()
     {
@@ -151,15 +153,15 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @param QualificationScheme $qualificationScheme
+     * @param \Arbor\Model\QualificationScheme $qualificationScheme
      */
-    public function setQualificationScheme(\QualificationScheme $qualificationScheme = null)
+    public function setQualificationScheme(\Arbor\Model\QualificationScheme $qualificationScheme = null)
     {
         $this->setProperty('qualificationScheme', $qualificationScheme);
     }
 
     /**
-     * @return QualificationSubject
+     * @return \Arbor\Model\QualificationSubject
      */
     public function getQualificationSubject()
     {
@@ -167,15 +169,15 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @param QualificationSubject $qualificationSubject
+     * @param \Arbor\Model\QualificationSubject $qualificationSubject
      */
-    public function setQualificationSubject(\QualificationSubject $qualificationSubject = null)
+    public function setQualificationSubject(\Arbor\Model\QualificationSubject $qualificationSubject = null)
     {
         $this->setProperty('qualificationSubject', $qualificationSubject);
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -183,9 +185,9 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -239,7 +241,7 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @return QualificationAwardType
+     * @return \Arbor\Model\QualificationAwardType
      */
     public function getQualificationAwardType()
     {
@@ -247,15 +249,15 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @param QualificationAwardType $qualificationAwardType
+     * @param \Arbor\Model\QualificationAwardType $qualificationAwardType
      */
-    public function setQualificationAwardType(\QualificationAwardType $qualificationAwardType = null)
+    public function setQualificationAwardType(\Arbor\Model\QualificationAwardType $qualificationAwardType = null)
     {
         $this->setProperty('qualificationAwardType', $qualificationAwardType);
     }
 
     /**
-     * @return QualificationAwardSubtype
+     * @return \Arbor\Model\QualificationAwardSubtype
      */
     public function getQualificationAwardSubtype()
     {
@@ -263,9 +265,9 @@ class QualificationAward extends \ModelBase
     }
 
     /**
-     * @param QualificationAwardSubtype $qualificationAwardSubtype
+     * @param \Arbor\Model\QualificationAwardSubtype $qualificationAwardSubtype
      */
-    public function setQualificationAwardSubtype(\QualificationAwardSubtype $qualificationAwardSubtype = null)
+    public function setQualificationAwardSubtype(\Arbor\Model\QualificationAwardSubtype $qualificationAwardSubtype = null)
     {
         $this->setProperty('qualificationAwardSubtype', $qualificationAwardSubtype);
     }
@@ -493,4 +495,5 @@ class QualificationAward extends \ModelBase
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }
+
 }

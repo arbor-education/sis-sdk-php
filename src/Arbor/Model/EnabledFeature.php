@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EnabledFeature extends \ModelBase
+class EnabledFeature extends ModelBase
 {
+
     public const FEATURE_IDENTIFIER = 'featureIdentifier';
 
     public const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
@@ -23,7 +25,7 @@ class EnabledFeature extends \ModelBase
      * @return EnabledFeature[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class EnabledFeature extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SenStatusAssignment extends \ModelBase
+class SenStatusAssignment extends ModelBase
 {
+
     public const IS_MEMBER_OF_SEN_UNIT = 'isMemberOfSenUnit';
 
     public const HAS_RESOURCED_PROVISION = 'hasResourcedProvision';
@@ -20,7 +21,7 @@ class SenStatusAssignment extends \ModelBase
      * @return SenStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,4 +83,5 @@ class SenStatusAssignment extends \ModelBase
     {
         $this->setProperty('hasResourcedProvision', $hasResourcedProvision);
     }
+
 }

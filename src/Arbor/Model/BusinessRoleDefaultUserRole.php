@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BusinessRoleDefaultUserRole extends \ModelBase
+class BusinessRoleDefaultUserRole extends ModelBase
 {
+
     public const BUSINESS_ROLE = 'businessRole';
 
     public const USER_ROLE = 'userRole';
@@ -17,7 +19,7 @@ class BusinessRoleDefaultUserRole extends \ModelBase
      * @return BusinessRoleDefaultUserRole[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class BusinessRoleDefaultUserRole extends \ModelBase
     }
 
     /**
-     * @return BusinessRole
+     * @return \Arbor\Model\BusinessRole
      */
     public function getBusinessRole()
     {
@@ -57,15 +59,15 @@ class BusinessRoleDefaultUserRole extends \ModelBase
     }
 
     /**
-     * @param BusinessRole $businessRole
+     * @param \Arbor\Model\BusinessRole $businessRole
      */
-    public function setBusinessRole(\BusinessRole $businessRole = null)
+    public function setBusinessRole(\Arbor\Model\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
 
     /**
-     * @return UserRole
+     * @return \Arbor\Model\UserRole
      */
     public function getUserRole()
     {
@@ -73,10 +75,11 @@ class BusinessRoleDefaultUserRole extends \ModelBase
     }
 
     /**
-     * @param UserRole $userRole
+     * @param \Arbor\Model\UserRole $userRole
      */
-    public function setUserRole(\UserRole $userRole = null)
+    public function setUserRole(\Arbor\Model\UserRole $userRole = null)
     {
         $this->setProperty('userRole', $userRole);
     }
+
 }

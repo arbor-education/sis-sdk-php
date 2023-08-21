@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MedicalCondition extends \ModelBase
+class MedicalCondition extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
@@ -29,7 +31,7 @@ class MedicalCondition extends \ModelBase
      * @return MedicalCondition[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +79,7 @@ class MedicalCondition extends \ModelBase
     }
 
     /**
-     * @return MedicalConditionType
+     * @return \Arbor\Model\MedicalConditionType
      */
     public function getMedicalConditionType()
     {
@@ -85,9 +87,9 @@ class MedicalCondition extends \ModelBase
     }
 
     /**
-     * @param MedicalConditionType $medicalConditionType
+     * @param \Arbor\Model\MedicalConditionType $medicalConditionType
      */
-    public function setMedicalConditionType(\MedicalConditionType $medicalConditionType = null)
+    public function setMedicalConditionType(\Arbor\Model\MedicalConditionType $medicalConditionType = null)
     {
         $this->setProperty('medicalConditionType', $medicalConditionType);
     }
@@ -187,4 +189,5 @@ class MedicalCondition extends \ModelBase
     {
         $this->setProperty('treatment', $treatment);
     }
+
 }

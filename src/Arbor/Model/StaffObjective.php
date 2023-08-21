@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffObjective extends \ModelBase
+class StaffObjective extends ModelBase
 {
+
     public const STAFF = 'staff';
 
     public const APPRAISAL = 'appraisal';
@@ -33,7 +35,7 @@ class StaffObjective extends \ModelBase
      * @return StaffObjective[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class StaffObjective extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -73,15 +75,15 @@ class StaffObjective extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
 
     /**
-     * @return Appraisal
+     * @return \Arbor\Model\Appraisal
      */
     public function getAppraisal()
     {
@@ -89,9 +91,9 @@ class StaffObjective extends \ModelBase
     }
 
     /**
-     * @param Appraisal $appraisal
+     * @param \Arbor\Model\Appraisal $appraisal
      */
-    public function setAppraisal(\Appraisal $appraisal = null)
+    public function setAppraisal(\Arbor\Model\Appraisal $appraisal = null)
     {
         $this->setProperty('appraisal', $appraisal);
     }
@@ -223,4 +225,5 @@ class StaffObjective extends \ModelBase
     {
         $this->setProperty('outcome', $outcome);
     }
+
 }

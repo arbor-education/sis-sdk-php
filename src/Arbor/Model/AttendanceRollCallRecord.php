@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AttendanceRollCallRecord extends \ModelBase
+class AttendanceRollCallRecord extends ModelBase
 {
+
     public const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
     public const RECORD_DATE = 'recordDate';
@@ -29,7 +31,7 @@ class AttendanceRollCallRecord extends \ModelBase
      * @return AttendanceRollCallRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @return AttendanceRollCall
+     * @return \Arbor\Model\AttendanceRollCall
      */
     public function getAttendanceRollCall()
     {
@@ -69,9 +71,9 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @param AttendanceRollCall $attendanceRollCall
+     * @param \Arbor\Model\AttendanceRollCall $attendanceRollCall
      */
-    public function setAttendanceRollCall(\AttendanceRollCall $attendanceRollCall = null)
+    public function setAttendanceRollCall(\Arbor\Model\AttendanceRollCall $attendanceRollCall = null)
     {
         $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
@@ -93,7 +95,7 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -101,15 +103,15 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return AttendanceMark
+     * @return \Arbor\Model\AttendanceMark
      */
     public function getAttendanceMark()
     {
@@ -117,9 +119,9 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @param AttendanceMark $attendanceMark
+     * @param \Arbor\Model\AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(\AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(\Arbor\Model\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -141,7 +143,7 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @return AttendanceRecord
+     * @return \Arbor\Model\AttendanceRecord
      */
     public function getSourceAttendanceRecord()
     {
@@ -149,9 +151,9 @@ class AttendanceRollCallRecord extends \ModelBase
     }
 
     /**
-     * @param AttendanceRecord $sourceAttendanceRecord
+     * @param \Arbor\Model\AttendanceRecord $sourceAttendanceRecord
      */
-    public function setSourceAttendanceRecord(\AttendanceRecord $sourceAttendanceRecord = null)
+    public function setSourceAttendanceRecord(\Arbor\Model\AttendanceRecord $sourceAttendanceRecord = null)
     {
         $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
@@ -187,4 +189,5 @@ class AttendanceRollCallRecord extends \ModelBase
     {
         $this->setProperty('source', $source);
     }
+
 }

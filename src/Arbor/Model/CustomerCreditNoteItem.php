@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomerCreditNoteItem extends \ModelBase
+class CustomerCreditNoteItem extends ModelBase
 {
+
     public const CUSTOMER_CREDIT_NOTE = 'customerCreditNote';
 
     public const CUSTOMER_INVOICE = 'customerInvoice';
@@ -25,7 +27,7 @@ class CustomerCreditNoteItem extends \ModelBase
      * @return CustomerCreditNoteItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class CustomerCreditNoteItem extends \ModelBase
     }
 
     /**
-     * @return CustomerCreditNote
+     * @return \Arbor\Model\CustomerCreditNote
      */
     public function getCustomerCreditNote()
     {
@@ -65,15 +67,15 @@ class CustomerCreditNoteItem extends \ModelBase
     }
 
     /**
-     * @param CustomerCreditNote $customerCreditNote
+     * @param \Arbor\Model\CustomerCreditNote $customerCreditNote
      */
-    public function setCustomerCreditNote(\CustomerCreditNote $customerCreditNote = null)
+    public function setCustomerCreditNote(\Arbor\Model\CustomerCreditNote $customerCreditNote = null)
     {
         $this->setProperty('customerCreditNote', $customerCreditNote);
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getCustomerInvoice()
     {
@@ -81,15 +83,15 @@ class CustomerCreditNoteItem extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoice $customerInvoice
+     * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
-     * @return CustomerInvoiceItem
+     * @return \Arbor\Model\CustomerInvoiceItem
      */
     public function getCustomerInvoiceItem()
     {
@@ -97,9 +99,9 @@ class CustomerCreditNoteItem extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoiceItem $customerInvoiceItem
+     * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -151,4 +153,5 @@ class CustomerCreditNoteItem extends \ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
 }

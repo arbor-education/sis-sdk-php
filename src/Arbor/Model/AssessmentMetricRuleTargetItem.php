@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentMetricRuleTargetItem extends \ModelBase
+class AssessmentMetricRuleTargetItem extends ModelBase
 {
+
     public const OPERATOR = 'operator';
 
     public const TARGET_TYPE = 'targetType';
@@ -23,7 +25,7 @@ class AssessmentMetricRuleTargetItem extends \ModelBase
      * @return AssessmentMetricRuleTargetItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -87,7 +89,7 @@ class AssessmentMetricRuleTargetItem extends \ModelBase
     }
 
     /**
-     * @return AssessmentMetricRule
+     * @return \Arbor\Model\AssessmentMetricRule
      */
     public function getAssessmentMetricRule()
     {
@@ -95,15 +97,15 @@ class AssessmentMetricRuleTargetItem extends \ModelBase
     }
 
     /**
-     * @param AssessmentMetricRule $assessmentMetricRule
+     * @param \Arbor\Model\AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(\AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(\Arbor\Model\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
 
     /**
-     * @return AssessmentMetricAssessment
+     * @return \Arbor\Model\AssessmentMetricAssessment
      */
     public function getAssessmentMetricAssessment()
     {
@@ -111,15 +113,15 @@ class AssessmentMetricRuleTargetItem extends \ModelBase
     }
 
     /**
-     * @param AssessmentMetricAssessment $assessmentMetricAssessment
+     * @param \Arbor\Model\AssessmentMetricAssessment $assessmentMetricAssessment
      */
-    public function setAssessmentMetricAssessment(\AssessmentMetricAssessment $assessmentMetricAssessment = null)
+    public function setAssessmentMetricAssessment(\Arbor\Model\AssessmentMetricAssessment $assessmentMetricAssessment = null)
     {
         $this->setProperty('assessmentMetricAssessment', $assessmentMetricAssessment);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -127,10 +129,11 @@ class AssessmentMetricRuleTargetItem extends \ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
+
 }

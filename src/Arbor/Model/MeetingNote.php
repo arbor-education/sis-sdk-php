@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MeetingNote extends \ModelBase
+class MeetingNote extends ModelBase
 {
+
     public const MEETING = 'meeting';
 
     public const NOTE_TEXT = 'noteText';
@@ -21,7 +23,7 @@ class MeetingNote extends \ModelBase
      * @return MeetingNote[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class MeetingNote extends \ModelBase
     }
 
     /**
-     * @return Meeting
+     * @return \Arbor\Model\Meeting
      */
     public function getMeeting()
     {
@@ -61,9 +63,9 @@ class MeetingNote extends \ModelBase
     }
 
     /**
-     * @param Meeting $meeting
+     * @param \Arbor\Model\Meeting $meeting
      */
-    public function setMeeting(\Meeting $meeting = null)
+    public function setMeeting(\Arbor\Model\Meeting $meeting = null)
     {
         $this->setProperty('meeting', $meeting);
     }
@@ -115,4 +117,5 @@ class MeetingNote extends \ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
+
 }

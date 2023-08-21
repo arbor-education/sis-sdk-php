@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffAbsence extends \ModelBase
+class StaffAbsence extends ModelBase
 {
+
     public const STAFF = 'staff';
 
     public const START_DATETIME = 'startDatetime';
@@ -45,7 +47,7 @@ class StaffAbsence extends \ModelBase
      * @return StaffAbsence[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +79,7 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -85,9 +87,9 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -125,7 +127,7 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @return StaffAbsenceCategory
+     * @return \Arbor\Model\StaffAbsenceCategory
      */
     public function getStaffAbsenceCategory()
     {
@@ -133,15 +135,15 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @param StaffAbsenceCategory $staffAbsenceCategory
+     * @param \Arbor\Model\StaffAbsenceCategory $staffAbsenceCategory
      */
-    public function setStaffAbsenceCategory(\StaffAbsenceCategory $staffAbsenceCategory = null)
+    public function setStaffAbsenceCategory(\Arbor\Model\StaffAbsenceCategory $staffAbsenceCategory = null)
     {
         $this->setProperty('staffAbsenceCategory', $staffAbsenceCategory);
     }
 
     /**
-     * @return StaffAbsenceSicknessCategory
+     * @return \Arbor\Model\StaffAbsenceSicknessCategory
      */
     public function getSicknessCategory()
     {
@@ -149,15 +151,15 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @param StaffAbsenceSicknessCategory $sicknessCategory
+     * @param \Arbor\Model\StaffAbsenceSicknessCategory $sicknessCategory
      */
-    public function setSicknessCategory(\StaffAbsenceSicknessCategory $sicknessCategory = null)
+    public function setSicknessCategory(\Arbor\Model\StaffAbsenceSicknessCategory $sicknessCategory = null)
     {
         $this->setProperty('sicknessCategory', $sicknessCategory);
     }
 
     /**
-     * @return StaffAbsenceSicknessSubcategory
+     * @return \Arbor\Model\StaffAbsenceSicknessSubcategory
      */
     public function getSicknessSubcategory()
     {
@@ -165,15 +167,15 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @param StaffAbsenceSicknessSubcategory $sicknessSubcategory
+     * @param \Arbor\Model\StaffAbsenceSicknessSubcategory $sicknessSubcategory
      */
-    public function setSicknessSubcategory(\StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
+    public function setSicknessSubcategory(\Arbor\Model\StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
     {
         $this->setProperty('sicknessSubcategory', $sicknessSubcategory);
     }
 
     /**
-     * @return IntegrationsHrFinanceProvider
+     * @return \Arbor\Model\IntegrationsHrFinanceProvider
      */
     public function getIntegrationsHrFinanceProvider()
     {
@@ -181,9 +183,9 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @param IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
+     * @param \Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
      */
-    public function setIntegrationsHrFinanceProvider(\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
+    public function setIntegrationsHrFinanceProvider(\Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
     {
         $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
@@ -205,7 +207,7 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedByStaff()
     {
@@ -213,9 +215,9 @@ class StaffAbsence extends \ModelBase
     }
 
     /**
-     * @param Staff $approvedByStaff
+     * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(\Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -331,4 +333,5 @@ class StaffAbsence extends \ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
 }

@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class GcseMathsAchievementType extends \ModelBase
+class GcseMathsAchievementType extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -28,7 +29,7 @@ class GcseMathsAchievementType extends \ModelBase
      * @return GcseMathsAchievementType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -154,4 +155,5 @@ class GcseMathsAchievementType extends \ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
+
 }

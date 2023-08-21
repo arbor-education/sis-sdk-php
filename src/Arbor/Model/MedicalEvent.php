@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MedicalEvent extends \ModelBase
+class MedicalEvent extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const START_DATETIME = 'startDatetime';
@@ -25,7 +27,7 @@ class MedicalEvent extends \ModelBase
      * @return MedicalEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -105,7 +107,7 @@ class MedicalEvent extends \ModelBase
     }
 
     /**
-     * @return MedicalEventType
+     * @return \Arbor\Model\MedicalEventType
      */
     public function getMedicalEventType()
     {
@@ -113,9 +115,9 @@ class MedicalEvent extends \ModelBase
     }
 
     /**
-     * @param MedicalEventType $medicalEventType
+     * @param \Arbor\Model\MedicalEventType $medicalEventType
      */
-    public function setMedicalEventType(\MedicalEventType $medicalEventType = null)
+    public function setMedicalEventType(\Arbor\Model\MedicalEventType $medicalEventType = null)
     {
         $this->setProperty('medicalEventType', $medicalEventType);
     }
@@ -137,7 +139,7 @@ class MedicalEvent extends \ModelBase
     }
 
     /**
-     * @return MedicalCondition
+     * @return \Arbor\Model\MedicalCondition
      */
     public function getMedicalCondition()
     {
@@ -145,10 +147,11 @@ class MedicalEvent extends \ModelBase
     }
 
     /**
-     * @param MedicalCondition $medicalCondition
+     * @param \Arbor\Model\MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(\MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(\Arbor\Model\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
+
 }

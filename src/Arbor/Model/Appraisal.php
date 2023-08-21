@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Appraisal extends \ModelBase
+class Appraisal extends ModelBase
 {
+
     public const APPRAISEE = 'appraisee';
 
     public const APPRAISAL_DATE = 'appraisalDate';
@@ -23,7 +25,7 @@ class Appraisal extends \ModelBase
      * @return Appraisal[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class Appraisal extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAppraisee()
     {
@@ -63,9 +65,9 @@ class Appraisal extends \ModelBase
     }
 
     /**
-     * @param Staff $appraisee
+     * @param \Arbor\Model\Staff $appraisee
      */
-    public function setAppraisee(\Staff $appraisee = null)
+    public function setAppraisee(\Arbor\Model\Staff $appraisee = null)
     {
         $this->setProperty('appraisee', $appraisee);
     }
@@ -87,7 +89,7 @@ class Appraisal extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAppraiser()
     {
@@ -95,9 +97,9 @@ class Appraisal extends \ModelBase
     }
 
     /**
-     * @param Staff $appraiser
+     * @param \Arbor\Model\Staff $appraiser
      */
-    public function setAppraiser(\Staff $appraiser = null)
+    public function setAppraiser(\Arbor\Model\Staff $appraiser = null)
     {
         $this->setProperty('appraiser', $appraiser);
     }
@@ -133,4 +135,5 @@ class Appraisal extends \ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
+
 }

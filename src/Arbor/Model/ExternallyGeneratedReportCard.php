@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ExternallyGeneratedReportCard extends \ModelBase
+class ExternallyGeneratedReportCard extends ModelBase
 {
+
     public const CONTENT = 'content';
 
     public const REPORT_CARD_BATCH = 'reportCardBatch';
@@ -19,7 +21,7 @@ class ExternallyGeneratedReportCard extends \ModelBase
      * @return ExternallyGeneratedReportCard[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class ExternallyGeneratedReportCard extends \ModelBase
     }
 
     /**
-     * @return Content
+     * @return \Arbor\Model\Content
      */
     public function getContent()
     {
@@ -59,15 +61,15 @@ class ExternallyGeneratedReportCard extends \ModelBase
     }
 
     /**
-     * @param Content $content
+     * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Content $content = null)
+    public function setContent(\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getReportCardBatch()
     {
@@ -75,15 +77,15 @@ class ExternallyGeneratedReportCard extends \ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $reportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -91,10 +93,11 @@ class ExternallyGeneratedReportCard extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessmentThreshold extends \ModelBase
+class StandardizedAssessmentThreshold extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -29,7 +31,7 @@ class StandardizedAssessmentThreshold extends \ModelBase
      * @return StandardizedAssessmentThreshold[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -125,7 +127,7 @@ class StandardizedAssessmentThreshold extends \ModelBase
     }
 
     /**
-     * @return StandardizedAssessment
+     * @return \Arbor\Model\StandardizedAssessment
      */
     public function getMarkStandardizedAssessment()
     {
@@ -133,15 +135,15 @@ class StandardizedAssessmentThreshold extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessment $markStandardizedAssessment
+     * @param \Arbor\Model\StandardizedAssessment $markStandardizedAssessment
      */
-    public function setMarkStandardizedAssessment(\StandardizedAssessment $markStandardizedAssessment = null)
+    public function setMarkStandardizedAssessment(\Arbor\Model\StandardizedAssessment $markStandardizedAssessment = null)
     {
         $this->setProperty('markStandardizedAssessment', $markStandardizedAssessment);
     }
 
     /**
-     * @return StandardizedAssessment
+     * @return \Arbor\Model\StandardizedAssessment
      */
     public function getOutcomeStandardizedAssessment()
     {
@@ -149,9 +151,9 @@ class StandardizedAssessmentThreshold extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessment $outcomeStandardizedAssessment
+     * @param \Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment
      */
-    public function setOutcomeStandardizedAssessment(\StandardizedAssessment $outcomeStandardizedAssessment = null)
+    public function setOutcomeStandardizedAssessment(\Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment = null)
     {
         $this->setProperty('outcomeStandardizedAssessment', $outcomeStandardizedAssessment);
     }
@@ -187,4 +189,5 @@ class StandardizedAssessmentThreshold extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

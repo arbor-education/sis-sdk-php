@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TargetJudgementRule extends \ModelBase
+class TargetJudgementRule extends ModelBase
 {
+
     public const ASSESSMENT_ASPECT = 'assessmentAspect';
 
     public const TARGET_JUDGEMENT = 'targetJudgement';
@@ -21,7 +23,7 @@ class TargetJudgementRule extends \ModelBase
      * @return TargetJudgementRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class TargetJudgementRule extends \ModelBase
     }
 
     /**
-     * @return AssessmentAspect
+     * @return \Arbor\Model\AssessmentAspect
      */
     public function getAssessmentAspect()
     {
@@ -61,15 +63,15 @@ class TargetJudgementRule extends \ModelBase
     }
 
     /**
-     * @param AssessmentAspect $assessmentAspect
+     * @param \Arbor\Model\AssessmentAspect $assessmentAspect
      */
-    public function setAssessmentAspect(\AssessmentAspect $assessmentAspect = null)
+    public function setAssessmentAspect(\Arbor\Model\AssessmentAspect $assessmentAspect = null)
     {
         $this->setProperty('assessmentAspect', $assessmentAspect);
     }
 
     /**
-     * @return TargetJudgement
+     * @return \Arbor\Model\TargetJudgement
      */
     public function getTargetJudgement()
     {
@@ -77,9 +79,9 @@ class TargetJudgementRule extends \ModelBase
     }
 
     /**
-     * @param TargetJudgement $targetJudgement
+     * @param \Arbor\Model\TargetJudgement $targetJudgement
      */
-    public function setTargetJudgement(\TargetJudgement $targetJudgement = null)
+    public function setTargetJudgement(\Arbor\Model\TargetJudgement $targetJudgement = null)
     {
         $this->setProperty('targetJudgement', $targetJudgement);
     }
@@ -115,4 +117,5 @@ class TargetJudgementRule extends \ModelBase
     {
         $this->setProperty('amountUnit', $amountUnit);
     }
+
 }

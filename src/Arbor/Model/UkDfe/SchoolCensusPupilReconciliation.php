@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolCensusPupilReconciliation extends \ModelBase
+class SchoolCensusPupilReconciliation extends ModelBase
 {
+
     public const SCHOOL_CENSUS = 'schoolCensus';
 
     public const PART_TIME_NOT_IN = 'partTimeNotIn';
@@ -28,7 +29,7 @@ class SchoolCensusPupilReconciliation extends \ModelBase
      * @return SchoolCensusPupilReconciliation[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +61,7 @@ class SchoolCensusPupilReconciliation extends \ModelBase
     }
 
     /**
-     * @return SchoolCensus
+     * @return \Arbor\Model\UkDfe\SchoolCensus
      */
     public function getSchoolCensus()
     {
@@ -68,9 +69,9 @@ class SchoolCensusPupilReconciliation extends \ModelBase
     }
 
     /**
-     * @param SchoolCensus $schoolCensus
+     * @param \Arbor\Model\UkDfe\SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(\SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
@@ -154,4 +155,5 @@ class SchoolCensusPupilReconciliation extends \ModelBase
     {
         $this->setProperty('fECollege', $fECollege);
     }
+
 }

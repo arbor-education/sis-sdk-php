@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PayScaleSpinalPoint extends \ModelBase
+class PayScaleSpinalPoint extends ModelBase
 {
+
     public const PAY_SCALE = 'payScale';
 
     public const SPINAL_POINT_CODE = 'spinalPointCode';
@@ -21,7 +23,7 @@ class PayScaleSpinalPoint extends \ModelBase
      * @return PayScaleSpinalPoint[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class PayScaleSpinalPoint extends \ModelBase
     }
 
     /**
-     * @return PayScale
+     * @return \Arbor\Model\PayScale
      */
     public function getPayScale()
     {
@@ -61,9 +63,9 @@ class PayScaleSpinalPoint extends \ModelBase
     }
 
     /**
-     * @param PayScale $payScale
+     * @param \Arbor\Model\PayScale $payScale
      */
-    public function setPayScale(\PayScale $payScale = null)
+    public function setPayScale(\Arbor\Model\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
@@ -115,4 +117,5 @@ class PayScaleSpinalPoint extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

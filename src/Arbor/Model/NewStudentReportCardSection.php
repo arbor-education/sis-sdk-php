@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class NewStudentReportCardSection extends \ModelBase
+class NewStudentReportCardSection extends ModelBase
 {
+
     public const STUDENT_REPORT_CARD = 'studentReportCard';
 
     public const LINKED_ENTITY = 'linkedEntity';
@@ -21,7 +23,7 @@ class NewStudentReportCardSection extends \ModelBase
      * @return NewStudentReportCardSection[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class NewStudentReportCardSection extends \ModelBase
     }
 
     /**
-     * @return NewStudentReportCard
+     * @return \Arbor\Model\NewStudentReportCard
      */
     public function getStudentReportCard()
     {
@@ -61,9 +63,9 @@ class NewStudentReportCardSection extends \ModelBase
     }
 
     /**
-     * @param NewStudentReportCard $studentReportCard
+     * @param \Arbor\Model\NewStudentReportCard $studentReportCard
      */
-    public function setStudentReportCard(\NewStudentReportCard $studentReportCard = null)
+    public function setStudentReportCard(\Arbor\Model\NewStudentReportCard $studentReportCard = null)
     {
         $this->setProperty('studentReportCard', $studentReportCard);
     }
@@ -115,4 +117,5 @@ class NewStudentReportCardSection extends \ModelBase
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
+
 }

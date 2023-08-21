@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Employer extends \ModelBase
+class Employer extends ModelBase
 {
+
     public const EDS_EMPLOYER_ID = 'edsEmployerId';
 
     public const SMALL_EMPLOYER = 'smallEmployer';
@@ -22,7 +23,7 @@ class Employer extends \ModelBase
      * @return Employer[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,4 +101,5 @@ class Employer extends \ModelBase
     {
         $this->setProperty('smallMediumEmployer', $smallMediumEmployer);
     }
+
 }

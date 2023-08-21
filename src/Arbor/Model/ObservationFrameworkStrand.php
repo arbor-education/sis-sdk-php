@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ObservationFrameworkStrand extends \ModelBase
+class ObservationFrameworkStrand extends ModelBase
 {
+
     public const OBSERVATION_FRAMEWORK = 'observationFramework';
 
     public const OBSERVATION_STRAND = 'observationStrand';
@@ -17,7 +19,7 @@ class ObservationFrameworkStrand extends \ModelBase
      * @return ObservationFrameworkStrand[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class ObservationFrameworkStrand extends \ModelBase
     }
 
     /**
-     * @return ObservationFramework
+     * @return \Arbor\Model\ObservationFramework
      */
     public function getObservationFramework()
     {
@@ -57,15 +59,15 @@ class ObservationFrameworkStrand extends \ModelBase
     }
 
     /**
-     * @param ObservationFramework $observationFramework
+     * @param \Arbor\Model\ObservationFramework $observationFramework
      */
-    public function setObservationFramework(\ObservationFramework $observationFramework = null)
+    public function setObservationFramework(\Arbor\Model\ObservationFramework $observationFramework = null)
     {
         $this->setProperty('observationFramework', $observationFramework);
     }
 
     /**
-     * @return ObservationStrand
+     * @return \Arbor\Model\ObservationStrand
      */
     public function getObservationStrand()
     {
@@ -73,10 +75,11 @@ class ObservationFrameworkStrand extends \ModelBase
     }
 
     /**
-     * @param ObservationStrand $observationStrand
+     * @param \Arbor\Model\ObservationStrand $observationStrand
      */
-    public function setObservationStrand(\ObservationStrand $observationStrand = null)
+    public function setObservationStrand(\Arbor\Model\ObservationStrand $observationStrand = null)
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentDefaultDisplayGradeSet extends \ModelBase
+class AssessmentDefaultDisplayGradeSet extends ModelBase
 {
+
     public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
     public const GRADE_SET = 'gradeSet';
@@ -17,7 +19,7 @@ class AssessmentDefaultDisplayGradeSet extends \ModelBase
      * @return AssessmentDefaultDisplayGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class AssessmentDefaultDisplayGradeSet extends \ModelBase
     }
 
     /**
-     * @return ProgressAssessmentBatch
+     * @return \Arbor\Model\ProgressAssessmentBatch
      */
     public function getProgressAssessmentBatch()
     {
@@ -57,15 +59,15 @@ class AssessmentDefaultDisplayGradeSet extends \ModelBase
     }
 
     /**
-     * @param ProgressAssessmentBatch $progressAssessmentBatch
+     * @param \Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(\ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -73,10 +75,11 @@ class AssessmentDefaultDisplayGradeSet extends \ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
+
 }

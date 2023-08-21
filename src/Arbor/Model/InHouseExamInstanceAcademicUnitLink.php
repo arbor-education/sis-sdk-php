@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InHouseExamInstanceAcademicUnitLink extends \ModelBase
+class InHouseExamInstanceAcademicUnitLink extends ModelBase
 {
+
     public const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
 
     public const ACADEMIC_UNIT = 'academicUnit';
@@ -17,7 +19,7 @@ class InHouseExamInstanceAcademicUnitLink extends \ModelBase
      * @return InHouseExamInstanceAcademicUnitLink[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class InHouseExamInstanceAcademicUnitLink extends \ModelBase
     }
 
     /**
-     * @return InHouseExamInstance
+     * @return \Arbor\Model\InHouseExamInstance
      */
     public function getInHouseExamInstance()
     {
@@ -57,15 +59,15 @@ class InHouseExamInstanceAcademicUnitLink extends \ModelBase
     }
 
     /**
-     * @param InHouseExamInstance $inHouseExamInstance
+     * @param \Arbor\Model\InHouseExamInstance $inHouseExamInstance
      */
-    public function setInHouseExamInstance(\InHouseExamInstance $inHouseExamInstance = null)
+    public function setInHouseExamInstance(\Arbor\Model\InHouseExamInstance $inHouseExamInstance = null)
     {
         $this->setProperty('inHouseExamInstance', $inHouseExamInstance);
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -73,10 +75,11 @@ class InHouseExamInstanceAcademicUnitLink extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
+
 }

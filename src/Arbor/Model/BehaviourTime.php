@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BehaviourTime extends \ModelBase
+class BehaviourTime extends ModelBase
 {
+
     public const START_TIME = 'startTime';
 
     public const END_TIME = 'endTime';
@@ -19,7 +21,7 @@ class BehaviourTime extends \ModelBase
      * @return BehaviourTime[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class BehaviourTime extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

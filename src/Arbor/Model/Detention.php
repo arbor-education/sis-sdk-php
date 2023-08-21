@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Detention extends \ModelBase
+class Detention extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const ISSUED_BY_STAFF = 'issuedByStaff';
@@ -41,7 +43,7 @@ class Detention extends \ModelBase
      * @return Detention[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +75,7 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -81,15 +83,15 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getIssuedByStaff()
     {
@@ -97,15 +99,15 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @param Staff $issuedByStaff
+     * @param \Arbor\Model\Staff $issuedByStaff
      */
-    public function setIssuedByStaff(\Staff $issuedByStaff = null)
+    public function setIssuedByStaff(\Arbor\Model\Staff $issuedByStaff = null)
     {
         $this->setProperty('issuedByStaff', $issuedByStaff);
     }
 
     /**
-     * @return DetentionSession
+     * @return \Arbor\Model\DetentionSession
      */
     public function getDetentionSession()
     {
@@ -113,15 +115,15 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @param DetentionSession $detentionSession
+     * @param \Arbor\Model\DetentionSession $detentionSession
      */
-    public function setDetentionSession(\DetentionSession $detentionSession = null)
+    public function setDetentionSession(\Arbor\Model\DetentionSession $detentionSession = null)
     {
         $this->setProperty('detentionSession', $detentionSession);
     }
 
     /**
-     * @return DetentionType
+     * @return \Arbor\Model\DetentionType
      */
     public function getDetentionType()
     {
@@ -129,9 +131,9 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @param DetentionType $detentionType
+     * @param \Arbor\Model\DetentionType $detentionType
      */
-    public function setDetentionType(\DetentionType $detentionType = null)
+    public function setDetentionType(\Arbor\Model\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
@@ -249,7 +251,7 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @return Behaviour
+     * @return \Arbor\Model\Behaviour
      */
     public function getReasonForDetention()
     {
@@ -257,9 +259,9 @@ class Detention extends \ModelBase
     }
 
     /**
-     * @param Behaviour $reasonForDetention
+     * @param \Arbor\Model\Behaviour $reasonForDetention
      */
-    public function setReasonForDetention(\Behaviour $reasonForDetention = null)
+    public function setReasonForDetention(\Arbor\Model\Behaviour $reasonForDetention = null)
     {
         $this->setProperty('reasonForDetention', $reasonForDetention);
     }
@@ -295,4 +297,5 @@ class Detention extends \ModelBase
     {
         $this->setProperty('event', $event);
     }
+
 }

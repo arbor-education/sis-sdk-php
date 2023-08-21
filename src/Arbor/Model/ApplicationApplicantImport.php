@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ApplicationApplicantImport extends \ModelBase
+class ApplicationApplicantImport extends ModelBase
 {
+
     public const APPLICATION_APPLICANT_IMPORT_JOB = 'applicationApplicantImportJob';
 
     public const APPLICATION = 'application';
@@ -23,7 +25,7 @@ class ApplicationApplicantImport extends \ModelBase
      * @return ApplicationApplicantImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class ApplicationApplicantImport extends \ModelBase
     }
 
     /**
-     * @return ApplicationApplicantImportJob
+     * @return \Arbor\Model\ApplicationApplicantImportJob
      */
     public function getApplicationApplicantImportJob()
     {
@@ -63,15 +65,15 @@ class ApplicationApplicantImport extends \ModelBase
     }
 
     /**
-     * @param ApplicationApplicantImportJob $applicationApplicantImportJob
+     * @param \Arbor\Model\ApplicationApplicantImportJob $applicationApplicantImportJob
      */
-    public function setApplicationApplicantImportJob(\ApplicationApplicantImportJob $applicationApplicantImportJob = null)
+    public function setApplicationApplicantImportJob(\Arbor\Model\ApplicationApplicantImportJob $applicationApplicantImportJob = null)
     {
         $this->setProperty('applicationApplicantImportJob', $applicationApplicantImportJob);
     }
 
     /**
-     * @return Application
+     * @return \Arbor\Model\Application
      */
     public function getApplication()
     {
@@ -79,9 +81,9 @@ class ApplicationApplicantImport extends \ModelBase
     }
 
     /**
-     * @param Application $application
+     * @param \Arbor\Model\Application $application
      */
-    public function setApplication(\Application $application = null)
+    public function setApplication(\Arbor\Model\Application $application = null)
     {
         $this->setProperty('application', $application);
     }
@@ -133,4 +135,5 @@ class ApplicationApplicantImport extends \ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
+
 }

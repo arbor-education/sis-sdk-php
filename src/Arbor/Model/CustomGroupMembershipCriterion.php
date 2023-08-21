@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomGroupMembershipCriterion extends \ModelBase
+class CustomGroupMembershipCriterion extends ModelBase
 {
+
     public const CUSTOM_GROUP = 'customGroup';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -25,7 +27,7 @@ class CustomGroupMembershipCriterion extends \ModelBase
      * @return CustomGroupMembershipCriterion[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class CustomGroupMembershipCriterion extends \ModelBase
     }
 
     /**
-     * @return CustomGroup
+     * @return \Arbor\Model\CustomGroup
      */
     public function getCustomGroup()
     {
@@ -65,9 +67,9 @@ class CustomGroupMembershipCriterion extends \ModelBase
     }
 
     /**
-     * @param CustomGroup $customGroup
+     * @param \Arbor\Model\CustomGroup $customGroup
      */
-    public function setCustomGroup(\CustomGroup $customGroup = null)
+    public function setCustomGroup(\Arbor\Model\CustomGroup $customGroup = null)
     {
         $this->setProperty('customGroup', $customGroup);
     }
@@ -151,4 +153,5 @@ class CustomGroupMembershipCriterion extends \ModelBase
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
+
 }

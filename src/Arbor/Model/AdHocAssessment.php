@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AdHocAssessment extends \ModelBase
+class AdHocAssessment extends ModelBase
 {
+
     public const AD_HOC_ASSESSMENT_CATEGORY = 'adHocAssessmentCategory';
 
     public const ASSESSMENT_NAME = 'assessmentName';
@@ -35,7 +37,7 @@ class AdHocAssessment extends \ModelBase
      * @return AdHocAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @return AdHocAssessmentCategory
+     * @return \Arbor\Model\AdHocAssessmentCategory
      */
     public function getAdHocAssessmentCategory()
     {
@@ -75,9 +77,9 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param AdHocAssessmentCategory $adHocAssessmentCategory
+     * @param \Arbor\Model\AdHocAssessmentCategory $adHocAssessmentCategory
      */
-    public function setAdHocAssessmentCategory(\AdHocAssessmentCategory $adHocAssessmentCategory = null)
+    public function setAdHocAssessmentCategory(\Arbor\Model\AdHocAssessmentCategory $adHocAssessmentCategory = null)
     {
         $this->setProperty('adHocAssessmentCategory', $adHocAssessmentCategory);
     }
@@ -131,7 +133,7 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -139,9 +141,9 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -179,7 +181,7 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @return CurriculumTier
+     * @return \Arbor\Model\CurriculumTier
      */
     public function getCurriculumTier()
     {
@@ -187,15 +189,15 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param CurriculumTier $curriculumTier
+     * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(\CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
-     * @return CurriculumGrade
+     * @return \Arbor\Model\CurriculumGrade
      */
     public function getCurriculumGrade()
     {
@@ -203,15 +205,15 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param CurriculumGrade $curriculumGrade
+     * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -219,9 +221,9 @@ class AdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -241,4 +243,5 @@ class AdHocAssessment extends \ModelBase
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }
+
 }

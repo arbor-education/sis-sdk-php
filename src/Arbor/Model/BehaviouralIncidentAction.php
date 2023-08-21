@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BehaviouralIncidentAction extends \ModelBase
+class BehaviouralIncidentAction extends ModelBase
 {
+
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -21,7 +23,7 @@ class BehaviouralIncidentAction extends \ModelBase
      * @return BehaviouralIncidentAction[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class BehaviouralIncidentAction extends \ModelBase
     }
 
     /**
-     * @return BehaviouralIncident
+     * @return \Arbor\Model\BehaviouralIncident
      */
     public function getBehaviouralIncident()
     {
@@ -61,15 +63,15 @@ class BehaviouralIncidentAction extends \ModelBase
     }
 
     /**
-     * @param BehaviouralIncident $behaviouralIncident
+     * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -77,9 +79,9 @@ class BehaviouralIncidentAction extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -115,4 +117,5 @@ class BehaviouralIncidentAction extends \ModelBase
     {
         $this->setProperty('isAutomatic', $isAutomatic);
     }
+
 }

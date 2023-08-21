@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomerPaymentRefund extends \ModelBase
+class CustomerPaymentRefund extends ModelBase
 {
+
     public const CUSTOMER_PAYMENT = 'customerPayment';
 
     public const REFUND_DATETIME = 'refundDatetime';
@@ -27,7 +29,7 @@ class CustomerPaymentRefund extends \ModelBase
      * @return CustomerPaymentRefund[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CustomerPaymentRefund extends \ModelBase
     }
 
     /**
-     * @return CustomerPayment
+     * @return \Arbor\Model\CustomerPayment
      */
     public function getCustomerPayment()
     {
@@ -67,9 +69,9 @@ class CustomerPaymentRefund extends \ModelBase
     }
 
     /**
-     * @param CustomerPayment $customerPayment
+     * @param \Arbor\Model\CustomerPayment $customerPayment
      */
-    public function setCustomerPayment(\CustomerPayment $customerPayment = null)
+    public function setCustomerPayment(\Arbor\Model\CustomerPayment $customerPayment = null)
     {
         $this->setProperty('customerPayment', $customerPayment);
     }
@@ -169,4 +171,5 @@ class CustomerPaymentRefund extends \ModelBase
     {
         $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }
+
 }

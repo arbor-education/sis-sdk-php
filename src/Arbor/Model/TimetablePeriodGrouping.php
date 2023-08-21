@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TimetablePeriodGrouping extends \ModelBase
+class TimetablePeriodGrouping extends ModelBase
 {
+
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const NAME = 'name';
@@ -21,7 +23,7 @@ class TimetablePeriodGrouping extends \ModelBase
      * @return TimetablePeriodGrouping[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class TimetablePeriodGrouping extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -61,9 +63,9 @@ class TimetablePeriodGrouping extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -115,4 +117,5 @@ class TimetablePeriodGrouping extends \ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
+
 }

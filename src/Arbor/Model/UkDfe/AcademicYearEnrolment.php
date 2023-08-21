@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class AcademicYearEnrolment extends \ModelBase
+class AcademicYearEnrolment extends ModelBase
 {
+
     public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
     public const PLANNED_EEP_HOURS = 'plannedEepHours';
@@ -22,7 +23,7 @@ class AcademicYearEnrolment extends \ModelBase
      * @return AcademicYearEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,4 +101,5 @@ class AcademicYearEnrolment extends \ModelBase
     {
         $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }
+
 }

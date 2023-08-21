@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentClubSessionInterval extends \ModelBase
+class StudentClubSessionInterval extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const CLUB_SESSION_INTERVAL = 'clubSessionInterval';
@@ -29,7 +31,7 @@ class StudentClubSessionInterval extends \ModelBase
      * @return StudentClubSessionInterval[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +71,15 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return ClubSessionInterval
+     * @return \Arbor\Model\ClubSessionInterval
      */
     public function getClubSessionInterval()
     {
@@ -85,15 +87,15 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param ClubSessionInterval $clubSessionInterval
+     * @param \Arbor\Model\ClubSessionInterval $clubSessionInterval
      */
-    public function setClubSessionInterval(\ClubSessionInterval $clubSessionInterval = null)
+    public function setClubSessionInterval(\Arbor\Model\ClubSessionInterval $clubSessionInterval = null)
     {
         $this->setProperty('clubSessionInterval', $clubSessionInterval);
     }
 
     /**
-     * @return ClubSession
+     * @return \Arbor\Model\ClubSession
      */
     public function getClubSession()
     {
@@ -101,9 +103,9 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param ClubSession $clubSession
+     * @param \Arbor\Model\ClubSession $clubSession
      */
-    public function setClubSession(\ClubSession $clubSession = null)
+    public function setClubSession(\Arbor\Model\ClubSession $clubSession = null)
     {
         $this->setProperty('clubSession', $clubSession);
     }
@@ -125,7 +127,7 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @return VatRate
+     * @return \Arbor\Model\VatRate
      */
     public function getVatRate()
     {
@@ -133,15 +135,15 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param VatRate $vatRate
+     * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\VatRate $vatRate = null)
+    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getCustomerInvoice()
     {
@@ -149,15 +151,15 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoice $customerInvoice
+     * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
-     * @return CustomerInvoiceItem
+     * @return \Arbor\Model\CustomerInvoiceItem
      */
     public function getCustomerInvoiceItem()
     {
@@ -165,9 +167,9 @@ class StudentClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoiceItem $customerInvoiceItem
+     * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -187,4 +189,5 @@ class StudentClubSessionInterval extends \ModelBase
     {
         $this->setProperty('hasMeals', $hasMeals);
     }
+
 }

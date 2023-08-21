@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AdHocAssessmentBatch extends \ModelBase
+class AdHocAssessmentBatch extends ModelBase
 {
+
     public const AD_HOC_ASSESSMENT = 'adHocAssessment';
 
     public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
@@ -21,7 +23,7 @@ class AdHocAssessmentBatch extends \ModelBase
      * @return AdHocAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class AdHocAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @return AdHocAssessment
+     * @return \Arbor\Model\AdHocAssessment
      */
     public function getAdHocAssessment()
     {
@@ -61,15 +63,15 @@ class AdHocAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param AdHocAssessment $adHocAssessment
+     * @param \Arbor\Model\AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(\AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(\Arbor\Model\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
 
     /**
-     * @return ProgressMeasurementPeriod
+     * @return \Arbor\Model\ProgressMeasurementPeriod
      */
     public function getProgressMeasurementPeriod()
     {
@@ -77,9 +79,9 @@ class AdHocAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param ProgressMeasurementPeriod $progressMeasurementPeriod
+     * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -115,4 +117,5 @@ class AdHocAssessmentBatch extends \ModelBase
     {
         $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }
+
 }

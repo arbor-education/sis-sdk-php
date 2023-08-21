@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentInterventionReview extends \ModelBase
+class StudentInterventionReview extends ModelBase
 {
+
     public const STUDENT_INTERVENTION = 'studentIntervention';
 
     public const INTERVENTION_REVIEW = 'interventionReview';
@@ -21,7 +23,7 @@ class StudentInterventionReview extends \ModelBase
      * @return StudentInterventionReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class StudentInterventionReview extends \ModelBase
     }
 
     /**
-     * @return StudentIntervention
+     * @return \Arbor\Model\StudentIntervention
      */
     public function getStudentIntervention()
     {
@@ -61,15 +63,15 @@ class StudentInterventionReview extends \ModelBase
     }
 
     /**
-     * @param StudentIntervention $studentIntervention
+     * @param \Arbor\Model\StudentIntervention $studentIntervention
      */
-    public function setStudentIntervention(\StudentIntervention $studentIntervention = null)
+    public function setStudentIntervention(\Arbor\Model\StudentIntervention $studentIntervention = null)
     {
         $this->setProperty('studentIntervention', $studentIntervention);
     }
 
     /**
-     * @return InterventionReview
+     * @return \Arbor\Model\InterventionReview
      */
     public function getInterventionReview()
     {
@@ -77,9 +79,9 @@ class StudentInterventionReview extends \ModelBase
     }
 
     /**
-     * @param InterventionReview $interventionReview
+     * @param \Arbor\Model\InterventionReview $interventionReview
      */
-    public function setInterventionReview(\InterventionReview $interventionReview = null)
+    public function setInterventionReview(\Arbor\Model\InterventionReview $interventionReview = null)
     {
         $this->setProperty('interventionReview', $interventionReview);
     }
@@ -115,4 +117,5 @@ class StudentInterventionReview extends \ModelBase
     {
         $this->setProperty('reviewDate', $reviewDate);
     }
+
 }

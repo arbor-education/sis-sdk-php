@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Book extends \ModelBase
+class Book extends ModelBase
 {
+
     public const BOOK_TYPE = 'bookType';
 
     public const PREFIX = 'prefix';
@@ -27,7 +29,7 @@ class Book extends \ModelBase
      * @return Book[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -155,7 +157,7 @@ class Book extends \ModelBase
     }
 
     /**
-     * @return BankAccount
+     * @return \Arbor\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -163,10 +165,11 @@ class Book extends \ModelBase
     }
 
     /**
-     * @param BankAccount $bankAccount
+     * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(\BankAccount $bankAccount = null)
+    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
+
 }

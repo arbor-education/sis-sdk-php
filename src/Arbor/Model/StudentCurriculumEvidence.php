@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentCurriculumEvidence extends \ModelBase
+class StudentCurriculumEvidence extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const CURRICULUM_STATEMENT = 'curriculumStatement';
@@ -29,7 +31,7 @@ class StudentCurriculumEvidence extends \ModelBase
      * @return StudentCurriculumEvidence[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class StudentCurriculumEvidence extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +71,15 @@ class StudentCurriculumEvidence extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CurriculumStatement
+     * @return \Arbor\Model\CurriculumStatement
      */
     public function getCurriculumStatement()
     {
@@ -85,15 +87,15 @@ class StudentCurriculumEvidence extends \ModelBase
     }
 
     /**
-     * @param CurriculumStatement $curriculumStatement
+     * @param \Arbor\Model\CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(\CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(\Arbor\Model\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
 
     /**
-     * @return StudentCurriculumAchievement
+     * @return \Arbor\Model\StudentCurriculumAchievement
      */
     public function getStudentCurriculumAchievement()
     {
@@ -101,9 +103,9 @@ class StudentCurriculumEvidence extends \ModelBase
     }
 
     /**
-     * @param StudentCurriculumAchievement $studentCurriculumAchievement
+     * @param \Arbor\Model\StudentCurriculumAchievement $studentCurriculumAchievement
      */
-    public function setStudentCurriculumAchievement(\StudentCurriculumAchievement $studentCurriculumAchievement = null)
+    public function setStudentCurriculumAchievement(\Arbor\Model\StudentCurriculumAchievement $studentCurriculumAchievement = null)
     {
         $this->setProperty('studentCurriculumAchievement', $studentCurriculumAchievement);
     }
@@ -157,7 +159,7 @@ class StudentCurriculumEvidence extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getObservationStaff()
     {
@@ -165,9 +167,9 @@ class StudentCurriculumEvidence extends \ModelBase
     }
 
     /**
-     * @param Staff $observationStaff
+     * @param \Arbor\Model\Staff $observationStaff
      */
-    public function setObservationStaff(\Staff $observationStaff = null)
+    public function setObservationStaff(\Arbor\Model\Staff $observationStaff = null)
     {
         $this->setProperty('observationStaff', $observationStaff);
     }
@@ -187,4 +189,5 @@ class StudentCurriculumEvidence extends \ModelBase
     {
         $this->setProperty('evidence', $evidence);
     }
+
 }

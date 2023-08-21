@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Behaviour extends \ModelBase
+class Behaviour extends ModelBase
 {
+
     public const BEHAVIOUR_NAME = 'behaviourName';
 
     public const DESCRIPTION = 'description';
@@ -25,7 +27,7 @@ class Behaviour extends \ModelBase
      * @return Behaviour[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -89,7 +91,7 @@ class Behaviour extends \ModelBase
     }
 
     /**
-     * @return BehaviouralIncidentLevelWorkflow
+     * @return \Arbor\Model\BehaviouralIncidentLevelWorkflow
      */
     public function getBehaviouralIncidentLevelWorkflow()
     {
@@ -97,9 +99,10 @@ class Behaviour extends \ModelBase
     }
 
     /**
-     * @param BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow
+     * @param \Arbor\Model\BehaviouralIncidentLevelWorkflow
+     * $behaviouralIncidentLevelWorkflow
      */
-    public function setBehaviouralIncidentLevelWorkflow(\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    public function setBehaviouralIncidentLevelWorkflow(\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
     {
         $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
@@ -151,4 +154,5 @@ class Behaviour extends \ModelBase
     {
         $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }
+
 }

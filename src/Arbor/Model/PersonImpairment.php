@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PersonImpairment extends \ModelBase
+class PersonImpairment extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const PERSON_IMPAIRMENT_NAME = 'personImpairmentName';
@@ -23,7 +25,7 @@ class PersonImpairment extends \ModelBase
      * @return PersonImpairment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -87,7 +89,7 @@ class PersonImpairment extends \ModelBase
     }
 
     /**
-     * @return ImpairmentCategory
+     * @return \Arbor\Model\ImpairmentCategory
      */
     public function getImpairmentCategory()
     {
@@ -95,9 +97,9 @@ class PersonImpairment extends \ModelBase
     }
 
     /**
-     * @param ImpairmentCategory $impairmentCategory
+     * @param \Arbor\Model\ImpairmentCategory $impairmentCategory
      */
-    public function setImpairmentCategory(\ImpairmentCategory $impairmentCategory = null)
+    public function setImpairmentCategory(\Arbor\Model\ImpairmentCategory $impairmentCategory = null)
     {
         $this->setProperty('impairmentCategory', $impairmentCategory);
     }
@@ -133,4 +135,5 @@ class PersonImpairment extends \ModelBase
     {
         $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TripPrice extends \ModelBase
+class TripPrice extends ModelBase
 {
+
     public const TRIP = 'trip';
 
     public const APPLICABLE = 'applicable';
@@ -29,7 +31,7 @@ class TripPrice extends \ModelBase
      * @return TripPrice[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class TripPrice extends \ModelBase
     }
 
     /**
-     * @return Trip
+     * @return \Arbor\Model\Trip
      */
     public function getTrip()
     {
@@ -69,9 +71,9 @@ class TripPrice extends \ModelBase
     }
 
     /**
-     * @param Trip $trip
+     * @param \Arbor\Model\Trip $trip
      */
-    public function setTrip(\Trip $trip = null)
+    public function setTrip(\Arbor\Model\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
@@ -109,7 +111,7 @@ class TripPrice extends \ModelBase
     }
 
     /**
-     * @return VatRate
+     * @return \Arbor\Model\VatRate
      */
     public function getVatRate()
     {
@@ -117,9 +119,9 @@ class TripPrice extends \ModelBase
     }
 
     /**
-     * @param VatRate $vatRate
+     * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\VatRate $vatRate = null)
+    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -187,4 +189,5 @@ class TripPrice extends \ModelBase
     {
         $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }
+
 }

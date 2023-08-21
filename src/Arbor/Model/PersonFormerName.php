@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PersonFormerName extends \ModelBase
+class PersonFormerName extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const FROM_DATE = 'fromDate';
@@ -25,7 +27,7 @@ class PersonFormerName extends \ModelBase
      * @return PersonFormerName[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class PersonFormerName extends \ModelBase
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -65,9 +67,9 @@ class PersonFormerName extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -151,4 +153,5 @@ class PersonFormerName extends \ModelBase
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
+
 }

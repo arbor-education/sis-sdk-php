@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicTeachingHour extends \ModelBase
+class AcademicTeachingHour extends ModelBase
 {
+
     public const EFFECTIVE_DATE = 'effectiveDate';
 
     public const END_DATE = 'endDate';
@@ -23,7 +25,7 @@ class AcademicTeachingHour extends \ModelBase
      * @return AcademicTeachingHour[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class AcademicTeachingHour extends \ModelBase
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
+
 }

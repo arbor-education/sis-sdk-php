@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AttendanceRollCallTime extends \ModelBase
+class AttendanceRollCallTime extends ModelBase
 {
+
     public const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -25,7 +27,7 @@ class AttendanceRollCallTime extends \ModelBase
      * @return AttendanceRollCallTime[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class AttendanceRollCallTime extends \ModelBase
     }
 
     /**
-     * @return AttendanceRollCall
+     * @return \Arbor\Model\AttendanceRollCall
      */
     public function getAttendanceRollCall()
     {
@@ -65,9 +67,9 @@ class AttendanceRollCallTime extends \ModelBase
     }
 
     /**
-     * @param AttendanceRollCall $attendanceRollCall
+     * @param \Arbor\Model\AttendanceRollCall $attendanceRollCall
      */
-    public function setAttendanceRollCall(\AttendanceRollCall $attendanceRollCall = null)
+    public function setAttendanceRollCall(\Arbor\Model\AttendanceRollCall $attendanceRollCall = null)
     {
         $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
@@ -151,4 +153,5 @@ class AttendanceRollCallTime extends \ModelBase
     {
         $this->setProperty('rollCallPeriodEndTime', $rollCallPeriodEndTime);
     }
+
 }

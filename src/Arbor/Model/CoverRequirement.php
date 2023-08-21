@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CoverRequirement extends \ModelBase
+class CoverRequirement extends ModelBase
 {
+
     public const COVER_EVENT = 'coverEvent';
 
     public const ABSENT_STAFF = 'absentStaff';
@@ -25,7 +27,7 @@ class CoverRequirement extends \ModelBase
      * @return CoverRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +75,7 @@ class CoverRequirement extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAbsentStaff()
     {
@@ -81,9 +83,9 @@ class CoverRequirement extends \ModelBase
     }
 
     /**
-     * @param Staff $absentStaff
+     * @param \Arbor\Model\Staff $absentStaff
      */
-    public function setAbsentStaff(\Staff $absentStaff = null)
+    public function setAbsentStaff(\Arbor\Model\Staff $absentStaff = null)
     {
         $this->setProperty('absentStaff', $absentStaff);
     }
@@ -151,4 +153,5 @@ class CoverRequirement extends \ModelBase
     {
         $this->setProperty('coverNotRequiredDatetime', $coverNotRequiredDatetime);
     }
+
 }

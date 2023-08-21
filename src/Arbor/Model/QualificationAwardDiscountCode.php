@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationAwardDiscountCode extends \ModelBase
+class QualificationAwardDiscountCode extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -27,7 +29,7 @@ class QualificationAwardDiscountCode extends \ModelBase
      * @return QualificationAwardDiscountCode[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +109,7 @@ class QualificationAwardDiscountCode extends \ModelBase
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getQualificationAward()
     {
@@ -115,9 +117,9 @@ class QualificationAwardDiscountCode extends \ModelBase
     }
 
     /**
-     * @param QualificationAward $qualificationAward
+     * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(\QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
@@ -169,4 +171,5 @@ class QualificationAwardDiscountCode extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

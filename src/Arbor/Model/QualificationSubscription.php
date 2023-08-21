@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationSubscription extends \ModelBase
+class QualificationSubscription extends ModelBase
 {
+
     public const QUALIFICATION_ELEMENT_TYPE = 'qualificationElementType';
 
     public const QUALIFICATION_ELEMENT_CODE = 'qualificationElementCode';
@@ -19,7 +21,7 @@ class QualificationSubscription extends \ModelBase
      * @return QualificationSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class QualificationSubscription extends \ModelBase
     {
         $this->setProperty('hash', $hash);
     }
+
 }

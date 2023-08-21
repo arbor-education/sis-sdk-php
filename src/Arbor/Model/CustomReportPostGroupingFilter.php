@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomReportPostGroupingFilter extends \ModelBase
+class CustomReportPostGroupingFilter extends ModelBase
 {
+
     public const CUSTOM_REPORT = 'customReport';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -27,7 +29,7 @@ class CustomReportPostGroupingFilter extends \ModelBase
      * @return CustomReportPostGroupingFilter[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CustomReportPostGroupingFilter extends \ModelBase
     }
 
     /**
-     * @return CustomReport
+     * @return \Arbor\Model\CustomReport
      */
     public function getCustomReport()
     {
@@ -67,9 +69,9 @@ class CustomReportPostGroupingFilter extends \ModelBase
     }
 
     /**
-     * @param CustomReport $customReport
+     * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\CustomReport $customReport = null)
+    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -139,7 +141,7 @@ class CustomReportPostGroupingFilter extends \ModelBase
     }
 
     /**
-     * @return CustomReportGrouping
+     * @return \Arbor\Model\CustomReportGrouping
      */
     public function getTargetGrouping()
     {
@@ -147,9 +149,9 @@ class CustomReportPostGroupingFilter extends \ModelBase
     }
 
     /**
-     * @param CustomReportGrouping $targetGrouping
+     * @param \Arbor\Model\CustomReportGrouping $targetGrouping
      */
-    public function setTargetGrouping(\CustomReportGrouping $targetGrouping = null)
+    public function setTargetGrouping(\Arbor\Model\CustomReportGrouping $targetGrouping = null)
     {
         $this->setProperty('targetGrouping', $targetGrouping);
     }
@@ -169,4 +171,5 @@ class CustomReportPostGroupingFilter extends \ModelBase
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
+
 }

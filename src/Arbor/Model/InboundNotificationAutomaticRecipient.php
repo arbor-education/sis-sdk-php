@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InboundNotificationAutomaticRecipient extends \ModelBase
+class InboundNotificationAutomaticRecipient extends ModelBase
 {
+
     public const AUTOMATIC_RECIPIENT = 'automaticRecipient';
 
     protected $_resourceType = ResourceType::INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT;
@@ -15,7 +17,7 @@ class InboundNotificationAutomaticRecipient extends \ModelBase
      * @return InboundNotificationAutomaticRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,4 +63,5 @@ class InboundNotificationAutomaticRecipient extends \ModelBase
     {
         $this->setProperty('automaticRecipient', $automaticRecipient);
     }
+
 }

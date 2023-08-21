@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Tag extends \ModelBase
+class Tag extends ModelBase
 {
+
     public const TAG_NAME = 'tagName';
 
     public const TAG_IDENTIFIER = 'tagIdentifier';
@@ -17,7 +19,7 @@ class Tag extends \ModelBase
      * @return Tag[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class Tag extends \ModelBase
     {
         $this->setProperty('tagIdentifier', $tagIdentifier);
     }
+
 }

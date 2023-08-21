@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationSubject extends \ModelBase
+class QualificationSubject extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -25,7 +27,7 @@ class QualificationSubject extends \ModelBase
      * @return QualificationSubject[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -151,4 +153,5 @@ class QualificationSubject extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

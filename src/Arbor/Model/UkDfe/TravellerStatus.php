@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class TravellerStatus extends \ModelBase
+class TravellerStatus extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -24,7 +25,7 @@ class TravellerStatus extends \ModelBase
      * @return TravellerStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -118,4 +119,5 @@ class TravellerStatus extends \ModelBase
     {
         $this->setProperty('travellerStatusName', $travellerStatusName);
     }
+
 }

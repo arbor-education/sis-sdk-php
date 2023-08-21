@@ -6,12 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
-use Arbor\Model\EducationalInstitution;
-use Arbor\Model\Company;
 
-class AlternativeProvisionPlacement extends \ModelBase
+class AlternativeProvisionPlacement extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -37,7 +35,7 @@ class AlternativeProvisionPlacement extends \ModelBase
      * @return AlternativeProvisionPlacement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +67,7 @@ class AlternativeProvisionPlacement extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -77,15 +75,15 @@ class AlternativeProvisionPlacement extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -93,15 +91,15 @@ class AlternativeProvisionPlacement extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
-     * @return Company
+     * @return \Arbor\Model\Company
      */
     public function getCompany()
     {
@@ -109,15 +107,15 @@ class AlternativeProvisionPlacement extends \ModelBase
     }
 
     /**
-     * @param Company $company
+     * @param \Arbor\Model\Company $company
      */
-    public function setCompany(\Company $company = null)
+    public function setCompany(\Arbor\Model\Company $company = null)
     {
         $this->setProperty('company', $company);
     }
 
     /**
-     * @return AlternativeProvisionPlacementReason
+     * @return \Arbor\Model\UkDfe\AlternativeProvisionPlacementReason
      */
     public function getAlternativeProvisionPlacementReason()
     {
@@ -125,9 +123,10 @@ class AlternativeProvisionPlacement extends \ModelBase
     }
 
     /**
-     * @param AlternativeProvisionPlacementReason $alternativeProvisionPlacementReason
+     * @param \Arbor\Model\UkDfe\AlternativeProvisionPlacementReason
+     * $alternativeProvisionPlacementReason
      */
-    public function setAlternativeProvisionPlacementReason(\AlternativeProvisionPlacementReason $alternativeProvisionPlacementReason = null)
+    public function setAlternativeProvisionPlacementReason(\Arbor\Model\UkDfe\AlternativeProvisionPlacementReason $alternativeProvisionPlacementReason = null)
     {
         $this->setProperty('alternativeProvisionPlacementReason', $alternativeProvisionPlacementReason);
     }
@@ -211,4 +210,5 @@ class AlternativeProvisionPlacement extends \ModelBase
     {
         $this->setProperty('sessionsPerWeek', $sessionsPerWeek);
     }
+
 }

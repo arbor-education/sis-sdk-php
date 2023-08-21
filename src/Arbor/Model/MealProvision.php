@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealProvision extends \ModelBase
+class MealProvision extends ModelBase
 {
+
     public const MEAL = 'meal';
 
     public const MEAL_PROVISION_NAME = 'mealProvisionName';
@@ -35,7 +37,7 @@ class MealProvision extends \ModelBase
      * @return MealProvision[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class MealProvision extends \ModelBase
     }
 
     /**
-     * @return Meal
+     * @return \Arbor\Model\Meal
      */
     public function getMeal()
     {
@@ -75,9 +77,9 @@ class MealProvision extends \ModelBase
     }
 
     /**
-     * @param Meal $meal
+     * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(\Meal $meal = null)
+    public function setMeal(\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -227,7 +229,7 @@ class MealProvision extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getCopiedToMealProvision()
     {
@@ -235,10 +237,11 @@ class MealProvision extends \ModelBase
     }
 
     /**
-     * @param MealProvision $copiedToMealProvision
+     * @param \Arbor\Model\MealProvision $copiedToMealProvision
      */
-    public function setCopiedToMealProvision(\MealProvision $copiedToMealProvision = null)
+    public function setCopiedToMealProvision(\Arbor\Model\MealProvision $copiedToMealProvision = null)
     {
         $this->setProperty('copiedToMealProvision', $copiedToMealProvision);
     }
+
 }

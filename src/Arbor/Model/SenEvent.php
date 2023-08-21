@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SenEvent extends \ModelBase
+class SenEvent extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -29,7 +31,7 @@ class SenEvent extends \ModelBase
      * @return SenEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -125,7 +127,7 @@ class SenEvent extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -133,15 +135,15 @@ class SenEvent extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return SenEventType
+     * @return \Arbor\Model\SenEventType
      */
     public function getSenEventType()
     {
@@ -149,9 +151,9 @@ class SenEvent extends \ModelBase
     }
 
     /**
-     * @param SenEventType $senEventType
+     * @param \Arbor\Model\SenEventType $senEventType
      */
-    public function setSenEventType(\SenEventType $senEventType = null)
+    public function setSenEventType(\Arbor\Model\SenEventType $senEventType = null)
     {
         $this->setProperty('senEventType', $senEventType);
     }
@@ -187,4 +189,5 @@ class SenEvent extends \ModelBase
     {
         $this->setProperty('senEventDescription', $senEventDescription);
     }
+
 }

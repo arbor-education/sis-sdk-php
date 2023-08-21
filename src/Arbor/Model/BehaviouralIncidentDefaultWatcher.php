@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BehaviouralIncidentDefaultWatcher extends \ModelBase
+class BehaviouralIncidentDefaultWatcher extends ModelBase
 {
+
     public const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     public const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
@@ -21,7 +23,7 @@ class BehaviouralIncidentDefaultWatcher extends \ModelBase
      * @return BehaviouralIncidentDefaultWatcher[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class BehaviouralIncidentDefaultWatcher extends \ModelBase
     }
 
     /**
-     * @return BehaviouralIncidentLevelWorkflow
+     * @return \Arbor\Model\BehaviouralIncidentLevelWorkflow
      */
     public function getBehaviouralIncidentLevelWorkflow()
     {
@@ -77,9 +79,10 @@ class BehaviouralIncidentDefaultWatcher extends \ModelBase
     }
 
     /**
-     * @param BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow
+     * @param \Arbor\Model\BehaviouralIncidentLevelWorkflow
+     * $behaviouralIncidentLevelWorkflow
      */
-    public function setBehaviouralIncidentLevelWorkflow(\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    public function setBehaviouralIncidentLevelWorkflow(\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
     {
         $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
@@ -101,7 +104,7 @@ class BehaviouralIncidentDefaultWatcher extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -109,10 +112,11 @@ class BehaviouralIncidentDefaultWatcher extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
+
 }

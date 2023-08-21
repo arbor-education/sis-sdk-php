@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ReportCardBatchAdHocAssessment extends \ModelBase
+class ReportCardBatchAdHocAssessment extends ModelBase
 {
+
     public const REPORT_CARD_BATCH = 'reportCardBatch';
 
     public const AD_HOC_ASSESSMENT = 'adHocAssessment';
@@ -21,7 +23,7 @@ class ReportCardBatchAdHocAssessment extends \ModelBase
      * @return ReportCardBatchAdHocAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class ReportCardBatchAdHocAssessment extends \ModelBase
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getReportCardBatch()
     {
@@ -61,15 +63,15 @@ class ReportCardBatchAdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $reportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
-     * @return AdHocAssessment
+     * @return \Arbor\Model\AdHocAssessment
      */
     public function getAdHocAssessment()
     {
@@ -77,9 +79,9 @@ class ReportCardBatchAdHocAssessment extends \ModelBase
     }
 
     /**
-     * @param AdHocAssessment $adHocAssessment
+     * @param \Arbor\Model\AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(\AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(\Arbor\Model\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -115,4 +117,5 @@ class ReportCardBatchAdHocAssessment extends \ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
+
 }

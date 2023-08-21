@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BehaviouralIncidentLevelWorkflow extends \ModelBase
+class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const LEVEL_OF_INCIDENT = 'levelOfIncident';
@@ -79,7 +81,7 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
      * @return BehaviouralIncidentLevelWorkflow[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -335,7 +337,7 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @return CommunicationTemplate
+     * @return \Arbor\Model\CommunicationTemplate
      */
     public function getBehaviouralIncidentSmsTemplate()
     {
@@ -343,15 +345,15 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param CommunicationTemplate $behaviouralIncidentSmsTemplate
+     * @param \Arbor\Model\CommunicationTemplate $behaviouralIncidentSmsTemplate
      */
-    public function setBehaviouralIncidentSmsTemplate(\CommunicationTemplate $behaviouralIncidentSmsTemplate = null)
+    public function setBehaviouralIncidentSmsTemplate(\Arbor\Model\CommunicationTemplate $behaviouralIncidentSmsTemplate = null)
     {
         $this->setProperty('behaviouralIncidentSmsTemplate', $behaviouralIncidentSmsTemplate);
     }
 
     /**
-     * @return CommunicationTemplate
+     * @return \Arbor\Model\CommunicationTemplate
      */
     public function getBehaviouralIncidentEmailTemplate()
     {
@@ -359,15 +361,15 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param CommunicationTemplate $behaviouralIncidentEmailTemplate
+     * @param \Arbor\Model\CommunicationTemplate $behaviouralIncidentEmailTemplate
      */
-    public function setBehaviouralIncidentEmailTemplate(\CommunicationTemplate $behaviouralIncidentEmailTemplate = null)
+    public function setBehaviouralIncidentEmailTemplate(\Arbor\Model\CommunicationTemplate $behaviouralIncidentEmailTemplate = null)
     {
         $this->setProperty('behaviouralIncidentEmailTemplate', $behaviouralIncidentEmailTemplate);
     }
 
     /**
-     * @return CommunicationTemplate
+     * @return \Arbor\Model\CommunicationTemplate
      */
     public function getDetentionEmailTemplate()
     {
@@ -375,15 +377,15 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param CommunicationTemplate $detentionEmailTemplate
+     * @param \Arbor\Model\CommunicationTemplate $detentionEmailTemplate
      */
-    public function setDetentionEmailTemplate(\CommunicationTemplate $detentionEmailTemplate = null)
+    public function setDetentionEmailTemplate(\Arbor\Model\CommunicationTemplate $detentionEmailTemplate = null)
     {
         $this->setProperty('detentionEmailTemplate', $detentionEmailTemplate);
     }
 
     /**
-     * @return CommunicationTemplate
+     * @return \Arbor\Model\CommunicationTemplate
      */
     public function getDetentionSmsTemplate()
     {
@@ -391,9 +393,9 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param CommunicationTemplate $detentionSmsTemplate
+     * @param \Arbor\Model\CommunicationTemplate $detentionSmsTemplate
      */
-    public function setDetentionSmsTemplate(\CommunicationTemplate $detentionSmsTemplate = null)
+    public function setDetentionSmsTemplate(\Arbor\Model\CommunicationTemplate $detentionSmsTemplate = null)
     {
         $this->setProperty('detentionSmsTemplate', $detentionSmsTemplate);
     }
@@ -415,7 +417,7 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getSpecificAssignee()
     {
@@ -423,15 +425,15 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param Staff $specificAssignee
+     * @param \Arbor\Model\Staff $specificAssignee
      */
-    public function setSpecificAssignee(\Staff $specificAssignee = null)
+    public function setSpecificAssignee(\Arbor\Model\Staff $specificAssignee = null)
     {
         $this->setProperty('specificAssignee', $specificAssignee);
     }
 
     /**
-     * @return DetentionType
+     * @return \Arbor\Model\DetentionType
      */
     public function getDetentionType()
     {
@@ -439,9 +441,9 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param DetentionType $detentionType
+     * @param \Arbor\Model\DetentionType $detentionType
      */
-    public function setDetentionType(\DetentionType $detentionType = null)
+    public function setDetentionType(\Arbor\Model\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
@@ -479,7 +481,7 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @return InternalExclusionType
+     * @return \Arbor\Model\InternalExclusionType
      */
     public function getInternalExclusionType()
     {
@@ -487,9 +489,9 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param InternalExclusionType $internalExclusionType
+     * @param \Arbor\Model\InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(\InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(\Arbor\Model\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
@@ -527,7 +529,7 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @return PointAwardScale
+     * @return \Arbor\Model\PointAwardScale
      */
     public function getPointAwardScale()
     {
@@ -535,9 +537,9 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     }
 
     /**
-     * @param PointAwardScale $pointAwardScale
+     * @param \Arbor\Model\PointAwardScale $pointAwardScale
      */
-    public function setPointAwardScale(\PointAwardScale $pointAwardScale = null)
+    public function setPointAwardScale(\Arbor\Model\PointAwardScale $pointAwardScale = null)
     {
         $this->setProperty('pointAwardScale', $pointAwardScale);
     }
@@ -637,4 +639,5 @@ class BehaviouralIncidentLevelWorkflow extends \ModelBase
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
+
 }

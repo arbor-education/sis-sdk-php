@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\AcademicYear;
 
-class SchoolWorkforceCensus extends \ModelBase
+class SchoolWorkforceCensus extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -31,7 +31,7 @@ class SchoolWorkforceCensus extends \ModelBase
      * @return SchoolWorkforceCensus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -111,7 +111,7 @@ class SchoolWorkforceCensus extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -119,9 +119,9 @@ class SchoolWorkforceCensus extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -173,4 +173,5 @@ class SchoolWorkforceCensus extends \ModelBase
     {
         $this->setProperty('censusSubmissionDeadlineDate', $censusSubmissionDeadlineDate);
     }
+
 }

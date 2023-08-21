@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PinnedItem extends \ModelBase
+class PinnedItem extends ModelBase
 {
+
     public const PINNED = 'pinned';
 
     public const TARGET = 'target';
@@ -19,7 +21,7 @@ class PinnedItem extends \ModelBase
      * @return PinnedItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class PinnedItem extends \ModelBase
     {
         $this->setProperty('pinnedUntilDatetime', $pinnedUntilDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ClubMembershipPeriod extends \ModelBase
+class ClubMembershipPeriod extends ModelBase
 {
+
     public const CLUB = 'club';
 
     public const NAME = 'name';
@@ -27,7 +29,7 @@ class ClubMembershipPeriod extends \ModelBase
      * @return ClubMembershipPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class ClubMembershipPeriod extends \ModelBase
     }
 
     /**
-     * @return Club
+     * @return \Arbor\Model\Club
      */
     public function getClub()
     {
@@ -67,9 +69,9 @@ class ClubMembershipPeriod extends \ModelBase
     }
 
     /**
-     * @param Club $club
+     * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Club $club = null)
+    public function setClub(\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -169,4 +171,5 @@ class ClubMembershipPeriod extends \ModelBase
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
+
 }

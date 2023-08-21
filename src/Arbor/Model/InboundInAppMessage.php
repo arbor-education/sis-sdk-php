@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InboundInAppMessage extends \ModelBase
+class InboundInAppMessage extends ModelBase
 {
+
     public const SENDER = 'sender';
 
     public const RECIPIENT = 'recipient';
@@ -27,7 +29,7 @@ class InboundInAppMessage extends \ModelBase
      * @return InboundInAppMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -139,7 +141,7 @@ class InboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getFirstReadBy()
     {
@@ -147,15 +149,15 @@ class InboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @param Staff $firstReadBy
+     * @param \Arbor\Model\Staff $firstReadBy
      */
-    public function setFirstReadBy(\Staff $firstReadBy = null)
+    public function setFirstReadBy(\Arbor\Model\Staff $firstReadBy = null)
     {
         $this->setProperty('firstReadBy', $firstReadBy);
     }
 
     /**
-     * @return OutboundInAppMessage
+     * @return \Arbor\Model\OutboundInAppMessage
      */
     public function getOutboundInAppMessageRepliedTo()
     {
@@ -163,10 +165,11 @@ class InboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @param OutboundInAppMessage $outboundInAppMessageRepliedTo
+     * @param \Arbor\Model\OutboundInAppMessage $outboundInAppMessageRepliedTo
      */
-    public function setOutboundInAppMessageRepliedTo(\OutboundInAppMessage $outboundInAppMessageRepliedTo = null)
+    public function setOutboundInAppMessageRepliedTo(\Arbor\Model\OutboundInAppMessage $outboundInAppMessageRepliedTo = null)
     {
         $this->setProperty('outboundInAppMessageRepliedTo', $outboundInAppMessageRepliedTo);
     }
+
 }

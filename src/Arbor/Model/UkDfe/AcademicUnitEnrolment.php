@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class AcademicUnitEnrolment extends \ModelBase
+class AcademicUnitEnrolment extends ModelBase
 {
+
     public const PLANNED_EEP_HOURS = 'plannedEepHours';
 
     protected $_resourceType = ResourceType::UK_DFE_ACADEMIC_UNIT_ENROLMENT;
@@ -18,7 +19,7 @@ class AcademicUnitEnrolment extends \ModelBase
      * @return AcademicUnitEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,4 +65,5 @@ class AcademicUnitEnrolment extends \ModelBase
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
+
 }

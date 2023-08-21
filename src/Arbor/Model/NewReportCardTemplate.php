@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class NewReportCardTemplate extends \ModelBase
+class NewReportCardTemplate extends ModelBase
 {
+
     public const TEMPLATE_NAME = 'templateName';
 
     public const TEMPLATE_FILENAME = 'templateFilename';
@@ -31,7 +33,7 @@ class NewReportCardTemplate extends \ModelBase
      * @return NewReportCardTemplate[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -205,4 +207,5 @@ class NewReportCardTemplate extends \ModelBase
     {
         $this->setProperty('isCustom', $isCustom);
     }
+
 }

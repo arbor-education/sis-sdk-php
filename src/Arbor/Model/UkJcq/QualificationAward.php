@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class QualificationAward extends \ModelBase
+class QualificationAward extends ModelBase
 {
+
     public const QCA_ACCREDITATION_NUMBER = 'qcaAccreditationNumber';
 
     public const KS4_DISCOUNT_CODE2014 = 'ks4DiscountCode2014';
@@ -28,7 +29,7 @@ class QualificationAward extends \ModelBase
      * @return QualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -154,4 +155,5 @@ class QualificationAward extends \ModelBase
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CurriculumTarget extends \ModelBase
+class CurriculumTarget extends ModelBase
 {
+
     public const CURRICULUM_TARGET_SET = 'curriculumTargetSet';
 
     public const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
@@ -21,7 +23,7 @@ class CurriculumTarget extends \ModelBase
      * @return CurriculumTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CurriculumTarget extends \ModelBase
     }
 
     /**
-     * @return CurriculumTargetSet
+     * @return \Arbor\Model\CurriculumTargetSet
      */
     public function getCurriculumTargetSet()
     {
@@ -61,9 +63,9 @@ class CurriculumTarget extends \ModelBase
     }
 
     /**
-     * @param CurriculumTargetSet $curriculumTargetSet
+     * @param \Arbor\Model\CurriculumTargetSet $curriculumTargetSet
      */
-    public function setCurriculumTargetSet(\CurriculumTargetSet $curriculumTargetSet = null)
+    public function setCurriculumTargetSet(\Arbor\Model\CurriculumTargetSet $curriculumTargetSet = null)
     {
         $this->setProperty('curriculumTargetSet', $curriculumTargetSet);
     }
@@ -115,4 +117,5 @@ class CurriculumTarget extends \ModelBase
     {
         $this->setProperty('target', $target);
     }
+
 }

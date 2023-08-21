@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Tagging extends \ModelBase
+class Tagging extends ModelBase
 {
+
     public const TAG = 'tag';
 
     public const TAGGED_OBJECT = 'taggedObject';
@@ -25,7 +27,7 @@ class Tagging extends \ModelBase
      * @return Tagging[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class Tagging extends \ModelBase
     }
 
     /**
-     * @return Tag
+     * @return \Arbor\Model\Tag
      */
     public function getTag()
     {
@@ -65,9 +67,9 @@ class Tagging extends \ModelBase
     }
 
     /**
-     * @param Tag $tag
+     * @param \Arbor\Model\Tag $tag
      */
-    public function setTag(\Tag $tag = null)
+    public function setTag(\Arbor\Model\Tag $tag = null)
     {
         $this->setProperty('tag', $tag);
     }
@@ -151,4 +153,5 @@ class Tagging extends \ModelBase
     {
         $this->setProperty('link2', $link2);
     }
+
 }

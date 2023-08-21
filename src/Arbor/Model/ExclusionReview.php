@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ExclusionReview extends \ModelBase
+class ExclusionReview extends ModelBase
 {
+
     public const COMMENT = 'comment';
 
     public const EXCLUSION_REVIEW_OUTCOME = 'exclusionReviewOutcome';
@@ -27,7 +29,7 @@ class ExclusionReview extends \ModelBase
      * @return ExclusionReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +77,7 @@ class ExclusionReview extends \ModelBase
     }
 
     /**
-     * @return ExclusionReviewOutcome
+     * @return \Arbor\Model\ExclusionReviewOutcome
      */
     public function getExclusionReviewOutcome()
     {
@@ -83,15 +85,15 @@ class ExclusionReview extends \ModelBase
     }
 
     /**
-     * @param ExclusionReviewOutcome $exclusionReviewOutcome
+     * @param \Arbor\Model\ExclusionReviewOutcome $exclusionReviewOutcome
      */
-    public function setExclusionReviewOutcome(\ExclusionReviewOutcome $exclusionReviewOutcome = null)
+    public function setExclusionReviewOutcome(\Arbor\Model\ExclusionReviewOutcome $exclusionReviewOutcome = null)
     {
         $this->setProperty('exclusionReviewOutcome', $exclusionReviewOutcome);
     }
 
     /**
-     * @return PermanentExclusion
+     * @return \Arbor\Model\PermanentExclusion
      */
     public function getPermanentExclusion()
     {
@@ -99,9 +101,9 @@ class ExclusionReview extends \ModelBase
     }
 
     /**
-     * @param PermanentExclusion $permanentExclusion
+     * @param \Arbor\Model\PermanentExclusion $permanentExclusion
      */
-    public function setPermanentExclusion(\PermanentExclusion $permanentExclusion = null)
+    public function setPermanentExclusion(\Arbor\Model\PermanentExclusion $permanentExclusion = null)
     {
         $this->setProperty('permanentExclusion', $permanentExclusion);
     }
@@ -123,7 +125,7 @@ class ExclusionReview extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -131,9 +133,9 @@ class ExclusionReview extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -169,4 +171,5 @@ class ExclusionReview extends \ModelBase
     {
         $this->setProperty('senExpertRequested', $senExpertRequested);
     }
+
 }

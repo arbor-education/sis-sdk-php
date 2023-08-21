@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomReportScopeFilter extends \ModelBase
+class CustomReportScopeFilter extends ModelBase
 {
+
     public const CUSTOM_REPORT_SCOPE = 'customReportScope';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -27,7 +29,7 @@ class CustomReportScopeFilter extends \ModelBase
      * @return CustomReportScopeFilter[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CustomReportScopeFilter extends \ModelBase
     }
 
     /**
-     * @return CustomReportScope
+     * @return \Arbor\Model\CustomReportScope
      */
     public function getCustomReportScope()
     {
@@ -67,9 +69,9 @@ class CustomReportScopeFilter extends \ModelBase
     }
 
     /**
-     * @param CustomReportScope $customReportScope
+     * @param \Arbor\Model\CustomReportScope $customReportScope
      */
-    public function setCustomReportScope(\CustomReportScope $customReportScope = null)
+    public function setCustomReportScope(\Arbor\Model\CustomReportScope $customReportScope = null)
     {
         $this->setProperty('customReportScope', $customReportScope);
     }
@@ -169,4 +171,5 @@ class CustomReportScopeFilter extends \ModelBase
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
+
 }

@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
 
-class ServiceChildStatusAssignment extends \ModelBase
+class ServiceChildStatusAssignment extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const START_DATE = 'startDate';
@@ -23,7 +23,7 @@ class ServiceChildStatusAssignment extends \ModelBase
      * @return ServiceChildStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +55,7 @@ class ServiceChildStatusAssignment extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,9 +63,9 @@ class ServiceChildStatusAssignment extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -101,4 +101,5 @@ class ServiceChildStatusAssignment extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

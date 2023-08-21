@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PostalAddressOccupancy extends \ModelBase
+class PostalAddressOccupancy extends ModelBase
 {
+
     public const POSTAL_ADDRESS = 'postalAddress';
 
     public const OCCUPANT = 'occupant';
@@ -25,7 +27,7 @@ class PostalAddressOccupancy extends \ModelBase
      * @return PostalAddressOccupancy[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class PostalAddressOccupancy extends \ModelBase
     }
 
     /**
-     * @return PostalAddress
+     * @return \Arbor\Model\PostalAddress
      */
     public function getPostalAddress()
     {
@@ -65,9 +67,9 @@ class PostalAddressOccupancy extends \ModelBase
     }
 
     /**
-     * @param PostalAddress $postalAddress
+     * @param \Arbor\Model\PostalAddress $postalAddress
      */
-    public function setPostalAddress(\PostalAddress $postalAddress = null)
+    public function setPostalAddress(\Arbor\Model\PostalAddress $postalAddress = null)
     {
         $this->setProperty('postalAddress', $postalAddress);
     }
@@ -151,4 +153,5 @@ class PostalAddressOccupancy extends \ModelBase
     {
         $this->setProperty('isCorrespondenceAddress', $isCorrespondenceAddress);
     }
+
 }

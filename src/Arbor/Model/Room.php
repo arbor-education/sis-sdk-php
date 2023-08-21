@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Room extends \ModelBase
+class Room extends ModelBase
 {
+
     public const SITE = 'site';
 
     public const ROOM_NAME = 'roomName';
@@ -25,7 +27,7 @@ class Room extends \ModelBase
      * @return Room[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class Room extends \ModelBase
     }
 
     /**
-     * @return Site
+     * @return \Arbor\Model\Site
      */
     public function getSite()
     {
@@ -65,9 +67,9 @@ class Room extends \ModelBase
     }
 
     /**
-     * @param Site $site
+     * @param \Arbor\Model\Site $site
      */
-    public function setSite(\Site $site = null)
+    public function setSite(\Arbor\Model\Site $site = null)
     {
         $this->setProperty('site', $site);
     }
@@ -151,4 +153,5 @@ class Room extends \ModelBase
     {
         $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }
+
 }

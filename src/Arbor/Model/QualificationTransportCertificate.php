@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationTransportCertificate extends \ModelBase
+class QualificationTransportCertificate extends ModelBase
 {
+
     public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -27,7 +29,7 @@ class QualificationTransportCertificate extends \ModelBase
      * @return QualificationTransportCertificate[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class QualificationTransportCertificate extends \ModelBase
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -67,15 +69,15 @@ class QualificationTransportCertificate extends \ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -83,9 +85,9 @@ class QualificationTransportCertificate extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -169,4 +171,5 @@ class QualificationTransportCertificate extends \ModelBase
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }
+
 }

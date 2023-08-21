@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BursaryPaymentManualCriterionStatus extends \ModelBase
+class BursaryPaymentManualCriterionStatus extends ModelBase
 {
+
     public const BURSARY_PAYMENT = 'bursaryPayment';
 
     public const BURSARY_PAYMENT_MANUAL_CRITERION = 'bursaryPaymentManualCriterion';
@@ -19,7 +21,7 @@ class BursaryPaymentManualCriterionStatus extends \ModelBase
      * @return BursaryPaymentManualCriterionStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class BursaryPaymentManualCriterionStatus extends \ModelBase
     }
 
     /**
-     * @return BursaryPayment
+     * @return \Arbor\Model\BursaryPayment
      */
     public function getBursaryPayment()
     {
@@ -59,15 +61,15 @@ class BursaryPaymentManualCriterionStatus extends \ModelBase
     }
 
     /**
-     * @param BursaryPayment $bursaryPayment
+     * @param \Arbor\Model\BursaryPayment $bursaryPayment
      */
-    public function setBursaryPayment(\BursaryPayment $bursaryPayment = null)
+    public function setBursaryPayment(\Arbor\Model\BursaryPayment $bursaryPayment = null)
     {
         $this->setProperty('bursaryPayment', $bursaryPayment);
     }
 
     /**
-     * @return BursaryPaymentManualCriterion
+     * @return \Arbor\Model\BursaryPaymentManualCriterion
      */
     public function getBursaryPaymentManualCriterion()
     {
@@ -75,9 +77,9 @@ class BursaryPaymentManualCriterionStatus extends \ModelBase
     }
 
     /**
-     * @param BursaryPaymentManualCriterion $bursaryPaymentManualCriterion
+     * @param \Arbor\Model\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion
      */
-    public function setBursaryPaymentManualCriterion(\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion = null)
+    public function setBursaryPaymentManualCriterion(\Arbor\Model\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion = null)
     {
         $this->setProperty('bursaryPaymentManualCriterion', $bursaryPaymentManualCriterion);
     }
@@ -97,4 +99,5 @@ class BursaryPaymentManualCriterionStatus extends \ModelBase
     {
         $this->setProperty('isMet', $isMet);
     }
+
 }

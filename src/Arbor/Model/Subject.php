@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Subject extends \ModelBase
+class Subject extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -31,7 +33,7 @@ class Subject extends \ModelBase
      * @return Subject[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -127,7 +129,7 @@ class Subject extends \ModelBase
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getParentSubject()
     {
@@ -135,9 +137,9 @@ class Subject extends \ModelBase
     }
 
     /**
-     * @param Subject $parentSubject
+     * @param \Arbor\Model\Subject $parentSubject
      */
-    public function setParentSubject(\Subject $parentSubject = null)
+    public function setParentSubject(\Arbor\Model\Subject $parentSubject = null)
     {
         $this->setProperty('parentSubject', $parentSubject);
     }
@@ -205,4 +207,5 @@ class Subject extends \ModelBase
     {
         $this->setProperty('d00220', $d00220);
     }
+
 }

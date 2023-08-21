@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LanguageAbility extends \ModelBase
+class LanguageAbility extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const LANGUAGE = 'language';
@@ -29,7 +31,7 @@ class LanguageAbility extends \ModelBase
      * @return LanguageAbility[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +79,7 @@ class LanguageAbility extends \ModelBase
     }
 
     /**
-     * @return Language
+     * @return \Arbor\Model\Language
      */
     public function getLanguage()
     {
@@ -85,9 +87,9 @@ class LanguageAbility extends \ModelBase
     }
 
     /**
-     * @param Language $language
+     * @param \Arbor\Model\Language $language
      */
-    public function setLanguage(\Language $language = null)
+    public function setLanguage(\Arbor\Model\Language $language = null)
     {
         $this->setProperty('language', $language);
     }
@@ -187,4 +189,5 @@ class LanguageAbility extends \ModelBase
     {
         $this->setProperty('notes', $notes);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessmentBatch extends \ModelBase
+class StandardizedAssessmentBatch extends ModelBase
 {
+
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const BATCH_NAME = 'batchName';
@@ -23,7 +25,7 @@ class StandardizedAssessmentBatch extends \ModelBase
      * @return StandardizedAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class StandardizedAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -63,9 +65,9 @@ class StandardizedAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -87,7 +89,7 @@ class StandardizedAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @return StandardizedAssessmentTemplate
+     * @return \Arbor\Model\StandardizedAssessmentTemplate
      */
     public function getStandardizedAssessmentTemplate()
     {
@@ -95,9 +97,10 @@ class StandardizedAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentTemplate $standardizedAssessmentTemplate
+     * @param \Arbor\Model\StandardizedAssessmentTemplate
+     * $standardizedAssessmentTemplate
      */
-    public function setStandardizedAssessmentTemplate(\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
+    public function setStandardizedAssessmentTemplate(\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
         $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }
@@ -133,4 +136,5 @@ class StandardizedAssessmentBatch extends \ModelBase
     {
         $this->setProperty('senStudentsOnly', $senStudentsOnly);
     }
+
 }

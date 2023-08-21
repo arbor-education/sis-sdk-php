@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TrainingEvent extends \ModelBase
+class TrainingEvent extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -27,7 +29,7 @@ class TrainingEvent extends \ModelBase
      * @return TrainingEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -155,7 +157,7 @@ class TrainingEvent extends \ModelBase
     }
 
     /**
-     * @return TrainingCourse
+     * @return \Arbor\Model\TrainingCourse
      */
     public function getTrainingCourse()
     {
@@ -163,10 +165,11 @@ class TrainingEvent extends \ModelBase
     }
 
     /**
-     * @param TrainingCourse $trainingCourse
+     * @param \Arbor\Model\TrainingCourse $trainingCourse
      */
-    public function setTrainingCourse(\TrainingCourse $trainingCourse = null)
+    public function setTrainingCourse(\Arbor\Model\TrainingCourse $trainingCourse = null)
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmailStatus extends \ModelBase
+class EmailStatus extends ModelBase
 {
+
     public const EMAIL = 'email';
 
     public const EMAIL_ADDRESS = 'emailAddress';
@@ -29,7 +31,7 @@ class EmailStatus extends \ModelBase
      * @return EmailStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class EmailStatus extends \ModelBase
     }
 
     /**
-     * @return Email
+     * @return \Arbor\Model\Email
      */
     public function getEmail()
     {
@@ -69,9 +71,9 @@ class EmailStatus extends \ModelBase
     }
 
     /**
-     * @param Email $email
+     * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Email $email = null)
+    public function setEmail(\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -93,7 +95,7 @@ class EmailStatus extends \ModelBase
     }
 
     /**
-     * @return EmailRecipient
+     * @return \Arbor\Model\EmailRecipient
      */
     public function getEmailRecipient()
     {
@@ -101,9 +103,9 @@ class EmailStatus extends \ModelBase
     }
 
     /**
-     * @param EmailRecipient $emailRecipient
+     * @param \Arbor\Model\EmailRecipient $emailRecipient
      */
-    public function setEmailRecipient(\EmailRecipient $emailRecipient = null)
+    public function setEmailRecipient(\Arbor\Model\EmailRecipient $emailRecipient = null)
     {
         $this->setProperty('emailRecipient', $emailRecipient);
     }
@@ -187,4 +189,5 @@ class EmailStatus extends \ModelBase
     {
         $this->setProperty('deliveryAttemptNumber', $deliveryAttemptNumber);
     }
+
 }

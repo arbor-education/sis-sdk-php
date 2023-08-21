@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmergencyAlert extends \ModelBase
+class EmergencyAlert extends ModelBase
 {
+
     public const DATETIME = 'datetime';
 
     public const TRIGGERED_BY_STAFF = 'triggeredByStaff';
@@ -31,7 +33,7 @@ class EmergencyAlert extends \ModelBase
      * @return EmergencyAlert[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +81,7 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getTriggeredByStaff()
     {
@@ -87,15 +89,15 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @param Staff $triggeredByStaff
+     * @param \Arbor\Model\Staff $triggeredByStaff
      */
-    public function setTriggeredByStaff(\Staff $triggeredByStaff = null)
+    public function setTriggeredByStaff(\Arbor\Model\Staff $triggeredByStaff = null)
     {
         $this->setProperty('triggeredByStaff', $triggeredByStaff);
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getLocation()
     {
@@ -103,9 +105,9 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @param Room $location
+     * @param \Arbor\Model\Room $location
      */
-    public function setLocation(\Room $location = null)
+    public function setLocation(\Arbor\Model\Room $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -143,7 +145,7 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @return EmergencyAlertType
+     * @return \Arbor\Model\EmergencyAlertType
      */
     public function getEmergencyAlertType()
     {
@@ -151,9 +153,9 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @param EmergencyAlertType $emergencyAlertType
+     * @param \Arbor\Model\EmergencyAlertType $emergencyAlertType
      */
-    public function setEmergencyAlertType(\EmergencyAlertType $emergencyAlertType = null)
+    public function setEmergencyAlertType(\Arbor\Model\EmergencyAlertType $emergencyAlertType = null)
     {
         $this->setProperty('emergencyAlertType', $emergencyAlertType);
     }
@@ -175,7 +177,7 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStatusModifiedStaff()
     {
@@ -183,9 +185,9 @@ class EmergencyAlert extends \ModelBase
     }
 
     /**
-     * @param Staff $statusModifiedStaff
+     * @param \Arbor\Model\Staff $statusModifiedStaff
      */
-    public function setStatusModifiedStaff(\Staff $statusModifiedStaff = null)
+    public function setStatusModifiedStaff(\Arbor\Model\Staff $statusModifiedStaff = null)
     {
         $this->setProperty('statusModifiedStaff', $statusModifiedStaff);
     }
@@ -205,4 +207,5 @@ class EmergencyAlert extends \ModelBase
     {
         $this->setProperty('statusModifiedDatetime', $statusModifiedDatetime);
     }
+
 }

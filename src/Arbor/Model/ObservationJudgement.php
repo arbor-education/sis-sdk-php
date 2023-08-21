@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ObservationJudgement extends \ModelBase
+class ObservationJudgement extends ModelBase
 {
+
     public const OBSERVATION = 'observation';
 
     public const OBSERVATION_STRAND = 'observationStrand';
@@ -21,7 +23,7 @@ class ObservationJudgement extends \ModelBase
      * @return ObservationJudgement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class ObservationJudgement extends \ModelBase
     }
 
     /**
-     * @return Observation
+     * @return \Arbor\Model\Observation
      */
     public function getObservation()
     {
@@ -61,15 +63,15 @@ class ObservationJudgement extends \ModelBase
     }
 
     /**
-     * @param Observation $observation
+     * @param \Arbor\Model\Observation $observation
      */
-    public function setObservation(\Observation $observation = null)
+    public function setObservation(\Arbor\Model\Observation $observation = null)
     {
         $this->setProperty('observation', $observation);
     }
 
     /**
-     * @return ObservationStrand
+     * @return \Arbor\Model\ObservationStrand
      */
     public function getObservationStrand()
     {
@@ -77,15 +79,15 @@ class ObservationJudgement extends \ModelBase
     }
 
     /**
-     * @param ObservationStrand $observationStrand
+     * @param \Arbor\Model\ObservationStrand $observationStrand
      */
-    public function setObservationStrand(\ObservationStrand $observationStrand = null)
+    public function setObservationStrand(\Arbor\Model\ObservationStrand $observationStrand = null)
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
 
     /**
-     * @return ObservationGrade
+     * @return \Arbor\Model\ObservationGrade
      */
     public function getObservationGrade()
     {
@@ -93,9 +95,9 @@ class ObservationJudgement extends \ModelBase
     }
 
     /**
-     * @param ObservationGrade $observationGrade
+     * @param \Arbor\Model\ObservationGrade $observationGrade
      */
-    public function setObservationGrade(\ObservationGrade $observationGrade = null)
+    public function setObservationGrade(\Arbor\Model\ObservationGrade $observationGrade = null)
     {
         $this->setProperty('observationGrade', $observationGrade);
     }
@@ -115,4 +117,5 @@ class ObservationJudgement extends \ModelBase
     {
         $this->setProperty('comment', $comment);
     }
+
 }

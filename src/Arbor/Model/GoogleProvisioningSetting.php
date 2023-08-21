@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class GoogleProvisioningSetting extends \ModelBase
+class GoogleProvisioningSetting extends ModelBase
 {
+
     public const PROVISION_STAFF_USERS = 'provisionStaffUsers';
 
     public const PROVISION_STUDENT_USERS = 'provisionStudentUsers';
@@ -23,7 +25,7 @@ class GoogleProvisioningSetting extends \ModelBase
      * @return GoogleProvisioningSetting[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class GoogleProvisioningSetting extends \ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentCurriculumAchievement extends \ModelBase
+class StudentCurriculumAchievement extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const CURRICULUM_STATEMENT = 'curriculumStatement';
@@ -25,7 +27,7 @@ class StudentCurriculumAchievement extends \ModelBase
      * @return StudentCurriculumAchievement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class StudentCurriculumAchievement extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -65,15 +67,15 @@ class StudentCurriculumAchievement extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CurriculumStatement
+     * @return \Arbor\Model\CurriculumStatement
      */
     public function getCurriculumStatement()
     {
@@ -81,15 +83,15 @@ class StudentCurriculumAchievement extends \ModelBase
     }
 
     /**
-     * @param CurriculumStatement $curriculumStatement
+     * @param \Arbor\Model\CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(\CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(\Arbor\Model\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
 
     /**
-     * @return AchievementLevel
+     * @return \Arbor\Model\AchievementLevel
      */
     public function getAchievementLevel()
     {
@@ -97,9 +99,9 @@ class StudentCurriculumAchievement extends \ModelBase
     }
 
     /**
-     * @param AchievementLevel $achievementLevel
+     * @param \Arbor\Model\AchievementLevel $achievementLevel
      */
-    public function setAchievementLevel(\AchievementLevel $achievementLevel = null)
+    public function setAchievementLevel(\Arbor\Model\AchievementLevel $achievementLevel = null)
     {
         $this->setProperty('achievementLevel', $achievementLevel);
     }
@@ -151,4 +153,5 @@ class StudentCurriculumAchievement extends \ModelBase
     {
         $this->setProperty('achievementDate', $achievementDate);
     }
+
 }

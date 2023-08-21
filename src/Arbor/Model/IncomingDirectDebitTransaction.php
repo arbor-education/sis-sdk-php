@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IncomingDirectDebitTransaction extends \ModelBase
+class IncomingDirectDebitTransaction extends ModelBase
 {
+
     public const INCOMING_DIRECT_DEBIT_AGREEMENT = 'incomingDirectDebitAgreement';
 
     public const PAYMENT_PROVIDER_PAYOUT = 'paymentProviderPayout';
@@ -37,7 +39,7 @@ class IncomingDirectDebitTransaction extends \ModelBase
      * @return IncomingDirectDebitTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class IncomingDirectDebitTransaction extends \ModelBase
     }
 
     /**
-     * @return IncomingDirectDebitAgreement
+     * @return \Arbor\Model\IncomingDirectDebitAgreement
      */
     public function getIncomingDirectDebitAgreement()
     {
@@ -77,15 +79,15 @@ class IncomingDirectDebitTransaction extends \ModelBase
     }
 
     /**
-     * @param IncomingDirectDebitAgreement $incomingDirectDebitAgreement
+     * @param \Arbor\Model\IncomingDirectDebitAgreement $incomingDirectDebitAgreement
      */
-    public function setIncomingDirectDebitAgreement(\IncomingDirectDebitAgreement $incomingDirectDebitAgreement = null)
+    public function setIncomingDirectDebitAgreement(\Arbor\Model\IncomingDirectDebitAgreement $incomingDirectDebitAgreement = null)
     {
         $this->setProperty('incomingDirectDebitAgreement', $incomingDirectDebitAgreement);
     }
 
     /**
-     * @return PaymentProviderPayout
+     * @return \Arbor\Model\PaymentProviderPayout
      */
     public function getPaymentProviderPayout()
     {
@@ -93,9 +95,9 @@ class IncomingDirectDebitTransaction extends \ModelBase
     }
 
     /**
-     * @param PaymentProviderPayout $paymentProviderPayout
+     * @param \Arbor\Model\PaymentProviderPayout $paymentProviderPayout
      */
-    public function setPaymentProviderPayout(\PaymentProviderPayout $paymentProviderPayout = null)
+    public function setPaymentProviderPayout(\Arbor\Model\PaymentProviderPayout $paymentProviderPayout = null)
     {
         $this->setProperty('paymentProviderPayout', $paymentProviderPayout);
     }
@@ -259,4 +261,5 @@ class IncomingDirectDebitTransaction extends \ModelBase
     {
         $this->setProperty('customerNotificationDatetime', $customerNotificationDatetime);
     }
+
 }

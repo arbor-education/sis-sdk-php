@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IncomingCardTransaction extends \ModelBase
+class IncomingCardTransaction extends ModelBase
 {
+
     public const BILL_PAYER = 'billPayer';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -39,7 +41,7 @@ class IncomingCardTransaction extends \ModelBase
      * @return IncomingCardTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +73,7 @@ class IncomingCardTransaction extends \ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -79,15 +81,15 @@ class IncomingCardTransaction extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
 
     /**
-     * @return PaymentProvider
+     * @return \Arbor\Model\PaymentProvider
      */
     public function getPaymentProvider()
     {
@@ -95,15 +97,15 @@ class IncomingCardTransaction extends \ModelBase
     }
 
     /**
-     * @param PaymentProvider $paymentProvider
+     * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(\PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
 
     /**
-     * @return PaymentProviderPayout
+     * @return \Arbor\Model\PaymentProviderPayout
      */
     public function getPaymentProviderPayout()
     {
@@ -111,9 +113,9 @@ class IncomingCardTransaction extends \ModelBase
     }
 
     /**
-     * @param PaymentProviderPayout $paymentProviderPayout
+     * @param \Arbor\Model\PaymentProviderPayout $paymentProviderPayout
      */
-    public function setPaymentProviderPayout(\PaymentProviderPayout $paymentProviderPayout = null)
+    public function setPaymentProviderPayout(\Arbor\Model\PaymentProviderPayout $paymentProviderPayout = null)
     {
         $this->setProperty('paymentProviderPayout', $paymentProviderPayout);
     }
@@ -277,4 +279,5 @@ class IncomingCardTransaction extends \ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
+
 }

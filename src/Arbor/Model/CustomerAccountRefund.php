@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomerAccountRefund extends \ModelBase
+class CustomerAccountRefund extends ModelBase
 {
+
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const REFUND_DATETIME = 'refundDatetime';
@@ -27,7 +29,7 @@ class CustomerAccountRefund extends \ModelBase
      * @return CustomerAccountRefund[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CustomerAccountRefund extends \ModelBase
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -67,9 +69,9 @@ class CustomerAccountRefund extends \ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -123,7 +125,7 @@ class CustomerAccountRefund extends \ModelBase
     }
 
     /**
-     * @return StripeRefundTransaction
+     * @return \Arbor\Model\StripeRefundTransaction
      */
     public function getStripeRefundTransaction()
     {
@@ -131,9 +133,9 @@ class CustomerAccountRefund extends \ModelBase
     }
 
     /**
-     * @param StripeRefundTransaction $stripeRefundTransaction
+     * @param \Arbor\Model\StripeRefundTransaction $stripeRefundTransaction
      */
-    public function setStripeRefundTransaction(\StripeRefundTransaction $stripeRefundTransaction = null)
+    public function setStripeRefundTransaction(\Arbor\Model\StripeRefundTransaction $stripeRefundTransaction = null)
     {
         $this->setProperty('stripeRefundTransaction', $stripeRefundTransaction);
     }
@@ -169,4 +171,5 @@ class CustomerAccountRefund extends \ModelBase
     {
         $this->setProperty('refundFailedDatetime', $refundFailedDatetime);
     }
+
 }

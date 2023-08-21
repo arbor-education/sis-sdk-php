@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class NewReportCardBatch extends \ModelBase
+class NewReportCardBatch extends ModelBase
 {
+
     public const REPORT_CARD_TEMPLATE = 'reportCardTemplate';
 
     public const REPORT_CARD_TITLE = 'reportCardTitle';
@@ -63,7 +65,7 @@ class NewReportCardBatch extends \ModelBase
      * @return NewReportCardBatch[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -95,7 +97,7 @@ class NewReportCardBatch extends \ModelBase
     }
 
     /**
-     * @return NewReportCardTemplate
+     * @return \Arbor\Model\NewReportCardTemplate
      */
     public function getReportCardTemplate()
     {
@@ -103,9 +105,9 @@ class NewReportCardBatch extends \ModelBase
     }
 
     /**
-     * @param NewReportCardTemplate $reportCardTemplate
+     * @param \Arbor\Model\NewReportCardTemplate $reportCardTemplate
      */
-    public function setReportCardTemplate(\NewReportCardTemplate $reportCardTemplate = null)
+    public function setReportCardTemplate(\Arbor\Model\NewReportCardTemplate $reportCardTemplate = null)
     {
         $this->setProperty('reportCardTemplate', $reportCardTemplate);
     }
@@ -223,7 +225,7 @@ class NewReportCardBatch extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -231,9 +233,9 @@ class NewReportCardBatch extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -493,4 +495,5 @@ class NewReportCardBatch extends \ModelBase
     {
         $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }
+
 }

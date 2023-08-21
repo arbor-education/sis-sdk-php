@@ -5,6 +5,9 @@ namespace Arbor\Test\Model;
 use Arbor\Model\ModelBase;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers Arbor\Model
+ */
 class LoaderTest extends TestCase
 {
     private $basePath;
@@ -29,12 +32,13 @@ class LoaderTest extends TestCase
         }
     }
 
-    public function directoryProvider()
+    public static function directoryProvider()
     {
         return [
             [''],
             ['UkDfe'],
-            ['UkJcq']
+            ['UkIlr'],
+            ['UkJcq'],
         ];
     }
 

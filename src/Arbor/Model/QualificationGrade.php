@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationGrade extends \ModelBase
+class QualificationGrade extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -35,7 +37,7 @@ class QualificationGrade extends \ModelBase
      * @return QualificationGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,7 +117,7 @@ class QualificationGrade extends \ModelBase
     }
 
     /**
-     * @return QualificationGradeSet
+     * @return \Arbor\Model\QualificationGradeSet
      */
     public function getQualificationGradeSet()
     {
@@ -123,9 +125,9 @@ class QualificationGrade extends \ModelBase
     }
 
     /**
-     * @param QualificationGradeSet $qualificationGradeSet
+     * @param \Arbor\Model\QualificationGradeSet $qualificationGradeSet
      */
-    public function setQualificationGradeSet(\QualificationGradeSet $qualificationGradeSet = null)
+    public function setQualificationGradeSet(\Arbor\Model\QualificationGradeSet $qualificationGradeSet = null)
     {
         $this->setProperty('qualificationGradeSet', $qualificationGradeSet);
     }
@@ -241,4 +243,5 @@ class QualificationGrade extends \ModelBase
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }
+
 }

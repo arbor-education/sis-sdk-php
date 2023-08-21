@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InterventionReview extends \ModelBase
+class InterventionReview extends ModelBase
 {
+
     public const INTERVENTION = 'intervention';
 
     public const REVIEW_DUE_DATE = 'reviewDueDate';
@@ -23,7 +25,7 @@ class InterventionReview extends \ModelBase
      * @return InterventionReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class InterventionReview extends \ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -63,9 +65,9 @@ class InterventionReview extends \ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -133,4 +135,5 @@ class InterventionReview extends \ModelBase
     {
         $this->setProperty('recommendations', $recommendations);
     }
+
 }

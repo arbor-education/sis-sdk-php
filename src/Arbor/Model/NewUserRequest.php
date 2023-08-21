@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class NewUserRequest extends \ModelBase
+class NewUserRequest extends ModelBase
 {
+
     public const BUSINESS_ROLE = 'businessRole';
 
     public const TITLE = 'title';
@@ -33,7 +35,7 @@ class NewUserRequest extends \ModelBase
      * @return NewUserRequest[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class NewUserRequest extends \ModelBase
     }
 
     /**
-     * @return BusinessRole
+     * @return \Arbor\Model\BusinessRole
      */
     public function getBusinessRole()
     {
@@ -73,15 +75,15 @@ class NewUserRequest extends \ModelBase
     }
 
     /**
-     * @param BusinessRole $businessRole
+     * @param \Arbor\Model\BusinessRole $businessRole
      */
-    public function setBusinessRole(\BusinessRole $businessRole = null)
+    public function setBusinessRole(\Arbor\Model\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
 
     /**
-     * @return Title
+     * @return \Arbor\Model\Title
      */
     public function getTitle()
     {
@@ -89,9 +91,9 @@ class NewUserRequest extends \ModelBase
     }
 
     /**
-     * @param Title $title
+     * @param \Arbor\Model\Title $title
      */
-    public function setTitle(\Title $title = null)
+    public function setTitle(\Arbor\Model\Title $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -193,7 +195,7 @@ class NewUserRequest extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getSelectedApproverStaff()
     {
@@ -201,9 +203,9 @@ class NewUserRequest extends \ModelBase
     }
 
     /**
-     * @param Staff $selectedApproverStaff
+     * @param \Arbor\Model\Staff $selectedApproverStaff
      */
-    public function setSelectedApproverStaff(\Staff $selectedApproverStaff = null)
+    public function setSelectedApproverStaff(\Arbor\Model\Staff $selectedApproverStaff = null)
     {
         $this->setProperty('selectedApproverStaff', $selectedApproverStaff);
     }
@@ -223,4 +225,5 @@ class NewUserRequest extends \ModelBase
     {
         $this->setProperty('approversExist', $approversExist);
     }
+
 }

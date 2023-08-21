@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TeachingGroup extends \ModelBase
+class TeachingGroup extends ModelBase
 {
+
     public const TEACHING_GROUP_NAME = 'teachingGroupName';
 
     public const DESCRIPTION = 'description';
@@ -31,7 +33,7 @@ class TeachingGroup extends \ModelBase
      * @return TeachingGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -95,7 +97,7 @@ class TeachingGroup extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -103,15 +105,15 @@ class TeachingGroup extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return ProgrammeInstance
+     * @return \Arbor\Model\ProgrammeInstance
      */
     public function getProgrammeInstance()
     {
@@ -119,15 +121,15 @@ class TeachingGroup extends \ModelBase
     }
 
     /**
-     * @param ProgrammeInstance $programmeInstance
+     * @param \Arbor\Model\ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(\ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(\Arbor\Model\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
 
     /**
-     * @return TeachingGroup
+     * @return \Arbor\Model\TeachingGroup
      */
     public function getCopiedToTeachingGroup()
     {
@@ -135,15 +137,15 @@ class TeachingGroup extends \ModelBase
     }
 
     /**
-     * @param TeachingGroup $copiedToTeachingGroup
+     * @param \Arbor\Model\TeachingGroup $copiedToTeachingGroup
      */
-    public function setCopiedToTeachingGroup(\TeachingGroup $copiedToTeachingGroup = null)
+    public function setCopiedToTeachingGroup(\Arbor\Model\TeachingGroup $copiedToTeachingGroup = null)
     {
         $this->setProperty('copiedToTeachingGroup', $copiedToTeachingGroup);
     }
 
     /**
-     * @return TeachingGroup
+     * @return \Arbor\Model\TeachingGroup
      */
     public function getPromotedToTeachingGroup()
     {
@@ -151,9 +153,9 @@ class TeachingGroup extends \ModelBase
     }
 
     /**
-     * @param TeachingGroup $promotedToTeachingGroup
+     * @param \Arbor\Model\TeachingGroup $promotedToTeachingGroup
      */
-    public function setPromotedToTeachingGroup(\TeachingGroup $promotedToTeachingGroup = null)
+    public function setPromotedToTeachingGroup(\Arbor\Model\TeachingGroup $promotedToTeachingGroup = null)
     {
         $this->setProperty('promotedToTeachingGroup', $promotedToTeachingGroup);
     }
@@ -205,4 +207,5 @@ class TeachingGroup extends \ModelBase
     {
         $this->setProperty('promotedEnrolmentEndDate', $promotedEnrolmentEndDate);
     }
+
 }

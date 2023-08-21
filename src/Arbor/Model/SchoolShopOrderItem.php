@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SchoolShopOrderItem extends \ModelBase
+class SchoolShopOrderItem extends ModelBase
 {
+
     public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
     public const CUSTOMER_INVOICE_ITEM = 'customerInvoiceItem';
@@ -21,7 +23,7 @@ class SchoolShopOrderItem extends \ModelBase
      * @return SchoolShopOrderItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class SchoolShopOrderItem extends \ModelBase
     }
 
     /**
-     * @return SchoolShopProduct
+     * @return \Arbor\Model\SchoolShopProduct
      */
     public function getSchoolShopProduct()
     {
@@ -61,15 +63,15 @@ class SchoolShopOrderItem extends \ModelBase
     }
 
     /**
-     * @param SchoolShopProduct $schoolShopProduct
+     * @param \Arbor\Model\SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(\SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
 
     /**
-     * @return CustomerInvoiceItem
+     * @return \Arbor\Model\CustomerInvoiceItem
      */
     public function getCustomerInvoiceItem()
     {
@@ -77,9 +79,9 @@ class SchoolShopOrderItem extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoiceItem $customerInvoiceItem
+     * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -115,4 +117,5 @@ class SchoolShopOrderItem extends \ModelBase
     {
         $this->setProperty('comment', $comment);
     }
+
 }

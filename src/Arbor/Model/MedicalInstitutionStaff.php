@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MedicalInstitutionStaff extends \ModelBase
+class MedicalInstitutionStaff extends ModelBase
 {
+
     public const MEDICAL_INSTITUTION = 'medicalInstitution';
 
     public const PERSON = 'person';
@@ -19,7 +21,7 @@ class MedicalInstitutionStaff extends \ModelBase
      * @return MedicalInstitutionStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class MedicalInstitutionStaff extends \ModelBase
     }
 
     /**
-     * @return MedicalInstitution
+     * @return \Arbor\Model\MedicalInstitution
      */
     public function getMedicalInstitution()
     {
@@ -59,15 +61,15 @@ class MedicalInstitutionStaff extends \ModelBase
     }
 
     /**
-     * @param MedicalInstitution $medicalInstitution
+     * @param \Arbor\Model\MedicalInstitution $medicalInstitution
      */
-    public function setMedicalInstitution(\MedicalInstitution $medicalInstitution = null)
+    public function setMedicalInstitution(\Arbor\Model\MedicalInstitution $medicalInstitution = null)
     {
         $this->setProperty('medicalInstitution', $medicalInstitution);
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -75,9 +77,9 @@ class MedicalInstitutionStaff extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -97,4 +99,5 @@ class MedicalInstitutionStaff extends \ModelBase
     {
         $this->setProperty('position', $position);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffEmploymentType extends \ModelBase
+class StaffEmploymentType extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -21,7 +23,7 @@ class StaffEmploymentType extends \ModelBase
      * @return StaffEmploymentType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class StaffEmploymentType extends \ModelBase
     {
         $this->setProperty('employmentTypeName', $employmentTypeName);
     }
+
 }

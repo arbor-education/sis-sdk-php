@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Trip extends \ModelBase
+class Trip extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -45,7 +47,7 @@ class Trip extends \ModelBase
      * @return Trip[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -173,7 +175,7 @@ class Trip extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -181,9 +183,9 @@ class Trip extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -205,7 +207,7 @@ class Trip extends \ModelBase
     }
 
     /**
-     * @return Trip
+     * @return \Arbor\Model\Trip
      */
     public function getCopiedToTrip()
     {
@@ -213,9 +215,9 @@ class Trip extends \ModelBase
     }
 
     /**
-     * @param Trip $copiedToTrip
+     * @param \Arbor\Model\Trip $copiedToTrip
      */
-    public function setCopiedToTrip(\Trip $copiedToTrip = null)
+    public function setCopiedToTrip(\Arbor\Model\Trip $copiedToTrip = null)
     {
         $this->setProperty('copiedToTrip', $copiedToTrip);
     }
@@ -301,7 +303,7 @@ class Trip extends \ModelBase
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -309,9 +311,9 @@ class Trip extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -331,4 +333,5 @@ class Trip extends \ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
+
 }

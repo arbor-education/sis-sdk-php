@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Guardian extends \ModelBase
+class Guardian extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const EMPLOYER = 'employer';
@@ -37,7 +39,7 @@ class Guardian extends \ModelBase
      * @return Guardian[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class Guardian extends \ModelBase
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -77,9 +79,9 @@ class Guardian extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -101,7 +103,7 @@ class Guardian extends \ModelBase
     }
 
     /**
-     * @return Religion
+     * @return \Arbor\Model\Religion
      */
     public function getReligion()
     {
@@ -109,15 +111,15 @@ class Guardian extends \ModelBase
     }
 
     /**
-     * @param Religion $religion
+     * @param \Arbor\Model\Religion $religion
      */
-    public function setReligion(\Religion $religion = null)
+    public function setReligion(\Arbor\Model\Religion $religion = null)
     {
         $this->setProperty('religion', $religion);
     }
 
     /**
-     * @return Ethnicity
+     * @return \Arbor\Model\Ethnicity
      */
     public function getEthnicity()
     {
@@ -125,9 +127,9 @@ class Guardian extends \ModelBase
     }
 
     /**
-     * @param Ethnicity $ethnicity
+     * @param \Arbor\Model\Ethnicity $ethnicity
      */
-    public function setEthnicity(\Ethnicity $ethnicity = null)
+    public function setEthnicity(\Arbor\Model\Ethnicity $ethnicity = null)
     {
         $this->setProperty('ethnicity', $ethnicity);
     }
@@ -259,4 +261,5 @@ class Guardian extends \ModelBase
     {
         $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }
+
 }

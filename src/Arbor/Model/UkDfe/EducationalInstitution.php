@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\LocalAuthority;
 
-class EducationalInstitution extends \ModelBase
+class EducationalInstitution extends ModelBase
 {
+
     public const LOCAL_AUTHORITY = 'localAuthority';
 
     public const ESTABLISHMENT_NUMBER = 'establishmentNumber';
@@ -61,7 +61,7 @@ class EducationalInstitution extends \ModelBase
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -93,7 +93,7 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @return LocalAuthority
+     * @return \Arbor\Model\LocalAuthority
      */
     public function getLocalAuthority()
     {
@@ -101,9 +101,9 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param LocalAuthority $localAuthority
+     * @param \Arbor\Model\LocalAuthority $localAuthority
      */
-    public function setLocalAuthority(\LocalAuthority $localAuthority = null)
+    public function setLocalAuthority(\Arbor\Model\LocalAuthority $localAuthority = null)
     {
         $this->setProperty('localAuthority', $localAuthority);
     }
@@ -125,7 +125,7 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @return CensusSchoolPhase
+     * @return \Arbor\Model\UkDfe\CensusSchoolPhase
      */
     public function getCensusSchoolPhase()
     {
@@ -133,15 +133,15 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param CensusSchoolPhase $censusSchoolPhase
+     * @param \Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase
      */
-    public function setCensusSchoolPhase(\CensusSchoolPhase $censusSchoolPhase = null)
+    public function setCensusSchoolPhase(\Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase = null)
     {
         $this->setProperty('censusSchoolPhase', $censusSchoolPhase);
     }
 
     /**
-     * @return SchoolType
+     * @return \Arbor\Model\UkDfe\SchoolType
      */
     public function getSchoolType()
     {
@@ -149,9 +149,9 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param SchoolType $schoolType
+     * @param \Arbor\Model\UkDfe\SchoolType $schoolType
      */
-    public function setSchoolType(\SchoolType $schoolType = null)
+    public function setSchoolType(\Arbor\Model\UkDfe\SchoolType $schoolType = null)
     {
         $this->setProperty('schoolType', $schoolType);
     }
@@ -173,7 +173,7 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @return SchoolGovernanceType
+     * @return \Arbor\Model\UkDfe\SchoolGovernanceType
      */
     public function getGovernanceType()
     {
@@ -181,15 +181,15 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param SchoolGovernanceType $governanceType
+     * @param \Arbor\Model\UkDfe\SchoolGovernanceType $governanceType
      */
-    public function setGovernanceType(\SchoolGovernanceType $governanceType = null)
+    public function setGovernanceType(\Arbor\Model\UkDfe\SchoolGovernanceType $governanceType = null)
     {
         $this->setProperty('governanceType', $governanceType);
     }
 
     /**
-     * @return SchoolIntakeType
+     * @return \Arbor\Model\UkDfe\SchoolIntakeType
      */
     public function getIntakeType()
     {
@@ -197,9 +197,9 @@ class EducationalInstitution extends \ModelBase
     }
 
     /**
-     * @param SchoolIntakeType $intakeType
+     * @param \Arbor\Model\UkDfe\SchoolIntakeType $intakeType
      */
-    public function setIntakeType(\SchoolIntakeType $intakeType = null)
+    public function setIntakeType(\Arbor\Model\UkDfe\SchoolIntakeType $intakeType = null)
     {
         $this->setProperty('intakeType', $intakeType);
     }
@@ -443,4 +443,5 @@ class EducationalInstitution extends \ModelBase
     {
         $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }
+
 }

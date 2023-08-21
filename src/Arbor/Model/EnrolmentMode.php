@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EnrolmentMode extends \ModelBase
+class EnrolmentMode extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -23,7 +25,7 @@ class EnrolmentMode extends \ModelBase
      * @return EnrolmentMode[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class EnrolmentMode extends \ModelBase
     {
         $this->setProperty('d00018', $d00018);
     }
+
 }

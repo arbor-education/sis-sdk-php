@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IncomingCashlessCateringSystemTransaction extends \ModelBase
+class IncomingCashlessCateringSystemTransaction extends ModelBase
 {
+
     public const BILL_PAYER = 'billPayer';
 
     public const SOURCE = 'source';
@@ -33,7 +35,7 @@ class IncomingCashlessCateringSystemTransaction extends \ModelBase
      * @return IncomingCashlessCateringSystemTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class IncomingCashlessCateringSystemTransaction extends \ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -73,9 +75,9 @@ class IncomingCashlessCateringSystemTransaction extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -129,7 +131,7 @@ class IncomingCashlessCateringSystemTransaction extends \ModelBase
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -137,9 +139,9 @@ class IncomingCashlessCateringSystemTransaction extends \ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -223,4 +225,5 @@ class IncomingCashlessCateringSystemTransaction extends \ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
+
 }

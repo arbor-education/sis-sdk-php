@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TrainingCourse extends \ModelBase
+class TrainingCourse extends ModelBase
 {
+
     public const TRAINING_COURSE_TITLE = 'trainingCourseTitle';
 
     public const TRAINING_COURSE_DESCRIPTION = 'trainingCourseDescription';
@@ -23,7 +25,7 @@ class TrainingCourse extends \ModelBase
      * @return TrainingCourse[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class TrainingCourse extends \ModelBase
     {
         $this->setProperty('otherCosts', $otherCosts);
     }
+
 }

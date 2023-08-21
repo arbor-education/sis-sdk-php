@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BehaviouralIncidentBehaviour extends \ModelBase
+class BehaviouralIncidentBehaviour extends ModelBase
 {
+
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -19,7 +21,7 @@ class BehaviouralIncidentBehaviour extends \ModelBase
      * @return BehaviouralIncidentBehaviour[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class BehaviouralIncidentBehaviour extends \ModelBase
     }
 
     /**
-     * @return BehaviouralIncident
+     * @return \Arbor\Model\BehaviouralIncident
      */
     public function getBehaviouralIncident()
     {
@@ -59,15 +61,15 @@ class BehaviouralIncidentBehaviour extends \ModelBase
     }
 
     /**
-     * @param BehaviouralIncident $behaviouralIncident
+     * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -75,15 +77,15 @@ class BehaviouralIncidentBehaviour extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Behaviour
+     * @return \Arbor\Model\Behaviour
      */
     public function getBehaviour()
     {
@@ -91,10 +93,11 @@ class BehaviouralIncidentBehaviour extends \ModelBase
     }
 
     /**
-     * @param Behaviour $behaviour
+     * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(\Behaviour $behaviour = null)
+    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
+
 }

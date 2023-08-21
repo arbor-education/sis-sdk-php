@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SiteTravelTime extends \ModelBase
+class SiteTravelTime extends ModelBase
 {
+
     public const SITE1 = 'site1';
 
     public const SITE2 = 'site2';
@@ -19,7 +21,7 @@ class SiteTravelTime extends \ModelBase
      * @return SiteTravelTime[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class SiteTravelTime extends \ModelBase
     }
 
     /**
-     * @return Site
+     * @return \Arbor\Model\Site
      */
     public function getSite1()
     {
@@ -59,15 +61,15 @@ class SiteTravelTime extends \ModelBase
     }
 
     /**
-     * @param Site $site1
+     * @param \Arbor\Model\Site $site1
      */
-    public function setSite1(\Site $site1 = null)
+    public function setSite1(\Arbor\Model\Site $site1 = null)
     {
         $this->setProperty('site1', $site1);
     }
 
     /**
-     * @return Site
+     * @return \Arbor\Model\Site
      */
     public function getSite2()
     {
@@ -75,9 +77,9 @@ class SiteTravelTime extends \ModelBase
     }
 
     /**
-     * @param Site $site2
+     * @param \Arbor\Model\Site $site2
      */
-    public function setSite2(\Site $site2 = null)
+    public function setSite2(\Arbor\Model\Site $site2 = null)
     {
         $this->setProperty('site2', $site2);
     }
@@ -97,4 +99,5 @@ class SiteTravelTime extends \ModelBase
     {
         $this->setProperty('travelTime', $travelTime);
     }
+
 }

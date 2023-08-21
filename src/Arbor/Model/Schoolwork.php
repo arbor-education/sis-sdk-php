@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Schoolwork extends \ModelBase
+class Schoolwork extends ModelBase
 {
+
     public const TITLE = 'title';
 
     public const STUDENT_INSTRUCTIONS = 'studentInstructions';
@@ -35,7 +37,7 @@ class Schoolwork extends \ModelBase
      * @return Schoolwork[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -131,7 +133,7 @@ class Schoolwork extends \ModelBase
     }
 
     /**
-     * @return Session
+     * @return \Arbor\Model\Session
      */
     public function getDueEvent()
     {
@@ -139,9 +141,9 @@ class Schoolwork extends \ModelBase
     }
 
     /**
-     * @param Session $dueEvent
+     * @param \Arbor\Model\Session $dueEvent
      */
-    public function setDueEvent(\Session $dueEvent = null)
+    public function setDueEvent(\Arbor\Model\Session $dueEvent = null)
     {
         $this->setProperty('dueEvent', $dueEvent);
     }
@@ -195,7 +197,7 @@ class Schoolwork extends \ModelBase
     }
 
     /**
-     * @return Session
+     * @return \Arbor\Model\Session
      */
     public function getSession()
     {
@@ -203,15 +205,15 @@ class Schoolwork extends \ModelBase
     }
 
     /**
-     * @param Session $session
+     * @param \Arbor\Model\Session $session
      */
-    public function setSession(\Session $session = null)
+    public function setSession(\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -219,9 +221,9 @@ class Schoolwork extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -241,4 +243,5 @@ class Schoolwork extends \ModelBase
     {
         $this->setProperty('submitViaArbor', $submitViaArbor);
     }
+
 }

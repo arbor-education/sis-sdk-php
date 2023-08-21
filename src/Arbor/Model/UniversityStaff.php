@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UniversityStaff extends \ModelBase
+class UniversityStaff extends ModelBase
 {
+
     public const UNIVERSITY = 'university';
 
     public const PERSON = 'person';
@@ -19,7 +21,7 @@ class UniversityStaff extends \ModelBase
      * @return UniversityStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class UniversityStaff extends \ModelBase
     }
 
     /**
-     * @return University
+     * @return \Arbor\Model\University
      */
     public function getUniversity()
     {
@@ -59,15 +61,15 @@ class UniversityStaff extends \ModelBase
     }
 
     /**
-     * @param University $university
+     * @param \Arbor\Model\University $university
      */
-    public function setUniversity(\University $university = null)
+    public function setUniversity(\Arbor\Model\University $university = null)
     {
         $this->setProperty('university', $university);
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -75,9 +77,9 @@ class UniversityStaff extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -97,4 +99,5 @@ class UniversityStaff extends \ModelBase
     {
         $this->setProperty('position', $position);
     }
+
 }

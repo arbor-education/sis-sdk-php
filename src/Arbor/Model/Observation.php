@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Observation extends \ModelBase
+class Observation extends ModelBase
 {
+
     public const OBSERVING_STAFF = 'observingStaff';
 
     public const OBSERVED_STAFF = 'observedStaff';
@@ -27,7 +29,7 @@ class Observation extends \ModelBase
      * @return Observation[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class Observation extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getObservingStaff()
     {
@@ -67,15 +69,15 @@ class Observation extends \ModelBase
     }
 
     /**
-     * @param Staff $observingStaff
+     * @param \Arbor\Model\Staff $observingStaff
      */
-    public function setObservingStaff(\Staff $observingStaff = null)
+    public function setObservingStaff(\Arbor\Model\Staff $observingStaff = null)
     {
         $this->setProperty('observingStaff', $observingStaff);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getObservedStaff()
     {
@@ -83,15 +85,15 @@ class Observation extends \ModelBase
     }
 
     /**
-     * @param Staff $observedStaff
+     * @param \Arbor\Model\Staff $observedStaff
      */
-    public function setObservedStaff(\Staff $observedStaff = null)
+    public function setObservedStaff(\Arbor\Model\Staff $observedStaff = null)
     {
         $this->setProperty('observedStaff', $observedStaff);
     }
 
     /**
-     * @return Session
+     * @return \Arbor\Model\Session
      */
     public function getSession()
     {
@@ -99,9 +101,9 @@ class Observation extends \ModelBase
     }
 
     /**
-     * @param Session $session
+     * @param \Arbor\Model\Session $session
      */
-    public function setSession(\Session $session = null)
+    public function setSession(\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -169,4 +171,5 @@ class Observation extends \ModelBase
     {
         $this->setProperty('observationFocus', $observationFocus);
     }
+
 }

@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ProgrammeInstance extends \ModelBase
+class ProgrammeInstance extends ModelBase
 {
+
     public const PARTNER_UKPRN = 'partnerUkprn';
 
     public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
@@ -22,7 +23,7 @@ class ProgrammeInstance extends \ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,4 +101,5 @@ class ProgrammeInstance extends \ModelBase
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
+
 }

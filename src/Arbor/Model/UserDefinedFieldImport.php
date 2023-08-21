@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UserDefinedFieldImport extends \ModelBase
+class UserDefinedFieldImport extends ModelBase
 {
+
     public const USER_DEFINED_IMPORT_JOB = 'userDefinedImportJob';
 
     public const ENTITY = 'entity';
@@ -25,7 +27,7 @@ class UserDefinedFieldImport extends \ModelBase
      * @return UserDefinedFieldImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class UserDefinedFieldImport extends \ModelBase
     }
 
     /**
-     * @return UserDefinedFieldImportJob
+     * @return \Arbor\Model\UserDefinedFieldImportJob
      */
     public function getUserDefinedImportJob()
     {
@@ -65,9 +67,9 @@ class UserDefinedFieldImport extends \ModelBase
     }
 
     /**
-     * @param UserDefinedFieldImportJob $userDefinedImportJob
+     * @param \Arbor\Model\UserDefinedFieldImportJob $userDefinedImportJob
      */
-    public function setUserDefinedImportJob(\UserDefinedFieldImportJob $userDefinedImportJob = null)
+    public function setUserDefinedImportJob(\Arbor\Model\UserDefinedFieldImportJob $userDefinedImportJob = null)
     {
         $this->setProperty('userDefinedImportJob', $userDefinedImportJob);
     }
@@ -151,4 +153,5 @@ class UserDefinedFieldImport extends \ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateEnrolment extends \ModelBase
+class CandidateEnrolment extends ModelBase
 {
+
     public const CANDIDATE = 'candidate';
 
     public const ENROLMENT_NUMBER = 'enrolmentNumber';
@@ -21,7 +23,7 @@ class CandidateEnrolment extends \ModelBase
      * @return CandidateEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CandidateEnrolment extends \ModelBase
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidate()
     {
@@ -61,9 +63,9 @@ class CandidateEnrolment extends \ModelBase
     }
 
     /**
-     * @param Candidate $candidate
+     * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Candidate $candidate = null)
+    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -115,4 +117,5 @@ class CandidateEnrolment extends \ModelBase
     {
         $this->setProperty('enrolmentConfirmedDatetime', $enrolmentConfirmedDatetime);
     }
+
 }

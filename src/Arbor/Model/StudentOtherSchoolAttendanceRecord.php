@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentOtherSchoolAttendanceRecord extends \ModelBase
+class StudentOtherSchoolAttendanceRecord extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -33,7 +35,7 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
      * @return StudentOtherSchoolAttendanceRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -73,15 +75,15 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -89,9 +91,9 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -113,7 +115,7 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -121,9 +123,9 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -223,4 +225,5 @@ class StudentOtherSchoolAttendanceRecord extends \ModelBase
     {
         $this->setProperty('attendanceMarks', $attendanceMarks);
     }
+
 }

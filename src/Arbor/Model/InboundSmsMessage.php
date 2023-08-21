@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InboundSmsMessage extends \ModelBase
+class InboundSmsMessage extends ModelBase
 {
+
     public const MESSAGE_TYPE = 'messageType';
 
     public const SENDER_NUMBER = 'senderNumber';
@@ -33,7 +35,7 @@ class InboundSmsMessage extends \ModelBase
      * @return InboundSmsMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -129,7 +131,7 @@ class InboundSmsMessage extends \ModelBase
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getRecipient()
     {
@@ -137,9 +139,9 @@ class InboundSmsMessage extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $recipient
+     * @param \Arbor\Model\EducationalInstitution $recipient
      */
-    public function setRecipient(\EducationalInstitution $recipient = null)
+    public function setRecipient(\Arbor\Model\EducationalInstitution $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -223,4 +225,5 @@ class InboundSmsMessage extends \ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
+
 }

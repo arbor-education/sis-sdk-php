@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DataSource extends \ModelBase
+class DataSource extends ModelBase
 {
+
     public const DOMAIN = 'domain';
 
     public const PROVIDER = 'provider';
@@ -17,7 +19,7 @@ class DataSource extends \ModelBase
      * @return DataSource[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class DataSource extends \ModelBase
     {
         $this->setProperty('provider', $provider);
     }
+
 }

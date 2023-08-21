@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicYearEnrolment extends \ModelBase
+class AcademicYearEnrolment extends ModelBase
 {
+
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const STUDENT = 'student';
@@ -31,7 +33,7 @@ class AcademicYearEnrolment extends \ModelBase
      * @return AcademicYearEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class AcademicYearEnrolment extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -71,15 +73,15 @@ class AcademicYearEnrolment extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -87,9 +89,9 @@ class AcademicYearEnrolment extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -127,7 +129,7 @@ class AcademicYearEnrolment extends \ModelBase
     }
 
     /**
-     * @return UnenrolmentReason
+     * @return \Arbor\Model\UnenrolmentReason
      */
     public function getUnenrolmentReason()
     {
@@ -135,9 +137,9 @@ class AcademicYearEnrolment extends \ModelBase
     }
 
     /**
-     * @param UnenrolmentReason $unenrolmentReason
+     * @param \Arbor\Model\UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(\UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
@@ -205,4 +207,5 @@ class AcademicYearEnrolment extends \ModelBase
     {
         $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }
+
 }

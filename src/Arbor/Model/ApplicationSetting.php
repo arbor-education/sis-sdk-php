@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ApplicationSetting extends \ModelBase
+class ApplicationSetting extends ModelBase
 {
+
     public const SETTING_NAME = 'settingName';
 
     public const SETTING_VALUE = 'settingValue';
@@ -19,7 +21,7 @@ class ApplicationSetting extends \ModelBase
      * @return ApplicationSetting[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class ApplicationSetting extends \ModelBase
     {
         $this->setProperty('settingClass', $settingClass);
     }
+
 }

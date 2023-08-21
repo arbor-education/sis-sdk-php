@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EducationPlanContributor extends \ModelBase
+class EducationPlanContributor extends ModelBase
 {
+
     public const EDUCATION_PLAN = 'educationPlan';
 
     public const CONTRIBUTOR = 'contributor';
@@ -17,7 +19,7 @@ class EducationPlanContributor extends \ModelBase
      * @return EducationPlanContributor[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class EducationPlanContributor extends \ModelBase
     }
 
     /**
-     * @return EducationPlan
+     * @return \Arbor\Model\EducationPlan
      */
     public function getEducationPlan()
     {
@@ -57,9 +59,9 @@ class EducationPlanContributor extends \ModelBase
     }
 
     /**
-     * @param EducationPlan $educationPlan
+     * @param \Arbor\Model\EducationPlan $educationPlan
      */
-    public function setEducationPlan(\EducationPlan $educationPlan = null)
+    public function setEducationPlan(\Arbor\Model\EducationPlan $educationPlan = null)
     {
         $this->setProperty('educationPlan', $educationPlan);
     }
@@ -79,4 +81,5 @@ class EducationPlanContributor extends \ModelBase
     {
         $this->setProperty('contributor', $contributor);
     }
+
 }

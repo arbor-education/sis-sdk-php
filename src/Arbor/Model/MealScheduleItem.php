@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealScheduleItem extends \ModelBase
+class MealScheduleItem extends ModelBase
 {
+
     public const MEAL_SCHEDULE = 'mealSchedule';
 
     public const MON_PROVISION = 'monProvision';
@@ -43,7 +45,7 @@ class MealScheduleItem extends \ModelBase
      * @return MealScheduleItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +77,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealSchedule
+     * @return \Arbor\Model\MealSchedule
      */
     public function getMealSchedule()
     {
@@ -83,15 +85,15 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealSchedule $mealSchedule
+     * @param \Arbor\Model\MealSchedule $mealSchedule
      */
-    public function setMealSchedule(\MealSchedule $mealSchedule = null)
+    public function setMealSchedule(\Arbor\Model\MealSchedule $mealSchedule = null)
     {
         $this->setProperty('mealSchedule', $mealSchedule);
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getMonProvision()
     {
@@ -99,9 +101,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $monProvision
+     * @param \Arbor\Model\MealProvision $monProvision
      */
-    public function setMonProvision(\MealProvision $monProvision = null)
+    public function setMonProvision(\Arbor\Model\MealProvision $monProvision = null)
     {
         $this->setProperty('monProvision', $monProvision);
     }
@@ -123,7 +125,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getTueProvision()
     {
@@ -131,9 +133,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $tueProvision
+     * @param \Arbor\Model\MealProvision $tueProvision
      */
-    public function setTueProvision(\MealProvision $tueProvision = null)
+    public function setTueProvision(\Arbor\Model\MealProvision $tueProvision = null)
     {
         $this->setProperty('tueProvision', $tueProvision);
     }
@@ -155,7 +157,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getWedProvision()
     {
@@ -163,9 +165,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $wedProvision
+     * @param \Arbor\Model\MealProvision $wedProvision
      */
-    public function setWedProvision(\MealProvision $wedProvision = null)
+    public function setWedProvision(\Arbor\Model\MealProvision $wedProvision = null)
     {
         $this->setProperty('wedProvision', $wedProvision);
     }
@@ -187,7 +189,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getThuProvision()
     {
@@ -195,9 +197,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $thuProvision
+     * @param \Arbor\Model\MealProvision $thuProvision
      */
-    public function setThuProvision(\MealProvision $thuProvision = null)
+    public function setThuProvision(\Arbor\Model\MealProvision $thuProvision = null)
     {
         $this->setProperty('thuProvision', $thuProvision);
     }
@@ -219,7 +221,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getFriProvision()
     {
@@ -227,9 +229,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $friProvision
+     * @param \Arbor\Model\MealProvision $friProvision
      */
-    public function setFriProvision(\MealProvision $friProvision = null)
+    public function setFriProvision(\Arbor\Model\MealProvision $friProvision = null)
     {
         $this->setProperty('friProvision', $friProvision);
     }
@@ -251,7 +253,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getSatProvision()
     {
@@ -259,9 +261,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $satProvision
+     * @param \Arbor\Model\MealProvision $satProvision
      */
-    public function setSatProvision(\MealProvision $satProvision = null)
+    public function setSatProvision(\Arbor\Model\MealProvision $satProvision = null)
     {
         $this->setProperty('satProvision', $satProvision);
     }
@@ -283,7 +285,7 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getSunProvision()
     {
@@ -291,9 +293,9 @@ class MealScheduleItem extends \ModelBase
     }
 
     /**
-     * @param MealProvision $sunProvision
+     * @param \Arbor\Model\MealProvision $sunProvision
      */
-    public function setSunProvision(\MealProvision $sunProvision = null)
+    public function setSunProvision(\Arbor\Model\MealProvision $sunProvision = null)
     {
         $this->setProperty('sunProvision', $sunProvision);
     }
@@ -313,4 +315,5 @@ class MealScheduleItem extends \ModelBase
     {
         $this->setProperty('sunLabel', $sunLabel);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BursaryPaymentManualCriterion extends \ModelBase
+class BursaryPaymentManualCriterion extends ModelBase
 {
+
     public const BURSARY_TYPE = 'bursaryType';
 
     public const NAME = 'name';
@@ -21,7 +23,7 @@ class BursaryPaymentManualCriterion extends \ModelBase
      * @return BursaryPaymentManualCriterion[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class BursaryPaymentManualCriterion extends \ModelBase
     }
 
     /**
-     * @return BursaryType
+     * @return \Arbor\Model\BursaryType
      */
     public function getBursaryType()
     {
@@ -61,9 +63,9 @@ class BursaryPaymentManualCriterion extends \ModelBase
     }
 
     /**
-     * @param BursaryType $bursaryType
+     * @param \Arbor\Model\BursaryType $bursaryType
      */
-    public function setBursaryType(\BursaryType $bursaryType = null)
+    public function setBursaryType(\Arbor\Model\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
@@ -115,4 +117,5 @@ class BursaryPaymentManualCriterion extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

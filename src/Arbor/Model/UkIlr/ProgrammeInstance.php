@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ProgrammeInstance extends \ModelBase
+class ProgrammeInstance extends ModelBase
 {
+
     public const PROGRAMME_TYPE = 'programmeType';
 
     public const FUNDING_MODEL = 'fundingModel';
@@ -24,7 +25,7 @@ class ProgrammeInstance extends \ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -118,4 +119,5 @@ class ProgrammeInstance extends \ModelBase
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }
+
 }

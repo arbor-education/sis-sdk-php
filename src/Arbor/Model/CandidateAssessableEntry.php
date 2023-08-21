@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateAssessableEntry extends \ModelBase
+class CandidateAssessableEntry extends ModelBase
 {
+
     public const CANDIDATE_ENTRY = 'candidateEntry';
 
     public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -31,7 +33,7 @@ class CandidateAssessableEntry extends \ModelBase
      * @return CandidateAssessableEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class CandidateAssessableEntry extends \ModelBase
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -71,15 +73,15 @@ class CandidateAssessableEntry extends \ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getQualificationAssessable()
     {
@@ -87,15 +89,15 @@ class CandidateAssessableEntry extends \ModelBase
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
 
     /**
-     * @return QualificationAssessableInstance
+     * @return \Arbor\Model\QualificationAssessableInstance
      */
     public function getQualificationAssessableInstance()
     {
@@ -103,15 +105,16 @@ class CandidateAssessableEntry extends \ModelBase
     }
 
     /**
-     * @param QualificationAssessableInstance $qualificationAssessableInstance
+     * @param \Arbor\Model\QualificationAssessableInstance
+     * $qualificationAssessableInstance
      */
-    public function setQualificationAssessableInstance(\QualificationAssessableInstance $qualificationAssessableInstance = null)
+    public function setQualificationAssessableInstance(\Arbor\Model\QualificationAssessableInstance $qualificationAssessableInstance = null)
     {
         $this->setProperty('qualificationAssessableInstance', $qualificationAssessableInstance);
     }
 
     /**
-     * @return InvigilationSession
+     * @return \Arbor\Model\InvigilationSession
      */
     public function getInvigilationSession()
     {
@@ -119,15 +122,15 @@ class CandidateAssessableEntry extends \ModelBase
     }
 
     /**
-     * @param InvigilationSession $invigilationSession
+     * @param \Arbor\Model\InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(\InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(\Arbor\Model\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
 
     /**
-     * @return RoomLayoutSeat
+     * @return \Arbor\Model\RoomLayoutSeat
      */
     public function getSeat()
     {
@@ -135,9 +138,9 @@ class CandidateAssessableEntry extends \ModelBase
     }
 
     /**
-     * @param RoomLayoutSeat $seat
+     * @param \Arbor\Model\RoomLayoutSeat $seat
      */
-    public function setSeat(\RoomLayoutSeat $seat = null)
+    public function setSeat(\Arbor\Model\RoomLayoutSeat $seat = null)
     {
         $this->setProperty('seat', $seat);
     }
@@ -205,4 +208,5 @@ class CandidateAssessableEntry extends \ModelBase
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
+
 }

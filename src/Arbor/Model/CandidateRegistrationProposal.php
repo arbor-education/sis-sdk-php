@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateRegistrationProposal extends \ModelBase
+class CandidateRegistrationProposal extends ModelBase
 {
+
     public const CANDIDATE_PROPOSAL = 'candidateProposal';
 
     public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
@@ -27,7 +29,7 @@ class CandidateRegistrationProposal extends \ModelBase
      * @return CandidateRegistrationProposal[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @return CandidateProposal
+     * @return \Arbor\Model\CandidateProposal
      */
     public function getCandidateProposal()
     {
@@ -67,15 +69,15 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @param CandidateProposal $candidateProposal
+     * @param \Arbor\Model\CandidateProposal $candidateProposal
      */
-    public function setCandidateProposal(\CandidateProposal $candidateProposal = null)
+    public function setCandidateProposal(\Arbor\Model\CandidateProposal $candidateProposal = null)
     {
         $this->setProperty('candidateProposal', $candidateProposal);
     }
 
     /**
-     * @return QualificationAvailabilityInstance
+     * @return \Arbor\Model\QualificationAvailabilityInstance
      */
     public function getQualificationAvailabilityInstance()
     {
@@ -83,15 +85,16 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     * @param \Arbor\Model\QualificationAvailabilityInstance
+     * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getQualificationAward()
     {
@@ -99,15 +102,15 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @param QualificationAward $qualificationAward
+     * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(\QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedByStaff()
     {
@@ -115,9 +118,9 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @param Staff $approvedByStaff
+     * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(\Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -139,7 +142,7 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getRejectedByStaff()
     {
@@ -147,9 +150,9 @@ class CandidateRegistrationProposal extends \ModelBase
     }
 
     /**
-     * @param Staff $rejectedByStaff
+     * @param \Arbor\Model\Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(\Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(\Arbor\Model\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }
@@ -169,4 +172,5 @@ class CandidateRegistrationProposal extends \ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
+
 }

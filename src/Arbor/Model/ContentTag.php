@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ContentTag extends \ModelBase
+class ContentTag extends ModelBase
 {
+
     public const CONTENT = 'content';
 
     public const TAGGED = 'tagged';
@@ -21,7 +23,7 @@ class ContentTag extends \ModelBase
      * @return ContentTag[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class ContentTag extends \ModelBase
     }
 
     /**
-     * @return Content
+     * @return \Arbor\Model\Content
      */
     public function getContent()
     {
@@ -61,9 +63,9 @@ class ContentTag extends \ModelBase
     }
 
     /**
-     * @param Content $content
+     * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Content $content = null)
+    public function setContent(\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -115,4 +117,5 @@ class ContentTag extends \ModelBase
     {
         $this->setProperty('tagValue', $tagValue);
     }
+
 }

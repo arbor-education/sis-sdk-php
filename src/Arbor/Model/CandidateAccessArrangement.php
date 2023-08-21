@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateAccessArrangement extends \ModelBase
+class CandidateAccessArrangement extends ModelBase
 {
+
     public const CANDIDATE = 'candidate';
 
     public const ACCESS_ARRANGEMENT = 'accessArrangement';
@@ -25,7 +27,7 @@ class CandidateAccessArrangement extends \ModelBase
      * @return CandidateAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class CandidateAccessArrangement extends \ModelBase
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidate()
     {
@@ -65,15 +67,15 @@ class CandidateAccessArrangement extends \ModelBase
     }
 
     /**
-     * @param Candidate $candidate
+     * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Candidate $candidate = null)
+    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
 
     /**
-     * @return AccessArrangement
+     * @return \Arbor\Model\AccessArrangement
      */
     public function getAccessArrangement()
     {
@@ -81,9 +83,9 @@ class CandidateAccessArrangement extends \ModelBase
     }
 
     /**
-     * @param AccessArrangement $accessArrangement
+     * @param \Arbor\Model\AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(\AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(\Arbor\Model\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -151,4 +153,5 @@ class CandidateAccessArrangement extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

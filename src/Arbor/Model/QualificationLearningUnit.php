@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationLearningUnit extends \ModelBase
+class QualificationLearningUnit extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -31,7 +33,7 @@ class QualificationLearningUnit extends \ModelBase
      * @return QualificationLearningUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -111,7 +113,7 @@ class QualificationLearningUnit extends \ModelBase
     }
 
     /**
-     * @return QualificationScheme
+     * @return \Arbor\Model\QualificationScheme
      */
     public function getQualificationScheme()
     {
@@ -119,15 +121,15 @@ class QualificationLearningUnit extends \ModelBase
     }
 
     /**
-     * @param QualificationScheme $qualificationScheme
+     * @param \Arbor\Model\QualificationScheme $qualificationScheme
      */
-    public function setQualificationScheme(\QualificationScheme $qualificationScheme = null)
+    public function setQualificationScheme(\Arbor\Model\QualificationScheme $qualificationScheme = null)
     {
         $this->setProperty('qualificationScheme', $qualificationScheme);
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -135,15 +137,15 @@ class QualificationLearningUnit extends \ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
-     * @return QualificationLearningUnitLevel
+     * @return \Arbor\Model\QualificationLearningUnitLevel
      */
     public function getQualificationLearningUnitLevel()
     {
@@ -151,9 +153,10 @@ class QualificationLearningUnit extends \ModelBase
     }
 
     /**
-     * @param QualificationLearningUnitLevel $qualificationLearningUnitLevel
+     * @param \Arbor\Model\QualificationLearningUnitLevel
+     * $qualificationLearningUnitLevel
      */
-    public function setQualificationLearningUnitLevel(\QualificationLearningUnitLevel $qualificationLearningUnitLevel = null)
+    public function setQualificationLearningUnitLevel(\Arbor\Model\QualificationLearningUnitLevel $qualificationLearningUnitLevel = null)
     {
         $this->setProperty('qualificationLearningUnitLevel', $qualificationLearningUnitLevel);
     }
@@ -205,4 +208,5 @@ class QualificationLearningUnit extends \ModelBase
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Content extends \ModelBase
+class Content extends ModelBase
 {
+
     public const CONTENT_NAME = 'contentName';
 
     public const DESCRIPTION = 'description';
@@ -17,7 +19,7 @@ class Content extends \ModelBase
      * @return Content[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class Content extends \ModelBase
     {
         $this->setProperty('description', $description);
     }
+
 }

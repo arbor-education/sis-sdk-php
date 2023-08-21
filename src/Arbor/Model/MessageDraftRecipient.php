@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MessageDraftRecipient extends \ModelBase
+class MessageDraftRecipient extends ModelBase
 {
+
     public const MESSAGE_DRAFT = 'messageDraft';
 
     public const RECIPIENT = 'recipient';
@@ -19,7 +21,7 @@ class MessageDraftRecipient extends \ModelBase
      * @return MessageDraftRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class MessageDraftRecipient extends \ModelBase
     {
         $this->setProperty('resolver', $resolver);
     }
+
 }

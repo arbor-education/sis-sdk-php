@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TargetJudgement extends \ModelBase
+class TargetJudgement extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const COLOR = 'color';
@@ -21,7 +23,7 @@ class TargetJudgement extends \ModelBase
      * @return TargetJudgement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class TargetJudgement extends \ModelBase
     {
         $this->setProperty('order', $order);
     }
+
 }

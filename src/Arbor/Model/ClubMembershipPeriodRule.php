@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ClubMembershipPeriodRule extends \ModelBase
+class ClubMembershipPeriodRule extends ModelBase
 {
+
     public const RULE_IDENTIFIER = 'ruleIdentifier';
 
     public const RULE_VALUE = 'ruleValue';
@@ -19,7 +21,7 @@ class ClubMembershipPeriodRule extends \ModelBase
      * @return ClubMembershipPeriodRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class ClubMembershipPeriodRule extends \ModelBase
     }
 
     /**
-     * @return ClubMembershipPeriod
+     * @return \Arbor\Model\ClubMembershipPeriod
      */
     public function getClubMembershipPeriod()
     {
@@ -91,10 +93,11 @@ class ClubMembershipPeriodRule extends \ModelBase
     }
 
     /**
-     * @param ClubMembershipPeriod $clubMembershipPeriod
+     * @param \Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod
      */
-    public function setClubMembershipPeriod(\ClubMembershipPeriod $clubMembershipPeriod = null)
+    public function setClubMembershipPeriod(\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
+
 }

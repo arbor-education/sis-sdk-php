@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PermanentExclusion extends \ModelBase
+class PermanentExclusion extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const EXCLUSION_REASON = 'exclusionReason';
@@ -27,7 +29,7 @@ class PermanentExclusion extends \ModelBase
      * @return PermanentExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class PermanentExclusion extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,15 +69,15 @@ class PermanentExclusion extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return ExclusionReason
+     * @return \Arbor\Model\ExclusionReason
      */
     public function getExclusionReason()
     {
@@ -83,9 +85,9 @@ class PermanentExclusion extends \ModelBase
     }
 
     /**
-     * @param ExclusionReason $exclusionReason
+     * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(\ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -169,4 +171,5 @@ class PermanentExclusion extends \ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
 }

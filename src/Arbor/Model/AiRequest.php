@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AiRequest extends \ModelBase
+class AiRequest extends ModelBase
 {
+
     public const PROVIDER = 'provider';
 
     public const MODEL = 'model';
@@ -41,7 +43,7 @@ class AiRequest extends \ModelBase
      * @return AiRequest[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -295,4 +297,5 @@ class AiRequest extends \ModelBase
     {
         $this->setProperty('customerResponse', $customerResponse);
     }
+
 }

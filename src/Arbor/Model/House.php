@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class House extends \ModelBase
+class House extends ModelBase
 {
+
     public const HOUSE_NAME = 'houseName';
 
     public const SHORT_NAME = 'shortName';
@@ -23,7 +25,7 @@ class House extends \ModelBase
      * @return House[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -87,7 +89,7 @@ class House extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -95,9 +97,9 @@ class House extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -119,7 +121,7 @@ class House extends \ModelBase
     }
 
     /**
-     * @return House
+     * @return \Arbor\Model\House
      */
     public function getCopiedToHouse()
     {
@@ -127,10 +129,11 @@ class House extends \ModelBase
     }
 
     /**
-     * @param House $copiedToHouse
+     * @param \Arbor\Model\House $copiedToHouse
      */
-    public function setCopiedToHouse(\House $copiedToHouse = null)
+    public function setCopiedToHouse(\Arbor\Model\House $copiedToHouse = null)
     {
         $this->setProperty('copiedToHouse', $copiedToHouse);
     }
+
 }

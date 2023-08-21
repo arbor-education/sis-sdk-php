@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffContractPostRate extends \ModelBase
+class StaffContractPostRate extends ModelBase
 {
+
     public const STAFF_CONTRACT_POST = 'staffContractPost';
 
     public const RATE = 'rate';
@@ -23,7 +25,7 @@ class StaffContractPostRate extends \ModelBase
      * @return StaffContractPostRate[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class StaffContractPostRate extends \ModelBase
     }
 
     /**
-     * @return StaffContractPost
+     * @return \Arbor\Model\StaffContractPost
      */
     public function getStaffContractPost()
     {
@@ -63,9 +65,9 @@ class StaffContractPostRate extends \ModelBase
     }
 
     /**
-     * @param StaffContractPost $staffContractPost
+     * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -133,4 +135,5 @@ class StaffContractPostRate extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

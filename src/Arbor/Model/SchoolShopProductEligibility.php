@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SchoolShopProductEligibility extends \ModelBase
+class SchoolShopProductEligibility extends ModelBase
 {
+
     public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
     public const ELIGIBLE = 'eligible';
@@ -17,7 +19,7 @@ class SchoolShopProductEligibility extends \ModelBase
      * @return SchoolShopProductEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class SchoolShopProductEligibility extends \ModelBase
     }
 
     /**
-     * @return SchoolShopProduct
+     * @return \Arbor\Model\SchoolShopProduct
      */
     public function getSchoolShopProduct()
     {
@@ -57,9 +59,9 @@ class SchoolShopProductEligibility extends \ModelBase
     }
 
     /**
-     * @param SchoolShopProduct $schoolShopProduct
+     * @param \Arbor\Model\SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(\SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
@@ -79,4 +81,5 @@ class SchoolShopProductEligibility extends \ModelBase
     {
         $this->setProperty('eligible', $eligible);
     }
+
 }

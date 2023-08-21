@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class GradePointScaleLevelGradeSet extends \ModelBase
+class GradePointScaleLevelGradeSet extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -27,7 +29,7 @@ class GradePointScaleLevelGradeSet extends \ModelBase
      * @return GradePointScaleLevelGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +109,7 @@ class GradePointScaleLevelGradeSet extends \ModelBase
     }
 
     /**
-     * @return GradePointScale
+     * @return \Arbor\Model\GradePointScale
      */
     public function getGradePointScale()
     {
@@ -115,15 +117,15 @@ class GradePointScaleLevelGradeSet extends \ModelBase
     }
 
     /**
-     * @param GradePointScale $gradePointScale
+     * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(\GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -131,9 +133,9 @@ class GradePointScaleLevelGradeSet extends \ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -169,4 +171,5 @@ class GradePointScaleLevelGradeSet extends \ModelBase
     {
         $this->setProperty('appliesToSenStudentOnly', $appliesToSenStudentOnly);
     }
+
 }

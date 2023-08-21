@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomGroupNotificationSetting extends \ModelBase
+class CustomGroupNotificationSetting extends ModelBase
 {
+
     public const CUSTOM_GROUP = 'customGroup';
 
     public const TRIGGER_EVENT_TYPE = 'triggerEventType';
@@ -21,7 +23,7 @@ class CustomGroupNotificationSetting extends \ModelBase
      * @return CustomGroupNotificationSetting[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CustomGroupNotificationSetting extends \ModelBase
     }
 
     /**
-     * @return CustomGroup
+     * @return \Arbor\Model\CustomGroup
      */
     public function getCustomGroup()
     {
@@ -61,9 +63,9 @@ class CustomGroupNotificationSetting extends \ModelBase
     }
 
     /**
-     * @param CustomGroup $customGroup
+     * @param \Arbor\Model\CustomGroup $customGroup
      */
-    public function setCustomGroup(\CustomGroup $customGroup = null)
+    public function setCustomGroup(\Arbor\Model\CustomGroup $customGroup = null)
     {
         $this->setProperty('customGroup', $customGroup);
     }
@@ -115,4 +117,5 @@ class CustomGroupNotificationSetting extends \ModelBase
     {
         $this->setProperty('sendEmail', $sendEmail);
     }
+
 }

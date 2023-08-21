@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OutgoingEntityTransfer extends \ModelBase
+class OutgoingEntityTransfer extends ModelBase
 {
+
     public const SOURCE_ENTITY = 'sourceEntity';
 
     public const TRANSFER_CLASS_NAME = 'transferClassName';
@@ -27,7 +29,7 @@ class OutgoingEntityTransfer extends \ModelBase
      * @return OutgoingEntityTransfer[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -169,4 +171,5 @@ class OutgoingEntityTransfer extends \ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
+
 }

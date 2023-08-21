@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IntegrationsHrFinanceMappingStatus extends \ModelBase
+class IntegrationsHrFinanceMappingStatus extends ModelBase
 {
+
     public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
 
     public const ERRORS = 'errors';
@@ -21,7 +23,7 @@ class IntegrationsHrFinanceMappingStatus extends \ModelBase
      * @return IntegrationsHrFinanceMappingStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class IntegrationsHrFinanceMappingStatus extends \ModelBase
     }
 
     /**
-     * @return IntegrationsHrFinanceProvider
+     * @return \Arbor\Model\IntegrationsHrFinanceProvider
      */
     public function getIntegrationsHrFinanceProvider()
     {
@@ -61,9 +63,9 @@ class IntegrationsHrFinanceMappingStatus extends \ModelBase
     }
 
     /**
-     * @param IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
+     * @param \Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
      */
-    public function setIntegrationsHrFinanceProvider(\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
+    public function setIntegrationsHrFinanceProvider(\Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
     {
         $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
@@ -115,4 +117,5 @@ class IntegrationsHrFinanceMappingStatus extends \ModelBase
     {
         $this->setProperty('mappingType', $mappingType);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class RoomChangeRequirement extends \ModelBase
+class RoomChangeRequirement extends ModelBase
 {
+
     public const EVENT = 'event';
 
     public const UNAVAILABLE_ROOM = 'unavailableRoom';
@@ -25,7 +27,7 @@ class RoomChangeRequirement extends \ModelBase
      * @return RoomChangeRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +75,7 @@ class RoomChangeRequirement extends \ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getUnavailableRoom()
     {
@@ -81,15 +83,15 @@ class RoomChangeRequirement extends \ModelBase
     }
 
     /**
-     * @param Room $unavailableRoom
+     * @param \Arbor\Model\Room $unavailableRoom
      */
-    public function setUnavailableRoom(\Room $unavailableRoom = null)
+    public function setUnavailableRoom(\Arbor\Model\Room $unavailableRoom = null)
     {
         $this->setProperty('unavailableRoom', $unavailableRoom);
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getNewRoom()
     {
@@ -97,15 +99,15 @@ class RoomChangeRequirement extends \ModelBase
     }
 
     /**
-     * @param Room $newRoom
+     * @param \Arbor\Model\Room $newRoom
      */
-    public function setNewRoom(\Room $newRoom = null)
+    public function setNewRoom(\Arbor\Model\Room $newRoom = null)
     {
         $this->setProperty('newRoom', $newRoom);
     }
 
     /**
-     * @return RoomUnavailability
+     * @return \Arbor\Model\RoomUnavailability
      */
     public function getUnavailabilityEvent()
     {
@@ -113,9 +115,9 @@ class RoomChangeRequirement extends \ModelBase
     }
 
     /**
-     * @param RoomUnavailability $unavailabilityEvent
+     * @param \Arbor\Model\RoomUnavailability $unavailabilityEvent
      */
-    public function setUnavailabilityEvent(\RoomUnavailability $unavailabilityEvent = null)
+    public function setUnavailabilityEvent(\Arbor\Model\RoomUnavailability $unavailabilityEvent = null)
     {
         $this->setProperty('unavailabilityEvent', $unavailabilityEvent);
     }
@@ -151,4 +153,5 @@ class RoomChangeRequirement extends \ModelBase
     {
         $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
+
 }

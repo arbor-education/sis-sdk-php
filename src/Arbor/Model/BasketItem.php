@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BasketItem extends \ModelBase
+class BasketItem extends ModelBase
 {
+
     public const BASKET = 'basket';
 
     public const PAYMENT_AMOUNT = 'paymentAmount';
@@ -25,7 +27,7 @@ class BasketItem extends \ModelBase
      * @return BasketItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class BasketItem extends \ModelBase
     }
 
     /**
-     * @return Basket
+     * @return \Arbor\Model\Basket
      */
     public function getBasket()
     {
@@ -65,9 +67,9 @@ class BasketItem extends \ModelBase
     }
 
     /**
-     * @param Basket $basket
+     * @param \Arbor\Model\Basket $basket
      */
-    public function setBasket(\Basket $basket = null)
+    public function setBasket(\Arbor\Model\Basket $basket = null)
     {
         $this->setProperty('basket', $basket);
     }
@@ -137,7 +139,7 @@ class BasketItem extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -145,10 +147,11 @@ class BasketItem extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
+
 }

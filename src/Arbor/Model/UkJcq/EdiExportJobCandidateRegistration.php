@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\CandidateRegistration;
 
-class EdiExportJobCandidateRegistration extends \ModelBase
+class EdiExportJobCandidateRegistration extends ModelBase
 {
+
     public const EDI_EXPORT_JOB = 'ediExportJob';
 
     public const CANDIDATE_REGISTRATION = 'candidateRegistration';
@@ -21,7 +21,7 @@ class EdiExportJobCandidateRegistration extends \ModelBase
      * @return EdiExportJobCandidateRegistration[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +53,7 @@ class EdiExportJobCandidateRegistration extends \ModelBase
     }
 
     /**
-     * @return EdiExportJob
+     * @return \Arbor\Model\UkJcq\EdiExportJob
      */
     public function getEdiExportJob()
     {
@@ -61,15 +61,15 @@ class EdiExportJobCandidateRegistration extends \ModelBase
     }
 
     /**
-     * @param EdiExportJob $ediExportJob
+     * @param \Arbor\Model\UkJcq\EdiExportJob $ediExportJob
      */
-    public function setEdiExportJob(\EdiExportJob $ediExportJob = null)
+    public function setEdiExportJob(\Arbor\Model\UkJcq\EdiExportJob $ediExportJob = null)
     {
         $this->setProperty('ediExportJob', $ediExportJob);
     }
 
     /**
-     * @return CandidateRegistration
+     * @return \Arbor\Model\CandidateRegistration
      */
     public function getCandidateRegistration()
     {
@@ -77,10 +77,11 @@ class EdiExportJobCandidateRegistration extends \ModelBase
     }
 
     /**
-     * @param CandidateRegistration $candidateRegistration
+     * @param \Arbor\Model\CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(\CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(\Arbor\Model\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PhysicalInterventionRecordWitness extends \ModelBase
+class PhysicalInterventionRecordWitness extends ModelBase
 {
+
     public const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
     public const WITNESS = 'witness';
@@ -23,7 +25,7 @@ class PhysicalInterventionRecordWitness extends \ModelBase
      * @return PhysicalInterventionRecordWitness[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class PhysicalInterventionRecordWitness extends \ModelBase
     }
 
     /**
-     * @return PhysicalInterventionRecord
+     * @return \Arbor\Model\PhysicalInterventionRecord
      */
     public function getPhysicalInterventionRecord()
     {
@@ -63,9 +65,9 @@ class PhysicalInterventionRecordWitness extends \ModelBase
     }
 
     /**
-     * @param PhysicalInterventionRecord $physicalInterventionRecord
+     * @param \Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord
      */
-    public function setPhysicalInterventionRecord(\PhysicalInterventionRecord $physicalInterventionRecord = null)
+    public function setPhysicalInterventionRecord(\Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
         $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
@@ -133,4 +135,5 @@ class PhysicalInterventionRecordWitness extends \ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PayScaleGrade extends \ModelBase
+class PayScaleGrade extends ModelBase
 {
+
     public const PAY_SCALE = 'payScale';
 
     public const GRADE_NAME = 'gradeName';
@@ -19,7 +21,7 @@ class PayScaleGrade extends \ModelBase
      * @return PayScaleGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class PayScaleGrade extends \ModelBase
     }
 
     /**
-     * @return PayScale
+     * @return \Arbor\Model\PayScale
      */
     public function getPayScale()
     {
@@ -59,9 +61,9 @@ class PayScaleGrade extends \ModelBase
     }
 
     /**
-     * @param PayScale $payScale
+     * @param \Arbor\Model\PayScale $payScale
      */
-    public function setPayScale(\PayScale $payScale = null)
+    public function setPayScale(\Arbor\Model\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
@@ -97,4 +99,5 @@ class PayScaleGrade extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

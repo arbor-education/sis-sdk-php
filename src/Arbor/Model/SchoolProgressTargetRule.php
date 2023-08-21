@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SchoolProgressTargetRule extends \ModelBase
+class SchoolProgressTargetRule extends ModelBase
 {
+
     public const RULE_NAME = 'ruleName';
 
     public const ASSESSMENT = 'assessment';
@@ -35,7 +37,7 @@ class SchoolProgressTargetRule extends \ModelBase
      * @return SchoolProgressTargetRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class SchoolProgressTargetRule extends \ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -91,9 +93,9 @@ class SchoolProgressTargetRule extends \ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -131,7 +133,7 @@ class SchoolProgressTargetRule extends \ModelBase
     }
 
     /**
-     * @return CurriculumGrade
+     * @return \Arbor\Model\CurriculumGrade
      */
     public function getCurriculumGrade()
     {
@@ -139,9 +141,9 @@ class SchoolProgressTargetRule extends \ModelBase
     }
 
     /**
-     * @param CurriculumGrade $curriculumGrade
+     * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -241,4 +243,5 @@ class SchoolProgressTargetRule extends \ModelBase
     {
         $this->setProperty('hasSameAttainmentTargetForEachPeriod', $hasSameAttainmentTargetForEachPeriod);
     }
+
 }

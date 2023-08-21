@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ChequeBook extends \ModelBase
+class ChequeBook extends ModelBase
 {
+
     public const BANK_ACCOUNT = 'bankAccount';
 
     public const CHEQUE_NUMBER_LENGTH = 'chequeNumberLength';
@@ -23,7 +25,7 @@ class ChequeBook extends \ModelBase
      * @return ChequeBook[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class ChequeBook extends \ModelBase
     }
 
     /**
-     * @return BankAccount
+     * @return \Arbor\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -63,9 +65,9 @@ class ChequeBook extends \ModelBase
     }
 
     /**
-     * @param BankAccount $bankAccount
+     * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(\BankAccount $bankAccount = null)
+    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
@@ -133,4 +135,5 @@ class ChequeBook extends \ModelBase
     {
         $this->setProperty('nextChequeNumber', $nextChequeNumber);
     }
+
 }

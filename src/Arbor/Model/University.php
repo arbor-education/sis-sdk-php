@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class University extends \ModelBase
+class University extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -17,7 +19,7 @@ class University extends \ModelBase
      * @return University[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class University extends \ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
+
 }

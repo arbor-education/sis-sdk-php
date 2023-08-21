@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EntityPushdownSyncedEntity extends \ModelBase
+class EntityPushdownSyncedEntity extends ModelBase
 {
+
     public const ENTITY_PUSHDOWN = 'entityPushdown';
 
     public const SYNCED_ENTITY = 'syncedEntity';
@@ -25,7 +27,7 @@ class EntityPushdownSyncedEntity extends \ModelBase
      * @return EntityPushdownSyncedEntity[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class EntityPushdownSyncedEntity extends \ModelBase
     }
 
     /**
-     * @return EntityPushdown
+     * @return \Arbor\Model\EntityPushdown
      */
     public function getEntityPushdown()
     {
@@ -65,9 +67,9 @@ class EntityPushdownSyncedEntity extends \ModelBase
     }
 
     /**
-     * @param EntityPushdown $entityPushdown
+     * @param \Arbor\Model\EntityPushdown $entityPushdown
      */
-    public function setEntityPushdown(\EntityPushdown $entityPushdown = null)
+    public function setEntityPushdown(\Arbor\Model\EntityPushdown $entityPushdown = null)
     {
         $this->setProperty('entityPushdown', $entityPushdown);
     }
@@ -151,4 +153,5 @@ class EntityPushdownSyncedEntity extends \ModelBase
     {
         $this->setProperty('allowEdit', $allowEdit);
     }
+
 }

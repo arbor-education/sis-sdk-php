@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class User extends \ModelBase
+class User extends ModelBase
 {
+
     public const STAFF = 'staff';
 
     public const STUDENT = 'student';
@@ -65,7 +67,7 @@ class User extends \ModelBase
      * @return User[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,7 +99,7 @@ class User extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -105,15 +107,15 @@ class User extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -121,15 +123,15 @@ class User extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Guardian
+     * @return \Arbor\Model\Guardian
      */
     public function getGuardian()
     {
@@ -137,15 +139,15 @@ class User extends \ModelBase
     }
 
     /**
-     * @param Guardian $guardian
+     * @param \Arbor\Model\Guardian $guardian
      */
-    public function setGuardian(\Guardian $guardian = null)
+    public function setGuardian(\Arbor\Model\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }
 
     /**
-     * @return ExternalAdministrator
+     * @return \Arbor\Model\ExternalAdministrator
      */
     public function getExternalAdministrator()
     {
@@ -153,9 +155,9 @@ class User extends \ModelBase
     }
 
     /**
-     * @param ExternalAdministrator $externalAdministrator
+     * @param \Arbor\Model\ExternalAdministrator $externalAdministrator
      */
-    public function setExternalAdministrator(\ExternalAdministrator $externalAdministrator = null)
+    public function setExternalAdministrator(\Arbor\Model\ExternalAdministrator $externalAdministrator = null)
     {
         $this->setProperty('externalAdministrator', $externalAdministrator);
     }
@@ -511,4 +513,5 @@ class User extends \ModelBase
     {
         $this->setProperty('acceptSaasTermsAndConditionsByDatetime', $acceptSaasTermsAndConditionsByDatetime);
     }
+
 }

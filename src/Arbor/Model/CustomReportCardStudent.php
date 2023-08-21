@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomReportCardStudent extends \ModelBase
+class CustomReportCardStudent extends ModelBase
 {
+
     public const CUSTOM_REPORT_CARD = 'customReportCard';
 
     public const STUDENT = 'student';
@@ -21,7 +23,7 @@ class CustomReportCardStudent extends \ModelBase
      * @return CustomReportCardStudent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CustomReportCardStudent extends \ModelBase
     }
 
     /**
-     * @return CustomReportCard
+     * @return \Arbor\Model\CustomReportCard
      */
     public function getCustomReportCard()
     {
@@ -61,15 +63,15 @@ class CustomReportCardStudent extends \ModelBase
     }
 
     /**
-     * @param CustomReportCard $customReportCard
+     * @param \Arbor\Model\CustomReportCard $customReportCard
      */
-    public function setCustomReportCard(\CustomReportCard $customReportCard = null)
+    public function setCustomReportCard(\Arbor\Model\CustomReportCard $customReportCard = null)
     {
         $this->setProperty('customReportCard', $customReportCard);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -77,9 +79,9 @@ class CustomReportCardStudent extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -115,4 +117,5 @@ class CustomReportCardStudent extends \ModelBase
     {
         $this->setProperty('generatedDatetime', $generatedDatetime);
     }
+
 }

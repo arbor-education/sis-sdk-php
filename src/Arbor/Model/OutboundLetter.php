@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OutboundLetter extends \ModelBase
+class OutboundLetter extends ModelBase
 {
+
     public const OUTBOUND_LETTER_DRAFT = 'outboundLetterDraft';
 
     public const SENDER = 'sender';
@@ -25,7 +27,7 @@ class OutboundLetter extends \ModelBase
      * @return OutboundLetter[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class OutboundLetter extends \ModelBase
     }
 
     /**
-     * @return OutboundLetterDraft
+     * @return \Arbor\Model\OutboundLetterDraft
      */
     public function getOutboundLetterDraft()
     {
@@ -65,9 +67,9 @@ class OutboundLetter extends \ModelBase
     }
 
     /**
-     * @param OutboundLetterDraft $outboundLetterDraft
+     * @param \Arbor\Model\OutboundLetterDraft $outboundLetterDraft
      */
-    public function setOutboundLetterDraft(\OutboundLetterDraft $outboundLetterDraft = null)
+    public function setOutboundLetterDraft(\Arbor\Model\OutboundLetterDraft $outboundLetterDraft = null)
     {
         $this->setProperty('outboundLetterDraft', $outboundLetterDraft);
     }
@@ -89,7 +91,7 @@ class OutboundLetter extends \ModelBase
     }
 
     /**
-     * @return DocumentLayout
+     * @return \Arbor\Model\DocumentLayout
      */
     public function getDocumentLayout()
     {
@@ -97,9 +99,9 @@ class OutboundLetter extends \ModelBase
     }
 
     /**
-     * @param DocumentLayout $documentLayout
+     * @param \Arbor\Model\DocumentLayout $documentLayout
      */
-    public function setDocumentLayout(\DocumentLayout $documentLayout = null)
+    public function setDocumentLayout(\Arbor\Model\DocumentLayout $documentLayout = null)
     {
         $this->setProperty('documentLayout', $documentLayout);
     }
@@ -151,4 +153,5 @@ class OutboundLetter extends \ModelBase
     {
         $this->setProperty('actionRequiredDatetime', $actionRequiredDatetime);
     }
+
 }

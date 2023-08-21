@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Site extends \ModelBase
+class Site extends ModelBase
 {
+
     public const SITE_NAME = 'siteName';
 
     public const SHORT_NAME = 'shortName';
@@ -19,7 +21,7 @@ class Site extends \ModelBase
      * @return Site[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class Site extends \ModelBase
     {
         $this->setProperty('siteDisplayOrder', $siteDisplayOrder);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Club extends \ModelBase
+class Club extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const DESCRIPTION = 'description';
@@ -41,7 +43,7 @@ class Club extends \ModelBase
      * @return Club[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -105,7 +107,7 @@ class Club extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -113,9 +115,9 @@ class Club extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -153,7 +155,7 @@ class Club extends \ModelBase
     }
 
     /**
-     * @return Club
+     * @return \Arbor\Model\Club
      */
     public function getCopiedToClub()
     {
@@ -161,9 +163,9 @@ class Club extends \ModelBase
     }
 
     /**
-     * @param Club $copiedToClub
+     * @param \Arbor\Model\Club $copiedToClub
      */
-    public function setCopiedToClub(\Club $copiedToClub = null)
+    public function setCopiedToClub(\Arbor\Model\Club $copiedToClub = null)
     {
         $this->setProperty('copiedToClub', $copiedToClub);
     }
@@ -185,7 +187,7 @@ class Club extends \ModelBase
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -193,9 +195,9 @@ class Club extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -233,7 +235,7 @@ class Club extends \ModelBase
     }
 
     /**
-     * @return CustomerAccountType
+     * @return \Arbor\Model\CustomerAccountType
      */
     public function getCustomerAccountType()
     {
@@ -241,9 +243,9 @@ class Club extends \ModelBase
     }
 
     /**
-     * @param CustomerAccountType $customerAccountType
+     * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -295,4 +297,5 @@ class Club extends \ModelBase
     {
         $this->setProperty('chargeStudentsBasedOnAttendanceMark', $chargeStudentsBasedOnAttendanceMark);
     }
+
 }

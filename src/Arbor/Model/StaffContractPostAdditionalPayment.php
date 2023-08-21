@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffContractPostAdditionalPayment extends \ModelBase
+class StaffContractPostAdditionalPayment extends ModelBase
 {
+
     public const STAFF_CONTRACT_POST = 'staffContractPost';
 
     public const ADDITIONAL_PAYMENT = 'additionalPayment';
@@ -25,7 +27,7 @@ class StaffContractPostAdditionalPayment extends \ModelBase
      * @return StaffContractPostAdditionalPayment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class StaffContractPostAdditionalPayment extends \ModelBase
     }
 
     /**
-     * @return StaffContractPost
+     * @return \Arbor\Model\StaffContractPost
      */
     public function getStaffContractPost()
     {
@@ -65,9 +67,9 @@ class StaffContractPostAdditionalPayment extends \ModelBase
     }
 
     /**
-     * @param StaffContractPost $staffContractPost
+     * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -105,7 +107,7 @@ class StaffContractPostAdditionalPayment extends \ModelBase
     }
 
     /**
-     * @return AdditionalPaymentReason
+     * @return \Arbor\Model\AdditionalPaymentReason
      */
     public function getAdditionalPaymentReason()
     {
@@ -113,9 +115,9 @@ class StaffContractPostAdditionalPayment extends \ModelBase
     }
 
     /**
-     * @param AdditionalPaymentReason $additionalPaymentReason
+     * @param \Arbor\Model\AdditionalPaymentReason $additionalPaymentReason
      */
-    public function setAdditionalPaymentReason(\AdditionalPaymentReason $additionalPaymentReason = null)
+    public function setAdditionalPaymentReason(\Arbor\Model\AdditionalPaymentReason $additionalPaymentReason = null)
     {
         $this->setProperty('additionalPaymentReason', $additionalPaymentReason);
     }
@@ -151,4 +153,5 @@ class StaffContractPostAdditionalPayment extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

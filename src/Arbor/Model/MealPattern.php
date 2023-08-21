@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealPattern extends \ModelBase
+class MealPattern extends ModelBase
 {
+
     public const ATTENDEE = 'attendee';
 
     public const MEAL = 'meal';
@@ -43,7 +45,7 @@ class MealPattern extends \ModelBase
      * @return MealPattern[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -91,7 +93,7 @@ class MealPattern extends \ModelBase
     }
 
     /**
-     * @return Meal
+     * @return \Arbor\Model\Meal
      */
     public function getMeal()
     {
@@ -99,15 +101,15 @@ class MealPattern extends \ModelBase
     }
 
     /**
-     * @param Meal $meal
+     * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(\Meal $meal = null)
+    public function setMeal(\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
 
     /**
-     * @return MealSitting
+     * @return \Arbor\Model\MealSitting
      */
     public function getMealSitting()
     {
@@ -115,9 +117,9 @@ class MealPattern extends \ModelBase
     }
 
     /**
-     * @param MealSitting $mealSitting
+     * @param \Arbor\Model\MealSitting $mealSitting
      */
-    public function setMealSitting(\MealSitting $mealSitting = null)
+    public function setMealSitting(\Arbor\Model\MealSitting $mealSitting = null)
     {
         $this->setProperty('mealSitting', $mealSitting);
     }
@@ -283,7 +285,7 @@ class MealPattern extends \ModelBase
     }
 
     /**
-     * @return MealSittingAutomaticAttendeeTarget
+     * @return \Arbor\Model\MealSittingAutomaticAttendeeTarget
      */
     public function getMealSittingAutomaticAttendeeTarget()
     {
@@ -291,9 +293,10 @@ class MealPattern extends \ModelBase
     }
 
     /**
-     * @param MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget
+     * @param \Arbor\Model\MealSittingAutomaticAttendeeTarget
+     * $mealSittingAutomaticAttendeeTarget
      */
-    public function setMealSittingAutomaticAttendeeTarget(\MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget = null)
+    public function setMealSittingAutomaticAttendeeTarget(\Arbor\Model\MealSittingAutomaticAttendeeTarget $mealSittingAutomaticAttendeeTarget = null)
     {
         $this->setProperty('mealSittingAutomaticAttendeeTarget', $mealSittingAutomaticAttendeeTarget);
     }
@@ -313,4 +316,5 @@ class MealPattern extends \ModelBase
     {
         $this->setProperty('groupMembership', $groupMembership);
     }
+
 }

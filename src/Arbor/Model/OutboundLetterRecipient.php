@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OutboundLetterRecipient extends \ModelBase
+class OutboundLetterRecipient extends ModelBase
 {
+
     public const OUTBOUND_LETTER = 'outboundLetter';
 
     public const RECIPIENT_NAME = 'recipientName';
@@ -23,7 +25,7 @@ class OutboundLetterRecipient extends \ModelBase
      * @return OutboundLetterRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class OutboundLetterRecipient extends \ModelBase
     }
 
     /**
-     * @return OutboundLetter
+     * @return \Arbor\Model\OutboundLetter
      */
     public function getOutboundLetter()
     {
@@ -63,9 +65,9 @@ class OutboundLetterRecipient extends \ModelBase
     }
 
     /**
-     * @param OutboundLetter $outboundLetter
+     * @param \Arbor\Model\OutboundLetter $outboundLetter
      */
-    public function setOutboundLetter(\OutboundLetter $outboundLetter = null)
+    public function setOutboundLetter(\Arbor\Model\OutboundLetter $outboundLetter = null)
     {
         $this->setProperty('outboundLetter', $outboundLetter);
     }
@@ -103,7 +105,7 @@ class OutboundLetterRecipient extends \ModelBase
     }
 
     /**
-     * @return MessageDraftRecipient
+     * @return \Arbor\Model\MessageDraftRecipient
      */
     public function getDraftRecipient()
     {
@@ -111,9 +113,9 @@ class OutboundLetterRecipient extends \ModelBase
     }
 
     /**
-     * @param MessageDraftRecipient $draftRecipient
+     * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -133,4 +135,5 @@ class OutboundLetterRecipient extends \ModelBase
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }
+
 }

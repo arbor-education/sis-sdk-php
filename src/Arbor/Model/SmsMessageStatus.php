@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SmsMessageStatus extends \ModelBase
+class SmsMessageStatus extends ModelBase
 {
+
     public const SMS_MESSAGE = 'smsMessage';
 
     public const SMS_MESSAGE_PART = 'smsMessagePart';
@@ -23,7 +25,7 @@ class SmsMessageStatus extends \ModelBase
      * @return SmsMessageStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class SmsMessageStatus extends \ModelBase
     }
 
     /**
-     * @return SmsMessage
+     * @return \Arbor\Model\SmsMessage
      */
     public function getSmsMessage()
     {
@@ -63,15 +65,15 @@ class SmsMessageStatus extends \ModelBase
     }
 
     /**
-     * @param SmsMessage $smsMessage
+     * @param \Arbor\Model\SmsMessage $smsMessage
      */
-    public function setSmsMessage(\SmsMessage $smsMessage = null)
+    public function setSmsMessage(\Arbor\Model\SmsMessage $smsMessage = null)
     {
         $this->setProperty('smsMessage', $smsMessage);
     }
 
     /**
-     * @return SmsMessagePart
+     * @return \Arbor\Model\SmsMessagePart
      */
     public function getSmsMessagePart()
     {
@@ -79,9 +81,9 @@ class SmsMessageStatus extends \ModelBase
     }
 
     /**
-     * @param SmsMessagePart $smsMessagePart
+     * @param \Arbor\Model\SmsMessagePart $smsMessagePart
      */
-    public function setSmsMessagePart(\SmsMessagePart $smsMessagePart = null)
+    public function setSmsMessagePart(\Arbor\Model\SmsMessagePart $smsMessagePart = null)
     {
         $this->setProperty('smsMessagePart', $smsMessagePart);
     }
@@ -133,4 +135,5 @@ class SmsMessageStatus extends \ModelBase
     {
         $this->setProperty('errorType', $errorType);
     }
+
 }

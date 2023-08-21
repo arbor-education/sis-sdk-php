@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationCenterAssessedOutcome extends \ModelBase
+class QualificationCenterAssessedOutcome extends ModelBase
 {
+
     public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     public const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -27,7 +29,7 @@ class QualificationCenterAssessedOutcome extends \ModelBase
      * @return QualificationCenterAssessedOutcome[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     }
 
     /**
-     * @return QualificationAspect
+     * @return \Arbor\Model\QualificationAspect
      */
     public function getQualificationAspect()
     {
@@ -67,15 +69,15 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     }
 
     /**
-     * @param QualificationAspect $qualificationAspect
+     * @param \Arbor\Model\QualificationAspect $qualificationAspect
      */
-    public function setQualificationAspect(\QualificationAspect $qualificationAspect = null)
+    public function setQualificationAspect(\Arbor\Model\QualificationAspect $qualificationAspect = null)
     {
         $this->setProperty('qualificationAspect', $qualificationAspect);
     }
 
     /**
-     * @return QualificationGrade
+     * @return \Arbor\Model\QualificationGrade
      */
     public function getQualificationGrade()
     {
@@ -83,9 +85,9 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     }
 
     /**
-     * @param QualificationGrade $qualificationGrade
+     * @param \Arbor\Model\QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(\QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(\Arbor\Model\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -107,7 +109,7 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -115,15 +117,15 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -131,9 +133,9 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -169,4 +171,5 @@ class QualificationCenterAssessedOutcome extends \ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
 }

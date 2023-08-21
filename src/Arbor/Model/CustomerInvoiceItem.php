@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomerInvoiceItem extends \ModelBase
+class CustomerInvoiceItem extends ModelBase
 {
+
     public const CUSTOMER_INVOICE = 'customerInvoice';
 
     public const ITEM_UNIT = 'itemUnit';
@@ -35,7 +37,7 @@ class CustomerInvoiceItem extends \ModelBase
      * @return CustomerInvoiceItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class CustomerInvoiceItem extends \ModelBase
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getCustomerInvoice()
     {
@@ -75,15 +77,15 @@ class CustomerInvoiceItem extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoice $customerInvoice
+     * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
-     * @return ItemUnit
+     * @return \Arbor\Model\ItemUnit
      */
     public function getItemUnit()
     {
@@ -91,9 +93,9 @@ class CustomerInvoiceItem extends \ModelBase
     }
 
     /**
-     * @param ItemUnit $itemUnit
+     * @param \Arbor\Model\ItemUnit $itemUnit
      */
-    public function setItemUnit(\ItemUnit $itemUnit = null)
+    public function setItemUnit(\Arbor\Model\ItemUnit $itemUnit = null)
     {
         $this->setProperty('itemUnit', $itemUnit);
     }
@@ -147,7 +149,7 @@ class CustomerInvoiceItem extends \ModelBase
     }
 
     /**
-     * @return VatRate
+     * @return \Arbor\Model\VatRate
      */
     public function getVatRate()
     {
@@ -155,9 +157,9 @@ class CustomerInvoiceItem extends \ModelBase
     }
 
     /**
-     * @param VatRate $vatRate
+     * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\VatRate $vatRate = null)
+    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -241,4 +243,5 @@ class CustomerInvoiceItem extends \ModelBase
     {
         $this->setProperty('itemStatus', $itemStatus);
     }
+
 }

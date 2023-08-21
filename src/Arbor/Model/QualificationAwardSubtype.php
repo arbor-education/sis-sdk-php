@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationAwardSubtype extends \ModelBase
+class QualificationAwardSubtype extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -23,7 +25,7 @@ class QualificationAwardSubtype extends \ModelBase
      * @return QualificationAwardSubtype[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -103,7 +105,7 @@ class QualificationAwardSubtype extends \ModelBase
     }
 
     /**
-     * @return QualificationAwardType
+     * @return \Arbor\Model\QualificationAwardType
      */
     public function getQualificationAwardType()
     {
@@ -111,9 +113,9 @@ class QualificationAwardSubtype extends \ModelBase
     }
 
     /**
-     * @param QualificationAwardType $qualificationAwardType
+     * @param \Arbor\Model\QualificationAwardType $qualificationAwardType
      */
-    public function setQualificationAwardType(\QualificationAwardType $qualificationAwardType = null)
+    public function setQualificationAwardType(\Arbor\Model\QualificationAwardType $qualificationAwardType = null)
     {
         $this->setProperty('qualificationAwardType', $qualificationAwardType);
     }
@@ -133,4 +135,5 @@ class QualificationAwardSubtype extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

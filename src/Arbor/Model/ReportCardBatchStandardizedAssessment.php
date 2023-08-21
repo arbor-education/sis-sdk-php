@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ReportCardBatchStandardizedAssessment extends \ModelBase
+class ReportCardBatchStandardizedAssessment extends ModelBase
 {
+
     public const REPORT_CARD_BATCH = 'reportCardBatch';
 
     public const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
@@ -19,7 +21,7 @@ class ReportCardBatchStandardizedAssessment extends \ModelBase
      * @return ReportCardBatchStandardizedAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class ReportCardBatchStandardizedAssessment extends \ModelBase
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getReportCardBatch()
     {
@@ -59,15 +61,15 @@ class ReportCardBatchStandardizedAssessment extends \ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $reportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
 
     /**
-     * @return StandardizedAssessment
+     * @return \Arbor\Model\StandardizedAssessment
      */
     public function getStandardizedAssessment()
     {
@@ -75,9 +77,9 @@ class ReportCardBatchStandardizedAssessment extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessment $standardizedAssessment
+     * @param \Arbor\Model\StandardizedAssessment $standardizedAssessment
      */
-    public function setStandardizedAssessment(\StandardizedAssessment $standardizedAssessment = null)
+    public function setStandardizedAssessment(\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
     {
         $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
@@ -97,4 +99,5 @@ class ReportCardBatchStandardizedAssessment extends \ModelBase
     {
         $this->setProperty('order', $order);
     }
+
 }

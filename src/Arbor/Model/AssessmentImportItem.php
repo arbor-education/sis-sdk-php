@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentImportItem extends \ModelBase
+class AssessmentImportItem extends ModelBase
 {
+
     public const ASSESSMENT_IMPORT_COLUMN = 'assessmentImportColumn';
 
     public const ASSESSMENT_IMPORT_ROW = 'assessmentImportRow';
@@ -21,7 +23,7 @@ class AssessmentImportItem extends \ModelBase
      * @return AssessmentImportItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class AssessmentImportItem extends \ModelBase
     }
 
     /**
-     * @return AssessmentImportColumn
+     * @return \Arbor\Model\AssessmentImportColumn
      */
     public function getAssessmentImportColumn()
     {
@@ -61,15 +63,15 @@ class AssessmentImportItem extends \ModelBase
     }
 
     /**
-     * @param AssessmentImportColumn $assessmentImportColumn
+     * @param \Arbor\Model\AssessmentImportColumn $assessmentImportColumn
      */
-    public function setAssessmentImportColumn(\AssessmentImportColumn $assessmentImportColumn = null)
+    public function setAssessmentImportColumn(\Arbor\Model\AssessmentImportColumn $assessmentImportColumn = null)
     {
         $this->setProperty('assessmentImportColumn', $assessmentImportColumn);
     }
 
     /**
-     * @return AssessmentImportRow
+     * @return \Arbor\Model\AssessmentImportRow
      */
     public function getAssessmentImportRow()
     {
@@ -77,9 +79,9 @@ class AssessmentImportItem extends \ModelBase
     }
 
     /**
-     * @param AssessmentImportRow $assessmentImportRow
+     * @param \Arbor\Model\AssessmentImportRow $assessmentImportRow
      */
-    public function setAssessmentImportRow(\AssessmentImportRow $assessmentImportRow = null)
+    public function setAssessmentImportRow(\Arbor\Model\AssessmentImportRow $assessmentImportRow = null)
     {
         $this->setProperty('assessmentImportRow', $assessmentImportRow);
     }
@@ -115,4 +117,5 @@ class AssessmentImportItem extends \ModelBase
     {
         $this->setProperty('importedDatetime', $importedDatetime);
     }
+
 }

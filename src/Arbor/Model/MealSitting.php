@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealSitting extends \ModelBase
+class MealSitting extends ModelBase
 {
+
     public const MEAL = 'meal';
 
     public const MEAL_SITTING_NAME = 'mealSittingName';
@@ -23,7 +25,7 @@ class MealSitting extends \ModelBase
      * @return MealSitting[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class MealSitting extends \ModelBase
     }
 
     /**
-     * @return Meal
+     * @return \Arbor\Model\Meal
      */
     public function getMeal()
     {
@@ -63,9 +65,9 @@ class MealSitting extends \ModelBase
     }
 
     /**
-     * @param Meal $meal
+     * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(\Meal $meal = null)
+    public function setMeal(\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -87,7 +89,7 @@ class MealSitting extends \ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getRoom()
     {
@@ -95,9 +97,9 @@ class MealSitting extends \ModelBase
     }
 
     /**
-     * @param Room $room
+     * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Room $room = null)
+    public function setRoom(\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -133,4 +135,5 @@ class MealSitting extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

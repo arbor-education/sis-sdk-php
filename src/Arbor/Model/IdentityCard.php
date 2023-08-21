@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IdentityCard extends \ModelBase
+class IdentityCard extends ModelBase
 {
+
     public const OWNER = 'owner';
 
     public const CARD_NUMBER = 'cardNumber';
@@ -23,7 +25,7 @@ class IdentityCard extends \ModelBase
      * @return IdentityCard[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class IdentityCard extends \ModelBase
     {
         $this->setProperty('lostDatetime', $lostDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class RegistrationForm extends \ModelBase
+class RegistrationForm extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const REGISTRATION_FORM_NAME = 'registrationFormName';
@@ -33,7 +35,7 @@ class RegistrationForm extends \ModelBase
      * @return RegistrationForm[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -113,7 +115,7 @@ class RegistrationForm extends \ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getRoom()
     {
@@ -121,15 +123,15 @@ class RegistrationForm extends \ModelBase
     }
 
     /**
-     * @param Room $room
+     * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Room $room = null)
+    public function setRoom(\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -137,15 +139,15 @@ class RegistrationForm extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getPromotedToRegistrationForm()
     {
@@ -153,9 +155,9 @@ class RegistrationForm extends \ModelBase
     }
 
     /**
-     * @param RegistrationForm $promotedToRegistrationForm
+     * @param \Arbor\Model\RegistrationForm $promotedToRegistrationForm
      */
-    public function setPromotedToRegistrationForm(\RegistrationForm $promotedToRegistrationForm = null)
+    public function setPromotedToRegistrationForm(\Arbor\Model\RegistrationForm $promotedToRegistrationForm = null)
     {
         $this->setProperty('promotedToRegistrationForm', $promotedToRegistrationForm);
     }
@@ -177,7 +179,7 @@ class RegistrationForm extends \ModelBase
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getCopiedToRegistrationForm()
     {
@@ -185,9 +187,9 @@ class RegistrationForm extends \ModelBase
     }
 
     /**
-     * @param RegistrationForm $copiedToRegistrationForm
+     * @param \Arbor\Model\RegistrationForm $copiedToRegistrationForm
      */
-    public function setCopiedToRegistrationForm(\RegistrationForm $copiedToRegistrationForm = null)
+    public function setCopiedToRegistrationForm(\Arbor\Model\RegistrationForm $copiedToRegistrationForm = null)
     {
         $this->setProperty('copiedToRegistrationForm', $copiedToRegistrationForm);
     }
@@ -239,4 +241,5 @@ class RegistrationForm extends \ModelBase
     {
         return $this->getCollectionProperty('studentMemberships');
     }
+
 }

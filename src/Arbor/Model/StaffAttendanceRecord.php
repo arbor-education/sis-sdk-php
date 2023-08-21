@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffAttendanceRecord extends \ModelBase
+class StaffAttendanceRecord extends ModelBase
 {
+
     public const STAFF = 'staff';
 
     public const ATTENDANCE_PERIOD_DATE = 'attendancePeriodDate';
@@ -31,7 +33,7 @@ class StaffAttendanceRecord extends \ModelBase
      * @return StaffAttendanceRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class StaffAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -71,9 +73,9 @@ class StaffAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -159,7 +161,7 @@ class StaffAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @return StaffAttendanceMark
+     * @return \Arbor\Model\StaffAttendanceMark
      */
     public function getStaffAttendanceMark()
     {
@@ -167,9 +169,9 @@ class StaffAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @param StaffAttendanceMark $staffAttendanceMark
+     * @param \Arbor\Model\StaffAttendanceMark $staffAttendanceMark
      */
-    public function setStaffAttendanceMark(\StaffAttendanceMark $staffAttendanceMark = null)
+    public function setStaffAttendanceMark(\Arbor\Model\StaffAttendanceMark $staffAttendanceMark = null)
     {
         $this->setProperty('staffAttendanceMark', $staffAttendanceMark);
     }
@@ -191,7 +193,7 @@ class StaffAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @return StaffAbsence
+     * @return \Arbor\Model\StaffAbsence
      */
     public function getStaffAbsence()
     {
@@ -199,10 +201,11 @@ class StaffAttendanceRecord extends \ModelBase
     }
 
     /**
-     * @param StaffAbsence $staffAbsence
+     * @param \Arbor\Model\StaffAbsence $staffAbsence
      */
-    public function setStaffAbsence(\StaffAbsence $staffAbsence = null)
+    public function setStaffAbsence(\Arbor\Model\StaffAbsence $staffAbsence = null)
     {
         $this->setProperty('staffAbsence', $staffAbsence);
     }
+
 }

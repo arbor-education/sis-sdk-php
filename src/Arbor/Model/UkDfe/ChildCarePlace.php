@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ChildCarePlace extends \ModelBase
+class ChildCarePlace extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const CHILD_CARE_ON_SITE = 'childCareOnSite';
@@ -36,7 +37,7 @@ class ChildCarePlace extends \ModelBase
      * @return ChildCarePlace[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -226,4 +227,5 @@ class ChildCarePlace extends \ModelBase
     {
         $this->setProperty('childCareWeeksOpen', $childCareWeeksOpen);
     }
+
 }

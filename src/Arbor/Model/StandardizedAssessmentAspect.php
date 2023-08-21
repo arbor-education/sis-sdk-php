@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessmentAspect extends \ModelBase
+class StandardizedAssessmentAspect extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -35,7 +37,7 @@ class StandardizedAssessmentAspect extends \ModelBase
      * @return StandardizedAssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,7 +117,7 @@ class StandardizedAssessmentAspect extends \ModelBase
     }
 
     /**
-     * @return StandardizedAssessmentAspectCategory
+     * @return \Arbor\Model\StandardizedAssessmentAspectCategory
      */
     public function getStandardizedAssessmentAspectCategory()
     {
@@ -123,16 +125,16 @@ class StandardizedAssessmentAspect extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentAspectCategory
+     * @param \Arbor\Model\StandardizedAssessmentAspectCategory
      * $standardizedAssessmentAspectCategory
      */
-    public function setStandardizedAssessmentAspectCategory(\StandardizedAssessmentAspectCategory $standardizedAssessmentAspectCategory = null)
+    public function setStandardizedAssessmentAspectCategory(\Arbor\Model\StandardizedAssessmentAspectCategory $standardizedAssessmentAspectCategory = null)
     {
         $this->setProperty('standardizedAssessmentAspectCategory', $standardizedAssessmentAspectCategory);
     }
 
     /**
-     * @return StandardizedAssessmentComponent
+     * @return \Arbor\Model\StandardizedAssessmentComponent
      */
     public function getStandardizedAssessmentComponent()
     {
@@ -140,9 +142,10 @@ class StandardizedAssessmentAspect extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentComponent $standardizedAssessmentComponent
+     * @param \Arbor\Model\StandardizedAssessmentComponent
+     * $standardizedAssessmentComponent
      */
-    public function setStandardizedAssessmentComponent(\StandardizedAssessmentComponent $standardizedAssessmentComponent = null)
+    public function setStandardizedAssessmentComponent(\Arbor\Model\StandardizedAssessmentComponent $standardizedAssessmentComponent = null)
     {
         $this->setProperty('standardizedAssessmentComponent', $standardizedAssessmentComponent);
     }
@@ -196,7 +199,7 @@ class StandardizedAssessmentAspect extends \ModelBase
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -204,9 +207,9 @@ class StandardizedAssessmentAspect extends \ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -242,4 +245,5 @@ class StandardizedAssessmentAspect extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

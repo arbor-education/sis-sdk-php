@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentLinkedRelationshipType extends \ModelBase
+class StudentLinkedRelationshipType extends ModelBase
 {
+
     public const STUDENT_LINKED_RELATIONSHIP_TYPE_NAME = 'studentLinkedRelationshipTypeName';
 
     public const IS_MEDICAL = 'isMedical';
@@ -19,7 +21,7 @@ class StudentLinkedRelationshipType extends \ModelBase
      * @return StudentLinkedRelationshipType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class StudentLinkedRelationshipType extends \ModelBase
     {
         $this->setProperty('isAcademic', $isAcademic);
     }
+
 }

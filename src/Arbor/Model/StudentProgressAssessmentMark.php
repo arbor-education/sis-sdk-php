@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentProgressAssessmentMark extends \ModelBase
+class StudentProgressAssessmentMark extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const ASSESSMENT = 'assessment';
@@ -41,7 +43,7 @@ class StudentProgressAssessmentMark extends \ModelBase
      * @return StudentProgressAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +75,7 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -81,15 +83,15 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -97,15 +99,15 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
 
     /**
-     * @return ProgressMeasurementPeriod
+     * @return \Arbor\Model\ProgressMeasurementPeriod
      */
     public function getProgressMeasurementPeriod()
     {
@@ -113,15 +115,15 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param ProgressMeasurementPeriod $progressMeasurementPeriod
+     * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getGrade()
     {
@@ -129,9 +131,9 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Grade $grade
+     * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(\Grade $grade = null)
+    public function setGrade(\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -185,7 +187,7 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return AssessmentMarkNonSubmissionReason
+     * @return \Arbor\Model\AssessmentMarkNonSubmissionReason
      */
     public function getAssessmentMarkNonSubmissionReason()
     {
@@ -193,9 +195,10 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
+     * @param \Arbor\Model\AssessmentMarkNonSubmissionReason
+     * $assessmentMarkNonSubmissionReason
      */
-    public function setAssessmentMarkNonSubmissionReason(\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    public function setAssessmentMarkNonSubmissionReason(\Arbor\Model\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
     {
         $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
@@ -217,7 +220,7 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getMarkingStaff()
     {
@@ -225,9 +228,9 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Staff $markingStaff
+     * @param \Arbor\Model\Staff $markingStaff
      */
-    public function setMarkingStaff(\Staff $markingStaff = null)
+    public function setMarkingStaff(\Arbor\Model\Staff $markingStaff = null)
     {
         $this->setProperty('markingStaff', $markingStaff);
     }
@@ -249,7 +252,7 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getCompletedStaff()
     {
@@ -257,9 +260,9 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Staff $completedStaff
+     * @param \Arbor\Model\Staff $completedStaff
      */
-    public function setCompletedStaff(\Staff $completedStaff = null)
+    public function setCompletedStaff(\Arbor\Model\Staff $completedStaff = null)
     {
         $this->setProperty('completedStaff', $completedStaff);
     }
@@ -281,7 +284,7 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedStaff()
     {
@@ -289,10 +292,11 @@ class StudentProgressAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Staff $approvedStaff
+     * @param \Arbor\Model\Staff $approvedStaff
      */
-    public function setApprovedStaff(\Staff $approvedStaff = null)
+    public function setApprovedStaff(\Arbor\Model\Staff $approvedStaff = null)
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
+
 }

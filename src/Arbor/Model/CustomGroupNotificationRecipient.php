@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomGroupNotificationRecipient extends \ModelBase
+class CustomGroupNotificationRecipient extends ModelBase
 {
+
     public const CUSTOM_GROUP_NOTIFICATION_SETTING = 'customGroupNotificationSetting';
 
     public const STAFF = 'staff';
@@ -19,7 +21,7 @@ class CustomGroupNotificationRecipient extends \ModelBase
      * @return CustomGroupNotificationRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class CustomGroupNotificationRecipient extends \ModelBase
     }
 
     /**
-     * @return CustomGroupNotificationSetting
+     * @return \Arbor\Model\CustomGroupNotificationSetting
      */
     public function getCustomGroupNotificationSetting()
     {
@@ -59,15 +61,16 @@ class CustomGroupNotificationRecipient extends \ModelBase
     }
 
     /**
-     * @param CustomGroupNotificationSetting $customGroupNotificationSetting
+     * @param \Arbor\Model\CustomGroupNotificationSetting
+     * $customGroupNotificationSetting
      */
-    public function setCustomGroupNotificationSetting(\CustomGroupNotificationSetting $customGroupNotificationSetting = null)
+    public function setCustomGroupNotificationSetting(\Arbor\Model\CustomGroupNotificationSetting $customGroupNotificationSetting = null)
     {
         $this->setProperty('customGroupNotificationSetting', $customGroupNotificationSetting);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -75,9 +78,9 @@ class CustomGroupNotificationRecipient extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -97,4 +100,5 @@ class CustomGroupNotificationRecipient extends \ModelBase
     {
         $this->setProperty('staffType', $staffType);
     }
+
 }

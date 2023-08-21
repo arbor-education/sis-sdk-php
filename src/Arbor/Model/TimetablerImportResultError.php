@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TimetablerImportResultError extends \ModelBase
+class TimetablerImportResultError extends ModelBase
 {
+
     public const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
     public const ERROR_MESSAGE = 'errorMessage';
@@ -17,7 +19,7 @@ class TimetablerImportResultError extends \ModelBase
      * @return TimetablerImportResultError[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class TimetablerImportResultError extends \ModelBase
     }
 
     /**
-     * @return TimetablerImportResult
+     * @return \Arbor\Model\TimetablerImportResult
      */
     public function getTimetablerImportResult()
     {
@@ -57,9 +59,9 @@ class TimetablerImportResultError extends \ModelBase
     }
 
     /**
-     * @param TimetablerImportResult $timetablerImportResult
+     * @param \Arbor\Model\TimetablerImportResult $timetablerImportResult
      */
-    public function setTimetablerImportResult(\TimetablerImportResult $timetablerImportResult = null)
+    public function setTimetablerImportResult(\Arbor\Model\TimetablerImportResult $timetablerImportResult = null)
     {
         $this->setProperty('timetablerImportResult', $timetablerImportResult);
     }
@@ -79,4 +81,5 @@ class TimetablerImportResultError extends \ModelBase
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
+
 }

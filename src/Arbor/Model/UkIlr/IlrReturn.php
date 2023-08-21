@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class IlrReturn extends \ModelBase
+class IlrReturn extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -38,7 +39,7 @@ class IlrReturn extends \ModelBase
      * @return IlrReturn[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -244,4 +245,5 @@ class IlrReturn extends \ModelBase
     {
         $this->setProperty('efaFunded', $efaFunded);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealSchedule extends \ModelBase
+class MealSchedule extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const WEEK = 'week';
@@ -19,7 +21,7 @@ class MealSchedule extends \ModelBase
      * @return MealSchedule[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class MealSchedule extends \ModelBase
     }
 
     /**
-     * @return MealRotationMenu
+     * @return \Arbor\Model\MealRotationMenu
      */
     public function getMealRotationMenu()
     {
@@ -91,10 +93,11 @@ class MealSchedule extends \ModelBase
     }
 
     /**
-     * @param MealRotationMenu $mealRotationMenu
+     * @param \Arbor\Model\MealRotationMenu $mealRotationMenu
      */
-    public function setMealRotationMenu(\MealRotationMenu $mealRotationMenu = null)
+    public function setMealRotationMenu(\Arbor\Model\MealRotationMenu $mealRotationMenu = null)
     {
         $this->setProperty('mealRotationMenu', $mealRotationMenu);
     }
+
 }

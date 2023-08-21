@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\LocalAuthority;
 
-class Student extends \ModelBase
+class Student extends ModelBase
 {
+
     public const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     public const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
@@ -55,7 +55,7 @@ class Student extends \ModelBase
      * @return Student[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -103,7 +103,7 @@ class Student extends \ModelBase
     }
 
     /**
-     * @return LocalAuthority
+     * @return \Arbor\Model\LocalAuthority
      */
     public function getHomeLocalAuthority()
     {
@@ -111,9 +111,9 @@ class Student extends \ModelBase
     }
 
     /**
-     * @param LocalAuthority $homeLocalAuthority
+     * @param \Arbor\Model\LocalAuthority $homeLocalAuthority
      */
-    public function setHomeLocalAuthority(\LocalAuthority $homeLocalAuthority = null)
+    public function setHomeLocalAuthority(\Arbor\Model\LocalAuthority $homeLocalAuthority = null)
     {
         $this->setProperty('homeLocalAuthority', $homeLocalAuthority);
     }
@@ -279,7 +279,7 @@ class Student extends \ModelBase
     }
 
     /**
-     * @return GcseEnglishAchievementType
+     * @return \Arbor\Model\UkDfe\GcseEnglishAchievementType
      */
     public function getGcseEnglishAchievementType()
     {
@@ -287,15 +287,15 @@ class Student extends \ModelBase
     }
 
     /**
-     * @param GcseEnglishAchievementType $gcseEnglishAchievementType
+     * @param \Arbor\Model\UkDfe\GcseEnglishAchievementType $gcseEnglishAchievementType
      */
-    public function setGcseEnglishAchievementType(\GcseEnglishAchievementType $gcseEnglishAchievementType = null)
+    public function setGcseEnglishAchievementType(\Arbor\Model\UkDfe\GcseEnglishAchievementType $gcseEnglishAchievementType = null)
     {
         $this->setProperty('gcseEnglishAchievementType', $gcseEnglishAchievementType);
     }
 
     /**
-     * @return GcseEnglishFundingExemptionType
+     * @return \Arbor\Model\UkDfe\GcseEnglishFundingExemptionType
      */
     public function getGcseEnglishFundingExemptionType()
     {
@@ -303,9 +303,10 @@ class Student extends \ModelBase
     }
 
     /**
-     * @param GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType
+     * @param \Arbor\Model\UkDfe\GcseEnglishFundingExemptionType
+     * $gcseEnglishFundingExemptionType
      */
-    public function setGcseEnglishFundingExemptionType(\GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType = null)
+    public function setGcseEnglishFundingExemptionType(\Arbor\Model\UkDfe\GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType = null)
     {
         $this->setProperty('gcseEnglishFundingExemptionType', $gcseEnglishFundingExemptionType);
     }
@@ -343,7 +344,7 @@ class Student extends \ModelBase
     }
 
     /**
-     * @return GcseMathsAchievementType
+     * @return \Arbor\Model\UkDfe\GcseMathsAchievementType
      */
     public function getGcseMathsAchievementType()
     {
@@ -351,15 +352,15 @@ class Student extends \ModelBase
     }
 
     /**
-     * @param GcseMathsAchievementType $gcseMathsAchievementType
+     * @param \Arbor\Model\UkDfe\GcseMathsAchievementType $gcseMathsAchievementType
      */
-    public function setGcseMathsAchievementType(\GcseMathsAchievementType $gcseMathsAchievementType = null)
+    public function setGcseMathsAchievementType(\Arbor\Model\UkDfe\GcseMathsAchievementType $gcseMathsAchievementType = null)
     {
         $this->setProperty('gcseMathsAchievementType', $gcseMathsAchievementType);
     }
 
     /**
-     * @return GcseMathsFundingExemptionType
+     * @return \Arbor\Model\UkDfe\GcseMathsFundingExemptionType
      */
     public function getGcseMathsFundingExemptionType()
     {
@@ -367,9 +368,10 @@ class Student extends \ModelBase
     }
 
     /**
-     * @param GcseMathsFundingExemptionType $gcseMathsFundingExemptionType
+     * @param \Arbor\Model\UkDfe\GcseMathsFundingExemptionType
+     * $gcseMathsFundingExemptionType
      */
-    public function setGcseMathsFundingExemptionType(\GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
+    public function setGcseMathsFundingExemptionType(\Arbor\Model\UkDfe\GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
@@ -389,4 +391,5 @@ class Student extends \ModelBase
     {
         $this->setProperty('tLevelPlannedEepHours', $tLevelPlannedEepHours);
     }
+
 }

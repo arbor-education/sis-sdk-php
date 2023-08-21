@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentEmploymentRecord extends \ModelBase
+class StudentEmploymentRecord extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const EMPLOYER = 'employer';
@@ -27,7 +29,7 @@ class StudentEmploymentRecord extends \ModelBase
      * @return StudentEmploymentRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,15 +69,15 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Employer
+     * @return \Arbor\Model\Employer
      */
     public function getEmployer()
     {
@@ -83,9 +85,9 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @param Employer $employer
+     * @param \Arbor\Model\Employer $employer
      */
-    public function setEmployer(\Employer $employer = null)
+    public function setEmployer(\Arbor\Model\Employer $employer = null)
     {
         $this->setProperty('employer', $employer);
     }
@@ -155,7 +157,7 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @return EmploymentRecordType
+     * @return \Arbor\Model\EmploymentRecordType
      */
     public function getEmploymentRecordType()
     {
@@ -163,10 +165,11 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @param EmploymentRecordType $employmentRecordType
+     * @param \Arbor\Model\EmploymentRecordType $employmentRecordType
      */
-    public function setEmploymentRecordType(\EmploymentRecordType $employmentRecordType = null)
+    public function setEmploymentRecordType(\Arbor\Model\EmploymentRecordType $employmentRecordType = null)
     {
         $this->setProperty('employmentRecordType', $employmentRecordType);
     }
+
 }

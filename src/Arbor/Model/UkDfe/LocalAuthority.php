@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class LocalAuthority extends \ModelBase
+class LocalAuthority extends ModelBase
 {
+
     public const AUTHORITY_CODE = 'authorityCode';
 
     public const AUTHORITY_CODE_PRE2011 = 'authorityCodePre2011';
@@ -20,7 +21,7 @@ class LocalAuthority extends \ModelBase
      * @return LocalAuthority[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,4 +83,5 @@ class LocalAuthority extends \ModelBase
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }
+
 }

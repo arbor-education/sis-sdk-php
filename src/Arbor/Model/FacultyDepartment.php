@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class FacultyDepartment extends \ModelBase
+class FacultyDepartment extends ModelBase
 {
+
     public const DEPARTMENT = 'department';
 
     public const FACULTY = 'faculty';
@@ -21,7 +23,7 @@ class FacultyDepartment extends \ModelBase
      * @return FacultyDepartment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class FacultyDepartment extends \ModelBase
     }
 
     /**
-     * @return Department
+     * @return \Arbor\Model\Department
      */
     public function getDepartment()
     {
@@ -61,15 +63,15 @@ class FacultyDepartment extends \ModelBase
     }
 
     /**
-     * @param Department $department
+     * @param \Arbor\Model\Department $department
      */
-    public function setDepartment(\Department $department = null)
+    public function setDepartment(\Arbor\Model\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
 
     /**
-     * @return Faculty
+     * @return \Arbor\Model\Faculty
      */
     public function getFaculty()
     {
@@ -77,9 +79,9 @@ class FacultyDepartment extends \ModelBase
     }
 
     /**
-     * @param Faculty $faculty
+     * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Faculty $faculty = null)
+    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -115,4 +117,5 @@ class FacultyDepartment extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

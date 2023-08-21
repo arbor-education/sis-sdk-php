@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BankAccount extends \ModelBase
+class BankAccount extends ModelBase
 {
+
     public const BANK = 'bank';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -29,7 +31,7 @@ class BankAccount extends \ModelBase
      * @return BankAccount[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class BankAccount extends \ModelBase
     }
 
     /**
-     * @return Bank
+     * @return \Arbor\Model\Bank
      */
     public function getBank()
     {
@@ -69,15 +71,15 @@ class BankAccount extends \ModelBase
     }
 
     /**
-     * @param Bank $bank
+     * @param \Arbor\Model\Bank $bank
      */
-    public function setBank(\Bank $bank = null)
+    public function setBank(\Arbor\Model\Bank $bank = null)
     {
         $this->setProperty('bank', $bank);
     }
 
     /**
-     * @return PaymentProvider
+     * @return \Arbor\Model\PaymentProvider
      */
     public function getPaymentProvider()
     {
@@ -85,9 +87,9 @@ class BankAccount extends \ModelBase
     }
 
     /**
-     * @param PaymentProvider $paymentProvider
+     * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(\PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -187,4 +189,5 @@ class BankAccount extends \ModelBase
     {
         $this->setProperty('bacsUserNumber', $bacsUserNumber);
     }
+
 }

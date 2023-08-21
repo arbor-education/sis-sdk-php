@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolWorkforceCensusStaffInformation extends \ModelBase
+class SchoolWorkforceCensusStaffInformation extends ModelBase
 {
+
     public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     public const OCCASIONALS_QTS = 'occasionalsQts';
@@ -24,7 +25,7 @@ class SchoolWorkforceCensusStaffInformation extends \ModelBase
      * @return SchoolWorkforceCensusStaffInformation[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -56,7 +57,7 @@ class SchoolWorkforceCensusStaffInformation extends \ModelBase
     }
 
     /**
-     * @return SchoolWorkforceCensus
+     * @return \Arbor\Model\UkDfe\SchoolWorkforceCensus
      */
     public function getSchoolWorkforceCensus()
     {
@@ -64,9 +65,9 @@ class SchoolWorkforceCensusStaffInformation extends \ModelBase
     }
 
     /**
-     * @param SchoolWorkforceCensus $schoolWorkforceCensus
+     * @param \Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(\SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(\Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
@@ -118,4 +119,5 @@ class SchoolWorkforceCensusStaffInformation extends \ModelBase
     {
         $this->setProperty('occasionalsNotKnown', $occasionalsNotKnown);
     }
+
 }

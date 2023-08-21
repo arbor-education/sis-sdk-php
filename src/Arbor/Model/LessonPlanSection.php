@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LessonPlanSection extends \ModelBase
+class LessonPlanSection extends ModelBase
 {
+
     public const LESSON_PLAN = 'lessonPlan';
 
     public const NARRATIVE = 'narrative';
@@ -25,7 +27,7 @@ class LessonPlanSection extends \ModelBase
      * @return LessonPlanSection[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class LessonPlanSection extends \ModelBase
     }
 
     /**
-     * @return LessonPlan
+     * @return \Arbor\Model\LessonPlan
      */
     public function getLessonPlan()
     {
@@ -65,9 +67,9 @@ class LessonPlanSection extends \ModelBase
     }
 
     /**
-     * @param LessonPlan $lessonPlan
+     * @param \Arbor\Model\LessonPlan $lessonPlan
      */
-    public function setLessonPlan(\LessonPlan $lessonPlan = null)
+    public function setLessonPlan(\Arbor\Model\LessonPlan $lessonPlan = null)
     {
         $this->setProperty('lessonPlan', $lessonPlan);
     }
@@ -151,4 +153,5 @@ class LessonPlanSection extends \ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Letter extends \ModelBase
+class Letter extends ModelBase
 {
+
     public const LETTER_DATE = 'letterDate';
 
     public const RECEIVED_DATE = 'receivedDate';
@@ -35,7 +37,7 @@ class Letter extends \ModelBase
      * @return Letter[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -163,7 +165,7 @@ class Letter extends \ModelBase
     }
 
     /**
-     * @return MessageDraftRecipient
+     * @return \Arbor\Model\MessageDraftRecipient
      */
     public function getDraftRecipient()
     {
@@ -171,9 +173,9 @@ class Letter extends \ModelBase
     }
 
     /**
-     * @param MessageDraftRecipient $draftRecipient
+     * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -241,4 +243,5 @@ class Letter extends \ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
+
 }

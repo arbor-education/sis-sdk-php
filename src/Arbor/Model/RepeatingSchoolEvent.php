@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class RepeatingSchoolEvent extends \ModelBase
+class RepeatingSchoolEvent extends ModelBase
 {
+
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const SCHOOL_EVENT_TYPE = 'schoolEventType';
@@ -23,7 +25,7 @@ class RepeatingSchoolEvent extends \ModelBase
      * @return RepeatingSchoolEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class RepeatingSchoolEvent extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -63,15 +65,15 @@ class RepeatingSchoolEvent extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return SchoolEventType
+     * @return \Arbor\Model\SchoolEventType
      */
     public function getSchoolEventType()
     {
@@ -79,9 +81,9 @@ class RepeatingSchoolEvent extends \ModelBase
     }
 
     /**
-     * @param SchoolEventType $schoolEventType
+     * @param \Arbor\Model\SchoolEventType $schoolEventType
      */
-    public function setSchoolEventType(\SchoolEventType $schoolEventType = null)
+    public function setSchoolEventType(\Arbor\Model\SchoolEventType $schoolEventType = null)
     {
         $this->setProperty('schoolEventType', $schoolEventType);
     }
@@ -133,4 +135,5 @@ class RepeatingSchoolEvent extends \ModelBase
     {
         $this->setProperty('coverRequired', $coverRequired);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentSchoolworkMark extends \ModelBase
+class StudentSchoolworkMark extends ModelBase
 {
+
     public const STUDENT_SCHOOLWORK = 'studentSchoolwork';
 
     public const SCHOOLWORK_ASPECT = 'schoolworkAspect';
@@ -27,7 +29,7 @@ class StudentSchoolworkMark extends \ModelBase
      * @return StudentSchoolworkMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class StudentSchoolworkMark extends \ModelBase
     }
 
     /**
-     * @return StudentSchoolwork
+     * @return \Arbor\Model\StudentSchoolwork
      */
     public function getStudentSchoolwork()
     {
@@ -67,15 +69,15 @@ class StudentSchoolworkMark extends \ModelBase
     }
 
     /**
-     * @param StudentSchoolwork $studentSchoolwork
+     * @param \Arbor\Model\StudentSchoolwork $studentSchoolwork
      */
-    public function setStudentSchoolwork(\StudentSchoolwork $studentSchoolwork = null)
+    public function setStudentSchoolwork(\Arbor\Model\StudentSchoolwork $studentSchoolwork = null)
     {
         $this->setProperty('studentSchoolwork', $studentSchoolwork);
     }
 
     /**
-     * @return SchoolworkAspect
+     * @return \Arbor\Model\SchoolworkAspect
      */
     public function getSchoolworkAspect()
     {
@@ -83,9 +85,9 @@ class StudentSchoolworkMark extends \ModelBase
     }
 
     /**
-     * @param SchoolworkAspect $schoolworkAspect
+     * @param \Arbor\Model\SchoolworkAspect $schoolworkAspect
      */
-    public function setSchoolworkAspect(\SchoolworkAspect $schoolworkAspect = null)
+    public function setSchoolworkAspect(\Arbor\Model\SchoolworkAspect $schoolworkAspect = null)
     {
         $this->setProperty('schoolworkAspect', $schoolworkAspect);
     }
@@ -139,7 +141,7 @@ class StudentSchoolworkMark extends \ModelBase
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getMarkGrade()
     {
@@ -147,9 +149,9 @@ class StudentSchoolworkMark extends \ModelBase
     }
 
     /**
-     * @param Grade $markGrade
+     * @param \Arbor\Model\Grade $markGrade
      */
-    public function setMarkGrade(\Grade $markGrade = null)
+    public function setMarkGrade(\Arbor\Model\Grade $markGrade = null)
     {
         $this->setProperty('markGrade', $markGrade);
     }
@@ -169,4 +171,5 @@ class StudentSchoolworkMark extends \ModelBase
     {
         $this->setProperty('markDate', $markDate);
     }
+
 }

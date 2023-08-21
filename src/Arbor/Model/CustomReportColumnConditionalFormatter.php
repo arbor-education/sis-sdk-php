@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomReportColumnConditionalFormatter extends \ModelBase
+class CustomReportColumnConditionalFormatter extends ModelBase
 {
+
     public const CUSTOM_REPORT_COLUMN = 'customReportColumn';
 
     public const CONDITION_CLASS = 'conditionClass';
@@ -21,7 +23,7 @@ class CustomReportColumnConditionalFormatter extends \ModelBase
      * @return CustomReportColumnConditionalFormatter[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CustomReportColumnConditionalFormatter extends \ModelBase
     }
 
     /**
-     * @return CustomReportColumn
+     * @return \Arbor\Model\CustomReportColumn
      */
     public function getCustomReportColumn()
     {
@@ -61,9 +63,9 @@ class CustomReportColumnConditionalFormatter extends \ModelBase
     }
 
     /**
-     * @param CustomReportColumn $customReportColumn
+     * @param \Arbor\Model\CustomReportColumn $customReportColumn
      */
-    public function setCustomReportColumn(\CustomReportColumn $customReportColumn = null)
+    public function setCustomReportColumn(\Arbor\Model\CustomReportColumn $customReportColumn = null)
     {
         $this->setProperty('customReportColumn', $customReportColumn);
     }
@@ -115,4 +117,5 @@ class CustomReportColumnConditionalFormatter extends \ModelBase
     {
         $this->setProperty('color', $color);
     }
+
 }

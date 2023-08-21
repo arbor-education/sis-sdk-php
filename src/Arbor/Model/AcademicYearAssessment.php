@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicYearAssessment extends \ModelBase
+class AcademicYearAssessment extends ModelBase
 {
+
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const ASSESSMENT_NAME = 'assessmentName';
@@ -33,7 +35,7 @@ class AcademicYearAssessment extends \ModelBase
      * @return AcademicYearAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class AcademicYearAssessment extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -73,9 +75,9 @@ class AcademicYearAssessment extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -97,7 +99,7 @@ class AcademicYearAssessment extends \ModelBase
     }
 
     /**
-     * @return CurriculumTier
+     * @return \Arbor\Model\CurriculumTier
      */
     public function getCurriculumTier()
     {
@@ -105,9 +107,9 @@ class AcademicYearAssessment extends \ModelBase
     }
 
     /**
-     * @param CurriculumTier $curriculumTier
+     * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(\CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -129,7 +131,7 @@ class AcademicYearAssessment extends \ModelBase
     }
 
     /**
-     * @return ProgressMeasurementPeriodSet
+     * @return \Arbor\Model\ProgressMeasurementPeriodSet
      */
     public function getProgressMeasurementPeriodSet()
     {
@@ -137,9 +139,9 @@ class AcademicYearAssessment extends \ModelBase
     }
 
     /**
-     * @param ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
+     * @param \Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
      */
-    public function setProgressMeasurementPeriodSet(\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
+    public function setProgressMeasurementPeriodSet(\Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
         $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
@@ -223,4 +225,5 @@ class AcademicYearAssessment extends \ModelBase
     {
         $this->setProperty('allowComments', $allowComments);
     }
+
 }

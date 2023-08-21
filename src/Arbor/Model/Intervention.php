@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Intervention extends \ModelBase
+class Intervention extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -45,7 +47,7 @@ class Intervention extends \ModelBase
      * @return Intervention[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -93,7 +95,7 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -101,15 +103,15 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return Term
+     * @return \Arbor\Model\Term
      */
     public function getTerm()
     {
@@ -117,9 +119,9 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @param Term $term
+     * @param \Arbor\Model\Term $term
      */
-    public function setTerm(\Term $term = null)
+    public function setTerm(\Arbor\Model\Term $term = null)
     {
         $this->setProperty('term', $term);
     }
@@ -253,7 +255,7 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -261,15 +263,15 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
 
     /**
-     * @return InterventionCategory
+     * @return \Arbor\Model\InterventionCategory
      */
     public function getCategory()
     {
@@ -277,9 +279,9 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @param InterventionCategory $category
+     * @param \Arbor\Model\InterventionCategory $category
      */
-    public function setCategory(\InterventionCategory $category = null)
+    public function setCategory(\Arbor\Model\InterventionCategory $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -317,7 +319,7 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getCopiedToIntervention()
     {
@@ -325,10 +327,11 @@ class Intervention extends \ModelBase
     }
 
     /**
-     * @param Intervention $copiedToIntervention
+     * @param \Arbor\Model\Intervention $copiedToIntervention
      */
-    public function setCopiedToIntervention(\Intervention $copiedToIntervention = null)
+    public function setCopiedToIntervention(\Arbor\Model\Intervention $copiedToIntervention = null)
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }
+
 }

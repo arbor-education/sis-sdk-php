@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LessonPlanObjective extends \ModelBase
+class LessonPlanObjective extends ModelBase
 {
+
     public const OBJECTIVE_TITLE = 'objectiveTitle';
 
     public const OBJECTIVE_DESCRIPTION = 'objectiveDescription';
@@ -19,7 +21,7 @@ class LessonPlanObjective extends \ModelBase
      * @return LessonPlanObjective[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class LessonPlanObjective extends \ModelBase
     }
 
     /**
-     * @return CurriculumStatement
+     * @return \Arbor\Model\CurriculumStatement
      */
     public function getCurriculumStatement()
     {
@@ -91,10 +93,11 @@ class LessonPlanObjective extends \ModelBase
     }
 
     /**
-     * @param CurriculumStatement $curriculumStatement
+     * @param \Arbor\Model\CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(\CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(\Arbor\Model\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }
+
 }

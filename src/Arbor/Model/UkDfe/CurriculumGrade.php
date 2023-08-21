@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class CurriculumGrade extends \ModelBase
+class CurriculumGrade extends ModelBase
 {
+
     public const D00020 = 'd00020';
 
     public const D00020_ORDER = 'd00020Order';
@@ -20,7 +21,7 @@ class CurriculumGrade extends \ModelBase
      * @return CurriculumGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,4 +83,5 @@ class CurriculumGrade extends \ModelBase
     {
         $this->setProperty('d00020Order', $d00020Order);
     }
+
 }

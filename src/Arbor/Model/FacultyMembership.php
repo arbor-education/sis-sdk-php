@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class FacultyMembership extends \ModelBase
+class FacultyMembership extends ModelBase
 {
+
     public const FACULTY_RESPONSIBILITY = 'facultyResponsibility';
 
     public const FACULTY = 'faculty';
@@ -23,7 +25,7 @@ class FacultyMembership extends \ModelBase
      * @return FacultyMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class FacultyMembership extends \ModelBase
     }
 
     /**
-     * @return FacultyResponsibility
+     * @return \Arbor\Model\FacultyResponsibility
      */
     public function getFacultyResponsibility()
     {
@@ -63,15 +65,15 @@ class FacultyMembership extends \ModelBase
     }
 
     /**
-     * @param FacultyResponsibility $facultyResponsibility
+     * @param \Arbor\Model\FacultyResponsibility $facultyResponsibility
      */
-    public function setFacultyResponsibility(\FacultyResponsibility $facultyResponsibility = null)
+    public function setFacultyResponsibility(\Arbor\Model\FacultyResponsibility $facultyResponsibility = null)
     {
         $this->setProperty('facultyResponsibility', $facultyResponsibility);
     }
 
     /**
-     * @return Faculty
+     * @return \Arbor\Model\Faculty
      */
     public function getFaculty()
     {
@@ -79,15 +81,15 @@ class FacultyMembership extends \ModelBase
     }
 
     /**
-     * @param Faculty $faculty
+     * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Faculty $faculty = null)
+    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -95,9 +97,9 @@ class FacultyMembership extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -133,4 +135,5 @@ class FacultyMembership extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TelephoneNumber extends \ModelBase
+class TelephoneNumber extends ModelBase
 {
+
     public const NUMBER_OWNER = 'numberOwner';
 
     public const TELEPHONE_NUMBER_TYPE = 'telephoneNumberType';
@@ -25,7 +27,7 @@ class TelephoneNumber extends \ModelBase
      * @return TelephoneNumber[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -151,4 +153,5 @@ class TelephoneNumber extends \ModelBase
     {
         $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }
+
 }

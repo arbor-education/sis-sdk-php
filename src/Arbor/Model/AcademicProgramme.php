@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicProgramme extends \ModelBase
+class AcademicProgramme extends ModelBase
 {
+
     public const ACADEMIC_PROGRAMME_NAME = 'academicProgrammeName';
 
     protected $_resourceType = ResourceType::ACADEMIC_PROGRAMME;
@@ -15,7 +17,7 @@ class AcademicProgramme extends \ModelBase
      * @return AcademicProgramme[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,4 +71,5 @@ class AcademicProgramme extends \ModelBase
     {
         return $this->getCollectionProperty('instances');
     }
+
 }

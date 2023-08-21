@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IssuedCheque extends \ModelBase
+class IssuedCheque extends ModelBase
 {
+
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const ISSUED_DATETIME = 'issuedDatetime';
@@ -21,7 +23,7 @@ class IssuedCheque extends \ModelBase
      * @return IssuedCheque[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class IssuedCheque extends \ModelBase
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -61,9 +63,9 @@ class IssuedCheque extends \ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -115,4 +117,5 @@ class IssuedCheque extends \ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
 }

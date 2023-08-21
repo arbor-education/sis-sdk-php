@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PointAward extends \ModelBase
+class PointAward extends ModelBase
 {
+
     public const POINT_AWARD_SCALE = 'pointAwardScale';
 
     public const STUDENT = 'student';
@@ -31,7 +33,7 @@ class PointAward extends \ModelBase
      * @return PointAward[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class PointAward extends \ModelBase
     }
 
     /**
-     * @return PointAwardScale
+     * @return \Arbor\Model\PointAwardScale
      */
     public function getPointAwardScale()
     {
@@ -71,15 +73,15 @@ class PointAward extends \ModelBase
     }
 
     /**
-     * @param PointAwardScale $pointAwardScale
+     * @param \Arbor\Model\PointAwardScale $pointAwardScale
      */
-    public function setPointAwardScale(\PointAwardScale $pointAwardScale = null)
+    public function setPointAwardScale(\Arbor\Model\PointAwardScale $pointAwardScale = null)
     {
         $this->setProperty('pointAwardScale', $pointAwardScale);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -87,15 +89,15 @@ class PointAward extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return PointAwardCategory
+     * @return \Arbor\Model\PointAwardCategory
      */
     public function getPointAwardCategory()
     {
@@ -103,9 +105,9 @@ class PointAward extends \ModelBase
     }
 
     /**
-     * @param PointAwardCategory $pointAwardCategory
+     * @param \Arbor\Model\PointAwardCategory $pointAwardCategory
      */
-    public function setPointAwardCategory(\PointAwardCategory $pointAwardCategory = null)
+    public function setPointAwardCategory(\Arbor\Model\PointAwardCategory $pointAwardCategory = null)
     {
         $this->setProperty('pointAwardCategory', $pointAwardCategory);
     }
@@ -175,7 +177,7 @@ class PointAward extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAwardedByStaff()
     {
@@ -183,9 +185,9 @@ class PointAward extends \ModelBase
     }
 
     /**
-     * @param Staff $awardedByStaff
+     * @param \Arbor\Model\Staff $awardedByStaff
      */
-    public function setAwardedByStaff(\Staff $awardedByStaff = null)
+    public function setAwardedByStaff(\Arbor\Model\Staff $awardedByStaff = null)
     {
         $this->setProperty('awardedByStaff', $awardedByStaff);
     }
@@ -205,4 +207,5 @@ class PointAward extends \ModelBase
     {
         $this->setProperty('event', $event);
     }
+
 }
