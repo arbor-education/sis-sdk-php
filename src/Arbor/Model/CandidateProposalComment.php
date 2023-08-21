@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateProposalComment extends \ModelBase
+class CandidateProposalComment extends ModelBase
 {
+
     public const CANDIDATE_PROPOSAL = 'candidateProposal';
 
     public const AUTHOR_STAFF = 'authorStaff';
@@ -21,7 +23,7 @@ class CandidateProposalComment extends \ModelBase
      * @return CandidateProposalComment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CandidateProposalComment extends \ModelBase
     }
 
     /**
-     * @return CandidateProposal
+     * @return \Arbor\Model\CandidateProposal
      */
     public function getCandidateProposal()
     {
@@ -61,15 +63,15 @@ class CandidateProposalComment extends \ModelBase
     }
 
     /**
-     * @param CandidateProposal $candidateProposal
+     * @param \Arbor\Model\CandidateProposal $candidateProposal
      */
-    public function setCandidateProposal(\CandidateProposal $candidateProposal = null)
+    public function setCandidateProposal(\Arbor\Model\CandidateProposal $candidateProposal = null)
     {
         $this->setProperty('candidateProposal', $candidateProposal);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAuthorStaff()
     {
@@ -77,9 +79,9 @@ class CandidateProposalComment extends \ModelBase
     }
 
     /**
-     * @param Staff $authorStaff
+     * @param \Arbor\Model\Staff $authorStaff
      */
-    public function setAuthorStaff(\Staff $authorStaff = null)
+    public function setAuthorStaff(\Arbor\Model\Staff $authorStaff = null)
     {
         $this->setProperty('authorStaff', $authorStaff);
     }
@@ -115,4 +117,5 @@ class CandidateProposalComment extends \ModelBase
     {
         $this->setProperty('comment', $comment);
     }
+
 }

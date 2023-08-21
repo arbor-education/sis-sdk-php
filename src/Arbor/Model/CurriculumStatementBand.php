@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CurriculumStatementBand extends \ModelBase
+class CurriculumStatementBand extends ModelBase
 {
+
     public const CURRICULUM = 'curriculum';
 
     public const NAME = 'name';
@@ -21,7 +23,7 @@ class CurriculumStatementBand extends \ModelBase
      * @return CurriculumStatementBand[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CurriculumStatementBand extends \ModelBase
     }
 
     /**
-     * @return Curriculum
+     * @return \Arbor\Model\Curriculum
      */
     public function getCurriculum()
     {
@@ -61,9 +63,9 @@ class CurriculumStatementBand extends \ModelBase
     }
 
     /**
-     * @param Curriculum $curriculum
+     * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Curriculum $curriculum = null)
+    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -115,4 +117,5 @@ class CurriculumStatementBand extends \ModelBase
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class FinalAssessmentTarget extends \ModelBase
+class FinalAssessmentTarget extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const ASSESSMENT = 'assessment';
@@ -27,7 +29,7 @@ class FinalAssessmentTarget extends \ModelBase
      * @return FinalAssessmentTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class FinalAssessmentTarget extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,15 +69,15 @@ class FinalAssessmentTarget extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -83,15 +85,15 @@ class FinalAssessmentTarget extends \ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getGrade()
     {
@@ -99,9 +101,9 @@ class FinalAssessmentTarget extends \ModelBase
     }
 
     /**
-     * @param Grade $grade
+     * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(\Grade $grade = null)
+    public function setGrade(\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -169,4 +171,5 @@ class FinalAssessmentTarget extends \ModelBase
     {
         $this->setProperty('locked', $locked);
     }
+
 }

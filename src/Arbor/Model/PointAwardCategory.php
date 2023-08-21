@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PointAwardCategory extends \ModelBase
+class PointAwardCategory extends ModelBase
 {
+
     public const DESCRIPTION = 'description';
 
     public const POINT_AWARD_SCALE = 'pointAwardScale';
@@ -19,7 +21,7 @@ class PointAwardCategory extends \ModelBase
      * @return PointAwardCategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class PointAwardCategory extends \ModelBase
     }
 
     /**
-     * @return PointAwardScale
+     * @return \Arbor\Model\PointAwardScale
      */
     public function getPointAwardScale()
     {
@@ -75,9 +77,9 @@ class PointAwardCategory extends \ModelBase
     }
 
     /**
-     * @param PointAwardScale $pointAwardScale
+     * @param \Arbor\Model\PointAwardScale $pointAwardScale
      */
-    public function setPointAwardScale(\PointAwardScale $pointAwardScale = null)
+    public function setPointAwardScale(\Arbor\Model\PointAwardScale $pointAwardScale = null)
     {
         $this->setProperty('pointAwardScale', $pointAwardScale);
     }
@@ -97,4 +99,5 @@ class PointAwardCategory extends \ModelBase
     {
         $this->setProperty('defaultPoints', $defaultPoints);
     }
+
 }

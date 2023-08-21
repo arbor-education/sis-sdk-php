@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicLevelRegistrationFormMapping extends \ModelBase
+class AcademicLevelRegistrationFormMapping extends ModelBase
 {
+
     public const ACADEMIC_LEVEL = 'academicLevel';
 
     public const REGISTRATION_FORM = 'registrationForm';
@@ -17,7 +19,7 @@ class AcademicLevelRegistrationFormMapping extends \ModelBase
      * @return AcademicLevelRegistrationFormMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class AcademicLevelRegistrationFormMapping extends \ModelBase
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getAcademicLevel()
     {
@@ -57,15 +59,15 @@ class AcademicLevelRegistrationFormMapping extends \ModelBase
     }
 
     /**
-     * @param AcademicLevel $academicLevel
+     * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(\AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getRegistrationForm()
     {
@@ -73,10 +75,11 @@ class AcademicLevelRegistrationFormMapping extends \ModelBase
     }
 
     /**
-     * @param RegistrationForm $registrationForm
+     * @param \Arbor\Model\RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(\RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(\Arbor\Model\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
+
 }

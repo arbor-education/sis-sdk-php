@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SenStatus extends \ModelBase
+class SenStatus extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -29,7 +31,7 @@ class SenStatus extends \ModelBase
      * @return SenStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -187,4 +189,5 @@ class SenStatus extends \ModelBase
     {
         $this->setProperty('d00229', $d00229);
     }
+
 }

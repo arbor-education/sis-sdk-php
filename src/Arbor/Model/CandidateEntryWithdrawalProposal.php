@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateEntryWithdrawalProposal extends \ModelBase
+class CandidateEntryWithdrawalProposal extends ModelBase
 {
+
     public const CANDIDATE_PROPOSAL = 'candidateProposal';
 
     public const CANDIDATE_ENTRY = 'candidateEntry';
@@ -25,7 +27,7 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
      * @return CandidateEntryWithdrawalProposal[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     }
 
     /**
-     * @return CandidateProposal
+     * @return \Arbor\Model\CandidateProposal
      */
     public function getCandidateProposal()
     {
@@ -65,15 +67,15 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     }
 
     /**
-     * @param CandidateProposal $candidateProposal
+     * @param \Arbor\Model\CandidateProposal $candidateProposal
      */
-    public function setCandidateProposal(\CandidateProposal $candidateProposal = null)
+    public function setCandidateProposal(\Arbor\Model\CandidateProposal $candidateProposal = null)
     {
         $this->setProperty('candidateProposal', $candidateProposal);
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidateEntry()
     {
@@ -81,15 +83,15 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     }
 
     /**
-     * @param Candidate $candidateEntry
+     * @param \Arbor\Model\Candidate $candidateEntry
      */
-    public function setCandidateEntry(\Candidate $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\Candidate $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedByStaff()
     {
@@ -97,9 +99,9 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     }
 
     /**
-     * @param Staff $approvedByStaff
+     * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(\Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -121,7 +123,7 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getRejectedByStaff()
     {
@@ -129,9 +131,9 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     }
 
     /**
-     * @param Staff $rejectedByStaff
+     * @param \Arbor\Model\Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(\Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(\Arbor\Model\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }
@@ -151,4 +153,5 @@ class CandidateEntryWithdrawalProposal extends \ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
+
 }

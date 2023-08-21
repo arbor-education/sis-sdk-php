@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SenStatusAssignment extends \ModelBase
+class SenStatusAssignment extends ModelBase
 {
+
     public const SEN_STATUS = 'senStatus';
 
     public const STUDENT = 'student';
@@ -21,7 +23,7 @@ class SenStatusAssignment extends \ModelBase
      * @return SenStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class SenStatusAssignment extends \ModelBase
     }
 
     /**
-     * @return SenStatus
+     * @return \Arbor\Model\SenStatus
      */
     public function getSenStatus()
     {
@@ -61,15 +63,15 @@ class SenStatusAssignment extends \ModelBase
     }
 
     /**
-     * @param SenStatus $senStatus
+     * @param \Arbor\Model\SenStatus $senStatus
      */
-    public function setSenStatus(\SenStatus $senStatus = null)
+    public function setSenStatus(\Arbor\Model\SenStatus $senStatus = null)
     {
         $this->setProperty('senStatus', $senStatus);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -77,9 +79,9 @@ class SenStatusAssignment extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -115,4 +117,5 @@ class SenStatusAssignment extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

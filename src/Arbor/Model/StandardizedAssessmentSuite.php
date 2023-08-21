@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessmentSuite extends \ModelBase
+class StandardizedAssessmentSuite extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -27,7 +29,7 @@ class StandardizedAssessmentSuite extends \ModelBase
      * @return StandardizedAssessmentSuite[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +109,7 @@ class StandardizedAssessmentSuite extends \ModelBase
     }
 
     /**
-     * @return AssessmentProvider
+     * @return \Arbor\Model\AssessmentProvider
      */
     public function getAssessmentProvider()
     {
@@ -115,15 +117,15 @@ class StandardizedAssessmentSuite extends \ModelBase
     }
 
     /**
-     * @param AssessmentProvider $assessmentProvider
+     * @param \Arbor\Model\AssessmentProvider $assessmentProvider
      */
-    public function setAssessmentProvider(\AssessmentProvider $assessmentProvider = null)
+    public function setAssessmentProvider(\Arbor\Model\AssessmentProvider $assessmentProvider = null)
     {
         $this->setProperty('assessmentProvider', $assessmentProvider);
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -131,9 +133,9 @@ class StandardizedAssessmentSuite extends \ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -169,4 +171,5 @@ class StandardizedAssessmentSuite extends \ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
+
 }

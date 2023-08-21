@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmailSender extends \ModelBase
+class EmailSender extends ModelBase
 {
+
     public const EMAIL = 'email';
 
     public const SENDER_TYPE = 'senderType';
@@ -27,7 +29,7 @@ class EmailSender extends \ModelBase
      * @return EmailSender[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class EmailSender extends \ModelBase
     }
 
     /**
-     * @return Email
+     * @return \Arbor\Model\Email
      */
     public function getEmail()
     {
@@ -67,9 +69,9 @@ class EmailSender extends \ModelBase
     }
 
     /**
-     * @param Email $email
+     * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Email $email = null)
+    public function setEmail(\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -123,7 +125,7 @@ class EmailSender extends \ModelBase
     }
 
     /**
-     * @return EmailAddress
+     * @return \Arbor\Model\EmailAddress
      */
     public function getEmailAddress()
     {
@@ -131,9 +133,9 @@ class EmailSender extends \ModelBase
     }
 
     /**
-     * @param EmailAddress $emailAddress
+     * @param \Arbor\Model\EmailAddress $emailAddress
      */
-    public function setEmailAddress(\EmailAddress $emailAddress = null)
+    public function setEmailAddress(\Arbor\Model\EmailAddress $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -169,4 +171,5 @@ class EmailSender extends \ModelBase
     {
         $this->setProperty('senderIndex', $senderIndex);
     }
+
 }

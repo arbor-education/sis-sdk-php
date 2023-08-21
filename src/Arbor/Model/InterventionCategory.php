@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InterventionCategory extends \ModelBase
+class InterventionCategory extends ModelBase
 {
+
     public const INTERVENTION_CATEGORY_NAME = 'interventionCategoryName';
 
     public const SHORT_NAME = 'shortName';
@@ -23,7 +25,7 @@ class InterventionCategory extends \ModelBase
      * @return InterventionCategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class InterventionCategory extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

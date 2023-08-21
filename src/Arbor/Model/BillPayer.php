@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BillPayer extends \ModelBase
+class BillPayer extends ModelBase
 {
+
     public const LEGAL_ENTITY = 'legalEntity';
 
     public const DELETED_LEGAL_ENTITY_NAME = 'deletedLegalEntityName';
@@ -21,7 +23,7 @@ class BillPayer extends \ModelBase
      * @return BillPayer[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class BillPayer extends \ModelBase
     {
         $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }
+
 }

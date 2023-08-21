@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Company extends \ModelBase
+class Company extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -21,7 +23,7 @@ class Company extends \ModelBase
      * @return Company[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class Company extends \ModelBase
     {
         $this->setProperty('vatIdentificationNumber', $vatIdentificationNumber);
     }
+
 }

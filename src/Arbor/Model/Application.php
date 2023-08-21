@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Application extends \ModelBase
+class Application extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const APPLICATION_DATETIME = 'applicationDatetime';
@@ -47,7 +49,7 @@ class Application extends \ModelBase
      * @return Application[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +81,7 @@ class Application extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -87,9 +89,9 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -127,7 +129,7 @@ class Application extends \ModelBase
     }
 
     /**
-     * @return IntakeSeason
+     * @return \Arbor\Model\IntakeSeason
      */
     public function getIntakeSeason()
     {
@@ -135,15 +137,15 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param IntakeSeason $intakeSeason
+     * @param \Arbor\Model\IntakeSeason $intakeSeason
      */
-    public function setIntakeSeason(\IntakeSeason $intakeSeason = null)
+    public function setIntakeSeason(\Arbor\Model\IntakeSeason $intakeSeason = null)
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }
 
     /**
-     * @return IntakeSeasonApplicantBucket
+     * @return \Arbor\Model\IntakeSeasonApplicantBucket
      */
     public function getApplicantBucket()
     {
@@ -151,9 +153,9 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param IntakeSeasonApplicantBucket $applicantBucket
+     * @param \Arbor\Model\IntakeSeasonApplicantBucket $applicantBucket
      */
-    public function setApplicantBucket(\IntakeSeasonApplicantBucket $applicantBucket = null)
+    public function setApplicantBucket(\Arbor\Model\IntakeSeasonApplicantBucket $applicantBucket = null)
     {
         $this->setProperty('applicantBucket', $applicantBucket);
     }
@@ -191,7 +193,7 @@ class Application extends \ModelBase
     }
 
     /**
-     * @return ApplicationWithdrawalReason
+     * @return \Arbor\Model\ApplicationWithdrawalReason
      */
     public function getWithdrawalReason()
     {
@@ -199,9 +201,9 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param ApplicationWithdrawalReason $withdrawalReason
+     * @param \Arbor\Model\ApplicationWithdrawalReason $withdrawalReason
      */
-    public function setWithdrawalReason(\ApplicationWithdrawalReason $withdrawalReason = null)
+    public function setWithdrawalReason(\Arbor\Model\ApplicationWithdrawalReason $withdrawalReason = null)
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }
@@ -223,7 +225,7 @@ class Application extends \ModelBase
     }
 
     /**
-     * @return IntakeSeasonGroup
+     * @return \Arbor\Model\IntakeSeasonGroup
      */
     public function getIntakeSeasonGroup()
     {
@@ -231,9 +233,9 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param IntakeSeasonGroup $intakeSeasonGroup
+     * @param \Arbor\Model\IntakeSeasonGroup $intakeSeasonGroup
      */
-    public function setIntakeSeasonGroup(\IntakeSeasonGroup $intakeSeasonGroup = null)
+    public function setIntakeSeasonGroup(\Arbor\Model\IntakeSeasonGroup $intakeSeasonGroup = null)
     {
         $this->setProperty('intakeSeasonGroup', $intakeSeasonGroup);
     }
@@ -287,7 +289,7 @@ class Application extends \ModelBase
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getExpectedAcademicLevel()
     {
@@ -295,15 +297,15 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param AcademicLevel $expectedAcademicLevel
+     * @param \Arbor\Model\AcademicLevel $expectedAcademicLevel
      */
-    public function setExpectedAcademicLevel(\AcademicLevel $expectedAcademicLevel = null)
+    public function setExpectedAcademicLevel(\Arbor\Model\AcademicLevel $expectedAcademicLevel = null)
     {
         $this->setProperty('expectedAcademicLevel', $expectedAcademicLevel);
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getExpectedRegistrationForm()
     {
@@ -311,15 +313,15 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param RegistrationForm $expectedRegistrationForm
+     * @param \Arbor\Model\RegistrationForm $expectedRegistrationForm
      */
-    public function setExpectedRegistrationForm(\RegistrationForm $expectedRegistrationForm = null)
+    public function setExpectedRegistrationForm(\Arbor\Model\RegistrationForm $expectedRegistrationForm = null)
     {
         $this->setProperty('expectedRegistrationForm', $expectedRegistrationForm);
     }
 
     /**
-     * @return House
+     * @return \Arbor\Model\House
      */
     public function getExpectedHouse()
     {
@@ -327,9 +329,9 @@ class Application extends \ModelBase
     }
 
     /**
-     * @param House $expectedHouse
+     * @param \Arbor\Model\House $expectedHouse
      */
-    public function setExpectedHouse(\House $expectedHouse = null)
+    public function setExpectedHouse(\Arbor\Model\House $expectedHouse = null)
     {
         $this->setProperty('expectedHouse', $expectedHouse);
     }
@@ -349,4 +351,5 @@ class Application extends \ModelBase
     {
         $this->setProperty('enrolledDatetime', $enrolledDatetime);
     }
+
 }

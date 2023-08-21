@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CurriculumSection extends \ModelBase
+class CurriculumSection extends ModelBase
 {
+
     public const CURRICULUM = 'curriculum';
 
     public const CODE = 'code';
@@ -27,7 +29,7 @@ class CurriculumSection extends \ModelBase
      * @return CurriculumSection[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CurriculumSection extends \ModelBase
     }
 
     /**
-     * @return Curriculum
+     * @return \Arbor\Model\Curriculum
      */
     public function getCurriculum()
     {
@@ -67,9 +69,9 @@ class CurriculumSection extends \ModelBase
     }
 
     /**
-     * @param Curriculum $curriculum
+     * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Curriculum $curriculum = null)
+    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -123,7 +125,7 @@ class CurriculumSection extends \ModelBase
     }
 
     /**
-     * @return CurriculumSection
+     * @return \Arbor\Model\CurriculumSection
      */
     public function getParentCurriculumSection()
     {
@@ -131,15 +133,15 @@ class CurriculumSection extends \ModelBase
     }
 
     /**
-     * @param CurriculumSection $parentCurriculumSection
+     * @param \Arbor\Model\CurriculumSection $parentCurriculumSection
      */
-    public function setParentCurriculumSection(\CurriculumSection $parentCurriculumSection = null)
+    public function setParentCurriculumSection(\Arbor\Model\CurriculumSection $parentCurriculumSection = null)
     {
         $this->setProperty('parentCurriculumSection', $parentCurriculumSection);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -147,9 +149,9 @@ class CurriculumSection extends \ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -169,4 +171,5 @@ class CurriculumSection extends \ModelBase
     {
         $this->setProperty('weighting', $weighting);
     }
+
 }

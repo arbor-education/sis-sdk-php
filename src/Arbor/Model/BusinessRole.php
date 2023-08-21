@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BusinessRole extends \ModelBase
+class BusinessRole extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -35,7 +37,7 @@ class BusinessRole extends \ModelBase
      * @return BusinessRole[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -241,4 +243,5 @@ class BusinessRole extends \ModelBase
     {
         $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
     }
+
 }

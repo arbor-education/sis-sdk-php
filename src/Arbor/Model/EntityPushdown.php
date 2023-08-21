@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EntityPushdown extends \ModelBase
+class EntityPushdown extends ModelBase
 {
+
     public const CONTROLLER_APPLICATION = 'controllerApplication';
 
     public const CONTROLLER_ENTITY_PUSHDOWN_ID = 'controllerEntityPushdownId';
@@ -31,7 +33,7 @@ class EntityPushdown extends \ModelBase
      * @return EntityPushdown[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -205,4 +207,5 @@ class EntityPushdown extends \ModelBase
     {
         $this->setProperty('defaultAllowDelete', $defaultAllowDelete);
     }
+
 }

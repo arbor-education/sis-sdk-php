@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicNote extends \ModelBase
+class AcademicNote extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const ACADEMIC_UNIT = 'academicUnit';
@@ -23,7 +25,7 @@ class AcademicNote extends \ModelBase
      * @return AcademicNote[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class AcademicNote extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,15 +65,15 @@ class AcademicNote extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -79,9 +81,9 @@ class AcademicNote extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -133,4 +135,5 @@ class AcademicNote extends \ModelBase
     {
         $this->setProperty('noteCreatedDatetime', $noteCreatedDatetime);
     }
+
 }

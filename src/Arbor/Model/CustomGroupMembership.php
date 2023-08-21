@@ -3,11 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
-use Arbor\Model\Group\CustomGroup;
-use Arbor\Model\Group\Institution;
+use Arbor\Model\ModelBase;
 
-class CustomGroupMembership extends \ModelBase
+class CustomGroupMembership extends ModelBase
 {
+
     public const CUSTOM_GROUP = 'customGroup';
 
     public const PERSON = 'person';
@@ -25,7 +25,7 @@ class CustomGroupMembership extends \ModelBase
      * @return CustomGroupMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +57,7 @@ class CustomGroupMembership extends \ModelBase
     }
 
     /**
-     * @return CustomGroup
+     * @return \Arbor\Model\Group\CustomGroup
      */
     public function getCustomGroup()
     {
@@ -65,9 +65,9 @@ class CustomGroupMembership extends \ModelBase
     }
 
     /**
-     * @param CustomGroup $customGroup
+     * @param \Arbor\Model\Group\CustomGroup $customGroup
      */
-    public function setCustomGroup(\CustomGroup $customGroup = null)
+    public function setCustomGroup(\Arbor\Model\Group\CustomGroup $customGroup = null)
     {
         $this->setProperty('customGroup', $customGroup);
     }
@@ -121,7 +121,7 @@ class CustomGroupMembership extends \ModelBase
     }
 
     /**
-     * @return Institution
+     * @return \Arbor\Model\Group\Institution
      */
     public function getGroupInstitution()
     {
@@ -129,10 +129,11 @@ class CustomGroupMembership extends \ModelBase
     }
 
     /**
-     * @param Institution $groupInstitution
+     * @param \Arbor\Model\Group\Institution $groupInstitution
      */
-    public function setGroupInstitution(\Institution $groupInstitution = null)
+    public function setGroupInstitution(\Arbor\Model\Group\Institution $groupInstitution = null)
     {
         $this->setProperty('groupInstitution', $groupInstitution);
     }
+
 }

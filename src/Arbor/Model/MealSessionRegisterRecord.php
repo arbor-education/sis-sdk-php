@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealSessionRegisterRecord extends \ModelBase
+class MealSessionRegisterRecord extends ModelBase
 {
+
     public const MEAL_SESSION = 'mealSession';
 
     public const PERSON = 'person';
@@ -25,7 +27,7 @@ class MealSessionRegisterRecord extends \ModelBase
      * @return MealSessionRegisterRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class MealSessionRegisterRecord extends \ModelBase
     }
 
     /**
-     * @return MealSession
+     * @return \Arbor\Model\MealSession
      */
     public function getMealSession()
     {
@@ -65,9 +67,9 @@ class MealSessionRegisterRecord extends \ModelBase
     }
 
     /**
-     * @param MealSession $mealSession
+     * @param \Arbor\Model\MealSession $mealSession
      */
-    public function setMealSession(\MealSession $mealSession = null)
+    public function setMealSession(\Arbor\Model\MealSession $mealSession = null)
     {
         $this->setProperty('mealSession', $mealSession);
     }
@@ -89,7 +91,7 @@ class MealSessionRegisterRecord extends \ModelBase
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getMealProvision()
     {
@@ -97,15 +99,15 @@ class MealSessionRegisterRecord extends \ModelBase
     }
 
     /**
-     * @param MealProvision $mealProvision
+     * @param \Arbor\Model\MealProvision $mealProvision
      */
-    public function setMealProvision(\MealProvision $mealProvision = null)
+    public function setMealProvision(\Arbor\Model\MealProvision $mealProvision = null)
     {
         $this->setProperty('mealProvision', $mealProvision);
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getCustomerInvoice()
     {
@@ -113,15 +115,15 @@ class MealSessionRegisterRecord extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoice $customerInvoice
+     * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
 
     /**
-     * @return MealProvisionPriceCategory
+     * @return \Arbor\Model\MealProvisionPriceCategory
      */
     public function getMealProvisionPriceCategory()
     {
@@ -129,9 +131,9 @@ class MealSessionRegisterRecord extends \ModelBase
     }
 
     /**
-     * @param MealProvisionPriceCategory $mealProvisionPriceCategory
+     * @param \Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory
      */
-    public function setMealProvisionPriceCategory(\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
+    public function setMealProvisionPriceCategory(\Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
         $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
@@ -151,4 +153,5 @@ class MealSessionRegisterRecord extends \ModelBase
     {
         $this->setProperty('source', $source);
     }
+
 }

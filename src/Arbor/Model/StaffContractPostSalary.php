@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffContractPostSalary extends \ModelBase
+class StaffContractPostSalary extends ModelBase
 {
+
     public const STAFF_CONTRACT_POST = 'staffContractPost';
 
     public const GROSS_SALARY = 'grossSalary';
@@ -39,7 +41,7 @@ class StaffContractPostSalary extends \ModelBase
      * @return StaffContractPostSalary[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +73,7 @@ class StaffContractPostSalary extends \ModelBase
     }
 
     /**
-     * @return StaffContractPost
+     * @return \Arbor\Model\StaffContractPost
      */
     public function getStaffContractPost()
     {
@@ -79,9 +81,9 @@ class StaffContractPostSalary extends \ModelBase
     }
 
     /**
-     * @param StaffContractPost $staffContractPost
+     * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -103,7 +105,7 @@ class StaffContractPostSalary extends \ModelBase
     }
 
     /**
-     * @return PayScale
+     * @return \Arbor\Model\PayScale
      */
     public function getPayScale()
     {
@@ -111,15 +113,15 @@ class StaffContractPostSalary extends \ModelBase
     }
 
     /**
-     * @param PayScale $payScale
+     * @param \Arbor\Model\PayScale $payScale
      */
-    public function setPayScale(\PayScale $payScale = null)
+    public function setPayScale(\Arbor\Model\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
 
     /**
-     * @return PayScaleGrade
+     * @return \Arbor\Model\PayScaleGrade
      */
     public function getPayScaleGrade()
     {
@@ -127,15 +129,15 @@ class StaffContractPostSalary extends \ModelBase
     }
 
     /**
-     * @param PayScaleGrade $payScaleGrade
+     * @param \Arbor\Model\PayScaleGrade $payScaleGrade
      */
-    public function setPayScaleGrade(\PayScaleGrade $payScaleGrade = null)
+    public function setPayScaleGrade(\Arbor\Model\PayScaleGrade $payScaleGrade = null)
     {
         $this->setProperty('payScaleGrade', $payScaleGrade);
     }
 
     /**
-     * @return PayScaleSpinalPoint
+     * @return \Arbor\Model\PayScaleSpinalPoint
      */
     public function getPayScaleSpinalPoint()
     {
@@ -143,9 +145,9 @@ class StaffContractPostSalary extends \ModelBase
     }
 
     /**
-     * @param PayScaleSpinalPoint $payScaleSpinalPoint
+     * @param \Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint
      */
-    public function setPayScaleSpinalPoint(\PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    public function setPayScaleSpinalPoint(\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
@@ -277,4 +279,5 @@ class StaffContractPostSalary extends \ModelBase
     {
         $this->setProperty('safeguardedPeriodEndDate', $safeguardedPeriodEndDate);
     }
+
 }

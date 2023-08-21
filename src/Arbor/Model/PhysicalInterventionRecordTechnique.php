@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PhysicalInterventionRecordTechnique extends \ModelBase
+class PhysicalInterventionRecordTechnique extends ModelBase
 {
+
     public const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
     public const PHYSICAL_INTERVENTION_TECHNIQUE = 'physicalInterventionTechnique';
@@ -17,7 +19,7 @@ class PhysicalInterventionRecordTechnique extends \ModelBase
      * @return PhysicalInterventionRecordTechnique[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class PhysicalInterventionRecordTechnique extends \ModelBase
     }
 
     /**
-     * @return PhysicalInterventionRecord
+     * @return \Arbor\Model\PhysicalInterventionRecord
      */
     public function getPhysicalInterventionRecord()
     {
@@ -57,15 +59,15 @@ class PhysicalInterventionRecordTechnique extends \ModelBase
     }
 
     /**
-     * @param PhysicalInterventionRecord $physicalInterventionRecord
+     * @param \Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord
      */
-    public function setPhysicalInterventionRecord(\PhysicalInterventionRecord $physicalInterventionRecord = null)
+    public function setPhysicalInterventionRecord(\Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
         $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
 
     /**
-     * @return PhysicalInterventionTechnique
+     * @return \Arbor\Model\PhysicalInterventionTechnique
      */
     public function getPhysicalInterventionTechnique()
     {
@@ -73,10 +75,11 @@ class PhysicalInterventionRecordTechnique extends \ModelBase
     }
 
     /**
-     * @param PhysicalInterventionTechnique $physicalInterventionTechnique
+     * @param \Arbor\Model\PhysicalInterventionTechnique $physicalInterventionTechnique
      */
-    public function setPhysicalInterventionTechnique(\PhysicalInterventionTechnique $physicalInterventionTechnique = null)
+    public function setPhysicalInterventionTechnique(\Arbor\Model\PhysicalInterventionTechnique $physicalInterventionTechnique = null)
     {
         $this->setProperty('physicalInterventionTechnique', $physicalInterventionTechnique);
     }
+
 }

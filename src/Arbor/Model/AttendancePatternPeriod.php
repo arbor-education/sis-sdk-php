@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AttendancePatternPeriod extends \ModelBase
+class AttendancePatternPeriod extends ModelBase
 {
+
     public const ATTENDANCE_PATTERN = 'attendancePattern';
 
     public const DAY_OF_CYCLE = 'dayOfCycle';
@@ -21,7 +23,7 @@ class AttendancePatternPeriod extends \ModelBase
      * @return AttendancePatternPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class AttendancePatternPeriod extends \ModelBase
     }
 
     /**
-     * @return AttendancePattern
+     * @return \Arbor\Model\AttendancePattern
      */
     public function getAttendancePattern()
     {
@@ -61,9 +63,9 @@ class AttendancePatternPeriod extends \ModelBase
     }
 
     /**
-     * @param AttendancePattern $attendancePattern
+     * @param \Arbor\Model\AttendancePattern $attendancePattern
      */
-    public function setAttendancePattern(\AttendancePattern $attendancePattern = null)
+    public function setAttendancePattern(\Arbor\Model\AttendancePattern $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
@@ -115,4 +117,5 @@ class AttendancePatternPeriod extends \ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
+
 }

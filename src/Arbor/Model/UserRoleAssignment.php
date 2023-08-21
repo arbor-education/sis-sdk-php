@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UserRoleAssignment extends \ModelBase
+class UserRoleAssignment extends ModelBase
 {
+
     public const USER = 'user';
 
     public const USER_ROLE = 'userRole';
@@ -23,7 +25,7 @@ class UserRoleAssignment extends \ModelBase
      * @return UserRoleAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class UserRoleAssignment extends \ModelBase
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getUser()
     {
@@ -63,15 +65,15 @@ class UserRoleAssignment extends \ModelBase
     }
 
     /**
-     * @param User $user
+     * @param \Arbor\Model\User $user
      */
-    public function setUser(\User $user = null)
+    public function setUser(\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
 
     /**
-     * @return UserRole
+     * @return \Arbor\Model\UserRole
      */
     public function getUserRole()
     {
@@ -79,15 +81,15 @@ class UserRoleAssignment extends \ModelBase
     }
 
     /**
-     * @param UserRole $userRole
+     * @param \Arbor\Model\UserRole $userRole
      */
-    public function setUserRole(\UserRole $userRole = null)
+    public function setUserRole(\Arbor\Model\UserRole $userRole = null)
     {
         $this->setProperty('userRole', $userRole);
     }
 
     /**
-     * @return BusinessRoleAssignment
+     * @return \Arbor\Model\BusinessRoleAssignment
      */
     public function getBusinessRoleAssignment()
     {
@@ -95,9 +97,9 @@ class UserRoleAssignment extends \ModelBase
     }
 
     /**
-     * @param BusinessRoleAssignment $businessRoleAssignment
+     * @param \Arbor\Model\BusinessRoleAssignment $businessRoleAssignment
      */
-    public function setBusinessRoleAssignment(\BusinessRoleAssignment $businessRoleAssignment = null)
+    public function setBusinessRoleAssignment(\Arbor\Model\BusinessRoleAssignment $businessRoleAssignment = null)
     {
         $this->setProperty('businessRoleAssignment', $businessRoleAssignment);
     }
@@ -133,4 +135,5 @@ class UserRoleAssignment extends \ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ProgrammeInstance extends \ModelBase
+class ProgrammeInstance extends ModelBase
 {
+
     public const PROGRAMME = 'programme';
 
     public const NAME = 'name';
@@ -33,7 +35,7 @@ class ProgrammeInstance extends \ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class ProgrammeInstance extends \ModelBase
     }
 
     /**
-     * @return Programme
+     * @return \Arbor\Model\Programme
      */
     public function getProgramme()
     {
@@ -73,9 +75,9 @@ class ProgrammeInstance extends \ModelBase
     }
 
     /**
-     * @param Programme $programme
+     * @param \Arbor\Model\Programme $programme
      */
-    public function setProgramme(\Programme $programme = null)
+    public function setProgramme(\Arbor\Model\Programme $programme = null)
     {
         $this->setProperty('programme', $programme);
     }
@@ -161,7 +163,7 @@ class ProgrammeInstance extends \ModelBase
     }
 
     /**
-     * @return ProgrammeClassification
+     * @return \Arbor\Model\ProgrammeClassification
      */
     public function getProgrammeClassification()
     {
@@ -169,9 +171,9 @@ class ProgrammeInstance extends \ModelBase
     }
 
     /**
-     * @param ProgrammeClassification $programmeClassification
+     * @param \Arbor\Model\ProgrammeClassification $programmeClassification
      */
-    public function setProgrammeClassification(\ProgrammeClassification $programmeClassification = null)
+    public function setProgrammeClassification(\Arbor\Model\ProgrammeClassification $programmeClassification = null)
     {
         $this->setProperty('programmeClassification', $programmeClassification);
     }
@@ -223,4 +225,5 @@ class ProgrammeInstance extends \ModelBase
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
+
 }

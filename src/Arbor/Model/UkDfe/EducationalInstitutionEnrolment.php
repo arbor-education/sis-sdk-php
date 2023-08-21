@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class EducationalInstitutionEnrolment extends \ModelBase
+class EducationalInstitutionEnrolment extends ModelBase
 {
+
     public const REMOVAL_GROUNDS = 'removalGrounds';
 
     public const ALTERNATIVE_PROVISION_REASON = 'alternativeProvisionReason';
@@ -20,7 +21,7 @@ class EducationalInstitutionEnrolment extends \ModelBase
      * @return EducationalInstitutionEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +69,7 @@ class EducationalInstitutionEnrolment extends \ModelBase
     }
 
     /**
-     * @return AlternativeProvisionReason
+     * @return \Arbor\Model\UkDfe\AlternativeProvisionReason
      */
     public function getAlternativeProvisionReason()
     {
@@ -76,10 +77,11 @@ class EducationalInstitutionEnrolment extends \ModelBase
     }
 
     /**
-     * @param AlternativeProvisionReason $alternativeProvisionReason
+     * @param \Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason
      */
-    public function setAlternativeProvisionReason(\AlternativeProvisionReason $alternativeProvisionReason = null)
+    public function setAlternativeProvisionReason(\Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason = null)
     {
         $this->setProperty('alternativeProvisionReason', $alternativeProvisionReason);
     }
+
 }

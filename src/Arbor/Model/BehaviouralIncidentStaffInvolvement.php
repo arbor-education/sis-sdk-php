@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BehaviouralIncidentStaffInvolvement extends \ModelBase
+class BehaviouralIncidentStaffInvolvement extends ModelBase
 {
+
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STAFF = 'staff';
@@ -17,7 +19,7 @@ class BehaviouralIncidentStaffInvolvement extends \ModelBase
      * @return BehaviouralIncidentStaffInvolvement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class BehaviouralIncidentStaffInvolvement extends \ModelBase
     }
 
     /**
-     * @return BehaviouralIncident
+     * @return \Arbor\Model\BehaviouralIncident
      */
     public function getBehaviouralIncident()
     {
@@ -57,15 +59,15 @@ class BehaviouralIncidentStaffInvolvement extends \ModelBase
     }
 
     /**
-     * @param BehaviouralIncident $behaviouralIncident
+     * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -73,10 +75,11 @@ class BehaviouralIncidentStaffInvolvement extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
+
 }

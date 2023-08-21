@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PhysicalInterventionRecord extends \ModelBase
+class PhysicalInterventionRecord extends ModelBase
 {
+
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -23,7 +25,7 @@ class PhysicalInterventionRecord extends \ModelBase
      * @return PhysicalInterventionRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class PhysicalInterventionRecord extends \ModelBase
     }
 
     /**
-     * @return BehaviouralIncident
+     * @return \Arbor\Model\BehaviouralIncident
      */
     public function getBehaviouralIncident()
     {
@@ -63,15 +65,15 @@ class PhysicalInterventionRecord extends \ModelBase
     }
 
     /**
-     * @param BehaviouralIncident $behaviouralIncident
+     * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -79,15 +81,15 @@ class PhysicalInterventionRecord extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -95,9 +97,9 @@ class PhysicalInterventionRecord extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -133,4 +135,5 @@ class PhysicalInterventionRecord extends \ModelBase
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
+
 }

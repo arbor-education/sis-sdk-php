@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BankDeposit extends \ModelBase
+class BankDeposit extends ModelBase
 {
+
     public const BANK_ACCOUNT = 'bankAccount';
 
     public const PAID_BY_STAFF = 'paidByStaff';
@@ -27,7 +29,7 @@ class BankDeposit extends \ModelBase
      * @return BankDeposit[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class BankDeposit extends \ModelBase
     }
 
     /**
-     * @return BankAccount
+     * @return \Arbor\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -67,15 +69,15 @@ class BankDeposit extends \ModelBase
     }
 
     /**
-     * @param BankAccount $bankAccount
+     * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(\BankAccount $bankAccount = null)
+    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getPaidByStaff()
     {
@@ -83,9 +85,9 @@ class BankDeposit extends \ModelBase
     }
 
     /**
-     * @param Staff $paidByStaff
+     * @param \Arbor\Model\Staff $paidByStaff
      */
-    public function setPaidByStaff(\Staff $paidByStaff = null)
+    public function setPaidByStaff(\Arbor\Model\Staff $paidByStaff = null)
     {
         $this->setProperty('paidByStaff', $paidByStaff);
     }
@@ -169,4 +171,5 @@ class BankDeposit extends \ModelBase
     {
         $this->setProperty('refundAdjustmentAmount', $refundAdjustmentAmount);
     }
+
 }

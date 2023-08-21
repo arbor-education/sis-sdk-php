@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IdentityCardReader extends \ModelBase
+class IdentityCardReader extends ModelBase
 {
+
     public const READER_NUMBER = 'readerNumber';
 
     public const ROOM = 'room';
@@ -17,7 +19,7 @@ class IdentityCardReader extends \ModelBase
      * @return IdentityCardReader[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class IdentityCardReader extends \ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getRoom()
     {
@@ -73,10 +75,11 @@ class IdentityCardReader extends \ModelBase
     }
 
     /**
-     * @param Room $room
+     * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Room $room = null)
+    public function setRoom(\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
+
 }

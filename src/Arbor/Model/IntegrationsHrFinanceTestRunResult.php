@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IntegrationsHrFinanceTestRunResult extends \ModelBase
+class IntegrationsHrFinanceTestRunResult extends ModelBase
 {
+
     public const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'integrationsHrFinanceTestRun';
 
     public const TYPE = 'type';
@@ -37,7 +39,7 @@ class IntegrationsHrFinanceTestRunResult extends \ModelBase
      * @return IntegrationsHrFinanceTestRunResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class IntegrationsHrFinanceTestRunResult extends \ModelBase
     }
 
     /**
-     * @return IntegrationsHrFinanceTestRun
+     * @return \Arbor\Model\IntegrationsHrFinanceTestRun
      */
     public function getIntegrationsHrFinanceTestRun()
     {
@@ -77,9 +79,9 @@ class IntegrationsHrFinanceTestRunResult extends \ModelBase
     }
 
     /**
-     * @param IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun
+     * @param \Arbor\Model\IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun
      */
-    public function setIntegrationsHrFinanceTestRun(\IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun = null)
+    public function setIntegrationsHrFinanceTestRun(\Arbor\Model\IntegrationsHrFinanceTestRun $integrationsHrFinanceTestRun = null)
     {
         $this->setProperty('integrationsHrFinanceTestRun', $integrationsHrFinanceTestRun);
     }
@@ -259,4 +261,5 @@ class IntegrationsHrFinanceTestRunResult extends \ModelBase
     {
         $this->setProperty('label', $label);
     }
+
 }

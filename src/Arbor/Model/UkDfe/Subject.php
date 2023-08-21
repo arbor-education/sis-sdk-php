@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Subject extends \ModelBase
+class Subject extends ModelBase
 {
+
     public const USED_IN_SWF_ONLY = 'usedInSwfOnly';
 
     public const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
@@ -24,7 +25,7 @@ class Subject extends \ModelBase
      * @return Subject[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -118,4 +119,5 @@ class Subject extends \ModelBase
     {
         $this->setProperty('d00220', $d00220);
     }
+
 }

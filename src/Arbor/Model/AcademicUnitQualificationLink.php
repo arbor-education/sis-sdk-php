@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicUnitQualificationLink extends \ModelBase
+class AcademicUnitQualificationLink extends ModelBase
 {
+
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -23,7 +25,7 @@ class AcademicUnitQualificationLink extends \ModelBase
      * @return AcademicUnitQualificationLink[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class AcademicUnitQualificationLink extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -63,15 +65,15 @@ class AcademicUnitQualificationLink extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getQualificationAssessable()
     {
@@ -79,9 +81,9 @@ class AcademicUnitQualificationLink extends \ModelBase
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
@@ -133,4 +135,5 @@ class AcademicUnitQualificationLink extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

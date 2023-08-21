@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AttendanceRollCall extends \ModelBase
+class AttendanceRollCall extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -27,7 +29,7 @@ class AttendanceRollCall extends \ModelBase
      * @return AttendanceRollCall[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +109,7 @@ class AttendanceRollCall extends \ModelBase
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -115,9 +117,9 @@ class AttendanceRollCall extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -169,4 +171,5 @@ class AttendanceRollCall extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

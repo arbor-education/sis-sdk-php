@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LessonPlanSectionItem extends \ModelBase
+class LessonPlanSectionItem extends ModelBase
 {
+
     public const LESSON_PLAN_SECTION = 'lessonPlanSection';
 
     public const LINKED_ITEM = 'linkedItem';
@@ -23,7 +25,7 @@ class LessonPlanSectionItem extends \ModelBase
      * @return LessonPlanSectionItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class LessonPlanSectionItem extends \ModelBase
     }
 
     /**
-     * @return LessonPlanSection
+     * @return \Arbor\Model\LessonPlanSection
      */
     public function getLessonPlanSection()
     {
@@ -63,9 +65,9 @@ class LessonPlanSectionItem extends \ModelBase
     }
 
     /**
-     * @param LessonPlanSection $lessonPlanSection
+     * @param \Arbor\Model\LessonPlanSection $lessonPlanSection
      */
-    public function setLessonPlanSection(\LessonPlanSection $lessonPlanSection = null)
+    public function setLessonPlanSection(\Arbor\Model\LessonPlanSection $lessonPlanSection = null)
     {
         $this->setProperty('lessonPlanSection', $lessonPlanSection);
     }
@@ -133,4 +135,5 @@ class LessonPlanSectionItem extends \ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IntegrationsCashlessCateringSystemProvider extends \ModelBase
+class IntegrationsCashlessCateringSystemProvider extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
@@ -21,7 +23,7 @@ class IntegrationsCashlessCateringSystemProvider extends \ModelBase
      * @return IntegrationsCashlessCateringSystemProvider[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class IntegrationsCashlessCateringSystemProvider extends \ModelBase
     }
 
     /**
-     * @return CustomerAccountType
+     * @return \Arbor\Model\CustomerAccountType
      */
     public function getCustomerAccountType()
     {
@@ -77,9 +79,9 @@ class IntegrationsCashlessCateringSystemProvider extends \ModelBase
     }
 
     /**
-     * @param CustomerAccountType $customerAccountType
+     * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -115,4 +117,5 @@ class IntegrationsCashlessCateringSystemProvider extends \ModelBase
     {
         $this->setProperty('enabled', $enabled);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationScheme extends \ModelBase
+class QualificationScheme extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -25,7 +27,7 @@ class QualificationScheme extends \ModelBase
      * @return QualificationScheme[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -105,7 +107,7 @@ class QualificationScheme extends \ModelBase
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -113,9 +115,9 @@ class QualificationScheme extends \ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -151,4 +153,5 @@ class QualificationScheme extends \ModelBase
     {
         $this->setProperty('title', $title);
     }
+
 }

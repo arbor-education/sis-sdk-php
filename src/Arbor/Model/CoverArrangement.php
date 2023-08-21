@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CoverArrangement extends \ModelBase
+class CoverArrangement extends ModelBase
 {
+
     public const COVER_REQUIREMENT = 'coverRequirement';
 
     public const COVERING_STAFF = 'coveringStaff';
@@ -27,7 +29,7 @@ class CoverArrangement extends \ModelBase
      * @return CoverArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class CoverArrangement extends \ModelBase
     }
 
     /**
-     * @return CoverRequirement
+     * @return \Arbor\Model\CoverRequirement
      */
     public function getCoverRequirement()
     {
@@ -67,15 +69,15 @@ class CoverArrangement extends \ModelBase
     }
 
     /**
-     * @param CoverRequirement $coverRequirement
+     * @param \Arbor\Model\CoverRequirement $coverRequirement
      */
-    public function setCoverRequirement(\CoverRequirement $coverRequirement = null)
+    public function setCoverRequirement(\Arbor\Model\CoverRequirement $coverRequirement = null)
     {
         $this->setProperty('coverRequirement', $coverRequirement);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getCoveringStaff()
     {
@@ -83,9 +85,9 @@ class CoverArrangement extends \ModelBase
     }
 
     /**
-     * @param Staff $coveringStaff
+     * @param \Arbor\Model\Staff $coveringStaff
      */
-    public function setCoveringStaff(\Staff $coveringStaff = null)
+    public function setCoveringStaff(\Arbor\Model\Staff $coveringStaff = null)
     {
         $this->setProperty('coveringStaff', $coveringStaff);
     }
@@ -169,4 +171,5 @@ class CoverArrangement extends \ModelBase
     {
         $this->setProperty('isSendCreationNotification', $isSendCreationNotification);
     }
+
 }

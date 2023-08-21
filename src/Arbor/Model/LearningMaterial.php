@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LearningMaterial extends \ModelBase
+class LearningMaterial extends ModelBase
 {
+
     public const LEARNING_MATERIAL_FOLDER = 'learningMaterialFolder';
 
     public const TITLE = 'title';
@@ -27,7 +29,7 @@ class LearningMaterial extends \ModelBase
      * @return LearningMaterial[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class LearningMaterial extends \ModelBase
     }
 
     /**
-     * @return LearningMaterialFolder
+     * @return \Arbor\Model\LearningMaterialFolder
      */
     public function getLearningMaterialFolder()
     {
@@ -67,9 +69,9 @@ class LearningMaterial extends \ModelBase
     }
 
     /**
-     * @param LearningMaterialFolder $learningMaterialFolder
+     * @param \Arbor\Model\LearningMaterialFolder $learningMaterialFolder
      */
-    public function setLearningMaterialFolder(\LearningMaterialFolder $learningMaterialFolder = null)
+    public function setLearningMaterialFolder(\Arbor\Model\LearningMaterialFolder $learningMaterialFolder = null)
     {
         $this->setProperty('learningMaterialFolder', $learningMaterialFolder);
     }
@@ -139,7 +141,7 @@ class LearningMaterial extends \ModelBase
     }
 
     /**
-     * @return ThirdPartySite
+     * @return \Arbor\Model\ThirdPartySite
      */
     public function getThirdPartySite()
     {
@@ -147,9 +149,9 @@ class LearningMaterial extends \ModelBase
     }
 
     /**
-     * @param ThirdPartySite $thirdPartySite
+     * @param \Arbor\Model\ThirdPartySite $thirdPartySite
      */
-    public function setThirdPartySite(\ThirdPartySite $thirdPartySite = null)
+    public function setThirdPartySite(\Arbor\Model\ThirdPartySite $thirdPartySite = null)
     {
         $this->setProperty('thirdPartySite', $thirdPartySite);
     }
@@ -169,4 +171,5 @@ class LearningMaterial extends \ModelBase
     {
         $this->setProperty('authoredDatetime', $authoredDatetime);
     }
+
 }

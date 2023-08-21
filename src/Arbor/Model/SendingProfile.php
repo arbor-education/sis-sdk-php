@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SendingProfile extends \ModelBase
+class SendingProfile extends ModelBase
 {
+
     public const OWNER = 'owner';
 
     public const EMAIL_ADDRESS = 'emailAddress';
@@ -21,7 +23,7 @@ class SendingProfile extends \ModelBase
      * @return SendingProfile[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class SendingProfile extends \ModelBase
     }
 
     /**
-     * @return EmailAddress
+     * @return \Arbor\Model\EmailAddress
      */
     public function getEmailAddress()
     {
@@ -77,15 +79,15 @@ class SendingProfile extends \ModelBase
     }
 
     /**
-     * @param EmailAddress $emailAddress
+     * @param \Arbor\Model\EmailAddress $emailAddress
      */
-    public function setEmailAddress(\EmailAddress $emailAddress = null)
+    public function setEmailAddress(\Arbor\Model\EmailAddress $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
-     * @return TelephoneNumber
+     * @return \Arbor\Model\TelephoneNumber
      */
     public function getMobileTelephoneNumber()
     {
@@ -93,15 +95,15 @@ class SendingProfile extends \ModelBase
     }
 
     /**
-     * @param TelephoneNumber $mobileTelephoneNumber
+     * @param \Arbor\Model\TelephoneNumber $mobileTelephoneNumber
      */
-    public function setMobileTelephoneNumber(\TelephoneNumber $mobileTelephoneNumber = null)
+    public function setMobileTelephoneNumber(\Arbor\Model\TelephoneNumber $mobileTelephoneNumber = null)
     {
         $this->setProperty('mobileTelephoneNumber', $mobileTelephoneNumber);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getPermittedSender()
     {
@@ -109,10 +111,11 @@ class SendingProfile extends \ModelBase
     }
 
     /**
-     * @param Staff $permittedSender
+     * @param \Arbor\Model\Staff $permittedSender
      */
-    public function setPermittedSender(\Staff $permittedSender = null)
+    public function setPermittedSender(\Arbor\Model\Staff $permittedSender = null)
     {
         $this->setProperty('permittedSender', $permittedSender);
     }
+
 }

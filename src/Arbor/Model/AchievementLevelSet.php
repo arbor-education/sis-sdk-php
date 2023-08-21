@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AchievementLevelSet extends \ModelBase
+class AchievementLevelSet extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const NAME = 'name';
@@ -23,7 +25,7 @@ class AchievementLevelSet extends \ModelBase
      * @return AchievementLevelSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -119,7 +121,7 @@ class AchievementLevelSet extends \ModelBase
     }
 
     /**
-     * @return Curriculum
+     * @return \Arbor\Model\Curriculum
      */
     public function getCurriculum()
     {
@@ -127,10 +129,11 @@ class AchievementLevelSet extends \ModelBase
     }
 
     /**
-     * @param Curriculum $curriculum
+     * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Curriculum $curriculum = null)
+    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentDerivationDependant extends \ModelBase
+class AssessmentDerivationDependant extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -29,7 +31,7 @@ class AssessmentDerivationDependant extends \ModelBase
      * @return AssessmentDerivationDependant[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -109,7 +111,7 @@ class AssessmentDerivationDependant extends \ModelBase
     }
 
     /**
-     * @return AssessmentDerivation
+     * @return \Arbor\Model\AssessmentDerivation
      */
     public function getAssessmentDerivation()
     {
@@ -117,9 +119,9 @@ class AssessmentDerivationDependant extends \ModelBase
     }
 
     /**
-     * @param AssessmentDerivation $assessmentDerivation
+     * @param \Arbor\Model\AssessmentDerivation $assessmentDerivation
      */
-    public function setAssessmentDerivation(\AssessmentDerivation $assessmentDerivation = null)
+    public function setAssessmentDerivation(\Arbor\Model\AssessmentDerivation $assessmentDerivation = null)
     {
         $this->setProperty('assessmentDerivation', $assessmentDerivation);
     }
@@ -187,4 +189,5 @@ class AssessmentDerivationDependant extends \ModelBase
     {
         $this->setProperty('maxGradePointScaleValue', $maxGradePointScaleValue);
     }
+
 }

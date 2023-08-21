@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OptionsImportStudentMapping extends \ModelBase
+class OptionsImportStudentMapping extends ModelBase
 {
+
     public const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
     public const STUDENT_NAME = 'studentName';
@@ -23,7 +25,7 @@ class OptionsImportStudentMapping extends \ModelBase
      * @return OptionsImportStudentMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class OptionsImportStudentMapping extends \ModelBase
     }
 
     /**
-     * @return OptionsImportResult
+     * @return \Arbor\Model\OptionsImportResult
      */
     public function getOptionsImportResult()
     {
@@ -63,9 +65,9 @@ class OptionsImportStudentMapping extends \ModelBase
     }
 
     /**
-     * @param OptionsImportResult $optionsImportResult
+     * @param \Arbor\Model\OptionsImportResult $optionsImportResult
      */
-    public function setOptionsImportResult(\OptionsImportResult $optionsImportResult = null)
+    public function setOptionsImportResult(\Arbor\Model\OptionsImportResult $optionsImportResult = null)
     {
         $this->setProperty('optionsImportResult', $optionsImportResult);
     }
@@ -119,7 +121,7 @@ class OptionsImportStudentMapping extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getMappedStudent()
     {
@@ -127,10 +129,11 @@ class OptionsImportStudentMapping extends \ModelBase
     }
 
     /**
-     * @param Student $mappedStudent
+     * @param \Arbor\Model\Student $mappedStudent
      */
-    public function setMappedStudent(\Student $mappedStudent = null)
+    public function setMappedStudent(\Arbor\Model\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
+
 }

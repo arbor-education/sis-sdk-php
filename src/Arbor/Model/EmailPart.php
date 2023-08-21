@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmailPart extends \ModelBase
+class EmailPart extends ModelBase
 {
+
     public const EMAIL = 'email';
 
     public const MIME_CONTENT_ID = 'mimeContentId';
@@ -31,7 +33,7 @@ class EmailPart extends \ModelBase
      * @return EmailPart[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class EmailPart extends \ModelBase
     }
 
     /**
-     * @return Email
+     * @return \Arbor\Model\Email
      */
     public function getEmail()
     {
@@ -71,9 +73,9 @@ class EmailPart extends \ModelBase
     }
 
     /**
-     * @param Email $email
+     * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Email $email = null)
+    public function setEmail(\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -191,7 +193,7 @@ class EmailPart extends \ModelBase
     }
 
     /**
-     * @return EmailPart
+     * @return \Arbor\Model\EmailPart
      */
     public function getParentEmailPart()
     {
@@ -199,10 +201,11 @@ class EmailPart extends \ModelBase
     }
 
     /**
-     * @param EmailPart $parentEmailPart
+     * @param \Arbor\Model\EmailPart $parentEmailPart
      */
-    public function setParentEmailPart(\EmailPart $parentEmailPart = null)
+    public function setParentEmailPart(\Arbor\Model\EmailPart $parentEmailPart = null)
     {
         $this->setProperty('parentEmailPart', $parentEmailPart);
     }
+
 }

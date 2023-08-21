@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Voucher extends \ModelBase
+class Voucher extends ModelBase
 {
+
     public const BILL_PAYER = 'billPayer';
 
     public const PAYMENT_RECEIVED_DATE = 'paymentReceivedDate';
@@ -23,7 +25,7 @@ class Voucher extends \ModelBase
      * @return Voucher[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class Voucher extends \ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -63,9 +65,9 @@ class Voucher extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -133,4 +135,5 @@ class Voucher extends \ModelBase
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
+
 }

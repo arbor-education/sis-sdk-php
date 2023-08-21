@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SchoolShopProduct extends \ModelBase
+class SchoolShopProduct extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const DESCRIPTION = 'description';
@@ -31,7 +33,7 @@ class SchoolShopProduct extends \ModelBase
      * @return SchoolShopProduct[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -175,7 +177,7 @@ class SchoolShopProduct extends \ModelBase
     }
 
     /**
-     * @return CustomerAccountType
+     * @return \Arbor\Model\CustomerAccountType
      */
     public function getCustomerAccountType()
     {
@@ -183,9 +185,9 @@ class SchoolShopProduct extends \ModelBase
     }
 
     /**
-     * @param CustomerAccountType $customerAccountType
+     * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -205,4 +207,5 @@ class SchoolShopProduct extends \ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
+
 }

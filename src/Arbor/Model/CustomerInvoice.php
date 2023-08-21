@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomerInvoice extends \ModelBase
+class CustomerInvoice extends ModelBase
 {
+
     public const PREVIOUS_CUSTOMER_INVOICE = 'previousCustomerInvoice';
 
     public const CUSTOMER_ACCOUNT = 'customerAccount';
@@ -39,7 +41,7 @@ class CustomerInvoice extends \ModelBase
      * @return CustomerInvoice[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +73,7 @@ class CustomerInvoice extends \ModelBase
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getPreviousCustomerInvoice()
     {
@@ -79,15 +81,15 @@ class CustomerInvoice extends \ModelBase
     }
 
     /**
-     * @param CustomerInvoice $previousCustomerInvoice
+     * @param \Arbor\Model\CustomerInvoice $previousCustomerInvoice
      */
-    public function setPreviousCustomerInvoice(\CustomerInvoice $previousCustomerInvoice = null)
+    public function setPreviousCustomerInvoice(\Arbor\Model\CustomerInvoice $previousCustomerInvoice = null)
     {
         $this->setProperty('previousCustomerInvoice', $previousCustomerInvoice);
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -95,9 +97,9 @@ class CustomerInvoice extends \ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -277,4 +279,5 @@ class CustomerInvoice extends \ModelBase
     {
         $this->setProperty('reissuedDate', $reissuedDate);
     }
+
 }

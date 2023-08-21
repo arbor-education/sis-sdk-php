@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TransportationMethod extends \ModelBase
+class TransportationMethod extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -23,7 +25,7 @@ class TransportationMethod extends \ModelBase
      * @return TransportationMethod[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class TransportationMethod extends \ModelBase
     {
         $this->setProperty('routeNumber', $routeNumber);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicUnitAutomaticEnrolment extends \ModelBase
+class AcademicUnitAutomaticEnrolment extends ModelBase
 {
+
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const TRIGGER = 'trigger';
@@ -19,7 +21,7 @@ class AcademicUnitAutomaticEnrolment extends \ModelBase
      * @return AcademicUnitAutomaticEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class AcademicUnitAutomaticEnrolment extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -59,9 +61,9 @@ class AcademicUnitAutomaticEnrolment extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -83,7 +85,7 @@ class AcademicUnitAutomaticEnrolment extends \ModelBase
     }
 
     /**
-     * @return AttendancePattern
+     * @return \Arbor\Model\AttendancePattern
      */
     public function getAttendancePattern()
     {
@@ -91,10 +93,11 @@ class AcademicUnitAutomaticEnrolment extends \ModelBase
     }
 
     /**
-     * @param AttendancePattern $attendancePattern
+     * @param \Arbor\Model\AttendancePattern $attendancePattern
      */
-    public function setAttendancePattern(\AttendancePattern $attendancePattern = null)
+    public function setAttendancePattern(\Arbor\Model\AttendancePattern $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
+
 }

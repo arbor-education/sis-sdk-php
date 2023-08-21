@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Consent extends \ModelBase
+class Consent extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const CONSENT_TYPE = 'consentType';
@@ -29,7 +31,7 @@ class Consent extends \ModelBase
      * @return Consent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class Consent extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +71,15 @@ class Consent extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return ConsentType
+     * @return \Arbor\Model\ConsentType
      */
     public function getConsentType()
     {
@@ -85,9 +87,9 @@ class Consent extends \ModelBase
     }
 
     /**
-     * @param ConsentType $consentType
+     * @param \Arbor\Model\ConsentType $consentType
      */
-    public function setConsentType(\ConsentType $consentType = null)
+    public function setConsentType(\Arbor\Model\ConsentType $consentType = null)
     {
         $this->setProperty('consentType', $consentType);
     }
@@ -109,7 +111,7 @@ class Consent extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getRequestor()
     {
@@ -117,9 +119,9 @@ class Consent extends \ModelBase
     }
 
     /**
-     * @param Staff $requestor
+     * @param \Arbor\Model\Staff $requestor
      */
-    public function setRequestor(\Staff $requestor = null)
+    public function setRequestor(\Arbor\Model\Staff $requestor = null)
     {
         $this->setProperty('requestor', $requestor);
     }
@@ -187,4 +189,5 @@ class Consent extends \ModelBase
     {
         $this->setProperty('respondee', $respondee);
     }
+
 }

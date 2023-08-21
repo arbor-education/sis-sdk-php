@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationStudyGuide extends \ModelBase
+class QualificationStudyGuide extends ModelBase
 {
+
     public const RELATED_QUALIFICATION_AWARD = 'relatedQualificationAward';
 
     public const STUDY_GUIDE_TITLE = 'studyGuideTitle';
@@ -25,7 +27,7 @@ class QualificationStudyGuide extends \ModelBase
      * @return QualificationStudyGuide[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class QualificationStudyGuide extends \ModelBase
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getRelatedQualificationAward()
     {
@@ -65,9 +67,9 @@ class QualificationStudyGuide extends \ModelBase
     }
 
     /**
-     * @param QualificationAward $relatedQualificationAward
+     * @param \Arbor\Model\QualificationAward $relatedQualificationAward
      */
-    public function setRelatedQualificationAward(\QualificationAward $relatedQualificationAward = null)
+    public function setRelatedQualificationAward(\Arbor\Model\QualificationAward $relatedQualificationAward = null)
     {
         $this->setProperty('relatedQualificationAward', $relatedQualificationAward);
     }
@@ -151,4 +153,5 @@ class QualificationStudyGuide extends \ModelBase
     {
         $this->setProperty('studyGuideMediumType', $studyGuideMediumType);
     }
+
 }

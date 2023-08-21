@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OptionsImportAcademicUnitMapping extends \ModelBase
+class OptionsImportAcademicUnitMapping extends ModelBase
 {
+
     public const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
     public const ACADEMIC_UNIT_NAME = 'academicUnitName';
@@ -21,7 +23,7 @@ class OptionsImportAcademicUnitMapping extends \ModelBase
      * @return OptionsImportAcademicUnitMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class OptionsImportAcademicUnitMapping extends \ModelBase
     }
 
     /**
-     * @return OptionsImportResult
+     * @return \Arbor\Model\OptionsImportResult
      */
     public function getOptionsImportResult()
     {
@@ -61,9 +63,9 @@ class OptionsImportAcademicUnitMapping extends \ModelBase
     }
 
     /**
-     * @param OptionsImportResult $optionsImportResult
+     * @param \Arbor\Model\OptionsImportResult $optionsImportResult
      */
-    public function setOptionsImportResult(\OptionsImportResult $optionsImportResult = null)
+    public function setOptionsImportResult(\Arbor\Model\OptionsImportResult $optionsImportResult = null)
     {
         $this->setProperty('optionsImportResult', $optionsImportResult);
     }
@@ -101,7 +103,7 @@ class OptionsImportAcademicUnitMapping extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getMappedAcademicUnit()
     {
@@ -109,10 +111,11 @@ class OptionsImportAcademicUnitMapping extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $mappedAcademicUnit
+     * @param \Arbor\Model\AcademicUnit $mappedAcademicUnit
      */
-    public function setMappedAcademicUnit(\AcademicUnit $mappedAcademicUnit = null)
+    public function setMappedAcademicUnit(\Arbor\Model\AcademicUnit $mappedAcademicUnit = null)
     {
         $this->setProperty('mappedAcademicUnit', $mappedAcademicUnit);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentMetric extends \ModelBase
+class AssessmentMetric extends ModelBase
 {
+
     public const ASSESSMENT_METRIC_SET = 'assessmentMetricSet';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -17,7 +19,7 @@ class AssessmentMetric extends \ModelBase
      * @return AssessmentMetric[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class AssessmentMetric extends \ModelBase
     }
 
     /**
-     * @return AssessmentMetricSet
+     * @return \Arbor\Model\AssessmentMetricSet
      */
     public function getAssessmentMetricSet()
     {
@@ -57,15 +59,15 @@ class AssessmentMetric extends \ModelBase
     }
 
     /**
-     * @param AssessmentMetricSet $assessmentMetricSet
+     * @param \Arbor\Model\AssessmentMetricSet $assessmentMetricSet
      */
-    public function setAssessmentMetricSet(\AssessmentMetricSet $assessmentMetricSet = null)
+    public function setAssessmentMetricSet(\Arbor\Model\AssessmentMetricSet $assessmentMetricSet = null)
     {
         $this->setProperty('assessmentMetricSet', $assessmentMetricSet);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -73,10 +75,11 @@ class AssessmentMetric extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
+
 }

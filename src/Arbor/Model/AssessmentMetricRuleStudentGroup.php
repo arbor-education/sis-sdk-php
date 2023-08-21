@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentMetricRuleStudentGroup extends \ModelBase
+class AssessmentMetricRuleStudentGroup extends ModelBase
 {
+
     public const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
 
     public const ACADEMIC_LEVEL = 'academicLevel';
@@ -17,7 +19,7 @@ class AssessmentMetricRuleStudentGroup extends \ModelBase
      * @return AssessmentMetricRuleStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class AssessmentMetricRuleStudentGroup extends \ModelBase
     }
 
     /**
-     * @return AssessmentMetricRule
+     * @return \Arbor\Model\AssessmentMetricRule
      */
     public function getAssessmentMetricRule()
     {
@@ -57,15 +59,15 @@ class AssessmentMetricRuleStudentGroup extends \ModelBase
     }
 
     /**
-     * @param AssessmentMetricRule $assessmentMetricRule
+     * @param \Arbor\Model\AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(\AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(\Arbor\Model\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getAcademicLevel()
     {
@@ -73,10 +75,11 @@ class AssessmentMetricRuleStudentGroup extends \ModelBase
     }
 
     /**
-     * @param AcademicLevel $academicLevel
+     * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(\AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
+
 }

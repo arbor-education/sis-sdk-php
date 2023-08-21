@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InterventionFilter extends \ModelBase
+class InterventionFilter extends ModelBase
 {
+
     public const INTERVENTION = 'intervention';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -29,7 +31,7 @@ class InterventionFilter extends \ModelBase
      * @return InterventionFilter[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class InterventionFilter extends \ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -69,9 +71,9 @@ class InterventionFilter extends \ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -187,4 +189,5 @@ class InterventionFilter extends \ModelBase
     {
         $this->setProperty('isOutcome', $isOutcome);
     }
+
 }

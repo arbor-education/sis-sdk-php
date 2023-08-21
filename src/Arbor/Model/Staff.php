@@ -3,10 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
-use Arbor\Model\UkDfe\QualifiedTeacherRoute;
+use Arbor\Model\ModelBase;
 
-class Staff extends \ModelBase
+class Staff extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const ETHNICITY = 'ethnicity';
@@ -50,7 +51,7 @@ class Staff extends \ModelBase
      * @return Staff[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +83,7 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -90,15 +91,15 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
 
     /**
-     * @return Ethnicity
+     * @return \Arbor\Model\Ethnicity
      */
     public function getEthnicity()
     {
@@ -106,15 +107,15 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @param Ethnicity $ethnicity
+     * @param \Arbor\Model\Ethnicity $ethnicity
      */
-    public function setEthnicity(\Ethnicity $ethnicity = null)
+    public function setEthnicity(\Arbor\Model\Ethnicity $ethnicity = null)
     {
         $this->setProperty('ethnicity', $ethnicity);
     }
 
     /**
-     * @return Religion
+     * @return \Arbor\Model\Religion
      */
     public function getReligion()
     {
@@ -122,9 +123,9 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @param Religion $religion
+     * @param \Arbor\Model\Religion $religion
      */
-    public function setReligion(\Religion $religion = null)
+    public function setReligion(\Arbor\Model\Religion $religion = null)
     {
         $this->setProperty('religion', $religion);
     }
@@ -306,7 +307,7 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @return QualifiedTeacherRoute
+     * @return \Arbor\Model\UkDfe\QualifiedTeacherRoute
      */
     public function getQualifiedTeacherRoute()
     {
@@ -314,9 +315,9 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @param QualifiedTeacherRoute $qualifiedTeacherRoute
+     * @param \Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute
      */
-    public function setQualifiedTeacherRoute(\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
+    public function setQualifiedTeacherRoute(\Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
     {
         $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
     }
@@ -368,4 +369,5 @@ class Staff extends \ModelBase
     {
         $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }
+
 }

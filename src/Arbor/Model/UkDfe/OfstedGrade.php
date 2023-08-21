@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class OfstedGrade extends \ModelBase
+class OfstedGrade extends ModelBase
 {
+
     public const LABEL = 'label';
 
     public const CODE = 'code';
@@ -26,7 +27,7 @@ class OfstedGrade extends \ModelBase
      * @return OfstedGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -136,4 +137,5 @@ class OfstedGrade extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

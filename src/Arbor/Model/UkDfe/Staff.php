@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Staff extends \ModelBase
+class Staff extends ModelBase
 {
+
     public const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
 
     public const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
@@ -32,7 +33,7 @@ class Staff extends \ModelBase
      * @return Staff[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -128,7 +129,7 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @return QualifiedTeacherRoute
+     * @return \Arbor\Model\UkDfe\QualifiedTeacherRoute
      */
     public function getQualifiedTeacherRoute()
     {
@@ -136,9 +137,9 @@ class Staff extends \ModelBase
     }
 
     /**
-     * @param QualifiedTeacherRoute $qualifiedTeacherRoute
+     * @param \Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute
      */
-    public function setQualifiedTeacherRoute(\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
+    public function setQualifiedTeacherRoute(\Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
     {
         $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
     }
@@ -190,4 +191,5 @@ class Staff extends \ModelBase
     {
         $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }
+
 }

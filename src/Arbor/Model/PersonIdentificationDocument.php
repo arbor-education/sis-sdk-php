@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PersonIdentificationDocument extends \ModelBase
+class PersonIdentificationDocument extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const DOCUMENT_TYPE = 'documentType';
@@ -27,7 +29,7 @@ class PersonIdentificationDocument extends \ModelBase
      * @return PersonIdentificationDocument[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +77,7 @@ class PersonIdentificationDocument extends \ModelBase
     }
 
     /**
-     * @return IdentificationDocumentType
+     * @return \Arbor\Model\IdentificationDocumentType
      */
     public function getDocumentType()
     {
@@ -83,9 +85,9 @@ class PersonIdentificationDocument extends \ModelBase
     }
 
     /**
-     * @param IdentificationDocumentType $documentType
+     * @param \Arbor\Model\IdentificationDocumentType $documentType
      */
-    public function setDocumentType(\IdentificationDocumentType $documentType = null)
+    public function setDocumentType(\Arbor\Model\IdentificationDocumentType $documentType = null)
     {
         $this->setProperty('documentType', $documentType);
     }
@@ -155,7 +157,7 @@ class PersonIdentificationDocument extends \ModelBase
     }
 
     /**
-     * @return Country
+     * @return \Arbor\Model\Country
      */
     public function getIssuingCountry()
     {
@@ -163,10 +165,11 @@ class PersonIdentificationDocument extends \ModelBase
     }
 
     /**
-     * @param Country $issuingCountry
+     * @param \Arbor\Model\Country $issuingCountry
      */
-    public function setIssuingCountry(\Country $issuingCountry = null)
+    public function setIssuingCountry(\Arbor\Model\Country $issuingCountry = null)
     {
         $this->setProperty('issuingCountry', $issuingCountry);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InHouseCandidateAccessArrangement extends \ModelBase
+class InHouseCandidateAccessArrangement extends ModelBase
 {
+
     public const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
 
     public const ACCESS_ARRANGEMENT = 'accessArrangement';
@@ -25,7 +27,7 @@ class InHouseCandidateAccessArrangement extends \ModelBase
      * @return InHouseCandidateAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class InHouseCandidateAccessArrangement extends \ModelBase
     }
 
     /**
-     * @return InHouseCandidate
+     * @return \Arbor\Model\InHouseCandidate
      */
     public function getInHouseCandidate()
     {
@@ -65,15 +67,15 @@ class InHouseCandidateAccessArrangement extends \ModelBase
     }
 
     /**
-     * @param InHouseCandidate $inHouseCandidate
+     * @param \Arbor\Model\InHouseCandidate $inHouseCandidate
      */
-    public function setInHouseCandidate(\InHouseCandidate $inHouseCandidate = null)
+    public function setInHouseCandidate(\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
     {
         $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
 
     /**
-     * @return AccessArrangement
+     * @return \Arbor\Model\AccessArrangement
      */
     public function getAccessArrangement()
     {
@@ -81,9 +83,9 @@ class InHouseCandidateAccessArrangement extends \ModelBase
     }
 
     /**
-     * @param AccessArrangement $accessArrangement
+     * @param \Arbor\Model\AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(\AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(\Arbor\Model\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -151,4 +153,5 @@ class InHouseCandidateAccessArrangement extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

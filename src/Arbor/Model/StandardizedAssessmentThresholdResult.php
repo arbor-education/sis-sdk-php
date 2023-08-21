@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessmentThresholdResult extends \ModelBase
+class StandardizedAssessmentThresholdResult extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -27,7 +29,7 @@ class StandardizedAssessmentThresholdResult extends \ModelBase
      * @return StandardizedAssessmentThresholdResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -107,7 +109,7 @@ class StandardizedAssessmentThresholdResult extends \ModelBase
     }
 
     /**
-     * @return StandardizedAssessmentThreshold
+     * @return \Arbor\Model\StandardizedAssessmentThreshold
      */
     public function getStandardizedAssessmentThreshold()
     {
@@ -115,9 +117,10 @@ class StandardizedAssessmentThresholdResult extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentThreshold $standardizedAssessmentThreshold
+     * @param \Arbor\Model\StandardizedAssessmentThreshold
+     * $standardizedAssessmentThreshold
      */
-    public function setStandardizedAssessmentThreshold(\StandardizedAssessmentThreshold $standardizedAssessmentThreshold = null)
+    public function setStandardizedAssessmentThreshold(\Arbor\Model\StandardizedAssessmentThreshold $standardizedAssessmentThreshold = null)
     {
         $this->setProperty('standardizedAssessmentThreshold', $standardizedAssessmentThreshold);
     }
@@ -155,7 +158,7 @@ class StandardizedAssessmentThresholdResult extends \ModelBase
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getGrade()
     {
@@ -163,10 +166,11 @@ class StandardizedAssessmentThresholdResult extends \ModelBase
     }
 
     /**
-     * @param Grade $grade
+     * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(\Grade $grade = null)
+    public function setGrade(\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
+
 }

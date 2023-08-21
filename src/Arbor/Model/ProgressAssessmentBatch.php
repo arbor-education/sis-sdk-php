@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ProgressAssessmentBatch extends \ModelBase
+class ProgressAssessmentBatch extends ModelBase
 {
+
     public const BATCH_NAME = 'batchName';
 
     public const ASSESSMENT = 'assessment';
@@ -35,7 +37,7 @@ class ProgressAssessmentBatch extends \ModelBase
      * @return ProgressAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class ProgressAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -91,15 +93,15 @@ class ProgressAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
 
     /**
-     * @return ProgressMeasurementPeriodSet
+     * @return \Arbor\Model\ProgressMeasurementPeriodSet
      */
     public function getProgressMeasurementPeriodSet()
     {
@@ -107,15 +109,15 @@ class ProgressAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
+     * @param \Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
      */
-    public function setProgressMeasurementPeriodSet(\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
+    public function setProgressMeasurementPeriodSet(\Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
         $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -123,9 +125,9 @@ class ProgressAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -241,4 +243,5 @@ class ProgressAssessmentBatch extends \ModelBase
     {
         $this->setProperty('showCurrentVsPrevious', $showCurrentVsPrevious);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ReportSubscription extends \ModelBase
+class ReportSubscription extends ModelBase
 {
+
     public const REPORT_IDENTIFIER = 'reportIdentifier';
 
     public const SUBSCRIBER = 'subscriber';
@@ -17,7 +19,7 @@ class ReportSubscription extends \ModelBase
      * @return ReportSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class ReportSubscription extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getSubscriber()
     {
@@ -73,10 +75,11 @@ class ReportSubscription extends \ModelBase
     }
 
     /**
-     * @param Staff $subscriber
+     * @param \Arbor\Model\Staff $subscriber
      */
-    public function setSubscriber(\Staff $subscriber = null)
+    public function setSubscriber(\Arbor\Model\Staff $subscriber = null)
     {
         $this->setProperty('subscriber', $subscriber);
     }
+
 }

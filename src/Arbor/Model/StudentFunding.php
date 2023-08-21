@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentFunding extends \ModelBase
+class StudentFunding extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const STUDENT_FUNDING_TYPE = 'studentFundingType';
@@ -23,7 +25,7 @@ class StudentFunding extends \ModelBase
      * @return StudentFunding[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class StudentFunding extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,15 +65,15 @@ class StudentFunding extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return StudentFundingType
+     * @return \Arbor\Model\StudentFundingType
      */
     public function getStudentFundingType()
     {
@@ -79,9 +81,9 @@ class StudentFunding extends \ModelBase
     }
 
     /**
-     * @param StudentFundingType $studentFundingType
+     * @param \Arbor\Model\StudentFundingType $studentFundingType
      */
-    public function setStudentFundingType(\StudentFundingType $studentFundingType = null)
+    public function setStudentFundingType(\Arbor\Model\StudentFundingType $studentFundingType = null)
     {
         $this->setProperty('studentFundingType', $studentFundingType);
     }
@@ -133,4 +135,5 @@ class StudentFunding extends \ModelBase
     {
         $this->setProperty('note', $note);
     }
+
 }

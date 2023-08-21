@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PaymentProviderPayout extends \ModelBase
+class PaymentProviderPayout extends ModelBase
 {
+
     public const BANK_ACCOUNT = 'bankAccount';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -31,7 +33,7 @@ class PaymentProviderPayout extends \ModelBase
      * @return PaymentProviderPayout[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class PaymentProviderPayout extends \ModelBase
     }
 
     /**
-     * @return BankAccount
+     * @return \Arbor\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -71,15 +73,15 @@ class PaymentProviderPayout extends \ModelBase
     }
 
     /**
-     * @param BankAccount $bankAccount
+     * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(\BankAccount $bankAccount = null)
+    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
 
     /**
-     * @return PaymentProvider
+     * @return \Arbor\Model\PaymentProvider
      */
     public function getPaymentProvider()
     {
@@ -87,9 +89,9 @@ class PaymentProviderPayout extends \ModelBase
     }
 
     /**
-     * @param PaymentProvider $paymentProvider
+     * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(\PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -205,4 +207,5 @@ class PaymentProviderPayout extends \ModelBase
     {
         $this->setProperty('payoutSourceType', $payoutSourceType);
     }
+
 }

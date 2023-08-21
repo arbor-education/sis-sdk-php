@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentGuardianRelationship extends \ModelBase
+class StudentGuardianRelationship extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const GUARDIAN = 'guardian';
@@ -33,7 +35,7 @@ class StudentGuardianRelationship extends \ModelBase
      * @return StudentGuardianRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class StudentGuardianRelationship extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -73,15 +75,15 @@ class StudentGuardianRelationship extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Guardian
+     * @return \Arbor\Model\Guardian
      */
     public function getGuardian()
     {
@@ -89,15 +91,15 @@ class StudentGuardianRelationship extends \ModelBase
     }
 
     /**
-     * @param Guardian $guardian
+     * @param \Arbor\Model\Guardian $guardian
      */
-    public function setGuardian(\Guardian $guardian = null)
+    public function setGuardian(\Arbor\Model\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }
 
     /**
-     * @return GuardianRelationshipType
+     * @return \Arbor\Model\GuardianRelationshipType
      */
     public function getGuardianRelationshipType()
     {
@@ -105,9 +107,9 @@ class StudentGuardianRelationship extends \ModelBase
     }
 
     /**
-     * @param GuardianRelationshipType $guardianRelationshipType
+     * @param \Arbor\Model\GuardianRelationshipType $guardianRelationshipType
      */
-    public function setGuardianRelationshipType(\GuardianRelationshipType $guardianRelationshipType = null)
+    public function setGuardianRelationshipType(\Arbor\Model\GuardianRelationshipType $guardianRelationshipType = null)
     {
         $this->setProperty('guardianRelationshipType', $guardianRelationshipType);
     }
@@ -223,4 +225,5 @@ class StudentGuardianRelationship extends \ModelBase
     {
         $this->setProperty('accessNotes', $accessNotes);
     }
+
 }

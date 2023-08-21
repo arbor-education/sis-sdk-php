@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentAdHocAssessmentMark extends \ModelBase
+class StudentAdHocAssessmentMark extends ModelBase
 {
+
     public const AD_HOC_ASSESSMENT_BATCH = 'adHocAssessmentBatch';
 
     public const STUDENT = 'student';
@@ -39,7 +41,7 @@ class StudentAdHocAssessmentMark extends \ModelBase
      * @return StudentAdHocAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +73,7 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return AdHocAssessmentBatch
+     * @return \Arbor\Model\AdHocAssessmentBatch
      */
     public function getAdHocAssessmentBatch()
     {
@@ -79,15 +81,15 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param AdHocAssessmentBatch $adHocAssessmentBatch
+     * @param \Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch
      */
-    public function setAdHocAssessmentBatch(\AdHocAssessmentBatch $adHocAssessmentBatch = null)
+    public function setAdHocAssessmentBatch(\Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch = null)
     {
         $this->setProperty('adHocAssessmentBatch', $adHocAssessmentBatch);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -95,15 +97,15 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return AdHocAssessment
+     * @return \Arbor\Model\AdHocAssessment
      */
     public function getAdHocAssessment()
     {
@@ -111,9 +113,9 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param AdHocAssessment $adHocAssessment
+     * @param \Arbor\Model\AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(\AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(\Arbor\Model\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -151,7 +153,7 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getGrade()
     {
@@ -159,9 +161,9 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Grade $grade
+     * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(\Grade $grade = null)
+    public function setGrade(\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -183,7 +185,7 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return AssessmentMarkNonSubmissionReason
+     * @return \Arbor\Model\AssessmentMarkNonSubmissionReason
      */
     public function getAssessmentMarkNonSubmissionReason()
     {
@@ -191,15 +193,16 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason
+     * @param \Arbor\Model\AssessmentMarkNonSubmissionReason
+     * $assessmentMarkNonSubmissionReason
      */
-    public function setAssessmentMarkNonSubmissionReason(\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    public function setAssessmentMarkNonSubmissionReason(\Arbor\Model\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
     {
         $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getMarkingStaff()
     {
@@ -207,9 +210,9 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Staff $markingStaff
+     * @param \Arbor\Model\Staff $markingStaff
      */
-    public function setMarkingStaff(\Staff $markingStaff = null)
+    public function setMarkingStaff(\Arbor\Model\Staff $markingStaff = null)
     {
         $this->setProperty('markingStaff', $markingStaff);
     }
@@ -231,7 +234,7 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getCompletedStaff()
     {
@@ -239,9 +242,9 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Staff $completedStaff
+     * @param \Arbor\Model\Staff $completedStaff
      */
-    public function setCompletedStaff(\Staff $completedStaff = null)
+    public function setCompletedStaff(\Arbor\Model\Staff $completedStaff = null)
     {
         $this->setProperty('completedStaff', $completedStaff);
     }
@@ -263,7 +266,7 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedStaff()
     {
@@ -271,10 +274,11 @@ class StudentAdHocAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Staff $approvedStaff
+     * @param \Arbor\Model\Staff $approvedStaff
      */
-    public function setApprovedStaff(\Staff $approvedStaff = null)
+    public function setApprovedStaff(\Arbor\Model\Staff $approvedStaff = null)
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentFrameworkAssessment extends \ModelBase
+class AssessmentFrameworkAssessment extends ModelBase
 {
+
     public const ASSESSMENT = 'assessment';
 
     public const STEPS_COMPLETED = 'stepsCompleted';
@@ -19,7 +21,7 @@ class AssessmentFrameworkAssessment extends \ModelBase
      * @return AssessmentFrameworkAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class AssessmentFrameworkAssessment extends \ModelBase
     {
         $this->setProperty('setupCompleted', $setupCompleted);
     }
+
 }

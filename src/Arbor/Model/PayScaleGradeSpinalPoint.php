@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PayScaleGradeSpinalPoint extends \ModelBase
+class PayScaleGradeSpinalPoint extends ModelBase
 {
+
     public const PAY_SCALE_GRADE = 'payScaleGrade';
 
     public const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
@@ -17,7 +19,7 @@ class PayScaleGradeSpinalPoint extends \ModelBase
      * @return PayScaleGradeSpinalPoint[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class PayScaleGradeSpinalPoint extends \ModelBase
     }
 
     /**
-     * @return PayScaleGrade
+     * @return \Arbor\Model\PayScaleGrade
      */
     public function getPayScaleGrade()
     {
@@ -57,15 +59,15 @@ class PayScaleGradeSpinalPoint extends \ModelBase
     }
 
     /**
-     * @param PayScaleGrade $payScaleGrade
+     * @param \Arbor\Model\PayScaleGrade $payScaleGrade
      */
-    public function setPayScaleGrade(\PayScaleGrade $payScaleGrade = null)
+    public function setPayScaleGrade(\Arbor\Model\PayScaleGrade $payScaleGrade = null)
     {
         $this->setProperty('payScaleGrade', $payScaleGrade);
     }
 
     /**
-     * @return PayScaleSpinalPoint
+     * @return \Arbor\Model\PayScaleSpinalPoint
      */
     public function getPayScaleSpinalPoint()
     {
@@ -73,10 +75,11 @@ class PayScaleGradeSpinalPoint extends \ModelBase
     }
 
     /**
-     * @param PayScaleSpinalPoint $payScaleSpinalPoint
+     * @param \Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint
      */
-    public function setPayScaleSpinalPoint(\PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    public function setPayScaleSpinalPoint(\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
+
 }

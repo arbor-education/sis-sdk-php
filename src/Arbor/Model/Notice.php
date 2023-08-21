@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Notice extends \ModelBase
+class Notice extends ModelBase
 {
+
     public const NOTICE_HTML = 'noticeHtml';
 
     public const NOTICE_DATETIME = 'noticeDatetime';
@@ -19,7 +21,7 @@ class Notice extends \ModelBase
      * @return Notice[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class Notice extends \ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
+
 }

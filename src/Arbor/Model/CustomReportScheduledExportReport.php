@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomReportScheduledExportReport extends \ModelBase
+class CustomReportScheduledExportReport extends ModelBase
 {
+
     public const CUSTOM_REPORT_SCHEDULED_EXPORT = 'customReportScheduledExport';
 
     public const CUSTOM_REPORT = 'customReport';
@@ -21,7 +23,7 @@ class CustomReportScheduledExportReport extends \ModelBase
      * @return CustomReportScheduledExportReport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class CustomReportScheduledExportReport extends \ModelBase
     }
 
     /**
-     * @return CustomReportScheduledExport
+     * @return \Arbor\Model\CustomReportScheduledExport
      */
     public function getCustomReportScheduledExport()
     {
@@ -61,15 +63,15 @@ class CustomReportScheduledExportReport extends \ModelBase
     }
 
     /**
-     * @param CustomReportScheduledExport $customReportScheduledExport
+     * @param \Arbor\Model\CustomReportScheduledExport $customReportScheduledExport
      */
-    public function setCustomReportScheduledExport(\CustomReportScheduledExport $customReportScheduledExport = null)
+    public function setCustomReportScheduledExport(\Arbor\Model\CustomReportScheduledExport $customReportScheduledExport = null)
     {
         $this->setProperty('customReportScheduledExport', $customReportScheduledExport);
     }
 
     /**
-     * @return CustomReport
+     * @return \Arbor\Model\CustomReport
      */
     public function getCustomReport()
     {
@@ -77,9 +79,9 @@ class CustomReportScheduledExportReport extends \ModelBase
     }
 
     /**
-     * @param CustomReport $customReport
+     * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\CustomReport $customReport = null)
+    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -115,4 +117,5 @@ class CustomReportScheduledExportReport extends \ModelBase
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }
+
 }

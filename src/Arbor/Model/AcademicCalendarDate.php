@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicCalendarDate extends \ModelBase
+class AcademicCalendarDate extends ModelBase
 {
+
     public const START_DATE = 'startDate';
 
     public const END_DATE = 'endDate';
@@ -51,7 +53,7 @@ class AcademicCalendarDate extends \ModelBase
      * @return AcademicCalendarDate[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -227,7 +229,7 @@ class AcademicCalendarDate extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -235,15 +237,15 @@ class AcademicCalendarDate extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return Term
+     * @return \Arbor\Model\Term
      */
     public function getTerm()
     {
@@ -251,9 +253,9 @@ class AcademicCalendarDate extends \ModelBase
     }
 
     /**
-     * @param Term $term
+     * @param \Arbor\Model\Term $term
      */
-    public function setTerm(\Term $term = null)
+    public function setTerm(\Arbor\Model\Term $term = null)
     {
         $this->setProperty('term', $term);
     }
@@ -307,7 +309,7 @@ class AcademicCalendarDate extends \ModelBase
     }
 
     /**
-     * @return AcademicHoliday
+     * @return \Arbor\Model\AcademicHoliday
      */
     public function getAcademicHoliday()
     {
@@ -315,9 +317,9 @@ class AcademicCalendarDate extends \ModelBase
     }
 
     /**
-     * @param AcademicHoliday $academicHoliday
+     * @param \Arbor\Model\AcademicHoliday $academicHoliday
      */
-    public function setAcademicHoliday(\AcademicHoliday $academicHoliday = null)
+    public function setAcademicHoliday(\Arbor\Model\AcademicHoliday $academicHoliday = null)
     {
         $this->setProperty('academicHoliday', $academicHoliday);
     }
@@ -385,4 +387,5 @@ class AcademicCalendarDate extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

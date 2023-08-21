@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicYear extends \ModelBase
+class AcademicYear extends ModelBase
 {
+
     public const ACADEMIC_YEAR_NAME = 'academicYearName';
 
     public const CODE = 'code';
@@ -23,7 +25,7 @@ class AcademicYear extends \ModelBase
      * @return AcademicYear[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class AcademicYear extends \ModelBase
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }
+
 }

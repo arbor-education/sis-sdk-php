@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SchoolEvent extends \ModelBase
+class SchoolEvent extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -33,7 +35,7 @@ class SchoolEvent extends \ModelBase
      * @return SchoolEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -129,7 +131,7 @@ class SchoolEvent extends \ModelBase
     }
 
     /**
-     * @return SchoolEventType
+     * @return \Arbor\Model\SchoolEventType
      */
     public function getSchoolEventType()
     {
@@ -137,15 +139,15 @@ class SchoolEvent extends \ModelBase
     }
 
     /**
-     * @param SchoolEventType $schoolEventType
+     * @param \Arbor\Model\SchoolEventType $schoolEventType
      */
-    public function setSchoolEventType(\SchoolEventType $schoolEventType = null)
+    public function setSchoolEventType(\Arbor\Model\SchoolEventType $schoolEventType = null)
     {
         $this->setProperty('schoolEventType', $schoolEventType);
     }
 
     /**
-     * @return RepeatingSchoolEvent
+     * @return \Arbor\Model\RepeatingSchoolEvent
      */
     public function getRepeatingSchoolEvent()
     {
@@ -153,9 +155,9 @@ class SchoolEvent extends \ModelBase
     }
 
     /**
-     * @param RepeatingSchoolEvent $repeatingSchoolEvent
+     * @param \Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent
      */
-    public function setRepeatingSchoolEvent(\RepeatingSchoolEvent $repeatingSchoolEvent = null)
+    public function setRepeatingSchoolEvent(\Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent = null)
     {
         $this->setProperty('repeatingSchoolEvent', $repeatingSchoolEvent);
     }
@@ -177,7 +179,7 @@ class SchoolEvent extends \ModelBase
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -185,9 +187,9 @@ class SchoolEvent extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -223,4 +225,5 @@ class SchoolEvent extends \ModelBase
     {
         $this->setProperty('coverRequired', $coverRequired);
     }
+
 }

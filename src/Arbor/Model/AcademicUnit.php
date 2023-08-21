@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicUnit extends \ModelBase
+class AcademicUnit extends ModelBase
 {
+
     public const UNIQUE_IDENTIFIER = 'uniqueIdentifier';
 
     public const PARENT_ACADEMIC_UNIT = 'parentAcademicUnit';
@@ -67,7 +69,7 @@ class AcademicUnit extends \ModelBase
      * @return AcademicUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,7 +117,7 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getParentAcademicUnit()
     {
@@ -123,15 +125,15 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $parentAcademicUnit
+     * @param \Arbor\Model\AcademicUnit $parentAcademicUnit
      */
-    public function setParentAcademicUnit(\AcademicUnit $parentAcademicUnit = null)
+    public function setParentAcademicUnit(\Arbor\Model\AcademicUnit $parentAcademicUnit = null)
     {
         $this->setProperty('parentAcademicUnit', $parentAcademicUnit);
     }
 
     /**
-     * @return AcademicProgrammeInstance
+     * @return \Arbor\Model\AcademicProgrammeInstance
      */
     public function getAcademicProgrammeInstance()
     {
@@ -139,9 +141,9 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicProgrammeInstance $academicProgrammeInstance
+     * @param \Arbor\Model\AcademicProgrammeInstance $academicProgrammeInstance
      */
-    public function setAcademicProgrammeInstance(\AcademicProgrammeInstance $academicProgrammeInstance = null)
+    public function setAcademicProgrammeInstance(\Arbor\Model\AcademicProgrammeInstance $academicProgrammeInstance = null)
     {
         $this->setProperty('academicProgrammeInstance', $academicProgrammeInstance);
     }
@@ -243,7 +245,7 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -251,15 +253,15 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getPromotedToAcademicUnit()
     {
@@ -267,9 +269,9 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $promotedToAcademicUnit
+     * @param \Arbor\Model\AcademicUnit $promotedToAcademicUnit
      */
-    public function setPromotedToAcademicUnit(\AcademicUnit $promotedToAcademicUnit = null)
+    public function setPromotedToAcademicUnit(\Arbor\Model\AcademicUnit $promotedToAcademicUnit = null)
     {
         $this->setProperty('promotedToAcademicUnit', $promotedToAcademicUnit);
     }
@@ -291,7 +293,7 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getCopiedToAcademicUnit()
     {
@@ -299,9 +301,9 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $copiedToAcademicUnit
+     * @param \Arbor\Model\AcademicUnit $copiedToAcademicUnit
      */
-    public function setCopiedToAcademicUnit(\AcademicUnit $copiedToAcademicUnit = null)
+    public function setCopiedToAcademicUnit(\Arbor\Model\AcademicUnit $copiedToAcademicUnit = null)
     {
         $this->setProperty('copiedToAcademicUnit', $copiedToAcademicUnit);
     }
@@ -339,7 +341,7 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @return Faculty
+     * @return \Arbor\Model\Faculty
      */
     public function getFaculty()
     {
@@ -347,9 +349,9 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param Faculty $faculty
+     * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Faculty $faculty = null)
+    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -403,7 +405,7 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -411,15 +413,15 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getAcademicLevel()
     {
@@ -427,15 +429,15 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicLevel $academicLevel
+     * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(\AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getRegistrationForm()
     {
@@ -443,9 +445,9 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param RegistrationForm $registrationForm
+     * @param \Arbor\Model\RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(\RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(\Arbor\Model\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
@@ -483,7 +485,7 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -491,9 +493,9 @@ class AcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -545,4 +547,5 @@ class AcademicUnit extends \ModelBase
     {
         return $this->getCollectionProperty('timetableSlots');
     }
+
 }

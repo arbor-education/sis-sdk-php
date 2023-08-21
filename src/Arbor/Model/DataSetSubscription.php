@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DataSetSubscription extends \ModelBase
+class DataSetSubscription extends ModelBase
 {
+
     public const DATA_SET_NAME = 'dataSetName';
 
     public const DATA_SET_IDENTIFIER = 'dataSetIdentifier';
@@ -25,7 +27,7 @@ class DataSetSubscription extends \ModelBase
      * @return DataSetSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -151,4 +153,5 @@ class DataSetSubscription extends \ModelBase
     {
         $this->setProperty('lastUpdatedDatetime', $lastUpdatedDatetime);
     }
+
 }

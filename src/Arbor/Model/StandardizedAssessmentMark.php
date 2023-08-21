@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessmentMark extends \ModelBase
+class StandardizedAssessmentMark extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const STANDARDIZED_ASSESSMENT_ASPECT = 'standardizedAssessmentAspect';
@@ -29,7 +31,7 @@ class StandardizedAssessmentMark extends \ModelBase
      * @return StandardizedAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class StandardizedAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +71,15 @@ class StandardizedAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return StandardizedAssessmentAspect
+     * @return \Arbor\Model\StandardizedAssessmentAspect
      */
     public function getStandardizedAssessmentAspect()
     {
@@ -85,15 +87,15 @@ class StandardizedAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentAspect $standardizedAssessmentAspect
+     * @param \Arbor\Model\StandardizedAssessmentAspect $standardizedAssessmentAspect
      */
-    public function setStandardizedAssessmentAspect(\StandardizedAssessmentAspect $standardizedAssessmentAspect = null)
+    public function setStandardizedAssessmentAspect(\Arbor\Model\StandardizedAssessmentAspect $standardizedAssessmentAspect = null)
     {
         $this->setProperty('standardizedAssessmentAspect', $standardizedAssessmentAspect);
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getMarkGrade()
     {
@@ -101,9 +103,9 @@ class StandardizedAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param Grade $markGrade
+     * @param \Arbor\Model\Grade $markGrade
      */
-    public function setMarkGrade(\Grade $markGrade = null)
+    public function setMarkGrade(\Arbor\Model\Grade $markGrade = null)
     {
         $this->setProperty('markGrade', $markGrade);
     }
@@ -173,7 +175,7 @@ class StandardizedAssessmentMark extends \ModelBase
     }
 
     /**
-     * @return AssessmentImportItem
+     * @return \Arbor\Model\AssessmentImportItem
      */
     public function getAssessmentImportItem()
     {
@@ -181,10 +183,11 @@ class StandardizedAssessmentMark extends \ModelBase
     }
 
     /**
-     * @param AssessmentImportItem $assessmentImportItem
+     * @param \Arbor\Model\AssessmentImportItem $assessmentImportItem
      */
-    public function setAssessmentImportItem(\AssessmentImportItem $assessmentImportItem = null)
+    public function setAssessmentImportItem(\Arbor\Model\AssessmentImportItem $assessmentImportItem = null)
     {
         $this->setProperty('assessmentImportItem', $assessmentImportItem);
     }
+
 }

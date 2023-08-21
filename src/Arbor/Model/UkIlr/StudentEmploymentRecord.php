@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\StudentEmploymentRecord;
 
-class StudentEmploymentRecord extends \ModelBase
+class StudentEmploymentRecord extends ModelBase
 {
+
     public const BSI1 = 'bsi1';
 
     public const BSI2 = 'bsi2';
@@ -29,7 +29,7 @@ class StudentEmploymentRecord extends \ModelBase
      * @return StudentEmploymentRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -141,7 +141,7 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @return StudentEmploymentRecord
+     * @return \Arbor\Model\StudentEmploymentRecord
      */
     public function getMadeRedundantStudentEmploymentRecord()
     {
@@ -149,10 +149,12 @@ class StudentEmploymentRecord extends \ModelBase
     }
 
     /**
-     * @param StudentEmploymentRecord $madeRedundantStudentEmploymentRecord
+     * @param \Arbor\Model\StudentEmploymentRecord
+     * $madeRedundantStudentEmploymentRecord
      */
-    public function setMadeRedundantStudentEmploymentRecord(\StudentEmploymentRecord $madeRedundantStudentEmploymentRecord = null)
+    public function setMadeRedundantStudentEmploymentRecord(\Arbor\Model\StudentEmploymentRecord $madeRedundantStudentEmploymentRecord = null)
     {
         $this->setProperty('madeRedundantStudentEmploymentRecord', $madeRedundantStudentEmploymentRecord);
     }
+
 }

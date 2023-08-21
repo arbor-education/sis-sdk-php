@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffAttendanceMark extends \ModelBase
+class StaffAttendanceMark extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -47,7 +49,7 @@ class StaffAttendanceMark extends \ModelBase
      * @return StaffAttendanceMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -349,4 +351,5 @@ class StaffAttendanceMark extends \ModelBase
     {
         $this->setProperty('isPhysicalNotRequired', $isPhysicalNotRequired);
     }
+
 }

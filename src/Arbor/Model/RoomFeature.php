@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class RoomFeature extends \ModelBase
+class RoomFeature extends ModelBase
 {
+
     public const ROOM_FEATURE_NAME = 'roomFeatureName';
 
     public const ASSIGN_TO_PEOPLE = 'assignToPeople';
@@ -17,7 +19,7 @@ class RoomFeature extends \ModelBase
      * @return RoomFeature[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class RoomFeature extends \ModelBase
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }
+
 }

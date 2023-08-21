@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OutboundInAppMessage extends \ModelBase
+class OutboundInAppMessage extends ModelBase
 {
+
     public const SENDER = 'sender';
 
     public const RECIPIENT = 'recipient';
@@ -29,7 +31,7 @@ class OutboundInAppMessage extends \ModelBase
      * @return OutboundInAppMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -125,7 +127,7 @@ class OutboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @return OutboundInAppMessageDraft
+     * @return \Arbor\Model\OutboundInAppMessageDraft
      */
     public function getOutboundInAppMessageDraft()
     {
@@ -133,9 +135,9 @@ class OutboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @param OutboundInAppMessageDraft $outboundInAppMessageDraft
+     * @param \Arbor\Model\OutboundInAppMessageDraft $outboundInAppMessageDraft
      */
-    public function setOutboundInAppMessageDraft(\OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
+    public function setOutboundInAppMessageDraft(\Arbor\Model\OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
     {
         $this->setProperty('outboundInAppMessageDraft', $outboundInAppMessageDraft);
     }
@@ -173,7 +175,7 @@ class OutboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @return InboundInAppMessage
+     * @return \Arbor\Model\InboundInAppMessage
      */
     public function getInboundInAppMessageRepliedTo()
     {
@@ -181,10 +183,11 @@ class OutboundInAppMessage extends \ModelBase
     }
 
     /**
-     * @param InboundInAppMessage $inboundInAppMessageRepliedTo
+     * @param \Arbor\Model\InboundInAppMessage $inboundInAppMessageRepliedTo
      */
-    public function setInboundInAppMessageRepliedTo(\InboundInAppMessage $inboundInAppMessageRepliedTo = null)
+    public function setInboundInAppMessageRepliedTo(\Arbor\Model\InboundInAppMessage $inboundInAppMessageRepliedTo = null)
     {
         $this->setProperty('inboundInAppMessageRepliedTo', $inboundInAppMessageRepliedTo);
     }
+
 }

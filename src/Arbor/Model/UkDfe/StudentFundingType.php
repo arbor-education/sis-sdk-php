@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class StudentFundingType extends \ModelBase
+class StudentFundingType extends ModelBase
 {
+
     public const D00209 = 'd00209';
 
     protected $_resourceType = ResourceType::UK_DFE_STUDENT_FUNDING_TYPE;
@@ -18,7 +19,7 @@ class StudentFundingType extends \ModelBase
      * @return StudentFundingType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,4 +65,5 @@ class StudentFundingType extends \ModelBase
     {
         $this->setProperty('d00209', $d00209);
     }
+
 }

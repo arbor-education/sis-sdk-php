@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InsightReport extends \ModelBase
+class InsightReport extends ModelBase
 {
+
     public const REPORT_TYPE = 'reportType';
 
     public const SUB_REPORT_TYPE = 'subReportType';
@@ -27,7 +29,7 @@ class InsightReport extends \ModelBase
      * @return InsightReport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -155,7 +157,7 @@ class InsightReport extends \ModelBase
     }
 
     /**
-     * @return File
+     * @return \Arbor\Model\File
      */
     public function getReportFile()
     {
@@ -163,10 +165,11 @@ class InsightReport extends \ModelBase
     }
 
     /**
-     * @param File $reportFile
+     * @param \Arbor\Model\File $reportFile
      */
-    public function setReportFile(\File $reportFile = null)
+    public function setReportFile(\Arbor\Model\File $reportFile = null)
     {
         $this->setProperty('reportFile', $reportFile);
     }
+
 }

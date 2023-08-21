@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class UcasImport extends \ModelBase
+class UcasImport extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const FILE_DATE = 'fileDate';
@@ -20,7 +21,7 @@ class UcasImport extends \ModelBase
      * @return UcasImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,4 +83,5 @@ class UcasImport extends \ModelBase
     {
         $this->setProperty('fileDate', $fileDate);
     }
+
 }

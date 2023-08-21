@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UserDefinedFieldPermission extends \ModelBase
+class UserDefinedFieldPermission extends ModelBase
 {
+
     public const USER_DEFINED_FIELD = 'userDefinedField';
 
     public const IDENTIFIER = 'identifier';
@@ -21,7 +23,7 @@ class UserDefinedFieldPermission extends \ModelBase
      * @return UserDefinedFieldPermission[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class UserDefinedFieldPermission extends \ModelBase
     }
 
     /**
-     * @return UserDefinedField
+     * @return \Arbor\Model\UserDefinedField
      */
     public function getUserDefinedField()
     {
@@ -61,9 +63,9 @@ class UserDefinedFieldPermission extends \ModelBase
     }
 
     /**
-     * @param UserDefinedField $userDefinedField
+     * @param \Arbor\Model\UserDefinedField $userDefinedField
      */
-    public function setUserDefinedField(\UserDefinedField $userDefinedField = null)
+    public function setUserDefinedField(\Arbor\Model\UserDefinedField $userDefinedField = null)
     {
         $this->setProperty('userDefinedField', $userDefinedField);
     }
@@ -115,4 +117,5 @@ class UserDefinedFieldPermission extends \ModelBase
     {
         $this->setProperty('active', $active);
     }
+
 }

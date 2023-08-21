@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IntegrationVleProvider extends \ModelBase
+class IntegrationVleProvider extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const CONFIGURATION = 'configuration';
@@ -21,7 +23,7 @@ class IntegrationVleProvider extends \ModelBase
      * @return IntegrationVleProvider[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class IntegrationVleProvider extends \ModelBase
     {
         $this->setProperty('code', $code);
     }
+
 }

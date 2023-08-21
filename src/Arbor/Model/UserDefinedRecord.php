@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UserDefinedRecord extends \ModelBase
+class UserDefinedRecord extends ModelBase
 {
+
     public const ENTITY = 'entity';
 
     public const USER_DEFINED_FIELD = 'userDefinedField';
@@ -19,7 +21,7 @@ class UserDefinedRecord extends \ModelBase
      * @return UserDefinedRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class UserDefinedRecord extends \ModelBase
     }
 
     /**
-     * @return UserDefinedField
+     * @return \Arbor\Model\UserDefinedField
      */
     public function getUserDefinedField()
     {
@@ -75,9 +77,9 @@ class UserDefinedRecord extends \ModelBase
     }
 
     /**
-     * @param UserDefinedField $userDefinedField
+     * @param \Arbor\Model\UserDefinedField $userDefinedField
      */
-    public function setUserDefinedField(\UserDefinedField $userDefinedField = null)
+    public function setUserDefinedField(\Arbor\Model\UserDefinedField $userDefinedField = null)
     {
         $this->setProperty('userDefinedField', $userDefinedField);
     }
@@ -97,4 +99,5 @@ class UserDefinedRecord extends \ModelBase
     {
         $this->setProperty('value', $value);
     }
+
 }

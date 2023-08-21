@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DataSharingRequest extends \ModelBase
+class DataSharingRequest extends ModelBase
 {
+
     public const GROUP_APPLICATION_ID = 'groupApplicationId';
 
     public const PERMISSION_LEVEL = 'permissionLevel';
@@ -25,7 +27,7 @@ class DataSharingRequest extends \ModelBase
      * @return DataSharingRequest[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -121,7 +123,7 @@ class DataSharingRequest extends \ModelBase
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getStatusUpdatedByUser()
     {
@@ -129,9 +131,9 @@ class DataSharingRequest extends \ModelBase
     }
 
     /**
-     * @param User $statusUpdatedByUser
+     * @param \Arbor\Model\User $statusUpdatedByUser
      */
-    public function setStatusUpdatedByUser(\User $statusUpdatedByUser = null)
+    public function setStatusUpdatedByUser(\Arbor\Model\User $statusUpdatedByUser = null)
     {
         $this->setProperty('statusUpdatedByUser', $statusUpdatedByUser);
     }
@@ -151,4 +153,5 @@ class DataSharingRequest extends \ModelBase
     {
         $this->setProperty('statusUpdatedDatetime', $statusUpdatedDatetime);
     }
+
 }

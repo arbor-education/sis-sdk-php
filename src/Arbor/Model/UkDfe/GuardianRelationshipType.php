@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class GuardianRelationshipType extends \ModelBase
+class GuardianRelationshipType extends ModelBase
 {
+
     public const D00033 = 'd00033';
 
     public const D00034 = 'd00034';
@@ -22,7 +23,7 @@ class GuardianRelationshipType extends \ModelBase
      * @return GuardianRelationshipType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,4 +101,5 @@ class GuardianRelationshipType extends \ModelBase
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }
+
 }

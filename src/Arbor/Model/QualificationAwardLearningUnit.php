@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationAwardLearningUnit extends \ModelBase
+class QualificationAwardLearningUnit extends ModelBase
 {
+
     public const QUALIFICATION_AWARD = 'qualificationAward';
 
     public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
@@ -19,7 +21,7 @@ class QualificationAwardLearningUnit extends \ModelBase
      * @return QualificationAwardLearningUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class QualificationAwardLearningUnit extends \ModelBase
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getQualificationAward()
     {
@@ -59,15 +61,15 @@ class QualificationAwardLearningUnit extends \ModelBase
     }
 
     /**
-     * @param QualificationAward $qualificationAward
+     * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(\QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
 
     /**
-     * @return QualificationLearningUnit
+     * @return \Arbor\Model\QualificationLearningUnit
      */
     public function getQualificationLearningUnit()
     {
@@ -75,9 +77,9 @@ class QualificationAwardLearningUnit extends \ModelBase
     }
 
     /**
-     * @param QualificationLearningUnit $qualificationLearningUnit
+     * @param \Arbor\Model\QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -97,4 +99,5 @@ class QualificationAwardLearningUnit extends \ModelBase
     {
         $this->setProperty('isUserDefined', $isUserDefined);
     }
+
 }

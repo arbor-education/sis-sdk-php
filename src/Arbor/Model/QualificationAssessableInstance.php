@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationAssessableInstance extends \ModelBase
+class QualificationAssessableInstance extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -37,7 +39,7 @@ class QualificationAssessableInstance extends \ModelBase
      * @return QualificationAssessableInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -117,7 +119,7 @@ class QualificationAssessableInstance extends \ModelBase
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getQualificationAssessable()
     {
@@ -125,15 +127,15 @@ class QualificationAssessableInstance extends \ModelBase
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
 
     /**
-     * @return QualificationAvailabilityInstance
+     * @return \Arbor\Model\QualificationAvailabilityInstance
      */
     public function getQualificationAvailabilityInstance()
     {
@@ -141,15 +143,16 @@ class QualificationAssessableInstance extends \ModelBase
     }
 
     /**
-     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     * @param \Arbor\Model\QualificationAvailabilityInstance
+     * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
-     * @return QualificationTimetableSessionType
+     * @return \Arbor\Model\QualificationTimetableSessionType
      */
     public function getQualificationTimetableSessionType()
     {
@@ -157,9 +160,10 @@ class QualificationAssessableInstance extends \ModelBase
     }
 
     /**
-     * @param QualificationTimetableSessionType $qualificationTimetableSessionType
+     * @param \Arbor\Model\QualificationTimetableSessionType
+     * $qualificationTimetableSessionType
      */
-    public function setQualificationTimetableSessionType(\QualificationTimetableSessionType $qualificationTimetableSessionType = null)
+    public function setQualificationTimetableSessionType(\Arbor\Model\QualificationTimetableSessionType $qualificationTimetableSessionType = null)
     {
         $this->setProperty('qualificationTimetableSessionType', $qualificationTimetableSessionType);
     }
@@ -259,4 +263,5 @@ class QualificationAssessableInstance extends \ModelBase
     {
         $this->setProperty('isProvisional', $isProvisional);
     }
+
 }

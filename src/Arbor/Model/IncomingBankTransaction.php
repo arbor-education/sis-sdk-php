@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IncomingBankTransaction extends \ModelBase
+class IncomingBankTransaction extends ModelBase
 {
+
     public const BILL_PAYER = 'billPayer';
 
     public const RECEIVED_DATE = 'receivedDate';
@@ -21,7 +23,7 @@ class IncomingBankTransaction extends \ModelBase
      * @return IncomingBankTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class IncomingBankTransaction extends \ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -61,9 +63,9 @@ class IncomingBankTransaction extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -115,4 +117,5 @@ class IncomingBankTransaction extends \ModelBase
     {
         $this->setProperty('payment', $payment);
     }
+
 }

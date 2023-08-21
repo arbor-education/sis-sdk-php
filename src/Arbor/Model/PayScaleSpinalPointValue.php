@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PayScaleSpinalPointValue extends \ModelBase
+class PayScaleSpinalPointValue extends ModelBase
 {
+
     public const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -21,7 +23,7 @@ class PayScaleSpinalPointValue extends \ModelBase
      * @return PayScaleSpinalPointValue[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class PayScaleSpinalPointValue extends \ModelBase
     }
 
     /**
-     * @return PayScaleSpinalPoint
+     * @return \Arbor\Model\PayScaleSpinalPoint
      */
     public function getPayScaleSpinalPoint()
     {
@@ -61,9 +63,9 @@ class PayScaleSpinalPointValue extends \ModelBase
     }
 
     /**
-     * @param PayScaleSpinalPoint $payScaleSpinalPoint
+     * @param \Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint
      */
-    public function setPayScaleSpinalPoint(\PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    public function setPayScaleSpinalPoint(\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
@@ -115,4 +117,5 @@ class PayScaleSpinalPointValue extends \ModelBase
     {
         $this->setProperty('grossSalary', $grossSalary);
     }
+
 }

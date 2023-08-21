@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class UnenrolmentReason extends \ModelBase
+class UnenrolmentReason extends ModelBase
 {
+
     public const D00206 = 'd00206';
 
     protected $_resourceType = ResourceType::UK_DFE_UNENROLMENT_REASON;
@@ -18,7 +19,7 @@ class UnenrolmentReason extends \ModelBase
      * @return UnenrolmentReason[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,4 +65,5 @@ class UnenrolmentReason extends \ModelBase
     {
         $this->setProperty('d00206', $d00206);
     }
+
 }

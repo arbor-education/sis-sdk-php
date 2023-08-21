@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateProposal extends \ModelBase
+class CandidateProposal extends ModelBase
 {
+
     public const CANDIDATE = 'candidate';
 
     public const SUGGESTED_BY_STAFF = 'suggestedByStaff';
@@ -19,7 +21,7 @@ class CandidateProposal extends \ModelBase
      * @return CandidateProposal[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class CandidateProposal extends \ModelBase
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidate()
     {
@@ -59,15 +61,15 @@ class CandidateProposal extends \ModelBase
     }
 
     /**
-     * @param Candidate $candidate
+     * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Candidate $candidate = null)
+    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getSuggestedByStaff()
     {
@@ -75,9 +77,9 @@ class CandidateProposal extends \ModelBase
     }
 
     /**
-     * @param Staff $suggestedByStaff
+     * @param \Arbor\Model\Staff $suggestedByStaff
      */
-    public function setSuggestedByStaff(\Staff $suggestedByStaff = null)
+    public function setSuggestedByStaff(\Arbor\Model\Staff $suggestedByStaff = null)
     {
         $this->setProperty('suggestedByStaff', $suggestedByStaff);
     }
@@ -97,4 +99,5 @@ class CandidateProposal extends \ModelBase
     {
         $this->setProperty('suggestedDatetime', $suggestedDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Demographic extends \ModelBase
+class Demographic extends ModelBase
 {
+
     public const LABEL = 'label';
 
     public const SHORT_NAME = 'shortName';
@@ -39,7 +41,7 @@ class Demographic extends \ModelBase
      * @return Demographic[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -277,4 +279,5 @@ class Demographic extends \ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
+
 }

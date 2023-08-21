@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class PupilPremiumRecipientType extends \ModelBase
+class PupilPremiumRecipientType extends ModelBase
 {
+
     public const PUPIL_PREMIUM_RECIPIENT = 'pupilPremiumRecipient';
 
     public const PUPIL_PREMIUM_TYPE = 'pupilPremiumType';
@@ -20,7 +21,7 @@ class PupilPremiumRecipientType extends \ModelBase
      * @return PupilPremiumRecipientType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +53,7 @@ class PupilPremiumRecipientType extends \ModelBase
     }
 
     /**
-     * @return PupilPremiumRecipient
+     * @return \Arbor\Model\UkDfe\PupilPremiumRecipient
      */
     public function getPupilPremiumRecipient()
     {
@@ -60,9 +61,9 @@ class PupilPremiumRecipientType extends \ModelBase
     }
 
     /**
-     * @param PupilPremiumRecipient $pupilPremiumRecipient
+     * @param \Arbor\Model\UkDfe\PupilPremiumRecipient $pupilPremiumRecipient
      */
-    public function setPupilPremiumRecipient(\PupilPremiumRecipient $pupilPremiumRecipient = null)
+    public function setPupilPremiumRecipient(\Arbor\Model\UkDfe\PupilPremiumRecipient $pupilPremiumRecipient = null)
     {
         $this->setProperty('pupilPremiumRecipient', $pupilPremiumRecipient);
     }
@@ -82,4 +83,5 @@ class PupilPremiumRecipientType extends \ModelBase
     {
         $this->setProperty('pupilPremiumType', $pupilPremiumType);
     }
+
 }

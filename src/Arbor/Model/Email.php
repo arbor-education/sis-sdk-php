@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Email extends \ModelBase
+class Email extends ModelBase
 {
+
     public const EMAIL_MAILBOX = 'emailMailbox';
 
     public const EMAIL_DRAFT = 'emailDraft';
@@ -43,7 +45,7 @@ class Email extends \ModelBase
      * @return Email[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +77,7 @@ class Email extends \ModelBase
     }
 
     /**
-     * @return EmailMailbox
+     * @return \Arbor\Model\EmailMailbox
      */
     public function getEmailMailbox()
     {
@@ -83,15 +85,15 @@ class Email extends \ModelBase
     }
 
     /**
-     * @param EmailMailbox $emailMailbox
+     * @param \Arbor\Model\EmailMailbox $emailMailbox
      */
-    public function setEmailMailbox(\EmailMailbox $emailMailbox = null)
+    public function setEmailMailbox(\Arbor\Model\EmailMailbox $emailMailbox = null)
     {
         $this->setProperty('emailMailbox', $emailMailbox);
     }
 
     /**
-     * @return EmailDraft
+     * @return \Arbor\Model\EmailDraft
      */
     public function getEmailDraft()
     {
@@ -99,9 +101,9 @@ class Email extends \ModelBase
     }
 
     /**
-     * @param EmailDraft $emailDraft
+     * @param \Arbor\Model\EmailDraft $emailDraft
      */
-    public function setEmailDraft(\EmailDraft $emailDraft = null)
+    public function setEmailDraft(\Arbor\Model\EmailDraft $emailDraft = null)
     {
         $this->setProperty('emailDraft', $emailDraft);
     }
@@ -251,7 +253,7 @@ class Email extends \ModelBase
     }
 
     /**
-     * @return EmailPart
+     * @return \Arbor\Model\EmailPart
      */
     public function getTextPart()
     {
@@ -259,15 +261,15 @@ class Email extends \ModelBase
     }
 
     /**
-     * @param EmailPart $textPart
+     * @param \Arbor\Model\EmailPart $textPart
      */
-    public function setTextPart(\EmailPart $textPart = null)
+    public function setTextPart(\Arbor\Model\EmailPart $textPart = null)
     {
         $this->setProperty('textPart', $textPart);
     }
 
     /**
-     * @return EmailPart
+     * @return \Arbor\Model\EmailPart
      */
     public function getHtmlPart()
     {
@@ -275,9 +277,9 @@ class Email extends \ModelBase
     }
 
     /**
-     * @param EmailPart $htmlPart
+     * @param \Arbor\Model\EmailPart $htmlPart
      */
-    public function setHtmlPart(\EmailPart $htmlPart = null)
+    public function setHtmlPart(\Arbor\Model\EmailPart $htmlPart = null)
     {
         $this->setProperty('htmlPart', $htmlPart);
     }
@@ -313,4 +315,5 @@ class Email extends \ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
+
 }

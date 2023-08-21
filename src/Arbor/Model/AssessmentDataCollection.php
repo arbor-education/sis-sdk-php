@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentDataCollection extends \ModelBase
+class AssessmentDataCollection extends ModelBase
 {
+
     public const ASSESSMENT_DATA_COLLECTION_POLICY = 'assessmentDataCollectionPolicy';
 
     public const DEADLINE_DATE = 'deadlineDate';
@@ -21,7 +23,7 @@ class AssessmentDataCollection extends \ModelBase
      * @return AssessmentDataCollection[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class AssessmentDataCollection extends \ModelBase
     }
 
     /**
-     * @return AssessmentDataCollectionPolicy
+     * @return \Arbor\Model\AssessmentDataCollectionPolicy
      */
     public function getAssessmentDataCollectionPolicy()
     {
@@ -61,9 +63,10 @@ class AssessmentDataCollection extends \ModelBase
     }
 
     /**
-     * @param AssessmentDataCollectionPolicy $assessmentDataCollectionPolicy
+     * @param \Arbor\Model\AssessmentDataCollectionPolicy
+     * $assessmentDataCollectionPolicy
      */
-    public function setAssessmentDataCollectionPolicy(\AssessmentDataCollectionPolicy $assessmentDataCollectionPolicy = null)
+    public function setAssessmentDataCollectionPolicy(\Arbor\Model\AssessmentDataCollectionPolicy $assessmentDataCollectionPolicy = null)
     {
         $this->setProperty('assessmentDataCollectionPolicy', $assessmentDataCollectionPolicy);
     }
@@ -115,4 +118,5 @@ class AssessmentDataCollection extends \ModelBase
     {
         $this->setProperty('collectionRangeEndDate', $collectionRangeEndDate);
     }
+
 }

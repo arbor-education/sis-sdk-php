@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationAspect extends \ModelBase
+class QualificationAspect extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -41,7 +43,7 @@ class QualificationAspect extends \ModelBase
      * @return QualificationAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -217,7 +219,7 @@ class QualificationAspect extends \ModelBase
     }
 
     /**
-     * @return QualificationGradeSet
+     * @return \Arbor\Model\QualificationGradeSet
      */
     public function getResultGradeSet()
     {
@@ -225,15 +227,15 @@ class QualificationAspect extends \ModelBase
     }
 
     /**
-     * @param QualificationGradeSet $resultGradeSet
+     * @param \Arbor\Model\QualificationGradeSet $resultGradeSet
      */
-    public function setResultGradeSet(\QualificationGradeSet $resultGradeSet = null)
+    public function setResultGradeSet(\Arbor\Model\QualificationGradeSet $resultGradeSet = null)
     {
         $this->setProperty('resultGradeSet', $resultGradeSet);
     }
 
     /**
-     * @return QualificationGradeSet
+     * @return \Arbor\Model\QualificationGradeSet
      */
     public function getForecastGradeSet()
     {
@@ -241,15 +243,15 @@ class QualificationAspect extends \ModelBase
     }
 
     /**
-     * @param QualificationGradeSet $forecastGradeSet
+     * @param \Arbor\Model\QualificationGradeSet $forecastGradeSet
      */
-    public function setForecastGradeSet(\QualificationGradeSet $forecastGradeSet = null)
+    public function setForecastGradeSet(\Arbor\Model\QualificationGradeSet $forecastGradeSet = null)
     {
         $this->setProperty('forecastGradeSet', $forecastGradeSet);
     }
 
     /**
-     * @return QualificationGradeSet
+     * @return \Arbor\Model\QualificationGradeSet
      */
     public function getEndorsementGradeSet()
     {
@@ -257,9 +259,9 @@ class QualificationAspect extends \ModelBase
     }
 
     /**
-     * @param QualificationGradeSet $endorsementGradeSet
+     * @param \Arbor\Model\QualificationGradeSet $endorsementGradeSet
      */
-    public function setEndorsementGradeSet(\QualificationGradeSet $endorsementGradeSet = null)
+    public function setEndorsementGradeSet(\Arbor\Model\QualificationGradeSet $endorsementGradeSet = null)
     {
         $this->setProperty('endorsementGradeSet', $endorsementGradeSet);
     }
@@ -295,4 +297,5 @@ class QualificationAspect extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

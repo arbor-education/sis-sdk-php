@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SmsMessagePart extends \ModelBase
+class SmsMessagePart extends ModelBase
 {
+
     public const SMS_MESSAGE = 'smsMessage';
 
     public const PART_IDENTIFIER = 'partIdentifier';
@@ -25,7 +27,7 @@ class SmsMessagePart extends \ModelBase
      * @return SmsMessagePart[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class SmsMessagePart extends \ModelBase
     }
 
     /**
-     * @return SmsMessage
+     * @return \Arbor\Model\SmsMessage
      */
     public function getSmsMessage()
     {
@@ -65,9 +67,9 @@ class SmsMessagePart extends \ModelBase
     }
 
     /**
-     * @param SmsMessage $smsMessage
+     * @param \Arbor\Model\SmsMessage $smsMessage
      */
-    public function setSmsMessage(\SmsMessage $smsMessage = null)
+    public function setSmsMessage(\Arbor\Model\SmsMessage $smsMessage = null)
     {
         $this->setProperty('smsMessage', $smsMessage);
     }
@@ -151,4 +153,5 @@ class SmsMessagePart extends \ModelBase
     {
         $this->setProperty('cost', $cost);
     }
+
 }

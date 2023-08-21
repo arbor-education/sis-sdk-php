@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Meeting extends \ModelBase
+class Meeting extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -45,7 +47,7 @@ class Meeting extends \ModelBase
      * @return Meeting[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -253,7 +255,7 @@ class Meeting extends \ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getScheduleLocation()
     {
@@ -261,9 +263,9 @@ class Meeting extends \ModelBase
     }
 
     /**
-     * @param Room $scheduleLocation
+     * @param \Arbor\Model\Room $scheduleLocation
      */
-    public function setScheduleLocation(\Room $scheduleLocation = null)
+    public function setScheduleLocation(\Arbor\Model\Room $scheduleLocation = null)
     {
         $this->setProperty('scheduleLocation', $scheduleLocation);
     }
@@ -331,4 +333,5 @@ class Meeting extends \ModelBase
     {
         $this->setProperty('outcomes', $outcomes);
     }
+
 }

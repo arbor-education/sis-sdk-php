@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TimetableSlotException extends \ModelBase
+class TimetableSlotException extends ModelBase
 {
+
     public const TIMETABLE_SLOT = 'timetableSlot';
 
     public const EXCEPTION_DATE = 'exceptionDate';
@@ -23,7 +25,7 @@ class TimetableSlotException extends \ModelBase
      * @return TimetableSlotException[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class TimetableSlotException extends \ModelBase
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -63,9 +65,9 @@ class TimetableSlotException extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -133,4 +135,5 @@ class TimetableSlotException extends \ModelBase
     {
         $this->setProperty('timeException', $timeException);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ProgressAssessmentBatchMeasurementPeriod extends \ModelBase
+class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
 {
+
     public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
     public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
@@ -17,7 +19,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends \ModelBase
      * @return ProgressAssessmentBatchMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends \ModelBase
     }
 
     /**
-     * @return ProgressAssessmentBatch
+     * @return \Arbor\Model\ProgressAssessmentBatch
      */
     public function getProgressAssessmentBatch()
     {
@@ -57,15 +59,15 @@ class ProgressAssessmentBatchMeasurementPeriod extends \ModelBase
     }
 
     /**
-     * @param ProgressAssessmentBatch $progressAssessmentBatch
+     * @param \Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(\ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
 
     /**
-     * @return ProgressMeasurementPeriod
+     * @return \Arbor\Model\ProgressMeasurementPeriod
      */
     public function getProgressMeasurementPeriod()
     {
@@ -73,10 +75,11 @@ class ProgressAssessmentBatchMeasurementPeriod extends \ModelBase
     }
 
     /**
-     * @param ProgressMeasurementPeriod $progressMeasurementPeriod
+     * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
+
 }

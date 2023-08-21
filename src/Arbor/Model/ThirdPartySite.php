@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ThirdPartySite extends \ModelBase
+class ThirdPartySite extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const NAME = 'name';
@@ -17,7 +19,7 @@ class ThirdPartySite extends \ModelBase
      * @return ThirdPartySite[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class ThirdPartySite extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

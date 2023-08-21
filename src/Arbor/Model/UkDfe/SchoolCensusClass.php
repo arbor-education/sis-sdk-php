@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Session;
 
-class SchoolCensusClass extends \ModelBase
+class SchoolCensusClass extends ModelBase
 {
+
     public const SCHOOL_CENSUS = 'schoolCensus';
 
     public const SESSION = 'session';
@@ -35,7 +35,7 @@ class SchoolCensusClass extends \ModelBase
      * @return SchoolCensusClass[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class SchoolCensusClass extends \ModelBase
     }
 
     /**
-     * @return SchoolCensus
+     * @return \Arbor\Model\UkDfe\SchoolCensus
      */
     public function getSchoolCensus()
     {
@@ -75,15 +75,15 @@ class SchoolCensusClass extends \ModelBase
     }
 
     /**
-     * @param SchoolCensus $schoolCensus
+     * @param \Arbor\Model\UkDfe\SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(\SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
 
     /**
-     * @return Session
+     * @return \Arbor\Model\Session
      */
     public function getSession()
     {
@@ -91,9 +91,9 @@ class SchoolCensusClass extends \ModelBase
     }
 
     /**
-     * @param Session $session
+     * @param \Arbor\Model\Session $session
      */
-    public function setSession(\Session $session = null)
+    public function setSession(\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -209,4 +209,5 @@ class SchoolCensusClass extends \ModelBase
     {
         $this->setProperty('infantPupilExceptions', $infantPupilExceptions);
     }
+
 }

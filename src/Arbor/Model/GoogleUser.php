@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class GoogleUser extends \ModelBase
+class GoogleUser extends ModelBase
 {
+
     public const GIVEN_NAME = 'givenName';
 
     public const FAMILY_NAME = 'familyName';
@@ -23,7 +25,7 @@ class GoogleUser extends \ModelBase
      * @return GoogleUser[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class GoogleUser extends \ModelBase
     {
         $this->setProperty('matchedPerson', $matchedPerson);
     }
+
 }

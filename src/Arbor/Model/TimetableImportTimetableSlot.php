@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TimetableImportTimetableSlot extends \ModelBase
+class TimetableImportTimetableSlot extends ModelBase
 {
+
     public const TIMETABLE_IMPORT_JOB = 'timetableImportJob';
 
     public const TIMETABLE_SLOT = 'timetableSlot';
@@ -37,7 +39,7 @@ class TimetableImportTimetableSlot extends \ModelBase
      * @return TimetableImportTimetableSlot[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class TimetableImportTimetableSlot extends \ModelBase
     }
 
     /**
-     * @return TimetableImportJob
+     * @return \Arbor\Model\TimetableImportJob
      */
     public function getTimetableImportJob()
     {
@@ -77,15 +79,15 @@ class TimetableImportTimetableSlot extends \ModelBase
     }
 
     /**
-     * @param TimetableImportJob $timetableImportJob
+     * @param \Arbor\Model\TimetableImportJob $timetableImportJob
      */
-    public function setTimetableImportJob(\TimetableImportJob $timetableImportJob = null)
+    public function setTimetableImportJob(\Arbor\Model\TimetableImportJob $timetableImportJob = null)
     {
         $this->setProperty('timetableImportJob', $timetableImportJob);
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -93,15 +95,15 @@ class TimetableImportTimetableSlot extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -109,9 +111,9 @@ class TimetableImportTimetableSlot extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -259,4 +261,5 @@ class TimetableImportTimetableSlot extends \ModelBase
     {
         $this->setProperty('frequency', $frequency);
     }
+
 }

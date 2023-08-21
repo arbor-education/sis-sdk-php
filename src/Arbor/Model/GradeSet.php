@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class GradeSet extends \ModelBase
+class GradeSet extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -29,7 +31,7 @@ class GradeSet extends \ModelBase
      * @return GradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -141,7 +143,7 @@ class GradeSet extends \ModelBase
     }
 
     /**
-     * @return GradePointScale
+     * @return \Arbor\Model\GradePointScale
      */
     public function getGradePointScale()
     {
@@ -149,9 +151,9 @@ class GradeSet extends \ModelBase
     }
 
     /**
-     * @param GradePointScale $gradePointScale
+     * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(\GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
@@ -187,4 +189,5 @@ class GradeSet extends \ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
+
 }

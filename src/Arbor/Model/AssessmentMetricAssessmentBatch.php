@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentMetricAssessmentBatch extends \ModelBase
+class AssessmentMetricAssessmentBatch extends ModelBase
 {
+
     public const ASSESSMENT_METRIC = 'assessmentMetric';
 
     public const OPERATOR = 'operator';
@@ -19,7 +21,7 @@ class AssessmentMetricAssessmentBatch extends \ModelBase
      * @return AssessmentMetricAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class AssessmentMetricAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @return AssessmentMetric
+     * @return \Arbor\Model\AssessmentMetric
      */
     public function getAssessmentMetric()
     {
@@ -59,9 +61,9 @@ class AssessmentMetricAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param AssessmentMetric $assessmentMetric
+     * @param \Arbor\Model\AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(\AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(\Arbor\Model\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
@@ -83,7 +85,7 @@ class AssessmentMetricAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @return AssessmentMetricAssessmentBatch
+     * @return \Arbor\Model\AssessmentMetricAssessmentBatch
      */
     public function getParentAssessmentMetricAssessmentBatch()
     {
@@ -91,10 +93,12 @@ class AssessmentMetricAssessmentBatch extends \ModelBase
     }
 
     /**
-     * @param AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch
+     * @param \Arbor\Model\AssessmentMetricAssessmentBatch
+     * $parentAssessmentMetricAssessmentBatch
      */
-    public function setParentAssessmentMetricAssessmentBatch(\AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch = null)
+    public function setParentAssessmentMetricAssessmentBatch(\Arbor\Model\AssessmentMetricAssessmentBatch $parentAssessmentMetricAssessmentBatch = null)
     {
         $this->setProperty('parentAssessmentMetricAssessmentBatch', $parentAssessmentMetricAssessmentBatch);
     }
+
 }

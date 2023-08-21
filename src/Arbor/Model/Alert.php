@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Alert extends \ModelBase
+class Alert extends ModelBase
 {
+
     public const ALERT_RULE = 'alertRule';
 
     public const TRIGGER_EVENT_TYPE = 'triggerEventType';
@@ -23,7 +25,7 @@ class Alert extends \ModelBase
      * @return Alert[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class Alert extends \ModelBase
     }
 
     /**
-     * @return AlertRule
+     * @return \Arbor\Model\AlertRule
      */
     public function getAlertRule()
     {
@@ -63,9 +65,9 @@ class Alert extends \ModelBase
     }
 
     /**
-     * @param AlertRule $alertRule
+     * @param \Arbor\Model\AlertRule $alertRule
      */
-    public function setAlertRule(\AlertRule $alertRule = null)
+    public function setAlertRule(\Arbor\Model\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -133,4 +135,5 @@ class Alert extends \ModelBase
     {
         $this->setProperty('triggeredDatetime', $triggeredDatetime);
     }
+
 }

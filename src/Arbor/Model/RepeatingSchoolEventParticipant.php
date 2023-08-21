@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class RepeatingSchoolEventParticipant extends \ModelBase
+class RepeatingSchoolEventParticipant extends ModelBase
 {
+
     public const REPEATING_SCHOOL_EVENT = 'repeatingSchoolEvent';
 
     public const PARTICIPANT = 'participant';
@@ -17,7 +19,7 @@ class RepeatingSchoolEventParticipant extends \ModelBase
      * @return RepeatingSchoolEventParticipant[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class RepeatingSchoolEventParticipant extends \ModelBase
     }
 
     /**
-     * @return RepeatingSchoolEvent
+     * @return \Arbor\Model\RepeatingSchoolEvent
      */
     public function getRepeatingSchoolEvent()
     {
@@ -57,9 +59,9 @@ class RepeatingSchoolEventParticipant extends \ModelBase
     }
 
     /**
-     * @param RepeatingSchoolEvent $repeatingSchoolEvent
+     * @param \Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent
      */
-    public function setRepeatingSchoolEvent(\RepeatingSchoolEvent $repeatingSchoolEvent = null)
+    public function setRepeatingSchoolEvent(\Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent = null)
     {
         $this->setProperty('repeatingSchoolEvent', $repeatingSchoolEvent);
     }
@@ -79,4 +81,5 @@ class RepeatingSchoolEventParticipant extends \ModelBase
     {
         $this->setProperty('participant', $participant);
     }
+
 }

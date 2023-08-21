@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentFundingType extends \ModelBase
+class StudentFundingType extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -21,7 +23,7 @@ class StudentFundingType extends \ModelBase
      * @return StudentFundingType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class StudentFundingType extends \ModelBase
     {
         $this->setProperty('label', $label);
     }
+
 }

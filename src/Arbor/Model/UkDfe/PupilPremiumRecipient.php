@@ -6,11 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
-use Arbor\Model\CurriculumGrade;
 
-class PupilPremiumRecipient extends \ModelBase
+class PupilPremiumRecipient extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const CURRICULUM_GRADE = 'curriculumGrade';
@@ -32,7 +31,7 @@ class PupilPremiumRecipient extends \ModelBase
      * @return PupilPremiumRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +63,7 @@ class PupilPremiumRecipient extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -72,15 +71,15 @@ class PupilPremiumRecipient extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CurriculumGrade
+     * @return \Arbor\Model\CurriculumGrade
      */
     public function getCurriculumGrade()
     {
@@ -88,9 +87,9 @@ class PupilPremiumRecipient extends \ModelBase
     }
 
     /**
-     * @param CurriculumGrade $curriculumGrade
+     * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -174,4 +173,5 @@ class PupilPremiumRecipient extends \ModelBase
     {
         $this->setProperty('lastFsm', $lastFsm);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class OutboundInAppMessageDraft extends \ModelBase
+class OutboundInAppMessageDraft extends ModelBase
 {
+
     public const SENDER = 'sender';
 
     public const MESSAGE = 'message';
@@ -25,7 +27,7 @@ class OutboundInAppMessageDraft extends \ModelBase
      * @return OutboundInAppMessageDraft[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -151,4 +153,5 @@ class OutboundInAppMessageDraft extends \ModelBase
     {
         $this->setProperty('context', $context);
     }
+
 }

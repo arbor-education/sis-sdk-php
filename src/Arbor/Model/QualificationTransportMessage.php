@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationTransportMessage extends \ModelBase
+class QualificationTransportMessage extends ModelBase
 {
+
     public const QUALIFICATION_TRANSPORT_CERTIFICATE = 'qualificationTransportCertificate';
 
     public const CONTENT = 'content';
@@ -29,7 +31,7 @@ class QualificationTransportMessage extends \ModelBase
      * @return QualificationTransportMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class QualificationTransportMessage extends \ModelBase
     }
 
     /**
-     * @return QualificationTransportCertificate
+     * @return \Arbor\Model\QualificationTransportCertificate
      */
     public function getQualificationTransportCertificate()
     {
@@ -69,15 +71,16 @@ class QualificationTransportMessage extends \ModelBase
     }
 
     /**
-     * @param QualificationTransportCertificate $qualificationTransportCertificate
+     * @param \Arbor\Model\QualificationTransportCertificate
+     * $qualificationTransportCertificate
      */
-    public function setQualificationTransportCertificate(\QualificationTransportCertificate $qualificationTransportCertificate = null)
+    public function setQualificationTransportCertificate(\Arbor\Model\QualificationTransportCertificate $qualificationTransportCertificate = null)
     {
         $this->setProperty('qualificationTransportCertificate', $qualificationTransportCertificate);
     }
 
     /**
-     * @return Content
+     * @return \Arbor\Model\Content
      */
     public function getContent()
     {
@@ -85,9 +88,9 @@ class QualificationTransportMessage extends \ModelBase
     }
 
     /**
-     * @param Content $content
+     * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Content $content = null)
+    public function setContent(\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -187,4 +190,5 @@ class QualificationTransportMessage extends \ModelBase
     {
         $this->setProperty('rawContent', $rawContent);
     }
+
 }

@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class AttendanceApiSubmission extends \ModelBase
+class AttendanceApiSubmission extends ModelBase
 {
+
     public const PAYLOAD = 'payload';
 
     public const PAYLOAD_SENT_DATETIME = 'payloadSentDatetime';
@@ -30,7 +31,7 @@ class AttendanceApiSubmission extends \ModelBase
      * @return AttendanceApiSubmission[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -172,4 +173,5 @@ class AttendanceApiSubmission extends \ModelBase
     {
         $this->setProperty('status', $status);
     }
+
 }

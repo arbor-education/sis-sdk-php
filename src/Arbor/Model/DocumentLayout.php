@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DocumentLayout extends \ModelBase
+class DocumentLayout extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const FIRST_PAGE_HEADER_HTML = 'firstPageHeaderHtml';
@@ -47,7 +49,7 @@ class DocumentLayout extends \ModelBase
      * @return DocumentLayout[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -349,4 +351,5 @@ class DocumentLayout extends \ModelBase
     {
         $this->setProperty('archived', $archived);
     }
+
 }

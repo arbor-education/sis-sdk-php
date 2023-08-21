@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateEntryAudit extends \ModelBase
+class CandidateEntryAudit extends ModelBase
 {
+
     public const CANDIDATE_ENTRY = 'candidateEntry';
 
     public const TYPE = 'type';
@@ -19,7 +21,7 @@ class CandidateEntryAudit extends \ModelBase
      * @return CandidateEntryAudit[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class CandidateEntryAudit extends \ModelBase
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -59,9 +61,9 @@ class CandidateEntryAudit extends \ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -97,4 +99,5 @@ class CandidateEntryAudit extends \ModelBase
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DietaryRequirement extends \ModelBase
+class DietaryRequirement extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const DIETARY_REQUIREMENT_TYPE = 'dietaryRequirementType';
@@ -19,7 +21,7 @@ class DietaryRequirement extends \ModelBase
      * @return DietaryRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class DietaryRequirement extends \ModelBase
     }
 
     /**
-     * @return DietaryRequirementType
+     * @return \Arbor\Model\DietaryRequirementType
      */
     public function getDietaryRequirementType()
     {
@@ -75,9 +77,9 @@ class DietaryRequirement extends \ModelBase
     }
 
     /**
-     * @param DietaryRequirementType $dietaryRequirementType
+     * @param \Arbor\Model\DietaryRequirementType $dietaryRequirementType
      */
-    public function setDietaryRequirementType(\DietaryRequirementType $dietaryRequirementType = null)
+    public function setDietaryRequirementType(\Arbor\Model\DietaryRequirementType $dietaryRequirementType = null)
     {
         $this->setProperty('dietaryRequirementType', $dietaryRequirementType);
     }
@@ -97,4 +99,5 @@ class DietaryRequirement extends \ModelBase
     {
         $this->setProperty('note', $note);
     }
+
 }

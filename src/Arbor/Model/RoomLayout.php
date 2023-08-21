@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class RoomLayout extends \ModelBase
+class RoomLayout extends ModelBase
 {
+
     public const ROOM = 'room';
 
     public const STAFF = 'staff';
@@ -21,7 +23,7 @@ class RoomLayout extends \ModelBase
      * @return RoomLayout[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class RoomLayout extends \ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getRoom()
     {
@@ -61,15 +63,15 @@ class RoomLayout extends \ModelBase
     }
 
     /**
-     * @param Room $room
+     * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Room $room = null)
+    public function setRoom(\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -77,9 +79,9 @@ class RoomLayout extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -115,4 +117,5 @@ class RoomLayout extends \ModelBase
     {
         $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }
+
 }

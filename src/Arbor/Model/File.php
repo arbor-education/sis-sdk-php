@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class File extends \ModelBase
+class File extends ModelBase
 {
+
     public const CONTENT = 'content';
 
     public const URL = 'url';
@@ -29,7 +31,7 @@ class File extends \ModelBase
      * @return File[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class File extends \ModelBase
     }
 
     /**
-     * @return Content
+     * @return \Arbor\Model\Content
      */
     public function getContent()
     {
@@ -69,9 +71,9 @@ class File extends \ModelBase
     }
 
     /**
-     * @param Content $content
+     * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Content $content = null)
+    public function setContent(\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -187,4 +189,5 @@ class File extends \ModelBase
     {
         $this->setProperty('compressed', $compressed);
     }
+
 }

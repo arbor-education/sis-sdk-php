@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DetentionSession extends \ModelBase
+class DetentionSession extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -25,7 +27,7 @@ class DetentionSession extends \ModelBase
      * @return DetentionSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -121,7 +123,7 @@ class DetentionSession extends \ModelBase
     }
 
     /**
-     * @return DetentionType
+     * @return \Arbor\Model\DetentionType
      */
     public function getDetentionType()
     {
@@ -129,15 +131,15 @@ class DetentionSession extends \ModelBase
     }
 
     /**
-     * @param DetentionType $detentionType
+     * @param \Arbor\Model\DetentionType $detentionType
      */
-    public function setDetentionType(\DetentionType $detentionType = null)
+    public function setDetentionType(\Arbor\Model\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -145,10 +147,11 @@ class DetentionSession extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
+
 }

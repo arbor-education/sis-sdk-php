@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InAppMessagePermittedSender extends \ModelBase
+class InAppMessagePermittedSender extends ModelBase
 {
+
     public const ACTION_TAKER = 'actionTaker';
 
     public const SENDER = 'sender';
@@ -19,7 +21,7 @@ class InAppMessagePermittedSender extends \ModelBase
      * @return InAppMessagePermittedSender[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class InAppMessagePermittedSender extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getActionTaker()
     {
@@ -59,9 +61,9 @@ class InAppMessagePermittedSender extends \ModelBase
     }
 
     /**
-     * @param Staff $actionTaker
+     * @param \Arbor\Model\Staff $actionTaker
      */
-    public function setActionTaker(\Staff $actionTaker = null)
+    public function setActionTaker(\Arbor\Model\Staff $actionTaker = null)
     {
         $this->setProperty('actionTaker', $actionTaker);
     }
@@ -97,4 +99,5 @@ class InAppMessagePermittedSender extends \ModelBase
     {
         $this->setProperty('allow', $allow);
     }
+
 }

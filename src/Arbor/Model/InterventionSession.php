@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InterventionSession extends \ModelBase
+class InterventionSession extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -39,7 +41,7 @@ class InterventionSession extends \ModelBase
      * @return InterventionSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -135,7 +137,7 @@ class InterventionSession extends \ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -143,9 +145,9 @@ class InterventionSession extends \ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -199,7 +201,7 @@ class InterventionSession extends \ModelBase
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -207,15 +209,15 @@ class InterventionSession extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
-     * @return InterventionGroup
+     * @return \Arbor\Model\InterventionGroup
      */
     public function getInterventionGroup()
     {
@@ -223,15 +225,15 @@ class InterventionSession extends \ModelBase
     }
 
     /**
-     * @param InterventionGroup $interventionGroup
+     * @param \Arbor\Model\InterventionGroup $interventionGroup
      */
-    public function setInterventionGroup(\InterventionGroup $interventionGroup = null)
+    public function setInterventionGroup(\Arbor\Model\InterventionGroup $interventionGroup = null)
     {
         $this->setProperty('interventionGroup', $interventionGroup);
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -239,9 +241,9 @@ class InterventionSession extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -277,4 +279,5 @@ class InterventionSession extends \ModelBase
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }
+
 }

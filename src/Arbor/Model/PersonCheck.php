@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PersonCheck extends \ModelBase
+class PersonCheck extends ModelBase
 {
+
     public const PERSON = 'person';
 
     public const CHECK_TYPE = 'checkType';
@@ -35,7 +37,7 @@ class PersonCheck extends \ModelBase
      * @return PersonCheck[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class PersonCheck extends \ModelBase
     }
 
     /**
-     * @return CheckType
+     * @return \Arbor\Model\CheckType
      */
     public function getCheckType()
     {
@@ -91,15 +93,15 @@ class PersonCheck extends \ModelBase
     }
 
     /**
-     * @param CheckType $checkType
+     * @param \Arbor\Model\CheckType $checkType
      */
-    public function setCheckType(\CheckType $checkType = null)
+    public function setCheckType(\Arbor\Model\CheckType $checkType = null)
     {
         $this->setProperty('checkType', $checkType);
     }
 
     /**
-     * @return CheckClearanceLevel
+     * @return \Arbor\Model\CheckClearanceLevel
      */
     public function getCheckClearanceLevel()
     {
@@ -107,9 +109,9 @@ class PersonCheck extends \ModelBase
     }
 
     /**
-     * @param CheckClearanceLevel $checkClearanceLevel
+     * @param \Arbor\Model\CheckClearanceLevel $checkClearanceLevel
      */
-    public function setCheckClearanceLevel(\CheckClearanceLevel $checkClearanceLevel = null)
+    public function setCheckClearanceLevel(\Arbor\Model\CheckClearanceLevel $checkClearanceLevel = null)
     {
         $this->setProperty('checkClearanceLevel', $checkClearanceLevel);
     }
@@ -195,7 +197,7 @@ class PersonCheck extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAuthenticatedByStaff()
     {
@@ -203,9 +205,9 @@ class PersonCheck extends \ModelBase
     }
 
     /**
-     * @param Staff $authenticatedByStaff
+     * @param \Arbor\Model\Staff $authenticatedByStaff
      */
-    public function setAuthenticatedByStaff(\Staff $authenticatedByStaff = null)
+    public function setAuthenticatedByStaff(\Arbor\Model\Staff $authenticatedByStaff = null)
     {
         $this->setProperty('authenticatedByStaff', $authenticatedByStaff);
     }
@@ -241,4 +243,5 @@ class PersonCheck extends \ModelBase
     {
         $this->setProperty('comment', $comment);
     }
+
 }

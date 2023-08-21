@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolIntakeType extends \ModelBase
+class SchoolIntakeType extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -24,7 +25,7 @@ class SchoolIntakeType extends \ModelBase
      * @return SchoolIntakeType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -118,4 +119,5 @@ class SchoolIntakeType extends \ModelBase
     {
         $this->setProperty('label', $label);
     }
+
 }

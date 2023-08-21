@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InHouseExamResult extends \ModelBase
+class InHouseExamResult extends ModelBase
 {
+
     public const IN_HOUSE_EXAM = 'inHouseExam';
 
     public const STUDENT = 'student';
@@ -25,7 +27,7 @@ class InHouseExamResult extends \ModelBase
      * @return InHouseExamResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class InHouseExamResult extends \ModelBase
     }
 
     /**
-     * @return InHouseExam
+     * @return \Arbor\Model\InHouseExam
      */
     public function getInHouseExam()
     {
@@ -65,15 +67,15 @@ class InHouseExamResult extends \ModelBase
     }
 
     /**
-     * @param InHouseExam $inHouseExam
+     * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -81,15 +83,15 @@ class InHouseExamResult extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return InHouseExamEntry
+     * @return \Arbor\Model\InHouseExamEntry
      */
     public function getInHouseExamEntry()
     {
@@ -97,9 +99,9 @@ class InHouseExamResult extends \ModelBase
     }
 
     /**
-     * @param InHouseExamEntry $inHouseExamEntry
+     * @param \Arbor\Model\InHouseExamEntry $inHouseExamEntry
      */
-    public function setInHouseExamEntry(\InHouseExamEntry $inHouseExamEntry = null)
+    public function setInHouseExamEntry(\Arbor\Model\InHouseExamEntry $inHouseExamEntry = null)
     {
         $this->setProperty('inHouseExamEntry', $inHouseExamEntry);
     }
@@ -121,7 +123,7 @@ class InHouseExamResult extends \ModelBase
     }
 
     /**
-     * @return InHouseExamGrade
+     * @return \Arbor\Model\InHouseExamGrade
      */
     public function getInHouseExamGrade()
     {
@@ -129,9 +131,9 @@ class InHouseExamResult extends \ModelBase
     }
 
     /**
-     * @param InHouseExamGrade $inHouseExamGrade
+     * @param \Arbor\Model\InHouseExamGrade $inHouseExamGrade
      */
-    public function setInHouseExamGrade(\InHouseExamGrade $inHouseExamGrade = null)
+    public function setInHouseExamGrade(\Arbor\Model\InHouseExamGrade $inHouseExamGrade = null)
     {
         $this->setProperty('inHouseExamGrade', $inHouseExamGrade);
     }
@@ -151,4 +153,5 @@ class InHouseExamResult extends \ModelBase
     {
         $this->setProperty('resultDate', $resultDate);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffAbsenceSicknessSubcategory extends \ModelBase
+class StaffAbsenceSicknessSubcategory extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -23,7 +25,7 @@ class StaffAbsenceSicknessSubcategory extends \ModelBase
      * @return StaffAbsenceSicknessSubcategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -103,7 +105,7 @@ class StaffAbsenceSicknessSubcategory extends \ModelBase
     }
 
     /**
-     * @return StaffAbsenceSicknessCategory
+     * @return \Arbor\Model\StaffAbsenceSicknessCategory
      */
     public function getStaffAbsenceSicknessCategory()
     {
@@ -111,9 +113,9 @@ class StaffAbsenceSicknessSubcategory extends \ModelBase
     }
 
     /**
-     * @param StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory
+     * @param \Arbor\Model\StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory
      */
-    public function setStaffAbsenceSicknessCategory(\StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory = null)
+    public function setStaffAbsenceSicknessCategory(\Arbor\Model\StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory = null)
     {
         $this->setProperty('staffAbsenceSicknessCategory', $staffAbsenceSicknessCategory);
     }
@@ -133,4 +135,5 @@ class StaffAbsenceSicknessSubcategory extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Department extends \ModelBase
+class Department extends ModelBase
 {
+
     public const DEPARTMENT_CODE = 'departmentCode';
 
     public const DEPARTMENT_NAME = 'departmentName';
@@ -19,7 +21,7 @@ class Department extends \ModelBase
      * @return Department[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,4 +99,5 @@ class Department extends \ModelBase
     {
         $this->setProperty('isActive', $isActive);
     }
+
 }

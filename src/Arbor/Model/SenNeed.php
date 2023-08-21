@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SenNeed extends \ModelBase
+class SenNeed extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const SEN_NEED_TYPE = 'senNeedType';
@@ -25,7 +27,7 @@ class SenNeed extends \ModelBase
      * @return SenNeed[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class SenNeed extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -65,15 +67,15 @@ class SenNeed extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return SenNeedType
+     * @return \Arbor\Model\SenNeedType
      */
     public function getSenNeedType()
     {
@@ -81,9 +83,9 @@ class SenNeed extends \ModelBase
     }
 
     /**
-     * @param SenNeedType $senNeedType
+     * @param \Arbor\Model\SenNeedType $senNeedType
      */
-    public function setSenNeedType(\SenNeedType $senNeedType = null)
+    public function setSenNeedType(\Arbor\Model\SenNeedType $senNeedType = null)
     {
         $this->setProperty('senNeedType', $senNeedType);
     }
@@ -151,4 +153,5 @@ class SenNeed extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

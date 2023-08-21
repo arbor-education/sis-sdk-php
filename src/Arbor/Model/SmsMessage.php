@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SmsMessage extends \ModelBase
+class SmsMessage extends ModelBase
 {
+
     public const SMS_MESSAGE_DRAFT = 'smsMessageDraft';
 
     public const MESSAGE_TYPE = 'messageType';
@@ -49,7 +51,7 @@ class SmsMessage extends \ModelBase
      * @return SmsMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +83,7 @@ class SmsMessage extends \ModelBase
     }
 
     /**
-     * @return SmsMessageDraft
+     * @return \Arbor\Model\SmsMessageDraft
      */
     public function getSmsMessageDraft()
     {
@@ -89,9 +91,9 @@ class SmsMessage extends \ModelBase
     }
 
     /**
-     * @param SmsMessageDraft $smsMessageDraft
+     * @param \Arbor\Model\SmsMessageDraft $smsMessageDraft
      */
-    public function setSmsMessageDraft(\SmsMessageDraft $smsMessageDraft = null)
+    public function setSmsMessageDraft(\Arbor\Model\SmsMessageDraft $smsMessageDraft = null)
     {
         $this->setProperty('smsMessageDraft', $smsMessageDraft);
     }
@@ -177,7 +179,7 @@ class SmsMessage extends \ModelBase
     }
 
     /**
-     * @return MessageDraftRecipient
+     * @return \Arbor\Model\MessageDraftRecipient
      */
     public function getDraftRecipient()
     {
@@ -185,9 +187,9 @@ class SmsMessage extends \ModelBase
     }
 
     /**
-     * @param MessageDraftRecipient $draftRecipient
+     * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -367,4 +369,5 @@ class SmsMessage extends \ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EligibilityRecord extends \ModelBase
+class EligibilityRecord extends ModelBase
 {
+
     public const ELIGIBILITY = 'eligibility';
 
     public const PERSON = 'person';
@@ -25,7 +27,7 @@ class EligibilityRecord extends \ModelBase
      * @return EligibilityRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class EligibilityRecord extends \ModelBase
     }
 
     /**
-     * @return Eligibility
+     * @return \Arbor\Model\Eligibility
      */
     public function getEligibility()
     {
@@ -65,9 +67,9 @@ class EligibilityRecord extends \ModelBase
     }
 
     /**
-     * @param Eligibility $eligibility
+     * @param \Arbor\Model\Eligibility $eligibility
      */
-    public function setEligibility(\Eligibility $eligibility = null)
+    public function setEligibility(\Arbor\Model\Eligibility $eligibility = null)
     {
         $this->setProperty('eligibility', $eligibility);
     }
@@ -151,4 +153,5 @@ class EligibilityRecord extends \ModelBase
     {
         $this->setProperty('nextCheckDate', $nextCheckDate);
     }
+
 }

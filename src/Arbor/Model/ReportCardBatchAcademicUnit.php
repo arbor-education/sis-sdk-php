@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ReportCardBatchAcademicUnit extends \ModelBase
+class ReportCardBatchAcademicUnit extends ModelBase
 {
+
     public const REPORT_CARD_BATCH = 'reportCardBatch';
 
     public const ORDER = 'order';
@@ -21,7 +23,7 @@ class ReportCardBatchAcademicUnit extends \ModelBase
      * @return ReportCardBatchAcademicUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class ReportCardBatchAcademicUnit extends \ModelBase
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getReportCardBatch()
     {
@@ -61,9 +63,9 @@ class ReportCardBatchAcademicUnit extends \ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $reportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -85,7 +87,7 @@ class ReportCardBatchAcademicUnit extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -93,9 +95,9 @@ class ReportCardBatchAcademicUnit extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -115,4 +117,5 @@ class ReportCardBatchAcademicUnit extends \ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
+
 }

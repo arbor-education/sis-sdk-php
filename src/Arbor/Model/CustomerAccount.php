@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomerAccount extends \ModelBase
+class CustomerAccount extends ModelBase
 {
+
     public const RELATED_ENTITY = 'relatedEntity';
 
     public const DELETED_RELATED_ENTITY_NAME = 'deletedRelatedEntityName';
@@ -39,7 +41,7 @@ class CustomerAccount extends \ModelBase
      * @return CustomerAccount[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -103,7 +105,7 @@ class CustomerAccount extends \ModelBase
     }
 
     /**
-     * @return CustomerAccountType
+     * @return \Arbor\Model\CustomerAccountType
      */
     public function getCustomerAccountType()
     {
@@ -111,15 +113,15 @@ class CustomerAccount extends \ModelBase
     }
 
     /**
-     * @param CustomerAccountType $customerAccountType
+     * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(\CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer1()
     {
@@ -127,15 +129,15 @@ class CustomerAccount extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer1
+     * @param \Arbor\Model\BillPayer $billPayer1
      */
-    public function setBillPayer1(\BillPayer $billPayer1 = null)
+    public function setBillPayer1(\Arbor\Model\BillPayer $billPayer1 = null)
     {
         $this->setProperty('billPayer1', $billPayer1);
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer2()
     {
@@ -143,15 +145,15 @@ class CustomerAccount extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer2
+     * @param \Arbor\Model\BillPayer $billPayer2
      */
-    public function setBillPayer2(\BillPayer $billPayer2 = null)
+    public function setBillPayer2(\Arbor\Model\BillPayer $billPayer2 = null)
     {
         $this->setProperty('billPayer2', $billPayer2);
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer3()
     {
@@ -159,9 +161,9 @@ class CustomerAccount extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer3
+     * @param \Arbor\Model\BillPayer $billPayer3
      */
-    public function setBillPayer3(\BillPayer $billPayer3 = null)
+    public function setBillPayer3(\Arbor\Model\BillPayer $billPayer3 = null)
     {
         $this->setProperty('billPayer3', $billPayer3);
     }
@@ -277,4 +279,5 @@ class CustomerAccount extends \ModelBase
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }
+
 }

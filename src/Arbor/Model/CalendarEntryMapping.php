@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CalendarEntryMapping extends \ModelBase
+class CalendarEntryMapping extends ModelBase
 {
+
     public const EVENT = 'event';
 
     public const START_DATETIME = 'startDatetime';
@@ -25,7 +27,7 @@ class CalendarEntryMapping extends \ModelBase
      * @return CalendarEntryMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -121,7 +123,7 @@ class CalendarEntryMapping extends \ModelBase
     }
 
     /**
-     * @return Calendar
+     * @return \Arbor\Model\Calendar
      */
     public function getCalendar()
     {
@@ -129,9 +131,9 @@ class CalendarEntryMapping extends \ModelBase
     }
 
     /**
-     * @param Calendar $calendar
+     * @param \Arbor\Model\Calendar $calendar
      */
-    public function setCalendar(\Calendar $calendar = null)
+    public function setCalendar(\Arbor\Model\Calendar $calendar = null)
     {
         $this->setProperty('calendar', $calendar);
     }
@@ -151,4 +153,5 @@ class CalendarEntryMapping extends \ModelBase
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }
+
 }

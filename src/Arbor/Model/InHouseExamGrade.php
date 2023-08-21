@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InHouseExamGrade extends \ModelBase
+class InHouseExamGrade extends ModelBase
 {
+
     public const IN_HOUSE_EXAM = 'inHouseExam';
 
     public const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -25,7 +27,7 @@ class InHouseExamGrade extends \ModelBase
      * @return InHouseExamGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class InHouseExamGrade extends \ModelBase
     }
 
     /**
-     * @return InHouseExam
+     * @return \Arbor\Model\InHouseExam
      */
     public function getInHouseExam()
     {
@@ -65,15 +67,15 @@ class InHouseExamGrade extends \ModelBase
     }
 
     /**
-     * @param InHouseExam $inHouseExam
+     * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
 
     /**
-     * @return QualificationGrade
+     * @return \Arbor\Model\QualificationGrade
      */
     public function getQualificationGrade()
     {
@@ -81,9 +83,9 @@ class InHouseExamGrade extends \ModelBase
     }
 
     /**
-     * @param QualificationGrade $qualificationGrade
+     * @param \Arbor\Model\QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(\QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(\Arbor\Model\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -151,4 +153,5 @@ class InHouseExamGrade extends \ModelBase
     {
         $this->setProperty('active', $active);
     }
+
 }

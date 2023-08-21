@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class KpiTarget extends \ModelBase
+class KpiTarget extends ModelBase
 {
+
     public const KPI = 'kpi';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -29,7 +31,7 @@ class KpiTarget extends \ModelBase
      * @return KpiTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class KpiTarget extends \ModelBase
     }
 
     /**
-     * @return Kpi
+     * @return \Arbor\Model\Kpi
      */
     public function getKpi()
     {
@@ -69,9 +71,9 @@ class KpiTarget extends \ModelBase
     }
 
     /**
-     * @param Kpi $kpi
+     * @param \Arbor\Model\Kpi $kpi
      */
-    public function setKpi(\Kpi $kpi = null)
+    public function setKpi(\Arbor\Model\Kpi $kpi = null)
     {
         $this->setProperty('kpi', $kpi);
     }
@@ -187,4 +189,5 @@ class KpiTarget extends \ModelBase
     {
         $this->setProperty('basis', $basis);
     }
+
 }

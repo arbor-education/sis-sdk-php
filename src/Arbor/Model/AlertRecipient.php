@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AlertRecipient extends \ModelBase
+class AlertRecipient extends ModelBase
 {
+
     public const ALERT = 'alert';
 
     public const ALERT_RULE_RECIPIENT = 'alertRuleRecipient';
@@ -23,7 +25,7 @@ class AlertRecipient extends \ModelBase
      * @return AlertRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class AlertRecipient extends \ModelBase
     }
 
     /**
-     * @return Alert
+     * @return \Arbor\Model\Alert
      */
     public function getAlert()
     {
@@ -63,15 +65,15 @@ class AlertRecipient extends \ModelBase
     }
 
     /**
-     * @param Alert $alert
+     * @param \Arbor\Model\Alert $alert
      */
-    public function setAlert(\Alert $alert = null)
+    public function setAlert(\Arbor\Model\Alert $alert = null)
     {
         $this->setProperty('alert', $alert);
     }
 
     /**
-     * @return AlertRuleRecipient
+     * @return \Arbor\Model\AlertRuleRecipient
      */
     public function getAlertRuleRecipient()
     {
@@ -79,9 +81,9 @@ class AlertRecipient extends \ModelBase
     }
 
     /**
-     * @param AlertRuleRecipient $alertRuleRecipient
+     * @param \Arbor\Model\AlertRuleRecipient $alertRuleRecipient
      */
-    public function setAlertRuleRecipient(\AlertRuleRecipient $alertRuleRecipient = null)
+    public function setAlertRuleRecipient(\Arbor\Model\AlertRuleRecipient $alertRuleRecipient = null)
     {
         $this->setProperty('alertRuleRecipient', $alertRuleRecipient);
     }
@@ -133,4 +135,5 @@ class AlertRecipient extends \ModelBase
     {
         $this->setProperty('message', $message);
     }
+
 }

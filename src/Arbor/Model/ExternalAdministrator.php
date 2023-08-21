@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ExternalAdministrator extends \ModelBase
+class ExternalAdministrator extends ModelBase
 {
+
     public const FIRST_NAME = 'firstName';
 
     public const LAST_NAME = 'lastName';
@@ -21,7 +23,7 @@ class ExternalAdministrator extends \ModelBase
      * @return ExternalAdministrator[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -115,4 +117,5 @@ class ExternalAdministrator extends \ModelBase
     {
         $this->setProperty('application', $application);
     }
+
 }

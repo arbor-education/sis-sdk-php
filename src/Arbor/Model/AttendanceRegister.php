@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AttendanceRegister extends \ModelBase
+class AttendanceRegister extends ModelBase
 {
+
     public const EVENT = 'event';
 
     public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
@@ -25,7 +27,7 @@ class AttendanceRegister extends \ModelBase
      * @return AttendanceRegister[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +75,7 @@ class AttendanceRegister extends \ModelBase
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -81,9 +83,9 @@ class AttendanceRegister extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -151,4 +153,5 @@ class AttendanceRegister extends \ModelBase
     {
         $this->setProperty('closedDatetime', $closedDatetime);
     }
+
 }

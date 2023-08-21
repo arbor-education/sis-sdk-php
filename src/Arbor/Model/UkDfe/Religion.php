@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Religion extends \ModelBase
+class Religion extends ModelBase
 {
+
     public const D00009 = 'd00009';
 
     public const D00195 = 'd00195';
@@ -20,7 +21,7 @@ class Religion extends \ModelBase
      * @return Religion[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,4 +83,5 @@ class Religion extends \ModelBase
     {
         $this->setProperty('d00195', $d00195);
     }
+
 }

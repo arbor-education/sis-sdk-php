@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EventParticipantInvitation extends \ModelBase
+class EventParticipantInvitation extends ModelBase
 {
+
     public const EVENT_PARTICIPANT = 'eventParticipant';
 
     public const INVITEE = 'invitee';
@@ -27,7 +29,7 @@ class EventParticipantInvitation extends \ModelBase
      * @return EventParticipantInvitation[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class EventParticipantInvitation extends \ModelBase
     }
 
     /**
-     * @return EventParticipant
+     * @return \Arbor\Model\EventParticipant
      */
     public function getEventParticipant()
     {
@@ -67,9 +69,9 @@ class EventParticipantInvitation extends \ModelBase
     }
 
     /**
-     * @param EventParticipant $eventParticipant
+     * @param \Arbor\Model\EventParticipant $eventParticipant
      */
-    public function setEventParticipant(\EventParticipant $eventParticipant = null)
+    public function setEventParticipant(\Arbor\Model\EventParticipant $eventParticipant = null)
     {
         $this->setProperty('eventParticipant', $eventParticipant);
     }
@@ -169,4 +171,5 @@ class EventParticipantInvitation extends \ModelBase
     {
         $this->setProperty('invitationReply', $invitationReply);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class BursaryType extends \ModelBase
+class BursaryType extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -21,7 +23,7 @@ class BursaryType extends \ModelBase
      * @return BursaryType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +71,7 @@ class BursaryType extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -77,15 +79,15 @@ class BursaryType extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return StudentFundingType
+     * @return \Arbor\Model\StudentFundingType
      */
     public function getStudentFundingType()
     {
@@ -93,9 +95,9 @@ class BursaryType extends \ModelBase
     }
 
     /**
-     * @param StudentFundingType $studentFundingType
+     * @param \Arbor\Model\StudentFundingType $studentFundingType
      */
-    public function setStudentFundingType(\StudentFundingType $studentFundingType = null)
+    public function setStudentFundingType(\Arbor\Model\StudentFundingType $studentFundingType = null)
     {
         $this->setProperty('studentFundingType', $studentFundingType);
     }
@@ -115,4 +117,5 @@ class BursaryType extends \ModelBase
     {
         $this->setProperty('allocatedAmount', $allocatedAmount);
     }
+
 }

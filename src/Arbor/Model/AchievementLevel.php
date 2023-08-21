@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AchievementLevel extends \ModelBase
+class AchievementLevel extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACHIEVEMENT_LEVEL_SET = 'achievementLevelSet';
@@ -35,7 +37,7 @@ class AchievementLevel extends \ModelBase
      * @return AchievementLevel[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class AchievementLevel extends \ModelBase
     }
 
     /**
-     * @return AchievementLevelSet
+     * @return \Arbor\Model\AchievementLevelSet
      */
     public function getAchievementLevelSet()
     {
@@ -91,9 +93,9 @@ class AchievementLevel extends \ModelBase
     }
 
     /**
-     * @param AchievementLevelSet $achievementLevelSet
+     * @param \Arbor\Model\AchievementLevelSet $achievementLevelSet
      */
-    public function setAchievementLevelSet(\AchievementLevelSet $achievementLevelSet = null)
+    public function setAchievementLevelSet(\Arbor\Model\AchievementLevelSet $achievementLevelSet = null)
     {
         $this->setProperty('achievementLevelSet', $achievementLevelSet);
     }
@@ -195,7 +197,7 @@ class AchievementLevel extends \ModelBase
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getLowerBenchmarkGrade()
     {
@@ -203,9 +205,9 @@ class AchievementLevel extends \ModelBase
     }
 
     /**
-     * @param Grade $lowerBenchmarkGrade
+     * @param \Arbor\Model\Grade $lowerBenchmarkGrade
      */
-    public function setLowerBenchmarkGrade(\Grade $lowerBenchmarkGrade = null)
+    public function setLowerBenchmarkGrade(\Arbor\Model\Grade $lowerBenchmarkGrade = null)
     {
         $this->setProperty('lowerBenchmarkGrade', $lowerBenchmarkGrade);
     }
@@ -227,7 +229,7 @@ class AchievementLevel extends \ModelBase
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getUpperBenchmarkGrade()
     {
@@ -235,10 +237,11 @@ class AchievementLevel extends \ModelBase
     }
 
     /**
-     * @param Grade $upperBenchmarkGrade
+     * @param \Arbor\Model\Grade $upperBenchmarkGrade
      */
-    public function setUpperBenchmarkGrade(\Grade $upperBenchmarkGrade = null)
+    public function setUpperBenchmarkGrade(\Arbor\Model\Grade $upperBenchmarkGrade = null)
     {
         $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
+
 }

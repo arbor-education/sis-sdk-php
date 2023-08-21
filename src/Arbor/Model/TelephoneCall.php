@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TelephoneCall extends \ModelBase
+class TelephoneCall extends ModelBase
 {
+
     public const CALLER_NAME = 'callerName';
 
     public const CALLER = 'caller';
@@ -39,7 +41,7 @@ class TelephoneCall extends \ModelBase
      * @return TelephoneCall[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -119,7 +121,7 @@ class TelephoneCall extends \ModelBase
     }
 
     /**
-     * @return TelephoneNumber
+     * @return \Arbor\Model\TelephoneNumber
      */
     public function getCallerTelephoneNumberModel()
     {
@@ -127,9 +129,9 @@ class TelephoneCall extends \ModelBase
     }
 
     /**
-     * @param TelephoneNumber $callerTelephoneNumberModel
+     * @param \Arbor\Model\TelephoneNumber $callerTelephoneNumberModel
      */
-    public function setCallerTelephoneNumberModel(\TelephoneNumber $callerTelephoneNumberModel = null)
+    public function setCallerTelephoneNumberModel(\Arbor\Model\TelephoneNumber $callerTelephoneNumberModel = null)
     {
         $this->setProperty('callerTelephoneNumberModel', $callerTelephoneNumberModel);
     }
@@ -215,7 +217,7 @@ class TelephoneCall extends \ModelBase
     }
 
     /**
-     * @return TelephoneNumber
+     * @return \Arbor\Model\TelephoneNumber
      */
     public function getRecipientTelephoneNumberModel()
     {
@@ -223,9 +225,9 @@ class TelephoneCall extends \ModelBase
     }
 
     /**
-     * @param TelephoneNumber $recipientTelephoneNumberModel
+     * @param \Arbor\Model\TelephoneNumber $recipientTelephoneNumberModel
      */
-    public function setRecipientTelephoneNumberModel(\TelephoneNumber $recipientTelephoneNumberModel = null)
+    public function setRecipientTelephoneNumberModel(\Arbor\Model\TelephoneNumber $recipientTelephoneNumberModel = null)
     {
         $this->setProperty('recipientTelephoneNumberModel', $recipientTelephoneNumberModel);
     }
@@ -277,4 +279,5 @@ class TelephoneCall extends \ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
+
 }

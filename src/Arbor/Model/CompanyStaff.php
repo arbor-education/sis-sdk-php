@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CompanyStaff extends \ModelBase
+class CompanyStaff extends ModelBase
 {
+
     public const COMPANY = 'company';
 
     public const PERSON = 'person';
@@ -19,7 +21,7 @@ class CompanyStaff extends \ModelBase
      * @return CompanyStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class CompanyStaff extends \ModelBase
     }
 
     /**
-     * @return Company
+     * @return \Arbor\Model\Company
      */
     public function getCompany()
     {
@@ -59,15 +61,15 @@ class CompanyStaff extends \ModelBase
     }
 
     /**
-     * @param Company $company
+     * @param \Arbor\Model\Company $company
      */
-    public function setCompany(\Company $company = null)
+    public function setCompany(\Arbor\Model\Company $company = null)
     {
         $this->setProperty('company', $company);
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -75,9 +77,9 @@ class CompanyStaff extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -97,4 +99,5 @@ class CompanyStaff extends \ModelBase
     {
         $this->setProperty('position', $position);
     }
+
 }

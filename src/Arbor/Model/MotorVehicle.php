@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MotorVehicle extends \ModelBase
+class MotorVehicle extends ModelBase
 {
+
     public const OWNER = 'owner';
 
     public const MOTOR_VEHICLE_TYPE = 'motorVehicleType';
@@ -27,7 +29,7 @@ class MotorVehicle extends \ModelBase
      * @return MotorVehicle[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -91,7 +93,7 @@ class MotorVehicle extends \ModelBase
     }
 
     /**
-     * @return MotorVehicleMake
+     * @return \Arbor\Model\MotorVehicleMake
      */
     public function getMotorVehicleMake()
     {
@@ -99,9 +101,9 @@ class MotorVehicle extends \ModelBase
     }
 
     /**
-     * @param MotorVehicleMake $motorVehicleMake
+     * @param \Arbor\Model\MotorVehicleMake $motorVehicleMake
      */
-    public function setMotorVehicleMake(\MotorVehicleMake $motorVehicleMake = null)
+    public function setMotorVehicleMake(\Arbor\Model\MotorVehicleMake $motorVehicleMake = null)
     {
         $this->setProperty('motorVehicleMake', $motorVehicleMake);
     }
@@ -169,4 +171,5 @@ class MotorVehicle extends \ModelBase
     {
         $this->setProperty('parkingAllocationProvided', $parkingAllocationProvided);
     }
+
 }

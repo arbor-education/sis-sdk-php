@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class GuardianConsultation extends \ModelBase
+class GuardianConsultation extends ModelBase
 {
+
     public const GUARDIAN_CONSULTATION_NAME = 'guardianConsultationName';
 
     public const START_DATETIME = 'startDatetime';
@@ -23,7 +25,7 @@ class GuardianConsultation extends \ModelBase
      * @return GuardianConsultation[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,4 +135,5 @@ class GuardianConsultation extends \ModelBase
     {
         $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
+
 }

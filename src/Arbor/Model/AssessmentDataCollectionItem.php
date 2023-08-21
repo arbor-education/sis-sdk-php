@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentDataCollectionItem extends \ModelBase
+class AssessmentDataCollectionItem extends ModelBase
 {
+
     public const ASSESSMENT_DATA_COLLECTION = 'assessmentDataCollection';
 
     public const ASSESSMENT_ENTITY = 'assessmentEntity';
@@ -31,7 +33,7 @@ class AssessmentDataCollectionItem extends \ModelBase
      * @return AssessmentDataCollectionItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +65,7 @@ class AssessmentDataCollectionItem extends \ModelBase
     }
 
     /**
-     * @return AssessmentDataCollection
+     * @return \Arbor\Model\AssessmentDataCollection
      */
     public function getAssessmentDataCollection()
     {
@@ -71,9 +73,9 @@ class AssessmentDataCollectionItem extends \ModelBase
     }
 
     /**
-     * @param AssessmentDataCollection $assessmentDataCollection
+     * @param \Arbor\Model\AssessmentDataCollection $assessmentDataCollection
      */
-    public function setAssessmentDataCollection(\AssessmentDataCollection $assessmentDataCollection = null)
+    public function setAssessmentDataCollection(\Arbor\Model\AssessmentDataCollection $assessmentDataCollection = null)
     {
         $this->setProperty('assessmentDataCollection', $assessmentDataCollection);
     }
@@ -127,7 +129,7 @@ class AssessmentDataCollectionItem extends \ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAssignedStaff()
     {
@@ -135,9 +137,9 @@ class AssessmentDataCollectionItem extends \ModelBase
     }
 
     /**
-     * @param Staff $assignedStaff
+     * @param \Arbor\Model\Staff $assignedStaff
      */
-    public function setAssignedStaff(\Staff $assignedStaff = null)
+    public function setAssignedStaff(\Arbor\Model\Staff $assignedStaff = null)
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }
@@ -205,4 +207,5 @@ class AssessmentDataCollectionItem extends \ModelBase
     {
         $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
     }
+
 }

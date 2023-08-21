@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class SchoolCensusSchoolDetail extends \ModelBase
+class SchoolCensusSchoolDetail extends ModelBase
 {
+
     public const SCHOOL_CENSUS = 'schoolCensus';
 
     public const TEEN_MOTHER_PLACES = 'teenMotherPlaces';
@@ -42,7 +43,7 @@ class SchoolCensusSchoolDetail extends \ModelBase
      * @return SchoolCensusSchoolDetail[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +75,7 @@ class SchoolCensusSchoolDetail extends \ModelBase
     }
 
     /**
-     * @return SchoolCensus
+     * @return \Arbor\Model\UkDfe\SchoolCensus
      */
     public function getSchoolCensus()
     {
@@ -82,9 +83,9 @@ class SchoolCensusSchoolDetail extends \ModelBase
     }
 
     /**
-     * @param SchoolCensus $schoolCensus
+     * @param \Arbor\Model\UkDfe\SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(\SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
@@ -280,4 +281,5 @@ class SchoolCensusSchoolDetail extends \ModelBase
     {
         $this->setProperty('previousYearQualificationResultsJson', $previousYearQualificationResultsJson);
     }
+
 }

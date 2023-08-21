@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EducationalInstitutionStaff extends \ModelBase
+class EducationalInstitutionStaff extends ModelBase
 {
+
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
     public const PERSON = 'person';
@@ -19,7 +21,7 @@ class EducationalInstitutionStaff extends \ModelBase
      * @return EducationalInstitutionStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class EducationalInstitutionStaff extends \ModelBase
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -59,15 +61,15 @@ class EducationalInstitutionStaff extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -75,9 +77,9 @@ class EducationalInstitutionStaff extends \ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -97,4 +99,5 @@ class EducationalInstitutionStaff extends \ModelBase
     {
         $this->setProperty('position', $position);
     }
+
 }

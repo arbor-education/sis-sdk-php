@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ProbationReview extends \ModelBase
+class ProbationReview extends ModelBase
 {
+
     public const PROBATION = 'probation';
 
     public const REVIEW_DATE = 'reviewDate';
@@ -21,7 +23,7 @@ class ProbationReview extends \ModelBase
      * @return ProbationReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class ProbationReview extends \ModelBase
     }
 
     /**
-     * @return Probation
+     * @return \Arbor\Model\Probation
      */
     public function getProbation()
     {
@@ -61,9 +63,9 @@ class ProbationReview extends \ModelBase
     }
 
     /**
-     * @param Probation $probation
+     * @param \Arbor\Model\Probation $probation
      */
-    public function setProbation(\Probation $probation = null)
+    public function setProbation(\Arbor\Model\Probation $probation = null)
     {
         $this->setProperty('probation', $probation);
     }
@@ -115,4 +117,5 @@ class ProbationReview extends \ModelBase
     {
         $this->setProperty('reviewNotes', $reviewNotes);
     }
+
 }

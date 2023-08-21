@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class KpiRange extends \ModelBase
+class KpiRange extends ModelBase
 {
+
     public const KPI = 'kpi';
 
     public const KPI_TARGET = 'kpiTarget';
@@ -29,7 +31,7 @@ class KpiRange extends \ModelBase
      * @return KpiRange[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +63,7 @@ class KpiRange extends \ModelBase
     }
 
     /**
-     * @return Kpi
+     * @return \Arbor\Model\Kpi
      */
     public function getKpi()
     {
@@ -69,15 +71,15 @@ class KpiRange extends \ModelBase
     }
 
     /**
-     * @param Kpi $kpi
+     * @param \Arbor\Model\Kpi $kpi
      */
-    public function setKpi(\Kpi $kpi = null)
+    public function setKpi(\Arbor\Model\Kpi $kpi = null)
     {
         $this->setProperty('kpi', $kpi);
     }
 
     /**
-     * @return KpiTarget
+     * @return \Arbor\Model\KpiTarget
      */
     public function getKpiTarget()
     {
@@ -85,9 +87,9 @@ class KpiRange extends \ModelBase
     }
 
     /**
-     * @param KpiTarget $kpiTarget
+     * @param \Arbor\Model\KpiTarget $kpiTarget
      */
-    public function setKpiTarget(\KpiTarget $kpiTarget = null)
+    public function setKpiTarget(\Arbor\Model\KpiTarget $kpiTarget = null)
     {
         $this->setProperty('kpiTarget', $kpiTarget);
     }
@@ -187,4 +189,5 @@ class KpiRange extends \ModelBase
     {
         $this->setProperty('color', $color);
     }
+
 }

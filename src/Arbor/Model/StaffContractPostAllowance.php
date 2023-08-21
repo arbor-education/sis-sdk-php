@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StaffContractPostAllowance extends \ModelBase
+class StaffContractPostAllowance extends ModelBase
 {
+
     public const STAFF_CONTRACT_POST = 'staffContractPost';
 
     public const LINKED_ALLOWANCE = 'linkedAllowance';
@@ -35,7 +37,7 @@ class StaffContractPostAllowance extends \ModelBase
      * @return StaffContractPostAllowance[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class StaffContractPostAllowance extends \ModelBase
     }
 
     /**
-     * @return StaffContractPost
+     * @return \Arbor\Model\StaffContractPost
      */
     public function getStaffContractPost()
     {
@@ -75,15 +77,15 @@ class StaffContractPostAllowance extends \ModelBase
     }
 
     /**
-     * @param StaffContractPost $staffContractPost
+     * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
 
     /**
-     * @return Allowance
+     * @return \Arbor\Model\Allowance
      */
     public function getLinkedAllowance()
     {
@@ -91,9 +93,9 @@ class StaffContractPostAllowance extends \ModelBase
     }
 
     /**
-     * @param Allowance $linkedAllowance
+     * @param \Arbor\Model\Allowance $linkedAllowance
      */
-    public function setLinkedAllowance(\Allowance $linkedAllowance = null)
+    public function setLinkedAllowance(\Arbor\Model\Allowance $linkedAllowance = null)
     {
         $this->setProperty('linkedAllowance', $linkedAllowance);
     }
@@ -241,4 +243,5 @@ class StaffContractPostAllowance extends \ModelBase
     {
         $this->setProperty('benefitInKind', $benefitInKind);
     }
+
 }

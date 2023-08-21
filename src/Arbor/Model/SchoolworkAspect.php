@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class SchoolworkAspect extends \ModelBase
+class SchoolworkAspect extends ModelBase
 {
+
     public const SCHOOLWORK = 'schoolwork';
 
     public const ASPECT_NAME = 'aspectName';
@@ -27,7 +29,7 @@ class SchoolworkAspect extends \ModelBase
      * @return SchoolworkAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class SchoolworkAspect extends \ModelBase
     }
 
     /**
-     * @return Schoolwork
+     * @return \Arbor\Model\Schoolwork
      */
     public function getSchoolwork()
     {
@@ -67,9 +69,9 @@ class SchoolworkAspect extends \ModelBase
     }
 
     /**
-     * @param Schoolwork $schoolwork
+     * @param \Arbor\Model\Schoolwork $schoolwork
      */
-    public function setSchoolwork(\Schoolwork $schoolwork = null)
+    public function setSchoolwork(\Arbor\Model\Schoolwork $schoolwork = null)
     {
         $this->setProperty('schoolwork', $schoolwork);
     }
@@ -107,7 +109,7 @@ class SchoolworkAspect extends \ModelBase
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -115,9 +117,9 @@ class SchoolworkAspect extends \ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -169,4 +171,5 @@ class SchoolworkAspect extends \ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
+
 }

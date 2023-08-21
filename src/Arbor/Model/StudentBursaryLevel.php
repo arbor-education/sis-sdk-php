@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentBursaryLevel extends \ModelBase
+class StudentBursaryLevel extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const BURSARY_LEVEL = 'bursaryLevel';
@@ -23,7 +25,7 @@ class StudentBursaryLevel extends \ModelBase
      * @return StudentBursaryLevel[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class StudentBursaryLevel extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,15 +65,15 @@ class StudentBursaryLevel extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return BursaryLevel
+     * @return \Arbor\Model\BursaryLevel
      */
     public function getBursaryLevel()
     {
@@ -79,15 +81,15 @@ class StudentBursaryLevel extends \ModelBase
     }
 
     /**
-     * @param BursaryLevel $bursaryLevel
+     * @param \Arbor\Model\BursaryLevel $bursaryLevel
      */
-    public function setBursaryLevel(\BursaryLevel $bursaryLevel = null)
+    public function setBursaryLevel(\Arbor\Model\BursaryLevel $bursaryLevel = null)
     {
         $this->setProperty('bursaryLevel', $bursaryLevel);
     }
 
     /**
-     * @return StudentFunding
+     * @return \Arbor\Model\StudentFunding
      */
     public function getStudentFunding()
     {
@@ -95,9 +97,9 @@ class StudentBursaryLevel extends \ModelBase
     }
 
     /**
-     * @param StudentFunding $studentFunding
+     * @param \Arbor\Model\StudentFunding $studentFunding
      */
-    public function setStudentFunding(\StudentFunding $studentFunding = null)
+    public function setStudentFunding(\Arbor\Model\StudentFunding $studentFunding = null)
     {
         $this->setProperty('studentFunding', $studentFunding);
     }
@@ -133,4 +135,5 @@ class StudentBursaryLevel extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

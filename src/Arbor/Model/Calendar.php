@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Calendar extends \ModelBase
+class Calendar extends ModelBase
 {
+
     public const OWNER = 'owner';
 
     public const CALENDAR_TYPE = 'calendarType';
@@ -23,7 +25,7 @@ class Calendar extends \ModelBase
      * @return Calendar[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +73,7 @@ class Calendar extends \ModelBase
     }
 
     /**
-     * @return CalendarType
+     * @return \Arbor\Model\CalendarType
      */
     public function getCalendarType()
     {
@@ -79,9 +81,9 @@ class Calendar extends \ModelBase
     }
 
     /**
-     * @param CalendarType $calendarType
+     * @param \Arbor\Model\CalendarType $calendarType
      */
-    public function setCalendarType(\CalendarType $calendarType = null)
+    public function setCalendarType(\Arbor\Model\CalendarType $calendarType = null)
     {
         $this->setProperty('calendarType', $calendarType);
     }
@@ -133,4 +135,5 @@ class Calendar extends \ModelBase
     {
         $this->setProperty('calendarColor', $calendarColor);
     }
+
 }

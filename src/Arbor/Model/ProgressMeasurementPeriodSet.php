@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ProgressMeasurementPeriodSet extends \ModelBase
+class ProgressMeasurementPeriodSet extends ModelBase
 {
+
     public const PERIOD_FREQUENCY = 'periodFrequency';
 
     public const SET_NAME = 'setName';
@@ -19,7 +21,7 @@ class ProgressMeasurementPeriodSet extends \ModelBase
      * @return ProgressMeasurementPeriodSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -83,7 +85,7 @@ class ProgressMeasurementPeriodSet extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -91,10 +93,11 @@ class ProgressMeasurementPeriodSet extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
+
 }

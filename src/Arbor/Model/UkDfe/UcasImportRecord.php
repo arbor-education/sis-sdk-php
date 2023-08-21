@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
 
-class UcasImportRecord extends \ModelBase
+class UcasImportRecord extends ModelBase
 {
+
     public const UCAS_IMPORT = 'ucasImport';
 
     public const CSV_ROW = 'csvRow';
@@ -37,7 +37,7 @@ class UcasImportRecord extends \ModelBase
      * @return UcasImportRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +69,7 @@ class UcasImportRecord extends \ModelBase
     }
 
     /**
-     * @return UcasImport
+     * @return \Arbor\Model\UkDfe\UcasImport
      */
     public function getUcasImport()
     {
@@ -77,9 +77,9 @@ class UcasImportRecord extends \ModelBase
     }
 
     /**
-     * @param UcasImport $ucasImport
+     * @param \Arbor\Model\UkDfe\UcasImport $ucasImport
      */
-    public function setUcasImport(\UcasImport $ucasImport = null)
+    public function setUcasImport(\Arbor\Model\UkDfe\UcasImport $ucasImport = null)
     {
         $this->setProperty('ucasImport', $ucasImport);
     }
@@ -101,7 +101,7 @@ class UcasImportRecord extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getMappedStudent()
     {
@@ -109,9 +109,9 @@ class UcasImportRecord extends \ModelBase
     }
 
     /**
-     * @param Student $mappedStudent
+     * @param \Arbor\Model\Student $mappedStudent
      */
-    public function setMappedStudent(\Student $mappedStudent = null)
+    public function setMappedStudent(\Arbor\Model\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
@@ -227,4 +227,5 @@ class UcasImportRecord extends \ModelBase
     {
         $this->setProperty('campusCode', $campusCode);
     }
+
 }

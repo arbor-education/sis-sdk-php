@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmailAddressImport extends \ModelBase
+class EmailAddressImport extends ModelBase
 {
+
     public const EMAIL_ADDRESS_IMPORT_JOB = 'emailAddressImportJob';
 
     public const EMAIL_ADDRESS_OWNER = 'emailAddressOwner';
@@ -27,7 +29,7 @@ class EmailAddressImport extends \ModelBase
      * @return EmailAddressImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class EmailAddressImport extends \ModelBase
     }
 
     /**
-     * @return EmailAddressImportJob
+     * @return \Arbor\Model\EmailAddressImportJob
      */
     public function getEmailAddressImportJob()
     {
@@ -67,9 +69,9 @@ class EmailAddressImport extends \ModelBase
     }
 
     /**
-     * @param EmailAddressImportJob $emailAddressImportJob
+     * @param \Arbor\Model\EmailAddressImportJob $emailAddressImportJob
      */
-    public function setEmailAddressImportJob(\EmailAddressImportJob $emailAddressImportJob = null)
+    public function setEmailAddressImportJob(\Arbor\Model\EmailAddressImportJob $emailAddressImportJob = null)
     {
         $this->setProperty('emailAddressImportJob', $emailAddressImportJob);
     }
@@ -169,4 +171,5 @@ class EmailAddressImport extends \ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
+
 }

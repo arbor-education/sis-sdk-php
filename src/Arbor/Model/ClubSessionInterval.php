@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ClubSessionInterval extends \ModelBase
+class ClubSessionInterval extends ModelBase
 {
+
     public const CLUB = 'club';
 
     public const TIMETABLE_SLOT = 'timetableSlot';
@@ -23,7 +25,7 @@ class ClubSessionInterval extends \ModelBase
      * @return ClubSessionInterval[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class ClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @return Club
+     * @return \Arbor\Model\Club
      */
     public function getClub()
     {
@@ -63,15 +65,15 @@ class ClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param Club $club
+     * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Club $club = null)
+    public function setClub(\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -79,9 +81,9 @@ class ClubSessionInterval extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -133,4 +135,5 @@ class ClubSessionInterval extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

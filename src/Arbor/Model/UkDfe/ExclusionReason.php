@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class ExclusionReason extends \ModelBase
+class ExclusionReason extends ModelBase
 {
+
     public const D00024 = 'd00024';
 
     protected $_resourceType = ResourceType::UK_DFE_EXCLUSION_REASON;
@@ -18,7 +19,7 @@ class ExclusionReason extends \ModelBase
      * @return ExclusionReason[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,4 +65,5 @@ class ExclusionReason extends \ModelBase
     {
         $this->setProperty('d00024', $d00024);
     }
+
 }

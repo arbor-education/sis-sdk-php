@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealPrice extends \ModelBase
+class MealPrice extends ModelBase
 {
+
     public const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
 
     public const PRICE_EX_VAT = 'priceExVat';
@@ -25,7 +27,7 @@ class MealPrice extends \ModelBase
      * @return MealPrice[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class MealPrice extends \ModelBase
     }
 
     /**
-     * @return MealProvisionPriceCategory
+     * @return \Arbor\Model\MealProvisionPriceCategory
      */
     public function getMealProvisionPriceCategory()
     {
@@ -65,9 +67,9 @@ class MealPrice extends \ModelBase
     }
 
     /**
-     * @param MealProvisionPriceCategory $mealProvisionPriceCategory
+     * @param \Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory
      */
-    public function setMealProvisionPriceCategory(\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
+    public function setMealProvisionPriceCategory(\Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
         $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
@@ -105,7 +107,7 @@ class MealPrice extends \ModelBase
     }
 
     /**
-     * @return VatRate
+     * @return \Arbor\Model\VatRate
      */
     public function getVatRate()
     {
@@ -113,9 +115,9 @@ class MealPrice extends \ModelBase
     }
 
     /**
-     * @param VatRate $vatRate
+     * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\VatRate $vatRate = null)
+    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -151,4 +153,5 @@ class MealPrice extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

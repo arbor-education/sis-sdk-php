@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Ethnicity extends \ModelBase
+class Ethnicity extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -37,7 +39,7 @@ class Ethnicity extends \ModelBase
      * @return Ethnicity[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -133,7 +135,7 @@ class Ethnicity extends \ModelBase
     }
 
     /**
-     * @return EthnicityCategory
+     * @return \Arbor\Model\EthnicityCategory
      */
     public function getEthnicityCategory()
     {
@@ -141,9 +143,9 @@ class Ethnicity extends \ModelBase
     }
 
     /**
-     * @param EthnicityCategory $ethnicityCategory
+     * @param \Arbor\Model\EthnicityCategory $ethnicityCategory
      */
-    public function setEthnicityCategory(\EthnicityCategory $ethnicityCategory = null)
+    public function setEthnicityCategory(\Arbor\Model\EthnicityCategory $ethnicityCategory = null)
     {
         $this->setProperty('ethnicityCategory', $ethnicityCategory);
     }
@@ -259,4 +261,5 @@ class Ethnicity extends \ModelBase
     {
         $this->setProperty('d00250', $d00250);
     }
+
 }

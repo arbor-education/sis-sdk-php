@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StandardizedAssessment extends \ModelBase
+class StandardizedAssessment extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -27,7 +29,7 @@ class StandardizedAssessment extends \ModelBase
      * @return StandardizedAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -139,7 +141,7 @@ class StandardizedAssessment extends \ModelBase
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -147,15 +149,15 @@ class StandardizedAssessment extends \ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
 
     /**
-     * @return GradePointScale
+     * @return \Arbor\Model\GradePointScale
      */
     public function getGradePointScale()
     {
@@ -163,10 +165,11 @@ class StandardizedAssessment extends \ModelBase
     }
 
     /**
-     * @param GradePointScale $gradePointScale
+     * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(\GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
+
 }

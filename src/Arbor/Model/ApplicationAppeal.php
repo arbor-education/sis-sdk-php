@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ApplicationAppeal extends \ModelBase
+class ApplicationAppeal extends ModelBase
 {
+
     public const APPLICATION = 'application';
 
     public const NARRATIVE = 'narrative';
@@ -27,7 +29,7 @@ class ApplicationAppeal extends \ModelBase
      * @return ApplicationAppeal[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class ApplicationAppeal extends \ModelBase
     }
 
     /**
-     * @return Application
+     * @return \Arbor\Model\Application
      */
     public function getApplication()
     {
@@ -67,9 +69,9 @@ class ApplicationAppeal extends \ModelBase
     }
 
     /**
-     * @param Application $application
+     * @param \Arbor\Model\Application $application
      */
-    public function setApplication(\Application $application = null)
+    public function setApplication(\Arbor\Model\Application $application = null)
     {
         $this->setProperty('application', $application);
     }
@@ -169,4 +171,5 @@ class ApplicationAppeal extends \ModelBase
     {
         $this->setProperty('decision', $decision);
     }
+
 }

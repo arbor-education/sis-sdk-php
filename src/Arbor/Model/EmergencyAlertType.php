@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EmergencyAlertType extends \ModelBase
+class EmergencyAlertType extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const ACTIVE = 'active';
@@ -17,7 +19,7 @@ class EmergencyAlertType extends \ModelBase
      * @return EmergencyAlertType[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,4 +81,5 @@ class EmergencyAlertType extends \ModelBase
     {
         $this->setProperty('active', $active);
     }
+
 }

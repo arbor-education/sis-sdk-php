@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AlertRuleCondition extends \ModelBase
+class AlertRuleCondition extends ModelBase
 {
+
     public const ALERT_RULE = 'alertRule';
 
     public const TRIGGER_FIELD = 'triggerField';
@@ -23,7 +25,7 @@ class AlertRuleCondition extends \ModelBase
      * @return AlertRuleCondition[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class AlertRuleCondition extends \ModelBase
     }
 
     /**
-     * @return AlertRule
+     * @return \Arbor\Model\AlertRule
      */
     public function getAlertRule()
     {
@@ -63,9 +65,9 @@ class AlertRuleCondition extends \ModelBase
     }
 
     /**
-     * @param AlertRule $alertRule
+     * @param \Arbor\Model\AlertRule $alertRule
      */
-    public function setAlertRule(\AlertRule $alertRule = null)
+    public function setAlertRule(\Arbor\Model\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -133,4 +135,5 @@ class AlertRuleCondition extends \ModelBase
     {
         $this->setProperty('conditionResolver', $conditionResolver);
     }
+
 }

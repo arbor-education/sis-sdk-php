@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentEducationalHistory extends \ModelBase
+class StudentEducationalHistory extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -25,7 +27,7 @@ class StudentEducationalHistory extends \ModelBase
      * @return StudentEducationalHistory[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class StudentEducationalHistory extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -65,15 +67,15 @@ class StudentEducationalHistory extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -81,9 +83,9 @@ class StudentEducationalHistory extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -137,7 +139,7 @@ class StudentEducationalHistory extends \ModelBase
     }
 
     /**
-     * @return UnenrolmentReason
+     * @return \Arbor\Model\UnenrolmentReason
      */
     public function getUnenrolmentReason()
     {
@@ -145,10 +147,11 @@ class StudentEducationalHistory extends \ModelBase
     }
 
     /**
-     * @param UnenrolmentReason $unenrolmentReason
+     * @param \Arbor\Model\UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(\UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
+
 }

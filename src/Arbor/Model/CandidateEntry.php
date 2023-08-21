@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CandidateEntry extends \ModelBase
+class CandidateEntry extends ModelBase
 {
+
     public const CANDIDATE = 'candidate';
 
     public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
@@ -23,7 +25,7 @@ class CandidateEntry extends \ModelBase
      * @return CandidateEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class CandidateEntry extends \ModelBase
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidate()
     {
@@ -63,15 +65,15 @@ class CandidateEntry extends \ModelBase
     }
 
     /**
-     * @param Candidate $candidate
+     * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Candidate $candidate = null)
+    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
 
     /**
-     * @return QualificationLearningUnit
+     * @return \Arbor\Model\QualificationLearningUnit
      */
     public function getQualificationLearningUnit()
     {
@@ -79,15 +81,15 @@ class CandidateEntry extends \ModelBase
     }
 
     /**
-     * @param QualificationLearningUnit $qualificationLearningUnit
+     * @param \Arbor\Model\QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
 
     /**
-     * @return QualificationAvailabilityInstance
+     * @return \Arbor\Model\QualificationAvailabilityInstance
      */
     public function getQualificationAvailabilityInstance()
     {
@@ -95,9 +97,10 @@ class CandidateEntry extends \ModelBase
     }
 
     /**
-     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     * @param \Arbor\Model\QualificationAvailabilityInstance
+     * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -133,4 +136,5 @@ class CandidateEntry extends \ModelBase
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }
+
 }

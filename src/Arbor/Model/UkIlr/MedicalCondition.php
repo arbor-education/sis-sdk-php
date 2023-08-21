@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\SenNeedType;
 
-class MedicalCondition extends \ModelBase
+class MedicalCondition extends ModelBase
 {
+
     public const ILR_RETURN_SEN_NEED_TYPE = 'ilrReturnSenNeedType';
 
     protected $_resourceType = ResourceType::UK_ILR_MEDICAL_CONDITION;
@@ -19,7 +19,7 @@ class MedicalCondition extends \ModelBase
      * @return MedicalCondition[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +51,7 @@ class MedicalCondition extends \ModelBase
     }
 
     /**
-     * @return SenNeedType
+     * @return \Arbor\Model\SenNeedType
      */
     public function getIlrReturnSenNeedType()
     {
@@ -59,10 +59,11 @@ class MedicalCondition extends \ModelBase
     }
 
     /**
-     * @param SenNeedType $ilrReturnSenNeedType
+     * @param \Arbor\Model\SenNeedType $ilrReturnSenNeedType
      */
-    public function setIlrReturnSenNeedType(\SenNeedType $ilrReturnSenNeedType = null)
+    public function setIlrReturnSenNeedType(\Arbor\Model\SenNeedType $ilrReturnSenNeedType = null)
     {
         $this->setProperty('ilrReturnSenNeedType', $ilrReturnSenNeedType);
     }
+
 }

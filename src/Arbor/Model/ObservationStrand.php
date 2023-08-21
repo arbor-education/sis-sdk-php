@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ObservationStrand extends \ModelBase
+class ObservationStrand extends ModelBase
 {
+
     public const OBSERVATION_THEME = 'observationTheme';
 
     public const OBSERVATION_GRADE_SET = 'observationGradeSet';
@@ -21,7 +23,7 @@ class ObservationStrand extends \ModelBase
      * @return ObservationStrand[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class ObservationStrand extends \ModelBase
     }
 
     /**
-     * @return ObservationTheme
+     * @return \Arbor\Model\ObservationTheme
      */
     public function getObservationTheme()
     {
@@ -61,15 +63,15 @@ class ObservationStrand extends \ModelBase
     }
 
     /**
-     * @param ObservationTheme $observationTheme
+     * @param \Arbor\Model\ObservationTheme $observationTheme
      */
-    public function setObservationTheme(\ObservationTheme $observationTheme = null)
+    public function setObservationTheme(\Arbor\Model\ObservationTheme $observationTheme = null)
     {
         $this->setProperty('observationTheme', $observationTheme);
     }
 
     /**
-     * @return ObservationGradeSet
+     * @return \Arbor\Model\ObservationGradeSet
      */
     public function getObservationGradeSet()
     {
@@ -77,9 +79,9 @@ class ObservationStrand extends \ModelBase
     }
 
     /**
-     * @param ObservationGradeSet $observationGradeSet
+     * @param \Arbor\Model\ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(\ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
@@ -115,4 +117,5 @@ class ObservationStrand extends \ModelBase
     {
         $this->setProperty('useComment', $useComment);
     }
+
 }

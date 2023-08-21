@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class HouseMembership extends \ModelBase
+class HouseMembership extends ModelBase
 {
+
     public const HOUSE = 'house';
 
     public const STUDENT = 'student';
@@ -25,7 +27,7 @@ class HouseMembership extends \ModelBase
      * @return HouseMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class HouseMembership extends \ModelBase
     }
 
     /**
-     * @return House
+     * @return \Arbor\Model\House
      */
     public function getHouse()
     {
@@ -65,15 +67,15 @@ class HouseMembership extends \ModelBase
     }
 
     /**
-     * @param House $house
+     * @param \Arbor\Model\House $house
      */
-    public function setHouse(\House $house = null)
+    public function setHouse(\Arbor\Model\House $house = null)
     {
         $this->setProperty('house', $house);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -81,9 +83,9 @@ class HouseMembership extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -121,7 +123,7 @@ class HouseMembership extends \ModelBase
     }
 
     /**
-     * @return HouseAutomaticEnrolment
+     * @return \Arbor\Model\HouseAutomaticEnrolment
      */
     public function getHouseAutomaticEnrolment()
     {
@@ -129,15 +131,15 @@ class HouseMembership extends \ModelBase
     }
 
     /**
-     * @param HouseAutomaticEnrolment $houseAutomaticEnrolment
+     * @param \Arbor\Model\HouseAutomaticEnrolment $houseAutomaticEnrolment
      */
-    public function setHouseAutomaticEnrolment(\HouseAutomaticEnrolment $houseAutomaticEnrolment = null)
+    public function setHouseAutomaticEnrolment(\Arbor\Model\HouseAutomaticEnrolment $houseAutomaticEnrolment = null)
     {
         $this->setProperty('houseAutomaticEnrolment', $houseAutomaticEnrolment);
     }
 
     /**
-     * @return RegistrationFormMembership
+     * @return \Arbor\Model\RegistrationFormMembership
      */
     public function getEnrolmentDependency()
     {
@@ -145,10 +147,11 @@ class HouseMembership extends \ModelBase
     }
 
     /**
-     * @param RegistrationFormMembership $enrolmentDependency
+     * @param \Arbor\Model\RegistrationFormMembership $enrolmentDependency
      */
-    public function setEnrolmentDependency(\RegistrationFormMembership $enrolmentDependency = null)
+    public function setEnrolmentDependency(\Arbor\Model\RegistrationFormMembership $enrolmentDependency = null)
     {
         $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
+
 }

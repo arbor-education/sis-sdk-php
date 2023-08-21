@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UserDefinedField extends \ModelBase
+class UserDefinedField extends ModelBase
 {
+
     public const FIELD_NAME = 'fieldName';
 
     public const IDENTIFIER = 'identifier';
@@ -27,7 +29,7 @@ class UserDefinedField extends \ModelBase
      * @return UserDefinedField[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -169,4 +171,5 @@ class UserDefinedField extends \ModelBase
     {
         $this->setProperty('active', $active);
     }
+
 }

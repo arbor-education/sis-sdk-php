@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class UserLogin extends \ModelBase
+class UserLogin extends ModelBase
 {
+
     public const USER = 'user';
 
     public const LOGIN_DATETIME = 'loginDatetime';
@@ -25,7 +27,7 @@ class UserLogin extends \ModelBase
      * @return UserLogin[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +59,7 @@ class UserLogin extends \ModelBase
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getUser()
     {
@@ -65,9 +67,9 @@ class UserLogin extends \ModelBase
     }
 
     /**
-     * @param User $user
+     * @param \Arbor\Model\User $user
      */
-    public function setUser(\User $user = null)
+    public function setUser(\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -151,4 +153,5 @@ class UserLogin extends \ModelBase
     {
         $this->setProperty('identityProvider', $identityProvider);
     }
+
 }

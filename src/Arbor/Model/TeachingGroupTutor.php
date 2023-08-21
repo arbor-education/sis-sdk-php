@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TeachingGroupTutor extends \ModelBase
+class TeachingGroupTutor extends ModelBase
 {
+
     public const TEACHING_GROUP = 'teachingGroup';
 
     public const STAFF = 'staff';
@@ -21,7 +23,7 @@ class TeachingGroupTutor extends \ModelBase
      * @return TeachingGroupTutor[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class TeachingGroupTutor extends \ModelBase
     }
 
     /**
-     * @return TeachingGroup
+     * @return \Arbor\Model\TeachingGroup
      */
     public function getTeachingGroup()
     {
@@ -61,15 +63,15 @@ class TeachingGroupTutor extends \ModelBase
     }
 
     /**
-     * @param TeachingGroup $teachingGroup
+     * @param \Arbor\Model\TeachingGroup $teachingGroup
      */
-    public function setTeachingGroup(\TeachingGroup $teachingGroup = null)
+    public function setTeachingGroup(\Arbor\Model\TeachingGroup $teachingGroup = null)
     {
         $this->setProperty('teachingGroup', $teachingGroup);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -77,9 +79,9 @@ class TeachingGroupTutor extends \ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -115,4 +117,5 @@ class TeachingGroupTutor extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

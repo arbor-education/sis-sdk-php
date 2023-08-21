@@ -3,10 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
-use Arbor\Model\UkJcq\QualificationResultImportJob;
+use Arbor\Model\ModelBase;
 
-class QualificationResult extends \ModelBase
+class QualificationResult extends ModelBase
 {
+
     public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     public const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -42,7 +43,7 @@ class QualificationResult extends \ModelBase
      * @return QualificationResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +75,7 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @return QualificationAspect
+     * @return \Arbor\Model\QualificationAspect
      */
     public function getQualificationAspect()
     {
@@ -82,15 +83,15 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param QualificationAspect $qualificationAspect
+     * @param \Arbor\Model\QualificationAspect $qualificationAspect
      */
-    public function setQualificationAspect(\QualificationAspect $qualificationAspect = null)
+    public function setQualificationAspect(\Arbor\Model\QualificationAspect $qualificationAspect = null)
     {
         $this->setProperty('qualificationAspect', $qualificationAspect);
     }
 
     /**
-     * @return QualificationGrade
+     * @return \Arbor\Model\QualificationGrade
      */
     public function getQualificationGrade()
     {
@@ -98,9 +99,9 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param QualificationGrade $qualificationGrade
+     * @param \Arbor\Model\QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(\QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(\Arbor\Model\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -122,7 +123,7 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -130,15 +131,15 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CandidateRegistration
+     * @return \Arbor\Model\CandidateRegistration
      */
     public function getCandidateRegistration()
     {
@@ -146,15 +147,15 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param CandidateRegistration $candidateRegistration
+     * @param \Arbor\Model\CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(\CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(\Arbor\Model\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -162,15 +163,15 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
-     * @return CandidateAssessableEntry
+     * @return \Arbor\Model\CandidateAssessableEntry
      */
     public function getCandidateAssessableEntry()
     {
@@ -178,9 +179,9 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param CandidateAssessableEntry $candidateAssessableEntry
+     * @param \Arbor\Model\CandidateAssessableEntry $candidateAssessableEntry
      */
-    public function setCandidateAssessableEntry(\CandidateAssessableEntry $candidateAssessableEntry = null)
+    public function setCandidateAssessableEntry(\Arbor\Model\CandidateAssessableEntry $candidateAssessableEntry = null)
     {
         $this->setProperty('candidateAssessableEntry', $candidateAssessableEntry);
     }
@@ -218,7 +219,7 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @return QualificationResultImportJob
+     * @return \Arbor\Model\UkJcq\QualificationResultImportJob
      */
     public function getImportJob()
     {
@@ -226,15 +227,15 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param QualificationResultImportJob $importJob
+     * @param \Arbor\Model\UkJcq\QualificationResultImportJob $importJob
      */
-    public function setImportJob(\QualificationResultImportJob $importJob = null)
+    public function setImportJob(\Arbor\Model\UkJcq\QualificationResultImportJob $importJob = null)
     {
         $this->setProperty('importJob', $importJob);
     }
 
     /**
-     * @return QualificationAvailabilityInstance
+     * @return \Arbor\Model\QualificationAvailabilityInstance
      */
     public function getQualificationAvailabilityInstance()
     {
@@ -242,9 +243,10 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     * @param \Arbor\Model\QualificationAvailabilityInstance
+     * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -282,7 +284,7 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @return QualificationGrade
+     * @return \Arbor\Model\QualificationGrade
      */
     public function getEndorsementGrade()
     {
@@ -290,10 +292,11 @@ class QualificationResult extends \ModelBase
     }
 
     /**
-     * @param QualificationGrade $endorsementGrade
+     * @param \Arbor\Model\QualificationGrade $endorsementGrade
      */
-    public function setEndorsementGrade(\QualificationGrade $endorsementGrade = null)
+    public function setEndorsementGrade(\Arbor\Model\QualificationGrade $endorsementGrade = null)
     {
         $this->setProperty('endorsementGrade', $endorsementGrade);
     }
+
 }

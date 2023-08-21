@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class EntityPushdownVersion extends \ModelBase
+class EntityPushdownVersion extends ModelBase
 {
+
     public const ENTITY_PUSHDOWN = 'entityPushdown';
 
     public const VERSION_DATA = 'versionData';
@@ -19,7 +21,7 @@ class EntityPushdownVersion extends \ModelBase
      * @return EntityPushdownVersion[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class EntityPushdownVersion extends \ModelBase
     }
 
     /**
-     * @return EntityPushdown
+     * @return \Arbor\Model\EntityPushdown
      */
     public function getEntityPushdown()
     {
@@ -59,9 +61,9 @@ class EntityPushdownVersion extends \ModelBase
     }
 
     /**
-     * @param EntityPushdown $entityPushdown
+     * @param \Arbor\Model\EntityPushdown $entityPushdown
      */
-    public function setEntityPushdown(\EntityPushdown $entityPushdown = null)
+    public function setEntityPushdown(\Arbor\Model\EntityPushdown $entityPushdown = null)
     {
         $this->setProperty('entityPushdown', $entityPushdown);
     }
@@ -97,4 +99,5 @@ class EntityPushdownVersion extends \ModelBase
     {
         $this->setProperty('versionNumber', $versionNumber);
     }
+
 }

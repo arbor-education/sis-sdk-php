@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Session extends \ModelBase
+class Session extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -33,7 +35,7 @@ class Session extends \ModelBase
      * @return Session[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -145,7 +147,7 @@ class Session extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -153,15 +155,15 @@ class Session extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -169,15 +171,15 @@ class Session extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -185,15 +187,15 @@ class Session extends \ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
     /**
-     * @return LessonPlan
+     * @return \Arbor\Model\LessonPlan
      */
     public function getLessonPlan()
     {
@@ -201,9 +203,9 @@ class Session extends \ModelBase
     }
 
     /**
-     * @param LessonPlan $lessonPlan
+     * @param \Arbor\Model\LessonPlan $lessonPlan
      */
-    public function setLessonPlan(\LessonPlan $lessonPlan = null)
+    public function setLessonPlan(\Arbor\Model\LessonPlan $lessonPlan = null)
     {
         $this->setProperty('lessonPlan', $lessonPlan);
     }
@@ -223,4 +225,5 @@ class Session extends \ModelBase
     {
         $this->setProperty('isSuspended', $isSuspended);
     }
+
 }

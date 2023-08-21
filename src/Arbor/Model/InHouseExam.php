@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InHouseExam extends \ModelBase
+class InHouseExam extends ModelBase
 {
+
     public const MOCK_QUALIFICATION_ASSESSABLE = 'mockQualificationAssessable';
 
     public const MOCK_QUALIFICATION_LEARNING_UNIT = 'mockQualificationLearningUnit';
@@ -21,7 +23,7 @@ class InHouseExam extends \ModelBase
      * @return InHouseExam[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class InHouseExam extends \ModelBase
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getMockQualificationAssessable()
     {
@@ -61,15 +63,15 @@ class InHouseExam extends \ModelBase
     }
 
     /**
-     * @param QualificationAssessable $mockQualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $mockQualificationAssessable
      */
-    public function setMockQualificationAssessable(\QualificationAssessable $mockQualificationAssessable = null)
+    public function setMockQualificationAssessable(\Arbor\Model\QualificationAssessable $mockQualificationAssessable = null)
     {
         $this->setProperty('mockQualificationAssessable', $mockQualificationAssessable);
     }
 
     /**
-     * @return QualificationLearningUnit
+     * @return \Arbor\Model\QualificationLearningUnit
      */
     public function getMockQualificationLearningUnit()
     {
@@ -77,9 +79,9 @@ class InHouseExam extends \ModelBase
     }
 
     /**
-     * @param QualificationLearningUnit $mockQualificationLearningUnit
+     * @param \Arbor\Model\QualificationLearningUnit $mockQualificationLearningUnit
      */
-    public function setMockQualificationLearningUnit(\QualificationLearningUnit $mockQualificationLearningUnit = null)
+    public function setMockQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $mockQualificationLearningUnit = null)
     {
         $this->setProperty('mockQualificationLearningUnit', $mockQualificationLearningUnit);
     }
@@ -115,4 +117,5 @@ class InHouseExam extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

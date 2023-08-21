@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IntegrationsHrFinanceTestRun extends \ModelBase
+class IntegrationsHrFinanceTestRun extends ModelBase
 {
+
     public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
 
     public const REQUESTED_DATETIME = 'requestedDatetime';
@@ -19,7 +21,7 @@ class IntegrationsHrFinanceTestRun extends \ModelBase
      * @return IntegrationsHrFinanceTestRun[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +53,7 @@ class IntegrationsHrFinanceTestRun extends \ModelBase
     }
 
     /**
-     * @return IntegrationsHrFinanceProvider
+     * @return \Arbor\Model\IntegrationsHrFinanceProvider
      */
     public function getIntegrationsHrFinanceProvider()
     {
@@ -59,9 +61,9 @@ class IntegrationsHrFinanceTestRun extends \ModelBase
     }
 
     /**
-     * @param IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
+     * @param \Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
      */
-    public function setIntegrationsHrFinanceProvider(\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
+    public function setIntegrationsHrFinanceProvider(\Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
     {
         $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
@@ -97,4 +99,5 @@ class IntegrationsHrFinanceTestRun extends \ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
+
 }

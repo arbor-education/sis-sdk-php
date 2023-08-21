@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CurriculumGrade extends \ModelBase
+class CurriculumGrade extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -33,7 +35,7 @@ class CurriculumGrade extends \ModelBase
      * @return CurriculumGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -129,7 +131,7 @@ class CurriculumGrade extends \ModelBase
     }
 
     /**
-     * @return CurriculumTier
+     * @return \Arbor\Model\CurriculumTier
      */
     public function getCurriculumTier()
     {
@@ -137,9 +139,9 @@ class CurriculumGrade extends \ModelBase
     }
 
     /**
-     * @param CurriculumTier $curriculumTier
+     * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(\CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -223,4 +225,5 @@ class CurriculumGrade extends \ModelBase
     {
         $this->setProperty('d00020Order', $d00020Order);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class IncomingDirectDebitAgreement extends \ModelBase
+class IncomingDirectDebitAgreement extends ModelBase
 {
+
     public const BILL_PAYER = 'billPayer';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -27,7 +29,7 @@ class IncomingDirectDebitAgreement extends \ModelBase
      * @return IncomingDirectDebitAgreement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +61,7 @@ class IncomingDirectDebitAgreement extends \ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -67,15 +69,15 @@ class IncomingDirectDebitAgreement extends \ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
 
     /**
-     * @return PaymentProvider
+     * @return \Arbor\Model\PaymentProvider
      */
     public function getPaymentProvider()
     {
@@ -83,9 +85,9 @@ class IncomingDirectDebitAgreement extends \ModelBase
     }
 
     /**
-     * @param PaymentProvider $paymentProvider
+     * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(\PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -169,4 +171,5 @@ class IncomingDirectDebitAgreement extends \ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class StudentIntervention extends \ModelBase
+class StudentIntervention extends ModelBase
 {
+
     public const STUDENT = 'student';
 
     public const INTERVENTION = 'intervention';
@@ -47,7 +49,7 @@ class StudentIntervention extends \ModelBase
      * @return StudentIntervention[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +81,7 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -87,15 +89,15 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -103,15 +105,15 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
 
     /**
-     * @return InterventionGroup
+     * @return \Arbor\Model\InterventionGroup
      */
     public function getInterventionGroup()
     {
@@ -119,9 +121,9 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @param InterventionGroup $interventionGroup
+     * @param \Arbor\Model\InterventionGroup $interventionGroup
      */
-    public function setInterventionGroup(\InterventionGroup $interventionGroup = null)
+    public function setInterventionGroup(\Arbor\Model\InterventionGroup $interventionGroup = null)
     {
         $this->setProperty('interventionGroup', $interventionGroup);
     }
@@ -271,7 +273,7 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @return SenNeed
+     * @return \Arbor\Model\SenNeed
      */
     public function getSenNeed()
     {
@@ -279,15 +281,15 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @param SenNeed $senNeed
+     * @param \Arbor\Model\SenNeed $senNeed
      */
-    public function setSenNeed(\SenNeed $senNeed = null)
+    public function setSenNeed(\Arbor\Model\SenNeed $senNeed = null)
     {
         $this->setProperty('senNeed', $senNeed);
     }
 
     /**
-     * @return LanguageAbility
+     * @return \Arbor\Model\LanguageAbility
      */
     public function getLanguageAbility()
     {
@@ -295,15 +297,15 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @param LanguageAbility $languageAbility
+     * @param \Arbor\Model\LanguageAbility $languageAbility
      */
-    public function setLanguageAbility(\LanguageAbility $languageAbility = null)
+    public function setLanguageAbility(\Arbor\Model\LanguageAbility $languageAbility = null)
     {
         $this->setProperty('languageAbility', $languageAbility);
     }
 
     /**
-     * @return MedicalCondition
+     * @return \Arbor\Model\MedicalCondition
      */
     public function getMedicalCondition()
     {
@@ -311,9 +313,9 @@ class StudentIntervention extends \ModelBase
     }
 
     /**
-     * @param MedicalCondition $medicalCondition
+     * @param \Arbor\Model\MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(\MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(\Arbor\Model\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
@@ -349,4 +351,5 @@ class StudentIntervention extends \ModelBase
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
+
 }

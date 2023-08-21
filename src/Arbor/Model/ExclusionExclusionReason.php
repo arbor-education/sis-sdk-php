@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class ExclusionExclusionReason extends \ModelBase
+class ExclusionExclusionReason extends ModelBase
 {
+
     public const EXCLUSION = 'exclusion';
 
     public const EXCLUSION_REASON = 'exclusionReason';
@@ -17,7 +19,7 @@ class ExclusionExclusionReason extends \ModelBase
      * @return ExclusionExclusionReason[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class ExclusionExclusionReason extends \ModelBase
     }
 
     /**
-     * @return ExclusionReason
+     * @return \Arbor\Model\ExclusionReason
      */
     public function getExclusionReason()
     {
@@ -73,10 +75,11 @@ class ExclusionExclusionReason extends \ModelBase
     }
 
     /**
-     * @param ExclusionReason $exclusionReason
+     * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(\ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
+
 }

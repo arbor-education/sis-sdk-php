@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicUnitTag extends \ModelBase
+class AcademicUnitTag extends ModelBase
 {
+
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const RELATED_OBJECT = 'relatedObject';
@@ -17,7 +19,7 @@ class AcademicUnitTag extends \ModelBase
      * @return AcademicUnitTag[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class AcademicUnitTag extends \ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -57,9 +59,9 @@ class AcademicUnitTag extends \ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -79,4 +81,5 @@ class AcademicUnitTag extends \ModelBase
     {
         $this->setProperty('relatedObject', $relatedObject);
     }
+
 }

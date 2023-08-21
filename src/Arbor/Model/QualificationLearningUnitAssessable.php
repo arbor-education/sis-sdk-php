@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class QualificationLearningUnitAssessable extends \ModelBase
+class QualificationLearningUnitAssessable extends ModelBase
 {
+
     public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
     public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -17,7 +19,7 @@ class QualificationLearningUnitAssessable extends \ModelBase
      * @return QualificationLearningUnitAssessable[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class QualificationLearningUnitAssessable extends \ModelBase
     }
 
     /**
-     * @return QualificationLearningUnit
+     * @return \Arbor\Model\QualificationLearningUnit
      */
     public function getQualificationLearningUnit()
     {
@@ -57,15 +59,15 @@ class QualificationLearningUnitAssessable extends \ModelBase
     }
 
     /**
-     * @param QualificationLearningUnit $qualificationLearningUnit
+     * @param \Arbor\Model\QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(\QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getQualificationAssessable()
     {
@@ -73,10 +75,11 @@ class QualificationLearningUnitAssessable extends \ModelBase
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
+
 }

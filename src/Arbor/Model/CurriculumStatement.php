@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CurriculumStatement extends \ModelBase
+class CurriculumStatement extends ModelBase
 {
+
     public const CURRICULUM_SECTION = 'curriculumSection';
 
     public const CURRICULUM_STATEMENT_BAND = 'curriculumStatementBand';
@@ -33,7 +35,7 @@ class CurriculumStatement extends \ModelBase
      * @return CurriculumStatement[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +67,7 @@ class CurriculumStatement extends \ModelBase
     }
 
     /**
-     * @return CurriculumSection
+     * @return \Arbor\Model\CurriculumSection
      */
     public function getCurriculumSection()
     {
@@ -73,15 +75,15 @@ class CurriculumStatement extends \ModelBase
     }
 
     /**
-     * @param CurriculumSection $curriculumSection
+     * @param \Arbor\Model\CurriculumSection $curriculumSection
      */
-    public function setCurriculumSection(\CurriculumSection $curriculumSection = null)
+    public function setCurriculumSection(\Arbor\Model\CurriculumSection $curriculumSection = null)
     {
         $this->setProperty('curriculumSection', $curriculumSection);
     }
 
     /**
-     * @return CurriculumStatementBand
+     * @return \Arbor\Model\CurriculumStatementBand
      */
     public function getCurriculumStatementBand()
     {
@@ -89,9 +91,9 @@ class CurriculumStatement extends \ModelBase
     }
 
     /**
-     * @param CurriculumStatementBand $curriculumStatementBand
+     * @param \Arbor\Model\CurriculumStatementBand $curriculumStatementBand
      */
-    public function setCurriculumStatementBand(\CurriculumStatementBand $curriculumStatementBand = null)
+    public function setCurriculumStatementBand(\Arbor\Model\CurriculumStatementBand $curriculumStatementBand = null)
     {
         $this->setProperty('curriculumStatementBand', $curriculumStatementBand);
     }
@@ -223,4 +225,5 @@ class CurriculumStatement extends \ModelBase
     {
         $this->setProperty('order', $order);
     }
+
 }

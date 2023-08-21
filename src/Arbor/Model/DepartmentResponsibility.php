@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class DepartmentResponsibility extends \ModelBase
+class DepartmentResponsibility extends ModelBase
 {
+
     public const DEPARTMENT_RESPONSIBILITY_TYPE = 'departmentResponsibilityType';
 
     public const DEPARTMENT = 'department';
@@ -21,7 +23,7 @@ class DepartmentResponsibility extends \ModelBase
      * @return DepartmentResponsibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class DepartmentResponsibility extends \ModelBase
     }
 
     /**
-     * @return DepartmentResponsibilityType
+     * @return \Arbor\Model\DepartmentResponsibilityType
      */
     public function getDepartmentResponsibilityType()
     {
@@ -61,15 +63,15 @@ class DepartmentResponsibility extends \ModelBase
     }
 
     /**
-     * @param DepartmentResponsibilityType $departmentResponsibilityType
+     * @param \Arbor\Model\DepartmentResponsibilityType $departmentResponsibilityType
      */
-    public function setDepartmentResponsibilityType(\DepartmentResponsibilityType $departmentResponsibilityType = null)
+    public function setDepartmentResponsibilityType(\Arbor\Model\DepartmentResponsibilityType $departmentResponsibilityType = null)
     {
         $this->setProperty('departmentResponsibilityType', $departmentResponsibilityType);
     }
 
     /**
-     * @return Department
+     * @return \Arbor\Model\Department
      */
     public function getDepartment()
     {
@@ -77,9 +79,9 @@ class DepartmentResponsibility extends \ModelBase
     }
 
     /**
-     * @param Department $department
+     * @param \Arbor\Model\Department $department
      */
-    public function setDepartment(\Department $department = null)
+    public function setDepartment(\Arbor\Model\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
@@ -115,4 +117,5 @@ class DepartmentResponsibility extends \ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
+
 }

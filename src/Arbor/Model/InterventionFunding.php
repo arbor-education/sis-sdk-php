@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class InterventionFunding extends \ModelBase
+class InterventionFunding extends ModelBase
 {
+
     public const INTERVENTION = 'intervention';
 
     public const STUDENT = 'student';
@@ -23,7 +25,7 @@ class InterventionFunding extends \ModelBase
      * @return InterventionFunding[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +57,7 @@ class InterventionFunding extends \ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -63,15 +65,15 @@ class InterventionFunding extends \ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -79,15 +81,15 @@ class InterventionFunding extends \ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return InterventionFundingSource
+     * @return \Arbor\Model\InterventionFundingSource
      */
     public function getInterventionFundingSource()
     {
@@ -95,9 +97,9 @@ class InterventionFunding extends \ModelBase
     }
 
     /**
-     * @param InterventionFundingSource $interventionFundingSource
+     * @param \Arbor\Model\InterventionFundingSource $interventionFundingSource
      */
-    public function setInterventionFundingSource(\InterventionFundingSource $interventionFundingSource = null)
+    public function setInterventionFundingSource(\Arbor\Model\InterventionFundingSource $interventionFundingSource = null)
     {
         $this->setProperty('interventionFundingSource', $interventionFundingSource);
     }
@@ -133,4 +135,5 @@ class InterventionFunding extends \ModelBase
     {
         $this->setProperty('fundingPercentage', $fundingPercentage);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class CustomReport extends \ModelBase
+class CustomReport extends ModelBase
 {
+
     public const TITLE = 'title';
 
     public const REPORT_CLASS = 'reportClass';
@@ -29,7 +31,7 @@ class CustomReport extends \ModelBase
      * @return CustomReport[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -187,4 +189,5 @@ class CustomReport extends \ModelBase
     {
         $this->setProperty('transient', $transient);
     }
+
 }

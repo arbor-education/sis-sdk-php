@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class PaymentProvider extends \ModelBase
+class PaymentProvider extends ModelBase
 {
+
     public const PAYMENT_PROVIDER_NAME = 'paymentProviderName';
 
     public const PROVIDER_CODE = 'providerCode';
@@ -25,7 +27,7 @@ class PaymentProvider extends \ModelBase
      * @return PaymentProvider[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -151,4 +153,5 @@ class PaymentProvider extends \ModelBase
     {
         $this->setProperty('minimumTransactionAmount', $minimumTransactionAmount);
     }
+
 }

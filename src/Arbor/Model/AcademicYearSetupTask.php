@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AcademicYearSetupTask extends \ModelBase
+class AcademicYearSetupTask extends ModelBase
 {
+
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const TYPE = 'type';
@@ -21,7 +23,7 @@ class AcademicYearSetupTask extends \ModelBase
      * @return AcademicYearSetupTask[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +55,7 @@ class AcademicYearSetupTask extends \ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -61,9 +63,9 @@ class AcademicYearSetupTask extends \ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -115,4 +117,5 @@ class AcademicYearSetupTask extends \ModelBase
     {
         $this->setProperty('skippedDatetime', $skippedDatetime);
     }
+
 }

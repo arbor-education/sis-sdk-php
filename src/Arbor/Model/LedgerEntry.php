@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LedgerEntry extends \ModelBase
+class LedgerEntry extends ModelBase
 {
+
     public const AMOUNT = 'amount';
 
     public const CUSTOMER_ACCOUNT = 'customerAccount';
@@ -19,7 +21,7 @@ class LedgerEntry extends \ModelBase
      * @return LedgerEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +69,7 @@ class LedgerEntry extends \ModelBase
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -75,9 +77,9 @@ class LedgerEntry extends \ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -97,4 +99,5 @@ class LedgerEntry extends \ModelBase
     {
         $this->setProperty('transaction', $transaction);
     }
+
 }

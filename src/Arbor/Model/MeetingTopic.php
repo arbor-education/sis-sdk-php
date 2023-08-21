@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MeetingTopic extends \ModelBase
+class MeetingTopic extends ModelBase
 {
+
     public const MEETING = 'meeting';
 
     public const TOPIC = 'topic';
@@ -17,7 +19,7 @@ class MeetingTopic extends \ModelBase
      * @return MeetingTopic[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class MeetingTopic extends \ModelBase
     }
 
     /**
-     * @return Meeting
+     * @return \Arbor\Model\Meeting
      */
     public function getMeeting()
     {
@@ -57,9 +59,9 @@ class MeetingTopic extends \ModelBase
     }
 
     /**
-     * @param Meeting $meeting
+     * @param \Arbor\Model\Meeting $meeting
      */
-    public function setMeeting(\Meeting $meeting = null)
+    public function setMeeting(\Arbor\Model\Meeting $meeting = null)
     {
         $this->setProperty('meeting', $meeting);
     }
@@ -79,4 +81,5 @@ class MeetingTopic extends \ModelBase
     {
         $this->setProperty('topic', $topic);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class AssessmentAspect extends \ModelBase
+class AssessmentAspect extends ModelBase
 {
+
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -35,7 +37,7 @@ class AssessmentAspect extends \ModelBase
      * @return AssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -211,7 +213,7 @@ class AssessmentAspect extends \ModelBase
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -219,15 +221,15 @@ class AssessmentAspect extends \ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getDefaultGradeSet()
     {
@@ -235,10 +237,11 @@ class AssessmentAspect extends \ModelBase
     }
 
     /**
-     * @param GradeSet $defaultGradeSet
+     * @param \Arbor\Model\GradeSet $defaultGradeSet
      */
-    public function setDefaultGradeSet(\GradeSet $defaultGradeSet = null)
+    public function setDefaultGradeSet(\Arbor\Model\GradeSet $defaultGradeSet = null)
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }
+
 }

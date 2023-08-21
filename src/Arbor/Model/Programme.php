@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class Programme extends \ModelBase
+class Programme extends ModelBase
 {
+
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -23,7 +25,7 @@ class Programme extends \ModelBase
      * @return Programme[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -103,7 +105,7 @@ class Programme extends \ModelBase
     }
 
     /**
-     * @return Faculty
+     * @return \Arbor\Model\Faculty
      */
     public function getFaculty()
     {
@@ -111,9 +113,9 @@ class Programme extends \ModelBase
     }
 
     /**
-     * @param Faculty $faculty
+     * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Faculty $faculty = null)
+    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -133,4 +135,5 @@ class Programme extends \ModelBase
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }
+
 }

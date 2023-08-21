@@ -6,10 +6,10 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\EducationalInstitution;
 
-class SchoolCensusReturn extends \ModelBase
+class SchoolCensusReturn extends ModelBase
 {
+
     public const SCHOOL_CENSUS = 'schoolCensus';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -47,7 +47,7 @@ class SchoolCensusReturn extends \ModelBase
      * @return SchoolCensusReturn[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +79,7 @@ class SchoolCensusReturn extends \ModelBase
     }
 
     /**
-     * @return SchoolCensus
+     * @return \Arbor\Model\UkDfe\SchoolCensus
      */
     public function getSchoolCensus()
     {
@@ -87,15 +87,15 @@ class SchoolCensusReturn extends \ModelBase
     }
 
     /**
-     * @param SchoolCensus $schoolCensus
+     * @param \Arbor\Model\UkDfe\SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(\SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -103,9 +103,9 @@ class SchoolCensusReturn extends \ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -317,4 +317,5 @@ class SchoolCensusReturn extends \ModelBase
     {
         $this->setProperty('submittedDatetime', $submittedDatetime);
     }
+
 }

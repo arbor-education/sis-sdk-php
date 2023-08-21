@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class LearningMaterialFolder extends \ModelBase
+class LearningMaterialFolder extends ModelBase
 {
+
     public const PARENT_LEARNING_MATERIAL_FOLDER = 'parentLearningMaterialFolder';
 
     public const NAME = 'name';
@@ -17,7 +19,7 @@ class LearningMaterialFolder extends \ModelBase
      * @return LearningMaterialFolder[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class LearningMaterialFolder extends \ModelBase
     }
 
     /**
-     * @return LearningMaterialFolder
+     * @return \Arbor\Model\LearningMaterialFolder
      */
     public function getParentLearningMaterialFolder()
     {
@@ -57,9 +59,9 @@ class LearningMaterialFolder extends \ModelBase
     }
 
     /**
-     * @param LearningMaterialFolder $parentLearningMaterialFolder
+     * @param \Arbor\Model\LearningMaterialFolder $parentLearningMaterialFolder
      */
-    public function setParentLearningMaterialFolder(\LearningMaterialFolder $parentLearningMaterialFolder = null)
+    public function setParentLearningMaterialFolder(\Arbor\Model\LearningMaterialFolder $parentLearningMaterialFolder = null)
     {
         $this->setProperty('parentLearningMaterialFolder', $parentLearningMaterialFolder);
     }
@@ -79,4 +81,5 @@ class LearningMaterialFolder extends \ModelBase
     {
         $this->setProperty('name', $name);
     }
+
 }

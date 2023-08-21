@@ -7,8 +7,9 @@ use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class Ethnicity extends \ModelBase
+class Ethnicity extends ModelBase
 {
+
     public const DFES_MAIN_CODE = 'dfesMainCode';
 
     public const D00005 = 'd00005';
@@ -24,7 +25,7 @@ class Ethnicity extends \ModelBase
      * @return Ethnicity[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -118,4 +119,5 @@ class Ethnicity extends \ModelBase
     {
         $this->setProperty('d00250', $d00250);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class TimetableImportTimetableSlotRelatedEntity extends \ModelBase
+class TimetableImportTimetableSlotRelatedEntity extends ModelBase
 {
+
     public const TIMETABLE_IMPORT_TIMETABLE_SLOT = 'timetableImportTimetableSlot';
 
     public const RELATED_ENTITY = 'relatedEntity';
@@ -17,7 +19,7 @@ class TimetableImportTimetableSlotRelatedEntity extends \ModelBase
      * @return TimetableImportTimetableSlotRelatedEntity[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +51,7 @@ class TimetableImportTimetableSlotRelatedEntity extends \ModelBase
     }
 
     /**
-     * @return TimetableImportTimetableSlot
+     * @return \Arbor\Model\TimetableImportTimetableSlot
      */
     public function getTimetableImportTimetableSlot()
     {
@@ -57,9 +59,9 @@ class TimetableImportTimetableSlotRelatedEntity extends \ModelBase
     }
 
     /**
-     * @param TimetableImportTimetableSlot $timetableImportTimetableSlot
+     * @param \Arbor\Model\TimetableImportTimetableSlot $timetableImportTimetableSlot
      */
-    public function setTimetableImportTimetableSlot(\TimetableImportTimetableSlot $timetableImportTimetableSlot = null)
+    public function setTimetableImportTimetableSlot(\Arbor\Model\TimetableImportTimetableSlot $timetableImportTimetableSlot = null)
     {
         $this->setProperty('timetableImportTimetableSlot', $timetableImportTimetableSlot);
     }
@@ -79,4 +81,5 @@ class TimetableImportTimetableSlotRelatedEntity extends \ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
+
 }

@@ -3,9 +3,11 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
-class MealSession extends \ModelBase
+class MealSession extends ModelBase
 {
+
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -31,7 +33,7 @@ class MealSession extends \ModelBase
      * @return MealSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -127,7 +129,7 @@ class MealSession extends \ModelBase
     }
 
     /**
-     * @return MealSitting
+     * @return \Arbor\Model\MealSitting
      */
     public function getMealSitting()
     {
@@ -135,9 +137,9 @@ class MealSession extends \ModelBase
     }
 
     /**
-     * @param MealSitting $mealSitting
+     * @param \Arbor\Model\MealSitting $mealSitting
      */
-    public function setMealSitting(\MealSitting $mealSitting = null)
+    public function setMealSitting(\Arbor\Model\MealSitting $mealSitting = null)
     {
         $this->setProperty('mealSitting', $mealSitting);
     }
@@ -191,7 +193,7 @@ class MealSession extends \ModelBase
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -199,10 +201,11 @@ class MealSession extends \ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
+
 }
