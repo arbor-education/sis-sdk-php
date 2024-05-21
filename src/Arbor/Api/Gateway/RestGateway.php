@@ -73,6 +73,26 @@ class RestGateway implements GatewayInterface
     {
         $this->handlerStack = HandlerStack::create(new CurlHandler());
 
+        /** 
+		Handler Stack push for Rate-Limit Detection
+		*/
+		$this->handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
+
+        // If no response then return false    
+		if (!$response instanceof Response) {
+        return false;
+		}
+
+        // If Status Code is 429 (Too Many Requests) rest for 60 seconds and retry request    
+		if ($response->getStatusCode() == 429) {
+        sleep(60);
+		return true;
+		}
+
+        // Else do not retry and utilise autoRetry for server-based errors    
+		return false;
+		}));
+
         if ($autoRetry) {
             $this->handlerStack->push(Middleware::retry($this->createRetryHandler()));
         }
