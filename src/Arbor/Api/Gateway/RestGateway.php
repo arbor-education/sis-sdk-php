@@ -646,7 +646,7 @@ class RestGateway implements GatewayInterface
             throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
         }
 
-        if (!is_array($responsePayload) && $code !== 204) {
+        if (!is_array($responsePayload) && !$this->isResponseValid($code)) {
             throw new ServerErrorException('Server responded with an invalid response', 0, null, $requestPayload);
         }
 
@@ -694,6 +694,13 @@ class RestGateway implements GatewayInterface
         }
 
         throw $exception;
+    }
+
+    private function isResponseValid(int $code): bool
+    {
+        $validCodes = [200, 201, 204, 422];
+
+        return in_array($code, $validCodes);
     }
 
     /**
