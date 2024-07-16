@@ -646,7 +646,7 @@ class RestGateway implements GatewayInterface
             throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
         }
 
-        if (!is_array($responsePayload)) {
+        if (!is_array($responsePayload) && $code !== 204) {
             throw new ServerErrorException('Server responded with an invalid response', 0, null, $requestPayload);
         }
 
@@ -676,6 +676,7 @@ class RestGateway implements GatewayInterface
         switch ($code) {
             case 200:
             case 201:
+            case 204:
             case 422:
                 // Request succeeded or failed due to validation error(s), this is not an exception (return the response)
                 return $responsePayload;
