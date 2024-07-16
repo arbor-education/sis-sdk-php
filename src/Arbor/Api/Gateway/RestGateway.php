@@ -679,7 +679,7 @@ class RestGateway implements GatewayInterface
             case 204:
             case 422:
                 // Request succeeded or failed due to validation error(s), this is not an exception (return the response)
-                return $responsePayload;
+                return $responsePayload ?? [];
             case 404:
                 $exception = new ResourceNotFoundException($message);
                 break;
