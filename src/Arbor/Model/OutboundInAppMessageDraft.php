@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class OutboundInAppMessageDraft extends ModelBase
 {
-
     public const SENDER = 'sender';
 
     public const MESSAGE = 'message';
@@ -153,5 +152,4 @@ class OutboundInAppMessageDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class House extends ModelBase
 {
-
     public const HOUSE_NAME = 'houseName';
 
     public const SHORT_NAME = 'shortName';
@@ -135,5 +134,4 @@ class House extends ModelBase
     {
         $this->setProperty('copiedToHouse', $copiedToHouse);
     }
-
 }

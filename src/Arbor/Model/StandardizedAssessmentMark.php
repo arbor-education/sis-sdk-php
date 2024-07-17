@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentMark extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const STANDARDIZED_ASSESSMENT_ASPECT = 'standardizedAssessmentAspect';
@@ -189,5 +188,4 @@ class StandardizedAssessmentMark extends ModelBase
     {
         $this->setProperty('assessmentImportItem', $assessmentImportItem);
     }
-
 }

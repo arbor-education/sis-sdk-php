@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeClassification extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -153,5 +152,4 @@ class ProgrammeClassification extends ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
-
 }

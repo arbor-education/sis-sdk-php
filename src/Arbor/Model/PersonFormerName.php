@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonFormerName extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const FROM_DATE = 'fromDate';
@@ -153,5 +152,4 @@ class PersonFormerName extends ModelBase
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
-
 }

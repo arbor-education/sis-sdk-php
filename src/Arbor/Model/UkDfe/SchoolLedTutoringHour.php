@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolLedTutoringHour extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const START_DATE = 'startDate';
@@ -119,5 +118,4 @@ class SchoolLedTutoringHour extends ModelBase
     {
         $this->setProperty('hours', $hours);
     }
-
 }

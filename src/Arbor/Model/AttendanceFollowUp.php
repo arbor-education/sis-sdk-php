@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceFollowUp extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const ATTENDANCE_DATE = 'attendanceDate';
@@ -189,5 +188,4 @@ class AttendanceFollowUp extends ModelBase
     {
         $this->setProperty('telephoneCallDatetime', $telephoneCallDatetime);
     }
-
 }

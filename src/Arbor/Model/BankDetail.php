@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BankDetail extends ModelBase
 {
-
     public const ACCOUNT_HOLDER = 'accountHolder';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -171,5 +170,4 @@ class BankDetail extends ModelBase
     {
         $this->setProperty('sortCode', $sortCode);
     }
-
 }

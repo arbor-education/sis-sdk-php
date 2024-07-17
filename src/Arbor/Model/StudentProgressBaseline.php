@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentProgressBaseline extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -189,5 +188,4 @@ class StudentProgressBaseline extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
-
 }

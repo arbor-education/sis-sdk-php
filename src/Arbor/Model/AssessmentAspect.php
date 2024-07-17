@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentAspect extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -243,5 +242,4 @@ class AssessmentAspect extends ModelBase
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }
-
 }

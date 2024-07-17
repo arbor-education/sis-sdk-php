@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CalendarEntryMapping extends ModelBase
 {
-
     public const EVENT = 'event';
 
     public const START_DATETIME = 'startDatetime';
@@ -153,5 +152,4 @@ class CalendarEntryMapping extends ModelBase
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }
-
 }

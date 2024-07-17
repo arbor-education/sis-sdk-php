@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class NewStudentReportCard extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const REPORT_CARD_BATCH = 'reportCardBatch';
@@ -117,5 +116,4 @@ class NewStudentReportCard extends ModelBase
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
-
 }

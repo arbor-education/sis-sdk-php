@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EnrolmentModeAssignment extends ModelBase
 {
-
     public const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
 
     public const ENROLMENT_MODE = 'enrolmentMode';
@@ -135,5 +134,4 @@ class EnrolmentModeAssignment extends ModelBase
     {
         $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
     }
-
 }

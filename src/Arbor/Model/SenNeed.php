@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SenNeed extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const SEN_NEED_TYPE = 'senNeedType';
@@ -153,5 +152,4 @@ class SenNeed extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

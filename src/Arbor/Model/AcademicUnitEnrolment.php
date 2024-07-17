@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitEnrolment extends ModelBase
 {
-
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const STUDENT = 'student';
@@ -208,5 +207,4 @@ class AcademicUnitEnrolment extends ModelBase
     {
         $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
     }
-
 }

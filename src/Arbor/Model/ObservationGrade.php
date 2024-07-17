@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ObservationGrade extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -243,5 +242,4 @@ class ObservationGrade extends ModelBase
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }
-
 }

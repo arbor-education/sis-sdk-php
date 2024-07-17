@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentSchoolwork extends ModelBase
 {
-
     public const SCHOOLWORK = 'schoolwork';
 
     public const STUDENT = 'student';
@@ -153,5 +152,4 @@ class StudentSchoolwork extends ModelBase
     {
         $this->setProperty('notSubmittedDatetime', $notSubmittedDatetime);
     }
-
 }

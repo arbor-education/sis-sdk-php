@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class PayScale extends ModelBase
 {
-
     public const REGIONAL_PAY_SPINE = 'regionalPaySpine';
 
     public const PAY_SCALE_CATEGORY = 'payScaleCategory';
@@ -83,5 +82,4 @@ class PayScale extends ModelBase
     {
         $this->setProperty('payScaleCategory', $payScaleCategory);
     }
-
 }

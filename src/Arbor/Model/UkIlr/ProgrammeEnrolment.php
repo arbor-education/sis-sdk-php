@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeEnrolment extends ModelBase
 {
-
     public const PROGRAMME_TYPE = 'programmeType';
 
     public const FUNDING_MODEL = 'fundingModel';
@@ -38,6 +37,10 @@ class ProgrammeEnrolment extends ModelBase
 
     public const LDM_CODE4 = 'ldmCode4';
 
+    public const FRAMEWORK_CODE = 'frameworkCode';
+
+    public const PATHWAY_CODE = 'pathwayCode';
+
     public const SPECIAL_PROJECT_CODE = 'specialProjectCode';
 
     public const WORK_PROGRAMME_PARTICIPATION = 'workProgrammeParticipation';
@@ -51,6 +54,18 @@ class ProgrammeEnrolment extends ModelBase
     public const OUTCOME_GRADE = 'outcomeGrade';
 
     public const DELIVERY_ORGANISATION = 'deliveryOrganisation';
+
+    public const DAM_CODE1 = 'damCode1';
+
+    public const DAM_CODE2 = 'damCode2';
+
+    public const DAM_CODE3 = 'damCode3';
+
+    public const DAM_CODE4 = 'damCode4';
+
+    public const ORIGINAL_LEARNING_START_DATE = 'originalLearningStartDate';
+
+    public const ADDITIONAL_DELIVERY_HOURS = 'additionalDeliveryHours';
 
     protected $_resourceType = ResourceType::UK_ILR_PROGRAMME_ENROLMENT;
 
@@ -317,6 +332,38 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @return string
      */
+    public function getFrameworkCode()
+    {
+        return $this->getProperty('frameworkCode');
+    }
+
+    /**
+     * @param string $frameworkCode
+     */
+    public function setFrameworkCode(string $frameworkCode = null)
+    {
+        $this->setProperty('frameworkCode', $frameworkCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPathwayCode()
+    {
+        return $this->getProperty('pathwayCode');
+    }
+
+    /**
+     * @param string $pathwayCode
+     */
+    public function setPathwayCode(string $pathwayCode = null)
+    {
+        $this->setProperty('pathwayCode', $pathwayCode);
+    }
+
+    /**
+     * @return string
+     */
     public function getSpecialProjectCode()
     {
         return $this->getProperty('specialProjectCode');
@@ -426,4 +473,99 @@ class ProgrammeEnrolment extends ModelBase
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
     }
 
+    /**
+     * @return string
+     */
+    public function getDamCode1()
+    {
+        return $this->getProperty('damCode1');
+    }
+
+    /**
+     * @param string $damCode1
+     */
+    public function setDamCode1(string $damCode1 = null)
+    {
+        $this->setProperty('damCode1', $damCode1);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode2()
+    {
+        return $this->getProperty('damCode2');
+    }
+
+    /**
+     * @param string $damCode2
+     */
+    public function setDamCode2(string $damCode2 = null)
+    {
+        $this->setProperty('damCode2', $damCode2);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode3()
+    {
+        return $this->getProperty('damCode3');
+    }
+
+    /**
+     * @param string $damCode3
+     */
+    public function setDamCode3(string $damCode3 = null)
+    {
+        $this->setProperty('damCode3', $damCode3);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode4()
+    {
+        return $this->getProperty('damCode4');
+    }
+
+    /**
+     * @param string $damCode4
+     */
+    public function setDamCode4(string $damCode4 = null)
+    {
+        $this->setProperty('damCode4', $damCode4);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getOriginalLearningStartDate()
+    {
+        return $this->getProperty('originalLearningStartDate');
+    }
+
+    /**
+     * @param \DateTime $originalLearningStartDate
+     */
+    public function setOriginalLearningStartDate(\DateTime $originalLearningStartDate = null)
+    {
+        $this->setProperty('originalLearningStartDate', $originalLearningStartDate);
+    }
+
+    /**
+     * @return int
+     */
+    public function getAdditionalDeliveryHours()
+    {
+        return $this->getProperty('additionalDeliveryHours');
+    }
+
+    /**
+     * @param int $additionalDeliveryHours
+     */
+    public function setAdditionalDeliveryHours(int $additionalDeliveryHours = null)
+    {
+        $this->setProperty('additionalDeliveryHours', $additionalDeliveryHours);
+    }
 }

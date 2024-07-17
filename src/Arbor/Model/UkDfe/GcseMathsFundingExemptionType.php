@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class GcseMathsFundingExemptionType extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -137,5 +136,4 @@ class GcseMathsFundingExemptionType extends ModelBase
     {
         $this->setProperty('exportValue', $exportValue);
     }
-
 }

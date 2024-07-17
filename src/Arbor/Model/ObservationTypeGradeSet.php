@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ObservationTypeGradeSet extends ModelBase
 {
-
     public const OBSERVATION_TYPE = 'observationType';
 
     public const OBSERVATION_GRADE_SET = 'observationGradeSet';
@@ -81,5 +80,4 @@ class ObservationTypeGradeSet extends ModelBase
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
-
 }

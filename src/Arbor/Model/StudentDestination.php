@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentDestination extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
@@ -153,5 +152,4 @@ class StudentDestination extends ModelBase
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }
-
 }

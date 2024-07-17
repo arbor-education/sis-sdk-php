@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class NewStudentReportCardSection extends ModelBase
 {
-
     public const STUDENT_REPORT_CARD = 'studentReportCard';
 
     public const LINKED_ENTITY = 'linkedEntity';
@@ -117,5 +116,4 @@ class NewStudentReportCardSection extends ModelBase
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
-
 }

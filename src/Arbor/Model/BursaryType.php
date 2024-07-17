@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BursaryType extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -117,5 +116,4 @@ class BursaryType extends ModelBase
     {
         $this->setProperty('allocatedAmount', $allocatedAmount);
     }
-
 }

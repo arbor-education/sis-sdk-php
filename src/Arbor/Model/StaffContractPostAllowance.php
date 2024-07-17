@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffContractPostAllowance extends ModelBase
 {
-
     public const STAFF_CONTRACT_POST = 'staffContractPost';
 
     public const LINKED_ALLOWANCE = 'linkedAllowance';
@@ -243,5 +242,4 @@ class StaffContractPostAllowance extends ModelBase
     {
         $this->setProperty('benefitInKind', $benefitInKind);
     }
-
 }

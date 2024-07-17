@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AlertRecipient extends ModelBase
 {
-
     public const ALERT = 'alert';
 
     public const ALERT_RULE_RECIPIENT = 'alertRuleRecipient';
@@ -135,5 +134,4 @@ class AlertRecipient extends ModelBase
     {
         $this->setProperty('message', $message);
     }
-
 }

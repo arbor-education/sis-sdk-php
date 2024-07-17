@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SuspectedDuplicate extends ModelBase
 {
-
     public const SUSPECT_ONE = 'suspectOne';
 
     public const SUSPECT_TWO = 'suspectTwo';
@@ -243,5 +242,4 @@ class SuspectedDuplicate extends ModelBase
     {
         $this->setProperty('resolution', $resolution);
     }
-
 }

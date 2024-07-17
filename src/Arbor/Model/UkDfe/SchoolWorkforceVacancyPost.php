@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolWorkforceVacancyPost extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -119,5 +118,4 @@ class SchoolWorkforceVacancyPost extends ModelBase
     {
         $this->setProperty('post', $post);
     }
-
 }

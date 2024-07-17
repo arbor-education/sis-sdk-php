@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Talent extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -117,5 +116,4 @@ class Talent extends ModelBase
     {
         $this->setProperty('talentName', $talentName);
     }
-
 }

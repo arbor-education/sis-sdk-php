@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerPaymentRefund extends ModelBase
 {
-
     public const CUSTOMER_PAYMENT = 'customerPayment';
 
     public const REFUND_DATETIME = 'refundDatetime';
@@ -171,5 +170,4 @@ class CustomerPaymentRefund extends ModelBase
     {
         $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }
-
 }

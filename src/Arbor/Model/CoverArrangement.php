@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CoverArrangement extends ModelBase
 {
-
     public const COVER_REQUIREMENT = 'coverRequirement';
 
     public const COVERING_STAFF = 'coveringStaff';
@@ -171,5 +170,4 @@ class CoverArrangement extends ModelBase
     {
         $this->setProperty('isSendCreationNotification', $isSendCreationNotification);
     }
-
 }

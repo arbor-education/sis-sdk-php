@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceRollCallTime extends ModelBase
 {
-
     public const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -153,5 +152,4 @@ class AttendanceRollCallTime extends ModelBase
     {
         $this->setProperty('rollCallPeriodEndTime', $rollCallPeriodEndTime);
     }
-
 }

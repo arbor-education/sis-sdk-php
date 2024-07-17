@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicYearSetupTask extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const TYPE = 'type';
@@ -117,5 +116,4 @@ class AcademicYearSetupTask extends ModelBase
     {
         $this->setProperty('skippedDatetime', $skippedDatetime);
     }
-
 }

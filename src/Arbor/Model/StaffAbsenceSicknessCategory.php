@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffAbsenceSicknessCategory extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -117,5 +116,4 @@ class StaffAbsenceSicknessCategory extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CoverRequirement extends ModelBase
 {
-
     public const COVER_EVENT = 'coverEvent';
 
     public const ABSENT_STAFF = 'absentStaff';
@@ -153,5 +152,4 @@ class CoverRequirement extends ModelBase
     {
         $this->setProperty('coverNotRequiredDatetime', $coverNotRequiredDatetime);
     }
-
 }

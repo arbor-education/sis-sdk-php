@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CheckClearanceLevel extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -135,5 +134,4 @@ class CheckClearanceLevel extends ModelBase
     {
         $this->setProperty('checkType', $checkType);
     }
-
 }

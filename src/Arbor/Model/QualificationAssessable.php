@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationAssessable extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -189,5 +188,4 @@ class QualificationAssessable extends ModelBase
     {
         $this->setProperty('centerAssessed', $centerAssessed);
     }
-
 }

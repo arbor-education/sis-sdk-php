@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentBatch extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const BATCH_NAME = 'batchName';
@@ -136,5 +135,4 @@ class StandardizedAssessmentBatch extends ModelBase
     {
         $this->setProperty('senStudentsOnly', $senStudentsOnly);
     }
-
 }

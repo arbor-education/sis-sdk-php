@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentCurriculumEvidence extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const CURRICULUM_STATEMENT = 'curriculumStatement';
@@ -189,5 +188,4 @@ class StudentCurriculumEvidence extends ModelBase
     {
         $this->setProperty('evidence', $evidence);
     }
-
 }

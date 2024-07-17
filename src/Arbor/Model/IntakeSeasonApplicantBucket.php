@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IntakeSeasonApplicantBucket extends ModelBase
 {
-
     public const APPLICANT_BUCKET_NAME = 'applicantBucketName';
 
     public const INTAKE_SEASON = 'intakeSeason';
@@ -81,5 +80,4 @@ class IntakeSeasonApplicantBucket extends ModelBase
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }
-
 }

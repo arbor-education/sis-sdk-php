@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class TwoYearOldFundingBasis extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const FUNDING_BASIS = 'fundingBasis';
@@ -83,5 +82,4 @@ class TwoYearOldFundingBasis extends ModelBase
     {
         $this->setProperty('fundingBasis', $fundingBasis);
     }
-
 }

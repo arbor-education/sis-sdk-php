@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EventParticipantInvitation extends ModelBase
 {
-
     public const EVENT_PARTICIPANT = 'eventParticipant';
 
     public const INVITEE = 'invitee';
@@ -171,5 +170,4 @@ class EventParticipantInvitation extends ModelBase
     {
         $this->setProperty('invitationReply', $invitationReply);
     }
-
 }

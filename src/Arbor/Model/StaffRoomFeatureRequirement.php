@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffRoomFeatureRequirement extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const ROOM_FEATURE = 'roomFeature';
@@ -81,5 +80,4 @@ class StaffRoomFeatureRequirement extends ModelBase
     {
         $this->setProperty('roomFeature', $roomFeature);
     }
-
 }

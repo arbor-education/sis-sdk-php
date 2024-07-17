@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Session extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -225,5 +224,4 @@ class Session extends ModelBase
     {
         $this->setProperty('isSuspended', $isSuspended);
     }
-
 }

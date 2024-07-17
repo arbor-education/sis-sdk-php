@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentDerivation extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -189,5 +188,4 @@ class AssessmentDerivation extends ModelBase
     {
         $this->setProperty('calculatorClass', $calculatorClass);
     }
-
 }

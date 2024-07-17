@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicHoliday extends ModelBase
 {
-
     public const ACADEMIC_HOLIDAY_TYPE = 'academicHolidayType';
 
     public const START_DATE = 'startDate';
@@ -117,5 +116,4 @@ class AcademicHoliday extends ModelBase
     {
         $this->setProperty('holidayLabel', $holidayLabel);
     }
-
 }

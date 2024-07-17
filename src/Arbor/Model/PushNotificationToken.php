@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PushNotificationToken extends ModelBase
 {
-
     public const USER = 'user';
 
     public const TOKEN = 'token';
@@ -153,5 +152,4 @@ class PushNotificationToken extends ModelBase
     {
         $this->setProperty('deviceId', $deviceId);
     }
-
 }

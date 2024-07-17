@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TelephoneNumber extends ModelBase
 {
-
     public const NUMBER_OWNER = 'numberOwner';
 
     public const TELEPHONE_NUMBER_TYPE = 'telephoneNumberType';
@@ -153,5 +152,4 @@ class TelephoneNumber extends ModelBase
     {
         $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class HearingTest extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const TEST_DATE = 'testDate';
@@ -99,5 +98,4 @@ class HearingTest extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TransportationMethod extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -17,6 +16,8 @@ class TransportationMethod extends ModelBase
     public const TRANSPORTATION_METHOD_NAME = 'transportationMethodName';
 
     public const ROUTE_NUMBER = 'routeNumber';
+
+    public const HIDDEN_DATETIME = 'hiddenDatetime';
 
     protected $_resourceType = ResourceType::TRANSPORTATION_METHOD;
 
@@ -136,4 +137,19 @@ class TransportationMethod extends ModelBase
         $this->setProperty('routeNumber', $routeNumber);
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getHiddenDatetime()
+    {
+        return $this->getProperty('hiddenDatetime');
+    }
+
+    /**
+     * @param \DateTime $hiddenDatetime
+     */
+    public function setHiddenDatetime(\DateTime $hiddenDatetime = null)
+    {
+        $this->setProperty('hiddenDatetime', $hiddenDatetime);
+    }
 }

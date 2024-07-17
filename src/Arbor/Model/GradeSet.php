@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class GradeSet extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -189,5 +188,4 @@ class GradeSet extends ModelBase
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
-
 }

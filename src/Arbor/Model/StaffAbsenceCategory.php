@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffAbsenceCategory extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -279,5 +278,4 @@ class StaffAbsenceCategory extends ModelBase
     {
         $this->setProperty('isAuthorizedAbsence', $isAuthorizedAbsence);
     }
-
 }

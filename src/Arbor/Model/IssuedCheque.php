@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IssuedCheque extends ModelBase
 {
-
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const ISSUED_DATETIME = 'issuedDatetime';
@@ -117,5 +116,4 @@ class IssuedCheque extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

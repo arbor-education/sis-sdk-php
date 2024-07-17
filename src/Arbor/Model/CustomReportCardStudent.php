@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportCardStudent extends ModelBase
 {
-
     public const CUSTOM_REPORT_CARD = 'customReportCard';
 
     public const STUDENT = 'student';
@@ -117,5 +116,4 @@ class CustomReportCardStudent extends ModelBase
     {
         $this->setProperty('generatedDatetime', $generatedDatetime);
     }
-
 }

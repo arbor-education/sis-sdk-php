@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeAcademicUnit extends ModelBase
 {
-
     public const PROGRAMME_INSTANCE = 'programmeInstance';
 
     public const ACADEMIC_UNIT = 'academicUnit';
@@ -81,5 +80,4 @@ class ProgrammeAcademicUnit extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
-
 }

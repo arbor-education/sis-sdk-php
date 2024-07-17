@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class OutboundLetterPermittedSender extends ModelBase
 {
-
     public const ACTION_TAKER = 'actionTaker';
 
     public const SENDER = 'sender';
@@ -99,5 +98,4 @@ class OutboundLetterPermittedSender extends ModelBase
     {
         $this->setProperty('allow', $allow);
     }
-
 }

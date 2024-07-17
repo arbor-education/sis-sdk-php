@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeEnrolment extends ModelBase
 {
-
     public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
     public const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
@@ -101,5 +100,4 @@ class ProgrammeEnrolment extends ModelBase
     {
         $this->setProperty('programmeAimType', $programmeAimType);
     }
-
 }

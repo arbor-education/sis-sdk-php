@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubLead extends ModelBase
 {
-
     public const CLUB = 'club';
 
     public const STAFF = 'staff';
@@ -117,5 +116,4 @@ class ClubLead extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

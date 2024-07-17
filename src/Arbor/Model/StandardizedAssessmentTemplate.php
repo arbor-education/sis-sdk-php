@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentTemplate extends ModelBase
 {
-
     public const TEMPLATE_NAME = 'templateName';
 
     public const CODE = 'code';
@@ -117,5 +116,4 @@ class StandardizedAssessmentTemplate extends ModelBase
     {
         $this->setProperty('validityEndDate', $validityEndDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentMetricRuleStudentGroup extends ModelBase
 {
-
     public const ASSESSMENT_METRIC_RULE = 'assessmentMetricRule';
 
     public const ACADEMIC_LEVEL = 'academicLevel';
@@ -81,5 +80,4 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
-
 }

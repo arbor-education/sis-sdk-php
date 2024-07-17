@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentStudentInvolvement extends ModelBase
 {
-
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -171,5 +170,4 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     {
         $this->setProperty('assignee', $assignee);
     }
-
 }

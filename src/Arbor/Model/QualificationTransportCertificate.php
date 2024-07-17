@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationTransportCertificate extends ModelBase
 {
-
     public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -171,5 +170,4 @@ class QualificationTransportCertificate extends ModelBase
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }
-
 }

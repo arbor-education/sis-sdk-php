@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PointAwardScale extends ModelBase
 {
-
     public const POINT_AWARD_SCALE_NAME = 'pointAwardScaleName';
 
     public const SINGULAR_POINT_NAME = 'singularPointName';
@@ -297,5 +296,4 @@ class PointAwardScale extends ModelBase
     {
         $this->setProperty('showEventInParentPortal', $showEventInParentPortal);
     }
-
 }

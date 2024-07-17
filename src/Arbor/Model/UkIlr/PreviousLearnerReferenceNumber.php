@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class PreviousLearnerReferenceNumber extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const PREVIOUS_LEARNER_REFERENCE_NUMBER = 'previousLearnerReferenceNumber';
@@ -101,5 +100,4 @@ class PreviousLearnerReferenceNumber extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

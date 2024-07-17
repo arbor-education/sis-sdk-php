@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MarkApproval extends ModelBase
 {
-
     public const MARK = 'mark';
 
     public const APPROVAL_LEVEL = 'approvalLevel';
@@ -99,5 +98,4 @@ class MarkApproval extends ModelBase
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationElementDisallowedCombination extends ModelBase
 {
-
     public const FIRST_ELEMENT = 'firstElement';
 
     public const SECOND_ELEMENT = 'secondElement';
@@ -81,5 +80,4 @@ class QualificationElementDisallowedCombination extends ModelBase
     {
         $this->setProperty('secondElement', $secondElement);
     }
-
 }

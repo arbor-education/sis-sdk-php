@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportScope extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const BASE_ENTITY_TYPE = 'baseEntityType';
@@ -171,5 +170,4 @@ class CustomReportScope extends ModelBase
     {
         $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }
-
 }

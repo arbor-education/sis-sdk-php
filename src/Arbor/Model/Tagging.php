@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Tagging extends ModelBase
 {
-
     public const TAG = 'tag';
 
     public const TAGGED_OBJECT = 'taggedObject';
@@ -153,5 +152,4 @@ class Tagging extends ModelBase
     {
         $this->setProperty('link2', $link2);
     }
-
 }

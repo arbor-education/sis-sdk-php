@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicLevelRegistrationFormMapping extends ModelBase
 {
-
     public const ACADEMIC_LEVEL = 'academicLevel';
 
     public const REGISTRATION_FORM = 'registrationForm';
@@ -81,5 +80,4 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
-
 }

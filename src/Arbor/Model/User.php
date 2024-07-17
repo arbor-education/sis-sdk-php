@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class User extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const STUDENT = 'student';
@@ -513,5 +512,4 @@ class User extends ModelBase
     {
         $this->setProperty('acceptSaasTermsAndConditionsByDatetime', $acceptSaasTermsAndConditionsByDatetime);
     }
-
 }

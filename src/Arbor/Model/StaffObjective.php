@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffObjective extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const APPRAISAL = 'appraisal';
@@ -225,5 +224,4 @@ class StaffObjective extends ModelBase
     {
         $this->setProperty('outcome', $outcome);
     }
-
 }

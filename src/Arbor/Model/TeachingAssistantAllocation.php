@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TeachingAssistantAllocation extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const DAY_OF_CYCLE = 'dayOfCycle';
@@ -171,5 +170,4 @@ class TeachingAssistantAllocation extends ModelBase
     {
         $this->setProperty('allocatedTo', $allocatedTo);
     }
-
 }

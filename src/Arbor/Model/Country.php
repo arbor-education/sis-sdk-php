@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Country extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -225,5 +224,4 @@ class Country extends ModelBase
     {
         $this->setProperty('appliesToPostalAddress', $appliesToPostalAddress);
     }
-
 }

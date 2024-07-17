@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetablePeriodGrouping extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const NAME = 'name';
@@ -117,5 +116,4 @@ class TimetablePeriodGrouping extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
-
 }

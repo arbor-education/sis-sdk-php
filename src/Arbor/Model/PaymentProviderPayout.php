@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PaymentProviderPayout extends ModelBase
 {
-
     public const BANK_ACCOUNT = 'bankAccount';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -207,5 +206,4 @@ class PaymentProviderPayout extends ModelBase
     {
         $this->setProperty('payoutSourceType', $payoutSourceType);
     }
-
 }

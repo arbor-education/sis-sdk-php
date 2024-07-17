@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ExclusionExclusionReason extends ModelBase
 {
-
     public const EXCLUSION = 'exclusion';
 
     public const EXCLUSION_REASON = 'exclusionReason';
@@ -81,5 +80,4 @@ class ExclusionExclusionReason extends ModelBase
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
-
 }

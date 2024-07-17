@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationTimetableSessionType extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -19,6 +18,8 @@ class QualificationTimetableSessionType extends ModelBase
     public const SHORT_NAME = 'shortName';
 
     public const START_TIME_FROM = 'startTimeFrom';
+
+    public const USER_DEFINED_START_TIME_FROM = 'userDefinedStartTimeFrom';
 
     public const START_TIME_UNTIL = 'startTimeUntil';
 
@@ -159,6 +160,22 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @return string
      */
+    public function getUserDefinedStartTimeFrom()
+    {
+        return $this->getProperty('userDefinedStartTimeFrom');
+    }
+
+    /**
+     * @param string $userDefinedStartTimeFrom
+     */
+    public function setUserDefinedStartTimeFrom(string $userDefinedStartTimeFrom = null)
+    {
+        $this->setProperty('userDefinedStartTimeFrom', $userDefinedStartTimeFrom);
+    }
+
+    /**
+     * @return string
+     */
     public function getStartTimeUntil()
     {
         return $this->getProperty('startTimeUntil');
@@ -171,5 +188,4 @@ class QualificationTimetableSessionType extends ModelBase
     {
         $this->setProperty('startTimeUntil', $startTimeUntil);
     }
-
 }

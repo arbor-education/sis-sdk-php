@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Employer extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const IDENTIFIER = 'identifier';
@@ -81,5 +80,4 @@ class Employer extends ModelBase
     {
         $this->setProperty('identifier', $identifier);
     }
-
 }

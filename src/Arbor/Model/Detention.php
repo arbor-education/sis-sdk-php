@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Detention extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const ISSUED_BY_STAFF = 'issuedByStaff';
@@ -297,5 +296,4 @@ class Detention extends ModelBase
     {
         $this->setProperty('event', $event);
     }
-
 }

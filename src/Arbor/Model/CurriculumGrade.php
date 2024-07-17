@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CurriculumGrade extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -225,5 +224,4 @@ class CurriculumGrade extends ModelBase
     {
         $this->setProperty('d00020Order', $d00020Order);
     }
-
 }

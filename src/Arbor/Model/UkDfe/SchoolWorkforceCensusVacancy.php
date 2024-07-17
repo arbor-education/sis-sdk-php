@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolWorkforceCensusVacancy extends ModelBase
 {
-
     public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -173,5 +172,4 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     {
         $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }
-
 }

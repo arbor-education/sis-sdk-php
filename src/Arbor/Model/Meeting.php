@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Meeting extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -333,5 +332,4 @@ class Meeting extends ModelBase
     {
         $this->setProperty('outcomes', $outcomes);
     }
-
 }

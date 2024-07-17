@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportCollation extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -135,5 +134,4 @@ class CustomReportCollation extends ModelBase
     {
         $this->setProperty('customLabel', $customLabel);
     }
-
 }

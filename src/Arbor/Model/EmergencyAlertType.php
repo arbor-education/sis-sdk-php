@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EmergencyAlertType extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const ACTIVE = 'active';
@@ -81,5 +80,4 @@ class EmergencyAlertType extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

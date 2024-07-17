@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AdHocAssessmentBatchTarget extends ModelBase
 {
-
     public const AD_HOC_ASSESSMENT_BATCH = 'adHocAssessmentBatch';
 
     public const TARGET = 'target';
@@ -117,5 +116,4 @@ class AdHocAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

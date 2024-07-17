@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ObservationJudgement extends ModelBase
 {
-
     public const OBSERVATION = 'observation';
 
     public const OBSERVATION_STRAND = 'observationStrand';
@@ -117,5 +116,4 @@ class ObservationJudgement extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 }

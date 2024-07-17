@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Behaviour extends ModelBase
 {
-
     public const BEHAVIOUR_NAME = 'behaviourName';
 
     public const DESCRIPTION = 'description';
@@ -154,5 +153,4 @@ class Behaviour extends ModelBase
     {
         $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }
-
 }

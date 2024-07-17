@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolEvent extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -225,5 +224,4 @@ class SchoolEvent extends ModelBase
     {
         $this->setProperty('coverRequired', $coverRequired);
     }
-
 }

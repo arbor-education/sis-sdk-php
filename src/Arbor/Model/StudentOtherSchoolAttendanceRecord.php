@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentOtherSchoolAttendanceRecord extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -225,5 +224,4 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     {
         $this->setProperty('attendanceMarks', $attendanceMarks);
     }
-
 }

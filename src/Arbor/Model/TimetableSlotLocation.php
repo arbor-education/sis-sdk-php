@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetableSlotLocation extends ModelBase
 {
-
     public const TIMETABLE_SLOT = 'timetableSlot';
 
     public const LOCATION = 'location';
@@ -117,5 +116,4 @@ class TimetableSlotLocation extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

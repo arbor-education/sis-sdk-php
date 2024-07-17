@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentTalent extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const TALENT = 'talent';
@@ -135,5 +134,4 @@ class StudentTalent extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

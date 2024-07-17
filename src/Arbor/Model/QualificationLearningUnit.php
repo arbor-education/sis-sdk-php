@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationLearningUnit extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -208,5 +207,4 @@ class QualificationLearningUnit extends ModelBase
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }
-
 }

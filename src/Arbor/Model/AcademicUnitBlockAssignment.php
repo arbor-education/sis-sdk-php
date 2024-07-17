@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitBlockAssignment extends ModelBase
 {
-
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const BLOCK_NAME = 'blockName';
@@ -81,5 +80,4 @@ class AcademicUnitBlockAssignment extends ModelBase
     {
         $this->setProperty('blockName', $blockName);
     }
-
 }

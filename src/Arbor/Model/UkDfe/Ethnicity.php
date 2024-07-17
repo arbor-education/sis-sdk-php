@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class Ethnicity extends ModelBase
 {
-
     public const DFES_MAIN_CODE = 'dfesMainCode';
 
     public const D00005 = 'd00005';
@@ -119,5 +118,4 @@ class Ethnicity extends ModelBase
     {
         $this->setProperty('d00250', $d00250);
     }
-
 }

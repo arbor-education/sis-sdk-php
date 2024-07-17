@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealScheduleItem extends ModelBase
 {
-
     public const MEAL_SCHEDULE = 'mealSchedule';
 
     public const MON_PROVISION = 'monProvision';
@@ -315,5 +314,4 @@ class MealScheduleItem extends ModelBase
     {
         $this->setProperty('sunLabel', $sunLabel);
     }
-
 }

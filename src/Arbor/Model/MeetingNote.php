@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MeetingNote extends ModelBase
 {
-
     public const MEETING = 'meeting';
 
     public const NOTE_TEXT = 'noteText';
@@ -117,5 +116,4 @@ class MeetingNote extends ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
-
 }

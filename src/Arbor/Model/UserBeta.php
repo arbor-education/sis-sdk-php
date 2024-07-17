@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserBeta extends ModelBase
 {
-
     public const USER = 'user';
 
     public const IS_ELIGIBLE = 'isEligible';
@@ -99,5 +98,4 @@ class UserBeta extends ModelBase
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Letter extends ModelBase
 {
-
     public const LETTER_DATE = 'letterDate';
 
     public const RECEIVED_DATE = 'receivedDate';
@@ -243,5 +242,4 @@ class Letter extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

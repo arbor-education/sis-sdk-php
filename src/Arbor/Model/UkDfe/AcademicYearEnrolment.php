@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicYearEnrolment extends ModelBase
 {
-
     public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
     public const PLANNED_EEP_HOURS = 'plannedEepHours';
@@ -101,5 +100,4 @@ class AcademicYearEnrolment extends ModelBase
     {
         $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }
-
 }

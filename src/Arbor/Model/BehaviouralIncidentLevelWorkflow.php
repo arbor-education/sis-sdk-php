@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentLevelWorkflow extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const LEVEL_OF_INCIDENT = 'levelOfIncident';
@@ -639,5 +638,4 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }
-
 }

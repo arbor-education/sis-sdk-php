@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolWorkforceCensusReturn extends ModelBase
 {
-
     public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -317,5 +316,4 @@ class SchoolWorkforceCensusReturn extends ModelBase
     {
         $this->setProperty('submittedDatetime', $submittedDatetime);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SuperannuationSchemeValue extends ModelBase
 {
-
     public const SUPERANNUATION_SCHEME = 'superannuationScheme';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -117,5 +116,4 @@ class SuperannuationSchemeValue extends ModelBase
     {
         $this->setProperty('value', $value);
     }
-
 }

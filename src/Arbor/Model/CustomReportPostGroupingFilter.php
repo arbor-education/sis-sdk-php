@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportPostGroupingFilter extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -171,5 +170,4 @@ class CustomReportPostGroupingFilter extends ModelBase
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
-
 }

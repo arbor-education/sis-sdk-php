@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MotorVehicle extends ModelBase
 {
-
     public const OWNER = 'owner';
 
     public const MOTOR_VEHICLE_TYPE = 'motorVehicleType';
@@ -171,5 +170,4 @@ class MotorVehicle extends ModelBase
     {
         $this->setProperty('parkingAllocationProvided', $parkingAllocationProvided);
     }
-
 }

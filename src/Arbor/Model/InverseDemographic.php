@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InverseDemographic extends ModelBase
 {
-
     public const DEMOGRAPHIC = 'demographic';
 
     protected $_resourceType = ResourceType::INVERSE_DEMOGRAPHIC;
@@ -63,5 +62,4 @@ class InverseDemographic extends ModelBase
     {
         $this->setProperty('demographic', $demographic);
     }
-
 }

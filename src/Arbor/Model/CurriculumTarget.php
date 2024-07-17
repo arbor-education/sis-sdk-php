@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CurriculumTarget extends ModelBase
 {
-
     public const CURRICULUM_TARGET_SET = 'curriculumTargetSet';
 
     public const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
@@ -117,5 +116,4 @@ class CurriculumTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ObservationFramework extends ModelBase
 {
-
     public const OBSERVATION_TYPE = 'observationType';
 
     public const NAME = 'name';
@@ -81,5 +80,4 @@ class ObservationFramework extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

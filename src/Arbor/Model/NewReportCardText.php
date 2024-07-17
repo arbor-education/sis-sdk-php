@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class NewReportCardText extends ModelBase
 {
-
     public const NEW_REPORT_CARD_BATCH = 'newReportCardBatch';
 
     public const TITLE = 'title';
@@ -117,5 +116,4 @@ class NewReportCardText extends ModelBase
     {
         $this->setProperty('body', $body);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EmailStatus extends ModelBase
 {
-
     public const EMAIL = 'email';
 
     public const EMAIL_ADDRESS = 'emailAddress';
@@ -189,5 +188,4 @@ class EmailStatus extends ModelBase
     {
         $this->setProperty('deliveryAttemptNumber', $deliveryAttemptNumber);
     }
-
 }

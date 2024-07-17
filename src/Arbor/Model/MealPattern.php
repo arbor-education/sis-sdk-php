@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealPattern extends ModelBase
 {
-
     public const ATTENDEE = 'attendee';
 
     public const MEAL = 'meal';
@@ -316,5 +315,4 @@ class MealPattern extends ModelBase
     {
         $this->setProperty('groupMembership', $groupMembership);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class HouseAutomaticEnrolment extends ModelBase
 {
-
     public const HOUSE = 'house';
 
     public const TRIGGER = 'trigger';
@@ -81,5 +80,4 @@ class HouseAutomaticEnrolment extends ModelBase
     {
         $this->setProperty('trigger', $trigger);
     }
-
 }

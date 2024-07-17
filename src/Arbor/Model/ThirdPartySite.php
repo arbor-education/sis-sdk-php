@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ThirdPartySite extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const NAME = 'name';
@@ -81,5 +80,4 @@ class ThirdPartySite extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class DataSource extends ModelBase
 {
-
     public const DOMAIN = 'domain';
 
     public const PROVIDER = 'provider';
@@ -81,5 +80,4 @@ class DataSource extends ModelBase
     {
         $this->setProperty('provider', $provider);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffWorkingPeriod extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -261,5 +260,4 @@ class StaffWorkingPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerInvoiceItem extends ModelBase
 {
-
     public const CUSTOMER_INVOICE = 'customerInvoice';
 
     public const ITEM_UNIT = 'itemUnit';
@@ -243,5 +242,4 @@ class CustomerInvoiceItem extends ModelBase
     {
         $this->setProperty('itemStatus', $itemStatus);
     }
-
 }

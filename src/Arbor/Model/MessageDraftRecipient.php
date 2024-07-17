@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MessageDraftRecipient extends ModelBase
 {
-
     public const MESSAGE_DRAFT = 'messageDraft';
 
     public const RECIPIENT = 'recipient';
@@ -99,5 +98,4 @@ class MessageDraftRecipient extends ModelBase
     {
         $this->setProperty('resolver', $resolver);
     }
-
 }

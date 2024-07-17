@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgressAssessmentBatch extends ModelBase
 {
-
     public const BATCH_NAME = 'batchName';
 
     public const ASSESSMENT = 'assessment';
@@ -243,5 +242,4 @@ class ProgressAssessmentBatch extends ModelBase
     {
         $this->setProperty('showCurrentVsPrevious', $showCurrentVsPrevious);
     }
-
 }

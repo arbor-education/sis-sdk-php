@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CurriculumStatementBand extends ModelBase
 {
-
     public const CURRICULUM = 'curriculum';
 
     public const NAME = 'name';
@@ -117,5 +116,4 @@ class CurriculumStatementBand extends ModelBase
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
-
 }

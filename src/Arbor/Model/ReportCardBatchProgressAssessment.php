@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ReportCardBatchProgressAssessment extends ModelBase
 {
-
     public const REPORT_CARD_BATCH = 'reportCardBatch';
 
     public const ORDER = 'order';
@@ -135,5 +134,4 @@ class ReportCardBatchProgressAssessment extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitAutomaticEnrolment extends ModelBase
 {
-
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const TRIGGER = 'trigger';
@@ -99,5 +98,4 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
-
 }

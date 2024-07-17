@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentProgressGoal extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -225,5 +224,4 @@ class StudentProgressGoal extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
-
 }

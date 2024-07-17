@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationCenterAssessedOutcome extends ModelBase
 {
-
     public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     public const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -171,5 +170,4 @@ class QualificationCenterAssessedOutcome extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

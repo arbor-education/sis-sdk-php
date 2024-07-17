@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BankAccount extends ModelBase
 {
-
     public const BANK = 'bank';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -23,6 +22,8 @@ class BankAccount extends ModelBase
     public const IBAN = 'iban';
 
     public const BACS_USER_NUMBER = 'bacsUserNumber';
+
+    public const ENABLED = 'enabled';
 
     protected $_resourceType = ResourceType::BANK_ACCOUNT;
 
@@ -190,4 +191,19 @@ class BankAccount extends ModelBase
         $this->setProperty('bacsUserNumber', $bacsUserNumber);
     }
 
+    /**
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return $this->getProperty('enabled');
+    }
+
+    /**
+     * @param bool $enabled
+     */
+    public function setEnabled(bool $enabled = null)
+    {
+        $this->setProperty('enabled', $enabled);
+    }
 }

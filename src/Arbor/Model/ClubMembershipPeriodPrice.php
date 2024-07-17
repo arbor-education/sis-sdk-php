@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubMembershipPeriodPrice extends ModelBase
 {
-
     public const CLUB_MEMBERSHIP_PERIOD = 'clubMembershipPeriod';
 
     public const PRICING_BASIS = 'pricingBasis';
@@ -153,5 +152,4 @@ class ClubMembershipPeriodPrice extends ModelBase
     {
         $this->setProperty('variableContribution', $variableContribution);
     }
-
 }

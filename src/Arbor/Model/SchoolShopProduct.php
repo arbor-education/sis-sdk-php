@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolShopProduct extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const DESCRIPTION = 'description';
@@ -207,5 +206,4 @@ class SchoolShopProduct extends ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerAccount extends ModelBase
 {
-
     public const RELATED_ENTITY = 'relatedEntity';
 
     public const DELETED_RELATED_ENTITY_NAME = 'deletedRelatedEntityName';
@@ -279,5 +278,4 @@ class CustomerAccount extends ModelBase
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }
-
 }

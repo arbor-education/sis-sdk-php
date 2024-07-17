@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserRoleAssignment extends ModelBase
 {
-
     public const USER = 'user';
 
     public const USER_ROLE = 'userRole';
@@ -135,5 +134,4 @@ class UserRoleAssignment extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 }

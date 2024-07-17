@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Company extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -117,5 +116,4 @@ class Company extends ModelBase
     {
         $this->setProperty('vatIdentificationNumber', $vatIdentificationNumber);
     }
-
 }

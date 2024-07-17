@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Title extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -153,5 +152,4 @@ class Title extends ModelBase
     {
         $this->setProperty('isFemale', $isFemale);
     }
-
 }

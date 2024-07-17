@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PhysicalInterventionTechnique extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const DESCRIPTION = 'description';
@@ -81,5 +80,4 @@ class PhysicalInterventionTechnique extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CandidateEntry extends ModelBase
 {
-
     public const CANDIDATE = 'candidate';
 
     public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
@@ -136,5 +135,4 @@ class CandidateEntry extends ModelBase
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }
-
 }

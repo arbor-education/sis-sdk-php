@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubMembershipPeriod extends ModelBase
 {
-
     public const CLUB = 'club';
 
     public const NAME = 'name';
@@ -171,5 +170,4 @@ class ClubMembershipPeriod extends ModelBase
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
-
 }

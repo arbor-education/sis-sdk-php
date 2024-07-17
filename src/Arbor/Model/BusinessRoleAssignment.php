@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BusinessRoleAssignment extends ModelBase
 {
-
     public const BUSINESS_ROLE = 'businessRole';
 
     public const STAFF_CONTRACT_POST = 'staffContractPost';
@@ -135,5 +134,4 @@ class BusinessRoleAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

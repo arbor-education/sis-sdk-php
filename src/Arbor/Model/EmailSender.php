@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EmailSender extends ModelBase
 {
-
     public const EMAIL = 'email';
 
     public const SENDER_TYPE = 'senderType';
@@ -171,5 +170,4 @@ class EmailSender extends ModelBase
     {
         $this->setProperty('senderIndex', $senderIndex);
     }
-
 }

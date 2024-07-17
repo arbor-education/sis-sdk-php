@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentAction extends ModelBase
 {
-
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -117,5 +116,4 @@ class BehaviouralIncidentAction extends ModelBase
     {
         $this->setProperty('isAutomatic', $isAutomatic);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationStudyGuide extends ModelBase
 {
-
     public const RELATED_QUALIFICATION_AWARD = 'relatedQualificationAward';
 
     public const STUDY_GUIDE_TITLE = 'studyGuideTitle';
@@ -153,5 +152,4 @@ class QualificationStudyGuide extends ModelBase
     {
         $this->setProperty('studyGuideMediumType', $studyGuideMediumType);
     }
-
 }

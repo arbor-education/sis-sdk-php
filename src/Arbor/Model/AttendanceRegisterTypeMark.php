@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceRegisterTypeMark extends ModelBase
 {
-
     public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
     public const ATTENDANCE_MARK = 'attendanceMark';
@@ -81,5 +80,4 @@ class AttendanceRegisterTypeMark extends ModelBase
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
-
 }

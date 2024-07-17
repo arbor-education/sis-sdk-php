@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceApiSubmission extends ModelBase
 {
-
     public const PAYLOAD = 'payload';
 
     public const PAYLOAD_SENT_DATETIME = 'payloadSentDatetime';
@@ -173,5 +172,4 @@ class AttendanceApiSubmission extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
 }

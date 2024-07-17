@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Snippet extends ModelBase
 {
-
     public const SNIPPET_NAME = 'snippetName';
 
     public const SNIPPET_TEXT = 'snippetText';
@@ -153,5 +152,4 @@ class Snippet extends ModelBase
     {
         $this->setProperty('isShared', $isShared);
     }
-
 }

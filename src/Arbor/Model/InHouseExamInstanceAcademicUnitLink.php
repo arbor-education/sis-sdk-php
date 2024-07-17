@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InHouseExamInstanceAcademicUnitLink extends ModelBase
 {
-
     public const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
 
     public const ACADEMIC_UNIT = 'academicUnit';
@@ -81,5 +80,4 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
-
 }

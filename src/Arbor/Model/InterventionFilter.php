@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InterventionFilter extends ModelBase
 {
-
     public const INTERVENTION = 'intervention';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -189,5 +188,4 @@ class InterventionFilter extends ModelBase
     {
         $this->setProperty('isOutcome', $isOutcome);
     }
-
 }

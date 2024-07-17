@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetableSlotException extends ModelBase
 {
-
     public const TIMETABLE_SLOT = 'timetableSlot';
 
     public const EXCEPTION_DATE = 'exceptionDate';
@@ -135,5 +134,4 @@ class TimetableSlotException extends ModelBase
     {
         $this->setProperty('timeException', $timeException);
     }
-
 }

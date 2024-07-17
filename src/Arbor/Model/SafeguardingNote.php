@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SafeguardingNote extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const DATE_LOGGED = 'dateLogged';
@@ -117,5 +116,4 @@ class SafeguardingNote extends ModelBase
     {
         $this->setProperty('content', $content);
     }
-
 }

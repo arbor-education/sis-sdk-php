@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EmergencyAlert extends ModelBase
 {
-
     public const DATETIME = 'datetime';
 
     public const TRIGGERED_BY_STAFF = 'triggeredByStaff';
@@ -207,5 +206,4 @@ class EmergencyAlert extends ModelBase
     {
         $this->setProperty('statusModifiedDatetime', $statusModifiedDatetime);
     }
-
 }

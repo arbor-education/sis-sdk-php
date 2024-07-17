@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class EnrolmentMode extends ModelBase
 {
-
     public const D00018 = 'd00018';
 
     protected $_resourceType = ResourceType::UK_DFE_ENROLMENT_MODE;
@@ -65,5 +64,4 @@ class EnrolmentMode extends ModelBase
     {
         $this->setProperty('d00018', $d00018);
     }
-
 }

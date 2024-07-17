@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class Student extends ModelBase
 {
-
     public const MIGRATED_AS_PART_OF_PROVIDER_MERGER = 'migratedAsPartOfProviderMerger';
 
     public const MOVED_DUE_TO_MINIMUM_CONTRACT_LEVEL = 'movedDueToMinimumContractLevel';
@@ -101,5 +100,4 @@ class Student extends ModelBase
     {
         $this->setProperty('primaryLlddAndHealthProblem', $primaryLlddAndHealthProblem);
     }
-
 }

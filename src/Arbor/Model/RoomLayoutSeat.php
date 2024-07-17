@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RoomLayoutSeat extends ModelBase
 {
-
     public const ROOM_LAYOUT = 'roomLayout';
 
     public const X = 'x';
@@ -99,5 +98,4 @@ class RoomLayoutSeat extends ModelBase
     {
         $this->setProperty('y', $y);
     }
-
 }

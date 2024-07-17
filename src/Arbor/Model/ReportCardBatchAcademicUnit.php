@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ReportCardBatchAcademicUnit extends ModelBase
 {
-
     public const REPORT_CARD_BATCH = 'reportCardBatch';
 
     public const ORDER = 'order';
@@ -117,5 +116,4 @@ class ReportCardBatchAcademicUnit extends ModelBase
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
-
 }

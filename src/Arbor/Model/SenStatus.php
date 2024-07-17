@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SenStatus extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -189,5 +188,4 @@ class SenStatus extends ModelBase
     {
         $this->setProperty('d00229', $d00229);
     }
-
 }

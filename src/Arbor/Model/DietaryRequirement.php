@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class DietaryRequirement extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const DIETARY_REQUIREMENT_TYPE = 'dietaryRequirementType';
@@ -99,5 +98,4 @@ class DietaryRequirement extends ModelBase
     {
         $this->setProperty('note', $note);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolShopProductEligibility extends ModelBase
 {
-
     public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
     public const ELIGIBLE = 'eligible';
@@ -81,5 +80,4 @@ class SchoolShopProductEligibility extends ModelBase
     {
         $this->setProperty('eligible', $eligible);
     }
-
 }

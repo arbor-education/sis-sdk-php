@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Person extends ModelBase
 {
-
     public const GENDER = 'gender';
 
     public const GENDER_IDENTITY = 'genderIdentity';
@@ -297,5 +296,4 @@ class Person extends ModelBase
     {
         $this->setProperty('dateOfDeath', $dateOfDeath);
     }
-
 }

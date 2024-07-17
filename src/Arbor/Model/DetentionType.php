@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class DetentionType extends ModelBase
 {
-
     public const DETENTION_TYPE_NAME = 'detentionTypeName';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -81,5 +80,4 @@ class DetentionType extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

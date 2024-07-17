@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentGradeSet extends ModelBase
 {
-
     public const ASSESSMENT = 'assessment';
 
     public const GRADE_SET = 'gradeSet';
@@ -117,5 +116,4 @@ class AssessmentGradeSet extends ModelBase
     {
         $this->setProperty('isOriginal', $isOriginal);
     }
-
 }

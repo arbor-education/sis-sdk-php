@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationTransportMessage extends ModelBase
 {
-
     public const QUALIFICATION_TRANSPORT_CERTIFICATE = 'qualificationTransportCertificate';
 
     public const CONTENT = 'content';
@@ -190,5 +189,4 @@ class QualificationTransportMessage extends ModelBase
     {
         $this->setProperty('rawContent', $rawContent);
     }
-
 }

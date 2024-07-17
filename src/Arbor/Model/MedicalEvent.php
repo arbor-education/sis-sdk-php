@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MedicalEvent extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const START_DATETIME = 'startDatetime';
@@ -153,5 +152,4 @@ class MedicalEvent extends ModelBase
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
-
 }

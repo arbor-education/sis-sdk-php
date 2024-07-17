@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicYearAssessment extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const ASSESSMENT_NAME = 'assessmentName';
@@ -225,5 +224,4 @@ class AcademicYearAssessment extends ModelBase
     {
         $this->setProperty('allowComments', $allowComments);
     }
-
 }

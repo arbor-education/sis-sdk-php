@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RoomChangeRequirement extends ModelBase
 {
-
     public const EVENT = 'event';
 
     public const UNAVAILABLE_ROOM = 'unavailableRoom';
@@ -153,5 +152,4 @@ class RoomChangeRequirement extends ModelBase
     {
         $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }
-
 }

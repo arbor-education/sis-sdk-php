@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RoomAsset extends ModelBase
 {
-
     public const ROOM_ASSET_NAME = 'roomAssetName';
 
     public const ASSIGN_TO_PEOPLE = 'assignToPeople';
@@ -81,5 +80,4 @@ class RoomAsset extends ModelBase
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }
-
 }

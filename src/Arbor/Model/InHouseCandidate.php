@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InHouseCandidate extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const CANDIDATE_NUMBER = 'candidateNumber';
@@ -81,5 +80,4 @@ class InHouseCandidate extends ModelBase
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }
-
 }

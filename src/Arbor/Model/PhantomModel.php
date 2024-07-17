@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PhantomModel extends ModelBase
 {
-
     public const ENTITY_TYPE = 'entityType';
 
     public const USER = 'user';
@@ -99,5 +98,4 @@ class PhantomModel extends ModelBase
     {
         $this->setProperty('modelCreatedDatetime', $modelCreatedDatetime);
     }
-
 }

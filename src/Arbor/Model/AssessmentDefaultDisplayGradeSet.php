@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentDefaultDisplayGradeSet extends ModelBase
 {
-
     public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
     public const GRADE_SET = 'gradeSet';
@@ -81,5 +80,4 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
-
 }

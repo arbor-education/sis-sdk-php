@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitDepartment extends ModelBase
 {
-
     public const DEPARTMENT = 'department';
 
     public const ACADEMIC_UNIT = 'academicUnit';
@@ -117,5 +116,4 @@ class AcademicUnitDepartment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

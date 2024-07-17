@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitEnrolmentImport extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -153,5 +152,4 @@ class AcademicUnitEnrolmentImport extends ModelBase
     {
         $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Language extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -225,5 +224,4 @@ class Language extends ModelBase
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }
-
 }

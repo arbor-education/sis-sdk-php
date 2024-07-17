@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EntityPushdownSyncedEntity extends ModelBase
 {
-
     public const ENTITY_PUSHDOWN = 'entityPushdown';
 
     public const SYNCED_ENTITY = 'syncedEntity';
@@ -153,5 +152,4 @@ class EntityPushdownSyncedEntity extends ModelBase
     {
         $this->setProperty('allowEdit', $allowEdit);
     }
-
 }

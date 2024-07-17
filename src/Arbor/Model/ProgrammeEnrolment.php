@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeEnrolment extends ModelBase
 {
-
     public const PROGRAMME_INSTANCE = 'programmeInstance';
 
     public const STUDENT = 'student';
@@ -207,5 +206,4 @@ class ProgrammeEnrolment extends ModelBase
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }
-
 }

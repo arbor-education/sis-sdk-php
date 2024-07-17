@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportShare extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const SHARED_WITH = 'sharedWith';
@@ -99,5 +98,4 @@ class CustomReportShare extends ModelBase
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }
-
 }

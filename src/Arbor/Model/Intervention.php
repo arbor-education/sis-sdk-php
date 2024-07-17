@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Intervention extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -333,5 +332,4 @@ class Intervention extends ModelBase
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ExclusionReviewOutcome extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -171,5 +170,4 @@ class ExclusionReviewOutcome extends ModelBase
     {
         $this->setProperty('isStudentReinstated', $isStudentReinstated);
     }
-
 }

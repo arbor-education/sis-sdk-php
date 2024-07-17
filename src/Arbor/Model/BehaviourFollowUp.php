@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviourFollowUp extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const STAFF = 'staff';
@@ -117,5 +116,4 @@ class BehaviourFollowUp extends ModelBase
     {
         $this->setProperty('summary', $summary);
     }
-
 }

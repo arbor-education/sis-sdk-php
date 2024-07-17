@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EmailRecipient extends ModelBase
 {
-
     public const EMAIL = 'email';
 
     public const RECIPIENT_TYPE = 'recipientType';
@@ -225,5 +224,4 @@ class EmailRecipient extends ModelBase
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
-
 }

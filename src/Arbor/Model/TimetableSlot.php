@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetableSlot extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const TIMETABLED_OBJECT = 'timetabledObject';
@@ -243,5 +242,4 @@ class TimetableSlot extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
 }

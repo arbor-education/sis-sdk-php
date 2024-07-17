@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ExternalAdministrator extends ModelBase
 {
-
     public const FIRST_NAME = 'firstName';
 
     public const LAST_NAME = 'lastName';
@@ -117,5 +116,4 @@ class ExternalAdministrator extends ModelBase
     {
         $this->setProperty('application', $application);
     }
-
 }

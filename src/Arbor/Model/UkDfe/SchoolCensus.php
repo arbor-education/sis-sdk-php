@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolCensus extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -227,5 +226,4 @@ class SchoolCensus extends ModelBase
     {
         $this->setProperty('schoolCensusSpecificTime', $schoolCensusSpecificTime);
     }
-
 }

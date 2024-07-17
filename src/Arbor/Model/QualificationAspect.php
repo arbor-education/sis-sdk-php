@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationAspect extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -297,5 +296,4 @@ class QualificationAspect extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgressGoalType extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const NAME = 'name';
@@ -81,5 +80,4 @@ class ProgressGoalType extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

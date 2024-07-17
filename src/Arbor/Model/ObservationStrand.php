@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ObservationStrand extends ModelBase
 {
-
     public const OBSERVATION_THEME = 'observationTheme';
 
     public const OBSERVATION_GRADE_SET = 'observationGradeSet';
@@ -117,5 +116,4 @@ class ObservationStrand extends ModelBase
     {
         $this->setProperty('useComment', $useComment);
     }
-
 }

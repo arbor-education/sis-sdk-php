@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeInstance extends ModelBase
 {
-
     public const PROGRAMME = 'programme';
 
     public const NAME = 'name';
@@ -225,5 +224,4 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
-
 }

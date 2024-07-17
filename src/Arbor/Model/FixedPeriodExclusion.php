@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class FixedPeriodExclusion extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EXCLUSION_REASON = 'exclusionReason';
@@ -243,5 +242,4 @@ class FixedPeriodExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

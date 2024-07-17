@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicYear extends ModelBase
 {
-
     public const ACADEMIC_YEAR_NAME = 'academicYearName';
 
     public const CODE = 'code';
@@ -135,5 +134,4 @@ class AcademicYear extends ModelBase
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }
-
 }

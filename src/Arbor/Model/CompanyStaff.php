@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CompanyStaff extends ModelBase
 {
-
     public const COMPANY = 'company';
 
     public const PERSON = 'person';
@@ -99,5 +98,4 @@ class CompanyStaff extends ModelBase
     {
         $this->setProperty('position', $position);
     }
-
 }

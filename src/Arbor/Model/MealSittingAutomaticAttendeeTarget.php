@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealSittingAutomaticAttendeeTarget extends ModelBase
 {
-
     public const MEAL_SITTING = 'mealSitting';
 
     public const AUTOMATIC_ATTENDEE_TARGET = 'automaticAttendeeTarget';
@@ -81,5 +80,4 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Email extends ModelBase
 {
-
     public const EMAIL_MAILBOX = 'emailMailbox';
 
     public const EMAIL_DRAFT = 'emailDraft';
@@ -315,5 +314,4 @@ class Email extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

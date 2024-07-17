@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentTemplateAssessment extends ModelBase
 {
-
     public const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
     public const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
@@ -100,5 +99,4 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

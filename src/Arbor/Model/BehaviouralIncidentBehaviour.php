@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentBehaviour extends ModelBase
 {
-
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -99,5 +98,4 @@ class BehaviouralIncidentBehaviour extends ModelBase
     {
         $this->setProperty('behaviour', $behaviour);
     }
-
 }

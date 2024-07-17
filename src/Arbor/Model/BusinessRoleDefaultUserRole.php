@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BusinessRoleDefaultUserRole extends ModelBase
 {
-
     public const BUSINESS_ROLE = 'businessRole';
 
     public const USER_ROLE = 'userRole';
@@ -81,5 +80,4 @@ class BusinessRoleDefaultUserRole extends ModelBase
     {
         $this->setProperty('userRole', $userRole);
     }
-
 }

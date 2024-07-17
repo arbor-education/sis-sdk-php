@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviouralIncident extends ModelBase
 {
-
     public const BEHAVIOUR = 'behaviour';
 
     public const INCIDENT_NAME = 'incidentName';
@@ -207,5 +206,4 @@ class BehaviouralIncident extends ModelBase
     {
         $this->setProperty('loggedByStaff', $loggedByStaff);
     }
-
 }

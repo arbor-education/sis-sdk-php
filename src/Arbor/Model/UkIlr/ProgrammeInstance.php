@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeInstance extends ModelBase
 {
-
     public const PROGRAMME_TYPE = 'programmeType';
 
     public const FUNDING_MODEL = 'fundingModel';
@@ -119,5 +118,4 @@ class ProgrammeInstance extends ModelBase
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }
-
 }

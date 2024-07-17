@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CashPayout extends ModelBase
 {
-
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const PAYOUT_DATETIME = 'payoutDatetime';
@@ -117,5 +116,4 @@ class CashPayout extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

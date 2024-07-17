@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class FacultyResponsibility extends ModelBase
 {
-
     public const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
 
     public const FACULTY = 'faculty';
@@ -117,5 +116,4 @@ class FacultyResponsibility extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

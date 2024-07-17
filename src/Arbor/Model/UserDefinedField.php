@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserDefinedField extends ModelBase
 {
-
     public const FIELD_NAME = 'fieldName';
 
     public const IDENTIFIER = 'identifier';
@@ -171,5 +170,4 @@ class UserDefinedField extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

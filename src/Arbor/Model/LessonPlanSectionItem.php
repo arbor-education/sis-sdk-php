@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class LessonPlanSectionItem extends ModelBase
 {
-
     public const LESSON_PLAN_SECTION = 'lessonPlanSection';
 
     public const LINKED_ITEM = 'linkedItem';
@@ -135,5 +134,4 @@ class LessonPlanSectionItem extends ModelBase
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
-
 }

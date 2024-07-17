@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetableImportTimetableSlotRelatedEntity extends ModelBase
 {
-
     public const TIMETABLE_IMPORT_TIMETABLE_SLOT = 'timetableImportTimetableSlot';
 
     public const RELATED_ENTITY = 'relatedEntity';
@@ -81,5 +80,4 @@ class TimetableImportTimetableSlotRelatedEntity extends ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
-
 }

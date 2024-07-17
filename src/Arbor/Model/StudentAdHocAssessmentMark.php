@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentAdHocAssessmentMark extends ModelBase
 {
-
     public const AD_HOC_ASSESSMENT_BATCH = 'adHocAssessmentBatch';
 
     public const STUDENT = 'student';
@@ -280,5 +279,4 @@ class StudentAdHocAssessmentMark extends ModelBase
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }
-
 }

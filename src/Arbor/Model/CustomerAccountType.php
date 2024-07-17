@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerAccountType extends ModelBase
 {
-
     public const ACCOUNT_TYPE_NAME = 'accountTypeName';
 
     public const ACCOUNT_TYPE_DESCRIPTION = 'accountTypeDescription';
@@ -225,5 +224,4 @@ class CustomerAccountType extends ModelBase
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
-
 }

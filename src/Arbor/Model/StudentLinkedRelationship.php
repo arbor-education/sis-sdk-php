@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentLinkedRelationship extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const LINKED_OBJECT = 'linkedObject';
@@ -135,5 +134,4 @@ class StudentLinkedRelationship extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

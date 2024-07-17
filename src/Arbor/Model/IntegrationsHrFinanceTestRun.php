@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IntegrationsHrFinanceTestRun extends ModelBase
 {
-
     public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
 
     public const REQUESTED_DATETIME = 'requestedDatetime';
@@ -99,5 +98,4 @@ class IntegrationsHrFinanceTestRun extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
-
 }

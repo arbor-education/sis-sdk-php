@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class DocumentLayout extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const FIRST_PAGE_HEADER_HTML = 'firstPageHeaderHtml';
@@ -351,5 +350,4 @@ class DocumentLayout extends ModelBase
     {
         $this->setProperty('archived', $archived);
     }
-
 }

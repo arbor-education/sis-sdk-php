@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportCard extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const TITLE = 'title';
@@ -225,5 +224,4 @@ class CustomReportCard extends ModelBase
     {
         $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }
-
 }

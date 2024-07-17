@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PermanentExclusion extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EXCLUSION_REASON = 'exclusionReason';
@@ -171,5 +170,4 @@ class PermanentExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

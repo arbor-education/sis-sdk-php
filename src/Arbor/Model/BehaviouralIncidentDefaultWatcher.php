@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentDefaultWatcher extends ModelBase
 {
-
     public const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
     public const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
@@ -118,5 +117,4 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
 }

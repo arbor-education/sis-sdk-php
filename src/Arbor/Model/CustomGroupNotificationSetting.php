@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomGroupNotificationSetting extends ModelBase
 {
-
     public const CUSTOM_GROUP = 'customGroup';
 
     public const TRIGGER_EVENT_TYPE = 'triggerEventType';
@@ -117,5 +116,4 @@ class CustomGroupNotificationSetting extends ModelBase
     {
         $this->setProperty('sendEmail', $sendEmail);
     }
-
 }

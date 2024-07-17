@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserDefinedRecord extends ModelBase
 {
-
     public const ENTITY = 'entity';
 
     public const USER_DEFINED_FIELD = 'userDefinedField';
@@ -99,5 +98,4 @@ class UserDefinedRecord extends ModelBase
     {
         $this->setProperty('value', $value);
     }
-
 }

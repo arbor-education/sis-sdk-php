@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BenefitRecordType extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -171,5 +170,4 @@ class BenefitRecordType extends ModelBase
     {
         $this->setProperty('appliesToGuardian', $appliesToGuardian);
     }
-
 }

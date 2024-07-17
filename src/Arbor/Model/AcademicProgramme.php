@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicProgramme extends ModelBase
 {
-
     public const ACADEMIC_PROGRAMME_NAME = 'academicProgrammeName';
 
     protected $_resourceType = ResourceType::ACADEMIC_PROGRAMME;
@@ -71,5 +70,4 @@ class AcademicProgramme extends ModelBase
     {
         return $this->getCollectionProperty('instances');
     }
-
 }

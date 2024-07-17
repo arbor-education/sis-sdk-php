@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Ethnicity extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -261,5 +260,4 @@ class Ethnicity extends ModelBase
     {
         $this->setProperty('d00250', $d00250);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentFunding extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const STUDENT_FUNDING_TYPE = 'studentFundingType';
@@ -135,5 +134,4 @@ class StudentFunding extends ModelBase
     {
         $this->setProperty('note', $note);
     }
-
 }

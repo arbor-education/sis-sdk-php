@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CourtOrderParty extends ModelBase
 {
-
     public const COURT_ORDER = 'courtOrder';
 
     public const PARTY = 'party';
@@ -81,5 +80,4 @@ class CourtOrderParty extends ModelBase
     {
         $this->setProperty('party', $party);
     }
-
 }

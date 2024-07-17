@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonProfessionalQualification extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const QUALIFICATION_NAME = 'qualificationName';
@@ -244,5 +243,4 @@ class PersonProfessionalQualification extends ModelBase
     {
         $this->setProperty('isVerified', $isVerified);
     }
-
 }

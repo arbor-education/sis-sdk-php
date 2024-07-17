@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicLevelMembership extends ModelBase
 {
-
     public const ACADEMIC_LEVEL = 'academicLevel';
 
     public const STUDENT = 'student';
@@ -117,5 +116,4 @@ class AcademicLevelMembership extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

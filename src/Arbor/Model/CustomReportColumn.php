@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportColumn extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -261,5 +260,4 @@ class CustomReportColumn extends ModelBase
     {
         $this->setProperty('isSourceUpdatePermitted', $isSourceUpdatePermitted);
     }
-
 }

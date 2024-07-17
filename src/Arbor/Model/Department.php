@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Department extends ModelBase
 {
-
     public const DEPARTMENT_CODE = 'departmentCode';
 
     public const DEPARTMENT_NAME = 'departmentName';
@@ -99,5 +98,4 @@ class Department extends ModelBase
     {
         $this->setProperty('isActive', $isActive);
     }
-
 }

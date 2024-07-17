@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerPayment extends ModelBase
 {
-
     public const CUSTOMER_INVOICE = 'customerInvoice';
 
     public const BILL_PAYER = 'billPayer';
@@ -335,5 +334,4 @@ class CustomerPayment extends ModelBase
     {
         $this->setProperty('paymentCancelledDatetime', $paymentCancelledDatetime);
     }
-
 }

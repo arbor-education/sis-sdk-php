@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserRole extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -207,5 +206,4 @@ class UserRole extends ModelBase
     {
         $this->setProperty('isExternalAdministratorRole', $isExternalAdministratorRole);
     }
-
 }

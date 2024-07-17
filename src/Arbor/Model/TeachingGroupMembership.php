@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TeachingGroupMembership extends ModelBase
 {
-
     public const TEACHING_GROUP = 'teachingGroup';
 
     public const STUDENT = 'student';
@@ -117,5 +116,4 @@ class TeachingGroupMembership extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

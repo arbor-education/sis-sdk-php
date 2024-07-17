@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffAttendanceRecord extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const ATTENDANCE_PERIOD_DATE = 'attendancePeriodDate';
@@ -207,5 +206,4 @@ class StaffAttendanceRecord extends ModelBase
     {
         $this->setProperty('staffAbsence', $staffAbsence);
     }
-
 }

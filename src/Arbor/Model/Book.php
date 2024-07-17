@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Book extends ModelBase
 {
-
     public const BOOK_TYPE = 'bookType';
 
     public const PREFIX = 'prefix';
@@ -171,5 +170,4 @@ class Book extends ModelBase
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
-
 }

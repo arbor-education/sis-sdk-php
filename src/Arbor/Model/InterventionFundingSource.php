@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InterventionFundingSource extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const CODE = 'code';
@@ -117,5 +116,4 @@ class InterventionFundingSource extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

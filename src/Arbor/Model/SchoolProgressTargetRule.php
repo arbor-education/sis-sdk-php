@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolProgressTargetRule extends ModelBase
 {
-
     public const RULE_NAME = 'ruleName';
 
     public const ASSESSMENT = 'assessment';
@@ -243,5 +242,4 @@ class SchoolProgressTargetRule extends ModelBase
     {
         $this->setProperty('hasSameAttainmentTargetForEachPeriod', $hasSameAttainmentTargetForEachPeriod);
     }
-
 }

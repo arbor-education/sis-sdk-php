@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IntegrationsCashlessCateringSystemProvider extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
@@ -117,5 +116,4 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     {
         $this->setProperty('enabled', $enabled);
     }
-
 }

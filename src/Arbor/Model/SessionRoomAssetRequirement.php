@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SessionRoomAssetRequirement extends ModelBase
 {
-
     public const SESSION = 'session';
 
     public const ROOM_ASSET = 'roomAsset';
@@ -99,5 +98,4 @@ class SessionRoomAssetRequirement extends ModelBase
     {
         $this->setProperty('quantity', $quantity);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffContract extends ModelBase
 {
-
     public const STAFF = 'staff';
 
     public const STAFF_EMPLOYMENT_TYPE = 'staffEmploymentType';
@@ -297,5 +296,4 @@ class StaffContract extends ModelBase
     {
         $this->setProperty('lastPayReviewDate', $lastPayReviewDate);
     }
-
 }

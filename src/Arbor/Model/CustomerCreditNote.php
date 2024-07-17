@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerCreditNote extends ModelBase
 {
-
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const BILL_PAYER = 'billPayer';
@@ -17,6 +16,8 @@ class CustomerCreditNote extends ModelBase
     public const TOTAL_AMOUNT_CREDITED = 'totalAmountCredited';
 
     public const CREDIT_NOTE_NUMBER = 'creditNoteNumber';
+
+    public const LEGACY_CREDIT_NOTE_NUMBER = 'legacyCreditNoteNumber';
 
     public const NARRATIVE = 'narrative';
 
@@ -141,6 +142,22 @@ class CustomerCreditNote extends ModelBase
     /**
      * @return string
      */
+    public function getLegacyCreditNoteNumber()
+    {
+        return $this->getProperty('legacyCreditNoteNumber');
+    }
+
+    /**
+     * @param string $legacyCreditNoteNumber
+     */
+    public function setLegacyCreditNoteNumber(string $legacyCreditNoteNumber = null)
+    {
+        $this->setProperty('legacyCreditNoteNumber', $legacyCreditNoteNumber);
+    }
+
+    /**
+     * @return string
+     */
     public function getNarrative()
     {
         return $this->getProperty('narrative');
@@ -153,5 +170,4 @@ class CustomerCreditNote extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

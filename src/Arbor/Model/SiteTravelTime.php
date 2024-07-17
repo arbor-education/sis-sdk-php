@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SiteTravelTime extends ModelBase
 {
-
     public const SITE1 = 'site1';
 
     public const SITE2 = 'site2';
@@ -99,5 +98,4 @@ class SiteTravelTime extends ModelBase
     {
         $this->setProperty('travelTime', $travelTime);
     }
-
 }

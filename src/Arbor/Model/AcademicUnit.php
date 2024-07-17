@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnit extends ModelBase
 {
-
     public const UNIQUE_IDENTIFIER = 'uniqueIdentifier';
 
     public const PARENT_ACADEMIC_UNIT = 'parentAcademicUnit';
@@ -547,5 +546,4 @@ class AcademicUnit extends ModelBase
     {
         return $this->getCollectionProperty('timetableSlots');
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportCardStudentGroup extends ModelBase
 {
-
     public const CUSTOM_REPORT_CARD = 'customReportCard';
 
     public const STUDENT_GROUP = 'studentGroup';
@@ -99,5 +98,4 @@ class CustomReportCardStudentGroup extends ModelBase
     {
         $this->setProperty('enrolmentDate', $enrolmentDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Room extends ModelBase
 {
-
     public const SITE = 'site';
 
     public const ROOM_NAME = 'roomName';
@@ -153,5 +152,4 @@ class Room extends ModelBase
     {
         $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
 {
-
     public const PROGRESS_ASSESSMENT_BATCH_TARGET = 'progressAssessmentBatchTarget';
 
     public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
@@ -153,5 +152,4 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     {
         $this->setProperty('allMarksApproved', $allMarksApproved);
     }
-
 }

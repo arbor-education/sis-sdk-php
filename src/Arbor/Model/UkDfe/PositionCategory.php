@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class PositionCategory extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -17,6 +16,8 @@ class PositionCategory extends ModelBase
     public const DATA_ORDER = 'dataOrder';
 
     public const LABEL = 'label';
+
+    public const CFR_CODE = 'cfrCode';
 
     protected $_resourceType = ResourceType::UK_DFE_POSITION_CATEGORY;
 
@@ -120,4 +121,19 @@ class PositionCategory extends ModelBase
         $this->setProperty('label', $label);
     }
 
+    /**
+     * @return string
+     */
+    public function getCfrCode()
+    {
+        return $this->getProperty('cfrCode');
+    }
+
+    /**
+     * @param string $cfrCode
+     */
+    public function setCfrCode(string $cfrCode = null)
+    {
+        $this->setProperty('cfrCode', $cfrCode);
+    }
 }

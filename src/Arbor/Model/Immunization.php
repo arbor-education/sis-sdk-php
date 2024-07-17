@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Immunization extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const IMMUNIZATION_TYPE = 'immunizationType';
@@ -117,5 +116,4 @@ class Immunization extends ModelBase
     {
         $this->setProperty('administeredByMedicalInstitution', $administeredByMedicalInstitution);
     }
-
 }

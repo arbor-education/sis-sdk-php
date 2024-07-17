@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetablerImportStepOutcome extends ModelBase
 {
-
     public const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
     public const IDENTIFIER = 'identifier';
@@ -171,5 +170,4 @@ class TimetablerImportStepOutcome extends ModelBase
     {
         $this->setProperty('isDraft', $isDraft);
     }
-
 }

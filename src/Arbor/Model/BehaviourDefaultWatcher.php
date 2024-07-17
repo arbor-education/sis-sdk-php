@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BehaviourDefaultWatcher extends ModelBase
 {
-
     public const BEHAVIOUR = 'behaviour';
 
     public const RELATION_TO_STUDENT = 'relationToStudent';
@@ -99,5 +98,4 @@ class BehaviourDefaultWatcher extends ModelBase
     {
         $this->setProperty('staff', $staff);
     }
-
 }

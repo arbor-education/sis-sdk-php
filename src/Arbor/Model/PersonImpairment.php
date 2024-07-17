@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonImpairment extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const PERSON_IMPAIRMENT_NAME = 'personImpairmentName';
@@ -135,5 +134,4 @@ class PersonImpairment extends ModelBase
     {
         $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }
-
 }

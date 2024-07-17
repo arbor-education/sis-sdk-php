@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Programme extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -135,5 +134,4 @@ class Programme extends ModelBase
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }
-
 }

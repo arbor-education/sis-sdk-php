@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserDefinedFieldImport extends ModelBase
 {
-
     public const USER_DEFINED_IMPORT_JOB = 'userDefinedImportJob';
 
     public const ENTITY = 'entity';
@@ -153,5 +152,4 @@ class UserDefinedFieldImport extends ModelBase
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }
-
 }

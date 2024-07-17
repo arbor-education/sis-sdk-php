@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffContractPost extends ModelBase
 {
-
     public const STAFF_CONTRACT = 'staffContract';
 
     public const POSITION = 'position';
@@ -261,5 +260,4 @@ class StaffContractPost extends ModelBase
     {
         $this->setProperty('endReason', $endReason);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class WorkPlacement extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EMPLOYER = 'employer';
@@ -18,7 +17,7 @@ class WorkPlacement extends ModelBase
 
     public const WORK_PLACEMENT_MODE = 'workPlacementMode';
 
-    public const PLANNED_HOURS = 'plannedHours';
+    public const TOTAL_PLANNED_HOURS = 'totalPlannedHours';
 
     public const PROGRAMME_ENROLMENT = 'programmeEnrolment';
 
@@ -141,19 +140,19 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getPlannedHours()
+    public function getTotalPlannedHours()
     {
-        return $this->getProperty('plannedHours');
+        return $this->getProperty('totalPlannedHours');
     }
 
     /**
-     * @param string $plannedHours
+     * @param int $totalPlannedHours
      */
-    public function setPlannedHours(string $plannedHours = null)
+    public function setTotalPlannedHours(int $totalPlannedHours = null)
     {
-        $this->setProperty('plannedHours', $plannedHours);
+        $this->setProperty('totalPlannedHours', $totalPlannedHours);
     }
 
     /**
@@ -171,5 +170,4 @@ class WorkPlacement extends ModelBase
     {
         $this->setProperty('programmeEnrolment', $programmeEnrolment);
     }
-
 }

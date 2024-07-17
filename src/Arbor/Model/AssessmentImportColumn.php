@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentImportColumn extends ModelBase
 {
-
     public const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
 
     public const MAPPED_ASSESSMENT_ASPECT = 'mappedAssessmentAspect';
@@ -81,5 +80,4 @@ class AssessmentImportColumn extends ModelBase
     {
         $this->setProperty('mappedAssessmentAspect', $mappedAssessmentAspect);
     }
-
 }

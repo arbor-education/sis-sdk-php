@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonNextOfKin extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const RELATED_PERSON = 'relatedPerson';
@@ -99,5 +98,4 @@ class PersonNextOfKin extends ModelBase
     {
         $this->setProperty('relationship', $relationship);
     }
-
 }

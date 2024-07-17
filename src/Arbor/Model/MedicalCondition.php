@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MedicalCondition extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
@@ -189,5 +188,4 @@ class MedicalCondition extends ModelBase
     {
         $this->setProperty('treatment', $treatment);
     }
-
 }

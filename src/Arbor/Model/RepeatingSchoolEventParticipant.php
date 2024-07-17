@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RepeatingSchoolEventParticipant extends ModelBase
 {
-
     public const REPEATING_SCHOOL_EVENT = 'repeatingSchoolEvent';
 
     public const PARTICIPANT = 'participant';
@@ -81,5 +80,4 @@ class RepeatingSchoolEventParticipant extends ModelBase
     {
         $this->setProperty('participant', $participant);
     }
-
 }

@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class TravellerStatusAssignment extends ModelBase
 {
-
     public const TRAVELLER_STATUS = 'travellerStatus';
 
     public const STUDENT = 'student';
@@ -137,5 +136,4 @@ class TravellerStatusAssignment extends ModelBase
     {
         $this->setProperty('informationSource', $informationSource);
     }
-
 }

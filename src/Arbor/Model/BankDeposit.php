@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BankDeposit extends ModelBase
 {
-
     public const BANK_ACCOUNT = 'bankAccount';
 
     public const PAID_BY_STAFF = 'paidByStaff';
@@ -171,5 +170,4 @@ class BankDeposit extends ModelBase
     {
         $this->setProperty('refundAdjustmentAmount', $refundAdjustmentAmount);
     }
-
 }
