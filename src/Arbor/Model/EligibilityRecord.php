@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EligibilityRecord extends ModelBase
 {
-
     public const ELIGIBILITY = 'eligibility';
 
     public const PERSON = 'person';
@@ -153,5 +152,4 @@ class EligibilityRecord extends ModelBase
     {
         $this->setProperty('nextCheckDate', $nextCheckDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ObservationFrameworkStrand extends ModelBase
 {
-
     public const OBSERVATION_FRAMEWORK = 'observationFramework';
 
     public const OBSERVATION_STRAND = 'observationStrand';
@@ -81,5 +80,4 @@ class ObservationFrameworkStrand extends ModelBase
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
-
 }

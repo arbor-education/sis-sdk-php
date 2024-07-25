@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationResult extends ModelBase
 {
-
     public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     public const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -298,5 +297,4 @@ class QualificationResult extends ModelBase
     {
         $this->setProperty('endorsementGrade', $endorsementGrade);
     }
-
 }

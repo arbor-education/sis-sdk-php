@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationAward extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -495,5 +494,4 @@ class QualificationAward extends ModelBase
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }
-
 }

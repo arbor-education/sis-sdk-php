@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MedicalConditionMedication extends ModelBase
 {
-
     public const MEDICAL_CONDITION = 'medicalCondition';
 
     public const MEDICATION = 'medication';
@@ -153,5 +152,4 @@ class MedicalConditionMedication extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

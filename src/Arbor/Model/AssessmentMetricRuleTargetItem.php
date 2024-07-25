@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentMetricRuleTargetItem extends ModelBase
 {
-
     public const OPERATOR = 'operator';
 
     public const TARGET_TYPE = 'targetType';
@@ -135,5 +134,4 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     {
         $this->setProperty('assessment', $assessment);
     }
-
 }

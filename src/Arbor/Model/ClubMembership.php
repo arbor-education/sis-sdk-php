@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubMembership extends ModelBase
 {
-
     public const CLUB = 'club';
 
     public const START_DATE = 'startDate';
@@ -243,5 +242,4 @@ class ClubMembership extends ModelBase
     {
         $this->setProperty('disabledDatetime', $disabledDatetime);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BoardingPattern extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -243,5 +242,4 @@ class BoardingPattern extends ModelBase
     {
         $this->setProperty('accommodationRoom', $accommodationRoom);
     }
-
 }

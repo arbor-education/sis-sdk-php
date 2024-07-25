@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationResultEmbargoViewer extends ModelBase
 {
-
     public const VIEWER = 'viewer';
 
     protected $_resourceType = ResourceType::QUALIFICATION_RESULT_EMBARGO_VIEWER;
@@ -63,5 +62,4 @@ class QualificationResultEmbargoViewer extends ModelBase
     {
         $this->setProperty('viewer', $viewer);
     }
-
 }

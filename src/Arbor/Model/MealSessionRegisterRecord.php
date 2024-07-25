@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealSessionRegisterRecord extends ModelBase
 {
-
     public const MEAL_SESSION = 'mealSession';
 
     public const PERSON = 'person';
@@ -153,5 +152,4 @@ class MealSessionRegisterRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
-
 }

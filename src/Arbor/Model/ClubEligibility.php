@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubEligibility extends ModelBase
 {
-
     public const CLUB = 'club';
 
     public const ELIGIBLE = 'eligible';
@@ -81,5 +80,4 @@ class ClubEligibility extends ModelBase
     {
         $this->setProperty('eligible', $eligible);
     }
-
 }

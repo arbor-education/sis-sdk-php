@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentStandardizedAssessmentMark extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
@@ -225,5 +224,4 @@ class StudentStandardizedAssessmentMark extends ModelBase
     {
         $this->setProperty('completedStaff', $completedStaff);
     }
-
 }

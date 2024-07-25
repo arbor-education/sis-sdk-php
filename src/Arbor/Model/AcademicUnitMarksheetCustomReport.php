@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitMarksheetCustomReport extends ModelBase
 {
-
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const CUSTOM_REPORT = 'customReport';
@@ -81,5 +80,4 @@ class AcademicUnitMarksheetCustomReport extends ModelBase
     {
         $this->setProperty('customReport', $customReport);
     }
-
 }

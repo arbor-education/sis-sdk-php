@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentImportRow extends ModelBase
 {
-
     public const ASSESSMENT_IMPORT_JOB = 'assessmentImportJob';
 
     public const MAPPED_STUDENT = 'mappedStudent';
@@ -81,5 +80,4 @@ class AssessmentImportRow extends ModelBase
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
-
 }

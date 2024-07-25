@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InternalExclusionSession extends ModelBase
 {
-
     public const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
 
     public const SESSION_NAME = 'sessionName';
@@ -225,5 +224,4 @@ class InternalExclusionSession extends ModelBase
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }
-
 }

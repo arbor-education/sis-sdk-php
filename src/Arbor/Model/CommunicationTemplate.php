@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CommunicationTemplate extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const IDENTIFIER = 'identifier';
@@ -207,5 +206,4 @@ class CommunicationTemplate extends ModelBase
     {
         $this->setProperty('customReport', $customReport);
     }
-
 }

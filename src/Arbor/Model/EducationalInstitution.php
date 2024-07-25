@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EducationalInstitution extends ModelBase
 {
-
     public const EDUCATIONAL_INSTITUTION_NAME = 'educationalInstitutionName';
 
     public const SHORT_NAME = 'shortName';
@@ -567,5 +566,4 @@ class EducationalInstitution extends ModelBase
     {
         $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }
-
 }

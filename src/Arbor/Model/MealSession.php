@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealSession extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -207,5 +206,4 @@ class MealSession extends ModelBase
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
-
 }

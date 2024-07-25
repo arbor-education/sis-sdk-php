@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EntityPushdownVersionStatus extends ModelBase
 {
-
     public const ENTITY_PUSHDOWN_VERSION = 'entityPushdownVersion';
 
     public const SUBSCRIBER_APPLICATION = 'subscriberApplication';
@@ -189,5 +188,4 @@ class EntityPushdownVersionStatus extends ModelBase
     {
         $this->setProperty('retries', $retries);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationAssessableInstance extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -22,6 +21,8 @@ class QualificationAssessableInstance extends ModelBase
 
     public const START_DATE_RANGE_FROM = 'startDateRangeFrom';
 
+    public const USER_DEFINED_START_DATE_RANGE_FROM = 'userDefinedStartDateRangeFrom';
+
     public const START_DATE_RANGE_UNTIL = 'startDateRangeUntil';
 
     public const DURATION = 'duration';
@@ -31,6 +32,8 @@ class QualificationAssessableInstance extends ModelBase
     public const CENTRE_SPECIFIED_DURATION = 'centreSpecifiedDuration';
 
     public const IS_PROVISIONAL = 'isProvisional';
+
+    public const IS_SHOWN_IN_SCHEDULING = 'isShownInScheduling';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ASSESSABLE_INSTANCE;
 
@@ -187,6 +190,22 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @return \DateTime
      */
+    public function getUserDefinedStartDateRangeFrom()
+    {
+        return $this->getProperty('userDefinedStartDateRangeFrom');
+    }
+
+    /**
+     * @param \DateTime $userDefinedStartDateRangeFrom
+     */
+    public function setUserDefinedStartDateRangeFrom(\DateTime $userDefinedStartDateRangeFrom = null)
+    {
+        $this->setProperty('userDefinedStartDateRangeFrom', $userDefinedStartDateRangeFrom);
+    }
+
+    /**
+     * @return \DateTime
+     */
     public function getStartDateRangeUntil()
     {
         return $this->getProperty('startDateRangeUntil');
@@ -264,4 +283,19 @@ class QualificationAssessableInstance extends ModelBase
         $this->setProperty('isProvisional', $isProvisional);
     }
 
+    /**
+     * @return bool
+     */
+    public function getIsShownInScheduling()
+    {
+        return $this->getProperty('isShownInScheduling');
+    }
+
+    /**
+     * @param bool $isShownInScheduling
+     */
+    public function setIsShownInScheduling(bool $isShownInScheduling = null)
+    {
+        $this->setProperty('isShownInScheduling', $isShownInScheduling);
+    }
 }

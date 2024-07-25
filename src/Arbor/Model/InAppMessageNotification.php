@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InAppMessageNotification extends ModelBase
 {
-
     public const IN_APP_MESSAGE = 'inAppMessage';
 
     public const NOTIFICATION_CHANNEL = 'notificationChannel';
@@ -81,5 +80,4 @@ class InAppMessageNotification extends ModelBase
     {
         $this->setProperty('notificationChannel', $notificationChannel);
     }
-
 }

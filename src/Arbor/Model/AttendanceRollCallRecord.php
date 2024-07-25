@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceRollCallRecord extends ModelBase
 {
-
     public const ATTENDANCE_ROLL_CALL = 'attendanceRollCall';
 
     public const RECORD_DATE = 'recordDate';
@@ -189,5 +188,4 @@ class AttendanceRollCallRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
-
 }

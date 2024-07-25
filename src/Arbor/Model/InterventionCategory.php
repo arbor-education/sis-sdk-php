@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InterventionCategory extends ModelBase
 {
-
     public const INTERVENTION_CATEGORY_NAME = 'interventionCategoryName';
 
     public const SHORT_NAME = 'shortName';
@@ -135,5 +134,4 @@ class InterventionCategory extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

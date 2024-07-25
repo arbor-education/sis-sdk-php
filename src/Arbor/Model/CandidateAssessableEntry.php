@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CandidateAssessableEntry extends ModelBase
 {
-
     public const CANDIDATE_ENTRY = 'candidateEntry';
 
     public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -208,5 +207,4 @@ class CandidateAssessableEntry extends ModelBase
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
-
 }

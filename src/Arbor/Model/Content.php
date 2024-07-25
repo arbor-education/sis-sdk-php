@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Content extends ModelBase
 {
-
     public const CONTENT_NAME = 'contentName';
 
     public const DESCRIPTION = 'description';
@@ -81,5 +80,4 @@ class Content extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ExternallyGeneratedReportCard extends ModelBase
 {
-
     public const CONTENT = 'content';
 
     public const REPORT_CARD_BATCH = 'reportCardBatch';
@@ -99,5 +98,4 @@ class ExternallyGeneratedReportCard extends ModelBase
     {
         $this->setProperty('student', $student);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Guardian extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const EMPLOYER = 'employer';
@@ -261,5 +260,4 @@ class Guardian extends ModelBase
     {
         $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }
-
 }

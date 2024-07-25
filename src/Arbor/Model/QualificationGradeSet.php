@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationGradeSet extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -153,5 +152,4 @@ class QualificationGradeSet extends ModelBase
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
-
 }

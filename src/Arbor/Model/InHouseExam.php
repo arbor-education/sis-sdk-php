@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InHouseExam extends ModelBase
 {
-
     public const MOCK_QUALIFICATION_ASSESSABLE = 'mockQualificationAssessable';
 
     public const MOCK_QUALIFICATION_LEARNING_UNIT = 'mockQualificationLearningUnit';
@@ -117,5 +116,4 @@ class InHouseExam extends ModelBase
     {
         $this->setProperty('name', $name);
     }
-
 }

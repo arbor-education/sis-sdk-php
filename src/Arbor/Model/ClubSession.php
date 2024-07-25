@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubSession extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -189,5 +188,4 @@ class ClubSession extends ModelBase
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
-
 }

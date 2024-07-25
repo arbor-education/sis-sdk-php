@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SessionRoomFeatureRequirement extends ModelBase
 {
-
     public const SESSION = 'session';
 
     public const ROOM_FEATURE = 'roomFeature';
@@ -81,5 +80,4 @@ class SessionRoomFeatureRequirement extends ModelBase
     {
         $this->setProperty('roomFeature', $roomFeature);
     }
-
 }

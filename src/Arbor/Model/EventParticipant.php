@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EventParticipant extends ModelBase
 {
-
     public const EVENT = 'event';
 
     public const PARTICIPANT = 'participant';
@@ -99,5 +98,4 @@ class EventParticipant extends ModelBase
     {
         $this->setProperty('attendanceRequirement', $attendanceRequirement);
     }
-
 }

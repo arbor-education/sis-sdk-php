@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class HouseTutor extends ModelBase
 {
-
     public const HOUSE = 'house';
 
     public const STAFF = 'staff';
@@ -117,5 +116,4 @@ class HouseTutor extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

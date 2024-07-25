@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentLinkedRelationshipType extends ModelBase
 {
-
     public const STUDENT_LINKED_RELATIONSHIP_TYPE_NAME = 'studentLinkedRelationshipTypeName';
 
     public const IS_MEDICAL = 'isMedical';
@@ -99,5 +98,4 @@ class StudentLinkedRelationshipType extends ModelBase
     {
         $this->setProperty('isAcademic', $isAcademic);
     }
-
 }

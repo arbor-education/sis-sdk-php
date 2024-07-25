@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AdHocBursaryPayment extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const BURSARY_TYPE = 'bursaryType';
@@ -153,5 +152,4 @@ class AdHocBursaryPayment extends ModelBase
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
-
 }

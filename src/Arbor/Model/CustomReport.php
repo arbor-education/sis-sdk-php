@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReport extends ModelBase
 {
-
     public const TITLE = 'title';
 
     public const REPORT_CLASS = 'reportClass';
@@ -189,5 +188,4 @@ class CustomReport extends ModelBase
     {
         $this->setProperty('transient', $transient);
     }
-
 }

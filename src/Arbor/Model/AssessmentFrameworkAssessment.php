@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentFrameworkAssessment extends ModelBase
 {
-
     public const ASSESSMENT = 'assessment';
 
     public const STEPS_COMPLETED = 'stepsCompleted';
@@ -99,5 +98,4 @@ class AssessmentFrameworkAssessment extends ModelBase
     {
         $this->setProperty('setupCompleted', $setupCompleted);
     }
-
 }

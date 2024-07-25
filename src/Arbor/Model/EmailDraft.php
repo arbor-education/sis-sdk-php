@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EmailDraft extends ModelBase
 {
-
     public const SENDER = 'sender';
 
     public const SUBJECT = 'subject';
@@ -243,5 +242,4 @@ class EmailDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
 }

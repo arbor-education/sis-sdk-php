@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentBatchTarget extends ModelBase
 {
-
     public const STANDARDIZED_ASSESSMENT_BATCH = 'standardizedAssessmentBatch';
 
     public const TARGET = 'target';
@@ -81,5 +80,4 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
 }

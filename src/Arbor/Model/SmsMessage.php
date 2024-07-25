@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SmsMessage extends ModelBase
 {
-
     public const SMS_MESSAGE_DRAFT = 'smsMessageDraft';
 
     public const MESSAGE_TYPE = 'messageType';
@@ -369,5 +368,4 @@ class SmsMessage extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

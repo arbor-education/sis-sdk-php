@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class OptionsImportAcademicUnitMapping extends ModelBase
 {
-
     public const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
     public const ACADEMIC_UNIT_NAME = 'academicUnitName';
@@ -117,5 +116,4 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     {
         $this->setProperty('mappedAcademicUnit', $mappedAcademicUnit);
     }
-
 }

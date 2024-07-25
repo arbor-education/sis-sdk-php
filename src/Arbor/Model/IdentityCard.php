@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IdentityCard extends ModelBase
 {
-
     public const OWNER = 'owner';
 
     public const CARD_NUMBER = 'cardNumber';
@@ -135,5 +134,4 @@ class IdentityCard extends ModelBase
     {
         $this->setProperty('lostDatetime', $lostDatetime);
     }
-
 }

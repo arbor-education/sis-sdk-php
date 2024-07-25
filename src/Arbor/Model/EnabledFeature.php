@@ -7,12 +7,15 @@ use Arbor\Model\ModelBase;
 
 class EnabledFeature extends ModelBase
 {
-
     public const FEATURE_IDENTIFIER = 'featureIdentifier';
 
     public const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
 
     public const BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = 'billingServiceContractSubscriptionId';
+
+    public const SUBSCRIPTION_SOURCE = 'subscriptionSource';
+
+    public const SUBSCRIPTION_IDENTIFIER = 'subscriptionIdentifier';
 
     public const START_DATE = 'startDate';
 
@@ -105,6 +108,38 @@ class EnabledFeature extends ModelBase
     }
 
     /**
+     * @return string
+     */
+    public function getSubscriptionSource()
+    {
+        return $this->getProperty('subscriptionSource');
+    }
+
+    /**
+     * @param string $subscriptionSource
+     */
+    public function setSubscriptionSource(string $subscriptionSource = null)
+    {
+        $this->setProperty('subscriptionSource', $subscriptionSource);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubscriptionIdentifier()
+    {
+        return $this->getProperty('subscriptionIdentifier');
+    }
+
+    /**
+     * @param string $subscriptionIdentifier
+     */
+    public function setSubscriptionIdentifier(string $subscriptionIdentifier = null)
+    {
+        $this->setProperty('subscriptionIdentifier', $subscriptionIdentifier);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getStartDate()
@@ -135,5 +170,4 @@ class EnabledFeature extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

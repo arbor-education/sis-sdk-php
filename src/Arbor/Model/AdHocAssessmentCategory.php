@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AdHocAssessmentCategory extends ModelBase
 {
-
     public const CATEGORY_NAME = 'categoryName';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_CATEGORY;
@@ -63,5 +62,4 @@ class AdHocAssessmentCategory extends ModelBase
     {
         $this->setProperty('categoryName', $categoryName);
     }
-
 }

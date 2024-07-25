@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealRotationMenu extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const MEAL = 'meal';
@@ -189,5 +188,4 @@ class MealRotationMenu extends ModelBase
     {
         $this->setProperty('allowMealChargesWhenNotEnoughBalance', $allowMealChargesWhenNotEnoughBalance);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class LessonPlan extends ModelBase
 {
-
     public const TITLE = 'title';
 
     public const SUMMARY = 'summary';
@@ -81,5 +80,4 @@ class LessonPlan extends ModelBase
     {
         $this->setProperty('summary', $summary);
     }
-
 }

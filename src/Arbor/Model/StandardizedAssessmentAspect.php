@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentAspect extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -245,5 +244,4 @@ class StandardizedAssessmentAspect extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

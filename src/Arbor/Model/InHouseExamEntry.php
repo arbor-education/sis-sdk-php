@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InHouseExamEntry extends ModelBase
 {
-
     public const IN_HOUSE_EXAM = 'inHouseExam';
 
     public const IN_HOUSE_EXAM_INSTANCE = 'inHouseExamInstance';
@@ -207,5 +206,4 @@ class InHouseExamEntry extends ModelBase
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
-
 }

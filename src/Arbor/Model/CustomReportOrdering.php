@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportOrdering extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -171,5 +170,4 @@ class CustomReportOrdering extends ModelBase
     {
         $this->setProperty('customReportColumn', $customReportColumn);
     }
-
 }

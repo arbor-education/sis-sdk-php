@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetablePeriod extends ModelBase
 {
-
     public const TIMETABLE_PERIOD_GROUPING = 'timetablePeriodGrouping';
 
     public const DAY_OF_CYCLE = 'dayOfCycle';
@@ -135,5 +134,4 @@ class TimetablePeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

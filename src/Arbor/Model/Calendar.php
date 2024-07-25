@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Calendar extends ModelBase
 {
-
     public const OWNER = 'owner';
 
     public const CALENDAR_TYPE = 'calendarType';
@@ -135,5 +134,4 @@ class Calendar extends ModelBase
     {
         $this->setProperty('calendarColor', $calendarColor);
     }
-
 }

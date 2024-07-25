@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentImportItem extends ModelBase
 {
-
     public const ASSESSMENT_IMPORT_COLUMN = 'assessmentImportColumn';
 
     public const ASSESSMENT_IMPORT_ROW = 'assessmentImportRow';
@@ -117,5 +116,4 @@ class AssessmentImportItem extends ModelBase
     {
         $this->setProperty('importedDatetime', $importedDatetime);
     }
-
 }

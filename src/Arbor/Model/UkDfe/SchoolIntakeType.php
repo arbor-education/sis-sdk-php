@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolIntakeType extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -119,5 +118,4 @@ class SchoolIntakeType extends ModelBase
     {
         $this->setProperty('label', $label);
     }
-
 }

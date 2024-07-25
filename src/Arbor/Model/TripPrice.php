@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TripPrice extends ModelBase
 {
-
     public const TRIP = 'trip';
 
     public const APPLICABLE = 'applicable';
@@ -23,6 +22,8 @@ class TripPrice extends ModelBase
     public const MINIMUM_INSTALMENT_AMOUNT = 'minimumInstalmentAmount';
 
     public const AUTO_CONFIRM_INSTALMENT_THRESHOLD = 'autoConfirmInstalmentThreshold';
+
+    public const SHOW_AMOUNT_OUTSTANDING = 'showAmountOutstanding';
 
     protected $_resourceType = ResourceType::TRIP_PRICE;
 
@@ -190,4 +191,19 @@ class TripPrice extends ModelBase
         $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }
 
+    /**
+     * @return bool
+     */
+    public function getShowAmountOutstanding()
+    {
+        return $this->getProperty('showAmountOutstanding');
+    }
+
+    /**
+     * @param bool $showAmountOutstanding
+     */
+    public function setShowAmountOutstanding(bool $showAmountOutstanding = null)
+    {
+        $this->setProperty('showAmountOutstanding', $showAmountOutstanding);
+    }
 }

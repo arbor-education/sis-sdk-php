@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolCensusPupilReconciliation extends ModelBase
 {
-
     public const SCHOOL_CENSUS = 'schoolCensus';
 
     public const PART_TIME_NOT_IN = 'partTimeNotIn';
@@ -155,5 +154,4 @@ class SchoolCensusPupilReconciliation extends ModelBase
     {
         $this->setProperty('fECollege', $fECollege);
     }
-
 }

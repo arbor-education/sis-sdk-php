@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BursaryPaymentDate extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const BURSARY_TYPE = 'bursaryType';
@@ -99,5 +98,4 @@ class BursaryPaymentDate extends ModelBase
     {
         $this->setProperty('paymentDate', $paymentDate);
     }
-
 }

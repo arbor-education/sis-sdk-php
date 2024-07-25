@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class Student extends ModelBase
 {
-
     public const UNIQUE_LEARNER_NUMBER = 'uniqueLearnerNumber';
 
     public const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
@@ -29,6 +28,8 @@ class Student extends ModelBase
     public const EXTENDED_HOURS = 'extendedHours';
 
     public const THIRTY_HOUR_CODE = 'thirtyHourCode';
+
+    public const EXPANDED_HOURS = 'expandedHours';
 
     public const GCSE_ENGLISH_GRADE = 'gcseEnglishGrade';
 
@@ -249,6 +250,22 @@ class Student extends ModelBase
     /**
      * @return string
      */
+    public function getExpandedHours()
+    {
+        return $this->getProperty('expandedHours');
+    }
+
+    /**
+     * @param string $expandedHours
+     */
+    public function setExpandedHours(string $expandedHours = null)
+    {
+        $this->setProperty('expandedHours', $expandedHours);
+    }
+
+    /**
+     * @return string
+     */
     public function getGcseEnglishGrade()
     {
         return $this->getProperty('gcseEnglishGrade');
@@ -391,5 +408,4 @@ class Student extends ModelBase
     {
         $this->setProperty('tLevelPlannedEepHours', $tLevelPlannedEepHours);
     }
-
 }

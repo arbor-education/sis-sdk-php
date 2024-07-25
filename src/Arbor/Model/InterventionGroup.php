@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InterventionGroup extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const INTERVENTION = 'intervention';
@@ -189,5 +188,4 @@ class InterventionGroup extends ModelBase
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }
-
 }

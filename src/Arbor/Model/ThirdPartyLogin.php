@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ThirdPartyLogin extends ModelBase
 {
-
     public const THIRD_PARTY_SITE = 'thirdPartySite';
 
     public const USERNAME = 'username';
@@ -153,5 +152,4 @@ class ThirdPartyLogin extends ModelBase
     {
         $this->setProperty('person', $person);
     }
-
 }

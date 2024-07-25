@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class AlternativeProvisionPlacement extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -210,5 +209,4 @@ class AlternativeProvisionPlacement extends ModelBase
     {
         $this->setProperty('sessionsPerWeek', $sessionsPerWeek);
     }
-
 }

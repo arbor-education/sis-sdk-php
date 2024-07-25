@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Position extends ModelBase
 {
-
     public const START_DATE = 'startDate';
 
     public const EXPECTED_END_DATE = 'expectedEndDate';
@@ -261,5 +260,4 @@ class Position extends ModelBase
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }
-
 }

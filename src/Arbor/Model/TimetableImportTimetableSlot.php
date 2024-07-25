@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetableImportTimetableSlot extends ModelBase
 {
-
     public const TIMETABLE_IMPORT_JOB = 'timetableImportJob';
 
     public const TIMETABLE_SLOT = 'timetableSlot';
@@ -31,6 +30,10 @@ class TimetableImportTimetableSlot extends ModelBase
     public const END_DATE = 'endDate';
 
     public const FREQUENCY = 'frequency';
+
+    public const IMPORT_STATUS = 'importStatus';
+
+    public const SCHEDULE_STATUS = 'scheduleStatus';
 
     protected $_resourceType = ResourceType::TIMETABLE_IMPORT_TIMETABLE_SLOT;
 
@@ -262,4 +265,35 @@ class TimetableImportTimetableSlot extends ModelBase
         $this->setProperty('frequency', $frequency);
     }
 
+    /**
+     * @return string
+     */
+    public function getImportStatus()
+    {
+        return $this->getProperty('importStatus');
+    }
+
+    /**
+     * @param string $importStatus
+     */
+    public function setImportStatus(string $importStatus = null)
+    {
+        $this->setProperty('importStatus', $importStatus);
+    }
+
+    /**
+     * @return string
+     */
+    public function getScheduleStatus()
+    {
+        return $this->getProperty('scheduleStatus');
+    }
+
+    /**
+     * @param string $scheduleStatus
+     */
+    public function setScheduleStatus(string $scheduleStatus = null)
+    {
+        $this->setProperty('scheduleStatus', $scheduleStatus);
+    }
 }

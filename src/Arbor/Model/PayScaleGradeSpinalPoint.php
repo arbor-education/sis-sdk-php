@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PayScaleGradeSpinalPoint extends ModelBase
 {
-
     public const PAY_SCALE_GRADE = 'payScaleGrade';
 
     public const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
@@ -81,5 +80,4 @@ class PayScaleGradeSpinalPoint extends ModelBase
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
-
 }

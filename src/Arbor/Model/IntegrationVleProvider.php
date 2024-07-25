@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IntegrationVleProvider extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const CONFIGURATION = 'configuration';
@@ -117,5 +116,4 @@ class IntegrationVleProvider extends ModelBase
     {
         $this->setProperty('code', $code);
     }
-
 }

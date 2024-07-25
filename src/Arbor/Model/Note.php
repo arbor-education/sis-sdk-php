@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Note extends ModelBase
 {
-
     public const NOTE = 'note';
 
     public const REFERENCE_OBJECT = 'referenceObject';
@@ -99,5 +98,4 @@ class Note extends ModelBase
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }
-
 }

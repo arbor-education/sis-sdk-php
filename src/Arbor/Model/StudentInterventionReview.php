@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentInterventionReview extends ModelBase
 {
-
     public const STUDENT_INTERVENTION = 'studentIntervention';
 
     public const INTERVENTION_REVIEW = 'interventionReview';
@@ -117,5 +116,4 @@ class StudentInterventionReview extends ModelBase
     {
         $this->setProperty('reviewDate', $reviewDate);
     }
-
 }

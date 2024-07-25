@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentEmploymentRecord extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EMPLOYER = 'employer';
@@ -171,5 +170,4 @@ class StudentEmploymentRecord extends ModelBase
     {
         $this->setProperty('employmentRecordType', $employmentRecordType);
     }
-
 }

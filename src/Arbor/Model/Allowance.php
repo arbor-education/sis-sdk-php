@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Allowance extends ModelBase
 {
-
     public const ALLOWANCE_NAME = 'allowanceName';
 
     public const ALLOWANCE_CODE = 'allowanceCode';
@@ -81,5 +80,4 @@ class Allowance extends ModelBase
     {
         $this->setProperty('allowanceCode', $allowanceCode);
     }
-
 }

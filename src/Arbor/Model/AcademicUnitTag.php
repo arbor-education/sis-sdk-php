@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitTag extends ModelBase
 {
-
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const RELATED_OBJECT = 'relatedObject';
@@ -81,5 +80,4 @@ class AcademicUnitTag extends ModelBase
     {
         $this->setProperty('relatedObject', $relatedObject);
     }
-
 }

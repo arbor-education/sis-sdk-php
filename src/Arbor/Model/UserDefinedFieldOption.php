@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserDefinedFieldOption extends ModelBase
 {
-
     public const USER_DEFINED_FIELD = 'userDefinedField';
 
     public const NAME = 'name';
@@ -117,5 +116,4 @@ class UserDefinedFieldOption extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

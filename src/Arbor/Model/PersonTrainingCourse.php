@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonTrainingCourse extends ModelBase
 {
-
     public const TRAINING_COURSE = 'trainingCourse';
 
     public const TRAINED_PERSON = 'trainedPerson';
@@ -99,5 +98,4 @@ class PersonTrainingCourse extends ModelBase
     {
         $this->setProperty('feeCosts', $feeCosts);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentStandardizedAssessment extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
@@ -118,5 +117,4 @@ class StudentStandardizedAssessment extends ModelBase
     {
         $this->setProperty('completedDate', $completedDate);
     }
-
 }

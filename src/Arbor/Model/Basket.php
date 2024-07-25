@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Basket extends ModelBase
 {
-
     public const GUARDIAN = 'guardian';
 
     protected $_resourceType = ResourceType::BASKET;
@@ -63,5 +62,4 @@ class Basket extends ModelBase
     {
         $this->setProperty('guardian', $guardian);
     }
-
 }

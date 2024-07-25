@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class LanguageAbility extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const LANGUAGE = 'language';
@@ -189,5 +188,4 @@ class LanguageAbility extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

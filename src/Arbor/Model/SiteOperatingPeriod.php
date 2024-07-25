@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SiteOperatingPeriod extends ModelBase
 {
-
     public const SITE = 'site';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -153,5 +152,4 @@ class SiteOperatingPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

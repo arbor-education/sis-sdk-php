@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonAlert extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const CONTEXT_PERSON = 'contextPerson';
@@ -135,5 +134,4 @@ class PersonAlert extends ModelBase
     {
         $this->setProperty('alertDatetime', $alertDatetime);
     }
-
 }

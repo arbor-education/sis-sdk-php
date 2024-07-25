@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Staff extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const ETHNICITY = 'ethnicity';
@@ -27,6 +26,8 @@ class Staff extends ModelBase
     public const LEGACY_SYSTEM_ID = 'legacySystemId';
 
     public const EXTERNAL_PERSON_ID = 'externalPersonId';
+
+    public const INCLUDE_IN_COVER = 'includeInCover';
 
     public const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
 
@@ -245,6 +246,22 @@ class Staff extends ModelBase
     /**
      * @return bool
      */
+    public function getIncludeInCover()
+    {
+        return $this->getProperty('includeInCover');
+    }
+
+    /**
+     * @param bool $includeInCover
+     */
+    public function setIncludeInCover(bool $includeInCover = null)
+    {
+        $this->setProperty('includeInCover', $includeInCover);
+    }
+
+    /**
+     * @return bool
+     */
     public function getEligibleForSchoolWorkforceReturn()
     {
         return $this->getProperty('eligibleForSchoolWorkforceReturn');
@@ -369,5 +386,4 @@ class Staff extends ModelBase
     {
         $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }
-
 }

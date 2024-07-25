@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentCurriculumAchievement extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const CURRICULUM_STATEMENT = 'curriculumStatement';
@@ -153,5 +152,4 @@ class StudentCurriculumAchievement extends ModelBase
     {
         $this->setProperty('achievementDate', $achievementDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SenEventOutcome extends ModelBase
 {
-
     public const SEN_EVENT = 'senEvent';
 
     public const SEN_EVENT_OUTCOME_TYPE = 'senEventOutcomeType';
@@ -99,5 +98,4 @@ class SenEventOutcome extends ModelBase
     {
         $this->setProperty('comments', $comments);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomGroup extends ModelBase
 {
-
     public const CUSTOM_GROUP_NAME = 'customGroupName';
 
     public const DESCRIPTION = 'description';
@@ -225,5 +224,4 @@ class CustomGroup extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

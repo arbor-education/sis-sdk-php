@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentMetricRuleGradeItem extends ModelBase
 {
-
     public const OPERATOR = 'operator';
 
     public const GRADE = 'grade';
@@ -135,5 +134,4 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     {
         $this->setProperty('assessment', $assessment);
     }
-
 }

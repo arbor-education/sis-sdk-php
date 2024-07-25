@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentEducationalHistory extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
@@ -153,5 +152,4 @@ class StudentEducationalHistory extends ModelBase
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
-
 }

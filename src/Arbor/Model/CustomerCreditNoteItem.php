@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerCreditNoteItem extends ModelBase
 {
-
     public const CUSTOMER_CREDIT_NOTE = 'customerCreditNote';
 
     public const CUSTOMER_INVOICE = 'customerInvoice';
@@ -153,5 +152,4 @@ class CustomerCreditNoteItem extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

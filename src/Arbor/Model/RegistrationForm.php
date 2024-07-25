@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RegistrationForm extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const REGISTRATION_FORM_NAME = 'registrationFormName';
@@ -241,5 +240,4 @@ class RegistrationForm extends ModelBase
     {
         return $this->getCollectionProperty('studentMemberships');
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MedicalInstitution extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -81,5 +80,4 @@ class MedicalInstitution extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
-
 }

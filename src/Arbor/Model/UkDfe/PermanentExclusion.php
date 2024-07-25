@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class PermanentExclusion extends ModelBase
 {
-
     public const EXCLUDE_FROM_SCHOOL_CENSUS = 'excludeFromSchoolCensus';
 
     protected $_resourceType = ResourceType::UK_DFE_PERMANENT_EXCLUSION;
@@ -65,5 +64,4 @@ class PermanentExclusion extends ModelBase
     {
         $this->setProperty('excludeFromSchoolCensus', $excludeFromSchoolCensus);
     }
-
 }

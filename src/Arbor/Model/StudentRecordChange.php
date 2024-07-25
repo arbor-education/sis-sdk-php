@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentRecordChange extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const CHANGER_CLASS_NAME = 'changerClassName';
@@ -207,5 +206,4 @@ class StudentRecordChange extends ModelBase
     {
         $this->setProperty('newData', $newData);
     }
-
 }

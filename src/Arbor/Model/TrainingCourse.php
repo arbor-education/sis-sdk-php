@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TrainingCourse extends ModelBase
 {
-
     public const TRAINING_COURSE_TITLE = 'trainingCourseTitle';
 
     public const TRAINING_COURSE_DESCRIPTION = 'trainingCourseDescription';
@@ -135,5 +134,4 @@ class TrainingCourse extends ModelBase
     {
         $this->setProperty('otherCosts', $otherCosts);
     }
-
 }

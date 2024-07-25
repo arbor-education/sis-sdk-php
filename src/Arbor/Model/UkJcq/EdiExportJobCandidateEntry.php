@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class EdiExportJobCandidateEntry extends ModelBase
 {
-
     public const EDI_EXPORT_JOB = 'ediExportJob';
 
     public const CANDIDATE_ENTRY = 'candidateEntry';
@@ -83,5 +82,4 @@ class EdiExportJobCandidateEntry extends ModelBase
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
-
 }

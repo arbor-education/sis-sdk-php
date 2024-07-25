@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CandidateDisappliedAccessArrangement extends ModelBase
 {
-
     public const CANDIDATE = 'candidate';
 
     public const ACCESS_ARRANGEMENT = 'accessArrangement';
@@ -99,5 +98,4 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceRecord extends ModelBase
 {
-
     public const ATTENDANCE_MARK = 'attendanceMark';
 
     public const ATTENDANCE_REGISTER = 'attendanceRegister';
@@ -279,5 +278,4 @@ class AttendanceRecord extends ModelBase
     {
         $this->setProperty('source', $source);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RoomLayout extends ModelBase
 {
-
     public const ROOM = 'room';
 
     public const STAFF = 'staff';
@@ -117,5 +116,4 @@ class RoomLayout extends ModelBase
     {
         $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonCheck extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const CHECK_TYPE = 'checkType';
@@ -243,5 +242,4 @@ class PersonCheck extends ModelBase
     {
         $this->setProperty('comment', $comment);
     }
-
 }

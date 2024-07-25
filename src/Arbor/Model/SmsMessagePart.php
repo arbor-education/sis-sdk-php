@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SmsMessagePart extends ModelBase
 {
-
     public const SMS_MESSAGE = 'smsMessage';
 
     public const PART_IDENTIFIER = 'partIdentifier';
@@ -153,5 +152,4 @@ class SmsMessagePart extends ModelBase
     {
         $this->setProperty('cost', $cost);
     }
-
 }

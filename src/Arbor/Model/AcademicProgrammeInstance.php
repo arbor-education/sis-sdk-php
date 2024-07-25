@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicProgrammeInstance extends ModelBase
 {
-
     public const ACADEMIC_PROGRAMME = 'academicProgramme';
 
     public const INSTANCE_NAME = 'instanceName';
@@ -107,5 +106,4 @@ class AcademicProgrammeInstance extends ModelBase
     {
         return $this->getCollectionProperty('topLevelAcademicUnits');
     }
-
 }

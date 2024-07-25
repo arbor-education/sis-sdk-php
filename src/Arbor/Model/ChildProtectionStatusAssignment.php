@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ChildProtectionStatusAssignment extends ModelBase
 {
-
     public const CHILD_PROTECTION_STATUS = 'childProtectionStatus';
 
     public const STUDENT = 'student';
@@ -153,5 +152,4 @@ class ChildProtectionStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
 }

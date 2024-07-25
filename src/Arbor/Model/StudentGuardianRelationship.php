@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentGuardianRelationship extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const GUARDIAN = 'guardian';
@@ -225,5 +224,4 @@ class StudentGuardianRelationship extends ModelBase
     {
         $this->setProperty('accessNotes', $accessNotes);
     }
-
 }

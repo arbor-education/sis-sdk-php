@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SuspendedCalendarEntryMapping extends ModelBase
 {
-
     public const SUSPENDED_OBJECT = 'suspendedObject';
 
     public const SUSPENDED_EVENT = 'suspendedEvent';
@@ -81,5 +80,4 @@ class SuspendedCalendarEntryMapping extends ModelBase
     {
         $this->setProperty('suspendedEvent', $suspendedEvent);
     }
-
 }

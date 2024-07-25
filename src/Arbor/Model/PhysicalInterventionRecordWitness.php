@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PhysicalInterventionRecordWitness extends ModelBase
 {
-
     public const PHYSICAL_INTERVENTION_RECORD = 'physicalInterventionRecord';
 
     public const WITNESS = 'witness';
@@ -135,5 +134,4 @@ class PhysicalInterventionRecordWitness extends ModelBase
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
-
 }

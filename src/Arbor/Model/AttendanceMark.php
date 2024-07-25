@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceMark extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -531,5 +530,4 @@ class AttendanceMark extends ModelBase
     {
         $this->setProperty('showInRegister', $showInRegister);
     }
-
 }

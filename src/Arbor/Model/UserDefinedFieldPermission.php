@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UserDefinedFieldPermission extends ModelBase
 {
-
     public const USER_DEFINED_FIELD = 'userDefinedField';
 
     public const IDENTIFIER = 'identifier';
@@ -117,5 +116,4 @@ class UserDefinedFieldPermission extends ModelBase
     {
         $this->setProperty('active', $active);
     }
-
 }

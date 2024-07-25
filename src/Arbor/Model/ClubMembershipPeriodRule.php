@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ClubMembershipPeriodRule extends ModelBase
 {
-
     public const RULE_IDENTIFIER = 'ruleIdentifier';
 
     public const RULE_VALUE = 'ruleValue';
@@ -99,5 +98,4 @@ class ClubMembershipPeriodRule extends ModelBase
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
-
 }

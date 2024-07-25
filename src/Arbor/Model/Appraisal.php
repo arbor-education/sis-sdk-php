@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Appraisal extends ModelBase
 {
-
     public const APPRAISEE = 'appraisee';
 
     public const APPRAISAL_DATE = 'appraisalDate';
@@ -135,5 +134,4 @@ class Appraisal extends ModelBase
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
-
 }

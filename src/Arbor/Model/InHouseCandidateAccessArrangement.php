@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InHouseCandidateAccessArrangement extends ModelBase
 {
-
     public const IN_HOUSE_CANDIDATE = 'inHouseCandidate';
 
     public const ACCESS_ARRANGEMENT = 'accessArrangement';
@@ -153,5 +152,4 @@ class InHouseCandidateAccessArrangement extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

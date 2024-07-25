@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolWorkforceCensusStaffInformation extends ModelBase
 {
-
     public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
     public const OCCASIONALS_QTS = 'occasionalsQts';
@@ -119,5 +118,4 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     {
         $this->setProperty('occasionalsNotKnown', $occasionalsNotKnown);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BursaryLevelAmount extends ModelBase
 {
-
     public const BURSARY_LEVEL = 'bursaryLevel';
 
     public const AMOUNT = 'amount';
@@ -117,5 +116,4 @@ class BursaryLevelAmount extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EducationalInstitutionStaff extends ModelBase
 {
-
     public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
     public const PERSON = 'person';
@@ -99,5 +98,4 @@ class EducationalInstitutionStaff extends ModelBase
     {
         $this->setProperty('position', $position);
     }
-
 }

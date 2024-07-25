@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RepeatingSchoolEvent extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const SCHOOL_EVENT_TYPE = 'schoolEventType';
@@ -135,5 +134,4 @@ class RepeatingSchoolEvent extends ModelBase
     {
         $this->setProperty('coverRequired', $coverRequired);
     }
-
 }

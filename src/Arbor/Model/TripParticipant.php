@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TripParticipant extends ModelBase
 {
-
     public const TRIP = 'trip';
 
     public const STUDENT = 'student';
@@ -135,5 +134,4 @@ class TripParticipant extends ModelBase
     {
         $this->setProperty('status', $status);
     }
-
 }

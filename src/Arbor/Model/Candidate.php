@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Candidate extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const CANDIDATE_NUMBER = 'candidateNumber';
@@ -81,5 +80,4 @@ class Candidate extends ModelBase
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }
-
 }

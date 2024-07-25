@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonBenefitRecord extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const BENEFIT_RECORD_TYPE = 'benefitRecordType';
@@ -117,5 +116,4 @@ class PersonBenefitRecord extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

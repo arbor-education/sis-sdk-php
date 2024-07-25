@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealRotationMenuChoice extends ModelBase
 {
-
     public const ATTENDEE = 'attendee';
 
     public const MEAL_PROVISION = 'mealProvision';
@@ -99,5 +98,4 @@ class MealRotationMenuChoice extends ModelBase
     {
         $this->setProperty('mealChoiceDate', $mealChoiceDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PositionBusinessRole extends ModelBase
 {
-
     public const POSITION = 'position';
 
     public const BUSINESS_ROLE = 'businessRole';
@@ -99,5 +98,4 @@ class PositionBusinessRole extends ModelBase
     {
         $this->setProperty('ranking', $ranking);
     }
-
 }

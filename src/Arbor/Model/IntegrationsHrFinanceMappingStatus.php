@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IntegrationsHrFinanceMappingStatus extends ModelBase
 {
-
     public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
 
     public const ERRORS = 'errors';
@@ -117,5 +116,4 @@ class IntegrationsHrFinanceMappingStatus extends ModelBase
     {
         $this->setProperty('mappingType', $mappingType);
     }
-
 }

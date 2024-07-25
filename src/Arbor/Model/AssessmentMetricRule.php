@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentMetricRule extends ModelBase
 {
-
     public const ASSESSMENT_METRIC = 'assessmentMetric';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_RULE;
@@ -63,5 +62,4 @@ class AssessmentMetricRule extends ModelBase
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerPrepayment extends ModelBase
 {
-
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const BILL_PAYER = 'billPayer';
@@ -335,5 +334,4 @@ class CustomerPrepayment extends ModelBase
     {
         $this->setProperty('prepaymentCancelledDatetime', $prepaymentCancelledDatetime);
     }
-
 }

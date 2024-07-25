@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CashReceipt extends ModelBase
 {
-
     public const BILL_PAYER = 'billPayer';
 
     public const BANK_DEPOSIT = 'bankDeposit';
@@ -135,5 +134,4 @@ class CashReceipt extends ModelBase
     {
         $this->setProperty('receivedPayment', $receivedPayment);
     }
-
 }

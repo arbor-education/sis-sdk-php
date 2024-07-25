@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IncomingCashlessCateringSystemTransaction extends ModelBase
 {
-
     public const BILL_PAYER = 'billPayer';
 
     public const SOURCE = 'source';
@@ -225,5 +224,4 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
-
 }

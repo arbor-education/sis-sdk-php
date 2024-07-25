@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class OutgoingEntityTransfer extends ModelBase
 {
-
     public const SOURCE_ENTITY = 'sourceEntity';
 
     public const TRANSFER_CLASS_NAME = 'transferClassName';
@@ -171,5 +170,4 @@ class OutgoingEntityTransfer extends ModelBase
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }
-
 }

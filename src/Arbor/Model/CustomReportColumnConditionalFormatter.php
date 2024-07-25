@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportColumnConditionalFormatter extends ModelBase
 {
-
     public const CUSTOM_REPORT_COLUMN = 'customReportColumn';
 
     public const CONDITION_CLASS = 'conditionClass';
@@ -117,5 +116,4 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     {
         $this->setProperty('color', $color);
     }
-
 }

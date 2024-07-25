@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TelephoneCall extends ModelBase
 {
-
     public const CALLER_NAME = 'callerName';
 
     public const CALLER = 'caller';
@@ -279,5 +278,4 @@ class TelephoneCall extends ModelBase
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
-
 }

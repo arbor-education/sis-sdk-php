@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CurriculumStatement extends ModelBase
 {
-
     public const CURRICULUM_SECTION = 'curriculumSection';
 
     public const CURRICULUM_STATEMENT_BAND = 'curriculumStatementBand';
@@ -225,5 +224,4 @@ class CurriculumStatement extends ModelBase
     {
         $this->setProperty('order', $order);
     }
-
 }

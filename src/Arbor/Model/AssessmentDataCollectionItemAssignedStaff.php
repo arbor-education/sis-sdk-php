@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentDataCollectionItemAssignedStaff extends ModelBase
 {
-
     public const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
 
     public const ASSIGNED_STAFF = 'assignedStaff';
@@ -81,5 +80,4 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }
-
 }

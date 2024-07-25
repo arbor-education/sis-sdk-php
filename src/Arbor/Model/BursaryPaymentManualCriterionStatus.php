@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BursaryPaymentManualCriterionStatus extends ModelBase
 {
-
     public const BURSARY_PAYMENT = 'bursaryPayment';
 
     public const BURSARY_PAYMENT_MANUAL_CRITERION = 'bursaryPaymentManualCriterion';
@@ -99,5 +98,4 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     {
         $this->setProperty('isMet', $isMet);
     }
-
 }

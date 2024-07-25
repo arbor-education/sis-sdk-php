@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StaffContractPostRate extends ModelBase
 {
-
     public const STAFF_CONTRACT_POST = 'staffContractPost';
 
     public const RATE = 'rate';
@@ -135,5 +134,4 @@ class StaffContractPostRate extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

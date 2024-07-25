@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonTransportationMethod extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const TRANSPORTATION_METHOD = 'transportationMethod';
@@ -99,5 +98,4 @@ class PersonTransportationMethod extends ModelBase
     {
         $this->setProperty('notes', $notes);
     }
-
 }

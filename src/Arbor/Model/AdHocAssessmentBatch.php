@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AdHocAssessmentBatch extends ModelBase
 {
-
     public const AD_HOC_ASSESSMENT = 'adHocAssessment';
 
     public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
@@ -117,5 +116,4 @@ class AdHocAssessmentBatch extends ModelBase
     {
         $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }
-
 }

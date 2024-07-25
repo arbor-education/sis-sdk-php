@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class RoomUnavailability extends ModelBase
 {
-
     public const ROOM = 'room';
 
     public const START_DATETIME = 'startDatetime';
@@ -117,5 +116,4 @@ class RoomUnavailability extends ModelBase
     {
         $this->setProperty('reason', $reason);
     }
-
 }

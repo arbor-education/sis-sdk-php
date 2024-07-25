@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealPrice extends ModelBase
 {
-
     public const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
 
     public const PRICE_EX_VAT = 'priceExVat';
@@ -153,5 +152,4 @@ class MealPrice extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

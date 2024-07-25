@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportGrouping extends ModelBase
 {
-
     public const CUSTOM_REPORT = 'customReport';
 
     public const FIELD_CLASS = 'fieldClass';
@@ -117,5 +116,4 @@ class CustomReportGrouping extends ModelBase
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
-
 }

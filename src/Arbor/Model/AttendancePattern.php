@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendancePattern extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -171,5 +170,4 @@ class AttendancePattern extends ModelBase
     {
         $this->setProperty('isAfternoonOnly', $isAfternoonOnly);
     }
-
 }

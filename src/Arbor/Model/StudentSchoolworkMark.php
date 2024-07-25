@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentSchoolworkMark extends ModelBase
 {
-
     public const STUDENT_SCHOOLWORK = 'studentSchoolwork';
 
     public const SCHOOLWORK_ASPECT = 'schoolworkAspect';
@@ -171,5 +170,4 @@ class StudentSchoolworkMark extends ModelBase
     {
         $this->setProperty('markDate', $markDate);
     }
-
 }

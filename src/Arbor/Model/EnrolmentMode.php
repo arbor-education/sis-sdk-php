@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EnrolmentMode extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -135,5 +134,4 @@ class EnrolmentMode extends ModelBase
     {
         $this->setProperty('d00018', $d00018);
     }
-
 }

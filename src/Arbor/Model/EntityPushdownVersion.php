@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EntityPushdownVersion extends ModelBase
 {
-
     public const ENTITY_PUSHDOWN = 'entityPushdown';
 
     public const VERSION_DATA = 'versionData';
@@ -99,5 +98,4 @@ class EntityPushdownVersion extends ModelBase
     {
         $this->setProperty('versionNumber', $versionNumber);
     }
-
 }

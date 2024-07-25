@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class NewReportCardTemplate extends ModelBase
 {
-
     public const TEMPLATE_NAME = 'templateName';
 
     public const TEMPLATE_FILENAME = 'templateFilename';
@@ -207,5 +206,4 @@ class NewReportCardTemplate extends ModelBase
     {
         $this->setProperty('isCustom', $isCustom);
     }
-
 }

@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class YoungCarerStatusAssignment extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const IDENTIFIED_BY = 'identifiedBy';
@@ -119,5 +118,4 @@ class YoungCarerStatusAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

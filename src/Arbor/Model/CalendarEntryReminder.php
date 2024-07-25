@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CalendarEntryReminder extends ModelBase
 {
-
     public const CALENDAR_ENTRY_MAPPING = 'calendarEntryMapping';
 
     public const REMINDER_SENT_DATETIME = 'reminderSentDatetime';
@@ -81,5 +80,4 @@ class CalendarEntryReminder extends ModelBase
     {
         $this->setProperty('reminderSentDatetime', $reminderSentDatetime);
     }
-
 }

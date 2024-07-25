@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetableSlotStudentException extends ModelBase
 {
-
     public const TIMETABLE_SLOT = 'timetableSlot';
 
     public const STUDENT = 'student';
@@ -117,5 +116,4 @@ class TimetableSlotStudentException extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

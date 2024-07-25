@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AccessArrangement extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -135,5 +134,4 @@ class AccessArrangement extends ModelBase
     {
         $this->setProperty('defaultExtraTimePercentage', $defaultExtraTimePercentage);
     }
-
 }

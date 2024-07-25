@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ReportSubscription extends ModelBase
 {
-
     public const REPORT_IDENTIFIER = 'reportIdentifier';
 
     public const SUBSCRIBER = 'subscriber';
@@ -81,5 +80,4 @@ class ReportSubscription extends ModelBase
     {
         $this->setProperty('subscriber', $subscriber);
     }
-
 }

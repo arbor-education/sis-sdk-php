@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class NewReportCardBatch extends ModelBase
 {
-
     public const REPORT_CARD_TEMPLATE = 'reportCardTemplate';
 
     public const REPORT_CARD_TITLE = 'reportCardTitle';
@@ -495,5 +494,4 @@ class NewReportCardBatch extends ModelBase
     {
         $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }
-
 }

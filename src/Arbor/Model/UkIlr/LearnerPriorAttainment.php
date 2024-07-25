@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class LearnerPriorAttainment extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const PRIOR_LEVEL = 'priorLevel';
@@ -101,5 +100,4 @@ class LearnerPriorAttainment extends ModelBase
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
-
 }

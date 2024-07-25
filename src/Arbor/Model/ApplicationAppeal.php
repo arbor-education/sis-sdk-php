@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ApplicationAppeal extends ModelBase
 {
-
     public const APPLICATION = 'application';
 
     public const NARRATIVE = 'narrative';
@@ -171,5 +170,4 @@ class ApplicationAppeal extends ModelBase
     {
         $this->setProperty('decision', $decision);
     }
-
 }

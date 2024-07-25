@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentDataCollectionItem extends ModelBase
 {
-
     public const ASSESSMENT_DATA_COLLECTION = 'assessmentDataCollection';
 
     public const ASSESSMENT_ENTITY = 'assessmentEntity';
@@ -15,8 +14,6 @@ class AssessmentDataCollectionItem extends ModelBase
     public const STUDENT_GROUP = 'studentGroup';
 
     public const COLLECTION_TYPE = 'collectionType';
-
-    public const ASSIGNED_STAFF = 'assignedStaff';
 
     public const DEADLINE_DATE = 'deadlineDate';
 
@@ -129,22 +126,6 @@ class AssessmentDataCollectionItem extends ModelBase
     }
 
     /**
-     * @return \Arbor\Model\Staff
-     */
-    public function getAssignedStaff()
-    {
-        return $this->getProperty('assignedStaff');
-    }
-
-    /**
-     * @param \Arbor\Model\Staff $assignedStaff
-     */
-    public function setAssignedStaff(\Arbor\Model\Staff $assignedStaff = null)
-    {
-        $this->setProperty('assignedStaff', $assignedStaff);
-    }
-
-    /**
      * @return \DateTime
      */
     public function getDeadlineDate()
@@ -207,5 +188,4 @@ class AssessmentDataCollectionItem extends ModelBase
     {
         $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
     }
-
 }

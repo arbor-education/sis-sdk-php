@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class GuardianRelationshipType extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -243,5 +242,4 @@ class GuardianRelationshipType extends ModelBase
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }
-
 }

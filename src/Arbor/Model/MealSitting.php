@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MealSitting extends ModelBase
 {
-
     public const MEAL = 'meal';
 
     public const MEAL_SITTING_NAME = 'mealSittingName';
@@ -135,5 +134,4 @@ class MealSitting extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

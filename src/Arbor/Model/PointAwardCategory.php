@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PointAwardCategory extends ModelBase
 {
-
     public const DESCRIPTION = 'description';
 
     public const POINT_AWARD_SCALE = 'pointAwardScale';
@@ -99,5 +98,4 @@ class PointAwardCategory extends ModelBase
     {
         $this->setProperty('defaultPoints', $defaultPoints);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SendingProfile extends ModelBase
 {
-
     public const OWNER = 'owner';
 
     public const EMAIL_ADDRESS = 'emailAddress';
@@ -117,5 +116,4 @@ class SendingProfile extends ModelBase
     {
         $this->setProperty('permittedSender', $permittedSender);
     }
-
 }

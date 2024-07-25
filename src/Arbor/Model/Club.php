@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Club extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const DESCRIPTION = 'description';
@@ -297,5 +296,4 @@ class Club extends ModelBase
     {
         $this->setProperty('chargeStudentsBasedOnAttendanceMark', $chargeStudentsBasedOnAttendanceMark);
     }
-
 }

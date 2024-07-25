@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EntityPushdown extends ModelBase
 {
-
     public const CONTROLLER_APPLICATION = 'controllerApplication';
 
     public const CONTROLLER_ENTITY_PUSHDOWN_ID = 'controllerEntityPushdownId';
@@ -207,5 +206,4 @@ class EntityPushdown extends ModelBase
     {
         $this->setProperty('defaultAllowDelete', $defaultAllowDelete);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomerAccountRefund extends ModelBase
 {
-
     public const CUSTOMER_ACCOUNT = 'customerAccount';
 
     public const REFUND_DATETIME = 'refundDatetime';
@@ -171,5 +170,4 @@ class CustomerAccountRefund extends ModelBase
     {
         $this->setProperty('refundFailedDatetime', $refundFailedDatetime);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SenStatement extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const DATE_REQUESTED = 'dateRequested';
@@ -261,5 +260,4 @@ class SenStatement extends ModelBase
     {
         $this->setProperty('comments', $comments);
     }
-
 }

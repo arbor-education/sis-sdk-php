@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AiRequest extends ModelBase
 {
-
     public const PROVIDER = 'provider';
 
     public const MODEL = 'model';
@@ -32,9 +31,15 @@ class AiRequest extends ModelBase
 
     public const COST = 'cost';
 
+    public const PROMPT_TOKENS = 'promptTokens';
+
+    public const COMPLETION_TOKENS = 'completionTokens';
+
     public const CUSTOMER_RATING = 'customerRating';
 
     public const CUSTOMER_RESPONSE = 'customerResponse';
+
+    public const LOG = 'log';
 
     protected $_resourceType = ResourceType::AI_REQUEST;
 
@@ -267,6 +272,38 @@ class AiRequest extends ModelBase
     }
 
     /**
+     * @return int
+     */
+    public function getPromptTokens()
+    {
+        return $this->getProperty('promptTokens');
+    }
+
+    /**
+     * @param int $promptTokens
+     */
+    public function setPromptTokens(int $promptTokens = null)
+    {
+        $this->setProperty('promptTokens', $promptTokens);
+    }
+
+    /**
+     * @return int
+     */
+    public function getCompletionTokens()
+    {
+        return $this->getProperty('completionTokens');
+    }
+
+    /**
+     * @param int $completionTokens
+     */
+    public function setCompletionTokens(int $completionTokens = null)
+    {
+        $this->setProperty('completionTokens', $completionTokens);
+    }
+
+    /**
      * @return string
      */
     public function getCustomerRating()
@@ -298,4 +335,19 @@ class AiRequest extends ModelBase
         $this->setProperty('customerResponse', $customerResponse);
     }
 
+    /**
+     * @return string
+     */
+    public function getLog()
+    {
+        return $this->getProperty('log');
+    }
+
+    /**
+     * @param string $log
+     */
+    public function setLog(string $log = null)
+    {
+        $this->setProperty('log', $log);
+    }
 }

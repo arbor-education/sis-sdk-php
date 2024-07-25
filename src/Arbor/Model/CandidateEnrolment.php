@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CandidateEnrolment extends ModelBase
 {
-
     public const CANDIDATE = 'candidate';
 
     public const ENROLMENT_NUMBER = 'enrolmentNumber';
@@ -117,5 +116,4 @@ class CandidateEnrolment extends ModelBase
     {
         $this->setProperty('enrolmentConfirmedDatetime', $enrolmentConfirmedDatetime);
     }
-
 }

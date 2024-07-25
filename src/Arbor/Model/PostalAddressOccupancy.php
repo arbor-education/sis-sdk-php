@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PostalAddressOccupancy extends ModelBase
 {
-
     public const POSTAL_ADDRESS = 'postalAddress';
 
     public const OCCUPANT = 'occupant';
@@ -153,5 +152,4 @@ class PostalAddressOccupancy extends ModelBase
     {
         $this->setProperty('isCorrespondenceAddress', $isCorrespondenceAddress);
     }
-
 }

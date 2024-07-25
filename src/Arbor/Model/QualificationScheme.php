@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationScheme extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -153,5 +152,4 @@ class QualificationScheme extends ModelBase
     {
         $this->setProperty('title', $title);
     }
-
 }

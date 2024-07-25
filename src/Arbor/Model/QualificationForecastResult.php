@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationForecastResult extends ModelBase
 {
-
     public const QUALIFICATION_ASPECT = 'qualificationAspect';
 
     public const QUALIFICATION_GRADE = 'qualificationGrade';
@@ -171,5 +170,4 @@ class QualificationForecastResult extends ModelBase
     {
         $this->setProperty('inputDatetime', $inputDatetime);
     }
-
 }

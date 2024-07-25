@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InterventionCost extends ModelBase
 {
-
     public const INTERVENTION = 'intervention';
 
     public const AMOUNT = 'amount';
@@ -99,5 +98,4 @@ class InterventionCost extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

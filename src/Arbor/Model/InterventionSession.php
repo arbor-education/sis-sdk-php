@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InterventionSession extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -279,5 +278,4 @@ class InterventionSession extends ModelBase
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }
-
 }

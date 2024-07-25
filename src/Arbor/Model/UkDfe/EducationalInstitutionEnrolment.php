@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class EducationalInstitutionEnrolment extends ModelBase
 {
-
     public const REMOVAL_GROUNDS = 'removalGrounds';
 
     public const ALTERNATIVE_PROVISION_REASON = 'alternativeProvisionReason';
@@ -83,5 +82,4 @@ class EducationalInstitutionEnrolment extends ModelBase
     {
         $this->setProperty('alternativeProvisionReason', $alternativeProvisionReason);
     }
-
 }

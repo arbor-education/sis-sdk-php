@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PredictedAssessmentMark extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const STUDENT = 'student';
@@ -226,5 +225,4 @@ class PredictedAssessmentMark extends ModelBase
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }
-
 }

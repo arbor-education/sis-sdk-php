@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Meal extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const MEAL_NAME = 'mealName';
@@ -153,5 +152,4 @@ class Meal extends ModelBase
     {
         $this->setProperty('copiedToMeal', $copiedToMeal);
     }
-
 }

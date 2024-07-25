@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class TimetablerImportResult extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const STEPS_COMPLETED = 'stepsCompleted';
@@ -153,5 +152,4 @@ class TimetablerImportResult extends ModelBase
     {
         $this->setProperty('fileHash', $fileHash);
     }
-
 }

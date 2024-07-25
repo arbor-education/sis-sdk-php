@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Schoolwork extends ModelBase
 {
-
     public const TITLE = 'title';
 
     public const STUDENT_INSTRUCTIONS = 'studentInstructions';
@@ -243,5 +242,4 @@ class Schoolwork extends ModelBase
     {
         $this->setProperty('submitViaArbor', $submitViaArbor);
     }
-
 }

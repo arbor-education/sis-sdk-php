@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PointAward extends ModelBase
 {
-
     public const POINT_AWARD_SCALE = 'pointAwardScale';
 
     public const STUDENT = 'student';
@@ -207,5 +206,4 @@ class PointAward extends ModelBase
     {
         $this->setProperty('event', $event);
     }
-
 }

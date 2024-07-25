@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class MedicalCondition extends ModelBase
 {
-
     public const ILR_RETURN_SEN_NEED_TYPE = 'ilrReturnSenNeedType';
 
     protected $_resourceType = ResourceType::UK_ILR_MEDICAL_CONDITION;
@@ -65,5 +64,4 @@ class MedicalCondition extends ModelBase
     {
         $this->setProperty('ilrReturnSenNeedType', $ilrReturnSenNeedType);
     }
-
 }

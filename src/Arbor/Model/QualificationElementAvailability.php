@@ -7,10 +7,13 @@ use Arbor\Model\ModelBase;
 
 class QualificationElementAvailability extends ModelBase
 {
-
     public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
     public const QUALIFICATION_ELEMENT = 'qualificationElement';
+
+    public const EXAMINATION_FEE = 'examinationFee';
+
+    public const USER_DEFINED_EXAMINATION_FEE = 'userDefinedExaminationFee';
 
     protected $_resourceType = ResourceType::QUALIFICATION_ELEMENT_AVAILABILITY;
 
@@ -83,4 +86,35 @@ class QualificationElementAvailability extends ModelBase
         $this->setProperty('qualificationElement', $qualificationElement);
     }
 
+    /**
+     * @return string
+     */
+    public function getExaminationFee()
+    {
+        return $this->getProperty('examinationFee');
+    }
+
+    /**
+     * @param string $examinationFee
+     */
+    public function setExaminationFee(string $examinationFee = null)
+    {
+        $this->setProperty('examinationFee', $examinationFee);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserDefinedExaminationFee()
+    {
+        return $this->getProperty('userDefinedExaminationFee');
+    }
+
+    /**
+     * @param string $userDefinedExaminationFee
+     */
+    public function setUserDefinedExaminationFee(string $userDefinedExaminationFee = null)
+    {
+        $this->setProperty('userDefinedExaminationFee', $userDefinedExaminationFee);
+    }
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendancePatternPeriod extends ModelBase
 {
-
     public const ATTENDANCE_PATTERN = 'attendancePattern';
 
     public const DAY_OF_CYCLE = 'dayOfCycle';
@@ -117,5 +116,4 @@ class AttendancePatternPeriod extends ModelBase
     {
         $this->setProperty('endTime', $endTime);
     }
-
 }

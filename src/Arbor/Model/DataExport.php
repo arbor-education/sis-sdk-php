@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class DataExport extends ModelBase
 {
-
     public const USER = 'user';
 
     public const MODULE = 'module';
@@ -243,5 +242,4 @@ class DataExport extends ModelBase
     {
         $this->setProperty('lastExportTitle', $lastExportTitle);
     }
-
 }

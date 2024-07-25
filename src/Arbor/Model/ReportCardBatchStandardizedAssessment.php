@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ReportCardBatchStandardizedAssessment extends ModelBase
 {
-
     public const REPORT_CARD_BATCH = 'reportCardBatch';
 
     public const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
@@ -99,5 +98,4 @@ class ReportCardBatchStandardizedAssessment extends ModelBase
     {
         $this->setProperty('order', $order);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Term extends ModelBase
 {
-
     public const ACADEMIC_YEAR = 'academicYear';
 
     public const TERM_NAME = 'termName';
@@ -153,5 +152,4 @@ class Term extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

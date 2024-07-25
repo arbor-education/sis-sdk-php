@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PayScaleSpinalPoint extends ModelBase
 {
-
     public const PAY_SCALE = 'payScale';
 
     public const SPINAL_POINT_CODE = 'spinalPointCode';
@@ -117,5 +116,4 @@ class PayScaleSpinalPoint extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

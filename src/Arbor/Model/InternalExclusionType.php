@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InternalExclusionType extends ModelBase
 {
-
     public const INTERNAL_EXCLUSION_TYPE_NAME = 'internalExclusionTypeName';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -81,5 +80,4 @@ class InternalExclusionType extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

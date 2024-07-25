@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SchoolShopProductPrice extends ModelBase
 {
-
     public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
     public const ELIGIBLE = 'eligible';
@@ -117,5 +116,4 @@ class SchoolShopProductPrice extends ModelBase
     {
         $this->setProperty('vatRate', $vatRate);
     }
-
 }

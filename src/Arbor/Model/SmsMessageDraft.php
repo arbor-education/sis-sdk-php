@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SmsMessageDraft extends ModelBase
 {
-
     public const SENDER = 'sender';
 
     public const MESSAGE_TEXT = 'messageText';
@@ -225,5 +224,4 @@ class SmsMessageDraft extends ModelBase
     {
         $this->setProperty('context', $context);
     }
-
 }

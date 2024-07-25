@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CustomReportScheduledExport extends ModelBase
 {
-
     public const EMAIL_ADDRESS = 'emailAddress';
 
     public const SUBJECT = 'subject';
@@ -261,5 +260,4 @@ class CustomReportScheduledExport extends ModelBase
     {
         $this->setProperty('scheduledFromDate', $scheduledFromDate);
     }
-
 }

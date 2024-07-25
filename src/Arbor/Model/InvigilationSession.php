@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InvigilationSession extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -117,5 +116,4 @@ class InvigilationSession extends ModelBase
     {
         $this->setProperty('location', $location);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentMetricAssessmentBatch extends ModelBase
 {
-
     public const ASSESSMENT_METRIC = 'assessmentMetric';
 
     public const OPERATOR = 'operator';
@@ -100,5 +99,4 @@ class AssessmentMetricAssessmentBatch extends ModelBase
     {
         $this->setProperty('parentAssessmentMetricAssessmentBatch', $parentAssessmentMetricAssessmentBatch);
     }
-
 }

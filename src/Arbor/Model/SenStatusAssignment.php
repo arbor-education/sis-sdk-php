@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SenStatusAssignment extends ModelBase
 {
-
     public const SEN_STATUS = 'senStatus';
 
     public const STUDENT = 'student';
@@ -117,5 +116,4 @@ class SenStatusAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

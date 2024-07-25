@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AdHocAssessment extends ModelBase
 {
-
     public const AD_HOC_ASSESSMENT_CATEGORY = 'adHocAssessmentCategory';
 
     public const ASSESSMENT_NAME = 'assessmentName';
@@ -243,5 +242,4 @@ class AdHocAssessment extends ModelBase
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }
-
 }

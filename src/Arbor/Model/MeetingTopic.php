@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class MeetingTopic extends ModelBase
 {
-
     public const MEETING = 'meeting';
 
     public const TOPIC = 'topic';
@@ -81,5 +80,4 @@ class MeetingTopic extends ModelBase
     {
         $this->setProperty('topic', $topic);
     }
-
 }

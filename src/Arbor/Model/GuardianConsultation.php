@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class GuardianConsultation extends ModelBase
 {
-
     public const GUARDIAN_CONSULTATION_NAME = 'guardianConsultationName';
 
     public const START_DATETIME = 'startDatetime';
@@ -135,5 +134,4 @@ class GuardianConsultation extends ModelBase
     {
         $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
-
 }

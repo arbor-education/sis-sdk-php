@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class LearningMaterial extends ModelBase
 {
-
     public const LEARNING_MATERIAL_FOLDER = 'learningMaterialFolder';
 
     public const TITLE = 'title';
@@ -171,5 +170,4 @@ class LearningMaterial extends ModelBase
     {
         $this->setProperty('authoredDatetime', $authoredDatetime);
     }
-
 }

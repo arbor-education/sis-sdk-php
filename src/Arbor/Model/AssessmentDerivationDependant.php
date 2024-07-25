@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AssessmentDerivationDependant extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -189,5 +188,4 @@ class AssessmentDerivationDependant extends ModelBase
     {
         $this->setProperty('maxGradePointScaleValue', $maxGradePointScaleValue);
     }
-
 }

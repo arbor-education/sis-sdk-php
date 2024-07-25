@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BasketItem extends ModelBase
 {
-
     public const BASKET = 'basket';
 
     public const PAYMENT_AMOUNT = 'paymentAmount';
@@ -153,5 +152,4 @@ class BasketItem extends ModelBase
     {
         $this->setProperty('student', $student);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BillPayer extends ModelBase
 {
-
     public const LEGAL_ENTITY = 'legalEntity';
 
     public const DELETED_LEGAL_ENTITY_NAME = 'deletedLegalEntityName';
@@ -117,5 +116,4 @@ class BillPayer extends ModelBase
     {
         $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SuperannuationScheme extends ModelBase
 {
-
     public const SUPERANNUATION_SCHEME_NAME = 'superannuationSchemeName';
 
     public const CODE = 'code';
@@ -81,5 +80,4 @@ class SuperannuationScheme extends ModelBase
     {
         $this->setProperty('code', $code);
     }
-
 }

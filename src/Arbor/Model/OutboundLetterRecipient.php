@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class OutboundLetterRecipient extends ModelBase
 {
-
     public const OUTBOUND_LETTER = 'outboundLetter';
 
     public const RECIPIENT_NAME = 'recipientName';
@@ -135,5 +134,4 @@ class OutboundLetterRecipient extends ModelBase
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }
-
 }

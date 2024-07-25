@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class SmsMessageStatus extends ModelBase
 {
-
     public const SMS_MESSAGE = 'smsMessage';
 
     public const SMS_MESSAGE_PART = 'smsMessagePart';
@@ -135,5 +134,4 @@ class SmsMessageStatus extends ModelBase
     {
         $this->setProperty('errorType', $errorType);
     }
-
 }

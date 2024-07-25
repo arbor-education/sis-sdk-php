@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class SenNeedType extends ModelBase
 {
-
     public const D00237 = 'd00237';
 
     public const EXPORT_CODE = 'exportCode';
@@ -83,5 +82,4 @@ class SenNeedType extends ModelBase
     {
         $this->setProperty('exportCode', $exportCode);
     }
-
 }

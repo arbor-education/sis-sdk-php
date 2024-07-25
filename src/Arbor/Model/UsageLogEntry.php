@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class UsageLogEntry extends ModelBase
 {
-
     public const TIMESTAMP = 'timestamp';
 
     public const USER = 'user';
@@ -261,5 +260,4 @@ class UsageLogEntry extends ModelBase
     {
         $this->setProperty('userAgent', $userAgent);
     }
-
 }

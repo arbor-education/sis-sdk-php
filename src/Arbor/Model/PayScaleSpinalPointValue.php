@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PayScaleSpinalPointValue extends ModelBase
 {
-
     public const PAY_SCALE_SPINAL_POINT = 'payScaleSpinalPoint';
 
     public const EFFECTIVE_DATE = 'effectiveDate';
@@ -117,5 +116,4 @@ class PayScaleSpinalPointValue extends ModelBase
     {
         $this->setProperty('grossSalary', $grossSalary);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class EducationPlanContributor extends ModelBase
 {
-
     public const EDUCATION_PLAN = 'educationPlan';
 
     public const CONTRIBUTOR = 'contributor';
@@ -81,5 +80,4 @@ class EducationPlanContributor extends ModelBase
     {
         $this->setProperty('contributor', $contributor);
     }
-
 }

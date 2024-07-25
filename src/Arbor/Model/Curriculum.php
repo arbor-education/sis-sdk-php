@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Curriculum extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -369,5 +368,4 @@ class Curriculum extends ModelBase
     {
         $this->setProperty('validUntilDate', $validUntilDate);
     }
-
 }

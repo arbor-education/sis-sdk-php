@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ApplicationSetting extends ModelBase
 {
-
     public const SETTING_NAME = 'settingName';
 
     public const SETTING_VALUE = 'settingValue';
@@ -99,5 +98,4 @@ class ApplicationSetting extends ModelBase
     {
         $this->setProperty('settingClass', $settingClass);
     }
-
 }

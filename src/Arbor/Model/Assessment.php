@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Assessment extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -279,5 +278,4 @@ class Assessment extends ModelBase
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
     }
-
 }

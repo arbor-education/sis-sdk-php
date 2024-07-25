@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StudentIntervention extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const INTERVENTION = 'intervention';
@@ -351,5 +350,4 @@ class StudentIntervention extends ModelBase
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
-
 }

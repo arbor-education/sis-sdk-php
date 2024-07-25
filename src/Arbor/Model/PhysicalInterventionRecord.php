@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PhysicalInterventionRecord extends ModelBase
 {
-
     public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
     public const STUDENT = 'student';
@@ -135,5 +134,4 @@ class PhysicalInterventionRecord extends ModelBase
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
-
 }

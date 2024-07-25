@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class UcasImportRecord extends ModelBase
 {
-
     public const UCAS_IMPORT = 'ucasImport';
 
     public const CSV_ROW = 'csvRow';
@@ -29,6 +28,10 @@ class UcasImportRecord extends ModelBase
     public const COURSE_NAME = 'courseName';
 
     public const CAMPUS_CODE = 'campusCode';
+
+    public const POINT_OF_ENTRY = 'pointOfEntry';
+
+    public const COURSE_START_DATE = 'courseStartDate';
 
     protected $_resourceType = ResourceType::UK_DFE_UCAS_IMPORT_RECORD;
 
@@ -228,4 +231,35 @@ class UcasImportRecord extends ModelBase
         $this->setProperty('campusCode', $campusCode);
     }
 
+    /**
+     * @return string
+     */
+    public function getPointOfEntry()
+    {
+        return $this->getProperty('pointOfEntry');
+    }
+
+    /**
+     * @param string $pointOfEntry
+     */
+    public function setPointOfEntry(string $pointOfEntry = null)
+    {
+        $this->setProperty('pointOfEntry', $pointOfEntry);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCourseStartDate()
+    {
+        return $this->getProperty('courseStartDate');
+    }
+
+    /**
+     * @param \DateTime $courseStartDate
+     */
+    public function setCourseStartDate(\DateTime $courseStartDate = null)
+    {
+        $this->setProperty('courseStartDate', $courseStartDate);
+    }
 }

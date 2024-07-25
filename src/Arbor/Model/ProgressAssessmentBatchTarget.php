@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProgressAssessmentBatchTarget extends ModelBase
 {
-
     public const PROGRESS_ASSESSMENT_BATCH = 'progressAssessmentBatch';
 
     public const TARGET = 'target';
@@ -81,5 +80,4 @@ class ProgressAssessmentBatchTarget extends ModelBase
     {
         $this->setProperty('target', $target);
     }
-
 }

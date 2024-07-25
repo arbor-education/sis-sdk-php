@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentThresholdResult extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -172,5 +171,4 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     {
         $this->setProperty('grade', $grade);
     }
-
 }

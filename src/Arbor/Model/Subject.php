@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Subject extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -207,5 +206,4 @@ class Subject extends ModelBase
     {
         $this->setProperty('d00220', $d00220);
     }
-
 }

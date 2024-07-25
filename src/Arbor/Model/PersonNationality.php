@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PersonNationality extends ModelBase
 {
-
     public const PERSON = 'person';
 
     public const COUNTRY = 'country';
@@ -99,5 +98,4 @@ class PersonNationality extends ModelBase
     {
         $this->setProperty('nationalityStatus', $nationalityStatus);
     }
-
 }

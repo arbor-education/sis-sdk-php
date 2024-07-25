@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentSuite extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -171,5 +170,4 @@ class StandardizedAssessmentSuite extends ModelBase
     {
         $this->setProperty('shortName', $shortName);
     }
-
 }

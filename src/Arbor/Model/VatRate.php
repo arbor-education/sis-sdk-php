@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class VatRate extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -207,5 +206,4 @@ class VatRate extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationLearningUnitAssessable extends ModelBase
 {
-
     public const QUALIFICATION_LEARNING_UNIT = 'qualificationLearningUnit';
 
     public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
@@ -81,5 +80,4 @@ class QualificationLearningUnitAssessable extends ModelBase
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
-
 }

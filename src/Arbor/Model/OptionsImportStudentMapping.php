@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class OptionsImportStudentMapping extends ModelBase
 {
-
     public const OPTIONS_IMPORT_RESULT = 'optionsImportResult';
 
     public const STUDENT_NAME = 'studentName';
@@ -135,5 +134,4 @@ class OptionsImportStudentMapping extends ModelBase
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
-
 }

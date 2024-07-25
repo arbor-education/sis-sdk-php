@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InHouseExamInstance extends ModelBase
 {
-
     public const IN_HOUSE_EXAM = 'inHouseExam';
 
     public const EXPECTED_START_DATETIME = 'expectedStartDatetime';
@@ -99,5 +98,4 @@ class InHouseExamInstance extends ModelBase
     {
         $this->setProperty('expectedEndDatetime', $expectedEndDatetime);
     }
-
 }

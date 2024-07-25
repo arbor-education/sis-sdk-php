@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AttendanceRollCall extends ModelBase
 {
-
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
@@ -171,5 +170,4 @@ class AttendanceRollCall extends ModelBase
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
-
 }

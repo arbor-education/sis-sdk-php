@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class CurriculumSection extends ModelBase
 {
-
     public const CURRICULUM = 'curriculum';
 
     public const CODE = 'code';
@@ -171,5 +170,4 @@ class CurriculumSection extends ModelBase
     {
         $this->setProperty('weighting', $weighting);
     }
-
 }

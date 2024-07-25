@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class AcademicUnitBandAssignment extends ModelBase
 {
-
     public const ACADEMIC_UNIT = 'academicUnit';
 
     public const BAND_NAME = 'bandName';
@@ -81,5 +80,4 @@ class AcademicUnitBandAssignment extends ModelBase
     {
         $this->setProperty('bandName', $bandName);
     }
-
 }

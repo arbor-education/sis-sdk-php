@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class PupilPremiumRecipient extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const CURRICULUM_GRADE = 'curriculumGrade';
@@ -173,5 +172,4 @@ class PupilPremiumRecipient extends ModelBase
     {
         $this->setProperty('lastFsm', $lastFsm);
     }
-
 }

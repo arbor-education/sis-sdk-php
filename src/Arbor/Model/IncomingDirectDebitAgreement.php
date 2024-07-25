@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class IncomingDirectDebitAgreement extends ModelBase
 {
-
     public const BILL_PAYER = 'billPayer';
 
     public const PAYMENT_PROVIDER = 'paymentProvider';
@@ -171,5 +170,4 @@ class IncomingDirectDebitAgreement extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
 }

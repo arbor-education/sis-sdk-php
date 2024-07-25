@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Tag extends ModelBase
 {
-
     public const TAG_NAME = 'tagName';
 
     public const TAG_IDENTIFIER = 'tagIdentifier';
@@ -81,5 +80,4 @@ class Tag extends ModelBase
     {
         $this->setProperty('tagIdentifier', $tagIdentifier);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class BusinessRole extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -243,5 +242,4 @@ class BusinessRole extends ModelBase
     {
         $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
     }
-
 }

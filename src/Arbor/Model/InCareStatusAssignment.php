@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class InCareStatusAssignment extends ModelBase
 {
-
     public const IN_CARE_STATUS = 'inCareStatus';
 
     public const STUDENT = 'student';
@@ -135,5 +134,4 @@ class InCareStatusAssignment extends ModelBase
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
-
 }

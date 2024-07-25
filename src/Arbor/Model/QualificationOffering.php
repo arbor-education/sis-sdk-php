@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class QualificationOffering extends ModelBase
 {
-
     public const QUALIFICATION_ELEMENT = 'qualificationElement';
 
     public const ACADEMIC_YEAR = 'academicYear';
@@ -81,5 +80,4 @@ class QualificationOffering extends ModelBase
     {
         $this->setProperty('academicYear', $academicYear);
     }
-
 }

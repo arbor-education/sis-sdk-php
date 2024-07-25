@@ -9,7 +9,6 @@ use Arbor\Model\ModelBase;
 
 class ServiceChildStatusAssignment extends ModelBase
 {
-
     public const STUDENT = 'student';
 
     public const START_DATE = 'startDate';
@@ -101,5 +100,4 @@ class ServiceChildStatusAssignment extends ModelBase
     {
         $this->setProperty('endDate', $endDate);
     }
-
 }

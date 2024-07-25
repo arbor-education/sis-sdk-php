@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PinnedItem extends ModelBase
 {
-
     public const PINNED = 'pinned';
 
     public const TARGET = 'target';
@@ -99,5 +98,4 @@ class PinnedItem extends ModelBase
     {
         $this->setProperty('pinnedUntilDatetime', $pinnedUntilDatetime);
     }
-
 }

@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class Notice extends ModelBase
 {
-
     public const NOTICE_HTML = 'noticeHtml';
 
     public const NOTICE_DATETIME = 'noticeDatetime';
@@ -99,5 +98,4 @@ class Notice extends ModelBase
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
-
 }

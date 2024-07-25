@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class ProfessionalQualificationClass extends ModelBase
 {
-
     public const CODE = 'code';
 
     public const ACTIVE = 'active';
@@ -135,5 +134,4 @@ class ProfessionalQualificationClass extends ModelBase
     {
         $this->setProperty('description', $description);
     }
-
 }

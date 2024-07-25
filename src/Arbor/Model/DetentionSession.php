@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class DetentionSession extends ModelBase
 {
-
     public const START_DATETIME = 'startDatetime';
 
     public const END_DATETIME = 'endDatetime';
@@ -153,5 +152,4 @@ class DetentionSession extends ModelBase
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
-
 }

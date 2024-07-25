@@ -7,7 +7,6 @@ use Arbor\Model\ModelBase;
 
 class PostalAddress extends ModelBase
 {
-
     public const ADDRESS1 = 'address1';
 
     public const ADDRESS2 = 'address2';
@@ -243,5 +242,4 @@ class PostalAddress extends ModelBase
     {
         $this->setProperty('geocodeType', $geocodeType);
     }
-
 }
