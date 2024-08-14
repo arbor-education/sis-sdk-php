@@ -2,9 +2,13 @@ name: PHP tests
 
 on:
   push:
-    branches: [ "master" ]
+    branches: 
+      - master
   pull_request:
-    types: [opened, reopened]
+    branches: 
+      - master
+  schedule:
+    - cron: '0 0 * * 0,5'
 
 permissions:
   contents: read
@@ -22,6 +26,7 @@ jobs:
       with:
         php-version: ${{ matrix.phpVersion }}
 
+    # PACKAGIST_TOKEN is a secret scoped to this repo as it's public, it is stored in the AEP/SP - Platform AWS vault as "GitHub Org Secret PACKGIST_TOKEN - sis-sdk-php"
     - name: Setup authentication
       run: |
         composer config --global --auth http-basic.repo.packagist.com token ${{ secrets.PACKGIST_TOKEN }}
