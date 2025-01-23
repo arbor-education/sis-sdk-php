@@ -17,6 +17,8 @@ class Subject extends ModelBase
 
     public const PARENT_SUBJECT = 'parentSubject';
 
+    public const EXPORT_CODE = 'exportCode';
+
     public const USED_IN_SWF_ONLY = 'usedInSwfOnly';
 
     public const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
@@ -141,6 +143,22 @@ class Subject extends ModelBase
     public function setParentSubject(\Arbor\Model\Subject $parentSubject = null)
     {
         $this->setProperty('parentSubject', $parentSubject);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**

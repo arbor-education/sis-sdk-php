@@ -27,6 +27,8 @@ class FixedPeriodExclusion extends ModelBase
 
     public const STATISTICAL_DAYS_EXCLUDED = 'statisticalDaysExcluded';
 
+    public const SCHOOL_DEFINED_SESSIONS_EXCLUDED = 'schoolDefinedSessionsExcluded';
+
     public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::FIXED_PERIOD_EXCLUSION;
@@ -225,6 +227,22 @@ class FixedPeriodExclusion extends ModelBase
     public function setStatisticalDaysExcluded(float $statisticalDaysExcluded = null)
     {
         $this->setProperty('statisticalDaysExcluded', $statisticalDaysExcluded);
+    }
+
+    /**
+     * @return int
+     */
+    public function getSchoolDefinedSessionsExcluded()
+    {
+        return $this->getProperty('schoolDefinedSessionsExcluded');
+    }
+
+    /**
+     * @param int $schoolDefinedSessionsExcluded
+     */
+    public function setSchoolDefinedSessionsExcluded(int $schoolDefinedSessionsExcluded = null)
+    {
+        $this->setProperty('schoolDefinedSessionsExcluded', $schoolDefinedSessionsExcluded);
     }
 
     /**

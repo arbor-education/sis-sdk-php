@@ -17,6 +17,8 @@ class GenderIdentity extends ModelBase
 
     public const LONG_NAME = 'longName';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::GENDER_IDENTITY;
 
     /**
@@ -133,5 +135,21 @@ class GenderIdentity extends ModelBase
     public function setLongName(string $longName = null)
     {
         $this->setProperty('longName', $longName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

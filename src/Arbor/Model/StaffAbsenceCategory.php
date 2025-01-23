@@ -33,6 +33,8 @@ class StaffAbsenceCategory extends ModelBase
 
     public const IS_AUTHORIZED_ABSENCE = 'isAuthorizedAbsence';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::STAFF_ABSENCE_CATEGORY;
 
     /**
@@ -277,5 +279,21 @@ class StaffAbsenceCategory extends ModelBase
     public function setIsAuthorizedAbsence(bool $isAuthorizedAbsence = null)
     {
         $this->setProperty('isAuthorizedAbsence', $isAuthorizedAbsence);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

@@ -15,6 +15,8 @@ class UnenrolmentReason extends ModelBase
 
     public const UNENROLMENT_REASON = 'unenrolmentReason';
 
+    public const EXPORT_CODE = 'exportCode';
+
     public const D00206 = 'd00206';
 
     protected $_resourceType = ResourceType::UNENROLMENT_REASON;
@@ -117,6 +119,22 @@ class UnenrolmentReason extends ModelBase
     public function setUnenrolmentReason(string $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**
