@@ -15,6 +15,8 @@ class ExclusionReason extends ModelBase
 
     public const EXCLUSION_REASON_NAME = 'exclusionReasonName';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::EXCLUSION_REASON;
 
     /**
@@ -115,5 +117,21 @@ class ExclusionReason extends ModelBase
     public function setExclusionReasonName(string $exclusionReasonName = null)
     {
         $this->setProperty('exclusionReasonName', $exclusionReasonName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

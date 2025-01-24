@@ -25,6 +25,8 @@ class ConsentType extends ModelBase
 
     public const CONSENTED_BY_GUARDIAN = 'consentedByGuardian';
 
+    public const ARCHIVED = 'archived';
+
     protected $_resourceType = ResourceType::CONSENT_TYPE;
 
     /**
@@ -205,5 +207,21 @@ class ConsentType extends ModelBase
     public function setConsentedByGuardian(bool $consentedByGuardian = null)
     {
         $this->setProperty('consentedByGuardian', $consentedByGuardian);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getArchived()
+    {
+        return $this->getProperty('archived');
+    }
+
+    /**
+     * @param bool $archived
+     */
+    public function setArchived(bool $archived = null)
+    {
+        $this->setProperty('archived', $archived);
     }
 }

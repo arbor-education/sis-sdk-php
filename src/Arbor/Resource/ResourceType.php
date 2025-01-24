@@ -160,6 +160,7 @@ class ResourceType
 	const COURT_ORDER = 'CourtOrder';
 	const COVER_ARRANGEMENT = 'CoverArrangement';
 	const COVER_REQUIREMENT = 'CoverRequirement';
+	const COVER_ARRANGEMENT_SUGGESTION = 'CoverArrangementSuggestion';
 	const COUNTRY = 'Country';
 	const COURT_ORDER_PARTY = 'CourtOrderParty';
 	const CUSTOM_GROUP = 'CustomGroup';
@@ -444,6 +445,7 @@ class ResourceType
 	const IN_HOUSE_EXAM_RESULT = 'InHouseExamResult';
 	const IN_HOUSE_EXAM = 'InHouseExam';
 	const IN_HOUSE_EXAM_INSTANCE_ACADEMIC_UNIT_LINK = 'InHouseExamInstanceAcademicUnitLink';
+	const IN_HOUSE_CANDIDATE_DISAPPLIED_ACCESS_ARRANGEMENT = 'InHouseCandidateDisappliedAccessArrangement';
 	const REGION = 'Region';
 	const REGISTRATION_FORM = 'RegistrationForm';
 	const REGISTRATION_FORM_MEMBERSHIP = 'RegistrationFormMembership';
@@ -544,6 +546,8 @@ class ResourceType
 	const STUDENT_ATTENDANCE_PATTERN = 'StudentAttendancePattern';
 	const STUDENT_ABSENCE_NOTE = 'StudentAbsenceNote';
 	const STUDENT_REPEATING_ABSENCE_NOTE = 'StudentRepeatingAbsenceNote';
+	const ATTENDANCE_FINE = 'AttendanceFine';
+	const ATTENDANCE_FINE_RECORD = 'AttendanceFineRecord';
 	const STUDENT_DESTINATION = 'StudentDestination';
 	const STUDENT_DESTINATION_TYPE = 'StudentDestinationType';
 	const STUDENT_EDUCATIONAL_HISTORY = 'StudentEducationalHistory';
@@ -608,7 +612,6 @@ class ResourceType
 	const TRAINING_EVENT = 'TrainingEvent';
 	const TRANSPORTATION_METHOD = 'TransportationMethod';
 	const UNENROLMENT_REASON = 'UnenrolmentReason';
-	const USAGE_LOG_ENTRY = 'UsageLogEntry';
 	const USER = 'User';
 	const USER_LOGIN = 'UserLogin';
 	const USER_NOTIFICATION = 'UserNotification';
@@ -682,10 +685,6 @@ class ResourceType
 	const BENEFIT_RECORD_TYPE = 'BenefitRecordType';
 	const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
 	const USER_DEFINED_FIELD_IMPORT = 'UserDefinedFieldImport';
-	const INTEGRATIONS_HR_FINANCE_PROVIDER = 'IntegrationsHrFinanceProvider';
-	const INTEGRATIONS_HR_FINANCE_MAPPING_STATUS = 'IntegrationsHrFinanceMappingStatus';
-	const INTEGRATIONS_HR_FINANCE_TEST_RUN = 'IntegrationsHrFinanceTestRun';
-	const INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT = 'IntegrationsHrFinanceTestRunResult';
 	const PERSON_ALERT = 'PersonAlert';
 	const BURSARY_TYPE = 'BursaryType';
 	const BURSARY_LEVEL = 'BursaryLevel';
@@ -707,6 +706,7 @@ class ResourceType
 	const INCOMING_ENTITY_TRANSFER = 'IncomingEntityTransfer';
 	const INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT = 'IntegrationsVleProviderAcademicUnit';
 	const AI_REQUEST = 'AiRequest';
+	const AI_ABSENCE_IMPORT = 'AiAbsenceImport';
 	const TIMETABLE_IMPORT_TIMETABLE_SLOT = 'TimetableImportTimetableSlot';
 	const TIMETABLE_IMPORT_TIMETABLE_SLOT_RELATED_ENTITY = 'TimetableImportTimetableSlotRelatedEntity';
 	const TIMETABLE_IMPORT_ENDING_TIMETABLE_SLOT = 'TimetableImportEndingTimetableSlot';

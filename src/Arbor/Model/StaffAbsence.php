@@ -19,8 +19,6 @@ class StaffAbsence extends ModelBase
 
     public const SICKNESS_SUBCATEGORY = 'sicknessSubcategory';
 
-    public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
-
     public const APPROVED_DATETIME = 'approvedDatetime';
 
     public const APPROVED_BY_STAFF = 'approvedByStaff';
@@ -171,22 +169,6 @@ class StaffAbsence extends ModelBase
     public function setSicknessSubcategory(\Arbor\Model\StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
     {
         $this->setProperty('sicknessSubcategory', $sicknessSubcategory);
-    }
-
-    /**
-     * @return \Arbor\Model\IntegrationsHrFinanceProvider
-     */
-    public function getIntegrationsHrFinanceProvider()
-    {
-        return $this->getProperty('integrationsHrFinanceProvider');
-    }
-
-    /**
-     * @param \Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
-     */
-    public function setIntegrationsHrFinanceProvider(\Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
-    {
-        $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
 
     /**

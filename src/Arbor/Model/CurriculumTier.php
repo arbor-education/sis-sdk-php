@@ -15,6 +15,8 @@ class CurriculumTier extends ModelBase
 
     public const CURRICULUM_TIER_NAME = 'curriculumTierName';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::CURRICULUM_TIER;
 
     /**
@@ -115,5 +117,21 @@ class CurriculumTier extends ModelBase
     public function setCurriculumTierName(string $curriculumTierName = null)
     {
         $this->setProperty('curriculumTierName', $curriculumTierName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

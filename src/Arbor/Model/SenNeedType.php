@@ -15,6 +15,8 @@ class SenNeedType extends ModelBase
 
     public const LABEL = 'label';
 
+    public const MAIN_EXPORT_CODE = 'mainExportCode';
+
     public const D00237 = 'd00237';
 
     public const EXPORT_CODE = 'exportCode';
@@ -119,6 +121,22 @@ class SenNeedType extends ModelBase
     public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMainExportCode()
+    {
+        return $this->getProperty('mainExportCode');
+    }
+
+    /**
+     * @param string $mainExportCode
+     */
+    public function setMainExportCode(string $mainExportCode = null)
+    {
+        $this->setProperty('mainExportCode', $mainExportCode);
     }
 
     /**

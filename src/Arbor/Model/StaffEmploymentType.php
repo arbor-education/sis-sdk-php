@@ -15,6 +15,8 @@ class StaffEmploymentType extends ModelBase
 
     public const EMPLOYMENT_TYPE_NAME = 'employmentTypeName';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::STAFF_EMPLOYMENT_TYPE;
 
     /**
@@ -115,5 +117,21 @@ class StaffEmploymentType extends ModelBase
     public function setEmploymentTypeName(string $employmentTypeName = null)
     {
         $this->setProperty('employmentTypeName', $employmentTypeName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

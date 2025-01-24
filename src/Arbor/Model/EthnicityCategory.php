@@ -15,6 +15,8 @@ class EthnicityCategory extends ModelBase
 
     public const NAME = 'name';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::ETHNICITY_CATEGORY;
 
     /**
@@ -115,5 +117,21 @@ class EthnicityCategory extends ModelBase
     public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

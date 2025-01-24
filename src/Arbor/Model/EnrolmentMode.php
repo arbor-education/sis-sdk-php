@@ -15,6 +15,8 @@ class EnrolmentMode extends ModelBase
 
     public const DESCRIPTION = 'description';
 
+    public const EXPORT_CODE = 'exportCode';
+
     public const D00018 = 'd00018';
 
     protected $_resourceType = ResourceType::ENROLMENT_MODE;
@@ -117,6 +119,22 @@ class EnrolmentMode extends ModelBase
     public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**

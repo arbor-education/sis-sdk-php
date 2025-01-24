@@ -23,6 +23,8 @@ class Ethnicity extends ModelBase
 
     public const NOTES = 'notes';
 
+    public const EXPORT_CODE = 'exportCode';
+
     public const DFES_MAIN_CODE = 'dfesMainCode';
 
     public const D00005 = 'd00005';
@@ -195,6 +197,22 @@ class Ethnicity extends ModelBase
     public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**

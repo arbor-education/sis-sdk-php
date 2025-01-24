@@ -23,6 +23,8 @@ class CurriculumGrade extends ModelBase
 
     public const MAXIMUM_AGE_AT_START = 'maximumAgeAtStart';
 
+    public const EXPORT_CODE = 'exportCode';
+
     public const D00020 = 'd00020';
 
     public const D00020_ORDER = 'd00020Order';
@@ -191,6 +193,22 @@ class CurriculumGrade extends ModelBase
     public function setMaximumAgeAtStart(float $maximumAgeAtStart = null)
     {
         $this->setProperty('maximumAgeAtStart', $maximumAgeAtStart);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**

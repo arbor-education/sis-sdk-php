@@ -1,11 +1,13 @@
 <?php
-namespace Arbor\Model;
+namespace Arbor\Model\Cymru;
 
-use Arbor\Resource\ResourceType;
+use Arbor\Resource\Cymru\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\Collection;
+use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class IntegrationsHrFinanceProvider extends ModelBase
+class SchoolType extends ModelBase
 {
     public const CODE = 'code';
 
@@ -13,17 +15,15 @@ class IntegrationsHrFinanceProvider extends ModelBase
 
     public const DATA_ORDER = 'dataOrder';
 
-    public const NAME = 'name';
+    public const EXPORT_CODE = 'exportCode';
 
-    public const CONFIGURATION = 'configuration';
+    public const LABEL = 'label';
 
-    public const ENABLED = 'enabled';
-
-    protected $_resourceType = ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER;
+    protected $_resourceType = ResourceType::CYMRU_SCHOOL_TYPE;
 
     /**
      * @param Query $query
-     * @return IntegrationsHrFinanceProvider[] | Collection
+     * @return SchoolType[] | Collection
      * @throws Exception
      */
     public static function query(\Arbor\Query\Query $query = null)
@@ -37,14 +37,14 @@ class IntegrationsHrFinanceProvider extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER);
+        $query->setResourceType(ResourceType::CYMRU_SCHOOL_TYPE);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return IntegrationsHrFinanceProvider
+     * @return SchoolType
      * @throws Exception
      */
     public static function retrieve($id)
@@ -54,7 +54,7 @@ class IntegrationsHrFinanceProvider extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::INTEGRATIONS_HR_FINANCE_PROVIDER, $id);
+        return $gateway->retrieve(ResourceType::CYMRU_SCHOOL_TYPE, $id);
     }
 
     /**
@@ -108,48 +108,32 @@ class IntegrationsHrFinanceProvider extends ModelBase
     /**
      * @return string
      */
-    public function getName()
+    public function getExportCode()
     {
-        return $this->getProperty('name');
+        return $this->getProperty('exportCode');
     }
 
     /**
-     * @param string $name
+     * @param string $exportCode
      */
-    public function setName(string $name = null)
+    public function setExportCode(string $exportCode = null)
     {
-        $this->setProperty('name', $name);
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**
      * @return string
      */
-    public function getConfiguration()
+    public function getLabel()
     {
-        return $this->getProperty('configuration');
+        return $this->getProperty('label');
     }
 
     /**
-     * @param string $configuration
+     * @param string $label
      */
-    public function setConfiguration(string $configuration = null)
+    public function setLabel(string $label = null)
     {
-        $this->setProperty('configuration', $configuration);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getEnabled()
-    {
-        return $this->getProperty('enabled');
-    }
-
-    /**
-     * @param bool $enabled
-     */
-    public function setEnabled(bool $enabled = null)
-    {
-        $this->setProperty('enabled', $enabled);
+        $this->setProperty('label', $label);
     }
 }

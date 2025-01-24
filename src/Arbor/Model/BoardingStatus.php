@@ -15,6 +15,8 @@ class BoardingStatus extends ModelBase
 
     public const DESCRIPTION = 'description';
 
+    public const EXPORT_CODE = 'exportCode';
+
     protected $_resourceType = ResourceType::BOARDING_STATUS;
 
     /**
@@ -115,5 +117,21 @@ class BoardingStatus extends ModelBase
     public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 }

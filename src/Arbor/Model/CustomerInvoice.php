@@ -33,6 +33,8 @@ class CustomerInvoice extends ModelBase
 
     public const REISSUED_DATE = 'reissuedDate';
 
+    public const IS_LEGACY_VAT_CALCULATION = 'isLegacyVatCalculation';
+
     protected $_resourceType = ResourceType::CUSTOMER_INVOICE;
 
     /**
@@ -277,5 +279,21 @@ class CustomerInvoice extends ModelBase
     public function setReissuedDate(\DateTime $reissuedDate = null)
     {
         $this->setProperty('reissuedDate', $reissuedDate);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsLegacyVatCalculation()
+    {
+        return $this->getProperty('isLegacyVatCalculation');
+    }
+
+    /**
+     * @param bool $isLegacyVatCalculation
+     */
+    public function setIsLegacyVatCalculation(bool $isLegacyVatCalculation = null)
+    {
+        $this->setProperty('isLegacyVatCalculation', $isLegacyVatCalculation);
     }
 }
