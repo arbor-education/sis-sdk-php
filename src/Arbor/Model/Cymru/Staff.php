@@ -33,8 +33,6 @@ class Staff extends ModelBase
 
     public const QUALIFIED_TEACHER_STATUS = 'qualifiedTeacherStatus';
 
-    public const TEACHER_NUMBER = 'teacherNumber';
-
     public const WELSH_TEACHING_ABILITY_CODE = 'welshTeachingAbilityCode';
 
     public const WELSH_TEACHING_CODE = 'welshTeachingCode';
@@ -267,22 +265,6 @@ class Staff extends ModelBase
     public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
-    }
-
-    /**
-     * @return string
-     */
-    public function getTeacherNumber()
-    {
-        return $this->getProperty('teacherNumber');
-    }
-
-    /**
-     * @param string $teacherNumber
-     */
-    public function setTeacherNumber(string $teacherNumber = null)
-    {
-        $this->setProperty('teacherNumber', $teacherNumber);
     }
 
     /**

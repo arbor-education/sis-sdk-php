@@ -11,8 +11,6 @@ class ProgrammeOfStudy extends ModelBase
 {
     public const PROGRAMME_REFERENCE = 'programmeReference';
 
-    public const NAME = 'name';
-
     public const SHORT_NAME = 'shortName';
 
     protected $_resourceType = ResourceType::CYMRU_PROGRAMME_OF_STUDY;
@@ -67,22 +65,6 @@ class ProgrammeOfStudy extends ModelBase
     public function setProgrammeReference(\Arbor\Model\Cymru\ProgrammeReference $programmeReference = null)
     {
         $this->setProperty('programmeReference', $programmeReference);
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->getProperty('name');
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName(string $name = null)
-    {
-        $this->setProperty('name', $name);
     }
 
     /**

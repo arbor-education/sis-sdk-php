@@ -54,7 +54,7 @@ class ProgrammeInstance extends ModelBase
     }
 
     /**
-     * @return string
+     * @return \Arbor\Model\Cymru\LearningActivityProvider
      */
     public function getLearningActivityProvider()
     {
@@ -62,9 +62,9 @@ class ProgrammeInstance extends ModelBase
     }
 
     /**
-     * @param string $learningActivityProvider
+     * @param \Arbor\Model\Cymru\LearningActivityProvider $learningActivityProvider
      */
-    public function setLearningActivityProvider(string $learningActivityProvider = null)
+    public function setLearningActivityProvider(\Arbor\Model\Cymru\LearningActivityProvider $learningActivityProvider = null)
     {
         $this->setProperty('learningActivityProvider', $learningActivityProvider);
     }

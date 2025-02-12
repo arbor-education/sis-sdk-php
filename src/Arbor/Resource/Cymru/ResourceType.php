@@ -21,7 +21,6 @@ class ResourceType
 	const CYMRU_PAY_SCALE = 'Cymru_PayScale';
 	const CYMRU_PAY_SCALE_CATEGORY = 'Cymru_PayScaleCategory';
 	const CYMRU_PERMANENT_EXCLUSION = 'Cymru_PermanentExclusion';
-	const CYMRU_PERSON_NATIONALITY = 'Cymru_PersonNationality';
 	const CYMRU_POSITION = 'Cymru_Position';
 	const CYMRU_POSITION_CATEGORY = 'Cymru_PositionCategory';
 	const CYMRU_PROGRAMME = 'Cymru_Programme';
@@ -60,7 +59,6 @@ class ResourceType
 	const CYMRU_STAFF_SPECIAL_SCHOOL_TEACHER_QUALIFICATION_TYPE = 'Cymru_StaffSpecialSchoolTeacherQualificationType';
 	const CYMRU_TRAVELLER_STATUS = 'Cymru_TravellerStatus';
 	const CYMRU_TRAVELLER_STATUS_ASSIGNMENT = 'Cymru_TravellerStatusAssignment';
-	const CYMRU_UCI_ASSIGNMENT = 'Cymru_UciAssignment';
 	const CYMRU_UPN_ASSIGNMENT = 'Cymru_UpnAssignment';
 	const CYMRU_YOUNG_CARER_STATUS_ASSIGNMENT = 'Cymru_YoungCarerStatusAssignment';
 	const CYMRU_QUALIFIED_TEACHER_ROUTE = 'Cymru_QualifiedTeacherRoute';
