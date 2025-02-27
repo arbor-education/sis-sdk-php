@@ -23,6 +23,8 @@ class CustomReport extends ModelBase
 
     public const TRANSIENT = 'transient';
 
+    public const IS_ARCHIVED = 'isArchived';
+
     protected $_resourceType = ResourceType::CUSTOM_REPORT;
 
     /**
@@ -187,5 +189,21 @@ class CustomReport extends ModelBase
     public function setTransient(bool $transient = null)
     {
         $this->setProperty('transient', $transient);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsArchived()
+    {
+        return $this->getProperty('isArchived');
+    }
+
+    /**
+     * @param bool $isArchived
+     */
+    public function setIsArchived(bool $isArchived = null)
+    {
+        $this->setProperty('isArchived', $isArchived);
     }
 }

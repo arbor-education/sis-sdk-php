@@ -35,7 +35,6 @@ class ResourceType
 	const UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL = 'UkDfe_SchoolCensusSchoolDetail';
 	const UK_DFE_SCHOOL_CENSUS_RETURN = 'UkDfe_SchoolCensusReturn';
 	const UK_DFE_SCHOOL_CENSUS_CLASS = 'UkDfe_SchoolCensusClass';
-	const UK_DFE_UCI_ASSIGNMENT = 'UkDfe_UciAssignment';
 	const UK_DFE_CHILD_PROTECTION_STATUS_ASSIGNMENT = 'UkDfe_ChildProtectionStatusAssignment';
 	const UK_DFE_IN_CARE_STATUS_ASSIGNMENT = 'UkDfe_InCareStatusAssignment';
 	const UK_DFE_TRAVELLER_STATUS = 'UkDfe_TravellerStatus';

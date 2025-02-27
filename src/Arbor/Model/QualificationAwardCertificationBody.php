@@ -5,7 +5,7 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\ModelBase;
 
-class QualificationSubject extends ModelBase
+class QualificationAwardCertificationBody extends ModelBase
 {
     public const CODE = 'code';
 
@@ -13,19 +13,19 @@ class QualificationSubject extends ModelBase
 
     public const DATA_ORDER = 'dataOrder';
 
-    public const NAME = 'name';
-
     public const EFFECTIVE_DATE = 'effectiveDate';
 
     public const END_DATE = 'endDate';
 
-    public const COUNTRY_CODE = 'countryCode';
+    public const NAME = 'name';
 
-    protected $_resourceType = ResourceType::QUALIFICATION_SUBJECT;
+    public const SHORT_NAME = 'shortName';
+
+    protected $_resourceType = ResourceType::QUALIFICATION_AWARD_CERTIFICATION_BODY;
 
     /**
      * @param Query $query
-     * @return QualificationSubject[] | Collection
+     * @return QualificationAwardCertificationBody[] | Collection
      * @throws Exception
      */
     public static function query(\Arbor\Query\Query $query = null)
@@ -39,14 +39,14 @@ class QualificationSubject extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::QUALIFICATION_SUBJECT);
+        $query->setResourceType(ResourceType::QUALIFICATION_AWARD_CERTIFICATION_BODY);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return QualificationSubject
+     * @return QualificationAwardCertificationBody
      * @throws Exception
      */
     public static function retrieve($id)
@@ -56,7 +56,7 @@ class QualificationSubject extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::QUALIFICATION_SUBJECT, $id);
+        return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD_CERTIFICATION_BODY, $id);
     }
 
     /**
@@ -108,22 +108,6 @@ class QualificationSubject extends ModelBase
     }
 
     /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->getProperty('name');
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName(string $name = null)
-    {
-        $this->setProperty('name', $name);
-    }
-
-    /**
      * @return \DateTime
      */
     public function getEffectiveDate()
@@ -158,16 +142,32 @@ class QualificationSubject extends ModelBase
     /**
      * @return string
      */
-    public function getCountryCode()
+    public function getName()
     {
-        return $this->getProperty('countryCode');
+        return $this->getProperty('name');
     }
 
     /**
-     * @param string $countryCode
+     * @param string $name
      */
-    public function setCountryCode(string $countryCode = null)
+    public function setName(string $name = null)
     {
-        $this->setProperty('countryCode', $countryCode);
+        $this->setProperty('name', $name);
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortName()
+    {
+        return $this->getProperty('shortName');
+    }
+
+    /**
+     * @param string $shortName
+     */
+    public function setShortName(string $shortName = null)
+    {
+        $this->setProperty('shortName', $shortName);
     }
 }

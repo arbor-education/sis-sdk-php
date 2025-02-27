@@ -27,8 +27,6 @@ class EducationalInstitution extends ModelBase
 
     public const OPEN_PLAN = 'openPlan';
 
-    public const CENTER_NUMBER = 'centerNumber';
-
     public const SPECIAL_SCHOOL_ACCOMMODATION = 'specialSchoolAccommodation';
 
     public const IS_OPTED_OUT_OF_HR_PAYROLL_SLA = 'isOptedOutOfHrPayrollSla';
@@ -215,22 +213,6 @@ class EducationalInstitution extends ModelBase
     public function setOpenPlan(bool $openPlan = null)
     {
         $this->setProperty('openPlan', $openPlan);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCenterNumber()
-    {
-        return $this->getProperty('centerNumber');
-    }
-
-    /**
-     * @param string $centerNumber
-     */
-    public function setCenterNumber(string $centerNumber = null)
-    {
-        $this->setProperty('centerNumber', $centerNumber);
     }
 
     /**
