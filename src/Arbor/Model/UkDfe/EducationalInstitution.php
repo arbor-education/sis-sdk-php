@@ -31,8 +31,6 @@ class EducationalInstitution extends ModelBase
 
     public const HAS_CHILDCARE_PLACES = 'hasChildcarePlaces';
 
-    public const CENTER_NUMBER = 'centerNumber';
-
     public const SPECIAL_SCHOOL_ACCOMMODATION = 'specialSchoolAccommodation';
 
     public const SPECIAL_SCHOOL_MAX_DAY_PUPILS = 'specialSchoolMaxDayPupils';
@@ -265,22 +263,6 @@ class EducationalInstitution extends ModelBase
     public function setHasChildcarePlaces(bool $hasChildcarePlaces = null)
     {
         $this->setProperty('hasChildcarePlaces', $hasChildcarePlaces);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCenterNumber()
-    {
-        return $this->getProperty('centerNumber');
-    }
-
-    /**
-     * @param string $centerNumber
-     */
-    public function setCenterNumber(string $centerNumber = null)
-    {
-        $this->setProperty('centerNumber', $centerNumber);
     }
 
     /**

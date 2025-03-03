@@ -15,8 +15,6 @@ class QualificationAward extends ModelBase
 
     public const QUALIFICATION_SCHEME = 'qualificationScheme';
 
-    public const QUALIFICATION_SUBJECT = 'qualificationSubject';
-
     public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
     public const AWARD_IDENTIFIER = 'awardIdentifier';
@@ -26,22 +24,6 @@ class QualificationAward extends ModelBase
     public const SHORT_TITLE = 'shortTitle';
 
     public const QUALIFICATION_AWARD_TYPE = 'qualificationAwardType';
-
-    public const QUALIFICATION_AWARD_SUBTYPE = 'qualificationAwardSubtype';
-
-    public const ACCREDITATION_START_DATE = 'accreditationStartDate';
-
-    public const ACCREDITATION_END_DATE = 'accreditationEndDate';
-
-    public const EFFECTIVE_DATE = 'effectiveDate';
-
-    public const END_DATE = 'endDate';
-
-    public const CERTIFICATION_END_DATE = 'certificationEndDate';
-
-    public const OPERATIONAL_START_DATE = 'operationalStartDate';
-
-    public const OPERATIONAL_END_DATE = 'operationalEndDate';
 
     public const IS_LINEAR_QUALIFICATION = 'isLinearQualification';
 
@@ -160,22 +142,6 @@ class QualificationAward extends ModelBase
     }
 
     /**
-     * @return \Arbor\Model\QualificationSubject
-     */
-    public function getQualificationSubject()
-    {
-        return $this->getProperty('qualificationSubject');
-    }
-
-    /**
-     * @param \Arbor\Model\QualificationSubject $qualificationSubject
-     */
-    public function setQualificationSubject(\Arbor\Model\QualificationSubject $qualificationSubject = null)
-    {
-        $this->setProperty('qualificationSubject', $qualificationSubject);
-    }
-
-    /**
      * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
@@ -253,134 +219,6 @@ class QualificationAward extends ModelBase
     public function setQualificationAwardType(\Arbor\Model\QualificationAwardType $qualificationAwardType = null)
     {
         $this->setProperty('qualificationAwardType', $qualificationAwardType);
-    }
-
-    /**
-     * @return \Arbor\Model\QualificationAwardSubtype
-     */
-    public function getQualificationAwardSubtype()
-    {
-        return $this->getProperty('qualificationAwardSubtype');
-    }
-
-    /**
-     * @param \Arbor\Model\QualificationAwardSubtype $qualificationAwardSubtype
-     */
-    public function setQualificationAwardSubtype(\Arbor\Model\QualificationAwardSubtype $qualificationAwardSubtype = null)
-    {
-        $this->setProperty('qualificationAwardSubtype', $qualificationAwardSubtype);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getAccreditationStartDate()
-    {
-        return $this->getProperty('accreditationStartDate');
-    }
-
-    /**
-     * @param \DateTime $accreditationStartDate
-     */
-    public function setAccreditationStartDate(\DateTime $accreditationStartDate = null)
-    {
-        $this->setProperty('accreditationStartDate', $accreditationStartDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getAccreditationEndDate()
-    {
-        return $this->getProperty('accreditationEndDate');
-    }
-
-    /**
-     * @param \DateTime $accreditationEndDate
-     */
-    public function setAccreditationEndDate(\DateTime $accreditationEndDate = null)
-    {
-        $this->setProperty('accreditationEndDate', $accreditationEndDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEffectiveDate()
-    {
-        return $this->getProperty('effectiveDate');
-    }
-
-    /**
-     * @param \DateTime $effectiveDate
-     */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
-    {
-        $this->setProperty('effectiveDate', $effectiveDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->getProperty('endDate');
-    }
-
-    /**
-     * @param \DateTime $endDate
-     */
-    public function setEndDate(\DateTime $endDate = null)
-    {
-        $this->setProperty('endDate', $endDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getCertificationEndDate()
-    {
-        return $this->getProperty('certificationEndDate');
-    }
-
-    /**
-     * @param \DateTime $certificationEndDate
-     */
-    public function setCertificationEndDate(\DateTime $certificationEndDate = null)
-    {
-        $this->setProperty('certificationEndDate', $certificationEndDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getOperationalStartDate()
-    {
-        return $this->getProperty('operationalStartDate');
-    }
-
-    /**
-     * @param \DateTime $operationalStartDate
-     */
-    public function setOperationalStartDate(\DateTime $operationalStartDate = null)
-    {
-        $this->setProperty('operationalStartDate', $operationalStartDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getOperationalEndDate()
-    {
-        return $this->getProperty('operationalEndDate');
-    }
-
-    /**
-     * @param \DateTime $operationalEndDate
-     */
-    public function setOperationalEndDate(\DateTime $operationalEndDate = null)
-    {
-        $this->setProperty('operationalEndDate', $operationalEndDate);
     }
 
     /**

@@ -23,6 +23,8 @@ class GuardianRelationshipType extends ModelBase
 
     public const IS_SIBLING = 'isSibling';
 
+    public const EXPORT_CODE = 'exportCode';
+
     public const D00033 = 'd00033';
 
     public const D00034 = 'd00034';
@@ -193,6 +195,22 @@ class GuardianRelationshipType extends ModelBase
     public function setIsSibling(bool $isSibling = null)
     {
         $this->setProperty('isSibling', $isSibling);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExportCode()
+    {
+        return $this->getProperty('exportCode');
+    }
+
+    /**
+     * @param string $exportCode
+     */
+    public function setExportCode(string $exportCode = null)
+    {
+        $this->setProperty('exportCode', $exportCode);
     }
 
     /**

@@ -437,6 +437,10 @@ class ResourceType
 	const QUALIFICATION_RESULT_EMBARGO_VIEWER = 'QualificationResultEmbargoViewer';
 	const QUALIFICATION_TRANSPORT_CERTIFICATE = 'QualificationTransportCertificate';
 	const QUALIFICATION_TRANSPORT_MESSAGE = 'QualificationTransportMessage';
+	const QUALIFICATION_AWARD_SUBJECT = 'QualificationAwardSubject';
+	const QUALIFICATION_AWARD_CERTIFICATION_BODY = 'QualificationAwardCertificationBody';
+	const QUALIFICATION_AWARD_COUNTRY = 'QualificationAwardCountry';
+	const QUALIFICATION_AWARD_METADATA = 'QualificationAwardMetadata';
 	const IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT = 'InHouseCandidateAccessArrangement';
 	const IN_HOUSE_CANDIDATE = 'InHouseCandidate';
 	const IN_HOUSE_EXAM_ENTRY = 'InHouseExamEntry';

@@ -1,7 +1,7 @@
 <?php
-namespace Arbor\Model\UkDfe;
+namespace Arbor\Model\UkJcq;
 
-use Arbor\Resource\UkDfe\ResourceType;
+use Arbor\Resource\UkJcq\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
@@ -25,7 +25,7 @@ class UciAssignment extends ModelBase
 
     public const CANCELLED_DATETIME = 'cancelledDatetime';
 
-    protected $_resourceType = ResourceType::UK_DFE_UCI_ASSIGNMENT;
+    protected $_resourceType = ResourceType::UK_JCQ_UCI_ASSIGNMENT;
 
     /**
      * @param Query $query
@@ -43,7 +43,7 @@ class UciAssignment extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::UK_DFE_UCI_ASSIGNMENT);
+        $query->setResourceType(ResourceType::UK_JCQ_UCI_ASSIGNMENT);
 
         return $gateway->query($query);
     }
@@ -60,7 +60,7 @@ class UciAssignment extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::UK_DFE_UCI_ASSIGNMENT, $id);
+        return $gateway->retrieve(ResourceType::UK_JCQ_UCI_ASSIGNMENT, $id);
     }
 
     /**

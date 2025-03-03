@@ -1,21 +1,19 @@
 <?php
-namespace Arbor\Model\Cymru;
+namespace Arbor\Model\UkJcq;
 
-use Arbor\Resource\Cymru\ResourceType;
+use Arbor\Resource\UkJcq\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
 
-class PersonNationality extends ModelBase
+class Student extends ModelBase
 {
-    public const NATIONAL_IDENTITY = 'nationalIdentity';
-
-    protected $_resourceType = ResourceType::CYMRU_PERSON_NATIONALITY;
+    protected $_resourceType = ResourceType::UK_JCQ_STUDENT;
 
     /**
      * @param Query $query
-     * @return PersonNationality[] | Collection
+     * @return Student[] | Collection
      * @throws Exception
      */
     public static function query(\Arbor\Query\Query $query = null)
@@ -29,14 +27,14 @@ class PersonNationality extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::CYMRU_PERSON_NATIONALITY);
+        $query->setResourceType(ResourceType::UK_JCQ_STUDENT);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return PersonNationality
+     * @return Student
      * @throws Exception
      */
     public static function retrieve($id)
@@ -46,22 +44,6 @@ class PersonNationality extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::CYMRU_PERSON_NATIONALITY, $id);
-    }
-
-    /**
-     * @return \Arbor\Model\Cymru\NationalIdentity
-     */
-    public function getNationalIdentity()
-    {
-        return $this->getProperty('nationalIdentity');
-    }
-
-    /**
-     * @param \Arbor\Model\Cymru\NationalIdentity $nationalIdentity
-     */
-    public function setNationalIdentity(\Arbor\Model\Cymru\NationalIdentity $nationalIdentity = null)
-    {
-        $this->setProperty('nationalIdentity', $nationalIdentity);
+        return $gateway->retrieve(ResourceType::UK_JCQ_STUDENT, $id);
     }
 }

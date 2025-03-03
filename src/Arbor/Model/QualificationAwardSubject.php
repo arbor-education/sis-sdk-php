@@ -5,7 +5,7 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\ModelBase;
 
-class QualificationAwardDiscountCode extends ModelBase
+class QualificationAwardSubject extends ModelBase
 {
     public const CODE = 'code';
 
@@ -15,21 +15,13 @@ class QualificationAwardDiscountCode extends ModelBase
 
     public const QUALIFICATION_AWARD = 'qualificationAward';
 
-    public const DISCOUNT_CODE = 'discountCode';
+    public const QUALIFICATION_SUBJECT = 'qualificationSubject';
 
-    public const COUNTRY_CODE = 'countryCode';
-
-    public const LEVEL = 'level';
-
-    public const EFFECTIVE_DATE = 'effectiveDate';
-
-    public const END_DATE = 'endDate';
-
-    protected $_resourceType = ResourceType::QUALIFICATION_AWARD_DISCOUNT_CODE;
+    protected $_resourceType = ResourceType::QUALIFICATION_AWARD_SUBJECT;
 
     /**
      * @param Query $query
-     * @return QualificationAwardDiscountCode[] | Collection
+     * @return QualificationAwardSubject[] | Collection
      * @throws Exception
      */
     public static function query(\Arbor\Query\Query $query = null)
@@ -43,14 +35,14 @@ class QualificationAwardDiscountCode extends ModelBase
             $query = new Query();
         }
 
-        $query->setResourceType(ResourceType::QUALIFICATION_AWARD_DISCOUNT_CODE);
+        $query->setResourceType(ResourceType::QUALIFICATION_AWARD_SUBJECT);
 
         return $gateway->query($query);
     }
 
     /**
      * @param int $id
-     * @return QualificationAwardDiscountCode
+     * @return QualificationAwardSubject
      * @throws Exception
      */
     public static function retrieve($id)
@@ -60,7 +52,7 @@ class QualificationAwardDiscountCode extends ModelBase
             throw new Exception('You must call ModelBase::setDefaultGateway() prior to calling ModelBase::retrieve()');
         }
 
-        return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD_DISCOUNT_CODE, $id);
+        return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD_SUBJECT, $id);
     }
 
     /**
@@ -128,82 +120,18 @@ class QualificationAwardDiscountCode extends ModelBase
     }
 
     /**
-     * @return string
+     * @return \Arbor\Model\QualificationSubject
      */
-    public function getDiscountCode()
+    public function getQualificationSubject()
     {
-        return $this->getProperty('discountCode');
+        return $this->getProperty('qualificationSubject');
     }
 
     /**
-     * @param string $discountCode
+     * @param \Arbor\Model\QualificationSubject $qualificationSubject
      */
-    public function setDiscountCode(string $discountCode = null)
+    public function setQualificationSubject(\Arbor\Model\QualificationSubject $qualificationSubject = null)
     {
-        $this->setProperty('discountCode', $discountCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountryCode()
-    {
-        return $this->getProperty('countryCode');
-    }
-
-    /**
-     * @param string $countryCode
-     */
-    public function setCountryCode(string $countryCode = null)
-    {
-        $this->setProperty('countryCode', $countryCode);
-    }
-
-    /**
-     * @return string
-     */
-    public function getLevel()
-    {
-        return $this->getProperty('level');
-    }
-
-    /**
-     * @param string $level
-     */
-    public function setLevel(string $level = null)
-    {
-        $this->setProperty('level', $level);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEffectiveDate()
-    {
-        return $this->getProperty('effectiveDate');
-    }
-
-    /**
-     * @param \DateTime $effectiveDate
-     */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
-    {
-        $this->setProperty('effectiveDate', $effectiveDate);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->getProperty('endDate');
-    }
-
-    /**
-     * @param \DateTime $endDate
-     */
-    public function setEndDate(\DateTime $endDate = null)
-    {
-        $this->setProperty('endDate', $endDate);
+        $this->setProperty('qualificationSubject', $qualificationSubject);
     }
 }
