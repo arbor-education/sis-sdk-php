@@ -10,15 +10,16 @@ use Arbor\Model\Student;
 
 class AttendanceRegistration
 {
-    const MARK_STUDENT = "student";
-    const MARK_MARK = "attendanceMark";
-    const MARK_NOTE = "note";
-    const MARK_MINUTES_LATE = "minutesLate";
-    const MARK_SESSION_START_TIME = "sessionStartTime";
-    const ACADEMIC_UNIT= "academicUnit";
-    const INCLUDE_ACADEMIC_UNIT= "includeAcademicUnit";
+    const MARK_STUDENT = 'student';
+    const MARK_MARK = 'attendanceMark';
+    const MARK_NOTE = 'note';
+    const MARK_MINUTES_LATE = 'minutesLate';
+    const MARK_SESSION_START_TIME = 'sessionStartTime';
+    const ACADEMIC_UNIT= 'academicUnit';
+    const INCLUDE_ACADEMIC_UNIT= 'includeAcademicUnit';
+    const INCLUDE_EXTRA_MARKS = 'includeExtraMarks';
 
-    /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
+    /** @var \Arbor\Api\Gateway\RestGateway $_gateway */
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
@@ -52,7 +53,7 @@ class AttendanceRegistration
         ];
     }
 
-    public function saveMarks($includeAcademicUnit = false)
+    public function saveMarks($includeAcademicUnit = false, bool $includeExtraMarks = false)
     {
         $payload = [];
 
@@ -61,7 +62,7 @@ class AttendanceRegistration
         foreach ($this->_marks as $mark) {
             $markPayload = [];
 
-            //Convert models to REST representations
+            // Convert models to REST representations
             $markPayload[self::MARK_STUDENT] = $this->getHydrator()->extractArray($mark[self::MARK_STUDENT], true);
             $markPayload[self::MARK_MARK] = $this->getHydrator()->extractArray($mark[self::MARK_MARK], true);
 
@@ -75,20 +76,24 @@ class AttendanceRegistration
 
             $markPayload[self::INCLUDE_ACADEMIC_UNIT] = $includeAcademicUnit;
 
-            //Convert date to Y-m-d H:i:s string
-            /**@var \DateTime $sessionStartTime*/
+            // Convert date to Y-m-d H:i:s string
+            /** @var \DateTime $sessionStartTime */
             $sessionStartTime = $mark[self::MARK_SESSION_START_TIME];
             if (!$sessionStartTime instanceof \DateTime) {
                 throw new \InvalidArgumentException("SessionStartTime must be an PHP DateTime object");
             }
             $markPayload[self::MARK_SESSION_START_TIME] = $sessionStartTime->format("Y-m-d H:i:s");
 
-            //Only include optional minutesLate and note parameters if not set to NULL
+            // Only include optional minutesLate and note parameters if not set to NULL
             if (isset($mark[self::MARK_MINUTES_LATE]) && !is_null($mark[self::MARK_MINUTES_LATE])) {
                 $markPayload[self::MARK_MINUTES_LATE] = $mark[self::MARK_MINUTES_LATE];
             }
             if (isset($mark[self::MARK_NOTE]) && !is_null($mark[self::MARK_NOTE])) {
                 $markPayload[self::MARK_NOTE] = $mark[self::MARK_NOTE];
+            }
+
+            if ($includeExtraMarks) {
+                $markPayload[self::INCLUDE_EXTRA_MARKS] = $includeExtraMarks;
             }
 
             $payload['request']['marks'][] = $markPayload;
