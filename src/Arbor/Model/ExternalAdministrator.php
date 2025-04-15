@@ -7,6 +7,8 @@ use Arbor\Model\ModelBase;
 
 class ExternalAdministrator extends ModelBase
 {
+    public const UNIQUE_EXTERNAL_USER_ID = 'uniqueExternalUserId';
+
     public const FIRST_NAME = 'firstName';
 
     public const LAST_NAME = 'lastName';
@@ -51,6 +53,22 @@ class ExternalAdministrator extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::EXTERNAL_ADMINISTRATOR, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUniqueExternalUserId()
+    {
+        return $this->getProperty('uniqueExternalUserId');
+    }
+
+    /**
+     * @param string $uniqueExternalUserId
+     */
+    public function setUniqueExternalUserId(string $uniqueExternalUserId = null)
+    {
+        $this->setProperty('uniqueExternalUserId', $uniqueExternalUserId);
     }
 
     /**

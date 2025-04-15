@@ -15,6 +15,8 @@ class ProgrammeInstance extends ModelBase
 
     public const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
 
+    public const DEFAULT_LEARNER_ACTIVITY_THROUGH_WELSH_MEDIUM = 'defaultLearnerActivityThroughWelshMedium';
+
     protected $_resourceType = ResourceType::CYMRU_PROGRAMME_INSTANCE;
 
     /**
@@ -99,5 +101,21 @@ class ProgrammeInstance extends ModelBase
     public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultLearnerActivityThroughWelshMedium()
+    {
+        return $this->getProperty('defaultLearnerActivityThroughWelshMedium');
+    }
+
+    /**
+     * @param string $defaultLearnerActivityThroughWelshMedium
+     */
+    public function setDefaultLearnerActivityThroughWelshMedium(string $defaultLearnerActivityThroughWelshMedium = null)
+    {
+        $this->setProperty('defaultLearnerActivityThroughWelshMedium', $defaultLearnerActivityThroughWelshMedium);
     }
 }

@@ -13,8 +13,6 @@ class Student extends ModelBase
 
     public const ETHNICITY_SOURCE = 'ethnicitySource';
 
-    public const HOME_LOCAL_AUTHORITY = 'homeLocalAuthority';
-
     public const HOME_WELSH_CODE = 'homeWelshCode';
 
     public const IS_CHILD_PROTECTION_STATUS = 'isChildProtectionStatus';
@@ -38,8 +36,6 @@ class Student extends ModelBase
     public const NATIONAL_IDENTITY = 'nationalIdentity';
 
     public const NHS_NUMBER = 'nhsNumber';
-
-    public const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     public const SERVICE_CHILD_IN_EDUCATION = 'serviceChildInEducation';
 
@@ -125,22 +121,6 @@ class Student extends ModelBase
     public function setEthnicitySource(string $ethnicitySource = null)
     {
         $this->setProperty('ethnicitySource', $ethnicitySource);
-    }
-
-    /**
-     * @return \Arbor\Model\LocalAuthority
-     */
-    public function getHomeLocalAuthority()
-    {
-        return $this->getProperty('homeLocalAuthority');
-    }
-
-    /**
-     * @param \Arbor\Model\LocalAuthority $homeLocalAuthority
-     */
-    public function setHomeLocalAuthority(\Arbor\Model\LocalAuthority $homeLocalAuthority = null)
-    {
-        $this->setProperty('homeLocalAuthority', $homeLocalAuthority);
     }
 
     /**
@@ -333,22 +313,6 @@ class Student extends ModelBase
     public function setNhsNumber(string $nhsNumber = null)
     {
         $this->setProperty('nhsNumber', $nhsNumber);
-    }
-
-    /**
-     * @return \Arbor\Model\LocalAuthority
-     */
-    public function getResponsibleLocalAuthority()
-    {
-        return $this->getProperty('responsibleLocalAuthority');
-    }
-
-    /**
-     * @param \Arbor\Model\LocalAuthority $responsibleLocalAuthority
-     */
-    public function setResponsibleLocalAuthority(\Arbor\Model\LocalAuthority $responsibleLocalAuthority = null)
-    {
-        $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }
 
     /**

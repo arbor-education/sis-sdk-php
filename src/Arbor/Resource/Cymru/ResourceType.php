@@ -10,6 +10,7 @@ class ResourceType
 	const CYMRU_EDUCATIONAL_INSTITUTION = 'Cymru_EducationalInstitution';
 	const CYMRU_CENSUS_SCHOOL_PHASE = 'Cymru_CensusSchoolPhase';
 	const CYMRU_CHILD_PROTECTION_STATUS_ASSIGNMENT = 'Cymru_ChildProtectionStatusAssignment';
+	const CYMRU_DATA_RETURN_COMPLETER = 'Cymru_DataReturnCompleter';
 	const CYMRU_EDUCATIONAL_INSTITUTION_ENROLMENT = 'Cymru_EducationalInstitutionEnrolment';
 	const CYMRU_ENGLISH_AS_ADDITIONAL_LANGUAGE_STATUS_ASSIGNMENT = 'Cymru_EnglishAsAdditionalLanguageStatusAssignment';
 	const CYMRU_GUARDIAN_RELATIONSHIP_TYPE = 'Cymru_GuardianRelationshipType';
@@ -43,8 +44,6 @@ class ResourceType
 	const CYMRU_SCHOOL_LANGUAGE_CATEGORY_ASSIGNMENT = 'Cymru_SchoolLanguageCategoryAssignment';
 	const CYMRU_SCHOOL_TYPE = 'Cymru_SchoolType';
 	const CYMRU_SCHOOL_VACANCY = 'Cymru_SchoolVacancy';
-	const CYMRU_SCHOOL_WORKFORCE_CENSUS = 'Cymru_SchoolWorkforceCensus';
-	const CYMRU_SCHOOL_WORKFORCE_CENSUS_RETURN = 'Cymru_SchoolWorkforceCensusReturn';
 	const CYMRU_SCHOOL_WORKFORCE_CENSUS_BUSINESS_ROLE = 'Cymru_SchoolWorkforceCensusBusinessRole';
 	const CYMRU_SEN_STATUS_ASSIGNMENT = 'Cymru_SenStatusAssignment';
 	const CYMRU_SERVICE_CHILD_CONCERN = 'Cymru_ServiceChildConcern';
