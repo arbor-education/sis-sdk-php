@@ -17,6 +17,10 @@ class TimetablerImportResult extends ModelBase
 
     public const COMPLETED_DATETIME = 'completedDatetime';
 
+    public const TIMETABLE_EFFECTIVE_DATE = 'timetableEffectiveDate';
+
+    public const TIMETABLE_END_DATE = 'timetableEndDate';
+
     public const FILE_HASH = 'fileHash';
 
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_RESULT;
@@ -135,6 +139,38 @@ class TimetablerImportResult extends ModelBase
     public function setCompletedDatetime(\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTimetableEffectiveDate()
+    {
+        return $this->getProperty('timetableEffectiveDate');
+    }
+
+    /**
+     * @param \DateTime $timetableEffectiveDate
+     */
+    public function setTimetableEffectiveDate(\DateTime $timetableEffectiveDate = null)
+    {
+        $this->setProperty('timetableEffectiveDate', $timetableEffectiveDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTimetableEndDate()
+    {
+        return $this->getProperty('timetableEndDate');
+    }
+
+    /**
+     * @param \DateTime $timetableEndDate
+     */
+    public function setTimetableEndDate(\DateTime $timetableEndDate = null)
+    {
+        $this->setProperty('timetableEndDate', $timetableEndDate);
     }
 
     /**
