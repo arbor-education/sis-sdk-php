@@ -746,8 +746,7 @@ class RestGateway implements GatewayInterface
      */
     private function createRetryHandler()
     {
-        /** @noinspection PhpUnusedParameterInspection */
-        return function ($retries, Request $request, Response $response = null, RequestException $exception = null) {
+        return function ($retries, Request $request, ?Response $response = null, ?RequestException $exception = null) {
             if ($retries >= self::MAX_RETRIES) {
                 return false;
             }
