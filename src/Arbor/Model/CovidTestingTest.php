@@ -5,6 +5,9 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\ModelBase;
 
+/**
+ * @coversNothing
+ */
 class CovidTestingTest extends ModelBase
 {
     public const PERSON = 'person';

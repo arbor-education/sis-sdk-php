@@ -5,6 +5,9 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\ModelBase;
 
+/**
+ * @coversNothing
+ */
 class VisionTest extends ModelBase
 {
     public const STUDENT = 'student';
