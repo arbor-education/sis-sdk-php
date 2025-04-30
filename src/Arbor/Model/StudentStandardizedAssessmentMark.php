@@ -124,7 +124,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param int $markInteger
      */
-    public function setMarkInteger(int $markInteger = null)
+    public function setMarkInteger(?int $markInteger = null)
     {
         $this->setProperty('markInteger', $markInteger);
     }
@@ -140,7 +140,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param float $markDecimal
      */
-    public function setMarkDecimal(float $markDecimal = null)
+    public function setMarkDecimal(?float $markDecimal = null)
     {
         $this->setProperty('markDecimal', $markDecimal);
     }
@@ -156,7 +156,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param string $markComment
      */
-    public function setMarkComment(string $markComment = null)
+    public function setMarkComment(?string $markComment = null)
     {
         $this->setProperty('markComment', $markComment);
     }

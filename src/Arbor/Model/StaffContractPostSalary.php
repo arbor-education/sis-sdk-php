@@ -98,7 +98,7 @@ class StaffContractPostSalary extends ModelBase
     /**
      * @param string $grossSalary
      */
-    public function setGrossSalary(string $grossSalary = null)
+    public function setGrossSalary(?string $grossSalary = null)
     {
         $this->setProperty('grossSalary', $grossSalary);
     }
@@ -162,7 +162,7 @@ class StaffContractPostSalary extends ModelBase
     /**
      * @param string $hoursPerWeek
      */
-    public function setHoursPerWeek(string $hoursPerWeek = null)
+    public function setHoursPerWeek(?string $hoursPerWeek = null)
     {
         $this->setProperty('hoursPerWeek', $hoursPerWeek);
     }
@@ -178,7 +178,7 @@ class StaffContractPostSalary extends ModelBase
     /**
      * @param float $weeksPerYear
      */
-    public function setWeeksPerYear(float $weeksPerYear = null)
+    public function setWeeksPerYear(?float $weeksPerYear = null)
     {
         $this->setProperty('weeksPerYear', $weeksPerYear);
     }
@@ -194,7 +194,7 @@ class StaffContractPostSalary extends ModelBase
     /**
      * @param string $fteHoursPerWeek
      */
-    public function setFteHoursPerWeek(string $fteHoursPerWeek = null)
+    public function setFteHoursPerWeek(?string $fteHoursPerWeek = null)
     {
         $this->setProperty('fteHoursPerWeek', $fteHoursPerWeek);
     }
@@ -210,7 +210,7 @@ class StaffContractPostSalary extends ModelBase
     /**
      * @param float $fteWeeksPerYear
      */
-    public function setFteWeeksPerYear(float $fteWeeksPerYear = null)
+    public function setFteWeeksPerYear(?float $fteWeeksPerYear = null)
     {
         $this->setProperty('fteWeeksPerYear', $fteWeeksPerYear);
     }

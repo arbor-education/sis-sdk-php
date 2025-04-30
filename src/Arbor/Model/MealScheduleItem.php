@@ -118,7 +118,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $monLabel
      */
-    public function setMonLabel(string $monLabel = null)
+    public function setMonLabel(?string $monLabel = null)
     {
         $this->setProperty('monLabel', $monLabel);
     }
@@ -150,7 +150,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $tueLabel
      */
-    public function setTueLabel(string $tueLabel = null)
+    public function setTueLabel(?string $tueLabel = null)
     {
         $this->setProperty('tueLabel', $tueLabel);
     }
@@ -182,7 +182,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $wedLabel
      */
-    public function setWedLabel(string $wedLabel = null)
+    public function setWedLabel(?string $wedLabel = null)
     {
         $this->setProperty('wedLabel', $wedLabel);
     }
@@ -214,7 +214,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $thuLabel
      */
-    public function setThuLabel(string $thuLabel = null)
+    public function setThuLabel(?string $thuLabel = null)
     {
         $this->setProperty('thuLabel', $thuLabel);
     }
@@ -246,7 +246,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $friLabel
      */
-    public function setFriLabel(string $friLabel = null)
+    public function setFriLabel(?string $friLabel = null)
     {
         $this->setProperty('friLabel', $friLabel);
     }
@@ -278,7 +278,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $satLabel
      */
-    public function setSatLabel(string $satLabel = null)
+    public function setSatLabel(?string $satLabel = null)
     {
         $this->setProperty('satLabel', $satLabel);
     }
@@ -310,7 +310,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $sunLabel
      */
-    public function setSunLabel(string $sunLabel = null)
+    public function setSunLabel(?string $sunLabel = null)
     {
         $this->setProperty('sunLabel', $sunLabel);
     }

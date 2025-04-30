@@ -78,7 +78,7 @@ class BasketItemPaymentData extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -94,7 +94,7 @@ class BasketItemPaymentData extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue(string $value = null)
+    public function setValue(?string $value = null)
     {
         $this->setProperty('value', $value);
     }

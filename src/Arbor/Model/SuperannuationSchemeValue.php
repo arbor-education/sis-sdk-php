@@ -112,7 +112,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param float $value
      */
-    public function setValue(float $value = null)
+    public function setValue(?float $value = null)
     {
         $this->setProperty('value', $value);
     }

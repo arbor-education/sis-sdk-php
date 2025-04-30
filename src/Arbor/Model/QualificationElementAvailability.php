@@ -97,7 +97,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param string $examinationFee
      */
-    public function setExaminationFee(string $examinationFee = null)
+    public function setExaminationFee(?string $examinationFee = null)
     {
         $this->setProperty('examinationFee', $examinationFee);
     }
@@ -113,7 +113,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param string $userDefinedExaminationFee
      */
-    public function setUserDefinedExaminationFee(string $userDefinedExaminationFee = null)
+    public function setUserDefinedExaminationFee(?string $userDefinedExaminationFee = null)
     {
         $this->setProperty('userDefinedExaminationFee', $userDefinedExaminationFee);
     }

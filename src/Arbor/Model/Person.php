@@ -116,7 +116,7 @@ class Person extends ModelBase
     /**
      * @param string $genderIdentityPreferredTerm
      */
-    public function setGenderIdentityPreferredTerm(string $genderIdentityPreferredTerm = null)
+    public function setGenderIdentityPreferredTerm(?string $genderIdentityPreferredTerm = null)
     {
         $this->setProperty('genderIdentityPreferredTerm', $genderIdentityPreferredTerm);
     }
@@ -164,7 +164,7 @@ class Person extends ModelBase
     /**
      * @param string $legalFirstName
      */
-    public function setLegalFirstName(string $legalFirstName = null)
+    public function setLegalFirstName(?string $legalFirstName = null)
     {
         $this->setProperty('legalFirstName', $legalFirstName);
     }
@@ -180,7 +180,7 @@ class Person extends ModelBase
     /**
      * @param string $legalMiddleNames
      */
-    public function setLegalMiddleNames(string $legalMiddleNames = null)
+    public function setLegalMiddleNames(?string $legalMiddleNames = null)
     {
         $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
@@ -196,7 +196,7 @@ class Person extends ModelBase
     /**
      * @param string $legalLastName
      */
-    public function setLegalLastName(string $legalLastName = null)
+    public function setLegalLastName(?string $legalLastName = null)
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
@@ -212,7 +212,7 @@ class Person extends ModelBase
     /**
      * @param string $preferredFirstName
      */
-    public function setPreferredFirstName(string $preferredFirstName = null)
+    public function setPreferredFirstName(?string $preferredFirstName = null)
     {
         $this->setProperty('preferredFirstName', $preferredFirstName);
     }
@@ -228,7 +228,7 @@ class Person extends ModelBase
     /**
      * @param string $preferredLastName
      */
-    public function setPreferredLastName(string $preferredLastName = null)
+    public function setPreferredLastName(?string $preferredLastName = null)
     {
         $this->setProperty('preferredLastName', $preferredLastName);
     }
@@ -276,7 +276,7 @@ class Person extends ModelBase
     /**
      * @param bool $deceased
      */
-    public function setDeceased(bool $deceased = null)
+    public function setDeceased(?bool $deceased = null)
     {
         $this->setProperty('deceased', $deceased);
     }

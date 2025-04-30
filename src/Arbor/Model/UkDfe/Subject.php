@@ -66,7 +66,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInSwfOnly
      */
-    public function setUsedInSwfOnly(bool $usedInSwfOnly = null)
+    public function setUsedInSwfOnly(?bool $usedInSwfOnly = null)
     {
         $this->setProperty('usedInSwfOnly', $usedInSwfOnly);
     }
@@ -82,7 +82,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInCbdsOnly
      */
-    public function setUsedInCbdsOnly(bool $usedInCbdsOnly = null)
+    public function setUsedInCbdsOnly(?bool $usedInCbdsOnly = null)
     {
         $this->setProperty('usedInCbdsOnly', $usedInCbdsOnly);
     }
@@ -98,7 +98,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00115
      */
-    public function setD00115(string $d00115 = null)
+    public function setD00115(?string $d00115 = null)
     {
         $this->setProperty('d00115', $d00115);
     }
@@ -114,7 +114,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00220
      */
-    public function setD00220(string $d00220 = null)
+    public function setD00220(?string $d00220 = null)
     {
         $this->setProperty('d00220', $d00220);
     }

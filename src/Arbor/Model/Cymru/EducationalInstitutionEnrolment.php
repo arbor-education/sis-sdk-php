@@ -60,7 +60,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param string $removalGrounds
      */
-    public function setRemovalGrounds(string $removalGrounds = null)
+    public function setRemovalGrounds(?string $removalGrounds = null)
     {
         $this->setProperty('removalGrounds', $removalGrounds);
     }

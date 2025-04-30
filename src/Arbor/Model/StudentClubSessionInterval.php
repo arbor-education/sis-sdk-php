@@ -120,7 +120,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -184,7 +184,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param bool $hasMeals
      */
-    public function setHasMeals(bool $hasMeals = null)
+    public function setHasMeals(?bool $hasMeals = null)
     {
         $this->setProperty('hasMeals', $hasMeals);
     }

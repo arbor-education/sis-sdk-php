@@ -64,7 +64,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param string $academicHolidayType
      */
-    public function setAcademicHolidayType(string $academicHolidayType = null)
+    public function setAcademicHolidayType(?string $academicHolidayType = null)
     {
         $this->setProperty('academicHolidayType', $academicHolidayType);
     }
@@ -112,7 +112,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param string $holidayLabel
      */
-    public function setHolidayLabel(string $holidayLabel = null)
+    public function setHolidayLabel(?string $holidayLabel = null)
     {
         $this->setProperty('holidayLabel', $holidayLabel);
     }

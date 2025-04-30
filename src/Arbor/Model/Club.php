@@ -84,7 +84,7 @@ class Club extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -100,7 +100,7 @@ class Club extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -132,7 +132,7 @@ class Club extends ModelBase
     /**
      * @param int $maxMembersPerSession
      */
-    public function setMaxMembersPerSession(int $maxMembersPerSession = null)
+    public function setMaxMembersPerSession(?int $maxMembersPerSession = null)
     {
         $this->setProperty('maxMembersPerSession', $maxMembersPerSession);
     }
@@ -148,7 +148,7 @@ class Club extends ModelBase
     /**
      * @param bool $requireConsent
      */
-    public function setRequireConsent(bool $requireConsent = null)
+    public function setRequireConsent(?bool $requireConsent = null)
     {
         $this->setProperty('requireConsent', $requireConsent);
     }
@@ -180,7 +180,7 @@ class Club extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree(bool $free = null)
+    public function setFree(?bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -228,7 +228,7 @@ class Club extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode(string $accountingCode = null)
+    public function setAccountingCode(?string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }
@@ -260,7 +260,7 @@ class Club extends ModelBase
     /**
      * @param bool $hasMeals
      */
-    public function setHasMeals(bool $hasMeals = null)
+    public function setHasMeals(?bool $hasMeals = null)
     {
         $this->setProperty('hasMeals', $hasMeals);
     }
@@ -276,7 +276,7 @@ class Club extends ModelBase
     /**
      * @param bool $isWraparoundChildcareClub
      */
-    public function setIsWraparoundChildcareClub(bool $isWraparoundChildcareClub = null)
+    public function setIsWraparoundChildcareClub(?bool $isWraparoundChildcareClub = null)
     {
         $this->setProperty('isWraparoundChildcareClub', $isWraparoundChildcareClub);
     }
@@ -292,7 +292,7 @@ class Club extends ModelBase
     /**
      * @param bool $chargeStudentsBasedOnAttendanceMark
      */
-    public function setChargeStudentsBasedOnAttendanceMark(bool $chargeStudentsBasedOnAttendanceMark = null)
+    public function setChargeStudentsBasedOnAttendanceMark(?bool $chargeStudentsBasedOnAttendanceMark = null)
     {
         $this->setProperty('chargeStudentsBasedOnAttendanceMark', $chargeStudentsBasedOnAttendanceMark);
     }

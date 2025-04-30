@@ -80,7 +80,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -128,7 +128,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $accreditationCode
      */
-    public function setAccreditationCode(string $accreditationCode = null)
+    public function setAccreditationCode(?string $accreditationCode = null)
     {
         $this->setProperty('accreditationCode', $accreditationCode);
     }
@@ -160,7 +160,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $accreditationName
      */
-    public function setAccreditationName(string $accreditationName = null)
+    public function setAccreditationName(?string $accreditationName = null)
     {
         $this->setProperty('accreditationName', $accreditationName);
     }
@@ -192,7 +192,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $countryCode
      */
-    public function setCountryCode(string $countryCode = null)
+    public function setCountryCode(?string $countryCode = null)
     {
         $this->setProperty('countryCode', $countryCode);
     }

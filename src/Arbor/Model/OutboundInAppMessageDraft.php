@@ -84,7 +84,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage(string $message = null)
+    public function setMessage(?string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -100,7 +100,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(?bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -116,7 +116,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(?bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }

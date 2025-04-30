@@ -132,7 +132,7 @@ class MedicalEvent extends ModelBase
     /**
      * @param string $medicalEventDescription
      */
-    public function setMedicalEventDescription(string $medicalEventDescription = null)
+    public function setMedicalEventDescription(?string $medicalEventDescription = null)
     {
         $this->setProperty('medicalEventDescription', $medicalEventDescription);
     }

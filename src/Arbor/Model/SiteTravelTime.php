@@ -94,7 +94,7 @@ class SiteTravelTime extends ModelBase
     /**
      * @param int $travelTime
      */
-    public function setTravelTime(int $travelTime = null)
+    public function setTravelTime(?int $travelTime = null)
     {
         $this->setProperty('travelTime', $travelTime);
     }

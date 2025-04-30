@@ -98,7 +98,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarName
      */
-    public function setCalendarName(string $calendarName = null)
+    public function setCalendarName(?string $calendarName = null)
     {
         $this->setProperty('calendarName', $calendarName);
     }
@@ -114,7 +114,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarDescription
      */
-    public function setCalendarDescription(string $calendarDescription = null)
+    public function setCalendarDescription(?string $calendarDescription = null)
     {
         $this->setProperty('calendarDescription', $calendarDescription);
     }
@@ -130,7 +130,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarColor
      */
-    public function setCalendarColor(string $calendarColor = null)
+    public function setCalendarColor(?string $calendarColor = null)
     {
         $this->setProperty('calendarColor', $calendarColor);
     }

@@ -80,7 +80,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -96,7 +96,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -112,7 +112,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }

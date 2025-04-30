@@ -94,7 +94,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }

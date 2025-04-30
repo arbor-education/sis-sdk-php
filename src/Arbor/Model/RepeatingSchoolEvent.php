@@ -98,7 +98,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param string $schoolEventName
      */
-    public function setSchoolEventName(string $schoolEventName = null)
+    public function setSchoolEventName(?string $schoolEventName = null)
     {
         $this->setProperty('schoolEventName', $schoolEventName);
     }
@@ -114,7 +114,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -130,7 +130,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param bool $coverRequired
      */
-    public function setCoverRequired(bool $coverRequired = null)
+    public function setCoverRequired(?bool $coverRequired = null)
     {
         $this->setProperty('coverRequired', $coverRequired);
     }

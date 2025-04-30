@@ -82,7 +82,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callerName
      */
-    public function setCallerName(string $callerName = null)
+    public function setCallerName(?string $callerName = null)
     {
         $this->setProperty('callerName', $callerName);
     }
@@ -114,7 +114,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callerTelephoneNumber
      */
-    public function setCallerTelephoneNumber(string $callerTelephoneNumber = null)
+    public function setCallerTelephoneNumber(?string $callerTelephoneNumber = null)
     {
         $this->setProperty('callerTelephoneNumber', $callerTelephoneNumber);
     }
@@ -162,7 +162,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callDuration
      */
-    public function setCallDuration(string $callDuration = null)
+    public function setCallDuration(?string $callDuration = null)
     {
         $this->setProperty('callDuration', $callDuration);
     }
@@ -178,7 +178,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -210,7 +210,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $recipientTelephoneNumber
      */
-    public function setRecipientTelephoneNumber(string $recipientTelephoneNumber = null)
+    public function setRecipientTelephoneNumber(?string $recipientTelephoneNumber = null)
     {
         $this->setProperty('recipientTelephoneNumber', $recipientTelephoneNumber);
     }
@@ -242,7 +242,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -258,7 +258,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

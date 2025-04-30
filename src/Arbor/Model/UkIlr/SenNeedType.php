@@ -62,7 +62,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $llddCode
      */
-    public function setLlddCode(string $llddCode = null)
+    public function setLlddCode(?string $llddCode = null)
     {
         $this->setProperty('llddCode', $llddCode);
     }
@@ -78,7 +78,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $ilrReturnValue
      */
-    public function setIlrReturnValue(string $ilrReturnValue = null)
+    public function setIlrReturnValue(?string $ilrReturnValue = null)
     {
         $this->setProperty('ilrReturnValue', $ilrReturnValue);
     }

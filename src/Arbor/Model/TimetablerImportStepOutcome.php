@@ -86,7 +86,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -102,7 +102,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -118,7 +118,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $optionType
      */
-    public function setOptionType(string $optionType = null)
+    public function setOptionType(?string $optionType = null)
     {
         $this->setProperty('optionType', $optionType);
     }
@@ -150,7 +150,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $stepType
      */
-    public function setStepType(string $stepType = null)
+    public function setStepType(?string $stepType = null)
     {
         $this->setProperty('stepType', $stepType);
     }
@@ -166,7 +166,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param bool $isDraft
      */
-    public function setIsDraft(bool $isDraft = null)
+    public function setIsDraft(?bool $isDraft = null)
     {
         $this->setProperty('isDraft', $isDraft);
     }

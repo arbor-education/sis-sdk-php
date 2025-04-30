@@ -86,7 +86,7 @@ class EmailSender extends ModelBase
     /**
      * @param string $senderType
      */
-    public function setSenderType(string $senderType = null)
+    public function setSenderType(?string $senderType = null)
     {
         $this->setProperty('senderType', $senderType);
     }
@@ -102,7 +102,7 @@ class EmailSender extends ModelBase
     /**
      * @param string $senderName
      */
-    public function setSenderName(string $senderName = null)
+    public function setSenderName(?string $senderName = null)
     {
         $this->setProperty('senderName', $senderName);
     }
@@ -118,7 +118,7 @@ class EmailSender extends ModelBase
     /**
      * @param string $senderRawEmail
      */
-    public function setSenderRawEmail(string $senderRawEmail = null)
+    public function setSenderRawEmail(?string $senderRawEmail = null)
     {
         $this->setProperty('senderRawEmail', $senderRawEmail);
     }
@@ -166,7 +166,7 @@ class EmailSender extends ModelBase
     /**
      * @param int $senderIndex
      */
-    public function setSenderIndex(int $senderIndex = null)
+    public function setSenderIndex(?int $senderIndex = null)
     {
         $this->setProperty('senderIndex', $senderIndex);
     }

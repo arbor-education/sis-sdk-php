@@ -68,7 +68,7 @@ class Title extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class Title extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class Title extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -116,7 +116,7 @@ class Title extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -132,7 +132,7 @@ class Title extends ModelBase
     /**
      * @param bool $isMale
      */
-    public function setIsMale(bool $isMale = null)
+    public function setIsMale(?bool $isMale = null)
     {
         $this->setProperty('isMale', $isMale);
     }
@@ -148,7 +148,7 @@ class Title extends ModelBase
     /**
      * @param bool $isFemale
      */
-    public function setIsFemale(bool $isFemale = null)
+    public function setIsFemale(?bool $isFemale = null)
     {
         $this->setProperty('isFemale', $isFemale);
     }

@@ -102,7 +102,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param string $privateKey
      */
-    public function setPrivateKey(string $privateKey = null)
+    public function setPrivateKey(?string $privateKey = null)
     {
         $this->setProperty('privateKey', $privateKey);
     }
@@ -118,7 +118,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param string $publicKey
      */
-    public function setPublicKey(string $publicKey = null)
+    public function setPublicKey(?string $publicKey = null)
     {
         $this->setProperty('publicKey', $publicKey);
     }
@@ -166,7 +166,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param int $lastSequenceNumber
      */
-    public function setLastSequenceNumber(int $lastSequenceNumber = null)
+    public function setLastSequenceNumber(?int $lastSequenceNumber = null)
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }

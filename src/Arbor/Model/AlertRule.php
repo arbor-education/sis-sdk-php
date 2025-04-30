@@ -58,7 +58,7 @@ class AlertRule extends ModelBase
     /**
      * @param string $triggerEventType
      */
-    public function setTriggerEventType(string $triggerEventType = null)
+    public function setTriggerEventType(?string $triggerEventType = null)
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }

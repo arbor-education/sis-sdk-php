@@ -136,7 +136,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure(string $tenure = null)
+    public function setTenure(?string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -152,7 +152,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $vacancyTemporarilyFilled
      */
-    public function setVacancyTemporarilyFilled(string $vacancyTemporarilyFilled = null)
+    public function setVacancyTemporarilyFilled(?string $vacancyTemporarilyFilled = null)
     {
         $this->setProperty('vacancyTemporarilyFilled', $vacancyTemporarilyFilled);
     }
@@ -168,7 +168,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $vacancyAdvertised
      */
-    public function setVacancyAdvertised(string $vacancyAdvertised = null)
+    public function setVacancyAdvertised(?string $vacancyAdvertised = null)
     {
         $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }

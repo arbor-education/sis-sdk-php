@@ -94,7 +94,7 @@ class UserDefinedRecord extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue(string $value = null)
+    public function setValue(?string $value = null)
     {
         $this->setProperty('value', $value);
     }

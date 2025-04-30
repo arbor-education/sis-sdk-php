@@ -78,7 +78,7 @@ class LearningSupportFunding extends ModelBase
     /**
      * @param int $learningSupportFundingCode
      */
-    public function setLearningSupportFundingCode(int $learningSupportFundingCode = null)
+    public function setLearningSupportFundingCode(?int $learningSupportFundingCode = null)
     {
         $this->setProperty('learningSupportFundingCode', $learningSupportFundingCode);
     }

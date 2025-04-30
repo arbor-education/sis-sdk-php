@@ -130,7 +130,7 @@ class Probation extends ModelBase
     /**
      * @param string $probationDecision
      */
-    public function setProbationDecision(string $probationDecision = null)
+    public function setProbationDecision(?string $probationDecision = null)
     {
         $this->setProperty('probationDecision', $probationDecision);
     }

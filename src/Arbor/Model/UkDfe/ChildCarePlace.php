@@ -88,7 +88,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -104,7 +104,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareSignposting
      */
-    public function setChildCareSignposting(string $childCareSignposting = null)
+    public function setChildCareSignposting(?string $childCareSignposting = null)
     {
         $this->setProperty('childCareSignposting', $childCareSignposting);
     }
@@ -120,7 +120,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareType
      */
-    public function setChildCareType(string $childCareType = null)
+    public function setChildCareType(?string $childCareType = null)
     {
         $this->setProperty('childCareType', $childCareType);
     }
@@ -136,7 +136,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareOpeningTime
      */
-    public function setChildCareOpeningTime(string $childCareOpeningTime = null)
+    public function setChildCareOpeningTime(?string $childCareOpeningTime = null)
     {
         $this->setProperty('childCareOpeningTime', $childCareOpeningTime);
     }
@@ -152,7 +152,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareClosingTime
      */
-    public function setChildCareClosingTime(string $childCareClosingTime = null)
+    public function setChildCareClosingTime(?string $childCareClosingTime = null)
     {
         $this->setProperty('childCareClosingTime', $childCareClosingTime);
     }
@@ -168,7 +168,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param int $childCareNumberOfPlaces
      */
-    public function setChildCareNumberOfPlaces(int $childCareNumberOfPlaces = null)
+    public function setChildCareNumberOfPlaces(?int $childCareNumberOfPlaces = null)
     {
         $this->setProperty('childCareNumberOfPlaces', $childCareNumberOfPlaces);
     }
@@ -184,7 +184,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareProvider
      */
-    public function setChildCareProvider(string $childCareProvider = null)
+    public function setChildCareProvider(?string $childCareProvider = null)
     {
         $this->setProperty('childCareProvider', $childCareProvider);
     }
@@ -200,7 +200,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareOtherSchools
      */
-    public function setChildCareOtherSchools(string $childCareOtherSchools = null)
+    public function setChildCareOtherSchools(?string $childCareOtherSchools = null)
     {
         $this->setProperty('childCareOtherSchools', $childCareOtherSchools);
     }
@@ -216,7 +216,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param int $childCareWeeksOpen
      */
-    public function setChildCareWeeksOpen(int $childCareWeeksOpen = null)
+    public function setChildCareWeeksOpen(?int $childCareWeeksOpen = null)
     {
         $this->setProperty('childCareWeeksOpen', $childCareWeeksOpen);
     }
@@ -232,7 +232,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareLocation
      */
-    public function setChildCareLocation(string $childCareLocation = null)
+    public function setChildCareLocation(?string $childCareLocation = null)
     {
         $this->setProperty('childCareLocation', $childCareLocation);
     }
@@ -248,7 +248,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCarePlacesAvailability
      */
-    public function setChildCarePlacesAvailability(string $childCarePlacesAvailability = null)
+    public function setChildCarePlacesAvailability(?string $childCarePlacesAvailability = null)
     {
         $this->setProperty('childCarePlacesAvailability', $childCarePlacesAvailability);
     }
@@ -264,7 +264,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareBefore8Am
      */
-    public function setChildCareBefore8Am(string $childCareBefore8Am = null)
+    public function setChildCareBefore8Am(?string $childCareBefore8Am = null)
     {
         $this->setProperty('childCareBefore8Am', $childCareBefore8Am);
     }
@@ -280,7 +280,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareCover8AmTo6Pm
      */
-    public function setChildCareCover8AmTo6Pm(string $childCareCover8AmTo6Pm = null)
+    public function setChildCareCover8AmTo6Pm(?string $childCareCover8AmTo6Pm = null)
     {
         $this->setProperty('childCareCover8AmTo6Pm', $childCareCover8AmTo6Pm);
     }
@@ -296,7 +296,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareUntil6Pm
      */
-    public function setChildCareUntil6Pm(string $childCareUntil6Pm = null)
+    public function setChildCareUntil6Pm(?string $childCareUntil6Pm = null)
     {
         $this->setProperty('childCareUntil6Pm', $childCareUntil6Pm);
     }
@@ -312,7 +312,7 @@ class ChildCarePlace extends ModelBase
     /**
      * @param string $childCareHolidayProviderHours
      */
-    public function setChildCareHolidayProviderHours(string $childCareHolidayProviderHours = null)
+    public function setChildCareHolidayProviderHours(?string $childCareHolidayProviderHours = null)
     {
         $this->setProperty('childCareHolidayProviderHours', $childCareHolidayProviderHours);
     }

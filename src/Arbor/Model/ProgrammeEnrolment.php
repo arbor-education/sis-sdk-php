@@ -106,7 +106,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $mainProgramme
      */
-    public function setMainProgramme(bool $mainProgramme = null)
+    public function setMainProgramme(?bool $mainProgramme = null)
     {
         $this->setProperty('mainProgramme', $mainProgramme);
     }
@@ -186,7 +186,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $completionStatus
      */
-    public function setCompletionStatus(string $completionStatus = null)
+    public function setCompletionStatus(?string $completionStatus = null)
     {
         $this->setProperty('completionStatus', $completionStatus);
     }

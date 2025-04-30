@@ -90,7 +90,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -106,7 +106,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $firstPageHeaderHtml
      */
-    public function setFirstPageHeaderHtml(string $firstPageHeaderHtml = null)
+    public function setFirstPageHeaderHtml(?string $firstPageHeaderHtml = null)
     {
         $this->setProperty('firstPageHeaderHtml', $firstPageHeaderHtml);
     }
@@ -122,7 +122,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $firstPageHeaderHeight
      */
-    public function setFirstPageHeaderHeight(float $firstPageHeaderHeight = null)
+    public function setFirstPageHeaderHeight(?float $firstPageHeaderHeight = null)
     {
         $this->setProperty('firstPageHeaderHeight', $firstPageHeaderHeight);
     }
@@ -138,7 +138,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $firstPageFooterHtml
      */
-    public function setFirstPageFooterHtml(string $firstPageFooterHtml = null)
+    public function setFirstPageFooterHtml(?string $firstPageFooterHtml = null)
     {
         $this->setProperty('firstPageFooterHtml', $firstPageFooterHtml);
     }
@@ -154,7 +154,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $firstPageFooterHeight
      */
-    public function setFirstPageFooterHeight(float $firstPageFooterHeight = null)
+    public function setFirstPageFooterHeight(?float $firstPageFooterHeight = null)
     {
         $this->setProperty('firstPageFooterHeight', $firstPageFooterHeight);
     }
@@ -170,7 +170,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $otherPagesHeaderHtml
      */
-    public function setOtherPagesHeaderHtml(string $otherPagesHeaderHtml = null)
+    public function setOtherPagesHeaderHtml(?string $otherPagesHeaderHtml = null)
     {
         $this->setProperty('otherPagesHeaderHtml', $otherPagesHeaderHtml);
     }
@@ -186,7 +186,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $otherPagesHeaderHeight
      */
-    public function setOtherPagesHeaderHeight(float $otherPagesHeaderHeight = null)
+    public function setOtherPagesHeaderHeight(?float $otherPagesHeaderHeight = null)
     {
         $this->setProperty('otherPagesHeaderHeight', $otherPagesHeaderHeight);
     }
@@ -202,7 +202,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $otherPagesFooterHtml
      */
-    public function setOtherPagesFooterHtml(string $otherPagesFooterHtml = null)
+    public function setOtherPagesFooterHtml(?string $otherPagesFooterHtml = null)
     {
         $this->setProperty('otherPagesFooterHtml', $otherPagesFooterHtml);
     }
@@ -218,7 +218,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $otherPagesFooterHeight
      */
-    public function setOtherPagesFooterHeight(float $otherPagesFooterHeight = null)
+    public function setOtherPagesFooterHeight(?float $otherPagesFooterHeight = null)
     {
         $this->setProperty('otherPagesFooterHeight', $otherPagesFooterHeight);
     }
@@ -234,7 +234,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $leftMargin
      */
-    public function setLeftMargin(float $leftMargin = null)
+    public function setLeftMargin(?float $leftMargin = null)
     {
         $this->setProperty('leftMargin', $leftMargin);
     }
@@ -250,7 +250,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $rightMargin
      */
-    public function setRightMargin(float $rightMargin = null)
+    public function setRightMargin(?float $rightMargin = null)
     {
         $this->setProperty('rightMargin', $rightMargin);
     }
@@ -266,7 +266,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $paperSize
      */
-    public function setPaperSize(string $paperSize = null)
+    public function setPaperSize(?string $paperSize = null)
     {
         $this->setProperty('paperSize', $paperSize);
     }
@@ -282,7 +282,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $orientation
      */
-    public function setOrientation(string $orientation = null)
+    public function setOrientation(?string $orientation = null)
     {
         $this->setProperty('orientation', $orientation);
     }
@@ -298,7 +298,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $defaultFontFamily
      */
-    public function setDefaultFontFamily(string $defaultFontFamily = null)
+    public function setDefaultFontFamily(?string $defaultFontFamily = null)
     {
         $this->setProperty('defaultFontFamily', $defaultFontFamily);
     }
@@ -314,7 +314,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param float $defaultFontSize
      */
-    public function setDefaultFontSize(float $defaultFontSize = null)
+    public function setDefaultFontSize(?float $defaultFontSize = null)
     {
         $this->setProperty('defaultFontSize', $defaultFontSize);
     }
@@ -330,7 +330,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param string $showAddressEnvelopeSize
      */
-    public function setShowAddressEnvelopeSize(string $showAddressEnvelopeSize = null)
+    public function setShowAddressEnvelopeSize(?string $showAddressEnvelopeSize = null)
     {
         $this->setProperty('showAddressEnvelopeSize', $showAddressEnvelopeSize);
     }
@@ -346,7 +346,7 @@ class DocumentLayout extends ModelBase
     /**
      * @param bool $archived
      */
-    public function setArchived(bool $archived = null)
+    public function setArchived(?bool $archived = null)
     {
         $this->setProperty('archived', $archived);
     }

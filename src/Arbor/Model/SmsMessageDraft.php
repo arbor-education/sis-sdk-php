@@ -92,7 +92,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText(string $messageText = null)
+    public function setMessageText(?string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -124,7 +124,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(?bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -140,7 +140,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(?bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }

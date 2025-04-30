@@ -108,7 +108,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $messageType
      */
-    public function setMessageType(string $messageType = null)
+    public function setMessageType(?string $messageType = null)
     {
         $this->setProperty('messageType', $messageType);
     }
@@ -124,7 +124,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $senderNumber
      */
-    public function setSenderNumber(string $senderNumber = null)
+    public function setSenderNumber(?string $senderNumber = null)
     {
         $this->setProperty('senderNumber', $senderNumber);
     }
@@ -156,7 +156,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $recipientNumber
      */
-    public function setRecipientNumber(string $recipientNumber = null)
+    public function setRecipientNumber(?string $recipientNumber = null)
     {
         $this->setProperty('recipientNumber', $recipientNumber);
     }
@@ -204,7 +204,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText(string $messageText = null)
+    public function setMessageText(?string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -284,7 +284,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $totalCost
      */
-    public function setTotalCost(string $totalCost = null)
+    public function setTotalCost(?string $totalCost = null)
     {
         $this->setProperty('totalCost', $totalCost);
     }
@@ -300,7 +300,7 @@ class SmsMessage extends ModelBase
     /**
      * @param float $creditsUsed
      */
-    public function setCreditsUsed(float $creditsUsed = null)
+    public function setCreditsUsed(?float $creditsUsed = null)
     {
         $this->setProperty('creditsUsed', $creditsUsed);
     }
@@ -316,7 +316,7 @@ class SmsMessage extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree(bool $free = null)
+    public function setFree(?bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -332,7 +332,7 @@ class SmsMessage extends ModelBase
     /**
      * @param int $messageParts
      */
-    public function setMessageParts(int $messageParts = null)
+    public function setMessageParts(?int $messageParts = null)
     {
         $this->setProperty('messageParts', $messageParts);
     }
@@ -348,7 +348,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $recipientNetworkCode
      */
-    public function setRecipientNetworkCode(string $recipientNetworkCode = null)
+    public function setRecipientNetworkCode(?string $recipientNetworkCode = null)
     {
         $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }

@@ -112,7 +112,7 @@ class BehaviourFollowUp extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

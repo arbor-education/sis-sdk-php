@@ -80,7 +80,7 @@ class NewReportCardText extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -96,7 +96,7 @@ class NewReportCardText extends ModelBase
     /**
      * @param string $position
      */
-    public function setPosition(string $position = null)
+    public function setPosition(?string $position = null)
     {
         $this->setProperty('position', $position);
     }
@@ -112,7 +112,7 @@ class NewReportCardText extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody(string $body = null)
+    public function setBody(?string $body = null)
     {
         $this->setProperty('body', $body);
     }

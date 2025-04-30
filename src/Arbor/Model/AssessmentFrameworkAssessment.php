@@ -78,7 +78,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted(int $stepsCompleted = null)
+    public function setStepsCompleted(?int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -94,7 +94,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param bool $setupCompleted
      */
-    public function setSetupCompleted(bool $setupCompleted = null)
+    public function setSetupCompleted(?bool $setupCompleted = null)
     {
         $this->setProperty('setupCompleted', $setupCompleted);
     }

@@ -134,7 +134,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -150,7 +150,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param int $severity
      */
-    public function setSeverity(int $severity = null)
+    public function setSeverity(?int $severity = null)
     {
         $this->setProperty('severity', $severity);
     }

@@ -76,7 +76,7 @@ class TimetablerImportResultError extends ModelBase
     /**
      * @param string $errorMessage
      */
-    public function setErrorMessage(string $errorMessage = null)
+    public function setErrorMessage(?string $errorMessage = null)
     {
         $this->setProperty('errorMessage', $errorMessage);
     }

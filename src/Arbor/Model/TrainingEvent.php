@@ -102,7 +102,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -134,7 +134,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param string $trainingEventTitle
      */
-    public function setTrainingEventTitle(string $trainingEventTitle = null)
+    public function setTrainingEventTitle(?string $trainingEventTitle = null)
     {
         $this->setProperty('trainingEventTitle', $trainingEventTitle);
     }

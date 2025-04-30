@@ -94,7 +94,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param bool $isMet
      */
-    public function setIsMet(bool $isMet = null)
+    public function setIsMet(?bool $isMet = null)
     {
         $this->setProperty('isMet', $isMet);
     }

@@ -76,7 +76,7 @@ class Subject extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class Subject extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class Subject extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -124,7 +124,7 @@ class Subject extends ModelBase
     /**
      * @param string $subjectName
      */
-    public function setSubjectName(string $subjectName = null)
+    public function setSubjectName(?string $subjectName = null)
     {
         $this->setProperty('subjectName', $subjectName);
     }
@@ -156,7 +156,7 @@ class Subject extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(string $exportCode = null)
+    public function setExportCode(?string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -172,7 +172,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInSwfOnly
      */
-    public function setUsedInSwfOnly(bool $usedInSwfOnly = null)
+    public function setUsedInSwfOnly(?bool $usedInSwfOnly = null)
     {
         $this->setProperty('usedInSwfOnly', $usedInSwfOnly);
     }
@@ -188,7 +188,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInCbdsOnly
      */
-    public function setUsedInCbdsOnly(bool $usedInCbdsOnly = null)
+    public function setUsedInCbdsOnly(?bool $usedInCbdsOnly = null)
     {
         $this->setProperty('usedInCbdsOnly', $usedInCbdsOnly);
     }
@@ -204,7 +204,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00115
      */
-    public function setD00115(string $d00115 = null)
+    public function setD00115(?string $d00115 = null)
     {
         $this->setProperty('d00115', $d00115);
     }
@@ -220,7 +220,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00220
      */
-    public function setD00220(string $d00220 = null)
+    public function setD00220(?string $d00220 = null)
     {
         $this->setProperty('d00220', $d00220);
     }

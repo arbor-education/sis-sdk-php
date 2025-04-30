@@ -68,7 +68,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -132,7 +132,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param string $schemeIdentifier
      */
-    public function setSchemeIdentifier(string $schemeIdentifier = null)
+    public function setSchemeIdentifier(?string $schemeIdentifier = null)
     {
         $this->setProperty('schemeIdentifier', $schemeIdentifier);
     }
@@ -148,7 +148,7 @@ class QualificationScheme extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }

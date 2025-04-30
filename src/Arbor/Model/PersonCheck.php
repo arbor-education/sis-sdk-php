@@ -174,7 +174,7 @@ class PersonCheck extends ModelBase
     /**
      * @param string $referenceNumber
      */
-    public function setReferenceNumber(string $referenceNumber = null)
+    public function setReferenceNumber(?string $referenceNumber = null)
     {
         $this->setProperty('referenceNumber', $referenceNumber);
     }
@@ -238,7 +238,7 @@ class PersonCheck extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

@@ -116,7 +116,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalFirstName
      */
-    public function setLegalFirstName(string $legalFirstName = null)
+    public function setLegalFirstName(?string $legalFirstName = null)
     {
         $this->setProperty('legalFirstName', $legalFirstName);
     }
@@ -132,7 +132,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalMiddleNames
      */
-    public function setLegalMiddleNames(string $legalMiddleNames = null)
+    public function setLegalMiddleNames(?string $legalMiddleNames = null)
     {
         $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
@@ -148,7 +148,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalLastName
      */
-    public function setLegalLastName(string $legalLastName = null)
+    public function setLegalLastName(?string $legalLastName = null)
     {
         $this->setProperty('legalLastName', $legalLastName);
     }

@@ -108,7 +108,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -124,7 +124,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -140,7 +140,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -156,7 +156,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -172,7 +172,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $examples
      */
-    public function setExamples(string $examples = null)
+    public function setExamples(?string $examples = null)
     {
         $this->setProperty('examples', $examples);
     }
@@ -188,7 +188,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param float $weighting
      */
-    public function setWeighting(float $weighting = null)
+    public function setWeighting(?float $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }
@@ -204,7 +204,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param bool $requirementForHigher
      */
-    public function setRequirementForHigher(bool $requirementForHigher = null)
+    public function setRequirementForHigher(?bool $requirementForHigher = null)
     {
         $this->setProperty('requirementForHigher', $requirementForHigher);
     }
@@ -220,7 +220,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(int $order = null)
+    public function setOrder(?int $order = null)
     {
         $this->setProperty('order', $order);
     }

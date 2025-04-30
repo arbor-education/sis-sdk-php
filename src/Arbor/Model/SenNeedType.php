@@ -70,7 +70,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class SenNeedType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class SenNeedType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(string $label = null)
+    public function setLabel(?string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -134,7 +134,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $mainExportCode
      */
-    public function setMainExportCode(string $mainExportCode = null)
+    public function setMainExportCode(?string $mainExportCode = null)
     {
         $this->setProperty('mainExportCode', $mainExportCode);
     }
@@ -150,7 +150,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $d00237
      */
-    public function setD00237(string $d00237 = null)
+    public function setD00237(?string $d00237 = null)
     {
         $this->setProperty('d00237', $d00237);
     }
@@ -166,7 +166,7 @@ class SenNeedType extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(string $exportCode = null)
+    public function setExportCode(?string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }

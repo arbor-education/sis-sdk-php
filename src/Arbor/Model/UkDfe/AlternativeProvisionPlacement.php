@@ -173,7 +173,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param string $settingType
      */
-    public function setSettingType(string $settingType = null)
+    public function setSettingType(?string $settingType = null)
     {
         $this->setProperty('settingType', $settingType);
     }
@@ -189,7 +189,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param string $attendancePattern
      */
-    public function setAttendancePattern(string $attendancePattern = null)
+    public function setAttendancePattern(?string $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
@@ -205,7 +205,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param int $sessionsPerWeek
      */
-    public function setSessionsPerWeek(int $sessionsPerWeek = null)
+    public function setSessionsPerWeek(?int $sessionsPerWeek = null)
     {
         $this->setProperty('sessionsPerWeek', $sessionsPerWeek);
     }

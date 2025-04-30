@@ -108,7 +108,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $teachers
      */
-    public function setTeachers(int $teachers = null)
+    public function setTeachers(?int $teachers = null)
     {
         $this->setProperty('teachers', $teachers);
     }
@@ -124,7 +124,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $nonTeachers
      */
-    public function setNonTeachers(int $nonTeachers = null)
+    public function setNonTeachers(?int $nonTeachers = null)
     {
         $this->setProperty('nonTeachers', $nonTeachers);
     }
@@ -140,7 +140,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $ppaTeachers
      */
-    public function setPpaTeachers(int $ppaTeachers = null)
+    public function setPpaTeachers(?int $ppaTeachers = null)
     {
         $this->setProperty('ppaTeachers', $ppaTeachers);
     }
@@ -156,7 +156,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param string $ascActivity
      */
-    public function setAscActivity(string $ascActivity = null)
+    public function setAscActivity(?string $ascActivity = null)
     {
         $this->setProperty('ascActivity', $ascActivity);
     }
@@ -172,7 +172,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $homePupils
      */
-    public function setHomePupils(int $homePupils = null)
+    public function setHomePupils(?int $homePupils = null)
     {
         $this->setProperty('homePupils', $homePupils);
     }
@@ -188,7 +188,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $guestPupils
      */
-    public function setGuestPupils(int $guestPupils = null)
+    public function setGuestPupils(?int $guestPupils = null)
     {
         $this->setProperty('guestPupils', $guestPupils);
     }
@@ -204,7 +204,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param string $infantPupilExceptions
      */
-    public function setInfantPupilExceptions(string $infantPupilExceptions = null)
+    public function setInfantPupilExceptions(?string $infantPupilExceptions = null)
     {
         $this->setProperty('infantPupilExceptions', $infantPupilExceptions);
     }

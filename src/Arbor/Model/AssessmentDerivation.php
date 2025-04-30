@@ -72,7 +72,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -184,7 +184,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param string $calculatorClass
      */
-    public function setCalculatorClass(string $calculatorClass = null)
+    public function setCalculatorClass(?string $calculatorClass = null)
     {
         $this->setProperty('calculatorClass', $calculatorClass);
     }

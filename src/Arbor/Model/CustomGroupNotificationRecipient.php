@@ -95,7 +95,7 @@ class CustomGroupNotificationRecipient extends ModelBase
     /**
      * @param string $staffType
      */
-    public function setStaffType(string $staffType = null)
+    public function setStaffType(?string $staffType = null)
     {
         $this->setProperty('staffType', $staffType);
     }

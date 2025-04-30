@@ -68,7 +68,7 @@ class GenderIdentity extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class GenderIdentity extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class GenderIdentity extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -116,7 +116,7 @@ class GenderIdentity extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -132,7 +132,7 @@ class GenderIdentity extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName(string $longName = null)
+    public function setLongName(?string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -148,7 +148,7 @@ class GenderIdentity extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(string $exportCode = null)
+    public function setExportCode(?string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }

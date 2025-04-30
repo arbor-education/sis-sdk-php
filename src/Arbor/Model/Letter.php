@@ -142,7 +142,7 @@ class Letter extends ModelBase
     /**
      * @param string $senderName
      */
-    public function setSenderName(string $senderName = null)
+    public function setSenderName(?string $senderName = null)
     {
         $this->setProperty('senderName', $senderName);
     }
@@ -190,7 +190,7 @@ class Letter extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -222,7 +222,7 @@ class Letter extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

@@ -64,7 +64,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $d00033
      */
-    public function setD00033(string $d00033 = null)
+    public function setD00033(?string $d00033 = null)
     {
         $this->setProperty('d00033', $d00033);
     }
@@ -80,7 +80,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $d00034
      */
-    public function setD00034(string $d00034 = null)
+    public function setD00034(?string $d00034 = null)
     {
         $this->setProperty('d00034', $d00034);
     }
@@ -96,7 +96,7 @@ class GuardianRelationshipType extends ModelBase
     /**
      * @param string $ctfExportCode
      */
-    public function setCtfExportCode(string $ctfExportCode = null)
+    public function setCtfExportCode(?string $ctfExportCode = null)
     {
         $this->setProperty('ctfExportCode', $ctfExportCode);
     }

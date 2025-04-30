@@ -82,7 +82,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $schoolSexMix
      */
-    public function setSchoolSexMix(string $schoolSexMix = null)
+    public function setSchoolSexMix(?string $schoolSexMix = null)
     {
         $this->setProperty('schoolSexMix', $schoolSexMix);
     }
@@ -162,7 +162,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $establishmentNumber
      */
-    public function setEstablishmentNumber(string $establishmentNumber = null)
+    public function setEstablishmentNumber(?string $establishmentNumber = null)
     {
         $this->setProperty('establishmentNumber', $establishmentNumber);
     }
@@ -178,7 +178,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $urn
      */
-    public function setUrn(string $urn = null)
+    public function setUrn(?string $urn = null)
     {
         $this->setProperty('urn', $urn);
     }
@@ -194,7 +194,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $ukprn
      */
-    public function setUkprn(string $ukprn = null)
+    public function setUkprn(?string $ukprn = null)
     {
         $this->setProperty('ukprn', $ukprn);
     }
@@ -210,7 +210,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $openPlan
      */
-    public function setOpenPlan(bool $openPlan = null)
+    public function setOpenPlan(?bool $openPlan = null)
     {
         $this->setProperty('openPlan', $openPlan);
     }
@@ -226,7 +226,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $specialSchoolAccommodation
      */
-    public function setSpecialSchoolAccommodation(string $specialSchoolAccommodation = null)
+    public function setSpecialSchoolAccommodation(?string $specialSchoolAccommodation = null)
     {
         $this->setProperty('specialSchoolAccommodation', $specialSchoolAccommodation);
     }
@@ -242,7 +242,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $isOptedOutOfHrPayrollSla
      */
-    public function setIsOptedOutOfHrPayrollSla(bool $isOptedOutOfHrPayrollSla = null)
+    public function setIsOptedOutOfHrPayrollSla(?bool $isOptedOutOfHrPayrollSla = null)
     {
         $this->setProperty('isOptedOutOfHrPayrollSla', $isOptedOutOfHrPayrollSla);
     }
@@ -258,7 +258,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $federatedGoverningBodyCode
      */
-    public function setFederatedGoverningBodyCode(string $federatedGoverningBodyCode = null)
+    public function setFederatedGoverningBodyCode(?string $federatedGoverningBodyCode = null)
     {
         $this->setProperty('federatedGoverningBodyCode', $federatedGoverningBodyCode);
     }

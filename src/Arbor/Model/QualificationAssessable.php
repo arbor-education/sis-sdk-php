@@ -72,7 +72,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param string $assessableIdentifier
      */
-    public function setAssessableIdentifier(string $assessableIdentifier = null)
+    public function setAssessableIdentifier(?string $assessableIdentifier = null)
     {
         $this->setProperty('assessableIdentifier', $assessableIdentifier);
     }
@@ -152,7 +152,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -168,7 +168,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param string $assessmentMethodType
      */
-    public function setAssessmentMethodType(string $assessmentMethodType = null)
+    public function setAssessmentMethodType(?string $assessmentMethodType = null)
     {
         $this->setProperty('assessmentMethodType', $assessmentMethodType);
     }
@@ -184,7 +184,7 @@ class QualificationAssessable extends ModelBase
     /**
      * @param bool $centerAssessed
      */
-    public function setCenterAssessed(bool $centerAssessed = null)
+    public function setCenterAssessed(?bool $centerAssessed = null)
     {
         $this->setProperty('centerAssessed', $centerAssessed);
     }

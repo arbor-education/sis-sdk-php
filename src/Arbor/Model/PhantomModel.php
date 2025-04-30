@@ -62,7 +62,7 @@ class PhantomModel extends ModelBase
     /**
      * @param int $entityType
      */
-    public function setEntityType(int $entityType = null)
+    public function setEntityType(?int $entityType = null)
     {
         $this->setProperty('entityType', $entityType);
     }

@@ -134,7 +134,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $accountName
      */
-    public function setAccountName(string $accountName = null)
+    public function setAccountName(?string $accountName = null)
     {
         $this->setProperty('accountName', $accountName);
     }
@@ -150,7 +150,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $accountNumber
      */
-    public function setAccountNumber(string $accountNumber = null)
+    public function setAccountNumber(?string $accountNumber = null)
     {
         $this->setProperty('accountNumber', $accountNumber);
     }
@@ -166,7 +166,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $sortCode
      */
-    public function setSortCode(string $sortCode = null)
+    public function setSortCode(?string $sortCode = null)
     {
         $this->setProperty('sortCode', $sortCode);
     }

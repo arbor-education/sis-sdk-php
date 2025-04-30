@@ -90,7 +90,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(string $provider = null)
+    public function setProvider(?string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -106,7 +106,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $model
      */
-    public function setModel(string $model = null)
+    public function setModel(?string $model = null)
     {
         $this->setProperty('model', $model);
     }
@@ -122,7 +122,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $feature
      */
-    public function setFeature(string $feature = null)
+    public function setFeature(?string $feature = null)
     {
         $this->setProperty('feature', $feature);
     }
@@ -138,7 +138,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $userInput
      */
-    public function setUserInput(string $userInput = null)
+    public function setUserInput(?string $userInput = null)
     {
         $this->setProperty('userInput', $userInput);
     }
@@ -170,7 +170,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $requestPayload
      */
-    public function setRequestPayload(string $requestPayload = null)
+    public function setRequestPayload(?string $requestPayload = null)
     {
         $this->setProperty('requestPayload', $requestPayload);
     }
@@ -186,7 +186,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $responsePayload
      */
-    public function setResponsePayload(string $responsePayload = null)
+    public function setResponsePayload(?string $responsePayload = null)
     {
         $this->setProperty('responsePayload', $responsePayload);
     }
@@ -202,7 +202,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $cleanedResponse
      */
-    public function setCleanedResponse(string $cleanedResponse = null)
+    public function setCleanedResponse(?string $cleanedResponse = null)
     {
         $this->setProperty('cleanedResponse', $cleanedResponse);
     }
@@ -218,7 +218,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $responseIdentifier
      */
-    public function setResponseIdentifier(string $responseIdentifier = null)
+    public function setResponseIdentifier(?string $responseIdentifier = null)
     {
         $this->setProperty('responseIdentifier', $responseIdentifier);
     }
@@ -234,7 +234,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $parentResponseIdentifier
      */
-    public function setParentResponseIdentifier(string $parentResponseIdentifier = null)
+    public function setParentResponseIdentifier(?string $parentResponseIdentifier = null)
     {
         $this->setProperty('parentResponseIdentifier', $parentResponseIdentifier);
     }
@@ -250,7 +250,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $costUnit
      */
-    public function setCostUnit(string $costUnit = null)
+    public function setCostUnit(?string $costUnit = null)
     {
         $this->setProperty('costUnit', $costUnit);
     }
@@ -266,7 +266,7 @@ class AiRequest extends ModelBase
     /**
      * @param float $cost
      */
-    public function setCost(float $cost = null)
+    public function setCost(?float $cost = null)
     {
         $this->setProperty('cost', $cost);
     }
@@ -282,7 +282,7 @@ class AiRequest extends ModelBase
     /**
      * @param int $promptTokens
      */
-    public function setPromptTokens(int $promptTokens = null)
+    public function setPromptTokens(?int $promptTokens = null)
     {
         $this->setProperty('promptTokens', $promptTokens);
     }
@@ -298,7 +298,7 @@ class AiRequest extends ModelBase
     /**
      * @param int $completionTokens
      */
-    public function setCompletionTokens(int $completionTokens = null)
+    public function setCompletionTokens(?int $completionTokens = null)
     {
         $this->setProperty('completionTokens', $completionTokens);
     }
@@ -314,7 +314,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $customerRating
      */
-    public function setCustomerRating(string $customerRating = null)
+    public function setCustomerRating(?string $customerRating = null)
     {
         $this->setProperty('customerRating', $customerRating);
     }
@@ -330,7 +330,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $customerResponse
      */
-    public function setCustomerResponse(string $customerResponse = null)
+    public function setCustomerResponse(?string $customerResponse = null)
     {
         $this->setProperty('customerResponse', $customerResponse);
     }
@@ -346,7 +346,7 @@ class AiRequest extends ModelBase
     /**
      * @param string $log
      */
-    public function setLog(string $log = null)
+    public function setLog(?string $log = null)
     {
         $this->setProperty('log', $log);
     }

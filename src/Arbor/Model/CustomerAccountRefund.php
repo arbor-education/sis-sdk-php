@@ -102,7 +102,7 @@ class CustomerAccountRefund extends ModelBase
     /**
      * @param string $refund
      */
-    public function setRefund(string $refund = null)
+    public function setRefund(?string $refund = null)
     {
         $this->setProperty('refund', $refund);
     }

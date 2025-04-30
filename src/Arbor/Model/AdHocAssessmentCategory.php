@@ -58,7 +58,7 @@ class AdHocAssessmentCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName(string $categoryName = null)
+    public function setCategoryName(?string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }

@@ -82,7 +82,7 @@ class OutboundLetterRecipient extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -130,7 +130,7 @@ class OutboundLetterRecipient extends ModelBase
     /**
      * @param int $recipientIndex
      */
-    public function setRecipientIndex(int $recipientIndex = null)
+    public function setRecipientIndex(?int $recipientIndex = null)
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }

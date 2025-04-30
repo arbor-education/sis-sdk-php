@@ -96,7 +96,7 @@ class InHouseExam extends ModelBase
     /**
      * @param string $duration
      */
-    public function setDuration(string $duration = null)
+    public function setDuration(?string $duration = null)
     {
         $this->setProperty('duration', $duration);
     }
@@ -112,7 +112,7 @@ class InHouseExam extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

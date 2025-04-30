@@ -98,7 +98,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $deletedRelatedEntityName
      */
-    public function setDeletedRelatedEntityName(string $deletedRelatedEntityName = null)
+    public function setDeletedRelatedEntityName(?string $deletedRelatedEntityName = null)
     {
         $this->setProperty('deletedRelatedEntityName', $deletedRelatedEntityName);
     }
@@ -178,7 +178,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer1Proportion
      */
-    public function setBillPayer1Proportion(float $billPayer1Proportion = null)
+    public function setBillPayer1Proportion(?float $billPayer1Proportion = null)
     {
         $this->setProperty('billPayer1Proportion', $billPayer1Proportion);
     }
@@ -194,7 +194,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer2Proportion
      */
-    public function setBillPayer2Proportion(float $billPayer2Proportion = null)
+    public function setBillPayer2Proportion(?float $billPayer2Proportion = null)
     {
         $this->setProperty('billPayer2Proportion', $billPayer2Proportion);
     }
@@ -210,7 +210,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer3Proportion
      */
-    public function setBillPayer3Proportion(float $billPayer3Proportion = null)
+    public function setBillPayer3Proportion(?float $billPayer3Proportion = null)
     {
         $this->setProperty('billPayer3Proportion', $billPayer3Proportion);
     }
@@ -226,7 +226,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $accountBalance
      */
-    public function setAccountBalance(string $accountBalance = null)
+    public function setAccountBalance(?string $accountBalance = null)
     {
         $this->setProperty('accountBalance', $accountBalance);
     }
@@ -242,7 +242,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $creditLimit
      */
-    public function setCreditLimit(string $creditLimit = null)
+    public function setCreditLimit(?string $creditLimit = null)
     {
         $this->setProperty('creditLimit', $creditLimit);
     }

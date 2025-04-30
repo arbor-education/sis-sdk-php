@@ -76,7 +76,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class ConsentType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -124,7 +124,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $consentTypeName
      */
-    public function setConsentTypeName(string $consentTypeName = null)
+    public function setConsentTypeName(?string $consentTypeName = null)
     {
         $this->setProperty('consentTypeName', $consentTypeName);
     }
@@ -140,7 +140,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -156,7 +156,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $defaultDescription
      */
-    public function setDefaultDescription(string $defaultDescription = null)
+    public function setDefaultDescription(?string $defaultDescription = null)
     {
         $this->setProperty('defaultDescription', $defaultDescription);
     }
@@ -172,7 +172,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $autoRequestFromGuardians
      */
-    public function setAutoRequestFromGuardians(bool $autoRequestFromGuardians = null)
+    public function setAutoRequestFromGuardians(?bool $autoRequestFromGuardians = null)
     {
         $this->setProperty('autoRequestFromGuardians', $autoRequestFromGuardians);
     }
@@ -188,7 +188,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $consentedByStudent
      */
-    public function setConsentedByStudent(bool $consentedByStudent = null)
+    public function setConsentedByStudent(?bool $consentedByStudent = null)
     {
         $this->setProperty('consentedByStudent', $consentedByStudent);
     }
@@ -204,7 +204,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $consentedByGuardian
      */
-    public function setConsentedByGuardian(bool $consentedByGuardian = null)
+    public function setConsentedByGuardian(?bool $consentedByGuardian = null)
     {
         $this->setProperty('consentedByGuardian', $consentedByGuardian);
     }
@@ -220,7 +220,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $archived
      */
-    public function setArchived(bool $archived = null)
+    public function setArchived(?bool $archived = null)
     {
         $this->setProperty('archived', $archived);
     }

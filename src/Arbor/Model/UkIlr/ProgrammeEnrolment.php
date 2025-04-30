@@ -116,7 +116,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $programmeType
      */
-    public function setProgrammeType(string $programmeType = null)
+    public function setProgrammeType(?string $programmeType = null)
     {
         $this->setProperty('programmeType', $programmeType);
     }
@@ -132,7 +132,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $fundingModel
      */
-    public function setFundingModel(string $fundingModel = null)
+    public function setFundingModel(?string $fundingModel = null)
     {
         $this->setProperty('fundingModel', $fundingModel);
     }
@@ -148,7 +148,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $priorLearningFundingAdjustment
      */
-    public function setPriorLearningFundingAdjustment(int $priorLearningFundingAdjustment = null)
+    public function setPriorLearningFundingAdjustment(?int $priorLearningFundingAdjustment = null)
     {
         $this->setProperty('priorLearningFundingAdjustment', $priorLearningFundingAdjustment);
     }
@@ -164,7 +164,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $otherFundingAdjustment
      */
-    public function setOtherFundingAdjustment(int $otherFundingAdjustment = null)
+    public function setOtherFundingAdjustment(?int $otherFundingAdjustment = null)
     {
         $this->setProperty('otherFundingAdjustment', $otherFundingAdjustment);
     }
@@ -180,7 +180,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $outcome
      */
-    public function setOutcome(string $outcome = null)
+    public function setOutcome(?string $outcome = null)
     {
         $this->setProperty('outcome', $outcome);
     }
@@ -196,7 +196,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $employmentOutcome
      */
-    public function setEmploymentOutcome(string $employmentOutcome = null)
+    public function setEmploymentOutcome(?string $employmentOutcome = null)
     {
         $this->setProperty('employmentOutcome', $employmentOutcome);
     }
@@ -212,7 +212,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $sourceOfFunding
      */
-    public function setSourceOfFunding(string $sourceOfFunding = null)
+    public function setSourceOfFunding(?string $sourceOfFunding = null)
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }
@@ -228,7 +228,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $fullFundingIndicator
      */
-    public function setFullFundingIndicator(string $fullFundingIndicator = null)
+    public function setFullFundingIndicator(?string $fullFundingIndicator = null)
     {
         $this->setProperty('fullFundingIndicator', $fullFundingIndicator);
     }
@@ -244,7 +244,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $workplaceLearning
      */
-    public function setWorkplaceLearning(bool $workplaceLearning = null)
+    public function setWorkplaceLearning(?bool $workplaceLearning = null)
     {
         $this->setProperty('workplaceLearning', $workplaceLearning);
     }
@@ -260,7 +260,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $eefEligibility
      */
-    public function setEefEligibility(string $eefEligibility = null)
+    public function setEefEligibility(?string $eefEligibility = null)
     {
         $this->setProperty('eefEligibility', $eefEligibility);
     }
@@ -276,7 +276,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode1
      */
-    public function setLdmCode1(string $ldmCode1 = null)
+    public function setLdmCode1(?string $ldmCode1 = null)
     {
         $this->setProperty('ldmCode1', $ldmCode1);
     }
@@ -292,7 +292,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode2
      */
-    public function setLdmCode2(string $ldmCode2 = null)
+    public function setLdmCode2(?string $ldmCode2 = null)
     {
         $this->setProperty('ldmCode2', $ldmCode2);
     }
@@ -308,7 +308,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode3
      */
-    public function setLdmCode3(string $ldmCode3 = null)
+    public function setLdmCode3(?string $ldmCode3 = null)
     {
         $this->setProperty('ldmCode3', $ldmCode3);
     }
@@ -324,7 +324,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode4
      */
-    public function setLdmCode4(string $ldmCode4 = null)
+    public function setLdmCode4(?string $ldmCode4 = null)
     {
         $this->setProperty('ldmCode4', $ldmCode4);
     }
@@ -340,7 +340,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $frameworkCode
      */
-    public function setFrameworkCode(string $frameworkCode = null)
+    public function setFrameworkCode(?string $frameworkCode = null)
     {
         $this->setProperty('frameworkCode', $frameworkCode);
     }
@@ -356,7 +356,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $pathwayCode
      */
-    public function setPathwayCode(string $pathwayCode = null)
+    public function setPathwayCode(?string $pathwayCode = null)
     {
         $this->setProperty('pathwayCode', $pathwayCode);
     }
@@ -372,7 +372,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $specialProjectCode
      */
-    public function setSpecialProjectCode(string $specialProjectCode = null)
+    public function setSpecialProjectCode(?string $specialProjectCode = null)
     {
         $this->setProperty('specialProjectCode', $specialProjectCode);
     }
@@ -388,7 +388,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $workProgrammeParticipation
      */
-    public function setWorkProgrammeParticipation(bool $workProgrammeParticipation = null)
+    public function setWorkProgrammeParticipation(?bool $workProgrammeParticipation = null)
     {
         $this->setProperty('workProgrammeParticipation', $workProgrammeParticipation);
     }
@@ -404,7 +404,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $percentageOnlineDelivery
      */
-    public function setPercentageOnlineDelivery(string $percentageOnlineDelivery = null)
+    public function setPercentageOnlineDelivery(?string $percentageOnlineDelivery = null)
     {
         $this->setProperty('percentageOnlineDelivery', $percentageOnlineDelivery);
     }
@@ -420,7 +420,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $communityLearningProvisionType
      */
-    public function setCommunityLearningProvisionType(string $communityLearningProvisionType = null)
+    public function setCommunityLearningProvisionType(?string $communityLearningProvisionType = null)
     {
         $this->setProperty('communityLearningProvisionType', $communityLearningProvisionType);
     }
@@ -436,7 +436,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $swSupAimId
      */
-    public function setSwSupAimId(string $swSupAimId = null)
+    public function setSwSupAimId(?string $swSupAimId = null)
     {
         $this->setProperty('swSupAimId', $swSupAimId);
     }
@@ -452,7 +452,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $outcomeGrade
      */
-    public function setOutcomeGrade(string $outcomeGrade = null)
+    public function setOutcomeGrade(?string $outcomeGrade = null)
     {
         $this->setProperty('outcomeGrade', $outcomeGrade);
     }
@@ -484,7 +484,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $damCode1
      */
-    public function setDamCode1(string $damCode1 = null)
+    public function setDamCode1(?string $damCode1 = null)
     {
         $this->setProperty('damCode1', $damCode1);
     }
@@ -500,7 +500,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $damCode2
      */
-    public function setDamCode2(string $damCode2 = null)
+    public function setDamCode2(?string $damCode2 = null)
     {
         $this->setProperty('damCode2', $damCode2);
     }
@@ -516,7 +516,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $damCode3
      */
-    public function setDamCode3(string $damCode3 = null)
+    public function setDamCode3(?string $damCode3 = null)
     {
         $this->setProperty('damCode3', $damCode3);
     }
@@ -532,7 +532,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $damCode4
      */
-    public function setDamCode4(string $damCode4 = null)
+    public function setDamCode4(?string $damCode4 = null)
     {
         $this->setProperty('damCode4', $damCode4);
     }
@@ -564,7 +564,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $additionalDeliveryHours
      */
-    public function setAdditionalDeliveryHours(int $additionalDeliveryHours = null)
+    public function setAdditionalDeliveryHours(?int $additionalDeliveryHours = null)
     {
         $this->setProperty('additionalDeliveryHours', $additionalDeliveryHours);
     }

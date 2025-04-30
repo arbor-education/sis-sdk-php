@@ -94,7 +94,7 @@ class EmailPermittedSender extends ModelBase
     /**
      * @param bool $allow
      */
-    public function setAllow(bool $allow = null)
+    public function setAllow(?bool $allow = null)
     {
         $this->setProperty('allow', $allow);
     }

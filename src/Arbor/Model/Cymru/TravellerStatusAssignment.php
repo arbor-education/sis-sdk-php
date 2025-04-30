@@ -84,7 +84,7 @@ class TravellerStatusAssignment extends ModelBase
     /**
      * @param string $informationSource
      */
-    public function setInformationSource(string $informationSource = null)
+    public function setInformationSource(?string $informationSource = null)
     {
         $this->setProperty('informationSource', $informationSource);
     }

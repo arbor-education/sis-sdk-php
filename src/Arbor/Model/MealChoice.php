@@ -128,7 +128,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesMonday
      */
-    public function setAppliesMonday(bool $appliesMonday = null)
+    public function setAppliesMonday(?bool $appliesMonday = null)
     {
         $this->setProperty('appliesMonday', $appliesMonday);
     }
@@ -144,7 +144,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesTuesday
      */
-    public function setAppliesTuesday(bool $appliesTuesday = null)
+    public function setAppliesTuesday(?bool $appliesTuesday = null)
     {
         $this->setProperty('appliesTuesday', $appliesTuesday);
     }
@@ -160,7 +160,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesWednesday
      */
-    public function setAppliesWednesday(bool $appliesWednesday = null)
+    public function setAppliesWednesday(?bool $appliesWednesday = null)
     {
         $this->setProperty('appliesWednesday', $appliesWednesday);
     }
@@ -176,7 +176,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesThursday
      */
-    public function setAppliesThursday(bool $appliesThursday = null)
+    public function setAppliesThursday(?bool $appliesThursday = null)
     {
         $this->setProperty('appliesThursday', $appliesThursday);
     }
@@ -192,7 +192,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesFriday
      */
-    public function setAppliesFriday(bool $appliesFriday = null)
+    public function setAppliesFriday(?bool $appliesFriday = null)
     {
         $this->setProperty('appliesFriday', $appliesFriday);
     }
@@ -208,7 +208,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesSaturday
      */
-    public function setAppliesSaturday(bool $appliesSaturday = null)
+    public function setAppliesSaturday(?bool $appliesSaturday = null)
     {
         $this->setProperty('appliesSaturday', $appliesSaturday);
     }
@@ -224,7 +224,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesSunday
      */
-    public function setAppliesSunday(bool $appliesSunday = null)
+    public function setAppliesSunday(?bool $appliesSunday = null)
     {
         $this->setProperty('appliesSunday', $appliesSunday);
     }

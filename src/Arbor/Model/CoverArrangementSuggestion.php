@@ -114,7 +114,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(string $reason = null)
+    public function setReason(?string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -130,7 +130,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }

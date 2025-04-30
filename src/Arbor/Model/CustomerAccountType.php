@@ -76,7 +76,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param string $accountTypeName
      */
-    public function setAccountTypeName(string $accountTypeName = null)
+    public function setAccountTypeName(?string $accountTypeName = null)
     {
         $this->setProperty('accountTypeName', $accountTypeName);
     }
@@ -92,7 +92,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param string $accountTypeDescription
      */
-    public function setAccountTypeDescription(string $accountTypeDescription = null)
+    public function setAccountTypeDescription(?string $accountTypeDescription = null)
     {
         $this->setProperty('accountTypeDescription', $accountTypeDescription);
     }
@@ -108,7 +108,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -124,7 +124,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory(string $category = null)
+    public function setCategory(?string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -140,7 +140,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param bool $isPrepayment
      */
-    public function setIsPrepayment(bool $isPrepayment = null)
+    public function setIsPrepayment(?bool $isPrepayment = null)
     {
         $this->setProperty('isPrepayment', $isPrepayment);
     }
@@ -156,7 +156,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param bool $autoCreateForStudents
      */
-    public function setAutoCreateForStudents(bool $autoCreateForStudents = null)
+    public function setAutoCreateForStudents(?bool $autoCreateForStudents = null)
     {
         $this->setProperty('autoCreateForStudents', $autoCreateForStudents);
     }
@@ -172,7 +172,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param bool $autoCreateForStaff
      */
-    public function setAutoCreateForStaff(bool $autoCreateForStaff = null)
+    public function setAutoCreateForStaff(?bool $autoCreateForStaff = null)
     {
         $this->setProperty('autoCreateForStaff', $autoCreateForStaff);
     }
@@ -188,7 +188,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param bool $cardPaymentsEnabled
      */
-    public function setCardPaymentsEnabled(bool $cardPaymentsEnabled = null)
+    public function setCardPaymentsEnabled(?bool $cardPaymentsEnabled = null)
     {
         $this->setProperty('cardPaymentsEnabled', $cardPaymentsEnabled);
     }
@@ -204,7 +204,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param bool $showInParentPortal
      */
-    public function setShowInParentPortal(bool $showInParentPortal = null)
+    public function setShowInParentPortal(?bool $showInParentPortal = null)
     {
         $this->setProperty('showInParentPortal', $showInParentPortal);
     }
@@ -220,7 +220,7 @@ class CustomerAccountType extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode(string $accountingCode = null)
+    public function setAccountingCode(?string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }

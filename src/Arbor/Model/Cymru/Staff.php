@@ -86,7 +86,7 @@ class Staff extends ModelBase
     /**
      * @param string $disabilityCode
      */
-    public function setDisabilityCode(string $disabilityCode = null)
+    public function setDisabilityCode(?string $disabilityCode = null)
     {
         $this->setProperty('disabilityCode', $disabilityCode);
     }
@@ -102,7 +102,7 @@ class Staff extends ModelBase
     /**
      * @param bool $earlyYearsTeacherStatus
      */
-    public function setEarlyYearsTeacherStatus(bool $earlyYearsTeacherStatus = null)
+    public function setEarlyYearsTeacherStatus(?bool $earlyYearsTeacherStatus = null)
     {
         $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
@@ -118,7 +118,7 @@ class Staff extends ModelBase
     /**
      * @param bool $eligibleForSchoolWorkforceReturn
      */
-    public function setEligibleForSchoolWorkforceReturn(bool $eligibleForSchoolWorkforceReturn = null)
+    public function setEligibleForSchoolWorkforceReturn(?bool $eligibleForSchoolWorkforceReturn = null)
     {
         $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
@@ -134,7 +134,7 @@ class Staff extends ModelBase
     /**
      * @param bool $hltaStatus
      */
-    public function setHltaStatus(bool $hltaStatus = null)
+    public function setHltaStatus(?bool $hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
@@ -150,7 +150,7 @@ class Staff extends ModelBase
     /**
      * @param bool $isNpqh
      */
-    public function setIsNpqh(bool $isNpqh = null)
+    public function setIsNpqh(?bool $isNpqh = null)
     {
         $this->setProperty('isNpqh', $isNpqh);
     }
@@ -166,7 +166,7 @@ class Staff extends ModelBase
     /**
      * @param bool $isThirdParty
      */
-    public function setIsThirdParty(bool $isThirdParty = null)
+    public function setIsThirdParty(?bool $isThirdParty = null)
     {
         $this->setProperty('isThirdParty', $isThirdParty);
     }
@@ -182,7 +182,7 @@ class Staff extends ModelBase
     /**
      * @param string $longTermAbsenceStatusCode
      */
-    public function setLongTermAbsenceStatusCode(string $longTermAbsenceStatusCode = null)
+    public function setLongTermAbsenceStatusCode(?string $longTermAbsenceStatusCode = null)
     {
         $this->setProperty('longTermAbsenceStatusCode', $longTermAbsenceStatusCode);
     }
@@ -262,7 +262,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherStatus
      */
-    public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
+    public function setQualifiedTeacherStatus(?bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
@@ -278,7 +278,7 @@ class Staff extends ModelBase
     /**
      * @param string $welshTeachingAbilityCode
      */
-    public function setWelshTeachingAbilityCode(string $welshTeachingAbilityCode = null)
+    public function setWelshTeachingAbilityCode(?string $welshTeachingAbilityCode = null)
     {
         $this->setProperty('welshTeachingAbilityCode', $welshTeachingAbilityCode);
     }
@@ -294,7 +294,7 @@ class Staff extends ModelBase
     /**
      * @param string $welshTeachingCode
      */
-    public function setWelshTeachingCode(string $welshTeachingCode = null)
+    public function setWelshTeachingCode(?string $welshTeachingCode = null)
     {
         $this->setProperty('welshTeachingCode', $welshTeachingCode);
     }

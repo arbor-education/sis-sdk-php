@@ -62,7 +62,7 @@ class Religion extends ModelBase
     /**
      * @param string $d00009
      */
-    public function setD00009(string $d00009 = null)
+    public function setD00009(?string $d00009 = null)
     {
         $this->setProperty('d00009', $d00009);
     }
@@ -78,7 +78,7 @@ class Religion extends ModelBase
     /**
      * @param string $d00195
      */
-    public function setD00195(string $d00195 = null)
+    public function setD00195(?string $d00195 = null)
     {
         $this->setProperty('d00195', $d00195);
     }

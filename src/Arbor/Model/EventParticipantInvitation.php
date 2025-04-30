@@ -118,7 +118,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationStatus
      */
-    public function setInvitationStatus(string $invitationStatus = null)
+    public function setInvitationStatus(?string $invitationStatus = null)
     {
         $this->setProperty('invitationStatus', $invitationStatus);
     }
@@ -150,7 +150,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationMessage
      */
-    public function setInvitationMessage(string $invitationMessage = null)
+    public function setInvitationMessage(?string $invitationMessage = null)
     {
         $this->setProperty('invitationMessage', $invitationMessage);
     }
@@ -166,7 +166,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationReply
      */
-    public function setInvitationReply(string $invitationReply = null)
+    public function setInvitationReply(?string $invitationReply = null)
     {
         $this->setProperty('invitationReply', $invitationReply);
     }

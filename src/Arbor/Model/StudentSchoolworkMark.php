@@ -102,7 +102,7 @@ class StudentSchoolworkMark extends ModelBase
     /**
      * @param int $markInteger
      */
-    public function setMarkInteger(int $markInteger = null)
+    public function setMarkInteger(?int $markInteger = null)
     {
         $this->setProperty('markInteger', $markInteger);
     }
@@ -118,7 +118,7 @@ class StudentSchoolworkMark extends ModelBase
     /**
      * @param float $markDecimal
      */
-    public function setMarkDecimal(float $markDecimal = null)
+    public function setMarkDecimal(?float $markDecimal = null)
     {
         $this->setProperty('markDecimal', $markDecimal);
     }
@@ -134,7 +134,7 @@ class StudentSchoolworkMark extends ModelBase
     /**
      * @param float $markNumeric
      */
-    public function setMarkNumeric(float $markNumeric = null)
+    public function setMarkNumeric(?float $markNumeric = null)
     {
         $this->setProperty('markNumeric', $markNumeric);
     }

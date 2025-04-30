@@ -64,7 +64,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param int $levelOfIncident
      */
-    public function setLevelOfIncident(int $levelOfIncident = null)
+    public function setLevelOfIncident(?int $levelOfIncident = null)
     {
         $this->setProperty('levelOfIncident', $levelOfIncident);
     }
@@ -97,7 +97,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent(string $relationToStudent = null)
+    public function setRelationToStudent(?string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }

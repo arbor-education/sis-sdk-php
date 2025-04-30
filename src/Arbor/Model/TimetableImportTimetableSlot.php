@@ -148,7 +148,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(int $dayOfCycle = null)
+    public function setDayOfCycle(?int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -164,7 +164,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param int $dayOfWeek
      */
-    public function setDayOfWeek(int $dayOfWeek = null)
+    public function setDayOfWeek(?int $dayOfWeek = null)
     {
         $this->setProperty('dayOfWeek', $dayOfWeek);
     }
@@ -180,7 +180,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param bool $termTimeOnly
      */
-    public function setTermTimeOnly(bool $termTimeOnly = null)
+    public function setTermTimeOnly(?bool $termTimeOnly = null)
     {
         $this->setProperty('termTimeOnly', $termTimeOnly);
     }
@@ -196,7 +196,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -212,7 +212,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -260,7 +260,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency(string $frequency = null)
+    public function setFrequency(?string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }
@@ -276,7 +276,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param string $importStatus
      */
-    public function setImportStatus(string $importStatus = null)
+    public function setImportStatus(?string $importStatus = null)
     {
         $this->setProperty('importStatus', $importStatus);
     }
@@ -292,7 +292,7 @@ class TimetableImportTimetableSlot extends ModelBase
     /**
      * @param string $scheduleStatus
      */
-    public function setScheduleStatus(string $scheduleStatus = null)
+    public function setScheduleStatus(?string $scheduleStatus = null)
     {
         $this->setProperty('scheduleStatus', $scheduleStatus);
     }

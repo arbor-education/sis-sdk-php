@@ -96,7 +96,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param bool $isDefault
      */
-    public function setIsDefault(bool $isDefault = null)
+    public function setIsDefault(?bool $isDefault = null)
     {
         $this->setProperty('isDefault', $isDefault);
     }
@@ -112,7 +112,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param bool $isOriginal
      */
-    public function setIsOriginal(bool $isOriginal = null)
+    public function setIsOriginal(?bool $isOriginal = null)
     {
         $this->setProperty('isOriginal', $isOriginal);
     }

@@ -94,7 +94,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $dataError
      */
-    public function setDataError(bool $dataError = null)
+    public function setDataError(?bool $dataError = null)
     {
         $this->setProperty('dataError', $dataError);
     }
@@ -158,7 +158,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isDryRun
      */
-    public function setIsDryRun(bool $isDryRun = null)
+    public function setIsDryRun(?bool $isDryRun = null)
     {
         $this->setProperty('isDryRun', $isDryRun);
     }
@@ -174,7 +174,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isStaffHrAndPayrollInformationExcluded
      */
-    public function setIsStaffHrAndPayrollInformationExcluded(bool $isStaffHrAndPayrollInformationExcluded = null)
+    public function setIsStaffHrAndPayrollInformationExcluded(?bool $isStaffHrAndPayrollInformationExcluded = null)
     {
         $this->setProperty('isStaffHrAndPayrollInformationExcluded', $isStaffHrAndPayrollInformationExcluded);
     }
@@ -222,7 +222,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $returnFilename
      */
-    public function setReturnFilename(string $returnFilename = null)
+    public function setReturnFilename(?string $returnFilename = null)
     {
         $this->setProperty('returnFilename', $returnFilename);
     }
@@ -238,7 +238,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $returnFilenameHrPayroll
      */
-    public function setReturnFilenameHrPayroll(string $returnFilenameHrPayroll = null)
+    public function setReturnFilenameHrPayroll(?string $returnFilenameHrPayroll = null)
     {
         $this->setProperty('returnFilenameHrPayroll', $returnFilenameHrPayroll);
     }
@@ -254,7 +254,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param int $returnFilenameHrPayrollSequenceNumber
      */
-    public function setReturnFilenameHrPayrollSequenceNumber(int $returnFilenameHrPayrollSequenceNumber = null)
+    public function setReturnFilenameHrPayrollSequenceNumber(?int $returnFilenameHrPayrollSequenceNumber = null)
     {
         $this->setProperty('returnFilenameHrPayrollSequenceNumber', $returnFilenameHrPayrollSequenceNumber);
     }
@@ -270,7 +270,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param int $returnFilenameSequenceNumber
      */
-    public function setReturnFilenameSequenceNumber(int $returnFilenameSequenceNumber = null)
+    public function setReturnFilenameSequenceNumber(?int $returnFilenameSequenceNumber = null)
     {
         $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
@@ -318,7 +318,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -350,7 +350,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $xsdError
      */
-    public function setXsdError(bool $xsdError = null)
+    public function setXsdError(?bool $xsdError = null)
     {
         $this->setProperty('xsdError', $xsdError);
     }
@@ -366,7 +366,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $xsltError
      */
-    public function setXsltError(bool $xsltError = null)
+    public function setXsltError(?bool $xsltError = null)
     {
         $this->setProperty('xsltError', $xsltError);
     }

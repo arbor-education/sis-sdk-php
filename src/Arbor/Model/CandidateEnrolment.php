@@ -80,7 +80,7 @@ class CandidateEnrolment extends ModelBase
     /**
      * @param string $enrolmentNumber
      */
-    public function setEnrolmentNumber(string $enrolmentNumber = null)
+    public function setEnrolmentNumber(?string $enrolmentNumber = null)
     {
         $this->setProperty('enrolmentNumber', $enrolmentNumber);
     }

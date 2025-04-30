@@ -80,7 +80,7 @@ class PreviousLearnerReferenceNumber extends ModelBase
     /**
      * @param string $previousLearnerReferenceNumber
      */
-    public function setPreviousLearnerReferenceNumber(string $previousLearnerReferenceNumber = null)
+    public function setPreviousLearnerReferenceNumber(?string $previousLearnerReferenceNumber = null)
     {
         $this->setProperty('previousLearnerReferenceNumber', $previousLearnerReferenceNumber);
     }

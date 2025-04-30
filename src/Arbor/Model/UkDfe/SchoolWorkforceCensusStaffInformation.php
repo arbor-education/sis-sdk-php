@@ -82,7 +82,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param int $occasionalsQts
      */
-    public function setOccasionalsQts(int $occasionalsQts = null)
+    public function setOccasionalsQts(?int $occasionalsQts = null)
     {
         $this->setProperty('occasionalsQts', $occasionalsQts);
     }
@@ -98,7 +98,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param int $occasionalsNotQts
      */
-    public function setOccasionalsNotQts(int $occasionalsNotQts = null)
+    public function setOccasionalsNotQts(?int $occasionalsNotQts = null)
     {
         $this->setProperty('occasionalsNotQts', $occasionalsNotQts);
     }
@@ -114,7 +114,7 @@ class SchoolWorkforceCensusStaffInformation extends ModelBase
     /**
      * @param int $occasionalsNotKnown
      */
-    public function setOccasionalsNotKnown(int $occasionalsNotKnown = null)
+    public function setOccasionalsNotKnown(?int $occasionalsNotKnown = null)
     {
         $this->setProperty('occasionalsNotKnown', $occasionalsNotKnown);
     }

@@ -78,7 +78,7 @@ class AiAbsenceImport extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -94,7 +94,7 @@ class AiAbsenceImport extends ModelBase
     /**
      * @param string $aiAgentResponseIdentifier
      */
-    public function setAiAgentResponseIdentifier(string $aiAgentResponseIdentifier = null)
+    public function setAiAgentResponseIdentifier(?string $aiAgentResponseIdentifier = null)
     {
         $this->setProperty('aiAgentResponseIdentifier', $aiAgentResponseIdentifier);
     }

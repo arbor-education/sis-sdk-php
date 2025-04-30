@@ -154,7 +154,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param string $enrolmentNotes
      */
-    public function setEnrolmentNotes(string $enrolmentNotes = null)
+    public function setEnrolmentNotes(?string $enrolmentNotes = null)
     {
         $this->setProperty('enrolmentNotes', $enrolmentNotes);
     }
@@ -170,7 +170,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(int $plannedLearningHours = null)
+    public function setPlannedLearningHours(?int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -186,7 +186,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $plannedEepHours
      */
-    public function setPlannedEepHours(int $plannedEepHours = null)
+    public function setPlannedEepHours(?int $plannedEepHours = null)
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
@@ -202,7 +202,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $tLevelPlannedLearningHours
      */
-    public function setTLevelPlannedLearningHours(int $tLevelPlannedLearningHours = null)
+    public function setTLevelPlannedLearningHours(?int $tLevelPlannedLearningHours = null)
     {
         $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }

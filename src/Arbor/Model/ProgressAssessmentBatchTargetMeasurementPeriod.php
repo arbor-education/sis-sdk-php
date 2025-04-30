@@ -148,7 +148,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param bool $allMarksApproved
      */
-    public function setAllMarksApproved(bool $allMarksApproved = null)
+    public function setAllMarksApproved(?bool $allMarksApproved = null)
     {
         $this->setProperty('allMarksApproved', $allMarksApproved);
     }

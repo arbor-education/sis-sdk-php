@@ -126,7 +126,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarYear
      */
-    public function setCalendarYear(int $calendarYear = null)
+    public function setCalendarYear(?int $calendarYear = null)
     {
         $this->setProperty('calendarYear', $calendarYear);
     }
@@ -142,7 +142,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarMonth
      */
-    public function setCalendarMonth(int $calendarMonth = null)
+    public function setCalendarMonth(?int $calendarMonth = null)
     {
         $this->setProperty('calendarMonth', $calendarMonth);
     }
@@ -158,7 +158,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarWeek
      */
-    public function setCalendarWeek(int $calendarWeek = null)
+    public function setCalendarWeek(?int $calendarWeek = null)
     {
         $this->setProperty('calendarWeek', $calendarWeek);
     }
@@ -174,7 +174,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarDay
      */
-    public function setCalendarDay(int $calendarDay = null)
+    public function setCalendarDay(?int $calendarDay = null)
     {
         $this->setProperty('calendarDay', $calendarDay);
     }
@@ -190,7 +190,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $calendarDayOfWeek
      */
-    public function setCalendarDayOfWeek(int $calendarDayOfWeek = null)
+    public function setCalendarDayOfWeek(?int $calendarDayOfWeek = null)
     {
         $this->setProperty('calendarDayOfWeek', $calendarDayOfWeek);
     }
@@ -206,7 +206,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param bool $isPublicHoliday
      */
-    public function setIsPublicHoliday(bool $isPublicHoliday = null)
+    public function setIsPublicHoliday(?bool $isPublicHoliday = null)
     {
         $this->setProperty('isPublicHoliday', $isPublicHoliday);
     }
@@ -222,7 +222,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param string $publicHolidayName
      */
-    public function setPublicHolidayName(string $publicHolidayName = null)
+    public function setPublicHolidayName(?string $publicHolidayName = null)
     {
         $this->setProperty('publicHolidayName', $publicHolidayName);
     }
@@ -270,7 +270,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(int $dayOfCycle = null)
+    public function setDayOfCycle(?int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -286,7 +286,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dayOfTerm
      */
-    public function setDayOfTerm(int $dayOfTerm = null)
+    public function setDayOfTerm(?int $dayOfTerm = null)
     {
         $this->setProperty('dayOfTerm', $dayOfTerm);
     }
@@ -302,7 +302,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dayOfAcademicYear
      */
-    public function setDayOfAcademicYear(int $dayOfAcademicYear = null)
+    public function setDayOfAcademicYear(?int $dayOfAcademicYear = null)
     {
         $this->setProperty('dayOfAcademicYear', $dayOfAcademicYear);
     }
@@ -334,7 +334,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param bool $isGoodSchoolDay
      */
-    public function setIsGoodSchoolDay(bool $isGoodSchoolDay = null)
+    public function setIsGoodSchoolDay(?bool $isGoodSchoolDay = null)
     {
         $this->setProperty('isGoodSchoolDay', $isGoodSchoolDay);
     }
@@ -350,7 +350,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -366,7 +366,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -382,7 +382,7 @@ class AcademicCalendarDate extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

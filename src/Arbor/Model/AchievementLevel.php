@@ -78,7 +78,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -110,7 +110,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -126,7 +126,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -142,7 +142,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $achievementValue
      */
-    public function setAchievementValue(float $achievementValue = null)
+    public function setAchievementValue(?float $achievementValue = null)
     {
         $this->setProperty('achievementValue', $achievementValue);
     }
@@ -158,7 +158,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $lowerAchievementValue
      */
-    public function setLowerAchievementValue(float $lowerAchievementValue = null)
+    public function setLowerAchievementValue(?float $lowerAchievementValue = null)
     {
         $this->setProperty('lowerAchievementValue', $lowerAchievementValue);
     }
@@ -174,7 +174,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $upperAchievementValue
      */
-    public function setUpperAchievementValue(float $upperAchievementValue = null)
+    public function setUpperAchievementValue(?float $upperAchievementValue = null)
     {
         $this->setProperty('upperAchievementValue', $upperAchievementValue);
     }
@@ -190,7 +190,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -222,7 +222,7 @@ class AchievementLevel extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }

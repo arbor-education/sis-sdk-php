@@ -62,7 +62,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param string $periodFrequency
      */
-    public function setPeriodFrequency(string $periodFrequency = null)
+    public function setPeriodFrequency(?string $periodFrequency = null)
     {
         $this->setProperty('periodFrequency', $periodFrequency);
     }
@@ -78,7 +78,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param string $setName
      */
-    public function setSetName(string $setName = null)
+    public function setSetName(?string $setName = null)
     {
         $this->setProperty('setName', $setName);
     }

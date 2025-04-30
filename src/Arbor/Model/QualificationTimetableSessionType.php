@@ -72,7 +72,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -136,7 +136,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -152,7 +152,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $startTimeFrom
      */
-    public function setStartTimeFrom(string $startTimeFrom = null)
+    public function setStartTimeFrom(?string $startTimeFrom = null)
     {
         $this->setProperty('startTimeFrom', $startTimeFrom);
     }
@@ -168,7 +168,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $userDefinedStartTimeFrom
      */
-    public function setUserDefinedStartTimeFrom(string $userDefinedStartTimeFrom = null)
+    public function setUserDefinedStartTimeFrom(?string $userDefinedStartTimeFrom = null)
     {
         $this->setProperty('userDefinedStartTimeFrom', $userDefinedStartTimeFrom);
     }
@@ -184,7 +184,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $startTimeUntil
      */
-    public function setStartTimeUntil(string $startTimeUntil = null)
+    public function setStartTimeUntil(?string $startTimeUntil = null)
     {
         $this->setProperty('startTimeUntil', $startTimeUntil);
     }

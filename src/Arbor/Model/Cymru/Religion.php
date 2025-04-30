@@ -60,7 +60,7 @@ class Religion extends ModelBase
     /**
      * @param string $faithCode
      */
-    public function setFaithCode(string $faithCode = null)
+    public function setFaithCode(?string $faithCode = null)
     {
         $this->setProperty('faithCode', $faithCode);
     }

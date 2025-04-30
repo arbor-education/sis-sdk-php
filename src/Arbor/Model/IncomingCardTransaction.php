@@ -130,7 +130,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $paymentProviderTransactionIdentifier
      */
-    public function setPaymentProviderTransactionIdentifier(string $paymentProviderTransactionIdentifier = null)
+    public function setPaymentProviderTransactionIdentifier(?string $paymentProviderTransactionIdentifier = null)
     {
         $this->setProperty('paymentProviderTransactionIdentifier', $paymentProviderTransactionIdentifier);
     }
@@ -146,7 +146,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionNetAmount
      */
-    public function setTransactionNetAmount(string $transactionNetAmount = null)
+    public function setTransactionNetAmount(?string $transactionNetAmount = null)
     {
         $this->setProperty('transactionNetAmount', $transactionNetAmount);
     }
@@ -162,7 +162,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionFeeAmount
      */
-    public function setTransactionFeeAmount(string $transactionFeeAmount = null)
+    public function setTransactionFeeAmount(?string $transactionFeeAmount = null)
     {
         $this->setProperty('transactionFeeAmount', $transactionFeeAmount);
     }
@@ -178,7 +178,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionReference
      */
-    public function setTransactionReference(string $transactionReference = null)
+    public function setTransactionReference(?string $transactionReference = null)
     {
         $this->setProperty('transactionReference', $transactionReference);
     }
@@ -258,7 +258,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $cardTokenId
      */
-    public function setCardTokenId(string $cardTokenId = null)
+    public function setCardTokenId(?string $cardTokenId = null)
     {
         $this->setProperty('cardTokenId', $cardTokenId);
     }

@@ -70,7 +70,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -166,7 +166,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param bool $senExpertRequested
      */
-    public function setSenExpertRequested(bool $senExpertRequested = null)
+    public function setSenExpertRequested(?bool $senExpertRequested = null)
     {
         $this->setProperty('senExpertRequested', $senExpertRequested);
     }

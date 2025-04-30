@@ -110,7 +110,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $uniqueKey
      */
-    public function setUniqueKey(string $uniqueKey = null)
+    public function setUniqueKey(?string $uniqueKey = null)
     {
         $this->setProperty('uniqueKey', $uniqueKey);
     }
@@ -126,7 +126,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param int $totalDuplicateScore
      */
-    public function setTotalDuplicateScore(int $totalDuplicateScore = null)
+    public function setTotalDuplicateScore(?int $totalDuplicateScore = null)
     {
         $this->setProperty('totalDuplicateScore', $totalDuplicateScore);
     }
@@ -142,7 +142,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $duplicateScores
      */
-    public function setDuplicateScores(string $duplicateScores = null)
+    public function setDuplicateScores(?string $duplicateScores = null)
     {
         $this->setProperty('duplicateScores', $duplicateScores);
     }
@@ -238,7 +238,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $resolution
      */
-    public function setResolution(string $resolution = null)
+    public function setResolution(?string $resolution = null)
     {
         $this->setProperty('resolution', $resolution);
     }

@@ -66,7 +66,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $programmeType
      */
-    public function setProgrammeType(string $programmeType = null)
+    public function setProgrammeType(?string $programmeType = null)
     {
         $this->setProperty('programmeType', $programmeType);
     }
@@ -82,7 +82,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $fundingModel
      */
-    public function setFundingModel(string $fundingModel = null)
+    public function setFundingModel(?string $fundingModel = null)
     {
         $this->setProperty('fundingModel', $fundingModel);
     }
@@ -98,7 +98,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $aimType
      */
-    public function setAimType(string $aimType = null)
+    public function setAimType(?string $aimType = null)
     {
         $this->setProperty('aimType', $aimType);
     }
@@ -114,7 +114,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $sourceOfFunding
      */
-    public function setSourceOfFunding(string $sourceOfFunding = null)
+    public function setSourceOfFunding(?string $sourceOfFunding = null)
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }

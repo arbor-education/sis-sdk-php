@@ -60,7 +60,7 @@ class Content extends ModelBase
     /**
      * @param string $contentName
      */
-    public function setContentName(string $contentName = null)
+    public function setContentName(?string $contentName = null)
     {
         $this->setProperty('contentName', $contentName);
     }
@@ -76,7 +76,7 @@ class Content extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }

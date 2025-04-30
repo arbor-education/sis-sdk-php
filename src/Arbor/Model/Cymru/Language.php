@@ -62,7 +62,7 @@ class Language extends ModelBase
     /**
      * @param string $cymFullCode
      */
-    public function setCymFullCode(string $cymFullCode = null)
+    public function setCymFullCode(?string $cymFullCode = null)
     {
         $this->setProperty('cymFullCode', $cymFullCode);
     }
@@ -78,7 +78,7 @@ class Language extends ModelBase
     /**
      * @param string $cymLabel
      */
-    public function setCymLabel(string $cymLabel = null)
+    public function setCymLabel(?string $cymLabel = null)
     {
         $this->setProperty('cymLabel', $cymLabel);
     }

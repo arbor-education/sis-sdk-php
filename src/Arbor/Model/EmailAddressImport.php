@@ -102,7 +102,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $emailAddressType
      */
-    public function setEmailAddressType(string $emailAddressType = null)
+    public function setEmailAddressType(?string $emailAddressType = null)
     {
         $this->setProperty('emailAddressType', $emailAddressType);
     }
@@ -118,7 +118,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(string $emailAddress = null)
+    public function setEmailAddress(?string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -134,7 +134,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param int $rowIndex
      */
-    public function setRowIndex(int $rowIndex = null)
+    public function setRowIndex(?int $rowIndex = null)
     {
         $this->setProperty('rowIndex', $rowIndex);
     }
@@ -150,7 +150,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors(string $errors = null)
+    public function setErrors(?string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -166,7 +166,7 @@ class EmailAddressImport extends ModelBase
     /**
      * @param string $requiredErrors
      */
-    public function setRequiredErrors(string $requiredErrors = null)
+    public function setRequiredErrors(?string $requiredErrors = null)
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }

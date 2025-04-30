@@ -72,7 +72,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -136,7 +136,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -152,7 +152,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -168,7 +168,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCode
      */
-    public function setAuthorityCode(string $authorityCode = null)
+    public function setAuthorityCode(?string $authorityCode = null)
     {
         $this->setProperty('authorityCode', $authorityCode);
     }
@@ -184,7 +184,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCodePre2011
      */
-    public function setAuthorityCodePre2011(string $authorityCodePre2011 = null)
+    public function setAuthorityCodePre2011(?string $authorityCodePre2011 = null)
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }

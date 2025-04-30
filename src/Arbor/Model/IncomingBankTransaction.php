@@ -112,7 +112,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param string $payment
      */
-    public function setPayment(string $payment = null)
+    public function setPayment(?string $payment = null)
     {
         $this->setProperty('payment', $payment);
     }

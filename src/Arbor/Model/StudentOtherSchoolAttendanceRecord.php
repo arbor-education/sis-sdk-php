@@ -108,7 +108,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param string $year
      */
-    public function setYear(string $year = null)
+    public function setYear(?string $year = null)
     {
         $this->setProperty('year', $year);
     }
@@ -140,7 +140,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsPossible
      */
-    public function setSessionsPossible(int $sessionsPossible = null)
+    public function setSessionsPossible(?int $sessionsPossible = null)
     {
         $this->setProperty('sessionsPossible', $sessionsPossible);
     }
@@ -156,7 +156,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsAttended
      */
-    public function setSessionsAttended(int $sessionsAttended = null)
+    public function setSessionsAttended(?int $sessionsAttended = null)
     {
         $this->setProperty('sessionsAttended', $sessionsAttended);
     }
@@ -172,7 +172,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsAuthorizedAbsence
      */
-    public function setSessionsAuthorizedAbsence(int $sessionsAuthorizedAbsence = null)
+    public function setSessionsAuthorizedAbsence(?int $sessionsAuthorizedAbsence = null)
     {
         $this->setProperty('sessionsAuthorizedAbsence', $sessionsAuthorizedAbsence);
     }
@@ -188,7 +188,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsUnauthorizedAbsence
      */
-    public function setSessionsUnauthorizedAbsence(int $sessionsUnauthorizedAbsence = null)
+    public function setSessionsUnauthorizedAbsence(?int $sessionsUnauthorizedAbsence = null)
     {
         $this->setProperty('sessionsUnauthorizedAbsence', $sessionsUnauthorizedAbsence);
     }
@@ -220,7 +220,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param string $attendanceMarks
      */
-    public function setAttendanceMarks(string $attendanceMarks = null)
+    public function setAttendanceMarks(?string $attendanceMarks = null)
     {
         $this->setProperty('attendanceMarks', $attendanceMarks);
     }

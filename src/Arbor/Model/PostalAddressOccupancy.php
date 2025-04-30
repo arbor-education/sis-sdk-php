@@ -132,7 +132,7 @@ class PostalAddressOccupancy extends ModelBase
     /**
      * @param string $postalAddressType
      */
-    public function setPostalAddressType(string $postalAddressType = null)
+    public function setPostalAddressType(?string $postalAddressType = null)
     {
         $this->setProperty('postalAddressType', $postalAddressType);
     }
@@ -148,7 +148,7 @@ class PostalAddressOccupancy extends ModelBase
     /**
      * @param bool $isCorrespondenceAddress
      */
-    public function setIsCorrespondenceAddress(bool $isCorrespondenceAddress = null)
+    public function setIsCorrespondenceAddress(?bool $isCorrespondenceAddress = null)
     {
         $this->setProperty('isCorrespondenceAddress', $isCorrespondenceAddress);
     }

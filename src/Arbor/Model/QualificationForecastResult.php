@@ -102,7 +102,7 @@ class QualificationForecastResult extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue(float $numericValue = null)
+    public function setNumericValue(?float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }

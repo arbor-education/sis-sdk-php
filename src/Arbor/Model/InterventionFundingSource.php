@@ -64,7 +64,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -80,7 +80,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class InterventionFundingSource extends ModelBase
     /**
      * @param bool $dataOrder
      */
-    public function setDataOrder(bool $dataOrder = null)
+    public function setDataOrder(?bool $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

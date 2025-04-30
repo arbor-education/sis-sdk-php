@@ -82,7 +82,7 @@ class StandardizedAssessmentBatch extends ModelBase
     /**
      * @param string $batchName
      */
-    public function setBatchName(string $batchName = null)
+    public function setBatchName(?string $batchName = null)
     {
         $this->setProperty('batchName', $batchName);
     }
@@ -131,7 +131,7 @@ class StandardizedAssessmentBatch extends ModelBase
     /**
      * @param bool $senStudentsOnly
      */
-    public function setSenStudentsOnly(bool $senStudentsOnly = null)
+    public function setSenStudentsOnly(?bool $senStudentsOnly = null)
     {
         $this->setProperty('senStudentsOnly', $senStudentsOnly);
     }

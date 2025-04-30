@@ -116,7 +116,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param string $registerOpensTime
      */
-    public function setRegisterOpensTime(string $registerOpensTime = null)
+    public function setRegisterOpensTime(?string $registerOpensTime = null)
     {
         $this->setProperty('registerOpensTime', $registerOpensTime);
     }
@@ -132,7 +132,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param string $registerClosesTime
      */
-    public function setRegisterClosesTime(string $registerClosesTime = null)
+    public function setRegisterClosesTime(?string $registerClosesTime = null)
     {
         $this->setProperty('registerClosesTime', $registerClosesTime);
     }
@@ -148,7 +148,7 @@ class AttendanceRollCallTime extends ModelBase
     /**
      * @param string $rollCallPeriodEndTime
      */
-    public function setRollCallPeriodEndTime(string $rollCallPeriodEndTime = null)
+    public function setRollCallPeriodEndTime(?string $rollCallPeriodEndTime = null)
     {
         $this->setProperty('rollCallPeriodEndTime', $rollCallPeriodEndTime);
     }

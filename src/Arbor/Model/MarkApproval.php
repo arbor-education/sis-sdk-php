@@ -78,7 +78,7 @@ class MarkApproval extends ModelBase
     /**
      * @param string $approvalLevel
      */
-    public function setApprovalLevel(string $approvalLevel = null)
+    public function setApprovalLevel(?string $approvalLevel = null)
     {
         $this->setProperty('approvalLevel', $approvalLevel);
     }

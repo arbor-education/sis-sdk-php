@@ -158,7 +158,7 @@ class ClubMembership extends ModelBase
     /**
      * @param bool $consentReceived
      */
-    public function setConsentReceived(bool $consentReceived = null)
+    public function setConsentReceived(?bool $consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
     }

@@ -86,7 +86,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $baseEntityType
      */
-    public function setBaseEntityType(int $baseEntityType = null)
+    public function setBaseEntityType(?int $baseEntityType = null)
     {
         $this->setProperty('baseEntityType', $baseEntityType);
     }
@@ -134,7 +134,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param string $referenceDateRangePeriodType
      */
-    public function setReferenceDateRangePeriodType(string $referenceDateRangePeriodType = null)
+    public function setReferenceDateRangePeriodType(?string $referenceDateRangePeriodType = null)
     {
         $this->setProperty('referenceDateRangePeriodType', $referenceDateRangePeriodType);
     }
@@ -150,7 +150,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $referenceDateRangePeriodCount
      */
-    public function setReferenceDateRangePeriodCount(int $referenceDateRangePeriodCount = null)
+    public function setReferenceDateRangePeriodCount(?int $referenceDateRangePeriodCount = null)
     {
         $this->setProperty('referenceDateRangePeriodCount', $referenceDateRangePeriodCount);
     }
@@ -166,7 +166,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $referenceDateRangePeriodOffset
      */
-    public function setReferenceDateRangePeriodOffset(int $referenceDateRangePeriodOffset = null)
+    public function setReferenceDateRangePeriodOffset(?int $referenceDateRangePeriodOffset = null)
     {
         $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }

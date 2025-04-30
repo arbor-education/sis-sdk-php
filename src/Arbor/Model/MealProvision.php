@@ -94,7 +94,7 @@ class MealProvision extends ModelBase
     /**
      * @param string $mealProvisionName
      */
-    public function setMealProvisionName(string $mealProvisionName = null)
+    public function setMealProvisionName(?string $mealProvisionName = null)
     {
         $this->setProperty('mealProvisionName', $mealProvisionName);
     }
@@ -142,7 +142,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isAbsent
      */
-    public function setIsAbsent(bool $isAbsent = null)
+    public function setIsAbsent(?bool $isAbsent = null)
     {
         $this->setProperty('isAbsent', $isAbsent);
     }
@@ -158,7 +158,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isSchoolHotMeal
      */
-    public function setIsSchoolHotMeal(bool $isSchoolHotMeal = null)
+    public function setIsSchoolHotMeal(?bool $isSchoolHotMeal = null)
     {
         $this->setProperty('isSchoolHotMeal', $isSchoolHotMeal);
     }
@@ -174,7 +174,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isSchoolLightMeal
      */
-    public function setIsSchoolLightMeal(bool $isSchoolLightMeal = null)
+    public function setIsSchoolLightMeal(?bool $isSchoolLightMeal = null)
     {
         $this->setProperty('isSchoolLightMeal', $isSchoolLightMeal);
     }
@@ -190,7 +190,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isSchoolPackedMeal
      */
-    public function setIsSchoolPackedMeal(bool $isSchoolPackedMeal = null)
+    public function setIsSchoolPackedMeal(?bool $isSchoolPackedMeal = null)
     {
         $this->setProperty('isSchoolPackedMeal', $isSchoolPackedMeal);
     }
@@ -206,7 +206,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isStudentPackedMeal
      */
-    public function setIsStudentPackedMeal(bool $isStudentPackedMeal = null)
+    public function setIsStudentPackedMeal(?bool $isStudentPackedMeal = null)
     {
         $this->setProperty('isStudentPackedMeal', $isStudentPackedMeal);
     }
@@ -222,7 +222,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $requiresMeal
      */
-    public function setRequiresMeal(bool $requiresMeal = null)
+    public function setRequiresMeal(?bool $requiresMeal = null)
     {
         $this->setProperty('requiresMeal', $requiresMeal);
     }

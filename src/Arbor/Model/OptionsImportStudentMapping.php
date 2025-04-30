@@ -82,7 +82,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $studentName
      */
-    public function setStudentName(string $studentName = null)
+    public function setStudentName(?string $studentName = null)
     {
         $this->setProperty('studentName', $studentName);
     }
@@ -98,7 +98,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $studentIdentifier
      */
-    public function setStudentIdentifier(string $studentIdentifier = null)
+    public function setStudentIdentifier(?string $studentIdentifier = null)
     {
         $this->setProperty('studentIdentifier', $studentIdentifier);
     }
@@ -114,7 +114,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $mappingAction
      */
-    public function setMappingAction(string $mappingAction = null)
+    public function setMappingAction(?string $mappingAction = null)
     {
         $this->setProperty('mappingAction', $mappingAction);
     }

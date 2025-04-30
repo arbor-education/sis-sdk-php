@@ -108,7 +108,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param string $assessmentType
      */
-    public function setAssessmentType(string $assessmentType = null)
+    public function setAssessmentType(?string $assessmentType = null)
     {
         $this->setProperty('assessmentType', $assessmentType);
     }
@@ -124,7 +124,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $curriculumCompletion
      */
-    public function setCurriculumCompletion(float $curriculumCompletion = null)
+    public function setCurriculumCompletion(?float $curriculumCompletion = null)
     {
         $this->setProperty('curriculumCompletion', $curriculumCompletion);
     }
@@ -140,7 +140,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $predictedMastery
      */
-    public function setPredictedMastery(float $predictedMastery = null)
+    public function setPredictedMastery(?float $predictedMastery = null)
     {
         $this->setProperty('predictedMastery', $predictedMastery);
     }
@@ -156,7 +156,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $currentMastery
      */
-    public function setCurrentMastery(float $currentMastery = null)
+    public function setCurrentMastery(?float $currentMastery = null)
     {
         $this->setProperty('currentMastery', $currentMastery);
     }
@@ -172,7 +172,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $predictedGradePointValue
      */
-    public function setPredictedGradePointValue(float $predictedGradePointValue = null)
+    public function setPredictedGradePointValue(?float $predictedGradePointValue = null)
     {
         $this->setProperty('predictedGradePointValue', $predictedGradePointValue);
     }
@@ -188,7 +188,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $currentGradePointValue
      */
-    public function setCurrentGradePointValue(float $currentGradePointValue = null)
+    public function setCurrentGradePointValue(?float $currentGradePointValue = null)
     {
         $this->setProperty('currentGradePointValue', $currentGradePointValue);
     }
@@ -204,7 +204,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $gradePointValueCap
      */
-    public function setGradePointValueCap(float $gradePointValueCap = null)
+    public function setGradePointValueCap(?float $gradePointValueCap = null)
     {
         $this->setProperty('gradePointValueCap', $gradePointValueCap);
     }

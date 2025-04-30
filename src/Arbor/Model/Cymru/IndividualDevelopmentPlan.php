@@ -84,7 +84,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param string $maintainedByCode
      */
-    public function setMaintainedByCode(string $maintainedByCode = null)
+    public function setMaintainedByCode(?string $maintainedByCode = null)
     {
         $this->setProperty('maintainedByCode', $maintainedByCode);
     }

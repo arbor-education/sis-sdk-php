@@ -114,7 +114,7 @@ class TripParticipant extends ModelBase
     /**
      * @param bool $consentReceived
      */
-    public function setConsentReceived(bool $consentReceived = null)
+    public function setConsentReceived(?bool $consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
     }
@@ -130,7 +130,7 @@ class TripParticipant extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }

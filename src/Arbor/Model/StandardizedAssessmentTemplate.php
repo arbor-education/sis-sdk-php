@@ -64,7 +64,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName = null)
+    public function setTemplateName(?string $templateName = null)
     {
         $this->setProperty('templateName', $templateName);
     }
@@ -80,7 +80,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }

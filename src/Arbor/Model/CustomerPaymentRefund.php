@@ -102,7 +102,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param string $refundAmount
      */
-    public function setRefundAmount(string $refundAmount = null)
+    public function setRefundAmount(?string $refundAmount = null)
     {
         $this->setProperty('refundAmount', $refundAmount);
     }
@@ -166,7 +166,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param string $customerPaymentRefundMethod
      */
-    public function setCustomerPaymentRefundMethod(string $customerPaymentRefundMethod = null)
+    public function setCustomerPaymentRefundMethod(?string $customerPaymentRefundMethod = null)
     {
         $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }

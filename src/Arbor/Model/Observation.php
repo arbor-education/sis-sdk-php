@@ -166,7 +166,7 @@ class Observation extends ModelBase
     /**
      * @param string $observationFocus
      */
-    public function setObservationFocus(string $observationFocus = null)
+    public function setObservationFocus(?string $observationFocus = null)
     {
         $this->setProperty('observationFocus', $observationFocus);
     }

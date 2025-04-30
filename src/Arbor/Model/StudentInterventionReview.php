@@ -96,7 +96,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param string $review
      */
-    public function setReview(string $review = null)
+    public function setReview(?string $review = null)
     {
         $this->setProperty('review', $review);
     }

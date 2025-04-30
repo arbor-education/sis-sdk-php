@@ -102,7 +102,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param string $documentNumber
      */
-    public function setDocumentNumber(string $documentNumber = null)
+    public function setDocumentNumber(?string $documentNumber = null)
     {
         $this->setProperty('documentNumber', $documentNumber);
     }
@@ -150,7 +150,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param string $nameOnDocument
      */
-    public function setNameOnDocument(string $nameOnDocument = null)
+    public function setNameOnDocument(?string $nameOnDocument = null)
     {
         $this->setProperty('nameOnDocument', $nameOnDocument);
     }

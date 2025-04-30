@@ -72,7 +72,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class GradeSet extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class GradeSet extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $gradeSetName
      */
-    public function setGradeSetName(string $gradeSetName = null)
+    public function setGradeSetName(?string $gradeSetName = null)
     {
         $this->setProperty('gradeSetName', $gradeSetName);
     }
@@ -136,7 +136,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -168,7 +168,7 @@ class GradeSet extends ModelBase
     /**
      * @param bool $isDisplayGradeSet
      */
-    public function setIsDisplayGradeSet(bool $isDisplayGradeSet = null)
+    public function setIsDisplayGradeSet(?bool $isDisplayGradeSet = null)
     {
         $this->setProperty('isDisplayGradeSet', $isDisplayGradeSet);
     }
@@ -184,7 +184,7 @@ class GradeSet extends ModelBase
     /**
      * @param string $scaleDirection
      */
-    public function setScaleDirection(string $scaleDirection = null)
+    public function setScaleDirection(?string $scaleDirection = null)
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }

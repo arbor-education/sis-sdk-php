@@ -98,7 +98,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel(string $channel = null)
+    public function setChannel(?string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }

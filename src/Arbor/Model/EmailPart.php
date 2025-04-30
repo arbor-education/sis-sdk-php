@@ -90,7 +90,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $mimeContentId
      */
-    public function setMimeContentId(string $mimeContentId = null)
+    public function setMimeContentId(?string $mimeContentId = null)
     {
         $this->setProperty('mimeContentId', $mimeContentId);
     }
@@ -106,7 +106,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $disposition
      */
-    public function setDisposition(string $disposition = null)
+    public function setDisposition(?string $disposition = null)
     {
         $this->setProperty('disposition', $disposition);
     }
@@ -122,7 +122,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $filename
      */
-    public function setFilename(string $filename = null)
+    public function setFilename(?string $filename = null)
     {
         $this->setProperty('filename', $filename);
     }
@@ -138,7 +138,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $typeMajor
      */
-    public function setTypeMajor(string $typeMajor = null)
+    public function setTypeMajor(?string $typeMajor = null)
     {
         $this->setProperty('typeMajor', $typeMajor);
     }
@@ -154,7 +154,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $typeMinor
      */
-    public function setTypeMinor(string $typeMinor = null)
+    public function setTypeMinor(?string $typeMinor = null)
     {
         $this->setProperty('typeMinor', $typeMinor);
     }
@@ -170,7 +170,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -186,7 +186,7 @@ class EmailPart extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

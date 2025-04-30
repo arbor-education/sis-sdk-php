@@ -178,7 +178,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param float $number
      */
-    public function setNumber(float $number = null)
+    public function setNumber(?float $number = null)
     {
         $this->setProperty('number', $number);
     }

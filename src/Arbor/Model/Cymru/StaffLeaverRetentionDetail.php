@@ -150,7 +150,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param int $teachingExperience
      */
-    public function setTeachingExperience(int $teachingExperience = null)
+    public function setTeachingExperience(?int $teachingExperience = null)
     {
         $this->setProperty('teachingExperience', $teachingExperience);
     }

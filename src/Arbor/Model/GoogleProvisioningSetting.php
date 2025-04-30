@@ -66,7 +66,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param bool $provisionStaffUsers
      */
-    public function setProvisionStaffUsers(bool $provisionStaffUsers = null)
+    public function setProvisionStaffUsers(?bool $provisionStaffUsers = null)
     {
         $this->setProperty('provisionStaffUsers', $provisionStaffUsers);
     }
@@ -82,7 +82,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param bool $provisionStudentUsers
      */
-    public function setProvisionStudentUsers(bool $provisionStudentUsers = null)
+    public function setProvisionStudentUsers(?bool $provisionStudentUsers = null)
     {
         $this->setProperty('provisionStudentUsers', $provisionStudentUsers);
     }
@@ -98,7 +98,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param string $authConfig
      */
-    public function setAuthConfig(string $authConfig = null)
+    public function setAuthConfig(?string $authConfig = null)
     {
         $this->setProperty('authConfig', $authConfig);
     }
@@ -114,7 +114,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param string $accessToken
      */
-    public function setAccessToken(string $accessToken = null)
+    public function setAccessToken(?string $accessToken = null)
     {
         $this->setProperty('accessToken', $accessToken);
     }

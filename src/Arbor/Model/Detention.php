@@ -212,7 +212,7 @@ class Detention extends ModelBase
     /**
      * @param string $detentionDuration
      */
-    public function setDetentionDuration(string $detentionDuration = null)
+    public function setDetentionDuration(?string $detentionDuration = null)
     {
         $this->setProperty('detentionDuration', $detentionDuration);
     }
@@ -228,7 +228,7 @@ class Detention extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark(string $attendanceMark = null)
+    public function setAttendanceMark(?string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -244,7 +244,7 @@ class Detention extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

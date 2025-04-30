@@ -120,7 +120,7 @@ class Trip extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -152,7 +152,7 @@ class Trip extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -168,7 +168,7 @@ class Trip extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -232,7 +232,7 @@ class Trip extends ModelBase
     /**
      * @param int $maxParticipants
      */
-    public function setMaxParticipants(int $maxParticipants = null)
+    public function setMaxParticipants(?int $maxParticipants = null)
     {
         $this->setProperty('maxParticipants', $maxParticipants);
     }
@@ -248,7 +248,7 @@ class Trip extends ModelBase
     /**
      * @param bool $requireConsent
      */
-    public function setRequireConsent(bool $requireConsent = null)
+    public function setRequireConsent(?bool $requireConsent = null)
     {
         $this->setProperty('requireConsent', $requireConsent);
     }
@@ -296,7 +296,7 @@ class Trip extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree(bool $free = null)
+    public function setFree(?bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -328,7 +328,7 @@ class Trip extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode(string $accountingCode = null)
+    public function setAccountingCode(?string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }

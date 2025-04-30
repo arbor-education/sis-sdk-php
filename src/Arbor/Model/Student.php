@@ -170,7 +170,7 @@ class Student extends ModelBase
     /**
      * @param string $bloodGroup
      */
-    public function setBloodGroup(string $bloodGroup = null)
+    public function setBloodGroup(?string $bloodGroup = null)
     {
         $this->setProperty('bloodGroup', $bloodGroup);
     }
@@ -186,7 +186,7 @@ class Student extends ModelBase
     /**
      * @param string $pregnancyLength
      */
-    public function setPregnancyLength(string $pregnancyLength = null)
+    public function setPregnancyLength(?string $pregnancyLength = null)
     {
         $this->setProperty('pregnancyLength', $pregnancyLength);
     }
@@ -202,7 +202,7 @@ class Student extends ModelBase
     /**
      * @param string $birthDelivery
      */
-    public function setBirthDelivery(string $birthDelivery = null)
+    public function setBirthDelivery(?string $birthDelivery = null)
     {
         $this->setProperty('birthDelivery', $birthDelivery);
     }
@@ -218,7 +218,7 @@ class Student extends ModelBase
     /**
      * @param string $handedness
      */
-    public function setHandedness(string $handedness = null)
+    public function setHandedness(?string $handedness = null)
     {
         $this->setProperty('handedness', $handedness);
     }
@@ -234,7 +234,7 @@ class Student extends ModelBase
     /**
      * @param string $studentNumber
      */
-    public function setStudentNumber(string $studentNumber = null)
+    public function setStudentNumber(?string $studentNumber = null)
     {
         $this->setProperty('studentNumber', $studentNumber);
     }
@@ -250,7 +250,7 @@ class Student extends ModelBase
     /**
      * @param string $legacySystemId
      */
-    public function setLegacySystemId(string $legacySystemId = null)
+    public function setLegacySystemId(?string $legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
     }
@@ -282,7 +282,7 @@ class Student extends ModelBase
     /**
      * @param bool $suspendCalendarEntryMappings
      */
-    public function setSuspendCalendarEntryMappings(bool $suspendCalendarEntryMappings = null)
+    public function setSuspendCalendarEntryMappings(?bool $suspendCalendarEntryMappings = null)
     {
         $this->setProperty('suspendCalendarEntryMappings', $suspendCalendarEntryMappings);
     }
@@ -298,7 +298,7 @@ class Student extends ModelBase
     /**
      * @param bool $isActiveOutgoingSync
      */
-    public function setIsActiveOutgoingSync(bool $isActiveOutgoingSync = null)
+    public function setIsActiveOutgoingSync(?bool $isActiveOutgoingSync = null)
     {
         $this->setProperty('isActiveOutgoingSync', $isActiveOutgoingSync);
     }
@@ -314,7 +314,7 @@ class Student extends ModelBase
     /**
      * @param bool $isActiveIncomingSync
      */
-    public function setIsActiveIncomingSync(bool $isActiveIncomingSync = null)
+    public function setIsActiveIncomingSync(?bool $isActiveIncomingSync = null)
     {
         $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }
@@ -330,7 +330,7 @@ class Student extends ModelBase
     /**
      * @param int $uniqueLearnerNumber
      */
-    public function setUniqueLearnerNumber(int $uniqueLearnerNumber = null)
+    public function setUniqueLearnerNumber(?int $uniqueLearnerNumber = null)
     {
         $this->setProperty('uniqueLearnerNumber', $uniqueLearnerNumber);
     }
@@ -362,7 +362,7 @@ class Student extends ModelBase
     /**
      * @param string $youthSupportServicesAgreement
      */
-    public function setYouthSupportServicesAgreement(string $youthSupportServicesAgreement = null)
+    public function setYouthSupportServicesAgreement(?string $youthSupportServicesAgreement = null)
     {
         $this->setProperty('youthSupportServicesAgreement', $youthSupportServicesAgreement);
     }
@@ -378,7 +378,7 @@ class Student extends ModelBase
     /**
      * @param string $hoursAtSetting
      */
-    public function setHoursAtSetting(string $hoursAtSetting = null)
+    public function setHoursAtSetting(?string $hoursAtSetting = null)
     {
         $this->setProperty('hoursAtSetting', $hoursAtSetting);
     }
@@ -394,7 +394,7 @@ class Student extends ModelBase
     /**
      * @param string $fundedHours
      */
-    public function setFundedHours(string $fundedHours = null)
+    public function setFundedHours(?string $fundedHours = null)
     {
         $this->setProperty('fundedHours', $fundedHours);
     }
@@ -410,7 +410,7 @@ class Student extends ModelBase
     /**
      * @param string $ethnicitySource
      */
-    public function setEthnicitySource(string $ethnicitySource = null)
+    public function setEthnicitySource(?string $ethnicitySource = null)
     {
         $this->setProperty('ethnicitySource', $ethnicitySource);
     }
@@ -426,7 +426,7 @@ class Student extends ModelBase
     /**
      * @param string $nhsNumber
      */
-    public function setNhsNumber(string $nhsNumber = null)
+    public function setNhsNumber(?string $nhsNumber = null)
     {
         $this->setProperty('nhsNumber', $nhsNumber);
     }
@@ -442,7 +442,7 @@ class Student extends ModelBase
     /**
      * @param string $ucasPersonalIdentifier
      */
-    public function setUcasPersonalIdentifier(string $ucasPersonalIdentifier = null)
+    public function setUcasPersonalIdentifier(?string $ucasPersonalIdentifier = null)
     {
         $this->setProperty('ucasPersonalIdentifier', $ucasPersonalIdentifier);
     }
@@ -458,7 +458,7 @@ class Student extends ModelBase
     /**
      * @param string $extendedHours
      */
-    public function setExtendedHours(string $extendedHours = null)
+    public function setExtendedHours(?string $extendedHours = null)
     {
         $this->setProperty('extendedHours', $extendedHours);
     }
@@ -474,7 +474,7 @@ class Student extends ModelBase
     /**
      * @param string $thirtyHourCode
      */
-    public function setThirtyHourCode(string $thirtyHourCode = null)
+    public function setThirtyHourCode(?string $thirtyHourCode = null)
     {
         $this->setProperty('thirtyHourCode', $thirtyHourCode);
     }
@@ -490,7 +490,7 @@ class Student extends ModelBase
     /**
      * @param string $expandedHours
      */
-    public function setExpandedHours(string $expandedHours = null)
+    public function setExpandedHours(?string $expandedHours = null)
     {
         $this->setProperty('expandedHours', $expandedHours);
     }
@@ -506,7 +506,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseEnglishGrade
      */
-    public function setGcseEnglishGrade(string $gcseEnglishGrade = null)
+    public function setGcseEnglishGrade(?string $gcseEnglishGrade = null)
     {
         $this->setProperty('gcseEnglishGrade', $gcseEnglishGrade);
     }
@@ -522,7 +522,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseEnglishGradePrior
      */
-    public function setGcseEnglishGradePrior(string $gcseEnglishGradePrior = null)
+    public function setGcseEnglishGradePrior(?string $gcseEnglishGradePrior = null)
     {
         $this->setProperty('gcseEnglishGradePrior', $gcseEnglishGradePrior);
     }
@@ -571,7 +571,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseMathsGrade
      */
-    public function setGcseMathsGrade(string $gcseMathsGrade = null)
+    public function setGcseMathsGrade(?string $gcseMathsGrade = null)
     {
         $this->setProperty('gcseMathsGrade', $gcseMathsGrade);
     }
@@ -587,7 +587,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseMathsGradePrior
      */
-    public function setGcseMathsGradePrior(string $gcseMathsGradePrior = null)
+    public function setGcseMathsGradePrior(?string $gcseMathsGradePrior = null)
     {
         $this->setProperty('gcseMathsGradePrior', $gcseMathsGradePrior);
     }
@@ -636,7 +636,7 @@ class Student extends ModelBase
     /**
      * @param int $tLevelPlannedEepHours
      */
-    public function setTLevelPlannedEepHours(int $tLevelPlannedEepHours = null)
+    public function setTLevelPlannedEepHours(?int $tLevelPlannedEepHours = null)
     {
         $this->setProperty('tLevelPlannedEepHours', $tLevelPlannedEepHours);
     }

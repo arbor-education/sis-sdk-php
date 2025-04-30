@@ -74,7 +74,7 @@ class Staff extends ModelBase
     /**
      * @param bool $eligibleForSchoolWorkforceReturn
      */
-    public function setEligibleForSchoolWorkforceReturn(bool $eligibleForSchoolWorkforceReturn = null)
+    public function setEligibleForSchoolWorkforceReturn(?bool $eligibleForSchoolWorkforceReturn = null)
     {
         $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
@@ -90,7 +90,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherStatus
      */
-    public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
+    public function setQualifiedTeacherStatus(?bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
@@ -106,7 +106,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherLearningAndSkillsStatus
      */
-    public function setQualifiedTeacherLearningAndSkillsStatus(bool $qualifiedTeacherLearningAndSkillsStatus = null)
+    public function setQualifiedTeacherLearningAndSkillsStatus(?bool $qualifiedTeacherLearningAndSkillsStatus = null)
     {
         $this->setProperty('qualifiedTeacherLearningAndSkillsStatus', $qualifiedTeacherLearningAndSkillsStatus);
     }
@@ -122,7 +122,7 @@ class Staff extends ModelBase
     /**
      * @param bool $earlyYearsTeacherStatus
      */
-    public function setEarlyYearsTeacherStatus(bool $earlyYearsTeacherStatus = null)
+    public function setEarlyYearsTeacherStatus(?bool $earlyYearsTeacherStatus = null)
     {
         $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
@@ -154,7 +154,7 @@ class Staff extends ModelBase
     /**
      * @param bool $hltaStatus
      */
-    public function setHltaStatus(bool $hltaStatus = null)
+    public function setHltaStatus(?bool $hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
@@ -186,7 +186,7 @@ class Staff extends ModelBase
     /**
      * @param string $sltStatusForSwc
      */
-    public function setSltStatusForSwc(string $sltStatusForSwc = null)
+    public function setSltStatusForSwc(?string $sltStatusForSwc = null)
     {
         $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }

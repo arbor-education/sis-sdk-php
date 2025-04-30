@@ -84,7 +84,7 @@ class BasketItem extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount(string $paymentAmount = null)
+    public function setPaymentAmount(?string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }
@@ -132,7 +132,7 @@ class BasketItem extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }

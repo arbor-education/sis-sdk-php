@@ -116,7 +116,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param bool $recipientForEconomicReasons
      */
-    public function setRecipientForEconomicReasons(bool $recipientForEconomicReasons = null)
+    public function setRecipientForEconomicReasons(?bool $recipientForEconomicReasons = null)
     {
         $this->setProperty('recipientForEconomicReasons', $recipientForEconomicReasons);
     }
@@ -132,7 +132,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param bool $recipientForOtherReasons
      */
-    public function setRecipientForOtherReasons(bool $recipientForOtherReasons = null)
+    public function setRecipientForOtherReasons(?bool $recipientForOtherReasons = null)
     {
         $this->setProperty('recipientForOtherReasons', $recipientForOtherReasons);
     }

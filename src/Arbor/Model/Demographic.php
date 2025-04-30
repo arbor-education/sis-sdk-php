@@ -82,7 +82,7 @@ class Demographic extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(string $label = null)
+    public function setLabel(?string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -98,7 +98,7 @@ class Demographic extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -114,7 +114,7 @@ class Demographic extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -130,7 +130,7 @@ class Demographic extends ModelBase
     /**
      * @param bool $hasInverse
      */
-    public function setHasInverse(bool $hasInverse = null)
+    public function setHasInverse(?bool $hasInverse = null)
     {
         $this->setProperty('hasInverse', $hasInverse);
     }
@@ -146,7 +146,7 @@ class Demographic extends ModelBase
     /**
      * @param string $inverseLabel
      */
-    public function setInverseLabel(string $inverseLabel = null)
+    public function setInverseLabel(?string $inverseLabel = null)
     {
         $this->setProperty('inverseLabel', $inverseLabel);
     }
@@ -162,7 +162,7 @@ class Demographic extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -178,7 +178,7 @@ class Demographic extends ModelBase
     /**
      * @param string $calculationClass
      */
-    public function setCalculationClass(string $calculationClass = null)
+    public function setCalculationClass(?string $calculationClass = null)
     {
         $this->setProperty('calculationClass', $calculationClass);
     }
@@ -226,7 +226,7 @@ class Demographic extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -242,7 +242,7 @@ class Demographic extends ModelBase
     /**
      * @param string $calculationParams
      */
-    public function setCalculationParams(string $calculationParams = null)
+    public function setCalculationParams(?string $calculationParams = null)
     {
         $this->setProperty('calculationParams', $calculationParams);
     }
@@ -258,7 +258,7 @@ class Demographic extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -274,7 +274,7 @@ class Demographic extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

@@ -96,7 +96,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param string $issued
      */
-    public function setIssued(string $issued = null)
+    public function setIssued(?string $issued = null)
     {
         $this->setProperty('issued', $issued);
     }
@@ -112,7 +112,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

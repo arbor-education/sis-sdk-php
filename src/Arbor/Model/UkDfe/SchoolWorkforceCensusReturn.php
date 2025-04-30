@@ -120,7 +120,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $returnFilename
      */
-    public function setReturnFilename(string $returnFilename = null)
+    public function setReturnFilename(?string $returnFilename = null)
     {
         $this->setProperty('returnFilename', $returnFilename);
     }
@@ -136,7 +136,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $statusDescription
      */
-    public function setStatusDescription(string $statusDescription = null)
+    public function setStatusDescription(?string $statusDescription = null)
     {
         $this->setProperty('statusDescription', $statusDescription);
     }
@@ -152,7 +152,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param int $returnFilenameSequenceNumber
      */
-    public function setReturnFilenameSequenceNumber(int $returnFilenameSequenceNumber = null)
+    public function setReturnFilenameSequenceNumber(?int $returnFilenameSequenceNumber = null)
     {
         $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
@@ -168,7 +168,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $xsltError
      */
-    public function setXsltError(bool $xsltError = null)
+    public function setXsltError(?bool $xsltError = null)
     {
         $this->setProperty('xsltError', $xsltError);
     }
@@ -184,7 +184,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $dataError
      */
-    public function setDataError(bool $dataError = null)
+    public function setDataError(?bool $dataError = null)
     {
         $this->setProperty('dataError', $dataError);
     }
@@ -200,7 +200,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isDryRun
      */
-    public function setIsDryRun(bool $isDryRun = null)
+    public function setIsDryRun(?bool $isDryRun = null)
     {
         $this->setProperty('isDryRun', $isDryRun);
     }
@@ -296,7 +296,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isStaffContractInformationExcluded
      */
-    public function setIsStaffContractInformationExcluded(bool $isStaffContractInformationExcluded = null)
+    public function setIsStaffContractInformationExcluded(?bool $isStaffContractInformationExcluded = null)
     {
         $this->setProperty('isStaffContractInformationExcluded', $isStaffContractInformationExcluded);
     }

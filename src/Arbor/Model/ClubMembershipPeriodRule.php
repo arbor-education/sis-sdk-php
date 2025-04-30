@@ -62,7 +62,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param string $ruleIdentifier
      */
-    public function setRuleIdentifier(string $ruleIdentifier = null)
+    public function setRuleIdentifier(?string $ruleIdentifier = null)
     {
         $this->setProperty('ruleIdentifier', $ruleIdentifier);
     }
@@ -78,7 +78,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param string $ruleValue
      */
-    public function setRuleValue(string $ruleValue = null)
+    public function setRuleValue(?string $ruleValue = null)
     {
         $this->setProperty('ruleValue', $ruleValue);
     }

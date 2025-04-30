@@ -90,7 +90,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $changerClassName
      */
-    public function setChangerClassName(string $changerClassName = null)
+    public function setChangerClassName(?string $changerClassName = null)
     {
         $this->setProperty('changerClassName', $changerClassName);
     }
@@ -106,7 +106,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $changeType
      */
-    public function setChangeType(string $changeType = null)
+    public function setChangeType(?string $changeType = null)
     {
         $this->setProperty('changeType', $changeType);
     }
@@ -186,7 +186,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $oldData
      */
-    public function setOldData(string $oldData = null)
+    public function setOldData(?string $oldData = null)
     {
         $this->setProperty('oldData', $oldData);
     }
@@ -202,7 +202,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $newData
      */
-    public function setNewData(string $newData = null)
+    public function setNewData(?string $newData = null)
     {
         $this->setProperty('newData', $newData);
     }

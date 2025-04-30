@@ -147,7 +147,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param bool $welshMediumVacancy
      */
-    public function setWelshMediumVacancy(bool $welshMediumVacancy = null)
+    public function setWelshMediumVacancy(?bool $welshMediumVacancy = null)
     {
         $this->setProperty('welshMediumVacancy', $welshMediumVacancy);
     }
@@ -163,7 +163,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure(string $tenure = null)
+    public function setTenure(?string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -211,7 +211,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param int $totalNumberOfApplications
      */
-    public function setTotalNumberOfApplications(int $totalNumberOfApplications = null)
+    public function setTotalNumberOfApplications(?int $totalNumberOfApplications = null)
     {
         $this->setProperty('totalNumberOfApplications', $totalNumberOfApplications);
     }
@@ -227,7 +227,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param int $vacancyAdvertisedCount
      */
-    public function setVacancyAdvertisedCount(int $vacancyAdvertisedCount = null)
+    public function setVacancyAdvertisedCount(?int $vacancyAdvertisedCount = null)
     {
         $this->setProperty('vacancyAdvertisedCount', $vacancyAdvertisedCount);
     }
@@ -243,7 +243,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param bool $appointmentMade
      */
-    public function setAppointmentMade(bool $appointmentMade = null)
+    public function setAppointmentMade(?bool $appointmentMade = null)
     {
         $this->setProperty('appointmentMade', $appointmentMade);
     }
@@ -259,7 +259,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param string $vacancyCover
      */
-    public function setVacancyCover(string $vacancyCover = null)
+    public function setVacancyCover(?string $vacancyCover = null)
     {
         $this->setProperty('vacancyCover', $vacancyCover);
     }

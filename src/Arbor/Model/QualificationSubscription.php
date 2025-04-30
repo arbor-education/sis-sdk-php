@@ -62,7 +62,7 @@ class QualificationSubscription extends ModelBase
     /**
      * @param string $qualificationElementType
      */
-    public function setQualificationElementType(string $qualificationElementType = null)
+    public function setQualificationElementType(?string $qualificationElementType = null)
     {
         $this->setProperty('qualificationElementType', $qualificationElementType);
     }
@@ -78,7 +78,7 @@ class QualificationSubscription extends ModelBase
     /**
      * @param string $qualificationElementCode
      */
-    public function setQualificationElementCode(string $qualificationElementCode = null)
+    public function setQualificationElementCode(?string $qualificationElementCode = null)
     {
         $this->setProperty('qualificationElementCode', $qualificationElementCode);
     }
@@ -94,7 +94,7 @@ class QualificationSubscription extends ModelBase
     /**
      * @param string $hash
      */
-    public function setHash(string $hash = null)
+    public function setHash(?string $hash = null)
     {
         $this->setProperty('hash', $hash);
     }

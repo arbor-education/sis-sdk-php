@@ -118,7 +118,7 @@ class Email extends ModelBase
     /**
      * @param int $uid
      */
-    public function setUid(int $uid = null)
+    public function setUid(?int $uid = null)
     {
         $this->setProperty('uid', $uid);
     }
@@ -134,7 +134,7 @@ class Email extends ModelBase
     /**
      * @param int $uidValidity
      */
-    public function setUidValidity(int $uidValidity = null)
+    public function setUidValidity(?int $uidValidity = null)
     {
         $this->setProperty('uidValidity', $uidValidity);
     }
@@ -150,7 +150,7 @@ class Email extends ModelBase
     /**
      * @param string $messageId
      */
-    public function setMessageId(string $messageId = null)
+    public function setMessageId(?string $messageId = null)
     {
         $this->setProperty('messageId', $messageId);
     }
@@ -166,7 +166,7 @@ class Email extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

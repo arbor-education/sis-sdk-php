@@ -74,7 +74,7 @@ class CustomReport extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -90,7 +90,7 @@ class CustomReport extends ModelBase
     /**
      * @param string $reportClass
      */
-    public function setReportClass(string $reportClass = null)
+    public function setReportClass(?string $reportClass = null)
     {
         $this->setProperty('reportClass', $reportClass);
     }
@@ -122,7 +122,7 @@ class CustomReport extends ModelBase
     /**
      * @param int $lastDbQueries
      */
-    public function setLastDbQueries(int $lastDbQueries = null)
+    public function setLastDbQueries(?int $lastDbQueries = null)
     {
         $this->setProperty('lastDbQueries', $lastDbQueries);
     }
@@ -138,7 +138,7 @@ class CustomReport extends ModelBase
     /**
      * @param float $lastDbTime
      */
-    public function setLastDbTime(float $lastDbTime = null)
+    public function setLastDbTime(?float $lastDbTime = null)
     {
         $this->setProperty('lastDbTime', $lastDbTime);
     }
@@ -154,7 +154,7 @@ class CustomReport extends ModelBase
     /**
      * @param float $lastTotalTime
      */
-    public function setLastTotalTime(float $lastTotalTime = null)
+    public function setLastTotalTime(?float $lastTotalTime = null)
     {
         $this->setProperty('lastTotalTime', $lastTotalTime);
     }
@@ -186,7 +186,7 @@ class CustomReport extends ModelBase
     /**
      * @param bool $transient
      */
-    public function setTransient(bool $transient = null)
+    public function setTransient(?bool $transient = null)
     {
         $this->setProperty('transient', $transient);
     }
@@ -202,7 +202,7 @@ class CustomReport extends ModelBase
     /**
      * @param bool $isArchived
      */
-    public function setIsArchived(bool $isArchived = null)
+    public function setIsArchived(?bool $isArchived = null)
     {
         $this->setProperty('isArchived', $isArchived);
     }

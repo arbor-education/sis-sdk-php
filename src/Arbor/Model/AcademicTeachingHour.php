@@ -98,7 +98,7 @@ class AcademicTeachingHour extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -114,7 +114,7 @@ class AcademicTeachingHour extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -130,7 +130,7 @@ class AcademicTeachingHour extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(int $dayOfCycle = null)
+    public function setDayOfCycle(?int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }

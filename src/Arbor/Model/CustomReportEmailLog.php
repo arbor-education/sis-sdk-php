@@ -78,7 +78,7 @@ class CustomReportEmailLog extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(string $emailAddress = null)
+    public function setEmailAddress(?string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }

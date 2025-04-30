@@ -76,7 +76,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageType
      */
-    public function setMessageType(string $messageType = null)
+    public function setMessageType(?string $messageType = null)
     {
         $this->setProperty('messageType', $messageType);
     }
@@ -92,7 +92,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $senderNumber
      */
-    public function setSenderNumber(string $senderNumber = null)
+    public function setSenderNumber(?string $senderNumber = null)
     {
         $this->setProperty('senderNumber', $senderNumber);
     }
@@ -124,7 +124,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $recipientNumber
      */
-    public function setRecipientNumber(string $recipientNumber = null)
+    public function setRecipientNumber(?string $recipientNumber = null)
     {
         $this->setProperty('recipientNumber', $recipientNumber);
     }
@@ -156,7 +156,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText(string $messageText = null)
+    public function setMessageText(?string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -172,7 +172,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageIdentifier
      */
-    public function setMessageIdentifier(string $messageIdentifier = null)
+    public function setMessageIdentifier(?string $messageIdentifier = null)
     {
         $this->setProperty('messageIdentifier', $messageIdentifier);
     }

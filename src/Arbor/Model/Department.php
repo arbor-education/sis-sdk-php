@@ -62,7 +62,7 @@ class Department extends ModelBase
     /**
      * @param string $departmentCode
      */
-    public function setDepartmentCode(string $departmentCode = null)
+    public function setDepartmentCode(?string $departmentCode = null)
     {
         $this->setProperty('departmentCode', $departmentCode);
     }
@@ -78,7 +78,7 @@ class Department extends ModelBase
     /**
      * @param string $departmentName
      */
-    public function setDepartmentName(string $departmentName = null)
+    public function setDepartmentName(?string $departmentName = null)
     {
         $this->setProperty('departmentName', $departmentName);
     }
@@ -94,7 +94,7 @@ class Department extends ModelBase
     /**
      * @param bool $isActive
      */
-    public function setIsActive(bool $isActive = null)
+    public function setIsActive(?bool $isActive = null)
     {
         $this->setProperty('isActive', $isActive);
     }

@@ -80,7 +80,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param string $spinalPointCode
      */
-    public function setSpinalPointCode(string $spinalPointCode = null)
+    public function setSpinalPointCode(?string $spinalPointCode = null)
     {
         $this->setProperty('spinalPointCode', $spinalPointCode);
     }
@@ -96,7 +96,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param string $spinalPointName
      */
-    public function setSpinalPointName(string $spinalPointName = null)
+    public function setSpinalPointName(?string $spinalPointName = null)
     {
         $this->setProperty('spinalPointName', $spinalPointName);
     }
@@ -112,7 +112,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

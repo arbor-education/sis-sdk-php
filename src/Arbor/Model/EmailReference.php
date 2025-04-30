@@ -82,7 +82,7 @@ class EmailReference extends ModelBase
     /**
      * @param string $referenceType
      */
-    public function setReferenceType(string $referenceType = null)
+    public function setReferenceType(?string $referenceType = null)
     {
         $this->setProperty('referenceType', $referenceType);
     }
@@ -98,7 +98,7 @@ class EmailReference extends ModelBase
     /**
      * @param string $referencedMessageId
      */
-    public function setReferencedMessageId(string $referencedMessageId = null)
+    public function setReferencedMessageId(?string $referencedMessageId = null)
     {
         $this->setProperty('referencedMessageId', $referencedMessageId);
     }
@@ -130,7 +130,7 @@ class EmailReference extends ModelBase
     /**
      * @param int $referenceIndex
      */
-    public function setReferenceIndex(int $referenceIndex = null)
+    public function setReferenceIndex(?int $referenceIndex = null)
     {
         $this->setProperty('referenceIndex', $referenceIndex);
     }

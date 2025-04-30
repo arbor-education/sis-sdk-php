@@ -80,7 +80,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $deletedLegalEntityName
      */
-    public function setDeletedLegalEntityName(string $deletedLegalEntityName = null)
+    public function setDeletedLegalEntityName(?string $deletedLegalEntityName = null)
     {
         $this->setProperty('deletedLegalEntityName', $deletedLegalEntityName);
     }
@@ -96,7 +96,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $stripeCustomerId
      */
-    public function setStripeCustomerId(string $stripeCustomerId = null)
+    public function setStripeCustomerId(?string $stripeCustomerId = null)
     {
         $this->setProperty('stripeCustomerId', $stripeCustomerId);
     }
@@ -112,7 +112,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $newStripeCustomerId
      */
-    public function setNewStripeCustomerId(string $newStripeCustomerId = null)
+    public function setNewStripeCustomerId(?string $newStripeCustomerId = null)
     {
         $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }

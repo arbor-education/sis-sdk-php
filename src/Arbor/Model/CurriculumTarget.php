@@ -80,7 +80,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param int $academicYearIndex
      */
-    public function setAcademicYearIndex(int $academicYearIndex = null)
+    public function setAcademicYearIndex(?int $academicYearIndex = null)
     {
         $this->setProperty('academicYearIndex', $academicYearIndex);
     }
@@ -96,7 +96,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param float $academicYearPoint
      */
-    public function setAcademicYearPoint(float $academicYearPoint = null)
+    public function setAcademicYearPoint(?float $academicYearPoint = null)
     {
         $this->setProperty('academicYearPoint', $academicYearPoint);
     }
@@ -112,7 +112,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param float $target
      */
-    public function setTarget(float $target = null)
+    public function setTarget(?float $target = null)
     {
         $this->setProperty('target', $target);
     }

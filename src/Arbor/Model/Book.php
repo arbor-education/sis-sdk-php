@@ -70,7 +70,7 @@ class Book extends ModelBase
     /**
      * @param string $bookType
      */
-    public function setBookType(string $bookType = null)
+    public function setBookType(?string $bookType = null)
     {
         $this->setProperty('bookType', $bookType);
     }
@@ -86,7 +86,7 @@ class Book extends ModelBase
     /**
      * @param string $prefix
      */
-    public function setPrefix(string $prefix = null)
+    public function setPrefix(?string $prefix = null)
     {
         $this->setProperty('prefix', $prefix);
     }
@@ -102,7 +102,7 @@ class Book extends ModelBase
     /**
      * @param int $firstNumber
      */
-    public function setFirstNumber(int $firstNumber = null)
+    public function setFirstNumber(?int $firstNumber = null)
     {
         $this->setProperty('firstNumber', $firstNumber);
     }
@@ -118,7 +118,7 @@ class Book extends ModelBase
     /**
      * @param int $lastNumber
      */
-    public function setLastNumber(int $lastNumber = null)
+    public function setLastNumber(?int $lastNumber = null)
     {
         $this->setProperty('lastNumber', $lastNumber);
     }
@@ -134,7 +134,7 @@ class Book extends ModelBase
     /**
      * @param int $nextNumber
      */
-    public function setNextNumber(int $nextNumber = null)
+    public function setNextNumber(?int $nextNumber = null)
     {
         $this->setProperty('nextNumber', $nextNumber);
     }
@@ -150,7 +150,7 @@ class Book extends ModelBase
     /**
      * @param bool $open
      */
-    public function setOpen(bool $open = null)
+    public function setOpen(?bool $open = null)
     {
         $this->setProperty('open', $open);
     }

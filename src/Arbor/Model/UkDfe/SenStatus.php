@@ -60,7 +60,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $d00229
      */
-    public function setD00229(string $d00229 = null)
+    public function setD00229(?string $d00229 = null)
     {
         $this->setProperty('d00229', $d00229);
     }

@@ -108,7 +108,7 @@ class Session extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -140,7 +140,7 @@ class Session extends ModelBase
     /**
      * @param string $sessionName
      */
-    public function setSessionName(string $sessionName = null)
+    public function setSessionName(?string $sessionName = null)
     {
         $this->setProperty('sessionName', $sessionName);
     }
@@ -220,7 +220,7 @@ class Session extends ModelBase
     /**
      * @param bool $isSuspended
      */
-    public function setIsSuspended(bool $isSuspended = null)
+    public function setIsSuspended(?bool $isSuspended = null)
     {
         $this->setProperty('isSuspended', $isSuspended);
     }

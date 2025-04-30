@@ -99,7 +99,7 @@ class VisionTest extends ModelBase
     /**
      * @param string $colorBlindness
      */
-    public function setColorBlindness(string $colorBlindness = null)
+    public function setColorBlindness(?string $colorBlindness = null)
     {
         $this->setProperty('colorBlindness', $colorBlindness);
     }
@@ -115,7 +115,7 @@ class VisionTest extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

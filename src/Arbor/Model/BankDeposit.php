@@ -118,7 +118,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $totalChequeAmount
      */
-    public function setTotalChequeAmount(string $totalChequeAmount = null)
+    public function setTotalChequeAmount(?string $totalChequeAmount = null)
     {
         $this->setProperty('totalChequeAmount', $totalChequeAmount);
     }
@@ -134,7 +134,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $totalCashAmount
      */
-    public function setTotalCashAmount(string $totalCashAmount = null)
+    public function setTotalCashAmount(?string $totalCashAmount = null)
     {
         $this->setProperty('totalCashAmount', $totalCashAmount);
     }
@@ -150,7 +150,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $depositReference
      */
-    public function setDepositReference(string $depositReference = null)
+    public function setDepositReference(?string $depositReference = null)
     {
         $this->setProperty('depositReference', $depositReference);
     }
@@ -166,7 +166,7 @@ class BankDeposit extends ModelBase
     /**
      * @param string $refundAdjustmentAmount
      */
-    public function setRefundAdjustmentAmount(string $refundAdjustmentAmount = null)
+    public function setRefundAdjustmentAmount(?string $refundAdjustmentAmount = null)
     {
         $this->setProperty('refundAdjustmentAmount', $refundAdjustmentAmount);
     }

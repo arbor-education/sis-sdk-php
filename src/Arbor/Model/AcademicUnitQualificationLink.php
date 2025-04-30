@@ -98,7 +98,7 @@ class AcademicUnitQualificationLink extends ModelBase
     /**
      * @param bool $automaticEntry
      */
-    public function setAutomaticEntry(bool $automaticEntry = null)
+    public function setAutomaticEntry(?bool $automaticEntry = null)
     {
         $this->setProperty('automaticEntry', $automaticEntry);
     }

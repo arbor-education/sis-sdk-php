@@ -84,7 +84,7 @@ class MealPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -100,7 +100,7 @@ class MealPrice extends ModelBase
     /**
      * @param string $vatAmount
      */
-    public function setVatAmount(string $vatAmount = null)
+    public function setVatAmount(?string $vatAmount = null)
     {
         $this->setProperty('vatAmount', $vatAmount);
     }

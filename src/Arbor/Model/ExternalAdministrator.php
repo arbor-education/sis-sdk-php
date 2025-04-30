@@ -66,7 +66,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $uniqueExternalUserId
      */
-    public function setUniqueExternalUserId(string $uniqueExternalUserId = null)
+    public function setUniqueExternalUserId(?string $uniqueExternalUserId = null)
     {
         $this->setProperty('uniqueExternalUserId', $uniqueExternalUserId);
     }
@@ -82,7 +82,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $firstName
      */
-    public function setFirstName(string $firstName = null)
+    public function setFirstName(?string $firstName = null)
     {
         $this->setProperty('firstName', $firstName);
     }
@@ -98,7 +98,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $lastName
      */
-    public function setLastName(string $lastName = null)
+    public function setLastName(?string $lastName = null)
     {
         $this->setProperty('lastName', $lastName);
     }
@@ -114,7 +114,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail(string $email = null)
+    public function setEmail(?string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -130,7 +130,7 @@ class ExternalAdministrator extends ModelBase
     /**
      * @param string $application
      */
-    public function setApplication(string $application = null)
+    public function setApplication(?string $application = null)
     {
         $this->setProperty('application', $application);
     }

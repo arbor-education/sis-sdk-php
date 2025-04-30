@@ -80,7 +80,7 @@ class MeetingNote extends ModelBase
     /**
      * @param string $noteText
      */
-    public function setNoteText(string $noteText = null)
+    public function setNoteText(?string $noteText = null)
     {
         $this->setProperty('noteText', $noteText);
     }
@@ -112,7 +112,7 @@ class MeetingNote extends ModelBase
     /**
      * @param bool $isSharedWithGuardians
      */
-    public function setIsSharedWithGuardians(bool $isSharedWithGuardians = null)
+    public function setIsSharedWithGuardians(?bool $isSharedWithGuardians = null)
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }

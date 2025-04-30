@@ -70,7 +70,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -134,7 +134,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $appliesToStudent
      */
-    public function setAppliesToStudent(bool $appliesToStudent = null)
+    public function setAppliesToStudent(?bool $appliesToStudent = null)
     {
         $this->setProperty('appliesToStudent', $appliesToStudent);
     }
@@ -150,7 +150,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $appliesToStaff
      */
-    public function setAppliesToStaff(bool $appliesToStaff = null)
+    public function setAppliesToStaff(?bool $appliesToStaff = null)
     {
         $this->setProperty('appliesToStaff', $appliesToStaff);
     }
@@ -166,7 +166,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $appliesToGuardian
      */
-    public function setAppliesToGuardian(bool $appliesToGuardian = null)
+    public function setAppliesToGuardian(?bool $appliesToGuardian = null)
     {
         $this->setProperty('appliesToGuardian', $appliesToGuardian);
     }

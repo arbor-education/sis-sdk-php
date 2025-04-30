@@ -88,7 +88,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted(int $stepsCompleted = null)
+    public function setStepsCompleted(?int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -104,7 +104,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param int $stepInProgress
      */
-    public function setStepInProgress(int $stepInProgress = null)
+    public function setStepInProgress(?int $stepInProgress = null)
     {
         $this->setProperty('stepInProgress', $stepInProgress);
     }
@@ -184,7 +184,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param string $fileHash
      */
-    public function setFileHash(string $fileHash = null)
+    public function setFileHash(?string $fileHash = null)
     {
         $this->setProperty('fileHash', $fileHash);
     }

@@ -68,7 +68,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $paymentProviderName
      */
-    public function setPaymentProviderName(string $paymentProviderName = null)
+    public function setPaymentProviderName(?string $paymentProviderName = null)
     {
         $this->setProperty('paymentProviderName', $paymentProviderName);
     }
@@ -84,7 +84,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $providerCode
      */
-    public function setProviderCode(string $providerCode = null)
+    public function setProviderCode(?string $providerCode = null)
     {
         $this->setProperty('providerCode', $providerCode);
     }
@@ -100,7 +100,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $secretKey
      */
-    public function setSecretKey(string $secretKey = null)
+    public function setSecretKey(?string $secretKey = null)
     {
         $this->setProperty('secretKey', $secretKey);
     }
@@ -116,7 +116,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $publishableKey
      */
-    public function setPublishableKey(string $publishableKey = null)
+    public function setPublishableKey(?string $publishableKey = null)
     {
         $this->setProperty('publishableKey', $publishableKey);
     }
@@ -132,7 +132,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled(bool $isEnabled = null)
+    public function setIsEnabled(?bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
@@ -148,7 +148,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $minimumTransactionAmount
      */
-    public function setMinimumTransactionAmount(string $minimumTransactionAmount = null)
+    public function setMinimumTransactionAmount(?string $minimumTransactionAmount = null)
     {
         $this->setProperty('minimumTransactionAmount', $minimumTransactionAmount);
     }

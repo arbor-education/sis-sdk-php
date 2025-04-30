@@ -72,7 +72,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $guestPupils
      */
-    public function setGuestPupils(int $guestPupils = null)
+    public function setGuestPupils(?int $guestPupils = null)
     {
         $this->setProperty('guestPupils', $guestPupils);
     }
@@ -88,7 +88,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $homePupils
      */
-    public function setHomePupils(int $homePupils = null)
+    public function setHomePupils(?int $homePupils = null)
     {
         $this->setProperty('homePupils', $homePupils);
     }
@@ -104,7 +104,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $nonTeachers
      */
-    public function setNonTeachers(int $nonTeachers = null)
+    public function setNonTeachers(?int $nonTeachers = null)
     {
         $this->setProperty('nonTeachers', $nonTeachers);
     }
@@ -152,7 +152,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param int $teachers
      */
-    public function setTeachers(int $teachers = null)
+    public function setTeachers(?int $teachers = null)
     {
         $this->setProperty('teachers', $teachers);
     }
@@ -168,7 +168,7 @@ class SchoolCensusClass extends ModelBase
     /**
      * @param string $countType
      */
-    public function setCountType(string $countType = null)
+    public function setCountType(?string $countType = null)
     {
         $this->setProperty('countType', $countType);
     }

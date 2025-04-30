@@ -86,7 +86,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param string $aspectName
      */
-    public function setAspectName(string $aspectName = null)
+    public function setAspectName(?string $aspectName = null)
     {
         $this->setProperty('aspectName', $aspectName);
     }
@@ -102,7 +102,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param string $aspectDataType
      */
-    public function setAspectDataType(string $aspectDataType = null)
+    public function setAspectDataType(?string $aspectDataType = null)
     {
         $this->setProperty('aspectDataType', $aspectDataType);
     }
@@ -134,7 +134,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue(float $markMinValue = null)
+    public function setMarkMinValue(?float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -150,7 +150,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue(float $markMaxValue = null)
+    public function setMarkMaxValue(?float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }
@@ -166,7 +166,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param string $scaleDirection
      */
-    public function setScaleDirection(string $scaleDirection = null)
+    public function setScaleDirection(?string $scaleDirection = null)
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }

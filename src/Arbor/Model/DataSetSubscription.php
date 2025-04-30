@@ -68,7 +68,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param string $dataSetName
      */
-    public function setDataSetName(string $dataSetName = null)
+    public function setDataSetName(?string $dataSetName = null)
     {
         $this->setProperty('dataSetName', $dataSetName);
     }
@@ -84,7 +84,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param string $dataSetIdentifier
      */
-    public function setDataSetIdentifier(string $dataSetIdentifier = null)
+    public function setDataSetIdentifier(?string $dataSetIdentifier = null)
     {
         $this->setProperty('dataSetIdentifier', $dataSetIdentifier);
     }
@@ -100,7 +100,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param string $supplierIdentifier
      */
-    public function setSupplierIdentifier(string $supplierIdentifier = null)
+    public function setSupplierIdentifier(?string $supplierIdentifier = null)
     {
         $this->setProperty('supplierIdentifier', $supplierIdentifier);
     }
@@ -116,7 +116,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param int $entityType
      */
-    public function setEntityType(int $entityType = null)
+    public function setEntityType(?int $entityType = null)
     {
         $this->setProperty('entityType', $entityType);
     }
@@ -132,7 +132,7 @@ class DataSetSubscription extends ModelBase
     /**
      * @param int $currentDataSetVersion
      */
-    public function setCurrentDataSetVersion(int $currentDataSetVersion = null)
+    public function setCurrentDataSetVersion(?int $currentDataSetVersion = null)
     {
         $this->setProperty('currentDataSetVersion', $currentDataSetVersion);
     }

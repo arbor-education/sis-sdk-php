@@ -96,7 +96,7 @@ class ProbationReview extends ModelBase
     /**
      * @param string $reviewOutcome
      */
-    public function setReviewOutcome(string $reviewOutcome = null)
+    public function setReviewOutcome(?string $reviewOutcome = null)
     {
         $this->setProperty('reviewOutcome', $reviewOutcome);
     }
@@ -112,7 +112,7 @@ class ProbationReview extends ModelBase
     /**
      * @param string $reviewNotes
      */
-    public function setReviewNotes(string $reviewNotes = null)
+    public function setReviewNotes(?string $reviewNotes = null)
     {
         $this->setProperty('reviewNotes', $reviewNotes);
     }

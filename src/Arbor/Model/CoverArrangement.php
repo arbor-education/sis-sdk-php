@@ -166,7 +166,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param bool $isSendCreationNotification
      */
-    public function setIsSendCreationNotification(bool $isSendCreationNotification = null)
+    public function setIsSendCreationNotification(?bool $isSendCreationNotification = null)
     {
         $this->setProperty('isSendCreationNotification', $isSendCreationNotification);
     }

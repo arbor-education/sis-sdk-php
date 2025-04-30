@@ -82,7 +82,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel(string $channel = null)
+    public function setChannel(?string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }
@@ -114,7 +114,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $recipientField
      */
-    public function setRecipientField(string $recipientField = null)
+    public function setRecipientField(?string $recipientField = null)
     {
         $this->setProperty('recipientField', $recipientField);
     }
@@ -130,7 +130,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $recipientResolver
      */
-    public function setRecipientResolver(string $recipientResolver = null)
+    public function setRecipientResolver(?string $recipientResolver = null)
     {
         $this->setProperty('recipientResolver', $recipientResolver);
     }

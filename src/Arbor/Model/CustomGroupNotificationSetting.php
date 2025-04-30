@@ -80,7 +80,7 @@ class CustomGroupNotificationSetting extends ModelBase
     /**
      * @param string $triggerEventType
      */
-    public function setTriggerEventType(string $triggerEventType = null)
+    public function setTriggerEventType(?string $triggerEventType = null)
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }
@@ -96,7 +96,7 @@ class CustomGroupNotificationSetting extends ModelBase
     /**
      * @param bool $createPersonAlert
      */
-    public function setCreatePersonAlert(bool $createPersonAlert = null)
+    public function setCreatePersonAlert(?bool $createPersonAlert = null)
     {
         $this->setProperty('createPersonAlert', $createPersonAlert);
     }
@@ -112,7 +112,7 @@ class CustomGroupNotificationSetting extends ModelBase
     /**
      * @param bool $sendEmail
      */
-    public function setSendEmail(bool $sendEmail = null)
+    public function setSendEmail(?bool $sendEmail = null)
     {
         $this->setProperty('sendEmail', $sendEmail);
     }

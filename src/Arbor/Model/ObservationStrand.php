@@ -96,7 +96,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -112,7 +112,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param bool $useComment
      */
-    public function setUseComment(bool $useComment = null)
+    public function setUseComment(?bool $useComment = null)
     {
         $this->setProperty('useComment', $useComment);
     }

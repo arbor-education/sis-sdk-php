@@ -90,7 +90,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $moveConcern
      */
-    public function setMoveConcern(string $moveConcern = null)
+    public function setMoveConcern(?string $moveConcern = null)
     {
         $this->setProperty('moveConcern', $moveConcern);
     }
@@ -106,7 +106,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $deploymentConcern
      */
-    public function setDeploymentConcern(string $deploymentConcern = null)
+    public function setDeploymentConcern(?string $deploymentConcern = null)
     {
         $this->setProperty('deploymentConcern', $deploymentConcern);
     }
@@ -122,7 +122,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $separationConcern
      */
-    public function setSeparationConcern(string $separationConcern = null)
+    public function setSeparationConcern(?string $separationConcern = null)
     {
         $this->setProperty('separationConcern', $separationConcern);
     }
@@ -138,7 +138,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -170,7 +170,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param bool $imported
      */
-    public function setImported(bool $imported = null)
+    public function setImported(?bool $imported = null)
     {
         $this->setProperty('imported', $imported);
     }

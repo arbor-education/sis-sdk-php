@@ -60,7 +60,7 @@ class InternalExclusionType extends ModelBase
     /**
      * @param string $internalExclusionTypeName
      */
-    public function setInternalExclusionTypeName(string $internalExclusionTypeName = null)
+    public function setInternalExclusionTypeName(?string $internalExclusionTypeName = null)
     {
         $this->setProperty('internalExclusionTypeName', $internalExclusionTypeName);
     }

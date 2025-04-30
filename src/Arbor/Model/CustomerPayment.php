@@ -250,7 +250,7 @@ class CustomerPayment extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount(string $paymentAmount = null)
+    public function setPaymentAmount(?string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }
@@ -314,7 +314,7 @@ class CustomerPayment extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

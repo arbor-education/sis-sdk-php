@@ -62,7 +62,7 @@ class MealSchedule extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class MealSchedule extends ModelBase
     /**
      * @param int $week
      */
-    public function setWeek(int $week = null)
+    public function setWeek(?int $week = null)
     {
         $this->setProperty('week', $week);
     }

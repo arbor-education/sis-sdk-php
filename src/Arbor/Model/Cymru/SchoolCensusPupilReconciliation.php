@@ -98,7 +98,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $franchisedPupils
      */
-    public function setFranchisedPupils(int $franchisedPupils = null)
+    public function setFranchisedPupils(?int $franchisedPupils = null)
     {
         $this->setProperty('franchisedPupils', $franchisedPupils);
     }
@@ -114,7 +114,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $costRecoveryPupils
      */
-    public function setCostRecoveryPupils(int $costRecoveryPupils = null)
+    public function setCostRecoveryPupils(?int $costRecoveryPupils = null)
     {
         $this->setProperty('costRecoveryPupils', $costRecoveryPupils);
     }
@@ -130,7 +130,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $otherFundedPupils
      */
-    public function setOtherFundedPupils(int $otherFundedPupils = null)
+    public function setOtherFundedPupils(?int $otherFundedPupils = null)
     {
         $this->setProperty('otherFundedPupils', $otherFundedPupils);
     }
@@ -146,7 +146,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $fullTimeAttendance
      */
-    public function setFullTimeAttendance(int $fullTimeAttendance = null)
+    public function setFullTimeAttendance(?int $fullTimeAttendance = null)
     {
         $this->setProperty('fullTimeAttendance', $fullTimeAttendance);
     }
@@ -162,7 +162,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $partTimeAttendance
      */
-    public function setPartTimeAttendance(int $partTimeAttendance = null)
+    public function setPartTimeAttendance(?int $partTimeAttendance = null)
     {
         $this->setProperty('partTimeAttendance', $partTimeAttendance);
     }
@@ -178,7 +178,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $morningAttendance
      */
-    public function setMorningAttendance(int $morningAttendance = null)
+    public function setMorningAttendance(?int $morningAttendance = null)
     {
         $this->setProperty('morningAttendance', $morningAttendance);
     }
@@ -194,7 +194,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $afternoonAttendance
      */
-    public function setAfternoonAttendance(int $afternoonAttendance = null)
+    public function setAfternoonAttendance(?int $afternoonAttendance = null)
     {
         $this->setProperty('afternoonAttendance', $afternoonAttendance);
     }
@@ -210,7 +210,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $otherAttendance
      */
-    public function setOtherAttendance(int $otherAttendance = null)
+    public function setOtherAttendance(?int $otherAttendance = null)
     {
         $this->setProperty('otherAttendance', $otherAttendance);
     }
@@ -226,7 +226,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $leaSpecialClass
      */
-    public function setLeaSpecialClass(int $leaSpecialClass = null)
+    public function setLeaSpecialClass(?int $leaSpecialClass = null)
     {
         $this->setProperty('leaSpecialClass', $leaSpecialClass);
     }
@@ -242,7 +242,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $leaSpecialClassPupils
      */
-    public function setLeaSpecialClassPupils(int $leaSpecialClassPupils = null)
+    public function setLeaSpecialClassPupils(?int $leaSpecialClassPupils = null)
     {
         $this->setProperty('leaSpecialClassPupils', $leaSpecialClassPupils);
     }
@@ -258,7 +258,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $leaSpecialClassOtherSchoolPupils
      */
-    public function setLeaSpecialClassOtherSchoolPupils(int $leaSpecialClassOtherSchoolPupils = null)
+    public function setLeaSpecialClassOtherSchoolPupils(?int $leaSpecialClassOtherSchoolPupils = null)
     {
         $this->setProperty('leaSpecialClassOtherSchoolPupils', $leaSpecialClassOtherSchoolPupils);
     }

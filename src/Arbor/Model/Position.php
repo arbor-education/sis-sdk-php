@@ -128,7 +128,7 @@ class Position extends ModelBase
     /**
      * @param string $positionName
      */
-    public function setPositionName(string $positionName = null)
+    public function setPositionName(?string $positionName = null)
     {
         $this->setProperty('positionName', $positionName);
     }
@@ -144,7 +144,7 @@ class Position extends ModelBase
     /**
      * @param string $positionReference
      */
-    public function setPositionReference(string $positionReference = null)
+    public function setPositionReference(?string $positionReference = null)
     {
         $this->setProperty('positionReference', $positionReference);
     }
@@ -176,7 +176,7 @@ class Position extends ModelBase
     /**
      * @param string $expectedHoursPerWeek
      */
-    public function setExpectedHoursPerWeek(string $expectedHoursPerWeek = null)
+    public function setExpectedHoursPerWeek(?string $expectedHoursPerWeek = null)
     {
         $this->setProperty('expectedHoursPerWeek', $expectedHoursPerWeek);
     }
@@ -192,7 +192,7 @@ class Position extends ModelBase
     /**
      * @param float $expectedWeeksPerYear
      */
-    public function setExpectedWeeksPerYear(float $expectedWeeksPerYear = null)
+    public function setExpectedWeeksPerYear(?float $expectedWeeksPerYear = null)
     {
         $this->setProperty('expectedWeeksPerYear', $expectedWeeksPerYear);
     }
@@ -208,7 +208,7 @@ class Position extends ModelBase
     /**
      * @param string $fteHoursPerWeek
      */
-    public function setFteHoursPerWeek(string $fteHoursPerWeek = null)
+    public function setFteHoursPerWeek(?string $fteHoursPerWeek = null)
     {
         $this->setProperty('fteHoursPerWeek', $fteHoursPerWeek);
     }
@@ -256,7 +256,7 @@ class Position extends ModelBase
     /**
      * @param string $workforceCensusRoleIdentifier
      */
-    public function setWorkforceCensusRoleIdentifier(string $workforceCensusRoleIdentifier = null)
+    public function setWorkforceCensusRoleIdentifier(?string $workforceCensusRoleIdentifier = null)
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }

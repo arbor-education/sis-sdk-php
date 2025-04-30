@@ -170,7 +170,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $priority
      */
-    public function setPriority(string $priority = null)
+    public function setPriority(?string $priority = null)
     {
         $this->setProperty('priority', $priority);
     }
@@ -186,7 +186,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -202,7 +202,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $monitoring
      */
-    public function setMonitoring(string $monitoring = null)
+    public function setMonitoring(?string $monitoring = null)
     {
         $this->setProperty('monitoring', $monitoring);
     }
@@ -218,7 +218,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims(string $aims = null)
+    public function setAims(?string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -234,7 +234,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $strategies
      */
-    public function setStrategies(string $strategies = null)
+    public function setStrategies(?string $strategies = null)
     {
         $this->setProperty('strategies', $strategies);
     }
@@ -250,7 +250,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria(string $successCriteria = null)
+    public function setSuccessCriteria(?string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -266,7 +266,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(string $reason = null)
+    public function setReason(?string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -330,7 +330,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $success
      */
-    public function setSuccess(string $success = null)
+    public function setSuccess(?string $success = null)
     {
         $this->setProperty('success', $success);
     }
@@ -346,7 +346,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $estimatedDuration
      */
-    public function setEstimatedDuration(string $estimatedDuration = null)
+    public function setEstimatedDuration(?string $estimatedDuration = null)
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }

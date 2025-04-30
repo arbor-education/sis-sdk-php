@@ -72,7 +72,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class SenStatus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class SenStatus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $senStatusName
      */
-    public function setSenStatusName(string $senStatusName = null)
+    public function setSenStatusName(?string $senStatusName = null)
     {
         $this->setProperty('senStatusName', $senStatusName);
     }
@@ -136,7 +136,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -152,7 +152,7 @@ class SenStatus extends ModelBase
     /**
      * @param bool $countsAsSenStatus
      */
-    public function setCountsAsSenStatus(bool $countsAsSenStatus = null)
+    public function setCountsAsSenStatus(?bool $countsAsSenStatus = null)
     {
         $this->setProperty('countsAsSenStatus', $countsAsSenStatus);
     }
@@ -168,7 +168,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(string $exportCode = null)
+    public function setExportCode(?string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -184,7 +184,7 @@ class SenStatus extends ModelBase
     /**
      * @param string $d00229
      */
-    public function setD00229(string $d00229 = null)
+    public function setD00229(?string $d00229 = null)
     {
         $this->setProperty('d00229', $d00229);
     }

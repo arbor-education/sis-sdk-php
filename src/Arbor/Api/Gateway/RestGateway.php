@@ -764,7 +764,7 @@ class RestGateway implements GatewayInterface
      * @param Response|null $response
      * @return bool
      */
-    private function isServerError(Response $response = null)
+    private function isServerError(?Response $response = null)
     {
         return $response && $response->getStatusCode() >= 500;
     }
@@ -773,7 +773,7 @@ class RestGateway implements GatewayInterface
      * @param RequestException|null $exception
      * @return bool
      */
-    private function isConnectError(RequestException $exception = null)
+    private function isConnectError(?RequestException $exception = null)
     {
         return $exception instanceof ConnectException;
     }

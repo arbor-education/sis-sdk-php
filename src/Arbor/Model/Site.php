@@ -62,7 +62,7 @@ class Site extends ModelBase
     /**
      * @param string $siteName
      */
-    public function setSiteName(string $siteName = null)
+    public function setSiteName(?string $siteName = null)
     {
         $this->setProperty('siteName', $siteName);
     }
@@ -78,7 +78,7 @@ class Site extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -94,7 +94,7 @@ class Site extends ModelBase
     /**
      * @param int $siteDisplayOrder
      */
-    public function setSiteDisplayOrder(int $siteDisplayOrder = null)
+    public function setSiteDisplayOrder(?int $siteDisplayOrder = null)
     {
         $this->setProperty('siteDisplayOrder', $siteDisplayOrder);
     }

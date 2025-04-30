@@ -100,7 +100,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount(string $amount = null)
+    public function setAmount(?string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }

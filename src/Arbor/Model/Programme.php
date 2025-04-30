@@ -66,7 +66,7 @@ class Programme extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -82,7 +82,7 @@ class Programme extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -98,7 +98,7 @@ class Programme extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -130,7 +130,7 @@ class Programme extends ModelBase
     /**
      * @param bool $isTraineeship
      */
-    public function setIsTraineeship(bool $isTraineeship = null)
+    public function setIsTraineeship(?bool $isTraineeship = null)
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }

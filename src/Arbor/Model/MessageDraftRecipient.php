@@ -94,7 +94,7 @@ class MessageDraftRecipient extends ModelBase
     /**
      * @param string $resolver
      */
-    public function setResolver(string $resolver = null)
+    public function setResolver(?string $resolver = null)
     {
         $this->setProperty('resolver', $resolver);
     }

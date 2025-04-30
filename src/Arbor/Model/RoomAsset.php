@@ -60,7 +60,7 @@ class RoomAsset extends ModelBase
     /**
      * @param string $roomAssetName
      */
-    public function setRoomAssetName(string $roomAssetName = null)
+    public function setRoomAssetName(?string $roomAssetName = null)
     {
         $this->setProperty('roomAssetName', $roomAssetName);
     }
@@ -76,7 +76,7 @@ class RoomAsset extends ModelBase
     /**
      * @param bool $assignToPeople
      */
-    public function setAssignToPeople(bool $assignToPeople = null)
+    public function setAssignToPeople(?bool $assignToPeople = null)
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }

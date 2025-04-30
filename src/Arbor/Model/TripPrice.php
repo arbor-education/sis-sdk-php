@@ -106,7 +106,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -138,7 +138,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $voluntaryContribution
      */
-    public function setVoluntaryContribution(bool $voluntaryContribution = null)
+    public function setVoluntaryContribution(?bool $voluntaryContribution = null)
     {
         $this->setProperty('voluntaryContribution', $voluntaryContribution);
     }
@@ -154,7 +154,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $instalmentsPermitted
      */
-    public function setInstalmentsPermitted(bool $instalmentsPermitted = null)
+    public function setInstalmentsPermitted(?bool $instalmentsPermitted = null)
     {
         $this->setProperty('instalmentsPermitted', $instalmentsPermitted);
     }
@@ -170,7 +170,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $minimumInstalmentAmount
      */
-    public function setMinimumInstalmentAmount(string $minimumInstalmentAmount = null)
+    public function setMinimumInstalmentAmount(?string $minimumInstalmentAmount = null)
     {
         $this->setProperty('minimumInstalmentAmount', $minimumInstalmentAmount);
     }
@@ -186,7 +186,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $autoConfirmInstalmentThreshold
      */
-    public function setAutoConfirmInstalmentThreshold(string $autoConfirmInstalmentThreshold = null)
+    public function setAutoConfirmInstalmentThreshold(?string $autoConfirmInstalmentThreshold = null)
     {
         $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }
@@ -202,7 +202,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $showAmountOutstanding
      */
-    public function setShowAmountOutstanding(bool $showAmountOutstanding = null)
+    public function setShowAmountOutstanding(?bool $showAmountOutstanding = null)
     {
         $this->setProperty('showAmountOutstanding', $showAmountOutstanding);
     }

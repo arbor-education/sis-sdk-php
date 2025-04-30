@@ -66,7 +66,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory(string $category = null)
+    public function setCategory(?string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -82,7 +82,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $welshLanguageUseInClass
      */
-    public function setWelshLanguageUseInClass(string $welshLanguageUseInClass = null)
+    public function setWelshLanguageUseInClass(?string $welshLanguageUseInClass = null)
     {
         $this->setProperty('welshLanguageUseInClass', $welshLanguageUseInClass);
     }
@@ -98,7 +98,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $lessonMedium
      */
-    public function setLessonMedium(string $lessonMedium = null)
+    public function setLessonMedium(?string $lessonMedium = null)
     {
         $this->setProperty('lessonMedium', $lessonMedium);
     }
@@ -114,7 +114,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param bool $isLeaDesignatedSpecialClass
      */
-    public function setIsLeaDesignatedSpecialClass(bool $isLeaDesignatedSpecialClass = null)
+    public function setIsLeaDesignatedSpecialClass(?bool $isLeaDesignatedSpecialClass = null)
     {
         $this->setProperty('isLeaDesignatedSpecialClass', $isLeaDesignatedSpecialClass);
     }

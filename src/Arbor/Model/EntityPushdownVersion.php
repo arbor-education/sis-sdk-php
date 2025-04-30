@@ -78,7 +78,7 @@ class EntityPushdownVersion extends ModelBase
     /**
      * @param string $versionData
      */
-    public function setVersionData(string $versionData = null)
+    public function setVersionData(?string $versionData = null)
     {
         $this->setProperty('versionData', $versionData);
     }
@@ -94,7 +94,7 @@ class EntityPushdownVersion extends ModelBase
     /**
      * @param int $versionNumber
      */
-    public function setVersionNumber(int $versionNumber = null)
+    public function setVersionNumber(?int $versionNumber = null)
     {
         $this->setProperty('versionNumber', $versionNumber);
     }

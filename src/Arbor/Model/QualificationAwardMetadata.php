@@ -70,7 +70,7 @@ class QualificationAwardMetadata extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class QualificationAwardMetadata extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class QualificationAwardMetadata extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -134,7 +134,7 @@ class QualificationAwardMetadata extends ModelBase
     /**
      * @param string $countryCode
      */
-    public function setCountryCode(string $countryCode = null)
+    public function setCountryCode(?string $countryCode = null)
     {
         $this->setProperty('countryCode', $countryCode);
     }
@@ -150,7 +150,7 @@ class QualificationAwardMetadata extends ModelBase
     /**
      * @param string $metadataName
      */
-    public function setMetadataName(string $metadataName = null)
+    public function setMetadataName(?string $metadataName = null)
     {
         $this->setProperty('metadataName', $metadataName);
     }
@@ -166,7 +166,7 @@ class QualificationAwardMetadata extends ModelBase
     /**
      * @param string $metadataValue
      */
-    public function setMetadataValue(string $metadataValue = null)
+    public function setMetadataValue(?string $metadataValue = null)
     {
         $this->setProperty('metadataValue', $metadataValue);
     }

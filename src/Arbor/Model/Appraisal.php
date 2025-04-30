@@ -114,7 +114,7 @@ class Appraisal extends ModelBase
     /**
      * @param string $appraisalNotes
      */
-    public function setAppraisalNotes(string $appraisalNotes = null)
+    public function setAppraisalNotes(?string $appraisalNotes = null)
     {
         $this->setProperty('appraisalNotes', $appraisalNotes);
     }

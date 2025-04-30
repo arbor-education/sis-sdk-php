@@ -122,7 +122,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $reportCardTitle
      */
-    public function setReportCardTitle(string $reportCardTitle = null)
+    public function setReportCardTitle(?string $reportCardTitle = null)
     {
         $this->setProperty('reportCardTitle', $reportCardTitle);
     }
@@ -138,7 +138,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $generalSettingsJson
      */
-    public function setGeneralSettingsJson(string $generalSettingsJson = null)
+    public function setGeneralSettingsJson(?string $generalSettingsJson = null)
     {
         $this->setProperty('generalSettingsJson', $generalSettingsJson);
     }
@@ -170,7 +170,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $attainmentSettingsJson
      */
-    public function setAttainmentSettingsJson(string $attainmentSettingsJson = null)
+    public function setAttainmentSettingsJson(?string $attainmentSettingsJson = null)
     {
         $this->setProperty('attainmentSettingsJson', $attainmentSettingsJson);
     }
@@ -250,7 +250,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeTeacherInitials
      */
-    public function setIncludeTeacherInitials(bool $includeTeacherInitials = null)
+    public function setIncludeTeacherInitials(?bool $includeTeacherInitials = null)
     {
         $this->setProperty('includeTeacherInitials', $includeTeacherInitials);
     }
@@ -266,7 +266,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeTeacherName
      */
-    public function setIncludeTeacherName(bool $includeTeacherName = null)
+    public function setIncludeTeacherName(?bool $includeTeacherName = null)
     {
         $this->setProperty('includeTeacherName', $includeTeacherName);
     }
@@ -282,7 +282,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeStudentPhoto
      */
-    public function setIncludeStudentPhoto(bool $includeStudentPhoto = null)
+    public function setIncludeStudentPhoto(?bool $includeStudentPhoto = null)
     {
         $this->setProperty('includeStudentPhoto', $includeStudentPhoto);
     }
@@ -298,7 +298,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeBaseline
      */
-    public function setIncludeBaseline(bool $includeBaseline = null)
+    public function setIncludeBaseline(?bool $includeBaseline = null)
     {
         $this->setProperty('includeBaseline', $includeBaseline);
     }
@@ -314,7 +314,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeWorkingAtCurrentPeriod
      */
-    public function setIncludeWorkingAtCurrentPeriod(bool $includeWorkingAtCurrentPeriod = null)
+    public function setIncludeWorkingAtCurrentPeriod(?bool $includeWorkingAtCurrentPeriod = null)
     {
         $this->setProperty('includeWorkingAtCurrentPeriod', $includeWorkingAtCurrentPeriod);
     }
@@ -330,7 +330,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeWorkingAtPreviousPeriod
      */
-    public function setIncludeWorkingAtPreviousPeriod(bool $includeWorkingAtPreviousPeriod = null)
+    public function setIncludeWorkingAtPreviousPeriod(?bool $includeWorkingAtPreviousPeriod = null)
     {
         $this->setProperty('includeWorkingAtPreviousPeriod', $includeWorkingAtPreviousPeriod);
     }
@@ -346,7 +346,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $previousPeriodMeaning
      */
-    public function setPreviousPeriodMeaning(string $previousPeriodMeaning = null)
+    public function setPreviousPeriodMeaning(?string $previousPeriodMeaning = null)
     {
         $this->setProperty('previousPeriodMeaning', $previousPeriodMeaning);
     }
@@ -362,7 +362,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $includeTeacherTarget
      */
-    public function setIncludeTeacherTarget(bool $includeTeacherTarget = null)
+    public function setIncludeTeacherTarget(?bool $includeTeacherTarget = null)
     {
         $this->setProperty('includeTeacherTarget', $includeTeacherTarget);
     }
@@ -394,7 +394,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $finalizationInProgress
      */
-    public function setFinalizationInProgress(bool $finalizationInProgress = null)
+    public function setFinalizationInProgress(?bool $finalizationInProgress = null)
     {
         $this->setProperty('finalizationInProgress', $finalizationInProgress);
     }
@@ -410,7 +410,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $sharedWithGuardians
      */
-    public function setSharedWithGuardians(bool $sharedWithGuardians = null)
+    public function setSharedWithGuardians(?bool $sharedWithGuardians = null)
     {
         $this->setProperty('sharedWithGuardians', $sharedWithGuardians);
     }
@@ -426,7 +426,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $sharedWithStudents
      */
-    public function setSharedWithStudents(bool $sharedWithStudents = null)
+    public function setSharedWithStudents(?bool $sharedWithStudents = null)
     {
         $this->setProperty('sharedWithStudents', $sharedWithStudents);
     }
@@ -442,7 +442,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $behaviourFields
      */
-    public function setBehaviourFields(string $behaviourFields = null)
+    public function setBehaviourFields(?string $behaviourFields = null)
     {
         $this->setProperty('behaviourFields', $behaviourFields);
     }
@@ -458,7 +458,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $attendanceFields
      */
-    public function setAttendanceFields(string $attendanceFields = null)
+    public function setAttendanceFields(?string $attendanceFields = null)
     {
         $this->setProperty('attendanceFields', $attendanceFields);
     }
@@ -474,7 +474,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param bool $showComments
      */
-    public function setShowComments(bool $showComments = null)
+    public function setShowComments(?bool $showComments = null)
     {
         $this->setProperty('showComments', $showComments);
     }
@@ -490,7 +490,7 @@ class NewReportCardBatch extends ModelBase
     /**
      * @param string $customDisplayNamesJson
      */
-    public function setCustomDisplayNamesJson(string $customDisplayNamesJson = null)
+    public function setCustomDisplayNamesJson(?string $customDisplayNamesJson = null)
     {
         $this->setProperty('customDisplayNamesJson', $customDisplayNamesJson);
     }

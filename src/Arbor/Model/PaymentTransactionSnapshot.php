@@ -76,7 +76,7 @@ class PaymentTransactionSnapshot extends ModelBase
     /**
      * @param string $metadataIdentifier
      */
-    public function setMetadataIdentifier(string $metadataIdentifier = null)
+    public function setMetadataIdentifier(?string $metadataIdentifier = null)
     {
         $this->setProperty('metadataIdentifier', $metadataIdentifier);
     }
@@ -108,7 +108,7 @@ class PaymentTransactionSnapshot extends ModelBase
     /**
      * @param float $paymentAmount
      */
-    public function setPaymentAmount(float $paymentAmount = null)
+    public function setPaymentAmount(?float $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }
@@ -124,7 +124,7 @@ class PaymentTransactionSnapshot extends ModelBase
     /**
      * @param string $paymentCurrency
      */
-    public function setPaymentCurrency(string $paymentCurrency = null)
+    public function setPaymentCurrency(?string $paymentCurrency = null)
     {
         $this->setProperty('paymentCurrency', $paymentCurrency);
     }
@@ -204,7 +204,7 @@ class PaymentTransactionSnapshot extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }

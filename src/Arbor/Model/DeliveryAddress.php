@@ -72,7 +72,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryAddressName
      */
-    public function setDeliveryAddressName(string $deliveryAddressName = null)
+    public function setDeliveryAddressName(?string $deliveryAddressName = null)
     {
         $this->setProperty('deliveryAddressName', $deliveryAddressName);
     }
@@ -120,7 +120,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryContactName
      */
-    public function setDeliveryContactName(string $deliveryContactName = null)
+    public function setDeliveryContactName(?string $deliveryContactName = null)
     {
         $this->setProperty('deliveryContactName', $deliveryContactName);
     }
@@ -136,7 +136,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryContactNumber
      */
-    public function setDeliveryContactNumber(string $deliveryContactNumber = null)
+    public function setDeliveryContactNumber(?string $deliveryContactNumber = null)
     {
         $this->setProperty('deliveryContactNumber', $deliveryContactNumber);
     }
@@ -152,7 +152,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryInstructions
      */
-    public function setDeliveryInstructions(string $deliveryInstructions = null)
+    public function setDeliveryInstructions(?string $deliveryInstructions = null)
     {
         $this->setProperty('deliveryInstructions', $deliveryInstructions);
     }
@@ -168,7 +168,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param bool $isDefault
      */
-    public function setIsDefault(bool $isDefault = null)
+    public function setIsDefault(?bool $isDefault = null)
     {
         $this->setProperty('isDefault', $isDefault);
     }
@@ -184,7 +184,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param bool $isAddressForReuse
      */
-    public function setIsAddressForReuse(bool $isAddressForReuse = null)
+    public function setIsAddressForReuse(?bool $isAddressForReuse = null)
     {
         $this->setProperty('isAddressForReuse', $isAddressForReuse);
     }

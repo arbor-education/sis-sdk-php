@@ -80,7 +80,7 @@ class EnglishProficiency extends ModelBase
     /**
      * @param string $proficiency
      */
-    public function setProficiency(string $proficiency = null)
+    public function setProficiency(?string $proficiency = null)
     {
         $this->setProperty('proficiency', $proficiency);
     }

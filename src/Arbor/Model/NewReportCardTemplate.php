@@ -74,7 +74,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName = null)
+    public function setTemplateName(?string $templateName = null)
     {
         $this->setProperty('templateName', $templateName);
     }
@@ -90,7 +90,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $templateFilename
      */
-    public function setTemplateFilename(string $templateFilename = null)
+    public function setTemplateFilename(?string $templateFilename = null)
     {
         $this->setProperty('templateFilename', $templateFilename);
     }
@@ -106,7 +106,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $templateHtml
      */
-    public function setTemplateHtml(string $templateHtml = null)
+    public function setTemplateHtml(?string $templateHtml = null)
     {
         $this->setProperty('templateHtml', $templateHtml);
     }
@@ -122,7 +122,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $css
      */
-    public function setCss(string $css = null)
+    public function setCss(?string $css = null)
     {
         $this->setProperty('css', $css);
     }
@@ -138,7 +138,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $helperClassName
      */
-    public function setHelperClassName(string $helperClassName = null)
+    public function setHelperClassName(?string $helperClassName = null)
     {
         $this->setProperty('helperClassName', $helperClassName);
     }
@@ -154,7 +154,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $variables
      */
-    public function setVariables(string $variables = null)
+    public function setVariables(?string $variables = null)
     {
         $this->setProperty('variables', $variables);
     }
@@ -170,7 +170,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -186,7 +186,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param string $orientation
      */
-    public function setOrientation(string $orientation = null)
+    public function setOrientation(?string $orientation = null)
     {
         $this->setProperty('orientation', $orientation);
     }
@@ -202,7 +202,7 @@ class NewReportCardTemplate extends ModelBase
     /**
      * @param bool $isCustom
      */
-    public function setIsCustom(bool $isCustom = null)
+    public function setIsCustom(?bool $isCustom = null)
     {
         $this->setProperty('isCustom', $isCustom);
     }

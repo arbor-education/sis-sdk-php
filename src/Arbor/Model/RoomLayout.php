@@ -96,7 +96,7 @@ class RoomLayout extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -112,7 +112,7 @@ class RoomLayout extends ModelBase
     /**
      * @param string $mainEntranceLocation
      */
-    public function setMainEntranceLocation(string $mainEntranceLocation = null)
+    public function setMainEntranceLocation(?string $mainEntranceLocation = null)
     {
         $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }

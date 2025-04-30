@@ -89,7 +89,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $testType
      */
-    public function setTestType(string $testType = null)
+    public function setTestType(?string $testType = null)
     {
         $this->setProperty('testType', $testType);
     }
@@ -105,7 +105,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $barcode
      */
-    public function setBarcode(string $barcode = null)
+    public function setBarcode(?string $barcode = null)
     {
         $this->setProperty('barcode', $barcode);
     }
@@ -121,7 +121,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $result
      */
-    public function setResult(string $result = null)
+    public function setResult(?string $result = null)
     {
         $this->setProperty('result', $result);
     }

@@ -142,7 +142,7 @@ class Staff extends ModelBase
     /**
      * @param string $bloodGroup
      */
-    public function setBloodGroup(string $bloodGroup = null)
+    public function setBloodGroup(?string $bloodGroup = null)
     {
         $this->setProperty('bloodGroup', $bloodGroup);
     }
@@ -158,7 +158,7 @@ class Staff extends ModelBase
     /**
      * @param string $staffNumber
      */
-    public function setStaffNumber(string $staffNumber = null)
+    public function setStaffNumber(?string $staffNumber = null)
     {
         $this->setProperty('staffNumber', $staffNumber);
     }
@@ -190,7 +190,7 @@ class Staff extends ModelBase
     /**
      * @param string $zendeskUser
      */
-    public function setZendeskUser(string $zendeskUser = null)
+    public function setZendeskUser(?string $zendeskUser = null)
     {
         $this->setProperty('zendeskUser', $zendeskUser);
     }
@@ -206,7 +206,7 @@ class Staff extends ModelBase
     /**
      * @param string $timetableAbbreviation
      */
-    public function setTimetableAbbreviation(string $timetableAbbreviation = null)
+    public function setTimetableAbbreviation(?string $timetableAbbreviation = null)
     {
         $this->setProperty('timetableAbbreviation', $timetableAbbreviation);
     }
@@ -222,7 +222,7 @@ class Staff extends ModelBase
     /**
      * @param string $legacySystemId
      */
-    public function setLegacySystemId(string $legacySystemId = null)
+    public function setLegacySystemId(?string $legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
     }
@@ -238,7 +238,7 @@ class Staff extends ModelBase
     /**
      * @param string $externalPersonId
      */
-    public function setExternalPersonId(string $externalPersonId = null)
+    public function setExternalPersonId(?string $externalPersonId = null)
     {
         $this->setProperty('externalPersonId', $externalPersonId);
     }
@@ -254,7 +254,7 @@ class Staff extends ModelBase
     /**
      * @param bool $includeInCover
      */
-    public function setIncludeInCover(bool $includeInCover = null)
+    public function setIncludeInCover(?bool $includeInCover = null)
     {
         $this->setProperty('includeInCover', $includeInCover);
     }
@@ -270,7 +270,7 @@ class Staff extends ModelBase
     /**
      * @param bool $eligibleForSchoolWorkforceReturn
      */
-    public function setEligibleForSchoolWorkforceReturn(bool $eligibleForSchoolWorkforceReturn = null)
+    public function setEligibleForSchoolWorkforceReturn(?bool $eligibleForSchoolWorkforceReturn = null)
     {
         $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
@@ -286,7 +286,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherStatus
      */
-    public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
+    public function setQualifiedTeacherStatus(?bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
@@ -302,7 +302,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherLearningAndSkillsStatus
      */
-    public function setQualifiedTeacherLearningAndSkillsStatus(bool $qualifiedTeacherLearningAndSkillsStatus = null)
+    public function setQualifiedTeacherLearningAndSkillsStatus(?bool $qualifiedTeacherLearningAndSkillsStatus = null)
     {
         $this->setProperty('qualifiedTeacherLearningAndSkillsStatus', $qualifiedTeacherLearningAndSkillsStatus);
     }
@@ -318,7 +318,7 @@ class Staff extends ModelBase
     /**
      * @param bool $earlyYearsTeacherStatus
      */
-    public function setEarlyYearsTeacherStatus(bool $earlyYearsTeacherStatus = null)
+    public function setEarlyYearsTeacherStatus(?bool $earlyYearsTeacherStatus = null)
     {
         $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
@@ -350,7 +350,7 @@ class Staff extends ModelBase
     /**
      * @param bool $hltaStatus
      */
-    public function setHltaStatus(bool $hltaStatus = null)
+    public function setHltaStatus(?bool $hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
@@ -382,7 +382,7 @@ class Staff extends ModelBase
     /**
      * @param string $sltStatusForSwc
      */
-    public function setSltStatusForSwc(string $sltStatusForSwc = null)
+    public function setSltStatusForSwc(?string $sltStatusForSwc = null)
     {
         $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }

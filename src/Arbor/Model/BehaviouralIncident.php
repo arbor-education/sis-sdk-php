@@ -90,7 +90,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $incidentName
      */
-    public function setIncidentName(string $incidentName = null)
+    public function setIncidentName(?string $incidentName = null)
     {
         $this->setProperty('incidentName', $incidentName);
     }
@@ -106,7 +106,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -138,7 +138,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity(string $severity = null)
+    public function setSeverity(?string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }

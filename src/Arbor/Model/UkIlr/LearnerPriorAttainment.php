@@ -80,7 +80,7 @@ class LearnerPriorAttainment extends ModelBase
     /**
      * @param string $priorLevel
      */
-    public function setPriorLevel(string $priorLevel = null)
+    public function setPriorLevel(?string $priorLevel = null)
     {
         $this->setProperty('priorLevel', $priorLevel);
     }

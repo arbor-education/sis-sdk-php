@@ -76,7 +76,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -140,7 +140,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $governmentVersion
      */
-    public function setGovernmentVersion(string $governmentVersion = null)
+    public function setGovernmentVersion(?string $governmentVersion = null)
     {
         $this->setProperty('governmentVersion', $governmentVersion);
     }
@@ -156,7 +156,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $documentVersion
      */
-    public function setDocumentVersion(string $documentVersion = null)
+    public function setDocumentVersion(?string $documentVersion = null)
     {
         $this->setProperty('documentVersion', $documentVersion);
     }
@@ -172,7 +172,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $censusYear
      */
-    public function setCensusYear(string $censusYear = null)
+    public function setCensusYear(?string $censusYear = null)
     {
         $this->setProperty('censusYear', $censusYear);
     }

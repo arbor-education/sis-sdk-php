@@ -72,7 +72,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param string $payload
      */
-    public function setPayload(string $payload = null)
+    public function setPayload(?string $payload = null)
     {
         $this->setProperty('payload', $payload);
     }
@@ -104,7 +104,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param string $response
      */
-    public function setResponse(string $response = null)
+    public function setResponse(?string $response = null)
     {
         $this->setProperty('response', $response);
     }
@@ -120,7 +120,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param int $responseStatusCode
      */
-    public function setResponseStatusCode(int $responseStatusCode = null)
+    public function setResponseStatusCode(?int $responseStatusCode = null)
     {
         $this->setProperty('responseStatusCode', $responseStatusCode);
     }
@@ -152,7 +152,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param string $responseSubmissionReference
      */
-    public function setResponseSubmissionReference(string $responseSubmissionReference = null)
+    public function setResponseSubmissionReference(?string $responseSubmissionReference = null)
     {
         $this->setProperty('responseSubmissionReference', $responseSubmissionReference);
     }
@@ -168,7 +168,7 @@ class AttendanceApiSubmission extends ModelBase
     /**
      * @param bool $status
      */
-    public function setStatus(bool $status = null)
+    public function setStatus(?bool $status = null)
     {
         $this->setProperty('status', $status);
     }

@@ -100,7 +100,7 @@ class SenNeed extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -116,7 +116,7 @@ class SenNeed extends ModelBase
     /**
      * @param int $ranking
      */
-    public function setRanking(int $ranking = null)
+    public function setRanking(?int $ranking = null)
     {
         $this->setProperty('ranking', $ranking);
     }

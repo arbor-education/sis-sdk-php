@@ -84,7 +84,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass(string $fieldClass = null)
+    public function setFieldClass(?string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -100,7 +100,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams(string $fieldParams = null)
+    public function setFieldParams(?string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -116,7 +116,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass(string $transformationClass = null)
+    public function setTransformationClass(?string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -132,7 +132,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass(string $conditionClass = null)
+    public function setConditionClass(?string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -148,7 +148,7 @@ class CustomGroupMembershipCriterion extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams(string $conditionParams = null)
+    public function setConditionParams(?string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }

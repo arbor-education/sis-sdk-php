@@ -104,7 +104,7 @@ class SenEvent extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -168,7 +168,7 @@ class SenEvent extends ModelBase
     /**
      * @param string $senEventName
      */
-    public function setSenEventName(string $senEventName = null)
+    public function setSenEventName(?string $senEventName = null)
     {
         $this->setProperty('senEventName', $senEventName);
     }
@@ -184,7 +184,7 @@ class SenEvent extends ModelBase
     /**
      * @param string $senEventDescription
      */
-    public function setSenEventDescription(string $senEventDescription = null)
+    public function setSenEventDescription(?string $senEventDescription = null)
     {
         $this->setProperty('senEventDescription', $senEventDescription);
     }

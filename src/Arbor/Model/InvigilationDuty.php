@@ -98,7 +98,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param string $additionalRole
      */
-    public function setAdditionalRole(string $additionalRole = null)
+    public function setAdditionalRole(?string $additionalRole = null)
     {
         $this->setProperty('additionalRole', $additionalRole);
     }

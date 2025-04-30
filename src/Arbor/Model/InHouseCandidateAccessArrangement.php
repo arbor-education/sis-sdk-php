@@ -100,7 +100,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage(float $extraTimePercentage = null)
+    public function setExtraTimePercentage(?float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -116,7 +116,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(string $reason = null)
+    public function setReason(?string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }

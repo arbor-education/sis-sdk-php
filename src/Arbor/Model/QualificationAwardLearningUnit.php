@@ -94,7 +94,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param bool $isUserDefined
      */
-    public function setIsUserDefined(bool $isUserDefined = null)
+    public function setIsUserDefined(?bool $isUserDefined = null)
     {
         $this->setProperty('isUserDefined', $isUserDefined);
     }

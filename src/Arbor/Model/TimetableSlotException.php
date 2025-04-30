@@ -98,7 +98,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $noEventException
      */
-    public function setNoEventException(bool $noEventException = null)
+    public function setNoEventException(?bool $noEventException = null)
     {
         $this->setProperty('noEventException', $noEventException);
     }
@@ -114,7 +114,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $locationException
      */
-    public function setLocationException(bool $locationException = null)
+    public function setLocationException(?bool $locationException = null)
     {
         $this->setProperty('locationException', $locationException);
     }
@@ -130,7 +130,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $timeException
      */
-    public function setTimeException(bool $timeException = null)
+    public function setTimeException(?bool $timeException = null)
     {
         $this->setProperty('timeException', $timeException);
     }

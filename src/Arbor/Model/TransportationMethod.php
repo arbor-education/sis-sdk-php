@@ -68,7 +68,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -116,7 +116,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param string $transportationMethodName
      */
-    public function setTransportationMethodName(string $transportationMethodName = null)
+    public function setTransportationMethodName(?string $transportationMethodName = null)
     {
         $this->setProperty('transportationMethodName', $transportationMethodName);
     }
@@ -132,7 +132,7 @@ class TransportationMethod extends ModelBase
     /**
      * @param string $routeNumber
      */
-    public function setRouteNumber(string $routeNumber = null)
+    public function setRouteNumber(?string $routeNumber = null)
     {
         $this->setProperty('routeNumber', $routeNumber);
     }

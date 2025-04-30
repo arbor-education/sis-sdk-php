@@ -70,7 +70,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName(string $assessmentName = null)
+    public function setAssessmentName(?string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -134,7 +134,7 @@ class StandardizedAssessment extends ModelBase
     /**
      * @param string $assessmentShortName
      */
-    public function setAssessmentShortName(string $assessmentShortName = null)
+    public function setAssessmentShortName(?string $assessmentShortName = null)
     {
         $this->setProperty('assessmentShortName', $assessmentShortName);
     }

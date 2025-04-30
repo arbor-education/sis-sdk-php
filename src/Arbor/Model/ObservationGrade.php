@@ -78,7 +78,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -142,7 +142,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -158,7 +158,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -174,7 +174,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $observationGradeValue
      */
-    public function setObservationGradeValue(float $observationGradeValue = null)
+    public function setObservationGradeValue(?float $observationGradeValue = null)
     {
         $this->setProperty('observationGradeValue', $observationGradeValue);
     }
@@ -190,7 +190,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $lowerValue
      */
-    public function setLowerValue(float $lowerValue = null)
+    public function setLowerValue(?float $lowerValue = null)
     {
         $this->setProperty('lowerValue', $lowerValue);
     }
@@ -206,7 +206,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $upperValue
      */
-    public function setUpperValue(float $upperValue = null)
+    public function setUpperValue(?float $upperValue = null)
     {
         $this->setProperty('upperValue', $upperValue);
     }
@@ -222,7 +222,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $statisticalValue
      */
-    public function setStatisticalValue(float $statisticalValue = null)
+    public function setStatisticalValue(?float $statisticalValue = null)
     {
         $this->setProperty('statisticalValue', $statisticalValue);
     }
@@ -238,7 +238,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param int $gradeOrder
      */
-    public function setGradeOrder(int $gradeOrder = null)
+    public function setGradeOrder(?int $gradeOrder = null)
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }

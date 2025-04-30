@@ -130,7 +130,7 @@ class ReceivedCheque extends ModelBase
     /**
      * @param string $chequeAmount
      */
-    public function setChequeAmount(string $chequeAmount = null)
+    public function setChequeAmount(?string $chequeAmount = null)
     {
         $this->setProperty('chequeAmount', $chequeAmount);
     }

@@ -82,7 +82,7 @@ class IntegrationsBiViewerReport extends ModelBase
     /**
      * @param string $embedUrl
      */
-    public function setEmbedUrl(string $embedUrl = null)
+    public function setEmbedUrl(?string $embedUrl = null)
     {
         $this->setProperty('embedUrl', $embedUrl);
     }
@@ -98,7 +98,7 @@ class IntegrationsBiViewerReport extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -114,7 +114,7 @@ class IntegrationsBiViewerReport extends ModelBase
     /**
      * @param string $externalReportId
      */
-    public function setExternalReportId(string $externalReportId = null)
+    public function setExternalReportId(?string $externalReportId = null)
     {
         $this->setProperty('externalReportId', $externalReportId);
     }
@@ -130,7 +130,7 @@ class IntegrationsBiViewerReport extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }

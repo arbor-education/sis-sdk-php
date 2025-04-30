@@ -62,7 +62,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param string $d00020
      */
-    public function setD00020(string $d00020 = null)
+    public function setD00020(?string $d00020 = null)
     {
         $this->setProperty('d00020', $d00020);
     }
@@ -78,7 +78,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param int $d00020Order
      */
-    public function setD00020Order(int $d00020Order = null)
+    public function setD00020Order(?int $d00020Order = null)
     {
         $this->setProperty('d00020Order', $d00020Order);
     }
