@@ -20,7 +20,7 @@ class LoaderTest extends TestCase
     /**
      * @param string $dirName
      * @dataProvider directoryProvider
-     * @CoversNothing
+     * @covers Arbor\Model
      */
     public function testLoadModels(string $dirName = '')
     {
