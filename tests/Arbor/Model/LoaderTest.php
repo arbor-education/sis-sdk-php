@@ -5,9 +5,6 @@ namespace Arbor\Test\Model;
 use Arbor\Model\ModelBase;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers Arbor\Model
- */
 class LoaderTest extends TestCase
 {
     private $basePath;
@@ -20,6 +17,7 @@ class LoaderTest extends TestCase
     /**
      * @param string $dirName
      * @dataProvider directoryProvider
+     * @covers Arbor\Model
      */
     public function testLoadModels(string $dirName = '')
     {
