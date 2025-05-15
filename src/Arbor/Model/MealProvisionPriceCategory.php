@@ -68,7 +68,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName(?string $categoryName = null)
+    public function setCategoryName(string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }
@@ -100,7 +100,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param string $appliesTo
      */
-    public function setAppliesTo(?string $appliesTo = null)
+    public function setAppliesTo(string $appliesTo = null)
     {
         $this->setProperty('appliesTo', $appliesTo);
     }

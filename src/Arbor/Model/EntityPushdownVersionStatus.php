@@ -88,7 +88,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param string $subscriberApplication
      */
-    public function setSubscriberApplication(?string $subscriberApplication = null)
+    public function setSubscriberApplication(string $subscriberApplication = null)
     {
         $this->setProperty('subscriberApplication', $subscriberApplication);
     }
@@ -104,7 +104,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -120,7 +120,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param string $errorMessage
      */
-    public function setErrorMessage(?string $errorMessage = null)
+    public function setErrorMessage(string $errorMessage = null)
     {
         $this->setProperty('errorMessage', $errorMessage);
     }
@@ -136,7 +136,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param string $subscribeMode
      */
-    public function setSubscribeMode(?string $subscribeMode = null)
+    public function setSubscribeMode(string $subscribeMode = null)
     {
         $this->setProperty('subscribeMode', $subscribeMode);
     }
@@ -152,7 +152,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param bool $allowEdit
      */
-    public function setAllowEdit(?bool $allowEdit = null)
+    public function setAllowEdit(bool $allowEdit = null)
     {
         $this->setProperty('allowEdit', $allowEdit);
     }
@@ -168,7 +168,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param bool $allowDelete
      */
-    public function setAllowDelete(?bool $allowDelete = null)
+    public function setAllowDelete(bool $allowDelete = null)
     {
         $this->setProperty('allowDelete', $allowDelete);
     }
@@ -184,7 +184,7 @@ class EntityPushdownVersionStatus extends ModelBase
     /**
      * @param int $retries
      */
-    public function setRetries(?int $retries = null)
+    public function setRetries(int $retries = null)
     {
         $this->setProperty('retries', $retries);
     }

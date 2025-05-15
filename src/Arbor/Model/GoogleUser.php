@@ -66,7 +66,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $givenName
      */
-    public function setGivenName(?string $givenName = null)
+    public function setGivenName(string $givenName = null)
     {
         $this->setProperty('givenName', $givenName);
     }
@@ -82,7 +82,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $familyName
      */
-    public function setFamilyName(?string $familyName = null)
+    public function setFamilyName(string $familyName = null)
     {
         $this->setProperty('familyName', $familyName);
     }
@@ -98,7 +98,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $primaryEmail
      */
-    public function setPrimaryEmail(?string $primaryEmail = null)
+    public function setPrimaryEmail(string $primaryEmail = null)
     {
         $this->setProperty('primaryEmail', $primaryEmail);
     }
@@ -114,7 +114,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $googleIdentifier
      */
-    public function setGoogleIdentifier(?string $googleIdentifier = null)
+    public function setGoogleIdentifier(string $googleIdentifier = null)
     {
         $this->setProperty('googleIdentifier', $googleIdentifier);
     }

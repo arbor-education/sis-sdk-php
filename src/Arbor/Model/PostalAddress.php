@@ -78,7 +78,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $address1
      */
-    public function setAddress1(?string $address1 = null)
+    public function setAddress1(string $address1 = null)
     {
         $this->setProperty('address1', $address1);
     }
@@ -94,7 +94,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $address2
      */
-    public function setAddress2(?string $address2 = null)
+    public function setAddress2(string $address2 = null)
     {
         $this->setProperty('address2', $address2);
     }
@@ -110,7 +110,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $address3
      */
-    public function setAddress3(?string $address3 = null)
+    public function setAddress3(string $address3 = null)
     {
         $this->setProperty('address3', $address3);
     }
@@ -126,7 +126,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $postalTown
      */
-    public function setPostalTown(?string $postalTown = null)
+    public function setPostalTown(string $postalTown = null)
     {
         $this->setProperty('postalTown', $postalTown);
     }
@@ -142,7 +142,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $postalState
      */
-    public function setPostalState(?string $postalState = null)
+    public function setPostalState(string $postalState = null)
     {
         $this->setProperty('postalState', $postalState);
     }
@@ -158,7 +158,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $postalCode
      */
-    public function setPostalCode(?string $postalCode = null)
+    public function setPostalCode(string $postalCode = null)
     {
         $this->setProperty('postalCode', $postalCode);
     }
@@ -174,7 +174,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $uniquePropertyReferenceNumber
      */
-    public function setUniquePropertyReferenceNumber(?string $uniquePropertyReferenceNumber = null)
+    public function setUniquePropertyReferenceNumber(string $uniquePropertyReferenceNumber = null)
     {
         $this->setProperty('uniquePropertyReferenceNumber', $uniquePropertyReferenceNumber);
     }
@@ -206,7 +206,7 @@ class PostalAddress extends ModelBase
     /**
      * @param float $lat
      */
-    public function setLat(?float $lat = null)
+    public function setLat(float $lat = null)
     {
         $this->setProperty('lat', $lat);
     }
@@ -222,7 +222,7 @@ class PostalAddress extends ModelBase
     /**
      * @param float $lng
      */
-    public function setLng(?float $lng = null)
+    public function setLng(float $lng = null)
     {
         $this->setProperty('lng', $lng);
     }
@@ -238,7 +238,7 @@ class PostalAddress extends ModelBase
     /**
      * @param string $geocodeType
      */
-    public function setGeocodeType(?string $geocodeType = null)
+    public function setGeocodeType(string $geocodeType = null)
     {
         $this->setProperty('geocodeType', $geocodeType);
     }

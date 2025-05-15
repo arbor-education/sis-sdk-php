@@ -64,7 +64,7 @@ class Medication extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -80,7 +80,7 @@ class Medication extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -96,7 +96,7 @@ class Medication extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -112,7 +112,7 @@ class Medication extends ModelBase
     /**
      * @param string $medicationName
      */
-    public function setMedicationName(?string $medicationName = null)
+    public function setMedicationName(string $medicationName = null)
     {
         $this->setProperty('medicationName', $medicationName);
     }

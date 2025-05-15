@@ -70,7 +70,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $featureIdentifier
      */
-    public function setFeatureIdentifier(?string $featureIdentifier = null)
+    public function setFeatureIdentifier(string $featureIdentifier = null)
     {
         $this->setProperty('featureIdentifier', $featureIdentifier);
     }
@@ -86,7 +86,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param int $crmContractServiceSubscriptionId
      */
-    public function setCrmContractServiceSubscriptionId(?int $crmContractServiceSubscriptionId = null)
+    public function setCrmContractServiceSubscriptionId(int $crmContractServiceSubscriptionId = null)
     {
         $this->setProperty('crmContractServiceSubscriptionId', $crmContractServiceSubscriptionId);
     }
@@ -102,7 +102,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param int $billingServiceContractSubscriptionId
      */
-    public function setBillingServiceContractSubscriptionId(?int $billingServiceContractSubscriptionId = null)
+    public function setBillingServiceContractSubscriptionId(int $billingServiceContractSubscriptionId = null)
     {
         $this->setProperty('billingServiceContractSubscriptionId', $billingServiceContractSubscriptionId);
     }
@@ -118,7 +118,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $subscriptionSource
      */
-    public function setSubscriptionSource(?string $subscriptionSource = null)
+    public function setSubscriptionSource(string $subscriptionSource = null)
     {
         $this->setProperty('subscriptionSource', $subscriptionSource);
     }
@@ -134,7 +134,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $subscriptionIdentifier
      */
-    public function setSubscriptionIdentifier(?string $subscriptionIdentifier = null)
+    public function setSubscriptionIdentifier(string $subscriptionIdentifier = null)
     {
         $this->setProperty('subscriptionIdentifier', $subscriptionIdentifier);
     }

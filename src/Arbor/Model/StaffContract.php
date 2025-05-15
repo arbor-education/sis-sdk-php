@@ -116,7 +116,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $contractName
      */
-    public function setContractName(?string $contractName = null)
+    public function setContractName(string $contractName = null)
     {
         $this->setProperty('contractName', $contractName);
     }
@@ -132,7 +132,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $contractReference
      */
-    public function setContractReference(?string $contractReference = null)
+    public function setContractReference(string $contractReference = null)
     {
         $this->setProperty('contractReference', $contractReference);
     }
@@ -212,7 +212,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $payrollNumber
      */
-    public function setPayrollNumber(?string $payrollNumber = null)
+    public function setPayrollNumber(string $payrollNumber = null)
     {
         $this->setProperty('payrollNumber', $payrollNumber);
     }

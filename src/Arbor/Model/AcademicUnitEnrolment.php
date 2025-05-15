@@ -138,7 +138,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param string $enrolmentStatus
      */
-    public function setEnrolmentStatus(?string $enrolmentStatus = null)
+    public function setEnrolmentStatus(string $enrolmentStatus = null)
     {
         $this->setProperty('enrolmentStatus', $enrolmentStatus);
     }
@@ -154,7 +154,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param bool $repeatEnrolment
      */
-    public function setRepeatEnrolment(?bool $repeatEnrolment = null)
+    public function setRepeatEnrolment(bool $repeatEnrolment = null)
     {
         $this->setProperty('repeatEnrolment', $repeatEnrolment);
     }

@@ -106,7 +106,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $attendancePeriodStartTime
      */
-    public function setAttendancePeriodStartTime(?string $attendancePeriodStartTime = null)
+    public function setAttendancePeriodStartTime(string $attendancePeriodStartTime = null)
     {
         $this->setProperty('attendancePeriodStartTime', $attendancePeriodStartTime);
     }
@@ -122,7 +122,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $attendancePeriodEndTime
      */
-    public function setAttendancePeriodEndTime(?string $attendancePeriodEndTime = null)
+    public function setAttendancePeriodEndTime(string $attendancePeriodEndTime = null)
     {
         $this->setProperty('attendancePeriodEndTime', $attendancePeriodEndTime);
     }
@@ -138,7 +138,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $actualStartTime
      */
-    public function setActualStartTime(?string $actualStartTime = null)
+    public function setActualStartTime(string $actualStartTime = null)
     {
         $this->setProperty('actualStartTime', $actualStartTime);
     }
@@ -154,7 +154,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $actualEndTime
      */
-    public function setActualEndTime(?string $actualEndTime = null)
+    public function setActualEndTime(string $actualEndTime = null)
     {
         $this->setProperty('actualEndTime', $actualEndTime);
     }
@@ -186,7 +186,7 @@ class StaffAttendanceRecord extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

@@ -105,7 +105,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(?string $type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -121,7 +121,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $messageId
      */
-    public function setMessageId(?string $messageId = null)
+    public function setMessageId(string $messageId = null)
     {
         $this->setProperty('messageId', $messageId);
     }
@@ -137,7 +137,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $direction
      */
-    public function setDirection(?string $direction = null)
+    public function setDirection(string $direction = null)
     {
         $this->setProperty('direction', $direction);
     }
@@ -153,7 +153,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $refToMessageId
      */
-    public function setRefToMessageId(?string $refToMessageId = null)
+    public function setRefToMessageId(string $refToMessageId = null)
     {
         $this->setProperty('refToMessageId', $refToMessageId);
     }
@@ -185,7 +185,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $rawContent
      */
-    public function setRawContent(?string $rawContent = null)
+    public function setRawContent(string $rawContent = null)
     {
         $this->setProperty('rawContent', $rawContent);
     }

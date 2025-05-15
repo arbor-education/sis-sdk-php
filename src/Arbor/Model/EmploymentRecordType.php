@@ -68,7 +68,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -116,7 +116,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -132,7 +132,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param bool $isEmployed
      */
-    public function setIsEmployed(?bool $isEmployed = null)
+    public function setIsEmployed(bool $isEmployed = null)
     {
         $this->setProperty('isEmployed', $isEmployed);
     }
@@ -148,7 +148,7 @@ class EmploymentRecordType extends ModelBase
     /**
      * @param bool $employerRequired
      */
-    public function setEmployerRequired(?bool $employerRequired = null)
+    public function setEmployerRequired(bool $employerRequired = null)
     {
         $this->setProperty('employerRequired', $employerRequired);
     }

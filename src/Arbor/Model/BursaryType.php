@@ -64,7 +64,7 @@ class BursaryType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -112,7 +112,7 @@ class BursaryType extends ModelBase
     /**
      * @param string $allocatedAmount
      */
-    public function setAllocatedAmount(?string $allocatedAmount = null)
+    public function setAllocatedAmount(string $allocatedAmount = null)
     {
         $this->setProperty('allocatedAmount', $allocatedAmount);
     }

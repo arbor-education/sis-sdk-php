@@ -78,7 +78,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -160,7 +160,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param string $markType
      */
-    public function setMarkType(?string $markType = null)
+    public function setMarkType(string $markType = null)
     {
         $this->setProperty('markType', $markType);
     }
@@ -176,7 +176,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue(?float $markMinValue = null)
+    public function setMarkMinValue(float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -192,7 +192,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue(?float $markMaxValue = null)
+    public function setMarkMaxValue(float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }

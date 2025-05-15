@@ -116,7 +116,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param string $creditAmount
      */
-    public function setCreditAmount(?string $creditAmount = null)
+    public function setCreditAmount(string $creditAmount = null)
     {
         $this->setProperty('creditAmount', $creditAmount);
     }
@@ -132,7 +132,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param int $quantityCredited
      */
-    public function setQuantityCredited(?int $quantityCredited = null)
+    public function setQuantityCredited(int $quantityCredited = null)
     {
         $this->setProperty('quantityCredited', $quantityCredited);
     }
@@ -148,7 +148,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

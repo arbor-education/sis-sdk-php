@@ -60,7 +60,7 @@ class ReportSubscription extends ModelBase
     /**
      * @param string $reportIdentifier
      */
-    public function setReportIdentifier(?string $reportIdentifier = null)
+    public function setReportIdentifier(string $reportIdentifier = null)
     {
         $this->setProperty('reportIdentifier', $reportIdentifier);
     }

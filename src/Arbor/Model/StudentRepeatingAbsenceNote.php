@@ -118,7 +118,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(?string $startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -134,7 +134,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(?string $endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -150,7 +150,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param string $repeatingType
      */
-    public function setRepeatingType(?string $repeatingType = null)
+    public function setRepeatingType(string $repeatingType = null)
     {
         $this->setProperty('repeatingType', $repeatingType);
     }
@@ -166,7 +166,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param int $maxOccurrence
      */
-    public function setMaxOccurrence(?int $maxOccurrence = null)
+    public function setMaxOccurrence(int $maxOccurrence = null)
     {
         $this->setProperty('maxOccurrence', $maxOccurrence);
     }

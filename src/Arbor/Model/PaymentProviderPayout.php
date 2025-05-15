@@ -106,7 +106,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $paymentProviderPayoutIdentifier
      */
-    public function setPaymentProviderPayoutIdentifier(?string $paymentProviderPayoutIdentifier = null)
+    public function setPaymentProviderPayoutIdentifier(string $paymentProviderPayoutIdentifier = null)
     {
         $this->setProperty('paymentProviderPayoutIdentifier', $paymentProviderPayoutIdentifier);
     }
@@ -122,7 +122,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $payoutAmount
      */
-    public function setPayoutAmount(?string $payoutAmount = null)
+    public function setPayoutAmount(string $payoutAmount = null)
     {
         $this->setProperty('payoutAmount', $payoutAmount);
     }
@@ -138,7 +138,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $payoutReference
      */
-    public function setPayoutReference(?string $payoutReference = null)
+    public function setPayoutReference(string $payoutReference = null)
     {
         $this->setProperty('payoutReference', $payoutReference);
     }
@@ -202,7 +202,7 @@ class PaymentProviderPayout extends ModelBase
     /**
      * @param string $payoutSourceType
      */
-    public function setPayoutSourceType(?string $payoutSourceType = null)
+    public function setPayoutSourceType(string $payoutSourceType = null)
     {
         $this->setProperty('payoutSourceType', $payoutSourceType);
     }

@@ -60,7 +60,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param int $plannedEepHours
      */
-    public function setPlannedEepHours(?int $plannedEepHours = null)
+    public function setPlannedEepHours(int $plannedEepHours = null)
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }

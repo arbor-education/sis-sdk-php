@@ -72,7 +72,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -136,7 +136,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled(?bool $isEnabled = null)
+    public function setIsEnabled(bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
@@ -152,7 +152,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param string $cutOffTimePeriod
      */
-    public function setCutOffTimePeriod(?string $cutOffTimePeriod = null)
+    public function setCutOffTimePeriod(string $cutOffTimePeriod = null)
     {
         $this->setProperty('cutOffTimePeriod', $cutOffTimePeriod);
     }
@@ -168,7 +168,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param string $cutOffTimeValue
      */
-    public function setCutOffTimeValue(?string $cutOffTimeValue = null)
+    public function setCutOffTimeValue(string $cutOffTimeValue = null)
     {
         $this->setProperty('cutOffTimeValue', $cutOffTimeValue);
     }
@@ -184,7 +184,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param bool $allowMealChargesWhenNotEnoughBalance
      */
-    public function setAllowMealChargesWhenNotEnoughBalance(?bool $allowMealChargesWhenNotEnoughBalance = null)
+    public function setAllowMealChargesWhenNotEnoughBalance(bool $allowMealChargesWhenNotEnoughBalance = null)
     {
         $this->setProperty('allowMealChargesWhenNotEnoughBalance', $allowMealChargesWhenNotEnoughBalance);
     }

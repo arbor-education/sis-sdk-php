@@ -62,7 +62,7 @@ class PointAwardCategory extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -94,7 +94,7 @@ class PointAwardCategory extends ModelBase
     /**
      * @param float $defaultPoints
      */
-    public function setDefaultPoints(?float $defaultPoints = null)
+    public function setDefaultPoints(float $defaultPoints = null)
     {
         $this->setProperty('defaultPoints', $defaultPoints);
     }

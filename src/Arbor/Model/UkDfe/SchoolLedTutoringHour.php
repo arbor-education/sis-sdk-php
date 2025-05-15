@@ -114,7 +114,7 @@ class SchoolLedTutoringHour extends ModelBase
     /**
      * @param float $hours
      */
-    public function setHours(?float $hours = null)
+    public function setHours(float $hours = null)
     {
         $this->setProperty('hours', $hours);
     }

@@ -78,7 +78,7 @@ class TwoYearOldFundingBasis extends ModelBase
     /**
      * @param string $fundingBasis
      */
-    public function setFundingBasis(?string $fundingBasis = null)
+    public function setFundingBasis(string $fundingBasis = null)
     {
         $this->setProperty('fundingBasis', $fundingBasis);
     }

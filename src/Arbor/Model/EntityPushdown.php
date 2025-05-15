@@ -74,7 +74,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param string $controllerApplication
      */
-    public function setControllerApplication(?string $controllerApplication = null)
+    public function setControllerApplication(string $controllerApplication = null)
     {
         $this->setProperty('controllerApplication', $controllerApplication);
     }
@@ -90,7 +90,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param int $controllerEntityPushdownId
      */
-    public function setControllerEntityPushdownId(?int $controllerEntityPushdownId = null)
+    public function setControllerEntityPushdownId(int $controllerEntityPushdownId = null)
     {
         $this->setProperty('controllerEntityPushdownId', $controllerEntityPushdownId);
     }
@@ -106,7 +106,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(?string $title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -138,7 +138,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param int $controllerParentEntityObjectTypeId
      */
-    public function setControllerParentEntityObjectTypeId(?int $controllerParentEntityObjectTypeId = null)
+    public function setControllerParentEntityObjectTypeId(int $controllerParentEntityObjectTypeId = null)
     {
         $this->setProperty('controllerParentEntityObjectTypeId', $controllerParentEntityObjectTypeId);
     }
@@ -154,7 +154,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param string $syncMode
      */
-    public function setSyncMode(?string $syncMode = null)
+    public function setSyncMode(string $syncMode = null)
     {
         $this->setProperty('syncMode', $syncMode);
     }
@@ -170,7 +170,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param string $defaultSubscribeMode
      */
-    public function setDefaultSubscribeMode(?string $defaultSubscribeMode = null)
+    public function setDefaultSubscribeMode(string $defaultSubscribeMode = null)
     {
         $this->setProperty('defaultSubscribeMode', $defaultSubscribeMode);
     }
@@ -186,7 +186,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param bool $defaultAllowEdit
      */
-    public function setDefaultAllowEdit(?bool $defaultAllowEdit = null)
+    public function setDefaultAllowEdit(bool $defaultAllowEdit = null)
     {
         $this->setProperty('defaultAllowEdit', $defaultAllowEdit);
     }
@@ -202,7 +202,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param bool $defaultAllowDelete
      */
-    public function setDefaultAllowDelete(?bool $defaultAllowDelete = null)
+    public function setDefaultAllowDelete(bool $defaultAllowDelete = null)
     {
         $this->setProperty('defaultAllowDelete', $defaultAllowDelete);
     }

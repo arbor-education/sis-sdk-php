@@ -86,7 +86,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -166,7 +166,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param string $decision
      */
-    public function setDecision(?string $decision = null)
+    public function setDecision(string $decision = null)
     {
         $this->setProperty('decision', $decision);
     }

@@ -138,7 +138,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(?string $comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -170,7 +170,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

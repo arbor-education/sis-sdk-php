@@ -172,7 +172,7 @@ class User extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername(?string $username = null)
+    public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -188,7 +188,7 @@ class User extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail(?string $email = null)
+    public function setEmail(string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -204,7 +204,7 @@ class User extends ModelBase
     /**
      * @param string $passwordHash
      */
-    public function setPasswordHash(?string $passwordHash = null)
+    public function setPasswordHash(string $passwordHash = null)
     {
         $this->setProperty('passwordHash', $passwordHash);
     }
@@ -220,7 +220,7 @@ class User extends ModelBase
     /**
      * @param string $passwordResetHash
      */
-    public function setPasswordResetHash(?string $passwordResetHash = null)
+    public function setPasswordResetHash(string $passwordResetHash = null)
     {
         $this->setProperty('passwordResetHash', $passwordResetHash);
     }
@@ -236,7 +236,7 @@ class User extends ModelBase
     /**
      * @param string $authenticationType
      */
-    public function setAuthenticationType(?string $authenticationType = null)
+    public function setAuthenticationType(string $authenticationType = null)
     {
         $this->setProperty('authenticationType', $authenticationType);
     }
@@ -252,7 +252,7 @@ class User extends ModelBase
     /**
      * @param string $authenticationToken
      */
-    public function setAuthenticationToken(?string $authenticationToken = null)
+    public function setAuthenticationToken(string $authenticationToken = null)
     {
         $this->setProperty('authenticationToken', $authenticationToken);
     }
@@ -284,7 +284,7 @@ class User extends ModelBase
     /**
      * @param string $currentIpAddress
      */
-    public function setCurrentIpAddress(?string $currentIpAddress = null)
+    public function setCurrentIpAddress(string $currentIpAddress = null)
     {
         $this->setProperty('currentIpAddress', $currentIpAddress);
     }
@@ -332,7 +332,7 @@ class User extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled(?bool $enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }
@@ -396,7 +396,7 @@ class User extends ModelBase
     /**
      * @param string $twoFactorAuthMethod
      */
-    public function setTwoFactorAuthMethod(?string $twoFactorAuthMethod = null)
+    public function setTwoFactorAuthMethod(string $twoFactorAuthMethod = null)
     {
         $this->setProperty('twoFactorAuthMethod', $twoFactorAuthMethod);
     }
@@ -412,7 +412,7 @@ class User extends ModelBase
     /**
      * @param string $twoFactorDeviceIdentifier
      */
-    public function setTwoFactorDeviceIdentifier(?string $twoFactorDeviceIdentifier = null)
+    public function setTwoFactorDeviceIdentifier(string $twoFactorDeviceIdentifier = null)
     {
         $this->setProperty('twoFactorDeviceIdentifier', $twoFactorDeviceIdentifier);
     }
@@ -428,7 +428,7 @@ class User extends ModelBase
     /**
      * @param int $deletedEntityType
      */
-    public function setDeletedEntityType(?int $deletedEntityType = null)
+    public function setDeletedEntityType(int $deletedEntityType = null)
     {
         $this->setProperty('deletedEntityType', $deletedEntityType);
     }
@@ -444,7 +444,7 @@ class User extends ModelBase
     /**
      * @param int $deletedObjectId
      */
-    public function setDeletedObjectId(?int $deletedObjectId = null)
+    public function setDeletedObjectId(int $deletedObjectId = null)
     {
         $this->setProperty('deletedObjectId', $deletedObjectId);
     }
@@ -460,7 +460,7 @@ class User extends ModelBase
     /**
      * @param string $deletedDisplayName
      */
-    public function setDeletedDisplayName(?string $deletedDisplayName = null)
+    public function setDeletedDisplayName(string $deletedDisplayName = null)
     {
         $this->setProperty('deletedDisplayName', $deletedDisplayName);
     }
@@ -476,7 +476,7 @@ class User extends ModelBase
     /**
      * @param string $googleTwoFactorSecret
      */
-    public function setGoogleTwoFactorSecret(?string $googleTwoFactorSecret = null)
+    public function setGoogleTwoFactorSecret(string $googleTwoFactorSecret = null)
     {
         $this->setProperty('googleTwoFactorSecret', $googleTwoFactorSecret);
     }
@@ -492,7 +492,7 @@ class User extends ModelBase
     /**
      * @param bool $ssoTwoFactorActivated
      */
-    public function setSsoTwoFactorActivated(?bool $ssoTwoFactorActivated = null)
+    public function setSsoTwoFactorActivated(bool $ssoTwoFactorActivated = null)
     {
         $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
     }

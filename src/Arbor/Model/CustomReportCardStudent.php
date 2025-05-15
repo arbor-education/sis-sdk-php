@@ -96,7 +96,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

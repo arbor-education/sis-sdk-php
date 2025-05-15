@@ -104,7 +104,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $medicalConditionName
      */
-    public function setMedicalConditionName(?string $medicalConditionName = null)
+    public function setMedicalConditionName(string $medicalConditionName = null)
     {
         $this->setProperty('medicalConditionName', $medicalConditionName);
     }
@@ -152,7 +152,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity(?string $severity = null)
+    public function setSeverity(string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -168,7 +168,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $symptoms
      */
-    public function setSymptoms(?string $symptoms = null)
+    public function setSymptoms(string $symptoms = null)
     {
         $this->setProperty('symptoms', $symptoms);
     }
@@ -184,7 +184,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $treatment
      */
-    public function setTreatment(?string $treatment = null)
+    public function setTreatment(string $treatment = null)
     {
         $this->setProperty('treatment', $treatment);
     }

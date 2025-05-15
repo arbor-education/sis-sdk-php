@@ -66,7 +66,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -98,7 +98,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param float $achievedThreshold
      */
-    public function setAchievedThreshold(?float $achievedThreshold = null)
+    public function setAchievedThreshold(float $achievedThreshold = null)
     {
         $this->setProperty('achievedThreshold', $achievedThreshold);
     }
@@ -114,7 +114,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(?string $type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }

@@ -110,7 +110,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(?int $dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -126,7 +126,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param int $dayOfWeek
      */
-    public function setDayOfWeek(?int $dayOfWeek = null)
+    public function setDayOfWeek(int $dayOfWeek = null)
     {
         $this->setProperty('dayOfWeek', $dayOfWeek);
     }
@@ -142,7 +142,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param bool $termTimeOnly
      */
-    public function setTermTimeOnly(?bool $termTimeOnly = null)
+    public function setTermTimeOnly(bool $termTimeOnly = null)
     {
         $this->setProperty('termTimeOnly', $termTimeOnly);
     }
@@ -158,7 +158,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(?string $startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -174,7 +174,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(?string $endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -222,7 +222,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency(?string $frequency = null)
+    public function setFrequency(string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }
@@ -238,7 +238,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

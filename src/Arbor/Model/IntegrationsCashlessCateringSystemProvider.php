@@ -64,7 +64,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -96,7 +96,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(?string $provider = null)
+    public function setProvider(string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -112,7 +112,7 @@ class IntegrationsCashlessCateringSystemProvider extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled(?bool $enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }

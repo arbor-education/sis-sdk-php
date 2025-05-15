@@ -84,7 +84,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param string $pricingBasis
      */
-    public function setPricingBasis(?string $pricingBasis = null)
+    public function setPricingBasis(string $pricingBasis = null)
     {
         $this->setProperty('pricingBasis', $pricingBasis);
     }
@@ -100,7 +100,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(?string $priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -148,7 +148,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param bool $variableContribution
      */
-    public function setVariableContribution(?bool $variableContribution = null)
+    public function setVariableContribution(bool $variableContribution = null)
     {
         $this->setProperty('variableContribution', $variableContribution);
     }

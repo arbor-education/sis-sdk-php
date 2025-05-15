@@ -60,7 +60,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param bool $excludeFromSchoolCensus
      */
-    public function setExcludeFromSchoolCensus(?bool $excludeFromSchoolCensus = null)
+    public function setExcludeFromSchoolCensus(bool $excludeFromSchoolCensus = null)
     {
         $this->setProperty('excludeFromSchoolCensus', $excludeFromSchoolCensus);
     }

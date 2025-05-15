@@ -82,7 +82,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param string $rate
      */
-    public function setRate(?string $rate = null)
+    public function setRate(string $rate = null)
     {
         $this->setProperty('rate', $rate);
     }
@@ -98,7 +98,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param string $rateFrequency
      */
-    public function setRateFrequency(?string $rateFrequency = null)
+    public function setRateFrequency(string $rateFrequency = null)
     {
         $this->setProperty('rateFrequency', $rateFrequency);
     }

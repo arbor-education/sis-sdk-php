@@ -171,7 +171,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage(?float $extraTimePercentage = null)
+    public function setExtraTimePercentage(float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -187,7 +187,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark(?string $attendanceMark = null)
+    public function setAttendanceMark(string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -203,7 +203,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(?int $minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }

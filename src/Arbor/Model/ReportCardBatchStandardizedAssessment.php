@@ -94,7 +94,7 @@ class ReportCardBatchStandardizedAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(?int $order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }

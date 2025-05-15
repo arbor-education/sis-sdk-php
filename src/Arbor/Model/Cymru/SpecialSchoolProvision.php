@@ -96,7 +96,7 @@ class SpecialSchoolProvision extends ModelBase
     /**
      * @param int $rank
      */
-    public function setRank(?int $rank = null)
+    public function setRank(int $rank = null)
     {
         $this->setProperty('rank', $rank);
     }

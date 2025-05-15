@@ -62,7 +62,7 @@ class IntakeSeasonGroup extends ModelBase
     /**
      * @param string $groupName
      */
-    public function setGroupName(?string $groupName = null)
+    public function setGroupName(string $groupName = null)
     {
         $this->setProperty('groupName', $groupName);
     }

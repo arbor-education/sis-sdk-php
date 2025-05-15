@@ -82,7 +82,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass(?string $fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -98,7 +98,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams(?string $fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -114,7 +114,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass(?string $transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -130,7 +130,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $customLabel
      */
-    public function setCustomLabel(?string $customLabel = null)
+    public function setCustomLabel(string $customLabel = null)
     {
         $this->setProperty('customLabel', $customLabel);
     }

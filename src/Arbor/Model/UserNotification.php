@@ -96,7 +96,7 @@ class UserNotification extends ModelBase
     /**
      * @param bool $isRead
      */
-    public function setIsRead(?bool $isRead = null)
+    public function setIsRead(bool $isRead = null)
     {
         $this->setProperty('isRead', $isRead);
     }
@@ -112,7 +112,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -128,7 +128,7 @@ class UserNotification extends ModelBase
     /**
      * @param int $modifiedGlobalCounter
      */
-    public function setModifiedGlobalCounter(?int $modifiedGlobalCounter = null)
+    public function setModifiedGlobalCounter(int $modifiedGlobalCounter = null)
     {
         $this->setProperty('modifiedGlobalCounter', $modifiedGlobalCounter);
     }
@@ -160,7 +160,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $action
      */
-    public function setAction(?string $action = null)
+    public function setAction(string $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -176,7 +176,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $icon
      */
-    public function setIcon(?string $icon = null)
+    public function setIcon(string $icon = null)
     {
         $this->setProperty('icon', $icon);
     }
@@ -192,7 +192,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $origin
      */
-    public function setOrigin(?string $origin = null)
+    public function setOrigin(string $origin = null)
     {
         $this->setProperty('origin', $origin);
     }
@@ -208,7 +208,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $parameters
      */
-    public function setParameters(?string $parameters = null)
+    public function setParameters(string $parameters = null)
     {
         $this->setProperty('parameters', $parameters);
     }
@@ -224,7 +224,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(?string $type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -240,7 +240,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -256,7 +256,7 @@ class UserNotification extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(?string $subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

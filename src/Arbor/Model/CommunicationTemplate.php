@@ -74,7 +74,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -90,7 +90,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(?string $identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -106,7 +106,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $emailSubject
      */
-    public function setEmailSubject(?string $emailSubject = null)
+    public function setEmailSubject(string $emailSubject = null)
     {
         $this->setProperty('emailSubject', $emailSubject);
     }
@@ -122,7 +122,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $emailBody
      */
-    public function setEmailBody(?string $emailBody = null)
+    public function setEmailBody(string $emailBody = null)
     {
         $this->setProperty('emailBody', $emailBody);
     }
@@ -138,7 +138,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $smsBody
      */
-    public function setSmsBody(?string $smsBody = null)
+    public function setSmsBody(string $smsBody = null)
     {
         $this->setProperty('smsBody', $smsBody);
     }
@@ -154,7 +154,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $letterBody
      */
-    public function setLetterBody(?string $letterBody = null)
+    public function setLetterBody(string $letterBody = null)
     {
         $this->setProperty('letterBody', $letterBody);
     }
@@ -170,7 +170,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $inAppMessageBody
      */
-    public function setInAppMessageBody(?string $inAppMessageBody = null)
+    public function setInAppMessageBody(string $inAppMessageBody = null)
     {
         $this->setProperty('inAppMessageBody', $inAppMessageBody);
     }
@@ -186,7 +186,7 @@ class CommunicationTemplate extends ModelBase
     /**
      * @param string $communicationTemplateDefinitionClass
      */
-    public function setCommunicationTemplateDefinitionClass(?string $communicationTemplateDefinitionClass = null)
+    public function setCommunicationTemplateDefinitionClass(string $communicationTemplateDefinitionClass = null)
     {
         $this->setProperty('communicationTemplateDefinitionClass', $communicationTemplateDefinitionClass);
     }

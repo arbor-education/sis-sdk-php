@@ -66,7 +66,7 @@ class TravellerStatus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class TravellerStatus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class TravellerStatus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class TravellerStatus extends ModelBase
     /**
      * @param string $travellerStatusName
      */
-    public function setTravellerStatusName(?string $travellerStatusName = null)
+    public function setTravellerStatusName(string $travellerStatusName = null)
     {
         $this->setProperty('travellerStatusName', $travellerStatusName);
     }

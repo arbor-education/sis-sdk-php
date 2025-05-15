@@ -74,7 +74,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -90,7 +90,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -106,7 +106,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -122,7 +122,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(?string $exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -138,7 +138,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -154,7 +154,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param bool $isMainRole
      */
-    public function setIsMainRole(?bool $isMainRole = null)
+    public function setIsMainRole(bool $isMainRole = null)
     {
         $this->setProperty('isMainRole', $isMainRole);
     }
@@ -170,7 +170,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param bool $isVacancyOrLeaverCategory
      */
-    public function setIsVacancyOrLeaverCategory(?bool $isVacancyOrLeaverCategory = null)
+    public function setIsVacancyOrLeaverCategory(bool $isVacancyOrLeaverCategory = null)
     {
         $this->setProperty('isVacancyOrLeaverCategory', $isVacancyOrLeaverCategory);
     }
@@ -186,7 +186,7 @@ class SchoolWorkforceCensusBusinessRole extends ModelBase
     /**
      * @param string $categoryCode
      */
-    public function setCategoryCode(?string $categoryCode = null)
+    public function setCategoryCode(string $categoryCode = null)
     {
         $this->setProperty('categoryCode', $categoryCode);
     }

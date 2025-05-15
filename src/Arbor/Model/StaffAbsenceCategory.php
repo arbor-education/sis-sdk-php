@@ -84,7 +84,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -100,7 +100,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -116,7 +116,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -132,7 +132,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName(?string $categoryName = null)
+    public function setCategoryName(string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }
@@ -148,7 +148,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidSickLeave
      */
-    public function setIsPaidSickLeave(?bool $isPaidSickLeave = null)
+    public function setIsPaidSickLeave(bool $isPaidSickLeave = null)
     {
         $this->setProperty('isPaidSickLeave', $isPaidSickLeave);
     }
@@ -164,7 +164,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidSickLeave
      */
-    public function setIsUnpaidSickLeave(?bool $isUnpaidSickLeave = null)
+    public function setIsUnpaidSickLeave(bool $isUnpaidSickLeave = null)
     {
         $this->setProperty('isUnpaidSickLeave', $isUnpaidSickLeave);
     }
@@ -180,7 +180,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidHoliday
      */
-    public function setIsPaidHoliday(?bool $isPaidHoliday = null)
+    public function setIsPaidHoliday(bool $isPaidHoliday = null)
     {
         $this->setProperty('isPaidHoliday', $isPaidHoliday);
     }
@@ -196,7 +196,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidHoliday
      */
-    public function setIsUnpaidHoliday(?bool $isUnpaidHoliday = null)
+    public function setIsUnpaidHoliday(bool $isUnpaidHoliday = null)
     {
         $this->setProperty('isUnpaidHoliday', $isUnpaidHoliday);
     }
@@ -212,7 +212,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidMaternity
      */
-    public function setIsPaidMaternity(?bool $isPaidMaternity = null)
+    public function setIsPaidMaternity(bool $isPaidMaternity = null)
     {
         $this->setProperty('isPaidMaternity', $isPaidMaternity);
     }
@@ -228,7 +228,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidMaternity
      */
-    public function setIsUnpaidMaternity(?bool $isUnpaidMaternity = null)
+    public function setIsUnpaidMaternity(bool $isUnpaidMaternity = null)
     {
         $this->setProperty('isUnpaidMaternity', $isUnpaidMaternity);
     }
@@ -244,7 +244,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidPaternity
      */
-    public function setIsPaidPaternity(?bool $isPaidPaternity = null)
+    public function setIsPaidPaternity(bool $isPaidPaternity = null)
     {
         $this->setProperty('isPaidPaternity', $isPaidPaternity);
     }
@@ -260,7 +260,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidPaternity
      */
-    public function setIsUnpaidPaternity(?bool $isUnpaidPaternity = null)
+    public function setIsUnpaidPaternity(bool $isUnpaidPaternity = null)
     {
         $this->setProperty('isUnpaidPaternity', $isUnpaidPaternity);
     }
@@ -276,7 +276,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isAuthorizedAbsence
      */
-    public function setIsAuthorizedAbsence(?bool $isAuthorizedAbsence = null)
+    public function setIsAuthorizedAbsence(bool $isAuthorizedAbsence = null)
     {
         $this->setProperty('isAuthorizedAbsence', $isAuthorizedAbsence);
     }
@@ -292,7 +292,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(?string $exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }

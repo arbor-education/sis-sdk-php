@@ -70,7 +70,7 @@ class StripeEvent extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(?string $identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -86,7 +86,7 @@ class StripeEvent extends ModelBase
     /**
      * @param string $apiVersion
      */
-    public function setApiVersion(?string $apiVersion = null)
+    public function setApiVersion(string $apiVersion = null)
     {
         $this->setProperty('apiVersion', $apiVersion);
     }
@@ -118,7 +118,7 @@ class StripeEvent extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(?string $type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -134,7 +134,7 @@ class StripeEvent extends ModelBase
     /**
      * @param string $payload
      */
-    public function setPayload(?string $payload = null)
+    public function setPayload(string $payload = null)
     {
         $this->setProperty('payload', $payload);
     }
@@ -150,7 +150,7 @@ class StripeEvent extends ModelBase
     /**
      * @param string $metadataIdentifier
      */
-    public function setMetadataIdentifier(?string $metadataIdentifier = null)
+    public function setMetadataIdentifier(string $metadataIdentifier = null)
     {
         $this->setProperty('metadataIdentifier', $metadataIdentifier);
     }
@@ -166,7 +166,7 @@ class StripeEvent extends ModelBase
     /**
      * @param string $stripeObjectIdentifier
      */
-    public function setStripeObjectIdentifier(?string $stripeObjectIdentifier = null)
+    public function setStripeObjectIdentifier(string $stripeObjectIdentifier = null)
     {
         $this->setProperty('stripeObjectIdentifier', $stripeObjectIdentifier);
     }

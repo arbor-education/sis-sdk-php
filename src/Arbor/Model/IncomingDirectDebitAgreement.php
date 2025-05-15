@@ -102,7 +102,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $paymentProviderAgreementIdentifier
      */
-    public function setPaymentProviderAgreementIdentifier(?string $paymentProviderAgreementIdentifier = null)
+    public function setPaymentProviderAgreementIdentifier(string $paymentProviderAgreementIdentifier = null)
     {
         $this->setProperty('paymentProviderAgreementIdentifier', $paymentProviderAgreementIdentifier);
     }
@@ -150,7 +150,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $agreementReference
      */
-    public function setAgreementReference(?string $agreementReference = null)
+    public function setAgreementReference(string $agreementReference = null)
     {
         $this->setProperty('agreementReference', $agreementReference);
     }
@@ -166,7 +166,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

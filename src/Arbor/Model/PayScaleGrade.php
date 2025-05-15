@@ -78,7 +78,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param string $gradeName
      */
-    public function setGradeName(?string $gradeName = null)
+    public function setGradeName(string $gradeName = null)
     {
         $this->setProperty('gradeName', $gradeName);
     }
@@ -94,7 +94,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

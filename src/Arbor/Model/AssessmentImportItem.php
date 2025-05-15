@@ -96,7 +96,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param string $dataValue
      */
-    public function setDataValue(?string $dataValue = null)
+    public function setDataValue(string $dataValue = null)
     {
         $this->setProperty('dataValue', $dataValue);
     }

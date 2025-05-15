@@ -76,7 +76,7 @@ class Country extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class Country extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class Country extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -124,7 +124,7 @@ class Country extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -140,7 +140,7 @@ class Country extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName(?string $longName = null)
+    public function setLongName(string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -156,7 +156,7 @@ class Country extends ModelBase
     /**
      * @param string $iso31661Alpha2
      */
-    public function setIso31661Alpha2(?string $iso31661Alpha2 = null)
+    public function setIso31661Alpha2(string $iso31661Alpha2 = null)
     {
         $this->setProperty('iso31661Alpha2', $iso31661Alpha2);
     }
@@ -172,7 +172,7 @@ class Country extends ModelBase
     /**
      * @param string $iso31661Alpha3
      */
-    public function setIso31661Alpha3(?string $iso31661Alpha3 = null)
+    public function setIso31661Alpha3(string $iso31661Alpha3 = null)
     {
         $this->setProperty('iso31661Alpha3', $iso31661Alpha3);
     }
@@ -188,7 +188,7 @@ class Country extends ModelBase
     /**
      * @param string $iso31661Numeric
      */
-    public function setIso31661Numeric(?string $iso31661Numeric = null)
+    public function setIso31661Numeric(string $iso31661Numeric = null)
     {
         $this->setProperty('iso31661Numeric', $iso31661Numeric);
     }
@@ -204,7 +204,7 @@ class Country extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote(?string $note = null)
+    public function setNote(string $note = null)
     {
         $this->setProperty('note', $note);
     }
@@ -220,7 +220,7 @@ class Country extends ModelBase
     /**
      * @param bool $appliesToPostalAddress
      */
-    public function setAppliesToPostalAddress(?bool $appliesToPostalAddress = null)
+    public function setAppliesToPostalAddress(bool $appliesToPostalAddress = null)
     {
         $this->setProperty('appliesToPostalAddress', $appliesToPostalAddress);
     }

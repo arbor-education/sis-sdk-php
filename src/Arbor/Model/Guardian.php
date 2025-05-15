@@ -96,7 +96,7 @@ class Guardian extends ModelBase
     /**
      * @param string $employer
      */
-    public function setEmployer(?string $employer = null)
+    public function setEmployer(string $employer = null)
     {
         $this->setProperty('employer', $employer);
     }
@@ -144,7 +144,7 @@ class Guardian extends ModelBase
     /**
      * @param string $jobPosition
      */
-    public function setJobPosition(?string $jobPosition = null)
+    public function setJobPosition(string $jobPosition = null)
     {
         $this->setProperty('jobPosition', $jobPosition);
     }
@@ -160,7 +160,7 @@ class Guardian extends ModelBase
     /**
      * @param string $bloodGroup
      */
-    public function setBloodGroup(?string $bloodGroup = null)
+    public function setBloodGroup(string $bloodGroup = null)
     {
         $this->setProperty('bloodGroup', $bloodGroup);
     }
@@ -176,7 +176,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $shareContactDetails
      */
-    public function setShareContactDetails(?bool $shareContactDetails = null)
+    public function setShareContactDetails(bool $shareContactDetails = null)
     {
         $this->setProperty('shareContactDetails', $shareContactDetails);
     }
@@ -192,7 +192,7 @@ class Guardian extends ModelBase
     /**
      * @param string $preferredContactMethod
      */
-    public function setPreferredContactMethod(?string $preferredContactMethod = null)
+    public function setPreferredContactMethod(string $preferredContactMethod = null)
     {
         $this->setProperty('preferredContactMethod', $preferredContactMethod);
     }
@@ -208,7 +208,7 @@ class Guardian extends ModelBase
     /**
      * @param string $legacySystemId
      */
-    public function setLegacySystemId(?string $legacySystemId = null)
+    public function setLegacySystemId(string $legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
     }
@@ -224,7 +224,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $isKeyWorker
      */
-    public function setIsKeyWorker(?bool $isKeyWorker = null)
+    public function setIsKeyWorker(bool $isKeyWorker = null)
     {
         $this->setProperty('isKeyWorker', $isKeyWorker);
     }
@@ -240,7 +240,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $isActiveOutgoingSync
      */
-    public function setIsActiveOutgoingSync(?bool $isActiveOutgoingSync = null)
+    public function setIsActiveOutgoingSync(bool $isActiveOutgoingSync = null)
     {
         $this->setProperty('isActiveOutgoingSync', $isActiveOutgoingSync);
     }
@@ -256,7 +256,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $isActiveIncomingSync
      */
-    public function setIsActiveIncomingSync(?bool $isActiveIncomingSync = null)
+    public function setIsActiveIncomingSync(bool $isActiveIncomingSync = null)
     {
         $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }

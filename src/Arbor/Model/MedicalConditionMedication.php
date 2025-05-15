@@ -100,7 +100,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param string $dosage
      */
-    public function setDosage(?string $dosage = null)
+    public function setDosage(string $dosage = null)
     {
         $this->setProperty('dosage', $dosage);
     }
@@ -116,7 +116,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency(?string $frequency = null)
+    public function setFrequency(string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }

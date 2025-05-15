@@ -96,7 +96,7 @@ class CashPayout extends ModelBase
     /**
      * @param string $payout
      */
-    public function setPayout(?string $payout = null)
+    public function setPayout(string $payout = null)
     {
         $this->setProperty('payout', $payout);
     }
@@ -112,7 +112,7 @@ class CashPayout extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

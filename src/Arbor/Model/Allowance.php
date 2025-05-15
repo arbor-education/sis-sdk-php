@@ -60,7 +60,7 @@ class Allowance extends ModelBase
     /**
      * @param string $allowanceName
      */
-    public function setAllowanceName(?string $allowanceName = null)
+    public function setAllowanceName(string $allowanceName = null)
     {
         $this->setProperty('allowanceName', $allowanceName);
     }
@@ -76,7 +76,7 @@ class Allowance extends ModelBase
     /**
      * @param string $allowanceCode
      */
-    public function setAllowanceCode(?string $allowanceCode = null)
+    public function setAllowanceCode(string $allowanceCode = null)
     {
         $this->setProperty('allowanceCode', $allowanceCode);
     }

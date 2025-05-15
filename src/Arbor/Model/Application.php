@@ -122,7 +122,7 @@ class Application extends ModelBase
     /**
      * @param string $applicationReferenceNumber
      */
-    public function setApplicationReferenceNumber(?string $applicationReferenceNumber = null)
+    public function setApplicationReferenceNumber(string $applicationReferenceNumber = null)
     {
         $this->setProperty('applicationReferenceNumber', $applicationReferenceNumber);
     }
@@ -170,7 +170,7 @@ class Application extends ModelBase
     /**
      * @param float $bucketScore
      */
-    public function setBucketScore(?float $bucketScore = null)
+    public function setBucketScore(float $bucketScore = null)
     {
         $this->setProperty('bucketScore', $bucketScore);
     }

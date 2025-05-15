@@ -60,7 +60,7 @@ class DetentionType extends ModelBase
     /**
      * @param string $detentionTypeName
      */
-    public function setDetentionTypeName(?string $detentionTypeName = null)
+    public function setDetentionTypeName(string $detentionTypeName = null)
     {
         $this->setProperty('detentionTypeName', $detentionTypeName);
     }

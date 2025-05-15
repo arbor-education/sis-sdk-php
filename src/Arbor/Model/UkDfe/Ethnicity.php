@@ -66,7 +66,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $dfesMainCode
      */
-    public function setDfesMainCode(?string $dfesMainCode = null)
+    public function setDfesMainCode(string $dfesMainCode = null)
     {
         $this->setProperty('dfesMainCode', $dfesMainCode);
     }
@@ -82,7 +82,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00005
      */
-    public function setD00005(?string $d00005 = null)
+    public function setD00005(string $d00005 = null)
     {
         $this->setProperty('d00005', $d00005);
     }
@@ -98,7 +98,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $onsCode
      */
-    public function setOnsCode(?string $onsCode = null)
+    public function setOnsCode(string $onsCode = null)
     {
         $this->setProperty('onsCode', $onsCode);
     }
@@ -114,7 +114,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00250
      */
-    public function setD00250(?string $d00250 = null)
+    public function setD00250(string $d00250 = null)
     {
         $this->setProperty('d00250', $d00250);
     }

@@ -84,7 +84,7 @@ class Term extends ModelBase
     /**
      * @param string $termName
      */
-    public function setTermName(?string $termName = null)
+    public function setTermName(string $termName = null)
     {
         $this->setProperty('termName', $termName);
     }
@@ -100,7 +100,7 @@ class Term extends ModelBase
     /**
      * @param string $shortTermName
      */
-    public function setShortTermName(?string $shortTermName = null)
+    public function setShortTermName(string $shortTermName = null)
     {
         $this->setProperty('shortTermName', $shortTermName);
     }
@@ -116,7 +116,7 @@ class Term extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }

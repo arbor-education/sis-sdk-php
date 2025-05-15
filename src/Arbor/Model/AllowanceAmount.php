@@ -112,7 +112,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param string $allowanceAmount
      */
-    public function setAllowanceAmount(?string $allowanceAmount = null)
+    public function setAllowanceAmount(string $allowanceAmount = null)
     {
         $this->setProperty('allowanceAmount', $allowanceAmount);
     }

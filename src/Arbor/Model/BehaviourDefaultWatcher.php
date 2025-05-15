@@ -78,7 +78,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent(?string $relationToStudent = null)
+    public function setRelationToStudent(string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }

@@ -116,7 +116,7 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     /**
      * @param bool $eligibleForEconomicReasons
      */
-    public function setEligibleForEconomicReasons(?bool $eligibleForEconomicReasons = null)
+    public function setEligibleForEconomicReasons(bool $eligibleForEconomicReasons = null)
     {
         $this->setProperty('eligibleForEconomicReasons', $eligibleForEconomicReasons);
     }
@@ -132,7 +132,7 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     /**
      * @param bool $eligibleForOtherReasons
      */
-    public function setEligibleForOtherReasons(?bool $eligibleForOtherReasons = null)
+    public function setEligibleForOtherReasons(bool $eligibleForOtherReasons = null)
     {
         $this->setProperty('eligibleForOtherReasons', $eligibleForOtherReasons);
     }

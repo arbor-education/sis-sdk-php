@@ -88,7 +88,7 @@ class File extends ModelBase
     /**
      * @param string $url
      */
-    public function setUrl(?string $url = null)
+    public function setUrl(string $url = null)
     {
         $this->setProperty('url', $url);
     }
@@ -104,7 +104,7 @@ class File extends ModelBase
     /**
      * @param int $fileSize
      */
-    public function setFileSize(?int $fileSize = null)
+    public function setFileSize(int $fileSize = null)
     {
         $this->setProperty('fileSize', $fileSize);
     }
@@ -120,7 +120,7 @@ class File extends ModelBase
     /**
      * @param string $mimeType
      */
-    public function setMimeType(?string $mimeType = null)
+    public function setMimeType(string $mimeType = null)
     {
         $this->setProperty('mimeType', $mimeType);
     }
@@ -136,7 +136,7 @@ class File extends ModelBase
     /**
      * @param string $fileIdentifier
      */
-    public function setFileIdentifier(?string $fileIdentifier = null)
+    public function setFileIdentifier(string $fileIdentifier = null)
     {
         $this->setProperty('fileIdentifier', $fileIdentifier);
     }
@@ -152,7 +152,7 @@ class File extends ModelBase
     /**
      * @param string $fileMetadata
      */
-    public function setFileMetadata(?string $fileMetadata = null)
+    public function setFileMetadata(string $fileMetadata = null)
     {
         $this->setProperty('fileMetadata', $fileMetadata);
     }
@@ -168,7 +168,7 @@ class File extends ModelBase
     /**
      * @param string $fileName
      */
-    public function setFileName(?string $fileName = null)
+    public function setFileName(string $fileName = null)
     {
         $this->setProperty('fileName', $fileName);
     }
@@ -184,7 +184,7 @@ class File extends ModelBase
     /**
      * @param bool $compressed
      */
-    public function setCompressed(?bool $compressed = null)
+    public function setCompressed(bool $compressed = null)
     {
         $this->setProperty('compressed', $compressed);
     }

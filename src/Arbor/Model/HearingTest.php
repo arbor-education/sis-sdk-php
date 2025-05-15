@@ -5,9 +5,6 @@ use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
 use Arbor\Model\ModelBase;
 
-/**
- * @coversNothing
- */
 class HearingTest extends ModelBase
 {
     public const STUDENT = 'student';
@@ -97,7 +94,7 @@ class HearingTest extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(?string $notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

@@ -58,7 +58,7 @@ class AcademicProgramme extends ModelBase
     /**
      * @param string $academicProgrammeName
      */
-    public function setAcademicProgrammeName(?string $academicProgrammeName = null)
+    public function setAcademicProgrammeName(string $academicProgrammeName = null)
     {
         $this->setProperty('academicProgrammeName', $academicProgrammeName);
     }

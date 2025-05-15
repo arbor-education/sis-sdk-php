@@ -60,7 +60,7 @@ class ExclusionReason extends ModelBase
     /**
      * @param string $d00024
      */
-    public function setD00024(?string $d00024 = null)
+    public function setD00024(string $d00024 = null)
     {
         $this->setProperty('d00024', $d00024);
     }

@@ -82,7 +82,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param string $triggerField
      */
-    public function setTriggerField(?string $triggerField = null)
+    public function setTriggerField(string $triggerField = null)
     {
         $this->setProperty('triggerField', $triggerField);
     }
@@ -98,7 +98,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param bool $conditionGroup
      */
-    public function setConditionGroup(?bool $conditionGroup = null)
+    public function setConditionGroup(bool $conditionGroup = null)
     {
         $this->setProperty('conditionGroup', $conditionGroup);
     }
@@ -130,7 +130,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param string $conditionResolver
      */
-    public function setConditionResolver(?string $conditionResolver = null)
+    public function setConditionResolver(string $conditionResolver = null)
     {
         $this->setProperty('conditionResolver', $conditionResolver);
     }

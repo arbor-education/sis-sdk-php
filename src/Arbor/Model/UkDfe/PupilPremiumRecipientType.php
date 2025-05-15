@@ -78,7 +78,7 @@ class PupilPremiumRecipientType extends ModelBase
     /**
      * @param string $pupilPremiumType
      */
-    public function setPupilPremiumType(?string $pupilPremiumType = null)
+    public function setPupilPremiumType(string $pupilPremiumType = null)
     {
         $this->setProperty('pupilPremiumType', $pupilPremiumType);
     }

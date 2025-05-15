@@ -76,7 +76,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param string $registrationFormName
      */
-    public function setRegistrationFormName(?string $registrationFormName = null)
+    public function setRegistrationFormName(string $registrationFormName = null)
     {
         $this->setProperty('registrationFormName', $registrationFormName);
     }
@@ -108,7 +108,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -204,7 +204,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(?int $displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -220,7 +220,7 @@ class RegistrationForm extends ModelBase
     /**
      * @param int $targetEnrolment
      */
-    public function setTargetEnrolment(?int $targetEnrolment = null)
+    public function setTargetEnrolment(int $targetEnrolment = null)
     {
         $this->setProperty('targetEnrolment', $targetEnrolment);
     }

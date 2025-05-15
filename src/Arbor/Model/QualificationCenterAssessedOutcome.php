@@ -102,7 +102,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue(?float $numericValue = null)
+    public function setNumericValue(float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -166,7 +166,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

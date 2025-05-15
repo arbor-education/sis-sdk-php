@@ -60,7 +60,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param string $d00206
      */
-    public function setD00206(?string $d00206 = null)
+    public function setD00206(string $d00206 = null)
     {
         $this->setProperty('d00206', $d00206);
     }

@@ -84,7 +84,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param string $partIdentifier
      */
-    public function setPartIdentifier(?string $partIdentifier = null)
+    public function setPartIdentifier(string $partIdentifier = null)
     {
         $this->setProperty('partIdentifier', $partIdentifier);
     }
@@ -132,7 +132,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param string $recipientNetworkCode
      */
-    public function setRecipientNetworkCode(?string $recipientNetworkCode = null)
+    public function setRecipientNetworkCode(string $recipientNetworkCode = null)
     {
         $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }
@@ -148,7 +148,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param string $cost
      */
-    public function setCost(?string $cost = null)
+    public function setCost(string $cost = null)
     {
         $this->setProperty('cost', $cost);
     }

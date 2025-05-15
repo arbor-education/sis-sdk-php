@@ -60,7 +60,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $guidedContactHours
      */
-    public function setGuidedContactHours(?int $guidedContactHours = null)
+    public function setGuidedContactHours(int $guidedContactHours = null)
     {
         $this->setProperty('guidedContactHours', $guidedContactHours);
     }

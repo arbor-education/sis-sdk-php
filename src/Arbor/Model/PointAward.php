@@ -122,7 +122,7 @@ class PointAward extends ModelBase
     /**
      * @param float $points
      */
-    public function setPoints(?float $points = null)
+    public function setPoints(float $points = null)
     {
         $this->setProperty('points', $points);
     }
@@ -154,7 +154,7 @@ class PointAward extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

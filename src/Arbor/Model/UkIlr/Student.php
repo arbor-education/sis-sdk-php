@@ -64,7 +64,7 @@ class Student extends ModelBase
     /**
      * @param bool $migratedAsPartOfProviderMerger
      */
-    public function setMigratedAsPartOfProviderMerger(?bool $migratedAsPartOfProviderMerger = null)
+    public function setMigratedAsPartOfProviderMerger(bool $migratedAsPartOfProviderMerger = null)
     {
         $this->setProperty('migratedAsPartOfProviderMerger', $migratedAsPartOfProviderMerger);
     }
@@ -80,7 +80,7 @@ class Student extends ModelBase
     /**
      * @param bool $movedDueToMinimumContractLevel
      */
-    public function setMovedDueToMinimumContractLevel(?bool $movedDueToMinimumContractLevel = null)
+    public function setMovedDueToMinimumContractLevel(bool $movedDueToMinimumContractLevel = null)
     {
         $this->setProperty('movedDueToMinimumContractLevel', $movedDueToMinimumContractLevel);
     }

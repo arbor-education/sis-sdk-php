@@ -118,7 +118,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $totalAmountCredited
      */
-    public function setTotalAmountCredited(?string $totalAmountCredited = null)
+    public function setTotalAmountCredited(string $totalAmountCredited = null)
     {
         $this->setProperty('totalAmountCredited', $totalAmountCredited);
     }
@@ -134,7 +134,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $creditNoteNumber
      */
-    public function setCreditNoteNumber(?string $creditNoteNumber = null)
+    public function setCreditNoteNumber(string $creditNoteNumber = null)
     {
         $this->setProperty('creditNoteNumber', $creditNoteNumber);
     }
@@ -150,7 +150,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $legacyCreditNoteNumber
      */
-    public function setLegacyCreditNoteNumber(?string $legacyCreditNoteNumber = null)
+    public function setLegacyCreditNoteNumber(string $legacyCreditNoteNumber = null)
     {
         $this->setProperty('legacyCreditNoteNumber', $legacyCreditNoteNumber);
     }
@@ -166,7 +166,7 @@ class CustomerCreditNote extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

@@ -84,7 +84,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -100,7 +100,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -116,7 +116,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -148,7 +148,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $gradeIndex
      */
-    public function setGradeIndex(?int $gradeIndex = null)
+    public function setGradeIndex(int $gradeIndex = null)
     {
         $this->setProperty('gradeIndex', $gradeIndex);
     }
@@ -164,7 +164,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param string $numericMarkType
      */
-    public function setNumericMarkType(?string $numericMarkType = null)
+    public function setNumericMarkType(string $numericMarkType = null)
     {
         $this->setProperty('numericMarkType', $numericMarkType);
     }
@@ -180,7 +180,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $decimalPlaces
      */
-    public function setDecimalPlaces(?int $decimalPlaces = null)
+    public function setDecimalPlaces(int $decimalPlaces = null)
     {
         $this->setProperty('decimalPlaces', $decimalPlaces);
     }
@@ -196,7 +196,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param float $minimumNumericValue
      */
-    public function setMinimumNumericValue(?float $minimumNumericValue = null)
+    public function setMinimumNumericValue(float $minimumNumericValue = null)
     {
         $this->setProperty('minimumNumericValue', $minimumNumericValue);
     }
@@ -212,7 +212,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param float $maximumNumericValue
      */
-    public function setMaximumNumericValue(?float $maximumNumericValue = null)
+    public function setMaximumNumericValue(float $maximumNumericValue = null)
     {
         $this->setProperty('maximumNumericValue', $maximumNumericValue);
     }

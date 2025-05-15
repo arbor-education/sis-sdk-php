@@ -104,7 +104,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param float $fte
      */
-    public function setFte(?float $fte = null)
+    public function setFte(float $fte = null)
     {
         $this->setProperty('fte', $fte);
     }
@@ -120,7 +120,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param string $fteCashAmount
      */
-    public function setFteCashAmount(?string $fteCashAmount = null)
+    public function setFteCashAmount(string $fteCashAmount = null)
     {
         $this->setProperty('fteCashAmount', $fteCashAmount);
     }
@@ -168,7 +168,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param string $lastFsm
      */
-    public function setLastFsm(?string $lastFsm = null)
+    public function setLastFsm(string $lastFsm = null)
     {
         $this->setProperty('lastFsm', $lastFsm);
     }

@@ -120,7 +120,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(?string $summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -136,7 +136,7 @@ class StudentCurriculumEvidence extends ModelBase
     /**
      * @param string $details
      */
-    public function setDetails(?string $details = null)
+    public function setDetails(string $details = null)
     {
         $this->setProperty('details', $details);
     }

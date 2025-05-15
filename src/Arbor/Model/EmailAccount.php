@@ -70,7 +70,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverType
      */
-    public function setServerType(?string $serverType = null)
+    public function setServerType(string $serverType = null)
     {
         $this->setProperty('serverType', $serverType);
     }
@@ -86,7 +86,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverHost
      */
-    public function setServerHost(?string $serverHost = null)
+    public function setServerHost(string $serverHost = null)
     {
         $this->setProperty('serverHost', $serverHost);
     }
@@ -102,7 +102,7 @@ class EmailAccount extends ModelBase
     /**
      * @param int $serverPort
      */
-    public function setServerPort(?int $serverPort = null)
+    public function setServerPort(int $serverPort = null)
     {
         $this->setProperty('serverPort', $serverPort);
     }
@@ -118,7 +118,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverEncryption
      */
-    public function setServerEncryption(?string $serverEncryption = null)
+    public function setServerEncryption(string $serverEncryption = null)
     {
         $this->setProperty('serverEncryption', $serverEncryption);
     }
@@ -134,7 +134,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername(?string $username = null)
+    public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -150,7 +150,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $password
      */
-    public function setPassword(?string $password = null)
+    public function setPassword(string $password = null)
     {
         $this->setProperty('password', $password);
     }

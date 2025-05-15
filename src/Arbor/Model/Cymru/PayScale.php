@@ -78,7 +78,7 @@ class PayScale extends ModelBase
     /**
      * @param string $regionalPaySpine
      */
-    public function setRegionalPaySpine(?string $regionalPaySpine = null)
+    public function setRegionalPaySpine(string $regionalPaySpine = null)
     {
         $this->setProperty('regionalPaySpine', $regionalPaySpine);
     }

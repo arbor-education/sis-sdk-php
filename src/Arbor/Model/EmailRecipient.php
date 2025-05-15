@@ -92,7 +92,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param string $recipientType
      */
-    public function setRecipientType(?string $recipientType = null)
+    public function setRecipientType(string $recipientType = null)
     {
         $this->setProperty('recipientType', $recipientType);
     }
@@ -108,7 +108,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(?string $recipientName = null)
+    public function setRecipientName(string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -124,7 +124,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param string $recipientRawEmail
      */
-    public function setRecipientRawEmail(?string $recipientRawEmail = null)
+    public function setRecipientRawEmail(string $recipientRawEmail = null)
     {
         $this->setProperty('recipientRawEmail', $recipientRawEmail);
     }
@@ -188,7 +188,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param int $recipientIndex
      */
-    public function setRecipientIndex(?int $recipientIndex = null)
+    public function setRecipientIndex(int $recipientIndex = null)
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }

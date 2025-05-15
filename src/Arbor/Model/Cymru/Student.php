@@ -118,7 +118,7 @@ class Student extends ModelBase
     /**
      * @param string $ethnicitySource
      */
-    public function setEthnicitySource(?string $ethnicitySource = null)
+    public function setEthnicitySource(string $ethnicitySource = null)
     {
         $this->setProperty('ethnicitySource', $ethnicitySource);
     }
@@ -134,7 +134,7 @@ class Student extends ModelBase
     /**
      * @param string $homeWelshCode
      */
-    public function setHomeWelshCode(?string $homeWelshCode = null)
+    public function setHomeWelshCode(string $homeWelshCode = null)
     {
         $this->setProperty('homeWelshCode', $homeWelshCode);
     }
@@ -150,7 +150,7 @@ class Student extends ModelBase
     /**
      * @param bool $isChildProtectionStatus
      */
-    public function setIsChildProtectionStatus(?bool $isChildProtectionStatus = null)
+    public function setIsChildProtectionStatus(bool $isChildProtectionStatus = null)
     {
         $this->setProperty('isChildProtectionStatus', $isChildProtectionStatus);
     }
@@ -166,7 +166,7 @@ class Student extends ModelBase
     /**
      * @param bool $isFromNonEnglishWelshSystems
      */
-    public function setIsFromNonEnglishWelshSystems(?bool $isFromNonEnglishWelshSystems = null)
+    public function setIsFromNonEnglishWelshSystems(bool $isFromNonEnglishWelshSystems = null)
     {
         $this->setProperty('isFromNonEnglishWelshSystems', $isFromNonEnglishWelshSystems);
     }
@@ -182,7 +182,7 @@ class Student extends ModelBase
     /**
      * @param bool $isFsmTransitionalProtection
      */
-    public function setIsFsmTransitionalProtection(?bool $isFsmTransitionalProtection = null)
+    public function setIsFsmTransitionalProtection(bool $isFsmTransitionalProtection = null)
     {
         $this->setProperty('isFsmTransitionalProtection', $isFsmTransitionalProtection);
     }
@@ -198,7 +198,7 @@ class Student extends ModelBase
     /**
      * @param bool $isLookedAfterChildStatus
      */
-    public function setIsLookedAfterChildStatus(?bool $isLookedAfterChildStatus = null)
+    public function setIsLookedAfterChildStatus(bool $isLookedAfterChildStatus = null)
     {
         $this->setProperty('isLookedAfterChildStatus', $isLookedAfterChildStatus);
     }
@@ -214,7 +214,7 @@ class Student extends ModelBase
     /**
      * @param bool $isOtherSubjectsStudiedInWelsh
      */
-    public function setIsOtherSubjectsStudiedInWelsh(?bool $isOtherSubjectsStudiedInWelsh = null)
+    public function setIsOtherSubjectsStudiedInWelsh(bool $isOtherSubjectsStudiedInWelsh = null)
     {
         $this->setProperty('isOtherSubjectsStudiedInWelsh', $isOtherSubjectsStudiedInWelsh);
     }
@@ -230,7 +230,7 @@ class Student extends ModelBase
     /**
      * @param bool $isTravellerStatus
      */
-    public function setIsTravellerStatus(?bool $isTravellerStatus = null)
+    public function setIsTravellerStatus(bool $isTravellerStatus = null)
     {
         $this->setProperty('isTravellerStatus', $isTravellerStatus);
     }
@@ -246,7 +246,7 @@ class Student extends ModelBase
     /**
      * @param bool $isUpfsmEligible
      */
-    public function setIsUpfsmEligible(?bool $isUpfsmEligible = null)
+    public function setIsUpfsmEligible(bool $isUpfsmEligible = null)
     {
         $this->setProperty('isUpfsmEligible', $isUpfsmEligible);
     }
@@ -262,7 +262,7 @@ class Student extends ModelBase
     /**
      * @param bool $isUpfsmException
      */
-    public function setIsUpfsmException(?bool $isUpfsmException = null)
+    public function setIsUpfsmException(bool $isUpfsmException = null)
     {
         $this->setProperty('isUpfsmException', $isUpfsmException);
     }
@@ -278,7 +278,7 @@ class Student extends ModelBase
     /**
      * @param string $languageSourceCode
      */
-    public function setLanguageSourceCode(?string $languageSourceCode = null)
+    public function setLanguageSourceCode(string $languageSourceCode = null)
     {
         $this->setProperty('languageSourceCode', $languageSourceCode);
     }
@@ -310,7 +310,7 @@ class Student extends ModelBase
     /**
      * @param string $nhsNumber
      */
-    public function setNhsNumber(?string $nhsNumber = null)
+    public function setNhsNumber(string $nhsNumber = null)
     {
         $this->setProperty('nhsNumber', $nhsNumber);
     }
@@ -326,7 +326,7 @@ class Student extends ModelBase
     /**
      * @param string $serviceChildInEducation
      */
-    public function setServiceChildInEducation(?string $serviceChildInEducation = null)
+    public function setServiceChildInEducation(string $serviceChildInEducation = null)
     {
         $this->setProperty('serviceChildInEducation', $serviceChildInEducation);
     }
@@ -342,7 +342,7 @@ class Student extends ModelBase
     /**
      * @param string $speakWelshCode
      */
-    public function setSpeakWelshCode(?string $speakWelshCode = null)
+    public function setSpeakWelshCode(string $speakWelshCode = null)
     {
         $this->setProperty('speakWelshCode', $speakWelshCode);
     }
@@ -358,7 +358,7 @@ class Student extends ModelBase
     /**
      * @param string $ucasPersonalIdentifier
      */
-    public function setUcasPersonalIdentifier(?string $ucasPersonalIdentifier = null)
+    public function setUcasPersonalIdentifier(string $ucasPersonalIdentifier = null)
     {
         $this->setProperty('ucasPersonalIdentifier', $ucasPersonalIdentifier);
     }
@@ -374,7 +374,7 @@ class Student extends ModelBase
     /**
      * @param string $uniqueCandidateIdentifier
      */
-    public function setUniqueCandidateIdentifier(?string $uniqueCandidateIdentifier = null)
+    public function setUniqueCandidateIdentifier(string $uniqueCandidateIdentifier = null)
     {
         $this->setProperty('uniqueCandidateIdentifier', $uniqueCandidateIdentifier);
     }
@@ -390,7 +390,7 @@ class Student extends ModelBase
     /**
      * @param int $uniqueLearnerNumber
      */
-    public function setUniqueLearnerNumber(?int $uniqueLearnerNumber = null)
+    public function setUniqueLearnerNumber(int $uniqueLearnerNumber = null)
     {
         $this->setProperty('uniqueLearnerNumber', $uniqueLearnerNumber);
     }
@@ -406,7 +406,7 @@ class Student extends ModelBase
     /**
      * @param string $welshSourceCode
      */
-    public function setWelshSourceCode(?string $welshSourceCode = null)
+    public function setWelshSourceCode(string $welshSourceCode = null)
     {
         $this->setProperty('welshSourceCode', $welshSourceCode);
     }
@@ -422,7 +422,7 @@ class Student extends ModelBase
     /**
      * @param string $welshStudiedLevelCode
      */
-    public function setWelshStudiedLevelCode(?string $welshStudiedLevelCode = null)
+    public function setWelshStudiedLevelCode(string $welshStudiedLevelCode = null)
     {
         $this->setProperty('welshStudiedLevelCode', $welshStudiedLevelCode);
     }
@@ -438,7 +438,7 @@ class Student extends ModelBase
     /**
      * @param string $youthSupportServicesAgreement
      */
-    public function setYouthSupportServicesAgreement(?string $youthSupportServicesAgreement = null)
+    public function setYouthSupportServicesAgreement(string $youthSupportServicesAgreement = null)
     {
         $this->setProperty('youthSupportServicesAgreement', $youthSupportServicesAgreement);
     }

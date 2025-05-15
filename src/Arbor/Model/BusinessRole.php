@@ -78,7 +78,7 @@ class BusinessRole extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class BusinessRole extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class BusinessRole extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -126,7 +126,7 @@ class BusinessRole extends ModelBase
     /**
      * @param string $businessRoleName
      */
-    public function setBusinessRoleName(?string $businessRoleName = null)
+    public function setBusinessRoleName(string $businessRoleName = null)
     {
         $this->setProperty('businessRoleName', $businessRoleName);
     }
@@ -142,7 +142,7 @@ class BusinessRole extends ModelBase
     /**
      * @param string $userDefinedName
      */
-    public function setUserDefinedName(?string $userDefinedName = null)
+    public function setUserDefinedName(string $userDefinedName = null)
     {
         $this->setProperty('userDefinedName', $userDefinedName);
     }
@@ -158,7 +158,7 @@ class BusinessRole extends ModelBase
     /**
      * @param string $businessRoleDescription
      */
-    public function setBusinessRoleDescription(?string $businessRoleDescription = null)
+    public function setBusinessRoleDescription(string $businessRoleDescription = null)
     {
         $this->setProperty('businessRoleDescription', $businessRoleDescription);
     }
@@ -174,7 +174,7 @@ class BusinessRole extends ModelBase
     /**
      * @param string $userDefinedDescription
      */
-    public function setUserDefinedDescription(?string $userDefinedDescription = null)
+    public function setUserDefinedDescription(string $userDefinedDescription = null)
     {
         $this->setProperty('userDefinedDescription', $userDefinedDescription);
     }
@@ -190,7 +190,7 @@ class BusinessRole extends ModelBase
     /**
      * @param bool $internalStaff
      */
-    public function setInternalStaff(?bool $internalStaff = null)
+    public function setInternalStaff(bool $internalStaff = null)
     {
         $this->setProperty('internalStaff', $internalStaff);
     }
@@ -206,7 +206,7 @@ class BusinessRole extends ModelBase
     /**
      * @param bool $teachingStaff
      */
-    public function setTeachingStaff(?bool $teachingStaff = null)
+    public function setTeachingStaff(bool $teachingStaff = null)
     {
         $this->setProperty('teachingStaff', $teachingStaff);
     }
@@ -222,7 +222,7 @@ class BusinessRole extends ModelBase
     /**
      * @param string $businessRoleCategory
      */
-    public function setBusinessRoleCategory(?string $businessRoleCategory = null)
+    public function setBusinessRoleCategory(string $businessRoleCategory = null)
     {
         $this->setProperty('businessRoleCategory', $businessRoleCategory);
     }
@@ -238,7 +238,7 @@ class BusinessRole extends ModelBase
     /**
      * @param bool $customerManagesDefaultUserRoles
      */
-    public function setCustomerManagesDefaultUserRoles(?bool $customerManagesDefaultUserRoles = null)
+    public function setCustomerManagesDefaultUserRoles(bool $customerManagesDefaultUserRoles = null)
     {
         $this->setProperty('customerManagesDefaultUserRoles', $customerManagesDefaultUserRoles);
     }

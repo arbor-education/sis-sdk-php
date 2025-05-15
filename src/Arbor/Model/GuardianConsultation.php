@@ -66,7 +66,7 @@ class GuardianConsultation extends ModelBase
     /**
      * @param string $guardianConsultationName
      */
-    public function setGuardianConsultationName(?string $guardianConsultationName = null)
+    public function setGuardianConsultationName(string $guardianConsultationName = null)
     {
         $this->setProperty('guardianConsultationName', $guardianConsultationName);
     }

@@ -114,7 +114,7 @@ class InterventionSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(?string $locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -162,7 +162,7 @@ class InterventionSession extends ModelBase
     /**
      * @param int $staffCount
      */
-    public function setStaffCount(?int $staffCount = null)
+    public function setStaffCount(int $staffCount = null)
     {
         $this->setProperty('staffCount', $staffCount);
     }
@@ -178,7 +178,7 @@ class InterventionSession extends ModelBase
     /**
      * @param int $studentCount
      */
-    public function setStudentCount(?int $studentCount = null)
+    public function setStudentCount(int $studentCount = null)
     {
         $this->setProperty('studentCount', $studentCount);
     }
@@ -194,7 +194,7 @@ class InterventionSession extends ModelBase
     /**
      * @param int $calendarWeek
      */
-    public function setCalendarWeek(?int $calendarWeek = null)
+    public function setCalendarWeek(int $calendarWeek = null)
     {
         $this->setProperty('calendarWeek', $calendarWeek);
     }

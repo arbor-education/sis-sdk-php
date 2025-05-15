@@ -78,7 +78,7 @@ class CheckType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class CheckType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -126,7 +126,7 @@ class CheckType extends ModelBase
     /**
      * @param string $checkName
      */
-    public function setCheckName(?string $checkName = null)
+    public function setCheckName(string $checkName = null)
     {
         $this->setProperty('checkName', $checkName);
     }
@@ -142,7 +142,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $isRequested
      */
-    public function setIsRequested(?bool $isRequested = null)
+    public function setIsRequested(bool $isRequested = null)
     {
         $this->setProperty('isRequested', $isRequested);
     }
@@ -158,7 +158,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $hasExpiryDate
      */
-    public function setHasExpiryDate(?bool $hasExpiryDate = null)
+    public function setHasExpiryDate(bool $hasExpiryDate = null)
     {
         $this->setProperty('hasExpiryDate', $hasExpiryDate);
     }
@@ -174,7 +174,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $hasReferenceNumber
      */
-    public function setHasReferenceNumber(?bool $hasReferenceNumber = null)
+    public function setHasReferenceNumber(bool $hasReferenceNumber = null)
     {
         $this->setProperty('hasReferenceNumber', $hasReferenceNumber);
     }
@@ -190,7 +190,7 @@ class CheckType extends ModelBase
     /**
      * @param bool $evidenceRequired
      */
-    public function setEvidenceRequired(?bool $evidenceRequired = null)
+    public function setEvidenceRequired(bool $evidenceRequired = null)
     {
         $this->setProperty('evidenceRequired', $evidenceRequired);
     }
@@ -206,7 +206,7 @@ class CheckType extends ModelBase
     /**
      * @param string $relatedEntityType
      */
-    public function setRelatedEntityType(?string $relatedEntityType = null)
+    public function setRelatedEntityType(string $relatedEntityType = null)
     {
         $this->setProperty('relatedEntityType', $relatedEntityType);
     }
@@ -222,7 +222,7 @@ class CheckType extends ModelBase
     /**
      * @param string $requestFromAllStaff
      */
-    public function setRequestFromAllStaff(?string $requestFromAllStaff = null)
+    public function setRequestFromAllStaff(string $requestFromAllStaff = null)
     {
         $this->setProperty('requestFromAllStaff', $requestFromAllStaff);
     }
@@ -238,7 +238,7 @@ class CheckType extends ModelBase
     /**
      * @param string $requestFromTeachingStaff
      */
-    public function setRequestFromTeachingStaff(?string $requestFromTeachingStaff = null)
+    public function setRequestFromTeachingStaff(string $requestFromTeachingStaff = null)
     {
         $this->setProperty('requestFromTeachingStaff', $requestFromTeachingStaff);
     }

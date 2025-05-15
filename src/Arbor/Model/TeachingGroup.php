@@ -74,7 +74,7 @@ class TeachingGroup extends ModelBase
     /**
      * @param string $teachingGroupName
      */
-    public function setTeachingGroupName(?string $teachingGroupName = null)
+    public function setTeachingGroupName(string $teachingGroupName = null)
     {
         $this->setProperty('teachingGroupName', $teachingGroupName);
     }
@@ -90,7 +90,7 @@ class TeachingGroup extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }

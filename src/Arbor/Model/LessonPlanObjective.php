@@ -62,7 +62,7 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param string $objectiveTitle
      */
-    public function setObjectiveTitle(?string $objectiveTitle = null)
+    public function setObjectiveTitle(string $objectiveTitle = null)
     {
         $this->setProperty('objectiveTitle', $objectiveTitle);
     }
@@ -78,7 +78,7 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param string $objectiveDescription
      */
-    public function setObjectiveDescription(?string $objectiveDescription = null)
+    public function setObjectiveDescription(string $objectiveDescription = null)
     {
         $this->setProperty('objectiveDescription', $objectiveDescription);
     }

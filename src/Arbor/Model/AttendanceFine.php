@@ -82,7 +82,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -130,7 +130,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(?string $notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

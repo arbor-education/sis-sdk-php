@@ -94,7 +94,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param string $qualificationName
      */
-    public function setQualificationName(?string $qualificationName = null)
+    public function setQualificationName(string $qualificationName = null)
     {
         $this->setProperty('qualificationName', $qualificationName);
     }
@@ -126,7 +126,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param string $awardingInstitution
      */
-    public function setAwardingInstitution(?string $awardingInstitution = null)
+    public function setAwardingInstitution(string $awardingInstitution = null)
     {
         $this->setProperty('awardingInstitution', $awardingInstitution);
     }
@@ -223,7 +223,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param bool $isVocationalQualification
      */
-    public function setIsVocationalQualification(?bool $isVocationalQualification = null)
+    public function setIsVocationalQualification(bool $isVocationalQualification = null)
     {
         $this->setProperty('isVocationalQualification', $isVocationalQualification);
     }
@@ -239,7 +239,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param bool $isVerified
      */
-    public function setIsVerified(?bool $isVerified = null)
+    public function setIsVerified(bool $isVerified = null)
     {
         $this->setProperty('isVerified', $isVerified);
     }

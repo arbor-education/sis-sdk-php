@@ -86,7 +86,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -102,7 +102,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -118,7 +118,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -166,7 +166,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param float $weighting
      */
-    public function setWeighting(?float $weighting = null)
+    public function setWeighting(float $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }

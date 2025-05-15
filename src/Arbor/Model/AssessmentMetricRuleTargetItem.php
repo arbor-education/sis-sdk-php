@@ -66,7 +66,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param string $operator
      */
-    public function setOperator(?string $operator = null)
+    public function setOperator(string $operator = null)
     {
         $this->setProperty('operator', $operator);
     }
@@ -82,7 +82,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param string $targetType
      */
-    public function setTargetType(?string $targetType = null)
+    public function setTargetType(string $targetType = null)
     {
         $this->setProperty('targetType', $targetType);
     }

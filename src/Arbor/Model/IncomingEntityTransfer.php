@@ -72,7 +72,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $sourceApplicationId
      */
-    public function setSourceApplicationId(?string $sourceApplicationId = null)
+    public function setSourceApplicationId(string $sourceApplicationId = null)
     {
         $this->setProperty('sourceApplicationId', $sourceApplicationId);
     }
@@ -88,7 +88,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $sourceEntity
      */
-    public function setSourceEntity(?string $sourceEntity = null)
+    public function setSourceEntity(string $sourceEntity = null)
     {
         $this->setProperty('sourceEntity', $sourceEntity);
     }
@@ -104,7 +104,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $transferClassName
      */
-    public function setTransferClassName(?string $transferClassName = null)
+    public function setTransferClassName(string $transferClassName = null)
     {
         $this->setProperty('transferClassName', $transferClassName);
     }
@@ -168,7 +168,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param bool $syncDisabled
      */
-    public function setSyncDisabled(?bool $syncDisabled = null)
+    public function setSyncDisabled(bool $syncDisabled = null)
     {
         $this->setProperty('syncDisabled', $syncDisabled);
     }

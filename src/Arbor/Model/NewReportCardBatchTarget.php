@@ -94,7 +94,7 @@ class NewReportCardBatchTarget extends ModelBase
     /**
      * @param bool $reportsGenerating
      */
-    public function setReportsGenerating(?bool $reportsGenerating = null)
+    public function setReportsGenerating(bool $reportsGenerating = null)
     {
         $this->setProperty('reportsGenerating', $reportsGenerating);
     }

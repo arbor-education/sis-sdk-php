@@ -76,7 +76,7 @@ class Candidate extends ModelBase
     /**
      * @param int $candidateNumber
      */
-    public function setCandidateNumber(?int $candidateNumber = null)
+    public function setCandidateNumber(int $candidateNumber = null)
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }

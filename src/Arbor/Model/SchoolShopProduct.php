@@ -74,7 +74,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -90,7 +90,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -138,7 +138,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(?int $quantity = null)
+    public function setQuantity(int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }
@@ -154,7 +154,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param int $maxItemsPerStudent
      */
-    public function setMaxItemsPerStudent(?int $maxItemsPerStudent = null)
+    public function setMaxItemsPerStudent(int $maxItemsPerStudent = null)
     {
         $this->setProperty('maxItemsPerStudent', $maxItemsPerStudent);
     }
@@ -170,7 +170,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param bool $isPublished
      */
-    public function setIsPublished(?bool $isPublished = null)
+    public function setIsPublished(bool $isPublished = null)
     {
         $this->setProperty('isPublished', $isPublished);
     }
@@ -202,7 +202,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode(?string $accountingCode = null)
+    public function setAccountingCode(string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }

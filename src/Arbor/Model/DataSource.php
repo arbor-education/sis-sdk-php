@@ -60,7 +60,7 @@ class DataSource extends ModelBase
     /**
      * @param string $domain
      */
-    public function setDomain(?string $domain = null)
+    public function setDomain(string $domain = null)
     {
         $this->setProperty('domain', $domain);
     }
@@ -76,7 +76,7 @@ class DataSource extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(?string $provider = null)
+    public function setProvider(string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }

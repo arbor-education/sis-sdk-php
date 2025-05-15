@@ -60,7 +60,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $ediAwardingBodyIdentifier
      */
-    public function setEdiAwardingBodyIdentifier(?string $ediAwardingBodyIdentifier = null)
+    public function setEdiAwardingBodyIdentifier(string $ediAwardingBodyIdentifier = null)
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }

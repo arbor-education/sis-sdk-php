@@ -64,7 +64,7 @@ class Talent extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -80,7 +80,7 @@ class Talent extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -96,7 +96,7 @@ class Talent extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -112,7 +112,7 @@ class Talent extends ModelBase
     /**
      * @param string $talentName
      */
-    public function setTalentName(?string $talentName = null)
+    public function setTalentName(string $talentName = null)
     {
         $this->setProperty('talentName', $talentName);
     }

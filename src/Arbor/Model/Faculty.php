@@ -62,7 +62,7 @@ class Faculty extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -78,7 +78,7 @@ class Faculty extends ModelBase
     /**
      * @param string $facultyName
      */
-    public function setFacultyName(?string $facultyName = null)
+    public function setFacultyName(string $facultyName = null)
     {
         $this->setProperty('facultyName', $facultyName);
     }
@@ -94,7 +94,7 @@ class Faculty extends ModelBase
     /**
      * @param bool $isActive
      */
-    public function setIsActive(?bool $isActive = null)
+    public function setIsActive(bool $isActive = null)
     {
         $this->setProperty('isActive', $isActive);
     }

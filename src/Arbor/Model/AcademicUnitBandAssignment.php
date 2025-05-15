@@ -76,7 +76,7 @@ class AcademicUnitBandAssignment extends ModelBase
     /**
      * @param string $bandName
      */
-    public function setBandName(?string $bandName = null)
+    public function setBandName(string $bandName = null)
     {
         $this->setProperty('bandName', $bandName);
     }

@@ -118,7 +118,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -134,7 +134,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -150,7 +150,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue(?float $statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -166,7 +166,7 @@ class FinalAssessmentTarget extends ModelBase
     /**
      * @param bool $locked
      */
-    public function setLocked(?bool $locked = null)
+    public function setLocked(bool $locked = null)
     {
         $this->setProperty('locked', $locked);
     }

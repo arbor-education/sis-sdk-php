@@ -84,7 +84,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $token
      */
-    public function setToken(?string $token = null)
+    public function setToken(string $token = null)
     {
         $this->setProperty('token', $token);
     }
@@ -100,7 +100,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $uniqueIdentifier
      */
-    public function setUniqueIdentifier(?string $uniqueIdentifier = null)
+    public function setUniqueIdentifier(string $uniqueIdentifier = null)
     {
         $this->setProperty('uniqueIdentifier', $uniqueIdentifier);
     }
@@ -116,7 +116,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $deviceOs
      */
-    public function setDeviceOs(?string $deviceOs = null)
+    public function setDeviceOs(string $deviceOs = null)
     {
         $this->setProperty('deviceOs', $deviceOs);
     }
@@ -132,7 +132,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $realPushToken
      */
-    public function setRealPushToken(?string $realPushToken = null)
+    public function setRealPushToken(string $realPushToken = null)
     {
         $this->setProperty('realPushToken', $realPushToken);
     }
@@ -148,7 +148,7 @@ class PushNotificationToken extends ModelBase
     /**
      * @param string $deviceId
      */
-    public function setDeviceId(?string $deviceId = null)
+    public function setDeviceId(string $deviceId = null)
     {
         $this->setProperty('deviceId', $deviceId);
     }

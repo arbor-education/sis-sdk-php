@@ -80,7 +80,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass(?string $conditionClass = null)
+    public function setConditionClass(string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -96,7 +96,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams(?string $conditionParams = null)
+    public function setConditionParams(string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
@@ -112,7 +112,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     /**
      * @param string $color
      */
-    public function setColor(?string $color = null)
+    public function setColor(string $color = null)
     {
         $this->setProperty('color', $color);
     }

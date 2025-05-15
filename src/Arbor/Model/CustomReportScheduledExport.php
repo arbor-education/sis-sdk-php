@@ -80,7 +80,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(?string $emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -96,7 +96,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(?string $subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -112,7 +112,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody(?string $body = null)
+    public function setBody(string $body = null)
     {
         $this->setProperty('body', $body);
     }
@@ -128,7 +128,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnMonday
      */
-    public function setExecuteOnMonday(?bool $executeOnMonday = null)
+    public function setExecuteOnMonday(bool $executeOnMonday = null)
     {
         $this->setProperty('executeOnMonday', $executeOnMonday);
     }
@@ -144,7 +144,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnTuesday
      */
-    public function setExecuteOnTuesday(?bool $executeOnTuesday = null)
+    public function setExecuteOnTuesday(bool $executeOnTuesday = null)
     {
         $this->setProperty('executeOnTuesday', $executeOnTuesday);
     }
@@ -160,7 +160,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnWednesday
      */
-    public function setExecuteOnWednesday(?bool $executeOnWednesday = null)
+    public function setExecuteOnWednesday(bool $executeOnWednesday = null)
     {
         $this->setProperty('executeOnWednesday', $executeOnWednesday);
     }
@@ -176,7 +176,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnThursday
      */
-    public function setExecuteOnThursday(?bool $executeOnThursday = null)
+    public function setExecuteOnThursday(bool $executeOnThursday = null)
     {
         $this->setProperty('executeOnThursday', $executeOnThursday);
     }
@@ -192,7 +192,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnFriday
      */
-    public function setExecuteOnFriday(?bool $executeOnFriday = null)
+    public function setExecuteOnFriday(bool $executeOnFriday = null)
     {
         $this->setProperty('executeOnFriday', $executeOnFriday);
     }
@@ -208,7 +208,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnSaturday
      */
-    public function setExecuteOnSaturday(?bool $executeOnSaturday = null)
+    public function setExecuteOnSaturday(bool $executeOnSaturday = null)
     {
         $this->setProperty('executeOnSaturday', $executeOnSaturday);
     }
@@ -224,7 +224,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param bool $executeOnSunday
      */
-    public function setExecuteOnSunday(?bool $executeOnSunday = null)
+    public function setExecuteOnSunday(bool $executeOnSunday = null)
     {
         $this->setProperty('executeOnSunday', $executeOnSunday);
     }
@@ -240,7 +240,7 @@ class CustomReportScheduledExport extends ModelBase
     /**
      * @param string $scheduledTime
      */
-    public function setScheduledTime(?string $scheduledTime = null)
+    public function setScheduledTime(string $scheduledTime = null)
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }

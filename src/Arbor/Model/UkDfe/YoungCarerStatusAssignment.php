@@ -82,7 +82,7 @@ class YoungCarerStatusAssignment extends ModelBase
     /**
      * @param string $identifiedBy
      */
-    public function setIdentifiedBy(?string $identifiedBy = null)
+    public function setIdentifiedBy(string $identifiedBy = null)
     {
         $this->setProperty('identifiedBy', $identifiedBy);
     }

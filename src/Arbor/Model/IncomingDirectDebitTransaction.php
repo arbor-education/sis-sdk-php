@@ -112,7 +112,7 @@ class IncomingDirectDebitTransaction extends ModelBase
     /**
      * @param string $paymentProviderTransactionIdentifier
      */
-    public function setPaymentProviderTransactionIdentifier(?string $paymentProviderTransactionIdentifier = null)
+    public function setPaymentProviderTransactionIdentifier(string $paymentProviderTransactionIdentifier = null)
     {
         $this->setProperty('paymentProviderTransactionIdentifier', $paymentProviderTransactionIdentifier);
     }
@@ -128,7 +128,7 @@ class IncomingDirectDebitTransaction extends ModelBase
     /**
      * @param string $transactionNetAmount
      */
-    public function setTransactionNetAmount(?string $transactionNetAmount = null)
+    public function setTransactionNetAmount(string $transactionNetAmount = null)
     {
         $this->setProperty('transactionNetAmount', $transactionNetAmount);
     }
@@ -144,7 +144,7 @@ class IncomingDirectDebitTransaction extends ModelBase
     /**
      * @param string $transactionFee
      */
-    public function setTransactionFee(?string $transactionFee = null)
+    public function setTransactionFee(string $transactionFee = null)
     {
         $this->setProperty('transactionFee', $transactionFee);
     }
@@ -160,7 +160,7 @@ class IncomingDirectDebitTransaction extends ModelBase
     /**
      * @param string $transactionReference
      */
-    public function setTransactionReference(?string $transactionReference = null)
+    public function setTransactionReference(string $transactionReference = null)
     {
         $this->setProperty('transactionReference', $transactionReference);
     }

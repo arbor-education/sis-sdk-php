@@ -84,7 +84,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param string $periodName
      */
-    public function setPeriodName(?string $periodName = null)
+    public function setPeriodName(string $periodName = null)
     {
         $this->setProperty('periodName', $periodName);
     }
@@ -100,7 +100,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }

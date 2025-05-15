@@ -72,7 +72,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param int $serviceSubscriptionId
      */
-    public function setServiceSubscriptionId(?int $serviceSubscriptionId = null)
+    public function setServiceSubscriptionId(int $serviceSubscriptionId = null)
     {
         $this->setProperty('serviceSubscriptionId', $serviceSubscriptionId);
     }
@@ -104,7 +104,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param string $tokenType
      */
-    public function setTokenType(?string $tokenType = null)
+    public function setTokenType(string $tokenType = null)
     {
         $this->setProperty('tokenType', $tokenType);
     }
@@ -120,7 +120,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param int $tokenQuantity
      */
-    public function setTokenQuantity(?int $tokenQuantity = null)
+    public function setTokenQuantity(int $tokenQuantity = null)
     {
         $this->setProperty('tokenQuantity', $tokenQuantity);
     }
@@ -136,7 +136,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -184,7 +184,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

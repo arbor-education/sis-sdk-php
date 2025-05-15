@@ -60,7 +60,7 @@ class Programme extends ModelBase
     /**
      * @param bool $isTraineeship
      */
-    public function setIsTraineeship(?bool $isTraineeship = null)
+    public function setIsTraineeship(bool $isTraineeship = null)
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }

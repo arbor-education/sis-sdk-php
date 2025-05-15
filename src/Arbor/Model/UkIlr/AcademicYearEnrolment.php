@@ -60,7 +60,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param string $learningSupportCost
      */
-    public function setLearningSupportCost(?string $learningSupportCost = null)
+    public function setLearningSupportCost(string $learningSupportCost = null)
     {
         $this->setProperty('learningSupportCost', $learningSupportCost);
     }

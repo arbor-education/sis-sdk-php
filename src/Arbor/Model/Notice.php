@@ -62,7 +62,7 @@ class Notice extends ModelBase
     /**
      * @param string $noticeHtml
      */
-    public function setNoticeHtml(?string $noticeHtml = null)
+    public function setNoticeHtml(string $noticeHtml = null)
     {
         $this->setProperty('noticeHtml', $noticeHtml);
     }

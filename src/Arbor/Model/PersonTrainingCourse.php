@@ -94,7 +94,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param float $feeCosts
      */
-    public function setFeeCosts(?float $feeCosts = null)
+    public function setFeeCosts(float $feeCosts = null)
     {
         $this->setProperty('feeCosts', $feeCosts);
     }

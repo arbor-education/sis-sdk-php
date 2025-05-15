@@ -60,7 +60,7 @@ class IdentityCardReader extends ModelBase
     /**
      * @param string $readerNumber
      */
-    public function setReaderNumber(?string $readerNumber = null)
+    public function setReaderNumber(string $readerNumber = null)
     {
         $this->setProperty('readerNumber', $readerNumber);
     }

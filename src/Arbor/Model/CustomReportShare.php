@@ -94,7 +94,7 @@ class CustomReportShare extends ModelBase
     /**
      * @param string $permissionLevel
      */
-    public function setPermissionLevel(?string $permissionLevel = null)
+    public function setPermissionLevel(string $permissionLevel = null)
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }

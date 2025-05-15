@@ -62,7 +62,7 @@ class Note extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote(?string $note = null)
+    public function setNote(string $note = null)
     {
         $this->setProperty('note', $note);
     }
@@ -94,7 +94,7 @@ class Note extends ModelBase
     /**
      * @param bool $isSharedWithGuardians
      */
-    public function setIsSharedWithGuardians(?bool $isSharedWithGuardians = null)
+    public function setIsSharedWithGuardians(bool $isSharedWithGuardians = null)
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }

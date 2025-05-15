@@ -62,7 +62,7 @@ class StudentLinkedRelationshipType extends ModelBase
     /**
      * @param string $studentLinkedRelationshipTypeName
      */
-    public function setStudentLinkedRelationshipTypeName(?string $studentLinkedRelationshipTypeName = null)
+    public function setStudentLinkedRelationshipTypeName(string $studentLinkedRelationshipTypeName = null)
     {
         $this->setProperty('studentLinkedRelationshipTypeName', $studentLinkedRelationshipTypeName);
     }
@@ -78,7 +78,7 @@ class StudentLinkedRelationshipType extends ModelBase
     /**
      * @param bool $isMedical
      */
-    public function setIsMedical(?bool $isMedical = null)
+    public function setIsMedical(bool $isMedical = null)
     {
         $this->setProperty('isMedical', $isMedical);
     }
@@ -94,7 +94,7 @@ class StudentLinkedRelationshipType extends ModelBase
     /**
      * @param bool $isAcademic
      */
-    public function setIsAcademic(?bool $isAcademic = null)
+    public function setIsAcademic(bool $isAcademic = null)
     {
         $this->setProperty('isAcademic', $isAcademic);
     }

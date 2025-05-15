@@ -78,7 +78,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -142,7 +142,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -158,7 +158,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -174,7 +174,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param string $gradeIdentifier
      */
-    public function setGradeIdentifier(?string $gradeIdentifier = null)
+    public function setGradeIdentifier(string $gradeIdentifier = null)
     {
         $this->setProperty('gradeIdentifier', $gradeIdentifier);
     }
@@ -190,7 +190,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param float $gradeValue
      */
-    public function setGradeValue(?float $gradeValue = null)
+    public function setGradeValue(float $gradeValue = null)
     {
         $this->setProperty('gradeValue', $gradeValue);
     }
@@ -206,7 +206,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param string $gradeDescription
      */
-    public function setGradeDescription(?string $gradeDescription = null)
+    public function setGradeDescription(string $gradeDescription = null)
     {
         $this->setProperty('gradeDescription', $gradeDescription);
     }
@@ -222,7 +222,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param string $gradeLetter
      */
-    public function setGradeLetter(?string $gradeLetter = null)
+    public function setGradeLetter(string $gradeLetter = null)
     {
         $this->setProperty('gradeLetter', $gradeLetter);
     }
@@ -238,7 +238,7 @@ class QualificationGrade extends ModelBase
     /**
      * @param int $gradeOrder
      */
-    public function setGradeOrder(?int $gradeOrder = null)
+    public function setGradeOrder(int $gradeOrder = null)
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }

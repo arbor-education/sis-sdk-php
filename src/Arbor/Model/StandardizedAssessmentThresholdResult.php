@@ -70,7 +70,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -135,7 +135,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param float $lowerResultValue
      */
-    public function setLowerResultValue(?float $lowerResultValue = null)
+    public function setLowerResultValue(float $lowerResultValue = null)
     {
         $this->setProperty('lowerResultValue', $lowerResultValue);
     }
@@ -151,7 +151,7 @@ class StandardizedAssessmentThresholdResult extends ModelBase
     /**
      * @param float $upperResultValue
      */
-    public function setUpperResultValue(?float $upperResultValue = null)
+    public function setUpperResultValue(float $upperResultValue = null)
     {
         $this->setProperty('upperResultValue', $upperResultValue);
     }

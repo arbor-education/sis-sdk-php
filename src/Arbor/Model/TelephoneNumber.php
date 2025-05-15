@@ -84,7 +84,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $telephoneNumberType
      */
-    public function setTelephoneNumberType(?string $telephoneNumberType = null)
+    public function setTelephoneNumberType(string $telephoneNumberType = null)
     {
         $this->setProperty('telephoneNumberType', $telephoneNumberType);
     }
@@ -100,7 +100,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $number
      */
-    public function setNumber(?string $number = null)
+    public function setNumber(string $number = null)
     {
         $this->setProperty('number', $number);
     }
@@ -116,7 +116,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $extensionNumber
      */
-    public function setExtensionNumber(?string $extensionNumber = null)
+    public function setExtensionNumber(string $extensionNumber = null)
     {
         $this->setProperty('extensionNumber', $extensionNumber);
     }
@@ -132,7 +132,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(?string $notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -148,7 +148,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param int $telephoneNumberRanking
      */
-    public function setTelephoneNumberRanking(?int $telephoneNumberRanking = null)
+    public function setTelephoneNumberRanking(int $telephoneNumberRanking = null)
     {
         $this->setProperty('telephoneNumberRanking', $telephoneNumberRanking);
     }

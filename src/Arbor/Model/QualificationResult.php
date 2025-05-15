@@ -116,7 +116,7 @@ class QualificationResult extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue(?float $numericValue = null)
+    public function setNumericValue(float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -261,7 +261,7 @@ class QualificationResult extends ModelBase
     /**
      * @param string $missingResultReason
      */
-    public function setMissingResultReason(?string $missingResultReason = null)
+    public function setMissingResultReason(string $missingResultReason = null)
     {
         $this->setProperty('missingResultReason', $missingResultReason);
     }
@@ -277,7 +277,7 @@ class QualificationResult extends ModelBase
     /**
      * @param int $partialAbsence
      */
-    public function setPartialAbsence(?int $partialAbsence = null)
+    public function setPartialAbsence(int $partialAbsence = null)
     {
         $this->setProperty('partialAbsence', $partialAbsence);
     }

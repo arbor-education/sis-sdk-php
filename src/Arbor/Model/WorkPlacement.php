@@ -134,7 +134,7 @@ class WorkPlacement extends ModelBase
     /**
      * @param string $workPlacementMode
      */
-    public function setWorkPlacementMode(?string $workPlacementMode = null)
+    public function setWorkPlacementMode(string $workPlacementMode = null)
     {
         $this->setProperty('workPlacementMode', $workPlacementMode);
     }
@@ -150,7 +150,7 @@ class WorkPlacement extends ModelBase
     /**
      * @param int $totalPlannedHours
      */
-    public function setTotalPlannedHours(?int $totalPlannedHours = null)
+    public function setTotalPlannedHours(int $totalPlannedHours = null)
     {
         $this->setProperty('totalPlannedHours', $totalPlannedHours);
     }

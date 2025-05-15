@@ -108,7 +108,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param int $guidedContactHours
      */
-    public function setGuidedContactHours(?int $guidedContactHours = null)
+    public function setGuidedContactHours(int $guidedContactHours = null)
     {
         $this->setProperty('guidedContactHours', $guidedContactHours);
     }
@@ -172,7 +172,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param int $lengthOfProgramme
      */
-    public function setLengthOfProgramme(?int $lengthOfProgramme = null)
+    public function setLengthOfProgramme(int $lengthOfProgramme = null)
     {
         $this->setProperty('lengthOfProgramme', $lengthOfProgramme);
     }
@@ -188,7 +188,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param int $yearOfProgramme
      */
-    public function setYearOfProgramme(?int $yearOfProgramme = null)
+    public function setYearOfProgramme(int $yearOfProgramme = null)
     {
         $this->setProperty('yearOfProgramme', $yearOfProgramme);
     }
@@ -204,7 +204,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param string $completionStatus
      */
-    public function setCompletionStatus(?string $completionStatus = null)
+    public function setCompletionStatus(string $completionStatus = null)
     {
         $this->setProperty('completionStatus', $completionStatus);
     }

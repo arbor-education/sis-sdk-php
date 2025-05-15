@@ -94,7 +94,7 @@ class EmailDraft extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(?string $subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -110,7 +110,7 @@ class EmailDraft extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody(?string $body = null)
+    public function setBody(string $body = null)
     {
         $this->setProperty('body', $body);
     }
@@ -142,7 +142,7 @@ class EmailDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient(?bool $combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -158,7 +158,7 @@ class EmailDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold(?bool $combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }

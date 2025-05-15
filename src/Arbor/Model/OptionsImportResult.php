@@ -86,7 +86,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted(?int $stepsCompleted = null)
+    public function setStepsCompleted(int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -102,7 +102,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param int $stepInProgress
      */
-    public function setStepInProgress(?int $stepInProgress = null)
+    public function setStepInProgress(int $stepInProgress = null)
     {
         $this->setProperty('stepInProgress', $stepInProgress);
     }

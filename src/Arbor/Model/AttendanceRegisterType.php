@@ -70,7 +70,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param string $attendanceRegisterTypeName
      */
-    public function setAttendanceRegisterTypeName(?string $attendanceRegisterTypeName = null)
+    public function setAttendanceRegisterTypeName(string $attendanceRegisterTypeName = null)
     {
         $this->setProperty('attendanceRegisterTypeName', $attendanceRegisterTypeName);
     }
@@ -134,7 +134,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param bool $isMorning
      */
-    public function setIsMorning(?bool $isMorning = null)
+    public function setIsMorning(bool $isMorning = null)
     {
         $this->setProperty('isMorning', $isMorning);
     }
@@ -150,7 +150,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param bool $isAfternoon
      */
-    public function setIsAfternoon(?bool $isAfternoon = null)
+    public function setIsAfternoon(bool $isAfternoon = null)
     {
         $this->setProperty('isAfternoon', $isAfternoon);
     }
@@ -166,7 +166,7 @@ class AttendanceRegisterType extends ModelBase
     /**
      * @param int $eventObjectTypeId
      */
-    public function setEventObjectTypeId(?int $eventObjectTypeId = null)
+    public function setEventObjectTypeId(int $eventObjectTypeId = null)
     {
         $this->setProperty('eventObjectTypeId', $eventObjectTypeId);
     }

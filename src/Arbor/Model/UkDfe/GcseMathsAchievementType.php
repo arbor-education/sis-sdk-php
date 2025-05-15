@@ -70,7 +70,7 @@ class GcseMathsAchievementType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class GcseMathsAchievementType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class GcseMathsAchievementType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class GcseMathsAchievementType extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(?string $label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -134,7 +134,7 @@ class GcseMathsAchievementType extends ModelBase
     /**
      * @param string $shortLabel
      */
-    public function setShortLabel(?string $shortLabel = null)
+    public function setShortLabel(string $shortLabel = null)
     {
         $this->setProperty('shortLabel', $shortLabel);
     }
@@ -150,7 +150,7 @@ class GcseMathsAchievementType extends ModelBase
     /**
      * @param string $exportValue
      */
-    public function setExportValue(?string $exportValue = null)
+    public function setExportValue(string $exportValue = null)
     {
         $this->setProperty('exportValue', $exportValue);
     }

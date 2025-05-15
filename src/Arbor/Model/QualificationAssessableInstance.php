@@ -84,7 +84,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -100,7 +100,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -116,7 +116,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -230,7 +230,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param string $duration
      */
-    public function setDuration(?string $duration = null)
+    public function setDuration(string $duration = null)
     {
         $this->setProperty('duration', $duration);
     }
@@ -246,7 +246,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $isCentreSpecifiedTimetable
      */
-    public function setIsCentreSpecifiedTimetable(?bool $isCentreSpecifiedTimetable = null)
+    public function setIsCentreSpecifiedTimetable(bool $isCentreSpecifiedTimetable = null)
     {
         $this->setProperty('isCentreSpecifiedTimetable', $isCentreSpecifiedTimetable);
     }
@@ -262,7 +262,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param string $centreSpecifiedDuration
      */
-    public function setCentreSpecifiedDuration(?string $centreSpecifiedDuration = null)
+    public function setCentreSpecifiedDuration(string $centreSpecifiedDuration = null)
     {
         $this->setProperty('centreSpecifiedDuration', $centreSpecifiedDuration);
     }
@@ -278,7 +278,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $isProvisional
      */
-    public function setIsProvisional(?bool $isProvisional = null)
+    public function setIsProvisional(bool $isProvisional = null)
     {
         $this->setProperty('isProvisional', $isProvisional);
     }
@@ -294,7 +294,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $isShownInScheduling
      */
-    public function setIsShownInScheduling(?bool $isShownInScheduling = null)
+    public function setIsShownInScheduling(bool $isShownInScheduling = null)
     {
         $this->setProperty('isShownInScheduling', $isShownInScheduling);
     }

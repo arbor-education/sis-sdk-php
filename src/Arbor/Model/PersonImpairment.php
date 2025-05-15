@@ -82,7 +82,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param string $personImpairmentName
      */
-    public function setPersonImpairmentName(?string $personImpairmentName = null)
+    public function setPersonImpairmentName(string $personImpairmentName = null)
     {
         $this->setProperty('personImpairmentName', $personImpairmentName);
     }
@@ -130,7 +130,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param bool $affectsWorkingAbility
      */
-    public function setAffectsWorkingAbility(?bool $affectsWorkingAbility = null)
+    public function setAffectsWorkingAbility(bool $affectsWorkingAbility = null)
     {
         $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }

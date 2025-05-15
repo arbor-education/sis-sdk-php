@@ -94,7 +94,7 @@ class EventParticipant extends ModelBase
     /**
      * @param string $attendanceRequirement
      */
-    public function setAttendanceRequirement(?string $attendanceRequirement = null)
+    public function setAttendanceRequirement(string $attendanceRequirement = null)
     {
         $this->setProperty('attendanceRequirement', $attendanceRequirement);
     }

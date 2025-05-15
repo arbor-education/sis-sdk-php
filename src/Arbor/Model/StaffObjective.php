@@ -108,7 +108,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -156,7 +156,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $criteria
      */
-    public function setCriteria(?string $criteria = null)
+    public function setCriteria(string $criteria = null)
     {
         $this->setProperty('criteria', $criteria);
     }
@@ -172,7 +172,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $weighting
      */
-    public function setWeighting(?string $weighting = null)
+    public function setWeighting(string $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }
@@ -188,7 +188,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $evidence
      */
-    public function setEvidence(?string $evidence = null)
+    public function setEvidence(string $evidence = null)
     {
         $this->setProperty('evidence', $evidence);
     }
@@ -204,7 +204,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments(?string $comments = null)
+    public function setComments(string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }
@@ -220,7 +220,7 @@ class StaffObjective extends ModelBase
     /**
      * @param string $outcome
      */
-    public function setOutcome(?string $outcome = null)
+    public function setOutcome(string $outcome = null)
     {
         $this->setProperty('outcome', $outcome);
     }

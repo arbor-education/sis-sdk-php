@@ -112,7 +112,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param bool $isAutomatic
      */
-    public function setIsAutomatic(?bool $isAutomatic = null)
+    public function setIsAutomatic(bool $isAutomatic = null)
     {
         $this->setProperty('isAutomatic', $isAutomatic);
     }

@@ -70,7 +70,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(?string $label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -134,7 +134,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(?string $exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -150,7 +150,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param bool $isExclusionUpheld
      */
-    public function setIsExclusionUpheld(?bool $isExclusionUpheld = null)
+    public function setIsExclusionUpheld(bool $isExclusionUpheld = null)
     {
         $this->setProperty('isExclusionUpheld', $isExclusionUpheld);
     }
@@ -166,7 +166,7 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @param bool $isStudentReinstated
      */
-    public function setIsStudentReinstated(?bool $isStudentReinstated = null)
+    public function setIsStudentReinstated(bool $isStudentReinstated = null)
     {
         $this->setProperty('isStudentReinstated', $isStudentReinstated);
     }

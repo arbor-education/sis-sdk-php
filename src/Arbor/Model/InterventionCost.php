@@ -78,7 +78,7 @@ class InterventionCost extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount(?string $amount = null)
+    public function setAmount(string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -94,7 +94,7 @@ class InterventionCost extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }

@@ -102,7 +102,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage(?string $message = null)
+    public function setMessage(string $message = null)
     {
         $this->setProperty('message', $message);
     }

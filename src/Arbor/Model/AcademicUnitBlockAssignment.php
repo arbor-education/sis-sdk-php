@@ -76,7 +76,7 @@ class AcademicUnitBlockAssignment extends ModelBase
     /**
      * @param string $blockName
      */
-    public function setBlockName(?string $blockName = null)
+    public function setBlockName(string $blockName = null)
     {
         $this->setProperty('blockName', $blockName);
     }

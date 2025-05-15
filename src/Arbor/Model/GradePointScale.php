@@ -76,7 +76,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class GradePointScale extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class GradePointScale extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -124,7 +124,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $gradePointScaleName
      */
-    public function setGradePointScaleName(?string $gradePointScaleName = null)
+    public function setGradePointScaleName(string $gradePointScaleName = null)
     {
         $this->setProperty('gradePointScaleName', $gradePointScaleName);
     }
@@ -140,7 +140,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -156,7 +156,7 @@ class GradePointScale extends ModelBase
     /**
      * @param string $pointName
      */
-    public function setPointName(?string $pointName = null)
+    public function setPointName(string $pointName = null)
     {
         $this->setProperty('pointName', $pointName);
     }
@@ -172,7 +172,7 @@ class GradePointScale extends ModelBase
     /**
      * @param int $minimumValue
      */
-    public function setMinimumValue(?int $minimumValue = null)
+    public function setMinimumValue(int $minimumValue = null)
     {
         $this->setProperty('minimumValue', $minimumValue);
     }
@@ -188,7 +188,7 @@ class GradePointScale extends ModelBase
     /**
      * @param int $maximumValue
      */
-    public function setMaximumValue(?int $maximumValue = null)
+    public function setMaximumValue(int $maximumValue = null)
     {
         $this->setProperty('maximumValue', $maximumValue);
     }
@@ -204,7 +204,7 @@ class GradePointScale extends ModelBase
     /**
      * @param float $scaleIncrement
      */
-    public function setScaleIncrement(?float $scaleIncrement = null)
+    public function setScaleIncrement(float $scaleIncrement = null)
     {
         $this->setProperty('scaleIncrement', $scaleIncrement);
     }

@@ -88,7 +88,7 @@ class EmailStatus extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(?string $emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -120,7 +120,7 @@ class EmailStatus extends ModelBase
     /**
      * @param string $statusType
      */
-    public function setStatusType(?string $statusType = null)
+    public function setStatusType(string $statusType = null)
     {
         $this->setProperty('statusType', $statusType);
     }
@@ -152,7 +152,7 @@ class EmailStatus extends ModelBase
     /**
      * @param int $statusCode
      */
-    public function setStatusCode(?int $statusCode = null)
+    public function setStatusCode(int $statusCode = null)
     {
         $this->setProperty('statusCode', $statusCode);
     }
@@ -168,7 +168,7 @@ class EmailStatus extends ModelBase
     /**
      * @param string $statusDetail
      */
-    public function setStatusDetail(?string $statusDetail = null)
+    public function setStatusDetail(string $statusDetail = null)
     {
         $this->setProperty('statusDetail', $statusDetail);
     }
@@ -184,7 +184,7 @@ class EmailStatus extends ModelBase
     /**
      * @param int $deliveryAttemptNumber
      */
-    public function setDeliveryAttemptNumber(?int $deliveryAttemptNumber = null)
+    public function setDeliveryAttemptNumber(int $deliveryAttemptNumber = null)
     {
         $this->setProperty('deliveryAttemptNumber', $deliveryAttemptNumber);
     }

@@ -144,7 +144,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $dailyStartTime
      */
-    public function setDailyStartTime(?string $dailyStartTime = null)
+    public function setDailyStartTime(string $dailyStartTime = null)
     {
         $this->setProperty('dailyStartTime', $dailyStartTime);
     }
@@ -160,7 +160,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $dailyEndTime
      */
-    public function setDailyEndTime(?string $dailyEndTime = null)
+    public function setDailyEndTime(string $dailyEndTime = null)
     {
         $this->setProperty('dailyEndTime', $dailyEndTime);
     }
@@ -224,7 +224,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param float $statisticalDaysExcluded
      */
-    public function setStatisticalDaysExcluded(?float $statisticalDaysExcluded = null)
+    public function setStatisticalDaysExcluded(float $statisticalDaysExcluded = null)
     {
         $this->setProperty('statisticalDaysExcluded', $statisticalDaysExcluded);
     }
@@ -240,7 +240,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param int $schoolDefinedSessionsExcluded
      */
-    public function setSchoolDefinedSessionsExcluded(?int $schoolDefinedSessionsExcluded = null)
+    public function setSchoolDefinedSessionsExcluded(int $schoolDefinedSessionsExcluded = null)
     {
         $this->setProperty('schoolDefinedSessionsExcluded', $schoolDefinedSessionsExcluded);
     }
@@ -256,7 +256,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

@@ -98,7 +98,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -114,7 +114,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes(?string $teacherNotes = null)
+    public function setTeacherNotes(string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -130,7 +130,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(?int $displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

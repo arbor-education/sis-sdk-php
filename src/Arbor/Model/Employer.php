@@ -60,7 +60,7 @@ class Employer extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -76,7 +76,7 @@ class Employer extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(?string $identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }

@@ -62,7 +62,7 @@ class ApplicationSetting extends ModelBase
     /**
      * @param string $settingName
      */
-    public function setSettingName(?string $settingName = null)
+    public function setSettingName(string $settingName = null)
     {
         $this->setProperty('settingName', $settingName);
     }
@@ -78,7 +78,7 @@ class ApplicationSetting extends ModelBase
     /**
      * @param string $settingValue
      */
-    public function setSettingValue(?string $settingValue = null)
+    public function setSettingValue(string $settingValue = null)
     {
         $this->setProperty('settingValue', $settingValue);
     }
@@ -94,7 +94,7 @@ class ApplicationSetting extends ModelBase
     /**
      * @param string $settingClass
      */
-    public function setSettingClass(?string $settingClass = null)
+    public function setSettingClass(string $settingClass = null)
     {
         $this->setProperty('settingClass', $settingClass);
     }

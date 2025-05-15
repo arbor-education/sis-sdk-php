@@ -78,7 +78,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param int $x
      */
-    public function setX(?int $x = null)
+    public function setX(int $x = null)
     {
         $this->setProperty('x', $x);
     }
@@ -94,7 +94,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param int $y
      */
-    public function setY(?int $y = null)
+    public function setY(int $y = null)
     {
         $this->setProperty('y', $y);
     }

@@ -86,7 +86,7 @@ class Grade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -102,7 +102,7 @@ class Grade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -118,7 +118,7 @@ class Grade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -150,7 +150,7 @@ class Grade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -166,7 +166,7 @@ class Grade extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName(?string $longName = null)
+    public function setLongName(string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -182,7 +182,7 @@ class Grade extends ModelBase
     /**
      * @param string $userDefinedShortName
      */
-    public function setUserDefinedShortName(?string $userDefinedShortName = null)
+    public function setUserDefinedShortName(string $userDefinedShortName = null)
     {
         $this->setProperty('userDefinedShortName', $userDefinedShortName);
     }
@@ -198,7 +198,7 @@ class Grade extends ModelBase
     /**
      * @param string $userDefinedLongName
      */
-    public function setUserDefinedLongName(?string $userDefinedLongName = null)
+    public function setUserDefinedLongName(string $userDefinedLongName = null)
     {
         $this->setProperty('userDefinedLongName', $userDefinedLongName);
     }
@@ -214,7 +214,7 @@ class Grade extends ModelBase
     /**
      * @param string $userDefinedGradeDescription
      */
-    public function setUserDefinedGradeDescription(?string $userDefinedGradeDescription = null)
+    public function setUserDefinedGradeDescription(string $userDefinedGradeDescription = null)
     {
         $this->setProperty('userDefinedGradeDescription', $userDefinedGradeDescription);
     }
@@ -230,7 +230,7 @@ class Grade extends ModelBase
     /**
      * @param string $gradeIdentifier
      */
-    public function setGradeIdentifier(?string $gradeIdentifier = null)
+    public function setGradeIdentifier(string $gradeIdentifier = null)
     {
         $this->setProperty('gradeIdentifier', $gradeIdentifier);
     }
@@ -246,7 +246,7 @@ class Grade extends ModelBase
     /**
      * @param float $gradeValue
      */
-    public function setGradeValue(?float $gradeValue = null)
+    public function setGradeValue(float $gradeValue = null)
     {
         $this->setProperty('gradeValue', $gradeValue);
     }
@@ -262,7 +262,7 @@ class Grade extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -278,7 +278,7 @@ class Grade extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -294,7 +294,7 @@ class Grade extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue(?float $statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -310,7 +310,7 @@ class Grade extends ModelBase
     /**
      * @param int $gradeOrder
      */
-    public function setGradeOrder(?int $gradeOrder = null)
+    public function setGradeOrder(int $gradeOrder = null)
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }

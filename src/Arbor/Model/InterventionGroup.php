@@ -72,7 +72,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -136,7 +136,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims(?string $aims = null)
+    public function setAims(string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -152,7 +152,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria(?string $successCriteria = null)
+    public function setSuccessCriteria(string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -184,7 +184,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param bool $isAttendanceRegistered
      */
-    public function setIsAttendanceRegistered(?bool $isAttendanceRegistered = null)
+    public function setIsAttendanceRegistered(bool $isAttendanceRegistered = null)
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }

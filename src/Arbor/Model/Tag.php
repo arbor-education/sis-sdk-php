@@ -60,7 +60,7 @@ class Tag extends ModelBase
     /**
      * @param string $tagName
      */
-    public function setTagName(?string $tagName = null)
+    public function setTagName(string $tagName = null)
     {
         $this->setProperty('tagName', $tagName);
     }
@@ -76,7 +76,7 @@ class Tag extends ModelBase
     /**
      * @param string $tagIdentifier
      */
-    public function setTagIdentifier(?string $tagIdentifier = null)
+    public function setTagIdentifier(string $tagIdentifier = null)
     {
         $this->setProperty('tagIdentifier', $tagIdentifier);
     }

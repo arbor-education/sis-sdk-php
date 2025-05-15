@@ -86,7 +86,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -134,7 +134,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param string $membershipPeriodType
      */
-    public function setMembershipPeriodType(?string $membershipPeriodType = null)
+    public function setMembershipPeriodType(string $membershipPeriodType = null)
     {
         $this->setProperty('membershipPeriodType', $membershipPeriodType);
     }

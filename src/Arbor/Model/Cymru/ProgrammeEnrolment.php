@@ -68,7 +68,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(?int $plannedLearningHours = null)
+    public function setPlannedLearningHours(int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -84,7 +84,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear(?int $plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
@@ -100,7 +100,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $programmeAimType
      */
-    public function setProgrammeAimType(?string $programmeAimType = null)
+    public function setProgrammeAimType(string $programmeAimType = null)
     {
         $this->setProperty('programmeAimType', $programmeAimType);
     }
@@ -116,7 +116,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $llddLearner
      */
-    public function setLlddLearner(?string $llddLearner = null)
+    public function setLlddLearner(string $llddLearner = null)
     {
         $this->setProperty('llddLearner', $llddLearner);
     }
@@ -132,7 +132,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $learnerActivityThroughWelshMedium
      */
-    public function setLearnerActivityThroughWelshMedium(?string $learnerActivityThroughWelshMedium = null)
+    public function setLearnerActivityThroughWelshMedium(string $learnerActivityThroughWelshMedium = null)
     {
         $this->setProperty('learnerActivityThroughWelshMedium', $learnerActivityThroughWelshMedium);
     }

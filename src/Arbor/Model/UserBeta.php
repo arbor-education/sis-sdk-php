@@ -78,7 +78,7 @@ class UserBeta extends ModelBase
     /**
      * @param bool $isEligible
      */
-    public function setIsEligible(?bool $isEligible = null)
+    public function setIsEligible(bool $isEligible = null)
     {
         $this->setProperty('isEligible', $isEligible);
     }
@@ -94,7 +94,7 @@ class UserBeta extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled(?bool $isEnabled = null)
+    public function setIsEnabled(bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }

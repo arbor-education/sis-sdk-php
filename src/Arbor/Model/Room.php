@@ -84,7 +84,7 @@ class Room extends ModelBase
     /**
      * @param string $roomName
      */
-    public function setRoomName(?string $roomName = null)
+    public function setRoomName(string $roomName = null)
     {
         $this->setProperty('roomName', $roomName);
     }
@@ -100,7 +100,7 @@ class Room extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -116,7 +116,7 @@ class Room extends ModelBase
     /**
      * @param int $studentCapacity
      */
-    public function setStudentCapacity(?int $studentCapacity = null)
+    public function setStudentCapacity(int $studentCapacity = null)
     {
         $this->setProperty('studentCapacity', $studentCapacity);
     }
@@ -132,7 +132,7 @@ class Room extends ModelBase
     /**
      * @param bool $isInvigilationRoom
      */
-    public function setIsInvigilationRoom(?bool $isInvigilationRoom = null)
+    public function setIsInvigilationRoom(bool $isInvigilationRoom = null)
     {
         $this->setProperty('isInvigilationRoom', $isInvigilationRoom);
     }
@@ -148,7 +148,7 @@ class Room extends ModelBase
     /**
      * @param int $invigilationCapacity
      */
-    public function setInvigilationCapacity(?int $invigilationCapacity = null)
+    public function setInvigilationCapacity(int $invigilationCapacity = null)
     {
         $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }

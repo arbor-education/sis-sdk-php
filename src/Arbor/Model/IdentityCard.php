@@ -82,7 +82,7 @@ class IdentityCard extends ModelBase
     /**
      * @param string $cardNumber
      */
-    public function setCardNumber(?string $cardNumber = null)
+    public function setCardNumber(string $cardNumber = null)
     {
         $this->setProperty('cardNumber', $cardNumber);
     }
@@ -98,7 +98,7 @@ class IdentityCard extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

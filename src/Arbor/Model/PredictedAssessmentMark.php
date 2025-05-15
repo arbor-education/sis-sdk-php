@@ -156,7 +156,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -172,7 +172,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -188,7 +188,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue(?float $statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -221,7 +221,7 @@ class PredictedAssessmentMark extends ModelBase
     /**
      * @param bool $isCalculatedGrade
      */
-    public function setIsCalculatedGrade(?bool $isCalculatedGrade = null)
+    public function setIsCalculatedGrade(bool $isCalculatedGrade = null)
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }

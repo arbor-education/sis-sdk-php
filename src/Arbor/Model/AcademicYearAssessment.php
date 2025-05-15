@@ -92,7 +92,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName(?string $assessmentName = null)
+    public function setAssessmentName(string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -156,7 +156,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param bool $isLinkedToSummativeTracking
      */
-    public function setIsLinkedToSummativeTracking(?bool $isLinkedToSummativeTracking = null)
+    public function setIsLinkedToSummativeTracking(bool $isLinkedToSummativeTracking = null)
     {
         $this->setProperty('isLinkedToSummativeTracking', $isLinkedToSummativeTracking);
     }
@@ -220,7 +220,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param bool $allowComments
      */
-    public function setAllowComments(?bool $allowComments = null)
+    public function setAllowComments(bool $allowComments = null)
     {
         $this->setProperty('allowComments', $allowComments);
     }

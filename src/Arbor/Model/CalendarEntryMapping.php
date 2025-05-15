@@ -148,7 +148,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param bool $timeslotBlocked
      */
-    public function setTimeslotBlocked(?bool $timeslotBlocked = null)
+    public function setTimeslotBlocked(bool $timeslotBlocked = null)
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }

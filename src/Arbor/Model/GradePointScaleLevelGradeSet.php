@@ -70,7 +70,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -150,7 +150,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param string $levelType
      */
-    public function setLevelType(?string $levelType = null)
+    public function setLevelType(string $levelType = null)
     {
         $this->setProperty('levelType', $levelType);
     }
@@ -166,7 +166,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param bool $appliesToSenStudentOnly
      */
-    public function setAppliesToSenStudentOnly(?bool $appliesToSenStudentOnly = null)
+    public function setAppliesToSenStudentOnly(bool $appliesToSenStudentOnly = null)
     {
         $this->setProperty('appliesToSenStudentOnly', $appliesToSenStudentOnly);
     }

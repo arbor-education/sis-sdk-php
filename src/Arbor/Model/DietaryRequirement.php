@@ -94,7 +94,7 @@ class DietaryRequirement extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote(?string $note = null)
+    public function setNote(string $note = null)
     {
         $this->setProperty('note', $note);
     }

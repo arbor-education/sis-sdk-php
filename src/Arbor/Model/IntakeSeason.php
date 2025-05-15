@@ -68,7 +68,7 @@ class IntakeSeason extends ModelBase
     /**
      * @param string $intakeSeasonName
      */
-    public function setIntakeSeasonName(?string $intakeSeasonName = null)
+    public function setIntakeSeasonName(string $intakeSeasonName = null)
     {
         $this->setProperty('intakeSeasonName', $intakeSeasonName);
     }
@@ -132,7 +132,7 @@ class IntakeSeason extends ModelBase
     /**
      * @param int $publishedAdmissionsNumber
      */
-    public function setPublishedAdmissionsNumber(?int $publishedAdmissionsNumber = null)
+    public function setPublishedAdmissionsNumber(int $publishedAdmissionsNumber = null)
     {
         $this->setProperty('publishedAdmissionsNumber', $publishedAdmissionsNumber);
     }
@@ -148,7 +148,7 @@ class IntakeSeason extends ModelBase
     /**
      * @param int $targetApplicationNumber
      */
-    public function setTargetApplicationNumber(?int $targetApplicationNumber = null)
+    public function setTargetApplicationNumber(int $targetApplicationNumber = null)
     {
         $this->setProperty('targetApplicationNumber', $targetApplicationNumber);
     }

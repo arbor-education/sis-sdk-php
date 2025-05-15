@@ -84,7 +84,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param string $additionalPayment
      */
-    public function setAdditionalPayment(?string $additionalPayment = null)
+    public function setAdditionalPayment(string $additionalPayment = null)
     {
         $this->setProperty('additionalPayment', $additionalPayment);
     }

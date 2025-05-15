@@ -88,7 +88,7 @@ class Intervention extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -168,7 +168,7 @@ class Intervention extends ModelBase
     /**
      * @param string $monitoring
      */
-    public function setMonitoring(?string $monitoring = null)
+    public function setMonitoring(string $monitoring = null)
     {
         $this->setProperty('monitoring', $monitoring);
     }
@@ -184,7 +184,7 @@ class Intervention extends ModelBase
     /**
      * @param string $aimsOfIntervention
      */
-    public function setAimsOfIntervention(?string $aimsOfIntervention = null)
+    public function setAimsOfIntervention(string $aimsOfIntervention = null)
     {
         $this->setProperty('aimsOfIntervention', $aimsOfIntervention);
     }
@@ -200,7 +200,7 @@ class Intervention extends ModelBase
     /**
      * @param string $strategies
      */
-    public function setStrategies(?string $strategies = null)
+    public function setStrategies(string $strategies = null)
     {
         $this->setProperty('strategies', $strategies);
     }
@@ -216,7 +216,7 @@ class Intervention extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria(?string $successCriteria = null)
+    public function setSuccessCriteria(string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -248,7 +248,7 @@ class Intervention extends ModelBase
     /**
      * @param string $estimatedDuration
      */
-    public function setEstimatedDuration(?string $estimatedDuration = null)
+    public function setEstimatedDuration(string $estimatedDuration = null)
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
@@ -296,7 +296,7 @@ class Intervention extends ModelBase
     /**
      * @param bool $isCompleted
      */
-    public function setIsCompleted(?bool $isCompleted = null)
+    public function setIsCompleted(bool $isCompleted = null)
     {
         $this->setProperty('isCompleted', $isCompleted);
     }

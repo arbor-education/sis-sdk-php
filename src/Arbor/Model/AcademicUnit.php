@@ -110,7 +110,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $uniqueIdentifier
      */
-    public function setUniqueIdentifier(?string $uniqueIdentifier = null)
+    public function setUniqueIdentifier(string $uniqueIdentifier = null)
     {
         $this->setProperty('uniqueIdentifier', $uniqueIdentifier);
     }
@@ -158,7 +158,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $academicUnitName
      */
-    public function setAcademicUnitName(?string $academicUnitName = null)
+    public function setAcademicUnitName(string $academicUnitName = null)
     {
         $this->setProperty('academicUnitName', $academicUnitName);
     }
@@ -174,7 +174,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName(?string $longName = null)
+    public function setLongName(string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -190,7 +190,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $longNameFormat
      */
-    public function setLongNameFormat(?string $longNameFormat = null)
+    public function setLongNameFormat(string $longNameFormat = null)
     {
         $this->setProperty('longNameFormat', $longNameFormat);
     }
@@ -206,7 +206,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -222,7 +222,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $shortNameFormat
      */
-    public function setShortNameFormat(?string $shortNameFormat = null)
+    public function setShortNameFormat(string $shortNameFormat = null)
     {
         $this->setProperty('shortNameFormat', $shortNameFormat);
     }
@@ -238,7 +238,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $academicUnitCode
      */
-    public function setAcademicUnitCode(?string $academicUnitCode = null)
+    public function setAcademicUnitCode(string $academicUnitCode = null)
     {
         $this->setProperty('academicUnitCode', $academicUnitCode);
     }
@@ -366,7 +366,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param bool $selfServiceEnrolment
      */
-    public function setSelfServiceEnrolment(?bool $selfServiceEnrolment = null)
+    public function setSelfServiceEnrolment(bool $selfServiceEnrolment = null)
     {
         $this->setProperty('selfServiceEnrolment', $selfServiceEnrolment);
     }
@@ -382,7 +382,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param int $maximumEnrolments
      */
-    public function setMaximumEnrolments(?int $maximumEnrolments = null)
+    public function setMaximumEnrolments(int $maximumEnrolments = null)
     {
         $this->setProperty('maximumEnrolments', $maximumEnrolments);
     }
@@ -398,7 +398,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param int $targetEnrolments
      */
-    public function setTargetEnrolments(?int $targetEnrolments = null)
+    public function setTargetEnrolments(int $targetEnrolments = null)
     {
         $this->setProperty('targetEnrolments', $targetEnrolments);
     }
@@ -462,7 +462,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param bool $isMainAssessableUnit
      */
-    public function setIsMainAssessableUnit(?bool $isMainAssessableUnit = null)
+    public function setIsMainAssessableUnit(bool $isMainAssessableUnit = null)
     {
         $this->setProperty('isMainAssessableUnit', $isMainAssessableUnit);
     }
@@ -478,7 +478,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(?int $displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

@@ -112,7 +112,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $educationalInstitutionName
      */
-    public function setEducationalInstitutionName(?string $educationalInstitutionName = null)
+    public function setEducationalInstitutionName(string $educationalInstitutionName = null)
     {
         $this->setProperty('educationalInstitutionName', $educationalInstitutionName);
     }
@@ -128,7 +128,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(?string $shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -176,7 +176,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $arborIdentifier
      */
-    public function setArborIdentifier(?string $arborIdentifier = null)
+    public function setArborIdentifier(string $arborIdentifier = null)
     {
         $this->setProperty('arborIdentifier', $arborIdentifier);
     }
@@ -192,7 +192,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $website
      */
-    public function setWebsite(?string $website = null)
+    public function setWebsite(string $website = null)
     {
         $this->setProperty('website', $website);
     }
@@ -240,7 +240,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $establishmentNumber
      */
-    public function setEstablishmentNumber(?string $establishmentNumber = null)
+    public function setEstablishmentNumber(string $establishmentNumber = null)
     {
         $this->setProperty('establishmentNumber', $establishmentNumber);
     }
@@ -288,7 +288,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $schoolGender
      */
-    public function setSchoolGender(?string $schoolGender = null)
+    public function setSchoolGender(string $schoolGender = null)
     {
         $this->setProperty('schoolGender', $schoolGender);
     }
@@ -336,7 +336,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $urn
      */
-    public function setUrn(?string $urn = null)
+    public function setUrn(string $urn = null)
     {
         $this->setProperty('urn', $urn);
     }
@@ -352,7 +352,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $ukprn
      */
-    public function setUkprn(?string $ukprn = null)
+    public function setUkprn(string $ukprn = null)
     {
         $this->setProperty('ukprn', $ukprn);
     }
@@ -368,7 +368,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $hasChildMotherProvision
      */
-    public function setHasChildMotherProvision(?bool $hasChildMotherProvision = null)
+    public function setHasChildMotherProvision(bool $hasChildMotherProvision = null)
     {
         $this->setProperty('hasChildMotherProvision', $hasChildMotherProvision);
     }
@@ -384,7 +384,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $hasChildcarePlaces
      */
-    public function setHasChildcarePlaces(?bool $hasChildcarePlaces = null)
+    public function setHasChildcarePlaces(bool $hasChildcarePlaces = null)
     {
         $this->setProperty('hasChildcarePlaces', $hasChildcarePlaces);
     }
@@ -400,7 +400,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $specialSchoolAccommodation
      */
-    public function setSpecialSchoolAccommodation(?string $specialSchoolAccommodation = null)
+    public function setSpecialSchoolAccommodation(string $specialSchoolAccommodation = null)
     {
         $this->setProperty('specialSchoolAccommodation', $specialSchoolAccommodation);
     }
@@ -416,7 +416,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxDayPupils
      */
-    public function setSpecialSchoolMaxDayPupils(?int $specialSchoolMaxDayPupils = null)
+    public function setSpecialSchoolMaxDayPupils(int $specialSchoolMaxDayPupils = null)
     {
         $this->setProperty('specialSchoolMaxDayPupils', $specialSchoolMaxDayPupils);
     }
@@ -432,7 +432,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxBoarders
      */
-    public function setSpecialSchoolMaxBoarders(?int $specialSchoolMaxBoarders = null)
+    public function setSpecialSchoolMaxBoarders(int $specialSchoolMaxBoarders = null)
     {
         $this->setProperty('specialSchoolMaxBoarders', $specialSchoolMaxBoarders);
     }
@@ -448,7 +448,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMinMaleAge
      */
-    public function setSpecialSchoolMinMaleAge(?int $specialSchoolMinMaleAge = null)
+    public function setSpecialSchoolMinMaleAge(int $specialSchoolMinMaleAge = null)
     {
         $this->setProperty('specialSchoolMinMaleAge', $specialSchoolMinMaleAge);
     }
@@ -464,7 +464,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxMaleAge
      */
-    public function setSpecialSchoolMaxMaleAge(?int $specialSchoolMaxMaleAge = null)
+    public function setSpecialSchoolMaxMaleAge(int $specialSchoolMaxMaleAge = null)
     {
         $this->setProperty('specialSchoolMaxMaleAge', $specialSchoolMaxMaleAge);
     }
@@ -480,7 +480,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMinFemaleAge
      */
-    public function setSpecialSchoolMinFemaleAge(?int $specialSchoolMinFemaleAge = null)
+    public function setSpecialSchoolMinFemaleAge(int $specialSchoolMinFemaleAge = null)
     {
         $this->setProperty('specialSchoolMinFemaleAge', $specialSchoolMinFemaleAge);
     }
@@ -496,7 +496,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxFemaleAge
      */
-    public function setSpecialSchoolMaxFemaleAge(?int $specialSchoolMaxFemaleAge = null)
+    public function setSpecialSchoolMaxFemaleAge(int $specialSchoolMaxFemaleAge = null)
     {
         $this->setProperty('specialSchoolMaxFemaleAge', $specialSchoolMaxFemaleAge);
     }
@@ -512,7 +512,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $specialSchoolSenProvisions
      */
-    public function setSpecialSchoolSenProvisions(?string $specialSchoolSenProvisions = null)
+    public function setSpecialSchoolSenProvisions(string $specialSchoolSenProvisions = null)
     {
         $this->setProperty('specialSchoolSenProvisions', $specialSchoolSenProvisions);
     }
@@ -544,7 +544,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $weeklyHoursOpen
      */
-    public function setWeeklyHoursOpen(?string $weeklyHoursOpen = null)
+    public function setWeeklyHoursOpen(string $weeklyHoursOpen = null)
     {
         $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }

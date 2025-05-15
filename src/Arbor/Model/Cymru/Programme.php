@@ -62,7 +62,7 @@ class Programme extends ModelBase
     /**
      * @param string $programmeIdentifier
      */
-    public function setProgrammeIdentifier(?string $programmeIdentifier = null)
+    public function setProgrammeIdentifier(string $programmeIdentifier = null)
     {
         $this->setProperty('programmeIdentifier', $programmeIdentifier);
     }

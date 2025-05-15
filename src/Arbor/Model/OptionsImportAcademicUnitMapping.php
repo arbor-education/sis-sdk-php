@@ -80,7 +80,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param string $academicUnitName
      */
-    public function setAcademicUnitName(?string $academicUnitName = null)
+    public function setAcademicUnitName(string $academicUnitName = null)
     {
         $this->setProperty('academicUnitName', $academicUnitName);
     }
@@ -96,7 +96,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param string $mappingAction
      */
-    public function setMappingAction(?string $mappingAction = null)
+    public function setMappingAction(string $mappingAction = null)
     {
         $this->setProperty('mappingAction', $mappingAction);
     }

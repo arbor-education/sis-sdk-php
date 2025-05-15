@@ -82,7 +82,7 @@ class MealSitting extends ModelBase
     /**
      * @param string $mealSittingName
      */
-    public function setMealSittingName(?string $mealSittingName = null)
+    public function setMealSittingName(string $mealSittingName = null)
     {
         $this->setProperty('mealSittingName', $mealSittingName);
     }

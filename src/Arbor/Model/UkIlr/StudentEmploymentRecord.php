@@ -70,7 +70,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi1
      */
-    public function setBsi1(?bool $bsi1 = null)
+    public function setBsi1(bool $bsi1 = null)
     {
         $this->setProperty('bsi1', $bsi1);
     }
@@ -86,7 +86,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi2
      */
-    public function setBsi2(?bool $bsi2 = null)
+    public function setBsi2(bool $bsi2 = null)
     {
         $this->setProperty('bsi2', $bsi2);
     }
@@ -102,7 +102,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi3
      */
-    public function setBsi3(?bool $bsi3 = null)
+    public function setBsi3(bool $bsi3 = null)
     {
         $this->setProperty('bsi3', $bsi3);
     }
@@ -118,7 +118,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $bsi4
      */
-    public function setBsi4(?bool $bsi4 = null)
+    public function setBsi4(bool $bsi4 = null)
     {
         $this->setProperty('bsi4', $bsi4);
     }
@@ -134,7 +134,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param bool $ron1
      */
-    public function setRon1(?bool $ron1 = null)
+    public function setRon1(bool $ron1 = null)
     {
         $this->setProperty('ron1', $ron1);
     }

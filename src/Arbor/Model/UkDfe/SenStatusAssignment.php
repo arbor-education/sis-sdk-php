@@ -62,7 +62,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param bool $isMemberOfSenUnit
      */
-    public function setIsMemberOfSenUnit(?bool $isMemberOfSenUnit = null)
+    public function setIsMemberOfSenUnit(bool $isMemberOfSenUnit = null)
     {
         $this->setProperty('isMemberOfSenUnit', $isMemberOfSenUnit);
     }
@@ -78,7 +78,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param bool $hasResourcedProvision
      */
-    public function setHasResourcedProvision(?bool $hasResourcedProvision = null)
+    public function setHasResourcedProvision(bool $hasResourcedProvision = null)
     {
         $this->setProperty('hasResourcedProvision', $hasResourcedProvision);
     }

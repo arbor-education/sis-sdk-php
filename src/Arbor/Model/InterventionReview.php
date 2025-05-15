@@ -114,7 +114,7 @@ class InterventionReview extends ModelBase
     /**
      * @param string $review
      */
-    public function setReview(?string $review = null)
+    public function setReview(string $review = null)
     {
         $this->setProperty('review', $review);
     }
@@ -130,7 +130,7 @@ class InterventionReview extends ModelBase
     /**
      * @param string $recommendations
      */
-    public function setRecommendations(?string $recommendations = null)
+    public function setRecommendations(string $recommendations = null)
     {
         $this->setProperty('recommendations', $recommendations);
     }

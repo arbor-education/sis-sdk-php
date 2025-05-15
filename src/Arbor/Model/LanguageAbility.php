@@ -106,7 +106,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $isFirstLanguage
      */
-    public function setIsFirstLanguage(?bool $isFirstLanguage = null)
+    public function setIsFirstLanguage(bool $isFirstLanguage = null)
     {
         $this->setProperty('isFirstLanguage', $isFirstLanguage);
     }
@@ -122,7 +122,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $isNativeLanguage
      */
-    public function setIsNativeLanguage(?bool $isNativeLanguage = null)
+    public function setIsNativeLanguage(bool $isNativeLanguage = null)
     {
         $this->setProperty('isNativeLanguage', $isNativeLanguage);
     }
@@ -138,7 +138,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $speaksLanguage
      */
-    public function setSpeaksLanguage(?bool $speaksLanguage = null)
+    public function setSpeaksLanguage(bool $speaksLanguage = null)
     {
         $this->setProperty('speaksLanguage', $speaksLanguage);
     }
@@ -154,7 +154,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $understandsLanguage
      */
-    public function setUnderstandsLanguage(?bool $understandsLanguage = null)
+    public function setUnderstandsLanguage(bool $understandsLanguage = null)
     {
         $this->setProperty('understandsLanguage', $understandsLanguage);
     }
@@ -170,7 +170,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param bool $isSpokenAtHome
      */
-    public function setIsSpokenAtHome(?bool $isSpokenAtHome = null)
+    public function setIsSpokenAtHome(bool $isSpokenAtHome = null)
     {
         $this->setProperty('isSpokenAtHome', $isSpokenAtHome);
     }
@@ -186,7 +186,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param string $languageProficiency
      */
-    public function setLanguageProficiency(?string $languageProficiency = null)
+    public function setLanguageProficiency(string $languageProficiency = null)
     {
         $this->setProperty('languageProficiency', $languageProficiency);
     }
@@ -202,7 +202,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(?string $notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

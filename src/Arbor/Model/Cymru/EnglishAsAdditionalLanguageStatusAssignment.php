@@ -64,7 +64,7 @@ class EnglishAsAdditionalLanguageStatusAssignment extends ModelBase
     /**
      * @param string $progress
      */
-    public function setProgress(?string $progress = null)
+    public function setProgress(string $progress = null)
     {
         $this->setProperty('progress', $progress);
     }

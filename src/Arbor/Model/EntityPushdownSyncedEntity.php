@@ -100,7 +100,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param int $syncedEntityObjectTypeId
      */
-    public function setSyncedEntityObjectTypeId(?int $syncedEntityObjectTypeId = null)
+    public function setSyncedEntityObjectTypeId(int $syncedEntityObjectTypeId = null)
     {
         $this->setProperty('syncedEntityObjectTypeId', $syncedEntityObjectTypeId);
     }
@@ -116,7 +116,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param string $globalIdentifier
      */
-    public function setGlobalIdentifier(?string $globalIdentifier = null)
+    public function setGlobalIdentifier(string $globalIdentifier = null)
     {
         $this->setProperty('globalIdentifier', $globalIdentifier);
     }
@@ -132,7 +132,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param bool $isTemplate
      */
-    public function setIsTemplate(?bool $isTemplate = null)
+    public function setIsTemplate(bool $isTemplate = null)
     {
         $this->setProperty('isTemplate', $isTemplate);
     }
@@ -148,7 +148,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param bool $allowEdit
      */
-    public function setAllowEdit(?bool $allowEdit = null)
+    public function setAllowEdit(bool $allowEdit = null)
     {
         $this->setProperty('allowEdit', $allowEdit);
     }

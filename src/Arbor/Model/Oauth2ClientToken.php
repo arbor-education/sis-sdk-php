@@ -84,7 +84,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(?string $provider = null)
+    public function setProvider(string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -100,7 +100,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $accessToken
      */
-    public function setAccessToken(?string $accessToken = null)
+    public function setAccessToken(string $accessToken = null)
     {
         $this->setProperty('accessToken', $accessToken);
     }
@@ -116,7 +116,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $refreshToken
      */
-    public function setRefreshToken(?string $refreshToken = null)
+    public function setRefreshToken(string $refreshToken = null)
     {
         $this->setProperty('refreshToken', $refreshToken);
     }
@@ -148,7 +148,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $resourceOwnerIdentifier
      */
-    public function setResourceOwnerIdentifier(?string $resourceOwnerIdentifier = null)
+    public function setResourceOwnerIdentifier(string $resourceOwnerIdentifier = null)
     {
         $this->setProperty('resourceOwnerIdentifier', $resourceOwnerIdentifier);
     }

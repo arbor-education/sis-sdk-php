@@ -70,7 +70,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $qcaAccreditationNumber
      */
-    public function setQcaAccreditationNumber(?string $qcaAccreditationNumber = null)
+    public function setQcaAccreditationNumber(string $qcaAccreditationNumber = null)
     {
         $this->setProperty('qcaAccreditationNumber', $qcaAccreditationNumber);
     }
@@ -86,7 +86,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2014
      */
-    public function setKs4DiscountCode2014(?string $ks4DiscountCode2014 = null)
+    public function setKs4DiscountCode2014(string $ks4DiscountCode2014 = null)
     {
         $this->setProperty('ks4DiscountCode2014', $ks4DiscountCode2014);
     }
@@ -102,7 +102,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2015
      */
-    public function setKs4DiscountCode2015(?string $ks4DiscountCode2015 = null)
+    public function setKs4DiscountCode2015(string $ks4DiscountCode2015 = null)
     {
         $this->setProperty('ks4DiscountCode2015', $ks4DiscountCode2015);
     }
@@ -118,7 +118,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2016
      */
-    public function setKs4DiscountCode2016(?string $ks4DiscountCode2016 = null)
+    public function setKs4DiscountCode2016(string $ks4DiscountCode2016 = null)
     {
         $this->setProperty('ks4DiscountCode2016', $ks4DiscountCode2016);
     }
@@ -134,7 +134,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2017
      */
-    public function setKs4DiscountCode2017(?string $ks4DiscountCode2017 = null)
+    public function setKs4DiscountCode2017(string $ks4DiscountCode2017 = null)
     {
         $this->setProperty('ks4DiscountCode2017', $ks4DiscountCode2017);
     }
@@ -150,7 +150,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $post16DiscountCode
      */
-    public function setPost16DiscountCode(?string $post16DiscountCode = null)
+    public function setPost16DiscountCode(string $post16DiscountCode = null)
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }

@@ -94,7 +94,7 @@ class UniversityStaff extends ModelBase
     /**
      * @param string $position
      */
-    public function setPosition(?string $position = null)
+    public function setPosition(string $position = null)
     {
         $this->setProperty('position', $position);
     }

@@ -78,7 +78,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param string $batchName
      */
-    public function setBatchName(?string $batchName = null)
+    public function setBatchName(string $batchName = null)
     {
         $this->setProperty('batchName', $batchName);
     }
@@ -142,7 +142,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $isBaselineLocked
      */
-    public function setIsBaselineLocked(?bool $isBaselineLocked = null)
+    public function setIsBaselineLocked(bool $isBaselineLocked = null)
     {
         $this->setProperty('isBaselineLocked', $isBaselineLocked);
     }
@@ -158,7 +158,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $isTargetLocked
      */
-    public function setIsTargetLocked(?bool $isTargetLocked = null)
+    public function setIsTargetLocked(bool $isTargetLocked = null)
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
     }
@@ -174,7 +174,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showRankOrder
      */
-    public function setShowRankOrder(?bool $showRankOrder = null)
+    public function setShowRankOrder(bool $showRankOrder = null)
     {
         $this->setProperty('showRankOrder', $showRankOrder);
     }
@@ -190,7 +190,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsBaseline
      */
-    public function setShowCurrentVsBaseline(?bool $showCurrentVsBaseline = null)
+    public function setShowCurrentVsBaseline(bool $showCurrentVsBaseline = null)
     {
         $this->setProperty('showCurrentVsBaseline', $showCurrentVsBaseline);
     }
@@ -206,7 +206,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsYearTarget
      */
-    public function setShowCurrentVsYearTarget(?bool $showCurrentVsYearTarget = null)
+    public function setShowCurrentVsYearTarget(bool $showCurrentVsYearTarget = null)
     {
         $this->setProperty('showCurrentVsYearTarget', $showCurrentVsYearTarget);
     }
@@ -222,7 +222,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsPredicted
      */
-    public function setShowCurrentVsPredicted(?bool $showCurrentVsPredicted = null)
+    public function setShowCurrentVsPredicted(bool $showCurrentVsPredicted = null)
     {
         $this->setProperty('showCurrentVsPredicted', $showCurrentVsPredicted);
     }
@@ -238,7 +238,7 @@ class ProgressAssessmentBatch extends ModelBase
     /**
      * @param bool $showCurrentVsPrevious
      */
-    public function setShowCurrentVsPrevious(?bool $showCurrentVsPrevious = null)
+    public function setShowCurrentVsPrevious(bool $showCurrentVsPrevious = null)
     {
         $this->setProperty('showCurrentVsPrevious', $showCurrentVsPrevious);
     }

@@ -66,7 +66,7 @@ class CurriculumTier extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class CurriculumTier extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class CurriculumTier extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class CurriculumTier extends ModelBase
     /**
      * @param string $curriculumTierName
      */
-    public function setCurriculumTierName(?string $curriculumTierName = null)
+    public function setCurriculumTierName(string $curriculumTierName = null)
     {
         $this->setProperty('curriculumTierName', $curriculumTierName);
     }
@@ -130,7 +130,7 @@ class CurriculumTier extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(?string $exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }

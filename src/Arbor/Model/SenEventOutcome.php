@@ -94,7 +94,7 @@ class SenEventOutcome extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments(?string $comments = null)
+    public function setComments(string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }

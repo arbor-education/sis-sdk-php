@@ -94,7 +94,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName(?string $assessmentName = null)
+    public function setAssessmentName(string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -110,7 +110,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentCode
      */
-    public function setAssessmentCode(?string $assessmentCode = null)
+    public function setAssessmentCode(string $assessmentCode = null)
     {
         $this->setProperty('assessmentCode', $assessmentCode);
     }
@@ -126,7 +126,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $markDataType
      */
-    public function setMarkDataType(?string $markDataType = null)
+    public function setMarkDataType(string $markDataType = null)
     {
         $this->setProperty('markDataType', $markDataType);
     }
@@ -158,7 +158,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $numberFormat
      */
-    public function setNumberFormat(?string $numberFormat = null)
+    public function setNumberFormat(string $numberFormat = null)
     {
         $this->setProperty('numberFormat', $numberFormat);
     }
@@ -174,7 +174,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $numberUnit
      */
-    public function setNumberUnit(?string $numberUnit = null)
+    public function setNumberUnit(string $numberUnit = null)
     {
         $this->setProperty('numberUnit', $numberUnit);
     }
@@ -238,7 +238,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentStrategy
      */
-    public function setAssessmentStrategy(?string $assessmentStrategy = null)
+    public function setAssessmentStrategy(string $assessmentStrategy = null)
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }

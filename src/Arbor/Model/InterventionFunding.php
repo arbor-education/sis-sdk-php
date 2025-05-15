@@ -114,7 +114,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param string $fundingAmount
      */
-    public function setFundingAmount(?string $fundingAmount = null)
+    public function setFundingAmount(string $fundingAmount = null)
     {
         $this->setProperty('fundingAmount', $fundingAmount);
     }
@@ -130,7 +130,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param float $fundingPercentage
      */
-    public function setFundingPercentage(?float $fundingPercentage = null)
+    public function setFundingPercentage(float $fundingPercentage = null)
     {
         $this->setProperty('fundingPercentage', $fundingPercentage);
     }

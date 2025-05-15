@@ -116,7 +116,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param float $achievementValue
      */
-    public function setAchievementValue(?float $achievementValue = null)
+    public function setAchievementValue(float $achievementValue = null)
     {
         $this->setProperty('achievementValue', $achievementValue);
     }
@@ -132,7 +132,7 @@ class StudentCurriculumAchievement extends ModelBase
     /**
      * @param string $assessmentType
      */
-    public function setAssessmentType(?string $assessmentType = null)
+    public function setAssessmentType(string $assessmentType = null)
     {
         $this->setProperty('assessmentType', $assessmentType);
     }

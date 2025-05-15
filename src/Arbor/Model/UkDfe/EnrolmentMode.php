@@ -60,7 +60,7 @@ class EnrolmentMode extends ModelBase
     /**
      * @param string $d00018
      */
-    public function setD00018(?string $d00018 = null)
+    public function setD00018(string $d00018 = null)
     {
         $this->setProperty('d00018', $d00018);
     }

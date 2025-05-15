@@ -88,7 +88,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -104,7 +104,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param int $defaultGuidedContactHours
      */
-    public function setDefaultGuidedContactHours(?int $defaultGuidedContactHours = null)
+    public function setDefaultGuidedContactHours(int $defaultGuidedContactHours = null)
     {
         $this->setProperty('defaultGuidedContactHours', $defaultGuidedContactHours);
     }
@@ -152,7 +152,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param int $defaultLengthOfProgramme
      */
-    public function setDefaultLengthOfProgramme(?int $defaultLengthOfProgramme = null)
+    public function setDefaultLengthOfProgramme(int $defaultLengthOfProgramme = null)
     {
         $this->setProperty('defaultLengthOfProgramme', $defaultLengthOfProgramme);
     }
@@ -168,7 +168,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param int $defaultYearOfProgramme
      */
-    public function setDefaultYearOfProgramme(?int $defaultYearOfProgramme = null)
+    public function setDefaultYearOfProgramme(int $defaultYearOfProgramme = null)
     {
         $this->setProperty('defaultYearOfProgramme', $defaultYearOfProgramme);
     }

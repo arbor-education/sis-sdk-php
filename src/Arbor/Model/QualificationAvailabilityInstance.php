@@ -72,7 +72,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -136,7 +136,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $qualificationAvailabilityIdentifier
      */
-    public function setQualificationAvailabilityIdentifier(?string $qualificationAvailabilityIdentifier = null)
+    public function setQualificationAvailabilityIdentifier(string $qualificationAvailabilityIdentifier = null)
     {
         $this->setProperty('qualificationAvailabilityIdentifier', $qualificationAvailabilityIdentifier);
     }
@@ -184,7 +184,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $ediAwardingBodyIdentifier
      */
-    public function setEdiAwardingBodyIdentifier(?string $ediAwardingBodyIdentifier = null)
+    public function setEdiAwardingBodyIdentifier(string $ediAwardingBodyIdentifier = null)
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }

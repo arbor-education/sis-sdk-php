@@ -68,7 +68,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $groupApplicationId
      */
-    public function setGroupApplicationId(?string $groupApplicationId = null)
+    public function setGroupApplicationId(string $groupApplicationId = null)
     {
         $this->setProperty('groupApplicationId', $groupApplicationId);
     }
@@ -84,7 +84,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $permissionLevel
      */
-    public function setPermissionLevel(?string $permissionLevel = null)
+    public function setPermissionLevel(string $permissionLevel = null)
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }
@@ -100,7 +100,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

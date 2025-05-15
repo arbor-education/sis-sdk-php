@@ -78,7 +78,7 @@ class AcademicProgrammeInstance extends ModelBase
     /**
      * @param string $instanceName
      */
-    public function setInstanceName(?string $instanceName = null)
+    public function setInstanceName(string $instanceName = null)
     {
         $this->setProperty('instanceName', $instanceName);
     }

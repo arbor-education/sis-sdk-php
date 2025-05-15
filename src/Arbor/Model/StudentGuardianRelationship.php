@@ -124,7 +124,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isLegalGuardian
      */
-    public function setIsLegalGuardian(?bool $isLegalGuardian = null)
+    public function setIsLegalGuardian(bool $isLegalGuardian = null)
     {
         $this->setProperty('isLegalGuardian', $isLegalGuardian);
     }
@@ -140,7 +140,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isPrimaryGuardian
      */
-    public function setIsPrimaryGuardian(?bool $isPrimaryGuardian = null)
+    public function setIsPrimaryGuardian(bool $isPrimaryGuardian = null)
     {
         $this->setProperty('isPrimaryGuardian', $isPrimaryGuardian);
     }
@@ -156,7 +156,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isAuthorizedToCollect
      */
-    public function setIsAuthorizedToCollect(?bool $isAuthorizedToCollect = null)
+    public function setIsAuthorizedToCollect(bool $isAuthorizedToCollect = null)
     {
         $this->setProperty('isAuthorizedToCollect', $isAuthorizedToCollect);
     }
@@ -172,7 +172,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param string $emergencyContactPriority
      */
-    public function setEmergencyContactPriority(?string $emergencyContactPriority = null)
+    public function setEmergencyContactPriority(string $emergencyContactPriority = null)
     {
         $this->setProperty('emergencyContactPriority', $emergencyContactPriority);
     }
@@ -188,7 +188,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $unsubscribedFromComms
      */
-    public function setUnsubscribedFromComms(?bool $unsubscribedFromComms = null)
+    public function setUnsubscribedFromComms(bool $unsubscribedFromComms = null)
     {
         $this->setProperty('unsubscribedFromComms', $unsubscribedFromComms);
     }
@@ -204,7 +204,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $guardianUserAuthorized
      */
-    public function setGuardianUserAuthorized(?bool $guardianUserAuthorized = null)
+    public function setGuardianUserAuthorized(bool $guardianUserAuthorized = null)
     {
         $this->setProperty('guardianUserAuthorized', $guardianUserAuthorized);
     }
@@ -220,7 +220,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param string $accessNotes
      */
-    public function setAccessNotes(?string $accessNotes = null)
+    public function setAccessNotes(string $accessNotes = null)
     {
         $this->setProperty('accessNotes', $accessNotes);
     }

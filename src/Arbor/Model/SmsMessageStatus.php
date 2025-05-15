@@ -98,7 +98,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param string $statusType
      */
-    public function setStatusType(?string $statusType = null)
+    public function setStatusType(string $statusType = null)
     {
         $this->setProperty('statusType', $statusType);
     }
@@ -130,7 +130,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param string $errorType
      */
-    public function setErrorType(?string $errorType = null)
+    public function setErrorType(string $errorType = null)
     {
         $this->setProperty('errorType', $errorType);
     }

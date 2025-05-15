@@ -120,7 +120,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param string $collectionType
      */
-    public function setCollectionType(?string $collectionType = null)
+    public function setCollectionType(string $collectionType = null)
     {
         $this->setProperty('collectionType', $collectionType);
     }
@@ -152,7 +152,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param int $completionNumerator
      */
-    public function setCompletionNumerator(?int $completionNumerator = null)
+    public function setCompletionNumerator(int $completionNumerator = null)
     {
         $this->setProperty('completionNumerator', $completionNumerator);
     }
@@ -168,7 +168,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param int $completionDenominator
      */
-    public function setCompletionDenominator(?int $completionDenominator = null)
+    public function setCompletionDenominator(int $completionDenominator = null)
     {
         $this->setProperty('completionDenominator', $completionDenominator);
     }
@@ -184,7 +184,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param bool $deriveAssignedStaff
      */
-    public function setDeriveAssignedStaff(?bool $deriveAssignedStaff = null)
+    public function setDeriveAssignedStaff(bool $deriveAssignedStaff = null)
     {
         $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
     }

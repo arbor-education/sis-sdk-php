@@ -116,7 +116,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody(?string $body = null)
+    public function setBody(string $body = null)
     {
         $this->setProperty('body', $body);
     }

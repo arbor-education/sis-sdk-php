@@ -78,7 +78,7 @@ class Schoolwork extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(?string $title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -94,7 +94,7 @@ class Schoolwork extends ModelBase
     /**
      * @param string $studentInstructions
      */
-    public function setStudentInstructions(?string $studentInstructions = null)
+    public function setStudentInstructions(string $studentInstructions = null)
     {
         $this->setProperty('studentInstructions', $studentInstructions);
     }
@@ -110,7 +110,7 @@ class Schoolwork extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes(?string $teacherNotes = null)
+    public function setTeacherNotes(string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -238,7 +238,7 @@ class Schoolwork extends ModelBase
     /**
      * @param bool $submitViaArbor
      */
-    public function setSubmitViaArbor(?bool $submitViaArbor = null)
+    public function setSubmitViaArbor(bool $submitViaArbor = null)
     {
         $this->setProperty('submitViaArbor', $submitViaArbor);
     }

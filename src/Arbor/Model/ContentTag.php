@@ -96,7 +96,7 @@ class ContentTag extends ModelBase
     /**
      * @param string $tagName
      */
-    public function setTagName(?string $tagName = null)
+    public function setTagName(string $tagName = null)
     {
         $this->setProperty('tagName', $tagName);
     }
@@ -112,7 +112,7 @@ class ContentTag extends ModelBase
     /**
      * @param string $tagValue
      */
-    public function setTagValue(?string $tagValue = null)
+    public function setTagValue(string $tagValue = null)
     {
         $this->setProperty('tagValue', $tagValue);
     }

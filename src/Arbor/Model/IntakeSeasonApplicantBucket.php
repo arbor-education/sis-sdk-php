@@ -60,7 +60,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
     /**
      * @param string $applicantBucketName
      */
-    public function setApplicantBucketName(?string $applicantBucketName = null)
+    public function setApplicantBucketName(string $applicantBucketName = null)
     {
         $this->setProperty('applicantBucketName', $applicantBucketName);
     }

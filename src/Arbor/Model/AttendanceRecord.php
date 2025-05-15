@@ -130,7 +130,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(?int $minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
@@ -146,7 +146,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param string $recordNote
      */
-    public function setRecordNote(?string $recordNote = null)
+    public function setRecordNote(string $recordNote = null)
     {
         $this->setProperty('recordNote', $recordNote);
     }
@@ -274,7 +274,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(?string $source = null)
+    public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
     }

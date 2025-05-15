@@ -66,7 +66,7 @@ class AssessmentMetricRuleGradeItem extends ModelBase
     /**
      * @param string $operator
      */
-    public function setOperator(?string $operator = null)
+    public function setOperator(string $operator = null)
     {
         $this->setProperty('operator', $operator);
     }

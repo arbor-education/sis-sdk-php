@@ -94,7 +94,7 @@ class KpiValue extends ModelBase
     /**
      * @param string $kpiCategory
      */
-    public function setKpiCategory(?string $kpiCategory = null)
+    public function setKpiCategory(string $kpiCategory = null)
     {
         $this->setProperty('kpiCategory', $kpiCategory);
     }
@@ -174,7 +174,7 @@ class KpiValue extends ModelBase
     /**
      * @param float $value
      */
-    public function setValue(?float $value = null)
+    public function setValue(float $value = null)
     {
         $this->setProperty('value', $value);
     }

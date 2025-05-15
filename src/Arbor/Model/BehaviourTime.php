@@ -62,7 +62,7 @@ class BehaviourTime extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(?string $startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -78,7 +78,7 @@ class BehaviourTime extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(?string $endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -94,7 +94,7 @@ class BehaviourTime extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

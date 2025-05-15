@@ -66,7 +66,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param string $trainingCourseTitle
      */
-    public function setTrainingCourseTitle(?string $trainingCourseTitle = null)
+    public function setTrainingCourseTitle(string $trainingCourseTitle = null)
     {
         $this->setProperty('trainingCourseTitle', $trainingCourseTitle);
     }
@@ -82,7 +82,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param string $trainingCourseDescription
      */
-    public function setTrainingCourseDescription(?string $trainingCourseDescription = null)
+    public function setTrainingCourseDescription(string $trainingCourseDescription = null)
     {
         $this->setProperty('trainingCourseDescription', $trainingCourseDescription);
     }
@@ -114,7 +114,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param float $courseFees
      */
-    public function setCourseFees(?float $courseFees = null)
+    public function setCourseFees(float $courseFees = null)
     {
         $this->setProperty('courseFees', $courseFees);
     }
@@ -130,7 +130,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param float $otherCosts
      */
-    public function setOtherCosts(?float $otherCosts = null)
+    public function setOtherCosts(float $otherCosts = null)
     {
         $this->setProperty('otherCosts', $otherCosts);
     }

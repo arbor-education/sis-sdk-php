@@ -112,7 +112,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param string $postReference
      */
-    public function setPostReference(?string $postReference = null)
+    public function setPostReference(string $postReference = null)
     {
         $this->setProperty('postReference', $postReference);
     }
@@ -128,7 +128,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param string $jobTitle
      */
-    public function setJobTitle(?string $jobTitle = null)
+    public function setJobTitle(string $jobTitle = null)
     {
         $this->setProperty('jobTitle', $jobTitle);
     }

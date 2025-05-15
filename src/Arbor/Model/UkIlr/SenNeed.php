@@ -60,7 +60,7 @@ class SenNeed extends ModelBase
     /**
      * @param bool $isAgreedWithStudent
      */
-    public function setIsAgreedWithStudent(?bool $isAgreedWithStudent = null)
+    public function setIsAgreedWithStudent(bool $isAgreedWithStudent = null)
     {
         $this->setProperty('isAgreedWithStudent', $isAgreedWithStudent);
     }

@@ -96,7 +96,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param float $amount
      */
-    public function setAmount(?float $amount = null)
+    public function setAmount(float $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -112,7 +112,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param string $amountUnit
      */
-    public function setAmountUnit(?string $amountUnit = null)
+    public function setAmountUnit(string $amountUnit = null)
     {
         $this->setProperty('amountUnit', $amountUnit);
     }

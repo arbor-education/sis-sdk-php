@@ -130,7 +130,7 @@ class CashReceipt extends ModelBase
     /**
      * @param string $receivedPayment
      */
-    public function setReceivedPayment(?string $receivedPayment = null)
+    public function setReceivedPayment(string $receivedPayment = null)
     {
         $this->setProperty('receivedPayment', $receivedPayment);
     }

@@ -98,7 +98,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param int $rowIndex
      */
-    public function setRowIndex(?int $rowIndex = null)
+    public function setRowIndex(int $rowIndex = null)
     {
         $this->setProperty('rowIndex', $rowIndex);
     }
@@ -114,7 +114,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors(?string $errors = null)
+    public function setErrors(string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -130,7 +130,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param string $requiredErrors
      */
-    public function setRequiredErrors(?string $requiredErrors = null)
+    public function setRequiredErrors(string $requiredErrors = null)
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }

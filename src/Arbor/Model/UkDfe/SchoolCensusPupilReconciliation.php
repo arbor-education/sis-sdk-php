@@ -86,7 +86,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $partTimeNotIn
      */
-    public function setPartTimeNotIn(?int $partTimeNotIn = null)
+    public function setPartTimeNotIn(int $partTimeNotIn = null)
     {
         $this->setProperty('partTimeNotIn', $partTimeNotIn);
     }
@@ -102,7 +102,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $privateStudy
      */
-    public function setPrivateStudy(?int $privateStudy = null)
+    public function setPrivateStudy(int $privateStudy = null)
     {
         $this->setProperty('privateStudy', $privateStudy);
     }
@@ -118,7 +118,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $atOtherSchool
      */
-    public function setAtOtherSchool(?int $atOtherSchool = null)
+    public function setAtOtherSchool(int $atOtherSchool = null)
     {
         $this->setProperty('atOtherSchool', $atOtherSchool);
     }
@@ -134,7 +134,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $workExperience
      */
-    public function setWorkExperience(?int $workExperience = null)
+    public function setWorkExperience(int $workExperience = null)
     {
         $this->setProperty('workExperience', $workExperience);
     }
@@ -150,7 +150,7 @@ class SchoolCensusPupilReconciliation extends ModelBase
     /**
      * @param int $fECollege
      */
-    public function setFECollege(?int $fECollege = null)
+    public function setFECollege(int $fECollege = null)
     {
         $this->setProperty('fECollege', $fECollege);
     }

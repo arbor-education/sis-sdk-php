@@ -84,7 +84,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $costPerHour
      */
-    public function setCostPerHour(?string $costPerHour = null)
+    public function setCostPerHour(string $costPerHour = null)
     {
         $this->setProperty('costPerHour', $costPerHour);
     }
@@ -132,7 +132,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $roundToNearest
      */
-    public function setRoundToNearest(?string $roundToNearest = null)
+    public function setRoundToNearest(string $roundToNearest = null)
     {
         $this->setProperty('roundToNearest', $roundToNearest);
     }
@@ -148,7 +148,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $minimumCharge
      */
-    public function setMinimumCharge(?string $minimumCharge = null)
+    public function setMinimumCharge(string $minimumCharge = null)
     {
         $this->setProperty('minimumCharge', $minimumCharge);
     }

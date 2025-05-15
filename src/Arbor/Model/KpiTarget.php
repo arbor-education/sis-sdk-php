@@ -120,7 +120,7 @@ class KpiTarget extends ModelBase
     /**
      * @param float $targetValue
      */
-    public function setTargetValue(?float $targetValue = null)
+    public function setTargetValue(float $targetValue = null)
     {
         $this->setProperty('targetValue', $targetValue);
     }
@@ -136,7 +136,7 @@ class KpiTarget extends ModelBase
     /**
      * @param string $targetName
      */
-    public function setTargetName(?string $targetName = null)
+    public function setTargetName(string $targetName = null)
     {
         $this->setProperty('targetName', $targetName);
     }
@@ -152,7 +152,7 @@ class KpiTarget extends ModelBase
     /**
      * @param string $abbreviation
      */
-    public function setAbbreviation(?string $abbreviation = null)
+    public function setAbbreviation(string $abbreviation = null)
     {
         $this->setProperty('abbreviation', $abbreviation);
     }
@@ -168,7 +168,7 @@ class KpiTarget extends ModelBase
     /**
      * @param string $valueType
      */
-    public function setValueType(?string $valueType = null)
+    public function setValueType(string $valueType = null)
     {
         $this->setProperty('valueType', $valueType);
     }

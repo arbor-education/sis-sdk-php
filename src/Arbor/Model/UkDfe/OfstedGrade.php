@@ -68,7 +68,7 @@ class OfstedGrade extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(?string $label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -84,7 +84,7 @@ class OfstedGrade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -100,7 +100,7 @@ class OfstedGrade extends ModelBase
     /**
      * @param int $numericalCode
      */
-    public function setNumericalCode(?int $numericalCode = null)
+    public function setNumericalCode(int $numericalCode = null)
     {
         $this->setProperty('numericalCode', $numericalCode);
     }
@@ -116,7 +116,7 @@ class OfstedGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -132,7 +132,7 @@ class OfstedGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

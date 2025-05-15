@@ -96,7 +96,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(?int $order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -128,7 +128,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param bool $includeStatements
      */
-    public function setIncludeStatements(?bool $includeStatements = null)
+    public function setIncludeStatements(bool $includeStatements = null)
     {
         $this->setProperty('includeStatements', $includeStatements);
     }
@@ -160,7 +160,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param float $lowerAchievementValue
      */
-    public function setLowerAchievementValue(?float $lowerAchievementValue = null)
+    public function setLowerAchievementValue(float $lowerAchievementValue = null)
     {
         $this->setProperty('lowerAchievementValue', $lowerAchievementValue);
     }
@@ -192,7 +192,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param float $upperAchievementValue
      */
-    public function setUpperAchievementValue(?float $upperAchievementValue = null)
+    public function setUpperAchievementValue(float $upperAchievementValue = null)
     {
         $this->setProperty('upperAchievementValue', $upperAchievementValue);
     }
@@ -208,7 +208,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param string $reportingMode
      */
-    public function setReportingMode(?string $reportingMode = null)
+    public function setReportingMode(string $reportingMode = null)
     {
         $this->setProperty('reportingMode', $reportingMode);
     }
@@ -224,7 +224,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param bool $includeSummativeGrade
      */
-    public function setIncludeSummativeGrade(?bool $includeSummativeGrade = null)
+    public function setIncludeSummativeGrade(bool $includeSummativeGrade = null)
     {
         $this->setProperty('includeSummativeGrade', $includeSummativeGrade);
     }
@@ -240,7 +240,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param string $summativeGradeType
      */
-    public function setSummativeGradeType(?string $summativeGradeType = null)
+    public function setSummativeGradeType(string $summativeGradeType = null)
     {
         $this->setProperty('summativeGradeType', $summativeGradeType);
     }

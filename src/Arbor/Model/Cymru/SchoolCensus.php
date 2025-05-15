@@ -80,7 +80,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -144,7 +144,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $governmentDocumentVersion
      */
-    public function setGovernmentDocumentVersion(?string $governmentDocumentVersion = null)
+    public function setGovernmentDocumentVersion(string $governmentDocumentVersion = null)
     {
         $this->setProperty('governmentDocumentVersion', $governmentDocumentVersion);
     }
@@ -224,7 +224,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $schoolCensusTerm
      */
-    public function setSchoolCensusTerm(?string $schoolCensusTerm = null)
+    public function setSchoolCensusTerm(string $schoolCensusTerm = null)
     {
         $this->setProperty('schoolCensusTerm', $schoolCensusTerm);
     }
@@ -240,7 +240,7 @@ class SchoolCensus extends ModelBase
     /**
      * @param string $schoolCensusYear
      */
-    public function setSchoolCensusYear(?string $schoolCensusYear = null)
+    public function setSchoolCensusYear(string $schoolCensusYear = null)
     {
         $this->setProperty('schoolCensusYear', $schoolCensusYear);
     }

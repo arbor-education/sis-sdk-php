@@ -136,7 +136,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(?int $minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
@@ -168,7 +168,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param string $validationError
      */
-    public function setValidationError(?string $validationError = null)
+    public function setValidationError(string $validationError = null)
     {
         $this->setProperty('validationError', $validationError);
     }
@@ -184,7 +184,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(?string $source = null)
+    public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
     }

@@ -72,7 +72,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $fileName
      */
-    public function setFileName(?string $fileName = null)
+    public function setFileName(string $fileName = null)
     {
         $this->setProperty('fileName', $fileName);
     }
@@ -88,7 +88,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $fileType
      */
-    public function setFileType(?string $fileType = null)
+    public function setFileType(string $fileType = null)
     {
         $this->setProperty('fileType', $fileType);
     }
@@ -120,7 +120,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(?string $status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -136,7 +136,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param int $sequenceNumber
      */
-    public function setSequenceNumber(?int $sequenceNumber = null)
+    public function setSequenceNumber(int $sequenceNumber = null)
     {
         $this->setProperty('sequenceNumber', $sequenceNumber);
     }

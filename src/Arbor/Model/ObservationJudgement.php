@@ -112,7 +112,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(?string $comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

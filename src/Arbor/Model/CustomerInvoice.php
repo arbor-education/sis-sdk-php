@@ -116,7 +116,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $invoiceNumber
      */
-    public function setInvoiceNumber(?string $invoiceNumber = null)
+    public function setInvoiceNumber(string $invoiceNumber = null)
     {
         $this->setProperty('invoiceNumber', $invoiceNumber);
     }
@@ -196,7 +196,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(?string $narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -212,7 +212,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $totalAmountExVat
      */
-    public function setTotalAmountExVat(?string $totalAmountExVat = null)
+    public function setTotalAmountExVat(string $totalAmountExVat = null)
     {
         $this->setProperty('totalAmountExVat', $totalAmountExVat);
     }
@@ -228,7 +228,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $vatTotal
      */
-    public function setVatTotal(?string $vatTotal = null)
+    public function setVatTotal(string $vatTotal = null)
     {
         $this->setProperty('vatTotal', $vatTotal);
     }
@@ -244,7 +244,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $balance
      */
-    public function setBalance(?string $balance = null)
+    public function setBalance(string $balance = null)
     {
         $this->setProperty('balance', $balance);
     }
@@ -292,7 +292,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param bool $isLegacyVatCalculation
      */
-    public function setIsLegacyVatCalculation(?bool $isLegacyVatCalculation = null)
+    public function setIsLegacyVatCalculation(bool $isLegacyVatCalculation = null)
     {
         $this->setProperty('isLegacyVatCalculation', $isLegacyVatCalculation);
     }

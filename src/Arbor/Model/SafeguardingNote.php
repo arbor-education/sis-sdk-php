@@ -96,7 +96,7 @@ class SafeguardingNote extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(?string $summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -112,7 +112,7 @@ class SafeguardingNote extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent(?string $content = null)
+    public function setContent(string $content = null)
     {
         $this->setProperty('content', $content);
     }

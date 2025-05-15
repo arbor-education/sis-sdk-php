@@ -108,7 +108,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeMilk
      */
-    public function setFreeMilk(?int $freeMilk = null)
+    public function setFreeMilk(int $freeMilk = null)
     {
         $this->setProperty('freeMilk', $freeMilk);
     }
@@ -124,7 +124,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $paidMilk
      */
-    public function setPaidMilk(?int $paidMilk = null)
+    public function setPaidMilk(int $paidMilk = null)
     {
         $this->setProperty('paidMilk', $paidMilk);
     }
@@ -140,7 +140,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeMeals
      */
-    public function setFreeMeals(?int $freeMeals = null)
+    public function setFreeMeals(int $freeMeals = null)
     {
         $this->setProperty('freeMeals', $freeMeals);
     }
@@ -156,7 +156,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $freeMealsTakenStudentIds
      */
-    public function setFreeMealsTakenStudentIds(?string $freeMealsTakenStudentIds = null)
+    public function setFreeMealsTakenStudentIds(string $freeMealsTakenStudentIds = null)
     {
         $this->setProperty('freeMealsTakenStudentIds', $freeMealsTakenStudentIds);
     }
@@ -172,7 +172,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $paidMeals
      */
-    public function setPaidMeals(?int $paidMeals = null)
+    public function setPaidMeals(int $paidMeals = null)
     {
         $this->setProperty('paidMeals', $paidMeals);
     }
@@ -188,7 +188,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $paidMealsTakenStudentIds
      */
-    public function setPaidMealsTakenStudentIds(?string $paidMealsTakenStudentIds = null)
+    public function setPaidMealsTakenStudentIds(string $paidMealsTakenStudentIds = null)
     {
         $this->setProperty('paidMealsTakenStudentIds', $paidMealsTakenStudentIds);
     }
@@ -204,7 +204,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeBreakfastsAllStudents
      */
-    public function setFreeBreakfastsAllStudents(?int $freeBreakfastsAllStudents = null)
+    public function setFreeBreakfastsAllStudents(int $freeBreakfastsAllStudents = null)
     {
         $this->setProperty('freeBreakfastsAllStudents', $freeBreakfastsAllStudents);
     }
@@ -220,7 +220,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeBreakfastsFsmStudents
      */
-    public function setFreeBreakfastsFsmStudents(?int $freeBreakfastsFsmStudents = null)
+    public function setFreeBreakfastsFsmStudents(int $freeBreakfastsFsmStudents = null)
     {
         $this->setProperty('freeBreakfastsFsmStudents', $freeBreakfastsFsmStudents);
     }
@@ -236,7 +236,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeBreakfastsCensusWeekAllStudents
      */
-    public function setFreeBreakfastsCensusWeekAllStudents(?int $freeBreakfastsCensusWeekAllStudents = null)
+    public function setFreeBreakfastsCensusWeekAllStudents(int $freeBreakfastsCensusWeekAllStudents = null)
     {
         $this->setProperty('freeBreakfastsCensusWeekAllStudents', $freeBreakfastsCensusWeekAllStudents);
     }
@@ -252,7 +252,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeBreakfastsCensusWeekFsmStudents
      */
-    public function setFreeBreakfastsCensusWeekFsmStudents(?int $freeBreakfastsCensusWeekFsmStudents = null)
+    public function setFreeBreakfastsCensusWeekFsmStudents(int $freeBreakfastsCensusWeekFsmStudents = null)
     {
         $this->setProperty('freeBreakfastsCensusWeekFsmStudents', $freeBreakfastsCensusWeekFsmStudents);
     }
@@ -268,7 +268,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $headGovernor
      */
-    public function setHeadGovernor(?int $headGovernor = null)
+    public function setHeadGovernor(int $headGovernor = null)
     {
         $this->setProperty('headGovernor', $headGovernor);
     }
@@ -284,7 +284,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $maleGovernor
      */
-    public function setMaleGovernor(?int $maleGovernor = null)
+    public function setMaleGovernor(int $maleGovernor = null)
     {
         $this->setProperty('maleGovernor', $maleGovernor);
     }
@@ -300,7 +300,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $femaleGovernor
      */
-    public function setFemaleGovernor(?int $femaleGovernor = null)
+    public function setFemaleGovernor(int $femaleGovernor = null)
     {
         $this->setProperty('femaleGovernor', $femaleGovernor);
     }
@@ -316,7 +316,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $welshGovernor
      */
-    public function setWelshGovernor(?int $welshGovernor = null)
+    public function setWelshGovernor(int $welshGovernor = null)
     {
         $this->setProperty('welshGovernor', $welshGovernor);
     }
@@ -332,7 +332,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $governorVacancy
      */
-    public function setGovernorVacancy(?int $governorVacancy = null)
+    public function setGovernorVacancy(int $governorVacancy = null)
     {
         $this->setProperty('governorVacancy', $governorVacancy);
     }
@@ -348,7 +348,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $headteacherTeachingCommitment
      */
-    public function setHeadteacherTeachingCommitment(?string $headteacherTeachingCommitment = null)
+    public function setHeadteacherTeachingCommitment(string $headteacherTeachingCommitment = null)
     {
         $this->setProperty('headteacherTeachingCommitment', $headteacherTeachingCommitment);
     }

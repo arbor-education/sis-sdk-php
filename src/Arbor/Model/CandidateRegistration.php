@@ -115,7 +115,7 @@ class CandidateRegistration extends ModelBase
     /**
      * @param string $entryStatus
      */
-    public function setEntryStatus(?string $entryStatus = null)
+    public function setEntryStatus(string $entryStatus = null)
     {
         $this->setProperty('entryStatus', $entryStatus);
     }
@@ -131,7 +131,7 @@ class CandidateRegistration extends ModelBase
     /**
      * @param string $withdrawalStatus
      */
-    public function setWithdrawalStatus(?string $withdrawalStatus = null)
+    public function setWithdrawalStatus(string $withdrawalStatus = null)
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }

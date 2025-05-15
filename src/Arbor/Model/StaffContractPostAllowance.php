@@ -142,7 +142,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param string $grossAllowance
      */
-    public function setGrossAllowance(?string $grossAllowance = null)
+    public function setGrossAllowance(string $grossAllowance = null)
     {
         $this->setProperty('grossAllowance', $grossAllowance);
     }
@@ -158,7 +158,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(?string $reason = null)
+    public function setReason(string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -174,7 +174,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param string $allowanceType
      */
-    public function setAllowanceType(?string $allowanceType = null)
+    public function setAllowanceType(string $allowanceType = null)
     {
         $this->setProperty('allowanceType', $allowanceType);
     }
@@ -190,7 +190,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param float $payFactor
      */
-    public function setPayFactor(?float $payFactor = null)
+    public function setPayFactor(float $payFactor = null)
     {
         $this->setProperty('payFactor', $payFactor);
     }
@@ -206,7 +206,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param bool $superannuation
      */
-    public function setSuperannuation(?bool $superannuation = null)
+    public function setSuperannuation(bool $superannuation = null)
     {
         $this->setProperty('superannuation', $superannuation);
     }
@@ -222,7 +222,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param bool $niStatus
      */
-    public function setNiStatus(?bool $niStatus = null)
+    public function setNiStatus(bool $niStatus = null)
     {
         $this->setProperty('niStatus', $niStatus);
     }
@@ -238,7 +238,7 @@ class StaffContractPostAllowance extends ModelBase
     /**
      * @param bool $benefitInKind
      */
-    public function setBenefitInKind(?bool $benefitInKind = null)
+    public function setBenefitInKind(bool $benefitInKind = null)
     {
         $this->setProperty('benefitInKind', $benefitInKind);
     }

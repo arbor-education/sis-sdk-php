@@ -66,7 +66,7 @@ class CalendarType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class CalendarType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class CalendarType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class CalendarType extends ModelBase
     /**
      * @param string $calendarTypeName
      */
-    public function setCalendarTypeName(?string $calendarTypeName = null)
+    public function setCalendarTypeName(string $calendarTypeName = null)
     {
         $this->setProperty('calendarTypeName', $calendarTypeName);
     }
@@ -130,7 +130,7 @@ class CalendarType extends ModelBase
     /**
      * @param string $calendarTypeColor
      */
-    public function setCalendarTypeColor(?string $calendarTypeColor = null)
+    public function setCalendarTypeColor(string $calendarTypeColor = null)
     {
         $this->setProperty('calendarTypeColor', $calendarTypeColor);
     }

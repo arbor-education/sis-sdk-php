@@ -96,7 +96,7 @@ class CustomReportScheduledExportReport extends ModelBase
     /**
      * @param string $exportFormat
      */
-    public function setExportFormat(?string $exportFormat = null)
+    public function setExportFormat(string $exportFormat = null)
     {
         $this->setProperty('exportFormat', $exportFormat);
     }
@@ -112,7 +112,7 @@ class CustomReportScheduledExportReport extends ModelBase
     /**
      * @param string $scheduledTime
      */
-    public function setScheduledTime(?string $scheduledTime = null)
+    public function setScheduledTime(string $scheduledTime = null)
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }

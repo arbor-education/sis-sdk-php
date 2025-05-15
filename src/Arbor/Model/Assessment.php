@@ -82,7 +82,7 @@ class Assessment extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -98,7 +98,7 @@ class Assessment extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -114,7 +114,7 @@ class Assessment extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -130,7 +130,7 @@ class Assessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName(?string $assessmentName = null)
+    public function setAssessmentName(string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -146,7 +146,7 @@ class Assessment extends ModelBase
     /**
      * @param string $assessmentShortName
      */
-    public function setAssessmentShortName(?string $assessmentShortName = null)
+    public function setAssessmentShortName(string $assessmentShortName = null)
     {
         $this->setProperty('assessmentShortName', $assessmentShortName);
     }
@@ -162,7 +162,7 @@ class Assessment extends ModelBase
     /**
      * @param string $userDefinedName
      */
-    public function setUserDefinedName(?string $userDefinedName = null)
+    public function setUserDefinedName(string $userDefinedName = null)
     {
         $this->setProperty('userDefinedName', $userDefinedName);
     }
@@ -178,7 +178,7 @@ class Assessment extends ModelBase
     /**
      * @param string $userDefinedShortName
      */
-    public function setUserDefinedShortName(?string $userDefinedShortName = null)
+    public function setUserDefinedShortName(string $userDefinedShortName = null)
     {
         $this->setProperty('userDefinedShortName', $userDefinedShortName);
     }
@@ -242,7 +242,7 @@ class Assessment extends ModelBase
     /**
      * @param string $studentProgressBaselineCalculatorClassName
      */
-    public function setStudentProgressBaselineCalculatorClassName(?string $studentProgressBaselineCalculatorClassName = null)
+    public function setStudentProgressBaselineCalculatorClassName(string $studentProgressBaselineCalculatorClassName = null)
     {
         $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
     }
@@ -258,7 +258,7 @@ class Assessment extends ModelBase
     /**
      * @param bool $isBaselineLocked
      */
-    public function setIsBaselineLocked(?bool $isBaselineLocked = null)
+    public function setIsBaselineLocked(bool $isBaselineLocked = null)
     {
         $this->setProperty('isBaselineLocked', $isBaselineLocked);
     }
@@ -274,7 +274,7 @@ class Assessment extends ModelBase
     /**
      * @param bool $isTargetLocked
      */
-    public function setIsTargetLocked(?bool $isTargetLocked = null)
+    public function setIsTargetLocked(bool $isTargetLocked = null)
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
     }

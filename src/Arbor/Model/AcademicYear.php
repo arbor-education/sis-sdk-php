@@ -66,7 +66,7 @@ class AcademicYear extends ModelBase
     /**
      * @param string $academicYearName
      */
-    public function setAcademicYearName(?string $academicYearName = null)
+    public function setAcademicYearName(string $academicYearName = null)
     {
         $this->setProperty('academicYearName', $academicYearName);
     }
@@ -82,7 +82,7 @@ class AcademicYear extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -130,7 +130,7 @@ class AcademicYear extends ModelBase
     /**
      * @param int $timetableCycleLength
      */
-    public function setTimetableCycleLength(?int $timetableCycleLength = null)
+    public function setTimetableCycleLength(int $timetableCycleLength = null)
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }

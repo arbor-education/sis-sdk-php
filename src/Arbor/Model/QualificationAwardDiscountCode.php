@@ -74,7 +74,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -90,7 +90,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -106,7 +106,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -138,7 +138,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param string $discountCode
      */
-    public function setDiscountCode(?string $discountCode = null)
+    public function setDiscountCode(string $discountCode = null)
     {
         $this->setProperty('discountCode', $discountCode);
     }
@@ -154,7 +154,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param string $countryCode
      */
-    public function setCountryCode(?string $countryCode = null)
+    public function setCountryCode(string $countryCode = null)
     {
         $this->setProperty('countryCode', $countryCode);
     }
@@ -170,7 +170,7 @@ class QualificationAwardDiscountCode extends ModelBase
     /**
      * @param string $level
      */
-    public function setLevel(?string $level = null)
+    public function setLevel(string $level = null)
     {
         $this->setProperty('level', $level);
     }

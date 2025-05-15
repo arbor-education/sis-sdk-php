@@ -86,7 +86,7 @@ class EmailAddress extends ModelBase
     /**
      * @param string $emailAddressType
      */
-    public function setEmailAddressType(?string $emailAddressType = null)
+    public function setEmailAddressType(string $emailAddressType = null)
     {
         $this->setProperty('emailAddressType', $emailAddressType);
     }
@@ -102,7 +102,7 @@ class EmailAddress extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(?string $emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -118,7 +118,7 @@ class EmailAddress extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -134,7 +134,7 @@ class EmailAddress extends ModelBase
     /**
      * @param bool $role
      */
-    public function setRole(?bool $role = null)
+    public function setRole(bool $role = null)
     {
         $this->setProperty('role', $role);
     }
@@ -150,7 +150,7 @@ class EmailAddress extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree(?bool $free = null)
+    public function setFree(bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -166,7 +166,7 @@ class EmailAddress extends ModelBase
     /**
      * @param bool $disposable
      */
-    public function setDisposable(?bool $disposable = null)
+    public function setDisposable(bool $disposable = null)
     {
         $this->setProperty('disposable', $disposable);
     }

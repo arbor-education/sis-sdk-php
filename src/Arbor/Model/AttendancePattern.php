@@ -70,7 +70,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param string $attendancePatternName
      */
-    public function setAttendancePatternName(?string $attendancePatternName = null)
+    public function setAttendancePatternName(string $attendancePatternName = null)
     {
         $this->setProperty('attendancePatternName', $attendancePatternName);
     }
@@ -134,7 +134,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $isPartTime
      */
-    public function setIsPartTime(?bool $isPartTime = null)
+    public function setIsPartTime(bool $isPartTime = null)
     {
         $this->setProperty('isPartTime', $isPartTime);
     }
@@ -150,7 +150,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $isMorningOnly
      */
-    public function setIsMorningOnly(?bool $isMorningOnly = null)
+    public function setIsMorningOnly(bool $isMorningOnly = null)
     {
         $this->setProperty('isMorningOnly', $isMorningOnly);
     }
@@ -166,7 +166,7 @@ class AttendancePattern extends ModelBase
     /**
      * @param bool $isAfternoonOnly
      */
-    public function setIsAfternoonOnly(?bool $isAfternoonOnly = null)
+    public function setIsAfternoonOnly(bool $isAfternoonOnly = null)
     {
         $this->setProperty('isAfternoonOnly', $isAfternoonOnly);
     }

@@ -72,7 +72,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -136,7 +136,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -168,7 +168,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param int $weighting
      */
-    public function setWeighting(?int $weighting = null)
+    public function setWeighting(int $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }
@@ -184,7 +184,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param float $maxGradePointScaleValue
      */
-    public function setMaxGradePointScaleValue(?float $maxGradePointScaleValue = null)
+    public function setMaxGradePointScaleValue(float $maxGradePointScaleValue = null)
     {
         $this->setProperty('maxGradePointScaleValue', $maxGradePointScaleValue);
     }

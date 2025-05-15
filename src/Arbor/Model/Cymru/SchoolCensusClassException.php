@@ -82,7 +82,7 @@ class SchoolCensusClassException extends ModelBase
     /**
      * @param int $pupilsInCatchment
      */
-    public function setPupilsInCatchment(?int $pupilsInCatchment = null)
+    public function setPupilsInCatchment(int $pupilsInCatchment = null)
     {
         $this->setProperty('pupilsInCatchment', $pupilsInCatchment);
     }
@@ -98,7 +98,7 @@ class SchoolCensusClassException extends ModelBase
     /**
      * @param int $exceptionCount
      */
-    public function setExceptionCount(?int $exceptionCount = null)
+    public function setExceptionCount(int $exceptionCount = null)
     {
         $this->setProperty('exceptionCount', $exceptionCount);
     }

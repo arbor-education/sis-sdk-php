@@ -94,7 +94,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param int $ranking
      */
-    public function setRanking(?int $ranking = null)
+    public function setRanking(int $ranking = null)
     {
         $this->setProperty('ranking', $ranking);
     }

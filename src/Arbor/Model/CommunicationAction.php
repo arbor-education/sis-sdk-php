@@ -80,7 +80,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param string $actionTaken
      */
-    public function setActionTaken(?string $actionTaken = null)
+    public function setActionTaken(string $actionTaken = null)
     {
         $this->setProperty('actionTaken', $actionTaken);
     }

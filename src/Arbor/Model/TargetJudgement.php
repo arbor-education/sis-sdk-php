@@ -64,7 +64,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -80,7 +80,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param string $color
      */
-    public function setColor(?string $color = null)
+    public function setColor(string $color = null)
     {
         $this->setProperty('color', $color);
     }
@@ -96,7 +96,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(?string $type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -112,7 +112,7 @@ class TargetJudgement extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(?int $order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }

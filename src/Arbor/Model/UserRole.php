@@ -74,7 +74,7 @@ class UserRole extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -90,7 +90,7 @@ class UserRole extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -106,7 +106,7 @@ class UserRole extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -122,7 +122,7 @@ class UserRole extends ModelBase
     /**
      * @param string $sectionName
      */
-    public function setSectionName(?string $sectionName = null)
+    public function setSectionName(string $sectionName = null)
     {
         $this->setProperty('sectionName', $sectionName);
     }
@@ -138,7 +138,7 @@ class UserRole extends ModelBase
     /**
      * @param string $functionName
      */
-    public function setFunctionName(?string $functionName = null)
+    public function setFunctionName(string $functionName = null)
     {
         $this->setProperty('functionName', $functionName);
     }
@@ -154,7 +154,7 @@ class UserRole extends ModelBase
     /**
      * @param string $permissionName
      */
-    public function setPermissionName(?string $permissionName = null)
+    public function setPermissionName(string $permissionName = null)
     {
         $this->setProperty('permissionName', $permissionName);
     }
@@ -170,7 +170,7 @@ class UserRole extends ModelBase
     /**
      * @param string $permissionCategory
      */
-    public function setPermissionCategory(?string $permissionCategory = null)
+    public function setPermissionCategory(string $permissionCategory = null)
     {
         $this->setProperty('permissionCategory', $permissionCategory);
     }
@@ -186,7 +186,7 @@ class UserRole extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(?string $description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -202,7 +202,7 @@ class UserRole extends ModelBase
     /**
      * @param bool $isExternalAdministratorRole
      */
-    public function setIsExternalAdministratorRole(?bool $isExternalAdministratorRole = null)
+    public function setIsExternalAdministratorRole(bool $isExternalAdministratorRole = null)
     {
         $this->setProperty('isExternalAdministratorRole', $isExternalAdministratorRole);
     }

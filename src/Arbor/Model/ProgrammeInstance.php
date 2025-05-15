@@ -92,7 +92,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -140,7 +140,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $placeholderQualificationAwardName
      */
-    public function setPlaceholderQualificationAwardName(?string $placeholderQualificationAwardName = null)
+    public function setPlaceholderQualificationAwardName(string $placeholderQualificationAwardName = null)
     {
         $this->setProperty('placeholderQualificationAwardName', $placeholderQualificationAwardName);
     }
@@ -156,7 +156,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $placeholderQualificationAwardReference
      */
-    public function setPlaceholderQualificationAwardReference(?string $placeholderQualificationAwardReference = null)
+    public function setPlaceholderQualificationAwardReference(string $placeholderQualificationAwardReference = null)
     {
         $this->setProperty('placeholderQualificationAwardReference', $placeholderQualificationAwardReference);
     }
@@ -188,7 +188,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $partnerUkprn
      */
-    public function setPartnerUkprn(?string $partnerUkprn = null)
+    public function setPartnerUkprn(string $partnerUkprn = null)
     {
         $this->setProperty('partnerUkprn', $partnerUkprn);
     }
@@ -204,7 +204,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(?int $plannedLearningHours = null)
+    public function setPlannedLearningHours(int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -220,7 +220,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear(?int $plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }

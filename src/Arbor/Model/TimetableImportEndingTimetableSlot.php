@@ -94,7 +94,7 @@ class TimetableImportEndingTimetableSlot extends ModelBase
     /**
      * @param string $scheduleStatus
      */
-    public function setScheduleStatus(?string $scheduleStatus = null)
+    public function setScheduleStatus(string $scheduleStatus = null)
     {
         $this->setProperty('scheduleStatus', $scheduleStatus);
     }

@@ -88,7 +88,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass(?string $fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -104,7 +104,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams(?string $fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -120,7 +120,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass(?string $transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -136,7 +136,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass(?string $conditionClass = null)
+    public function setConditionClass(string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -152,7 +152,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams(?string $conditionParams = null)
+    public function setConditionParams(string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
@@ -168,7 +168,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param int $filterGroupIndex
      */
-    public function setFilterGroupIndex(?int $filterGroupIndex = null)
+    public function setFilterGroupIndex(int $filterGroupIndex = null)
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
@@ -184,7 +184,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param bool $isOutcome
      */
-    public function setIsOutcome(?bool $isOutcome = null)
+    public function setIsOutcome(bool $isOutcome = null)
     {
         $this->setProperty('isOutcome', $isOutcome);
     }

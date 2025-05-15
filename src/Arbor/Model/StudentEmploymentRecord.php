@@ -134,7 +134,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param string $hoursPerWeek
      */
-    public function setHoursPerWeek(?string $hoursPerWeek = null)
+    public function setHoursPerWeek(string $hoursPerWeek = null)
     {
         $this->setProperty('hoursPerWeek', $hoursPerWeek);
     }

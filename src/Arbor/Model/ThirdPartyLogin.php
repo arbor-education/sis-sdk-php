@@ -84,7 +84,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername(?string $username = null)
+    public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -100,7 +100,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param string $password
      */
-    public function setPassword(?string $password = null)
+    public function setPassword(string $password = null)
     {
         $this->setProperty('password', $password);
     }

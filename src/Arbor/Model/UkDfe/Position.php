@@ -96,7 +96,7 @@ class Position extends ModelBase
     /**
      * @param string $workforceCensusRoleIdentifier
      */
-    public function setWorkforceCensusRoleIdentifier(?string $workforceCensusRoleIdentifier = null)
+    public function setWorkforceCensusRoleIdentifier(string $workforceCensusRoleIdentifier = null)
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }

@@ -84,7 +84,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuideTitle
      */
-    public function setStudyGuideTitle(?string $studyGuideTitle = null)
+    public function setStudyGuideTitle(string $studyGuideTitle = null)
     {
         $this->setProperty('studyGuideTitle', $studyGuideTitle);
     }
@@ -100,7 +100,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuidePublisherName
      */
-    public function setStudyGuidePublisherName(?string $studyGuidePublisherName = null)
+    public function setStudyGuidePublisherName(string $studyGuidePublisherName = null)
     {
         $this->setProperty('studyGuidePublisherName', $studyGuidePublisherName);
     }
@@ -116,7 +116,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuidePublisherIsbn
      */
-    public function setStudyGuidePublisherIsbn(?string $studyGuidePublisherIsbn = null)
+    public function setStudyGuidePublisherIsbn(string $studyGuidePublisherIsbn = null)
     {
         $this->setProperty('studyGuidePublisherIsbn', $studyGuidePublisherIsbn);
     }
@@ -132,7 +132,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuidePublisherUrl
      */
-    public function setStudyGuidePublisherUrl(?string $studyGuidePublisherUrl = null)
+    public function setStudyGuidePublisherUrl(string $studyGuidePublisherUrl = null)
     {
         $this->setProperty('studyGuidePublisherUrl', $studyGuidePublisherUrl);
     }
@@ -148,7 +148,7 @@ class QualificationStudyGuide extends ModelBase
     /**
      * @param string $studyGuideMediumType
      */
-    public function setStudyGuideMediumType(?string $studyGuideMediumType = null)
+    public function setStudyGuideMediumType(string $studyGuideMediumType = null)
     {
         $this->setProperty('studyGuideMediumType', $studyGuideMediumType);
     }

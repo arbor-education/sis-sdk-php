@@ -62,7 +62,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCode
      */
-    public function setAuthorityCode(?string $authorityCode = null)
+    public function setAuthorityCode(string $authorityCode = null)
     {
         $this->setProperty('authorityCode', $authorityCode);
     }
@@ -78,7 +78,7 @@ class LocalAuthority extends ModelBase
     /**
      * @param string $authorityCodePre2011
      */
-    public function setAuthorityCodePre2011(?string $authorityCodePre2011 = null)
+    public function setAuthorityCodePre2011(string $authorityCodePre2011 = null)
     {
         $this->setProperty('authorityCodePre2011', $authorityCodePre2011);
     }

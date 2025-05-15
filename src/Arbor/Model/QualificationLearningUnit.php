@@ -74,7 +74,7 @@ class QualificationLearningUnit extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -90,7 +90,7 @@ class QualificationLearningUnit extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -106,7 +106,7 @@ class QualificationLearningUnit extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -171,7 +171,7 @@ class QualificationLearningUnit extends ModelBase
     /**
      * @param string $learningUnitIdentifier
      */
-    public function setLearningUnitIdentifier(?string $learningUnitIdentifier = null)
+    public function setLearningUnitIdentifier(string $learningUnitIdentifier = null)
     {
         $this->setProperty('learningUnitIdentifier', $learningUnitIdentifier);
     }
@@ -187,7 +187,7 @@ class QualificationLearningUnit extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(?string $title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -203,7 +203,7 @@ class QualificationLearningUnit extends ModelBase
     /**
      * @param bool $isLinearQualification
      */
-    public function setIsLinearQualification(?bool $isLinearQualification = null)
+    public function setIsLinearQualification(bool $isLinearQualification = null)
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }

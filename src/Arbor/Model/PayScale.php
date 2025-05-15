@@ -72,7 +72,7 @@ class PayScale extends ModelBase
     /**
      * @param string $payScaleCode
      */
-    public function setPayScaleCode(?string $payScaleCode = null)
+    public function setPayScaleCode(string $payScaleCode = null)
     {
         $this->setProperty('payScaleCode', $payScaleCode);
     }
@@ -88,7 +88,7 @@ class PayScale extends ModelBase
     /**
      * @param string $payScaleName
      */
-    public function setPayScaleName(?string $payScaleName = null)
+    public function setPayScaleName(string $payScaleName = null)
     {
         $this->setProperty('payScaleName', $payScaleName);
     }
@@ -136,7 +136,7 @@ class PayScale extends ModelBase
     /**
      * @param string $minimumSalary
      */
-    public function setMinimumSalary(?string $minimumSalary = null)
+    public function setMinimumSalary(string $minimumSalary = null)
     {
         $this->setProperty('minimumSalary', $minimumSalary);
     }
@@ -152,7 +152,7 @@ class PayScale extends ModelBase
     /**
      * @param string $maximumSalary
      */
-    public function setMaximumSalary(?string $maximumSalary = null)
+    public function setMaximumSalary(string $maximumSalary = null)
     {
         $this->setProperty('maximumSalary', $maximumSalary);
     }
@@ -168,7 +168,7 @@ class PayScale extends ModelBase
     /**
      * @param string $regionalPaySpine
      */
-    public function setRegionalPaySpine(?string $regionalPaySpine = null)
+    public function setRegionalPaySpine(string $regionalPaySpine = null)
     {
         $this->setProperty('regionalPaySpine', $regionalPaySpine);
     }

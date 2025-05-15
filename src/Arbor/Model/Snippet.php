@@ -68,7 +68,7 @@ class Snippet extends ModelBase
     /**
      * @param string $snippetName
      */
-    public function setSnippetName(?string $snippetName = null)
+    public function setSnippetName(string $snippetName = null)
     {
         $this->setProperty('snippetName', $snippetName);
     }
@@ -84,7 +84,7 @@ class Snippet extends ModelBase
     /**
      * @param string $snippetText
      */
-    public function setSnippetText(?string $snippetText = null)
+    public function setSnippetText(string $snippetText = null)
     {
         $this->setProperty('snippetText', $snippetText);
     }
@@ -100,7 +100,7 @@ class Snippet extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory(?string $category = null)
+    public function setCategory(string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -148,7 +148,7 @@ class Snippet extends ModelBase
     /**
      * @param bool $isShared
      */
-    public function setIsShared(?bool $isShared = null)
+    public function setIsShared(bool $isShared = null)
     {
         $this->setProperty('isShared', $isShared);
     }

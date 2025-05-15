@@ -76,7 +76,7 @@ class Language extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class Language extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class Language extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -124,7 +124,7 @@ class Language extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(?string $label = null)
+    public function setLabel(string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -140,7 +140,7 @@ class Language extends ModelBase
     /**
      * @param string $iso6391Alpha2
      */
-    public function setIso6391Alpha2(?string $iso6391Alpha2 = null)
+    public function setIso6391Alpha2(string $iso6391Alpha2 = null)
     {
         $this->setProperty('iso6391Alpha2', $iso6391Alpha2);
     }
@@ -156,7 +156,7 @@ class Language extends ModelBase
     /**
      * @param string $iso6392Alpha3
      */
-    public function setIso6392Alpha3(?string $iso6392Alpha3 = null)
+    public function setIso6392Alpha3(string $iso6392Alpha3 = null)
     {
         $this->setProperty('iso6392Alpha3', $iso6392Alpha3);
     }
@@ -172,7 +172,7 @@ class Language extends ModelBase
     /**
      * @param string $iso6392Alpha3Terminology
      */
-    public function setIso6392Alpha3Terminology(?string $iso6392Alpha3Terminology = null)
+    public function setIso6392Alpha3Terminology(string $iso6392Alpha3Terminology = null)
     {
         $this->setProperty('iso6392Alpha3Terminology', $iso6392Alpha3Terminology);
     }
@@ -188,7 +188,7 @@ class Language extends ModelBase
     /**
      * @param string $parentCode
      */
-    public function setParentCode(?string $parentCode = null)
+    public function setParentCode(string $parentCode = null)
     {
         $this->setProperty('parentCode', $parentCode);
     }
@@ -204,7 +204,7 @@ class Language extends ModelBase
     /**
      * @param string $d00011Alpha3
      */
-    public function setD00011Alpha3(?string $d00011Alpha3 = null)
+    public function setD00011Alpha3(string $d00011Alpha3 = null)
     {
         $this->setProperty('d00011Alpha3', $d00011Alpha3);
     }
@@ -220,7 +220,7 @@ class Language extends ModelBase
     /**
      * @param string $d00011Alpha4
      */
-    public function setD00011Alpha4(?string $d00011Alpha4 = null)
+    public function setD00011Alpha4(string $d00011Alpha4 = null)
     {
         $this->setProperty('d00011Alpha4', $d00011Alpha4);
     }

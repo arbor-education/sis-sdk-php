@@ -106,7 +106,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $accountHolderName
      */
-    public function setAccountHolderName(?string $accountHolderName = null)
+    public function setAccountHolderName(string $accountHolderName = null)
     {
         $this->setProperty('accountHolderName', $accountHolderName);
     }
@@ -122,7 +122,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $accountNumber
      */
-    public function setAccountNumber(?string $accountNumber = null)
+    public function setAccountNumber(string $accountNumber = null)
     {
         $this->setProperty('accountNumber', $accountNumber);
     }
@@ -138,7 +138,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $sortCode
      */
-    public function setSortCode(?string $sortCode = null)
+    public function setSortCode(string $sortCode = null)
     {
         $this->setProperty('sortCode', $sortCode);
     }
@@ -154,7 +154,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $swiftCode
      */
-    public function setSwiftCode(?string $swiftCode = null)
+    public function setSwiftCode(string $swiftCode = null)
     {
         $this->setProperty('swiftCode', $swiftCode);
     }
@@ -170,7 +170,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $iban
      */
-    public function setIban(?string $iban = null)
+    public function setIban(string $iban = null)
     {
         $this->setProperty('iban', $iban);
     }
@@ -186,7 +186,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $bacsUserNumber
      */
-    public function setBacsUserNumber(?string $bacsUserNumber = null)
+    public function setBacsUserNumber(string $bacsUserNumber = null)
     {
         $this->setProperty('bacsUserNumber', $bacsUserNumber);
     }
@@ -202,7 +202,7 @@ class BankAccount extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled(?bool $enabled = null)
+    public function setEnabled(bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }

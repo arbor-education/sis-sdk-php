@@ -82,7 +82,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(?string $code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -98,7 +98,7 @@ class Ethnicity extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(?bool $active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -114,7 +114,7 @@ class Ethnicity extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(?int $dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -130,7 +130,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $ethnicityName
      */
-    public function setEthnicityName(?string $ethnicityName = null)
+    public function setEthnicityName(string $ethnicityName = null)
     {
         $this->setProperty('ethnicityName', $ethnicityName);
     }
@@ -162,7 +162,7 @@ class Ethnicity extends ModelBase
     /**
      * @param bool $appliesToStudents
      */
-    public function setAppliesToStudents(?bool $appliesToStudents = null)
+    public function setAppliesToStudents(bool $appliesToStudents = null)
     {
         $this->setProperty('appliesToStudents', $appliesToStudents);
     }
@@ -178,7 +178,7 @@ class Ethnicity extends ModelBase
     /**
      * @param bool $appliesToStaff
      */
-    public function setAppliesToStaff(?bool $appliesToStaff = null)
+    public function setAppliesToStaff(bool $appliesToStaff = null)
     {
         $this->setProperty('appliesToStaff', $appliesToStaff);
     }
@@ -194,7 +194,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(?string $notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -210,7 +210,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $exportCode
      */
-    public function setExportCode(?string $exportCode = null)
+    public function setExportCode(string $exportCode = null)
     {
         $this->setProperty('exportCode', $exportCode);
     }
@@ -226,7 +226,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $dfesMainCode
      */
-    public function setDfesMainCode(?string $dfesMainCode = null)
+    public function setDfesMainCode(string $dfesMainCode = null)
     {
         $this->setProperty('dfesMainCode', $dfesMainCode);
     }
@@ -242,7 +242,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00005
      */
-    public function setD00005(?string $d00005 = null)
+    public function setD00005(string $d00005 = null)
     {
         $this->setProperty('d00005', $d00005);
     }
@@ -258,7 +258,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $onsCode
      */
-    public function setOnsCode(?string $onsCode = null)
+    public function setOnsCode(string $onsCode = null)
     {
         $this->setProperty('onsCode', $onsCode);
     }
@@ -274,7 +274,7 @@ class Ethnicity extends ModelBase
     /**
      * @param string $d00250
      */
-    public function setD00250(?string $d00250 = null)
+    public function setD00250(string $d00250 = null)
     {
         $this->setProperty('d00250', $d00250);
     }

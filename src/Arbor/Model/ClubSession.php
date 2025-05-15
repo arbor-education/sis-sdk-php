@@ -104,7 +104,7 @@ class ClubSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(?string $locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -152,7 +152,7 @@ class ClubSession extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(?string $name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

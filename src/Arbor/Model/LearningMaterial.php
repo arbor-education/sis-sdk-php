@@ -86,7 +86,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(?string $title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -102,7 +102,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(?string $summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -118,7 +118,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $url
      */
-    public function setUrl(?string $url = null)
+    public function setUrl(string $url = null)
     {
         $this->setProperty('url', $url);
     }
@@ -134,7 +134,7 @@ class LearningMaterial extends ModelBase
     /**
      * @param string $editUrl
      */
-    public function setEditUrl(?string $editUrl = null)
+    public function setEditUrl(string $editUrl = null)
     {
         $this->setProperty('editUrl', $editUrl);
     }
