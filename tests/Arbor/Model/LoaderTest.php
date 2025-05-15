@@ -20,8 +20,9 @@ class LoaderTest extends TestCase
     /**
      * @param string $dirName
      * @dataProvider directoryProvider
+     * @covers Arbor\Model
      */
-    public function testLoadModels($dirName)
+    public function testLoadModels(string $dirName = '')
     {
         $files = $this->loadFiles($this->basePath . DIRECTORY_SEPARATOR . $dirName);
         $namespace = $dirName === '' ? '\\Arbor\\Model' : '\\Arbor\Model\\' . $dirName;

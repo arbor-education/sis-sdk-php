@@ -8,7 +8,10 @@
          beStrictAboutCoverageMetadata="true"
          beStrictAboutOutputDuringTests="true"
          failOnRisky="true"
-         failOnWarning="true">
+         failOnWarning="true"
+         failOnDeprecation="true"
+         failOnSkipped="true"
+         failOnPhpunitDeprecation="false">
     <testsuites>
         <testsuite name="default">
             <directory>tests</directory>
