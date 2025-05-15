@@ -8,14 +8,17 @@
          beStrictAboutCoverageMetadata="true"
          beStrictAboutOutputDuringTests="true"
          failOnRisky="true"
-         failOnWarning="true">
+         failOnWarning="true"
+         failOnDeprecation ="true"
+         failOnSkipped ="true"
+         failOnPhpunitDeprecation="true">
     <testsuites>
         <testsuite name="default">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
 
-    <source restrictDeprecations="false" restrictNotices="true" restrictWarnings="true">
+    <source restrictDeprecations="true" restrictNotices="true" restrictWarnings="true">
         <include>
             <directory>src</directory>
         </include>
