@@ -1,6 +1,6 @@
 # Arbor SDK
 
-Arbor Education SDK library.
+Arbor Education SDK library
 
 ## Introduction
 
