@@ -13,14 +13,14 @@ interface GatewayInterface
      * @param ModelBase $model
      * @return ModelBase
      */
-    public function create(ModelBase $model);
+    public function create(ModelBase $model): ModelBase;
 
     /**
      * @param string $resource
      * @param string $id
      * @return ModelBase
      */
-    public function retrieve($resource, $id);
+    public function retrieve(string $resource, string $id): ModelBase;
 
     /**
      * @param ModelBase $model
@@ -34,21 +34,21 @@ interface GatewayInterface
 
     /**
      * @param $resource
-     * @return mixed
+     * @return void
      */
-    public function describe($resource);
+    public function describe($resource): void;
 
     /**
-     * @param Query
+     * @param Query $query
      * @return Collection
      */
-    public function query($query);
+    public function query(Query $query): Collection;
 
     /**
      * @param ModelBase $model
      * @return ModelBase;
      */
-    public function refresh($model);
+    public function refresh(ModelBase $model): ModelBase;
 
     /**
      * @param string $resourceType
@@ -56,7 +56,7 @@ interface GatewayInterface
      * @param int $toRevision
      * @return Change[]
      */
-    public function getChanges($resourceType, $fromRevision, $toRevision);
+    public function getChanges(string $resourceType, int $fromRevision, int $toRevision): array;
 
     /**
      * @param string $resource
@@ -69,10 +69,10 @@ interface GatewayInterface
     /**
      * @param string $applicationId
      */
-    public function setApplicationId($applicationId);
+    public function setApplicationId(string $applicationId);
 
     /**
      * @return string
      */
-    public function getApplicationId();
+    public function getApplicationId(): string;
 }

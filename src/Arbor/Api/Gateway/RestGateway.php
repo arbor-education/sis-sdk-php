@@ -188,7 +188,7 @@ class RestGateway implements GatewayInterface
     /**
      * @return string
      */
-    public function getApplicationId()
+    public function getApplicationId(): string
     {
         return $this->_applicationId;
     }
@@ -196,7 +196,7 @@ class RestGateway implements GatewayInterface
     /**
      * @param string $applicationId
      */
-    public function setApplicationId($applicationId)
+    public function setApplicationId(string $applicationId)
     {
         $this->_applicationId = $applicationId;
     }
@@ -204,9 +204,11 @@ class RestGateway implements GatewayInterface
     /**
      * @param ModelBase $model
      * @return ModelBase
-     * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException
+     * @throws Exception
+     * @throws ServerErrorException
+     * @throws \Arbor\Model\Exception
      */
-    public function create(ModelBase $model)
+    public function create(ModelBase $model): ModelBase
     {
         $pluralResource = self::getPluralizeFilter()->filter($model->getResourceType());
         $resource = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
@@ -338,7 +340,7 @@ class RestGateway implements GatewayInterface
      * @return ModelBase
      * @throws Exception|\RuntimeException
      */
-    public function refresh($model)
+    public function refresh(ModelBase $model): ModelBase
     {
         $url = $model->getResourceUrl();
         $response = $this->getHttpClient()->get($url);
@@ -362,7 +364,7 @@ class RestGateway implements GatewayInterface
      * @return \Arbor\Model\ModelBase
      * @throws Exception|ResourceNotFoundException|ServerErrorException|\RuntimeException|\Arbor\Model\Exception
      */
-    public function retrieve($resource, $id)
+    public function retrieve(string $resource, string $id): ModelBase
     {
         $resourceSegment = strtolower(self::getCamelToDashFilter()->filter(self::getPluralizeFilter()->filter($resource)));
 
@@ -494,7 +496,7 @@ class RestGateway implements GatewayInterface
      * @return array
      * @throws \RuntimeException
      */
-    public function delete(ModelBase $model)
+    public function delete(ModelBase $model): array
     {
         $response = $this->getHttpClient()->delete($model->getResourceUrl());
 
@@ -505,7 +507,7 @@ class RestGateway implements GatewayInterface
      * @param $resource
      * @return void
      */
-    public function describe($resource)
+    public function describe($resource): void
     {
         // TODO: Implement describe() method.
     }
@@ -514,10 +516,11 @@ class RestGateway implements GatewayInterface
      * @param string $resourceType
      * @param int $fromRevision
      * @param int $toRevision
-     * @return \Arbor\ChangeLog\Change[]
-     * @throws ResourceNotFoundException|ServerErrorException|\RuntimeException
+     * @return Change[]
+     * @throws ServerErrorException
+     * @throws \Arbor\Model\Exception
      */
-    public function getChanges($resourceType, $fromRevision = 0, $toRevision = -1)
+    public function getChanges(string $resourceType, int $fromRevision, int $toRevision): array
     {
         $pluralResource = self::getPluralizeFilter()->filter($resourceType);
         $resourceSegment = strtolower(self::getCamelToDashFilter()->filter($pluralResource));
@@ -555,7 +558,7 @@ class RestGateway implements GatewayInterface
      * @return \Arbor\Model\Collection
      * @throws ServerErrorException|ResourceNotFoundException|\RuntimeException|Exception
      */
-    public function query($query)
+    public function query($query): Collection
     {
         $pluralResource = self::getPluralizeFilter()->filter($query->getResourceType());
         $resourceRoot = lcfirst($pluralResource);
@@ -746,7 +749,6 @@ class RestGateway implements GatewayInterface
      */
     private function createRetryHandler()
     {
-        /** @noinspection PhpUnusedParameterInspection */
         return function ($retries, Request $request, Response $response = null, RequestException $exception = null) {
             if ($retries >= self::MAX_RETRIES) {
                 return false;
