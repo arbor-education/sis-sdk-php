@@ -26,8 +26,7 @@ class PsrRestGateway implements GatewayInterface
         protected Hydrator        $hydrator,
         protected CamelCaseToDash $camelCaseToDash,
         protected                 $pluralizeFilter
-    )
-    {
+    ) {
     }
 
     public function getApplicationId(): string
@@ -40,14 +39,6 @@ class PsrRestGateway implements GatewayInterface
         $this->applicationId = $applicationId;
         $this->httpClient->setApplicationId($applicationId);
         return $this;
-    }
-
-    private function buildUrl(string $resourceSegment, $id = null): string
-    {
-        if ($id !== null) {
-            return sprintf('/rest-v2/%s/%s', $resourceSegment, $id);
-        }
-        return sprintf('/rest-v2/%s', $resourceSegment);
     }
 
     /**
@@ -64,7 +55,6 @@ class PsrRestGateway implements GatewayInterface
         $arrayRepresentation = $this->hydrator->extractArray($model);
         $resourceRoot = $this->getResourceRoot($model->getResourceType());
         $options = ['body' => ['request' => [$resourceRoot => $arrayRepresentation]]];
-
 
         $responseRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_POST, $this->buildUrl($resource), $options);
 
@@ -175,10 +165,7 @@ class PsrRestGateway implements GatewayInterface
                 continue;
             }
 
-            /** @var ModelBase $model */
-            $model = $createCollection[$key];
-            $resultingModelRepresentation = $result[$resourceRoot];
-            $this->hydrator->hydrateModel($model, $resultingModelRepresentation);
+            $this->hydrator->hydrateModel($createCollection[$key], $result[$resourceRoot]);
         }
 
         return $createCollection;
@@ -193,18 +180,15 @@ class PsrRestGateway implements GatewayInterface
      */
     public function refresh(ModelBase $model): ModelBase
     {
-        $url = $model->getResourceUrl();
-        $arrayRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_GET, $url);
+        $arrayRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_GET, $model->getResourceUrl());
 
         $resourceRoot = $this->getResourceRoot($model->getResourceType());
-
-        if (array_key_exists($resourceRoot, $arrayRepresentation)) {
-            $this->hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
-
-            return $model;
+        if (false === array_key_exists($resourceRoot, $arrayRepresentation)) {
+            throw new Exception("Resource {$model->getResourceType()} with ID {$model->getResourceId()} could not be retrieved from URL: " . $model->getResourceUrl());
         }
 
-        throw new Exception("Resource {$model->getResourceType()} with ID {$model->getResourceId()} could not be retrieved from URL: $url");
+        $this->hydrator->hydrateModel($model, $arrayRepresentation[$resourceRoot]);
+        return $model;
     }
 
     /**
@@ -217,10 +201,11 @@ class PsrRestGateway implements GatewayInterface
      */
     public function retrieve(string $resource, string $id): ModelBase
     {
-        $resourceSegment = $this->getResource($resource);
-
-        $url = $this->buildUrl($resourceSegment, $id);
-        $arrayRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_GET, $url);
+        $url = $this->buildUrl($this->getResource($resource), $id);
+        $arrayRepresentation = $this->httpClient->sendRequest(
+            self::HTTP_METHOD_GET,
+            $url
+        );
         $resourceRoot = $this->getResourceRoot($resource);
 
         if (!array_key_exists($resourceRoot, $arrayRepresentation)) {
@@ -243,7 +228,7 @@ class PsrRestGateway implements GatewayInterface
      * @throws ServerErrorException
      * @throws \Arbor\Model\Exception
      */
-    public function findOne(string $resourceType, array $propertyFilters, array $userTags)
+    public function findOne(string $resourceType, array $propertyFilters, array $userTags): mixed
     {
         if (0 === count($propertyFilters) && 0 === count($userTags)) {
             return null;
@@ -293,11 +278,7 @@ class PsrRestGateway implements GatewayInterface
         // ?filter.propertyName.equals=propertyValue
     }
 
-    /**
-     * @param string $resourceType
-     * @return ModelBase
-     */
-    public function instantiateModel(string $resourceType): ModelBase
+    protected function instantiateModel(string $resourceType): ModelBase
     {
         $modelClass = "Arbor\\Model\\$resourceType";
         $modelClassFile = __DIR__ . "/../../Model/$resourceType.php";
@@ -409,14 +390,17 @@ class PsrRestGateway implements GatewayInterface
      * @throws ServerErrorException
      * @throws \Arbor\Model\Exception
      */
-    public function query($query): Collection
+    public function query(Query $query): Collection
     {
         $pluralResource = $this->pluralizeResource($query->getResourceType());
         $resourceRoot = $this->getResourceRoot($pluralResource);
-        $url = $this->buildUrl($pluralResource);
         $options = ['query' => $query->getQueryOptions()];
 
-        $arrayRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_GET, $url, $options);
+        $arrayRepresentation = $this->httpClient->sendRequest(
+            self::HTTP_METHOD_GET,
+            $this->buildUrl($pluralResource),
+            $options
+        );
 
         if (array_key_exists($resourceRoot, $arrayRepresentation)) {
             return $this->hydrateModel($arrayRepresentation[$resourceRoot], $query->getResourceType());
@@ -495,6 +479,14 @@ class PsrRestGateway implements GatewayInterface
         }
 
         return $difference;
+    }
+
+    protected function buildUrl(string $resourceSegment, $id = null): string
+    {
+        if ($id !== null) {
+            return sprintf('/rest-v2/%s/%s', $resourceSegment, $id);
+        }
+        return sprintf('/rest-v2/%s', $resourceSegment);
     }
 
     private function getResource(string $resourceType): string

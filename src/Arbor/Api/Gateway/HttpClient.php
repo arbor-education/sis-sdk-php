@@ -91,15 +91,15 @@ class HttpClient
     }
 
     /**
-     * @param $method
-     * @param $url
+     * @param string $method
+     * @param string $url
      * @param array $options
      * @return array
      * @throws ServerErrorException
      */
-    public function sendRequest($method, $url, array $options = []): array
+    public function sendRequest(string $method, string $url, array $options = []): array
     {
-        list($request, $message, $code, $requestPayload) = $this->prepareRequest($method, $url, $options);
+        list($request, $message, $requestPayload) = $this->prepareRequest($method, $url, $options);
 
         try {
             $response = $this->httpClient->sendRequest($request);
@@ -141,59 +141,32 @@ class HttpClient
             $message = sprintf("Server threw: %s with message: %s URL=%s", $serverException, $serverMessage, $url);
         }
 
-        switch ($code) {
-            case 200:
-            case 201:
-            case 204:
-            case 422:
-                // Request succeeded or failed due to validation error(s), this is not an exception (return the response)
-                return $responsePayload ?? [];
-            case 404:
-                $exception = new ResourceNotFoundException($message);
-                break;
-            default:
-                $exception = new ServerErrorException($message, 0, null, $requestPayload, $responsePayload);
-                if (null !== $serverException) {
-                    $exception->setServerExceptionClass($serverException);
-                    $exception->setServerExceptionMessage($serverMessage);
-                    $exception->setServerExceptionTrace($serverTrace);
-                }
-                break;
-        }
-
-        throw $exception;
+        return match ($code) {
+            200, 201, 204, 422 => $responsePayload ?? [],
+            404 => throw new ResourceNotFoundException($message ?? 'Not Found'),
+            default => throw $this->getErrorException($message, $requestPayload, $responsePayload, $serverException, $serverMessage, $serverTrace),
+        };
     }
 
-    private function isResponseValid(int $code): bool
+    protected function isResponseValid(int $code): bool
     {
-        $validCodes = [200, 201, 204, 422];
-
-        return in_array($code, $validCodes);
+        return in_array($code, [200, 201, 204, 422]);
     }
 
-    /**
-     * @param $method
-     * @param $url
-     * @param array $options
-     * @return array
-     */
-    private function prepareRequest($method, $url, array $options): array
+    protected function prepareRequest(string $method, string $url, array $options): array
     {
         // NOTE: Uncomment this line to allow you to trigger a debug session in the Mis project
         // $url .= '?XDEBUG_SESSION_START=0';
-        $request = $this->requestFactory->createRequest(mb_strtoupper($method), $this->getBaseUrl() . $url);
+        $request = $this->requestFactory->createRequest(mb_strtoupper($method), $this->baseUrl . $url);
 
         // Set a generic error message
         $message = 'API Error';
-        $code = 0;
 
         // Adding user agent string if it's not passed
-        if (!isset($options['headers']['User-Agent'])) {
-            $options['headers']['User-Agent'] = $this->getUserAgent();
-        }
+        $options['headers']['User-Agent'] = $options['headers']['User-Agent'] ?? $this->userAgent;
 
         // Adding applicationId headers if it's passed.
-        if (!empty($this->applicationId)) {
+        if ($this->applicationId) {
             $options['headers']['x-mis-application-id'] = $this->applicationId;
         }
 
@@ -208,15 +181,24 @@ class HttpClient
             $request = $request->withHeader('Authorization', $header);
         }
 
-        $requestPayload = null;
+        $requestPayload = $options['body'] ?? null;
 
-        if (isset($options['body'])) {
-            $requestPayload = $options['body'];
-            if (is_array($options['body'])) {
-                $bodyStream = $this->streamFactory->createStream(json_encode($options['body']));
-                $request->withBody($bodyStream);
-            }
+        if (is_array($requestPayload)) {
+            $bodyStream = $this->streamFactory->createStream(json_encode($requestPayload));
+            $request = $request->withBody($bodyStream);
         }
-        return array($request, $message, $code, $requestPayload);
+
+        return array($request, $message, $requestPayload);
+    }
+
+    protected function getErrorException($message, $requestPayload, $responsePayload, $serverException, $serverMessage, $serverTrace): ServerErrorException
+    {
+        $exception = new ServerErrorException($message, 0, null, $requestPayload, $responsePayload);
+        if (null !== $serverException) {
+            $exception->setServerExceptionClass($serverException);
+            $exception->setServerExceptionMessage($serverMessage);
+            $exception->setServerExceptionTrace($serverTrace);
+        }
+        return $exception;
     }
 }
