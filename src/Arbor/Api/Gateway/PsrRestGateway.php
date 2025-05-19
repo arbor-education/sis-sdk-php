@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arbor\Api\Gateway;
 
 use Arbor\Api\ServerErrorException;
@@ -278,7 +280,7 @@ class PsrRestGateway implements GatewayInterface
         // ?filter.propertyName.equals=propertyValue
     }
 
-    protected function instantiateModel(string $resourceType): ModelBase
+    public function instantiateModel(string $resourceType): ModelBase
     {
         $modelClass = "Arbor\\Model\\$resourceType";
         $modelClassFile = __DIR__ . "/../../Model/$resourceType.php";

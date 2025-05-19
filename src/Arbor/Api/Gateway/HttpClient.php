@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arbor\Api\Gateway;
 
 use Arbor\Api\ResourceNotFoundException;
