@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Arbor\Api\Gateway;
+namespace Arbor\Api\Gateway\HttpClient;
 
-use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use Http\Discovery\Psr17FactoryDiscovery;

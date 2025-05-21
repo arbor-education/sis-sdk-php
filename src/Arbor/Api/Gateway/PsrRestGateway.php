@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Arbor\Api\Gateway;
 
+use Arbor\Api\Gateway\HttpClient\HttpClient;
 use Arbor\Api\ServerErrorException;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
+use Arbor\Filter\PluralizeFilter;
 use Arbor\Model\Collection;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
@@ -27,7 +29,7 @@ class PsrRestGateway implements GatewayInterface
         protected HttpClient      $httpClient,
         protected Hydrator        $hydrator,
         protected CamelCaseToDash $camelCaseToDash,
-        protected                 $pluralizeFilter
+        protected PluralizeFilter $pluralizeFilter
     ) {
     }
 

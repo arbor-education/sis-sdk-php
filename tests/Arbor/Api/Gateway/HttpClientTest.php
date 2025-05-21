@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Arbor\Test\Arbor\Api\Gateway;
 
-use Arbor\Api\Gateway\HttpClient;
+use Arbor\Api\Gateway\HttpClient\HttpClient;
+use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
@@ -45,7 +44,7 @@ class HttpClientTest extends TestCase
      */
     public function testReturnsGetRequestSuccess()
     {
-        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+        $typedRequestMock = $this->createMock(TypedRequest::class);
 
         $this->responseMock
             ->method('getBody')
@@ -77,7 +76,7 @@ class HttpClientTest extends TestCase
      */
     public function testReturnsPayloadForSuccessfulPostRequest()
     {
-        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+        $typedRequestMock = $this->createMock(TypedRequest::class);
 
         $this->responseMock
             ->method('getStatusCode')
@@ -109,7 +108,7 @@ class HttpClientTest extends TestCase
      */
     public function testThrowsExceptionForMissingResource()
     {
-        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+        $typedRequestMock = $this->createMock(TypedRequest::class);
 
         $this->responseMock
             ->method('getStatusCode')
@@ -141,7 +140,7 @@ class HttpClientTest extends TestCase
      */
     public function testThrowsExceptionForInvalidResponseCode()
     {
-        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+        $typedRequestMock = $this->createMock(TypedRequest::class);
 
         $this->responseMock
             ->method('getStatusCode')
@@ -173,7 +172,7 @@ class HttpClientTest extends TestCase
      */
     public function testHandlesEmptyBodyForNoContentResponse()
     {
-        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+        $typedRequestMock = $this->createMock(TypedRequest::class);
 
         $this->responseMock
             ->method('getStatusCode')
