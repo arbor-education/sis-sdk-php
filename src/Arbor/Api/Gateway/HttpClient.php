@@ -4,31 +4,30 @@ declare(strict_types=1);
 
 namespace Arbor\Api\Gateway;
 
+use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use RuntimeException;
 
 class HttpClient
 {
     public function __construct(
+        private readonly TypedRequestFactory $typedRequestFactory,
         private ?ClientInterface         $httpClient = null,
-        private ?RequestFactoryInterface $requestFactory = null,
         private ?StreamFactoryInterface  $streamFactory = null,
         protected string                 $baseUrl = '',
         protected string                 $authUser = '',
         protected string                 $authPassword = '',
         protected string                 $userAgent = 'Arbor PHP SDK',
         protected ?string                $applicationId = null
-    )
-    {
+    ) {
         $this->httpClient = $httpClient ?: Psr18ClientDiscovery::find();
-        $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = $streamFactory ?: Psr17FactoryDiscovery::findStreamFactory();
         $this->applicationId = $applicationId ?: null;
 
@@ -101,6 +100,7 @@ class HttpClient
      */
     public function sendRequest(string $method, string $url, array $options = []): array
     {
+        /** @var RequestInterface $request */
         list($request, $message, $requestPayload) = $this->prepareRequest($method, $url, $options);
 
         try {
@@ -159,7 +159,7 @@ class HttpClient
     {
         // NOTE: Uncomment this line to allow you to trigger a debug session in the Mis project
         // $url .= '?XDEBUG_SESSION_START=0';
-        $request = $this->requestFactory->createRequest(mb_strtoupper($method), $this->baseUrl . $url);
+        $request = $this->typedRequestFactory->createRequest($method, $this->baseUrl . $url);
 
         // Set a generic error message
         $message = 'API Error';
@@ -190,7 +190,7 @@ class HttpClient
             $request = $request->withBody($bodyStream);
         }
 
-        return array($request, $message, $requestPayload);
+        return [$request, $message, $requestPayload];
     }
 
     protected function getErrorException($message, $requestPayload, $responsePayload, $serverException, $serverMessage, $serverTrace): ServerErrorException

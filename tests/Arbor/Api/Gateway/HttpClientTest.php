@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arbor\Test\Arbor\Api\Gateway;
 
 use Arbor\Api\Gateway\HttpClient;
+use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use PHPUnit\Framework\MockObject\Exception;
@@ -20,8 +23,8 @@ use Psr\Http\Message\StreamInterface;
 class HttpClientTest extends TestCase
 {
     private ClientInterface $httpClientMock;
-    private RequestFactoryInterface $requestFactoryMock;
     private ResponseInterface $responseMock;
+    private TypedRequestFactory $typedRequestFactoryMock;
 
     /**
      * @throws Exception
@@ -29,11 +32,11 @@ class HttpClientTest extends TestCase
     protected function setUp(): void
     {
         $this->httpClientMock = $this->createMock(ClientInterface::class);
-        $this->requestFactoryMock = $this->createMock(RequestFactoryInterface::class);
         $this->responseMock = $this->createMock(ResponseInterface::class);
-        $this->streamFactoryMock = $this->createMock(StreamFactoryInterface::class);
+        $streamFactoryMock = $this->createMock(StreamFactoryInterface::class);
+        $this->typedRequestFactoryMock = $this->createMock(TypedRequestFactory::class);
 
-        $this->httpClient = new HttpClient($this->httpClientMock, $this->requestFactoryMock, $this->streamFactoryMock);
+        $this->httpClient = new HttpClient($this->typedRequestFactoryMock, $this->httpClientMock, $streamFactoryMock);
     }
 
     /**
@@ -42,7 +45,7 @@ class HttpClientTest extends TestCase
      */
     public function testReturnsGetRequestSuccess()
     {
-        $requestMock = $this->createMock(RequestInterface::class);
+        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
 
         $this->responseMock
             ->method('getBody')
@@ -50,14 +53,13 @@ class HttpClientTest extends TestCase
                 'getContents' => json_encode(['response' => ['code' => 200]])
             ]));
 
-        $this->requestFactoryMock
+        $this->typedRequestFactoryMock
             ->method('createRequest')
             ->with('GET', '/resource')
-            ->willReturn($requestMock);
+            ->willReturn($typedRequestMock);
 
         $this->httpClientMock
             ->method('sendRequest')
-            ->with($requestMock)
             ->willReturn($this->responseMock);
 
         $this->responseMock
@@ -66,142 +68,134 @@ class HttpClientTest extends TestCase
 
         $result = $this->httpClient->sendRequest('GET', '/resource');
 
-        $this->assertEquals(['response' => ['code' => 200, 'data' => 'created']], $result);
+        $this->assertEquals(['response' => ['code' => 200]], $result);
     }
 
     /**
      * @throws Exception
      * @throws ServerErrorException
      */
-//    public function testReturnsPayloadForSuccessfulPostRequest()
-//    {
-//        $requestMock = $this->createMock(RequestInterface::class);
-//
-//        $this->requestFactoryMock
-//            ->method('createRequest')
-//            ->with('POST', '/resource')
-//            ->willReturn($requestMock);
-//
-//        $this->httpClientMock
-//            ->method('sendRequest')
-//            ->with($requestMock)
-//            ->willReturn($this->responseMock);
-//
-//        $this->responseMock
-//            ->method('getStatusCode')
-//            ->willReturn(201);
-//
-////        $this->streamFactoryMock
-////            ->method('createStream')
-////            ->willReturn($requestMock);
-//
-//        $this->responseMock
-//            ->method('getBody')
-//            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-//                'getContents' => json_encode(['response' => ['code' => 201, 'data' => 'created']])
-//            ]));
-//
-//        $result = $this->httpClient->sendRequest('POST', '/resource', ['body' => ['key' => 'value']]);
-//
-//        $this->assertEquals(['response' => ['code' => 201, 'data' => 'created']], $result);
-//    }
+    public function testReturnsPayloadForSuccessfulPostRequest()
+    {
+        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(201);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 201, 'data' => 'created']])
+            ]));
+
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('POST', '/resource')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $result = $this->httpClient->sendRequest('POST', '/resource', ['body' => ['key' => 'value']]);
+
+        $this->assertEquals(['response' => ['code' => 201, 'data' => 'created']], $result);
+    }
 
     /**
      * @throws Exception
      * @throws ServerErrorException
      */
-//    public function testThrowsExceptionForMissingResource()
-//    {
-//        $requestMock = $this->createMock(RequestInterface::class);
-//
-//        $this->requestFactoryMock
-//            ->method('createRequest')
-//            ->with('GET', '/missing-resource')
-//            ->willReturn($requestMock);
-//
-//        $this->httpClientMock
-//            ->method('sendRequest')
-//            ->with($requestMock)
-//            ->willReturn($this->responseMock);
-//
-//        $this->responseMock
-//            ->method('getStatusCode')
-//            ->willReturn(404);
-//
-//        $this->responseMock
-//            ->method('getBody')
-//            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-//                'getContents' => json_encode(['response' => ['reason' => 'Not Found']])
-//            ]));
-//
-//        $this->expectException(ResourceNotFoundException::class);
-//
-//        $response = $this->httpClient->sendRequest('GET', '/missing-resource');
-//        var_dump($response);
-//    }
+    public function testThrowsExceptionForMissingResource()
+    {
+        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(404);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['reason' => 'Not Found']])
+            ]));
+
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/missing-resource')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $this->expectException(ResourceNotFoundException::class);
+
+        $response = $this->httpClient->sendRequest('GET', '/missing-resource');
+        var_dump($response);
+    }
 
     /**
      * @throws Exception
      */
-//    public function testThrowsExceptionForInvalidResponseCode()
-//    {
-//        $requestMock = $this->createMock(RequestInterface::class);
-//
-//        $this->requestFactoryMock
-//            ->method('createRequest')
-//            ->with('GET', '/invalid-response')
-//            ->willReturn($requestMock);
-//
-//        $this->httpClientMock
-//            ->method('sendRequest')
-//            ->with($requestMock)
-//            ->willReturn($this->responseMock);
-//
-//        $this->responseMock
-//            ->method('getStatusCode')
-//            ->willReturn(418);
-//
-//        $this->responseMock
-//            ->method('getBody')
-//            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-//                'getContents' => json_encode(['response' => ['reason' => 'I\'m a teapot']])
-//            ]));
-//
-//        $this->expectException(ServerErrorException::class);
-//
-//        $this->httpClient->sendRequest('GET', '/invalid-response');
-//    }
+    public function testThrowsExceptionForInvalidResponseCode()
+    {
+        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(418);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['reason' => 'I\'m a teapot']])
+            ]));
+
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/invalid-response')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $this->expectException(ServerErrorException::class);
+
+        $this->httpClient->sendRequest('GET', '/invalid-response');
+    }
 
     /**
      * @throws Exception
      * @throws ServerErrorException
      */
-//    public function testHandlesEmptyBodyForNoContentResponse()
-//    {
-//        $requestMock = $this->createMock(RequestInterface::class);
-//
-//        $this->requestFactoryMock
-//            ->method('createRequest')
-//            ->with('DELETE', '/resource')
-//            ->willReturn($requestMock);
-//
-//        $this->httpClientMock
-//            ->method('sendRequest')
-//            ->with($requestMock)
-//            ->willReturn($this->responseMock);
-//
-//        $this->responseMock
-//            ->method('getStatusCode')
-//            ->willReturn(204);
-//
-//        $this->responseMock
-//            ->method('getBody')
-//            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-//                'getContents' => ''
-//            ]));
-//
-//        $result = $this->httpClient->sendRequest('DELETE', '/resource');
-//
-//        $this->assertEquals([], $result);
-//    }
+    public function testHandlesEmptyBodyForNoContentResponse()
+    {
+        $typedRequestMock = $this->createMock(HttpClient\TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(204);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => ''
+            ]));
+
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('DELETE', '/resource')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $result = $this->httpClient->sendRequest('DELETE', '/resource');
+
+        $this->assertEquals([], $result);
+    }
 }
