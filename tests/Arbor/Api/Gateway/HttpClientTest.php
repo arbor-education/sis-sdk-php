@@ -9,6 +9,7 @@ use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -16,9 +17,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
 
-/**
- * @covers \Arbor\Api\Gateway\HttpClient
- */
+#[CoversClass(HttpClient::class)]
 class HttpClientTest extends TestCase
 {
     private ClientInterface $httpClientMock;
@@ -132,11 +131,10 @@ class HttpClientTest extends TestCase
         $this->expectException(ResourceNotFoundException::class);
 
         $response = $this->httpClient->sendRequest('GET', '/missing-resource');
-        var_dump($response);
     }
 
     /**
-     * @throws Exception
+     * @throws ServerErrorException
      */
     public function testThrowsExceptionForInvalidResponseCode()
     {
