@@ -1,14 +1,16 @@
 <?php
 
-namespace Arbor\Test\Unit\Arbor\Model;
+namespace Arbor\Test\Integration\Arbor\Model;
 
 use Arbor\Model\ModelBase;
 use PHPUnit\Framework\Attributes\CoversClassesThatExtendClass;
 use PHPUnit\Framework\Attributes\CoversNamespace;
+use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 #[CoversNamespace('Arbor\\Model')]
+#[CoversNothing]
 #[CoversClassesThatExtendClass('Arbor\\Model')]
 class LoaderTest extends TestCase
 {
