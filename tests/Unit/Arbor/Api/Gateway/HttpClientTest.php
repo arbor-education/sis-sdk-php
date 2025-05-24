@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Arbor\Test\Arbor\Api\Gateway;
+namespace Arbor\Test\Unit\Arbor\Api\Gateway;
 
 use Arbor\Api\Gateway\HttpClient\HttpClient;
+use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\ResourceNotFoundException;
 use Arbor\Api\ServerErrorException;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversClassesThatImplementInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -18,11 +21,14 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
 
 #[CoversClass(HttpClient::class)]
+#[CoversClass(ServerErrorException::class)]
+#[CoversClassesThatImplementInterface(HttpClientInterface::class)]
 class HttpClientTest extends TestCase
 {
     private ClientInterface $httpClientMock;
     private ResponseInterface $responseMock;
     private TypedRequestFactory $typedRequestFactoryMock;
+    private HttpClient $httpClient;
 
     /**
      * @throws Exception
@@ -63,6 +69,40 @@ class HttpClientTest extends TestCase
         $this->responseMock
             ->method('getStatusCode')
             ->willReturn(200);
+
+        $result = $this->httpClient->sendRequest('GET', '/resource');
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testReturnsGetRequestSuccessWithApplicationId()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->httpClient->setApplicationId('test');
 
         $result = $this->httpClient->sendRequest('GET', '/resource');
 
@@ -130,29 +170,31 @@ class HttpClientTest extends TestCase
 
         $this->expectException(ResourceNotFoundException::class);
 
-        $response = $this->httpClient->sendRequest('GET', '/missing-resource');
+        $this->httpClient->sendRequest('GET', '/missing-resource');
     }
 
     /**
      * @throws ServerErrorException
+     * @throws Exception
      */
-    public function testThrowsExceptionForInvalidResponseCode()
+    #[DataProvider('exceptionDataProvider')]
+    public function testThrowsExceptionForInvalidResponseCode($statusCode, $bodyContent, $requestMethod, $requestPath, $expectedExceptionMessage)
     {
         $typedRequestMock = $this->createMock(TypedRequest::class);
 
         $this->responseMock
             ->method('getStatusCode')
-            ->willReturn(418);
+            ->willReturn($statusCode);
 
         $this->responseMock
             ->method('getBody')
             ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-                'getContents' => json_encode(['response' => ['reason' => 'I\'m a teapot']])
+                'getContents' => $bodyContent
             ]));
 
         $this->typedRequestFactoryMock
             ->method('createRequest')
-            ->with('GET', '/invalid-response')
+            ->with($requestMethod, $requestPath)
             ->willReturn($typedRequestMock);
 
         $this->httpClientMock
@@ -160,8 +202,20 @@ class HttpClientTest extends TestCase
             ->willReturn($this->responseMock);
 
         $this->expectException(ServerErrorException::class);
+        $this->expectExceptionCode(0);
+        $this->expectExceptionMessage($expectedExceptionMessage);
 
-        $this->httpClient->sendRequest('GET', '/invalid-response');
+        $this->httpClient->sendRequest('GET', $requestPath);
+    }
+
+    public static function exceptionDataProvider(): array
+    {
+        return [
+            [418, json_encode(['response' => ['reason' => 'I\'m a teapot']]), 'GET', '/invalid-response', 'I\'m a teapot'],
+            [418, '{}', 'GET', '/invalid-response', 'API Error'],
+            [500, '{}', 'GET', '/invalid-response', 'API Error'],
+            [418, '', 'GET', '/invalid-response', 'Server responded with an invalid response'],
+        ];
     }
 
     /**
