@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Arbor\Api\Gateway;
 
-use Arbor\Api\Gateway\HttpClient\HttpClient;
+use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\Api\ServerErrorException;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
@@ -18,19 +18,15 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 class PsrRestGateway implements GatewayInterface
 {
-    const HTTP_METHOD_GET = "get";
-    const HTTP_METHOD_POST = "post";
-    const HTTP_METHOD_PUT = "put";
-    const HTTP_METHOD_DELETE = "delete";
-
     protected string $applicationId;
 
     public function __construct(
-        protected HttpClient      $httpClient,
-        protected Hydrator        $hydrator,
-        protected CamelCaseToDash $camelCaseToDash,
-        protected PluralizeFilter $pluralizeFilter
-    ) {
+        protected HttpClientInterface $httpClient,
+        protected Hydrator            $hydrator,
+        protected CamelCaseToDash     $camelCaseToDash,
+        protected PluralizeFilter     $pluralizeFilter
+    )
+    {
     }
 
     public function getApplicationId(): string
@@ -60,7 +56,7 @@ class PsrRestGateway implements GatewayInterface
         $resourceRoot = $this->getResourceRoot($model->getResourceType());
         $options = ['body' => ['request' => [$resourceRoot => $arrayRepresentation]]];
 
-        $responseRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_POST, $this->buildUrl($resource), $options);
+        $responseRepresentation = $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, $this->buildUrl($resource), $options);
 
         if (!array_key_exists($resourceRoot, $responseRepresentation)) {
             throw new Exception('API Error: ' . print_r($responseRepresentation, true));
@@ -140,7 +136,7 @@ class PsrRestGateway implements GatewayInterface
         }
 
         try {
-            $responseRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_POST, $this->buildUrl($resourceUrl), $options);
+            $responseRepresentation = $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, $this->buildUrl($resourceUrl), $options);
         } catch (ServerErrorException $exception) {
             $responseRepresentation = $exception->getResponsePayload();
 
@@ -184,7 +180,7 @@ class PsrRestGateway implements GatewayInterface
      */
     public function refresh(ModelBase $model): ModelBase
     {
-        $arrayRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_GET, $model->getResourceUrl());
+        $arrayRepresentation = $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_GET, $model->getResourceUrl());
 
         $resourceRoot = $this->getResourceRoot($model->getResourceType());
         if (false === array_key_exists($resourceRoot, $arrayRepresentation)) {
@@ -207,7 +203,7 @@ class PsrRestGateway implements GatewayInterface
     {
         $url = $this->buildUrl($this->getResource($resource), $id);
         $arrayRepresentation = $this->httpClient->sendRequest(
-            self::HTTP_METHOD_GET,
+            HttpClientInterface::HTTP_METHOD_GET,
             $url
         );
         $resourceRoot = $this->getResourceRoot($resource);
@@ -325,7 +321,7 @@ class PsrRestGateway implements GatewayInterface
         }
 
         $options = ['body' => ['request' => [$resourceRoot => $modelDiff]]];
-        $responseRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_PUT, $url, $options);
+        $responseRepresentation = $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_PUT, $url, $options);
 
         // Revision ID is a read-only property so lets remove it before sending the update request to the API
         if (array_key_exists('revisionId', $responseRepresentation)) {
@@ -349,7 +345,7 @@ class PsrRestGateway implements GatewayInterface
      */
     public function delete(ModelBase $model): array
     {
-        return $this->httpClient->sendRequest(self::HTTP_METHOD_DELETE, $model->getResourceUrl());
+        return $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_DELETE, $model->getResourceUrl());
     }
 
     public function describe($resource): void
@@ -378,7 +374,7 @@ class PsrRestGateway implements GatewayInterface
             $uri .= "to-revision=$toRevision&";
         }
 
-        $arrayRepresentation = $this->httpClient->sendRequest(self::HTTP_METHOD_GET, $uri);
+        $arrayRepresentation = $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_GET, $uri);
 
         if (!array_key_exists('changes', $arrayRepresentation)) {
             return [];
@@ -396,12 +392,12 @@ class PsrRestGateway implements GatewayInterface
      */
     public function query(Query $query): Collection
     {
-        $pluralResource = $this->pluralizeResource($query->getResourceType());
+        $pluralResource = $this->pluralizeFilter->filter($query->getResourceType());
         $resourceRoot = $this->getResourceRoot($pluralResource);
         $options = ['query' => $query->getQueryOptions()];
 
         $arrayRepresentation = $this->httpClient->sendRequest(
-            self::HTTP_METHOD_GET,
+            HttpClientInterface::HTTP_METHOD_GET,
             $this->buildUrl($pluralResource),
             $options
         );
@@ -502,10 +498,5 @@ class PsrRestGateway implements GatewayInterface
     private function getResourceRoot(string $resourceType): string
     {
         return mb_lcfirst($resourceType);
-    }
-
-    private function pluralizeResource(string $resource)
-    {
-        return $this->pluralizeFilter->filter($resource);
     }
 }

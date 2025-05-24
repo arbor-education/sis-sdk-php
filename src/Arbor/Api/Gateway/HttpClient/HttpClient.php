@@ -14,7 +14,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use RuntimeException;
 
-class HttpClient
+class HttpClient implements HttpClientInterface
 {
     public function __construct(
         private readonly TypedRequestFactory $typedRequestFactory,
