@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Arbor\Api\Gateway\HttpClient;
 
-use Arbor\Api\ResourceNotFoundException;
-use Arbor\Api\ServerErrorException;
+use Arbor\Api\Exception\ResourceNotFoundException;
+use Arbor\Api\Exception\ServerErrorException;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Http\Client\ClientExceptionInterface;

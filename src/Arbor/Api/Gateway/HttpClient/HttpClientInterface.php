@@ -2,7 +2,7 @@
 
 namespace Arbor\Api\Gateway\HttpClient;
 
-use Arbor\Api\ServerErrorException;
+use Arbor\Api\Exception\ServerErrorException;
 
 interface HttpClientInterface
 {

@@ -8,8 +8,8 @@ use Arbor\Api\Gateway\HttpClient\HttpClient;
 use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
-use Arbor\Api\ResourceNotFoundException;
-use Arbor\Api\ServerErrorException;
+use Arbor\Api\Exception\ResourceNotFoundException;
+use Arbor\Api\Exception\ServerErrorException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversClassesThatImplementInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -21,7 +21,6 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
 
 #[CoversClass(HttpClient::class)]
-#[CoversClass(ServerErrorException::class)]
 #[CoversClassesThatImplementInterface(HttpClientInterface::class)]
 class HttpClientTest extends TestCase
 {
@@ -178,7 +177,7 @@ class HttpClientTest extends TestCase
      * @throws Exception
      */
     #[DataProvider('exceptionDataProvider')]
-    public function testThrowsExceptionForInvalidResponseCode($statusCode, $bodyContent, $requestMethod, $requestPath, $expectedExceptionMessage)
+    public function testThrowsException($statusCode, $bodyContent, $requestMethod, $requestPath, $expectedExceptionMessage)
     {
         $typedRequestMock = $this->createMock(TypedRequest::class);
 

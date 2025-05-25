@@ -10,7 +10,6 @@ use Psr\Http\Message\RequestInterface;
 
 class TypedRequestFactory
 {
-
     public function __construct(
         private ?RequestFactoryInterface $requestFactory = null,
     ) {

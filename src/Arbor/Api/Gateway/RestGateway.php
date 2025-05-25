@@ -2,8 +2,8 @@
 
 namespace Arbor\Api\Gateway;
 
-use Arbor\Api\ResourceNotFoundException;
-use Arbor\Api\ServerErrorException;
+use Arbor\Api\Exception\ServerErrorException\ResourceNotFoundException;
+use Arbor\Api\Exception\ServerErrorException;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
 use Arbor\Filter\PluralizeFilter;
