@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Arbor\Test\Unit\Arbor\Api\Gateway;
+namespace Arbor\Test\Unit\Arbor\Api\Gateway\HttpClient;
 
+use Arbor\Api\Exception\ResourceNotFoundException;
+use Arbor\Api\Exception\ServerErrorException;
 use Arbor\Api\Gateway\HttpClient\HttpClient;
 use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
-use Arbor\Api\Exception\ResourceNotFoundException;
-use Arbor\Api\Exception\ServerErrorException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversClassesThatImplementInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
