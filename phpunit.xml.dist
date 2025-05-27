@@ -26,6 +26,8 @@
         </include>
         <exclude>
             <directory suffix=".php">src/Arbor/Api/Exception</directory>
+            <directory suffix=".php">src/Arbor/Model</directory>
+            <directory suffix=".php">src/Arbor/Resource</directory>
         </exclude>
     </source>
 </phpunit>
