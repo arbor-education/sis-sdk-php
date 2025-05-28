@@ -100,13 +100,12 @@ class HttpClient implements HttpClientInterface
     public function sendRequest(string $method, string $url, array $options = []): array
     {
         /** @var RequestInterface $request */
-        list($request, $message, $requestPayload) = $this->prepareRequest($method, $url, $options);
+        list($request, $requestPayload) = $this->prepareRequest($method, $url, $options);
 
         try {
             $response = $this->httpClient->sendRequest($request);
 
             // Allow the user to direct requests at a common API endpoint if they specify the applicationId as a request header
-            $code = $response->getStatusCode();
             $response->getBody()->rewind();
             $responsePayload = json_decode($response->getBody()->getContents(), true);
         } catch (ClientExceptionInterface|RuntimeException $e) {
@@ -114,6 +113,8 @@ class HttpClient implements HttpClientInterface
             // This is useful in case the response does not contain valid json
             throw new ServerErrorException('An unexpected error has occurred: ' . $e->getMessage(), 0, $e);
         }
+
+        $code = $response->getStatusCode();
 
         if (!is_array($responsePayload) && !$this->isResponseValid($code)) {
             throw new ServerErrorException('Server responded with an invalid response', 0, null, $requestPayload);
@@ -125,9 +126,7 @@ class HttpClient implements HttpClientInterface
         }
 
         // If available use the reason phrase
-        if (isset($responsePayload['response']['reason'])) {
-            $message = $responsePayload['response']['reason'];
-        }
+        $message = $responsePayload['response']['reason'] ?? 'API Error';
 
         // If available use a specific error message
         $serverMessage = $serverTrace = $serverException = null;
@@ -160,9 +159,6 @@ class HttpClient implements HttpClientInterface
         // $url .= '?XDEBUG_SESSION_START=0';
         $request = $this->typedRequestFactory->createRequest($method, $this->baseUrl . $url);
 
-        // Set a generic error message
-        $message = 'API Error';
-
         // Adding user agent string if it's not passed
         $options['headers']['User-Agent'] = $options['headers']['User-Agent'] ?? $this->userAgent;
 
@@ -183,13 +179,12 @@ class HttpClient implements HttpClientInterface
         }
 
         $requestPayload = $options['body'] ?? null;
-
         if (is_array($requestPayload)) {
             $bodyStream = $this->streamFactory->createStream(json_encode($requestPayload));
             $request = $request->withBody($bodyStream);
         }
 
-        return [$request, $message, $requestPayload];
+        return [$request, $requestPayload];
     }
 
     protected function getErrorException($message, $requestPayload, $responsePayload, $serverException, $serverMessage, $serverTrace): ServerErrorException
