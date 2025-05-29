@@ -601,4 +601,60 @@ class PsrRestGatewayTest extends TestCase
         $this->assertIsArray($result);
         $this->assertEmpty($result);
     }
+
+    /**
+     * @throws Exception
+     * @throws \Arbor\Query\Exception
+     * @throws \Arbor\Model\Exception
+     * @throws ServerErrorException
+     */
+    public function testFindOneReturnsModelWhenFound(): void
+    {
+        $resourceType = 'Student';
+        $propertyFilters = ['name' => 'John'];
+        $userTags = ['tag' => 'value'];
+        $responseData = ['students' => [['id' => '123']]];
+        $options = [ 'query' => ['filters.name.equals' => 'John']];
+
+        $mockModel = $this->createMock(\Arbor\Model\ModelBase::class);
+        $mockModel->method('getResourceType')->willReturn($resourceType);
+
+        $this->camelCaseToDash->method('filter')->willReturn('students');
+        $this->pluralizeFilter->method('filter')->willReturn('Students');
+        $this->httpClient->expects($this->once())
+            ->method('sendRequest')
+            ->with(HttpClientInterface::HTTP_METHOD_GET, '/rest-v2/Students', $options)
+            ->willReturn($responseData);
+
+        $result = $this->gateway->findOne($resourceType, $propertyFilters, $userTags);
+
+        $this->assertInstanceOf(ModelBase::class, $result);
+        $this->assertSame($resourceType, $result->getResourceType());
+    }
+
+    /**
+     * @throws ServerErrorException
+     * @throws \Arbor\Query\Exception
+     * @throws \Arbor\Model\Exception
+     */
+    public function testFindOneReturnsNullWhenNoFilters(): void
+    {
+        $result = $this->gateway->findOne('Student', [], []);
+        $this->assertNull($result);
+    }
+
+    /**
+     * @throws ServerErrorException
+     * @throws \Arbor\Query\Exception
+     * @throws \Arbor\Model\Exception
+     */
+    public function testFindOneReturnsNullWhenNoModelsFound(): void
+    {
+        $this->camelCaseToDash->method('filter')->willReturn('students');
+        $this->pluralizeFilter->method('filter')->willReturn('Students');
+
+        $result = $this->gateway->findOne('Student', ['name' => 'John'], []);
+
+        $this->assertNull($result);
+    }
 }

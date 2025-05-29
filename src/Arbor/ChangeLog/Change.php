@@ -2,92 +2,58 @@
 
 namespace Arbor\ChangeLog;
 
+use Arbor\Model\ModelBase;
+
 class Change
 {
-    /**@var string $_changeType*/
-    protected $_changeType;
-    /**@var \Arbor\Model\ModelBase $_changedResource*/
-    protected $_changedResource;
-    /**@var int $_changedFromRevisionUrl*/
-    protected $_changedFromRevision;
-    /**@var int $_changedToRevisionUrl*/
-    protected $_changedToRevision;
-
-    /**
-     * @param \Arbor\Model\ModelBase $changedResource
-     * @param string $changeType
-     * @param int $changedFromRevision
-     * @param int $changedToRevision
-     */
-    public function __construct($changedResource, $changeType, $changedFromRevision, $changedToRevision)
-    {
-        $this->setChangeType($changeType);
-        $this->setChangedResource($changedResource);
-        $this->setChangedFromRevision($changedFromRevision);
-        $this->setChangedToRevision($changedToRevision);
+    public function __construct(
+        protected ModelBase $changedResource,
+        protected string    $changeType,
+        protected int       $changedFromRevision,
+        protected int       $changedToRevision
+    ) {
     }
 
-    /**
-     * @param string $changeType
-     */
-    public function setChangeType($changeType)
+    public function setChangeType(string $changeType): void
     {
-        $this->_changeType = $changeType;
+        $this->changeType = $changeType;
     }
 
-    /**
-     * @return string
-     */
-    public function getChangeType()
+    public function getChangeType(): string
     {
-        return $this->_changeType;
+        return $this->changeType;
     }
 
-    /**
-     * @param int $changedFromRevision
-     */
-    public function setChangedFromRevision($changedFromRevision)
+    public function setChangedFromRevision(int $changedFromRevision): void
     {
-        $this->_changedFromRevision = $changedFromRevision;
+        $this->changedFromRevision = $changedFromRevision;
     }
 
     /**
      * @return int
      */
-    public function getChangedFromRevision()
+    public function getChangedFromRevision(): int
     {
-        return $this->_changedFromRevision;
+        return $this->changedFromRevision;
     }
 
-    /**
-     * @param \Arbor\Model\ModelBase $changedResource
-     */
-    public function setChangedResource($changedResource)
+    public function setChangedResource(ModelBase $changedResource): void
     {
-        $this->_changedResource = $changedResource;
+        $this->changedResource = $changedResource;
     }
 
-    /**
-     * @return \Arbor\Model\ModelBase
-     */
-    public function getChangedResource()
+    public function getChangedResource(): ModelBase
     {
-        return $this->_changedResource;
+        return $this->changedResource;
     }
 
-    /**
-     * @param int $changedToRevision
-     */
-    public function setChangedToRevision($changedToRevision)
+    public function setChangedToRevision(int $changedToRevision): void
     {
-        $this->_changedToRevision = $changedToRevision;
+        $this->changedToRevision = $changedToRevision;
     }
 
-    /**
-     * @return int
-     */
-    public function getChangedToRevision()
+    public function getChangedToRevision(): int
     {
-        return $this->_changedToRevision;
+        return $this->changedToRevision;
     }
 }
