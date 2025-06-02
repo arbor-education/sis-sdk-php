@@ -14,7 +14,6 @@ use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
 use Arbor\Query\Exception;
 use Arbor\Query\Query;
-use Psr\Http\Client\ClientExceptionInterface;
 
 class PsrRestGateway implements GatewayInterface
 {
@@ -25,8 +24,7 @@ class PsrRestGateway implements GatewayInterface
         protected Hydrator            $hydrator,
         protected CamelCaseToDash     $camelCaseToDash,
         protected PluralizeFilter     $pluralizeFilter
-    )
-    {
+    ) {
     }
 
     public function getApplicationId(): string
@@ -81,7 +79,6 @@ class PsrRestGateway implements GatewayInterface
      * @param Collection $collection
      * @param bool $checkForPersistence
      * @return Collection
-     * @throws ClientExceptionInterface
      * @throws Exception
      * @throws ServerErrorException
      * @throws \Arbor\Model\Exception
@@ -96,39 +93,7 @@ class PsrRestGateway implements GatewayInterface
 
         /** @var ModelBase $model */
         foreach ($collection as $model) {
-            if ($resource !== $model->getResourceType()) {
-                throw new Exception(sprintf('Not all elements of collection are of type "%s"', $resource));
-            }
-        }
-
-        /** @var ModelBase $model */
-        foreach ($collection as $model) {
-            if ($model->getResourceUrl() !== null) {
-                throw new Exception(
-                    sprintf('Model you want to create already exists on "%s"', $model->getResourceUrl())
-                );
-            }
-
-            $userTags = $model->getUserTags();
-
-            if ($checkForPersistence && $userTags && count($userTags) > 0) {
-                $query = new Query();
-                $query->setResourceType($resource);
-
-                foreach ($userTags as $tagName => $tagValue) {
-                    $query->addUserTagFilter($tagName, $tagValue);
-                }
-
-                $models = $this->query($query)->getArrayCopy();
-
-                if (count($models) > 0) {
-                    $foundModel = current($models);
-
-                    throw new Exception(
-                        sprintf('Model you want to create already exists on "%s"', $foundModel->getResourceUrl())
-                    );
-                }
-            }
+            $this->validateModelForBulkCreate($model, $checkForPersistence, $resource);
 
             $createCollection->add($model);
             $arrayRepresentation = $this->hydrator->extractArray($model);
@@ -160,13 +125,7 @@ class PsrRestGateway implements GatewayInterface
             );
         }
 
-        foreach ($responseRepresentation['results'] as $key => $result) {
-            if (!$result['status']['success']) {
-                continue;
-            }
-
-            $this->hydrator->hydrateModel($createCollection[$key], $result[$resourceRoot]);
-        }
+        $this->hydrateBulkResponse($responseRepresentation['results'], $createCollection, $resourceRoot);
 
         return $createCollection;
     }
@@ -444,6 +403,24 @@ class PsrRestGateway implements GatewayInterface
     }
 
     /**
+     * @param $results
+     * @param Collection $createCollection
+     * @param string $resourceRoot
+     * @return void
+     * @throws \Arbor\Model\Exception
+     */
+    protected function hydrateBulkResponse($results, Collection $createCollection, string $resourceRoot): void
+    {
+        foreach ($results as $key => $result) {
+            if (!$result['status']['success']) {
+                continue;
+            }
+
+            $this->hydrator->hydrateModel($createCollection[$key], $result[$resourceRoot]);
+        }
+    }
+
+    /**
      * Finds difference between two array representations recursively.
      * Array keys like 'entityType' and 'href' will be ignored on difference check
      * and added to the returning difference array.
@@ -498,5 +475,44 @@ class PsrRestGateway implements GatewayInterface
     protected function getResourceRoot(string $resourceType): string
     {
         return mb_lcfirst($resourceType);
+    }
+
+    /**
+     * @throws Exception
+     * @throws \Arbor\Model\Exception
+     * @throws ServerErrorException
+     */
+    protected function validateModelForBulkCreate(ModelBase $model, bool $checkForPersistence, string $resource): void
+    {
+        if ($resource !== $model->getResourceType()) {
+            throw new Exception(sprintf('Not all elements of collection are of type "%s"', $resource));
+        }
+
+        if ($model->getResourceUrl() !== null) {
+            throw new Exception(
+                sprintf('Model you want to create already exists on "%s"', $model->getResourceUrl())
+            );
+        }
+
+        $userTags = $model->getUserTags();
+
+        if ($checkForPersistence && $userTags && count($userTags) > 0) {
+            $query = new Query();
+            $query->setResourceType($resource);
+
+            foreach ($userTags as $tagName => $tagValue) {
+                $query->addUserTagFilter($tagName, $tagValue);
+            }
+
+            $models = $this->query($query)->getArrayCopy();
+
+            if (count($models) > 0) {
+                $foundModel = current($models);
+
+                throw new Exception(
+                    sprintf('Model you want to create already exists on "%s"', $foundModel->getResourceUrl())
+                );
+            }
+        }
     }
 }
