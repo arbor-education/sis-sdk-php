@@ -837,7 +837,7 @@ class PsrRestGatewayTest extends TestCase
         $model1->method('getResourceUrl')->willReturn(null);
         $model1->method('getUserTags')->willReturn([]);
         $model2 = $this->createMock(ModelBase::class);
-        $model2->method('getResourceType')->willReturn($resource);
+        $model2->method('getResourceType')->willReturnOnConsecutiveCalls($resource, null);
         $model2->method('getResourceUrl')->willReturn(null);
         $model2->method('getUserTags')->willReturn([]);
 
@@ -868,21 +868,53 @@ class PsrRestGatewayTest extends TestCase
 
         $this->hydrator->expects($this->once())
             ->method('hydrateModel')
-            ->with($model1, ['name' => 'John']);
+            ->with($model1, ['name' => 'John'])
+            ->willReturn($model1);
 
         $result = $this->gateway->bulkCreate($resource, $collection);
 
         // Only the first model should be hydrated, the second should not
         $this->assertInstanceOf(Collection::class, $result);
         $this->assertCount(2, $result);
-        $this->assertSame('Student', $result->offsetGet(0)->getResourceId()); // First model should be hydrated
-        $this->assertSame('Student', $result->offsetGet(1)->getResourceId()); // Second model should not be hydrated
+        $this->assertSame('Student', $result->offsetGet(0)->getResourceType()); // First model should be hydrated
+        $this->assertNull($result->offsetGet(1)->getResourceType()); // Second model should not be hydrated
     }
 
     // Test bulk create when ServerErrorException is thrown by httpClient
-//    public function testBulkCreateServerErrorException()
-//    {
-//        // Arrange: httpClient->sendRequest throws ServerErrorException
-//        // Act & Assert: bulkCreate throws ServerErrorException
-//    }
+
+    /**
+     * @throws ClientExceptionInterface
+     * @throws Exception
+     * @throws \Arbor\Query\Exception
+     * @throws \Arbor\Model\Exception
+     */
+    public function testBulkCreateServerErrorException()
+    {
+        $resource = 'TestResource';
+        $modelMock = $this->createMock(ModelBase::class);
+        $modelMock->method('getResourceType')->willReturn($resource);
+        $modelMock->method('getResourceUrl')->willReturn(null);
+        $modelMock->method('getUserTags')->willReturn([]);
+        $collection = new Collection();
+        $collection->add($modelMock);
+
+        $this->hydrator->method('extractArray')->willReturn([]);
+        $this->camelCaseToDash->method('filter')->willReturn($resource);
+        $this->pluralizeFilter->method('filter')->willReturn($resource);
+
+        $serverErrorException = new ServerErrorException(
+            'Server error',
+            500,
+            null,
+            [],
+            ['results' => [['status' => ['success' => false, 'error' => 'Failed']]]],
+            'TestClass',
+            'TestMessage',
+            'TestTrace'
+        );
+        $this->httpClient->method('sendRequest')->will($this->throwException($serverErrorException));
+
+        $this->expectException(ServerErrorException::class);
+        $this->gateway->bulkCreate($resource, $collection);
+    }
 }
