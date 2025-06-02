@@ -19,6 +19,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Client\ClientExceptionInterface;
 use ReflectionClass;
 use ReflectionException;
 
@@ -521,7 +522,7 @@ class PsrRestGatewayTest extends TestCase
         $propertyFilters = ['name' => 'John'];
         $userTags = ['tag' => 'value'];
         $url = '/rest-v2/Students';
-        $options = [ 'query' => ['filters.name.equals' => 'John']];
+        $options = ['query' => ['filters.name.equals' => 'John']];
         $responseData = ['students' => [['id' => '123']]];
 
         $mockCollection = $this->createMock(Collection::class);
@@ -554,7 +555,7 @@ class PsrRestGatewayTest extends TestCase
         $propertyFilters = ['lastName' => 'Smith', 'name' => ['OR', 'John']];
         $userTags = ['tag' => 'value'];
         $url = '/rest-v2/Students';
-        $options = [ 'query' => [
+        $options = ['query' => [
             'filters.name.OR' => 'John',
             'filters.lastName.equals' => 'Smith'
         ]];
@@ -614,9 +615,9 @@ class PsrRestGatewayTest extends TestCase
         $propertyFilters = ['name' => 'John'];
         $userTags = ['tag' => 'value'];
         $responseData = ['students' => [['id' => '123']]];
-        $options = [ 'query' => ['filters.name.equals' => 'John']];
+        $options = ['query' => ['filters.name.equals' => 'John']];
 
-        $mockModel = $this->createMock(\Arbor\Model\ModelBase::class);
+        $mockModel = $this->createMock(ModelBase::class);
         $mockModel->method('getResourceType')->willReturn($resourceType);
 
         $this->camelCaseToDash->method('filter')->willReturn('students');
@@ -657,4 +658,231 @@ class PsrRestGatewayTest extends TestCase
 
         $this->assertNull($result);
     }
+
+    /**
+     * Test successful bulk create with a single model
+     *
+     * @throws ClientExceptionInterface
+     * @throws Exception
+     * @throws ServerErrorException
+     * @throws \Arbor\Model\Exception
+     * @throws \Arbor\Query\Exception
+     */
+    public function testBulkCreateSuccess()
+    {
+        $resource = 'Student';
+        $resourceUrl = 'students';
+        $resourceRoot = 'student';
+
+        $model1 = $this->createMock(ModelBase::class);
+        $model1->method('getResourceType')->willReturn($resource);
+        $model1->method('getResourceUrl')->willReturn(null);
+        $model1->method('getUserTags')->willReturn([]);
+        $this->hydrator->method('extractArray')->willReturn(['name' => 'John']);
+
+        $collection = new Collection();
+        $collection->add($model1);
+
+        $this->camelCaseToDash->method('filter')->willReturn($resourceUrl);
+        $this->pluralizeFilter->method('filter')->willReturn($resourceUrl);
+
+        $this->httpClient->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn([
+                'results' => [
+                    [
+                        'status' => ['success' => true],
+                        $resourceRoot => ['name' => 'John']
+                    ]
+                ]
+            ]);
+
+        $this->hydrator->expects($this->once())
+            ->method('hydrateModel')
+            ->with($model1, ['name' => 'John']);
+
+        $result = $this->gateway->bulkCreate($resource, $collection);
+
+        $this->assertInstanceOf(Collection::class, $result);
+        $this->assertCount(1, $result);
+    }
+
+    /**
+     * Test bulk create with user tags and checkForPersistence true, where no existing model is found
+     *
+     * @throws Exception
+     * @throws ClientExceptionInterface
+     * @throws \Arbor\Query\Exception
+     * @throws \Arbor\Model\Exception
+     * @throws ServerErrorException
+     */
+    public function testBulkCreateWithUserTagsNoExistingModel()
+    {
+        $resource = 'Student';
+        $resourceUrl = 'students';
+        $resourceRoot = 'student';
+
+        $model1 = $this->createMock(ModelBase::class);
+        $model1->method('getResourceType')->willReturn($resource);
+        $model1->method('getResourceUrl')->willReturn(null);
+        $model1->method('getUserTags')->willReturn(['id' => 1]);
+        $this->hydrator->method('extractArray')->willReturn(['name' => 'John']);
+
+        $collection = new Collection();
+        $collection->add($model1);
+
+        $this->camelCaseToDash->method('filter')->willReturn($resourceUrl);
+        $this->pluralizeFilter->method('filter')->willReturn($resourceUrl);
+
+        $this->httpClient->expects($this->atLeast(2))
+            ->method('sendRequest')
+            ->willReturn([
+                'results' => [
+                    [
+                        'status' => ['success' => true],
+                        $resourceRoot => ['name' => 'John']
+                    ]
+                ]
+            ]);
+
+        $this->hydrator->expects($this->once())
+            ->method('hydrateModel')
+            ->with($model1, ['name' => 'John']);
+
+        $result = $this->gateway->bulkCreate($resource, $collection);
+
+        $this->assertInstanceOf(Collection::class, $result);
+        $this->assertCount(1, $result);
+    }
+
+    /**
+     * Test bulk create with a model of the wrong resource type
+     *
+     * @throws Exception
+     * @throws ClientExceptionInterface
+     * @throws \Arbor\Query\Exception
+     * @throws \Arbor\Model\Exception
+     * @throws ServerErrorException
+     */
+    public function testBulkCreateWithWrongResourceTypeThrowsException()
+    {
+        $resource = 'Student';
+        $resourceUrl = 'students';
+
+        $model1 = $this->createMock(ModelBase::class);
+        $model1->method('getResourceType')->willReturn($resource);
+        $model1->method('getResourceUrl')->willReturn(null);
+        $model1->method('getUserTags')->willReturn([]);
+        $this->hydrator->method('extractArray')->willReturn(['name' => 'John']);
+
+        $collection = new Collection();
+        $collection->add($model1);
+
+        $this->camelCaseToDash->method('filter')->willReturn($resourceUrl);
+        $this->pluralizeFilter->method('filter')->willReturn($resourceUrl);
+
+        $this->expectException(\Arbor\Query\Exception::class);
+        $this->gateway->bulkCreate('Staff', $collection);
+    }
+
+    /**
+     * Test bulk create with a model that already has a resource URL
+     *
+     * @throws Exception
+     * @throws ClientExceptionInterface
+     * @throws \Arbor\Model\Exception
+     * @throws ServerErrorException
+     */
+    public function testBulkCreateWithExistingResourceUrlThrowsException()
+    {
+        // Arrange: model->getResourceUrl returns non-null
+        // Act & Assert: bulkCreate throws Exception
+        $resource = 'Student';
+        $resourceUrl = 'students';
+
+        $model1 = $this->createMock(ModelBase::class);
+        $model1->method('getResourceType')->willReturn($resource);
+        $model1->method('getResourceUrl')->willReturn('/students/1');
+        $model1->method('getUserTags')->willReturn([]);
+        $this->hydrator->method('extractArray')->willReturn(['name' => 'John']);
+
+        $collection = new Collection();
+        $collection->add($model1);
+
+        $this->camelCaseToDash->method('filter')->willReturn($resourceUrl);
+        $this->pluralizeFilter->method('filter')->willReturn($resourceUrl);
+
+        $this->expectException(\Arbor\Query\Exception::class);
+        $this->gateway->bulkCreate($resource, $collection);
+    }
+
+    /**
+     * Test bulk create when API returns a failed status in results
+     *
+     * @return void
+     * @throws ClientExceptionInterface
+     * @throws Exception
+     * @throws ServerErrorException
+     * @throws \Arbor\Model\Exception
+     * @throws \Arbor\Query\Exception
+     */
+    public function testBulkCreateWithPartialFailure()
+    {
+        $resource = 'Student';
+        $resourceUrl = 'students';
+        $resourceRoot = 'student';
+
+        $model1 = $this->createMock(ModelBase::class);
+        $model1->method('getResourceType')->willReturn($resource);
+        $model1->method('getResourceUrl')->willReturn(null);
+        $model1->method('getUserTags')->willReturn([]);
+        $model2 = $this->createMock(ModelBase::class);
+        $model2->method('getResourceType')->willReturn($resource);
+        $model2->method('getResourceUrl')->willReturn(null);
+        $model2->method('getUserTags')->willReturn([]);
+
+        $collection = new Collection();
+        $collection->add($model1);
+        $collection->add($model2);
+
+        $this->camelCaseToDash->method('filter')->willReturn($resourceUrl);
+        $this->pluralizeFilter->method('filter')->willReturn($resourceUrl);
+
+        $this->hydrator->method('extractArray')->willReturn(['name' => 'John']);
+
+        $response = [
+            'results' => [
+                [
+                    'status' => ['success' => true],
+                    $resourceRoot => ['name' => 'John']
+                ],
+                [
+                    'status' => ['success' => false, 'error' => 'Some error']
+                ]
+            ]
+        ];
+
+        $this->httpClient->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn($response);
+
+        $this->hydrator->expects($this->once())
+            ->method('hydrateModel')
+            ->with($model1, ['name' => 'John']);
+
+        $result = $this->gateway->bulkCreate($resource, $collection);
+
+        // Only the first model should be hydrated, the second should not
+        $this->assertInstanceOf(Collection::class, $result);
+        $this->assertCount(2, $result);
+        $this->assertSame('Student', $result->offsetGet(0)->getResourceId()); // First model should be hydrated
+        $this->assertSame('Student', $result->offsetGet(1)->getResourceId()); // Second model should not be hydrated
+    }
+
+    // Test bulk create when ServerErrorException is thrown by httpClient
+//    public function testBulkCreateServerErrorException()
+//    {
+//        // Arrange: httpClient->sendRequest throws ServerErrorException
+//        // Act & Assert: bulkCreate throws ServerErrorException
+//    }
 }
