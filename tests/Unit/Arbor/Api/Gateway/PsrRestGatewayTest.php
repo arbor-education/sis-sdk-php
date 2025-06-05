@@ -880,13 +880,13 @@ class PsrRestGatewayTest extends TestCase
         $this->assertNull($result->offsetGet(1)->getResourceType()); // Second model should not be hydrated
     }
 
-    // Test bulk create when ServerErrorException is thrown by httpClient
-
     /**
-     * @throws ClientExceptionInterface
+     * Test bulk create when ServerErrorException is thrown by httpClient
+     *
      * @throws Exception
-     * @throws \Arbor\Query\Exception
+     * @throws ServerErrorException
      * @throws \Arbor\Model\Exception
+     * @throws \Arbor\Query\Exception
      */
     public function testBulkCreateServerErrorException()
     {
