@@ -231,9 +231,9 @@ class Query
     }
 
     /**
-     * @return null
+     * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): ?string
     {
         return $this->_resourceType;
     }
