@@ -7,6 +7,10 @@
          beStrictAboutCoverageMetadata="true"
          beStrictAboutOutputDuringTests="true"
          failOnRisky="true"
+         failOnWarning="true"
+         failOnDeprecation="true"
+         failOnSkipped="true"
+         failOnPhpunitDeprecation="false">
          failOnWarning="true">
     <coverage includeUncoveredFiles="true" pathCoverage="true">
         <report>

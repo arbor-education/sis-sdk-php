@@ -7,6 +7,12 @@ use Arbor\Model\ModelBase;
 
 class QualificationAwardMetadata extends ModelBase
 {
+    public const CODE = 'code';
+
+    public const ACTIVE = 'active';
+
+    public const DATA_ORDER = 'dataOrder';
+
     public const QUALIFICATION_AWARD = 'qualificationAward';
 
     public const COUNTRY_CODE = 'countryCode';
@@ -14,12 +20,6 @@ class QualificationAwardMetadata extends ModelBase
     public const METADATA_NAME = 'metadataName';
 
     public const METADATA_VALUE = 'metadataValue';
-
-    public const CODE = 'code';
-
-    public const ACTIVE = 'active';
-
-    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD_METADATA;
 
@@ -57,6 +57,54 @@ class QualificationAwardMetadata extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::QUALIFICATION_AWARD_METADATA, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode(string $code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive(bool $active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder(int $dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
@@ -121,53 +169,5 @@ class QualificationAwardMetadata extends ModelBase
     public function setMetadataValue(string $metadataValue = null)
     {
         $this->setProperty('metadataValue', $metadataValue);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->getProperty('code');
-    }
-
-    /**
-     * @param string $code
-     */
-    public function setCode(string $code = null)
-    {
-        $this->setProperty('code', $code);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getActive()
-    {
-        return $this->getProperty('active');
-    }
-
-    /**
-     * @param bool $active
-     */
-    public function setActive(bool $active = null)
-    {
-        $this->setProperty('active', $active);
-    }
-
-    /**
-     * @return int
-     */
-    public function getDataOrder()
-    {
-        return $this->getProperty('dataOrder');
-    }
-
-    /**
-     * @param int $dataOrder
-     */
-    public function setDataOrder(int $dataOrder = null)
-    {
-        $this->setProperty('dataOrder', $dataOrder);
     }
 }

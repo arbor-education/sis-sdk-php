@@ -11,6 +11,8 @@ class LanguageAbility extends ModelBase
 
     public const LANGUAGE = 'language';
 
+    public const IS_FIRST_LANGUAGE = 'isFirstLanguage';
+
     public const IS_NATIVE_LANGUAGE = 'isNativeLanguage';
 
     public const SPEAKS_LANGUAGE = 'speaksLanguage';
@@ -91,6 +93,22 @@ class LanguageAbility extends ModelBase
     public function setLanguage(\Arbor\Model\Language $language = null)
     {
         $this->setProperty('language', $language);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsFirstLanguage()
+    {
+        return $this->getProperty('isFirstLanguage');
+    }
+
+    /**
+     * @param bool $isFirstLanguage
+     */
+    public function setIsFirstLanguage(bool $isFirstLanguage = null)
+    {
+        $this->setProperty('isFirstLanguage', $isFirstLanguage);
     }
 
     /**
