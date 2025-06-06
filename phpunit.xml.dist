@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-         bootstrap="vendor/autoload.php"
-         cacheDirectory=".phpunit.cache"
-         executionOrder="depends,defects"
-         requireCoverageMetadata="true"
-         beStrictAboutCoverageMetadata="true"
-         beStrictAboutOutputDuringTests="true"
-         failOnRisky="true"
-         failOnWarning="true"
-         failOnDeprecation="true"
-         failOnSkipped="true"
-         failOnPhpunitDeprecation="false">
-         failOnWarning="true">
+        bootstrap="vendor/autoload.php"
+        cacheDirectory=".phpunit.cache"
+        executionOrder="depends,defects"
+        requireCoverageMetadata="true"
+        beStrictAboutCoverageMetadata="true"
+        beStrictAboutOutputDuringTests="true"
+        failOnRisky="true"
+        failOnWarning="true"
+        failOnDeprecation="true"
+        failOnSkipped="true"
+        failOnPhpunitDeprecation="false">
     <coverage includeUncoveredFiles="true" pathCoverage="true">
         <report>
             <html outputDirectory="coverage-report"/>
