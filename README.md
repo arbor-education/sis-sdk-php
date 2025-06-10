@@ -32,9 +32,32 @@ In the `examples/example-bootstrap` you will find the configuration needed to ma
 
 ## Example
 
-Use `Arbor\Api\Gateway\PsrRestGateway` to make GET, POST, PUT and DELETE requests and use `Arbor\Query\Query` to add filters to your requests.
+When initializing the `PsrRestGateway` you will need to pass the `Arbor\Api\Gateway\HttpClient\HttpClientInterface`.
 
-When initializing the `PsrRestGateway` you will need to pass the `Arbor\Api\http\HttpClientInterface`. There is an
+```php
+$httpClient = new \Arbor\Api\Gateway\HttpClient\HttpClient(
+    new \Arbor\Api\Gateway\HttpClient\TypedRequestFactory(),
+    null,
+    null,
+    $config['api']['baseUrl'],
+    $config['api']['auth']['user'],
+    $config['api']['auth']['password']
+);
+
+$api = new \Arbor\Api\Gateway\PsrRestGateway(
+    $httpClient,
+    new \Arbor\Model\Hydrator(),
+    new \Arbor\Filter\CamelCaseToDash(),
+    new \Arbor\Filter\PluralizeFilter(),
+);
+```
+This will create a new instance of the `PsrRestGateway` which you can use to interact with the Arbor API. It will try to find any existing installed PSR-18 HTTP client, or you can pass your own implementation of `Psr\Http\Client\ClientInterface` to the `HttpClient` class.
+
+This will set the default gateway for all models, allowing you to use the SDK without needing to pass the gateway instance every time you want to retrieve or manipulate a model.
+```php
+\Arbor\Model\ModelBase::setDefaultGateway($api);
+```
+Use `Arbor\Api\Gateway\PsrRestGateway` to make GET, POST, PUT and DELETE requests and use `Arbor\Query\Query` to add filters to your requests.
 
 ```php
 
