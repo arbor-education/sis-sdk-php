@@ -1,0 +1,3 @@
+repos:
+  - repo: arbor-education/gha.workflows/.github/workflows/pre-commit-template.yaml
+    rev: v0.0.168
