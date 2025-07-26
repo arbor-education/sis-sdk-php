@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         cacheDirectory=".phpunit.cache"
-         executionOrder="depends,defects"
-         requireCoverageMetadata="true"
-         beStrictAboutCoverageMetadata="true"
-         beStrictAboutOutputDuringTests="true"
-         failOnRisky="true"
-         failOnWarning="true"
-         failOnDeprecation="true"
-         failOnSkipped="true"
-         failOnPhpunitDeprecation="false">
+<phpunit
+        bootstrap="vendor/autoload.php"
+        cacheDirectory=".phpunit.cache"
+        executionOrder="depends,defects"
+        requireCoverageMetadata="true"
+        beStrictAboutCoverageMetadata="true"
+        beStrictAboutOutputDuringTests="true"
+        failOnRisky="true"
+        failOnWarning="true"
+        failOnDeprecation="true"
+        failOnSkipped="true"
+        failOnPhpunitDeprecation="false">
+    <coverage includeUncoveredFiles="true" pathCoverage="true">
+        <report>
+            <html outputDirectory="coverage-report"/>
+        </report>
+    </coverage>
+
     <testsuites>
         <testsuite name="default">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
 
-    <source restrictDeprecations="true" restrictNotices="true" restrictWarnings="true">
+    <source restrictNotices="true" restrictWarnings="true">
         <include>
             <directory>src</directory>
         </include>
+        <exclude>
+            <directory suffix=".php">src/Arbor/Api/Exception</directory>
+            <directory suffix=".php">src/Arbor/Model</directory>
+            <directory suffix=".php">src/Arbor/Resource</directory>
+        </exclude>
     </source>
 </phpunit>

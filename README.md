@@ -8,9 +8,12 @@ PHP SDK is a library which simplifies the process of integrating the Arbor REST 
 
 Rather than handling XML and making HTTP requests in your code, you can simply include the SDK and use getters and setters on models in order to access data from Arbor. PHP SDK includes hundreds of models as well as a gateway pattern for querying the API via a query model.
 
+SDK supports and requires any PSR 18 based HTTP client. Make sure to install one prior to using the SDK.
+
+
 ## Requirements
 
-* PHP 7.1 or higher
+* PHP 8.1 or higher
 * [Composer](https://getcomposer.org/download)
 
 ## Installation
@@ -23,11 +26,40 @@ Once setup use the `examples/config-dist.php` to create your own config. For thi
 
 ## Usage
 
+The `PsrRestGateway` class is a gateway implementation for interacting with REST APIs using PSR-compliant HTTP clients. It provides methods for CRUD operations, bulk creation, querying, and handling API responses.
+
 In the `examples/example-bootstrap` you will find the configuration needed to make requests, either using it directly from `examples/config.php` or using your own configuration. The entire `examples` directory is focused on helping you develop your app faster. Scripts written represent some of the most frequently used queries.
 
 ## Example
 
-Use `Arbor\Api\Gateway\RestGateway` to make GET, POST, PUT and DELETE requests and use `Arbor\Query\Query` to add filters to your requests. 
+When initializing the `PsrRestGateway` you will need to pass the `Arbor\Api\Gateway\HttpClient\HttpClientInterface`.
+
+```php
+$httpClient = new \Arbor\Api\Gateway\HttpClient\HttpClient(
+    new \Arbor\Api\Gateway\HttpClient\TypedRequestFactory(),
+    null,
+    null,
+    $config['api']['baseUrl'],
+    $config['api']['auth']['user'],
+    $config['api']['auth']['password']
+);
+
+$api = new \Arbor\Api\Gateway\PsrRestGateway(
+    $httpClient,
+    new \Arbor\Model\Hydrator(),
+    new \Arbor\Filter\CamelCaseToDash(),
+    new \Arbor\Filter\PluralizeFilter(),
+);
+```
+This will create a new instance of the `PsrRestGateway` which you can use to interact with the Arbor API. It will try to find any existing installed PSR-18 HTTP client, or you can pass your own implementation of `Psr\Http\Client\ClientInterface` to the `HttpClient` class.
+
+This will set the default gateway for all models, allowing you to use the SDK without needing to pass the gateway instance every time you want to retrieve or manipulate a model.
+```php
+\Arbor\Model\ModelBase::setDefaultGateway($api);
+```
+Use `Arbor\Api\Gateway\PsrRestGateway` to make GET, POST, PUT and DELETE requests and use `Arbor\Query\Query` to add filters to your requests.
+
+```php
 
 #### GET request:
 ```php

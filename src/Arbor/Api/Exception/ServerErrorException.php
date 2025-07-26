@@ -1,19 +1,16 @@
 <?php
 
-namespace Arbor\Api;
+namespace Arbor\Api\Exception;
 
 use Arbor\Exception;
 
 class ServerErrorException extends Exception
 {
-    protected $requestPayload;
-    protected $responsePayload;
-    /**@var string $_serverExceptionClass */
-    protected $_serverExceptionClass;
-    /**@var string $_serverExceptionMessage */
-    protected $_serverExceptionMessage;
-    /**@var string $_serverExceptionTrace */
-    protected $_serverExceptionTrace;
+    protected mixed $requestPayload;
+    protected mixed $responsePayload;
+    protected ?string $_serverExceptionClass;
+    protected ?string $_serverExceptionMessage;
+    protected ?string $_serverExceptionTrace;
 
     public function __construct(
         $message = "",
@@ -36,7 +33,7 @@ class ServerErrorException extends Exception
     /**
      * @return mixed|null
      */
-    public function getRequestPayload()
+    public function getRequestPayload(): mixed
     {
         return $this->requestPayload;
     }
@@ -44,55 +41,37 @@ class ServerErrorException extends Exception
     /**
      * @return mixed|null
      */
-    public function getResponsePayload()
+    public function getResponsePayload(): mixed
     {
         return $this->responsePayload;
     }
 
-    /**
-     * @param string $serverExceptionClass
-     */
-    public function setServerExceptionClass($serverExceptionClass)
+    public function setServerExceptionClass(?string $serverExceptionClass): void
     {
         $this->_serverExceptionClass = $serverExceptionClass;
     }
 
-    /**
-     * @return string
-     */
-    public function getServerExceptionClass()
+    public function getServerExceptionClass(): string
     {
         return $this->_serverExceptionClass;
     }
 
-    /**
-     * @param string $serverExceptionMessage
-     */
-    public function setServerExceptionMessage($serverExceptionMessage)
+    public function setServerExceptionMessage(?string $serverExceptionMessage): void
     {
         $this->_serverExceptionMessage = $serverExceptionMessage;
     }
 
-    /**
-     * @return string
-     */
-    public function getServerExceptionMessage()
+    public function getServerExceptionMessage(): string
     {
         return $this->_serverExceptionMessage;
     }
 
-    /**
-     * @param string $serverExceptionTrace
-     */
-    public function setServerExceptionTrace($serverExceptionTrace)
+    public function setServerExceptionTrace(?string $serverExceptionTrace): void
     {
         $this->_serverExceptionTrace = $serverExceptionTrace;
     }
 
-    /**
-     * @return string
-     */
-    public function getServerExceptionTrace()
+    public function getServerExceptionTrace(): string
     {
         return $this->_serverExceptionTrace;
     }
