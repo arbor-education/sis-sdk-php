@@ -157,6 +157,14 @@ class HttpClient implements HttpClientInterface
     {
         // NOTE: Uncomment this line to allow you to trigger a debug session in the Mis project
         // $url .= '?XDEBUG_SESSION_START=0';
+        // Handle query parameters by appending them to the URL
+        if (!empty($options['query']) && is_array($options['query'])) {
+            $queryString = http_build_query($options['query']);
+            if ($queryString !== '') {
+                $url .= (mb_strpos($url, '?') !== false ? '&' : '?') . $queryString;
+            }
+        }
+
         $request = $this->typedRequestFactory->createRequest($method, $this->baseUrl . $url);
 
         // Adding user agent string if it's not passed

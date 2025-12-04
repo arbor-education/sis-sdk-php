@@ -248,4 +248,262 @@ class HttpClientTest extends TestCase
 
         $this->assertEquals([], $result);
     }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithQueryParameters()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        // Expect the URL to include query parameters
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource?filters.name.equals=John&page-size=10&filters.age.greaterThan=18')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $queryOptions = [
+            'filters.name.equals' => 'John',
+            'page-size' => '10',
+            'filters.age.greaterThan' => '18'
+        ];
+
+        $result = $this->httpClient->sendRequest('GET', '/resource', ['query' => $queryOptions]);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithQueryParametersAndExistingUrlParams()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        // Expect the URL to properly append query parameters to existing ones
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource?existing=param&filters.name.equals=John&page-size=10')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $queryOptions = [
+            'filters.name.equals' => 'John',
+            'page-size' => '10'
+        ];
+
+        $result = $this->httpClient->sendRequest('GET', '/resource?existing=param', ['query' => $queryOptions]);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithEmptyQueryParameters()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        // Expect the URL to remain unchanged with empty query parameters
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $result = $this->httpClient->sendRequest('GET', '/resource', ['query' => []]);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithNullQueryParameters()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        // Expect the URL to remain unchanged with null query parameters
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $result = $this->httpClient->sendRequest('GET', '/resource', ['query' => null]);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithSpecialCharactersInQueryParameters()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        // Expect the URL to properly encode special characters
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource?search=test+with+spaces&special=%26%40%23')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $queryOptions = [
+            'search' => 'test with spaces',
+            'special' => '&@#'
+        ];
+
+        $result = $this->httpClient->sendRequest('GET', '/resource', ['query' => $queryOptions]);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithArrayValueInQueryParameters()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        // Expect the URL to properly handle array values
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('GET', '/resource?ids%5B0%5D=1&ids%5B1%5D=2&ids%5B2%5D=3&single=value')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $queryOptions = [
+            'ids' => ['1', '2', '3'],
+            'single' => 'value'
+        ];
+
+        $result = $this->httpClient->sendRequest('GET', '/resource', ['query' => $queryOptions]);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    /**
+     * @throws Exception
+     * @throws ServerErrorException
+     */
+    public function testSendsRequestWithQueryParametersAndBodyData()
+    {
+        $typedRequestMock = $this->createMock(TypedRequest::class);
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(201);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 201]])
+            ]));
+
+        // Expect the URL to include query parameters while also handling body data
+        $this->typedRequestFactoryMock
+            ->method('createRequest')
+            ->with('POST', '/resource?filters.name.equals=John')
+            ->willReturn($typedRequestMock);
+
+        $this->httpClientMock
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        $queryOptions = ['filters.name.equals' => 'John'];
+        $bodyData = ['key' => 'value'];
+
+        $result = $this->httpClient->sendRequest('POST', '/resource', [
+            'query' => $queryOptions,
+            'body' => $bodyData
+        ]);
+
+        $this->assertEquals(['response' => ['code' => 201]], $result);
+    }
 }
