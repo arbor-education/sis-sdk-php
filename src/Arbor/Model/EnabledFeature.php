@@ -9,10 +9,6 @@ class EnabledFeature extends ModelBase
 {
     public const FEATURE_IDENTIFIER = 'featureIdentifier';
 
-    public const CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = 'crmContractServiceSubscriptionId';
-
-    public const BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = 'billingServiceContractSubscriptionId';
-
     public const SUBSCRIPTION_SOURCE = 'subscriptionSource';
 
     public const SUBSCRIPTION_IDENTIFIER = 'subscriptionIdentifier';
@@ -73,38 +69,6 @@ class EnabledFeature extends ModelBase
     public function setFeatureIdentifier(string $featureIdentifier = null)
     {
         $this->setProperty('featureIdentifier', $featureIdentifier);
-    }
-
-    /**
-     * @return int
-     */
-    public function getCrmContractServiceSubscriptionId()
-    {
-        return $this->getProperty('crmContractServiceSubscriptionId');
-    }
-
-    /**
-     * @param int $crmContractServiceSubscriptionId
-     */
-    public function setCrmContractServiceSubscriptionId(int $crmContractServiceSubscriptionId = null)
-    {
-        $this->setProperty('crmContractServiceSubscriptionId', $crmContractServiceSubscriptionId);
-    }
-
-    /**
-     * @return int
-     */
-    public function getBillingServiceContractSubscriptionId()
-    {
-        return $this->getProperty('billingServiceContractSubscriptionId');
-    }
-
-    /**
-     * @param int $billingServiceContractSubscriptionId
-     */
-    public function setBillingServiceContractSubscriptionId(int $billingServiceContractSubscriptionId = null)
-    {
-        $this->setProperty('billingServiceContractSubscriptionId', $billingServiceContractSubscriptionId);
     }
 
     /**

@@ -19,6 +19,8 @@ class EdiExportJob extends ModelBase
 
     public const SEQUENCE_NUMBER = 'sequenceNumber';
 
+    public const ACADEMIC_YEAR = 'academicYear';
+
     public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
     public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
@@ -139,6 +141,22 @@ class EdiExportJob extends ModelBase
     public function setSequenceNumber(int $sequenceNumber = null)
     {
         $this->setProperty('sequenceNumber', $sequenceNumber);
+    }
+
+    /**
+     * @return \Arbor\Model\AcademicYear
+     */
+    public function getAcademicYear()
+    {
+        return $this->getProperty('academicYear');
+    }
+
+    /**
+     * @param \Arbor\Model\AcademicYear $academicYear
+     */
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    {
+        $this->setProperty('academicYear', $academicYear);
     }
 
     /**

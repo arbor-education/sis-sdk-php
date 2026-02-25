@@ -27,6 +27,8 @@ class Staff extends ModelBase
 
     public const EXTERNAL_PERSON_ID = 'externalPersonId';
 
+    public const DISABILITY_STATUS = 'disabilityStatus';
+
     public const INCLUDE_IN_COVER = 'includeInCover';
 
     public const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
@@ -241,6 +243,22 @@ class Staff extends ModelBase
     public function setExternalPersonId(string $externalPersonId = null)
     {
         $this->setProperty('externalPersonId', $externalPersonId);
+    }
+
+    /**
+     * @return \Arbor\Model\DisabilityStatus
+     */
+    public function getDisabilityStatus()
+    {
+        return $this->getProperty('disabilityStatus');
+    }
+
+    /**
+     * @param \Arbor\Model\DisabilityStatus $disabilityStatus
+     */
+    public function setDisabilityStatus(\Arbor\Model\DisabilityStatus $disabilityStatus = null)
+    {
+        $this->setProperty('disabilityStatus', $disabilityStatus);
     }
 
     /**

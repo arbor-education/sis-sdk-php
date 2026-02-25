@@ -43,6 +43,8 @@ class SmsMessage extends ModelBase
 
     public const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
 
+    public const PROVIDER = 'provider';
+
     protected $_resourceType = ResourceType::SMS_MESSAGE;
 
     /**
@@ -367,5 +369,21 @@ class SmsMessage extends ModelBase
     public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
+    }
+
+    /**
+     * @return string
+     */
+    public function getProvider()
+    {
+        return $this->getProperty('provider');
+    }
+
+    /**
+     * @param string $provider
+     */
+    public function setProvider(string $provider = null)
+    {
+        $this->setProperty('provider', $provider);
     }
 }

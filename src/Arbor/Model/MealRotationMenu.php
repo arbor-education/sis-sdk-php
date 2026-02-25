@@ -21,7 +21,7 @@ class MealRotationMenu extends ModelBase
 
     public const CUT_OFF_TIME_VALUE = 'cutOffTimeValue';
 
-    public const ALLOW_MEAL_CHARGES_WHEN_NOT_ENOUGH_BALANCE = 'allowMealChargesWhenNotEnoughBalance';
+    public const ALLOW_MEAL_CHOICES_WHEN_NOT_ENOUGH_BALANCE = 'allowMealChoicesWhenNotEnoughBalance';
 
     protected $_resourceType = ResourceType::MEAL_ROTATION_MENU;
 
@@ -176,16 +176,16 @@ class MealRotationMenu extends ModelBase
     /**
      * @return bool
      */
-    public function getAllowMealChargesWhenNotEnoughBalance()
+    public function getAllowMealChoicesWhenNotEnoughBalance()
     {
-        return $this->getProperty('allowMealChargesWhenNotEnoughBalance');
+        return $this->getProperty('allowMealChoicesWhenNotEnoughBalance');
     }
 
     /**
-     * @param bool $allowMealChargesWhenNotEnoughBalance
+     * @param bool $allowMealChoicesWhenNotEnoughBalance
      */
-    public function setAllowMealChargesWhenNotEnoughBalance(bool $allowMealChargesWhenNotEnoughBalance = null)
+    public function setAllowMealChoicesWhenNotEnoughBalance(bool $allowMealChoicesWhenNotEnoughBalance = null)
     {
-        $this->setProperty('allowMealChargesWhenNotEnoughBalance', $allowMealChargesWhenNotEnoughBalance);
+        $this->setProperty('allowMealChoicesWhenNotEnoughBalance', $allowMealChoicesWhenNotEnoughBalance);
     }
 }

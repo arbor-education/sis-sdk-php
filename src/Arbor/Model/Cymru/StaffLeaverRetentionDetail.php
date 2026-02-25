@@ -9,9 +9,11 @@ use Arbor\Model\ModelBase;
 
 class StaffLeaverRetentionDetail extends ModelBase
 {
+    public const LEAVING_DATE = 'leavingDate';
+
     public const CURRICULUM_GRADE = 'curriculumGrade';
 
-    public const POSITION_CATEGORY = 'positionCategory';
+    public const SCHOOL_WORKFORCE_CENSUS_BUSINESS_ROLE = 'schoolWorkforceCensusBusinessRole';
 
     public const STAFF = 'staff';
 
@@ -60,6 +62,22 @@ class StaffLeaverRetentionDetail extends ModelBase
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getLeavingDate()
+    {
+        return $this->getProperty('leavingDate');
+    }
+
+    /**
+     * @param \DateTime $leavingDate
+     */
+    public function setLeavingDate(\DateTime $leavingDate = null)
+    {
+        $this->setProperty('leavingDate', $leavingDate);
+    }
+
+    /**
      * @return \Arbor\Model\CurriculumGrade
      */
     public function getCurriculumGrade()
@@ -76,19 +94,20 @@ class StaffLeaverRetentionDetail extends ModelBase
     }
 
     /**
-     * @return \Arbor\Model\Cymru\PositionCategory
+     * @return \Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole
      */
-    public function getPositionCategory()
+    public function getSchoolWorkforceCensusBusinessRole()
     {
-        return $this->getProperty('positionCategory');
+        return $this->getProperty('schoolWorkforceCensusBusinessRole');
     }
 
     /**
-     * @param \Arbor\Model\Cymru\PositionCategory $positionCategory
+     * @param \Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole
+     * $schoolWorkforceCensusBusinessRole
      */
-    public function setPositionCategory(\Arbor\Model\Cymru\PositionCategory $positionCategory = null)
+    public function setSchoolWorkforceCensusBusinessRole(\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
     {
-        $this->setProperty('positionCategory', $positionCategory);
+        $this->setProperty('schoolWorkforceCensusBusinessRole', $schoolWorkforceCensusBusinessRole);
     }
 
     /**
