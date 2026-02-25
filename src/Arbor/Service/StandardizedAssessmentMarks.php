@@ -8,17 +8,17 @@ use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentMarks
 {
-    const MARK_STUDENT = "student";
-    const MARK_ASSESSMENT_CODE = "assessmentCode";
-    const MARK_RESULT_DATE = "resultDate";
-    const MARK_RESULT = "result";
+    public const MARK_STUDENT = "student";
+    public const MARK_ASSESSMENT_CODE = "assessmentCode";
+    public const MARK_RESULT_DATE = "resultDate";
+    public const MARK_RESULT = "result";
 
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
 
-    public function __construct($gateway=null)
+    public function __construct($gateway = null)
     {
         if (null === $gateway) {
             $gateway = ModelBase::getDefaultGateway();
@@ -40,7 +40,7 @@ class StandardizedAssessmentMarks
             self::MARK_STUDENT => $student,
             self::MARK_RESULT_DATE => $resultDate,
             self::MARK_ASSESSMENT_CODE => $assessmentCode,
-            self::MARK_RESULT =>$result
+            self::MARK_RESULT => $result
         ];
     }
 

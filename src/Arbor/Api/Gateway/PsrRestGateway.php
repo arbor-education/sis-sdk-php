@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Arbor\Api\Gateway;
 
-use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\Api\Exception\ServerErrorException;
+use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
 use Arbor\Filter\PluralizeFilter;

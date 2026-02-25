@@ -10,19 +10,19 @@ use Arbor\Model\Student;
 
 class AttendanceRollCallRegistration
 {
-    const MARK_STUDENT = 'student';
-    const MARK_MARK = 'attendanceMark';
-    const MARK_ROLL_CALL_DATE_TIME = 'rollCallDateTime';
-    const MARK_MINUTES_LATE = 'minutesLate';
-    const MARK_RECORD_DATE = 'recordDate';
-    const MARK_ROLL_CALL = 'rollCall';
+    public const MARK_STUDENT = 'student';
+    public const MARK_MARK = 'attendanceMark';
+    public const MARK_ROLL_CALL_DATE_TIME = 'rollCallDateTime';
+    public const MARK_MINUTES_LATE = 'minutesLate';
+    public const MARK_RECORD_DATE = 'recordDate';
+    public const MARK_ROLL_CALL = 'rollCall';
 
     /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
 
-    public function __construct($gateway=null)
+    public function __construct($gateway = null)
     {
         if (null === $gateway) {
             $gateway = ModelBase::getDefaultGateway();

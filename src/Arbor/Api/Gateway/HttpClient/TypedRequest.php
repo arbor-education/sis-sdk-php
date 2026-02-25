@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Arbor\Api\Gateway\HttpClient;
 
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\UriInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UriInterface;
 
 /**
  * Because PSR 7, 17, 18 were published before covariant support was added into PHP (7.4), MessageInterface

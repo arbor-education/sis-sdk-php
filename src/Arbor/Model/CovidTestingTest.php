@@ -1,10 +1,14 @@
 <?php
+
 namespace Arbor\Model;
 
-use Arbor\Resource\ResourceType;
-use Arbor\Query\Query;
 use Arbor\Model\ModelBase;
+use Arbor\Query\Query;
+use Arbor\Resource\ResourceType;
 
+/**
+ * @coversNothing
+ */
 class CovidTestingTest extends ModelBase
 {
     public const PERSON = 'person';

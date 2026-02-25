@@ -10,21 +10,21 @@ use Arbor\Model\Student;
 
 class AttendanceRegistration
 {
-    const MARK_STUDENT = 'student';
-    const MARK_MARK = 'attendanceMark';
-    const MARK_NOTE = 'note';
-    const MARK_MINUTES_LATE = 'minutesLate';
-    const MARK_SESSION_START_TIME = 'sessionStartTime';
-    const ACADEMIC_UNIT= 'academicUnit';
-    const INCLUDE_ACADEMIC_UNIT= 'includeAcademicUnit';
-    const INCLUDE_EXTRA_MARKS = 'includeExtraMarks';
+    public const MARK_STUDENT = 'student';
+    public const MARK_MARK = 'attendanceMark';
+    public const MARK_NOTE = 'note';
+    public const MARK_MINUTES_LATE = 'minutesLate';
+    public const MARK_SESSION_START_TIME = 'sessionStartTime';
+    public const ACADEMIC_UNIT = 'academicUnit';
+    public const INCLUDE_ACADEMIC_UNIT = 'includeAcademicUnit';
+    public const INCLUDE_EXTRA_MARKS = 'includeExtraMarks';
 
     /** @var \Arbor\Api\Gateway\RestGateway $_gateway */
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
 
-    public function __construct($gateway=null)
+    public function __construct($gateway = null)
     {
         if (null === $gateway) {
             $gateway = ModelBase::getDefaultGateway();
@@ -41,13 +41,13 @@ class AttendanceRegistration
      * @param int $minutesLate
      * @param string $note
      */
-    public function awardAttendanceMark($student, $sessionStartTime, $attendanceMark, $minutesLate=null, $note=null, $academicUnit=null)
+    public function awardAttendanceMark($student, $sessionStartTime, $attendanceMark, $minutesLate = null, $note = null, $academicUnit = null)
     {
         $this->_marks[] = [
             self::MARK_STUDENT => $student,
             self::MARK_SESSION_START_TIME => $sessionStartTime,
             self::MARK_MARK => $attendanceMark,
-            self::MARK_MINUTES_LATE =>$minutesLate,
+            self::MARK_MINUTES_LATE => $minutesLate,
             self::MARK_NOTE => $note,
             self::ACADEMIC_UNIT => $academicUnit
         ];

@@ -15,7 +15,7 @@ foreach ($progressMarks as $progressMark) {
         $progressMark->getStudent()->getPerson()->getLegalFirstName(),
         $progressMark->getStudent()->getPerson()->getLegalLastName(),
         $progressMark->getAssessment()->getAssessmentName(),
-        $progressMark->getAssessment()->getSubject()? $progressMark->getAssessment()->getSubject()->getSubjectName() : null,
+        $progressMark->getAssessment()->getSubject() ? $progressMark->getAssessment()->getSubject()->getSubjectName() : null,
         $progressMark->getGrade() ? $progressMark->getGrade()->getGradeCode() : null,
         $progressMark->getAssessmentDate(),
         PHP_EOL

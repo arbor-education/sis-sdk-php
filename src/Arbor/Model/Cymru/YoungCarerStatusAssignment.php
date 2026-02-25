@@ -1,11 +1,12 @@
 <?php
+
 namespace Arbor\Model\Cymru;
 
-use Arbor\Resource\Cymru\ResourceType;
-use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
+use Arbor\Query\Query;
+use Arbor\Resource\Cymru\ResourceType;
 
 class YoungCarerStatusAssignment extends ModelBase
 {
