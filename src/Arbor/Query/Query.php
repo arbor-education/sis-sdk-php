@@ -31,13 +31,13 @@ class Query
     public const OPERATOR_IN = 'in';
 
     public function __construct(
-        $resourceType = null,
-        $propertyFilters = [],
-        $userTagFilters = [],
-        $pageNumber = null,
-        $pageSize = null,
+        $resourceType=null,
+        $propertyFilters=[],
+        $userTagFilters=[],
+        $pageNumber=null,
+        $pageSize=null,
         $taggingsFilter = [],
-        $orderProperty = null
+        $orderProperty=null
     ) {
         $this->setResourceType($resourceType);
         $this->setPropertyFilters($propertyFilters);
@@ -193,7 +193,7 @@ class Query
             } elseif ($propertyFilter['value'] instanceof \DateTime) {
                 $propertyFilter['value'] = $propertyFilter['value']->format('Y-m-d H:i:s');
             } elseif (null === $propertyFilter['value']) {
-                $propertyFilter['value'] = 'NULL';
+                $propertyFilter['value']='NULL';
             }
 
             $key = 'filters.' . $propertyFilter['propertyName'] . '.' . $propertyFilter['operator'];

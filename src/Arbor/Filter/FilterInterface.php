@@ -1,5 +1,4 @@
 <?php
-
 namespace Arbor\Filter;
 
 interface FilterInterface

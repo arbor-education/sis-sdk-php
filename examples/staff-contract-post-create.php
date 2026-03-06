@@ -24,9 +24,9 @@ $staffContract->setStaff($staff);
 $staffContract->setContractName('Meal Supervisor');
 $staffContract->setContractReference('Support Staff');
 $staffContract->setStaffEmploymentType($staffEmloymentType);
-$staffContract->setIssuedDate(new \DateTime());
-$staffContract->setStartDate(new \DateTime());
-$staffContract->setEndDate(new \DateTime());
+$staffContract->setIssuedDate(new \DateTime);
+$staffContract->setStartDate(new \DateTime);
+$staffContract->setEndDate(new \DateTime);
 $staffContract->setExpectedEndDate(null);
 $staffContract->setPayrollNumber(123);
 $staffContract->connect($api);
@@ -38,10 +38,10 @@ $staffContractPost->setStaffContract($staffContract);
 // // retreive positions from api, they may be different between schools
 $staffContractPost->setPosition($api->retrieve(\Arbor\Resource\ResourceType::POSITION, 1));
 $staffContractPost->setJobTitle('Teacher of Mathematics');
-$staffContractPost->setOfferedDate(new \DateTime());
-$staffContractPost->setAcceptedDate(new \DateTime());
-$staffContractPost->setStartDate(new \DateTime());
-$staffContractPost->setEndDate(new \DateTime());
+$staffContractPost->setOfferedDate(new \DateTime);
+$staffContractPost->setAcceptedDate(new \DateTime);
+$staffContractPost->setStartDate(new \DateTime);
+$staffContractPost->setEndDate(new \DateTime);
 $staffContractPost->connect($api);
 $staffContractPost->save();
 

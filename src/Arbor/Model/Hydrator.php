@@ -1,5 +1,4 @@
 <?php
-
 namespace Arbor\Model;
 
 use Arbor\Model\Hydrator\HydratorInterface;
@@ -18,7 +17,7 @@ class Hydrator implements HydratorInterface
         }
 
         $properties = [];
-        foreach ($arrayRepresentation as $propertyName => $propertyValue) {
+        foreach ($arrayRepresentation as $propertyName=>$propertyValue) {
             switch ($propertyName) {
                 case 'entityType':
                     $model->setResourceType($propertyValue);
@@ -35,7 +34,7 @@ class Hydrator implements HydratorInterface
                     break;
                 default: //This is a normal property
                     //If the property value is another representation then parse it recursivly
-                    if (is_array($propertyValue) && (isset($propertyValue['entityType']))) {
+                    if (is_array($propertyValue)&&(isset($propertyValue['entityType']))) {
                         switch ($propertyValue['entityType']) {
                             case 'date':
                                 /**@var \DateTime $propertyValue*/
@@ -77,7 +76,7 @@ class Hydrator implements HydratorInterface
      * @param bool $abbreviate If set to true only entityType and href array keys will be included
      * @return array
      */
-    public function extractArray($model, $abbreviate = false)
+    public function extractArray($model, $abbreviate=false)
     {
         $representation = [];
 
@@ -87,14 +86,14 @@ class Hydrator implements HydratorInterface
         }
         if (!$abbreviate) {
             $properties = $model->getProperties();
-            foreach ($properties as $propertyName => $propertyValue) {
+            foreach ($properties as $propertyName=>$propertyValue) {
                 if ($propertyValue instanceof ModelBase) {
                     $relatedModel = $propertyValue;
                     $representation[$propertyName] = $this->extractArray($relatedModel);
                 } elseif ($propertyValue instanceof \DateTimeInterface) {
                     $representation[$propertyName] = [
-                            "entityType" => "date",
-                            "date" => $propertyValue->format("Y-m-d H:i:s"),
+                            "entityType"=>"date",
+                            "date"=>$propertyValue->format("Y-m-d H:i:s"),
                     ];
                 } elseif ($propertyValue instanceof Collection) {
                     //This must be a navigation property which holds a collection of related objects

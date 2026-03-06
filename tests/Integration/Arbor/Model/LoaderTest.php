@@ -28,7 +28,7 @@ class LoaderTest extends TestCase
         $namespace = $dirName === '' ? '\\Arbor\\Model' : '\\Arbor\Model\\' . $dirName;
         foreach ($files as $fileName) {
             $className = "$namespace\\{$fileName}";
-            $class = new $className();
+            $class = new $className;
             $this->assertInstanceOf(ModelBase::class, $class);
         }
     }

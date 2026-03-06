@@ -1,7 +1,7 @@
 <?php
 
-use Arbor\Api\Exception\ServerErrorException;
 use Arbor\Api\Gateway\RestGateway;
+use Arbor\Api\Exception\ServerErrorException;
 use Arbor\Model\Gender;
 use Arbor\Model\Hydrator;
 use Arbor\Model\Person;

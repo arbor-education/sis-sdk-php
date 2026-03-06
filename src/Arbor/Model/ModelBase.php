@@ -33,7 +33,7 @@ class ModelBase implements Serializable
      * @param array $properties
      * @param \Arbor\Api\Gateway\GatewayInterface $apiGateway
      */
-    public function __construct($resourceType = null, $properties = [], $apiGateway = null)
+    public function __construct($resourceType=null, $properties=[], $apiGateway=null)
     {
         if (!is_null($resourceType)) {
             $this->setResourceType($resourceType);
@@ -71,10 +71,10 @@ class ModelBase implements Serializable
     public function __call($name, $arguments)
     {
         if (substr($name, 0, 3) == "get") {
-            $propertyName = lcfirst(substr($name, 3, strlen($name) - 2));
+            $propertyName = lcfirst(substr($name, 3, strlen($name)-2));
             return $this->getProperty($propertyName);
         } elseif (substr($name, 0, 3) == "set") {
-            $propertyName = lcfirst(substr($name, 3, strlen($name) - 3));
+            $propertyName = lcfirst(substr($name, 3, strlen($name)-3));
             $this->_properties[$propertyName] = $arguments[0];
         } else {
             throw new Exception("Invalid method: $name");
@@ -100,7 +100,7 @@ class ModelBase implements Serializable
     public function getResourceId()
     {
         if (!empty($this->_resourceUrl)) {
-            list($api, $resource, $id) = explode("/", trim($this->getResourceUrl(), "/"));
+            list($api, $resource, $id)=explode("/", trim($this->getResourceUrl(), "/"));
             return $id;
         }
         return null;
