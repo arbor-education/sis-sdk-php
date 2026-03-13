@@ -13,6 +13,8 @@ class AiAbsenceImport extends ModelBase
 
     public const AI_AGENT_RESPONSE_IDENTIFIER = 'aiAgentResponseIdentifier';
 
+    public const IS_ERROR_DISMISSED = 'isErrorDismissed';
+
     protected $_resourceType = ResourceType::AI_ABSENCE_IMPORT;
 
     /**
@@ -97,5 +99,21 @@ class AiAbsenceImport extends ModelBase
     public function setAiAgentResponseIdentifier(string $aiAgentResponseIdentifier = null)
     {
         $this->setProperty('aiAgentResponseIdentifier', $aiAgentResponseIdentifier);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsErrorDismissed()
+    {
+        return $this->getProperty('isErrorDismissed');
+    }
+
+    /**
+     * @param bool $isErrorDismissed
+     */
+    public function setIsErrorDismissed(bool $isErrorDismissed = null)
+    {
+        $this->setProperty('isErrorDismissed', $isErrorDismissed);
     }
 }

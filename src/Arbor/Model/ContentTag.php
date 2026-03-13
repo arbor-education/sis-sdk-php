@@ -15,6 +15,8 @@ class ContentTag extends ModelBase
 
     public const TAG_VALUE = 'tagValue';
 
+    public const RELATED_BASE_ENTITY = 'relatedBaseEntity';
+
     protected $_resourceType = ResourceType::CONTENT_TAG;
 
     /**
@@ -115,5 +117,21 @@ class ContentTag extends ModelBase
     public function setTagValue(string $tagValue = null)
     {
         $this->setProperty('tagValue', $tagValue);
+    }
+
+    /**
+     * @return ModelBase
+     */
+    public function getRelatedBaseEntity()
+    {
+        return $this->getProperty('relatedBaseEntity');
+    }
+
+    /**
+     * @param ModelBase $relatedBaseEntity
+     */
+    public function setRelatedBaseEntity(\ModelBase $relatedBaseEntity = null)
+    {
+        $this->setProperty('relatedBaseEntity', $relatedBaseEntity);
     }
 }

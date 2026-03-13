@@ -80,7 +80,7 @@ class ServiceChildConcern extends ModelBase
     }
 
     /**
-     * @return \Arbor\Model\Statutory\CtfImportJobStudent
+     * @return \Arbor\Model\UkDfe\CtfImportJobStudent
      */
     public function getCtfImportJobStudent()
     {
@@ -88,9 +88,9 @@ class ServiceChildConcern extends ModelBase
     }
 
     /**
-     * @param \Arbor\Model\Statutory\CtfImportJobStudent $ctfImportJobStudent
+     * @param \Arbor\Model\UkDfe\CtfImportJobStudent $ctfImportJobStudent
      */
-    public function setCtfImportJobStudent(\Arbor\Model\Statutory\CtfImportJobStudent $ctfImportJobStudent = null)
+    public function setCtfImportJobStudent(\Arbor\Model\UkDfe\CtfImportJobStudent $ctfImportJobStudent = null)
     {
         $this->setProperty('ctfImportJobStudent', $ctfImportJobStudent);
     }

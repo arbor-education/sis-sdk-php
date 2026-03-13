@@ -9,8 +9,6 @@ use Arbor\Model\ModelBase;
 
 class Staff extends ModelBase
 {
-    public const DISABILITY_CODE = 'disabilityCode';
-
     public const EARLY_YEARS_TEACHER_STATUS = 'earlyYearsTeacherStatus';
 
     public const ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = 'eligibleForSchoolWorkforceReturn';
@@ -73,22 +71,6 @@ class Staff extends ModelBase
         }
 
         return $gateway->retrieve(ResourceType::CYMRU_STAFF, $id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDisabilityCode()
-    {
-        return $this->getProperty('disabilityCode');
-    }
-
-    /**
-     * @param string $disabilityCode
-     */
-    public function setDisabilityCode(string $disabilityCode = null)
-    {
-        $this->setProperty('disabilityCode', $disabilityCode);
     }
 
     /**

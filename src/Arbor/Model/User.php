@@ -17,6 +17,8 @@ class User extends ModelBase
 
     public const USERNAME = 'username';
 
+    public const LANGUAGE = 'language';
+
     public const EMAIL = 'email';
 
     public const PASSWORD_HASH = 'passwordHash';
@@ -175,6 +177,22 @@ class User extends ModelBase
     public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->getProperty('language');
+    }
+
+    /**
+     * @param string $language
+     */
+    public function setLanguage(string $language = null)
+    {
+        $this->setProperty('language', $language);
     }
 
     /**

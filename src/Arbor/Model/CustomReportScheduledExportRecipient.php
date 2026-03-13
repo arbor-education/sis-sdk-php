@@ -11,6 +11,8 @@ class CustomReportScheduledExportRecipient extends ModelBase
 
     public const STAFF = 'staff';
 
+    public const EMAIL_REPORT_STAFF = 'emailReportStaff';
+
     public const EMAIL_ADDRESS = 'emailAddress';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT_RECIPIENT;
@@ -81,6 +83,22 @@ class CustomReportScheduledExportRecipient extends ModelBase
     public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
+    }
+
+    /**
+     * @return \Arbor\Model\Staff
+     */
+    public function getEmailReportStaff()
+    {
+        return $this->getProperty('emailReportStaff');
+    }
+
+    /**
+     * @param \Arbor\Model\Staff $emailReportStaff
+     */
+    public function setEmailReportStaff(\Arbor\Model\Staff $emailReportStaff = null)
+    {
+        $this->setProperty('emailReportStaff', $emailReportStaff);
     }
 
     /**

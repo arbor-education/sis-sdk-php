@@ -29,6 +29,12 @@ class TimetableSlot extends ModelBase
 
     public const STATUS = 'status';
 
+    public const SCHEDULING_ERROR_TYPE = 'schedulingErrorType';
+
+    public const SCHEDULING_ERROR = 'schedulingError';
+
+    public const SCHEDULING_ERROR_DATETIME = 'schedulingErrorDatetime';
+
     protected $_resourceType = ResourceType::TIMETABLE_SLOT;
 
     /**
@@ -241,5 +247,53 @@ class TimetableSlot extends ModelBase
     public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSchedulingErrorType()
+    {
+        return $this->getProperty('schedulingErrorType');
+    }
+
+    /**
+     * @param string $schedulingErrorType
+     */
+    public function setSchedulingErrorType(string $schedulingErrorType = null)
+    {
+        $this->setProperty('schedulingErrorType', $schedulingErrorType);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSchedulingError()
+    {
+        return $this->getProperty('schedulingError');
+    }
+
+    /**
+     * @param string $schedulingError
+     */
+    public function setSchedulingError(string $schedulingError = null)
+    {
+        $this->setProperty('schedulingError', $schedulingError);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getSchedulingErrorDatetime()
+    {
+        return $this->getProperty('schedulingErrorDatetime');
+    }
+
+    /**
+     * @param \DateTime $schedulingErrorDatetime
+     */
+    public function setSchedulingErrorDatetime(\DateTime $schedulingErrorDatetime = null)
+    {
+        $this->setProperty('schedulingErrorDatetime', $schedulingErrorDatetime);
     }
 }

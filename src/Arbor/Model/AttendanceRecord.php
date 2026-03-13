@@ -33,6 +33,8 @@ class AttendanceRecord extends ModelBase
 
     public const SOURCE = 'source';
 
+    public const IS_REDUNDANT = 'isRedundant';
+
     protected $_resourceType = ResourceType::ATTENDANCE_RECORD;
 
     /**
@@ -277,5 +279,21 @@ class AttendanceRecord extends ModelBase
     public function setSource(string $source = null)
     {
         $this->setProperty('source', $source);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsRedundant()
+    {
+        return $this->getProperty('isRedundant');
+    }
+
+    /**
+     * @param bool $isRedundant
+     */
+    public function setIsRedundant(bool $isRedundant = null)
+    {
+        $this->setProperty('isRedundant', $isRedundant);
     }
 }

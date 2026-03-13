@@ -31,8 +31,6 @@ class SchoolVacancy extends ModelBase
 
     public const APPOINTMENT_MADE = 'appointmentMade';
 
-    public const VACANCY_COVER = 'vacancyCover';
-
     protected $_resourceType = ResourceType::CYMRU_SCHOOL_VACANCY;
 
     /**
@@ -246,21 +244,5 @@ class SchoolVacancy extends ModelBase
     public function setAppointmentMade(bool $appointmentMade = null)
     {
         $this->setProperty('appointmentMade', $appointmentMade);
-    }
-
-    /**
-     * @return string
-     */
-    public function getVacancyCover()
-    {
-        return $this->getProperty('vacancyCover');
-    }
-
-    /**
-     * @param string $vacancyCover
-     */
-    public function setVacancyCover(string $vacancyCover = null)
-    {
-        $this->setProperty('vacancyCover', $vacancyCover);
     }
 }

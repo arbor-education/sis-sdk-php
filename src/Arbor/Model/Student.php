@@ -63,6 +63,8 @@ class Student extends ModelBase
 
     public const GCSE_ENGLISH_FUNDING_EXEMPTION_TYPE = 'gcseEnglishFundingExemptionType';
 
+    public const GCSE_ENGLISH_MINIMUM_HOURS = 'gcseEnglishMinimumHours';
+
     public const GCSE_MATHS_GRADE = 'gcseMathsGrade';
 
     public const GCSE_MATHS_GRADE_PRIOR = 'gcseMathsGradePrior';
@@ -70,6 +72,8 @@ class Student extends ModelBase
     public const GCSE_MATHS_ACHIEVEMENT_TYPE = 'gcseMathsAchievementType';
 
     public const GCSE_MATHS_FUNDING_EXEMPTION_TYPE = 'gcseMathsFundingExemptionType';
+
+    public const GCSE_MATHS_MINIMUM_HOURS = 'gcseMathsMinimumHours';
 
     public const T_LEVEL_PLANNED_EEP_HOURS = 'tLevelPlannedEepHours';
 
@@ -563,6 +567,22 @@ class Student extends ModelBase
     /**
      * @return string
      */
+    public function getGcseEnglishMinimumHours()
+    {
+        return $this->getProperty('gcseEnglishMinimumHours');
+    }
+
+    /**
+     * @param string $gcseEnglishMinimumHours
+     */
+    public function setGcseEnglishMinimumHours(string $gcseEnglishMinimumHours = null)
+    {
+        $this->setProperty('gcseEnglishMinimumHours', $gcseEnglishMinimumHours);
+    }
+
+    /**
+     * @return string
+     */
     public function getGcseMathsGrade()
     {
         return $this->getProperty('gcseMathsGrade');
@@ -623,6 +643,22 @@ class Student extends ModelBase
     public function setGcseMathsFundingExemptionType(\Arbor\Model\UkDfe\GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGcseMathsMinimumHours()
+    {
+        return $this->getProperty('gcseMathsMinimumHours');
+    }
+
+    /**
+     * @param string $gcseMathsMinimumHours
+     */
+    public function setGcseMathsMinimumHours(string $gcseMathsMinimumHours = null)
+    {
+        $this->setProperty('gcseMathsMinimumHours', $gcseMathsMinimumHours);
     }
 
     /**

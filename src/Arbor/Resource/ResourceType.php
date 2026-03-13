@@ -123,7 +123,6 @@ class ResourceType
 	const BUSINESS_ROLE_DEFAULT_USER_ROLE = 'BusinessRoleDefaultUserRole';
 	const CALENDAR = 'Calendar';
 	const CALENDAR_ENTRY_MAPPING = 'CalendarEntryMapping';
-	const CALENDAR_ENTRY_REMINDER = 'CalendarEntryReminder';
 	const CALENDAR_TYPE = 'CalendarType';
 	const CANDIDATE = 'Candidate';
 	const CANDIDATE_ASSESSABLE_ENTRY = 'CandidateAssessableEntry';
@@ -157,6 +156,7 @@ class ResourceType
 	const CONSENT_TYPE = 'ConsentType';
 	const CONTENT = 'Content';
 	const CONTENT_TAG = 'ContentTag';
+	const URL_ATTACHMENT = 'UrlAttachment';
 	const COURT_ORDER = 'CourtOrder';
 	const COVER_ARRANGEMENT = 'CoverArrangement';
 	const COVER_REQUIREMENT = 'CoverRequirement';
@@ -190,6 +190,8 @@ class ResourceType
 	const CURRICULUM_TARGET = 'CurriculumTarget';
 	const CURRICULUM_TARGET_SET = 'CurriculumTargetSet';
 	const DATA_EXPORT = 'DataExport';
+	const DATA_RETENTION_RULE = 'DataRetentionRule';
+	const DATA_RETENTION_STATUS = 'DataRetentionStatus';
 	const DATA_SET_SUBSCRIPTION = 'DataSetSubscription';
 	const DATA_SOURCE = 'DataSource';
 	const DEMOGRAPHIC = 'Demographic';
@@ -462,6 +464,7 @@ class ResourceType
 	const REPORT_CARD_BATCH_ACADEMIC_UNIT = 'ReportCardBatchAcademicUnit';
 	const REPORT_CARD_BATCH_AD_HOC_ASSESSMENT = 'ReportCardBatchAdHocAssessment';
 	const REPORT_CARD_BATCH_STANDARDIZED_ASSESSMENT = 'ReportCardBatchStandardizedAssessment';
+	const REPORT_CARD_BATCH_STANDARDIZED_ASSESSMENT_ASPECT = 'ReportCardBatchStandardizedAssessmentAspect';
 	const EXTERNALLY_GENERATED_REPORT_CARD = 'ExternallyGeneratedReportCard';
 	const CUSTOM_REPORT_CARD = 'CustomReportCard';
 	const CUSTOM_REPORT_CARD_STUDENT_GROUP = 'CustomReportCardStudentGroup';
@@ -632,6 +635,7 @@ class ResourceType
 	const BEHAVIOURAL_INCIDENT_WATCHER = 'BehaviouralIncidentWatcher';
 	const BEHAVIOURAL_INCIDENT_DEFAULT_WATCHER = 'BehaviouralIncidentDefaultWatcher';
 	const BEHAVIOUR_DEFAULT_WATCHER = 'BehaviourDefaultWatcher';
+	const DISABILITY_STATUS = 'DisabilityStatus';
 	const BANK = 'Bank';
 	const BANK_ACCOUNT = 'BankAccount';
 	const BANK_DEPOSIT = 'BankDeposit';
@@ -685,6 +689,7 @@ class ResourceType
 	const OBSERVATION_JUDGEMENT = 'ObservationJudgement';
 	const OBSERVATION_TYPE_GRADE_SET = 'ObservationTypeGradeSet';
 	const OAUTH2_CLIENT_TOKEN = 'Oauth2ClientToken';
+	const OAUTH2_CLIENT_TOKEN_DETAIL = 'Oauth2ClientTokenDetail';
 	const PERSON_BENEFIT_RECORD = 'PersonBenefitRecord';
 	const BENEFIT_RECORD_TYPE = 'BenefitRecordType';
 	const EMAIL_ADDRESS_IMPORT = 'EmailAddressImport';
@@ -709,8 +714,11 @@ class ResourceType
 	const OUTGOING_ENTITY_TRANSFER = 'OutgoingEntityTransfer';
 	const INCOMING_ENTITY_TRANSFER = 'IncomingEntityTransfer';
 	const INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT = 'IntegrationsVleProviderAcademicUnit';
+	const AI_CREDIT_BUNDLE = 'AiCreditBundle';
+	const AI_INTERACTION = 'AiInteraction';
 	const AI_REQUEST = 'AiRequest';
 	const AI_ABSENCE_IMPORT = 'AiAbsenceImport';
+	const AI_FEATURE_OPT_OUT = 'AiFeatureOptOut';
 	const TIMETABLE_IMPORT_TIMETABLE_SLOT = 'TimetableImportTimetableSlot';
 	const TIMETABLE_IMPORT_TIMETABLE_SLOT_RELATED_ENTITY = 'TimetableImportTimetableSlotRelatedEntity';
 	const TIMETABLE_IMPORT_ENDING_TIMETABLE_SLOT = 'TimetableImportEndingTimetableSlot';
@@ -726,5 +734,20 @@ class ResourceType
 	const ENTITY_PUSHDOWN_SYNCED_ENTITY = 'EntityPushdownSyncedEntity';
 	const ENTITY_PUSHDOWN_VERSION = 'EntityPushdownVersion';
 	const ENTITY_PUSHDOWN_VERSION_STATUS = 'EntityPushdownVersionStatus';
+	const SECURE_CONTENT = 'SecureContent';
 	const ARBOR_LABS_FEATURE = 'ArborLabsFeature';
+	const ASSESSMENT_DATA_DROP = 'AssessmentDataDrop';
+	const ASSESSMENT_DATA_GRADE_SET = 'AssessmentDataGradeSet';
+	const ASSESSMENT_GRADE = 'AssessmentGrade';
+	const ASSESSMENT_SUBJECT = 'AssessmentSubject';
+	const ASSESSMENT_COMPONENT = 'AssessmentComponent';
+	const ASSESSMENT_MARKSHEET = 'AssessmentMarksheet';
+	const MARKSHEET_TEMPLATE = 'MarksheetTemplate';
+	const MARKSHEET_TEMPLATE_COLUMN = 'MarksheetTemplateColumn';
+	const MARKSHEET_TEMPLATE_CONTEXTUAL_COLUMN = 'MarksheetTemplateContextualColumn';
+	const MARKSHEET_TEMPLATE_DATA_ENTRY_COLUMN = 'MarksheetTemplateDataEntryColumn';
+	const MARKSHEET_ASSIGNED_STAFF = 'MarksheetAssignedStaff';
+	const MARKSHEET_STUDENT_GROUP = 'MarksheetStudentGroup';
+	const MARKSHEET_DUE_DATE = 'MarksheetDueDate';
+	const STUDENT_ASSESSMENT_MARK = 'StudentAssessmentMark';
 }
