@@ -2,7 +2,8 @@
 
 namespace Arbor\Service;
 
-use Arbor\Api\Gateway\RestGateway;
+use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
+use Arbor\Api\Gateway\PsrRestGateway;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
 
@@ -13,7 +14,7 @@ class StandardizedAssessmentMarks
     const MARK_RESULT_DATE = "resultDate";
     const MARK_RESULT = "result";
 
-    /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
+    /**@var PsrRestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
@@ -69,8 +70,8 @@ class StandardizedAssessmentMarks
             $payload['request']['marks'][] = $markPayload;
         }
 
-        $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST,
+        $this->getGateway()->getHttpClient()->sendRequest(
+            HttpClientInterface::HTTP_METHOD_POST,
             '/rest-v2/standardized-assessment-mark',
             ['body' => $payload]
         );
@@ -79,7 +80,7 @@ class StandardizedAssessmentMarks
     }
 
     /**
-     * @param \Arbor\Api\Gateway\RestGateway $gateway
+     * @param PsrRestGateway $gateway
      */
     public function setGateway($gateway)
     {
@@ -87,7 +88,7 @@ class StandardizedAssessmentMarks
     }
 
     /**
-     * @return \Arbor\Api\Gateway\RestGateway
+     * @return PsrRestGateway
      */
     public function getGateway()
     {
