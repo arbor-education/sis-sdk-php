@@ -2,7 +2,8 @@
 
 namespace Arbor\Service;
 
-use Arbor\Api\Gateway\RestGateway;
+use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
+use Arbor\Api\Gateway\PsrRestGateway;
 use Arbor\Model\AttendanceMark;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
@@ -19,7 +20,7 @@ class AttendanceRegistration
     const INCLUDE_ACADEMIC_UNIT= 'includeAcademicUnit';
     const INCLUDE_EXTRA_MARKS = 'includeExtraMarks';
 
-    /** @var \Arbor\Api\Gateway\RestGateway $_gateway */
+    /** @var PsrRestGateway $_gateway */
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
@@ -99,8 +100,8 @@ class AttendanceRegistration
             $payload['request']['marks'][] = $markPayload;
         }
 
-        $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST,
+        $this->getGateway()->getHttpClient()->sendRequest(
+            HttpClientInterface::HTTP_METHOD_POST,
             '/rest-v2/attendance-registration',
             ['body' => $payload]
         );
@@ -109,7 +110,7 @@ class AttendanceRegistration
     }
 
     /**
-     * @param \Arbor\Api\Gateway\RestGateway $gateway
+     * @param PsrRestGateway $gateway
      */
     public function setGateway($gateway)
     {
@@ -117,7 +118,7 @@ class AttendanceRegistration
     }
 
     /**
-     * @return \Arbor\Api\Gateway\RestGateway
+     * @return PsrRestGateway
      */
     public function getGateway()
     {

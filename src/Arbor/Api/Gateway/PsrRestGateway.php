@@ -27,6 +27,11 @@ class PsrRestGateway implements GatewayInterface
     ) {
     }
 
+    public function getHttpClient(): HttpClientInterface
+    {
+        return $this->httpClient;
+    }
+
     public function getApplicationId(): string
     {
         return $this->applicationId;

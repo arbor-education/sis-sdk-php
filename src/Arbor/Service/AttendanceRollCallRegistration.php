@@ -2,7 +2,8 @@
 
 namespace Arbor\Service;
 
-use Arbor\Api\Gateway\RestGateway;
+use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
+use Arbor\Api\Gateway\PsrRestGateway;
 use Arbor\Model\AttendanceMark;
 use Arbor\Model\Hydrator;
 use Arbor\Model\ModelBase;
@@ -17,7 +18,7 @@ class AttendanceRollCallRegistration
     const MARK_RECORD_DATE = 'recordDate';
     const MARK_ROLL_CALL = 'rollCall';
 
-    /**@var \Arbor\Api\Gateway\RestGateway $_gateway*/
+    /**@var PsrRestGateway $_gateway*/
     protected $_gateway;
     protected $_hydrator;
     protected $_marks = [];
@@ -95,8 +96,8 @@ class AttendanceRollCallRegistration
             $payload['request']['marks'][] = $markPayload;
         }
 
-        $this->getGateway()->sendRequest(
-            RestGateway::HTTP_METHOD_POST,
+        $this->getGateway()->getHttpClient()->sendRequest(
+            HttpClientInterface::HTTP_METHOD_POST,
             '/rest-v2/attendance-roll-call-registration',
             ['body' => $payload]
         );
@@ -105,7 +106,7 @@ class AttendanceRollCallRegistration
     }
 
     /**
-     * @param \Arbor\Api\Gateway\RestGateway $gateway
+     * @param PsrRestGateway $gateway
      */
     public function setGateway($gateway)
     {
@@ -113,7 +114,7 @@ class AttendanceRollCallRegistration
     }
 
     /**
-     * @return \Arbor\Api\Gateway\RestGateway
+     * @return PsrRestGateway
      */
     public function getGateway()
     {
