@@ -67,6 +67,13 @@ interface GatewayInterface
     public function bulkCreate(string $resource, Collection $collection, bool $checkForPersistence = true): Collection;
 
     /**
+     * @param string $endpoint
+     * @param UploadFile $file
+     * @return array
+     */
+    public function upload(string $endpoint, UploadFile $file): array;
+
+    /**
      * @param string $applicationId
      */
     public function setApplicationId(string $applicationId);

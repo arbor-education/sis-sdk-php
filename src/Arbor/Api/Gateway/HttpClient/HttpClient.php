@@ -8,6 +8,8 @@ use Arbor\Api\Exception\ResourceNotFoundException;
 use Arbor\Api\Exception\ServerErrorException;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
+use Http\Message\MultipartStream\MultipartStreamBuilder;
+use InvalidArgumentException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -157,6 +159,10 @@ class HttpClient implements HttpClientInterface
     {
         // NOTE: Uncomment this line to allow you to trigger a debug session in the Mis project
         // $url .= '?XDEBUG_SESSION_START=0';
+        if (array_key_exists('body', $options) && array_key_exists('multipart', $options)) {
+            throw new InvalidArgumentException('Cannot use "body" and "multipart" options in the same request.');
+        }
+
         // Handle query parameters by appending them to the URL
         if (!empty($options['query']) && is_array($options['query'])) {
             $queryString = http_build_query($options['query']);
@@ -166,6 +172,7 @@ class HttpClient implements HttpClientInterface
         }
 
         $request = $this->typedRequestFactory->createRequest($method, $this->baseUrl . $url);
+        $requestPayload = null;
 
         // Adding user agent string if it's not passed
         $options['headers']['User-Agent'] = $options['headers']['User-Agent'] ?? $this->userAgent;
@@ -186,8 +193,37 @@ class HttpClient implements HttpClientInterface
             $request = $request->withHeader('Authorization', $header);
         }
 
-        $requestPayload = $options['body'] ?? null;
-        if (is_array($requestPayload)) {
+        if (array_key_exists('multipart', $options)) {
+            $requestPayload = '[multipart data]';
+            $builder = new MultipartStreamBuilder($this->streamFactory);
+
+            foreach ($options['multipart'] as $index => $part) {
+                if (!isset($part['name']) || !is_scalar($part['name']) || $part['name'] === '') {
+                    throw new InvalidArgumentException(
+                        sprintf('Multipart part at index %d must contain non-empty scalar "name".', $index)
+                    );
+                }
+                if (!array_key_exists('contents', $part)) {
+                    throw new InvalidArgumentException(
+                        sprintf('Multipart part at index %d must contain "contents".', $index)
+                    );
+                }
+
+                $partOptions = [];
+                if (isset($part['filename'])) {
+                    $partOptions['filename'] = $part['filename'];
+                }
+                if (isset($part['headers'])) {
+                    $partOptions['headers'] = $part['headers'];
+                }
+                $builder->addResource($part['name'], $part['contents'], $partOptions);
+            }
+
+            $request = $request
+                ->withHeader('Content-Type', 'multipart/form-data; boundary="' . $builder->getBoundary() . '"')
+                ->withBody($builder->build());
+        } elseif (is_array($options['body'] ?? null)) {
+            $requestPayload = $options['body'];
             $bodyStream = $this->streamFactory->createStream(json_encode($requestPayload));
             $request = $request->withBody($bodyStream);
         }

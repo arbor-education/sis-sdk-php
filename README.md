@@ -59,7 +59,31 @@ This will set the default gateway for all models, allowing you to use the SDK wi
 ```
 Use `Arbor\Api\Gateway\PsrRestGateway` to make GET, POST, PUT and DELETE requests and use `Arbor\Query\Query` to add filters to your requests.
 
+#### Multipart upload request
+
+Use the `upload()` method to submit files as `multipart/form-data`.
+
 ```php
+use Arbor\Api\Gateway\UploadFile;
+
+$fileContent = file_get_contents('/path/to/document.pdf');
+
+$response = $api->upload(
+    '/rest-v2/documents/upload',
+    new UploadFile(name: 'file', contents: $fileContent, filename: 'document.pdf')
+);
+```
+
+For large files, pass a PSR-7 stream to avoid loading the entire file into memory:
+
+```php
+$stream = $streamFactory->createStreamFromFile('/path/to/large-video.mp4');
+
+$response = $api->upload(
+    '/rest-v2/documents/upload',
+    new UploadFile(name: 'file', contents: $stream, filename: 'large-video.mp4')
+);
+```
 
 #### GET request:
 ```php
