@@ -77,6 +77,7 @@ $response = $api->upload(
 For large files, pass a PSR-7 stream to avoid loading the entire file into memory:
 
 ```php
+// $streamFactory can be any PSR-17 StreamFactoryInterface implementation
 $stream = $streamFactory->createStreamFromFile('/path/to/large-video.mp4');
 
 $response = $api->upload(
