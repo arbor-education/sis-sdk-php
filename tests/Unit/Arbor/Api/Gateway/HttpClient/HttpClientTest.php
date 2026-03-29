@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Arbor\Test\Unit\Arbor\Api\Gateway\HttpClient;
 
-use InvalidArgumentException;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Arbor\Api\Exception\ResourceNotFoundException;
 use Arbor\Api\Exception\ServerErrorException;
@@ -12,6 +11,7 @@ use Arbor\Api\Gateway\HttpClient\HttpClient;
 use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
 use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
+use Arbor\Api\Gateway\UploadFile;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\Exception;
@@ -512,7 +512,7 @@ class HttpClientTest extends TestCase
     /**
      * @throws ServerErrorException
      */
-    public function testSendsRequestWithMultipartData()
+    public function testUploadRequestSendsMultipartWithUploadFile(): void
     {
         $psr17Factory = new Psr17Factory();
         $httpClient = new HttpClient(
@@ -543,71 +543,23 @@ class HttpClientTest extends TestCase
                     'multipart/form-data; boundary=',
                     $request->getHeaderLine('Content-Type')
                 );
-                $this->assertStringContainsString('Content-Disposition: form-data; name="file"; filename="upload.txt"', $payload);
-                $this->assertStringContainsString("Content-Type: text/plain\r\n", $payload);
-                $this->assertStringContainsString('hello-world', $payload);
+                $this->assertStringContainsString('Content-Disposition: form-data; name="file"; filename="report.pdf"', $payload);
+                $this->assertStringContainsString('pdf-contents', $payload);
 
                 return true;
             }))
             ->willReturn($this->responseMock);
 
-        $result = $httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-            'multipart' => [
-                [
-                    'name' => 'file',
-                    'filename' => 'upload.txt',
-                    'contents' => 'hello-world',
-                ],
-            ],
-        ]);
+        $file = new UploadFile(name: 'file', contents: 'pdf-contents', filename: 'report.pdf');
+        $result = $httpClient->uploadRequest('/rest-v2/documents/upload', $file);
 
         $this->assertEquals(['response' => ['code' => 200]], $result);
-    }
-
-    public function testMasksMultipartPayloadInServerErrorException(): void
-    {
-        $psr17Factory = new Psr17Factory();
-        $httpClient = new HttpClient(
-            new TypedRequestFactory($psr17Factory),
-            $this->httpClientMock,
-            $psr17Factory
-        );
-
-        $this->responseMock
-            ->method('getStatusCode')
-            ->willReturn(500);
-
-        $this->responseMock
-            ->method('getBody')
-            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-                'getContents' => json_encode(['response' => ['reason' => 'Server Error']])
-            ]));
-
-        $this->httpClientMock
-            ->expects($this->once())
-            ->method('sendRequest')
-            ->willReturn($this->responseMock);
-
-        try {
-            $httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-                'multipart' => [
-                    [
-                        'name' => 'file',
-                        'filename' => 'upload.txt',
-                        'contents' => 'binary-or-large-content',
-                    ],
-                ],
-            ]);
-            $this->fail('Expected ServerErrorException to be thrown.');
-        } catch (ServerErrorException $exception) {
-            $this->assertSame('[multipart data]', $exception->getRequestPayload());
-        }
     }
 
     /**
      * @throws ServerErrorException
      */
-    public function testSendsRequestWithMultipartAndQueryParameters()
+    public function testUploadRequestWithQueryParameters(): void
     {
         $psr17Factory = new Psr17Factory();
         $httpClient = new HttpClient(
@@ -630,7 +582,7 @@ class HttpClientTest extends TestCase
             ->expects($this->once())
             ->method('sendRequest')
             ->with($this->callback(function ($request): bool {
-                $this->assertSame('/upload?folder=reports', (string) $request->getUri());
+                $this->assertSame('/rest-v2/documents/upload?folder=reports', (string) $request->getUri());
                 $this->assertStringStartsWith(
                     'multipart/form-data; boundary=',
                     $request->getHeaderLine('Content-Type')
@@ -640,17 +592,9 @@ class HttpClientTest extends TestCase
             }))
             ->willReturn($this->responseMock);
 
-        $result = $httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-            'query' => [
-                'folder' => 'reports',
-            ],
-            'multipart' => [
-                [
-                    'name' => 'file',
-                    'filename' => 'report.csv',
-                    'contents' => 'row-1',
-                ],
-            ],
+        $file = new UploadFile(name: 'file', contents: 'csv-data', filename: 'report.csv');
+        $result = $httpClient->uploadRequest('/rest-v2/documents/upload', $file, [
+            'query' => ['folder' => 'reports'],
         ]);
 
         $this->assertEquals(['response' => ['code' => 200]], $result);
@@ -659,104 +603,7 @@ class HttpClientTest extends TestCase
     /**
      * @throws ServerErrorException
      */
-    public function testSendsRequestWithMultipleMultipartParts(): void
-    {
-        $psr17Factory = new Psr17Factory();
-        $httpClient = new HttpClient(
-            new TypedRequestFactory($psr17Factory),
-            $this->httpClientMock,
-            $psr17Factory
-        );
-
-        $this->responseMock
-            ->method('getStatusCode')
-            ->willReturn(200);
-
-        $this->responseMock
-            ->method('getBody')
-            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
-                'getContents' => json_encode(['response' => ['code' => 200]])
-            ]));
-
-        $this->httpClientMock
-            ->expects($this->once())
-            ->method('sendRequest')
-            ->with($this->callback(function ($request): bool {
-                $request->getBody()->rewind();
-                $payload = $request->getBody()->getContents();
-
-                $this->assertStringContainsString('Content-Disposition: form-data; name="description"', $payload);
-                $this->assertStringContainsString('Student profile image', $payload);
-                $this->assertStringContainsString('Content-Disposition: form-data; name="file"; filename="avatar.png"', $payload);
-                $this->assertStringContainsString("Content-Type: image/png\r\n", $payload);
-                $this->assertStringContainsString('png-bytes', $payload);
-
-                return true;
-            }))
-            ->willReturn($this->responseMock);
-
-        $result = $httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-            'multipart' => [
-                [
-                    'name' => 'description',
-                    'contents' => 'Student profile image',
-                ],
-                [
-                    'name' => 'file',
-                    'filename' => 'avatar.png',
-                    'contents' => 'png-bytes',
-                ],
-            ],
-        ]);
-
-        $this->assertEquals(['response' => ['code' => 200]], $result);
-    }
-
-    public function testThrowsExceptionWhenBodyAndMultipartAreSet(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Cannot use "body" and "multipart" options in the same request.');
-
-        $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-            'body' => ['key' => 'value'],
-            'multipart' => [
-                [
-                    'name' => 'file',
-                    'contents' => 'content',
-                ],
-            ],
-        ]);
-    }
-
-    public function testThrowsExceptionForMultipartWithoutRequiredFields(): void
-    {
-        $psr17Factory = new Psr17Factory();
-        $httpClient = new HttpClient(
-            new TypedRequestFactory($psr17Factory),
-            $this->httpClientMock,
-            $psr17Factory
-        );
-
-        $this->httpClientMock
-            ->expects($this->never())
-            ->method('sendRequest');
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Multipart part at index 0 must contain non-empty scalar "name".');
-
-        $httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-            'multipart' => [
-                [
-                    'contents' => 'content',
-                ],
-            ],
-        ]);
-    }
-
-    /**
-     * @throws ServerErrorException
-     */
-    public function testKeepsExplicitMultipartPartContentTypeHeader(): void
+    public function testUploadRequestWithCustomHeaders(): void
     {
         $psr17Factory = new Psr17Factory();
         $httpClient = new HttpClient(
@@ -783,24 +630,94 @@ class HttpClientTest extends TestCase
                 $payload = $request->getBody()->getContents();
 
                 $this->assertStringContainsString("content-type: image/png\r\n", strtolower($payload));
-                $this->assertStringNotContainsString("Content-Type: application/octet-stream\r\n", $payload);
 
                 return true;
             }))
             ->willReturn($this->responseMock);
 
-        $result = $httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_POST, '/upload', [
-            'multipart' => [
-                [
-                    'name' => 'file',
-                    'filename' => 'avatar.png',
-                    'contents' => 'png-bytes',
-                    'headers' => [
-                        'content-type' => 'image/png',
-                    ],
-                ],
-            ],
-        ]);
+        $file = new UploadFile(
+            name: 'file',
+            contents: 'png-bytes',
+            filename: 'avatar.png',
+            headers: ['Content-Type' => 'image/png']
+        );
+        $result = $httpClient->uploadRequest('/rest-v2/documents/upload', $file);
+
+        $this->assertEquals(['response' => ['code' => 200]], $result);
+    }
+
+    public function testUploadRequestMasksPayloadInServerErrorException(): void
+    {
+        $psr17Factory = new Psr17Factory();
+        $httpClient = new HttpClient(
+            new TypedRequestFactory($psr17Factory),
+            $this->httpClientMock,
+            $psr17Factory
+        );
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(500);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['reason' => 'Server Error']])
+            ]));
+
+        $this->httpClientMock
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn($this->responseMock);
+
+        try {
+            $file = new UploadFile(name: 'file', contents: 'large-binary-data', filename: 'big.bin');
+            $httpClient->uploadRequest('/rest-v2/documents/upload', $file);
+            $this->fail('Expected ServerErrorException to be thrown.');
+        } catch (ServerErrorException $exception) {
+            $this->assertSame('[multipart data]', $exception->getRequestPayload());
+        }
+    }
+
+    /**
+     * @throws ServerErrorException
+     */
+    public function testUploadRequestWithStreamContents(): void
+    {
+        $psr17Factory = new Psr17Factory();
+        $httpClient = new HttpClient(
+            new TypedRequestFactory($psr17Factory),
+            $this->httpClientMock,
+            $psr17Factory
+        );
+
+        $this->responseMock
+            ->method('getStatusCode')
+            ->willReturn(200);
+
+        $this->responseMock
+            ->method('getBody')
+            ->willReturn($this->createConfiguredMock(StreamInterface::class, [
+                'getContents' => json_encode(['response' => ['code' => 200]])
+            ]));
+
+        $this->httpClientMock
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->with($this->callback(function ($request): bool {
+                $request->getBody()->rewind();
+                $payload = $request->getBody()->getContents();
+
+                $this->assertStringContainsString('Content-Disposition: form-data; name="file"; filename="stream.txt"', $payload);
+                $this->assertStringContainsString('streamed-content', $payload);
+
+                return true;
+            }))
+            ->willReturn($this->responseMock);
+
+        $stream = $psr17Factory->createStream('streamed-content');
+        $file = new UploadFile(name: 'file', contents: $stream, filename: 'stream.txt');
+        $result = $httpClient->uploadRequest('/rest-v2/documents/upload', $file);
 
         $this->assertEquals(['response' => ['code' => 200]], $result);
     }

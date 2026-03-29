@@ -3,6 +3,7 @@
 namespace Arbor\Api\Gateway\HttpClient;
 
 use Arbor\Api\Exception\ServerErrorException;
+use Arbor\Api\Gateway\UploadFile;
 
 interface HttpClientInterface
 {
@@ -39,4 +40,13 @@ interface HttpClientInterface
      * @throws ServerErrorException
      */
     public function sendRequest(string $method, string $url, array $options = []): array;
+
+    /**
+     * @param string $url
+     * @param UploadFile $file
+     * @param array $options Optional options (e.g. 'query', 'headers')
+     * @return array
+     * @throws ServerErrorException
+     */
+    public function uploadRequest(string $url, UploadFile $file, array $options = []): array;
 }

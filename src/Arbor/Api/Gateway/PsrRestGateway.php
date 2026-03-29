@@ -317,24 +317,7 @@ class PsrRestGateway implements GatewayInterface
      */
     public function upload(string $endpoint, UploadFile $file): array
     {
-        $part = [
-            'name' => $file->name,
-            'contents' => $file->contents,
-        ];
-
-        if ($file->filename !== null) {
-            $part['filename'] = $file->filename;
-        }
-
-        if ($file->headers !== null) {
-            $part['headers'] = $file->headers;
-        }
-
-        return $this->httpClient->sendRequest(
-            HttpClientInterface::HTTP_METHOD_POST,
-            $endpoint,
-            ['multipart' => [$part]]
-        );
+        return $this->httpClient->uploadRequest($endpoint, $file);
     }
 
     public function describe($resource): void

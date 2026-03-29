@@ -7,6 +7,7 @@ namespace Arbor\Test\Unit\Arbor\Api\Gateway;
 use Arbor\Api\Exception\ServerErrorException;
 use Arbor\Api\Gateway\PsrRestGateway;
 use Arbor\Api\Gateway\HttpClient\HttpClientInterface;
+use Arbor\Api\Gateway\UploadFile;
 use Arbor\ChangeLog\Change;
 use Arbor\Filter\CamelCaseToDash;
 use Arbor\Filter\PluralizeFilter;
@@ -916,5 +917,26 @@ class PsrRestGatewayTest extends TestCase
 
         $this->expectException(ServerErrorException::class);
         $this->gateway->bulkCreate($resource, $collection);
+    }
+
+    /**
+     * @throws ServerErrorException
+     */
+    public function testUploadDelegatesToUploadRequest(): void
+    {
+        $file = new UploadFile(name: 'file', contents: 'file-data', filename: 'doc.pdf');
+        $expectedResponse = ['fileId' => '123'];
+
+        $this->httpClient->expects($this->once())
+            ->method('uploadRequest')
+            ->with('/rest-v2/documents/upload', $file)
+            ->willReturn($expectedResponse);
+
+        $this->httpClient->expects($this->never())
+            ->method('sendRequest');
+
+        $result = $this->gateway->upload('/rest-v2/documents/upload', $file);
+
+        $this->assertEquals($expectedResponse, $result);
     }
 }
