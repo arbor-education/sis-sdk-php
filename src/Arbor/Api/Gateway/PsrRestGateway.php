@@ -312,6 +312,14 @@ class PsrRestGateway implements GatewayInterface
         return $this->httpClient->sendRequest(HttpClientInterface::HTTP_METHOD_DELETE, $model->getResourceUrl());
     }
 
+    /**
+     * @throws ServerErrorException
+     */
+    public function upload(string $endpoint, UploadFile $file): array
+    {
+        return $this->httpClient->uploadRequest($endpoint, $file);
+    }
+
     public function describe($resource): void
     {
         // This method is not implemented and should be removed in future
