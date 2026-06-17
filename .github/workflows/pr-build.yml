@@ -33,14 +33,14 @@ jobs:
       run: |
         composer config --global --auth http-basic.repo.packagist.com token ${{ secrets.PACKGIST_TOKEN }}
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Validate composer.json and composer.lock
       run: composer validate
 
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
