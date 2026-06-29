@@ -11,6 +11,6 @@ permissions:
 
 jobs:
   stale:
-    uses: arbor-education/gha.workflows/.github/workflows/pr-housekeeping-template.yaml@v2
+    uses: arbor-education/gha.workflows/.github/workflows/pr-housekeeping-template.yaml@b2a8ca3db636abdb78177b137e3c09504582542b # v2
     with:
       dry_run: true
