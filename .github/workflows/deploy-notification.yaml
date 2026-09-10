@@ -46,28 +46,57 @@ jobs:
             exit 1
           fi
 
+      - name: Build Slack payload
+        id: payload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.release.outputs.version }}
+          # Slack rejects any single text object over 3000 characters, so leave headroom.
+          MAX_NOTES_CHARS: 2800
+        run: |
+          # Fetched by tag rather than read from the event payload so that release-triggered
+          # and manually dispatched runs take the same path. A release with no notes, or a
+          # version with no GitHub release at all, degrades to announcing without notes.
+          BODY=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$VERSION" --jq '.body // ""' 2>/dev/null || echo "")
+
+          # GitHub markdown -> Slack mrkdwn: bold, headings, inline links, bullets.
+          NOTES=$(printf '%s' "$BODY" | tr -d '\r' \
+            | sed -E 's/\*\*([^*]+)\*\*/*\1*/g' \
+            | sed -E 's/^#{1,6} +(.*)$/*\1*/' \
+            | sed -E 's/\[([^]]+)\]\(([^)]+)\)/<\2|\1>/g' \
+            | sed -E 's/^\* /• /')
+
+          if [ "${#NOTES}" -gt "$MAX_NOTES_CHARS" ]; then
+            NOTES="${NOTES:0:$MAX_NOTES_CHARS}"$'\n'"…(truncated, see the full release notes linked above)"
+          fi
+
+          HEADLINE=":arbor-love: We've just released a new version of $GITHUB_REPOSITORY *$VERSION*"
+          FALLBACK="We've just released a new version of $GITHUB_REPOSITORY $VERSION"
+          LINK="<https://github.com/$GITHUB_REPOSITORY/releases/tag/$VERSION|Github release notes for $VERSION>"
+
+          # Built with jq so that quotes, backslashes and newlines in the release notes
+          # cannot break the payload.
+          PAYLOAD=$(jq -cn \
+            --arg fallback "$FALLBACK" \
+            --arg headline "$HEADLINE" \
+            --arg link "$LINK" \
+            --arg notes "$NOTES" \
+            '{
+              text: $fallback,
+              blocks: ([
+                { type: "section", text: { type: "mrkdwn", text: $headline } },
+                { type: "section", text: { type: "mrkdwn", text: $link } }
+              ] + (if ($notes | length) > 0 then [
+                { type: "divider" },
+                { type: "section", text: { type: "mrkdwn", text: $notes } }
+              ] else [] end))
+            }')
+
+          echo "json=$PAYLOAD" >> "$GITHUB_OUTPUT"
+
       - name: Send release notification to Slack
         uses: slackapi/slack-github-action@v3.0.3
         with:
           webhook: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
           webhook-type: incoming-webhook
-          payload: |
-            {
-              "text": "We've just released a new version of ${{ github.repository }} ${{ steps.release.outputs.version }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": ":arbor-love: We've just released a new version of ${{ github.repository }} *${{ steps.release.outputs.version }}*"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "<https://github.com/${{ github.repository }}/releases/tag/${{ steps.release.outputs.version }}|Github release notes for ${{ steps.release.outputs.version }}>"
-                  }
-                }
-              ]
-            }
+          payload: ${{ steps.payload.outputs.json }}
