@@ -1,0 +1,73 @@
+name: Deploy Notification
+
+# Announces a new SDK release in the team's shared deployment Slack channel.
+#
+# This repository is public, so it cannot reuse the organisation's shared release
+# notification workflow the way the team's other projects do: reusable workflows held in
+# a private repository are not resolvable from a public caller, and a public repository
+# cannot use the self-hosted runners or the secret store that workflow depends on. The
+# webhook URL is therefore supplied as a GitHub Actions secret instead. See MIG-18859.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version to announce, e.g. 6.0.4'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Notify Slack
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve release version
+        id: release
+        env:
+          RELEASE_VERSION: ${{ github.event_name == 'release' && github.event.release.tag_name || inputs.version }}
+        run: |
+          if [ -z "$RELEASE_VERSION" ]; then
+            echo "::error::Could not determine which release version to announce."
+            exit 1
+          fi
+          echo "version=$RELEASE_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check Slack webhook is configured
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL" ]; then
+            echo "::error::Secret SLACK_DEPLOY_WEBHOOK_URL is not set for this repository, so the release cannot be announced. See MIG-18859."
+            exit 1
+          fi
+
+      - name: Send release notification to Slack
+        uses: slackapi/slack-github-action@v3.0.3
+        with:
+          webhook: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "We've just released a new version of ${{ github.repository }} ${{ steps.release.outputs.version }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":arbor-love: We've just released a new version of ${{ github.repository }} *${{ steps.release.outputs.version }}*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://github.com/${{ github.repository }}/releases/tag/${{ steps.release.outputs.version }}|Github release notes for ${{ steps.release.outputs.version }}>"
+                  }
+                }
+              ]
+            }
