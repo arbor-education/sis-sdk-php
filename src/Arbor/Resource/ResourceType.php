@@ -123,6 +123,7 @@ class ResourceType
 	const BUSINESS_ROLE_DEFAULT_USER_ROLE = 'BusinessRoleDefaultUserRole';
 	const CALENDAR = 'Calendar';
 	const CALENDAR_ENTRY_MAPPING = 'CalendarEntryMapping';
+	const CALENDAR_ENTRY_REMINDER = 'CalendarEntryReminder';
 	const CALENDAR_TYPE = 'CalendarType';
 	const CANDIDATE = 'Candidate';
 	const CANDIDATE_ASSESSABLE_ENTRY = 'CandidateAssessableEntry';
