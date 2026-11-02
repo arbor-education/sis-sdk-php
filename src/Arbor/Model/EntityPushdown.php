@@ -122,7 +122,7 @@ class EntityPushdown extends ModelBase
     /**
      * @param ModelBase $controllerParentEntity
      */
-    public function setControllerParentEntity(\ModelBase $controllerParentEntity = null)
+    public function setControllerParentEntity(\Arbor\Model\ModelBase $controllerParentEntity = null)
     {
         $this->setProperty('controllerParentEntity', $controllerParentEntity);
     }

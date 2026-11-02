@@ -98,7 +98,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param ModelBase $caller
      */
-    public function setCaller(\ModelBase $caller = null)
+    public function setCaller(\Arbor\Model\ModelBase $caller = null)
     {
         $this->setProperty('caller', $caller);
     }
@@ -194,7 +194,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }

@@ -76,7 +76,7 @@ class CourtOrderParty extends ModelBase
     /**
      * @param ModelBase $party
      */
-    public function setParty(\ModelBase $party = null)
+    public function setParty(\Arbor\Model\ModelBase $party = null)
     {
         $this->setProperty('party', $party);
     }

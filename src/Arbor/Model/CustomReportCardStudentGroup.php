@@ -78,7 +78,7 @@ class CustomReportCardStudentGroup extends ModelBase
     /**
      * @param ModelBase $studentGroup
      */
-    public function setStudentGroup(\ModelBase $studentGroup = null)
+    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

@@ -84,7 +84,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param ModelBase $syncedEntity
      */
-    public function setSyncedEntity(\ModelBase $syncedEntity = null)
+    public function setSyncedEntity(\Arbor\Model\ModelBase $syncedEntity = null)
     {
         $this->setProperty('syncedEntity', $syncedEntity);
     }

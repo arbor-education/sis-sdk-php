@@ -82,7 +82,7 @@ class ContentTag extends ModelBase
     /**
      * @param ModelBase $tagged
      */
-    public function setTagged(\ModelBase $tagged = null)
+    public function setTagged(\Arbor\Model\ModelBase $tagged = null)
     {
         $this->setProperty('tagged', $tagged);
     }
@@ -130,7 +130,7 @@ class ContentTag extends ModelBase
     /**
      * @param ModelBase $relatedBaseEntity
      */
-    public function setRelatedBaseEntity(\ModelBase $relatedBaseEntity = null)
+    public function setRelatedBaseEntity(\Arbor\Model\ModelBase $relatedBaseEntity = null)
     {
         $this->setProperty('relatedBaseEntity', $relatedBaseEntity);
     }

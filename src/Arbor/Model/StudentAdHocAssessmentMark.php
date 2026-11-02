@@ -146,7 +146,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param ModelBase $scopeEntity
      */
-    public function setScopeEntity(\ModelBase $scopeEntity = null)
+    public function setScopeEntity(\Arbor\Model\ModelBase $scopeEntity = null)
     {
         $this->setProperty('scopeEntity', $scopeEntity);
     }

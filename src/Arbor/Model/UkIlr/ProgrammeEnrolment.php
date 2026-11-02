@@ -468,7 +468,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param ModelBase $deliveryOrganisation
      */
-    public function setDeliveryOrganisation(\ModelBase $deliveryOrganisation = null)
+    public function setDeliveryOrganisation(\Arbor\Model\ModelBase $deliveryOrganisation = null)
     {
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
     }

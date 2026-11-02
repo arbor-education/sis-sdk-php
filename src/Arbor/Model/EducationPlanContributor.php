@@ -76,7 +76,7 @@ class EducationPlanContributor extends ModelBase
     /**
      * @param ModelBase $contributor
      */
-    public function setContributor(\ModelBase $contributor = null)
+    public function setContributor(\Arbor\Model\ModelBase $contributor = null)
     {
         $this->setProperty('contributor', $contributor);
     }

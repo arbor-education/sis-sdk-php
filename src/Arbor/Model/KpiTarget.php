@@ -184,7 +184,7 @@ class KpiTarget extends ModelBase
     /**
      * @param ModelBase $basis
      */
-    public function setBasis(\ModelBase $basis = null)
+    public function setBasis(\Arbor\Model\ModelBase $basis = null)
     {
         $this->setProperty('basis', $basis);
     }

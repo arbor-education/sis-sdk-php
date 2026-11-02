@@ -84,7 +84,7 @@ class UserDefinedFieldImport extends ModelBase
     /**
      * @param ModelBase $entity
      */
-    public function setEntity(\ModelBase $entity = null)
+    public function setEntity(\Arbor\Model\ModelBase $entity = null)
     {
         $this->setProperty('entity', $entity);
     }

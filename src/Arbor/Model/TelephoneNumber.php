@@ -68,7 +68,7 @@ class TelephoneNumber extends ModelBase
     /**
      * @param ModelBase $numberOwner
      */
-    public function setNumberOwner(\ModelBase $numberOwner = null)
+    public function setNumberOwner(\Arbor\Model\ModelBase $numberOwner = null)
     {
         $this->setProperty('numberOwner', $numberOwner);
     }

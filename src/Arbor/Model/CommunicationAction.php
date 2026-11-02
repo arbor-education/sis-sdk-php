@@ -64,7 +64,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param ModelBase $communication
      */
-    public function setCommunication(\ModelBase $communication = null)
+    public function setCommunication(\Arbor\Model\ModelBase $communication = null)
     {
         $this->setProperty('communication', $communication);
     }
@@ -96,7 +96,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param ModelBase $reply
      */
-    public function setReply(\ModelBase $reply = null)
+    public function setReply(\Arbor\Model\ModelBase $reply = null)
     {
         $this->setProperty('reply', $reply);
     }

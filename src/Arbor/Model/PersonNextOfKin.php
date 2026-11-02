@@ -78,7 +78,7 @@ class PersonNextOfKin extends ModelBase
     /**
      * @param ModelBase $relatedPerson
      */
-    public function setRelatedPerson(\ModelBase $relatedPerson = null)
+    public function setRelatedPerson(\Arbor\Model\ModelBase $relatedPerson = null)
     {
         $this->setProperty('relatedPerson', $relatedPerson);
     }

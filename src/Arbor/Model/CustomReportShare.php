@@ -78,7 +78,7 @@ class CustomReportShare extends ModelBase
     /**
      * @param ModelBase $sharedWith
      */
-    public function setSharedWith(\ModelBase $sharedWith = null)
+    public function setSharedWith(\Arbor\Model\ModelBase $sharedWith = null)
     {
         $this->setProperty('sharedWith', $sharedWith);
     }

@@ -74,7 +74,7 @@ class LanguageAbility extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
