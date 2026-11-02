@@ -14,6 +14,7 @@ use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\Gateway\UploadFile;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -24,6 +25,7 @@ use Psr\Http\Message\StreamInterface;
 #[CoversClass(HttpClient::class)]
 #[CoversClass(TypedRequest::class)]
 #[CoversClass(TypedRequestFactory::class)]
+#[UsesClass(UploadFile::class)]
 class HttpClientTest extends TestCase
 {
     private ClientInterface $httpClientMock;
