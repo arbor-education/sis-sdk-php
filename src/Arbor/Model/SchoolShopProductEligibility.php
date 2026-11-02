@@ -76,7 +76,7 @@ class SchoolShopProductEligibility extends ModelBase
     /**
      * @param ModelBase $eligible
      */
-    public function setEligible(\ModelBase $eligible = null)
+    public function setEligible(\Arbor\Model\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }

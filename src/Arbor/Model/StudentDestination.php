@@ -148,7 +148,7 @@ class StudentDestination extends ModelBase
     /**
      * @param ModelBase $linkedRecord
      */
-    public function setLinkedRecord(\ModelBase $linkedRecord = null)
+    public function setLinkedRecord(\Arbor\Model\ModelBase $linkedRecord = null)
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }

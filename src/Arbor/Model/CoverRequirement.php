@@ -68,7 +68,7 @@ class CoverRequirement extends ModelBase
     /**
      * @param ModelBase $coverEvent
      */
-    public function setCoverEvent(\ModelBase $coverEvent = null)
+    public function setCoverEvent(\Arbor\Model\ModelBase $coverEvent = null)
     {
         $this->setProperty('coverEvent', $coverEvent);
     }
@@ -100,7 +100,7 @@ class CoverRequirement extends ModelBase
     /**
      * @param ModelBase $absenceEvent
      */
-    public function setAbsenceEvent(\ModelBase $absenceEvent = null)
+    public function setAbsenceEvent(\Arbor\Model\ModelBase $absenceEvent = null)
     {
         $this->setProperty('absenceEvent', $absenceEvent);
     }

@@ -136,7 +136,7 @@ class Trip extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -200,7 +200,7 @@ class Trip extends ModelBase
     /**
      * @param ModelBase $linkTo
      */
-    public function setLinkTo(\ModelBase $linkTo = null)
+    public function setLinkTo(\Arbor\Model\ModelBase $linkTo = null)
     {
         $this->setProperty('linkTo', $linkTo);
     }

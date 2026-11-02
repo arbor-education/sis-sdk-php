@@ -68,7 +68,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }

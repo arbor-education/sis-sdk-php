@@ -86,7 +86,7 @@ class MealPattern extends ModelBase
     /**
      * @param ModelBase $attendee
      */
-    public function setAttendee(\ModelBase $attendee = null)
+    public function setAttendee(\Arbor\Model\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }
@@ -311,7 +311,7 @@ class MealPattern extends ModelBase
     /**
      * @param ModelBase $groupMembership
      */
-    public function setGroupMembership(\ModelBase $groupMembership = null)
+    public function setGroupMembership(\Arbor\Model\ModelBase $groupMembership = null)
     {
         $this->setProperty('groupMembership', $groupMembership);
     }

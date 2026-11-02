@@ -62,7 +62,7 @@ class EventParticipant extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -78,7 +78,7 @@ class EventParticipant extends ModelBase
     /**
      * @param ModelBase $participant
      */
-    public function setParticipant(\ModelBase $participant = null)
+    public function setParticipant(\Arbor\Model\ModelBase $participant = null)
     {
         $this->setProperty('participant', $participant);
     }

@@ -58,7 +58,7 @@ class InboundNotificationAutomaticRecipient extends ModelBase
     /**
      * @param ModelBase $automaticRecipient
      */
-    public function setAutomaticRecipient(\ModelBase $automaticRecipient = null)
+    public function setAutomaticRecipient(\Arbor\Model\ModelBase $automaticRecipient = null)
     {
         $this->setProperty('automaticRecipient', $automaticRecipient);
     }

@@ -82,7 +82,7 @@ class StudentLinkedRelationship extends ModelBase
     /**
      * @param ModelBase $linkedObject
      */
-    public function setLinkedObject(\ModelBase $linkedObject = null)
+    public function setLinkedObject(\Arbor\Model\ModelBase $linkedObject = null)
     {
         $this->setProperty('linkedObject', $linkedObject);
     }

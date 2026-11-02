@@ -60,7 +60,7 @@ class ExclusionExclusionReason extends ModelBase
     /**
      * @param ModelBase $exclusion
      */
-    public function setExclusion(\ModelBase $exclusion = null)
+    public function setExclusion(\Arbor\Model\ModelBase $exclusion = null)
     {
         $this->setProperty('exclusion', $exclusion);
     }

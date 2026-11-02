@@ -82,7 +82,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
@@ -274,7 +274,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param ModelBase $openingBalanceTransaction
      */
-    public function setOpeningBalanceTransaction(\ModelBase $openingBalanceTransaction = null)
+    public function setOpeningBalanceTransaction(\Arbor\Model\ModelBase $openingBalanceTransaction = null)
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }

@@ -196,7 +196,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -212,7 +212,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param ModelBase $eventGroup
      */
-    public function setEventGroup(\ModelBase $eventGroup = null)
+    public function setEventGroup(\Arbor\Model\ModelBase $eventGroup = null)
     {
         $this->setProperty('eventGroup', $eventGroup);
     }

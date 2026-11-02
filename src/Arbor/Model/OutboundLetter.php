@@ -84,7 +84,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }

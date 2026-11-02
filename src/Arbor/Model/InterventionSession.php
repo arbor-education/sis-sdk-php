@@ -130,7 +130,7 @@ class InterventionSession extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }

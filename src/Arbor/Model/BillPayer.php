@@ -64,7 +64,7 @@ class BillPayer extends ModelBase
     /**
      * @param ModelBase $legalEntity
      */
-    public function setLegalEntity(\ModelBase $legalEntity = null)
+    public function setLegalEntity(\Arbor\Model\ModelBase $legalEntity = null)
     {
         $this->setProperty('legalEntity', $legalEntity);
     }

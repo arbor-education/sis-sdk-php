@@ -70,7 +70,7 @@ class EmailAddress extends ModelBase
     /**
      * @param ModelBase $emailAddressOwner
      */
-    public function setEmailAddressOwner(\ModelBase $emailAddressOwner = null)
+    public function setEmailAddressOwner(\Arbor\Model\ModelBase $emailAddressOwner = null)
     {
         $this->setProperty('emailAddressOwner', $emailAddressOwner);
     }

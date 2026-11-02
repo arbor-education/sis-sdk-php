@@ -114,7 +114,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param ModelBase $condition
      */
-    public function setCondition(\ModelBase $condition = null)
+    public function setCondition(\Arbor\Model\ModelBase $condition = null)
     {
         $this->setProperty('condition', $condition);
     }

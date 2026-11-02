@@ -88,7 +88,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(\ModelBase $owner = null)
+    public function setOwner(\Arbor\Model\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }

@@ -156,7 +156,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }

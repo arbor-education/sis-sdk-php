@@ -64,7 +64,7 @@ class AiAbsenceImport extends ModelBase
     /**
      * @param ModelBase $source
      */
-    public function setSource(\ModelBase $source = null)
+    public function setSource(\Arbor\Model\ModelBase $source = null)
     {
         $this->setProperty('source', $source);
     }

@@ -120,7 +120,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param ModelBase $assessment
      */
-    public function setAssessment(\ModelBase $assessment = null)
+    public function setAssessment(\Arbor\Model\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }

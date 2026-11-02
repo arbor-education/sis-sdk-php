@@ -68,7 +68,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -116,7 +116,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $mapped
      */
-    public function setMapped(\ModelBase $mapped = null)
+    public function setMapped(\Arbor\Model\ModelBase $mapped = null)
     {
         $this->setProperty('mapped', $mapped);
     }

@@ -78,7 +78,7 @@ class AiFeatureOptOut extends ModelBase
     /**
      * @param ModelBase $target
      */
-    public function setTarget(\ModelBase $target = null)
+    public function setTarget(\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

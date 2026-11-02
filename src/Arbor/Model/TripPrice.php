@@ -90,7 +90,7 @@ class TripPrice extends ModelBase
     /**
      * @param ModelBase $applicable
      */
-    public function setApplicable(\ModelBase $applicable = null)
+    public function setApplicable(\Arbor\Model\ModelBase $applicable = null)
     {
         $this->setProperty('applicable', $applicable);
     }

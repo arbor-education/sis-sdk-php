@@ -66,7 +66,7 @@ class PersonAlert extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -82,7 +82,7 @@ class PersonAlert extends ModelBase
     /**
      * @param ModelBase $contextPerson
      */
-    public function setContextPerson(\ModelBase $contextPerson = null)
+    public function setContextPerson(\Arbor\Model\ModelBase $contextPerson = null)
     {
         $this->setProperty('contextPerson', $contextPerson);
     }
@@ -98,7 +98,7 @@ class PersonAlert extends ModelBase
     /**
      * @param ModelBase $contextObject
      */
-    public function setContextObject(\ModelBase $contextObject = null)
+    public function setContextObject(\Arbor\Model\ModelBase $contextObject = null)
     {
         $this->setProperty('contextObject', $contextObject);
     }

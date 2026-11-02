@@ -96,7 +96,7 @@ class Student extends ModelBase
     /**
      * @param ModelBase $primaryLlddAndHealthProblem
      */
-    public function setPrimaryLlddAndHealthProblem(\ModelBase $primaryLlddAndHealthProblem = null)
+    public function setPrimaryLlddAndHealthProblem(\Arbor\Model\ModelBase $primaryLlddAndHealthProblem = null)
     {
         $this->setProperty('primaryLlddAndHealthProblem', $primaryLlddAndHealthProblem);
     }
