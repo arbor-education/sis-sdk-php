@@ -18,6 +18,7 @@ use Arbor\Model\Staff;
 use Arbor\Query\Query;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientExceptionInterface;
@@ -27,6 +28,7 @@ use ReflectionException;
 #[CoversClass(PsrRestGateway::class)]
 #[CoversClass(Change::class)]
 #[CoversClass(Query::class)]
+#[UsesClass(UploadFile::class)]
 class PsrRestGatewayTest extends TestCase
 {
     private PsrRestGateway $gateway;
