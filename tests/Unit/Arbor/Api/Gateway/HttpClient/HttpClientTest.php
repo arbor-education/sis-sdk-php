@@ -13,6 +13,7 @@ use Arbor\Api\Gateway\HttpClient\TypedRequest;
 use Arbor\Api\Gateway\HttpClient\TypedRequestFactory;
 use Arbor\Api\Gateway\UploadFile;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\MockObject\Exception;
