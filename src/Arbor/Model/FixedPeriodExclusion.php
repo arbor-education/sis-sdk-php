@@ -31,6 +31,8 @@ class FixedPeriodExclusion extends ModelBase
 
     public const NARRATIVE = 'narrative';
 
+    public const CANCELLATION_REASON = 'cancellationReason';
+
     protected $_resourceType = ResourceType::FIXED_PERIOD_EXCLUSION;
 
     /**
@@ -259,5 +261,21 @@ class FixedPeriodExclusion extends ModelBase
     public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCancellationReason()
+    {
+        return $this->getProperty('cancellationReason');
+    }
+
+    /**
+     * @param string $cancellationReason
+     */
+    public function setCancellationReason(string $cancellationReason = null)
+    {
+        $this->setProperty('cancellationReason', $cancellationReason);
     }
 }
