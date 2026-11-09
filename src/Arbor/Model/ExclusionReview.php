@@ -13,6 +13,8 @@ class ExclusionReview extends ModelBase
 
     public const PERMANENT_EXCLUSION = 'permanentExclusion';
 
+    public const FIXED_PERIOD_EXCLUSION = 'fixedPeriodExclusion';
+
     public const REVIEW_DATE = 'reviewDate';
 
     public const STUDENT = 'student';
@@ -20,6 +22,8 @@ class ExclusionReview extends ModelBase
     public const STUDENT_REINSTATEMENT_DATE = 'studentReinstatementDate';
 
     public const SEN_EXPERT_REQUESTED = 'senExpertRequested';
+
+    public const EXCLUSION_REVIEW_CATEGORY = 'exclusionReviewCategory';
 
     protected $_resourceType = ResourceType::EXCLUSION_REVIEW;
 
@@ -108,6 +112,22 @@ class ExclusionReview extends ModelBase
     }
 
     /**
+     * @return \Arbor\Model\FixedPeriodExclusion
+     */
+    public function getFixedPeriodExclusion()
+    {
+        return $this->getProperty('fixedPeriodExclusion');
+    }
+
+    /**
+     * @param \Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion
+     */
+    public function setFixedPeriodExclusion(\Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion = null)
+    {
+        $this->setProperty('fixedPeriodExclusion', $fixedPeriodExclusion);
+    }
+
+    /**
      * @return \DateTime
      */
     public function getReviewDate()
@@ -169,5 +189,21 @@ class ExclusionReview extends ModelBase
     public function setSenExpertRequested(bool $senExpertRequested = null)
     {
         $this->setProperty('senExpertRequested', $senExpertRequested);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExclusionReviewCategory()
+    {
+        return $this->getProperty('exclusionReviewCategory');
+    }
+
+    /**
+     * @param string $exclusionReviewCategory
+     */
+    public function setExclusionReviewCategory(string $exclusionReviewCategory = null)
+    {
+        $this->setProperty('exclusionReviewCategory', $exclusionReviewCategory);
     }
 }

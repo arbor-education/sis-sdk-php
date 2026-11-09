@@ -9,6 +9,8 @@ class OutboundInAppMessageDraft extends ModelBase
 {
     public const SENDER = 'sender';
 
+    public const SUBJECT = 'subject';
+
     public const MESSAGE = 'message';
 
     public const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
@@ -71,6 +73,22 @@ class OutboundInAppMessageDraft extends ModelBase
     public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->getProperty('subject');
+    }
+
+    /**
+     * @param string $subject
+     */
+    public function setSubject(string $subject = null)
+    {
+        $this->setProperty('subject', $subject);
     }
 
     /**

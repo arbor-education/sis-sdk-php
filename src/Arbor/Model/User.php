@@ -21,6 +21,8 @@ class User extends ModelBase
 
     public const EMAIL = 'email';
 
+    public const ARBOR_CENTRAL_ID = 'arborCentralId';
+
     public const PASSWORD_HASH = 'passwordHash';
 
     public const PASSWORD_RESET_HASH = 'passwordResetHash';
@@ -209,6 +211,22 @@ class User extends ModelBase
     public function setEmail(string $email = null)
     {
         $this->setProperty('email', $email);
+    }
+
+    /**
+     * @return string
+     */
+    public function getArborCentralId()
+    {
+        return $this->getProperty('arborCentralId');
+    }
+
+    /**
+     * @param string $arborCentralId
+     */
+    public function setArborCentralId(string $arborCentralId = null)
+    {
+        $this->setProperty('arborCentralId', $arborCentralId);
     }
 
     /**

@@ -21,6 +21,8 @@ class PlascCensusClass extends ModelBase
 
     public const GUEST_PUPILS = 'guestPupils';
 
+    public const ALN_PUPILS = 'alnPupils';
+
     public const KEY_STAGE = 'keyStage';
 
     public const CLASS_SIZE_COUNT_TYPE = 'classSizeCountType';
@@ -157,6 +159,22 @@ class PlascCensusClass extends ModelBase
     public function setGuestPupils(int $guestPupils = null)
     {
         $this->setProperty('guestPupils', $guestPupils);
+    }
+
+    /**
+     * @return int
+     */
+    public function getAlnPupils()
+    {
+        return $this->getProperty('alnPupils');
+    }
+
+    /**
+     * @param int $alnPupils
+     */
+    public function setAlnPupils(int $alnPupils = null)
+    {
+        $this->setProperty('alnPupils', $alnPupils);
     }
 
     /**

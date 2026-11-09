@@ -11,6 +11,8 @@ class IndividualDevelopmentPlan extends ModelBase
 {
     public const END_DATE = 'endDate';
 
+    public const LAST_REVIEW_DATE = 'lastReviewDate';
+
     public const MAINTAINED_BY_CODE = 'maintainedByCode';
 
     public const SCHEDULED_REVIEW_DATE = 'scheduledReviewDate';
@@ -71,6 +73,22 @@ class IndividualDevelopmentPlan extends ModelBase
     public function setEndDate(\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastReviewDate()
+    {
+        return $this->getProperty('lastReviewDate');
+    }
+
+    /**
+     * @param \DateTime $lastReviewDate
+     */
+    public function setLastReviewDate(\DateTime $lastReviewDate = null)
+    {
+        $this->setProperty('lastReviewDate', $lastReviewDate);
     }
 
     /**

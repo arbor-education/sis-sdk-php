@@ -15,6 +15,8 @@ class Schoolwork extends ModelBase
 
     public const SET_DATETIME = 'setDatetime';
 
+    public const RELEASE_DATETIME = 'releaseDatetime';
+
     public const DUE_EVENT = 'dueEvent';
 
     public const DUE_DATETIME = 'dueDatetime';
@@ -129,6 +131,22 @@ class Schoolwork extends ModelBase
     public function setSetDatetime(\DateTime $setDatetime = null)
     {
         $this->setProperty('setDatetime', $setDatetime);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getReleaseDatetime()
+    {
+        return $this->getProperty('releaseDatetime');
+    }
+
+    /**
+     * @param \DateTime $releaseDatetime
+     */
+    public function setReleaseDatetime(\DateTime $releaseDatetime = null)
+    {
+        $this->setProperty('releaseDatetime', $releaseDatetime);
     }
 
     /**

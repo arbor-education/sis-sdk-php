@@ -25,6 +25,12 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
 
     public const IS_USED_IN_COMPLETION_STATISTICS = 'isUsedInCompletionStatistics';
 
+    public const MINIMUM_VALUE = 'minimumValue';
+
+    public const MAXIMUM_VALUE = 'maximumValue';
+
+    public const DECIMAL_PLACES = 'decimalPlaces';
+
     protected $_resourceType = ResourceType::MARKSHEET_TEMPLATE_DATA_ENTRY_COLUMN;
 
     /**
@@ -205,5 +211,53 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     public function setIsUsedInCompletionStatistics(bool $isUsedInCompletionStatistics = null)
     {
         $this->setProperty('isUsedInCompletionStatistics', $isUsedInCompletionStatistics);
+    }
+
+    /**
+     * @return float
+     */
+    public function getMinimumValue()
+    {
+        return $this->getProperty('minimumValue');
+    }
+
+    /**
+     * @param float $minimumValue
+     */
+    public function setMinimumValue(float $minimumValue = null)
+    {
+        $this->setProperty('minimumValue', $minimumValue);
+    }
+
+    /**
+     * @return float
+     */
+    public function getMaximumValue()
+    {
+        return $this->getProperty('maximumValue');
+    }
+
+    /**
+     * @param float $maximumValue
+     */
+    public function setMaximumValue(float $maximumValue = null)
+    {
+        $this->setProperty('maximumValue', $maximumValue);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDecimalPlaces()
+    {
+        return $this->getProperty('decimalPlaces');
+    }
+
+    /**
+     * @param int $decimalPlaces
+     */
+    public function setDecimalPlaces(int $decimalPlaces = null)
+    {
+        $this->setProperty('decimalPlaces', $decimalPlaces);
     }
 }
