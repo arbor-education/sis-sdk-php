@@ -17,6 +17,8 @@ class EnabledFeature extends ModelBase
 
     public const END_DATE = 'endDate';
 
+    public const IS_PERMANENT = 'isPermanent';
+
     protected $_resourceType = ResourceType::ENABLED_FEATURE;
 
     /**
@@ -133,5 +135,21 @@ class EnabledFeature extends ModelBase
     public function setEndDate(\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsPermanent()
+    {
+        return $this->getProperty('isPermanent');
+    }
+
+    /**
+     * @param bool $isPermanent
+     */
+    public function setIsPermanent(bool $isPermanent = null)
+    {
+        $this->setProperty('isPermanent', $isPermanent);
     }
 }

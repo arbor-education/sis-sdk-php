@@ -17,6 +17,8 @@ class Staff extends ModelBase
 
     public const IS_NPQH = 'isNpqh';
 
+    public const IS_SENIOR_LEADERSHIP_TEAM = 'isSeniorLeadershipTeam';
+
     public const IS_THIRD_PARTY = 'isThirdParty';
 
     public const LONG_TERM_ABSENCE_STATUS_CODE = 'longTermAbsenceStatusCode';
@@ -135,6 +137,22 @@ class Staff extends ModelBase
     public function setIsNpqh(bool $isNpqh = null)
     {
         $this->setProperty('isNpqh', $isNpqh);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsSeniorLeadershipTeam()
+    {
+        return $this->getProperty('isSeniorLeadershipTeam');
+    }
+
+    /**
+     * @param bool $isSeniorLeadershipTeam
+     */
+    public function setIsSeniorLeadershipTeam(bool $isSeniorLeadershipTeam = null)
+    {
+        $this->setProperty('isSeniorLeadershipTeam', $isSeniorLeadershipTeam);
     }
 
     /**

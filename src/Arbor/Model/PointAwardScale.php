@@ -35,6 +35,8 @@ class PointAwardScale extends ModelBase
 
     public const SHOW_EVENT_IN_PARENT_PORTAL = 'showEventInParentPortal';
 
+    public const IS_ACCESSIBLE_IN_LESSON = 'isAccessibleInLesson';
+
     protected $_resourceType = ResourceType::POINT_AWARD_SCALE;
 
     /**
@@ -295,5 +297,21 @@ class PointAwardScale extends ModelBase
     public function setShowEventInParentPortal(bool $showEventInParentPortal = null)
     {
         $this->setProperty('showEventInParentPortal', $showEventInParentPortal);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsAccessibleInLesson()
+    {
+        return $this->getProperty('isAccessibleInLesson');
+    }
+
+    /**
+     * @param bool $isAccessibleInLesson
+     */
+    public function setIsAccessibleInLesson(bool $isAccessibleInLesson = null)
+    {
+        $this->setProperty('isAccessibleInLesson', $isAccessibleInLesson);
     }
 }

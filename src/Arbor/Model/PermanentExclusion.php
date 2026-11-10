@@ -23,6 +23,8 @@ class PermanentExclusion extends ModelBase
 
     public const CANCELLATION_REASON = 'cancellationReason';
 
+    public const STUDENT_REINSTATEMENT_DATE = 'studentReinstatementDate';
+
     protected $_resourceType = ResourceType::PERMANENT_EXCLUSION;
 
     /**
@@ -171,21 +173,5 @@ class PermanentExclusion extends ModelBase
     public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCancellationReason()
-    {
-        return $this->getProperty('cancellationReason');
-    }
-
-    /**
-     * @param string $cancellationReason
-     */
-    public function setCancellationReason(string $cancellationReason = null)
-    {
-        $this->setProperty('cancellationReason', $cancellationReason);
     }
 }

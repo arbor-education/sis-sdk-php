@@ -15,6 +15,10 @@ class InboundInAppMessage extends ModelBase
 
     public const READ_DATETIME = 'readDatetime';
 
+    public const THREAD = 'thread';
+
+    public const SUBJECT = 'subject';
+
     public const RECEIVED_DATETIME = 'receivedDatetime';
 
     public const FIRST_READ_BY = 'firstReadBy';
@@ -121,6 +125,38 @@ class InboundInAppMessage extends ModelBase
     public function setReadDatetime(\DateTime $readDatetime = null)
     {
         $this->setProperty('readDatetime', $readDatetime);
+    }
+
+    /**
+     * @return \Arbor\Model\InAppMessageThread
+     */
+    public function getThread()
+    {
+        return $this->getProperty('thread');
+    }
+
+    /**
+     * @param \Arbor\Model\InAppMessageThread $thread
+     */
+    public function setThread(\Arbor\Model\InAppMessageThread $thread = null)
+    {
+        $this->setProperty('thread', $thread);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->getProperty('subject');
+    }
+
+    /**
+     * @param string $subject
+     */
+    public function setSubject(string $subject = null)
+    {
+        $this->setProperty('subject', $subject);
     }
 
     /**

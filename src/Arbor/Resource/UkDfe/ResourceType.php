@@ -4,6 +4,7 @@ namespace Arbor\Resource\UkDfe;
 
 class ResourceType
 {
+	const UK_DFE_CLUB = 'UkDfe_Club';
 	const UK_DFE_EDUCATIONAL_INSTITUTION = 'UkDfe_EducationalInstitution';
 	const UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT = 'UkDfe_EducationalInstitutionEnrolment';
 	const UK_DFE_STAFF = 'UkDfe_Staff';
@@ -75,4 +76,9 @@ class ResourceType
 	const UK_DFE_ACADEMIC_UNIT_ENROLMENT = 'UkDfe_AcademicUnitEnrolment';
 	const UK_DFE_SCHOOL_LED_TUTORING_HOUR = 'UkDfe_SchoolLedTutoringHour';
 	const UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT = 'UkDfe_YoungCarerStatusAssignment';
+	const UK_DFE_FSM_CATEGORY = 'UkDfe_FsmCategory';
+	const UK_DFE_ACADEMIC_UNIT = 'UkDfe_AcademicUnit';
+	const UK_DFE_ELIGIBILITY_RECORD = 'UkDfe_EligibilityRecord';
+	const UK_DFE_KINSHIP_CARE_STATUS_ASSIGNMENT = 'UkDfe_KinshipCareStatusAssignment';
+	const UK_DFE_MANAGED_MOVE = 'UkDfe_ManagedMove';
 }

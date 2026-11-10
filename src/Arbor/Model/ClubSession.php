@@ -23,6 +23,8 @@ class ClubSession extends ModelBase
 
     public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
+    public const IS_CANCELLED = 'isCancelled';
+
     protected $_resourceType = ResourceType::CLUB_SESSION;
 
     /**
@@ -187,5 +189,21 @@ class ClubSession extends ModelBase
     public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsCancelled()
+    {
+        return $this->getProperty('isCancelled');
+    }
+
+    /**
+     * @param bool $isCancelled
+     */
+    public function setIsCancelled(bool $isCancelled = null)
+    {
+        $this->setProperty('isCancelled', $isCancelled);
     }
 }

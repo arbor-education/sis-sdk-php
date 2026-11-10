@@ -15,11 +15,19 @@ class ExclusionReviewOutcome extends ModelBase
 
     public const LABEL = 'label';
 
+    public const DESCRIPTION = 'description';
+
     public const EXPORT_CODE = 'exportCode';
 
     public const IS_EXCLUSION_UPHELD = 'isExclusionUpheld';
 
     public const IS_STUDENT_REINSTATED = 'isStudentReinstated';
+
+    public const CATEGORY = 'category';
+
+    public const IS_REINSTATEMENT_OFFERED = 'isReinstatementOffered';
+
+    public const IS_ONGOING = 'isOngoing';
 
     protected $_resourceType = ResourceType::EXCLUSION_REVIEW_OUTCOME;
 
@@ -126,6 +134,22 @@ class ExclusionReviewOutcome extends ModelBase
     /**
      * @return string
      */
+    public function getDescription()
+    {
+        return $this->getProperty('description');
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description = null)
+    {
+        $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return string
+     */
     public function getExportCode()
     {
         return $this->getProperty('exportCode');
@@ -169,5 +193,53 @@ class ExclusionReviewOutcome extends ModelBase
     public function setIsStudentReinstated(bool $isStudentReinstated = null)
     {
         $this->setProperty('isStudentReinstated', $isStudentReinstated);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->getProperty('category');
+    }
+
+    /**
+     * @param string $category
+     */
+    public function setCategory(string $category = null)
+    {
+        $this->setProperty('category', $category);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsReinstatementOffered()
+    {
+        return $this->getProperty('isReinstatementOffered');
+    }
+
+    /**
+     * @param bool $isReinstatementOffered
+     */
+    public function setIsReinstatementOffered(bool $isReinstatementOffered = null)
+    {
+        $this->setProperty('isReinstatementOffered', $isReinstatementOffered);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsOngoing()
+    {
+        return $this->getProperty('isOngoing');
+    }
+
+    /**
+     * @param bool $isOngoing
+     */
+    public function setIsOngoing(bool $isOngoing = null)
+    {
+        $this->setProperty('isOngoing', $isOngoing);
     }
 }

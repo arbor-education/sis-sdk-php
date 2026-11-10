@@ -15,7 +15,11 @@ class OutboundInAppMessage extends ModelBase
 
     public const READ_DATETIME = 'readDatetime';
 
+    public const THREAD = 'thread';
+
     public const OUTBOUND_IN_APP_MESSAGE_DRAFT = 'outboundInAppMessageDraft';
+
+    public const SUBJECT = 'subject';
 
     public const SENT_DATETIME = 'sentDatetime';
 
@@ -126,6 +130,22 @@ class OutboundInAppMessage extends ModelBase
     }
 
     /**
+     * @return \Arbor\Model\InAppMessageThread
+     */
+    public function getThread()
+    {
+        return $this->getProperty('thread');
+    }
+
+    /**
+     * @param \Arbor\Model\InAppMessageThread $thread
+     */
+    public function setThread(\Arbor\Model\InAppMessageThread $thread = null)
+    {
+        $this->setProperty('thread', $thread);
+    }
+
+    /**
      * @return \Arbor\Model\OutboundInAppMessageDraft
      */
     public function getOutboundInAppMessageDraft()
@@ -139,6 +159,22 @@ class OutboundInAppMessage extends ModelBase
     public function setOutboundInAppMessageDraft(\Arbor\Model\OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
     {
         $this->setProperty('outboundInAppMessageDraft', $outboundInAppMessageDraft);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->getProperty('subject');
+    }
+
+    /**
+     * @param string $subject
+     */
+    public function setSubject(string $subject = null)
+    {
+        $this->setProperty('subject', $subject);
     }
 
     /**

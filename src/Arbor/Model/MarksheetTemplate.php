@@ -15,6 +15,8 @@ class MarksheetTemplate extends ModelBase
 
     public const NAME = 'name';
 
+    public const LAST_MODIFIED_DATETIME = 'lastModifiedDatetime';
+
     protected $_resourceType = ResourceType::MARKSHEET_TEMPLATE;
 
     /**
@@ -115,5 +117,21 @@ class MarksheetTemplate extends ModelBase
     public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastModifiedDatetime()
+    {
+        return $this->getProperty('lastModifiedDatetime');
+    }
+
+    /**
+     * @param \DateTime $lastModifiedDatetime
+     */
+    public function setLastModifiedDatetime(\DateTime $lastModifiedDatetime = null)
+    {
+        $this->setProperty('lastModifiedDatetime', $lastModifiedDatetime);
     }
 }

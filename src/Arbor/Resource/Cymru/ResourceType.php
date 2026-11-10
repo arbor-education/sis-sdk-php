@@ -7,6 +7,7 @@ class ResourceType
 	const CYMRU_STUDENT = 'Cymru_Student';
 	const CYMRU_ACADEMIC_UNIT = 'Cymru_AcademicUnit';
 	const CYMRU_ACADEMIC_YEAR_ENROLMENT = 'Cymru_AcademicYearEnrolment';
+	const CYMRU_ALN_DECISION = 'Cymru_AlnDecision';
 	const CYMRU_EDUCATIONAL_INSTITUTION = 'Cymru_EducationalInstitution';
 	const CYMRU_CENSUS_SCHOOL_PHASE = 'Cymru_CensusSchoolPhase';
 	const CYMRU_CHILD_PROTECTION_STATUS_ASSIGNMENT = 'Cymru_ChildProtectionStatusAssignment';
@@ -64,4 +65,5 @@ class ResourceType
 	const CYMRU_UPN_ASSIGNMENT = 'Cymru_UpnAssignment';
 	const CYMRU_YOUNG_CARER_STATUS_ASSIGNMENT = 'Cymru_YoungCarerStatusAssignment';
 	const CYMRU_QUALIFIED_TEACHER_ROUTE = 'Cymru_QualifiedTeacherRoute';
+	const CYMRU_SEN_STATUS_ASSIGNMENT_AREA_OF_NEED = 'Cymru_SenStatusAssignmentAreaOfNeed';
 }

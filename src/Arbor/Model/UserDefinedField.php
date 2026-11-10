@@ -21,6 +21,8 @@ class UserDefinedField extends ModelBase
 
     public const ACTIVE = 'active';
 
+    public const SHOW_IN_LESSON_DASHBOARD = 'showInLessonDashboard';
+
     protected $_resourceType = ResourceType::USER_DEFINED_FIELD;
 
     /**
@@ -169,5 +171,21 @@ class UserDefinedField extends ModelBase
     public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return string
+     */
+    public function getShowInLessonDashboard()
+    {
+        return $this->getProperty('showInLessonDashboard');
+    }
+
+    /**
+     * @param string $showInLessonDashboard
+     */
+    public function setShowInLessonDashboard(string $showInLessonDashboard = null)
+    {
+        $this->setProperty('showInLessonDashboard', $showInLessonDashboard);
     }
 }

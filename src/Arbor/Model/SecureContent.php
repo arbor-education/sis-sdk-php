@@ -9,6 +9,8 @@ class SecureContent extends ModelBase
 {
     public const NAME = 'name';
 
+    public const PROVIDER = 'provider';
+
     public const SECURE_VALUE = 'secureValue';
 
     protected $_resourceType = ResourceType::SECURE_CONTENT;
@@ -63,6 +65,22 @@ class SecureContent extends ModelBase
     public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
+    }
+
+    /**
+     * @return string
+     */
+    public function getProvider()
+    {
+        return $this->getProperty('provider');
+    }
+
+    /**
+     * @param string $provider
+     */
+    public function setProvider(string $provider = null)
+    {
+        $this->setProperty('provider', $provider);
     }
 
     /**

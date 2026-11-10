@@ -9,6 +9,10 @@ class AssessmentMarksheet extends ModelBase
 {
     public const MARKSHEET_TEMPLATE = 'marksheetTemplate';
 
+    public const ACADEMIC_YEAR = 'academicYear';
+
+    public const LAST_MODIFIED_DATETIME = 'lastModifiedDatetime';
+
     protected $_resourceType = ResourceType::ASSESSMENT_MARKSHEET;
 
     /**
@@ -61,5 +65,37 @@ class AssessmentMarksheet extends ModelBase
     public function setMarksheetTemplate(\Arbor\Model\MarksheetTemplate $marksheetTemplate = null)
     {
         $this->setProperty('marksheetTemplate', $marksheetTemplate);
+    }
+
+    /**
+     * @return \Arbor\Model\AcademicYear
+     */
+    public function getAcademicYear()
+    {
+        return $this->getProperty('academicYear');
+    }
+
+    /**
+     * @param \Arbor\Model\AcademicYear $academicYear
+     */
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    {
+        $this->setProperty('academicYear', $academicYear);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastModifiedDatetime()
+    {
+        return $this->getProperty('lastModifiedDatetime');
+    }
+
+    /**
+     * @param \DateTime $lastModifiedDatetime
+     */
+    public function setLastModifiedDatetime(\DateTime $lastModifiedDatetime = null)
+    {
+        $this->setProperty('lastModifiedDatetime', $lastModifiedDatetime);
     }
 }

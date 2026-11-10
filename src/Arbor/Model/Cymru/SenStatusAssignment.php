@@ -15,6 +15,8 @@ class SenStatusAssignment extends ModelBase
 
     public const SEN_GROUPING_AND_SUPPORT = 'senGroupingAndSupport';
 
+    public const SEN_LOCAL_HEALTH_BOARD_SECURED_PROVISION = 'senLocalHealthBoardSecuredProvision';
+
     public const SEN_SPECIALISED_RESOURCES = 'senSpecialisedResources';
 
     protected $_resourceType = ResourceType::CYMRU_SEN_STATUS_ASSIGNMENT;
@@ -101,6 +103,22 @@ class SenStatusAssignment extends ModelBase
     public function setSenGroupingAndSupport(string $senGroupingAndSupport = null)
     {
         $this->setProperty('senGroupingAndSupport', $senGroupingAndSupport);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getSenLocalHealthBoardSecuredProvision()
+    {
+        return $this->getProperty('senLocalHealthBoardSecuredProvision');
+    }
+
+    /**
+     * @param bool $senLocalHealthBoardSecuredProvision
+     */
+    public function setSenLocalHealthBoardSecuredProvision(bool $senLocalHealthBoardSecuredProvision = null)
+    {
+        $this->setProperty('senLocalHealthBoardSecuredProvision', $senLocalHealthBoardSecuredProvision);
     }
 
     /**
