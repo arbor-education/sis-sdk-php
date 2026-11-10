@@ -76,7 +76,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -220,7 +220,7 @@ class SmsMessageDraft extends ModelBase
     /**
      * @param ModelBase $context
      */
-    public function setContext(\ModelBase $context = null)
+    public function setContext(\Arbor\Model\ModelBase $context = null)
     {
         $this->setProperty('context', $context);
     }

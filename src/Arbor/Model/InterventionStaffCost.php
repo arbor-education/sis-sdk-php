@@ -68,7 +68,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param ModelBase $staff
      */
-    public function setStaff(\ModelBase $staff = null)
+    public function setStaff(\Arbor\Model\ModelBase $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

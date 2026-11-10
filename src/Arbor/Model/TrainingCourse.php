@@ -98,7 +98,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param ModelBase $organizer
      */
-    public function setOrganizer(\ModelBase $organizer = null)
+    public function setOrganizer(\Arbor\Model\ModelBase $organizer = null)
     {
         $this->setProperty('organizer', $organizer);
     }

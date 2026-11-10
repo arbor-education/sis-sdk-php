@@ -76,7 +76,7 @@ class RepeatingSchoolEventParticipant extends ModelBase
     /**
      * @param ModelBase $participant
      */
-    public function setParticipant(\ModelBase $participant = null)
+    public function setParticipant(\Arbor\Model\ModelBase $participant = null)
     {
         $this->setProperty('participant', $participant);
     }

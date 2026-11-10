@@ -138,7 +138,7 @@ class MarksheetTemplateColumn extends ModelBase
     /**
      * @param ModelBase $column
      */
-    public function setColumn(\ModelBase $column = null)
+    public function setColumn(\Arbor\Model\ModelBase $column = null)
     {
         $this->setProperty('column', $column);
     }

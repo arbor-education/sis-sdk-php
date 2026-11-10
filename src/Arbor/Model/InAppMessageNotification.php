@@ -60,7 +60,7 @@ class InAppMessageNotification extends ModelBase
     /**
      * @param ModelBase $inAppMessage
      */
-    public function setInAppMessage(\ModelBase $inAppMessage = null)
+    public function setInAppMessage(\Arbor\Model\ModelBase $inAppMessage = null)
     {
         $this->setProperty('inAppMessage', $inAppMessage);
     }
@@ -76,7 +76,7 @@ class InAppMessageNotification extends ModelBase
     /**
      * @param ModelBase $notificationChannel
      */
-    public function setNotificationChannel(\ModelBase $notificationChannel = null)
+    public function setNotificationChannel(\Arbor\Model\ModelBase $notificationChannel = null)
     {
         $this->setProperty('notificationChannel', $notificationChannel);
     }

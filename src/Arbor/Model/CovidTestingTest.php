@@ -70,7 +70,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -150,7 +150,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param ModelBase $administeredBy
      */
-    public function setAdministeredBy(\ModelBase $administeredBy = null)
+    public function setAdministeredBy(\Arbor\Model\ModelBase $administeredBy = null)
     {
         $this->setProperty('administeredBy', $administeredBy);
     }

@@ -166,7 +166,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param ModelBase $allocatedTo
      */
-    public function setAllocatedTo(\ModelBase $allocatedTo = null)
+    public function setAllocatedTo(\Arbor\Model\ModelBase $allocatedTo = null)
     {
         $this->setProperty('allocatedTo', $allocatedTo);
     }

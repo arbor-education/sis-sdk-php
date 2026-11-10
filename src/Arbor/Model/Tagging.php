@@ -84,7 +84,7 @@ class Tagging extends ModelBase
     /**
      * @param ModelBase $taggedObject
      */
-    public function setTaggedObject(\ModelBase $taggedObject = null)
+    public function setTaggedObject(\Arbor\Model\ModelBase $taggedObject = null)
     {
         $this->setProperty('taggedObject', $taggedObject);
     }
@@ -132,7 +132,7 @@ class Tagging extends ModelBase
     /**
      * @param ModelBase $link1
      */
-    public function setLink1(\ModelBase $link1 = null)
+    public function setLink1(\Arbor\Model\ModelBase $link1 = null)
     {
         $this->setProperty('link1', $link1);
     }
@@ -148,7 +148,7 @@ class Tagging extends ModelBase
     /**
      * @param ModelBase $link2
      */
-    public function setLink2(\ModelBase $link2 = null)
+    public function setLink2(\Arbor\Model\ModelBase $link2 = null)
     {
         $this->setProperty('link2', $link2);
     }

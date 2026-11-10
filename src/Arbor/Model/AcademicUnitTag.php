@@ -76,7 +76,7 @@ class AcademicUnitTag extends ModelBase
     /**
      * @param ModelBase $relatedObject
      */
-    public function setRelatedObject(\ModelBase $relatedObject = null)
+    public function setRelatedObject(\Arbor\Model\ModelBase $relatedObject = null)
     {
         $this->setProperty('relatedObject', $relatedObject);
     }

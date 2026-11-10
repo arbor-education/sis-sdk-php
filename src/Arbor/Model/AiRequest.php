@@ -154,7 +154,7 @@ class AiRequest extends ModelBase
     /**
      * @param ModelBase $linkedEntity
      */
-    public function setLinkedEntity(\ModelBase $linkedEntity = null)
+    public function setLinkedEntity(\Arbor\Model\ModelBase $linkedEntity = null)
     {
         $this->setProperty('linkedEntity', $linkedEntity);
     }

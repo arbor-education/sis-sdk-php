@@ -60,7 +60,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     /**
      * @param ModelBase $firstElement
      */
-    public function setFirstElement(\ModelBase $firstElement = null)
+    public function setFirstElement(\Arbor\Model\ModelBase $firstElement = null)
     {
         $this->setProperty('firstElement', $firstElement);
     }
@@ -76,7 +76,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     /**
      * @param ModelBase $secondElement
      */
-    public function setSecondElement(\ModelBase $secondElement = null)
+    public function setSecondElement(\Arbor\Model\ModelBase $secondElement = null)
     {
         $this->setProperty('secondElement', $secondElement);
     }

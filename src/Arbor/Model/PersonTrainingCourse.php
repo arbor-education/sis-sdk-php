@@ -78,7 +78,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param ModelBase $trainedPerson
      */
-    public function setTrainedPerson(\ModelBase $trainedPerson = null)
+    public function setTrainedPerson(\Arbor\Model\ModelBase $trainedPerson = null)
     {
         $this->setProperty('trainedPerson', $trainedPerson);
     }

@@ -86,7 +86,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param ModelBase $invitee
      */
-    public function setInvitee(\ModelBase $invitee = null)
+    public function setInvitee(\Arbor\Model\ModelBase $invitee = null)
     {
         $this->setProperty('invitee', $invitee);
     }

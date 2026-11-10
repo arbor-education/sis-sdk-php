@@ -276,7 +276,7 @@ class Detention extends ModelBase
     /**
      * @param ModelBase $absenteesDetentionAction
      */
-    public function setAbsenteesDetentionAction(\ModelBase $absenteesDetentionAction = null)
+    public function setAbsenteesDetentionAction(\Arbor\Model\ModelBase $absenteesDetentionAction = null)
     {
         $this->setProperty('absenteesDetentionAction', $absenteesDetentionAction);
     }
@@ -292,7 +292,7 @@ class Detention extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }

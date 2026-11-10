@@ -81,7 +81,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param ModelBase $qualificationElement
      */
-    public function setQualificationElement(\ModelBase $qualificationElement = null)
+    public function setQualificationElement(\Arbor\Model\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }

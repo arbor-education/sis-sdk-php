@@ -60,7 +60,7 @@ class SuspendedCalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $suspendedObject
      */
-    public function setSuspendedObject(\ModelBase $suspendedObject = null)
+    public function setSuspendedObject(\Arbor\Model\ModelBase $suspendedObject = null)
     {
         $this->setProperty('suspendedObject', $suspendedObject);
     }
@@ -76,7 +76,7 @@ class SuspendedCalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $suspendedEvent
      */
-    public function setSuspendedEvent(\ModelBase $suspendedEvent = null)
+    public function setSuspendedEvent(\Arbor\Model\ModelBase $suspendedEvent = null)
     {
         $this->setProperty('suspendedEvent', $suspendedEvent);
     }

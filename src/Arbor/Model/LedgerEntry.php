@@ -94,7 +94,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param ModelBase $transaction
      */
-    public function setTransaction(\ModelBase $transaction = null)
+    public function setTransaction(\Arbor\Model\ModelBase $transaction = null)
     {
         $this->setProperty('transaction', $transaction);
     }

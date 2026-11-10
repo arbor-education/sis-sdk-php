@@ -76,7 +76,7 @@ class MeetingTopic extends ModelBase
     /**
      * @param ModelBase $topic
      */
-    public function setTopic(\ModelBase $topic = null)
+    public function setTopic(\Arbor\Model\ModelBase $topic = null)
     {
         $this->setProperty('topic', $topic);
     }

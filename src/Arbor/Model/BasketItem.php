@@ -116,7 +116,7 @@ class BasketItem extends ModelBase
     /**
      * @param ModelBase $payingFor
      */
-    public function setPayingFor(\ModelBase $payingFor = null)
+    public function setPayingFor(\Arbor\Model\ModelBase $payingFor = null)
     {
         $this->setProperty('payingFor', $payingFor);
     }

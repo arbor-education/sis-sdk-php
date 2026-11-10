@@ -170,7 +170,7 @@ class PointAward extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -202,7 +202,7 @@ class PointAward extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }

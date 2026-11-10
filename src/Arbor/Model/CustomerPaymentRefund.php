@@ -118,7 +118,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param ModelBase $refundTransaction
      */
-    public function setRefundTransaction(\ModelBase $refundTransaction = null)
+    public function setRefundTransaction(\Arbor\Model\ModelBase $refundTransaction = null)
     {
         $this->setProperty('refundTransaction', $refundTransaction);
     }

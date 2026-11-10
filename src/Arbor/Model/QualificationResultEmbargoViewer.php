@@ -58,7 +58,7 @@ class QualificationResultEmbargoViewer extends ModelBase
     /**
      * @param ModelBase $viewer
      */
-    public function setViewer(\ModelBase $viewer = null)
+    public function setViewer(\Arbor\Model\ModelBase $viewer = null)
     {
         $this->setProperty('viewer', $viewer);
     }

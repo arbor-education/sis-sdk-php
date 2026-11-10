@@ -62,7 +62,7 @@ class MarkApproval extends ModelBase
     /**
      * @param ModelBase $mark
      */
-    public function setMark(\ModelBase $mark = null)
+    public function setMark(\Arbor\Model\ModelBase $mark = null)
     {
         $this->setProperty('mark', $mark);
     }

@@ -62,7 +62,7 @@ class MealRotationMenuChoice extends ModelBase
     /**
      * @param ModelBase $attendee
      */
-    public function setAttendee(\ModelBase $attendee = null)
+    public function setAttendee(\Arbor\Model\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }

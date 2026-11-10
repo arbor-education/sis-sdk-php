@@ -114,7 +114,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -130,7 +130,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param ModelBase $message
      */
-    public function setMessage(\ModelBase $message = null)
+    public function setMessage(\Arbor\Model\ModelBase $message = null)
     {
         $this->setProperty('message', $message);
     }

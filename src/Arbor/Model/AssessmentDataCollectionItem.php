@@ -88,7 +88,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param ModelBase $assessmentEntity
      */
-    public function setAssessmentEntity(\ModelBase $assessmentEntity = null)
+    public function setAssessmentEntity(\Arbor\Model\ModelBase $assessmentEntity = null)
     {
         $this->setProperty('assessmentEntity', $assessmentEntity);
     }
@@ -104,7 +104,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param ModelBase $studentGroup
      */
-    public function setStudentGroup(\ModelBase $studentGroup = null)
+    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

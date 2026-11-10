@@ -98,7 +98,7 @@ class Alert extends ModelBase
     /**
      * @param ModelBase $triggeredBy
      */
-    public function setTriggeredBy(\ModelBase $triggeredBy = null)
+    public function setTriggeredBy(\Arbor\Model\ModelBase $triggeredBy = null)
     {
         $this->setProperty('triggeredBy', $triggeredBy);
     }
@@ -114,7 +114,7 @@ class Alert extends ModelBase
     /**
      * @param ModelBase $reference
      */
-    public function setReference(\ModelBase $reference = null)
+    public function setReference(\Arbor\Model\ModelBase $reference = null)
     {
         $this->setProperty('reference', $reference);
     }

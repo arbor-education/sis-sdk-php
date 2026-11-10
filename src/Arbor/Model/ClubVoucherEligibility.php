@@ -76,7 +76,7 @@ class ClubVoucherEligibility extends ModelBase
     /**
      * @param ModelBase $group
      */
-    public function setGroup(\ModelBase $group = null)
+    public function setGroup(\Arbor\Model\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }

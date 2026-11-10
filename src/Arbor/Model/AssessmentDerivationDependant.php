@@ -152,7 +152,7 @@ class AssessmentDerivationDependant extends ModelBase
     /**
      * @param ModelBase $dependantAssessment
      */
-    public function setDependantAssessment(\ModelBase $dependantAssessment = null)
+    public function setDependantAssessment(\Arbor\Model\ModelBase $dependantAssessment = null)
     {
         $this->setProperty('dependantAssessment', $dependantAssessment);
     }

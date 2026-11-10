@@ -92,7 +92,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param ModelBase $curriculumEntity
      */
-    public function setCurriculumEntity(\ModelBase $curriculumEntity = null)
+    public function setCurriculumEntity(\Arbor\Model\ModelBase $curriculumEntity = null)
     {
         $this->setProperty('curriculumEntity', $curriculumEntity);
     }

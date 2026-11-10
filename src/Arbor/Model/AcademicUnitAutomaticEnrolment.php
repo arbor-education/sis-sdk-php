@@ -78,7 +78,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     /**
      * @param ModelBase $trigger
      */
-    public function setTrigger(\ModelBase $trigger = null)
+    public function setTrigger(\Arbor\Model\ModelBase $trigger = null)
     {
         $this->setProperty('trigger', $trigger);
     }

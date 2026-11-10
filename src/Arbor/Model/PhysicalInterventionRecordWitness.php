@@ -82,7 +82,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param ModelBase $witness
      */
-    public function setWitness(\ModelBase $witness = null)
+    public function setWitness(\Arbor\Model\ModelBase $witness = null)
     {
         $this->setProperty('witness', $witness);
     }
