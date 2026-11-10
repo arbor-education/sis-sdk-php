@@ -264,36 +264,4 @@ class FixedPeriodExclusion extends ModelBase
     {
         $this->setProperty('narrative', $narrative);
     }
-
-    /**
-     * @return string
-     */
-    public function getCancellationReason()
-    {
-        return $this->getProperty('cancellationReason');
-    }
-
-    /**
-     * @param string $cancellationReason
-     */
-    public function setCancellationReason(string $cancellationReason = null)
-    {
-        $this->setProperty('cancellationReason', $cancellationReason);
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getStudentReinstatementDate()
-    {
-        return $this->getProperty('studentReinstatementDate');
-    }
-
-    /**
-     * @param \DateTime $studentReinstatementDate
-     */
-    public function setStudentReinstatementDate(\DateTime $studentReinstatementDate = null)
-    {
-        $this->setProperty('studentReinstatementDate', $studentReinstatementDate);
-    }
 }
