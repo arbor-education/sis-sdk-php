@@ -74,7 +74,7 @@ class PostalAddressOccupancy extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOccupant()
     {
@@ -82,9 +82,9 @@ class PostalAddressOccupancy extends ModelBase
     }
 
     /**
-     * @param ModelBase $occupant
+     * @param \Arbor\Model\ModelBase $occupant
      */
-    public function setOccupant(\ModelBase $occupant = null)
+    public function setOccupant(\Arbor\Model\ModelBase $occupant = null)
     {
         $this->setProperty('occupant', $occupant);
     }

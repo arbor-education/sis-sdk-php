@@ -146,7 +146,7 @@ class PaymentEvent extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSource()
     {
@@ -154,9 +154,9 @@ class PaymentEvent extends ModelBase
     }
 
     /**
-     * @param ModelBase $source
+     * @param \Arbor\Model\ModelBase $source
      */
-    public function setSource(\ModelBase $source = null)
+    public function setSource(\Arbor\Model\ModelBase $source = null)
     {
         $this->setProperty('source', $source);
     }

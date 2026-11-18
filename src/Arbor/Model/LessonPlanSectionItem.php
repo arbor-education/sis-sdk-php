@@ -72,7 +72,7 @@ class LessonPlanSectionItem extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedItem()
     {
@@ -80,9 +80,9 @@ class LessonPlanSectionItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedItem
+     * @param \Arbor\Model\ModelBase $linkedItem
      */
-    public function setLinkedItem(\ModelBase $linkedItem = null)
+    public function setLinkedItem(\Arbor\Model\ModelBase $linkedItem = null)
     {
         $this->setProperty('linkedItem', $linkedItem);
     }

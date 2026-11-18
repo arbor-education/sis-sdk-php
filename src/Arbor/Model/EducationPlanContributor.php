@@ -66,7 +66,7 @@ class EducationPlanContributor extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getContributor()
     {
@@ -74,9 +74,9 @@ class EducationPlanContributor extends ModelBase
     }
 
     /**
-     * @param ModelBase $contributor
+     * @param \Arbor\Model\ModelBase $contributor
      */
-    public function setContributor(\ModelBase $contributor = null)
+    public function setContributor(\Arbor\Model\ModelBase $contributor = null)
     {
         $this->setProperty('contributor', $contributor);
     }

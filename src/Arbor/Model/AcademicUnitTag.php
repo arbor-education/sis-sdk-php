@@ -66,7 +66,7 @@ class AcademicUnitTag extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedObject()
     {
@@ -74,9 +74,9 @@ class AcademicUnitTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedObject
+     * @param \Arbor\Model\ModelBase $relatedObject
      */
-    public function setRelatedObject(\ModelBase $relatedObject = null)
+    public function setRelatedObject(\Arbor\Model\ModelBase $relatedObject = null)
     {
         $this->setProperty('relatedObject', $relatedObject);
     }

@@ -68,7 +68,7 @@ class SmsMessagePermittedSender extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -76,9 +76,9 @@ class SmsMessagePermittedSender extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }

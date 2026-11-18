@@ -120,7 +120,7 @@ class GoogleUser extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getMatchedPerson()
     {
@@ -128,9 +128,9 @@ class GoogleUser extends ModelBase
     }
 
     /**
-     * @param ModelBase $matchedPerson
+     * @param \Arbor\Model\ModelBase $matchedPerson
      */
-    public function setMatchedPerson(\ModelBase $matchedPerson = null)
+    public function setMatchedPerson(\Arbor\Model\ModelBase $matchedPerson = null)
     {
         $this->setProperty('matchedPerson', $matchedPerson);
     }

@@ -66,7 +66,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAutomaticAttendeeTarget()
     {
@@ -74,9 +74,9 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     }
 
     /**
-     * @param ModelBase $automaticAttendeeTarget
+     * @param \Arbor\Model\ModelBase $automaticAttendeeTarget
      */
-    public function setAutomaticAttendeeTarget(\ModelBase $automaticAttendeeTarget = null)
+    public function setAutomaticAttendeeTarget(\Arbor\Model\ModelBase $automaticAttendeeTarget = null)
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }

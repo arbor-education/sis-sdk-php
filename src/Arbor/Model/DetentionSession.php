@@ -106,7 +106,7 @@ class DetentionSession extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -114,9 +114,9 @@ class DetentionSession extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }

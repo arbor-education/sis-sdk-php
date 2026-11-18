@@ -68,7 +68,7 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSuspectOne()
     {
@@ -76,15 +76,15 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @param ModelBase $suspectOne
+     * @param \Arbor\Model\ModelBase $suspectOne
      */
-    public function setSuspectOne(\ModelBase $suspectOne = null)
+    public function setSuspectOne(\Arbor\Model\ModelBase $suspectOne = null)
     {
         $this->setProperty('suspectOne', $suspectOne);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSuspectTwo()
     {
@@ -92,9 +92,9 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @param ModelBase $suspectTwo
+     * @param \Arbor\Model\ModelBase $suspectTwo
      */
-    public function setSuspectTwo(\ModelBase $suspectTwo = null)
+    public function setSuspectTwo(\Arbor\Model\ModelBase $suspectTwo = null)
     {
         $this->setProperty('suspectTwo', $suspectTwo);
     }

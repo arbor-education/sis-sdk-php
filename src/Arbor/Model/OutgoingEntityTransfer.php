@@ -60,7 +60,7 @@ class OutgoingEntityTransfer extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSourceEntity()
     {
@@ -68,9 +68,9 @@ class OutgoingEntityTransfer extends ModelBase
     }
 
     /**
-     * @param ModelBase $sourceEntity
+     * @param \Arbor\Model\ModelBase $sourceEntity
      */
-    public function setSourceEntity(\ModelBase $sourceEntity = null)
+    public function setSourceEntity(\Arbor\Model\ModelBase $sourceEntity = null)
     {
         $this->setProperty('sourceEntity', $sourceEntity);
     }

@@ -76,7 +76,7 @@ class EventParticipantInvitation extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getInvitee()
     {
@@ -84,9 +84,9 @@ class EventParticipantInvitation extends ModelBase
     }
 
     /**
-     * @param ModelBase $invitee
+     * @param \Arbor\Model\ModelBase $invitee
      */
-    public function setInvitee(\ModelBase $invitee = null)
+    public function setInvitee(\Arbor\Model\ModelBase $invitee = null)
     {
         $this->setProperty('invitee', $invitee);
     }

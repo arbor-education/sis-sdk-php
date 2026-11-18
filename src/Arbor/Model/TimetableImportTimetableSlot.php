@@ -122,7 +122,7 @@ class TimetableImportTimetableSlot extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTimetabledObject()
     {
@@ -130,9 +130,9 @@ class TimetableImportTimetableSlot extends ModelBase
     }
 
     /**
-     * @param ModelBase $timetabledObject
+     * @param \Arbor\Model\ModelBase $timetabledObject
      */
-    public function setTimetabledObject(\ModelBase $timetabledObject = null)
+    public function setTimetabledObject(\Arbor\Model\ModelBase $timetabledObject = null)
     {
         $this->setProperty('timetabledObject', $timetabledObject);
     }

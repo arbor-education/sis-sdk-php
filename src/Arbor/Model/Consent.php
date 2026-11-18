@@ -94,7 +94,7 @@ class Consent extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelated()
     {
@@ -102,9 +102,9 @@ class Consent extends ModelBase
     }
 
     /**
-     * @param ModelBase $related
+     * @param \Arbor\Model\ModelBase $related
      */
-    public function setRelated(\ModelBase $related = null)
+    public function setRelated(\Arbor\Model\ModelBase $related = null)
     {
         $this->setProperty('related', $related);
     }
@@ -174,7 +174,7 @@ class Consent extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRespondee()
     {
@@ -182,9 +182,9 @@ class Consent extends ModelBase
     }
 
     /**
-     * @param ModelBase $respondee
+     * @param \Arbor\Model\ModelBase $respondee
      */
-    public function setRespondee(\ModelBase $respondee = null)
+    public function setRespondee(\Arbor\Model\ModelBase $respondee = null)
     {
         $this->setProperty('respondee', $respondee);
     }

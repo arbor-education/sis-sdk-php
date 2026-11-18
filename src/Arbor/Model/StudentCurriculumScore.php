@@ -82,7 +82,7 @@ class StudentCurriculumScore extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getCurriculumEntity()
     {
@@ -90,9 +90,9 @@ class StudentCurriculumScore extends ModelBase
     }
 
     /**
-     * @param ModelBase $curriculumEntity
+     * @param \Arbor\Model\ModelBase $curriculumEntity
      */
-    public function setCurriculumEntity(\ModelBase $curriculumEntity = null)
+    public function setCurriculumEntity(\Arbor\Model\ModelBase $curriculumEntity = null)
     {
         $this->setProperty('curriculumEntity', $curriculumEntity);
     }

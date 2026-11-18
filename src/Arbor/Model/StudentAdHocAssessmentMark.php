@@ -136,7 +136,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getScopeEntity()
     {
@@ -144,9 +144,9 @@ class StudentAdHocAssessmentMark extends ModelBase
     }
 
     /**
-     * @param ModelBase $scopeEntity
+     * @param \Arbor\Model\ModelBase $scopeEntity
      */
-    public function setScopeEntity(\ModelBase $scopeEntity = null)
+    public function setScopeEntity(\Arbor\Model\ModelBase $scopeEntity = null)
     {
         $this->setProperty('scopeEntity', $scopeEntity);
     }

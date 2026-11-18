@@ -108,7 +108,7 @@ class CustomerAccountRefund extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTransaction()
     {
@@ -116,9 +116,9 @@ class CustomerAccountRefund extends ModelBase
     }
 
     /**
-     * @param ModelBase $transaction
+     * @param \Arbor\Model\ModelBase $transaction
      */
-    public function setTransaction(\ModelBase $transaction = null)
+    public function setTransaction(\Arbor\Model\ModelBase $transaction = null)
     {
         $this->setProperty('transaction', $transaction);
     }

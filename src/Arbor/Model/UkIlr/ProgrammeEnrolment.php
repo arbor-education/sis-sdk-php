@@ -458,7 +458,7 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getDeliveryOrganisation()
     {
@@ -466,9 +466,9 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @param ModelBase $deliveryOrganisation
+     * @param \Arbor\Model\ModelBase $deliveryOrganisation
      */
-    public function setDeliveryOrganisation(\ModelBase $deliveryOrganisation = null)
+    public function setDeliveryOrganisation(\Arbor\Model\ModelBase $deliveryOrganisation = null)
     {
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
     }

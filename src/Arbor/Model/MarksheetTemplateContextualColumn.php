@@ -13,6 +13,8 @@ class MarksheetTemplateContextualColumn extends ModelBase
 
     public const DATA_ORDER = 'dataOrder';
 
+    public const CLASS = 'class';
+
     public const FORMATTER_CLASS = 'formatterClass';
 
     protected $_resourceType = ResourceType::MARKSHEET_TEMPLATE_CONTEXTUAL_COLUMN;
