@@ -18,7 +18,7 @@ class AssessmentImportColumn extends ModelBase
      * @return AssessmentImportColumn[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AssessmentImportColumn extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentImportJob $assessmentImportJob
      */
-    public function setAssessmentImportJob(\Arbor\Model\AssessmentImportJob $assessmentImportJob = null)
+    public function setAssessmentImportJob(?\Arbor\Model\AssessmentImportJob $assessmentImportJob = null)
     {
         $this->setProperty('assessmentImportJob', $assessmentImportJob);
     }
@@ -76,7 +76,7 @@ class AssessmentImportColumn extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $mappedAssessmentAspect
      */
-    public function setMappedAssessmentAspect(\Arbor\Model\ModelBase $mappedAssessmentAspect = null)
+    public function setMappedAssessmentAspect(?\Arbor\Model\ModelBase $mappedAssessmentAspect = null)
     {
         $this->setProperty('mappedAssessmentAspect', $mappedAssessmentAspect);
     }

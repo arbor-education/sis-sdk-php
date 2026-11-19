@@ -24,7 +24,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
      * @return ReportCardBatchProgressAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -82,7 +82,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(int $order = null)
+    public function setOrder(?int $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -98,7 +98,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -114,7 +114,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $displayGradeSet
      */
-    public function setDisplayGradeSet(\Arbor\Model\GradeSet $displayGradeSet = null)
+    public function setDisplayGradeSet(?\Arbor\Model\GradeSet $displayGradeSet = null)
     {
         $this->setProperty('displayGradeSet', $displayGradeSet);
     }
@@ -130,7 +130,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param \DateTime $markingCompletedDatetime
      */
-    public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
+    public function setMarkingCompletedDatetime(?\DateTime $markingCompletedDatetime = null)
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }

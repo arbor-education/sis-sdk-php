@@ -18,7 +18,7 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
      * @return InHouseExamInstanceAcademicUnitLink[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExamInstance $inHouseExamInstance
      */
-    public function setInHouseExamInstance(\Arbor\Model\InHouseExamInstance $inHouseExamInstance = null)
+    public function setInHouseExamInstance(?\Arbor\Model\InHouseExamInstance $inHouseExamInstance = null)
     {
         $this->setProperty('inHouseExamInstance', $inHouseExamInstance);
     }
@@ -76,7 +76,7 @@ class InHouseExamInstanceAcademicUnitLink extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }

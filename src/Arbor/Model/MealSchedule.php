@@ -20,7 +20,7 @@ class MealSchedule extends ModelBase
      * @return MealSchedule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class MealSchedule extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class MealSchedule extends ModelBase
     /**
      * @param int $week
      */
-    public function setWeek(int $week = null)
+    public function setWeek(?int $week = null)
     {
         $this->setProperty('week', $week);
     }
@@ -94,7 +94,7 @@ class MealSchedule extends ModelBase
     /**
      * @param \Arbor\Model\MealRotationMenu $mealRotationMenu
      */
-    public function setMealRotationMenu(\Arbor\Model\MealRotationMenu $mealRotationMenu = null)
+    public function setMealRotationMenu(?\Arbor\Model\MealRotationMenu $mealRotationMenu = null)
     {
         $this->setProperty('mealRotationMenu', $mealRotationMenu);
     }

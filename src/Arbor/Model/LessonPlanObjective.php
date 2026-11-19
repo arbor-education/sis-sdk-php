@@ -20,7 +20,7 @@ class LessonPlanObjective extends ModelBase
      * @return LessonPlanObjective[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param string $objectiveTitle
      */
-    public function setObjectiveTitle(string $objectiveTitle = null)
+    public function setObjectiveTitle(?string $objectiveTitle = null)
     {
         $this->setProperty('objectiveTitle', $objectiveTitle);
     }
@@ -78,7 +78,7 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param string $objectiveDescription
      */
-    public function setObjectiveDescription(string $objectiveDescription = null)
+    public function setObjectiveDescription(?string $objectiveDescription = null)
     {
         $this->setProperty('objectiveDescription', $objectiveDescription);
     }
@@ -94,7 +94,7 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(\Arbor\Model\CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(?\Arbor\Model\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }

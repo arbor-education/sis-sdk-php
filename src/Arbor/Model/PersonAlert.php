@@ -24,7 +24,7 @@ class PersonAlert extends ModelBase
      * @return PersonAlert[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class PersonAlert extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\Arbor\Model\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -82,7 +82,7 @@ class PersonAlert extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $contextPerson
      */
-    public function setContextPerson(\Arbor\Model\ModelBase $contextPerson = null)
+    public function setContextPerson(?\Arbor\Model\ModelBase $contextPerson = null)
     {
         $this->setProperty('contextPerson', $contextPerson);
     }
@@ -98,7 +98,7 @@ class PersonAlert extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $contextObject
      */
-    public function setContextObject(\Arbor\Model\ModelBase $contextObject = null)
+    public function setContextObject(?\Arbor\Model\ModelBase $contextObject = null)
     {
         $this->setProperty('contextObject', $contextObject);
     }
@@ -114,7 +114,7 @@ class PersonAlert extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -130,7 +130,7 @@ class PersonAlert extends ModelBase
     /**
      * @param \DateTime $alertDatetime
      */
-    public function setAlertDatetime(\DateTime $alertDatetime = null)
+    public function setAlertDatetime(?\DateTime $alertDatetime = null)
     {
         $this->setProperty('alertDatetime', $alertDatetime);
     }

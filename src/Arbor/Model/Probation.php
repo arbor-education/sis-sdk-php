@@ -24,7 +24,7 @@ class Probation extends ModelBase
      * @return Probation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Probation extends ModelBase
     /**
      * @param \Arbor\Model\StaffContract $staffContract
      */
-    public function setStaffContract(\Arbor\Model\StaffContract $staffContract = null)
+    public function setStaffContract(?\Arbor\Model\StaffContract $staffContract = null)
     {
         $this->setProperty('staffContract', $staffContract);
     }
@@ -82,7 +82,7 @@ class Probation extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -98,7 +98,7 @@ class Probation extends ModelBase
     /**
      * @param \DateTime $originalEndDate
      */
-    public function setOriginalEndDate(\DateTime $originalEndDate = null)
+    public function setOriginalEndDate(?\DateTime $originalEndDate = null)
     {
         $this->setProperty('originalEndDate', $originalEndDate);
     }
@@ -114,7 +114,7 @@ class Probation extends ModelBase
     /**
      * @param \DateTime $currentEndDate
      */
-    public function setCurrentEndDate(\DateTime $currentEndDate = null)
+    public function setCurrentEndDate(?\DateTime $currentEndDate = null)
     {
         $this->setProperty('currentEndDate', $currentEndDate);
     }
@@ -130,7 +130,7 @@ class Probation extends ModelBase
     /**
      * @param string $probationDecision
      */
-    public function setProbationDecision(string $probationDecision = null)
+    public function setProbationDecision(?string $probationDecision = null)
     {
         $this->setProperty('probationDecision', $probationDecision);
     }

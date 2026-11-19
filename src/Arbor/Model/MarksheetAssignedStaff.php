@@ -18,7 +18,7 @@ class MarksheetAssignedStaff extends ModelBase
      * @return MarksheetAssignedStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class MarksheetAssignedStaff extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMarksheet $marksheet
      */
-    public function setMarksheet(\Arbor\Model\AssessmentMarksheet $marksheet = null)
+    public function setMarksheet(?\Arbor\Model\AssessmentMarksheet $marksheet = null)
     {
         $this->setProperty('marksheet', $marksheet);
     }
@@ -76,7 +76,7 @@ class MarksheetAssignedStaff extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

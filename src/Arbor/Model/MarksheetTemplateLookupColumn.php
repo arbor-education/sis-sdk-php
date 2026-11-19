@@ -24,7 +24,7 @@ class MarksheetTemplateLookupColumn extends ModelBase
      * @return MarksheetTemplateLookupColumn[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class MarksheetTemplateLookupColumn extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class MarksheetTemplateLookupColumn extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class MarksheetTemplateLookupColumn extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class MarksheetTemplateLookupColumn extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentLookup $assessmentLookup
      */
-    public function setAssessmentLookup(\Arbor\Model\AssessmentLookup $assessmentLookup = null)
+    public function setAssessmentLookup(?\Arbor\Model\AssessmentLookup $assessmentLookup = null)
     {
         $this->setProperty('assessmentLookup', $assessmentLookup);
     }
@@ -130,7 +130,7 @@ class MarksheetTemplateLookupColumn extends ModelBase
     /**
      * @param \Arbor\Model\MarksheetTemplateColumn $comparisonMarksheetTemplateColumn
      */
-    public function setComparisonMarksheetTemplateColumn(\Arbor\Model\MarksheetTemplateColumn $comparisonMarksheetTemplateColumn = null)
+    public function setComparisonMarksheetTemplateColumn(?\Arbor\Model\MarksheetTemplateColumn $comparisonMarksheetTemplateColumn = null)
     {
         $this->setProperty('comparisonMarksheetTemplateColumn', $comparisonMarksheetTemplateColumn);
     }

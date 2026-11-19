@@ -22,7 +22,7 @@ class HouseTutor extends ModelBase
      * @return HouseTutor[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class HouseTutor extends ModelBase
     /**
      * @param \Arbor\Model\House $house
      */
-    public function setHouse(\Arbor\Model\House $house = null)
+    public function setHouse(?\Arbor\Model\House $house = null)
     {
         $this->setProperty('house', $house);
     }
@@ -80,7 +80,7 @@ class HouseTutor extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -96,7 +96,7 @@ class HouseTutor extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class HouseTutor extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

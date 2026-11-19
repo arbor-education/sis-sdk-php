@@ -24,7 +24,7 @@ class Alert extends ModelBase
      * @return Alert[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Alert extends ModelBase
     /**
      * @param \Arbor\Model\AlertRule $alertRule
      */
-    public function setAlertRule(\Arbor\Model\AlertRule $alertRule = null)
+    public function setAlertRule(?\Arbor\Model\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -82,7 +82,7 @@ class Alert extends ModelBase
     /**
      * @param string $triggerEventType
      */
-    public function setTriggerEventType(string $triggerEventType = null)
+    public function setTriggerEventType(?string $triggerEventType = null)
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }
@@ -98,7 +98,7 @@ class Alert extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $triggeredBy
      */
-    public function setTriggeredBy(\Arbor\Model\ModelBase $triggeredBy = null)
+    public function setTriggeredBy(?\Arbor\Model\ModelBase $triggeredBy = null)
     {
         $this->setProperty('triggeredBy', $triggeredBy);
     }
@@ -114,7 +114,7 @@ class Alert extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $reference
      */
-    public function setReference(\Arbor\Model\ModelBase $reference = null)
+    public function setReference(?\Arbor\Model\ModelBase $reference = null)
     {
         $this->setProperty('reference', $reference);
     }
@@ -130,7 +130,7 @@ class Alert extends ModelBase
     /**
      * @param \DateTime $triggeredDatetime
      */
-    public function setTriggeredDatetime(\DateTime $triggeredDatetime = null)
+    public function setTriggeredDatetime(?\DateTime $triggeredDatetime = null)
     {
         $this->setProperty('triggeredDatetime', $triggeredDatetime);
     }

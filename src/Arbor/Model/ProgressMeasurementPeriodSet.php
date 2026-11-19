@@ -20,7 +20,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
      * @return ProgressMeasurementPeriodSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param string $periodFrequency
      */
-    public function setPeriodFrequency(string $periodFrequency = null)
+    public function setPeriodFrequency(?string $periodFrequency = null)
     {
         $this->setProperty('periodFrequency', $periodFrequency);
     }
@@ -78,7 +78,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param string $setName
      */
-    public function setSetName(string $setName = null)
+    public function setSetName(?string $setName = null)
     {
         $this->setProperty('setName', $setName);
     }
@@ -94,7 +94,7 @@ class ProgressMeasurementPeriodSet extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

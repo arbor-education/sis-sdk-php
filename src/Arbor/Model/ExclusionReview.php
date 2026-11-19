@@ -32,7 +32,7 @@ class ExclusionReview extends ModelBase
      * @return ExclusionReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -90,7 +90,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param \Arbor\Model\ExclusionReviewOutcome $exclusionReviewOutcome
      */
-    public function setExclusionReviewOutcome(\Arbor\Model\ExclusionReviewOutcome $exclusionReviewOutcome = null)
+    public function setExclusionReviewOutcome(?\Arbor\Model\ExclusionReviewOutcome $exclusionReviewOutcome = null)
     {
         $this->setProperty('exclusionReviewOutcome', $exclusionReviewOutcome);
     }
@@ -106,7 +106,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param \Arbor\Model\PermanentExclusion $permanentExclusion
      */
-    public function setPermanentExclusion(\Arbor\Model\PermanentExclusion $permanentExclusion = null)
+    public function setPermanentExclusion(?\Arbor\Model\PermanentExclusion $permanentExclusion = null)
     {
         $this->setProperty('permanentExclusion', $permanentExclusion);
     }
@@ -122,7 +122,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param \Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion
      */
-    public function setFixedPeriodExclusion(\Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion = null)
+    public function setFixedPeriodExclusion(?\Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion = null)
     {
         $this->setProperty('fixedPeriodExclusion', $fixedPeriodExclusion);
     }
@@ -138,7 +138,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param \DateTime $reviewDate
      */
-    public function setReviewDate(\DateTime $reviewDate = null)
+    public function setReviewDate(?\DateTime $reviewDate = null)
     {
         $this->setProperty('reviewDate', $reviewDate);
     }
@@ -154,7 +154,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -170,7 +170,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param \DateTime $studentReinstatementDate
      */
-    public function setStudentReinstatementDate(\DateTime $studentReinstatementDate = null)
+    public function setStudentReinstatementDate(?\DateTime $studentReinstatementDate = null)
     {
         $this->setProperty('studentReinstatementDate', $studentReinstatementDate);
     }
@@ -186,7 +186,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param bool $senExpertRequested
      */
-    public function setSenExpertRequested(bool $senExpertRequested = null)
+    public function setSenExpertRequested(?bool $senExpertRequested = null)
     {
         $this->setProperty('senExpertRequested', $senExpertRequested);
     }
@@ -202,7 +202,7 @@ class ExclusionReview extends ModelBase
     /**
      * @param string $exclusionReviewCategory
      */
-    public function setExclusionReviewCategory(string $exclusionReviewCategory = null)
+    public function setExclusionReviewCategory(?string $exclusionReviewCategory = null)
     {
         $this->setProperty('exclusionReviewCategory', $exclusionReviewCategory);
     }

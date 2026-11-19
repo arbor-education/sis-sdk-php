@@ -20,7 +20,7 @@ class MarkApproval extends ModelBase
      * @return MarkApproval[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class MarkApproval extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $mark
      */
-    public function setMark(\Arbor\Model\ModelBase $mark = null)
+    public function setMark(?\Arbor\Model\ModelBase $mark = null)
     {
         $this->setProperty('mark', $mark);
     }
@@ -78,7 +78,7 @@ class MarkApproval extends ModelBase
     /**
      * @param string $approvalLevel
      */
-    public function setApprovalLevel(string $approvalLevel = null)
+    public function setApprovalLevel(?string $approvalLevel = null)
     {
         $this->setProperty('approvalLevel', $approvalLevel);
     }
@@ -94,7 +94,7 @@ class MarkApproval extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem
      */
-    public function setAssessmentDataCollectionItem(\Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
+    public function setAssessmentDataCollectionItem(?\Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }

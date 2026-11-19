@@ -22,7 +22,7 @@ class SpecialSchoolProvision extends ModelBase
      * @return SpecialSchoolProvision[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class SpecialSchoolProvision extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -80,7 +80,7 @@ class SpecialSchoolProvision extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\SpecialSchoolProvisionType $specialSchoolProvisionType
      */
-    public function setSpecialSchoolProvisionType(\Arbor\Model\Cymru\SpecialSchoolProvisionType $specialSchoolProvisionType = null)
+    public function setSpecialSchoolProvisionType(?\Arbor\Model\Cymru\SpecialSchoolProvisionType $specialSchoolProvisionType = null)
     {
         $this->setProperty('specialSchoolProvisionType', $specialSchoolProvisionType);
     }
@@ -96,7 +96,7 @@ class SpecialSchoolProvision extends ModelBase
     /**
      * @param int $rank
      */
-    public function setRank(int $rank = null)
+    public function setRank(?int $rank = null)
     {
         $this->setProperty('rank', $rank);
     }

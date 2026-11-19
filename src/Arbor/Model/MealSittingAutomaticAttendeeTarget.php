@@ -18,7 +18,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
      * @return MealSittingAutomaticAttendeeTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     /**
      * @param \Arbor\Model\MealSitting $mealSitting
      */
-    public function setMealSitting(\Arbor\Model\MealSitting $mealSitting = null)
+    public function setMealSitting(?\Arbor\Model\MealSitting $mealSitting = null)
     {
         $this->setProperty('mealSitting', $mealSitting);
     }
@@ -76,7 +76,7 @@ class MealSittingAutomaticAttendeeTarget extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $automaticAttendeeTarget
      */
-    public function setAutomaticAttendeeTarget(\Arbor\Model\ModelBase $automaticAttendeeTarget = null)
+    public function setAutomaticAttendeeTarget(?\Arbor\Model\ModelBase $automaticAttendeeTarget = null)
     {
         $this->setProperty('automaticAttendeeTarget', $automaticAttendeeTarget);
     }

@@ -22,7 +22,7 @@ class AreaDeprivationIndex extends ModelBase
      * @return AreaDeprivationIndex[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AreaDeprivationIndex extends ModelBase
     /**
      * @param string $areaReference
      */
-    public function setAreaReference(string $areaReference = null)
+    public function setAreaReference(?string $areaReference = null)
     {
         $this->setProperty('areaReference', $areaReference);
     }
@@ -80,7 +80,7 @@ class AreaDeprivationIndex extends ModelBase
     /**
      * @param int $year
      */
-    public function setYear(int $year = null)
+    public function setYear(?int $year = null)
     {
         $this->setProperty('year', $year);
     }
@@ -96,7 +96,7 @@ class AreaDeprivationIndex extends ModelBase
     /**
      * @param int $decile
      */
-    public function setDecile(int $decile = null)
+    public function setDecile(?int $decile = null)
     {
         $this->setProperty('decile', $decile);
     }
@@ -112,7 +112,7 @@ class AreaDeprivationIndex extends ModelBase
     /**
      * @param int $rank
      */
-    public function setRank(int $rank = null)
+    public function setRank(?int $rank = null)
     {
         $this->setProperty('rank', $rank);
     }

@@ -32,7 +32,7 @@ class TripPrice extends ModelBase
      * @return TripPrice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class TripPrice extends ModelBase
     /**
      * @param \Arbor\Model\Trip $trip
      */
-    public function setTrip(\Arbor\Model\Trip $trip = null)
+    public function setTrip(?\Arbor\Model\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
@@ -90,7 +90,7 @@ class TripPrice extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $applicable
      */
-    public function setApplicable(\Arbor\Model\ModelBase $applicable = null)
+    public function setApplicable(?\Arbor\Model\ModelBase $applicable = null)
     {
         $this->setProperty('applicable', $applicable);
     }
@@ -106,7 +106,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -122,7 +122,7 @@ class TripPrice extends ModelBase
     /**
      * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
+    public function setVatRate(?\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -138,7 +138,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $voluntaryContribution
      */
-    public function setVoluntaryContribution(bool $voluntaryContribution = null)
+    public function setVoluntaryContribution(?bool $voluntaryContribution = null)
     {
         $this->setProperty('voluntaryContribution', $voluntaryContribution);
     }
@@ -154,7 +154,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $instalmentsPermitted
      */
-    public function setInstalmentsPermitted(bool $instalmentsPermitted = null)
+    public function setInstalmentsPermitted(?bool $instalmentsPermitted = null)
     {
         $this->setProperty('instalmentsPermitted', $instalmentsPermitted);
     }
@@ -170,7 +170,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $minimumInstalmentAmount
      */
-    public function setMinimumInstalmentAmount(string $minimumInstalmentAmount = null)
+    public function setMinimumInstalmentAmount(?string $minimumInstalmentAmount = null)
     {
         $this->setProperty('minimumInstalmentAmount', $minimumInstalmentAmount);
     }
@@ -186,7 +186,7 @@ class TripPrice extends ModelBase
     /**
      * @param string $autoConfirmInstalmentThreshold
      */
-    public function setAutoConfirmInstalmentThreshold(string $autoConfirmInstalmentThreshold = null)
+    public function setAutoConfirmInstalmentThreshold(?string $autoConfirmInstalmentThreshold = null)
     {
         $this->setProperty('autoConfirmInstalmentThreshold', $autoConfirmInstalmentThreshold);
     }
@@ -202,7 +202,7 @@ class TripPrice extends ModelBase
     /**
      * @param bool $showAmountOutstanding
      */
-    public function setShowAmountOutstanding(bool $showAmountOutstanding = null)
+    public function setShowAmountOutstanding(?bool $showAmountOutstanding = null)
     {
         $this->setProperty('showAmountOutstanding', $showAmountOutstanding);
     }

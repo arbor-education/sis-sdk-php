@@ -22,7 +22,7 @@ class CustomReportScheduledExportReport extends ModelBase
      * @return CustomReportScheduledExportReport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CustomReportScheduledExportReport extends ModelBase
     /**
      * @param \Arbor\Model\CustomReportScheduledExport $customReportScheduledExport
      */
-    public function setCustomReportScheduledExport(\Arbor\Model\CustomReportScheduledExport $customReportScheduledExport = null)
+    public function setCustomReportScheduledExport(?\Arbor\Model\CustomReportScheduledExport $customReportScheduledExport = null)
     {
         $this->setProperty('customReportScheduledExport', $customReportScheduledExport);
     }
@@ -80,7 +80,7 @@ class CustomReportScheduledExportReport extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -96,7 +96,7 @@ class CustomReportScheduledExportReport extends ModelBase
     /**
      * @param string $exportFormat
      */
-    public function setExportFormat(string $exportFormat = null)
+    public function setExportFormat(?string $exportFormat = null)
     {
         $this->setProperty('exportFormat', $exportFormat);
     }
@@ -112,7 +112,7 @@ class CustomReportScheduledExportReport extends ModelBase
     /**
      * @param string $scheduledTime
      */
-    public function setScheduledTime(string $scheduledTime = null)
+    public function setScheduledTime(?string $scheduledTime = null)
     {
         $this->setProperty('scheduledTime', $scheduledTime);
     }

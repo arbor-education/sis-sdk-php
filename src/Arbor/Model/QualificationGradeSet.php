@@ -26,7 +26,7 @@ class QualificationGradeSet extends ModelBase
      * @return QualificationGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class QualificationGradeSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -84,7 +84,7 @@ class QualificationGradeSet extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -100,7 +100,7 @@ class QualificationGradeSet extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -116,7 +116,7 @@ class QualificationGradeSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -132,7 +132,7 @@ class QualificationGradeSet extends ModelBase
     /**
      * @param string $scaleDirection
      */
-    public function setScaleDirection(string $scaleDirection = null)
+    public function setScaleDirection(?string $scaleDirection = null)
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }
@@ -148,7 +148,7 @@ class QualificationGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
+    public function setGradePointScale(?\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }

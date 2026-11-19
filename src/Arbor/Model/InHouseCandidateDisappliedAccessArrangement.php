@@ -20,7 +20,7 @@ class InHouseCandidateDisappliedAccessArrangement extends ModelBase
      * @return InHouseCandidateDisappliedAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class InHouseCandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\InHouseCandidate $inHouseCandidate
      */
-    public function setInHouseCandidate(\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
+    public function setInHouseCandidate(?\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
     {
         $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
@@ -78,7 +78,7 @@ class InHouseCandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(\Arbor\Model\AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(?\Arbor\Model\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -94,7 +94,7 @@ class InHouseCandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(?\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }

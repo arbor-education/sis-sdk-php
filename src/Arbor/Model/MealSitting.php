@@ -24,7 +24,7 @@ class MealSitting extends ModelBase
      * @return MealSitting[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class MealSitting extends ModelBase
     /**
      * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(\Arbor\Model\Meal $meal = null)
+    public function setMeal(?\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -82,7 +82,7 @@ class MealSitting extends ModelBase
     /**
      * @param string $mealSittingName
      */
-    public function setMealSittingName(string $mealSittingName = null)
+    public function setMealSittingName(?string $mealSittingName = null)
     {
         $this->setProperty('mealSittingName', $mealSittingName);
     }
@@ -98,7 +98,7 @@ class MealSitting extends ModelBase
     /**
      * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Arbor\Model\Room $room = null)
+    public function setRoom(?\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -114,7 +114,7 @@ class MealSitting extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -130,7 +130,7 @@ class MealSitting extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

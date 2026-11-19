@@ -28,7 +28,7 @@ class PersonIdentificationDocument extends ModelBase
      * @return PersonIdentificationDocument[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\Arbor\Model\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -86,7 +86,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param \Arbor\Model\IdentificationDocumentType $documentType
      */
-    public function setDocumentType(\Arbor\Model\IdentificationDocumentType $documentType = null)
+    public function setDocumentType(?\Arbor\Model\IdentificationDocumentType $documentType = null)
     {
         $this->setProperty('documentType', $documentType);
     }
@@ -102,7 +102,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param string $documentNumber
      */
-    public function setDocumentNumber(string $documentNumber = null)
+    public function setDocumentNumber(?string $documentNumber = null)
     {
         $this->setProperty('documentNumber', $documentNumber);
     }
@@ -118,7 +118,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param \DateTime $issueDate
      */
-    public function setIssueDate(\DateTime $issueDate = null)
+    public function setIssueDate(?\DateTime $issueDate = null)
     {
         $this->setProperty('issueDate', $issueDate);
     }
@@ -134,7 +134,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param \DateTime $expiryDate
      */
-    public function setExpiryDate(\DateTime $expiryDate = null)
+    public function setExpiryDate(?\DateTime $expiryDate = null)
     {
         $this->setProperty('expiryDate', $expiryDate);
     }
@@ -150,7 +150,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param string $nameOnDocument
      */
-    public function setNameOnDocument(string $nameOnDocument = null)
+    public function setNameOnDocument(?string $nameOnDocument = null)
     {
         $this->setProperty('nameOnDocument', $nameOnDocument);
     }
@@ -166,7 +166,7 @@ class PersonIdentificationDocument extends ModelBase
     /**
      * @param \Arbor\Model\Country $issuingCountry
      */
-    public function setIssuingCountry(\Arbor\Model\Country $issuingCountry = null)
+    public function setIssuingCountry(?\Arbor\Model\Country $issuingCountry = null)
     {
         $this->setProperty('issuingCountry', $issuingCountry);
     }

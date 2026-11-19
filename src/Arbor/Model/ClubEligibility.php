@@ -18,7 +18,7 @@ class ClubEligibility extends ModelBase
      * @return ClubEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ClubEligibility extends ModelBase
     /**
      * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Arbor\Model\Club $club = null)
+    public function setClub(?\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -76,7 +76,7 @@ class ClubEligibility extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $eligible
      */
-    public function setEligible(\Arbor\Model\ModelBase $eligible = null)
+    public function setEligible(?\Arbor\Model\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }

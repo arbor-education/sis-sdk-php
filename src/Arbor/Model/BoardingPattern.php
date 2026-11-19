@@ -36,7 +36,7 @@ class BoardingPattern extends ModelBase
      * @return BoardingPattern[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -94,7 +94,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -110,7 +110,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -126,7 +126,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $mondayBoardingStatus
      */
-    public function setMondayBoardingStatus(\Arbor\Model\BoardingStatus $mondayBoardingStatus = null)
+    public function setMondayBoardingStatus(?\Arbor\Model\BoardingStatus $mondayBoardingStatus = null)
     {
         $this->setProperty('mondayBoardingStatus', $mondayBoardingStatus);
     }
@@ -142,7 +142,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $tuesdayBoardingStatus
      */
-    public function setTuesdayBoardingStatus(\Arbor\Model\BoardingStatus $tuesdayBoardingStatus = null)
+    public function setTuesdayBoardingStatus(?\Arbor\Model\BoardingStatus $tuesdayBoardingStatus = null)
     {
         $this->setProperty('tuesdayBoardingStatus', $tuesdayBoardingStatus);
     }
@@ -158,7 +158,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $wednesdayBoardingStatus
      */
-    public function setWednesdayBoardingStatus(\Arbor\Model\BoardingStatus $wednesdayBoardingStatus = null)
+    public function setWednesdayBoardingStatus(?\Arbor\Model\BoardingStatus $wednesdayBoardingStatus = null)
     {
         $this->setProperty('wednesdayBoardingStatus', $wednesdayBoardingStatus);
     }
@@ -174,7 +174,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $thursdayBoardingStatus
      */
-    public function setThursdayBoardingStatus(\Arbor\Model\BoardingStatus $thursdayBoardingStatus = null)
+    public function setThursdayBoardingStatus(?\Arbor\Model\BoardingStatus $thursdayBoardingStatus = null)
     {
         $this->setProperty('thursdayBoardingStatus', $thursdayBoardingStatus);
     }
@@ -190,7 +190,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $fridayBoardingStatus
      */
-    public function setFridayBoardingStatus(\Arbor\Model\BoardingStatus $fridayBoardingStatus = null)
+    public function setFridayBoardingStatus(?\Arbor\Model\BoardingStatus $fridayBoardingStatus = null)
     {
         $this->setProperty('fridayBoardingStatus', $fridayBoardingStatus);
     }
@@ -206,7 +206,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $saturdayBoardingStatus
      */
-    public function setSaturdayBoardingStatus(\Arbor\Model\BoardingStatus $saturdayBoardingStatus = null)
+    public function setSaturdayBoardingStatus(?\Arbor\Model\BoardingStatus $saturdayBoardingStatus = null)
     {
         $this->setProperty('saturdayBoardingStatus', $saturdayBoardingStatus);
     }
@@ -222,7 +222,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\BoardingStatus $sundayBoardingStatus
      */
-    public function setSundayBoardingStatus(\Arbor\Model\BoardingStatus $sundayBoardingStatus = null)
+    public function setSundayBoardingStatus(?\Arbor\Model\BoardingStatus $sundayBoardingStatus = null)
     {
         $this->setProperty('sundayBoardingStatus', $sundayBoardingStatus);
     }
@@ -238,7 +238,7 @@ class BoardingPattern extends ModelBase
     /**
      * @param \Arbor\Model\Room $accommodationRoom
      */
-    public function setAccommodationRoom(\Arbor\Model\Room $accommodationRoom = null)
+    public function setAccommodationRoom(?\Arbor\Model\Room $accommodationRoom = null)
     {
         $this->setProperty('accommodationRoom', $accommodationRoom);
     }

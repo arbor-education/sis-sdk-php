@@ -22,7 +22,7 @@ class BehaviouralIncidentAction extends ModelBase
      * @return BehaviouralIncidentAction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(?\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -80,7 +80,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -96,7 +96,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $action
      */
-    public function setAction(\Arbor\Model\ModelBase $action = null)
+    public function setAction(?\Arbor\Model\ModelBase $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -112,7 +112,7 @@ class BehaviouralIncidentAction extends ModelBase
     /**
      * @param bool $isAutomatic
      */
-    public function setIsAutomatic(bool $isAutomatic = null)
+    public function setIsAutomatic(?bool $isAutomatic = null)
     {
         $this->setProperty('isAutomatic', $isAutomatic);
     }

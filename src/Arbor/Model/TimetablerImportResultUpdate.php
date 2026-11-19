@@ -18,7 +18,7 @@ class TimetablerImportResultUpdate extends ModelBase
      * @return TimetablerImportResultUpdate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class TimetablerImportResultUpdate extends ModelBase
     /**
      * @param \Arbor\Model\TimetablerImportResult $timetablerImportResult
      */
-    public function setTimetablerImportResult(\Arbor\Model\TimetablerImportResult $timetablerImportResult = null)
+    public function setTimetablerImportResult(?\Arbor\Model\TimetablerImportResult $timetablerImportResult = null)
     {
         $this->setProperty('timetablerImportResult', $timetablerImportResult);
     }
@@ -76,7 +76,7 @@ class TimetablerImportResultUpdate extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $updated
      */
-    public function setUpdated(\Arbor\Model\ModelBase $updated = null)
+    public function setUpdated(?\Arbor\Model\ModelBase $updated = null)
     {
         $this->setProperty('updated', $updated);
     }

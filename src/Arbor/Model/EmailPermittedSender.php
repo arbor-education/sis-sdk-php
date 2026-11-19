@@ -20,7 +20,7 @@ class EmailPermittedSender extends ModelBase
      * @return EmailPermittedSender[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class EmailPermittedSender extends ModelBase
     /**
      * @param \Arbor\Model\Staff $actionTaker
      */
-    public function setActionTaker(\Arbor\Model\Staff $actionTaker = null)
+    public function setActionTaker(?\Arbor\Model\Staff $actionTaker = null)
     {
         $this->setProperty('actionTaker', $actionTaker);
     }
@@ -78,7 +78,7 @@ class EmailPermittedSender extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\Arbor\Model\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -94,7 +94,7 @@ class EmailPermittedSender extends ModelBase
     /**
      * @param bool $allow
      */
-    public function setAllow(bool $allow = null)
+    public function setAllow(?bool $allow = null)
     {
         $this->setProperty('allow', $allow);
     }

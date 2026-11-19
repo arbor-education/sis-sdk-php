@@ -16,7 +16,7 @@ class Basket extends ModelBase
      * @return Basket[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class Basket extends ModelBase
     /**
      * @param \Arbor\Model\Guardian $guardian
      */
-    public function setGuardian(\Arbor\Model\Guardian $guardian = null)
+    public function setGuardian(?\Arbor\Model\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }

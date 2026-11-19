@@ -30,7 +30,7 @@ class StandardizedAssessmentThreshold extends ModelBase
      * @return StandardizedAssessmentThreshold[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -136,7 +136,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessment $markStandardizedAssessment
      */
-    public function setMarkStandardizedAssessment(\Arbor\Model\StandardizedAssessment $markStandardizedAssessment = null)
+    public function setMarkStandardizedAssessment(?\Arbor\Model\StandardizedAssessment $markStandardizedAssessment = null)
     {
         $this->setProperty('markStandardizedAssessment', $markStandardizedAssessment);
     }
@@ -152,7 +152,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment
      */
-    public function setOutcomeStandardizedAssessment(\Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment = null)
+    public function setOutcomeStandardizedAssessment(?\Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment = null)
     {
         $this->setProperty('outcomeStandardizedAssessment', $outcomeStandardizedAssessment);
     }
@@ -168,7 +168,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -184,7 +184,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

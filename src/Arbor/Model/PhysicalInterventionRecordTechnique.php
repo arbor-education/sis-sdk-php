@@ -18,7 +18,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
      * @return PhysicalInterventionRecordTechnique[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
     /**
      * @param \Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord
      */
-    public function setPhysicalInterventionRecord(\Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord = null)
+    public function setPhysicalInterventionRecord(?\Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
         $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
@@ -76,7 +76,7 @@ class PhysicalInterventionRecordTechnique extends ModelBase
     /**
      * @param \Arbor\Model\PhysicalInterventionTechnique $physicalInterventionTechnique
      */
-    public function setPhysicalInterventionTechnique(\Arbor\Model\PhysicalInterventionTechnique $physicalInterventionTechnique = null)
+    public function setPhysicalInterventionTechnique(?\Arbor\Model\PhysicalInterventionTechnique $physicalInterventionTechnique = null)
     {
         $this->setProperty('physicalInterventionTechnique', $physicalInterventionTechnique);
     }

@@ -60,7 +60,7 @@ class Student extends ModelBase
      * @return Student[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -102,7 +102,7 @@ class Student extends ModelBase
     /**
      * @param int $uniqueLearnerNumber
      */
-    public function setUniqueLearnerNumber(int $uniqueLearnerNumber = null)
+    public function setUniqueLearnerNumber(?int $uniqueLearnerNumber = null)
     {
         $this->setProperty('uniqueLearnerNumber', $uniqueLearnerNumber);
     }
@@ -118,7 +118,7 @@ class Student extends ModelBase
     /**
      * @param \Arbor\Model\LocalAuthority $homeLocalAuthority
      */
-    public function setHomeLocalAuthority(\Arbor\Model\LocalAuthority $homeLocalAuthority = null)
+    public function setHomeLocalAuthority(?\Arbor\Model\LocalAuthority $homeLocalAuthority = null)
     {
         $this->setProperty('homeLocalAuthority', $homeLocalAuthority);
     }
@@ -134,7 +134,7 @@ class Student extends ModelBase
     /**
      * @param string $youthSupportServicesAgreement
      */
-    public function setYouthSupportServicesAgreement(string $youthSupportServicesAgreement = null)
+    public function setYouthSupportServicesAgreement(?string $youthSupportServicesAgreement = null)
     {
         $this->setProperty('youthSupportServicesAgreement', $youthSupportServicesAgreement);
     }
@@ -150,7 +150,7 @@ class Student extends ModelBase
     /**
      * @param string $hoursAtSetting
      */
-    public function setHoursAtSetting(string $hoursAtSetting = null)
+    public function setHoursAtSetting(?string $hoursAtSetting = null)
     {
         $this->setProperty('hoursAtSetting', $hoursAtSetting);
     }
@@ -166,7 +166,7 @@ class Student extends ModelBase
     /**
      * @param string $fundedHours
      */
-    public function setFundedHours(string $fundedHours = null)
+    public function setFundedHours(?string $fundedHours = null)
     {
         $this->setProperty('fundedHours', $fundedHours);
     }
@@ -182,7 +182,7 @@ class Student extends ModelBase
     /**
      * @param string $ethnicitySource
      */
-    public function setEthnicitySource(string $ethnicitySource = null)
+    public function setEthnicitySource(?string $ethnicitySource = null)
     {
         $this->setProperty('ethnicitySource', $ethnicitySource);
     }
@@ -198,7 +198,7 @@ class Student extends ModelBase
     /**
      * @param string $nhsNumber
      */
-    public function setNhsNumber(string $nhsNumber = null)
+    public function setNhsNumber(?string $nhsNumber = null)
     {
         $this->setProperty('nhsNumber', $nhsNumber);
     }
@@ -214,7 +214,7 @@ class Student extends ModelBase
     /**
      * @param string $ucasPersonalIdentifier
      */
-    public function setUcasPersonalIdentifier(string $ucasPersonalIdentifier = null)
+    public function setUcasPersonalIdentifier(?string $ucasPersonalIdentifier = null)
     {
         $this->setProperty('ucasPersonalIdentifier', $ucasPersonalIdentifier);
     }
@@ -230,7 +230,7 @@ class Student extends ModelBase
     /**
      * @param string $extendedHours
      */
-    public function setExtendedHours(string $extendedHours = null)
+    public function setExtendedHours(?string $extendedHours = null)
     {
         $this->setProperty('extendedHours', $extendedHours);
     }
@@ -246,7 +246,7 @@ class Student extends ModelBase
     /**
      * @param string $thirtyHourCode
      */
-    public function setThirtyHourCode(string $thirtyHourCode = null)
+    public function setThirtyHourCode(?string $thirtyHourCode = null)
     {
         $this->setProperty('thirtyHourCode', $thirtyHourCode);
     }
@@ -262,7 +262,7 @@ class Student extends ModelBase
     /**
      * @param string $expandedHours
      */
-    public function setExpandedHours(string $expandedHours = null)
+    public function setExpandedHours(?string $expandedHours = null)
     {
         $this->setProperty('expandedHours', $expandedHours);
     }
@@ -278,7 +278,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseEnglishGrade
      */
-    public function setGcseEnglishGrade(string $gcseEnglishGrade = null)
+    public function setGcseEnglishGrade(?string $gcseEnglishGrade = null)
     {
         $this->setProperty('gcseEnglishGrade', $gcseEnglishGrade);
     }
@@ -294,7 +294,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseEnglishGradePrior
      */
-    public function setGcseEnglishGradePrior(string $gcseEnglishGradePrior = null)
+    public function setGcseEnglishGradePrior(?string $gcseEnglishGradePrior = null)
     {
         $this->setProperty('gcseEnglishGradePrior', $gcseEnglishGradePrior);
     }
@@ -310,7 +310,7 @@ class Student extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\GcseEnglishAchievementType $gcseEnglishAchievementType
      */
-    public function setGcseEnglishAchievementType(\Arbor\Model\UkDfe\GcseEnglishAchievementType $gcseEnglishAchievementType = null)
+    public function setGcseEnglishAchievementType(?\Arbor\Model\UkDfe\GcseEnglishAchievementType $gcseEnglishAchievementType = null)
     {
         $this->setProperty('gcseEnglishAchievementType', $gcseEnglishAchievementType);
     }
@@ -327,7 +327,7 @@ class Student extends ModelBase
      * @param \Arbor\Model\UkDfe\GcseEnglishFundingExemptionType
      * $gcseEnglishFundingExemptionType
      */
-    public function setGcseEnglishFundingExemptionType(\Arbor\Model\UkDfe\GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType = null)
+    public function setGcseEnglishFundingExemptionType(?\Arbor\Model\UkDfe\GcseEnglishFundingExemptionType $gcseEnglishFundingExemptionType = null)
     {
         $this->setProperty('gcseEnglishFundingExemptionType', $gcseEnglishFundingExemptionType);
     }
@@ -343,7 +343,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseEnglishMinimumHours
      */
-    public function setGcseEnglishMinimumHours(string $gcseEnglishMinimumHours = null)
+    public function setGcseEnglishMinimumHours(?string $gcseEnglishMinimumHours = null)
     {
         $this->setProperty('gcseEnglishMinimumHours', $gcseEnglishMinimumHours);
     }
@@ -359,7 +359,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseMathsGrade
      */
-    public function setGcseMathsGrade(string $gcseMathsGrade = null)
+    public function setGcseMathsGrade(?string $gcseMathsGrade = null)
     {
         $this->setProperty('gcseMathsGrade', $gcseMathsGrade);
     }
@@ -375,7 +375,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseMathsGradePrior
      */
-    public function setGcseMathsGradePrior(string $gcseMathsGradePrior = null)
+    public function setGcseMathsGradePrior(?string $gcseMathsGradePrior = null)
     {
         $this->setProperty('gcseMathsGradePrior', $gcseMathsGradePrior);
     }
@@ -391,7 +391,7 @@ class Student extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\GcseMathsAchievementType $gcseMathsAchievementType
      */
-    public function setGcseMathsAchievementType(\Arbor\Model\UkDfe\GcseMathsAchievementType $gcseMathsAchievementType = null)
+    public function setGcseMathsAchievementType(?\Arbor\Model\UkDfe\GcseMathsAchievementType $gcseMathsAchievementType = null)
     {
         $this->setProperty('gcseMathsAchievementType', $gcseMathsAchievementType);
     }
@@ -408,7 +408,7 @@ class Student extends ModelBase
      * @param \Arbor\Model\UkDfe\GcseMathsFundingExemptionType
      * $gcseMathsFundingExemptionType
      */
-    public function setGcseMathsFundingExemptionType(\Arbor\Model\UkDfe\GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
+    public function setGcseMathsFundingExemptionType(?\Arbor\Model\UkDfe\GcseMathsFundingExemptionType $gcseMathsFundingExemptionType = null)
     {
         $this->setProperty('gcseMathsFundingExemptionType', $gcseMathsFundingExemptionType);
     }
@@ -424,7 +424,7 @@ class Student extends ModelBase
     /**
      * @param string $gcseMathsMinimumHours
      */
-    public function setGcseMathsMinimumHours(string $gcseMathsMinimumHours = null)
+    public function setGcseMathsMinimumHours(?string $gcseMathsMinimumHours = null)
     {
         $this->setProperty('gcseMathsMinimumHours', $gcseMathsMinimumHours);
     }
@@ -440,7 +440,7 @@ class Student extends ModelBase
     /**
      * @param int $tLevelPlannedEepHours
      */
-    public function setTLevelPlannedEepHours(int $tLevelPlannedEepHours = null)
+    public function setTLevelPlannedEepHours(?int $tLevelPlannedEepHours = null)
     {
         $this->setProperty('tLevelPlannedEepHours', $tLevelPlannedEepHours);
     }

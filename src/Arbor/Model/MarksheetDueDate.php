@@ -20,7 +20,7 @@ class MarksheetDueDate extends ModelBase
      * @return MarksheetDueDate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class MarksheetDueDate extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMarksheet $marksheet
      */
-    public function setMarksheet(\Arbor\Model\AssessmentMarksheet $marksheet = null)
+    public function setMarksheet(?\Arbor\Model\AssessmentMarksheet $marksheet = null)
     {
         $this->setProperty('marksheet', $marksheet);
     }
@@ -78,7 +78,7 @@ class MarksheetDueDate extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataDrop $assessmentDataDrop
      */
-    public function setAssessmentDataDrop(\Arbor\Model\AssessmentDataDrop $assessmentDataDrop = null)
+    public function setAssessmentDataDrop(?\Arbor\Model\AssessmentDataDrop $assessmentDataDrop = null)
     {
         $this->setProperty('assessmentDataDrop', $assessmentDataDrop);
     }
@@ -94,7 +94,7 @@ class MarksheetDueDate extends ModelBase
     /**
      * @param \DateTime $dueDate
      */
-    public function setDueDate(\DateTime $dueDate = null)
+    public function setDueDate(?\DateTime $dueDate = null)
     {
         $this->setProperty('dueDate', $dueDate);
     }

@@ -18,7 +18,7 @@ class ReportSubscription extends ModelBase
      * @return ReportSubscription[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ReportSubscription extends ModelBase
     /**
      * @param string $reportIdentifier
      */
-    public function setReportIdentifier(string $reportIdentifier = null)
+    public function setReportIdentifier(?string $reportIdentifier = null)
     {
         $this->setProperty('reportIdentifier', $reportIdentifier);
     }
@@ -76,7 +76,7 @@ class ReportSubscription extends ModelBase
     /**
      * @param \Arbor\Model\Staff $subscriber
      */
-    public function setSubscriber(\Arbor\Model\Staff $subscriber = null)
+    public function setSubscriber(?\Arbor\Model\Staff $subscriber = null)
     {
         $this->setProperty('subscriber', $subscriber);
     }

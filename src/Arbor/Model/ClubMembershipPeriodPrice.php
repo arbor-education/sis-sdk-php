@@ -26,7 +26,7 @@ class ClubMembershipPeriodPrice extends ModelBase
      * @return ClubMembershipPeriodPrice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param \Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod
      */
-    public function setClubMembershipPeriod(\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
+    public function setClubMembershipPeriod(?\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
@@ -84,7 +84,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param string $pricingBasis
      */
-    public function setPricingBasis(string $pricingBasis = null)
+    public function setPricingBasis(?string $pricingBasis = null)
     {
         $this->setProperty('pricingBasis', $pricingBasis);
     }
@@ -100,7 +100,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -116,7 +116,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
+    public function setVatRate(?\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -132,7 +132,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $applicable
      */
-    public function setApplicable(\Arbor\Model\ModelBase $applicable = null)
+    public function setApplicable(?\Arbor\Model\ModelBase $applicable = null)
     {
         $this->setProperty('applicable', $applicable);
     }
@@ -148,7 +148,7 @@ class ClubMembershipPeriodPrice extends ModelBase
     /**
      * @param bool $variableContribution
      */
-    public function setVariableContribution(bool $variableContribution = null)
+    public function setVariableContribution(?bool $variableContribution = null)
     {
         $this->setProperty('variableContribution', $variableContribution);
     }

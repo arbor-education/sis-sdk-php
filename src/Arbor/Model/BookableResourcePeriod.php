@@ -20,7 +20,7 @@ class BookableResourcePeriod extends ModelBase
      * @return BookableResourcePeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class BookableResourcePeriod extends ModelBase
     /**
      * @param \Arbor\Model\Staff $resource
      */
-    public function setResource(\Arbor\Model\Staff $resource = null)
+    public function setResource(?\Arbor\Model\Staff $resource = null)
     {
         $this->setProperty('resource', $resource);
     }
@@ -78,7 +78,7 @@ class BookableResourcePeriod extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -94,7 +94,7 @@ class BookableResourcePeriod extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }

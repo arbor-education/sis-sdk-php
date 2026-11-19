@@ -46,7 +46,7 @@ class Meeting extends ModelBase
      * @return Meeting[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -88,7 +88,7 @@ class Meeting extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -104,7 +104,7 @@ class Meeting extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -120,7 +120,7 @@ class Meeting extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -136,7 +136,7 @@ class Meeting extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\Arbor\Model\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -152,7 +152,7 @@ class Meeting extends ModelBase
     /**
      * @param string $meetingName
      */
-    public function setMeetingName(string $meetingName = null)
+    public function setMeetingName(?string $meetingName = null)
     {
         $this->setProperty('meetingName', $meetingName);
     }
@@ -168,7 +168,7 @@ class Meeting extends ModelBase
     /**
      * @param bool $allowSelfServiceScheduling
      */
-    public function setAllowSelfServiceScheduling(bool $allowSelfServiceScheduling = null)
+    public function setAllowSelfServiceScheduling(?bool $allowSelfServiceScheduling = null)
     {
         $this->setProperty('allowSelfServiceScheduling', $allowSelfServiceScheduling);
     }
@@ -184,7 +184,7 @@ class Meeting extends ModelBase
     /**
      * @param \DateTime $selfSchedulingOpensDatetime
      */
-    public function setSelfSchedulingOpensDatetime(\DateTime $selfSchedulingOpensDatetime = null)
+    public function setSelfSchedulingOpensDatetime(?\DateTime $selfSchedulingOpensDatetime = null)
     {
         $this->setProperty('selfSchedulingOpensDatetime', $selfSchedulingOpensDatetime);
     }
@@ -200,7 +200,7 @@ class Meeting extends ModelBase
     /**
      * @param \DateTime $selfSchedulingClosesDatetime
      */
-    public function setSelfSchedulingClosesDatetime(\DateTime $selfSchedulingClosesDatetime = null)
+    public function setSelfSchedulingClosesDatetime(?\DateTime $selfSchedulingClosesDatetime = null)
     {
         $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }
@@ -216,7 +216,7 @@ class Meeting extends ModelBase
     /**
      * @param string $scheduleMinimumDuration
      */
-    public function setScheduleMinimumDuration(string $scheduleMinimumDuration = null)
+    public function setScheduleMinimumDuration(?string $scheduleMinimumDuration = null)
     {
         $this->setProperty('scheduleMinimumDuration', $scheduleMinimumDuration);
     }
@@ -232,7 +232,7 @@ class Meeting extends ModelBase
     /**
      * @param string $scheduleMaximumDuration
      */
-    public function setScheduleMaximumDuration(string $scheduleMaximumDuration = null)
+    public function setScheduleMaximumDuration(?string $scheduleMaximumDuration = null)
     {
         $this->setProperty('scheduleMaximumDuration', $scheduleMaximumDuration);
     }
@@ -248,7 +248,7 @@ class Meeting extends ModelBase
     /**
      * @param string $scheduleSuggestedDuration
      */
-    public function setScheduleSuggestedDuration(string $scheduleSuggestedDuration = null)
+    public function setScheduleSuggestedDuration(?string $scheduleSuggestedDuration = null)
     {
         $this->setProperty('scheduleSuggestedDuration', $scheduleSuggestedDuration);
     }
@@ -264,7 +264,7 @@ class Meeting extends ModelBase
     /**
      * @param \Arbor\Model\Room $scheduleLocation
      */
-    public function setScheduleLocation(\Arbor\Model\Room $scheduleLocation = null)
+    public function setScheduleLocation(?\Arbor\Model\Room $scheduleLocation = null)
     {
         $this->setProperty('scheduleLocation', $scheduleLocation);
     }
@@ -280,7 +280,7 @@ class Meeting extends ModelBase
     /**
      * @param bool $allowDuplicateScheduling
      */
-    public function setAllowDuplicateScheduling(bool $allowDuplicateScheduling = null)
+    public function setAllowDuplicateScheduling(?bool $allowDuplicateScheduling = null)
     {
         $this->setProperty('allowDuplicateScheduling', $allowDuplicateScheduling);
     }
@@ -296,7 +296,7 @@ class Meeting extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims(string $aims = null)
+    public function setAims(?string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -312,7 +312,7 @@ class Meeting extends ModelBase
     /**
      * @param string $agenda
      */
-    public function setAgenda(string $agenda = null)
+    public function setAgenda(?string $agenda = null)
     {
         $this->setProperty('agenda', $agenda);
     }
@@ -328,7 +328,7 @@ class Meeting extends ModelBase
     /**
      * @param string $outcomes
      */
-    public function setOutcomes(string $outcomes = null)
+    public function setOutcomes(?string $outcomes = null)
     {
         $this->setProperty('outcomes', $outcomes);
     }

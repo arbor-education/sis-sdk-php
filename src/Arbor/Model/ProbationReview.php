@@ -22,7 +22,7 @@ class ProbationReview extends ModelBase
      * @return ProbationReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ProbationReview extends ModelBase
     /**
      * @param \Arbor\Model\Probation $probation
      */
-    public function setProbation(\Arbor\Model\Probation $probation = null)
+    public function setProbation(?\Arbor\Model\Probation $probation = null)
     {
         $this->setProperty('probation', $probation);
     }
@@ -80,7 +80,7 @@ class ProbationReview extends ModelBase
     /**
      * @param \DateTime $reviewDate
      */
-    public function setReviewDate(\DateTime $reviewDate = null)
+    public function setReviewDate(?\DateTime $reviewDate = null)
     {
         $this->setProperty('reviewDate', $reviewDate);
     }
@@ -96,7 +96,7 @@ class ProbationReview extends ModelBase
     /**
      * @param string $reviewOutcome
      */
-    public function setReviewOutcome(string $reviewOutcome = null)
+    public function setReviewOutcome(?string $reviewOutcome = null)
     {
         $this->setProperty('reviewOutcome', $reviewOutcome);
     }
@@ -112,7 +112,7 @@ class ProbationReview extends ModelBase
     /**
      * @param string $reviewNotes
      */
-    public function setReviewNotes(string $reviewNotes = null)
+    public function setReviewNotes(?string $reviewNotes = null)
     {
         $this->setProperty('reviewNotes', $reviewNotes);
     }

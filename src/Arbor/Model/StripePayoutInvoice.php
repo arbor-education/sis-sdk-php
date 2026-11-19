@@ -24,7 +24,7 @@ class StripePayoutInvoice extends ModelBase
      * @return StripePayoutInvoice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class StripePayoutInvoice extends ModelBase
     /**
      * @param \Arbor\Model\StripePayoutTransaction $stripePayoutTransaction
      */
-    public function setStripePayoutTransaction(\Arbor\Model\StripePayoutTransaction $stripePayoutTransaction = null)
+    public function setStripePayoutTransaction(?\Arbor\Model\StripePayoutTransaction $stripePayoutTransaction = null)
     {
         $this->setProperty('stripePayoutTransaction', $stripePayoutTransaction);
     }
@@ -82,7 +82,7 @@ class StripePayoutInvoice extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -98,7 +98,7 @@ class StripePayoutInvoice extends ModelBase
     /**
      * @param string $invoiceNumber
      */
-    public function setInvoiceNumber(string $invoiceNumber = null)
+    public function setInvoiceNumber(?string $invoiceNumber = null)
     {
         $this->setProperty('invoiceNumber', $invoiceNumber);
     }
@@ -114,7 +114,7 @@ class StripePayoutInvoice extends ModelBase
     /**
      * @param \DateTime $invoiceDate
      */
-    public function setInvoiceDate(\DateTime $invoiceDate = null)
+    public function setInvoiceDate(?\DateTime $invoiceDate = null)
     {
         $this->setProperty('invoiceDate', $invoiceDate);
     }
@@ -130,7 +130,7 @@ class StripePayoutInvoice extends ModelBase
     /**
      * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Arbor\Model\Content $content = null)
+    public function setContent(?\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }

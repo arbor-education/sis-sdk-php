@@ -22,7 +22,7 @@ class Employer extends ModelBase
      * @return Employer[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class Employer extends ModelBase
     /**
      * @param string $edsEmployerId
      */
-    public function setEdsEmployerId(string $edsEmployerId = null)
+    public function setEdsEmployerId(?string $edsEmployerId = null)
     {
         $this->setProperty('edsEmployerId', $edsEmployerId);
     }
@@ -80,7 +80,7 @@ class Employer extends ModelBase
     /**
      * @param bool $smallEmployer
      */
-    public function setSmallEmployer(bool $smallEmployer = null)
+    public function setSmallEmployer(?bool $smallEmployer = null)
     {
         $this->setProperty('smallEmployer', $smallEmployer);
     }
@@ -96,7 +96,7 @@ class Employer extends ModelBase
     /**
      * @param bool $smallMediumEmployer
      */
-    public function setSmallMediumEmployer(bool $smallMediumEmployer = null)
+    public function setSmallMediumEmployer(?bool $smallMediumEmployer = null)
     {
         $this->setProperty('smallMediumEmployer', $smallMediumEmployer);
     }

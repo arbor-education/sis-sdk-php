@@ -20,7 +20,7 @@ class PhantomModel extends ModelBase
      * @return PhantomModel[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class PhantomModel extends ModelBase
     /**
      * @param int $entityType
      */
-    public function setEntityType(int $entityType = null)
+    public function setEntityType(?int $entityType = null)
     {
         $this->setProperty('entityType', $entityType);
     }
@@ -78,7 +78,7 @@ class PhantomModel extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -94,7 +94,7 @@ class PhantomModel extends ModelBase
     /**
      * @param \DateTime $modelCreatedDatetime
      */
-    public function setModelCreatedDatetime(\DateTime $modelCreatedDatetime = null)
+    public function setModelCreatedDatetime(?\DateTime $modelCreatedDatetime = null)
     {
         $this->setProperty('modelCreatedDatetime', $modelCreatedDatetime);
     }

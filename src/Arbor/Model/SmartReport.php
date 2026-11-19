@@ -34,7 +34,7 @@ class SmartReport extends ModelBase
      * @return SmartReport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class SmartReport extends ModelBase
     /**
      * @param string $uid
      */
-    public function setUid(string $uid = null)
+    public function setUid(?string $uid = null)
     {
         $this->setProperty('uid', $uid);
     }
@@ -92,7 +92,7 @@ class SmartReport extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -108,7 +108,7 @@ class SmartReport extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -124,7 +124,7 @@ class SmartReport extends ModelBase
     /**
      * @param string $reportTemplateCode
      */
-    public function setReportTemplateCode(string $reportTemplateCode = null)
+    public function setReportTemplateCode(?string $reportTemplateCode = null)
     {
         $this->setProperty('reportTemplateCode', $reportTemplateCode);
     }
@@ -140,7 +140,7 @@ class SmartReport extends ModelBase
     /**
      * @param bool $agentCreated
      */
-    public function setAgentCreated(bool $agentCreated = null)
+    public function setAgentCreated(?bool $agentCreated = null)
     {
         $this->setProperty('agentCreated', $agentCreated);
     }
@@ -156,7 +156,7 @@ class SmartReport extends ModelBase
     /**
      * @param bool $archived
      */
-    public function setArchived(bool $archived = null)
+    public function setArchived(?bool $archived = null)
     {
         $this->setProperty('archived', $archived);
     }
@@ -172,7 +172,7 @@ class SmartReport extends ModelBase
     /**
      * @param \Arbor\Model\Content $reportDefinitionContent
      */
-    public function setReportDefinitionContent(\Arbor\Model\Content $reportDefinitionContent = null)
+    public function setReportDefinitionContent(?\Arbor\Model\Content $reportDefinitionContent = null)
     {
         $this->setProperty('reportDefinitionContent', $reportDefinitionContent);
     }
@@ -188,7 +188,7 @@ class SmartReport extends ModelBase
     /**
      * @param \Arbor\Model\Content $reportContent
      */
-    public function setReportContent(\Arbor\Model\Content $reportContent = null)
+    public function setReportContent(?\Arbor\Model\Content $reportContent = null)
     {
         $this->setProperty('reportContent', $reportContent);
     }
@@ -204,7 +204,7 @@ class SmartReport extends ModelBase
     /**
      * @param \Arbor\Model\Content $layoutContent
      */
-    public function setLayoutContent(\Arbor\Model\Content $layoutContent = null)
+    public function setLayoutContent(?\Arbor\Model\Content $layoutContent = null)
     {
         $this->setProperty('layoutContent', $layoutContent);
     }
@@ -220,7 +220,7 @@ class SmartReport extends ModelBase
     /**
      * @param \Arbor\Model\AiInteraction $aiInteraction
      */
-    public function setAiInteraction(\Arbor\Model\AiInteraction $aiInteraction = null)
+    public function setAiInteraction(?\Arbor\Model\AiInteraction $aiInteraction = null)
     {
         $this->setProperty('aiInteraction', $aiInteraction);
     }

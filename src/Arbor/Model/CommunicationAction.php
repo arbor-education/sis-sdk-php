@@ -22,7 +22,7 @@ class CommunicationAction extends ModelBase
      * @return CommunicationAction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $communication
      */
-    public function setCommunication(\Arbor\Model\ModelBase $communication = null)
+    public function setCommunication(?\Arbor\Model\ModelBase $communication = null)
     {
         $this->setProperty('communication', $communication);
     }
@@ -80,7 +80,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param string $actionTaken
      */
-    public function setActionTaken(string $actionTaken = null)
+    public function setActionTaken(?string $actionTaken = null)
     {
         $this->setProperty('actionTaken', $actionTaken);
     }
@@ -96,7 +96,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $reply
      */
-    public function setReply(\Arbor\Model\ModelBase $reply = null)
+    public function setReply(?\Arbor\Model\ModelBase $reply = null)
     {
         $this->setProperty('reply', $reply);
     }
@@ -112,7 +112,7 @@ class CommunicationAction extends ModelBase
     /**
      * @param \DateTime $actionDatetime
      */
-    public function setActionDatetime(\DateTime $actionDatetime = null)
+    public function setActionDatetime(?\DateTime $actionDatetime = null)
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }

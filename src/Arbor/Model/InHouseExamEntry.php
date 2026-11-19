@@ -32,7 +32,7 @@ class InHouseExamEntry extends ModelBase
      * @return InHouseExamEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(?\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
@@ -90,7 +90,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExamInstance $inHouseExamInstance
      */
-    public function setInHouseExamInstance(\Arbor\Model\InHouseExamInstance $inHouseExamInstance = null)
+    public function setInHouseExamInstance(?\Arbor\Model\InHouseExamInstance $inHouseExamInstance = null)
     {
         $this->setProperty('inHouseExamInstance', $inHouseExamInstance);
     }
@@ -106,7 +106,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param \Arbor\Model\InHouseCandidate $inHouseCandidate
      */
-    public function setInHouseCandidate(\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
+    public function setInHouseCandidate(?\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
     {
         $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
@@ -122,7 +122,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param \Arbor\Model\InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(\Arbor\Model\InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(?\Arbor\Model\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
@@ -138,7 +138,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param \Arbor\Model\RoomLayoutSeat $seat
      */
-    public function setSeat(\Arbor\Model\RoomLayoutSeat $seat = null)
+    public function setSeat(?\Arbor\Model\RoomLayoutSeat $seat = null)
     {
         $this->setProperty('seat', $seat);
     }
@@ -154,7 +154,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -170,7 +170,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage(float $extraTimePercentage = null)
+    public function setExtraTimePercentage(?float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -186,7 +186,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark(string $attendanceMark = null)
+    public function setAttendanceMark(?string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -202,7 +202,7 @@ class InHouseExamEntry extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(int $minutesLate = null)
+    public function setMinutesLate(?int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }

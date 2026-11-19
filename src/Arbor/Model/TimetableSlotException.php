@@ -24,7 +24,7 @@ class TimetableSlotException extends ModelBase
      * @return TimetableSlotException[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -82,7 +82,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param \DateTime $exceptionDate
      */
-    public function setExceptionDate(\DateTime $exceptionDate = null)
+    public function setExceptionDate(?\DateTime $exceptionDate = null)
     {
         $this->setProperty('exceptionDate', $exceptionDate);
     }
@@ -98,7 +98,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $noEventException
      */
-    public function setNoEventException(bool $noEventException = null)
+    public function setNoEventException(?bool $noEventException = null)
     {
         $this->setProperty('noEventException', $noEventException);
     }
@@ -114,7 +114,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $locationException
      */
-    public function setLocationException(bool $locationException = null)
+    public function setLocationException(?bool $locationException = null)
     {
         $this->setProperty('locationException', $locationException);
     }
@@ -130,7 +130,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $timeException
      */
-    public function setTimeException(bool $timeException = null)
+    public function setTimeException(?bool $timeException = null)
     {
         $this->setProperty('timeException', $timeException);
     }

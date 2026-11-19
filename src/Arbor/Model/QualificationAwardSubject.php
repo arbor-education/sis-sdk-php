@@ -24,7 +24,7 @@ class QualificationAwardSubject extends ModelBase
      * @return QualificationAwardSubject[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class QualificationAwardSubject extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class QualificationAwardSubject extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class QualificationAwardSubject extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class QualificationAwardSubject extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
+    public function setQualificationAward(?\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
@@ -130,7 +130,7 @@ class QualificationAwardSubject extends ModelBase
     /**
      * @param \Arbor\Model\QualificationSubject $qualificationSubject
      */
-    public function setQualificationSubject(\Arbor\Model\QualificationSubject $qualificationSubject = null)
+    public function setQualificationSubject(?\Arbor\Model\QualificationSubject $qualificationSubject = null)
     {
         $this->setProperty('qualificationSubject', $qualificationSubject);
     }

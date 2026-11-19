@@ -22,7 +22,7 @@ class TimetableSlotLocation extends ModelBase
      * @return TimetableSlotLocation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class TimetableSlotLocation extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -80,7 +80,7 @@ class TimetableSlotLocation extends ModelBase
     /**
      * @param \Arbor\Model\Room $location
      */
-    public function setLocation(\Arbor\Model\Room $location = null)
+    public function setLocation(?\Arbor\Model\Room $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -96,7 +96,7 @@ class TimetableSlotLocation extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -112,7 +112,7 @@ class TimetableSlotLocation extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

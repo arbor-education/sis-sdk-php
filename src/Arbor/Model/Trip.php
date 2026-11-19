@@ -46,7 +46,7 @@ class Trip extends ModelBase
      * @return Trip[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -88,7 +88,7 @@ class Trip extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -104,7 +104,7 @@ class Trip extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -120,7 +120,7 @@ class Trip extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -136,7 +136,7 @@ class Trip extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\Arbor\Model\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -152,7 +152,7 @@ class Trip extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -168,7 +168,7 @@ class Trip extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -184,7 +184,7 @@ class Trip extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -200,7 +200,7 @@ class Trip extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $linkTo
      */
-    public function setLinkTo(\Arbor\Model\ModelBase $linkTo = null)
+    public function setLinkTo(?\Arbor\Model\ModelBase $linkTo = null)
     {
         $this->setProperty('linkTo', $linkTo);
     }
@@ -216,7 +216,7 @@ class Trip extends ModelBase
     /**
      * @param \Arbor\Model\Trip $copiedToTrip
      */
-    public function setCopiedToTrip(\Arbor\Model\Trip $copiedToTrip = null)
+    public function setCopiedToTrip(?\Arbor\Model\Trip $copiedToTrip = null)
     {
         $this->setProperty('copiedToTrip', $copiedToTrip);
     }
@@ -232,7 +232,7 @@ class Trip extends ModelBase
     /**
      * @param int $maxParticipants
      */
-    public function setMaxParticipants(int $maxParticipants = null)
+    public function setMaxParticipants(?int $maxParticipants = null)
     {
         $this->setProperty('maxParticipants', $maxParticipants);
     }
@@ -248,7 +248,7 @@ class Trip extends ModelBase
     /**
      * @param bool $requireConsent
      */
-    public function setRequireConsent(bool $requireConsent = null)
+    public function setRequireConsent(?bool $requireConsent = null)
     {
         $this->setProperty('requireConsent', $requireConsent);
     }
@@ -264,7 +264,7 @@ class Trip extends ModelBase
     /**
      * @param \DateTime $guardianSignupStartDatetime
      */
-    public function setGuardianSignupStartDatetime(\DateTime $guardianSignupStartDatetime = null)
+    public function setGuardianSignupStartDatetime(?\DateTime $guardianSignupStartDatetime = null)
     {
         $this->setProperty('guardianSignupStartDatetime', $guardianSignupStartDatetime);
     }
@@ -280,7 +280,7 @@ class Trip extends ModelBase
     /**
      * @param \DateTime $guardianSignupEndDatetime
      */
-    public function setGuardianSignupEndDatetime(\DateTime $guardianSignupEndDatetime = null)
+    public function setGuardianSignupEndDatetime(?\DateTime $guardianSignupEndDatetime = null)
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }
@@ -296,7 +296,7 @@ class Trip extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree(bool $free = null)
+    public function setFree(?bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -312,7 +312,7 @@ class Trip extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -328,7 +328,7 @@ class Trip extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode(string $accountingCode = null)
+    public function setAccountingCode(?string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }

@@ -32,7 +32,7 @@ class AcademicYearEnrolment extends ModelBase
      * @return AcademicYearEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -90,7 +90,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -106,7 +106,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -122,7 +122,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -138,7 +138,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(?\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }
@@ -154,7 +154,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param string $enrolmentNotes
      */
-    public function setEnrolmentNotes(string $enrolmentNotes = null)
+    public function setEnrolmentNotes(?string $enrolmentNotes = null)
     {
         $this->setProperty('enrolmentNotes', $enrolmentNotes);
     }
@@ -170,7 +170,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(int $plannedLearningHours = null)
+    public function setPlannedLearningHours(?int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -186,7 +186,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $plannedEepHours
      */
-    public function setPlannedEepHours(int $plannedEepHours = null)
+    public function setPlannedEepHours(?int $plannedEepHours = null)
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }
@@ -202,7 +202,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param int $tLevelPlannedLearningHours
      */
-    public function setTLevelPlannedLearningHours(int $tLevelPlannedLearningHours = null)
+    public function setTLevelPlannedLearningHours(?int $tLevelPlannedLearningHours = null)
     {
         $this->setProperty('tLevelPlannedLearningHours', $tLevelPlannedLearningHours);
     }

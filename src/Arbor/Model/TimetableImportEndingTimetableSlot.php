@@ -20,7 +20,7 @@ class TimetableImportEndingTimetableSlot extends ModelBase
      * @return TimetableImportEndingTimetableSlot[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class TimetableImportEndingTimetableSlot extends ModelBase
     /**
      * @param \Arbor\Model\TimetableImportJob $timetableImportJob
      */
-    public function setTimetableImportJob(\Arbor\Model\TimetableImportJob $timetableImportJob = null)
+    public function setTimetableImportJob(?\Arbor\Model\TimetableImportJob $timetableImportJob = null)
     {
         $this->setProperty('timetableImportJob', $timetableImportJob);
     }
@@ -78,7 +78,7 @@ class TimetableImportEndingTimetableSlot extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -94,7 +94,7 @@ class TimetableImportEndingTimetableSlot extends ModelBase
     /**
      * @param string $scheduleStatus
      */
-    public function setScheduleStatus(string $scheduleStatus = null)
+    public function setScheduleStatus(?string $scheduleStatus = null)
     {
         $this->setProperty('scheduleStatus', $scheduleStatus);
     }

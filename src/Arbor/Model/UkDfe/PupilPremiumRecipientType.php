@@ -20,7 +20,7 @@ class PupilPremiumRecipientType extends ModelBase
      * @return PupilPremiumRecipientType[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class PupilPremiumRecipientType extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\PupilPremiumRecipient $pupilPremiumRecipient
      */
-    public function setPupilPremiumRecipient(\Arbor\Model\UkDfe\PupilPremiumRecipient $pupilPremiumRecipient = null)
+    public function setPupilPremiumRecipient(?\Arbor\Model\UkDfe\PupilPremiumRecipient $pupilPremiumRecipient = null)
     {
         $this->setProperty('pupilPremiumRecipient', $pupilPremiumRecipient);
     }
@@ -78,7 +78,7 @@ class PupilPremiumRecipientType extends ModelBase
     /**
      * @param string $pupilPremiumType
      */
-    public function setPupilPremiumType(string $pupilPremiumType = null)
+    public function setPupilPremiumType(?string $pupilPremiumType = null)
     {
         $this->setProperty('pupilPremiumType', $pupilPremiumType);
     }

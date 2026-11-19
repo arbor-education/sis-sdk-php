@@ -26,7 +26,7 @@ class ProgressMeasurementPeriod extends ModelBase
      * @return ProgressMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param \Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
      */
-    public function setProgressMeasurementPeriodSet(\Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
+    public function setProgressMeasurementPeriodSet(?\Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
         $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
@@ -84,7 +84,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param string $periodName
      */
-    public function setPeriodName(string $periodName = null)
+    public function setPeriodName(?string $periodName = null)
     {
         $this->setProperty('periodName', $periodName);
     }
@@ -100,7 +100,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -116,7 +116,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -132,7 +132,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -148,7 +148,7 @@ class ProgressMeasurementPeriod extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

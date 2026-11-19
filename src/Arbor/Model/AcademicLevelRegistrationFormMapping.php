@@ -18,7 +18,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
      * @return AcademicLevelRegistrationFormMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     /**
      * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(?\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
@@ -76,7 +76,7 @@ class AcademicLevelRegistrationFormMapping extends ModelBase
     /**
      * @param \Arbor\Model\RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(\Arbor\Model\RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(?\Arbor\Model\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }

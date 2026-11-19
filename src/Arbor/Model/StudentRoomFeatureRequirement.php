@@ -18,7 +18,7 @@ class StudentRoomFeatureRequirement extends ModelBase
      * @return StudentRoomFeatureRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class StudentRoomFeatureRequirement extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -76,7 +76,7 @@ class StudentRoomFeatureRequirement extends ModelBase
     /**
      * @param \Arbor\Model\RoomFeature $roomFeature
      */
-    public function setRoomFeature(\Arbor\Model\RoomFeature $roomFeature = null)
+    public function setRoomFeature(?\Arbor\Model\RoomFeature $roomFeature = null)
     {
         $this->setProperty('roomFeature', $roomFeature);
     }

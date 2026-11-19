@@ -20,7 +20,7 @@ class SenEventOutcome extends ModelBase
      * @return SenEventOutcome[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SenEventOutcome extends ModelBase
     /**
      * @param \Arbor\Model\SenEvent $senEvent
      */
-    public function setSenEvent(\Arbor\Model\SenEvent $senEvent = null)
+    public function setSenEvent(?\Arbor\Model\SenEvent $senEvent = null)
     {
         $this->setProperty('senEvent', $senEvent);
     }
@@ -78,7 +78,7 @@ class SenEventOutcome extends ModelBase
     /**
      * @param \Arbor\Model\SenEventOutcomeType $senEventOutcomeType
      */
-    public function setSenEventOutcomeType(\Arbor\Model\SenEventOutcomeType $senEventOutcomeType = null)
+    public function setSenEventOutcomeType(?\Arbor\Model\SenEventOutcomeType $senEventOutcomeType = null)
     {
         $this->setProperty('senEventOutcomeType', $senEventOutcomeType);
     }
@@ -94,7 +94,7 @@ class SenEventOutcome extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments(string $comments = null)
+    public function setComments(?string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }

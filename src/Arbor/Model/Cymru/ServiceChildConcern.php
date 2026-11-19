@@ -32,7 +32,7 @@ class ServiceChildConcern extends ModelBase
      * @return ServiceChildConcern[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param \DateTime $assessmentDate
      */
-    public function setAssessmentDate(\DateTime $assessmentDate = null)
+    public function setAssessmentDate(?\DateTime $assessmentDate = null)
     {
         $this->setProperty('assessmentDate', $assessmentDate);
     }
@@ -90,7 +90,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param \Arbor\Model\Statutory\CtfImportJobStudent $ctfImportJobStudent
      */
-    public function setCtfImportJobStudent(\Arbor\Model\Statutory\CtfImportJobStudent $ctfImportJobStudent = null)
+    public function setCtfImportJobStudent(?\Arbor\Model\Statutory\CtfImportJobStudent $ctfImportJobStudent = null)
     {
         $this->setProperty('ctfImportJobStudent', $ctfImportJobStudent);
     }
@@ -106,7 +106,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $deploymentConcern
      */
-    public function setDeploymentConcern(string $deploymentConcern = null)
+    public function setDeploymentConcern(?string $deploymentConcern = null)
     {
         $this->setProperty('deploymentConcern', $deploymentConcern);
     }
@@ -122,7 +122,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param bool $isImported
      */
-    public function setIsImported(bool $isImported = null)
+    public function setIsImported(?bool $isImported = null)
     {
         $this->setProperty('isImported', $isImported);
     }
@@ -138,7 +138,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $moveConcern
      */
-    public function setMoveConcern(string $moveConcern = null)
+    public function setMoveConcern(?string $moveConcern = null)
     {
         $this->setProperty('moveConcern', $moveConcern);
     }
@@ -154,7 +154,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -170,7 +170,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param string $separationConcern
      */
-    public function setSeparationConcern(string $separationConcern = null)
+    public function setSeparationConcern(?string $separationConcern = null)
     {
         $this->setProperty('separationConcern', $separationConcern);
     }
@@ -186,7 +186,7 @@ class ServiceChildConcern extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

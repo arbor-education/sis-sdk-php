@@ -24,7 +24,7 @@ class TripParticipant extends ModelBase
      * @return TripParticipant[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class TripParticipant extends ModelBase
     /**
      * @param \Arbor\Model\Trip $trip
      */
-    public function setTrip(\Arbor\Model\Trip $trip = null)
+    public function setTrip(?\Arbor\Model\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
@@ -82,7 +82,7 @@ class TripParticipant extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -98,7 +98,7 @@ class TripParticipant extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(?\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -114,7 +114,7 @@ class TripParticipant extends ModelBase
     /**
      * @param bool $consentReceived
      */
-    public function setConsentReceived(bool $consentReceived = null)
+    public function setConsentReceived(?bool $consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
     }
@@ -130,7 +130,7 @@ class TripParticipant extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }

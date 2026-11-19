@@ -18,7 +18,7 @@ class DetentionType extends ModelBase
      * @return DetentionType[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class DetentionType extends ModelBase
     /**
      * @param string $detentionTypeName
      */
-    public function setDetentionTypeName(string $detentionTypeName = null)
+    public function setDetentionTypeName(?string $detentionTypeName = null)
     {
         $this->setProperty('detentionTypeName', $detentionTypeName);
     }
@@ -76,7 +76,7 @@ class DetentionType extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

@@ -26,7 +26,7 @@ class AdmissionCycle extends ModelBase
      * @return AdmissionCycle[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class AdmissionCycle extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -84,7 +84,7 @@ class AdmissionCycle extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -100,7 +100,7 @@ class AdmissionCycle extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -116,7 +116,7 @@ class AdmissionCycle extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,7 +132,7 @@ class AdmissionCycle extends ModelBase
     /**
      * @param int $plannedPlaces
      */
-    public function setPlannedPlaces(int $plannedPlaces = null)
+    public function setPlannedPlaces(?int $plannedPlaces = null)
     {
         $this->setProperty('plannedPlaces', $plannedPlaces);
     }
@@ -148,7 +148,7 @@ class AdmissionCycle extends ModelBase
     /**
      * @param int $targetApplications
      */
-    public function setTargetApplications(int $targetApplications = null)
+    public function setTargetApplications(?int $targetApplications = null)
     {
         $this->setProperty('targetApplications', $targetApplications);
     }

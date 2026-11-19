@@ -30,7 +30,7 @@ class PayScale extends ModelBase
      * @return PayScale[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class PayScale extends ModelBase
     /**
      * @param string $payScaleCode
      */
-    public function setPayScaleCode(string $payScaleCode = null)
+    public function setPayScaleCode(?string $payScaleCode = null)
     {
         $this->setProperty('payScaleCode', $payScaleCode);
     }
@@ -88,7 +88,7 @@ class PayScale extends ModelBase
     /**
      * @param string $payScaleName
      */
-    public function setPayScaleName(string $payScaleName = null)
+    public function setPayScaleName(?string $payScaleName = null)
     {
         $this->setProperty('payScaleName', $payScaleName);
     }
@@ -104,7 +104,7 @@ class PayScale extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -120,7 +120,7 @@ class PayScale extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -136,7 +136,7 @@ class PayScale extends ModelBase
     /**
      * @param string $minimumSalary
      */
-    public function setMinimumSalary(string $minimumSalary = null)
+    public function setMinimumSalary(?string $minimumSalary = null)
     {
         $this->setProperty('minimumSalary', $minimumSalary);
     }
@@ -152,7 +152,7 @@ class PayScale extends ModelBase
     /**
      * @param string $maximumSalary
      */
-    public function setMaximumSalary(string $maximumSalary = null)
+    public function setMaximumSalary(?string $maximumSalary = null)
     {
         $this->setProperty('maximumSalary', $maximumSalary);
     }
@@ -168,7 +168,7 @@ class PayScale extends ModelBase
     /**
      * @param string $regionalPaySpine
      */
-    public function setRegionalPaySpine(string $regionalPaySpine = null)
+    public function setRegionalPaySpine(?string $regionalPaySpine = null)
     {
         $this->setProperty('regionalPaySpine', $regionalPaySpine);
     }
@@ -184,7 +184,7 @@ class PayScale extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\PayScaleCategory $payScaleCategory
      */
-    public function setPayScaleCategory(\Arbor\Model\UkDfe\PayScaleCategory $payScaleCategory = null)
+    public function setPayScaleCategory(?\Arbor\Model\UkDfe\PayScaleCategory $payScaleCategory = null)
     {
         $this->setProperty('payScaleCategory', $payScaleCategory);
     }

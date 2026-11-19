@@ -22,7 +22,7 @@ class CandidateEnrolment extends ModelBase
      * @return CandidateEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CandidateEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
+    public function setCandidate(?\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -80,7 +80,7 @@ class CandidateEnrolment extends ModelBase
     /**
      * @param string $enrolmentNumber
      */
-    public function setEnrolmentNumber(string $enrolmentNumber = null)
+    public function setEnrolmentNumber(?string $enrolmentNumber = null)
     {
         $this->setProperty('enrolmentNumber', $enrolmentNumber);
     }
@@ -96,7 +96,7 @@ class CandidateEnrolment extends ModelBase
     /**
      * @param \DateTime $enrolmentRequestedDatetime
      */
-    public function setEnrolmentRequestedDatetime(\DateTime $enrolmentRequestedDatetime = null)
+    public function setEnrolmentRequestedDatetime(?\DateTime $enrolmentRequestedDatetime = null)
     {
         $this->setProperty('enrolmentRequestedDatetime', $enrolmentRequestedDatetime);
     }
@@ -112,7 +112,7 @@ class CandidateEnrolment extends ModelBase
     /**
      * @param \DateTime $enrolmentConfirmedDatetime
      */
-    public function setEnrolmentConfirmedDatetime(\DateTime $enrolmentConfirmedDatetime = null)
+    public function setEnrolmentConfirmedDatetime(?\DateTime $enrolmentConfirmedDatetime = null)
     {
         $this->setProperty('enrolmentConfirmedDatetime', $enrolmentConfirmedDatetime);
     }

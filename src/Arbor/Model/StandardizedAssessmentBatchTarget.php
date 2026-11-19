@@ -18,7 +18,7 @@ class StandardizedAssessmentBatchTarget extends ModelBase
      * @return StandardizedAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessmentBatch $standardizedAssessmentBatch
      */
-    public function setStandardizedAssessmentBatch(\Arbor\Model\StandardizedAssessmentBatch $standardizedAssessmentBatch = null)
+    public function setStandardizedAssessmentBatch(?\Arbor\Model\StandardizedAssessmentBatch $standardizedAssessmentBatch = null)
     {
         $this->setProperty('standardizedAssessmentBatch', $standardizedAssessmentBatch);
     }
@@ -76,7 +76,7 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $target
      */
-    public function setTarget(\Arbor\Model\ModelBase $target = null)
+    public function setTarget(?\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

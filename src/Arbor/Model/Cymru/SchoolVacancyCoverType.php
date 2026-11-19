@@ -20,7 +20,7 @@ class SchoolVacancyCoverType extends ModelBase
      * @return SchoolVacancyCoverType[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SchoolVacancyCoverType extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\SchoolVacancy $schoolVacancy
      */
-    public function setSchoolVacancy(\Arbor\Model\Cymru\SchoolVacancy $schoolVacancy = null)
+    public function setSchoolVacancy(?\Arbor\Model\Cymru\SchoolVacancy $schoolVacancy = null)
     {
         $this->setProperty('schoolVacancy', $schoolVacancy);
     }
@@ -78,7 +78,7 @@ class SchoolVacancyCoverType extends ModelBase
     /**
      * @param string $vacancyCoverType
      */
-    public function setVacancyCoverType(string $vacancyCoverType = null)
+    public function setVacancyCoverType(?string $vacancyCoverType = null)
     {
         $this->setProperty('vacancyCoverType', $vacancyCoverType);
     }

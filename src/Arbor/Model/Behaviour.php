@@ -26,7 +26,7 @@ class Behaviour extends ModelBase
      * @return Behaviour[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class Behaviour extends ModelBase
     /**
      * @param string $behaviourName
      */
-    public function setBehaviourName(string $behaviourName = null)
+    public function setBehaviourName(?string $behaviourName = null)
     {
         $this->setProperty('behaviourName', $behaviourName);
     }
@@ -84,7 +84,7 @@ class Behaviour extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -101,7 +101,7 @@ class Behaviour extends ModelBase
      * @param \Arbor\Model\BehaviouralIncidentLevelWorkflow
      * $behaviouralIncidentLevelWorkflow
      */
-    public function setBehaviouralIncidentLevelWorkflow(\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    public function setBehaviouralIncidentLevelWorkflow(?\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
     {
         $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
@@ -117,7 +117,7 @@ class Behaviour extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity(string $severity = null)
+    public function setSeverity(?string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -133,7 +133,7 @@ class Behaviour extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -149,7 +149,7 @@ class Behaviour extends ModelBase
     /**
      * @param bool $isMyClassroomDefault
      */
-    public function setIsMyClassroomDefault(bool $isMyClassroomDefault = null)
+    public function setIsMyClassroomDefault(?bool $isMyClassroomDefault = null)
     {
         $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }

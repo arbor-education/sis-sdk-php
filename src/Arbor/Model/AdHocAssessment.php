@@ -36,7 +36,7 @@ class AdHocAssessment extends ModelBase
      * @return AdHocAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessmentCategory $adHocAssessmentCategory
      */
-    public function setAdHocAssessmentCategory(\Arbor\Model\AdHocAssessmentCategory $adHocAssessmentCategory = null)
+    public function setAdHocAssessmentCategory(?\Arbor\Model\AdHocAssessmentCategory $adHocAssessmentCategory = null)
     {
         $this->setProperty('adHocAssessmentCategory', $adHocAssessmentCategory);
     }
@@ -94,7 +94,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName(string $assessmentName = null)
+    public function setAssessmentName(?string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -110,7 +110,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentCode
      */
-    public function setAssessmentCode(string $assessmentCode = null)
+    public function setAssessmentCode(?string $assessmentCode = null)
     {
         $this->setProperty('assessmentCode', $assessmentCode);
     }
@@ -126,7 +126,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $markDataType
      */
-    public function setMarkDataType(string $markDataType = null)
+    public function setMarkDataType(?string $markDataType = null)
     {
         $this->setProperty('markDataType', $markDataType);
     }
@@ -142,7 +142,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
+    public function setGradeSet(?\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -158,7 +158,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $numberFormat
      */
-    public function setNumberFormat(string $numberFormat = null)
+    public function setNumberFormat(?string $numberFormat = null)
     {
         $this->setProperty('numberFormat', $numberFormat);
     }
@@ -174,7 +174,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $numberUnit
      */
-    public function setNumberUnit(string $numberUnit = null)
+    public function setNumberUnit(?string $numberUnit = null)
     {
         $this->setProperty('numberUnit', $numberUnit);
     }
@@ -190,7 +190,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(?\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -206,7 +206,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -222,7 +222,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -238,7 +238,7 @@ class AdHocAssessment extends ModelBase
     /**
      * @param string $assessmentStrategy
      */
-    public function setAssessmentStrategy(string $assessmentStrategy = null)
+    public function setAssessmentStrategy(?string $assessmentStrategy = null)
     {
         $this->setProperty('assessmentStrategy', $assessmentStrategy);
     }

@@ -44,7 +44,7 @@ class Staff extends ModelBase
      * @return Staff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -86,7 +86,7 @@ class Staff extends ModelBase
     /**
      * @param bool $earlyYearsTeacherStatus
      */
-    public function setEarlyYearsTeacherStatus(bool $earlyYearsTeacherStatus = null)
+    public function setEarlyYearsTeacherStatus(?bool $earlyYearsTeacherStatus = null)
     {
         $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
@@ -102,7 +102,7 @@ class Staff extends ModelBase
     /**
      * @param bool $eligibleForSchoolWorkforceReturn
      */
-    public function setEligibleForSchoolWorkforceReturn(bool $eligibleForSchoolWorkforceReturn = null)
+    public function setEligibleForSchoolWorkforceReturn(?bool $eligibleForSchoolWorkforceReturn = null)
     {
         $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
@@ -118,7 +118,7 @@ class Staff extends ModelBase
     /**
      * @param bool $hltaStatus
      */
-    public function setHltaStatus(bool $hltaStatus = null)
+    public function setHltaStatus(?bool $hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
@@ -134,7 +134,7 @@ class Staff extends ModelBase
     /**
      * @param bool $isNpqh
      */
-    public function setIsNpqh(bool $isNpqh = null)
+    public function setIsNpqh(?bool $isNpqh = null)
     {
         $this->setProperty('isNpqh', $isNpqh);
     }
@@ -150,7 +150,7 @@ class Staff extends ModelBase
     /**
      * @param bool $isSeniorLeadershipTeam
      */
-    public function setIsSeniorLeadershipTeam(bool $isSeniorLeadershipTeam = null)
+    public function setIsSeniorLeadershipTeam(?bool $isSeniorLeadershipTeam = null)
     {
         $this->setProperty('isSeniorLeadershipTeam', $isSeniorLeadershipTeam);
     }
@@ -166,7 +166,7 @@ class Staff extends ModelBase
     /**
      * @param bool $isThirdParty
      */
-    public function setIsThirdParty(bool $isThirdParty = null)
+    public function setIsThirdParty(?bool $isThirdParty = null)
     {
         $this->setProperty('isThirdParty', $isThirdParty);
     }
@@ -182,7 +182,7 @@ class Staff extends ModelBase
     /**
      * @param string $longTermAbsenceStatusCode
      */
-    public function setLongTermAbsenceStatusCode(string $longTermAbsenceStatusCode = null)
+    public function setLongTermAbsenceStatusCode(?string $longTermAbsenceStatusCode = null)
     {
         $this->setProperty('longTermAbsenceStatusCode', $longTermAbsenceStatusCode);
     }
@@ -198,7 +198,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\NationalIdentity $nationalIdentity
      */
-    public function setNationalIdentity(\Arbor\Model\Cymru\NationalIdentity $nationalIdentity = null)
+    public function setNationalIdentity(?\Arbor\Model\Cymru\NationalIdentity $nationalIdentity = null)
     {
         $this->setProperty('nationalIdentity', $nationalIdentity);
     }
@@ -214,7 +214,7 @@ class Staff extends ModelBase
     /**
      * @param \DateTime $npqhDate
      */
-    public function setNpqhDate(\DateTime $npqhDate = null)
+    public function setNpqhDate(?\DateTime $npqhDate = null)
     {
         $this->setProperty('npqhDate', $npqhDate);
     }
@@ -230,7 +230,7 @@ class Staff extends ModelBase
     /**
      * @param \DateTime $qualifiedTeacherDate
      */
-    public function setQualifiedTeacherDate(\DateTime $qualifiedTeacherDate = null)
+    public function setQualifiedTeacherDate(?\DateTime $qualifiedTeacherDate = null)
     {
         $this->setProperty('qualifiedTeacherDate', $qualifiedTeacherDate);
     }
@@ -246,7 +246,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\QualifiedTeacherRoute $qualifiedTeacherRoute
      */
-    public function setQualifiedTeacherRoute(\Arbor\Model\Cymru\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
+    public function setQualifiedTeacherRoute(?\Arbor\Model\Cymru\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
     {
         $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
     }
@@ -262,7 +262,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherStatus
      */
-    public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
+    public function setQualifiedTeacherStatus(?bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
@@ -278,7 +278,7 @@ class Staff extends ModelBase
     /**
      * @param string $welshTeachingAbilityCode
      */
-    public function setWelshTeachingAbilityCode(string $welshTeachingAbilityCode = null)
+    public function setWelshTeachingAbilityCode(?string $welshTeachingAbilityCode = null)
     {
         $this->setProperty('welshTeachingAbilityCode', $welshTeachingAbilityCode);
     }
@@ -294,7 +294,7 @@ class Staff extends ModelBase
     /**
      * @param string $welshTeachingCode
      */
-    public function setWelshTeachingCode(string $welshTeachingCode = null)
+    public function setWelshTeachingCode(?string $welshTeachingCode = null)
     {
         $this->setProperty('welshTeachingCode', $welshTeachingCode);
     }

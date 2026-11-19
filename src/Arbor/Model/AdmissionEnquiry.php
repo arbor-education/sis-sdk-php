@@ -24,7 +24,7 @@ class AdmissionEnquiry extends ModelBase
      * @return AdmissionEnquiry[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AdmissionEnquiry extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionGuardian $admissionGuardian
      */
-    public function setAdmissionGuardian(\Arbor\Model\AdmissionGuardian $admissionGuardian = null)
+    public function setAdmissionGuardian(?\Arbor\Model\AdmissionGuardian $admissionGuardian = null)
     {
         $this->setProperty('admissionGuardian', $admissionGuardian);
     }
@@ -82,7 +82,7 @@ class AdmissionEnquiry extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(string $source = null)
+    public function setSource(?string $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -98,7 +98,7 @@ class AdmissionEnquiry extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -114,7 +114,7 @@ class AdmissionEnquiry extends ModelBase
     /**
      * @param \DateTime $receivedDate
      */
-    public function setReceivedDate(\DateTime $receivedDate = null)
+    public function setReceivedDate(?\DateTime $receivedDate = null)
     {
         $this->setProperty('receivedDate', $receivedDate);
     }
@@ -130,7 +130,7 @@ class AdmissionEnquiry extends ModelBase
     /**
      * @param bool $marketingConsent
      */
-    public function setMarketingConsent(bool $marketingConsent = null)
+    public function setMarketingConsent(?bool $marketingConsent = null)
     {
         $this->setProperty('marketingConsent', $marketingConsent);
     }

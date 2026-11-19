@@ -20,7 +20,7 @@ class UserDefinedRecord extends ModelBase
      * @return UserDefinedRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UserDefinedRecord extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $entity
      */
-    public function setEntity(\Arbor\Model\ModelBase $entity = null)
+    public function setEntity(?\Arbor\Model\ModelBase $entity = null)
     {
         $this->setProperty('entity', $entity);
     }
@@ -78,7 +78,7 @@ class UserDefinedRecord extends ModelBase
     /**
      * @param \Arbor\Model\UserDefinedField $userDefinedField
      */
-    public function setUserDefinedField(\Arbor\Model\UserDefinedField $userDefinedField = null)
+    public function setUserDefinedField(?\Arbor\Model\UserDefinedField $userDefinedField = null)
     {
         $this->setProperty('userDefinedField', $userDefinedField);
     }
@@ -94,7 +94,7 @@ class UserDefinedRecord extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue(string $value = null)
+    public function setValue(?string $value = null)
     {
         $this->setProperty('value', $value);
     }

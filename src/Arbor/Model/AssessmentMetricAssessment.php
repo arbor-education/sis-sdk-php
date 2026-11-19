@@ -20,7 +20,7 @@ class AssessmentMetricAssessment extends ModelBase
      * @return AssessmentMetricAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class AssessmentMetricAssessment extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(\Arbor\Model\AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(?\Arbor\Model\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
@@ -78,7 +78,7 @@ class AssessmentMetricAssessment extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -95,7 +95,7 @@ class AssessmentMetricAssessment extends ModelBase
      * @param \Arbor\Model\AssessmentMetricAssessmentBatch
      * $assessmentMetricAssessmentBatch
      */
-    public function setAssessmentMetricAssessmentBatch(\Arbor\Model\AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
+    public function setAssessmentMetricAssessmentBatch(?\Arbor\Model\AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
     {
         $this->setProperty('assessmentMetricAssessmentBatch', $assessmentMetricAssessmentBatch);
     }

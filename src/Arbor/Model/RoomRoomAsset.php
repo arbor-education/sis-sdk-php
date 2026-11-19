@@ -20,7 +20,7 @@ class RoomRoomAsset extends ModelBase
      * @return RoomRoomAsset[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class RoomRoomAsset extends ModelBase
     /**
      * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Arbor\Model\Room $room = null)
+    public function setRoom(?\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -78,7 +78,7 @@ class RoomRoomAsset extends ModelBase
     /**
      * @param \Arbor\Model\RoomAsset $roomAsset
      */
-    public function setRoomAsset(\Arbor\Model\RoomAsset $roomAsset = null)
+    public function setRoomAsset(?\Arbor\Model\RoomAsset $roomAsset = null)
     {
         $this->setProperty('roomAsset', $roomAsset);
     }
@@ -94,7 +94,7 @@ class RoomRoomAsset extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }

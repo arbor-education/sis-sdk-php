@@ -18,7 +18,7 @@ class AcademicUnit extends ModelBase
      * @return AcademicUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param bool $isDesignatedNursery
      */
-    public function setIsDesignatedNursery(bool $isDesignatedNursery = null)
+    public function setIsDesignatedNursery(?bool $isDesignatedNursery = null)
     {
         $this->setProperty('isDesignatedNursery', $isDesignatedNursery);
     }

@@ -20,7 +20,7 @@ class InHouseExamInstance extends ModelBase
      * @return InHouseExamInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class InHouseExamInstance extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(?\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
@@ -78,7 +78,7 @@ class InHouseExamInstance extends ModelBase
     /**
      * @param \DateTime $expectedStartDatetime
      */
-    public function setExpectedStartDatetime(\DateTime $expectedStartDatetime = null)
+    public function setExpectedStartDatetime(?\DateTime $expectedStartDatetime = null)
     {
         $this->setProperty('expectedStartDatetime', $expectedStartDatetime);
     }
@@ -94,7 +94,7 @@ class InHouseExamInstance extends ModelBase
     /**
      * @param \DateTime $expectedEndDatetime
      */
-    public function setExpectedEndDatetime(\DateTime $expectedEndDatetime = null)
+    public function setExpectedEndDatetime(?\DateTime $expectedEndDatetime = null)
     {
         $this->setProperty('expectedEndDatetime', $expectedEndDatetime);
     }

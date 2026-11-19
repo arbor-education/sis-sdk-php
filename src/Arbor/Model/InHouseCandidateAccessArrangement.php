@@ -26,7 +26,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
      * @return InHouseCandidateAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\InHouseCandidate $inHouseCandidate
      */
-    public function setInHouseCandidate(\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
+    public function setInHouseCandidate(?\Arbor\Model\InHouseCandidate $inHouseCandidate = null)
     {
         $this->setProperty('inHouseCandidate', $inHouseCandidate);
     }
@@ -84,7 +84,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(\Arbor\Model\AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(?\Arbor\Model\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -100,7 +100,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage(float $extraTimePercentage = null)
+    public function setExtraTimePercentage(?float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -116,7 +116,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(string $reason = null)
+    public function setReason(?string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -132,7 +132,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -148,7 +148,7 @@ class InHouseCandidateAccessArrangement extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

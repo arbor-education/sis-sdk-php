@@ -24,7 +24,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
      * @return PhysicalInterventionRecordWitness[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param \Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord
      */
-    public function setPhysicalInterventionRecord(\Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord = null)
+    public function setPhysicalInterventionRecord(?\Arbor\Model\PhysicalInterventionRecord $physicalInterventionRecord = null)
     {
         $this->setProperty('physicalInterventionRecord', $physicalInterventionRecord);
     }
@@ -82,7 +82,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $witness
      */
-    public function setWitness(\Arbor\Model\ModelBase $witness = null)
+    public function setWitness(?\Arbor\Model\ModelBase $witness = null)
     {
         $this->setProperty('witness', $witness);
     }
@@ -98,7 +98,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -114,7 +114,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param \DateTime $confirmedDatetime
      */
-    public function setConfirmedDatetime(\DateTime $confirmedDatetime = null)
+    public function setConfirmedDatetime(?\DateTime $confirmedDatetime = null)
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }
@@ -130,7 +130,7 @@ class PhysicalInterventionRecordWitness extends ModelBase
     /**
      * @param \DateTime $rejectedDatetime
      */
-    public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
+    public function setRejectedDatetime(?\DateTime $rejectedDatetime = null)
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }

@@ -22,7 +22,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
      * @return AdHocAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch
      */
-    public function setAdHocAssessmentBatch(\Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch = null)
+    public function setAdHocAssessmentBatch(?\Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch = null)
     {
         $this->setProperty('adHocAssessmentBatch', $adHocAssessmentBatch);
     }
@@ -80,7 +80,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $target
      */
-    public function setTarget(\Arbor\Model\ModelBase $target = null)
+    public function setTarget(?\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }
@@ -96,7 +96,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
     /**
      * @param \DateTime $markingStartedDatetime
      */
-    public function setMarkingStartedDatetime(\DateTime $markingStartedDatetime = null)
+    public function setMarkingStartedDatetime(?\DateTime $markingStartedDatetime = null)
     {
         $this->setProperty('markingStartedDatetime', $markingStartedDatetime);
     }
@@ -112,7 +112,7 @@ class AdHocAssessmentBatchTarget extends ModelBase
     /**
      * @param \DateTime $markingCompletedDatetime
      */
-    public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
+    public function setMarkingCompletedDatetime(?\DateTime $markingCompletedDatetime = null)
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }

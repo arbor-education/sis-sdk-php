@@ -24,7 +24,7 @@ class EnrolmentModeAssignment extends ModelBase
      * @return EnrolmentModeAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYearEnrolment $academicYearEnrolment
      */
-    public function setAcademicYearEnrolment(\Arbor\Model\AcademicYearEnrolment $academicYearEnrolment = null)
+    public function setAcademicYearEnrolment(?\Arbor\Model\AcademicYearEnrolment $academicYearEnrolment = null)
     {
         $this->setProperty('academicYearEnrolment', $academicYearEnrolment);
     }
@@ -82,7 +82,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param \Arbor\Model\EnrolmentMode $enrolmentMode
      */
-    public function setEnrolmentMode(\Arbor\Model\EnrolmentMode $enrolmentMode = null)
+    public function setEnrolmentMode(?\Arbor\Model\EnrolmentMode $enrolmentMode = null)
     {
         $this->setProperty('enrolmentMode', $enrolmentMode);
     }
@@ -98,7 +98,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -114,7 +114,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -130,7 +130,7 @@ class EnrolmentModeAssignment extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $otherEducationalInstitution
      */
-    public function setOtherEducationalInstitution(\Arbor\Model\EducationalInstitution $otherEducationalInstitution = null)
+    public function setOtherEducationalInstitution(?\Arbor\Model\EducationalInstitution $otherEducationalInstitution = null)
     {
         $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
     }

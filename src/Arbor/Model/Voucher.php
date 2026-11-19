@@ -24,7 +24,7 @@ class Voucher extends ModelBase
      * @return Voucher[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Voucher extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -82,7 +82,7 @@ class Voucher extends ModelBase
     /**
      * @param \DateTime $paymentReceivedDate
      */
-    public function setPaymentReceivedDate(\DateTime $paymentReceivedDate = null)
+    public function setPaymentReceivedDate(?\DateTime $paymentReceivedDate = null)
     {
         $this->setProperty('paymentReceivedDate', $paymentReceivedDate);
     }
@@ -98,7 +98,7 @@ class Voucher extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -114,7 +114,7 @@ class Voucher extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount(string $paymentAmount = null)
+    public function setPaymentAmount(?string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }
@@ -130,7 +130,7 @@ class Voucher extends ModelBase
     /**
      * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    public function setCancelledDatetime(?\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }

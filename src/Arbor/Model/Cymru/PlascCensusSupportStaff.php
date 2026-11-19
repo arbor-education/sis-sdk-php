@@ -28,7 +28,7 @@ class PlascCensusSupportStaff extends ModelBase
      * @return PlascCensusSupportStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class PlascCensusSupportStaff extends ModelBase
     /**
      * @param \Arbor\Model\Statutory\DataReturn $dataReturn
      */
-    public function setDataReturn(\Arbor\Model\Statutory\DataReturn $dataReturn = null)
+    public function setDataReturn(?\Arbor\Model\Statutory\DataReturn $dataReturn = null)
     {
         $this->setProperty('dataReturn', $dataReturn);
     }
@@ -86,7 +86,7 @@ class PlascCensusSupportStaff extends ModelBase
     /**
      * @param string $supportCategory
      */
-    public function setSupportCategory(string $supportCategory = null)
+    public function setSupportCategory(?string $supportCategory = null)
     {
         $this->setProperty('supportCategory', $supportCategory);
     }
@@ -102,7 +102,7 @@ class PlascCensusSupportStaff extends ModelBase
     /**
      * @param string $sex
      */
-    public function setSex(string $sex = null)
+    public function setSex(?string $sex = null)
     {
         $this->setProperty('sex', $sex);
     }
@@ -118,7 +118,7 @@ class PlascCensusSupportStaff extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure(string $tenure = null)
+    public function setTenure(?string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -134,7 +134,7 @@ class PlascCensusSupportStaff extends ModelBase
     /**
      * @param int $partTimeHours
      */
-    public function setPartTimeHours(int $partTimeHours = null)
+    public function setPartTimeHours(?int $partTimeHours = null)
     {
         $this->setProperty('partTimeHours', $partTimeHours);
     }
@@ -150,7 +150,7 @@ class PlascCensusSupportStaff extends ModelBase
     /**
      * @param int $headCount
      */
-    public function setHeadCount(int $headCount = null)
+    public function setHeadCount(?int $headCount = null)
     {
         $this->setProperty('headCount', $headCount);
     }

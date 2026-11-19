@@ -18,7 +18,7 @@ class AssessmentStudentGroup extends ModelBase
      * @return AssessmentStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AssessmentStudentGroup extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYearAssessment $academicYearAssessment
      */
-    public function setAcademicYearAssessment(\Arbor\Model\AcademicYearAssessment $academicYearAssessment = null)
+    public function setAcademicYearAssessment(?\Arbor\Model\AcademicYearAssessment $academicYearAssessment = null)
     {
         $this->setProperty('academicYearAssessment', $academicYearAssessment);
     }
@@ -76,7 +76,7 @@ class AssessmentStudentGroup extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $studentGroup
      */
-    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
+    public function setStudentGroup(?\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

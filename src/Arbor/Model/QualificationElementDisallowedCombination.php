@@ -18,7 +18,7 @@ class QualificationElementDisallowedCombination extends ModelBase
      * @return QualificationElementDisallowedCombination[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $firstElement
      */
-    public function setFirstElement(\Arbor\Model\ModelBase $firstElement = null)
+    public function setFirstElement(?\Arbor\Model\ModelBase $firstElement = null)
     {
         $this->setProperty('firstElement', $firstElement);
     }
@@ -76,7 +76,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $secondElement
      */
-    public function setSecondElement(\Arbor\Model\ModelBase $secondElement = null)
+    public function setSecondElement(?\Arbor\Model\ModelBase $secondElement = null)
     {
         $this->setProperty('secondElement', $secondElement);
     }

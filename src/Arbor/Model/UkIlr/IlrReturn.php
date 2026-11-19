@@ -38,7 +38,7 @@ class IlrReturn extends ModelBase
      * @return IlrReturn[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class IlrReturn extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class IlrReturn extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -128,7 +128,7 @@ class IlrReturn extends ModelBase
     /**
      * @param string $returnNumber
      */
-    public function setReturnNumber(string $returnNumber = null)
+    public function setReturnNumber(?string $returnNumber = null)
     {
         $this->setProperty('returnNumber', $returnNumber);
     }
@@ -144,7 +144,7 @@ class IlrReturn extends ModelBase
     /**
      * @param \DateTime $returnDate
      */
-    public function setReturnDate(\DateTime $returnDate = null)
+    public function setReturnDate(?\DateTime $returnDate = null)
     {
         $this->setProperty('returnDate', $returnDate);
     }
@@ -160,7 +160,7 @@ class IlrReturn extends ModelBase
     /**
      * @param \DateTime $referenceDate
      */
-    public function setReferenceDate(\DateTime $referenceDate = null)
+    public function setReferenceDate(?\DateTime $referenceDate = null)
     {
         $this->setProperty('referenceDate', $referenceDate);
     }
@@ -176,7 +176,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $adultSkillsBudget
      */
-    public function setAdultSkillsBudget(bool $adultSkillsBudget = null)
+    public function setAdultSkillsBudget(?bool $adultSkillsBudget = null)
     {
         $this->setProperty('adultSkillsBudget', $adultSkillsBudget);
     }
@@ -192,7 +192,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $apprenticeships16_18
      */
-    public function setApprenticeships16_18(bool $apprenticeships16_18 = null)
+    public function setApprenticeships16_18(?bool $apprenticeships16_18 = null)
     {
         $this->setProperty('apprenticeships16_18', $apprenticeships16_18);
     }
@@ -208,7 +208,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $esfFunded
      */
-    public function setEsfFunded(bool $esfFunded = null)
+    public function setEsfFunded(?bool $esfFunded = null)
     {
         $this->setProperty('esfFunded', $esfFunded);
     }
@@ -224,7 +224,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $communityLearning
      */
-    public function setCommunityLearning(bool $communityLearning = null)
+    public function setCommunityLearning(?bool $communityLearning = null)
     {
         $this->setProperty('communityLearning', $communityLearning);
     }
@@ -240,7 +240,7 @@ class IlrReturn extends ModelBase
     /**
      * @param bool $efaFunded
      */
-    public function setEfaFunded(bool $efaFunded = null)
+    public function setEfaFunded(?bool $efaFunded = null)
     {
         $this->setProperty('efaFunded', $efaFunded);
     }

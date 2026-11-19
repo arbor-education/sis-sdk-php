@@ -20,7 +20,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
      * @return CandidateDisappliedAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
+    public function setCandidate(?\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -78,7 +78,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(\Arbor\Model\AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(?\Arbor\Model\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
@@ -94,7 +94,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(?\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }

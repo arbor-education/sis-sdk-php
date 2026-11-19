@@ -18,7 +18,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
      * @return IntakeSeasonApplicantBucket[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
     /**
      * @param string $applicantBucketName
      */
-    public function setApplicantBucketName(string $applicantBucketName = null)
+    public function setApplicantBucketName(?string $applicantBucketName = null)
     {
         $this->setProperty('applicantBucketName', $applicantBucketName);
     }
@@ -76,7 +76,7 @@ class IntakeSeasonApplicantBucket extends ModelBase
     /**
      * @param \Arbor\Model\IntakeSeason $intakeSeason
      */
-    public function setIntakeSeason(\Arbor\Model\IntakeSeason $intakeSeason = null)
+    public function setIntakeSeason(?\Arbor\Model\IntakeSeason $intakeSeason = null)
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }

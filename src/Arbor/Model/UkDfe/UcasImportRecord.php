@@ -40,7 +40,7 @@ class UcasImportRecord extends ModelBase
      * @return UcasImportRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +82,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\UcasImport $ucasImport
      */
-    public function setUcasImport(\Arbor\Model\UkDfe\UcasImport $ucasImport = null)
+    public function setUcasImport(?\Arbor\Model\UkDfe\UcasImport $ucasImport = null)
     {
         $this->setProperty('ucasImport', $ucasImport);
     }
@@ -98,7 +98,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param int $csvRow
      */
-    public function setCsvRow(int $csvRow = null)
+    public function setCsvRow(?int $csvRow = null)
     {
         $this->setProperty('csvRow', $csvRow);
     }
@@ -114,7 +114,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $mappedStudent
      */
-    public function setMappedStudent(\Arbor\Model\Student $mappedStudent = null)
+    public function setMappedStudent(?\Arbor\Model\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
@@ -130,7 +130,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param int $yearOfEntry
      */
-    public function setYearOfEntry(int $yearOfEntry = null)
+    public function setYearOfEntry(?int $yearOfEntry = null)
     {
         $this->setProperty('yearOfEntry', $yearOfEntry);
     }
@@ -146,7 +146,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $applicationSchemeCode
      */
-    public function setApplicationSchemeCode(string $applicationSchemeCode = null)
+    public function setApplicationSchemeCode(?string $applicationSchemeCode = null)
     {
         $this->setProperty('applicationSchemeCode', $applicationSchemeCode);
     }
@@ -162,7 +162,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $institutionCode
      */
-    public function setInstitutionCode(string $institutionCode = null)
+    public function setInstitutionCode(?string $institutionCode = null)
     {
         $this->setProperty('institutionCode', $institutionCode);
     }
@@ -178,7 +178,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $institutionName
      */
-    public function setInstitutionName(string $institutionName = null)
+    public function setInstitutionName(?string $institutionName = null)
     {
         $this->setProperty('institutionName', $institutionName);
     }
@@ -194,7 +194,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $courseCode
      */
-    public function setCourseCode(string $courseCode = null)
+    public function setCourseCode(?string $courseCode = null)
     {
         $this->setProperty('courseCode', $courseCode);
     }
@@ -210,7 +210,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $courseName
      */
-    public function setCourseName(string $courseName = null)
+    public function setCourseName(?string $courseName = null)
     {
         $this->setProperty('courseName', $courseName);
     }
@@ -226,7 +226,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $campusCode
      */
-    public function setCampusCode(string $campusCode = null)
+    public function setCampusCode(?string $campusCode = null)
     {
         $this->setProperty('campusCode', $campusCode);
     }
@@ -242,7 +242,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $pointOfEntry
      */
-    public function setPointOfEntry(string $pointOfEntry = null)
+    public function setPointOfEntry(?string $pointOfEntry = null)
     {
         $this->setProperty('pointOfEntry', $pointOfEntry);
     }
@@ -258,7 +258,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param \DateTime $courseStartDate
      */
-    public function setCourseStartDate(\DateTime $courseStartDate = null)
+    public function setCourseStartDate(?\DateTime $courseStartDate = null)
     {
         $this->setProperty('courseStartDate', $courseStartDate);
     }

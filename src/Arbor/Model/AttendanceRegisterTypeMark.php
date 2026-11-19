@@ -18,7 +18,7 @@ class AttendanceRegisterTypeMark extends ModelBase
      * @return AttendanceRegisterTypeMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AttendanceRegisterTypeMark extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -76,7 +76,7 @@ class AttendanceRegisterTypeMark extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(\Arbor\Model\AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(?\Arbor\Model\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }

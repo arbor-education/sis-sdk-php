@@ -18,7 +18,7 @@ class Cheque extends ModelBase
      * @return Cheque[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Cheque extends ModelBase
     /**
      * @param \Arbor\Model\ChequeBook $chequeBook
      */
-    public function setChequeBook(\Arbor\Model\ChequeBook $chequeBook = null)
+    public function setChequeBook(?\Arbor\Model\ChequeBook $chequeBook = null)
     {
         $this->setProperty('chequeBook', $chequeBook);
     }
@@ -76,7 +76,7 @@ class Cheque extends ModelBase
     /**
      * @param string $chequeNumber
      */
-    public function setChequeNumber(string $chequeNumber = null)
+    public function setChequeNumber(?string $chequeNumber = null)
     {
         $this->setProperty('chequeNumber', $chequeNumber);
     }

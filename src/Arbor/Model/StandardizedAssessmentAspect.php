@@ -36,7 +36,7 @@ class StandardizedAssessmentAspect extends ModelBase
      * @return StandardizedAssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -127,7 +127,7 @@ class StandardizedAssessmentAspect extends ModelBase
      * @param \Arbor\Model\StandardizedAssessmentAspectCategory
      * $standardizedAssessmentAspectCategory
      */
-    public function setStandardizedAssessmentAspectCategory(\Arbor\Model\StandardizedAssessmentAspectCategory $standardizedAssessmentAspectCategory = null)
+    public function setStandardizedAssessmentAspectCategory(?\Arbor\Model\StandardizedAssessmentAspectCategory $standardizedAssessmentAspectCategory = null)
     {
         $this->setProperty('standardizedAssessmentAspectCategory', $standardizedAssessmentAspectCategory);
     }
@@ -144,7 +144,7 @@ class StandardizedAssessmentAspect extends ModelBase
      * @param \Arbor\Model\StandardizedAssessmentComponent
      * $standardizedAssessmentComponent
      */
-    public function setStandardizedAssessmentComponent(\Arbor\Model\StandardizedAssessmentComponent $standardizedAssessmentComponent = null)
+    public function setStandardizedAssessmentComponent(?\Arbor\Model\StandardizedAssessmentComponent $standardizedAssessmentComponent = null)
     {
         $this->setProperty('standardizedAssessmentComponent', $standardizedAssessmentComponent);
     }
@@ -160,7 +160,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param string $markType
      */
-    public function setMarkType(string $markType = null)
+    public function setMarkType(?string $markType = null)
     {
         $this->setProperty('markType', $markType);
     }
@@ -176,7 +176,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue(float $markMinValue = null)
+    public function setMarkMinValue(?float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -192,7 +192,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue(float $markMaxValue = null)
+    public function setMarkMaxValue(?float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }
@@ -208,7 +208,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
+    public function setGradeSet(?\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -224,7 +224,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -240,7 +240,7 @@ class StandardizedAssessmentAspect extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

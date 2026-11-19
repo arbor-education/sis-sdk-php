@@ -20,7 +20,7 @@ class SenStatusAssignmentAreaOfNeed extends ModelBase
      * @return SenStatusAssignmentAreaOfNeed[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SenStatusAssignmentAreaOfNeed extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\SenStatusAssignment $senStatusAssignment
      */
-    public function setSenStatusAssignment(\Arbor\Model\Cymru\SenStatusAssignment $senStatusAssignment = null)
+    public function setSenStatusAssignment(?\Arbor\Model\Cymru\SenStatusAssignment $senStatusAssignment = null)
     {
         $this->setProperty('senStatusAssignment', $senStatusAssignment);
     }
@@ -78,7 +78,7 @@ class SenStatusAssignmentAreaOfNeed extends ModelBase
     /**
      * @param string $areaOfNeed
      */
-    public function setAreaOfNeed(string $areaOfNeed = null)
+    public function setAreaOfNeed(?string $areaOfNeed = null)
     {
         $this->setProperty('areaOfNeed', $areaOfNeed);
     }

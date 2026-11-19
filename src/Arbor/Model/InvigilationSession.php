@@ -22,7 +22,7 @@ class InvigilationSession extends ModelBase
      * @return InvigilationSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class InvigilationSession extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -80,7 +80,7 @@ class InvigilationSession extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -96,7 +96,7 @@ class InvigilationSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -112,7 +112,7 @@ class InvigilationSession extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\Arbor\Model\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }

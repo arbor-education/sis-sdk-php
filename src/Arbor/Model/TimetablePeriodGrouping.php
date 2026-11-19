@@ -22,7 +22,7 @@ class TimetablePeriodGrouping extends ModelBase
      * @return TimetablePeriodGrouping[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -80,7 +80,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -96,7 +96,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -112,7 +112,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

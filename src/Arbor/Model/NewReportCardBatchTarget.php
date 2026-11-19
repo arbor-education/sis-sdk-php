@@ -20,7 +20,7 @@ class NewReportCardBatchTarget extends ModelBase
      * @return NewReportCardBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class NewReportCardBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -78,7 +78,7 @@ class NewReportCardBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $target
      */
-    public function setTarget(\Arbor\Model\ModelBase $target = null)
+    public function setTarget(?\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }
@@ -94,7 +94,7 @@ class NewReportCardBatchTarget extends ModelBase
     /**
      * @param bool $reportsGenerating
      */
-    public function setReportsGenerating(bool $reportsGenerating = null)
+    public function setReportsGenerating(?bool $reportsGenerating = null)
     {
         $this->setProperty('reportsGenerating', $reportsGenerating);
     }

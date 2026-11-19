@@ -22,7 +22,7 @@ class EducationalInstitution extends ModelBase
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\LocalAuthority $localAuthority
      */
-    public function setLocalAuthority(\Arbor\Model\LocalAuthority $localAuthority = null)
+    public function setLocalAuthority(?\Arbor\Model\LocalAuthority $localAuthority = null)
     {
         $this->setProperty('localAuthority', $localAuthority);
     }
@@ -80,7 +80,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $establishmentNumber
      */
-    public function setEstablishmentNumber(string $establishmentNumber = null)
+    public function setEstablishmentNumber(?string $establishmentNumber = null)
     {
         $this->setProperty('establishmentNumber', $establishmentNumber);
     }
@@ -96,7 +96,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $urn
      */
-    public function setUrn(string $urn = null)
+    public function setUrn(?string $urn = null)
     {
         $this->setProperty('urn', $urn);
     }

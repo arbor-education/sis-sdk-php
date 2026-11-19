@@ -20,7 +20,7 @@ class EducationalInstitutionEnrolment extends ModelBase
      * @return EducationalInstitutionEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param string $removalGrounds
      */
-    public function setRemovalGrounds(string $removalGrounds = null)
+    public function setRemovalGrounds(?string $removalGrounds = null)
     {
         $this->setProperty('removalGrounds', $removalGrounds);
     }
@@ -78,7 +78,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason
      */
-    public function setAlternativeProvisionReason(\Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason = null)
+    public function setAlternativeProvisionReason(?\Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason = null)
     {
         $this->setProperty('alternativeProvisionReason', $alternativeProvisionReason);
     }

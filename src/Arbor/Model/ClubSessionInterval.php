@@ -24,7 +24,7 @@ class ClubSessionInterval extends ModelBase
      * @return ClubSessionInterval[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class ClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Arbor\Model\Club $club = null)
+    public function setClub(?\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -82,7 +82,7 @@ class ClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -98,7 +98,7 @@ class ClubSessionInterval extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -114,7 +114,7 @@ class ClubSessionInterval extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -130,7 +130,7 @@ class ClubSessionInterval extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

@@ -30,7 +30,7 @@ class UserDefinedField extends ModelBase
      * @return UserDefinedField[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $fieldName
      */
-    public function setFieldName(string $fieldName = null)
+    public function setFieldName(?string $fieldName = null)
     {
         $this->setProperty('fieldName', $fieldName);
     }
@@ -88,7 +88,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -104,7 +104,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $relatedEntityType
      */
-    public function setRelatedEntityType(string $relatedEntityType = null)
+    public function setRelatedEntityType(?string $relatedEntityType = null)
     {
         $this->setProperty('relatedEntityType', $relatedEntityType);
     }
@@ -120,7 +120,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $fieldType
      */
-    public function setFieldType(string $fieldType = null)
+    public function setFieldType(?string $fieldType = null)
     {
         $this->setProperty('fieldType', $fieldType);
     }
@@ -136,7 +136,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(string $source = null)
+    public function setSource(?string $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -152,7 +152,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -168,7 +168,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -184,7 +184,7 @@ class UserDefinedField extends ModelBase
     /**
      * @param string $showInLessonDashboard
      */
-    public function setShowInLessonDashboard(string $showInLessonDashboard = null)
+    public function setShowInLessonDashboard(?string $showInLessonDashboard = null)
     {
         $this->setProperty('showInLessonDashboard', $showInLessonDashboard);
     }

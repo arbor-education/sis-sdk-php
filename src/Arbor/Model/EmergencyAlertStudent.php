@@ -18,7 +18,7 @@ class EmergencyAlertStudent extends ModelBase
      * @return EmergencyAlertStudent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class EmergencyAlertStudent extends ModelBase
     /**
      * @param \Arbor\Model\EmergencyAlert $emergencyAlert
      */
-    public function setEmergencyAlert(\Arbor\Model\EmergencyAlert $emergencyAlert = null)
+    public function setEmergencyAlert(?\Arbor\Model\EmergencyAlert $emergencyAlert = null)
     {
         $this->setProperty('emergencyAlert', $emergencyAlert);
     }
@@ -76,7 +76,7 @@ class EmergencyAlertStudent extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

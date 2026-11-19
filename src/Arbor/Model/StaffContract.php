@@ -42,7 +42,7 @@ class StaffContract extends ModelBase
      * @return StaffContract[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class StaffContract extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -100,7 +100,7 @@ class StaffContract extends ModelBase
     /**
      * @param \Arbor\Model\StaffEmploymentType $staffEmploymentType
      */
-    public function setStaffEmploymentType(\Arbor\Model\StaffEmploymentType $staffEmploymentType = null)
+    public function setStaffEmploymentType(?\Arbor\Model\StaffEmploymentType $staffEmploymentType = null)
     {
         $this->setProperty('staffEmploymentType', $staffEmploymentType);
     }
@@ -116,7 +116,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $contractName
      */
-    public function setContractName(string $contractName = null)
+    public function setContractName(?string $contractName = null)
     {
         $this->setProperty('contractName', $contractName);
     }
@@ -132,7 +132,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $contractReference
      */
-    public function setContractReference(string $contractReference = null)
+    public function setContractReference(?string $contractReference = null)
     {
         $this->setProperty('contractReference', $contractReference);
     }
@@ -148,7 +148,7 @@ class StaffContract extends ModelBase
     /**
      * @param \DateTime $issuedDate
      */
-    public function setIssuedDate(\DateTime $issuedDate = null)
+    public function setIssuedDate(?\DateTime $issuedDate = null)
     {
         $this->setProperty('issuedDate', $issuedDate);
     }
@@ -164,7 +164,7 @@ class StaffContract extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -180,7 +180,7 @@ class StaffContract extends ModelBase
     /**
      * @param \DateTime $expectedEndDate
      */
-    public function setExpectedEndDate(\DateTime $expectedEndDate = null)
+    public function setExpectedEndDate(?\DateTime $expectedEndDate = null)
     {
         $this->setProperty('expectedEndDate', $expectedEndDate);
     }
@@ -196,7 +196,7 @@ class StaffContract extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -212,7 +212,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $payrollNumber
      */
-    public function setPayrollNumber(string $payrollNumber = null)
+    public function setPayrollNumber(?string $payrollNumber = null)
     {
         $this->setProperty('payrollNumber', $payrollNumber);
     }
@@ -228,7 +228,7 @@ class StaffContract extends ModelBase
     /**
      * @param \Arbor\Model\StaffOrigin $staffOrigin
      */
-    public function setStaffOrigin(\Arbor\Model\StaffOrigin $staffOrigin = null)
+    public function setStaffOrigin(?\Arbor\Model\StaffOrigin $staffOrigin = null)
     {
         $this->setProperty('staffOrigin', $staffOrigin);
     }
@@ -244,7 +244,7 @@ class StaffContract extends ModelBase
     /**
      * @param \Arbor\Model\StaffDestination $staffDestination
      */
-    public function setStaffDestination(\Arbor\Model\StaffDestination $staffDestination = null)
+    public function setStaffDestination(?\Arbor\Model\StaffDestination $staffDestination = null)
     {
         $this->setProperty('staffDestination', $staffDestination);
     }
@@ -260,7 +260,7 @@ class StaffContract extends ModelBase
     /**
      * @param \Arbor\Model\StaffLeavingReason $staffLeavingReason
      */
-    public function setStaffLeavingReason(\Arbor\Model\StaffLeavingReason $staffLeavingReason = null)
+    public function setStaffLeavingReason(?\Arbor\Model\StaffLeavingReason $staffLeavingReason = null)
     {
         $this->setProperty('staffLeavingReason', $staffLeavingReason);
     }
@@ -276,7 +276,7 @@ class StaffContract extends ModelBase
     /**
      * @param \Arbor\Model\SuperannuationScheme $superannuationScheme
      */
-    public function setSuperannuationScheme(\Arbor\Model\SuperannuationScheme $superannuationScheme = null)
+    public function setSuperannuationScheme(?\Arbor\Model\SuperannuationScheme $superannuationScheme = null)
     {
         $this->setProperty('superannuationScheme', $superannuationScheme);
     }
@@ -292,7 +292,7 @@ class StaffContract extends ModelBase
     /**
      * @param \DateTime $lastPayReviewDate
      */
-    public function setLastPayReviewDate(\DateTime $lastPayReviewDate = null)
+    public function setLastPayReviewDate(?\DateTime $lastPayReviewDate = null)
     {
         $this->setProperty('lastPayReviewDate', $lastPayReviewDate);
     }

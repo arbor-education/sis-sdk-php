@@ -42,7 +42,7 @@ class AttendanceRecord extends ModelBase
      * @return AttendanceRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(\Arbor\Model\AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(?\Arbor\Model\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -100,7 +100,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegister $attendanceRegister
      */
-    public function setAttendanceRegister(\Arbor\Model\AttendanceRegister $attendanceRegister = null)
+    public function setAttendanceRegister(?\Arbor\Model\AttendanceRegister $attendanceRegister = null)
     {
         $this->setProperty('attendanceRegister', $attendanceRegister);
     }
@@ -116,7 +116,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -132,7 +132,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(int $minutesLate = null)
+    public function setMinutesLate(?int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
@@ -148,7 +148,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param string $recordNote
      */
-    public function setRecordNote(string $recordNote = null)
+    public function setRecordNote(?string $recordNote = null)
     {
         $this->setProperty('recordNote', $recordNote);
     }
@@ -164,7 +164,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -180,7 +180,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -196,7 +196,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\Arbor\Model\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -212,7 +212,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $eventGroup
      */
-    public function setEventGroup(\Arbor\Model\ModelBase $eventGroup = null)
+    public function setEventGroup(?\Arbor\Model\ModelBase $eventGroup = null)
     {
         $this->setProperty('eventGroup', $eventGroup);
     }
@@ -228,7 +228,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceFollowUp $attendanceFollowUp
      */
-    public function setAttendanceFollowUp(\Arbor\Model\AttendanceFollowUp $attendanceFollowUp = null)
+    public function setAttendanceFollowUp(?\Arbor\Model\AttendanceFollowUp $attendanceFollowUp = null)
     {
         $this->setProperty('attendanceFollowUp', $attendanceFollowUp);
     }
@@ -244,7 +244,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\StudentAbsenceNote $studentAbsenceNote
      */
-    public function setStudentAbsenceNote(\Arbor\Model\StudentAbsenceNote $studentAbsenceNote = null)
+    public function setStudentAbsenceNote(?\Arbor\Model\StudentAbsenceNote $studentAbsenceNote = null)
     {
         $this->setProperty('studentAbsenceNote', $studentAbsenceNote);
     }
@@ -260,7 +260,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRecord $sourceAttendanceRecord
      */
-    public function setSourceAttendanceRecord(\Arbor\Model\AttendanceRecord $sourceAttendanceRecord = null)
+    public function setSourceAttendanceRecord(?\Arbor\Model\AttendanceRecord $sourceAttendanceRecord = null)
     {
         $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
@@ -276,7 +276,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(string $source = null)
+    public function setSource(?string $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -292,7 +292,7 @@ class AttendanceRecord extends ModelBase
     /**
      * @param bool $isRedundant
      */
-    public function setIsRedundant(bool $isRedundant = null)
+    public function setIsRedundant(?bool $isRedundant = null)
     {
         $this->setProperty('isRedundant', $isRedundant);
     }

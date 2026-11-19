@@ -34,7 +34,7 @@ class OutboundInAppMessage extends ModelBase
      * @return OutboundInAppMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\Arbor\Model\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -92,7 +92,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -108,7 +108,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage(string $message = null)
+    public function setMessage(?string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -124,7 +124,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \DateTime $readDatetime
      */
-    public function setReadDatetime(\DateTime $readDatetime = null)
+    public function setReadDatetime(?\DateTime $readDatetime = null)
     {
         $this->setProperty('readDatetime', $readDatetime);
     }
@@ -140,7 +140,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\InAppMessageThread $thread
      */
-    public function setThread(\Arbor\Model\InAppMessageThread $thread = null)
+    public function setThread(?\Arbor\Model\InAppMessageThread $thread = null)
     {
         $this->setProperty('thread', $thread);
     }
@@ -156,7 +156,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\OutboundInAppMessageDraft $outboundInAppMessageDraft
      */
-    public function setOutboundInAppMessageDraft(\Arbor\Model\OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
+    public function setOutboundInAppMessageDraft(?\Arbor\Model\OutboundInAppMessageDraft $outboundInAppMessageDraft = null)
     {
         $this->setProperty('outboundInAppMessageDraft', $outboundInAppMessageDraft);
     }
@@ -172,7 +172,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -188,7 +188,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \DateTime $sentDatetime
      */
-    public function setSentDatetime(\DateTime $sentDatetime = null)
+    public function setSentDatetime(?\DateTime $sentDatetime = null)
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }
@@ -204,7 +204,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \DateTime $actionRequiredByDatetime
      */
-    public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
+    public function setActionRequiredByDatetime(?\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
@@ -220,7 +220,7 @@ class OutboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\InboundInAppMessage $inboundInAppMessageRepliedTo
      */
-    public function setInboundInAppMessageRepliedTo(\Arbor\Model\InboundInAppMessage $inboundInAppMessageRepliedTo = null)
+    public function setInboundInAppMessageRepliedTo(?\Arbor\Model\InboundInAppMessage $inboundInAppMessageRepliedTo = null)
     {
         $this->setProperty('inboundInAppMessageRepliedTo', $inboundInAppMessageRepliedTo);
     }

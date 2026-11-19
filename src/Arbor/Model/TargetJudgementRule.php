@@ -22,7 +22,7 @@ class TargetJudgementRule extends ModelBase
      * @return TargetJudgementRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentAspect $assessmentAspect
      */
-    public function setAssessmentAspect(\Arbor\Model\AssessmentAspect $assessmentAspect = null)
+    public function setAssessmentAspect(?\Arbor\Model\AssessmentAspect $assessmentAspect = null)
     {
         $this->setProperty('assessmentAspect', $assessmentAspect);
     }
@@ -80,7 +80,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param \Arbor\Model\TargetJudgement $targetJudgement
      */
-    public function setTargetJudgement(\Arbor\Model\TargetJudgement $targetJudgement = null)
+    public function setTargetJudgement(?\Arbor\Model\TargetJudgement $targetJudgement = null)
     {
         $this->setProperty('targetJudgement', $targetJudgement);
     }
@@ -96,7 +96,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param float $amount
      */
-    public function setAmount(float $amount = null)
+    public function setAmount(?float $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -112,7 +112,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param string $amountUnit
      */
-    public function setAmountUnit(string $amountUnit = null)
+    public function setAmountUnit(?string $amountUnit = null)
     {
         $this->setProperty('amountUnit', $amountUnit);
     }

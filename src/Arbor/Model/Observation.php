@@ -28,7 +28,7 @@ class Observation extends ModelBase
      * @return Observation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class Observation extends ModelBase
     /**
      * @param \Arbor\Model\Staff $observingStaff
      */
-    public function setObservingStaff(\Arbor\Model\Staff $observingStaff = null)
+    public function setObservingStaff(?\Arbor\Model\Staff $observingStaff = null)
     {
         $this->setProperty('observingStaff', $observingStaff);
     }
@@ -86,7 +86,7 @@ class Observation extends ModelBase
     /**
      * @param \Arbor\Model\Staff $observedStaff
      */
-    public function setObservedStaff(\Arbor\Model\Staff $observedStaff = null)
+    public function setObservedStaff(?\Arbor\Model\Staff $observedStaff = null)
     {
         $this->setProperty('observedStaff', $observedStaff);
     }
@@ -102,7 +102,7 @@ class Observation extends ModelBase
     /**
      * @param \Arbor\Model\Session $session
      */
-    public function setSession(\Arbor\Model\Session $session = null)
+    public function setSession(?\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -118,7 +118,7 @@ class Observation extends ModelBase
     /**
      * @param \DateTime $observationStartDatetime
      */
-    public function setObservationStartDatetime(\DateTime $observationStartDatetime = null)
+    public function setObservationStartDatetime(?\DateTime $observationStartDatetime = null)
     {
         $this->setProperty('observationStartDatetime', $observationStartDatetime);
     }
@@ -134,7 +134,7 @@ class Observation extends ModelBase
     /**
      * @param \DateTime $observationEndDatetime
      */
-    public function setObservationEndDatetime(\DateTime $observationEndDatetime = null)
+    public function setObservationEndDatetime(?\DateTime $observationEndDatetime = null)
     {
         $this->setProperty('observationEndDatetime', $observationEndDatetime);
     }
@@ -150,7 +150,7 @@ class Observation extends ModelBase
     /**
      * @param \DateTime $submittedDatetime
      */
-    public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
+    public function setSubmittedDatetime(?\DateTime $submittedDatetime = null)
     {
         $this->setProperty('submittedDatetime', $submittedDatetime);
     }
@@ -166,7 +166,7 @@ class Observation extends ModelBase
     /**
      * @param string $observationFocus
      */
-    public function setObservationFocus(string $observationFocus = null)
+    public function setObservationFocus(?string $observationFocus = null)
     {
         $this->setProperty('observationFocus', $observationFocus);
     }

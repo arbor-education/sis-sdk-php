@@ -34,7 +34,7 @@ class PlascCensusClass extends ModelBase
      * @return PlascCensusClass[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param \Arbor\Model\Statutory\DataReturn $dataReturn
      */
-    public function setDataReturn(\Arbor\Model\Statutory\DataReturn $dataReturn = null)
+    public function setDataReturn(?\Arbor\Model\Statutory\DataReturn $dataReturn = null)
     {
         $this->setProperty('dataReturn', $dataReturn);
     }
@@ -92,7 +92,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param \Arbor\Model\Session $session
      */
-    public function setSession(\Arbor\Model\Session $session = null)
+    public function setSession(?\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -108,7 +108,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param int $teachers
      */
-    public function setTeachers(int $teachers = null)
+    public function setTeachers(?int $teachers = null)
     {
         $this->setProperty('teachers', $teachers);
     }
@@ -124,7 +124,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param int $nonTeachers
      */
-    public function setNonTeachers(int $nonTeachers = null)
+    public function setNonTeachers(?int $nonTeachers = null)
     {
         $this->setProperty('nonTeachers', $nonTeachers);
     }
@@ -140,7 +140,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param int $homePupils
      */
-    public function setHomePupils(int $homePupils = null)
+    public function setHomePupils(?int $homePupils = null)
     {
         $this->setProperty('homePupils', $homePupils);
     }
@@ -156,7 +156,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param int $guestPupils
      */
-    public function setGuestPupils(int $guestPupils = null)
+    public function setGuestPupils(?int $guestPupils = null)
     {
         $this->setProperty('guestPupils', $guestPupils);
     }
@@ -172,7 +172,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param int $alnPupils
      */
-    public function setAlnPupils(int $alnPupils = null)
+    public function setAlnPupils(?int $alnPupils = null)
     {
         $this->setProperty('alnPupils', $alnPupils);
     }
@@ -188,7 +188,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param string $keyStage
      */
-    public function setKeyStage(string $keyStage = null)
+    public function setKeyStage(?string $keyStage = null)
     {
         $this->setProperty('keyStage', $keyStage);
     }
@@ -204,7 +204,7 @@ class PlascCensusClass extends ModelBase
     /**
      * @param string $classSizeCountType
      */
-    public function setClassSizeCountType(string $classSizeCountType = null)
+    public function setClassSizeCountType(?string $classSizeCountType = null)
     {
         $this->setProperty('classSizeCountType', $classSizeCountType);
     }

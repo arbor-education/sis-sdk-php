@@ -20,7 +20,7 @@ class BursaryPaymentDate extends ModelBase
      * @return BursaryPaymentDate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class BursaryPaymentDate extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class BursaryPaymentDate extends ModelBase
     /**
      * @param \Arbor\Model\BursaryType $bursaryType
      */
-    public function setBursaryType(\Arbor\Model\BursaryType $bursaryType = null)
+    public function setBursaryType(?\Arbor\Model\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
@@ -94,7 +94,7 @@ class BursaryPaymentDate extends ModelBase
     /**
      * @param \DateTime $paymentDate
      */
-    public function setPaymentDate(\DateTime $paymentDate = null)
+    public function setPaymentDate(?\DateTime $paymentDate = null)
     {
         $this->setProperty('paymentDate', $paymentDate);
     }

@@ -24,7 +24,7 @@ class PhysicalInterventionRecord extends ModelBase
      * @return PhysicalInterventionRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(?\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -82,7 +82,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -98,7 +98,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -114,7 +114,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -130,7 +130,7 @@ class PhysicalInterventionRecord extends ModelBase
     /**
      * @param \DateTime $confirmedDatetime
      */
-    public function setConfirmedDatetime(\DateTime $confirmedDatetime = null)
+    public function setConfirmedDatetime(?\DateTime $confirmedDatetime = null)
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }

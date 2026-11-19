@@ -32,7 +32,7 @@ class UciAssignment extends ModelBase
      * @return UciAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class UciAssignment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -90,7 +90,7 @@ class UciAssignment extends ModelBase
     /**
      * @param string $uci
      */
-    public function setUci(string $uci = null)
+    public function setUci(?string $uci = null)
     {
         $this->setProperty('uci', $uci);
     }
@@ -106,7 +106,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedYear
      */
-    public function setIssuedYear(int $issuedYear = null)
+    public function setIssuedYear(?int $issuedYear = null)
     {
         $this->setProperty('issuedYear', $issuedYear);
     }
@@ -122,7 +122,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedCenterNumber
      */
-    public function setIssuedCenterNumber(int $issuedCenterNumber = null)
+    public function setIssuedCenterNumber(?int $issuedCenterNumber = null)
     {
         $this->setProperty('issuedCenterNumber', $issuedCenterNumber);
     }
@@ -138,7 +138,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedAwardingOrganizationIdentifier
      */
-    public function setIssuedAwardingOrganizationIdentifier(int $issuedAwardingOrganizationIdentifier = null)
+    public function setIssuedAwardingOrganizationIdentifier(?int $issuedAwardingOrganizationIdentifier = null)
     {
         $this->setProperty('issuedAwardingOrganizationIdentifier', $issuedAwardingOrganizationIdentifier);
     }
@@ -154,7 +154,7 @@ class UciAssignment extends ModelBase
     /**
      * @param int $issuedSerialNumber
      */
-    public function setIssuedSerialNumber(int $issuedSerialNumber = null)
+    public function setIssuedSerialNumber(?int $issuedSerialNumber = null)
     {
         $this->setProperty('issuedSerialNumber', $issuedSerialNumber);
     }
@@ -170,7 +170,7 @@ class UciAssignment extends ModelBase
     /**
      * @param \DateTime $issuedDatetime
      */
-    public function setIssuedDatetime(\DateTime $issuedDatetime = null)
+    public function setIssuedDatetime(?\DateTime $issuedDatetime = null)
     {
         $this->setProperty('issuedDatetime', $issuedDatetime);
     }
@@ -186,7 +186,7 @@ class UciAssignment extends ModelBase
     /**
      * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    public function setCancelledDatetime(?\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }

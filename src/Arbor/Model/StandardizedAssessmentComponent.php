@@ -28,7 +28,7 @@ class StandardizedAssessmentComponent extends ModelBase
      * @return StandardizedAssessmentComponent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessmentSuite $standardizedAssessmentSuite
      */
-    public function setStandardizedAssessmentSuite(\Arbor\Model\StandardizedAssessmentSuite $standardizedAssessmentSuite = null)
+    public function setStandardizedAssessmentSuite(?\Arbor\Model\StandardizedAssessmentSuite $standardizedAssessmentSuite = null)
     {
         $this->setProperty('standardizedAssessmentSuite', $standardizedAssessmentSuite);
     }
@@ -134,7 +134,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -150,7 +150,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -166,7 +166,7 @@ class StandardizedAssessmentComponent extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

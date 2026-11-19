@@ -20,7 +20,7 @@ class InterventionCost extends ModelBase
      * @return InterventionCost[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class InterventionCost extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
+    public function setIntervention(?\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -78,7 +78,7 @@ class InterventionCost extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount(string $amount = null)
+    public function setAmount(?string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -94,7 +94,7 @@ class InterventionCost extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }

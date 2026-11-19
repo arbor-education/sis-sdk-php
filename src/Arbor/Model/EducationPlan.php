@@ -28,7 +28,7 @@ class EducationPlan extends ModelBase
      * @return EducationPlan[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class EducationPlan extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -86,7 +86,7 @@ class EducationPlan extends ModelBase
     /**
      * @param string $educationPlanType
      */
-    public function setEducationPlanType(string $educationPlanType = null)
+    public function setEducationPlanType(?string $educationPlanType = null)
     {
         $this->setProperty('educationPlanType', $educationPlanType);
     }
@@ -102,7 +102,7 @@ class EducationPlan extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -118,7 +118,7 @@ class EducationPlan extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent(string $content = null)
+    public function setContent(?string $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -134,7 +134,7 @@ class EducationPlan extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -150,7 +150,7 @@ class EducationPlan extends ModelBase
     /**
      * @param \DateTime $scheduledReviewDate
      */
-    public function setScheduledReviewDate(\DateTime $scheduledReviewDate = null)
+    public function setScheduledReviewDate(?\DateTime $scheduledReviewDate = null)
     {
         $this->setProperty('scheduledReviewDate', $scheduledReviewDate);
     }
@@ -166,7 +166,7 @@ class EducationPlan extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

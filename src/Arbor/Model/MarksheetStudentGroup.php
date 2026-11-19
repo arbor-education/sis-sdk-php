@@ -18,7 +18,7 @@ class MarksheetStudentGroup extends ModelBase
      * @return MarksheetStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class MarksheetStudentGroup extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMarksheet $marksheet
      */
-    public function setMarksheet(\Arbor\Model\AssessmentMarksheet $marksheet = null)
+    public function setMarksheet(?\Arbor\Model\AssessmentMarksheet $marksheet = null)
     {
         $this->setProperty('marksheet', $marksheet);
     }
@@ -76,7 +76,7 @@ class MarksheetStudentGroup extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $studentGroup
      */
-    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
+    public function setStudentGroup(?\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

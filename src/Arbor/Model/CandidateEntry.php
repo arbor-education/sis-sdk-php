@@ -24,7 +24,7 @@ class CandidateEntry extends ModelBase
      * @return CandidateEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
+    public function setCandidate(?\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
@@ -82,7 +82,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param \Arbor\Model\QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(?\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -99,7 +99,7 @@ class CandidateEntry extends ModelBase
      * @param \Arbor\Model\QualificationAvailabilityInstance
      * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(?\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -115,7 +115,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param string $entryStatus
      */
-    public function setEntryStatus(string $entryStatus = null)
+    public function setEntryStatus(?string $entryStatus = null)
     {
         $this->setProperty('entryStatus', $entryStatus);
     }
@@ -131,7 +131,7 @@ class CandidateEntry extends ModelBase
     /**
      * @param string $withdrawalStatus
      */
-    public function setWithdrawalStatus(string $withdrawalStatus = null)
+    public function setWithdrawalStatus(?string $withdrawalStatus = null)
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }

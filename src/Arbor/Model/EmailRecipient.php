@@ -34,7 +34,7 @@ class EmailRecipient extends ModelBase
      * @return EmailRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Arbor\Model\Email $email = null)
+    public function setEmail(?\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -92,7 +92,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param string $recipientType
      */
-    public function setRecipientType(string $recipientType = null)
+    public function setRecipientType(?string $recipientType = null)
     {
         $this->setProperty('recipientType', $recipientType);
     }
@@ -108,7 +108,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
@@ -124,7 +124,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param string $recipientRawEmail
      */
-    public function setRecipientRawEmail(string $recipientRawEmail = null)
+    public function setRecipientRawEmail(?string $recipientRawEmail = null)
     {
         $this->setProperty('recipientRawEmail', $recipientRawEmail);
     }
@@ -140,7 +140,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param \Arbor\Model\EmailAddress $emailAddress
      */
-    public function setEmailAddress(\Arbor\Model\EmailAddress $emailAddress = null)
+    public function setEmailAddress(?\Arbor\Model\EmailAddress $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -156,7 +156,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -172,7 +172,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(?\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -188,7 +188,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param int $recipientIndex
      */
-    public function setRecipientIndex(int $recipientIndex = null)
+    public function setRecipientIndex(?int $recipientIndex = null)
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }
@@ -204,7 +204,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param \DateTime $receivedDatetime
      */
-    public function setReceivedDatetime(\DateTime $receivedDatetime = null)
+    public function setReceivedDatetime(?\DateTime $receivedDatetime = null)
     {
         $this->setProperty('receivedDatetime', $receivedDatetime);
     }
@@ -220,7 +220,7 @@ class EmailRecipient extends ModelBase
     /**
      * @param \DateTime $failedDatetime
      */
-    public function setFailedDatetime(\DateTime $failedDatetime = null)
+    public function setFailedDatetime(?\DateTime $failedDatetime = null)
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }

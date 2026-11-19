@@ -26,7 +26,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      * @return ProgressAssessmentBatchTargetMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param \Arbor\Model\ProgressAssessmentBatchTarget $progressAssessmentBatchTarget
      */
-    public function setProgressAssessmentBatchTarget(\Arbor\Model\ProgressAssessmentBatchTarget $progressAssessmentBatchTarget = null)
+    public function setProgressAssessmentBatchTarget(?\Arbor\Model\ProgressAssessmentBatchTarget $progressAssessmentBatchTarget = null)
     {
         $this->setProperty('progressAssessmentBatchTarget', $progressAssessmentBatchTarget);
     }
@@ -84,7 +84,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(?\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -100,7 +100,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param \DateTime $markingStartedDatetime
      */
-    public function setMarkingStartedDatetime(\DateTime $markingStartedDatetime = null)
+    public function setMarkingStartedDatetime(?\DateTime $markingStartedDatetime = null)
     {
         $this->setProperty('markingStartedDatetime', $markingStartedDatetime);
     }
@@ -116,7 +116,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param \DateTime $markingCompletedDatetime
      */
-    public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
+    public function setMarkingCompletedDatetime(?\DateTime $markingCompletedDatetime = null)
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
@@ -132,7 +132,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param \DateTime $markingFinalizedDatetime
      */
-    public function setMarkingFinalizedDatetime(\DateTime $markingFinalizedDatetime = null)
+    public function setMarkingFinalizedDatetime(?\DateTime $markingFinalizedDatetime = null)
     {
         $this->setProperty('markingFinalizedDatetime', $markingFinalizedDatetime);
     }
@@ -148,7 +148,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param bool $allMarksApproved
      */
-    public function setAllMarksApproved(bool $allMarksApproved = null)
+    public function setAllMarksApproved(?bool $allMarksApproved = null)
     {
         $this->setProperty('allMarksApproved', $allMarksApproved);
     }

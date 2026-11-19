@@ -18,7 +18,7 @@ class InternalExclusionType extends ModelBase
      * @return InternalExclusionType[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class InternalExclusionType extends ModelBase
     /**
      * @param string $internalExclusionTypeName
      */
-    public function setInternalExclusionTypeName(string $internalExclusionTypeName = null)
+    public function setInternalExclusionTypeName(?string $internalExclusionTypeName = null)
     {
         $this->setProperty('internalExclusionTypeName', $internalExclusionTypeName);
     }
@@ -76,7 +76,7 @@ class InternalExclusionType extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

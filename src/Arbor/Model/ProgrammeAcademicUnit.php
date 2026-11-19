@@ -18,7 +18,7 @@ class ProgrammeAcademicUnit extends ModelBase
      * @return ProgrammeAcademicUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ProgrammeAcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(\Arbor\Model\ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(?\Arbor\Model\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
@@ -76,7 +76,7 @@ class ProgrammeAcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }

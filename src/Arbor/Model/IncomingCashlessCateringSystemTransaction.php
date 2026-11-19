@@ -34,7 +34,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
      * @return IncomingCashlessCateringSystemTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -92,7 +92,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(string $source = null)
+    public function setSource(?string $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -108,7 +108,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $transactionIdentifier
      */
-    public function setTransactionIdentifier(string $transactionIdentifier = null)
+    public function setTransactionIdentifier(?string $transactionIdentifier = null)
     {
         $this->setProperty('transactionIdentifier', $transactionIdentifier);
     }
@@ -124,7 +124,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -140,7 +140,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(?\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -156,7 +156,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $transactionAmount
      */
-    public function setTransactionAmount(string $transactionAmount = null)
+    public function setTransactionAmount(?string $transactionAmount = null)
     {
         $this->setProperty('transactionAmount', $transactionAmount);
     }
@@ -172,7 +172,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $transactionFeeAmount
      */
-    public function setTransactionFeeAmount(string $transactionFeeAmount = null)
+    public function setTransactionFeeAmount(?string $transactionFeeAmount = null)
     {
         $this->setProperty('transactionFeeAmount', $transactionFeeAmount);
     }
@@ -188,7 +188,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param string $vatAmount
      */
-    public function setVatAmount(string $vatAmount = null)
+    public function setVatAmount(?string $vatAmount = null)
     {
         $this->setProperty('vatAmount', $vatAmount);
     }
@@ -204,7 +204,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param \DateTime $transactionDate
      */
-    public function setTransactionDate(\DateTime $transactionDate = null)
+    public function setTransactionDate(?\DateTime $transactionDate = null)
     {
         $this->setProperty('transactionDate', $transactionDate);
     }
@@ -220,7 +220,7 @@ class IncomingCashlessCateringSystemTransaction extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\Arbor\Model\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(?\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }

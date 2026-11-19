@@ -26,7 +26,7 @@ class BasketItem extends ModelBase
      * @return BasketItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class BasketItem extends ModelBase
     /**
      * @param \Arbor\Model\Basket $basket
      */
-    public function setBasket(\Arbor\Model\Basket $basket = null)
+    public function setBasket(?\Arbor\Model\Basket $basket = null)
     {
         $this->setProperty('basket', $basket);
     }
@@ -84,7 +84,7 @@ class BasketItem extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount(string $paymentAmount = null)
+    public function setPaymentAmount(?string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }
@@ -100,7 +100,7 @@ class BasketItem extends ModelBase
     /**
      * @param \DateTime $addedDatetime
      */
-    public function setAddedDatetime(\DateTime $addedDatetime = null)
+    public function setAddedDatetime(?\DateTime $addedDatetime = null)
     {
         $this->setProperty('addedDatetime', $addedDatetime);
     }
@@ -116,7 +116,7 @@ class BasketItem extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $payingFor
      */
-    public function setPayingFor(\Arbor\Model\ModelBase $payingFor = null)
+    public function setPayingFor(?\Arbor\Model\ModelBase $payingFor = null)
     {
         $this->setProperty('payingFor', $payingFor);
     }
@@ -132,7 +132,7 @@ class BasketItem extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }
@@ -148,7 +148,7 @@ class BasketItem extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

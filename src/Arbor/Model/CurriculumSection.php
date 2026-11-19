@@ -28,7 +28,7 @@ class CurriculumSection extends ModelBase
      * @return CurriculumSection[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
+    public function setCurriculum(?\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -86,7 +86,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -102,7 +102,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -118,7 +118,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -134,7 +134,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumSection $parentCurriculumSection
      */
-    public function setParentCurriculumSection(\Arbor\Model\CurriculumSection $parentCurriculumSection = null)
+    public function setParentCurriculumSection(?\Arbor\Model\CurriculumSection $parentCurriculumSection = null)
     {
         $this->setProperty('parentCurriculumSection', $parentCurriculumSection);
     }
@@ -150,7 +150,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -166,7 +166,7 @@ class CurriculumSection extends ModelBase
     /**
      * @param float $weighting
      */
-    public function setWeighting(float $weighting = null)
+    public function setWeighting(?float $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }

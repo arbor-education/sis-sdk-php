@@ -32,7 +32,7 @@ class ProgrammeEnrolment extends ModelBase
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(\Arbor\Model\ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(?\Arbor\Model\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
@@ -90,7 +90,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -106,7 +106,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $mainProgramme
      */
-    public function setMainProgramme(bool $mainProgramme = null)
+    public function setMainProgramme(?bool $mainProgramme = null)
     {
         $this->setProperty('mainProgramme', $mainProgramme);
     }
@@ -122,7 +122,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\ProgrammeClassification $programmeClassification
      */
-    public function setProgrammeClassification(\Arbor\Model\ProgrammeClassification $programmeClassification = null)
+    public function setProgrammeClassification(?\Arbor\Model\ProgrammeClassification $programmeClassification = null)
     {
         $this->setProperty('programmeClassification', $programmeClassification);
     }
@@ -138,7 +138,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \DateTime $plannedStartDate
      */
-    public function setPlannedStartDate(\DateTime $plannedStartDate = null)
+    public function setPlannedStartDate(?\DateTime $plannedStartDate = null)
     {
         $this->setProperty('plannedStartDate', $plannedStartDate);
     }
@@ -154,7 +154,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \DateTime $plannedEndDate
      */
-    public function setPlannedEndDate(\DateTime $plannedEndDate = null)
+    public function setPlannedEndDate(?\DateTime $plannedEndDate = null)
     {
         $this->setProperty('plannedEndDate', $plannedEndDate);
     }
@@ -170,7 +170,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \DateTime $actualEndDate
      */
-    public function setActualEndDate(\DateTime $actualEndDate = null)
+    public function setActualEndDate(?\DateTime $actualEndDate = null)
     {
         $this->setProperty('actualEndDate', $actualEndDate);
     }
@@ -186,7 +186,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $completionStatus
      */
-    public function setCompletionStatus(string $completionStatus = null)
+    public function setCompletionStatus(?string $completionStatus = null)
     {
         $this->setProperty('completionStatus', $completionStatus);
     }
@@ -202,7 +202,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\ProgrammeWithdrawalReason $withdrawalReason
      */
-    public function setWithdrawalReason(\Arbor\Model\ProgrammeWithdrawalReason $withdrawalReason = null)
+    public function setWithdrawalReason(?\Arbor\Model\ProgrammeWithdrawalReason $withdrawalReason = null)
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }

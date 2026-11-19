@@ -18,7 +18,7 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
      * @return AssessmentDefaultDisplayGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(?\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
@@ -76,7 +76,7 @@ class AssessmentDefaultDisplayGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
+    public function setGradeSet(?\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }

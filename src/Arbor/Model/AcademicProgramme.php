@@ -16,7 +16,7 @@ class AcademicProgramme extends ModelBase
      * @return AcademicProgramme[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class AcademicProgramme extends ModelBase
     /**
      * @param string $academicProgrammeName
      */
-    public function setAcademicProgrammeName(string $academicProgrammeName = null)
+    public function setAcademicProgrammeName(?string $academicProgrammeName = null)
     {
         $this->setProperty('academicProgrammeName', $academicProgrammeName);
     }

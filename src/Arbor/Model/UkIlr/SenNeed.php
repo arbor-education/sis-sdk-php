@@ -18,7 +18,7 @@ class SenNeed extends ModelBase
      * @return SenNeed[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class SenNeed extends ModelBase
     /**
      * @param bool $isAgreedWithStudent
      */
-    public function setIsAgreedWithStudent(bool $isAgreedWithStudent = null)
+    public function setIsAgreedWithStudent(?bool $isAgreedWithStudent = null)
     {
         $this->setProperty('isAgreedWithStudent', $isAgreedWithStudent);
     }

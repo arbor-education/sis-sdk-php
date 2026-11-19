@@ -26,7 +26,7 @@ class EntityPushdownSyncedEntity extends ModelBase
      * @return EntityPushdownSyncedEntity[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param \Arbor\Model\EntityPushdown $entityPushdown
      */
-    public function setEntityPushdown(\Arbor\Model\EntityPushdown $entityPushdown = null)
+    public function setEntityPushdown(?\Arbor\Model\EntityPushdown $entityPushdown = null)
     {
         $this->setProperty('entityPushdown', $entityPushdown);
     }
@@ -84,7 +84,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $syncedEntity
      */
-    public function setSyncedEntity(\Arbor\Model\ModelBase $syncedEntity = null)
+    public function setSyncedEntity(?\Arbor\Model\ModelBase $syncedEntity = null)
     {
         $this->setProperty('syncedEntity', $syncedEntity);
     }
@@ -100,7 +100,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param int $syncedEntityObjectTypeId
      */
-    public function setSyncedEntityObjectTypeId(int $syncedEntityObjectTypeId = null)
+    public function setSyncedEntityObjectTypeId(?int $syncedEntityObjectTypeId = null)
     {
         $this->setProperty('syncedEntityObjectTypeId', $syncedEntityObjectTypeId);
     }
@@ -116,7 +116,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param string $globalIdentifier
      */
-    public function setGlobalIdentifier(string $globalIdentifier = null)
+    public function setGlobalIdentifier(?string $globalIdentifier = null)
     {
         $this->setProperty('globalIdentifier', $globalIdentifier);
     }
@@ -132,7 +132,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param bool $isTemplate
      */
-    public function setIsTemplate(bool $isTemplate = null)
+    public function setIsTemplate(?bool $isTemplate = null)
     {
         $this->setProperty('isTemplate', $isTemplate);
     }
@@ -148,7 +148,7 @@ class EntityPushdownSyncedEntity extends ModelBase
     /**
      * @param bool $allowEdit
      */
-    public function setAllowEdit(bool $allowEdit = null)
+    public function setAllowEdit(?bool $allowEdit = null)
     {
         $this->setProperty('allowEdit', $allowEdit);
     }

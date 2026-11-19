@@ -18,7 +18,7 @@ class AcademicUnitCurriculum extends ModelBase
      * @return AcademicUnitCurriculum[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicUnitCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -76,7 +76,7 @@ class AcademicUnitCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
+    public function setCurriculum(?\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }

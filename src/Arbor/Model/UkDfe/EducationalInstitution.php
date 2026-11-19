@@ -58,7 +58,7 @@ class EducationalInstitution extends ModelBase
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,7 +100,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\LocalAuthority $localAuthority
      */
-    public function setLocalAuthority(\Arbor\Model\LocalAuthority $localAuthority = null)
+    public function setLocalAuthority(?\Arbor\Model\LocalAuthority $localAuthority = null)
     {
         $this->setProperty('localAuthority', $localAuthority);
     }
@@ -116,7 +116,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $establishmentNumber
      */
-    public function setEstablishmentNumber(string $establishmentNumber = null)
+    public function setEstablishmentNumber(?string $establishmentNumber = null)
     {
         $this->setProperty('establishmentNumber', $establishmentNumber);
     }
@@ -132,7 +132,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase
      */
-    public function setCensusSchoolPhase(\Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase = null)
+    public function setCensusSchoolPhase(?\Arbor\Model\UkDfe\CensusSchoolPhase $censusSchoolPhase = null)
     {
         $this->setProperty('censusSchoolPhase', $censusSchoolPhase);
     }
@@ -148,7 +148,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolType $schoolType
      */
-    public function setSchoolType(\Arbor\Model\UkDfe\SchoolType $schoolType = null)
+    public function setSchoolType(?\Arbor\Model\UkDfe\SchoolType $schoolType = null)
     {
         $this->setProperty('schoolType', $schoolType);
     }
@@ -164,7 +164,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $schoolGender
      */
-    public function setSchoolGender(string $schoolGender = null)
+    public function setSchoolGender(?string $schoolGender = null)
     {
         $this->setProperty('schoolGender', $schoolGender);
     }
@@ -180,7 +180,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolGovernanceType $governanceType
      */
-    public function setGovernanceType(\Arbor\Model\UkDfe\SchoolGovernanceType $governanceType = null)
+    public function setGovernanceType(?\Arbor\Model\UkDfe\SchoolGovernanceType $governanceType = null)
     {
         $this->setProperty('governanceType', $governanceType);
     }
@@ -196,7 +196,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolIntakeType $intakeType
      */
-    public function setIntakeType(\Arbor\Model\UkDfe\SchoolIntakeType $intakeType = null)
+    public function setIntakeType(?\Arbor\Model\UkDfe\SchoolIntakeType $intakeType = null)
     {
         $this->setProperty('intakeType', $intakeType);
     }
@@ -212,7 +212,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $urn
      */
-    public function setUrn(string $urn = null)
+    public function setUrn(?string $urn = null)
     {
         $this->setProperty('urn', $urn);
     }
@@ -228,7 +228,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $ukprn
      */
-    public function setUkprn(string $ukprn = null)
+    public function setUkprn(?string $ukprn = null)
     {
         $this->setProperty('ukprn', $ukprn);
     }
@@ -244,7 +244,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $hasChildMotherProvision
      */
-    public function setHasChildMotherProvision(bool $hasChildMotherProvision = null)
+    public function setHasChildMotherProvision(?bool $hasChildMotherProvision = null)
     {
         $this->setProperty('hasChildMotherProvision', $hasChildMotherProvision);
     }
@@ -260,7 +260,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $hasChildcarePlaces
      */
-    public function setHasChildcarePlaces(bool $hasChildcarePlaces = null)
+    public function setHasChildcarePlaces(?bool $hasChildcarePlaces = null)
     {
         $this->setProperty('hasChildcarePlaces', $hasChildcarePlaces);
     }
@@ -276,7 +276,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $specialSchoolAccommodation
      */
-    public function setSpecialSchoolAccommodation(string $specialSchoolAccommodation = null)
+    public function setSpecialSchoolAccommodation(?string $specialSchoolAccommodation = null)
     {
         $this->setProperty('specialSchoolAccommodation', $specialSchoolAccommodation);
     }
@@ -292,7 +292,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxDayPupils
      */
-    public function setSpecialSchoolMaxDayPupils(int $specialSchoolMaxDayPupils = null)
+    public function setSpecialSchoolMaxDayPupils(?int $specialSchoolMaxDayPupils = null)
     {
         $this->setProperty('specialSchoolMaxDayPupils', $specialSchoolMaxDayPupils);
     }
@@ -308,7 +308,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxBoarders
      */
-    public function setSpecialSchoolMaxBoarders(int $specialSchoolMaxBoarders = null)
+    public function setSpecialSchoolMaxBoarders(?int $specialSchoolMaxBoarders = null)
     {
         $this->setProperty('specialSchoolMaxBoarders', $specialSchoolMaxBoarders);
     }
@@ -324,7 +324,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMinMaleAge
      */
-    public function setSpecialSchoolMinMaleAge(int $specialSchoolMinMaleAge = null)
+    public function setSpecialSchoolMinMaleAge(?int $specialSchoolMinMaleAge = null)
     {
         $this->setProperty('specialSchoolMinMaleAge', $specialSchoolMinMaleAge);
     }
@@ -340,7 +340,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxMaleAge
      */
-    public function setSpecialSchoolMaxMaleAge(int $specialSchoolMaxMaleAge = null)
+    public function setSpecialSchoolMaxMaleAge(?int $specialSchoolMaxMaleAge = null)
     {
         $this->setProperty('specialSchoolMaxMaleAge', $specialSchoolMaxMaleAge);
     }
@@ -356,7 +356,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMinFemaleAge
      */
-    public function setSpecialSchoolMinFemaleAge(int $specialSchoolMinFemaleAge = null)
+    public function setSpecialSchoolMinFemaleAge(?int $specialSchoolMinFemaleAge = null)
     {
         $this->setProperty('specialSchoolMinFemaleAge', $specialSchoolMinFemaleAge);
     }
@@ -372,7 +372,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param int $specialSchoolMaxFemaleAge
      */
-    public function setSpecialSchoolMaxFemaleAge(int $specialSchoolMaxFemaleAge = null)
+    public function setSpecialSchoolMaxFemaleAge(?int $specialSchoolMaxFemaleAge = null)
     {
         $this->setProperty('specialSchoolMaxFemaleAge', $specialSchoolMaxFemaleAge);
     }
@@ -388,7 +388,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $specialSchoolSenProvisions
      */
-    public function setSpecialSchoolSenProvisions(string $specialSchoolSenProvisions = null)
+    public function setSpecialSchoolSenProvisions(?string $specialSchoolSenProvisions = null)
     {
         $this->setProperty('specialSchoolSenProvisions', $specialSchoolSenProvisions);
     }
@@ -404,7 +404,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \DateTime $censusSchoolOpeningDate
      */
-    public function setCensusSchoolOpeningDate(\DateTime $censusSchoolOpeningDate = null)
+    public function setCensusSchoolOpeningDate(?\DateTime $censusSchoolOpeningDate = null)
     {
         $this->setProperty('censusSchoolOpeningDate', $censusSchoolOpeningDate);
     }
@@ -420,7 +420,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $weeklyHoursOpen
      */
-    public function setWeeklyHoursOpen(string $weeklyHoursOpen = null)
+    public function setWeeklyHoursOpen(?string $weeklyHoursOpen = null)
     {
         $this->setProperty('weeklyHoursOpen', $weeklyHoursOpen);
     }

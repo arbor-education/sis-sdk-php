@@ -24,7 +24,7 @@ class InterventionReview extends ModelBase
      * @return InterventionReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class InterventionReview extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
+    public function setIntervention(?\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -82,7 +82,7 @@ class InterventionReview extends ModelBase
     /**
      * @param \DateTime $reviewDueDate
      */
-    public function setReviewDueDate(\DateTime $reviewDueDate = null)
+    public function setReviewDueDate(?\DateTime $reviewDueDate = null)
     {
         $this->setProperty('reviewDueDate', $reviewDueDate);
     }
@@ -98,7 +98,7 @@ class InterventionReview extends ModelBase
     /**
      * @param \DateTime $reviewCompletedDate
      */
-    public function setReviewCompletedDate(\DateTime $reviewCompletedDate = null)
+    public function setReviewCompletedDate(?\DateTime $reviewCompletedDate = null)
     {
         $this->setProperty('reviewCompletedDate', $reviewCompletedDate);
     }
@@ -114,7 +114,7 @@ class InterventionReview extends ModelBase
     /**
      * @param string $review
      */
-    public function setReview(string $review = null)
+    public function setReview(?string $review = null)
     {
         $this->setProperty('review', $review);
     }
@@ -130,7 +130,7 @@ class InterventionReview extends ModelBase
     /**
      * @param string $recommendations
      */
-    public function setRecommendations(string $recommendations = null)
+    public function setRecommendations(?string $recommendations = null)
     {
         $this->setProperty('recommendations', $recommendations);
     }

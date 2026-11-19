@@ -18,7 +18,7 @@ class Allowance extends ModelBase
      * @return Allowance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Allowance extends ModelBase
     /**
      * @param string $allowanceName
      */
-    public function setAllowanceName(string $allowanceName = null)
+    public function setAllowanceName(?string $allowanceName = null)
     {
         $this->setProperty('allowanceName', $allowanceName);
     }
@@ -76,7 +76,7 @@ class Allowance extends ModelBase
     /**
      * @param string $allowanceCode
      */
-    public function setAllowanceCode(string $allowanceCode = null)
+    public function setAllowanceCode(?string $allowanceCode = null)
     {
         $this->setProperty('allowanceCode', $allowanceCode);
     }

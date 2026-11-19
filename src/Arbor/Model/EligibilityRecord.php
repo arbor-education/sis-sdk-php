@@ -26,7 +26,7 @@ class EligibilityRecord extends ModelBase
      * @return EligibilityRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \Arbor\Model\Eligibility $eligibility
      */
-    public function setEligibility(\Arbor\Model\Eligibility $eligibility = null)
+    public function setEligibility(?\Arbor\Model\Eligibility $eligibility = null)
     {
         $this->setProperty('eligibility', $eligibility);
     }
@@ -84,7 +84,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\Arbor\Model\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -100,7 +100,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -116,7 +116,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,7 +132,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \DateTime $lastVerifiedDate
      */
-    public function setLastVerifiedDate(\DateTime $lastVerifiedDate = null)
+    public function setLastVerifiedDate(?\DateTime $lastVerifiedDate = null)
     {
         $this->setProperty('lastVerifiedDate', $lastVerifiedDate);
     }
@@ -148,7 +148,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \DateTime $nextCheckDate
      */
-    public function setNextCheckDate(\DateTime $nextCheckDate = null)
+    public function setNextCheckDate(?\DateTime $nextCheckDate = null)
     {
         $this->setProperty('nextCheckDate', $nextCheckDate);
     }

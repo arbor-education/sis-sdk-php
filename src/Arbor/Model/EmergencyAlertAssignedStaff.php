@@ -18,7 +18,7 @@ class EmergencyAlertAssignedStaff extends ModelBase
      * @return EmergencyAlertAssignedStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class EmergencyAlertAssignedStaff extends ModelBase
     /**
      * @param \Arbor\Model\EmergencyAlert $emergencyAlert
      */
-    public function setEmergencyAlert(\Arbor\Model\EmergencyAlert $emergencyAlert = null)
+    public function setEmergencyAlert(?\Arbor\Model\EmergencyAlert $emergencyAlert = null)
     {
         $this->setProperty('emergencyAlert', $emergencyAlert);
     }
@@ -76,7 +76,7 @@ class EmergencyAlertAssignedStaff extends ModelBase
     /**
      * @param \Arbor\Model\Staff $assignedStaff
      */
-    public function setAssignedStaff(\Arbor\Model\Staff $assignedStaff = null)
+    public function setAssignedStaff(?\Arbor\Model\Staff $assignedStaff = null)
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }

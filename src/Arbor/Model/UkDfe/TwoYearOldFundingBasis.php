@@ -20,7 +20,7 @@ class TwoYearOldFundingBasis extends ModelBase
      * @return TwoYearOldFundingBasis[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class TwoYearOldFundingBasis extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -78,7 +78,7 @@ class TwoYearOldFundingBasis extends ModelBase
     /**
      * @param string $fundingBasis
      */
-    public function setFundingBasis(string $fundingBasis = null)
+    public function setFundingBasis(?string $fundingBasis = null)
     {
         $this->setProperty('fundingBasis', $fundingBasis);
     }

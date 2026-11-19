@@ -28,7 +28,7 @@ class CustomReportScopeFilter extends ModelBase
      * @return CustomReportScopeFilter[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param \Arbor\Model\CustomReportScope $customReportScope
      */
-    public function setCustomReportScope(\Arbor\Model\CustomReportScope $customReportScope = null)
+    public function setCustomReportScope(?\Arbor\Model\CustomReportScope $customReportScope = null)
     {
         $this->setProperty('customReportScope', $customReportScope);
     }
@@ -86,7 +86,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass(string $fieldClass = null)
+    public function setFieldClass(?string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -102,7 +102,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams(string $fieldParams = null)
+    public function setFieldParams(?string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -118,7 +118,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass(string $transformationClass = null)
+    public function setTransformationClass(?string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -134,7 +134,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass(string $conditionClass = null)
+    public function setConditionClass(?string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -150,7 +150,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams(string $conditionParams = null)
+    public function setConditionParams(?string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
@@ -166,7 +166,7 @@ class CustomReportScopeFilter extends ModelBase
     /**
      * @param int $filterGroupIndex
      */
-    public function setFilterGroupIndex(int $filterGroupIndex = null)
+    public function setFilterGroupIndex(?int $filterGroupIndex = null)
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }

@@ -18,7 +18,7 @@ class StripePayer extends ModelBase
      * @return StripePayer[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class StripePayer extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail(string $email = null)
+    public function setEmail(?string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -76,7 +76,7 @@ class StripePayer extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

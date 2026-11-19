@@ -38,7 +38,7 @@ class ReportCardBatchCurriculum extends ModelBase
      * @return ReportCardBatchCurriculum[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -96,7 +96,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(int $order = null)
+    public function setOrder(?int $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -112,7 +112,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
+    public function setCurriculum(?\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -128,7 +128,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param bool $includeStatements
      */
-    public function setIncludeStatements(bool $includeStatements = null)
+    public function setIncludeStatements(?bool $includeStatements = null)
     {
         $this->setProperty('includeStatements', $includeStatements);
     }
@@ -144,7 +144,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\AchievementLevel $lowerAchievementLevel
      */
-    public function setLowerAchievementLevel(\Arbor\Model\AchievementLevel $lowerAchievementLevel = null)
+    public function setLowerAchievementLevel(?\Arbor\Model\AchievementLevel $lowerAchievementLevel = null)
     {
         $this->setProperty('lowerAchievementLevel', $lowerAchievementLevel);
     }
@@ -160,7 +160,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param float $lowerAchievementValue
      */
-    public function setLowerAchievementValue(float $lowerAchievementValue = null)
+    public function setLowerAchievementValue(?float $lowerAchievementValue = null)
     {
         $this->setProperty('lowerAchievementValue', $lowerAchievementValue);
     }
@@ -176,7 +176,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\AchievementLevel $upperAchievementLevel
      */
-    public function setUpperAchievementLevel(\Arbor\Model\AchievementLevel $upperAchievementLevel = null)
+    public function setUpperAchievementLevel(?\Arbor\Model\AchievementLevel $upperAchievementLevel = null)
     {
         $this->setProperty('upperAchievementLevel', $upperAchievementLevel);
     }
@@ -192,7 +192,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param float $upperAchievementValue
      */
-    public function setUpperAchievementValue(float $upperAchievementValue = null)
+    public function setUpperAchievementValue(?float $upperAchievementValue = null)
     {
         $this->setProperty('upperAchievementValue', $upperAchievementValue);
     }
@@ -208,7 +208,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param string $reportingMode
      */
-    public function setReportingMode(string $reportingMode = null)
+    public function setReportingMode(?string $reportingMode = null)
     {
         $this->setProperty('reportingMode', $reportingMode);
     }
@@ -224,7 +224,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param bool $includeSummativeGrade
      */
-    public function setIncludeSummativeGrade(bool $includeSummativeGrade = null)
+    public function setIncludeSummativeGrade(?bool $includeSummativeGrade = null)
     {
         $this->setProperty('includeSummativeGrade', $includeSummativeGrade);
     }
@@ -240,7 +240,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param string $summativeGradeType
      */
-    public function setSummativeGradeType(string $summativeGradeType = null)
+    public function setSummativeGradeType(?string $summativeGradeType = null)
     {
         $this->setProperty('summativeGradeType', $summativeGradeType);
     }
@@ -256,7 +256,7 @@ class ReportCardBatchCurriculum extends ModelBase
     /**
      * @param \Arbor\Model\AchievementLevelSet $summativeGradeAchievementLevelSet
      */
-    public function setSummativeGradeAchievementLevelSet(\Arbor\Model\AchievementLevelSet $summativeGradeAchievementLevelSet = null)
+    public function setSummativeGradeAchievementLevelSet(?\Arbor\Model\AchievementLevelSet $summativeGradeAchievementLevelSet = null)
     {
         $this->setProperty('summativeGradeAchievementLevelSet', $summativeGradeAchievementLevelSet);
     }

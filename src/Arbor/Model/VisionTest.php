@@ -22,7 +22,7 @@ class VisionTest extends ModelBase
      * @return VisionTest[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class VisionTest extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class VisionTest extends ModelBase
     /**
      * @param \DateTime $testDate
      */
-    public function setTestDate(\DateTime $testDate = null)
+    public function setTestDate(?\DateTime $testDate = null)
     {
         $this->setProperty('testDate', $testDate);
     }
@@ -96,7 +96,7 @@ class VisionTest extends ModelBase
     /**
      * @param string $colorBlindness
      */
-    public function setColorBlindness(string $colorBlindness = null)
+    public function setColorBlindness(?string $colorBlindness = null)
     {
         $this->setProperty('colorBlindness', $colorBlindness);
     }
@@ -112,7 +112,7 @@ class VisionTest extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

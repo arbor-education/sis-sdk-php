@@ -18,7 +18,7 @@ class BursaryLevel extends ModelBase
      * @return BursaryLevel[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class BursaryLevel extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -76,7 +76,7 @@ class BursaryLevel extends ModelBase
     /**
      * @param \Arbor\Model\BursaryType $bursaryType
      */
-    public function setBursaryType(\Arbor\Model\BursaryType $bursaryType = null)
+    public function setBursaryType(?\Arbor\Model\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }

@@ -26,7 +26,7 @@ class StudentSchoolwork extends ModelBase
      * @return StudentSchoolwork[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class StudentSchoolwork extends ModelBase
     /**
      * @param \Arbor\Model\Schoolwork $schoolwork
      */
-    public function setSchoolwork(\Arbor\Model\Schoolwork $schoolwork = null)
+    public function setSchoolwork(?\Arbor\Model\Schoolwork $schoolwork = null)
     {
         $this->setProperty('schoolwork', $schoolwork);
     }
@@ -84,7 +84,7 @@ class StudentSchoolwork extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -100,7 +100,7 @@ class StudentSchoolwork extends ModelBase
     /**
      * @param \DateTime $dueDatetime
      */
-    public function setDueDatetime(\DateTime $dueDatetime = null)
+    public function setDueDatetime(?\DateTime $dueDatetime = null)
     {
         $this->setProperty('dueDatetime', $dueDatetime);
     }
@@ -116,7 +116,7 @@ class StudentSchoolwork extends ModelBase
     /**
      * @param \DateTime $submittedDatetime
      */
-    public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
+    public function setSubmittedDatetime(?\DateTime $submittedDatetime = null)
     {
         $this->setProperty('submittedDatetime', $submittedDatetime);
     }
@@ -132,7 +132,7 @@ class StudentSchoolwork extends ModelBase
     /**
      * @param \DateTime $markingCompletedDatetime
      */
-    public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
+    public function setMarkingCompletedDatetime(?\DateTime $markingCompletedDatetime = null)
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }
@@ -148,7 +148,7 @@ class StudentSchoolwork extends ModelBase
     /**
      * @param \DateTime $notSubmittedDatetime
      */
-    public function setNotSubmittedDatetime(\DateTime $notSubmittedDatetime = null)
+    public function setNotSubmittedDatetime(?\DateTime $notSubmittedDatetime = null)
     {
         $this->setProperty('notSubmittedDatetime', $notSubmittedDatetime);
     }

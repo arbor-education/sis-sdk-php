@@ -46,7 +46,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
      * @return SchoolWorkforceCensusReturn[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -88,7 +88,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(\Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(?\Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
@@ -104,7 +104,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -120,7 +120,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $returnFilename
      */
-    public function setReturnFilename(string $returnFilename = null)
+    public function setReturnFilename(?string $returnFilename = null)
     {
         $this->setProperty('returnFilename', $returnFilename);
     }
@@ -136,7 +136,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param string $statusDescription
      */
-    public function setStatusDescription(string $statusDescription = null)
+    public function setStatusDescription(?string $statusDescription = null)
     {
         $this->setProperty('statusDescription', $statusDescription);
     }
@@ -152,7 +152,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param int $returnFilenameSequenceNumber
      */
-    public function setReturnFilenameSequenceNumber(int $returnFilenameSequenceNumber = null)
+    public function setReturnFilenameSequenceNumber(?int $returnFilenameSequenceNumber = null)
     {
         $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
@@ -168,7 +168,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $xsltError
      */
-    public function setXsltError(bool $xsltError = null)
+    public function setXsltError(?bool $xsltError = null)
     {
         $this->setProperty('xsltError', $xsltError);
     }
@@ -184,7 +184,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $dataError
      */
-    public function setDataError(bool $dataError = null)
+    public function setDataError(?bool $dataError = null)
     {
         $this->setProperty('dataError', $dataError);
     }
@@ -200,7 +200,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isDryRun
      */
-    public function setIsDryRun(bool $isDryRun = null)
+    public function setIsDryRun(?bool $isDryRun = null)
     {
         $this->setProperty('isDryRun', $isDryRun);
     }
@@ -216,7 +216,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \DateTime $dataExportStartedDatetime
      */
-    public function setDataExportStartedDatetime(\DateTime $dataExportStartedDatetime = null)
+    public function setDataExportStartedDatetime(?\DateTime $dataExportStartedDatetime = null)
     {
         $this->setProperty('dataExportStartedDatetime', $dataExportStartedDatetime);
     }
@@ -232,7 +232,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \DateTime $dataExportCompletedDatetime
      */
-    public function setDataExportCompletedDatetime(\DateTime $dataExportCompletedDatetime = null)
+    public function setDataExportCompletedDatetime(?\DateTime $dataExportCompletedDatetime = null)
     {
         $this->setProperty('dataExportCompletedDatetime', $dataExportCompletedDatetime);
     }
@@ -248,7 +248,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \DateTime $schoolApprovedDatetime
      */
-    public function setSchoolApprovedDatetime(\DateTime $schoolApprovedDatetime = null)
+    public function setSchoolApprovedDatetime(?\DateTime $schoolApprovedDatetime = null)
     {
         $this->setProperty('schoolApprovedDatetime', $schoolApprovedDatetime);
     }
@@ -264,7 +264,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \DateTime $localAuthorityRejectedDatetime
      */
-    public function setLocalAuthorityRejectedDatetime(\DateTime $localAuthorityRejectedDatetime = null)
+    public function setLocalAuthorityRejectedDatetime(?\DateTime $localAuthorityRejectedDatetime = null)
     {
         $this->setProperty('localAuthorityRejectedDatetime', $localAuthorityRejectedDatetime);
     }
@@ -280,7 +280,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \DateTime $localAuthorityAcceptedDatetime
      */
-    public function setLocalAuthorityAcceptedDatetime(\DateTime $localAuthorityAcceptedDatetime = null)
+    public function setLocalAuthorityAcceptedDatetime(?\DateTime $localAuthorityAcceptedDatetime = null)
     {
         $this->setProperty('localAuthorityAcceptedDatetime', $localAuthorityAcceptedDatetime);
     }
@@ -296,7 +296,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param bool $isStaffContractInformationExcluded
      */
-    public function setIsStaffContractInformationExcluded(bool $isStaffContractInformationExcluded = null)
+    public function setIsStaffContractInformationExcluded(?bool $isStaffContractInformationExcluded = null)
     {
         $this->setProperty('isStaffContractInformationExcluded', $isStaffContractInformationExcluded);
     }
@@ -312,7 +312,7 @@ class SchoolWorkforceCensusReturn extends ModelBase
     /**
      * @param \DateTime $submittedDatetime
      */
-    public function setSubmittedDatetime(\DateTime $submittedDatetime = null)
+    public function setSubmittedDatetime(?\DateTime $submittedDatetime = null)
     {
         $this->setProperty('submittedDatetime', $submittedDatetime);
     }

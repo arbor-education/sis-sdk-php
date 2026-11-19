@@ -20,7 +20,7 @@ class CompanyStaff extends ModelBase
      * @return CompanyStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class CompanyStaff extends ModelBase
     /**
      * @param \Arbor\Model\Company $company
      */
-    public function setCompany(\Arbor\Model\Company $company = null)
+    public function setCompany(?\Arbor\Model\Company $company = null)
     {
         $this->setProperty('company', $company);
     }
@@ -78,7 +78,7 @@ class CompanyStaff extends ModelBase
     /**
      * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Arbor\Model\Person $person = null)
+    public function setPerson(?\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -94,7 +94,7 @@ class CompanyStaff extends ModelBase
     /**
      * @param string $position
      */
-    public function setPosition(string $position = null)
+    public function setPosition(?string $position = null)
     {
         $this->setProperty('position', $position);
     }

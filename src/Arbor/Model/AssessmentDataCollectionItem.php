@@ -30,7 +30,7 @@ class AssessmentDataCollectionItem extends ModelBase
      * @return AssessmentDataCollectionItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataCollection $assessmentDataCollection
      */
-    public function setAssessmentDataCollection(\Arbor\Model\AssessmentDataCollection $assessmentDataCollection = null)
+    public function setAssessmentDataCollection(?\Arbor\Model\AssessmentDataCollection $assessmentDataCollection = null)
     {
         $this->setProperty('assessmentDataCollection', $assessmentDataCollection);
     }
@@ -88,7 +88,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $assessmentEntity
      */
-    public function setAssessmentEntity(\Arbor\Model\ModelBase $assessmentEntity = null)
+    public function setAssessmentEntity(?\Arbor\Model\ModelBase $assessmentEntity = null)
     {
         $this->setProperty('assessmentEntity', $assessmentEntity);
     }
@@ -104,7 +104,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $studentGroup
      */
-    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
+    public function setStudentGroup(?\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }
@@ -120,7 +120,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param string $collectionType
      */
-    public function setCollectionType(string $collectionType = null)
+    public function setCollectionType(?string $collectionType = null)
     {
         $this->setProperty('collectionType', $collectionType);
     }
@@ -136,7 +136,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param \DateTime $deadlineDate
      */
-    public function setDeadlineDate(\DateTime $deadlineDate = null)
+    public function setDeadlineDate(?\DateTime $deadlineDate = null)
     {
         $this->setProperty('deadlineDate', $deadlineDate);
     }
@@ -152,7 +152,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param int $completionNumerator
      */
-    public function setCompletionNumerator(int $completionNumerator = null)
+    public function setCompletionNumerator(?int $completionNumerator = null)
     {
         $this->setProperty('completionNumerator', $completionNumerator);
     }
@@ -168,7 +168,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param int $completionDenominator
      */
-    public function setCompletionDenominator(int $completionDenominator = null)
+    public function setCompletionDenominator(?int $completionDenominator = null)
     {
         $this->setProperty('completionDenominator', $completionDenominator);
     }
@@ -184,7 +184,7 @@ class AssessmentDataCollectionItem extends ModelBase
     /**
      * @param bool $deriveAssignedStaff
      */
-    public function setDeriveAssignedStaff(bool $deriveAssignedStaff = null)
+    public function setDeriveAssignedStaff(?bool $deriveAssignedStaff = null)
     {
         $this->setProperty('deriveAssignedStaff', $deriveAssignedStaff);
     }

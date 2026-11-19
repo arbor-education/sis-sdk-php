@@ -20,7 +20,7 @@ class UserFavouritePage extends ModelBase
      * @return UserFavouritePage[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UserFavouritePage extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -78,7 +78,7 @@ class UserFavouritePage extends ModelBase
     /**
      * @param string $route
      */
-    public function setRoute(string $route = null)
+    public function setRoute(?string $route = null)
     {
         $this->setProperty('route', $route);
     }
@@ -94,7 +94,7 @@ class UserFavouritePage extends ModelBase
     /**
      * @param string $customName
      */
-    public function setCustomName(string $customName = null)
+    public function setCustomName(?string $customName = null)
     {
         $this->setProperty('customName', $customName);
     }

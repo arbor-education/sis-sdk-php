@@ -18,7 +18,7 @@ class CourtOrderParty extends ModelBase
      * @return CourtOrderParty[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class CourtOrderParty extends ModelBase
     /**
      * @param \Arbor\Model\CourtOrder $courtOrder
      */
-    public function setCourtOrder(\Arbor\Model\CourtOrder $courtOrder = null)
+    public function setCourtOrder(?\Arbor\Model\CourtOrder $courtOrder = null)
     {
         $this->setProperty('courtOrder', $courtOrder);
     }
@@ -76,7 +76,7 @@ class CourtOrderParty extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $party
      */
-    public function setParty(\Arbor\Model\ModelBase $party = null)
+    public function setParty(?\Arbor\Model\ModelBase $party = null)
     {
         $this->setProperty('party', $party);
     }

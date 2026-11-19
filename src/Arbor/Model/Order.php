@@ -24,7 +24,7 @@ class Order extends ModelBase
      * @return Order[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Order extends ModelBase
     /**
      * @param string $orderType
      */
-    public function setOrderType(string $orderType = null)
+    public function setOrderType(?string $orderType = null)
     {
         $this->setProperty('orderType', $orderType);
     }
@@ -82,7 +82,7 @@ class Order extends ModelBase
     /**
      * @param string $paymentStatus
      */
-    public function setPaymentStatus(string $paymentStatus = null)
+    public function setPaymentStatus(?string $paymentStatus = null)
     {
         $this->setProperty('paymentStatus', $paymentStatus);
     }
@@ -98,7 +98,7 @@ class Order extends ModelBase
     /**
      * @param string $fulfillmentStatus
      */
-    public function setFulfillmentStatus(string $fulfillmentStatus = null)
+    public function setFulfillmentStatus(?string $fulfillmentStatus = null)
     {
         $this->setProperty('fulfillmentStatus', $fulfillmentStatus);
     }
@@ -114,7 +114,7 @@ class Order extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -130,7 +130,7 @@ class Order extends ModelBase
     /**
      * @param string $client
      */
-    public function setClient(string $client = null)
+    public function setClient(?string $client = null)
     {
         $this->setProperty('client', $client);
     }

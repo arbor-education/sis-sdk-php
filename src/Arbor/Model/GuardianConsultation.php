@@ -24,7 +24,7 @@ class GuardianConsultation extends ModelBase
      * @return GuardianConsultation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class GuardianConsultation extends ModelBase
     /**
      * @param string $guardianConsultationName
      */
-    public function setGuardianConsultationName(string $guardianConsultationName = null)
+    public function setGuardianConsultationName(?string $guardianConsultationName = null)
     {
         $this->setProperty('guardianConsultationName', $guardianConsultationName);
     }
@@ -82,7 +82,7 @@ class GuardianConsultation extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -98,7 +98,7 @@ class GuardianConsultation extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -114,7 +114,7 @@ class GuardianConsultation extends ModelBase
     /**
      * @param \DateTime $selfSchedulingOpensDatetime
      */
-    public function setSelfSchedulingOpensDatetime(\DateTime $selfSchedulingOpensDatetime = null)
+    public function setSelfSchedulingOpensDatetime(?\DateTime $selfSchedulingOpensDatetime = null)
     {
         $this->setProperty('selfSchedulingOpensDatetime', $selfSchedulingOpensDatetime);
     }
@@ -130,7 +130,7 @@ class GuardianConsultation extends ModelBase
     /**
      * @param \DateTime $selfSchedulingClosesDatetime
      */
-    public function setSelfSchedulingClosesDatetime(\DateTime $selfSchedulingClosesDatetime = null)
+    public function setSelfSchedulingClosesDatetime(?\DateTime $selfSchedulingClosesDatetime = null)
     {
         $this->setProperty('selfSchedulingClosesDatetime', $selfSchedulingClosesDatetime);
     }

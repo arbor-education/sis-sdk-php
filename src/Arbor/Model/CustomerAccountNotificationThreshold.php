@@ -20,7 +20,7 @@ class CustomerAccountNotificationThreshold extends ModelBase
      * @return CustomerAccountNotificationThreshold[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class CustomerAccountNotificationThreshold extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(?\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -78,7 +78,7 @@ class CustomerAccountNotificationThreshold extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -94,7 +94,7 @@ class CustomerAccountNotificationThreshold extends ModelBase
     /**
      * @param string $threshold
      */
-    public function setThreshold(string $threshold = null)
+    public function setThreshold(?string $threshold = null)
     {
         $this->setProperty('threshold', $threshold);
     }

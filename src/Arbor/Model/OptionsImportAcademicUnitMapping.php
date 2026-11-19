@@ -22,7 +22,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
      * @return OptionsImportAcademicUnitMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param \Arbor\Model\OptionsImportResult $optionsImportResult
      */
-    public function setOptionsImportResult(\Arbor\Model\OptionsImportResult $optionsImportResult = null)
+    public function setOptionsImportResult(?\Arbor\Model\OptionsImportResult $optionsImportResult = null)
     {
         $this->setProperty('optionsImportResult', $optionsImportResult);
     }
@@ -80,7 +80,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param string $academicUnitName
      */
-    public function setAcademicUnitName(string $academicUnitName = null)
+    public function setAcademicUnitName(?string $academicUnitName = null)
     {
         $this->setProperty('academicUnitName', $academicUnitName);
     }
@@ -96,7 +96,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param string $mappingAction
      */
-    public function setMappingAction(string $mappingAction = null)
+    public function setMappingAction(?string $mappingAction = null)
     {
         $this->setProperty('mappingAction', $mappingAction);
     }
@@ -112,7 +112,7 @@ class OptionsImportAcademicUnitMapping extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $mappedAcademicUnit
      */
-    public function setMappedAcademicUnit(\Arbor\Model\AcademicUnit $mappedAcademicUnit = null)
+    public function setMappedAcademicUnit(?\Arbor\Model\AcademicUnit $mappedAcademicUnit = null)
     {
         $this->setProperty('mappedAcademicUnit', $mappedAcademicUnit);
     }

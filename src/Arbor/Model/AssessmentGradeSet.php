@@ -22,7 +22,7 @@ class AssessmentGradeSet extends ModelBase
      * @return AssessmentGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -80,7 +80,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
+    public function setGradeSet(?\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -96,7 +96,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param bool $isDefault
      */
-    public function setIsDefault(bool $isDefault = null)
+    public function setIsDefault(?bool $isDefault = null)
     {
         $this->setProperty('isDefault', $isDefault);
     }
@@ -112,7 +112,7 @@ class AssessmentGradeSet extends ModelBase
     /**
      * @param bool $isOriginal
      */
-    public function setIsOriginal(bool $isOriginal = null)
+    public function setIsOriginal(?bool $isOriginal = null)
     {
         $this->setProperty('isOriginal', $isOriginal);
     }

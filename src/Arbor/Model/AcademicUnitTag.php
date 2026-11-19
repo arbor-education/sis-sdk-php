@@ -18,7 +18,7 @@ class AcademicUnitTag extends ModelBase
      * @return AcademicUnitTag[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicUnitTag extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -76,7 +76,7 @@ class AcademicUnitTag extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $relatedObject
      */
-    public function setRelatedObject(\Arbor\Model\ModelBase $relatedObject = null)
+    public function setRelatedObject(?\Arbor\Model\ModelBase $relatedObject = null)
     {
         $this->setProperty('relatedObject', $relatedObject);
     }
