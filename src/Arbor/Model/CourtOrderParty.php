@@ -66,7 +66,7 @@ class CourtOrderParty extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getParty()
     {
@@ -74,9 +74,9 @@ class CourtOrderParty extends ModelBase
     }
 
     /**
-     * @param ModelBase $party
+     * @param \Arbor\Model\ModelBase $party
      */
-    public function setParty(\ModelBase $party = null)
+    public function setParty(\Arbor\Model\ModelBase $party = null)
     {
         $this->setProperty('party', $party);
     }

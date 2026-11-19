@@ -52,7 +52,7 @@ class MessageDraftRecipient extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getMessageDraft()
     {
@@ -60,15 +60,15 @@ class MessageDraftRecipient extends ModelBase
     }
 
     /**
-     * @param ModelBase $messageDraft
+     * @param \Arbor\Model\ModelBase $messageDraft
      */
-    public function setMessageDraft(\ModelBase $messageDraft = null)
+    public function setMessageDraft(\Arbor\Model\ModelBase $messageDraft = null)
     {
         $this->setProperty('messageDraft', $messageDraft);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRecipient()
     {
@@ -76,9 +76,9 @@ class MessageDraftRecipient extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }

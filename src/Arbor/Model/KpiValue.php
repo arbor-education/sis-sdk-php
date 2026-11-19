@@ -148,7 +148,7 @@ class KpiValue extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getBasis()
     {
@@ -156,9 +156,9 @@ class KpiValue extends ModelBase
     }
 
     /**
-     * @param ModelBase $basis
+     * @param \Arbor\Model\ModelBase $basis
      */
-    public function setBasis(\ModelBase $basis = null)
+    public function setBasis(\Arbor\Model\ModelBase $basis = null)
     {
         $this->setProperty('basis', $basis);
     }

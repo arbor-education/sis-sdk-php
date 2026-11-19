@@ -70,7 +70,7 @@ class SchoolShopProductPrice extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEligible()
     {
@@ -78,9 +78,9 @@ class SchoolShopProductPrice extends ModelBase
     }
 
     /**
-     * @param ModelBase $eligible
+     * @param \Arbor\Model\ModelBase $eligible
      */
-    public function setEligible(\ModelBase $eligible = null)
+    public function setEligible(\Arbor\Model\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }

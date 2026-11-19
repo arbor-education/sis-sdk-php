@@ -50,7 +50,7 @@ class QualificationElementDisallowedCombination extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getFirstElement()
     {
@@ -58,15 +58,15 @@ class QualificationElementDisallowedCombination extends ModelBase
     }
 
     /**
-     * @param ModelBase $firstElement
+     * @param \Arbor\Model\ModelBase $firstElement
      */
-    public function setFirstElement(\ModelBase $firstElement = null)
+    public function setFirstElement(\Arbor\Model\ModelBase $firstElement = null)
     {
         $this->setProperty('firstElement', $firstElement);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSecondElement()
     {
@@ -74,9 +74,9 @@ class QualificationElementDisallowedCombination extends ModelBase
     }
 
     /**
-     * @param ModelBase $secondElement
+     * @param \Arbor\Model\ModelBase $secondElement
      */
-    public function setSecondElement(\ModelBase $secondElement = null)
+    public function setSecondElement(\Arbor\Model\ModelBase $secondElement = null)
     {
         $this->setProperty('secondElement', $secondElement);
     }

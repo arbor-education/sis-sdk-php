@@ -54,7 +54,7 @@ class SendingProfile extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOwner()
     {
@@ -62,9 +62,9 @@ class SendingProfile extends ModelBase
     }
 
     /**
-     * @param ModelBase $owner
+     * @param \Arbor\Model\ModelBase $owner
      */
-    public function setOwner(\ModelBase $owner = null)
+    public function setOwner(\Arbor\Model\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }

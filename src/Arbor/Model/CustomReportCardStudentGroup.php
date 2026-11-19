@@ -68,7 +68,7 @@ class CustomReportCardStudentGroup extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getStudentGroup()
     {
@@ -76,9 +76,9 @@ class CustomReportCardStudentGroup extends ModelBase
     }
 
     /**
-     * @param ModelBase $studentGroup
+     * @param \Arbor\Model\ModelBase $studentGroup
      */
-    public function setStudentGroup(\ModelBase $studentGroup = null)
+    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

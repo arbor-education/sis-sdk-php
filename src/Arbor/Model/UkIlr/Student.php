@@ -86,7 +86,7 @@ class Student extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPrimaryLlddAndHealthProblem()
     {
@@ -94,9 +94,9 @@ class Student extends ModelBase
     }
 
     /**
-     * @param ModelBase $primaryLlddAndHealthProblem
+     * @param \Arbor\Model\ModelBase $primaryLlddAndHealthProblem
      */
-    public function setPrimaryLlddAndHealthProblem(\ModelBase $primaryLlddAndHealthProblem = null)
+    public function setPrimaryLlddAndHealthProblem(\Arbor\Model\ModelBase $primaryLlddAndHealthProblem = null)
     {
         $this->setProperty('primaryLlddAndHealthProblem', $primaryLlddAndHealthProblem);
     }

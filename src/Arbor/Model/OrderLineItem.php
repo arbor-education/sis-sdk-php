@@ -80,7 +80,7 @@ class OrderLineItem extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getItem()
     {
@@ -88,9 +88,9 @@ class OrderLineItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $item
+     * @param \Arbor\Model\ModelBase $item
      */
-    public function setItem(\ModelBase $item = null)
+    public function setItem(\Arbor\Model\ModelBase $item = null)
     {
         $this->setProperty('item', $item);
     }

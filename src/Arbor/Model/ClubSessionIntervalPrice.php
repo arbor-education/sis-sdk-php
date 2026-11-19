@@ -70,7 +70,7 @@ class ClubSessionIntervalPrice extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getGroup()
     {
@@ -78,9 +78,9 @@ class ClubSessionIntervalPrice extends ModelBase
     }
 
     /**
-     * @param ModelBase $group
+     * @param \Arbor\Model\ModelBase $group
      */
-    public function setGroup(\ModelBase $group = null)
+    public function setGroup(\Arbor\Model\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }

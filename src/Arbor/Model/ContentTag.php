@@ -72,7 +72,7 @@ class ContentTag extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTagged()
     {
@@ -80,9 +80,9 @@ class ContentTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $tagged
+     * @param \Arbor\Model\ModelBase $tagged
      */
-    public function setTagged(\ModelBase $tagged = null)
+    public function setTagged(\Arbor\Model\ModelBase $tagged = null)
     {
         $this->setProperty('tagged', $tagged);
     }
@@ -120,7 +120,7 @@ class ContentTag extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedBaseEntity()
     {
@@ -128,9 +128,9 @@ class ContentTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedBaseEntity
+     * @param \Arbor\Model\ModelBase $relatedBaseEntity
      */
-    public function setRelatedBaseEntity(\ModelBase $relatedBaseEntity = null)
+    public function setRelatedBaseEntity(\Arbor\Model\ModelBase $relatedBaseEntity = null)
     {
         $this->setProperty('relatedBaseEntity', $relatedBaseEntity);
     }

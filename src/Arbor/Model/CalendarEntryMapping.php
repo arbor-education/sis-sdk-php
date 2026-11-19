@@ -58,7 +58,7 @@ class CalendarEntryMapping extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvent()
     {
@@ -66,9 +66,9 @@ class CalendarEntryMapping extends ModelBase
     }
 
     /**
-     * @param ModelBase $event
+     * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -106,7 +106,7 @@ class CalendarEntryMapping extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getMapped()
     {
@@ -114,9 +114,9 @@ class CalendarEntryMapping extends ModelBase
     }
 
     /**
-     * @param ModelBase $mapped
+     * @param \Arbor\Model\ModelBase $mapped
      */
-    public function setMapped(\ModelBase $mapped = null)
+    public function setMapped(\Arbor\Model\ModelBase $mapped = null)
     {
         $this->setProperty('mapped', $mapped);
     }

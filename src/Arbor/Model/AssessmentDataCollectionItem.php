@@ -78,7 +78,7 @@ class AssessmentDataCollectionItem extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAssessmentEntity()
     {
@@ -86,15 +86,15 @@ class AssessmentDataCollectionItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $assessmentEntity
+     * @param \Arbor\Model\ModelBase $assessmentEntity
      */
-    public function setAssessmentEntity(\ModelBase $assessmentEntity = null)
+    public function setAssessmentEntity(\Arbor\Model\ModelBase $assessmentEntity = null)
     {
         $this->setProperty('assessmentEntity', $assessmentEntity);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getStudentGroup()
     {
@@ -102,9 +102,9 @@ class AssessmentDataCollectionItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $studentGroup
+     * @param \Arbor\Model\ModelBase $studentGroup
      */
-    public function setStudentGroup(\ModelBase $studentGroup = null)
+    public function setStudentGroup(\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

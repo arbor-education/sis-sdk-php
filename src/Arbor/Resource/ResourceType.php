@@ -50,6 +50,7 @@ class ResourceType
 	const ADMISSION_CYCLE = 'AdmissionCycle';
 	const ADMISSION_CYCLE_CATEGORY = 'AdmissionCycleCategory';
 	const ADMISSION_CYCLE_GROUP = 'AdmissionCycleGroup';
+	const ADMISSION_ENQUIRY = 'AdmissionEnquiry';
 	const ADMISSION_GROUP = 'AdmissionGroup';
 	const ADMISSION_GUARDIAN = 'AdmissionGuardian';
 	const ALERT = 'Alert';
@@ -587,6 +588,8 @@ class ResourceType
 	const STUDENT_FUNDING_TYPE = 'StudentFundingType';
 	const STUDENT_INTERVENTION = 'StudentIntervention';
 	const STUDENT_INTERVENTION_REVIEW = 'StudentInterventionReview';
+	const STUDENT_LEAVING_INTENTION = 'StudentLeavingIntention';
+	const STUDENT_LEAVING_INTENTION_TYPE = 'StudentLeavingIntentionType';
 	const STUDENT_LINKED_RELATIONSHIP = 'StudentLinkedRelationship';
 	const STUDENT_LINKED_RELATIONSHIP_TYPE = 'StudentLinkedRelationshipType';
 	const STUDENT_MEDICAL_RELATIONSHIP = 'StudentMedicalRelationship';
@@ -598,6 +601,8 @@ class ResourceType
 	const STUDENT_SCHOOLWORK_MARK = 'StudentSchoolworkMark';
 	const STUDENT = 'Student';
 	const STUDENT_EMPLOYMENT_RECORD = 'StudentEmploymentRecord';
+	const STUDENT_UNIVERSITY_RECORD = 'StudentUniversityRecord';
+	const STUDENT_TRAINING_PROVIDER_RECORD = 'StudentTrainingProviderRecord';
 	const STUDENT_ROOM_FEATURE_REQUIREMENT = 'StudentRoomFeatureRequirement';
 	const STUDENT_RECORD_CHANGE = 'StudentRecordChange';
 	const STRIPE_PAYOUT_INVOICE = 'StripePayoutInvoice';
@@ -641,6 +646,7 @@ class ResourceType
 	const TITLE = 'Title';
 	const TRAINING_COURSE = 'TrainingCourse';
 	const TRAINING_EVENT = 'TrainingEvent';
+	const TRAINING_PROVIDER = 'TrainingProvider';
 	const TRANSPORTATION_METHOD = 'TransportationMethod';
 	const UNENROLMENT_REASON = 'UnenrolmentReason';
 	const USER = 'User';

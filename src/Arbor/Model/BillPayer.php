@@ -54,7 +54,7 @@ class BillPayer extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLegalEntity()
     {
@@ -62,9 +62,9 @@ class BillPayer extends ModelBase
     }
 
     /**
-     * @param ModelBase $legalEntity
+     * @param \Arbor\Model\ModelBase $legalEntity
      */
-    public function setLegalEntity(\ModelBase $legalEntity = null)
+    public function setLegalEntity(\Arbor\Model\ModelBase $legalEntity = null)
     {
         $this->setProperty('legalEntity', $legalEntity);
     }

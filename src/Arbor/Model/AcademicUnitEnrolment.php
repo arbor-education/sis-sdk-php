@@ -177,7 +177,7 @@ class AcademicUnitEnrolment extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEnrolmentDependency()
     {
@@ -185,9 +185,9 @@ class AcademicUnitEnrolment extends ModelBase
     }
 
     /**
-     * @param ModelBase $enrolmentDependency
+     * @param \Arbor\Model\ModelBase $enrolmentDependency
      */
-    public function setEnrolmentDependency(\ModelBase $enrolmentDependency = null)
+    public function setEnrolmentDependency(\Arbor\Model\ModelBase $enrolmentDependency = null)
     {
         $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }

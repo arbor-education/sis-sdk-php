@@ -52,7 +52,7 @@ class CommunicationTag extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getCommunication()
     {
@@ -60,15 +60,15 @@ class CommunicationTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $communication
+     * @param \Arbor\Model\ModelBase $communication
      */
-    public function setCommunication(\ModelBase $communication = null)
+    public function setCommunication(\Arbor\Model\ModelBase $communication = null)
     {
         $this->setProperty('communication', $communication);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTaggedEntity()
     {
@@ -76,9 +76,9 @@ class CommunicationTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $taggedEntity
+     * @param \Arbor\Model\ModelBase $taggedEntity
      */
-    public function setTaggedEntity(\ModelBase $taggedEntity = null)
+    public function setTaggedEntity(\Arbor\Model\ModelBase $taggedEntity = null)
     {
         $this->setProperty('taggedEntity', $taggedEntity);
     }

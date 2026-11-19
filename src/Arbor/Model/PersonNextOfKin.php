@@ -68,7 +68,7 @@ class PersonNextOfKin extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedPerson()
     {
@@ -76,9 +76,9 @@ class PersonNextOfKin extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedPerson
+     * @param \Arbor\Model\ModelBase $relatedPerson
      */
-    public function setRelatedPerson(\ModelBase $relatedPerson = null)
+    public function setRelatedPerson(\Arbor\Model\ModelBase $relatedPerson = null)
     {
         $this->setProperty('relatedPerson', $relatedPerson);
     }

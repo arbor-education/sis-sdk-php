@@ -110,7 +110,7 @@ class IncomingEntityTransfer extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getImportedEntity()
     {
@@ -118,9 +118,9 @@ class IncomingEntityTransfer extends ModelBase
     }
 
     /**
-     * @param ModelBase $importedEntity
+     * @param \Arbor\Model\ModelBase $importedEntity
      */
-    public function setImportedEntity(\ModelBase $importedEntity = null)
+    public function setImportedEntity(\Arbor\Model\ModelBase $importedEntity = null)
     {
         $this->setProperty('importedEntity', $importedEntity);
     }

@@ -66,7 +66,7 @@ class TripEligibility extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEligibile()
     {
@@ -74,9 +74,9 @@ class TripEligibility extends ModelBase
     }
 
     /**
-     * @param ModelBase $eligibile
+     * @param \Arbor\Model\ModelBase $eligibile
      */
-    public function setEligibile(\ModelBase $eligibile = null)
+    public function setEligibile(\Arbor\Model\ModelBase $eligibile = null)
     {
         $this->setProperty('eligibile', $eligibile);
     }

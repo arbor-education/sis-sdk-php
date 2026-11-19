@@ -80,7 +80,7 @@ class TripPrice extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getApplicable()
     {
@@ -88,9 +88,9 @@ class TripPrice extends ModelBase
     }
 
     /**
-     * @param ModelBase $applicable
+     * @param \Arbor\Model\ModelBase $applicable
      */
-    public function setApplicable(\ModelBase $applicable = null)
+    public function setApplicable(\Arbor\Model\ModelBase $applicable = null)
     {
         $this->setProperty('applicable', $applicable);
     }
