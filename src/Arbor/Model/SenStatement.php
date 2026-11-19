@@ -38,7 +38,7 @@ class SenStatement extends ModelBase
      * @return SenStatement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class SenStatement extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -96,7 +96,7 @@ class SenStatement extends ModelBase
     /**
      * @param \DateTime $dateRequested
      */
-    public function setDateRequested(\DateTime $dateRequested = null)
+    public function setDateRequested(?\DateTime $dateRequested = null)
     {
         $this->setProperty('dateRequested', $dateRequested);
     }
@@ -112,7 +112,7 @@ class SenStatement extends ModelBase
     /**
      * @param \DateTime $dateParentConsulted
      */
-    public function setDateParentConsulted(\DateTime $dateParentConsulted = null)
+    public function setDateParentConsulted(?\DateTime $dateParentConsulted = null)
     {
         $this->setProperty('dateParentConsulted', $dateParentConsulted);
     }
@@ -128,7 +128,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $disapplicationFromNcPermanentSubjects
      */
-    public function setDisapplicationFromNcPermanentSubjects(string $disapplicationFromNcPermanentSubjects = null)
+    public function setDisapplicationFromNcPermanentSubjects(?string $disapplicationFromNcPermanentSubjects = null)
     {
         $this->setProperty('disapplicationFromNcPermanentSubjects', $disapplicationFromNcPermanentSubjects);
     }
@@ -144,7 +144,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $disapplicationFromNcTemporarySubjects
      */
-    public function setDisapplicationFromNcTemporarySubjects(string $disapplicationFromNcTemporarySubjects = null)
+    public function setDisapplicationFromNcTemporarySubjects(?string $disapplicationFromNcTemporarySubjects = null)
     {
         $this->setProperty('disapplicationFromNcTemporarySubjects', $disapplicationFromNcTemporarySubjects);
     }
@@ -160,7 +160,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $localAuthorityOfficer
      */
-    public function setLocalAuthorityOfficer(string $localAuthorityOfficer = null)
+    public function setLocalAuthorityOfficer(?string $localAuthorityOfficer = null)
     {
         $this->setProperty('localAuthorityOfficer', $localAuthorityOfficer);
     }
@@ -176,7 +176,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $decisionStatus
      */
-    public function setDecisionStatus(string $decisionStatus = null)
+    public function setDecisionStatus(?string $decisionStatus = null)
     {
         $this->setProperty('decisionStatus', $decisionStatus);
     }
@@ -192,7 +192,7 @@ class SenStatement extends ModelBase
     /**
      * @param bool $subjectToSenTribunal
      */
-    public function setSubjectToSenTribunal(bool $subjectToSenTribunal = null)
+    public function setSubjectToSenTribunal(?bool $subjectToSenTribunal = null)
     {
         $this->setProperty('subjectToSenTribunal', $subjectToSenTribunal);
     }
@@ -208,7 +208,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $appealNotes
      */
-    public function setAppealNotes(string $appealNotes = null)
+    public function setAppealNotes(?string $appealNotes = null)
     {
         $this->setProperty('appealNotes', $appealNotes);
     }
@@ -224,7 +224,7 @@ class SenStatement extends ModelBase
     /**
      * @param \DateTime $dateFinalized
      */
-    public function setDateFinalized(\DateTime $dateFinalized = null)
+    public function setDateFinalized(?\DateTime $dateFinalized = null)
     {
         $this->setProperty('dateFinalized', $dateFinalized);
     }
@@ -240,7 +240,7 @@ class SenStatement extends ModelBase
     /**
      * @param \DateTime $dateCeased
      */
-    public function setDateCeased(\DateTime $dateCeased = null)
+    public function setDateCeased(?\DateTime $dateCeased = null)
     {
         $this->setProperty('dateCeased', $dateCeased);
     }
@@ -256,7 +256,7 @@ class SenStatement extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments(string $comments = null)
+    public function setComments(?string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }

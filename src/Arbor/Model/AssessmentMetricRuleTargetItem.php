@@ -24,7 +24,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
      * @return AssessmentMetricRuleTargetItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param string $operator
      */
-    public function setOperator(string $operator = null)
+    public function setOperator(?string $operator = null)
     {
         $this->setProperty('operator', $operator);
     }
@@ -82,7 +82,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param string $targetType
      */
-    public function setTargetType(string $targetType = null)
+    public function setTargetType(?string $targetType = null)
     {
         $this->setProperty('targetType', $targetType);
     }
@@ -98,7 +98,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(\Arbor\Model\AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(?\Arbor\Model\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
@@ -114,7 +114,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMetricAssessment $assessmentMetricAssessment
      */
-    public function setAssessmentMetricAssessment(\Arbor\Model\AssessmentMetricAssessment $assessmentMetricAssessment = null)
+    public function setAssessmentMetricAssessment(?\Arbor\Model\AssessmentMetricAssessment $assessmentMetricAssessment = null)
     {
         $this->setProperty('assessmentMetricAssessment', $assessmentMetricAssessment);
     }
@@ -130,7 +130,7 @@ class AssessmentMetricRuleTargetItem extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }

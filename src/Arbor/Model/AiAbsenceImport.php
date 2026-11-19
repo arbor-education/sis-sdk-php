@@ -22,7 +22,7 @@ class AiAbsenceImport extends ModelBase
      * @return AiAbsenceImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -54,7 +54,7 @@ class AiAbsenceImport extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSource()
     {
@@ -62,9 +62,9 @@ class AiAbsenceImport extends ModelBase
     }
 
     /**
-     * @param ModelBase $source
+     * @param \Arbor\Model\ModelBase $source
      */
-    public function setSource(\ModelBase $source = null)
+    public function setSource(?\Arbor\Model\ModelBase $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -80,7 +80,7 @@ class AiAbsenceImport extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -96,7 +96,7 @@ class AiAbsenceImport extends ModelBase
     /**
      * @param string $aiAgentResponseIdentifier
      */
-    public function setAiAgentResponseIdentifier(string $aiAgentResponseIdentifier = null)
+    public function setAiAgentResponseIdentifier(?string $aiAgentResponseIdentifier = null)
     {
         $this->setProperty('aiAgentResponseIdentifier', $aiAgentResponseIdentifier);
     }
@@ -112,7 +112,7 @@ class AiAbsenceImport extends ModelBase
     /**
      * @param bool $isErrorDismissed
      */
-    public function setIsErrorDismissed(bool $isErrorDismissed = null)
+    public function setIsErrorDismissed(?bool $isErrorDismissed = null)
     {
         $this->setProperty('isErrorDismissed', $isErrorDismissed);
     }

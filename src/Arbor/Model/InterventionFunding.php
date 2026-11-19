@@ -24,7 +24,7 @@ class InterventionFunding extends ModelBase
      * @return InterventionFunding[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
+    public function setIntervention(?\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -82,7 +82,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -98,7 +98,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param \Arbor\Model\InterventionFundingSource $interventionFundingSource
      */
-    public function setInterventionFundingSource(\Arbor\Model\InterventionFundingSource $interventionFundingSource = null)
+    public function setInterventionFundingSource(?\Arbor\Model\InterventionFundingSource $interventionFundingSource = null)
     {
         $this->setProperty('interventionFundingSource', $interventionFundingSource);
     }
@@ -114,7 +114,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param string $fundingAmount
      */
-    public function setFundingAmount(string $fundingAmount = null)
+    public function setFundingAmount(?string $fundingAmount = null)
     {
         $this->setProperty('fundingAmount', $fundingAmount);
     }
@@ -130,7 +130,7 @@ class InterventionFunding extends ModelBase
     /**
      * @param float $fundingPercentage
      */
-    public function setFundingPercentage(float $fundingPercentage = null)
+    public function setFundingPercentage(?float $fundingPercentage = null)
     {
         $this->setProperty('fundingPercentage', $fundingPercentage);
     }

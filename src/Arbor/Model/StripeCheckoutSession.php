@@ -28,7 +28,7 @@ class StripeCheckoutSession extends ModelBase
      * @return StripeCheckoutSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param \Arbor\Model\Order $order
      */
-    public function setOrder(\Arbor\Model\Order $order = null)
+    public function setOrder(?\Arbor\Model\Order $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -86,7 +86,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param string $stripeIdentifier
      */
-    public function setStripeIdentifier(string $stripeIdentifier = null)
+    public function setStripeIdentifier(?string $stripeIdentifier = null)
     {
         $this->setProperty('stripeIdentifier', $stripeIdentifier);
     }
@@ -102,7 +102,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param \DateTime $expiresAt
      */
-    public function setExpiresAt(\DateTime $expiresAt = null)
+    public function setExpiresAt(?\DateTime $expiresAt = null)
     {
         $this->setProperty('expiresAt', $expiresAt);
     }
@@ -118,7 +118,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -134,7 +134,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param string $url
      */
-    public function setUrl(string $url = null)
+    public function setUrl(?string $url = null)
     {
         $this->setProperty('url', $url);
     }
@@ -150,7 +150,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -166,7 +166,7 @@ class StripeCheckoutSession extends ModelBase
     /**
      * @param string $client
      */
-    public function setClient(string $client = null)
+    public function setClient(?string $client = null)
     {
         $this->setProperty('client', $client);
     }

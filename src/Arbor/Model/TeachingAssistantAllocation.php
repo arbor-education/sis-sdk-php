@@ -28,7 +28,7 @@ class TeachingAssistantAllocation extends ModelBase
      * @return TeachingAssistantAllocation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -86,7 +86,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(int $dayOfCycle = null)
+    public function setDayOfCycle(?int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -102,7 +102,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -118,7 +118,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -134,7 +134,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -150,13 +150,13 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAllocatedTo()
     {
@@ -164,9 +164,9 @@ class TeachingAssistantAllocation extends ModelBase
     }
 
     /**
-     * @param ModelBase $allocatedTo
+     * @param \Arbor\Model\ModelBase $allocatedTo
      */
-    public function setAllocatedTo(\ModelBase $allocatedTo = null)
+    public function setAllocatedTo(?\Arbor\Model\ModelBase $allocatedTo = null)
     {
         $this->setProperty('allocatedTo', $allocatedTo);
     }

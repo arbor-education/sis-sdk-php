@@ -24,7 +24,7 @@ class Appraisal extends ModelBase
      * @return Appraisal[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class Appraisal extends ModelBase
     /**
      * @param \Arbor\Model\Staff $appraisee
      */
-    public function setAppraisee(\Arbor\Model\Staff $appraisee = null)
+    public function setAppraisee(?\Arbor\Model\Staff $appraisee = null)
     {
         $this->setProperty('appraisee', $appraisee);
     }
@@ -82,7 +82,7 @@ class Appraisal extends ModelBase
     /**
      * @param \DateTime $appraisalDate
      */
-    public function setAppraisalDate(\DateTime $appraisalDate = null)
+    public function setAppraisalDate(?\DateTime $appraisalDate = null)
     {
         $this->setProperty('appraisalDate', $appraisalDate);
     }
@@ -98,7 +98,7 @@ class Appraisal extends ModelBase
     /**
      * @param \Arbor\Model\Staff $appraiser
      */
-    public function setAppraiser(\Arbor\Model\Staff $appraiser = null)
+    public function setAppraiser(?\Arbor\Model\Staff $appraiser = null)
     {
         $this->setProperty('appraiser', $appraiser);
     }
@@ -114,7 +114,7 @@ class Appraisal extends ModelBase
     /**
      * @param string $appraisalNotes
      */
-    public function setAppraisalNotes(string $appraisalNotes = null)
+    public function setAppraisalNotes(?string $appraisalNotes = null)
     {
         $this->setProperty('appraisalNotes', $appraisalNotes);
     }
@@ -130,7 +130,7 @@ class Appraisal extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }

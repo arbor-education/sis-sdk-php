@@ -20,7 +20,7 @@ class PersonTransportationMethod extends ModelBase
      * @return PersonTransportationMethod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class PersonTransportationMethod extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -60,9 +60,9 @@ class PersonTransportationMethod extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -78,7 +78,7 @@ class PersonTransportationMethod extends ModelBase
     /**
      * @param \Arbor\Model\TransportationMethod $transportationMethod
      */
-    public function setTransportationMethod(\Arbor\Model\TransportationMethod $transportationMethod = null)
+    public function setTransportationMethod(?\Arbor\Model\TransportationMethod $transportationMethod = null)
     {
         $this->setProperty('transportationMethod', $transportationMethod);
     }
@@ -94,7 +94,7 @@ class PersonTransportationMethod extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

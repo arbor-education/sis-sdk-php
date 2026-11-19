@@ -26,7 +26,7 @@ class AdHocBursaryPayment extends ModelBase
      * @return AdHocBursaryPayment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -84,7 +84,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\BursaryType $bursaryType
      */
-    public function setBursaryType(\Arbor\Model\BursaryType $bursaryType = null)
+    public function setBursaryType(?\Arbor\Model\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
@@ -100,7 +100,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount(string $amount = null)
+    public function setAmount(?string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -116,7 +116,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param \DateTime $paidDate
      */
-    public function setPaidDate(\DateTime $paidDate = null)
+    public function setPaidDate(?\DateTime $paidDate = null)
     {
         $this->setProperty('paidDate', $paidDate);
     }
@@ -132,7 +132,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param \DateTime $approvedDate
      */
-    public function setApprovedDate(\DateTime $approvedDate = null)
+    public function setApprovedDate(?\DateTime $approvedDate = null)
     {
         $this->setProperty('approvedDate', $approvedDate);
     }
@@ -148,7 +148,7 @@ class AdHocBursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
+    public function setApprovedByStaff(?\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }

@@ -30,7 +30,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
      * @return SchoolWorkforceCensusVacancy[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(\Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(?\Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
@@ -88,7 +88,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -104,7 +104,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost
      */
-    public function setSchoolWorkforceVacancyPost(\Arbor\Model\UkDfe\SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost = null)
+    public function setSchoolWorkforceVacancyPost(?\Arbor\Model\UkDfe\SchoolWorkforceVacancyPost $schoolWorkforceVacancyPost = null)
     {
         $this->setProperty('schoolWorkforceVacancyPost', $schoolWorkforceVacancyPost);
     }
@@ -120,7 +120,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -136,7 +136,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure(string $tenure = null)
+    public function setTenure(?string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -152,7 +152,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $vacancyTemporarilyFilled
      */
-    public function setVacancyTemporarilyFilled(string $vacancyTemporarilyFilled = null)
+    public function setVacancyTemporarilyFilled(?string $vacancyTemporarilyFilled = null)
     {
         $this->setProperty('vacancyTemporarilyFilled', $vacancyTemporarilyFilled);
     }
@@ -168,7 +168,7 @@ class SchoolWorkforceCensusVacancy extends ModelBase
     /**
      * @param string $vacancyAdvertised
      */
-    public function setVacancyAdvertised(string $vacancyAdvertised = null)
+    public function setVacancyAdvertised(?string $vacancyAdvertised = null)
     {
         $this->setProperty('vacancyAdvertised', $vacancyAdvertised);
     }

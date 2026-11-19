@@ -20,7 +20,7 @@ class AiFeatureOptOut extends ModelBase
      * @return AiFeatureOptOut[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class AiFeatureOptOut extends ModelBase
     /**
      * @param string $featureCode
      */
-    public function setFeatureCode(string $featureCode = null)
+    public function setFeatureCode(?string $featureCode = null)
     {
         $this->setProperty('featureCode', $featureCode);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTarget()
     {
@@ -76,9 +76,9 @@ class AiFeatureOptOut extends ModelBase
     }
 
     /**
-     * @param ModelBase $target
+     * @param \Arbor\Model\ModelBase $target
      */
-    public function setTarget(\ModelBase $target = null)
+    public function setTarget(?\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }
@@ -94,7 +94,7 @@ class AiFeatureOptOut extends ModelBase
     /**
      * @param bool $isException
      */
-    public function setIsException(bool $isException = null)
+    public function setIsException(?bool $isException = null)
     {
         $this->setProperty('isException', $isException);
     }

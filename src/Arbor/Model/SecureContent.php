@@ -20,7 +20,7 @@ class SecureContent extends ModelBase
      * @return SecureContent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SecureContent extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class SecureContent extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(string $provider = null)
+    public function setProvider(?string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -94,7 +94,7 @@ class SecureContent extends ModelBase
     /**
      * @param string $secureValue
      */
-    public function setSecureValue(string $secureValue = null)
+    public function setSecureValue(?string $secureValue = null)
     {
         $this->setProperty('secureValue', $secureValue);
     }

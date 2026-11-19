@@ -20,7 +20,7 @@ class MealRotationMenuChoice extends ModelBase
      * @return MealRotationMenuChoice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class MealRotationMenuChoice extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAttendee()
     {
@@ -60,9 +60,9 @@ class MealRotationMenuChoice extends ModelBase
     }
 
     /**
-     * @param ModelBase $attendee
+     * @param \Arbor\Model\ModelBase $attendee
      */
-    public function setAttendee(\ModelBase $attendee = null)
+    public function setAttendee(?\Arbor\Model\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }
@@ -78,7 +78,7 @@ class MealRotationMenuChoice extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $mealProvision
      */
-    public function setMealProvision(\Arbor\Model\MealProvision $mealProvision = null)
+    public function setMealProvision(?\Arbor\Model\MealProvision $mealProvision = null)
     {
         $this->setProperty('mealProvision', $mealProvision);
     }
@@ -94,7 +94,7 @@ class MealRotationMenuChoice extends ModelBase
     /**
      * @param \DateTime $mealChoiceDate
      */
-    public function setMealChoiceDate(\DateTime $mealChoiceDate = null)
+    public function setMealChoiceDate(?\DateTime $mealChoiceDate = null)
     {
         $this->setProperty('mealChoiceDate', $mealChoiceDate);
     }

@@ -20,7 +20,7 @@ class ExternallyGeneratedReportCard extends ModelBase
      * @return ExternallyGeneratedReportCard[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ExternallyGeneratedReportCard extends ModelBase
     /**
      * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Arbor\Model\Content $content = null)
+    public function setContent(?\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -78,7 +78,7 @@ class ExternallyGeneratedReportCard extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -94,7 +94,7 @@ class ExternallyGeneratedReportCard extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

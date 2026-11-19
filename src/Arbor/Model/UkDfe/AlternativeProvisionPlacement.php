@@ -34,7 +34,7 @@ class AlternativeProvisionPlacement extends ModelBase
      * @return AlternativeProvisionPlacement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -92,7 +92,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -108,7 +108,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param \Arbor\Model\Company $company
      */
-    public function setCompany(\Arbor\Model\Company $company = null)
+    public function setCompany(?\Arbor\Model\Company $company = null)
     {
         $this->setProperty('company', $company);
     }
@@ -125,7 +125,7 @@ class AlternativeProvisionPlacement extends ModelBase
      * @param \Arbor\Model\UkDfe\AlternativeProvisionPlacementReason
      * $alternativeProvisionPlacementReason
      */
-    public function setAlternativeProvisionPlacementReason(\Arbor\Model\UkDfe\AlternativeProvisionPlacementReason $alternativeProvisionPlacementReason = null)
+    public function setAlternativeProvisionPlacementReason(?\Arbor\Model\UkDfe\AlternativeProvisionPlacementReason $alternativeProvisionPlacementReason = null)
     {
         $this->setProperty('alternativeProvisionPlacementReason', $alternativeProvisionPlacementReason);
     }
@@ -141,7 +141,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -157,7 +157,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -173,7 +173,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param string $settingType
      */
-    public function setSettingType(string $settingType = null)
+    public function setSettingType(?string $settingType = null)
     {
         $this->setProperty('settingType', $settingType);
     }
@@ -189,7 +189,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param string $attendancePattern
      */
-    public function setAttendancePattern(string $attendancePattern = null)
+    public function setAttendancePattern(?string $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
@@ -205,7 +205,7 @@ class AlternativeProvisionPlacement extends ModelBase
     /**
      * @param int $sessionsPerWeek
      */
-    public function setSessionsPerWeek(int $sessionsPerWeek = null)
+    public function setSessionsPerWeek(?int $sessionsPerWeek = null)
     {
         $this->setProperty('sessionsPerWeek', $sessionsPerWeek);
     }

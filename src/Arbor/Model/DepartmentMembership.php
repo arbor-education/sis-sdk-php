@@ -24,7 +24,7 @@ class DepartmentMembership extends ModelBase
      * @return DepartmentMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class DepartmentMembership extends ModelBase
     /**
      * @param \Arbor\Model\DepartmentResponsibility $departmentResponsibility
      */
-    public function setDepartmentResponsibility(\Arbor\Model\DepartmentResponsibility $departmentResponsibility = null)
+    public function setDepartmentResponsibility(?\Arbor\Model\DepartmentResponsibility $departmentResponsibility = null)
     {
         $this->setProperty('departmentResponsibility', $departmentResponsibility);
     }
@@ -82,7 +82,7 @@ class DepartmentMembership extends ModelBase
     /**
      * @param \Arbor\Model\Department $department
      */
-    public function setDepartment(\Arbor\Model\Department $department = null)
+    public function setDepartment(?\Arbor\Model\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
@@ -98,7 +98,7 @@ class DepartmentMembership extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -114,7 +114,7 @@ class DepartmentMembership extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -130,7 +130,7 @@ class DepartmentMembership extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

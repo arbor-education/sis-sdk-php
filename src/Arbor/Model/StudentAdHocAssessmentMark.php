@@ -40,7 +40,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      * @return StudentAdHocAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +82,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch
      */
-    public function setAdHocAssessmentBatch(\Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch = null)
+    public function setAdHocAssessmentBatch(?\Arbor\Model\AdHocAssessmentBatch $adHocAssessmentBatch = null)
     {
         $this->setProperty('adHocAssessmentBatch', $adHocAssessmentBatch);
     }
@@ -98,7 +98,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -114,7 +114,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(\Arbor\Model\AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(?\Arbor\Model\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -130,13 +130,13 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \DateTime $assessmentReferenceDate
      */
-    public function setAssessmentReferenceDate(\DateTime $assessmentReferenceDate = null)
+    public function setAssessmentReferenceDate(?\DateTime $assessmentReferenceDate = null)
     {
         $this->setProperty('assessmentReferenceDate', $assessmentReferenceDate);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getScopeEntity()
     {
@@ -144,9 +144,9 @@ class StudentAdHocAssessmentMark extends ModelBase
     }
 
     /**
-     * @param ModelBase $scopeEntity
+     * @param \Arbor\Model\ModelBase $scopeEntity
      */
-    public function setScopeEntity(\ModelBase $scopeEntity = null)
+    public function setScopeEntity(?\Arbor\Model\ModelBase $scopeEntity = null)
     {
         $this->setProperty('scopeEntity', $scopeEntity);
     }
@@ -162,7 +162,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(\Arbor\Model\Grade $grade = null)
+    public function setGrade(?\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -178,7 +178,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param float $number
      */
-    public function setNumber(float $number = null)
+    public function setNumber(?float $number = null)
     {
         $this->setProperty('number', $number);
     }
@@ -195,7 +195,7 @@ class StudentAdHocAssessmentMark extends ModelBase
      * @param \Arbor\Model\AssessmentMarkNonSubmissionReason
      * $assessmentMarkNonSubmissionReason
      */
-    public function setAssessmentMarkNonSubmissionReason(\Arbor\Model\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
+    public function setAssessmentMarkNonSubmissionReason(?\Arbor\Model\AssessmentMarkNonSubmissionReason $assessmentMarkNonSubmissionReason = null)
     {
         $this->setProperty('assessmentMarkNonSubmissionReason', $assessmentMarkNonSubmissionReason);
     }
@@ -211,7 +211,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Staff $markingStaff
      */
-    public function setMarkingStaff(\Arbor\Model\Staff $markingStaff = null)
+    public function setMarkingStaff(?\Arbor\Model\Staff $markingStaff = null)
     {
         $this->setProperty('markingStaff', $markingStaff);
     }
@@ -227,7 +227,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
@@ -243,7 +243,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Staff $completedStaff
      */
-    public function setCompletedStaff(\Arbor\Model\Staff $completedStaff = null)
+    public function setCompletedStaff(?\Arbor\Model\Staff $completedStaff = null)
     {
         $this->setProperty('completedStaff', $completedStaff);
     }
@@ -259,7 +259,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \DateTime $approvedDatetime
      */
-    public function setApprovedDatetime(\DateTime $approvedDatetime = null)
+    public function setApprovedDatetime(?\DateTime $approvedDatetime = null)
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
@@ -275,7 +275,7 @@ class StudentAdHocAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Staff $approvedStaff
      */
-    public function setApprovedStaff(\Arbor\Model\Staff $approvedStaff = null)
+    public function setApprovedStaff(?\Arbor\Model\Staff $approvedStaff = null)
     {
         $this->setProperty('approvedStaff', $approvedStaff);
     }

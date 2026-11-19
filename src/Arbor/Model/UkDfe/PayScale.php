@@ -20,7 +20,7 @@ class PayScale extends ModelBase
      * @return PayScale[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class PayScale extends ModelBase
     /**
      * @param string $regionalPaySpine
      */
-    public function setRegionalPaySpine(string $regionalPaySpine = null)
+    public function setRegionalPaySpine(?string $regionalPaySpine = null)
     {
         $this->setProperty('regionalPaySpine', $regionalPaySpine);
     }
@@ -78,7 +78,7 @@ class PayScale extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\PayScaleCategory $payScaleCategory
      */
-    public function setPayScaleCategory(\Arbor\Model\UkDfe\PayScaleCategory $payScaleCategory = null)
+    public function setPayScaleCategory(?\Arbor\Model\UkDfe\PayScaleCategory $payScaleCategory = null)
     {
         $this->setProperty('payScaleCategory', $payScaleCategory);
     }

@@ -18,7 +18,7 @@ class LearningMaterialFolder extends ModelBase
      * @return LearningMaterialFolder[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class LearningMaterialFolder extends ModelBase
     /**
      * @param \Arbor\Model\LearningMaterialFolder $parentLearningMaterialFolder
      */
-    public function setParentLearningMaterialFolder(\Arbor\Model\LearningMaterialFolder $parentLearningMaterialFolder = null)
+    public function setParentLearningMaterialFolder(?\Arbor\Model\LearningMaterialFolder $parentLearningMaterialFolder = null)
     {
         $this->setProperty('parentLearningMaterialFolder', $parentLearningMaterialFolder);
     }
@@ -76,7 +76,7 @@ class LearningMaterialFolder extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

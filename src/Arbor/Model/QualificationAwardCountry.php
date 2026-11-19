@@ -38,7 +38,7 @@ class QualificationAwardCountry extends ModelBase
      * @return QualificationAwardCountry[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -128,7 +128,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $accreditationCode
      */
-    public function setAccreditationCode(string $accreditationCode = null)
+    public function setAccreditationCode(?string $accreditationCode = null)
     {
         $this->setProperty('accreditationCode', $accreditationCode);
     }
@@ -144,7 +144,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param \DateTime $accreditationEndDate
      */
-    public function setAccreditationEndDate(\DateTime $accreditationEndDate = null)
+    public function setAccreditationEndDate(?\DateTime $accreditationEndDate = null)
     {
         $this->setProperty('accreditationEndDate', $accreditationEndDate);
     }
@@ -160,7 +160,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $accreditationName
      */
-    public function setAccreditationName(string $accreditationName = null)
+    public function setAccreditationName(?string $accreditationName = null)
     {
         $this->setProperty('accreditationName', $accreditationName);
     }
@@ -176,7 +176,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param \DateTime $accreditationStartDate
      */
-    public function setAccreditationStartDate(\DateTime $accreditationStartDate = null)
+    public function setAccreditationStartDate(?\DateTime $accreditationStartDate = null)
     {
         $this->setProperty('accreditationStartDate', $accreditationStartDate);
     }
@@ -192,7 +192,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param string $countryCode
      */
-    public function setCountryCode(string $countryCode = null)
+    public function setCountryCode(?string $countryCode = null)
     {
         $this->setProperty('countryCode', $countryCode);
     }
@@ -208,7 +208,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param \DateTime $operationalEndDate
      */
-    public function setOperationalEndDate(\DateTime $operationalEndDate = null)
+    public function setOperationalEndDate(?\DateTime $operationalEndDate = null)
     {
         $this->setProperty('operationalEndDate', $operationalEndDate);
     }
@@ -224,7 +224,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param \DateTime $operationalStartDate
      */
-    public function setOperationalStartDate(\DateTime $operationalStartDate = null)
+    public function setOperationalStartDate(?\DateTime $operationalStartDate = null)
     {
         $this->setProperty('operationalStartDate', $operationalStartDate);
     }
@@ -241,7 +241,7 @@ class QualificationAwardCountry extends ModelBase
      * @param \Arbor\Model\QualificationAwardCertificationBody
      * $qualificationAwardCertificationBody
      */
-    public function setQualificationAwardCertificationBody(\Arbor\Model\QualificationAwardCertificationBody $qualificationAwardCertificationBody = null)
+    public function setQualificationAwardCertificationBody(?\Arbor\Model\QualificationAwardCertificationBody $qualificationAwardCertificationBody = null)
     {
         $this->setProperty('qualificationAwardCertificationBody', $qualificationAwardCertificationBody);
     }
@@ -257,7 +257,7 @@ class QualificationAwardCountry extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
+    public function setQualificationAward(?\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }

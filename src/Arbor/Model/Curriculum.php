@@ -50,7 +50,7 @@ class Curriculum extends ModelBase
      * @return Curriculum[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -92,7 +92,7 @@ class Curriculum extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -108,7 +108,7 @@ class Curriculum extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -124,7 +124,7 @@ class Curriculum extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -140,7 +140,7 @@ class Curriculum extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -156,7 +156,7 @@ class Curriculum extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -172,7 +172,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
+    public function setGradePointScale(?\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
@@ -188,7 +188,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(?\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -204,7 +204,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $lowerCurriculumGrade
      */
-    public function setLowerCurriculumGrade(\Arbor\Model\CurriculumGrade $lowerCurriculumGrade = null)
+    public function setLowerCurriculumGrade(?\Arbor\Model\CurriculumGrade $lowerCurriculumGrade = null)
     {
         $this->setProperty('lowerCurriculumGrade', $lowerCurriculumGrade);
     }
@@ -220,7 +220,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $upperCurriculumGrade
      */
-    public function setUpperCurriculumGrade(\Arbor\Model\CurriculumGrade $upperCurriculumGrade = null)
+    public function setUpperCurriculumGrade(?\Arbor\Model\CurriculumGrade $upperCurriculumGrade = null)
     {
         $this->setProperty('upperCurriculumGrade', $upperCurriculumGrade);
     }
@@ -236,7 +236,7 @@ class Curriculum extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -252,7 +252,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\Grade $lowerBenchmarkGrade
      */
-    public function setLowerBenchmarkGrade(\Arbor\Model\Grade $lowerBenchmarkGrade = null)
+    public function setLowerBenchmarkGrade(?\Arbor\Model\Grade $lowerBenchmarkGrade = null)
     {
         $this->setProperty('lowerBenchmarkGrade', $lowerBenchmarkGrade);
     }
@@ -268,7 +268,7 @@ class Curriculum extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -284,7 +284,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\Grade $upperBenchmarkGrade
      */
-    public function setUpperBenchmarkGrade(\Arbor\Model\Grade $upperBenchmarkGrade = null)
+    public function setUpperBenchmarkGrade(?\Arbor\Model\Grade $upperBenchmarkGrade = null)
     {
         $this->setProperty('upperBenchmarkGrade', $upperBenchmarkGrade);
     }
@@ -300,7 +300,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\AchievementLevelSet $achievementLevelSet
      */
-    public function setAchievementLevelSet(\Arbor\Model\AchievementLevelSet $achievementLevelSet = null)
+    public function setAchievementLevelSet(?\Arbor\Model\AchievementLevelSet $achievementLevelSet = null)
     {
         $this->setProperty('achievementLevelSet', $achievementLevelSet);
     }
@@ -316,7 +316,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -332,7 +332,7 @@ class Curriculum extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -348,7 +348,7 @@ class Curriculum extends ModelBase
     /**
      * @param \DateTime $validFromDate
      */
-    public function setValidFromDate(\DateTime $validFromDate = null)
+    public function setValidFromDate(?\DateTime $validFromDate = null)
     {
         $this->setProperty('validFromDate', $validFromDate);
     }
@@ -364,7 +364,7 @@ class Curriculum extends ModelBase
     /**
      * @param \DateTime $validUntilDate
      */
-    public function setValidUntilDate(\DateTime $validUntilDate = null)
+    public function setValidUntilDate(?\DateTime $validUntilDate = null)
     {
         $this->setProperty('validUntilDate', $validUntilDate);
     }

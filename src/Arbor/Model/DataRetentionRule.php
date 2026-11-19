@@ -28,7 +28,7 @@ class DataRetentionRule extends ModelBase
      * @return DataRetentionRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param int $entityType
      */
-    public function setEntityType(int $entityType = null)
+    public function setEntityType(?int $entityType = null)
     {
         $this->setProperty('entityType', $entityType);
     }
@@ -86,7 +86,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param string $domainAreaCode
      */
-    public function setDomainAreaCode(string $domainAreaCode = null)
+    public function setDomainAreaCode(?string $domainAreaCode = null)
     {
         $this->setProperty('domainAreaCode', $domainAreaCode);
     }
@@ -102,7 +102,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param string $targetGroupCode
      */
-    public function setTargetGroupCode(string $targetGroupCode = null)
+    public function setTargetGroupCode(?string $targetGroupCode = null)
     {
         $this->setProperty('targetGroupCode', $targetGroupCode);
     }
@@ -118,7 +118,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param int $retainMonths
      */
-    public function setRetainMonths(int $retainMonths = null)
+    public function setRetainMonths(?int $retainMonths = null)
     {
         $this->setProperty('retainMonths', $retainMonths);
     }
@@ -134,7 +134,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param int $retainUntilAgeMonths
      */
-    public function setRetainUntilAgeMonths(int $retainUntilAgeMonths = null)
+    public function setRetainUntilAgeMonths(?int $retainUntilAgeMonths = null)
     {
         $this->setProperty('retainUntilAgeMonths', $retainUntilAgeMonths);
     }
@@ -150,7 +150,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -166,7 +166,7 @@ class DataRetentionRule extends ModelBase
     /**
      * @param bool $isActive
      */
-    public function setIsActive(bool $isActive = null)
+    public function setIsActive(?bool $isActive = null)
     {
         $this->setProperty('isActive', $isActive);
     }

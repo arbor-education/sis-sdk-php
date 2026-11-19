@@ -36,7 +36,7 @@ class PersonProfessionalQualification extends ModelBase
      * @return PersonProfessionalQualification[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class PersonProfessionalQualification extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -76,9 +76,9 @@ class PersonProfessionalQualification extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -94,7 +94,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param string $qualificationName
      */
-    public function setQualificationName(string $qualificationName = null)
+    public function setQualificationName(?string $qualificationName = null)
     {
         $this->setProperty('qualificationName', $qualificationName);
     }
@@ -110,7 +110,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param \DateTime $dateAwarded
      */
-    public function setDateAwarded(\DateTime $dateAwarded = null)
+    public function setDateAwarded(?\DateTime $dateAwarded = null)
     {
         $this->setProperty('dateAwarded', $dateAwarded);
     }
@@ -126,7 +126,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param string $awardingInstitution
      */
-    public function setAwardingInstitution(string $awardingInstitution = null)
+    public function setAwardingInstitution(?string $awardingInstitution = null)
     {
         $this->setProperty('awardingInstitution', $awardingInstitution);
     }
@@ -142,7 +142,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param \Arbor\Model\ProfessionalQualificationType $professionalQualificationType
      */
-    public function setProfessionalQualificationType(\Arbor\Model\ProfessionalQualificationType $professionalQualificationType = null)
+    public function setProfessionalQualificationType(?\Arbor\Model\ProfessionalQualificationType $professionalQualificationType = null)
     {
         $this->setProperty('professionalQualificationType', $professionalQualificationType);
     }
@@ -159,7 +159,7 @@ class PersonProfessionalQualification extends ModelBase
      * @param \Arbor\Model\ProfessionalQualificationClass
      * $professionalQualificationClass
      */
-    public function setProfessionalQualificationClass(\Arbor\Model\ProfessionalQualificationClass $professionalQualificationClass = null)
+    public function setProfessionalQualificationClass(?\Arbor\Model\ProfessionalQualificationClass $professionalQualificationClass = null)
     {
         $this->setProperty('professionalQualificationClass', $professionalQualificationClass);
     }
@@ -175,7 +175,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param \Arbor\Model\ProfessionalQualificationSubject $firstSubject
      */
-    public function setFirstSubject(\Arbor\Model\ProfessionalQualificationSubject $firstSubject = null)
+    public function setFirstSubject(?\Arbor\Model\ProfessionalQualificationSubject $firstSubject = null)
     {
         $this->setProperty('firstSubject', $firstSubject);
     }
@@ -191,7 +191,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param \Arbor\Model\ProfessionalQualificationSubject $secondSubject
      */
-    public function setSecondSubject(\Arbor\Model\ProfessionalQualificationSubject $secondSubject = null)
+    public function setSecondSubject(?\Arbor\Model\ProfessionalQualificationSubject $secondSubject = null)
     {
         $this->setProperty('secondSubject', $secondSubject);
     }
@@ -207,7 +207,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param \Arbor\Model\Country $originCountry
      */
-    public function setOriginCountry(\Arbor\Model\Country $originCountry = null)
+    public function setOriginCountry(?\Arbor\Model\Country $originCountry = null)
     {
         $this->setProperty('originCountry', $originCountry);
     }
@@ -223,7 +223,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param bool $isVocationalQualification
      */
-    public function setIsVocationalQualification(bool $isVocationalQualification = null)
+    public function setIsVocationalQualification(?bool $isVocationalQualification = null)
     {
         $this->setProperty('isVocationalQualification', $isVocationalQualification);
     }
@@ -239,7 +239,7 @@ class PersonProfessionalQualification extends ModelBase
     /**
      * @param bool $isVerified
      */
-    public function setIsVerified(bool $isVerified = null)
+    public function setIsVerified(?bool $isVerified = null)
     {
         $this->setProperty('isVerified', $isVerified);
     }

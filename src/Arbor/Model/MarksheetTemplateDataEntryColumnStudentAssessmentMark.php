@@ -20,7 +20,7 @@ class MarksheetTemplateDataEntryColumnStudentAssessmentMark extends ModelBase
      * @return MarksheetTemplateDataEntryColumnStudentAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class MarksheetTemplateDataEntryColumnStudentAssessmentMark extends ModelBase
      * @param \Arbor\Model\MarksheetTemplateDataEntryColumn
      * $marksheetTemplateDataEntryColumn
      */
-    public function setMarksheetTemplateDataEntryColumn(\Arbor\Model\MarksheetTemplateDataEntryColumn $marksheetTemplateDataEntryColumn = null)
+    public function setMarksheetTemplateDataEntryColumn(?\Arbor\Model\MarksheetTemplateDataEntryColumn $marksheetTemplateDataEntryColumn = null)
     {
         $this->setProperty('marksheetTemplateDataEntryColumn', $marksheetTemplateDataEntryColumn);
     }
@@ -79,7 +79,7 @@ class MarksheetTemplateDataEntryColumnStudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\StudentAssessmentMark $studentAssessmentMark
      */
-    public function setStudentAssessmentMark(\Arbor\Model\StudentAssessmentMark $studentAssessmentMark = null)
+    public function setStudentAssessmentMark(?\Arbor\Model\StudentAssessmentMark $studentAssessmentMark = null)
     {
         $this->setProperty('studentAssessmentMark', $studentAssessmentMark);
     }
@@ -95,7 +95,7 @@ class MarksheetTemplateDataEntryColumnStudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

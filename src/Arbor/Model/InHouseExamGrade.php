@@ -26,7 +26,7 @@ class InHouseExamGrade extends ModelBase
      * @return InHouseExamGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(?\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
@@ -84,7 +84,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(\Arbor\Model\QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(?\Arbor\Model\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -100,7 +100,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -116,7 +116,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName(string $longName = null)
+    public function setLongName(?string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -132,7 +132,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param float $gradeValue
      */
-    public function setGradeValue(float $gradeValue = null)
+    public function setGradeValue(?float $gradeValue = null)
     {
         $this->setProperty('gradeValue', $gradeValue);
     }
@@ -148,7 +148,7 @@ class InHouseExamGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }

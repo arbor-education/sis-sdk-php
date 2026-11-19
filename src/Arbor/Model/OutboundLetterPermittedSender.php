@@ -20,7 +20,7 @@ class OutboundLetterPermittedSender extends ModelBase
      * @return OutboundLetterPermittedSender[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class OutboundLetterPermittedSender extends ModelBase
     /**
      * @param \Arbor\Model\Staff $actionTaker
      */
-    public function setActionTaker(\Arbor\Model\Staff $actionTaker = null)
+    public function setActionTaker(?\Arbor\Model\Staff $actionTaker = null)
     {
         $this->setProperty('actionTaker', $actionTaker);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -76,9 +76,9 @@ class OutboundLetterPermittedSender extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -94,7 +94,7 @@ class OutboundLetterPermittedSender extends ModelBase
     /**
      * @param bool $allow
      */
-    public function setAllow(bool $allow = null)
+    public function setAllow(?bool $allow = null)
     {
         $this->setProperty('allow', $allow);
     }

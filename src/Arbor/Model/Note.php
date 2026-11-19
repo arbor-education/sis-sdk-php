@@ -20,7 +20,7 @@ class Note extends ModelBase
      * @return Note[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class Note extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote(string $note = null)
+    public function setNote(?string $note = null)
     {
         $this->setProperty('note', $note);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getReferenceObject()
     {
@@ -76,9 +76,9 @@ class Note extends ModelBase
     }
 
     /**
-     * @param ModelBase $referenceObject
+     * @param \Arbor\Model\ModelBase $referenceObject
      */
-    public function setReferenceObject(\ModelBase $referenceObject = null)
+    public function setReferenceObject(?\Arbor\Model\ModelBase $referenceObject = null)
     {
         $this->setProperty('referenceObject', $referenceObject);
     }
@@ -94,7 +94,7 @@ class Note extends ModelBase
     /**
      * @param bool $isSharedWithGuardians
      */
-    public function setIsSharedWithGuardians(bool $isSharedWithGuardians = null)
+    public function setIsSharedWithGuardians(?bool $isSharedWithGuardians = null)
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }

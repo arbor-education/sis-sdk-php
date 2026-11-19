@@ -40,7 +40,7 @@ class InterventionSession extends ModelBase
      * @return InterventionSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +82,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -98,7 +98,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -114,13 +114,13 @@ class InterventionSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -128,9 +128,9 @@ class InterventionSession extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -146,7 +146,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
+    public function setIntervention(?\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -162,7 +162,7 @@ class InterventionSession extends ModelBase
     /**
      * @param int $staffCount
      */
-    public function setStaffCount(int $staffCount = null)
+    public function setStaffCount(?int $staffCount = null)
     {
         $this->setProperty('staffCount', $staffCount);
     }
@@ -178,7 +178,7 @@ class InterventionSession extends ModelBase
     /**
      * @param int $studentCount
      */
-    public function setStudentCount(int $studentCount = null)
+    public function setStudentCount(?int $studentCount = null)
     {
         $this->setProperty('studentCount', $studentCount);
     }
@@ -194,7 +194,7 @@ class InterventionSession extends ModelBase
     /**
      * @param int $calendarWeek
      */
-    public function setCalendarWeek(int $calendarWeek = null)
+    public function setCalendarWeek(?int $calendarWeek = null)
     {
         $this->setProperty('calendarWeek', $calendarWeek);
     }
@@ -210,7 +210,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -226,7 +226,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \Arbor\Model\InterventionGroup $interventionGroup
      */
-    public function setInterventionGroup(\Arbor\Model\InterventionGroup $interventionGroup = null)
+    public function setInterventionGroup(?\Arbor\Model\InterventionGroup $interventionGroup = null)
     {
         $this->setProperty('interventionGroup', $interventionGroup);
     }
@@ -242,7 +242,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -258,7 +258,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \DateTime $attendanceRegisterOpenedDatetime
      */
-    public function setAttendanceRegisterOpenedDatetime(\DateTime $attendanceRegisterOpenedDatetime = null)
+    public function setAttendanceRegisterOpenedDatetime(?\DateTime $attendanceRegisterOpenedDatetime = null)
     {
         $this->setProperty('attendanceRegisterOpenedDatetime', $attendanceRegisterOpenedDatetime);
     }
@@ -274,7 +274,7 @@ class InterventionSession extends ModelBase
     /**
      * @param \DateTime $attendanceRegisterClosedDatetime
      */
-    public function setAttendanceRegisterClosedDatetime(\DateTime $attendanceRegisterClosedDatetime = null)
+    public function setAttendanceRegisterClosedDatetime(?\DateTime $attendanceRegisterClosedDatetime = null)
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }

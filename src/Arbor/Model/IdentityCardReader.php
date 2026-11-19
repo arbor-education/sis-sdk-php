@@ -18,7 +18,7 @@ class IdentityCardReader extends ModelBase
      * @return IdentityCardReader[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class IdentityCardReader extends ModelBase
     /**
      * @param string $readerNumber
      */
-    public function setReaderNumber(string $readerNumber = null)
+    public function setReaderNumber(?string $readerNumber = null)
     {
         $this->setProperty('readerNumber', $readerNumber);
     }
@@ -76,7 +76,7 @@ class IdentityCardReader extends ModelBase
     /**
      * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Arbor\Model\Room $room = null)
+    public function setRoom(?\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }

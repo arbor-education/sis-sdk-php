@@ -24,7 +24,7 @@ class StudentLinkedRelationship extends ModelBase
      * @return StudentLinkedRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,13 +66,13 @@ class StudentLinkedRelationship extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedObject()
     {
@@ -80,9 +80,9 @@ class StudentLinkedRelationship extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedObject
+     * @param \Arbor\Model\ModelBase $linkedObject
      */
-    public function setLinkedObject(\ModelBase $linkedObject = null)
+    public function setLinkedObject(?\Arbor\Model\ModelBase $linkedObject = null)
     {
         $this->setProperty('linkedObject', $linkedObject);
     }
@@ -98,7 +98,7 @@ class StudentLinkedRelationship extends ModelBase
     /**
      * @param \Arbor\Model\StudentLinkedRelationshipType $studentLinkedRelationshipType
      */
-    public function setStudentLinkedRelationshipType(\Arbor\Model\StudentLinkedRelationshipType $studentLinkedRelationshipType = null)
+    public function setStudentLinkedRelationshipType(?\Arbor\Model\StudentLinkedRelationshipType $studentLinkedRelationshipType = null)
     {
         $this->setProperty('studentLinkedRelationshipType', $studentLinkedRelationshipType);
     }
@@ -114,7 +114,7 @@ class StudentLinkedRelationship extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -130,7 +130,7 @@ class StudentLinkedRelationship extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

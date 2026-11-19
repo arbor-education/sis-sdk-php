@@ -26,7 +26,7 @@ class UserDefinedFieldImport extends ModelBase
      * @return UserDefinedFieldImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,13 +68,13 @@ class UserDefinedFieldImport extends ModelBase
     /**
      * @param \Arbor\Model\UserDefinedFieldImportJob $userDefinedImportJob
      */
-    public function setUserDefinedImportJob(\Arbor\Model\UserDefinedFieldImportJob $userDefinedImportJob = null)
+    public function setUserDefinedImportJob(?\Arbor\Model\UserDefinedFieldImportJob $userDefinedImportJob = null)
     {
         $this->setProperty('userDefinedImportJob', $userDefinedImportJob);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEntity()
     {
@@ -82,9 +82,9 @@ class UserDefinedFieldImport extends ModelBase
     }
 
     /**
-     * @param ModelBase $entity
+     * @param \Arbor\Model\ModelBase $entity
      */
-    public function setEntity(\ModelBase $entity = null)
+    public function setEntity(?\Arbor\Model\ModelBase $entity = null)
     {
         $this->setProperty('entity', $entity);
     }
@@ -100,7 +100,7 @@ class UserDefinedFieldImport extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue(string $value = null)
+    public function setValue(?string $value = null)
     {
         $this->setProperty('value', $value);
     }
@@ -116,7 +116,7 @@ class UserDefinedFieldImport extends ModelBase
     /**
      * @param int $rowIndex
      */
-    public function setRowIndex(int $rowIndex = null)
+    public function setRowIndex(?int $rowIndex = null)
     {
         $this->setProperty('rowIndex', $rowIndex);
     }
@@ -132,7 +132,7 @@ class UserDefinedFieldImport extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors(string $errors = null)
+    public function setErrors(?string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -148,7 +148,7 @@ class UserDefinedFieldImport extends ModelBase
     /**
      * @param string $requiredErrors
      */
-    public function setRequiredErrors(string $requiredErrors = null)
+    public function setRequiredErrors(?string $requiredErrors = null)
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }

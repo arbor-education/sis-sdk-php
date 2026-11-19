@@ -42,7 +42,7 @@ class QualificationAssessableInstance extends ModelBase
      * @return QualificationAssessableInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -100,7 +100,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -116,7 +116,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -132,7 +132,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(?\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
@@ -149,7 +149,7 @@ class QualificationAssessableInstance extends ModelBase
      * @param \Arbor\Model\QualificationAvailabilityInstance
      * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(?\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -166,7 +166,7 @@ class QualificationAssessableInstance extends ModelBase
      * @param \Arbor\Model\QualificationTimetableSessionType
      * $qualificationTimetableSessionType
      */
-    public function setQualificationTimetableSessionType(\Arbor\Model\QualificationTimetableSessionType $qualificationTimetableSessionType = null)
+    public function setQualificationTimetableSessionType(?\Arbor\Model\QualificationTimetableSessionType $qualificationTimetableSessionType = null)
     {
         $this->setProperty('qualificationTimetableSessionType', $qualificationTimetableSessionType);
     }
@@ -182,7 +182,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param \DateTime $startDateRangeFrom
      */
-    public function setStartDateRangeFrom(\DateTime $startDateRangeFrom = null)
+    public function setStartDateRangeFrom(?\DateTime $startDateRangeFrom = null)
     {
         $this->setProperty('startDateRangeFrom', $startDateRangeFrom);
     }
@@ -198,7 +198,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param \DateTime $userDefinedStartDateRangeFrom
      */
-    public function setUserDefinedStartDateRangeFrom(\DateTime $userDefinedStartDateRangeFrom = null)
+    public function setUserDefinedStartDateRangeFrom(?\DateTime $userDefinedStartDateRangeFrom = null)
     {
         $this->setProperty('userDefinedStartDateRangeFrom', $userDefinedStartDateRangeFrom);
     }
@@ -214,7 +214,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param \DateTime $startDateRangeUntil
      */
-    public function setStartDateRangeUntil(\DateTime $startDateRangeUntil = null)
+    public function setStartDateRangeUntil(?\DateTime $startDateRangeUntil = null)
     {
         $this->setProperty('startDateRangeUntil', $startDateRangeUntil);
     }
@@ -230,7 +230,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param string $duration
      */
-    public function setDuration(string $duration = null)
+    public function setDuration(?string $duration = null)
     {
         $this->setProperty('duration', $duration);
     }
@@ -246,7 +246,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $isCentreSpecifiedTimetable
      */
-    public function setIsCentreSpecifiedTimetable(bool $isCentreSpecifiedTimetable = null)
+    public function setIsCentreSpecifiedTimetable(?bool $isCentreSpecifiedTimetable = null)
     {
         $this->setProperty('isCentreSpecifiedTimetable', $isCentreSpecifiedTimetable);
     }
@@ -262,7 +262,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param string $centreSpecifiedDuration
      */
-    public function setCentreSpecifiedDuration(string $centreSpecifiedDuration = null)
+    public function setCentreSpecifiedDuration(?string $centreSpecifiedDuration = null)
     {
         $this->setProperty('centreSpecifiedDuration', $centreSpecifiedDuration);
     }
@@ -278,7 +278,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $isProvisional
      */
-    public function setIsProvisional(bool $isProvisional = null)
+    public function setIsProvisional(?bool $isProvisional = null)
     {
         $this->setProperty('isProvisional', $isProvisional);
     }
@@ -294,7 +294,7 @@ class QualificationAssessableInstance extends ModelBase
     /**
      * @param bool $isShownInScheduling
      */
-    public function setIsShownInScheduling(bool $isShownInScheduling = null)
+    public function setIsShownInScheduling(?bool $isShownInScheduling = null)
     {
         $this->setProperty('isShownInScheduling', $isShownInScheduling);
     }

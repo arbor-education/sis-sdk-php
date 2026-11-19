@@ -20,7 +20,7 @@ class CustomGroupNotificationRecipient extends ModelBase
      * @return CustomGroupNotificationRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class CustomGroupNotificationRecipient extends ModelBase
      * @param \Arbor\Model\CustomGroupNotificationSetting
      * $customGroupNotificationSetting
      */
-    public function setCustomGroupNotificationSetting(\Arbor\Model\CustomGroupNotificationSetting $customGroupNotificationSetting = null)
+    public function setCustomGroupNotificationSetting(?\Arbor\Model\CustomGroupNotificationSetting $customGroupNotificationSetting = null)
     {
         $this->setProperty('customGroupNotificationSetting', $customGroupNotificationSetting);
     }
@@ -79,7 +79,7 @@ class CustomGroupNotificationRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -95,7 +95,7 @@ class CustomGroupNotificationRecipient extends ModelBase
     /**
      * @param string $staffType
      */
-    public function setStaffType(string $staffType = null)
+    public function setStaffType(?string $staffType = null)
     {
         $this->setProperty('staffType', $staffType);
     }

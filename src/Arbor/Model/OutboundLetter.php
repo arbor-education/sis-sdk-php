@@ -26,7 +26,7 @@ class OutboundLetter extends ModelBase
      * @return OutboundLetter[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,13 +68,13 @@ class OutboundLetter extends ModelBase
     /**
      * @param \Arbor\Model\OutboundLetterDraft $outboundLetterDraft
      */
-    public function setOutboundLetterDraft(\Arbor\Model\OutboundLetterDraft $outboundLetterDraft = null)
+    public function setOutboundLetterDraft(?\Arbor\Model\OutboundLetterDraft $outboundLetterDraft = null)
     {
         $this->setProperty('outboundLetterDraft', $outboundLetterDraft);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -82,9 +82,9 @@ class OutboundLetter extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -100,7 +100,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param \Arbor\Model\DocumentLayout $documentLayout
      */
-    public function setDocumentLayout(\Arbor\Model\DocumentLayout $documentLayout = null)
+    public function setDocumentLayout(?\Arbor\Model\DocumentLayout $documentLayout = null)
     {
         $this->setProperty('documentLayout', $documentLayout);
     }
@@ -116,7 +116,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody(string $body = null)
+    public function setBody(?string $body = null)
     {
         $this->setProperty('body', $body);
     }
@@ -132,7 +132,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param \DateTime $generatedDatetime
      */
-    public function setGeneratedDatetime(\DateTime $generatedDatetime = null)
+    public function setGeneratedDatetime(?\DateTime $generatedDatetime = null)
     {
         $this->setProperty('generatedDatetime', $generatedDatetime);
     }
@@ -148,7 +148,7 @@ class OutboundLetter extends ModelBase
     /**
      * @param \DateTime $actionRequiredDatetime
      */
-    public function setActionRequiredDatetime(\DateTime $actionRequiredDatetime = null)
+    public function setActionRequiredDatetime(?\DateTime $actionRequiredDatetime = null)
     {
         $this->setProperty('actionRequiredDatetime', $actionRequiredDatetime);
     }

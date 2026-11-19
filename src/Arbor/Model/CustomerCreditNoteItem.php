@@ -26,7 +26,7 @@ class CustomerCreditNoteItem extends ModelBase
      * @return CustomerCreditNoteItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param \Arbor\Model\CustomerCreditNote $customerCreditNote
      */
-    public function setCustomerCreditNote(\Arbor\Model\CustomerCreditNote $customerCreditNote = null)
+    public function setCustomerCreditNote(?\Arbor\Model\CustomerCreditNote $customerCreditNote = null)
     {
         $this->setProperty('customerCreditNote', $customerCreditNote);
     }
@@ -84,7 +84,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(?\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -100,7 +100,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(?\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -116,7 +116,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param string $creditAmount
      */
-    public function setCreditAmount(string $creditAmount = null)
+    public function setCreditAmount(?string $creditAmount = null)
     {
         $this->setProperty('creditAmount', $creditAmount);
     }
@@ -132,7 +132,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param int $quantityCredited
      */
-    public function setQuantityCredited(int $quantityCredited = null)
+    public function setQuantityCredited(?int $quantityCredited = null)
     {
         $this->setProperty('quantityCredited', $quantityCredited);
     }
@@ -148,7 +148,7 @@ class CustomerCreditNoteItem extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

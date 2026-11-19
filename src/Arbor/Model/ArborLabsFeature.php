@@ -20,7 +20,7 @@ class ArborLabsFeature extends ModelBase
      * @return ArborLabsFeature[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ArborLabsFeature extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -78,7 +78,7 @@ class ArborLabsFeature extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled(bool $isEnabled = null)
+    public function setIsEnabled(?bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
@@ -94,7 +94,7 @@ class ArborLabsFeature extends ModelBase
     /**
      * @param string $metadata
      */
-    public function setMetadata(string $metadata = null)
+    public function setMetadata(?string $metadata = null)
     {
         $this->setProperty('metadata', $metadata);
     }

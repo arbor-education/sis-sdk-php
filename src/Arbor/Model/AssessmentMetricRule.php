@@ -16,7 +16,7 @@ class AssessmentMetricRule extends ModelBase
      * @return AssessmentMetricRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class AssessmentMetricRule extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(\Arbor\Model\AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(?\Arbor\Model\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }

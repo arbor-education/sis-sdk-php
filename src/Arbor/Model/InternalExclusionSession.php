@@ -34,7 +34,7 @@ class InternalExclusionSession extends ModelBase
      * @return InternalExclusionSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \Arbor\Model\InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(\Arbor\Model\InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(?\Arbor\Model\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
@@ -92,7 +92,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param string $sessionName
      */
-    public function setSessionName(string $sessionName = null)
+    public function setSessionName(?string $sessionName = null)
     {
         $this->setProperty('sessionName', $sessionName);
     }
@@ -108,7 +108,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -124,7 +124,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -140,7 +140,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \Arbor\Model\Room $location
      */
-    public function setLocation(\Arbor\Model\Room $location = null)
+    public function setLocation(?\Arbor\Model\Room $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -156,7 +156,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -172,7 +172,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -188,7 +188,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -204,7 +204,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \DateTime $attendanceRegisterOpenedDatetime
      */
-    public function setAttendanceRegisterOpenedDatetime(\DateTime $attendanceRegisterOpenedDatetime = null)
+    public function setAttendanceRegisterOpenedDatetime(?\DateTime $attendanceRegisterOpenedDatetime = null)
     {
         $this->setProperty('attendanceRegisterOpenedDatetime', $attendanceRegisterOpenedDatetime);
     }
@@ -220,7 +220,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param \DateTime $attendanceRegisterClosedDatetime
      */
-    public function setAttendanceRegisterClosedDatetime(\DateTime $attendanceRegisterClosedDatetime = null)
+    public function setAttendanceRegisterClosedDatetime(?\DateTime $attendanceRegisterClosedDatetime = null)
     {
         $this->setProperty('attendanceRegisterClosedDatetime', $attendanceRegisterClosedDatetime);
     }

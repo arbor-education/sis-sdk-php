@@ -30,7 +30,7 @@ class IncomingEntityTransfer extends ModelBase
      * @return IncomingEntityTransfer[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $sourceApplicationId
      */
-    public function setSourceApplicationId(string $sourceApplicationId = null)
+    public function setSourceApplicationId(?string $sourceApplicationId = null)
     {
         $this->setProperty('sourceApplicationId', $sourceApplicationId);
     }
@@ -88,7 +88,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $sourceEntity
      */
-    public function setSourceEntity(string $sourceEntity = null)
+    public function setSourceEntity(?string $sourceEntity = null)
     {
         $this->setProperty('sourceEntity', $sourceEntity);
     }
@@ -104,13 +104,13 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param string $transferClassName
      */
-    public function setTransferClassName(string $transferClassName = null)
+    public function setTransferClassName(?string $transferClassName = null)
     {
         $this->setProperty('transferClassName', $transferClassName);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getImportedEntity()
     {
@@ -118,9 +118,9 @@ class IncomingEntityTransfer extends ModelBase
     }
 
     /**
-     * @param ModelBase $importedEntity
+     * @param \Arbor\Model\ModelBase $importedEntity
      */
-    public function setImportedEntity(\ModelBase $importedEntity = null)
+    public function setImportedEntity(?\Arbor\Model\ModelBase $importedEntity = null)
     {
         $this->setProperty('importedEntity', $importedEntity);
     }
@@ -136,7 +136,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param \DateTime $syncEffectiveDate
      */
-    public function setSyncEffectiveDate(\DateTime $syncEffectiveDate = null)
+    public function setSyncEffectiveDate(?\DateTime $syncEffectiveDate = null)
     {
         $this->setProperty('syncEffectiveDate', $syncEffectiveDate);
     }
@@ -152,7 +152,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param \DateTime $syncEndDate
      */
-    public function setSyncEndDate(\DateTime $syncEndDate = null)
+    public function setSyncEndDate(?\DateTime $syncEndDate = null)
     {
         $this->setProperty('syncEndDate', $syncEndDate);
     }
@@ -168,7 +168,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param bool $syncDisabled
      */
-    public function setSyncDisabled(bool $syncDisabled = null)
+    public function setSyncDisabled(?bool $syncDisabled = null)
     {
         $this->setProperty('syncDisabled', $syncDisabled);
     }
@@ -184,7 +184,7 @@ class IncomingEntityTransfer extends ModelBase
     /**
      * @param \DateTime $lastSyncDatetime
      */
-    public function setLastSyncDatetime(\DateTime $lastSyncDatetime = null)
+    public function setLastSyncDatetime(?\DateTime $lastSyncDatetime = null)
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }

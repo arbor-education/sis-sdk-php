@@ -32,7 +32,7 @@ class PlascCensusTeacher extends ModelBase
      * @return PlascCensusTeacher[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param \Arbor\Model\Statutory\DataReturn $dataReturn
      */
-    public function setDataReturn(\Arbor\Model\Statutory\DataReturn $dataReturn = null)
+    public function setDataReturn(?\Arbor\Model\Statutory\DataReturn $dataReturn = null)
     {
         $this->setProperty('dataReturn', $dataReturn);
     }
@@ -90,7 +90,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param string $teacherCategory
      */
-    public function setTeacherCategory(string $teacherCategory = null)
+    public function setTeacherCategory(?string $teacherCategory = null)
     {
         $this->setProperty('teacherCategory', $teacherCategory);
     }
@@ -106,7 +106,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param string $sex
      */
-    public function setSex(string $sex = null)
+    public function setSex(?string $sex = null)
     {
         $this->setProperty('sex', $sex);
     }
@@ -122,7 +122,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure(string $tenure = null)
+    public function setTenure(?string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -138,7 +138,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param int $partTimeHours
      */
-    public function setPartTimeHours(int $partTimeHours = null)
+    public function setPartTimeHours(?int $partTimeHours = null)
     {
         $this->setProperty('partTimeHours', $partTimeHours);
     }
@@ -154,7 +154,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param int $headCount
      */
-    public function setHeadCount(int $headCount = null)
+    public function setHeadCount(?int $headCount = null)
     {
         $this->setProperty('headCount', $headCount);
     }
@@ -170,7 +170,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param int $contractsCount
      */
-    public function setContractsCount(int $contractsCount = null)
+    public function setContractsCount(?int $contractsCount = null)
     {
         $this->setProperty('contractsCount', $contractsCount);
     }
@@ -186,7 +186,7 @@ class PlascCensusTeacher extends ModelBase
     /**
      * @param int $contractsPartTimeHours
      */
-    public function setContractsPartTimeHours(int $contractsPartTimeHours = null)
+    public function setContractsPartTimeHours(?int $contractsPartTimeHours = null)
     {
         $this->setProperty('contractsPartTimeHours', $contractsPartTimeHours);
     }

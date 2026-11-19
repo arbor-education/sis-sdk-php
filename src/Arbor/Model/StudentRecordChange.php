@@ -32,7 +32,7 @@ class StudentRecordChange extends ModelBase
      * @return StudentRecordChange[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -90,7 +90,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $changerClassName
      */
-    public function setChangerClassName(string $changerClassName = null)
+    public function setChangerClassName(?string $changerClassName = null)
     {
         $this->setProperty('changerClassName', $changerClassName);
     }
@@ -106,13 +106,13 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $changeType
      */
-    public function setChangeType(string $changeType = null)
+    public function setChangeType(?string $changeType = null)
     {
         $this->setProperty('changeType', $changeType);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getReferenceObject()
     {
@@ -120,9 +120,9 @@ class StudentRecordChange extends ModelBase
     }
 
     /**
-     * @param ModelBase $referenceObject
+     * @param \Arbor\Model\ModelBase $referenceObject
      */
-    public function setReferenceObject(\ModelBase $referenceObject = null)
+    public function setReferenceObject(?\Arbor\Model\ModelBase $referenceObject = null)
     {
         $this->setProperty('referenceObject', $referenceObject);
     }
@@ -138,7 +138,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param \DateTime $acceptedDatetime
      */
-    public function setAcceptedDatetime(\DateTime $acceptedDatetime = null)
+    public function setAcceptedDatetime(?\DateTime $acceptedDatetime = null)
     {
         $this->setProperty('acceptedDatetime', $acceptedDatetime);
     }
@@ -154,7 +154,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param \DateTime $rejectedDatetime
      */
-    public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
+    public function setRejectedDatetime(?\DateTime $rejectedDatetime = null)
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
@@ -170,7 +170,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param \Arbor\Model\Staff $actionedByStaff
      */
-    public function setActionedByStaff(\Arbor\Model\Staff $actionedByStaff = null)
+    public function setActionedByStaff(?\Arbor\Model\Staff $actionedByStaff = null)
     {
         $this->setProperty('actionedByStaff', $actionedByStaff);
     }
@@ -186,7 +186,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $oldData
      */
-    public function setOldData(string $oldData = null)
+    public function setOldData(?string $oldData = null)
     {
         $this->setProperty('oldData', $oldData);
     }
@@ -202,7 +202,7 @@ class StudentRecordChange extends ModelBase
     /**
      * @param string $newData
      */
-    public function setNewData(string $newData = null)
+    public function setNewData(?string $newData = null)
     {
         $this->setProperty('newData', $newData);
     }

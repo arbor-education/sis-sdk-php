@@ -24,7 +24,7 @@ class SmsMessageStatus extends ModelBase
      * @return SmsMessageStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param \Arbor\Model\SmsMessage $smsMessage
      */
-    public function setSmsMessage(\Arbor\Model\SmsMessage $smsMessage = null)
+    public function setSmsMessage(?\Arbor\Model\SmsMessage $smsMessage = null)
     {
         $this->setProperty('smsMessage', $smsMessage);
     }
@@ -82,7 +82,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param \Arbor\Model\SmsMessagePart $smsMessagePart
      */
-    public function setSmsMessagePart(\Arbor\Model\SmsMessagePart $smsMessagePart = null)
+    public function setSmsMessagePart(?\Arbor\Model\SmsMessagePart $smsMessagePart = null)
     {
         $this->setProperty('smsMessagePart', $smsMessagePart);
     }
@@ -98,7 +98,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param string $statusType
      */
-    public function setStatusType(string $statusType = null)
+    public function setStatusType(?string $statusType = null)
     {
         $this->setProperty('statusType', $statusType);
     }
@@ -114,7 +114,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param \DateTime $statusDatetime
      */
-    public function setStatusDatetime(\DateTime $statusDatetime = null)
+    public function setStatusDatetime(?\DateTime $statusDatetime = null)
     {
         $this->setProperty('statusDatetime', $statusDatetime);
     }
@@ -130,7 +130,7 @@ class SmsMessageStatus extends ModelBase
     /**
      * @param string $errorType
      */
-    public function setErrorType(string $errorType = null)
+    public function setErrorType(?string $errorType = null)
     {
         $this->setProperty('errorType', $errorType);
     }

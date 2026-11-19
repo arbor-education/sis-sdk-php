@@ -20,7 +20,7 @@ class EducationalInstitution extends ModelBase
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $centerNumber
      */
-    public function setCenterNumber(string $centerNumber = null)
+    public function setCenterNumber(?string $centerNumber = null)
     {
         $this->setProperty('centerNumber', $centerNumber);
     }
@@ -78,7 +78,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $countryCode
      */
-    public function setCountryCode(string $countryCode = null)
+    public function setCountryCode(?string $countryCode = null)
     {
         $this->setProperty('countryCode', $countryCode);
     }

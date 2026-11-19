@@ -24,7 +24,7 @@ class SmartReportTemplate extends ModelBase
      * @return SmartReportTemplate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class SmartReportTemplate extends ModelBase
     /**
      * @param string $uuid
      */
-    public function setUuid(string $uuid = null)
+    public function setUuid(?string $uuid = null)
     {
         $this->setProperty('uuid', $uuid);
     }
@@ -82,7 +82,7 @@ class SmartReportTemplate extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -98,7 +98,7 @@ class SmartReportTemplate extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -114,7 +114,7 @@ class SmartReportTemplate extends ModelBase
     /**
      * @param bool $archived
      */
-    public function setArchived(bool $archived = null)
+    public function setArchived(?bool $archived = null)
     {
         $this->setProperty('archived', $archived);
     }
@@ -130,7 +130,7 @@ class SmartReportTemplate extends ModelBase
     /**
      * @param \Arbor\Model\Content $templateContent
      */
-    public function setTemplateContent(\Arbor\Model\Content $templateContent = null)
+    public function setTemplateContent(?\Arbor\Model\Content $templateContent = null)
     {
         $this->setProperty('templateContent', $templateContent);
     }

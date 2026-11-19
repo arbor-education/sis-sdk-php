@@ -18,7 +18,7 @@ class AcademicUnitBandAssignment extends ModelBase
      * @return AcademicUnitBandAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicUnitBandAssignment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -76,7 +76,7 @@ class AcademicUnitBandAssignment extends ModelBase
     /**
      * @param string $bandName
      */
-    public function setBandName(string $bandName = null)
+    public function setBandName(?string $bandName = null)
     {
         $this->setProperty('bandName', $bandName);
     }

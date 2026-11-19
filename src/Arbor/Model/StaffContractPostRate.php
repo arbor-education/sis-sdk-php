@@ -24,7 +24,7 @@ class StaffContractPostRate extends ModelBase
      * @return StaffContractPostRate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(?\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -82,7 +82,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param string $rate
      */
-    public function setRate(string $rate = null)
+    public function setRate(?string $rate = null)
     {
         $this->setProperty('rate', $rate);
     }
@@ -98,7 +98,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param string $rateFrequency
      */
-    public function setRateFrequency(string $rateFrequency = null)
+    public function setRateFrequency(?string $rateFrequency = null)
     {
         $this->setProperty('rateFrequency', $rateFrequency);
     }
@@ -114,7 +114,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -130,7 +130,7 @@ class StaffContractPostRate extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

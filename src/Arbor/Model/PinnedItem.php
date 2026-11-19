@@ -20,7 +20,7 @@ class PinnedItem extends ModelBase
      * @return PinnedItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class PinnedItem extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPinned()
     {
@@ -60,15 +60,15 @@ class PinnedItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $pinned
+     * @param \Arbor\Model\ModelBase $pinned
      */
-    public function setPinned(\ModelBase $pinned = null)
+    public function setPinned(?\Arbor\Model\ModelBase $pinned = null)
     {
         $this->setProperty('pinned', $pinned);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTarget()
     {
@@ -76,9 +76,9 @@ class PinnedItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $target
+     * @param \Arbor\Model\ModelBase $target
      */
-    public function setTarget(\ModelBase $target = null)
+    public function setTarget(?\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }
@@ -94,7 +94,7 @@ class PinnedItem extends ModelBase
     /**
      * @param \DateTime $pinnedUntilDatetime
      */
-    public function setPinnedUntilDatetime(\DateTime $pinnedUntilDatetime = null)
+    public function setPinnedUntilDatetime(?\DateTime $pinnedUntilDatetime = null)
     {
         $this->setProperty('pinnedUntilDatetime', $pinnedUntilDatetime);
     }

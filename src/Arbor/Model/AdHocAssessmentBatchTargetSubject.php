@@ -18,7 +18,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
      * @return AdHocAssessmentBatchTargetSubject[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget
      */
-    public function setAdHocAssessmentBatchTarget(\Arbor\Model\AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget = null)
+    public function setAdHocAssessmentBatchTarget(?\Arbor\Model\AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget = null)
     {
         $this->setProperty('adHocAssessmentBatchTarget', $adHocAssessmentBatchTarget);
     }
@@ -76,7 +76,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

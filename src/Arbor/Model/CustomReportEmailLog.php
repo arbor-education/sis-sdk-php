@@ -20,7 +20,7 @@ class CustomReportEmailLog extends ModelBase
      * @return CustomReportEmailLog[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class CustomReportEmailLog extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -78,7 +78,7 @@ class CustomReportEmailLog extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(string $emailAddress = null)
+    public function setEmailAddress(?string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -94,7 +94,7 @@ class CustomReportEmailLog extends ModelBase
     /**
      * @param \DateTime $sentDatetime
      */
-    public function setSentDatetime(\DateTime $sentDatetime = null)
+    public function setSentDatetime(?\DateTime $sentDatetime = null)
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }

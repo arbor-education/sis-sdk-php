@@ -20,7 +20,7 @@ class UcasImport extends ModelBase
      * @return UcasImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UcasImport extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class UcasImport extends ModelBase
     /**
      * @param \DateTime $fileDate
      */
-    public function setFileDate(\DateTime $fileDate = null)
+    public function setFileDate(?\DateTime $fileDate = null)
     {
         $this->setProperty('fileDate', $fileDate);
     }

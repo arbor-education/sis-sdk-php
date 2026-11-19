@@ -20,7 +20,7 @@ class Programme extends ModelBase
      * @return Programme[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class Programme extends ModelBase
     /**
      * @param string $programmeIdentifier
      */
-    public function setProgrammeIdentifier(string $programmeIdentifier = null)
+    public function setProgrammeIdentifier(?string $programmeIdentifier = null)
     {
         $this->setProperty('programmeIdentifier', $programmeIdentifier);
     }
@@ -78,7 +78,7 @@ class Programme extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\ProgrammeReference $programmeReference
      */
-    public function setProgrammeReference(\Arbor\Model\Cymru\ProgrammeReference $programmeReference = null)
+    public function setProgrammeReference(?\Arbor\Model\Cymru\ProgrammeReference $programmeReference = null)
     {
         $this->setProperty('programmeReference', $programmeReference);
     }

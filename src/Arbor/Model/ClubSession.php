@@ -32,7 +32,7 @@ class ClubSession extends ModelBase
      * @return ClubSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class ClubSession extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -90,7 +90,7 @@ class ClubSession extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -106,13 +106,13 @@ class ClubSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -120,9 +120,9 @@ class ClubSession extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -138,7 +138,7 @@ class ClubSession extends ModelBase
     /**
      * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Arbor\Model\Club $club = null)
+    public function setClub(?\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -154,7 +154,7 @@ class ClubSession extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -170,7 +170,7 @@ class ClubSession extends ModelBase
     /**
      * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(?\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -186,7 +186,7 @@ class ClubSession extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -202,7 +202,7 @@ class ClubSession extends ModelBase
     /**
      * @param bool $isCancelled
      */
-    public function setIsCancelled(bool $isCancelled = null)
+    public function setIsCancelled(?bool $isCancelled = null)
     {
         $this->setProperty('isCancelled', $isCancelled);
     }

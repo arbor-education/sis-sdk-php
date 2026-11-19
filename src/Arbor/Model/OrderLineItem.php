@@ -32,7 +32,7 @@ class OrderLineItem extends ModelBase
      * @return OrderLineItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,13 +74,13 @@ class OrderLineItem extends ModelBase
     /**
      * @param \Arbor\Model\Order $order
      */
-    public function setOrder(\Arbor\Model\Order $order = null)
+    public function setOrder(?\Arbor\Model\Order $order = null)
     {
         $this->setProperty('order', $order);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getItem()
     {
@@ -88,9 +88,9 @@ class OrderLineItem extends ModelBase
     }
 
     /**
-     * @param ModelBase $item
+     * @param \Arbor\Model\ModelBase $item
      */
-    public function setItem(\ModelBase $item = null)
+    public function setItem(?\Arbor\Model\ModelBase $item = null)
     {
         $this->setProperty('item', $item);
     }
@@ -106,7 +106,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }
@@ -122,7 +122,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param string $itemAmount
      */
-    public function setItemAmount(string $itemAmount = null)
+    public function setItemAmount(?string $itemAmount = null)
     {
         $this->setProperty('itemAmount', $itemAmount);
     }
@@ -138,7 +138,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param string $transactionFeeAmount
      */
-    public function setTransactionFeeAmount(string $transactionFeeAmount = null)
+    public function setTransactionFeeAmount(?string $transactionFeeAmount = null)
     {
         $this->setProperty('transactionFeeAmount', $transactionFeeAmount);
     }
@@ -154,7 +154,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param string $transactionFeeVatAmount
      */
-    public function setTransactionFeeVatAmount(string $transactionFeeVatAmount = null)
+    public function setTransactionFeeVatAmount(?string $transactionFeeVatAmount = null)
     {
         $this->setProperty('transactionFeeVatAmount', $transactionFeeVatAmount);
     }
@@ -170,7 +170,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -186,7 +186,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param string $fulfillmentStatus
      */
-    public function setFulfillmentStatus(string $fulfillmentStatus = null)
+    public function setFulfillmentStatus(?string $fulfillmentStatus = null)
     {
         $this->setProperty('fulfillmentStatus', $fulfillmentStatus);
     }
@@ -202,7 +202,7 @@ class OrderLineItem extends ModelBase
     /**
      * @param \Arbor\Model\StripeIncomingCardTransaction $stripeIncomingCardTransaction
      */
-    public function setStripeIncomingCardTransaction(\Arbor\Model\StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
+    public function setStripeIncomingCardTransaction(?\Arbor\Model\StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
     {
         $this->setProperty('stripeIncomingCardTransaction', $stripeIncomingCardTransaction);
     }

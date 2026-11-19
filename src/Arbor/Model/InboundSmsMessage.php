@@ -34,7 +34,7 @@ class InboundSmsMessage extends ModelBase
      * @return InboundSmsMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageType
      */
-    public function setMessageType(string $messageType = null)
+    public function setMessageType(?string $messageType = null)
     {
         $this->setProperty('messageType', $messageType);
     }
@@ -92,13 +92,13 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $senderNumber
      */
-    public function setSenderNumber(string $senderNumber = null)
+    public function setSenderNumber(?string $senderNumber = null)
     {
         $this->setProperty('senderNumber', $senderNumber);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -106,9 +106,9 @@ class InboundSmsMessage extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -124,7 +124,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $recipientNumber
      */
-    public function setRecipientNumber(string $recipientNumber = null)
+    public function setRecipientNumber(?string $recipientNumber = null)
     {
         $this->setProperty('recipientNumber', $recipientNumber);
     }
@@ -140,7 +140,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $recipient
      */
-    public function setRecipient(\Arbor\Model\EducationalInstitution $recipient = null)
+    public function setRecipient(?\Arbor\Model\EducationalInstitution $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -156,7 +156,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText(string $messageText = null)
+    public function setMessageText(?string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -172,7 +172,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageIdentifier
      */
-    public function setMessageIdentifier(string $messageIdentifier = null)
+    public function setMessageIdentifier(?string $messageIdentifier = null)
     {
         $this->setProperty('messageIdentifier', $messageIdentifier);
     }
@@ -188,7 +188,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param \DateTime $receivedDatetime
      */
-    public function setReceivedDatetime(\DateTime $receivedDatetime = null)
+    public function setReceivedDatetime(?\DateTime $receivedDatetime = null)
     {
         $this->setProperty('receivedDatetime', $receivedDatetime);
     }
@@ -204,7 +204,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param \DateTime $readDatetime
      */
-    public function setReadDatetime(\DateTime $readDatetime = null)
+    public function setReadDatetime(?\DateTime $readDatetime = null)
     {
         $this->setProperty('readDatetime', $readDatetime);
     }
@@ -220,7 +220,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param \DateTime $actionRequiredByDatetime
      */
-    public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
+    public function setActionRequiredByDatetime(?\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }

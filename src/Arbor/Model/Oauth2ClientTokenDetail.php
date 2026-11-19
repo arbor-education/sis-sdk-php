@@ -20,7 +20,7 @@ class Oauth2ClientTokenDetail extends ModelBase
      * @return Oauth2ClientTokenDetail[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class Oauth2ClientTokenDetail extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class Oauth2ClientTokenDetail extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue(string $value = null)
+    public function setValue(?string $value = null)
     {
         $this->setProperty('value', $value);
     }
@@ -94,7 +94,7 @@ class Oauth2ClientTokenDetail extends ModelBase
     /**
      * @param \Arbor\Model\Oauth2ClientToken $oauth2ClientToken
      */
-    public function setOauth2ClientToken(\Arbor\Model\Oauth2ClientToken $oauth2ClientToken = null)
+    public function setOauth2ClientToken(?\Arbor\Model\Oauth2ClientToken $oauth2ClientToken = null)
     {
         $this->setProperty('oauth2ClientToken', $oauth2ClientToken);
     }

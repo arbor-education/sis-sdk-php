@@ -22,7 +22,7 @@ class NewStudentReportCardSection extends ModelBase
      * @return NewStudentReportCardSection[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,13 +64,13 @@ class NewStudentReportCardSection extends ModelBase
     /**
      * @param \Arbor\Model\NewStudentReportCard $studentReportCard
      */
-    public function setStudentReportCard(\Arbor\Model\NewStudentReportCard $studentReportCard = null)
+    public function setStudentReportCard(?\Arbor\Model\NewStudentReportCard $studentReportCard = null)
     {
         $this->setProperty('studentReportCard', $studentReportCard);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedEntity()
     {
@@ -78,9 +78,9 @@ class NewStudentReportCardSection extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedEntity
+     * @param \Arbor\Model\ModelBase $linkedEntity
      */
-    public function setLinkedEntity(\ModelBase $linkedEntity = null)
+    public function setLinkedEntity(?\Arbor\Model\ModelBase $linkedEntity = null)
     {
         $this->setProperty('linkedEntity', $linkedEntity);
     }
@@ -96,7 +96,7 @@ class NewStudentReportCardSection extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
@@ -112,7 +112,7 @@ class NewStudentReportCardSection extends ModelBase
     /**
      * @param \DateTime $approvedDatetime
      */
-    public function setApprovedDatetime(\DateTime $approvedDatetime = null)
+    public function setApprovedDatetime(?\DateTime $approvedDatetime = null)
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }

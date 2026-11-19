@@ -18,7 +18,7 @@ class AcademicYearEnrolment extends ModelBase
      * @return AcademicYearEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param string $learningSupportCost
      */
-    public function setLearningSupportCost(string $learningSupportCost = null)
+    public function setLearningSupportCost(?string $learningSupportCost = null)
     {
         $this->setProperty('learningSupportCost', $learningSupportCost);
     }

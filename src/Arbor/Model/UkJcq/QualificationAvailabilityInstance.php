@@ -18,7 +18,7 @@ class QualificationAvailabilityInstance extends ModelBase
      * @return QualificationAvailabilityInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $ediAwardingBodyIdentifier
      */
-    public function setEdiAwardingBodyIdentifier(string $ediAwardingBodyIdentifier = null)
+    public function setEdiAwardingBodyIdentifier(?string $ediAwardingBodyIdentifier = null)
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }

@@ -22,7 +22,7 @@ class ObservationStrand extends ModelBase
      * @return ObservationStrand[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param \Arbor\Model\ObservationTheme $observationTheme
      */
-    public function setObservationTheme(\Arbor\Model\ObservationTheme $observationTheme = null)
+    public function setObservationTheme(?\Arbor\Model\ObservationTheme $observationTheme = null)
     {
         $this->setProperty('observationTheme', $observationTheme);
     }
@@ -80,7 +80,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param \Arbor\Model\ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(?\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
@@ -96,7 +96,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -112,7 +112,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param bool $useComment
      */
-    public function setUseComment(bool $useComment = null)
+    public function setUseComment(?bool $useComment = null)
     {
         $this->setProperty('useComment', $useComment);
     }

@@ -44,7 +44,7 @@ class MealScheduleItem extends ModelBase
      * @return MealScheduleItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -86,7 +86,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealSchedule $mealSchedule
      */
-    public function setMealSchedule(\Arbor\Model\MealSchedule $mealSchedule = null)
+    public function setMealSchedule(?\Arbor\Model\MealSchedule $mealSchedule = null)
     {
         $this->setProperty('mealSchedule', $mealSchedule);
     }
@@ -102,7 +102,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $monProvision
      */
-    public function setMonProvision(\Arbor\Model\MealProvision $monProvision = null)
+    public function setMonProvision(?\Arbor\Model\MealProvision $monProvision = null)
     {
         $this->setProperty('monProvision', $monProvision);
     }
@@ -118,7 +118,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $monLabel
      */
-    public function setMonLabel(string $monLabel = null)
+    public function setMonLabel(?string $monLabel = null)
     {
         $this->setProperty('monLabel', $monLabel);
     }
@@ -134,7 +134,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $tueProvision
      */
-    public function setTueProvision(\Arbor\Model\MealProvision $tueProvision = null)
+    public function setTueProvision(?\Arbor\Model\MealProvision $tueProvision = null)
     {
         $this->setProperty('tueProvision', $tueProvision);
     }
@@ -150,7 +150,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $tueLabel
      */
-    public function setTueLabel(string $tueLabel = null)
+    public function setTueLabel(?string $tueLabel = null)
     {
         $this->setProperty('tueLabel', $tueLabel);
     }
@@ -166,7 +166,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $wedProvision
      */
-    public function setWedProvision(\Arbor\Model\MealProvision $wedProvision = null)
+    public function setWedProvision(?\Arbor\Model\MealProvision $wedProvision = null)
     {
         $this->setProperty('wedProvision', $wedProvision);
     }
@@ -182,7 +182,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $wedLabel
      */
-    public function setWedLabel(string $wedLabel = null)
+    public function setWedLabel(?string $wedLabel = null)
     {
         $this->setProperty('wedLabel', $wedLabel);
     }
@@ -198,7 +198,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $thuProvision
      */
-    public function setThuProvision(\Arbor\Model\MealProvision $thuProvision = null)
+    public function setThuProvision(?\Arbor\Model\MealProvision $thuProvision = null)
     {
         $this->setProperty('thuProvision', $thuProvision);
     }
@@ -214,7 +214,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $thuLabel
      */
-    public function setThuLabel(string $thuLabel = null)
+    public function setThuLabel(?string $thuLabel = null)
     {
         $this->setProperty('thuLabel', $thuLabel);
     }
@@ -230,7 +230,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $friProvision
      */
-    public function setFriProvision(\Arbor\Model\MealProvision $friProvision = null)
+    public function setFriProvision(?\Arbor\Model\MealProvision $friProvision = null)
     {
         $this->setProperty('friProvision', $friProvision);
     }
@@ -246,7 +246,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $friLabel
      */
-    public function setFriLabel(string $friLabel = null)
+    public function setFriLabel(?string $friLabel = null)
     {
         $this->setProperty('friLabel', $friLabel);
     }
@@ -262,7 +262,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $satProvision
      */
-    public function setSatProvision(\Arbor\Model\MealProvision $satProvision = null)
+    public function setSatProvision(?\Arbor\Model\MealProvision $satProvision = null)
     {
         $this->setProperty('satProvision', $satProvision);
     }
@@ -278,7 +278,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $satLabel
      */
-    public function setSatLabel(string $satLabel = null)
+    public function setSatLabel(?string $satLabel = null)
     {
         $this->setProperty('satLabel', $satLabel);
     }
@@ -294,7 +294,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $sunProvision
      */
-    public function setSunProvision(\Arbor\Model\MealProvision $sunProvision = null)
+    public function setSunProvision(?\Arbor\Model\MealProvision $sunProvision = null)
     {
         $this->setProperty('sunProvision', $sunProvision);
     }
@@ -310,7 +310,7 @@ class MealScheduleItem extends ModelBase
     /**
      * @param string $sunLabel
      */
-    public function setSunLabel(string $sunLabel = null)
+    public function setSunLabel(?string $sunLabel = null)
     {
         $this->setProperty('sunLabel', $sunLabel);
     }

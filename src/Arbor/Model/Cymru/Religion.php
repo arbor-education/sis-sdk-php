@@ -18,7 +18,7 @@ class Religion extends ModelBase
      * @return Religion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Religion extends ModelBase
     /**
      * @param string $faithCode
      */
-    public function setFaithCode(string $faithCode = null)
+    public function setFaithCode(?string $faithCode = null)
     {
         $this->setProperty('faithCode', $faithCode);
     }

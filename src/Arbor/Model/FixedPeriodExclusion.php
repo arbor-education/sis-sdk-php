@@ -42,7 +42,7 @@ class FixedPeriodExclusion extends ModelBase
      * @return FixedPeriodExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -100,7 +100,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(?\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -116,7 +116,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \DateTime $fromDatetime
      */
-    public function setFromDatetime(\DateTime $fromDatetime = null)
+    public function setFromDatetime(?\DateTime $fromDatetime = null)
     {
         $this->setProperty('fromDatetime', $fromDatetime);
     }
@@ -132,7 +132,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \DateTime $untilDatetime
      */
-    public function setUntilDatetime(\DateTime $untilDatetime = null)
+    public function setUntilDatetime(?\DateTime $untilDatetime = null)
     {
         $this->setProperty('untilDatetime', $untilDatetime);
     }
@@ -148,7 +148,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $dailyStartTime
      */
-    public function setDailyStartTime(string $dailyStartTime = null)
+    public function setDailyStartTime(?string $dailyStartTime = null)
     {
         $this->setProperty('dailyStartTime', $dailyStartTime);
     }
@@ -164,7 +164,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $dailyEndTime
      */
-    public function setDailyEndTime(string $dailyEndTime = null)
+    public function setDailyEndTime(?string $dailyEndTime = null)
     {
         $this->setProperty('dailyEndTime', $dailyEndTime);
     }
@@ -180,7 +180,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \DateTime $decisionDatetime
      */
-    public function setDecisionDatetime(\DateTime $decisionDatetime = null)
+    public function setDecisionDatetime(?\DateTime $decisionDatetime = null)
     {
         $this->setProperty('decisionDatetime', $decisionDatetime);
     }
@@ -196,7 +196,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \DateTime $notifiedStudentDatetime
      */
-    public function setNotifiedStudentDatetime(\DateTime $notifiedStudentDatetime = null)
+    public function setNotifiedStudentDatetime(?\DateTime $notifiedStudentDatetime = null)
     {
         $this->setProperty('notifiedStudentDatetime', $notifiedStudentDatetime);
     }
@@ -212,7 +212,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param \DateTime $notifiedGuardiansDatetime
      */
-    public function setNotifiedGuardiansDatetime(\DateTime $notifiedGuardiansDatetime = null)
+    public function setNotifiedGuardiansDatetime(?\DateTime $notifiedGuardiansDatetime = null)
     {
         $this->setProperty('notifiedGuardiansDatetime', $notifiedGuardiansDatetime);
     }
@@ -228,7 +228,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param float $statisticalDaysExcluded
      */
-    public function setStatisticalDaysExcluded(float $statisticalDaysExcluded = null)
+    public function setStatisticalDaysExcluded(?float $statisticalDaysExcluded = null)
     {
         $this->setProperty('statisticalDaysExcluded', $statisticalDaysExcluded);
     }
@@ -244,7 +244,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param int $schoolDefinedSessionsExcluded
      */
-    public function setSchoolDefinedSessionsExcluded(int $schoolDefinedSessionsExcluded = null)
+    public function setSchoolDefinedSessionsExcluded(?int $schoolDefinedSessionsExcluded = null)
     {
         $this->setProperty('schoolDefinedSessionsExcluded', $schoolDefinedSessionsExcluded);
     }
@@ -260,8 +260,40 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCancellationReason()
+    {
+        return $this->getProperty('cancellationReason');
+    }
+
+    /**
+     * @param string $cancellationReason
+     */
+    public function setCancellationReason(?string $cancellationReason = null)
+    {
+        $this->setProperty('cancellationReason', $cancellationReason);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getStudentReinstatementDate()
+    {
+        return $this->getProperty('studentReinstatementDate');
+    }
+
+    /**
+     * @param \DateTime $studentReinstatementDate
+     */
+    public function setStudentReinstatementDate(?\DateTime $studentReinstatementDate = null)
+    {
+        $this->setProperty('studentReinstatementDate', $studentReinstatementDate);
     }
 }

@@ -36,7 +36,7 @@ class EmailDraft extends ModelBase
      * @return EmailDraft[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class EmailDraft extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -76,9 +76,9 @@ class EmailDraft extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -94,7 +94,7 @@ class EmailDraft extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -110,7 +110,7 @@ class EmailDraft extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody(string $body = null)
+    public function setBody(?string $body = null)
     {
         $this->setProperty('body', $body);
     }
@@ -126,7 +126,7 @@ class EmailDraft extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -142,7 +142,7 @@ class EmailDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(?bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -158,7 +158,7 @@ class EmailDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(?bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }
@@ -174,7 +174,7 @@ class EmailDraft extends ModelBase
     /**
      * @param \DateTime $sendingQueuedDatetime
      */
-    public function setSendingQueuedDatetime(\DateTime $sendingQueuedDatetime = null)
+    public function setSendingQueuedDatetime(?\DateTime $sendingQueuedDatetime = null)
     {
         $this->setProperty('sendingQueuedDatetime', $sendingQueuedDatetime);
     }
@@ -190,7 +190,7 @@ class EmailDraft extends ModelBase
     /**
      * @param \DateTime $sendingStartedDatetime
      */
-    public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
+    public function setSendingStartedDatetime(?\DateTime $sendingStartedDatetime = null)
     {
         $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
@@ -206,7 +206,7 @@ class EmailDraft extends ModelBase
     /**
      * @param \DateTime $recipientsResolvedDatetime
      */
-    public function setRecipientsResolvedDatetime(\DateTime $recipientsResolvedDatetime = null)
+    public function setRecipientsResolvedDatetime(?\DateTime $recipientsResolvedDatetime = null)
     {
         $this->setProperty('recipientsResolvedDatetime', $recipientsResolvedDatetime);
     }
@@ -222,13 +222,13 @@ class EmailDraft extends ModelBase
     /**
      * @param \DateTime $sendingCompletedDatetime
      */
-    public function setSendingCompletedDatetime(\DateTime $sendingCompletedDatetime = null)
+    public function setSendingCompletedDatetime(?\DateTime $sendingCompletedDatetime = null)
     {
         $this->setProperty('sendingCompletedDatetime', $sendingCompletedDatetime);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getContext()
     {
@@ -236,9 +236,9 @@ class EmailDraft extends ModelBase
     }
 
     /**
-     * @param ModelBase $context
+     * @param \Arbor\Model\ModelBase $context
      */
-    public function setContext(\ModelBase $context = null)
+    public function setContext(?\Arbor\Model\ModelBase $context = null)
     {
         $this->setProperty('context', $context);
     }

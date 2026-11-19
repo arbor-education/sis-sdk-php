@@ -20,7 +20,7 @@ class CommunicationTag extends ModelBase
      * @return CommunicationTag[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class CommunicationTag extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getCommunication()
     {
@@ -60,15 +60,15 @@ class CommunicationTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $communication
+     * @param \Arbor\Model\ModelBase $communication
      */
-    public function setCommunication(\ModelBase $communication = null)
+    public function setCommunication(?\Arbor\Model\ModelBase $communication = null)
     {
         $this->setProperty('communication', $communication);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTaggedEntity()
     {
@@ -76,9 +76,9 @@ class CommunicationTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $taggedEntity
+     * @param \Arbor\Model\ModelBase $taggedEntity
      */
-    public function setTaggedEntity(\ModelBase $taggedEntity = null)
+    public function setTaggedEntity(?\Arbor\Model\ModelBase $taggedEntity = null)
     {
         $this->setProperty('taggedEntity', $taggedEntity);
     }
@@ -94,7 +94,7 @@ class CommunicationTag extends ModelBase
     /**
      * @param bool $isShared
      */
-    public function setIsShared(bool $isShared = null)
+    public function setIsShared(?bool $isShared = null)
     {
         $this->setProperty('isShared', $isShared);
     }

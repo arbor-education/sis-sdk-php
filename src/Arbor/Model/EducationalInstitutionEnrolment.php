@@ -22,7 +22,7 @@ class EducationalInstitutionEnrolment extends ModelBase
      * @return EducationalInstitutionEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param \DateTime $entryDate
      */
-    public function setEntryDate(\DateTime $entryDate = null)
+    public function setEntryDate(?\DateTime $entryDate = null)
     {
         $this->setProperty('entryDate', $entryDate);
     }
@@ -96,7 +96,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param \DateTime $leavingDate
      */
-    public function setLeavingDate(\DateTime $leavingDate = null)
+    public function setLeavingDate(?\DateTime $leavingDate = null)
     {
         $this->setProperty('leavingDate', $leavingDate);
     }
@@ -112,7 +112,7 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(?\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }

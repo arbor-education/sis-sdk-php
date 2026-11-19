@@ -70,7 +70,7 @@ class User extends ModelBase
      * @return User[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -112,7 +112,7 @@ class User extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -128,7 +128,7 @@ class User extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -144,7 +144,7 @@ class User extends ModelBase
     /**
      * @param \Arbor\Model\Guardian $guardian
      */
-    public function setGuardian(\Arbor\Model\Guardian $guardian = null)
+    public function setGuardian(?\Arbor\Model\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }
@@ -160,7 +160,7 @@ class User extends ModelBase
     /**
      * @param \Arbor\Model\ExternalAdministrator $externalAdministrator
      */
-    public function setExternalAdministrator(\Arbor\Model\ExternalAdministrator $externalAdministrator = null)
+    public function setExternalAdministrator(?\Arbor\Model\ExternalAdministrator $externalAdministrator = null)
     {
         $this->setProperty('externalAdministrator', $externalAdministrator);
     }
@@ -176,7 +176,7 @@ class User extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername(string $username = null)
+    public function setUsername(?string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -192,7 +192,7 @@ class User extends ModelBase
     /**
      * @param string $language
      */
-    public function setLanguage(string $language = null)
+    public function setLanguage(?string $language = null)
     {
         $this->setProperty('language', $language);
     }
@@ -208,7 +208,7 @@ class User extends ModelBase
     /**
      * @param string $email
      */
-    public function setEmail(string $email = null)
+    public function setEmail(?string $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -224,7 +224,7 @@ class User extends ModelBase
     /**
      * @param string $arborCentralId
      */
-    public function setArborCentralId(string $arborCentralId = null)
+    public function setArborCentralId(?string $arborCentralId = null)
     {
         $this->setProperty('arborCentralId', $arborCentralId);
     }
@@ -240,7 +240,7 @@ class User extends ModelBase
     /**
      * @param string $passwordHash
      */
-    public function setPasswordHash(string $passwordHash = null)
+    public function setPasswordHash(?string $passwordHash = null)
     {
         $this->setProperty('passwordHash', $passwordHash);
     }
@@ -256,7 +256,7 @@ class User extends ModelBase
     /**
      * @param string $passwordResetHash
      */
-    public function setPasswordResetHash(string $passwordResetHash = null)
+    public function setPasswordResetHash(?string $passwordResetHash = null)
     {
         $this->setProperty('passwordResetHash', $passwordResetHash);
     }
@@ -272,7 +272,7 @@ class User extends ModelBase
     /**
      * @param string $authenticationType
      */
-    public function setAuthenticationType(string $authenticationType = null)
+    public function setAuthenticationType(?string $authenticationType = null)
     {
         $this->setProperty('authenticationType', $authenticationType);
     }
@@ -288,7 +288,7 @@ class User extends ModelBase
     /**
      * @param string $authenticationToken
      */
-    public function setAuthenticationToken(string $authenticationToken = null)
+    public function setAuthenticationToken(?string $authenticationToken = null)
     {
         $this->setProperty('authenticationToken', $authenticationToken);
     }
@@ -304,7 +304,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $authenticationTokenExpiryDatetime
      */
-    public function setAuthenticationTokenExpiryDatetime(\DateTime $authenticationTokenExpiryDatetime = null)
+    public function setAuthenticationTokenExpiryDatetime(?\DateTime $authenticationTokenExpiryDatetime = null)
     {
         $this->setProperty('authenticationTokenExpiryDatetime', $authenticationTokenExpiryDatetime);
     }
@@ -320,7 +320,7 @@ class User extends ModelBase
     /**
      * @param string $currentIpAddress
      */
-    public function setCurrentIpAddress(string $currentIpAddress = null)
+    public function setCurrentIpAddress(?string $currentIpAddress = null)
     {
         $this->setProperty('currentIpAddress', $currentIpAddress);
     }
@@ -336,7 +336,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $lastAccessDatetime
      */
-    public function setLastAccessDatetime(\DateTime $lastAccessDatetime = null)
+    public function setLastAccessDatetime(?\DateTime $lastAccessDatetime = null)
     {
         $this->setProperty('lastAccessDatetime', $lastAccessDatetime);
     }
@@ -352,7 +352,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $passwordLastChangedDatetime
      */
-    public function setPasswordLastChangedDatetime(\DateTime $passwordLastChangedDatetime = null)
+    public function setPasswordLastChangedDatetime(?\DateTime $passwordLastChangedDatetime = null)
     {
         $this->setProperty('passwordLastChangedDatetime', $passwordLastChangedDatetime);
     }
@@ -368,7 +368,7 @@ class User extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled(bool $enabled = null)
+    public function setEnabled(?bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }
@@ -384,7 +384,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $verifiedDatetime
      */
-    public function setVerifiedDatetime(\DateTime $verifiedDatetime = null)
+    public function setVerifiedDatetime(?\DateTime $verifiedDatetime = null)
     {
         $this->setProperty('verifiedDatetime', $verifiedDatetime);
     }
@@ -400,7 +400,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $termsOfUseAcceptedDatetime
      */
-    public function setTermsOfUseAcceptedDatetime(\DateTime $termsOfUseAcceptedDatetime = null)
+    public function setTermsOfUseAcceptedDatetime(?\DateTime $termsOfUseAcceptedDatetime = null)
     {
         $this->setProperty('termsOfUseAcceptedDatetime', $termsOfUseAcceptedDatetime);
     }
@@ -416,7 +416,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $welcomeMessageDatetime
      */
-    public function setWelcomeMessageDatetime(\DateTime $welcomeMessageDatetime = null)
+    public function setWelcomeMessageDatetime(?\DateTime $welcomeMessageDatetime = null)
     {
         $this->setProperty('welcomeMessageDatetime', $welcomeMessageDatetime);
     }
@@ -432,7 +432,7 @@ class User extends ModelBase
     /**
      * @param string $twoFactorAuthMethod
      */
-    public function setTwoFactorAuthMethod(string $twoFactorAuthMethod = null)
+    public function setTwoFactorAuthMethod(?string $twoFactorAuthMethod = null)
     {
         $this->setProperty('twoFactorAuthMethod', $twoFactorAuthMethod);
     }
@@ -448,7 +448,7 @@ class User extends ModelBase
     /**
      * @param string $twoFactorDeviceIdentifier
      */
-    public function setTwoFactorDeviceIdentifier(string $twoFactorDeviceIdentifier = null)
+    public function setTwoFactorDeviceIdentifier(?string $twoFactorDeviceIdentifier = null)
     {
         $this->setProperty('twoFactorDeviceIdentifier', $twoFactorDeviceIdentifier);
     }
@@ -464,7 +464,7 @@ class User extends ModelBase
     /**
      * @param int $deletedEntityType
      */
-    public function setDeletedEntityType(int $deletedEntityType = null)
+    public function setDeletedEntityType(?int $deletedEntityType = null)
     {
         $this->setProperty('deletedEntityType', $deletedEntityType);
     }
@@ -480,7 +480,7 @@ class User extends ModelBase
     /**
      * @param int $deletedObjectId
      */
-    public function setDeletedObjectId(int $deletedObjectId = null)
+    public function setDeletedObjectId(?int $deletedObjectId = null)
     {
         $this->setProperty('deletedObjectId', $deletedObjectId);
     }
@@ -496,7 +496,7 @@ class User extends ModelBase
     /**
      * @param string $deletedDisplayName
      */
-    public function setDeletedDisplayName(string $deletedDisplayName = null)
+    public function setDeletedDisplayName(?string $deletedDisplayName = null)
     {
         $this->setProperty('deletedDisplayName', $deletedDisplayName);
     }
@@ -512,7 +512,7 @@ class User extends ModelBase
     /**
      * @param string $googleTwoFactorSecret
      */
-    public function setGoogleTwoFactorSecret(string $googleTwoFactorSecret = null)
+    public function setGoogleTwoFactorSecret(?string $googleTwoFactorSecret = null)
     {
         $this->setProperty('googleTwoFactorSecret', $googleTwoFactorSecret);
     }
@@ -528,7 +528,7 @@ class User extends ModelBase
     /**
      * @param bool $ssoTwoFactorActivated
      */
-    public function setSsoTwoFactorActivated(bool $ssoTwoFactorActivated = null)
+    public function setSsoTwoFactorActivated(?bool $ssoTwoFactorActivated = null)
     {
         $this->setProperty('ssoTwoFactorActivated', $ssoTwoFactorActivated);
     }
@@ -544,7 +544,7 @@ class User extends ModelBase
     /**
      * @param \DateTime $acceptSaasTermsAndConditionsByDatetime
      */
-    public function setAcceptSaasTermsAndConditionsByDatetime(\DateTime $acceptSaasTermsAndConditionsByDatetime = null)
+    public function setAcceptSaasTermsAndConditionsByDatetime(?\DateTime $acceptSaasTermsAndConditionsByDatetime = null)
     {
         $this->setProperty('acceptSaasTermsAndConditionsByDatetime', $acceptSaasTermsAndConditionsByDatetime);
     }

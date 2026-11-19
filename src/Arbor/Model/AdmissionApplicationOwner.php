@@ -18,7 +18,7 @@ class AdmissionApplicationOwner extends ModelBase
      * @return AdmissionApplicationOwner[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AdmissionApplicationOwner extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionApplication $admissionApplication
      */
-    public function setAdmissionApplication(\Arbor\Model\AdmissionApplication $admissionApplication = null)
+    public function setAdmissionApplication(?\Arbor\Model\AdmissionApplication $admissionApplication = null)
     {
         $this->setProperty('admissionApplication', $admissionApplication);
     }
@@ -76,7 +76,7 @@ class AdmissionApplicationOwner extends ModelBase
     /**
      * @param \Arbor\Model\Staff $ownerStaff
      */
-    public function setOwnerStaff(\Arbor\Model\Staff $ownerStaff = null)
+    public function setOwnerStaff(?\Arbor\Model\Staff $ownerStaff = null)
     {
         $this->setProperty('ownerStaff', $ownerStaff);
     }

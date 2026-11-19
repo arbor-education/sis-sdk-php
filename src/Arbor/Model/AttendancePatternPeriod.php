@@ -22,7 +22,7 @@ class AttendancePatternPeriod extends ModelBase
      * @return AttendancePatternPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param \Arbor\Model\AttendancePattern $attendancePattern
      */
-    public function setAttendancePattern(\Arbor\Model\AttendancePattern $attendancePattern = null)
+    public function setAttendancePattern(?\Arbor\Model\AttendancePattern $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }
@@ -80,7 +80,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(int $dayOfCycle = null)
+    public function setDayOfCycle(?int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -96,7 +96,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -112,7 +112,7 @@ class AttendancePatternPeriod extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }

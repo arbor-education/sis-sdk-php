@@ -26,7 +26,7 @@ class Snippet extends ModelBase
      * @return Snippet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class Snippet extends ModelBase
     /**
      * @param string $snippetName
      */
-    public function setSnippetName(string $snippetName = null)
+    public function setSnippetName(?string $snippetName = null)
     {
         $this->setProperty('snippetName', $snippetName);
     }
@@ -84,7 +84,7 @@ class Snippet extends ModelBase
     /**
      * @param string $snippetText
      */
-    public function setSnippetText(string $snippetText = null)
+    public function setSnippetText(?string $snippetText = null)
     {
         $this->setProperty('snippetText', $snippetText);
     }
@@ -100,7 +100,7 @@ class Snippet extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory(string $category = null)
+    public function setCategory(?string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -116,13 +116,13 @@ class Snippet extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedToEntity()
     {
@@ -130,9 +130,9 @@ class Snippet extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedToEntity
+     * @param \Arbor\Model\ModelBase $linkedToEntity
      */
-    public function setLinkedToEntity(\ModelBase $linkedToEntity = null)
+    public function setLinkedToEntity(?\Arbor\Model\ModelBase $linkedToEntity = null)
     {
         $this->setProperty('linkedToEntity', $linkedToEntity);
     }
@@ -148,7 +148,7 @@ class Snippet extends ModelBase
     /**
      * @param bool $isShared
      */
-    public function setIsShared(bool $isShared = null)
+    public function setIsShared(?bool $isShared = null)
     {
         $this->setProperty('isShared', $isShared);
     }

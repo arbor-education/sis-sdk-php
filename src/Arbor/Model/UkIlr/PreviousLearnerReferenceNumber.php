@@ -22,7 +22,7 @@ class PreviousLearnerReferenceNumber extends ModelBase
      * @return PreviousLearnerReferenceNumber[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class PreviousLearnerReferenceNumber extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class PreviousLearnerReferenceNumber extends ModelBase
     /**
      * @param string $previousLearnerReferenceNumber
      */
-    public function setPreviousLearnerReferenceNumber(string $previousLearnerReferenceNumber = null)
+    public function setPreviousLearnerReferenceNumber(?string $previousLearnerReferenceNumber = null)
     {
         $this->setProperty('previousLearnerReferenceNumber', $previousLearnerReferenceNumber);
     }
@@ -96,7 +96,7 @@ class PreviousLearnerReferenceNumber extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

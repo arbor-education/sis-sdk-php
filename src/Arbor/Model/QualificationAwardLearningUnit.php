@@ -20,7 +20,7 @@ class QualificationAwardLearningUnit extends ModelBase
      * @return QualificationAwardLearningUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
+    public function setQualificationAward(?\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
@@ -78,7 +78,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param \Arbor\Model\QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(?\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -94,7 +94,7 @@ class QualificationAwardLearningUnit extends ModelBase
     /**
      * @param bool $isUserDefined
      */
-    public function setIsUserDefined(bool $isUserDefined = null)
+    public function setIsUserDefined(?bool $isUserDefined = null)
     {
         $this->setProperty('isUserDefined', $isUserDefined);
     }

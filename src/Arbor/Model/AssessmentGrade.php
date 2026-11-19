@@ -30,7 +30,7 @@ class AssessmentGrade extends ModelBase
      * @return AssessmentGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet
      */
-    public function setAssessmentDataGradeSet(\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
+    public function setAssessmentDataGradeSet(?\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
     {
         $this->setProperty('assessmentDataGradeSet', $assessmentDataGradeSet);
     }
@@ -136,7 +136,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -152,7 +152,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -168,7 +168,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param float $statisticalValue
      */
-    public function setStatisticalValue(float $statisticalValue = null)
+    public function setStatisticalValue(?float $statisticalValue = null)
     {
         $this->setProperty('statisticalValue', $statisticalValue);
     }
@@ -184,7 +184,7 @@ class AssessmentGrade extends ModelBase
     /**
      * @param string $colour
      */
-    public function setColour(string $colour = null)
+    public function setColour(?string $colour = null)
     {
         $this->setProperty('colour', $colour);
     }

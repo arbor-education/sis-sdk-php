@@ -80,7 +80,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
      * @return BehaviouralIncidentLevelWorkflow[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -122,7 +122,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -138,7 +138,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param int $levelOfIncident
      */
-    public function setLevelOfIncident(int $levelOfIncident = null)
+    public function setLevelOfIncident(?int $levelOfIncident = null)
     {
         $this->setProperty('levelOfIncident', $levelOfIncident);
     }
@@ -154,7 +154,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $autoClose
      */
-    public function setAutoClose(bool $autoClose = null)
+    public function setAutoClose(?bool $autoClose = null)
     {
         $this->setProperty('autoClose', $autoClose);
     }
@@ -170,7 +170,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param int $escalationThresholdCount
      */
-    public function setEscalationThresholdCount(int $escalationThresholdCount = null)
+    public function setEscalationThresholdCount(?int $escalationThresholdCount = null)
     {
         $this->setProperty('escalationThresholdCount', $escalationThresholdCount);
     }
@@ -186,7 +186,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $escalationThresholdTimeRange
      */
-    public function setEscalationThresholdTimeRange(string $escalationThresholdTimeRange = null)
+    public function setEscalationThresholdTimeRange(?string $escalationThresholdTimeRange = null)
     {
         $this->setProperty('escalationThresholdTimeRange', $escalationThresholdTimeRange);
     }
@@ -202,7 +202,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param int $escalateToLevel
      */
-    public function setEscalateToLevel(int $escalateToLevel = null)
+    public function setEscalateToLevel(?int $escalateToLevel = null)
     {
         $this->setProperty('escalateToLevel', $escalateToLevel);
     }
@@ -218,7 +218,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param int $escalateNumberOfLevels
      */
-    public function setEscalateNumberOfLevels(int $escalateNumberOfLevels = null)
+    public function setEscalateNumberOfLevels(?int $escalateNumberOfLevels = null)
     {
         $this->setProperty('escalateNumberOfLevels', $escalateNumberOfLevels);
     }
@@ -234,7 +234,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $resetToZero
      */
-    public function setResetToZero(bool $resetToZero = null)
+    public function setResetToZero(?bool $resetToZero = null)
     {
         $this->setProperty('resetToZero', $resetToZero);
     }
@@ -250,7 +250,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $guardianEmailTemplate
      */
-    public function setGuardianEmailTemplate(string $guardianEmailTemplate = null)
+    public function setGuardianEmailTemplate(?string $guardianEmailTemplate = null)
     {
         $this->setProperty('guardianEmailTemplate', $guardianEmailTemplate);
     }
@@ -266,7 +266,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $messageChannel
      */
-    public function setMessageChannel(string $messageChannel = null)
+    public function setMessageChannel(?string $messageChannel = null)
     {
         $this->setProperty('messageChannel', $messageChannel);
     }
@@ -282,7 +282,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $behaviouralIncidentSmsGuardian
      */
-    public function setBehaviouralIncidentSmsGuardian(bool $behaviouralIncidentSmsGuardian = null)
+    public function setBehaviouralIncidentSmsGuardian(?bool $behaviouralIncidentSmsGuardian = null)
     {
         $this->setProperty('behaviouralIncidentSmsGuardian', $behaviouralIncidentSmsGuardian);
     }
@@ -298,7 +298,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $behaviouralIncidentEmailGuardian
      */
-    public function setBehaviouralIncidentEmailGuardian(bool $behaviouralIncidentEmailGuardian = null)
+    public function setBehaviouralIncidentEmailGuardian(?bool $behaviouralIncidentEmailGuardian = null)
     {
         $this->setProperty('behaviouralIncidentEmailGuardian', $behaviouralIncidentEmailGuardian);
     }
@@ -314,7 +314,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $detentionSmsGuardian
      */
-    public function setDetentionSmsGuardian(bool $detentionSmsGuardian = null)
+    public function setDetentionSmsGuardian(?bool $detentionSmsGuardian = null)
     {
         $this->setProperty('detentionSmsGuardian', $detentionSmsGuardian);
     }
@@ -330,7 +330,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $detentionEmailGuardian
      */
-    public function setDetentionEmailGuardian(bool $detentionEmailGuardian = null)
+    public function setDetentionEmailGuardian(?bool $detentionEmailGuardian = null)
     {
         $this->setProperty('detentionEmailGuardian', $detentionEmailGuardian);
     }
@@ -346,7 +346,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\CommunicationTemplate $behaviouralIncidentSmsTemplate
      */
-    public function setBehaviouralIncidentSmsTemplate(\Arbor\Model\CommunicationTemplate $behaviouralIncidentSmsTemplate = null)
+    public function setBehaviouralIncidentSmsTemplate(?\Arbor\Model\CommunicationTemplate $behaviouralIncidentSmsTemplate = null)
     {
         $this->setProperty('behaviouralIncidentSmsTemplate', $behaviouralIncidentSmsTemplate);
     }
@@ -362,7 +362,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\CommunicationTemplate $behaviouralIncidentEmailTemplate
      */
-    public function setBehaviouralIncidentEmailTemplate(\Arbor\Model\CommunicationTemplate $behaviouralIncidentEmailTemplate = null)
+    public function setBehaviouralIncidentEmailTemplate(?\Arbor\Model\CommunicationTemplate $behaviouralIncidentEmailTemplate = null)
     {
         $this->setProperty('behaviouralIncidentEmailTemplate', $behaviouralIncidentEmailTemplate);
     }
@@ -378,7 +378,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\CommunicationTemplate $detentionEmailTemplate
      */
-    public function setDetentionEmailTemplate(\Arbor\Model\CommunicationTemplate $detentionEmailTemplate = null)
+    public function setDetentionEmailTemplate(?\Arbor\Model\CommunicationTemplate $detentionEmailTemplate = null)
     {
         $this->setProperty('detentionEmailTemplate', $detentionEmailTemplate);
     }
@@ -394,7 +394,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\CommunicationTemplate $detentionSmsTemplate
      */
-    public function setDetentionSmsTemplate(\Arbor\Model\CommunicationTemplate $detentionSmsTemplate = null)
+    public function setDetentionSmsTemplate(?\Arbor\Model\CommunicationTemplate $detentionSmsTemplate = null)
     {
         $this->setProperty('detentionSmsTemplate', $detentionSmsTemplate);
     }
@@ -410,7 +410,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $defaultAssignee
      */
-    public function setDefaultAssignee(string $defaultAssignee = null)
+    public function setDefaultAssignee(?string $defaultAssignee = null)
     {
         $this->setProperty('defaultAssignee', $defaultAssignee);
     }
@@ -426,7 +426,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\Staff $specificAssignee
      */
-    public function setSpecificAssignee(\Arbor\Model\Staff $specificAssignee = null)
+    public function setSpecificAssignee(?\Arbor\Model\Staff $specificAssignee = null)
     {
         $this->setProperty('specificAssignee', $specificAssignee);
     }
@@ -442,7 +442,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\DetentionType $detentionType
      */
-    public function setDetentionType(\Arbor\Model\DetentionType $detentionType = null)
+    public function setDetentionType(?\Arbor\Model\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
@@ -458,7 +458,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $detentionTimeFrame
      */
-    public function setDetentionTimeFrame(string $detentionTimeFrame = null)
+    public function setDetentionTimeFrame(?string $detentionTimeFrame = null)
     {
         $this->setProperty('detentionTimeFrame', $detentionTimeFrame);
     }
@@ -474,7 +474,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $assignmentPolicy
      */
-    public function setAssignmentPolicy(string $assignmentPolicy = null)
+    public function setAssignmentPolicy(?string $assignmentPolicy = null)
     {
         $this->setProperty('assignmentPolicy', $assignmentPolicy);
     }
@@ -490,7 +490,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(\Arbor\Model\InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(?\Arbor\Model\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
@@ -506,7 +506,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param string $internalExclusionTimeFrame
      */
-    public function setInternalExclusionTimeFrame(string $internalExclusionTimeFrame = null)
+    public function setInternalExclusionTimeFrame(?string $internalExclusionTimeFrame = null)
     {
         $this->setProperty('internalExclusionTimeFrame', $internalExclusionTimeFrame);
     }
@@ -522,7 +522,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param int $numberOfSessions
      */
-    public function setNumberOfSessions(int $numberOfSessions = null)
+    public function setNumberOfSessions(?int $numberOfSessions = null)
     {
         $this->setProperty('numberOfSessions', $numberOfSessions);
     }
@@ -538,7 +538,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param \Arbor\Model\PointAwardScale $pointAwardScale
      */
-    public function setPointAwardScale(\Arbor\Model\PointAwardScale $pointAwardScale = null)
+    public function setPointAwardScale(?\Arbor\Model\PointAwardScale $pointAwardScale = null)
     {
         $this->setProperty('pointAwardScale', $pointAwardScale);
     }
@@ -554,7 +554,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param float $addDeductPoints
      */
-    public function setAddDeductPoints(float $addDeductPoints = null)
+    public function setAddDeductPoints(?float $addDeductPoints = null)
     {
         $this->setProperty('addDeductPoints', $addDeductPoints);
     }
@@ -570,7 +570,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $editableWatchers
      */
-    public function setEditableWatchers(bool $editableWatchers = null)
+    public function setEditableWatchers(?bool $editableWatchers = null)
     {
         $this->setProperty('editableWatchers', $editableWatchers);
     }
@@ -586,7 +586,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $allowAssignDetention
      */
-    public function setAllowAssignDetention(bool $allowAssignDetention = null)
+    public function setAllowAssignDetention(?bool $allowAssignDetention = null)
     {
         $this->setProperty('allowAssignDetention', $allowAssignDetention);
     }
@@ -602,7 +602,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $allowAddDeductPoints
      */
-    public function setAllowAddDeductPoints(bool $allowAddDeductPoints = null)
+    public function setAllowAddDeductPoints(?bool $allowAddDeductPoints = null)
     {
         $this->setProperty('allowAddDeductPoints', $allowAddDeductPoints);
     }
@@ -618,7 +618,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $emailAssignee
      */
-    public function setEmailAssignee(bool $emailAssignee = null)
+    public function setEmailAssignee(?bool $emailAssignee = null)
     {
         $this->setProperty('emailAssignee', $emailAssignee);
     }
@@ -634,7 +634,7 @@ class BehaviouralIncidentLevelWorkflow extends ModelBase
     /**
      * @param bool $allowAssignInternalExclusion
      */
-    public function setAllowAssignInternalExclusion(bool $allowAssignInternalExclusion = null)
+    public function setAllowAssignInternalExclusion(?bool $allowAssignInternalExclusion = null)
     {
         $this->setProperty('allowAssignInternalExclusion', $allowAssignInternalExclusion);
     }

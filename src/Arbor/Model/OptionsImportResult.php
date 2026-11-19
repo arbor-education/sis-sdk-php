@@ -28,7 +28,7 @@ class OptionsImportResult extends ModelBase
      * @return OptionsImportResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -86,7 +86,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted(int $stepsCompleted = null)
+    public function setStepsCompleted(?int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -102,7 +102,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param int $stepInProgress
      */
-    public function setStepInProgress(int $stepInProgress = null)
+    public function setStepInProgress(?int $stepInProgress = null)
     {
         $this->setProperty('stepInProgress', $stepInProgress);
     }
@@ -118,7 +118,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param \DateTime $startedDatetime
      */
-    public function setStartedDatetime(\DateTime $startedDatetime = null)
+    public function setStartedDatetime(?\DateTime $startedDatetime = null)
     {
         $this->setProperty('startedDatetime', $startedDatetime);
     }
@@ -134,7 +134,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
@@ -150,7 +150,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param \DateTime $enrolmentStartDate
      */
-    public function setEnrolmentStartDate(\DateTime $enrolmentStartDate = null)
+    public function setEnrolmentStartDate(?\DateTime $enrolmentStartDate = null)
     {
         $this->setProperty('enrolmentStartDate', $enrolmentStartDate);
     }
@@ -166,7 +166,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param \DateTime $enrolmentEndDate
      */
-    public function setEnrolmentEndDate(\DateTime $enrolmentEndDate = null)
+    public function setEnrolmentEndDate(?\DateTime $enrolmentEndDate = null)
     {
         $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }

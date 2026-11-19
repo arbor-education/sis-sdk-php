@@ -22,7 +22,7 @@ class AttendanceFineRecord extends ModelBase
      * @return AttendanceFineRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AttendanceFineRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class AttendanceFineRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRollCallRecord $attendanceRollCallRecord
      */
-    public function setAttendanceRollCallRecord(\Arbor\Model\AttendanceRollCallRecord $attendanceRollCallRecord = null)
+    public function setAttendanceRollCallRecord(?\Arbor\Model\AttendanceRollCallRecord $attendanceRollCallRecord = null)
     {
         $this->setProperty('attendanceRollCallRecord', $attendanceRollCallRecord);
     }
@@ -96,7 +96,7 @@ class AttendanceFineRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceFine $attendanceFine
      */
-    public function setAttendanceFine(\Arbor\Model\AttendanceFine $attendanceFine = null)
+    public function setAttendanceFine(?\Arbor\Model\AttendanceFine $attendanceFine = null)
     {
         $this->setProperty('attendanceFine', $attendanceFine);
     }
@@ -112,7 +112,7 @@ class AttendanceFineRecord extends ModelBase
     /**
      * @param \DateTime $markDate
      */
-    public function setMarkDate(\DateTime $markDate = null)
+    public function setMarkDate(?\DateTime $markDate = null)
     {
         $this->setProperty('markDate', $markDate);
     }

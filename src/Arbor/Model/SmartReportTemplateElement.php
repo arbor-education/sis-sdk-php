@@ -24,7 +24,7 @@ class SmartReportTemplateElement extends ModelBase
      * @return SmartReportTemplateElement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class SmartReportTemplateElement extends ModelBase
     /**
      * @param \Arbor\Model\SmartReportTemplate $smartReportTemplate
      */
-    public function setSmartReportTemplate(\Arbor\Model\SmartReportTemplate $smartReportTemplate = null)
+    public function setSmartReportTemplate(?\Arbor\Model\SmartReportTemplate $smartReportTemplate = null)
     {
         $this->setProperty('smartReportTemplate', $smartReportTemplate);
     }
@@ -82,7 +82,7 @@ class SmartReportTemplateElement extends ModelBase
     /**
      * @param \Arbor\Model\SmartReportTemplateChapter $smartReportTemplateChapter
      */
-    public function setSmartReportTemplateChapter(\Arbor\Model\SmartReportTemplateChapter $smartReportTemplateChapter = null)
+    public function setSmartReportTemplateChapter(?\Arbor\Model\SmartReportTemplateChapter $smartReportTemplateChapter = null)
     {
         $this->setProperty('smartReportTemplateChapter', $smartReportTemplateChapter);
     }
@@ -98,7 +98,7 @@ class SmartReportTemplateElement extends ModelBase
     /**
      * @param string $uuid
      */
-    public function setUuid(string $uuid = null)
+    public function setUuid(?string $uuid = null)
     {
         $this->setProperty('uuid', $uuid);
     }
@@ -114,7 +114,7 @@ class SmartReportTemplateElement extends ModelBase
     /**
      * @param string $elementType
      */
-    public function setElementType(string $elementType = null)
+    public function setElementType(?string $elementType = null)
     {
         $this->setProperty('elementType', $elementType);
     }
@@ -130,7 +130,7 @@ class SmartReportTemplateElement extends ModelBase
     /**
      * @param string $displayTitle
      */
-    public function setDisplayTitle(string $displayTitle = null)
+    public function setDisplayTitle(?string $displayTitle = null)
     {
         $this->setProperty('displayTitle', $displayTitle);
     }

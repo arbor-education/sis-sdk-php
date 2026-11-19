@@ -22,7 +22,7 @@ class QualificationElementAvailability extends ModelBase
      * @return QualificationElementAvailability[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,13 +65,13 @@ class QualificationElementAvailability extends ModelBase
      * @param \Arbor\Model\QualificationAvailabilityInstance
      * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(?\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getQualificationElement()
     {
@@ -79,9 +79,9 @@ class QualificationElementAvailability extends ModelBase
     }
 
     /**
-     * @param ModelBase $qualificationElement
+     * @param \Arbor\Model\ModelBase $qualificationElement
      */
-    public function setQualificationElement(\ModelBase $qualificationElement = null)
+    public function setQualificationElement(?\Arbor\Model\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
@@ -97,7 +97,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param string $examinationFee
      */
-    public function setExaminationFee(string $examinationFee = null)
+    public function setExaminationFee(?string $examinationFee = null)
     {
         $this->setProperty('examinationFee', $examinationFee);
     }
@@ -113,7 +113,7 @@ class QualificationElementAvailability extends ModelBase
     /**
      * @param string $userDefinedExaminationFee
      */
-    public function setUserDefinedExaminationFee(string $userDefinedExaminationFee = null)
+    public function setUserDefinedExaminationFee(?string $userDefinedExaminationFee = null)
     {
         $this->setProperty('userDefinedExaminationFee', $userDefinedExaminationFee);
     }

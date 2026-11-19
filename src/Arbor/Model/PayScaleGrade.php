@@ -20,7 +20,7 @@ class PayScaleGrade extends ModelBase
      * @return PayScaleGrade[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param \Arbor\Model\PayScale $payScale
      */
-    public function setPayScale(\Arbor\Model\PayScale $payScale = null)
+    public function setPayScale(?\Arbor\Model\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
@@ -78,7 +78,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param string $gradeName
      */
-    public function setGradeName(string $gradeName = null)
+    public function setGradeName(?string $gradeName = null)
     {
         $this->setProperty('gradeName', $gradeName);
     }
@@ -94,7 +94,7 @@ class PayScaleGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

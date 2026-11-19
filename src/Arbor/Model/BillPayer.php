@@ -22,7 +22,7 @@ class BillPayer extends ModelBase
      * @return BillPayer[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -54,7 +54,7 @@ class BillPayer extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLegalEntity()
     {
@@ -62,9 +62,9 @@ class BillPayer extends ModelBase
     }
 
     /**
-     * @param ModelBase $legalEntity
+     * @param \Arbor\Model\ModelBase $legalEntity
      */
-    public function setLegalEntity(\ModelBase $legalEntity = null)
+    public function setLegalEntity(?\Arbor\Model\ModelBase $legalEntity = null)
     {
         $this->setProperty('legalEntity', $legalEntity);
     }
@@ -80,7 +80,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $deletedLegalEntityName
      */
-    public function setDeletedLegalEntityName(string $deletedLegalEntityName = null)
+    public function setDeletedLegalEntityName(?string $deletedLegalEntityName = null)
     {
         $this->setProperty('deletedLegalEntityName', $deletedLegalEntityName);
     }
@@ -96,7 +96,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $stripeCustomerId
      */
-    public function setStripeCustomerId(string $stripeCustomerId = null)
+    public function setStripeCustomerId(?string $stripeCustomerId = null)
     {
         $this->setProperty('stripeCustomerId', $stripeCustomerId);
     }
@@ -112,7 +112,7 @@ class BillPayer extends ModelBase
     /**
      * @param string $newStripeCustomerId
      */
-    public function setNewStripeCustomerId(string $newStripeCustomerId = null)
+    public function setNewStripeCustomerId(?string $newStripeCustomerId = null)
     {
         $this->setProperty('newStripeCustomerId', $newStripeCustomerId);
     }

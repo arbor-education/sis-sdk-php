@@ -22,7 +22,7 @@ class FacultyResponsibility extends ModelBase
      * @return FacultyResponsibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class FacultyResponsibility extends ModelBase
     /**
      * @param \Arbor\Model\FacultyResponsibilityType $facultyResponsibilityType
      */
-    public function setFacultyResponsibilityType(\Arbor\Model\FacultyResponsibilityType $facultyResponsibilityType = null)
+    public function setFacultyResponsibilityType(?\Arbor\Model\FacultyResponsibilityType $facultyResponsibilityType = null)
     {
         $this->setProperty('facultyResponsibilityType', $facultyResponsibilityType);
     }
@@ -80,7 +80,7 @@ class FacultyResponsibility extends ModelBase
     /**
      * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
+    public function setFaculty(?\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -96,7 +96,7 @@ class FacultyResponsibility extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class FacultyResponsibility extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

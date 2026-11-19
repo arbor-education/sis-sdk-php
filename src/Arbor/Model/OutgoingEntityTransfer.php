@@ -28,7 +28,7 @@ class OutgoingEntityTransfer extends ModelBase
      * @return OutgoingEntityTransfer[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class OutgoingEntityTransfer extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSourceEntity()
     {
@@ -68,9 +68,9 @@ class OutgoingEntityTransfer extends ModelBase
     }
 
     /**
-     * @param ModelBase $sourceEntity
+     * @param \Arbor\Model\ModelBase $sourceEntity
      */
-    public function setSourceEntity(\ModelBase $sourceEntity = null)
+    public function setSourceEntity(?\Arbor\Model\ModelBase $sourceEntity = null)
     {
         $this->setProperty('sourceEntity', $sourceEntity);
     }
@@ -86,7 +86,7 @@ class OutgoingEntityTransfer extends ModelBase
     /**
      * @param string $transferClassName
      */
-    public function setTransferClassName(string $transferClassName = null)
+    public function setTransferClassName(?string $transferClassName = null)
     {
         $this->setProperty('transferClassName', $transferClassName);
     }
@@ -102,7 +102,7 @@ class OutgoingEntityTransfer extends ModelBase
     /**
      * @param string $destinationApplicationId
      */
-    public function setDestinationApplicationId(string $destinationApplicationId = null)
+    public function setDestinationApplicationId(?string $destinationApplicationId = null)
     {
         $this->setProperty('destinationApplicationId', $destinationApplicationId);
     }
@@ -118,7 +118,7 @@ class OutgoingEntityTransfer extends ModelBase
     /**
      * @param \DateTime $syncEffectiveDate
      */
-    public function setSyncEffectiveDate(\DateTime $syncEffectiveDate = null)
+    public function setSyncEffectiveDate(?\DateTime $syncEffectiveDate = null)
     {
         $this->setProperty('syncEffectiveDate', $syncEffectiveDate);
     }
@@ -134,7 +134,7 @@ class OutgoingEntityTransfer extends ModelBase
     /**
      * @param \DateTime $syncEndDate
      */
-    public function setSyncEndDate(\DateTime $syncEndDate = null)
+    public function setSyncEndDate(?\DateTime $syncEndDate = null)
     {
         $this->setProperty('syncEndDate', $syncEndDate);
     }
@@ -150,7 +150,7 @@ class OutgoingEntityTransfer extends ModelBase
     /**
      * @param bool $syncDisabled
      */
-    public function setSyncDisabled(bool $syncDisabled = null)
+    public function setSyncDisabled(?bool $syncDisabled = null)
     {
         $this->setProperty('syncDisabled', $syncDisabled);
     }
@@ -166,7 +166,7 @@ class OutgoingEntityTransfer extends ModelBase
     /**
      * @param \DateTime $lastSyncDatetime
      */
-    public function setLastSyncDatetime(\DateTime $lastSyncDatetime = null)
+    public function setLastSyncDatetime(?\DateTime $lastSyncDatetime = null)
     {
         $this->setProperty('lastSyncDatetime', $lastSyncDatetime);
     }

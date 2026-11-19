@@ -26,7 +26,7 @@ class MedicalConditionMedication extends ModelBase
      * @return MedicalConditionMedication[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param \Arbor\Model\MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(\Arbor\Model\MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(?\Arbor\Model\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
@@ -84,7 +84,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param \Arbor\Model\Medication $medication
      */
-    public function setMedication(\Arbor\Model\Medication $medication = null)
+    public function setMedication(?\Arbor\Model\Medication $medication = null)
     {
         $this->setProperty('medication', $medication);
     }
@@ -100,7 +100,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param string $dosage
      */
-    public function setDosage(string $dosage = null)
+    public function setDosage(?string $dosage = null)
     {
         $this->setProperty('dosage', $dosage);
     }
@@ -116,7 +116,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency(string $frequency = null)
+    public function setFrequency(?string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }
@@ -132,7 +132,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -148,7 +148,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

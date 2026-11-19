@@ -26,7 +26,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
      * @return EarlyYearsPupilPremiumRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -84,7 +84,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -100,7 +100,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -116,7 +116,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param bool $recipientForEconomicReasons
      */
-    public function setRecipientForEconomicReasons(bool $recipientForEconomicReasons = null)
+    public function setRecipientForEconomicReasons(?bool $recipientForEconomicReasons = null)
     {
         $this->setProperty('recipientForEconomicReasons', $recipientForEconomicReasons);
     }
@@ -132,7 +132,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param bool $recipientForOtherReasons
      */
-    public function setRecipientForOtherReasons(bool $recipientForOtherReasons = null)
+    public function setRecipientForOtherReasons(?bool $recipientForOtherReasons = null)
     {
         $this->setProperty('recipientForOtherReasons', $recipientForOtherReasons);
     }

@@ -32,7 +32,7 @@ class AwardingOrganization extends ModelBase
      * @return AwardingOrganization[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -90,7 +90,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -106,7 +106,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -122,7 +122,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -138,7 +138,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -154,7 +154,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param string $issuedCenterNumber
      */
-    public function setIssuedCenterNumber(string $issuedCenterNumber = null)
+    public function setIssuedCenterNumber(?string $issuedCenterNumber = null)
     {
         $this->setProperty('issuedCenterNumber', $issuedCenterNumber);
     }
@@ -170,7 +170,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param \DateTime $centerNumberIssuedDate
      */
-    public function setCenterNumberIssuedDate(\DateTime $centerNumberIssuedDate = null)
+    public function setCenterNumberIssuedDate(?\DateTime $centerNumberIssuedDate = null)
     {
         $this->setProperty('centerNumberIssuedDate', $centerNumberIssuedDate);
     }
@@ -186,7 +186,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -202,7 +202,7 @@ class AwardingOrganization extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

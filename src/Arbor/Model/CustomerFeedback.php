@@ -26,7 +26,7 @@ class CustomerFeedback extends ModelBase
      * @return CustomerFeedback[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class CustomerFeedback extends ModelBase
     /**
      * @param string $area
      */
-    public function setArea(string $area = null)
+    public function setArea(?string $area = null)
     {
         $this->setProperty('area', $area);
     }
@@ -84,7 +84,7 @@ class CustomerFeedback extends ModelBase
     /**
      * @param int $score
      */
-    public function setScore(int $score = null)
+    public function setScore(?int $score = null)
     {
         $this->setProperty('score', $score);
     }
@@ -100,7 +100,7 @@ class CustomerFeedback extends ModelBase
     /**
      * @param string $feedback
      */
-    public function setFeedback(string $feedback = null)
+    public function setFeedback(?string $feedback = null)
     {
         $this->setProperty('feedback', $feedback);
     }
@@ -116,7 +116,7 @@ class CustomerFeedback extends ModelBase
     /**
      * @param string $clientType
      */
-    public function setClientType(string $clientType = null)
+    public function setClientType(?string $clientType = null)
     {
         $this->setProperty('clientType', $clientType);
     }
@@ -132,7 +132,7 @@ class CustomerFeedback extends ModelBase
     /**
      * @param string $clientVersion
      */
-    public function setClientVersion(string $clientVersion = null)
+    public function setClientVersion(?string $clientVersion = null)
     {
         $this->setProperty('clientVersion', $clientVersion);
     }
@@ -148,7 +148,7 @@ class CustomerFeedback extends ModelBase
     /**
      * @param string $request
      */
-    public function setRequest(string $request = null)
+    public function setRequest(?string $request = null)
     {
         $this->setProperty('request', $request);
     }

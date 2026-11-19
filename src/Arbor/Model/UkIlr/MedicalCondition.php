@@ -18,7 +18,7 @@ class MedicalCondition extends ModelBase
      * @return MedicalCondition[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param \Arbor\Model\SenNeedType $ilrReturnSenNeedType
      */
-    public function setIlrReturnSenNeedType(\Arbor\Model\SenNeedType $ilrReturnSenNeedType = null)
+    public function setIlrReturnSenNeedType(?\Arbor\Model\SenNeedType $ilrReturnSenNeedType = null)
     {
         $this->setProperty('ilrReturnSenNeedType', $ilrReturnSenNeedType);
     }

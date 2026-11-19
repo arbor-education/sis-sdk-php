@@ -20,7 +20,7 @@ class AssessmentMarksheet extends ModelBase
      * @return AssessmentMarksheet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class AssessmentMarksheet extends ModelBase
     /**
      * @param \Arbor\Model\MarksheetTemplate $marksheetTemplate
      */
-    public function setMarksheetTemplate(\Arbor\Model\MarksheetTemplate $marksheetTemplate = null)
+    public function setMarksheetTemplate(?\Arbor\Model\MarksheetTemplate $marksheetTemplate = null)
     {
         $this->setProperty('marksheetTemplate', $marksheetTemplate);
     }
@@ -78,7 +78,7 @@ class AssessmentMarksheet extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -94,7 +94,7 @@ class AssessmentMarksheet extends ModelBase
     /**
      * @param \DateTime $lastModifiedDatetime
      */
-    public function setLastModifiedDatetime(\DateTime $lastModifiedDatetime = null)
+    public function setLastModifiedDatetime(?\DateTime $lastModifiedDatetime = null)
     {
         $this->setProperty('lastModifiedDatetime', $lastModifiedDatetime);
     }

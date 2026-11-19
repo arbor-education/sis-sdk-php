@@ -22,7 +22,7 @@ class SchoolShopProductPrice extends ModelBase
      * @return SchoolShopProductPrice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,13 +64,13 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param \Arbor\Model\SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(?\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEligible()
     {
@@ -78,9 +78,9 @@ class SchoolShopProductPrice extends ModelBase
     }
 
     /**
-     * @param ModelBase $eligible
+     * @param \Arbor\Model\ModelBase $eligible
      */
-    public function setEligible(\ModelBase $eligible = null)
+    public function setEligible(?\Arbor\Model\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }
@@ -96,7 +96,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -112,7 +112,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
+    public function setVatRate(?\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }

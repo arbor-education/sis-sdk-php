@@ -24,7 +24,7 @@ class ContentTag extends ModelBase
      * @return ContentTag[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,13 +66,13 @@ class ContentTag extends ModelBase
     /**
      * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Arbor\Model\Content $content = null)
+    public function setContent(?\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTagged()
     {
@@ -80,9 +80,9 @@ class ContentTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $tagged
+     * @param \Arbor\Model\ModelBase $tagged
      */
-    public function setTagged(\ModelBase $tagged = null)
+    public function setTagged(?\Arbor\Model\ModelBase $tagged = null)
     {
         $this->setProperty('tagged', $tagged);
     }
@@ -98,7 +98,7 @@ class ContentTag extends ModelBase
     /**
      * @param string $tagName
      */
-    public function setTagName(string $tagName = null)
+    public function setTagName(?string $tagName = null)
     {
         $this->setProperty('tagName', $tagName);
     }
@@ -114,13 +114,13 @@ class ContentTag extends ModelBase
     /**
      * @param string $tagValue
      */
-    public function setTagValue(string $tagValue = null)
+    public function setTagValue(?string $tagValue = null)
     {
         $this->setProperty('tagValue', $tagValue);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedBaseEntity()
     {
@@ -128,9 +128,9 @@ class ContentTag extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedBaseEntity
+     * @param \Arbor\Model\ModelBase $relatedBaseEntity
      */
-    public function setRelatedBaseEntity(\ModelBase $relatedBaseEntity = null)
+    public function setRelatedBaseEntity(?\Arbor\Model\ModelBase $relatedBaseEntity = null)
     {
         $this->setProperty('relatedBaseEntity', $relatedBaseEntity);
     }

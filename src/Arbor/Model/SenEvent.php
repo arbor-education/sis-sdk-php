@@ -30,7 +30,7 @@ class SenEvent extends ModelBase
      * @return SenEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class SenEvent extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -88,7 +88,7 @@ class SenEvent extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -104,13 +104,13 @@ class SenEvent extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -118,9 +118,9 @@ class SenEvent extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -136,7 +136,7 @@ class SenEvent extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -152,7 +152,7 @@ class SenEvent extends ModelBase
     /**
      * @param \Arbor\Model\SenEventType $senEventType
      */
-    public function setSenEventType(\Arbor\Model\SenEventType $senEventType = null)
+    public function setSenEventType(?\Arbor\Model\SenEventType $senEventType = null)
     {
         $this->setProperty('senEventType', $senEventType);
     }
@@ -168,7 +168,7 @@ class SenEvent extends ModelBase
     /**
      * @param string $senEventName
      */
-    public function setSenEventName(string $senEventName = null)
+    public function setSenEventName(?string $senEventName = null)
     {
         $this->setProperty('senEventName', $senEventName);
     }
@@ -184,7 +184,7 @@ class SenEvent extends ModelBase
     /**
      * @param string $senEventDescription
      */
-    public function setSenEventDescription(string $senEventDescription = null)
+    public function setSenEventDescription(?string $senEventDescription = null)
     {
         $this->setProperty('senEventDescription', $senEventDescription);
     }

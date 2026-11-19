@@ -24,7 +24,7 @@ class ApplicationApplicantImport extends ModelBase
      * @return ApplicationApplicantImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param \Arbor\Model\ApplicationApplicantImportJob $applicationApplicantImportJob
      */
-    public function setApplicationApplicantImportJob(\Arbor\Model\ApplicationApplicantImportJob $applicationApplicantImportJob = null)
+    public function setApplicationApplicantImportJob(?\Arbor\Model\ApplicationApplicantImportJob $applicationApplicantImportJob = null)
     {
         $this->setProperty('applicationApplicantImportJob', $applicationApplicantImportJob);
     }
@@ -82,7 +82,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param \Arbor\Model\Application $application
      */
-    public function setApplication(\Arbor\Model\Application $application = null)
+    public function setApplication(?\Arbor\Model\Application $application = null)
     {
         $this->setProperty('application', $application);
     }
@@ -98,7 +98,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param int $rowIndex
      */
-    public function setRowIndex(int $rowIndex = null)
+    public function setRowIndex(?int $rowIndex = null)
     {
         $this->setProperty('rowIndex', $rowIndex);
     }
@@ -114,7 +114,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param string $errors
      */
-    public function setErrors(string $errors = null)
+    public function setErrors(?string $errors = null)
     {
         $this->setProperty('errors', $errors);
     }
@@ -130,7 +130,7 @@ class ApplicationApplicantImport extends ModelBase
     /**
      * @param string $requiredErrors
      */
-    public function setRequiredErrors(string $requiredErrors = null)
+    public function setRequiredErrors(?string $requiredErrors = null)
     {
         $this->setProperty('requiredErrors', $requiredErrors);
     }

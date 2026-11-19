@@ -26,7 +26,7 @@ class StudentEducationalHistory extends ModelBase
      * @return StudentEducationalHistory[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -84,7 +84,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -100,7 +100,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param \DateTime $expectedEntryDate
      */
-    public function setExpectedEntryDate(\DateTime $expectedEntryDate = null)
+    public function setExpectedEntryDate(?\DateTime $expectedEntryDate = null)
     {
         $this->setProperty('expectedEntryDate', $expectedEntryDate);
     }
@@ -116,7 +116,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param \DateTime $actualEntryDate
      */
-    public function setActualEntryDate(\DateTime $actualEntryDate = null)
+    public function setActualEntryDate(?\DateTime $actualEntryDate = null)
     {
         $this->setProperty('actualEntryDate', $actualEntryDate);
     }
@@ -132,7 +132,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param \DateTime $leavingDate
      */
-    public function setLeavingDate(\DateTime $leavingDate = null)
+    public function setLeavingDate(?\DateTime $leavingDate = null)
     {
         $this->setProperty('leavingDate', $leavingDate);
     }
@@ -148,7 +148,7 @@ class StudentEducationalHistory extends ModelBase
     /**
      * @param \Arbor\Model\UnenrolmentReason $unenrolmentReason
      */
-    public function setUnenrolmentReason(\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
+    public function setUnenrolmentReason(?\Arbor\Model\UnenrolmentReason $unenrolmentReason = null)
     {
         $this->setProperty('unenrolmentReason', $unenrolmentReason);
     }

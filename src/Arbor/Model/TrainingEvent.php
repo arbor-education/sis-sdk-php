@@ -28,7 +28,7 @@ class TrainingEvent extends ModelBase
      * @return TrainingEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -86,7 +86,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -102,13 +102,13 @@ class TrainingEvent extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText(string $locationText = null)
+    public function setLocationText(?string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -116,9 +116,9 @@ class TrainingEvent extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -134,7 +134,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param string $trainingEventTitle
      */
-    public function setTrainingEventTitle(string $trainingEventTitle = null)
+    public function setTrainingEventTitle(?string $trainingEventTitle = null)
     {
         $this->setProperty('trainingEventTitle', $trainingEventTitle);
     }
@@ -150,7 +150,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param \DateTime $expiryDate
      */
-    public function setExpiryDate(\DateTime $expiryDate = null)
+    public function setExpiryDate(?\DateTime $expiryDate = null)
     {
         $this->setProperty('expiryDate', $expiryDate);
     }
@@ -166,7 +166,7 @@ class TrainingEvent extends ModelBase
     /**
      * @param \Arbor\Model\TrainingCourse $trainingCourse
      */
-    public function setTrainingCourse(\Arbor\Model\TrainingCourse $trainingCourse = null)
+    public function setTrainingCourse(?\Arbor\Model\TrainingCourse $trainingCourse = null)
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }

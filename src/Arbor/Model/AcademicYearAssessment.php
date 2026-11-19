@@ -34,7 +34,7 @@ class AcademicYearAssessment extends ModelBase
      * @return AcademicYearAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -92,7 +92,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName(string $assessmentName = null)
+    public function setAssessmentName(?string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -108,13 +108,13 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(?\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAssessmentEntity()
     {
@@ -122,9 +122,9 @@ class AcademicYearAssessment extends ModelBase
     }
 
     /**
-     * @param ModelBase $assessmentEntity
+     * @param \Arbor\Model\ModelBase $assessmentEntity
      */
-    public function setAssessmentEntity(\ModelBase $assessmentEntity = null)
+    public function setAssessmentEntity(?\Arbor\Model\ModelBase $assessmentEntity = null)
     {
         $this->setProperty('assessmentEntity', $assessmentEntity);
     }
@@ -140,7 +140,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param \Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet
      */
-    public function setProgressMeasurementPeriodSet(\Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
+    public function setProgressMeasurementPeriodSet(?\Arbor\Model\ProgressMeasurementPeriodSet $progressMeasurementPeriodSet = null)
     {
         $this->setProperty('progressMeasurementPeriodSet', $progressMeasurementPeriodSet);
     }
@@ -156,7 +156,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param bool $isLinkedToSummativeTracking
      */
-    public function setIsLinkedToSummativeTracking(bool $isLinkedToSummativeTracking = null)
+    public function setIsLinkedToSummativeTracking(?bool $isLinkedToSummativeTracking = null)
     {
         $this->setProperty('isLinkedToSummativeTracking', $isLinkedToSummativeTracking);
     }
@@ -172,7 +172,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param \DateTime $setupCompletedDatetime
      */
-    public function setSetupCompletedDatetime(\DateTime $setupCompletedDatetime = null)
+    public function setSetupCompletedDatetime(?\DateTime $setupCompletedDatetime = null)
     {
         $this->setProperty('setupCompletedDatetime', $setupCompletedDatetime);
     }
@@ -188,7 +188,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param \DateTime $setupCompletionStartedDatetime
      */
-    public function setSetupCompletionStartedDatetime(\DateTime $setupCompletionStartedDatetime = null)
+    public function setSetupCompletionStartedDatetime(?\DateTime $setupCompletionStartedDatetime = null)
     {
         $this->setProperty('setupCompletionStartedDatetime', $setupCompletionStartedDatetime);
     }
@@ -204,7 +204,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param \DateTime $deletionStartedDatetime
      */
-    public function setDeletionStartedDatetime(\DateTime $deletionStartedDatetime = null)
+    public function setDeletionStartedDatetime(?\DateTime $deletionStartedDatetime = null)
     {
         $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }
@@ -220,7 +220,7 @@ class AcademicYearAssessment extends ModelBase
     /**
      * @param bool $allowComments
      */
-    public function setAllowComments(bool $allowComments = null)
+    public function setAllowComments(?bool $allowComments = null)
     {
         $this->setProperty('allowComments', $allowComments);
     }

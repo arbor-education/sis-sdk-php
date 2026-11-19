@@ -28,7 +28,7 @@ class EmailSender extends ModelBase
      * @return EmailSender[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class EmailSender extends ModelBase
     /**
      * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Arbor\Model\Email $email = null)
+    public function setEmail(?\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -86,7 +86,7 @@ class EmailSender extends ModelBase
     /**
      * @param string $senderType
      */
-    public function setSenderType(string $senderType = null)
+    public function setSenderType(?string $senderType = null)
     {
         $this->setProperty('senderType', $senderType);
     }
@@ -102,7 +102,7 @@ class EmailSender extends ModelBase
     /**
      * @param string $senderName
      */
-    public function setSenderName(string $senderName = null)
+    public function setSenderName(?string $senderName = null)
     {
         $this->setProperty('senderName', $senderName);
     }
@@ -118,7 +118,7 @@ class EmailSender extends ModelBase
     /**
      * @param string $senderRawEmail
      */
-    public function setSenderRawEmail(string $senderRawEmail = null)
+    public function setSenderRawEmail(?string $senderRawEmail = null)
     {
         $this->setProperty('senderRawEmail', $senderRawEmail);
     }
@@ -134,13 +134,13 @@ class EmailSender extends ModelBase
     /**
      * @param \Arbor\Model\EmailAddress $emailAddress
      */
-    public function setEmailAddress(\Arbor\Model\EmailAddress $emailAddress = null)
+    public function setEmailAddress(?\Arbor\Model\EmailAddress $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -148,9 +148,9 @@ class EmailSender extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -166,7 +166,7 @@ class EmailSender extends ModelBase
     /**
      * @param int $senderIndex
      */
-    public function setSenderIndex(int $senderIndex = null)
+    public function setSenderIndex(?int $senderIndex = null)
     {
         $this->setProperty('senderIndex', $senderIndex);
     }

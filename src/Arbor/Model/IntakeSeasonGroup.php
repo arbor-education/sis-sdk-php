@@ -20,7 +20,7 @@ class IntakeSeasonGroup extends ModelBase
      * @return IntakeSeasonGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class IntakeSeasonGroup extends ModelBase
     /**
      * @param string $groupName
      */
-    public function setGroupName(string $groupName = null)
+    public function setGroupName(?string $groupName = null)
     {
         $this->setProperty('groupName', $groupName);
     }
@@ -78,7 +78,7 @@ class IntakeSeasonGroup extends ModelBase
     /**
      * @param \Arbor\Model\IntakeSeason $intakeSeason
      */
-    public function setIntakeSeason(\Arbor\Model\IntakeSeason $intakeSeason = null)
+    public function setIntakeSeason(?\Arbor\Model\IntakeSeason $intakeSeason = null)
     {
         $this->setProperty('intakeSeason', $intakeSeason);
     }
@@ -94,7 +94,7 @@ class IntakeSeasonGroup extends ModelBase
     /**
      * @param \DateTime $expectedAdmissionDate
      */
-    public function setExpectedAdmissionDate(\DateTime $expectedAdmissionDate = null)
+    public function setExpectedAdmissionDate(?\DateTime $expectedAdmissionDate = null)
     {
         $this->setProperty('expectedAdmissionDate', $expectedAdmissionDate);
     }

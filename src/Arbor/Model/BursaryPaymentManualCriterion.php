@@ -22,7 +22,7 @@ class BursaryPaymentManualCriterion extends ModelBase
      * @return BursaryPaymentManualCriterion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class BursaryPaymentManualCriterion extends ModelBase
     /**
      * @param \Arbor\Model\BursaryType $bursaryType
      */
-    public function setBursaryType(\Arbor\Model\BursaryType $bursaryType = null)
+    public function setBursaryType(?\Arbor\Model\BursaryType $bursaryType = null)
     {
         $this->setProperty('bursaryType', $bursaryType);
     }
@@ -80,7 +80,7 @@ class BursaryPaymentManualCriterion extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -96,7 +96,7 @@ class BursaryPaymentManualCriterion extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class BursaryPaymentManualCriterion extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

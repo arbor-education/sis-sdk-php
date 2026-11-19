@@ -52,7 +52,7 @@ class SmsMessage extends ModelBase
      * @return SmsMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -94,7 +94,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \Arbor\Model\SmsMessageDraft $smsMessageDraft
      */
-    public function setSmsMessageDraft(\Arbor\Model\SmsMessageDraft $smsMessageDraft = null)
+    public function setSmsMessageDraft(?\Arbor\Model\SmsMessageDraft $smsMessageDraft = null)
     {
         $this->setProperty('smsMessageDraft', $smsMessageDraft);
     }
@@ -110,7 +110,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $messageType
      */
-    public function setMessageType(string $messageType = null)
+    public function setMessageType(?string $messageType = null)
     {
         $this->setProperty('messageType', $messageType);
     }
@@ -126,13 +126,13 @@ class SmsMessage extends ModelBase
     /**
      * @param string $senderNumber
      */
-    public function setSenderNumber(string $senderNumber = null)
+    public function setSenderNumber(?string $senderNumber = null)
     {
         $this->setProperty('senderNumber', $senderNumber);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -140,9 +140,9 @@ class SmsMessage extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -158,13 +158,13 @@ class SmsMessage extends ModelBase
     /**
      * @param string $recipientNumber
      */
-    public function setRecipientNumber(string $recipientNumber = null)
+    public function setRecipientNumber(?string $recipientNumber = null)
     {
         $this->setProperty('recipientNumber', $recipientNumber);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRecipient()
     {
@@ -172,9 +172,9 @@ class SmsMessage extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -190,7 +190,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(?\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -206,7 +206,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText(string $messageText = null)
+    public function setMessageText(?string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -222,7 +222,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \DateTime $sentDatetime
      */
-    public function setSentDatetime(\DateTime $sentDatetime = null)
+    public function setSentDatetime(?\DateTime $sentDatetime = null)
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }
@@ -238,7 +238,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \DateTime $readDatetime
      */
-    public function setReadDatetime(\DateTime $readDatetime = null)
+    public function setReadDatetime(?\DateTime $readDatetime = null)
     {
         $this->setProperty('readDatetime', $readDatetime);
     }
@@ -254,7 +254,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \DateTime $receivedDatetime
      */
-    public function setReceivedDatetime(\DateTime $receivedDatetime = null)
+    public function setReceivedDatetime(?\DateTime $receivedDatetime = null)
     {
         $this->setProperty('receivedDatetime', $receivedDatetime);
     }
@@ -270,7 +270,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \DateTime $failedDatetime
      */
-    public function setFailedDatetime(\DateTime $failedDatetime = null)
+    public function setFailedDatetime(?\DateTime $failedDatetime = null)
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
@@ -286,7 +286,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $totalCost
      */
-    public function setTotalCost(string $totalCost = null)
+    public function setTotalCost(?string $totalCost = null)
     {
         $this->setProperty('totalCost', $totalCost);
     }
@@ -302,7 +302,7 @@ class SmsMessage extends ModelBase
     /**
      * @param float $creditsUsed
      */
-    public function setCreditsUsed(float $creditsUsed = null)
+    public function setCreditsUsed(?float $creditsUsed = null)
     {
         $this->setProperty('creditsUsed', $creditsUsed);
     }
@@ -318,7 +318,7 @@ class SmsMessage extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree(bool $free = null)
+    public function setFree(?bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -334,7 +334,7 @@ class SmsMessage extends ModelBase
     /**
      * @param int $messageParts
      */
-    public function setMessageParts(int $messageParts = null)
+    public function setMessageParts(?int $messageParts = null)
     {
         $this->setProperty('messageParts', $messageParts);
     }
@@ -350,7 +350,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $recipientNetworkCode
      */
-    public function setRecipientNetworkCode(string $recipientNetworkCode = null)
+    public function setRecipientNetworkCode(?string $recipientNetworkCode = null)
     {
         $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }
@@ -366,7 +366,7 @@ class SmsMessage extends ModelBase
     /**
      * @param \DateTime $actionRequiredByDatetime
      */
-    public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
+    public function setActionRequiredByDatetime(?\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }
@@ -382,7 +382,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(string $provider = null)
+    public function setProvider(?string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }

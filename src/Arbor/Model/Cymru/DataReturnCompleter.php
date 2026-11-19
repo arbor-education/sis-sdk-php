@@ -22,7 +22,7 @@ class DataReturnCompleter extends ModelBase
      * @return DataReturnCompleter[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class DataReturnCompleter extends ModelBase
     /**
      * @param \Arbor\Model\Statutory\DataReturn $dataReturn
      */
-    public function setDataReturn(\Arbor\Model\Statutory\DataReturn $dataReturn = null)
+    public function setDataReturn(?\Arbor\Model\Statutory\DataReturn $dataReturn = null)
     {
         $this->setProperty('dataReturn', $dataReturn);
     }
@@ -80,7 +80,7 @@ class DataReturnCompleter extends ModelBase
     /**
      * @param int $hours
      */
-    public function setHours(int $hours = null)
+    public function setHours(?int $hours = null)
     {
         $this->setProperty('hours', $hours);
     }
@@ -96,7 +96,7 @@ class DataReturnCompleter extends ModelBase
     /**
      * @param string $role
      */
-    public function setRole(string $role = null)
+    public function setRole(?string $role = null)
     {
         $this->setProperty('role', $role);
     }

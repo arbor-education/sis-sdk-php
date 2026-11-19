@@ -26,7 +26,7 @@ class EnabledFeature extends ModelBase
      * @return EnabledFeature[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $featureIdentifier
      */
-    public function setFeatureIdentifier(string $featureIdentifier = null)
+    public function setFeatureIdentifier(?string $featureIdentifier = null)
     {
         $this->setProperty('featureIdentifier', $featureIdentifier);
     }
@@ -84,7 +84,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $subscriptionSource
      */
-    public function setSubscriptionSource(string $subscriptionSource = null)
+    public function setSubscriptionSource(?string $subscriptionSource = null)
     {
         $this->setProperty('subscriptionSource', $subscriptionSource);
     }
@@ -100,7 +100,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param string $subscriptionIdentifier
      */
-    public function setSubscriptionIdentifier(string $subscriptionIdentifier = null)
+    public function setSubscriptionIdentifier(?string $subscriptionIdentifier = null)
     {
         $this->setProperty('subscriptionIdentifier', $subscriptionIdentifier);
     }
@@ -116,7 +116,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -132,7 +132,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -148,7 +148,7 @@ class EnabledFeature extends ModelBase
     /**
      * @param bool $isPermanent
      */
-    public function setIsPermanent(bool $isPermanent = null)
+    public function setIsPermanent(?bool $isPermanent = null)
     {
         $this->setProperty('isPermanent', $isPermanent);
     }

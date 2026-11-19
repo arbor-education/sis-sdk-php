@@ -30,7 +30,7 @@ class QualificationTransportMessage extends ModelBase
      * @return QualificationTransportMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +73,7 @@ class QualificationTransportMessage extends ModelBase
      * @param \Arbor\Model\QualificationTransportCertificate
      * $qualificationTransportCertificate
      */
-    public function setQualificationTransportCertificate(\Arbor\Model\QualificationTransportCertificate $qualificationTransportCertificate = null)
+    public function setQualificationTransportCertificate(?\Arbor\Model\QualificationTransportCertificate $qualificationTransportCertificate = null)
     {
         $this->setProperty('qualificationTransportCertificate', $qualificationTransportCertificate);
     }
@@ -89,7 +89,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Arbor\Model\Content $content = null)
+    public function setContent(?\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -105,7 +105,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -121,7 +121,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $messageId
      */
-    public function setMessageId(string $messageId = null)
+    public function setMessageId(?string $messageId = null)
     {
         $this->setProperty('messageId', $messageId);
     }
@@ -137,7 +137,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $direction
      */
-    public function setDirection(string $direction = null)
+    public function setDirection(?string $direction = null)
     {
         $this->setProperty('direction', $direction);
     }
@@ -153,7 +153,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $refToMessageId
      */
-    public function setRefToMessageId(string $refToMessageId = null)
+    public function setRefToMessageId(?string $refToMessageId = null)
     {
         $this->setProperty('refToMessageId', $refToMessageId);
     }
@@ -169,7 +169,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param \DateTime $datetime
      */
-    public function setDatetime(\DateTime $datetime = null)
+    public function setDatetime(?\DateTime $datetime = null)
     {
         $this->setProperty('datetime', $datetime);
     }
@@ -185,7 +185,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $rawContent
      */
-    public function setRawContent(string $rawContent = null)
+    public function setRawContent(?string $rawContent = null)
     {
         $this->setProperty('rawContent', $rawContent);
     }

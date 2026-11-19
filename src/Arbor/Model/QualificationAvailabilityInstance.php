@@ -30,7 +30,7 @@ class QualificationAvailabilityInstance extends ModelBase
      * @return QualificationAvailabilityInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(?\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -136,7 +136,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $qualificationAvailabilityIdentifier
      */
-    public function setQualificationAvailabilityIdentifier(string $qualificationAvailabilityIdentifier = null)
+    public function setQualificationAvailabilityIdentifier(?string $qualificationAvailabilityIdentifier = null)
     {
         $this->setProperty('qualificationAvailabilityIdentifier', $qualificationAvailabilityIdentifier);
     }
@@ -152,7 +152,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -168,7 +168,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -184,7 +184,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $ediAwardingBodyIdentifier
      */
-    public function setEdiAwardingBodyIdentifier(string $ediAwardingBodyIdentifier = null)
+    public function setEdiAwardingBodyIdentifier(?string $ediAwardingBodyIdentifier = null)
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }

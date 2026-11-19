@@ -30,7 +30,7 @@ class EmailStatus extends ModelBase
      * @return EmailStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class EmailStatus extends ModelBase
     /**
      * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Arbor\Model\Email $email = null)
+    public function setEmail(?\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -88,7 +88,7 @@ class EmailStatus extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(string $emailAddress = null)
+    public function setEmailAddress(?string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -104,7 +104,7 @@ class EmailStatus extends ModelBase
     /**
      * @param \Arbor\Model\EmailRecipient $emailRecipient
      */
-    public function setEmailRecipient(\Arbor\Model\EmailRecipient $emailRecipient = null)
+    public function setEmailRecipient(?\Arbor\Model\EmailRecipient $emailRecipient = null)
     {
         $this->setProperty('emailRecipient', $emailRecipient);
     }
@@ -120,7 +120,7 @@ class EmailStatus extends ModelBase
     /**
      * @param string $statusType
      */
-    public function setStatusType(string $statusType = null)
+    public function setStatusType(?string $statusType = null)
     {
         $this->setProperty('statusType', $statusType);
     }
@@ -136,7 +136,7 @@ class EmailStatus extends ModelBase
     /**
      * @param \DateTime $statusDatetime
      */
-    public function setStatusDatetime(\DateTime $statusDatetime = null)
+    public function setStatusDatetime(?\DateTime $statusDatetime = null)
     {
         $this->setProperty('statusDatetime', $statusDatetime);
     }
@@ -152,7 +152,7 @@ class EmailStatus extends ModelBase
     /**
      * @param int $statusCode
      */
-    public function setStatusCode(int $statusCode = null)
+    public function setStatusCode(?int $statusCode = null)
     {
         $this->setProperty('statusCode', $statusCode);
     }
@@ -168,7 +168,7 @@ class EmailStatus extends ModelBase
     /**
      * @param string $statusDetail
      */
-    public function setStatusDetail(string $statusDetail = null)
+    public function setStatusDetail(?string $statusDetail = null)
     {
         $this->setProperty('statusDetail', $statusDetail);
     }
@@ -184,7 +184,7 @@ class EmailStatus extends ModelBase
     /**
      * @param int $deliveryAttemptNumber
      */
-    public function setDeliveryAttemptNumber(int $deliveryAttemptNumber = null)
+    public function setDeliveryAttemptNumber(?int $deliveryAttemptNumber = null)
     {
         $this->setProperty('deliveryAttemptNumber', $deliveryAttemptNumber);
     }

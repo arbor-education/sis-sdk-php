@@ -24,7 +24,7 @@ class PersonImpairment extends ModelBase
      * @return PersonImpairment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -56,7 +56,7 @@ class PersonImpairment extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -64,9 +64,9 @@ class PersonImpairment extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -82,7 +82,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param string $personImpairmentName
      */
-    public function setPersonImpairmentName(string $personImpairmentName = null)
+    public function setPersonImpairmentName(?string $personImpairmentName = null)
     {
         $this->setProperty('personImpairmentName', $personImpairmentName);
     }
@@ -98,7 +98,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param \Arbor\Model\ImpairmentCategory $impairmentCategory
      */
-    public function setImpairmentCategory(\Arbor\Model\ImpairmentCategory $impairmentCategory = null)
+    public function setImpairmentCategory(?\Arbor\Model\ImpairmentCategory $impairmentCategory = null)
     {
         $this->setProperty('impairmentCategory', $impairmentCategory);
     }
@@ -114,7 +114,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param \DateTime $dateAdvised
      */
-    public function setDateAdvised(\DateTime $dateAdvised = null)
+    public function setDateAdvised(?\DateTime $dateAdvised = null)
     {
         $this->setProperty('dateAdvised', $dateAdvised);
     }
@@ -130,7 +130,7 @@ class PersonImpairment extends ModelBase
     /**
      * @param bool $affectsWorkingAbility
      */
-    public function setAffectsWorkingAbility(bool $affectsWorkingAbility = null)
+    public function setAffectsWorkingAbility(?bool $affectsWorkingAbility = null)
     {
         $this->setProperty('affectsWorkingAbility', $affectsWorkingAbility);
     }

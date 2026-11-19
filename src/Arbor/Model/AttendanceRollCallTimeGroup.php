@@ -18,7 +18,7 @@ class AttendanceRollCallTimeGroup extends ModelBase
      * @return AttendanceRollCallTimeGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,13 +60,13 @@ class AttendanceRollCallTimeGroup extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRollCallTime $attendanceRollCallTime
      */
-    public function setAttendanceRollCallTime(\Arbor\Model\AttendanceRollCallTime $attendanceRollCallTime = null)
+    public function setAttendanceRollCallTime(?\Arbor\Model\AttendanceRollCallTime $attendanceRollCallTime = null)
     {
         $this->setProperty('attendanceRollCallTime', $attendanceRollCallTime);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getStudentGroup()
     {
@@ -74,9 +74,9 @@ class AttendanceRollCallTimeGroup extends ModelBase
     }
 
     /**
-     * @param ModelBase $studentGroup
+     * @param \Arbor\Model\ModelBase $studentGroup
      */
-    public function setStudentGroup(\ModelBase $studentGroup = null)
+    public function setStudentGroup(?\Arbor\Model\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

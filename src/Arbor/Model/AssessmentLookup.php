@@ -28,7 +28,7 @@ class AssessmentLookup extends ModelBase
      * @return AssessmentLookup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -86,7 +86,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -102,7 +102,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -118,7 +118,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -134,7 +134,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -150,7 +150,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param string $lookupType
      */
-    public function setLookupType(string $lookupType = null)
+    public function setLookupType(?string $lookupType = null)
     {
         $this->setProperty('lookupType', $lookupType);
     }
@@ -166,7 +166,7 @@ class AssessmentLookup extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet
      */
-    public function setAssessmentDataGradeSet(\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
+    public function setAssessmentDataGradeSet(?\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
     {
         $this->setProperty('assessmentDataGradeSet', $assessmentDataGradeSet);
     }

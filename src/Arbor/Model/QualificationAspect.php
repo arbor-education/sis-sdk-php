@@ -42,7 +42,7 @@ class QualificationAspect extends ModelBase
      * @return QualificationAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -100,7 +100,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -116,13 +116,13 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getQualificationElement()
     {
@@ -130,9 +130,9 @@ class QualificationAspect extends ModelBase
     }
 
     /**
-     * @param ModelBase $qualificationElement
+     * @param \Arbor\Model\ModelBase $qualificationElement
      */
-    public function setQualificationElement(\ModelBase $qualificationElement = null)
+    public function setQualificationElement(?\Arbor\Model\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
@@ -148,7 +148,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $gradeIndex
      */
-    public function setGradeIndex(int $gradeIndex = null)
+    public function setGradeIndex(?int $gradeIndex = null)
     {
         $this->setProperty('gradeIndex', $gradeIndex);
     }
@@ -164,7 +164,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param string $numericMarkType
      */
-    public function setNumericMarkType(string $numericMarkType = null)
+    public function setNumericMarkType(?string $numericMarkType = null)
     {
         $this->setProperty('numericMarkType', $numericMarkType);
     }
@@ -180,7 +180,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param int $decimalPlaces
      */
-    public function setDecimalPlaces(int $decimalPlaces = null)
+    public function setDecimalPlaces(?int $decimalPlaces = null)
     {
         $this->setProperty('decimalPlaces', $decimalPlaces);
     }
@@ -196,7 +196,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param float $minimumNumericValue
      */
-    public function setMinimumNumericValue(float $minimumNumericValue = null)
+    public function setMinimumNumericValue(?float $minimumNumericValue = null)
     {
         $this->setProperty('minimumNumericValue', $minimumNumericValue);
     }
@@ -212,7 +212,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param float $maximumNumericValue
      */
-    public function setMaximumNumericValue(float $maximumNumericValue = null)
+    public function setMaximumNumericValue(?float $maximumNumericValue = null)
     {
         $this->setProperty('maximumNumericValue', $maximumNumericValue);
     }
@@ -228,7 +228,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGradeSet $resultGradeSet
      */
-    public function setResultGradeSet(\Arbor\Model\QualificationGradeSet $resultGradeSet = null)
+    public function setResultGradeSet(?\Arbor\Model\QualificationGradeSet $resultGradeSet = null)
     {
         $this->setProperty('resultGradeSet', $resultGradeSet);
     }
@@ -244,7 +244,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGradeSet $forecastGradeSet
      */
-    public function setForecastGradeSet(\Arbor\Model\QualificationGradeSet $forecastGradeSet = null)
+    public function setForecastGradeSet(?\Arbor\Model\QualificationGradeSet $forecastGradeSet = null)
     {
         $this->setProperty('forecastGradeSet', $forecastGradeSet);
     }
@@ -260,7 +260,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGradeSet $endorsementGradeSet
      */
-    public function setEndorsementGradeSet(\Arbor\Model\QualificationGradeSet $endorsementGradeSet = null)
+    public function setEndorsementGradeSet(?\Arbor\Model\QualificationGradeSet $endorsementGradeSet = null)
     {
         $this->setProperty('endorsementGradeSet', $endorsementGradeSet);
     }
@@ -276,7 +276,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -292,7 +292,7 @@ class QualificationAspect extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

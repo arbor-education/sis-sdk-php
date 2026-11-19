@@ -20,7 +20,7 @@ class PersonTrainingCourse extends ModelBase
      * @return PersonTrainingCourse[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param \Arbor\Model\TrainingCourse $trainingCourse
      */
-    public function setTrainingCourse(\Arbor\Model\TrainingCourse $trainingCourse = null)
+    public function setTrainingCourse(?\Arbor\Model\TrainingCourse $trainingCourse = null)
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTrainedPerson()
     {
@@ -76,9 +76,9 @@ class PersonTrainingCourse extends ModelBase
     }
 
     /**
-     * @param ModelBase $trainedPerson
+     * @param \Arbor\Model\ModelBase $trainedPerson
      */
-    public function setTrainedPerson(\ModelBase $trainedPerson = null)
+    public function setTrainedPerson(?\Arbor\Model\ModelBase $trainedPerson = null)
     {
         $this->setProperty('trainedPerson', $trainedPerson);
     }
@@ -94,7 +94,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param float $feeCosts
      */
-    public function setFeeCosts(float $feeCosts = null)
+    public function setFeeCosts(?float $feeCosts = null)
     {
         $this->setProperty('feeCosts', $feeCosts);
     }

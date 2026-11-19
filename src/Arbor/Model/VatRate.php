@@ -32,7 +32,7 @@ class VatRate extends ModelBase
      * @return VatRate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class VatRate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -90,7 +90,7 @@ class VatRate extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -106,7 +106,7 @@ class VatRate extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -122,7 +122,7 @@ class VatRate extends ModelBase
     /**
      * @param bool $isDefaultVatRate
      */
-    public function setIsDefaultVatRate(bool $isDefaultVatRate = null)
+    public function setIsDefaultVatRate(?bool $isDefaultVatRate = null)
     {
         $this->setProperty('isDefaultVatRate', $isDefaultVatRate);
     }
@@ -138,7 +138,7 @@ class VatRate extends ModelBase
     /**
      * @param string $vatRateName
      */
-    public function setVatRateName(string $vatRateName = null)
+    public function setVatRateName(?string $vatRateName = null)
     {
         $this->setProperty('vatRateName', $vatRateName);
     }
@@ -154,7 +154,7 @@ class VatRate extends ModelBase
     /**
      * @param string $vatRateShortName
      */
-    public function setVatRateShortName(string $vatRateShortName = null)
+    public function setVatRateShortName(?string $vatRateShortName = null)
     {
         $this->setProperty('vatRateShortName', $vatRateShortName);
     }
@@ -170,7 +170,7 @@ class VatRate extends ModelBase
     /**
      * @param float $rate
      */
-    public function setRate(float $rate = null)
+    public function setRate(?float $rate = null)
     {
         $this->setProperty('rate', $rate);
     }
@@ -186,7 +186,7 @@ class VatRate extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -202,7 +202,7 @@ class VatRate extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

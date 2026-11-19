@@ -26,7 +26,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      * @return ChildProtectionStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param \Arbor\Model\ChildProtectionStatus $childProtectionStatus
      */
-    public function setChildProtectionStatus(\Arbor\Model\ChildProtectionStatus $childProtectionStatus = null)
+    public function setChildProtectionStatus(?\Arbor\Model\ChildProtectionStatus $childProtectionStatus = null)
     {
         $this->setProperty('childProtectionStatus', $childProtectionStatus);
     }
@@ -84,7 +84,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -100,7 +100,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -116,7 +116,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,7 +132,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -148,7 +148,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param \Arbor\Model\LocalAuthority $responsibleLocalAuthority
      */
-    public function setResponsibleLocalAuthority(\Arbor\Model\LocalAuthority $responsibleLocalAuthority = null)
+    public function setResponsibleLocalAuthority(?\Arbor\Model\LocalAuthority $responsibleLocalAuthority = null)
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }

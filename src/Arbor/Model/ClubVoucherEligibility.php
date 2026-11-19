@@ -18,7 +18,7 @@ class ClubVoucherEligibility extends ModelBase
      * @return ClubVoucherEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,13 +60,13 @@ class ClubVoucherEligibility extends ModelBase
     /**
      * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Arbor\Model\Club $club = null)
+    public function setClub(?\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getGroup()
     {
@@ -74,9 +74,9 @@ class ClubVoucherEligibility extends ModelBase
     }
 
     /**
-     * @param ModelBase $group
+     * @param \Arbor\Model\ModelBase $group
      */
-    public function setGroup(\ModelBase $group = null)
+    public function setGroup(?\Arbor\Model\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }

@@ -20,7 +20,7 @@ class DietaryRequirement extends ModelBase
      * @return DietaryRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class DietaryRequirement extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -60,9 +60,9 @@ class DietaryRequirement extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -78,7 +78,7 @@ class DietaryRequirement extends ModelBase
     /**
      * @param \Arbor\Model\DietaryRequirementType $dietaryRequirementType
      */
-    public function setDietaryRequirementType(\Arbor\Model\DietaryRequirementType $dietaryRequirementType = null)
+    public function setDietaryRequirementType(?\Arbor\Model\DietaryRequirementType $dietaryRequirementType = null)
     {
         $this->setProperty('dietaryRequirementType', $dietaryRequirementType);
     }
@@ -94,7 +94,7 @@ class DietaryRequirement extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote(string $note = null)
+    public function setNote(?string $note = null)
     {
         $this->setProperty('note', $note);
     }

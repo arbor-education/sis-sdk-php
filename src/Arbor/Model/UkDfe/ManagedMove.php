@@ -24,7 +24,7 @@ class ManagedMove extends ModelBase
      * @return ManagedMove[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +67,7 @@ class ManagedMove extends ModelBase
      * @param \Arbor\Model\EducationalInstitutionEnrolment
      * $educationalInstitutionEnrolment
      */
-    public function setEducationalInstitutionEnrolment(\Arbor\Model\EducationalInstitutionEnrolment $educationalInstitutionEnrolment = null)
+    public function setEducationalInstitutionEnrolment(?\Arbor\Model\EducationalInstitutionEnrolment $educationalInstitutionEnrolment = null)
     {
         $this->setProperty('educationalInstitutionEnrolment', $educationalInstitutionEnrolment);
     }
@@ -83,7 +83,7 @@ class ManagedMove extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $destinationEducationalInstitution
      */
-    public function setDestinationEducationalInstitution(\Arbor\Model\EducationalInstitution $destinationEducationalInstitution = null)
+    public function setDestinationEducationalInstitution(?\Arbor\Model\EducationalInstitution $destinationEducationalInstitution = null)
     {
         $this->setProperty('destinationEducationalInstitution', $destinationEducationalInstitution);
     }
@@ -99,7 +99,7 @@ class ManagedMove extends ModelBase
     /**
      * @param string $managedMoveReason
      */
-    public function setManagedMoveReason(string $managedMoveReason = null)
+    public function setManagedMoveReason(?string $managedMoveReason = null)
     {
         $this->setProperty('managedMoveReason', $managedMoveReason);
     }
@@ -115,7 +115,7 @@ class ManagedMove extends ModelBase
     /**
      * @param \DateTime $managedMoveStartDate
      */
-    public function setManagedMoveStartDate(\DateTime $managedMoveStartDate = null)
+    public function setManagedMoveStartDate(?\DateTime $managedMoveStartDate = null)
     {
         $this->setProperty('managedMoveStartDate', $managedMoveStartDate);
     }

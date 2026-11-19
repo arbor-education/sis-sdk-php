@@ -36,7 +36,7 @@ class Letter extends ModelBase
      * @return Letter[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class Letter extends ModelBase
     /**
      * @param \DateTime $letterDate
      */
-    public function setLetterDate(\DateTime $letterDate = null)
+    public function setLetterDate(?\DateTime $letterDate = null)
     {
         $this->setProperty('letterDate', $letterDate);
     }
@@ -94,7 +94,7 @@ class Letter extends ModelBase
     /**
      * @param \DateTime $receivedDate
      */
-    public function setReceivedDate(\DateTime $receivedDate = null)
+    public function setReceivedDate(?\DateTime $receivedDate = null)
     {
         $this->setProperty('receivedDate', $receivedDate);
     }
@@ -110,7 +110,7 @@ class Letter extends ModelBase
     /**
      * @param \DateTime $preparedDatetime
      */
-    public function setPreparedDatetime(\DateTime $preparedDatetime = null)
+    public function setPreparedDatetime(?\DateTime $preparedDatetime = null)
     {
         $this->setProperty('preparedDatetime', $preparedDatetime);
     }
@@ -126,7 +126,7 @@ class Letter extends ModelBase
     /**
      * @param \DateTime $sentDatetime
      */
-    public function setSentDatetime(\DateTime $sentDatetime = null)
+    public function setSentDatetime(?\DateTime $sentDatetime = null)
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }
@@ -142,13 +142,13 @@ class Letter extends ModelBase
     /**
      * @param string $senderName
      */
-    public function setSenderName(string $senderName = null)
+    public function setSenderName(?string $senderName = null)
     {
         $this->setProperty('senderName', $senderName);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -156,9 +156,9 @@ class Letter extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -174,7 +174,7 @@ class Letter extends ModelBase
     /**
      * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(?\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -190,13 +190,13 @@ class Letter extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRecipient()
     {
@@ -204,9 +204,9 @@ class Letter extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -222,7 +222,7 @@ class Letter extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -238,7 +238,7 @@ class Letter extends ModelBase
     /**
      * @param \DateTime $actionRequiredByDatetime
      */
-    public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
+    public function setActionRequiredByDatetime(?\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }

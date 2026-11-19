@@ -24,7 +24,7 @@ class AlertRuleRecipient extends ModelBase
      * @return AlertRuleRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param \Arbor\Model\AlertRule $alertRule
      */
-    public function setAlertRule(\Arbor\Model\AlertRule $alertRule = null)
+    public function setAlertRule(?\Arbor\Model\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -82,13 +82,13 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel(string $channel = null)
+    public function setChannel(?string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRecipient()
     {
@@ -96,9 +96,9 @@ class AlertRuleRecipient extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -114,7 +114,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $recipientField
      */
-    public function setRecipientField(string $recipientField = null)
+    public function setRecipientField(?string $recipientField = null)
     {
         $this->setProperty('recipientField', $recipientField);
     }
@@ -130,7 +130,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $recipientResolver
      */
-    public function setRecipientResolver(string $recipientResolver = null)
+    public function setRecipientResolver(?string $recipientResolver = null)
     {
         $this->setProperty('recipientResolver', $recipientResolver);
     }

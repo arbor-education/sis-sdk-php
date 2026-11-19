@@ -16,7 +16,7 @@ class InverseDemographic extends ModelBase
      * @return InverseDemographic[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class InverseDemographic extends ModelBase
     /**
      * @param \Arbor\Model\Demographic $demographic
      */
-    public function setDemographic(\Arbor\Model\Demographic $demographic = null)
+    public function setDemographic(?\Arbor\Model\Demographic $demographic = null)
     {
         $this->setProperty('demographic', $demographic);
     }

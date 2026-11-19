@@ -28,7 +28,7 @@ class IncomingDirectDebitAgreement extends ModelBase
      * @return IncomingDirectDebitAgreement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -86,7 +86,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(?\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -102,7 +102,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $paymentProviderAgreementIdentifier
      */
-    public function setPaymentProviderAgreementIdentifier(string $paymentProviderAgreementIdentifier = null)
+    public function setPaymentProviderAgreementIdentifier(?string $paymentProviderAgreementIdentifier = null)
     {
         $this->setProperty('paymentProviderAgreementIdentifier', $paymentProviderAgreementIdentifier);
     }
@@ -118,7 +118,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param \DateTime $agreementStartDate
      */
-    public function setAgreementStartDate(\DateTime $agreementStartDate = null)
+    public function setAgreementStartDate(?\DateTime $agreementStartDate = null)
     {
         $this->setProperty('agreementStartDate', $agreementStartDate);
     }
@@ -134,7 +134,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param \DateTime $agreementEndDate
      */
-    public function setAgreementEndDate(\DateTime $agreementEndDate = null)
+    public function setAgreementEndDate(?\DateTime $agreementEndDate = null)
     {
         $this->setProperty('agreementEndDate', $agreementEndDate);
     }
@@ -150,7 +150,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $agreementReference
      */
-    public function setAgreementReference(string $agreementReference = null)
+    public function setAgreementReference(?string $agreementReference = null)
     {
         $this->setProperty('agreementReference', $agreementReference);
     }
@@ -166,7 +166,7 @@ class IncomingDirectDebitAgreement extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

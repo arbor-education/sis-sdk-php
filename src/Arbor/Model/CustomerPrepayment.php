@@ -46,7 +46,7 @@ class CustomerPrepayment extends ModelBase
      * @return CustomerPrepayment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -88,7 +88,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(?\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -104,7 +104,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -121,7 +121,7 @@ class CustomerPrepayment extends ModelBase
      * @param \Arbor\Model\IncomingDirectDebitTransaction
      * $incomingDirectDebitTransaction
      */
-    public function setIncomingDirectDebitTransaction(\Arbor\Model\IncomingDirectDebitTransaction $incomingDirectDebitTransaction = null)
+    public function setIncomingDirectDebitTransaction(?\Arbor\Model\IncomingDirectDebitTransaction $incomingDirectDebitTransaction = null)
     {
         $this->setProperty('incomingDirectDebitTransaction', $incomingDirectDebitTransaction);
     }
@@ -137,7 +137,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\IncomingCardTransaction $incomingCardTransaction
      */
-    public function setIncomingCardTransaction(\Arbor\Model\IncomingCardTransaction $incomingCardTransaction = null)
+    public function setIncomingCardTransaction(?\Arbor\Model\IncomingCardTransaction $incomingCardTransaction = null)
     {
         $this->setProperty('incomingCardTransaction', $incomingCardTransaction);
     }
@@ -153,7 +153,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\IncomingBankTransaction $incomingBankTransaction
      */
-    public function setIncomingBankTransaction(\Arbor\Model\IncomingBankTransaction $incomingBankTransaction = null)
+    public function setIncomingBankTransaction(?\Arbor\Model\IncomingBankTransaction $incomingBankTransaction = null)
     {
         $this->setProperty('incomingBankTransaction', $incomingBankTransaction);
     }
@@ -170,7 +170,7 @@ class CustomerPrepayment extends ModelBase
      * @param \Arbor\Model\IncomingCashlessCateringSystemTransaction
      * $incomingCashlessCateringSystemTransaction
      */
-    public function setIncomingCashlessCateringSystemTransaction(\Arbor\Model\IncomingCashlessCateringSystemTransaction $incomingCashlessCateringSystemTransaction = null)
+    public function setIncomingCashlessCateringSystemTransaction(?\Arbor\Model\IncomingCashlessCateringSystemTransaction $incomingCashlessCateringSystemTransaction = null)
     {
         $this->setProperty('incomingCashlessCateringSystemTransaction', $incomingCashlessCateringSystemTransaction);
     }
@@ -186,7 +186,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\ReceivedCheque $receivedCheque
      */
-    public function setReceivedCheque(\Arbor\Model\ReceivedCheque $receivedCheque = null)
+    public function setReceivedCheque(?\Arbor\Model\ReceivedCheque $receivedCheque = null)
     {
         $this->setProperty('receivedCheque', $receivedCheque);
     }
@@ -202,7 +202,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\CashReceipt $cashReceipt
      */
-    public function setCashReceipt(\Arbor\Model\CashReceipt $cashReceipt = null)
+    public function setCashReceipt(?\Arbor\Model\CashReceipt $cashReceipt = null)
     {
         $this->setProperty('cashReceipt', $cashReceipt);
     }
@@ -218,7 +218,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\StripeIncomingCardTransaction $stripeIncomingCardTransaction
      */
-    public function setStripeIncomingCardTransaction(\Arbor\Model\StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
+    public function setStripeIncomingCardTransaction(?\Arbor\Model\StripeIncomingCardTransaction $stripeIncomingCardTransaction = null)
     {
         $this->setProperty('stripeIncomingCardTransaction', $stripeIncomingCardTransaction);
     }
@@ -234,7 +234,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \Arbor\Model\Voucher $voucher
      */
-    public function setVoucher(\Arbor\Model\Voucher $voucher = null)
+    public function setVoucher(?\Arbor\Model\Voucher $voucher = null)
     {
         $this->setProperty('voucher', $voucher);
     }
@@ -250,7 +250,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param string $prepaymentAmount
      */
-    public function setPrepaymentAmount(string $prepaymentAmount = null)
+    public function setPrepaymentAmount(?string $prepaymentAmount = null)
     {
         $this->setProperty('prepaymentAmount', $prepaymentAmount);
     }
@@ -266,7 +266,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \DateTime $prepaymentDatetime
      */
-    public function setPrepaymentDatetime(\DateTime $prepaymentDatetime = null)
+    public function setPrepaymentDatetime(?\DateTime $prepaymentDatetime = null)
     {
         $this->setProperty('prepaymentDatetime', $prepaymentDatetime);
     }
@@ -282,7 +282,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \DateTime $prepaymentSucceededDatetime
      */
-    public function setPrepaymentSucceededDatetime(\DateTime $prepaymentSucceededDatetime = null)
+    public function setPrepaymentSucceededDatetime(?\DateTime $prepaymentSucceededDatetime = null)
     {
         $this->setProperty('prepaymentSucceededDatetime', $prepaymentSucceededDatetime);
     }
@@ -298,7 +298,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \DateTime $prepaymentFailedDatetime
      */
-    public function setPrepaymentFailedDatetime(\DateTime $prepaymentFailedDatetime = null)
+    public function setPrepaymentFailedDatetime(?\DateTime $prepaymentFailedDatetime = null)
     {
         $this->setProperty('prepaymentFailedDatetime', $prepaymentFailedDatetime);
     }
@@ -314,7 +314,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -330,7 +330,7 @@ class CustomerPrepayment extends ModelBase
     /**
      * @param \DateTime $prepaymentCancelledDatetime
      */
-    public function setPrepaymentCancelledDatetime(\DateTime $prepaymentCancelledDatetime = null)
+    public function setPrepaymentCancelledDatetime(?\DateTime $prepaymentCancelledDatetime = null)
     {
         $this->setProperty('prepaymentCancelledDatetime', $prepaymentCancelledDatetime);
     }

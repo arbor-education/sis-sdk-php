@@ -20,7 +20,7 @@ class AdmissionApplicationCycleHistory extends ModelBase
      * @return AdmissionApplicationCycleHistory[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class AdmissionApplicationCycleHistory extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionApplication $admissionApplication
      */
-    public function setAdmissionApplication(\Arbor\Model\AdmissionApplication $admissionApplication = null)
+    public function setAdmissionApplication(?\Arbor\Model\AdmissionApplication $admissionApplication = null)
     {
         $this->setProperty('admissionApplication', $admissionApplication);
     }
@@ -78,7 +78,7 @@ class AdmissionApplicationCycleHistory extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCycle $admissionCycle
      */
-    public function setAdmissionCycle(\Arbor\Model\AdmissionCycle $admissionCycle = null)
+    public function setAdmissionCycle(?\Arbor\Model\AdmissionCycle $admissionCycle = null)
     {
         $this->setProperty('admissionCycle', $admissionCycle);
     }
@@ -94,7 +94,7 @@ class AdmissionApplicationCycleHistory extends ModelBase
     /**
      * @param string $cycleName
      */
-    public function setCycleName(string $cycleName = null)
+    public function setCycleName(?string $cycleName = null)
     {
         $this->setProperty('cycleName', $cycleName);
     }

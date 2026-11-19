@@ -18,7 +18,7 @@ class ExclusionExclusionReason extends ModelBase
      * @return ExclusionExclusionReason[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -50,7 +50,7 @@ class ExclusionExclusionReason extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getExclusion()
     {
@@ -58,9 +58,9 @@ class ExclusionExclusionReason extends ModelBase
     }
 
     /**
-     * @param ModelBase $exclusion
+     * @param \Arbor\Model\ModelBase $exclusion
      */
-    public function setExclusion(\ModelBase $exclusion = null)
+    public function setExclusion(?\Arbor\Model\ModelBase $exclusion = null)
     {
         $this->setProperty('exclusion', $exclusion);
     }
@@ -76,7 +76,7 @@ class ExclusionExclusionReason extends ModelBase
     /**
      * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(?\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }

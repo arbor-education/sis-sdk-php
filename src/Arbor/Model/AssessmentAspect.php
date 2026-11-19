@@ -36,7 +36,7 @@ class AssessmentAspect extends ModelBase
      * @return AssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,13 +110,13 @@ class AssessmentAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAssessment()
     {
@@ -124,9 +124,9 @@ class AssessmentAspect extends ModelBase
     }
 
     /**
-     * @param ModelBase $assessment
+     * @param \Arbor\Model\ModelBase $assessment
      */
-    public function setAssessment(\ModelBase $assessment = null)
+    public function setAssessment(?\Arbor\Model\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -142,7 +142,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -158,7 +158,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -174,7 +174,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param string $markType
      */
-    public function setMarkType(string $markType = null)
+    public function setMarkType(?string $markType = null)
     {
         $this->setProperty('markType', $markType);
     }
@@ -190,7 +190,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue(float $markMinValue = null)
+    public function setMarkMinValue(?float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -206,7 +206,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue(float $markMaxValue = null)
+    public function setMarkMaxValue(?float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }
@@ -222,7 +222,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
+    public function setGradeSet(?\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -238,7 +238,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param \Arbor\Model\GradeSet $defaultGradeSet
      */
-    public function setDefaultGradeSet(\Arbor\Model\GradeSet $defaultGradeSet = null)
+    public function setDefaultGradeSet(?\Arbor\Model\GradeSet $defaultGradeSet = null)
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }

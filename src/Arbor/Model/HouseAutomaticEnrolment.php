@@ -18,7 +18,7 @@ class HouseAutomaticEnrolment extends ModelBase
      * @return HouseAutomaticEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class HouseAutomaticEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\House $house
      */
-    public function setHouse(\Arbor\Model\House $house = null)
+    public function setHouse(?\Arbor\Model\House $house = null)
     {
         $this->setProperty('house', $house);
     }
@@ -76,7 +76,7 @@ class HouseAutomaticEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\RegistrationForm $trigger
      */
-    public function setTrigger(\Arbor\Model\RegistrationForm $trigger = null)
+    public function setTrigger(?\Arbor\Model\RegistrationForm $trigger = null)
     {
         $this->setProperty('trigger', $trigger);
     }

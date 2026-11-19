@@ -28,7 +28,7 @@ class EmailAccount extends ModelBase
      * @return EmailAccount[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverType
      */
-    public function setServerType(string $serverType = null)
+    public function setServerType(?string $serverType = null)
     {
         $this->setProperty('serverType', $serverType);
     }
@@ -86,7 +86,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverHost
      */
-    public function setServerHost(string $serverHost = null)
+    public function setServerHost(?string $serverHost = null)
     {
         $this->setProperty('serverHost', $serverHost);
     }
@@ -102,7 +102,7 @@ class EmailAccount extends ModelBase
     /**
      * @param int $serverPort
      */
-    public function setServerPort(int $serverPort = null)
+    public function setServerPort(?int $serverPort = null)
     {
         $this->setProperty('serverPort', $serverPort);
     }
@@ -118,7 +118,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $serverEncryption
      */
-    public function setServerEncryption(string $serverEncryption = null)
+    public function setServerEncryption(?string $serverEncryption = null)
     {
         $this->setProperty('serverEncryption', $serverEncryption);
     }
@@ -134,7 +134,7 @@ class EmailAccount extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername(string $username = null)
+    public function setUsername(?string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -150,13 +150,13 @@ class EmailAccount extends ModelBase
     /**
      * @param string $password
      */
-    public function setPassword(string $password = null)
+    public function setPassword(?string $password = null)
     {
         $this->setProperty('password', $password);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOwner()
     {
@@ -164,9 +164,9 @@ class EmailAccount extends ModelBase
     }
 
     /**
-     * @param ModelBase $owner
+     * @param \Arbor\Model\ModelBase $owner
      */
-    public function setOwner(\ModelBase $owner = null)
+    public function setOwner(?\Arbor\Model\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }

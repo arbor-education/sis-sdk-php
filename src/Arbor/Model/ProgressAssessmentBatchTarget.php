@@ -18,7 +18,7 @@ class ProgressAssessmentBatchTarget extends ModelBase
      * @return ProgressAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,13 +60,13 @@ class ProgressAssessmentBatchTarget extends ModelBase
     /**
      * @param \Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(?\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTarget()
     {
@@ -74,9 +74,9 @@ class ProgressAssessmentBatchTarget extends ModelBase
     }
 
     /**
-     * @param ModelBase $target
+     * @param \Arbor\Model\ModelBase $target
      */
-    public function setTarget(\ModelBase $target = null)
+    public function setTarget(?\Arbor\Model\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

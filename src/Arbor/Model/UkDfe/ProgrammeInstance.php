@@ -22,7 +22,7 @@ class ProgrammeInstance extends ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $partnerUkprn
      */
-    public function setPartnerUkprn(string $partnerUkprn = null)
+    public function setPartnerUkprn(?string $partnerUkprn = null)
     {
         $this->setProperty('partnerUkprn', $partnerUkprn);
     }
@@ -80,7 +80,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(int $plannedLearningHours = null)
+    public function setPlannedLearningHours(?int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -96,7 +96,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(?int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }

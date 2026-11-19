@@ -20,7 +20,7 @@ class BehaviourCategoryBehaviour extends ModelBase
      * @return BehaviourCategoryBehaviour[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class BehaviourCategoryBehaviour extends ModelBase
     /**
      * @param \Arbor\Model\BehaviourCategory $behaviourCategory
      */
-    public function setBehaviourCategory(\Arbor\Model\BehaviourCategory $behaviourCategory = null)
+    public function setBehaviourCategory(?\Arbor\Model\BehaviourCategory $behaviourCategory = null)
     {
         $this->setProperty('behaviourCategory', $behaviourCategory);
     }
@@ -78,7 +78,7 @@ class BehaviourCategoryBehaviour extends ModelBase
     /**
      * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
+    public function setBehaviour(?\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
@@ -94,7 +94,7 @@ class BehaviourCategoryBehaviour extends ModelBase
     /**
      * @param int $version
      */
-    public function setVersion(int $version = null)
+    public function setVersion(?int $version = null)
     {
         $this->setProperty('version', $version);
     }

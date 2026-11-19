@@ -22,7 +22,7 @@ class BursaryLevelAmount extends ModelBase
      * @return BursaryLevelAmount[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class BursaryLevelAmount extends ModelBase
     /**
      * @param \Arbor\Model\BursaryLevel $bursaryLevel
      */
-    public function setBursaryLevel(\Arbor\Model\BursaryLevel $bursaryLevel = null)
+    public function setBursaryLevel(?\Arbor\Model\BursaryLevel $bursaryLevel = null)
     {
         $this->setProperty('bursaryLevel', $bursaryLevel);
     }
@@ -80,7 +80,7 @@ class BursaryLevelAmount extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount(string $amount = null)
+    public function setAmount(?string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -96,7 +96,7 @@ class BursaryLevelAmount extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -112,7 +112,7 @@ class BursaryLevelAmount extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

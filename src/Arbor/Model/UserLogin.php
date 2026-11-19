@@ -26,7 +26,7 @@ class UserLogin extends ModelBase
      * @return UserLogin[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class UserLogin extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -84,7 +84,7 @@ class UserLogin extends ModelBase
     /**
      * @param \DateTime $loginDatetime
      */
-    public function setLoginDatetime(\DateTime $loginDatetime = null)
+    public function setLoginDatetime(?\DateTime $loginDatetime = null)
     {
         $this->setProperty('loginDatetime', $loginDatetime);
     }
@@ -100,7 +100,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $ipAddress
      */
-    public function setIpAddress(string $ipAddress = null)
+    public function setIpAddress(?string $ipAddress = null)
     {
         $this->setProperty('ipAddress', $ipAddress);
     }
@@ -116,7 +116,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $userAgent
      */
-    public function setUserAgent(string $userAgent = null)
+    public function setUserAgent(?string $userAgent = null)
     {
         $this->setProperty('userAgent', $userAgent);
     }
@@ -132,7 +132,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $twoFactorAuthenticationMethod
      */
-    public function setTwoFactorAuthenticationMethod(string $twoFactorAuthenticationMethod = null)
+    public function setTwoFactorAuthenticationMethod(?string $twoFactorAuthenticationMethod = null)
     {
         $this->setProperty('twoFactorAuthenticationMethod', $twoFactorAuthenticationMethod);
     }
@@ -148,7 +148,7 @@ class UserLogin extends ModelBase
     /**
      * @param string $identityProvider
      */
-    public function setIdentityProvider(string $identityProvider = null)
+    public function setIdentityProvider(?string $identityProvider = null)
     {
         $this->setProperty('identityProvider', $identityProvider);
     }

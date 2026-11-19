@@ -18,7 +18,7 @@ class UrlAttachment extends ModelBase
      * @return UrlAttachment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class UrlAttachment extends ModelBase
     /**
      * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Arbor\Model\Content $content = null)
+    public function setContent(?\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -76,7 +76,7 @@ class UrlAttachment extends ModelBase
     /**
      * @param string $url
      */
-    public function setUrl(string $url = null)
+    public function setUrl(?string $url = null)
     {
         $this->setProperty('url', $url);
     }

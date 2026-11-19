@@ -28,7 +28,7 @@ class OutboundInAppMessageDraft extends ModelBase
      * @return OutboundInAppMessageDraft[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -68,9 +68,9 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -86,7 +86,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -102,7 +102,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage(string $message = null)
+    public function setMessage(?string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -118,7 +118,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(?bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -134,7 +134,7 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(?bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }
@@ -150,13 +150,13 @@ class OutboundInAppMessageDraft extends ModelBase
     /**
      * @param \DateTime $generatedDatetime
      */
-    public function setGeneratedDatetime(\DateTime $generatedDatetime = null)
+    public function setGeneratedDatetime(?\DateTime $generatedDatetime = null)
     {
         $this->setProperty('generatedDatetime', $generatedDatetime);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getContext()
     {
@@ -164,9 +164,9 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @param ModelBase $context
+     * @param \Arbor\Model\ModelBase $context
      */
-    public function setContext(\ModelBase $context = null)
+    public function setContext(?\Arbor\Model\ModelBase $context = null)
     {
         $this->setProperty('context', $context);
     }

@@ -20,7 +20,7 @@ class UserSetting extends ModelBase
      * @return UserSetting[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UserSetting extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -78,7 +78,7 @@ class UserSetting extends ModelBase
     /**
      * @param string $settingName
      */
-    public function setSettingName(string $settingName = null)
+    public function setSettingName(?string $settingName = null)
     {
         $this->setProperty('settingName', $settingName);
     }
@@ -94,7 +94,7 @@ class UserSetting extends ModelBase
     /**
      * @param string $settingValue
      */
-    public function setSettingValue(string $settingValue = null)
+    public function setSettingValue(?string $settingValue = null)
     {
         $this->setProperty('settingValue', $settingValue);
     }

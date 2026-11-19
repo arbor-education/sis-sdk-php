@@ -18,7 +18,7 @@ class AssessmentImportError extends ModelBase
      * @return AssessmentImportError[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AssessmentImportError extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentImportJob $assessmentImportJob
      */
-    public function setAssessmentImportJob(\Arbor\Model\AssessmentImportJob $assessmentImportJob = null)
+    public function setAssessmentImportJob(?\Arbor\Model\AssessmentImportJob $assessmentImportJob = null)
     {
         $this->setProperty('assessmentImportJob', $assessmentImportJob);
     }
@@ -76,7 +76,7 @@ class AssessmentImportError extends ModelBase
     /**
      * @param string $errorMessage
      */
-    public function setErrorMessage(string $errorMessage = null)
+    public function setErrorMessage(?string $errorMessage = null)
     {
         $this->setProperty('errorMessage', $errorMessage);
     }

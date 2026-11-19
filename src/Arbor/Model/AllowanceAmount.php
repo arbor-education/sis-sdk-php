@@ -22,7 +22,7 @@ class AllowanceAmount extends ModelBase
      * @return AllowanceAmount[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param \Arbor\Model\Allowance $allowance
      */
-    public function setAllowance(\Arbor\Model\Allowance $allowance = null)
+    public function setAllowance(?\Arbor\Model\Allowance $allowance = null)
     {
         $this->setProperty('allowance', $allowance);
     }
@@ -80,7 +80,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -96,7 +96,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -112,7 +112,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param string $allowanceAmount
      */
-    public function setAllowanceAmount(string $allowanceAmount = null)
+    public function setAllowanceAmount(?string $allowanceAmount = null)
     {
         $this->setProperty('allowanceAmount', $allowanceAmount);
     }

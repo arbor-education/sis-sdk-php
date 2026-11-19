@@ -18,7 +18,7 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
      * @return AssessmentDataCollectionItemAssignedStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem
      */
-    public function setAssessmentDataCollectionItem(\Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
+    public function setAssessmentDataCollectionItem(?\Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }
@@ -76,7 +76,7 @@ class AssessmentDataCollectionItemAssignedStaff extends ModelBase
     /**
      * @param \Arbor\Model\Staff $assignedStaff
      */
-    public function setAssignedStaff(\Arbor\Model\Staff $assignedStaff = null)
+    public function setAssignedStaff(?\Arbor\Model\Staff $assignedStaff = null)
     {
         $this->setProperty('assignedStaff', $assignedStaff);
     }

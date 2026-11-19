@@ -22,7 +22,7 @@ class Student extends ModelBase
      * @return Student[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class Student extends ModelBase
     /**
      * @param bool $migratedAsPartOfProviderMerger
      */
-    public function setMigratedAsPartOfProviderMerger(bool $migratedAsPartOfProviderMerger = null)
+    public function setMigratedAsPartOfProviderMerger(?bool $migratedAsPartOfProviderMerger = null)
     {
         $this->setProperty('migratedAsPartOfProviderMerger', $migratedAsPartOfProviderMerger);
     }
@@ -80,13 +80,13 @@ class Student extends ModelBase
     /**
      * @param bool $movedDueToMinimumContractLevel
      */
-    public function setMovedDueToMinimumContractLevel(bool $movedDueToMinimumContractLevel = null)
+    public function setMovedDueToMinimumContractLevel(?bool $movedDueToMinimumContractLevel = null)
     {
         $this->setProperty('movedDueToMinimumContractLevel', $movedDueToMinimumContractLevel);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPrimaryLlddAndHealthProblem()
     {
@@ -94,9 +94,9 @@ class Student extends ModelBase
     }
 
     /**
-     * @param ModelBase $primaryLlddAndHealthProblem
+     * @param \Arbor\Model\ModelBase $primaryLlddAndHealthProblem
      */
-    public function setPrimaryLlddAndHealthProblem(\ModelBase $primaryLlddAndHealthProblem = null)
+    public function setPrimaryLlddAndHealthProblem(?\Arbor\Model\ModelBase $primaryLlddAndHealthProblem = null)
     {
         $this->setProperty('primaryLlddAndHealthProblem', $primaryLlddAndHealthProblem);
     }

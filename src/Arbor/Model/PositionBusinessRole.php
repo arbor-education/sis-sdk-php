@@ -20,7 +20,7 @@ class PositionBusinessRole extends ModelBase
      * @return PositionBusinessRole[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param \Arbor\Model\Position $position
      */
-    public function setPosition(\Arbor\Model\Position $position = null)
+    public function setPosition(?\Arbor\Model\Position $position = null)
     {
         $this->setProperty('position', $position);
     }
@@ -78,7 +78,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param \Arbor\Model\BusinessRole $businessRole
      */
-    public function setBusinessRole(\Arbor\Model\BusinessRole $businessRole = null)
+    public function setBusinessRole(?\Arbor\Model\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
@@ -94,7 +94,7 @@ class PositionBusinessRole extends ModelBase
     /**
      * @param int $ranking
      */
-    public function setRanking(int $ranking = null)
+    public function setRanking(?int $ranking = null)
     {
         $this->setProperty('ranking', $ranking);
     }

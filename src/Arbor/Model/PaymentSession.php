@@ -26,7 +26,7 @@ class PaymentSession extends ModelBase
      * @return PaymentSession[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class PaymentSession extends ModelBase
     /**
      * @param \Arbor\Model\Order $order
      */
-    public function setOrder(\Arbor\Model\Order $order = null)
+    public function setOrder(?\Arbor\Model\Order $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -84,7 +84,7 @@ class PaymentSession extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -100,7 +100,7 @@ class PaymentSession extends ModelBase
     /**
      * @param string $client
      */
-    public function setClient(string $client = null)
+    public function setClient(?string $client = null)
     {
         $this->setProperty('client', $client);
     }
@@ -116,7 +116,7 @@ class PaymentSession extends ModelBase
     /**
      * @param string $stripePaymentIntentIdentifier
      */
-    public function setStripePaymentIntentIdentifier(string $stripePaymentIntentIdentifier = null)
+    public function setStripePaymentIntentIdentifier(?string $stripePaymentIntentIdentifier = null)
     {
         $this->setProperty('stripePaymentIntentIdentifier', $stripePaymentIntentIdentifier);
     }
@@ -132,7 +132,7 @@ class PaymentSession extends ModelBase
     /**
      * @param \DateTime $expiresAt
      */
-    public function setExpiresAt(\DateTime $expiresAt = null)
+    public function setExpiresAt(?\DateTime $expiresAt = null)
     {
         $this->setProperty('expiresAt', $expiresAt);
     }
@@ -148,7 +148,7 @@ class PaymentSession extends ModelBase
     /**
      * @param \DateTime $completedAt
      */
-    public function setCompletedAt(\DateTime $completedAt = null)
+    public function setCompletedAt(?\DateTime $completedAt = null)
     {
         $this->setProperty('completedAt', $completedAt);
     }

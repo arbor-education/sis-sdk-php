@@ -18,7 +18,7 @@ class StudentFundingType extends ModelBase
      * @return StudentFundingType[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class StudentFundingType extends ModelBase
     /**
      * @param string $d00209
      */
-    public function setD00209(string $d00209 = null)
+    public function setD00209(?string $d00209 = null)
     {
         $this->setProperty('d00209', $d00209);
     }

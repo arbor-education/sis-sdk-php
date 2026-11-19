@@ -22,7 +22,7 @@ class UserDefinedFieldPermission extends ModelBase
      * @return UserDefinedFieldPermission[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param \Arbor\Model\UserDefinedField $userDefinedField
      */
-    public function setUserDefinedField(\Arbor\Model\UserDefinedField $userDefinedField = null)
+    public function setUserDefinedField(?\Arbor\Model\UserDefinedField $userDefinedField = null)
     {
         $this->setProperty('userDefinedField', $userDefinedField);
     }
@@ -80,7 +80,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -96,7 +96,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -112,7 +112,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }

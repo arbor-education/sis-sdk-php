@@ -28,7 +28,7 @@ class IndividualDevelopmentPlan extends ModelBase
      * @return IndividualDevelopmentPlan[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -86,7 +86,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param \DateTime $lastReviewDate
      */
-    public function setLastReviewDate(\DateTime $lastReviewDate = null)
+    public function setLastReviewDate(?\DateTime $lastReviewDate = null)
     {
         $this->setProperty('lastReviewDate', $lastReviewDate);
     }
@@ -102,7 +102,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param string $maintainedByCode
      */
-    public function setMaintainedByCode(string $maintainedByCode = null)
+    public function setMaintainedByCode(?string $maintainedByCode = null)
     {
         $this->setProperty('maintainedByCode', $maintainedByCode);
     }
@@ -118,7 +118,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param \DateTime $scheduledReviewDate
      */
-    public function setScheduledReviewDate(\DateTime $scheduledReviewDate = null)
+    public function setScheduledReviewDate(?\DateTime $scheduledReviewDate = null)
     {
         $this->setProperty('scheduledReviewDate', $scheduledReviewDate);
     }
@@ -134,7 +134,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -150,7 +150,7 @@ class IndividualDevelopmentPlan extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

@@ -20,7 +20,7 @@ class AcademicProgrammeInstance extends ModelBase
      * @return AcademicProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class AcademicProgrammeInstance extends ModelBase
     /**
      * @param \Arbor\Model\AcademicProgramme $academicProgramme
      */
-    public function setAcademicProgramme(\Arbor\Model\AcademicProgramme $academicProgramme = null)
+    public function setAcademicProgramme(?\Arbor\Model\AcademicProgramme $academicProgramme = null)
     {
         $this->setProperty('academicProgramme', $academicProgramme);
     }
@@ -78,7 +78,7 @@ class AcademicProgrammeInstance extends ModelBase
     /**
      * @param string $instanceName
      */
-    public function setInstanceName(string $instanceName = null)
+    public function setInstanceName(?string $instanceName = null)
     {
         $this->setProperty('instanceName', $instanceName);
     }
@@ -94,7 +94,7 @@ class AcademicProgrammeInstance extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

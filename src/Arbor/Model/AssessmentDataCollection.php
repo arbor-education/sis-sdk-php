@@ -22,7 +22,7 @@ class AssessmentDataCollection extends ModelBase
      * @return AssessmentDataCollection[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +65,7 @@ class AssessmentDataCollection extends ModelBase
      * @param \Arbor\Model\AssessmentDataCollectionPolicy
      * $assessmentDataCollectionPolicy
      */
-    public function setAssessmentDataCollectionPolicy(\Arbor\Model\AssessmentDataCollectionPolicy $assessmentDataCollectionPolicy = null)
+    public function setAssessmentDataCollectionPolicy(?\Arbor\Model\AssessmentDataCollectionPolicy $assessmentDataCollectionPolicy = null)
     {
         $this->setProperty('assessmentDataCollectionPolicy', $assessmentDataCollectionPolicy);
     }
@@ -81,7 +81,7 @@ class AssessmentDataCollection extends ModelBase
     /**
      * @param \DateTime $deadlineDate
      */
-    public function setDeadlineDate(\DateTime $deadlineDate = null)
+    public function setDeadlineDate(?\DateTime $deadlineDate = null)
     {
         $this->setProperty('deadlineDate', $deadlineDate);
     }
@@ -97,7 +97,7 @@ class AssessmentDataCollection extends ModelBase
     /**
      * @param \DateTime $collectionRangeStartDate
      */
-    public function setCollectionRangeStartDate(\DateTime $collectionRangeStartDate = null)
+    public function setCollectionRangeStartDate(?\DateTime $collectionRangeStartDate = null)
     {
         $this->setProperty('collectionRangeStartDate', $collectionRangeStartDate);
     }
@@ -113,7 +113,7 @@ class AssessmentDataCollection extends ModelBase
     /**
      * @param \DateTime $collectionRangeEndDate
      */
-    public function setCollectionRangeEndDate(\DateTime $collectionRangeEndDate = null)
+    public function setCollectionRangeEndDate(?\DateTime $collectionRangeEndDate = null)
     {
         $this->setProperty('collectionRangeEndDate', $collectionRangeEndDate);
     }

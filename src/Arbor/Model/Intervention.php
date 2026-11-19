@@ -46,7 +46,7 @@ class Intervention extends ModelBase
      * @return Intervention[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -88,7 +88,7 @@ class Intervention extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -104,7 +104,7 @@ class Intervention extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -120,7 +120,7 @@ class Intervention extends ModelBase
     /**
      * @param \Arbor\Model\Term $term
      */
-    public function setTerm(\Arbor\Model\Term $term = null)
+    public function setTerm(?\Arbor\Model\Term $term = null)
     {
         $this->setProperty('term', $term);
     }
@@ -136,7 +136,7 @@ class Intervention extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -152,7 +152,7 @@ class Intervention extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -168,7 +168,7 @@ class Intervention extends ModelBase
     /**
      * @param string $monitoring
      */
-    public function setMonitoring(string $monitoring = null)
+    public function setMonitoring(?string $monitoring = null)
     {
         $this->setProperty('monitoring', $monitoring);
     }
@@ -184,7 +184,7 @@ class Intervention extends ModelBase
     /**
      * @param string $aimsOfIntervention
      */
-    public function setAimsOfIntervention(string $aimsOfIntervention = null)
+    public function setAimsOfIntervention(?string $aimsOfIntervention = null)
     {
         $this->setProperty('aimsOfIntervention', $aimsOfIntervention);
     }
@@ -200,7 +200,7 @@ class Intervention extends ModelBase
     /**
      * @param string $strategies
      */
-    public function setStrategies(string $strategies = null)
+    public function setStrategies(?string $strategies = null)
     {
         $this->setProperty('strategies', $strategies);
     }
@@ -216,7 +216,7 @@ class Intervention extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria(string $successCriteria = null)
+    public function setSuccessCriteria(?string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -232,7 +232,7 @@ class Intervention extends ModelBase
     /**
      * @param \DateTime $nextReviewDate
      */
-    public function setNextReviewDate(\DateTime $nextReviewDate = null)
+    public function setNextReviewDate(?\DateTime $nextReviewDate = null)
     {
         $this->setProperty('nextReviewDate', $nextReviewDate);
     }
@@ -248,7 +248,7 @@ class Intervention extends ModelBase
     /**
      * @param string $estimatedDuration
      */
-    public function setEstimatedDuration(string $estimatedDuration = null)
+    public function setEstimatedDuration(?string $estimatedDuration = null)
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }
@@ -264,7 +264,7 @@ class Intervention extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -280,7 +280,7 @@ class Intervention extends ModelBase
     /**
      * @param \Arbor\Model\InterventionCategory $category
      */
-    public function setCategory(\Arbor\Model\InterventionCategory $category = null)
+    public function setCategory(?\Arbor\Model\InterventionCategory $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -296,13 +296,13 @@ class Intervention extends ModelBase
     /**
      * @param bool $isCompleted
      */
-    public function setIsCompleted(bool $isCompleted = null)
+    public function setIsCompleted(?bool $isCompleted = null)
     {
         $this->setProperty('isCompleted', $isCompleted);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -310,9 +310,9 @@ class Intervention extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -328,7 +328,7 @@ class Intervention extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $copiedToIntervention
      */
-    public function setCopiedToIntervention(\Arbor\Model\Intervention $copiedToIntervention = null)
+    public function setCopiedToIntervention(?\Arbor\Model\Intervention $copiedToIntervention = null)
     {
         $this->setProperty('copiedToIntervention', $copiedToIntervention);
     }

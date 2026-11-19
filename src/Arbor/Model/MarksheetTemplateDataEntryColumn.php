@@ -38,7 +38,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
      * @return MarksheetTemplateDataEntryColumn[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -112,7 +112,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -128,7 +128,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentComponent $assessmentComponent
      */
-    public function setAssessmentComponent(\Arbor\Model\AssessmentComponent $assessmentComponent = null)
+    public function setAssessmentComponent(?\Arbor\Model\AssessmentComponent $assessmentComponent = null)
     {
         $this->setProperty('assessmentComponent', $assessmentComponent);
     }
@@ -144,7 +144,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataDrop $assessmentDataDrop
      */
-    public function setAssessmentDataDrop(\Arbor\Model\AssessmentDataDrop $assessmentDataDrop = null)
+    public function setAssessmentDataDrop(?\Arbor\Model\AssessmentDataDrop $assessmentDataDrop = null)
     {
         $this->setProperty('assessmentDataDrop', $assessmentDataDrop);
     }
@@ -160,7 +160,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentSubject $assessmentSubject
      */
-    public function setAssessmentSubject(\Arbor\Model\AssessmentSubject $assessmentSubject = null)
+    public function setAssessmentSubject(?\Arbor\Model\AssessmentSubject $assessmentSubject = null)
     {
         $this->setProperty('assessmentSubject', $assessmentSubject);
     }
@@ -176,7 +176,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet
      */
-    public function setAssessmentDataGradeSet(\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
+    public function setAssessmentDataGradeSet(?\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
     {
         $this->setProperty('assessmentDataGradeSet', $assessmentDataGradeSet);
     }
@@ -192,7 +192,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -208,7 +208,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param bool $isUsedInCompletionStatistics
      */
-    public function setIsUsedInCompletionStatistics(bool $isUsedInCompletionStatistics = null)
+    public function setIsUsedInCompletionStatistics(?bool $isUsedInCompletionStatistics = null)
     {
         $this->setProperty('isUsedInCompletionStatistics', $isUsedInCompletionStatistics);
     }
@@ -224,7 +224,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param float $minimumValue
      */
-    public function setMinimumValue(float $minimumValue = null)
+    public function setMinimumValue(?float $minimumValue = null)
     {
         $this->setProperty('minimumValue', $minimumValue);
     }
@@ -240,7 +240,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param float $maximumValue
      */
-    public function setMaximumValue(float $maximumValue = null)
+    public function setMaximumValue(?float $maximumValue = null)
     {
         $this->setProperty('maximumValue', $maximumValue);
     }
@@ -256,7 +256,7 @@ class MarksheetTemplateDataEntryColumn extends ModelBase
     /**
      * @param int $decimalPlaces
      */
-    public function setDecimalPlaces(int $decimalPlaces = null)
+    public function setDecimalPlaces(?int $decimalPlaces = null)
     {
         $this->setProperty('decimalPlaces', $decimalPlaces);
     }

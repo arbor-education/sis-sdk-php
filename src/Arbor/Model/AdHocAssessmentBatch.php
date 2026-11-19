@@ -22,7 +22,7 @@ class AdHocAssessmentBatch extends ModelBase
      * @return AdHocAssessmentBatch[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AdHocAssessmentBatch extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(\Arbor\Model\AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(?\Arbor\Model\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -80,7 +80,7 @@ class AdHocAssessmentBatch extends ModelBase
     /**
      * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(?\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -96,7 +96,7 @@ class AdHocAssessmentBatch extends ModelBase
     /**
      * @param \DateTime $assessmentReferenceDate
      */
-    public function setAssessmentReferenceDate(\DateTime $assessmentReferenceDate = null)
+    public function setAssessmentReferenceDate(?\DateTime $assessmentReferenceDate = null)
     {
         $this->setProperty('assessmentReferenceDate', $assessmentReferenceDate);
     }
@@ -112,7 +112,7 @@ class AdHocAssessmentBatch extends ModelBase
     /**
      * @param \DateTime $deletionStartedDatetime
      */
-    public function setDeletionStartedDatetime(\DateTime $deletionStartedDatetime = null)
+    public function setDeletionStartedDatetime(?\DateTime $deletionStartedDatetime = null)
     {
         $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }

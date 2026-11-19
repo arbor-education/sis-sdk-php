@@ -20,7 +20,7 @@ class AdmissionCycleGroup extends ModelBase
      * @return AdmissionCycleGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class AdmissionCycleGroup extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -78,7 +78,7 @@ class AdmissionCycleGroup extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionGroup $admissionGroup
      */
-    public function setAdmissionGroup(\Arbor\Model\AdmissionGroup $admissionGroup = null)
+    public function setAdmissionGroup(?\Arbor\Model\AdmissionGroup $admissionGroup = null)
     {
         $this->setProperty('admissionGroup', $admissionGroup);
     }
@@ -94,7 +94,7 @@ class AdmissionCycleGroup extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCycle $admissionCycle
      */
-    public function setAdmissionCycle(\Arbor\Model\AdmissionCycle $admissionCycle = null)
+    public function setAdmissionCycle(?\Arbor\Model\AdmissionCycle $admissionCycle = null)
     {
         $this->setProperty('admissionCycle', $admissionCycle);
     }

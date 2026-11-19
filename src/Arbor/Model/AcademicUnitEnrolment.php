@@ -32,7 +32,7 @@ class AcademicUnitEnrolment extends ModelBase
      * @return AcademicUnitEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -90,7 +90,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -106,7 +106,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -122,7 +122,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -138,7 +138,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param string $enrolmentStatus
      */
-    public function setEnrolmentStatus(string $enrolmentStatus = null)
+    public function setEnrolmentStatus(?string $enrolmentStatus = null)
     {
         $this->setProperty('enrolmentStatus', $enrolmentStatus);
     }
@@ -154,7 +154,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param bool $repeatEnrolment
      */
-    public function setRepeatEnrolment(bool $repeatEnrolment = null)
+    public function setRepeatEnrolment(?bool $repeatEnrolment = null)
     {
         $this->setProperty('repeatEnrolment', $repeatEnrolment);
     }
@@ -171,13 +171,13 @@ class AcademicUnitEnrolment extends ModelBase
      * @param \Arbor\Model\AcademicUnitAutomaticEnrolment
      * $academicUnitAutomaticEnrolment
      */
-    public function setAcademicUnitAutomaticEnrolment(\Arbor\Model\AcademicUnitAutomaticEnrolment $academicUnitAutomaticEnrolment = null)
+    public function setAcademicUnitAutomaticEnrolment(?\Arbor\Model\AcademicUnitAutomaticEnrolment $academicUnitAutomaticEnrolment = null)
     {
         $this->setProperty('academicUnitAutomaticEnrolment', $academicUnitAutomaticEnrolment);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEnrolmentDependency()
     {
@@ -185,9 +185,9 @@ class AcademicUnitEnrolment extends ModelBase
     }
 
     /**
-     * @param ModelBase $enrolmentDependency
+     * @param \Arbor\Model\ModelBase $enrolmentDependency
      */
-    public function setEnrolmentDependency(\ModelBase $enrolmentDependency = null)
+    public function setEnrolmentDependency(?\Arbor\Model\ModelBase $enrolmentDependency = null)
     {
         $this->setProperty('enrolmentDependency', $enrolmentDependency);
     }
@@ -203,7 +203,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\StudentAttendancePattern $studentAttendancePatternDependency
      */
-    public function setStudentAttendancePatternDependency(\Arbor\Model\StudentAttendancePattern $studentAttendancePatternDependency = null)
+    public function setStudentAttendancePatternDependency(?\Arbor\Model\StudentAttendancePattern $studentAttendancePatternDependency = null)
     {
         $this->setProperty('studentAttendancePatternDependency', $studentAttendancePatternDependency);
     }

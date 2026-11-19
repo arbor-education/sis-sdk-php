@@ -34,7 +34,7 @@ class CustomReportCard extends ModelBase
      * @return CustomReportCard[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -92,7 +92,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -108,7 +108,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param \DateTime $date
      */
-    public function setDate(\DateTime $date = null)
+    public function setDate(?\DateTime $date = null)
     {
         $this->setProperty('date', $date);
     }
@@ -124,7 +124,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -140,7 +140,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param string $orientation
      */
-    public function setOrientation(string $orientation = null)
+    public function setOrientation(?string $orientation = null)
     {
         $this->setProperty('orientation', $orientation);
     }
@@ -156,7 +156,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param bool $removeBlankRows
      */
-    public function setRemoveBlankRows(bool $removeBlankRows = null)
+    public function setRemoveBlankRows(?bool $removeBlankRows = null)
     {
         $this->setProperty('removeBlankRows', $removeBlankRows);
     }
@@ -172,7 +172,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param string $template
      */
-    public function setTemplate(string $template = null)
+    public function setTemplate(?string $template = null)
     {
         $this->setProperty('template', $template);
     }
@@ -188,7 +188,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param bool $sharedWithGuardians
      */
-    public function setSharedWithGuardians(bool $sharedWithGuardians = null)
+    public function setSharedWithGuardians(?bool $sharedWithGuardians = null)
     {
         $this->setProperty('sharedWithGuardians', $sharedWithGuardians);
     }
@@ -204,7 +204,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param bool $sharedWithStudents
      */
-    public function setSharedWithStudents(bool $sharedWithStudents = null)
+    public function setSharedWithStudents(?bool $sharedWithStudents = null)
     {
         $this->setProperty('sharedWithStudents', $sharedWithStudents);
     }
@@ -220,7 +220,7 @@ class CustomReportCard extends ModelBase
     /**
      * @param \DateTime $deletionStartedDatetime
      */
-    public function setDeletionStartedDatetime(\DateTime $deletionStartedDatetime = null)
+    public function setDeletionStartedDatetime(?\DateTime $deletionStartedDatetime = null)
     {
         $this->setProperty('deletionStartedDatetime', $deletionStartedDatetime);
     }

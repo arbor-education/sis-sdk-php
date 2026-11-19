@@ -20,7 +20,7 @@ class PersonNextOfKin extends ModelBase
      * @return PersonNextOfKin[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class PersonNextOfKin extends ModelBase
     /**
      * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Arbor\Model\Person $person = null)
+    public function setPerson(?\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedPerson()
     {
@@ -76,9 +76,9 @@ class PersonNextOfKin extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedPerson
+     * @param \Arbor\Model\ModelBase $relatedPerson
      */
-    public function setRelatedPerson(\ModelBase $relatedPerson = null)
+    public function setRelatedPerson(?\Arbor\Model\ModelBase $relatedPerson = null)
     {
         $this->setProperty('relatedPerson', $relatedPerson);
     }
@@ -94,7 +94,7 @@ class PersonNextOfKin extends ModelBase
     /**
      * @param \Arbor\Model\NextOfKinRelationship $relationship
      */
-    public function setRelationship(\Arbor\Model\NextOfKinRelationship $relationship = null)
+    public function setRelationship(?\Arbor\Model\NextOfKinRelationship $relationship = null)
     {
         $this->setProperty('relationship', $relationship);
     }

@@ -22,7 +22,7 @@ class RoomLayout extends ModelBase
      * @return RoomLayout[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class RoomLayout extends ModelBase
     /**
      * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Arbor\Model\Room $room = null)
+    public function setRoom(?\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -80,7 +80,7 @@ class RoomLayout extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -96,7 +96,7 @@ class RoomLayout extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -112,7 +112,7 @@ class RoomLayout extends ModelBase
     /**
      * @param string $mainEntranceLocation
      */
-    public function setMainEntranceLocation(string $mainEntranceLocation = null)
+    public function setMainEntranceLocation(?string $mainEntranceLocation = null)
     {
         $this->setProperty('mainEntranceLocation', $mainEntranceLocation);
     }

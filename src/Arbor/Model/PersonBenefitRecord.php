@@ -22,7 +22,7 @@ class PersonBenefitRecord extends ModelBase
      * @return PersonBenefitRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -54,7 +54,7 @@ class PersonBenefitRecord extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -62,9 +62,9 @@ class PersonBenefitRecord extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -80,7 +80,7 @@ class PersonBenefitRecord extends ModelBase
     /**
      * @param \Arbor\Model\BenefitRecordType $benefitRecordType
      */
-    public function setBenefitRecordType(\Arbor\Model\BenefitRecordType $benefitRecordType = null)
+    public function setBenefitRecordType(?\Arbor\Model\BenefitRecordType $benefitRecordType = null)
     {
         $this->setProperty('benefitRecordType', $benefitRecordType);
     }
@@ -96,7 +96,7 @@ class PersonBenefitRecord extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class PersonBenefitRecord extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

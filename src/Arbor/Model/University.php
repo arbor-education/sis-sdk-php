@@ -7,9 +7,17 @@ use Arbor\Model\ModelBase;
 
 class University extends ModelBase
 {
+    public const CODE = 'code';
+
+    public const ACTIVE = 'active';
+
+    public const DATA_ORDER = 'dataOrder';
+
     public const NAME = 'name';
 
     public const SHORT_NAME = 'shortName';
+
+    public const UNIQUE_IDENTIFIER = 'uniqueIdentifier';
 
     protected $_resourceType = ResourceType::UNIVERSITY;
 
@@ -18,7 +26,7 @@ class University extends ModelBase
      * @return University[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,6 +60,54 @@ class University extends ModelBase
     /**
      * @return string
      */
+    public function getCode()
+    {
+        return $this->getProperty('code');
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode(?string $code = null)
+    {
+        $this->setProperty('code', $code);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->getProperty('active');
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive(?bool $active = null)
+    {
+        $this->setProperty('active', $active);
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataOrder()
+    {
+        return $this->getProperty('dataOrder');
+    }
+
+    /**
+     * @param int $dataOrder
+     */
+    public function setDataOrder(?int $dataOrder = null)
+    {
+        $this->setProperty('dataOrder', $dataOrder);
+    }
+
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->getProperty('name');
@@ -60,7 +116,7 @@ class University extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -76,8 +132,24 @@ class University extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUniqueIdentifier()
+    {
+        return $this->getProperty('uniqueIdentifier');
+    }
+
+    /**
+     * @param string $uniqueIdentifier
+     */
+    public function setUniqueIdentifier(?string $uniqueIdentifier = null)
+    {
+        $this->setProperty('uniqueIdentifier', $uniqueIdentifier);
     }
 }

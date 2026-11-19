@@ -27,6 +27,8 @@ class AdmissionApplication extends ModelBase
 
     public const DISPLAY_ORDER = 'displayOrder';
 
+    public const SOURCE = 'source';
+
     protected $_resourceType = ResourceType::ADMISSION_APPLICATION;
 
     /**
@@ -34,7 +36,7 @@ class AdmissionApplication extends ModelBase
      * @return AdmissionApplication[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +78,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionApplicant $admissionApplicant
      */
-    public function setAdmissionApplicant(\Arbor\Model\AdmissionApplicant $admissionApplicant = null)
+    public function setAdmissionApplicant(?\Arbor\Model\AdmissionApplicant $admissionApplicant = null)
     {
         $this->setProperty('admissionApplicant', $admissionApplicant);
     }
@@ -92,7 +94,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $previousEducationalInstitution
      */
-    public function setPreviousEducationalInstitution(\Arbor\Model\EducationalInstitution $previousEducationalInstitution = null)
+    public function setPreviousEducationalInstitution(?\Arbor\Model\EducationalInstitution $previousEducationalInstitution = null)
     {
         $this->setProperty('previousEducationalInstitution', $previousEducationalInstitution);
     }
@@ -108,7 +110,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \Arbor\Model\AcademicLevel $expectedAcademicLevel
      */
-    public function setExpectedAcademicLevel(\Arbor\Model\AcademicLevel $expectedAcademicLevel = null)
+    public function setExpectedAcademicLevel(?\Arbor\Model\AcademicLevel $expectedAcademicLevel = null)
     {
         $this->setProperty('expectedAcademicLevel', $expectedAcademicLevel);
     }
@@ -124,7 +126,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \DateTime $applicationDate
      */
-    public function setApplicationDate(\DateTime $applicationDate = null)
+    public function setApplicationDate(?\DateTime $applicationDate = null)
     {
         $this->setProperty('applicationDate', $applicationDate);
     }
@@ -140,7 +142,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param string $applicationReferenceNumber
      */
-    public function setApplicationReferenceNumber(string $applicationReferenceNumber = null)
+    public function setApplicationReferenceNumber(?string $applicationReferenceNumber = null)
     {
         $this->setProperty('applicationReferenceNumber', $applicationReferenceNumber);
     }
@@ -156,7 +158,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCycle $currentAdmissionCycle
      */
-    public function setCurrentAdmissionCycle(\Arbor\Model\AdmissionCycle $currentAdmissionCycle = null)
+    public function setCurrentAdmissionCycle(?\Arbor\Model\AdmissionCycle $currentAdmissionCycle = null)
     {
         $this->setProperty('currentAdmissionCycle', $currentAdmissionCycle);
     }
@@ -172,7 +174,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param string $currentApplicationStage
      */
-    public function setCurrentApplicationStage(string $currentApplicationStage = null)
+    public function setCurrentApplicationStage(?string $currentApplicationStage = null)
     {
         $this->setProperty('currentApplicationStage', $currentApplicationStage);
     }
@@ -188,7 +190,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCycleGroup $admissionCycleGroup
      */
-    public function setAdmissionCycleGroup(\Arbor\Model\AdmissionCycleGroup $admissionCycleGroup = null)
+    public function setAdmissionCycleGroup(?\Arbor\Model\AdmissionCycleGroup $admissionCycleGroup = null)
     {
         $this->setProperty('admissionCycleGroup', $admissionCycleGroup);
     }
@@ -204,7 +206,7 @@ class AdmissionApplication extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCycleCategory $admissionCycleCategory
      */
-    public function setAdmissionCycleCategory(\Arbor\Model\AdmissionCycleCategory $admissionCycleCategory = null)
+    public function setAdmissionCycleCategory(?\Arbor\Model\AdmissionCycleCategory $admissionCycleCategory = null)
     {
         $this->setProperty('admissionCycleCategory', $admissionCycleCategory);
     }
@@ -220,8 +222,24 @@ class AdmissionApplication extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->getProperty('source');
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource(?string $source = null)
+    {
+        $this->setProperty('source', $source);
     }
 }

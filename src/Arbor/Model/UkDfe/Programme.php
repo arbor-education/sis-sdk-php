@@ -18,7 +18,7 @@ class Programme extends ModelBase
      * @return Programme[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Programme extends ModelBase
     /**
      * @param bool $isTraineeship
      */
-    public function setIsTraineeship(bool $isTraineeship = null)
+    public function setIsTraineeship(?bool $isTraineeship = null)
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }

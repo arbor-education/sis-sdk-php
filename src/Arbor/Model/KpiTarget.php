@@ -30,7 +30,7 @@ class KpiTarget extends ModelBase
      * @return KpiTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class KpiTarget extends ModelBase
     /**
      * @param \Arbor\Model\Kpi $kpi
      */
-    public function setKpi(\Arbor\Model\Kpi $kpi = null)
+    public function setKpi(?\Arbor\Model\Kpi $kpi = null)
     {
         $this->setProperty('kpi', $kpi);
     }
@@ -88,7 +88,7 @@ class KpiTarget extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -104,7 +104,7 @@ class KpiTarget extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -120,7 +120,7 @@ class KpiTarget extends ModelBase
     /**
      * @param float $targetValue
      */
-    public function setTargetValue(float $targetValue = null)
+    public function setTargetValue(?float $targetValue = null)
     {
         $this->setProperty('targetValue', $targetValue);
     }
@@ -136,7 +136,7 @@ class KpiTarget extends ModelBase
     /**
      * @param string $targetName
      */
-    public function setTargetName(string $targetName = null)
+    public function setTargetName(?string $targetName = null)
     {
         $this->setProperty('targetName', $targetName);
     }
@@ -152,7 +152,7 @@ class KpiTarget extends ModelBase
     /**
      * @param string $abbreviation
      */
-    public function setAbbreviation(string $abbreviation = null)
+    public function setAbbreviation(?string $abbreviation = null)
     {
         $this->setProperty('abbreviation', $abbreviation);
     }
@@ -168,13 +168,13 @@ class KpiTarget extends ModelBase
     /**
      * @param string $valueType
      */
-    public function setValueType(string $valueType = null)
+    public function setValueType(?string $valueType = null)
     {
         $this->setProperty('valueType', $valueType);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getBasis()
     {
@@ -182,9 +182,9 @@ class KpiTarget extends ModelBase
     }
 
     /**
-     * @param ModelBase $basis
+     * @param \Arbor\Model\ModelBase $basis
      */
-    public function setBasis(\ModelBase $basis = null)
+    public function setBasis(?\Arbor\Model\ModelBase $basis = null)
     {
         $this->setProperty('basis', $basis);
     }

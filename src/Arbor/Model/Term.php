@@ -26,7 +26,7 @@ class Term extends ModelBase
      * @return Term[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class Term extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -84,7 +84,7 @@ class Term extends ModelBase
     /**
      * @param string $termName
      */
-    public function setTermName(string $termName = null)
+    public function setTermName(?string $termName = null)
     {
         $this->setProperty('termName', $termName);
     }
@@ -100,7 +100,7 @@ class Term extends ModelBase
     /**
      * @param string $shortTermName
      */
-    public function setShortTermName(string $shortTermName = null)
+    public function setShortTermName(?string $shortTermName = null)
     {
         $this->setProperty('shortTermName', $shortTermName);
     }
@@ -116,7 +116,7 @@ class Term extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -132,7 +132,7 @@ class Term extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -148,7 +148,7 @@ class Term extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

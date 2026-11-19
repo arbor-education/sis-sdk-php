@@ -26,7 +26,7 @@ class StudentDestination extends ModelBase
      * @return StudentDestination[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class StudentDestination extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -84,7 +84,7 @@ class StudentDestination extends ModelBase
     /**
      * @param \Arbor\Model\StudentDestinationType $studentDestinationType
      */
-    public function setStudentDestinationType(\Arbor\Model\StudentDestinationType $studentDestinationType = null)
+    public function setStudentDestinationType(?\Arbor\Model\StudentDestinationType $studentDestinationType = null)
     {
         $this->setProperty('studentDestinationType', $studentDestinationType);
     }
@@ -100,7 +100,7 @@ class StudentDestination extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -116,7 +116,7 @@ class StudentDestination extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,13 +132,13 @@ class StudentDestination extends ModelBase
     /**
      * @param \DateTime $verifiedDate
      */
-    public function setVerifiedDate(\DateTime $verifiedDate = null)
+    public function setVerifiedDate(?\DateTime $verifiedDate = null)
     {
         $this->setProperty('verifiedDate', $verifiedDate);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedRecord()
     {
@@ -146,9 +146,9 @@ class StudentDestination extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedRecord
+     * @param \Arbor\Model\ModelBase $linkedRecord
      */
-    public function setLinkedRecord(\ModelBase $linkedRecord = null)
+    public function setLinkedRecord(?\Arbor\Model\ModelBase $linkedRecord = null)
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }

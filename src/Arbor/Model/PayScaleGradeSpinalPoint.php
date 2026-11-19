@@ -18,7 +18,7 @@ class PayScaleGradeSpinalPoint extends ModelBase
      * @return PayScaleGradeSpinalPoint[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class PayScaleGradeSpinalPoint extends ModelBase
     /**
      * @param \Arbor\Model\PayScaleGrade $payScaleGrade
      */
-    public function setPayScaleGrade(\Arbor\Model\PayScaleGrade $payScaleGrade = null)
+    public function setPayScaleGrade(?\Arbor\Model\PayScaleGrade $payScaleGrade = null)
     {
         $this->setProperty('payScaleGrade', $payScaleGrade);
     }
@@ -76,7 +76,7 @@ class PayScaleGradeSpinalPoint extends ModelBase
     /**
      * @param \Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint
      */
-    public function setPayScaleSpinalPoint(\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    public function setPayScaleSpinalPoint(?\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }

@@ -24,7 +24,7 @@ class CustomGroupMembership extends ModelBase
      * @return CustomGroupMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,13 +66,13 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param \Arbor\Model\Group\CustomGroup $customGroup
      */
-    public function setCustomGroup(\Arbor\Model\Group\CustomGroup $customGroup = null)
+    public function setCustomGroup(?\Arbor\Model\Group\CustomGroup $customGroup = null)
     {
         $this->setProperty('customGroup', $customGroup);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -80,9 +80,9 @@ class CustomGroupMembership extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -98,7 +98,7 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -114,7 +114,7 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -130,7 +130,7 @@ class CustomGroupMembership extends ModelBase
     /**
      * @param \Arbor\Model\Group\Institution $groupInstitution
      */
-    public function setGroupInstitution(\Arbor\Model\Group\Institution $groupInstitution = null)
+    public function setGroupInstitution(?\Arbor\Model\Group\Institution $groupInstitution = null)
     {
         $this->setProperty('groupInstitution', $groupInstitution);
     }

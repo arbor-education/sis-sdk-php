@@ -20,7 +20,7 @@ class DataRetentionStatus extends ModelBase
      * @return DataRetentionStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class DataRetentionStatus extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -60,9 +60,9 @@ class DataRetentionStatus extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -78,7 +78,7 @@ class DataRetentionStatus extends ModelBase
     /**
      * @param string $domainAreaCode
      */
-    public function setDomainAreaCode(string $domainAreaCode = null)
+    public function setDomainAreaCode(?string $domainAreaCode = null)
     {
         $this->setProperty('domainAreaCode', $domainAreaCode);
     }
@@ -94,7 +94,7 @@ class DataRetentionStatus extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }

@@ -20,7 +20,7 @@ class EventParticipant extends ModelBase
      * @return EventParticipant[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class EventParticipant extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvent()
     {
@@ -60,15 +60,15 @@ class EventParticipant extends ModelBase
     }
 
     /**
-     * @param ModelBase $event
+     * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getParticipant()
     {
@@ -76,9 +76,9 @@ class EventParticipant extends ModelBase
     }
 
     /**
-     * @param ModelBase $participant
+     * @param \Arbor\Model\ModelBase $participant
      */
-    public function setParticipant(\ModelBase $participant = null)
+    public function setParticipant(?\Arbor\Model\ModelBase $participant = null)
     {
         $this->setProperty('participant', $participant);
     }
@@ -94,7 +94,7 @@ class EventParticipant extends ModelBase
     /**
      * @param string $attendanceRequirement
      */
-    public function setAttendanceRequirement(string $attendanceRequirement = null)
+    public function setAttendanceRequirement(?string $attendanceRequirement = null)
     {
         $this->setProperty('attendanceRequirement', $attendanceRequirement);
     }

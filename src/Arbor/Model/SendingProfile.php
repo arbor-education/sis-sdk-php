@@ -22,7 +22,7 @@ class SendingProfile extends ModelBase
      * @return SendingProfile[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -54,7 +54,7 @@ class SendingProfile extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOwner()
     {
@@ -62,9 +62,9 @@ class SendingProfile extends ModelBase
     }
 
     /**
-     * @param ModelBase $owner
+     * @param \Arbor\Model\ModelBase $owner
      */
-    public function setOwner(\ModelBase $owner = null)
+    public function setOwner(?\Arbor\Model\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
@@ -80,7 +80,7 @@ class SendingProfile extends ModelBase
     /**
      * @param \Arbor\Model\EmailAddress $emailAddress
      */
-    public function setEmailAddress(\Arbor\Model\EmailAddress $emailAddress = null)
+    public function setEmailAddress(?\Arbor\Model\EmailAddress $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }
@@ -96,7 +96,7 @@ class SendingProfile extends ModelBase
     /**
      * @param \Arbor\Model\TelephoneNumber $mobileTelephoneNumber
      */
-    public function setMobileTelephoneNumber(\Arbor\Model\TelephoneNumber $mobileTelephoneNumber = null)
+    public function setMobileTelephoneNumber(?\Arbor\Model\TelephoneNumber $mobileTelephoneNumber = null)
     {
         $this->setProperty('mobileTelephoneNumber', $mobileTelephoneNumber);
     }
@@ -112,7 +112,7 @@ class SendingProfile extends ModelBase
     /**
      * @param \Arbor\Model\Staff $permittedSender
      */
-    public function setPermittedSender(\Arbor\Model\Staff $permittedSender = null)
+    public function setPermittedSender(?\Arbor\Model\Staff $permittedSender = null)
     {
         $this->setProperty('permittedSender', $permittedSender);
     }

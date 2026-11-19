@@ -28,7 +28,7 @@ class QualificationTransportCertificate extends ModelBase
      * @return QualificationTransportCertificate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(?\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -86,7 +86,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -102,7 +102,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param string $privateKey
      */
-    public function setPrivateKey(string $privateKey = null)
+    public function setPrivateKey(?string $privateKey = null)
     {
         $this->setProperty('privateKey', $privateKey);
     }
@@ -118,7 +118,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param string $publicKey
      */
-    public function setPublicKey(string $publicKey = null)
+    public function setPublicKey(?string $publicKey = null)
     {
         $this->setProperty('publicKey', $publicKey);
     }
@@ -134,7 +134,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -150,7 +150,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -166,7 +166,7 @@ class QualificationTransportCertificate extends ModelBase
     /**
      * @param int $lastSequenceNumber
      */
-    public function setLastSequenceNumber(int $lastSequenceNumber = null)
+    public function setLastSequenceNumber(?int $lastSequenceNumber = null)
     {
         $this->setProperty('lastSequenceNumber', $lastSequenceNumber);
     }

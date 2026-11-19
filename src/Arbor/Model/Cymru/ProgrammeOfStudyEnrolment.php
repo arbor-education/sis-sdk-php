@@ -34,7 +34,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
      * @return ProgrammeOfStudyEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\ProgrammeOfStudyInstance $programmeOfStudyInstance
      */
-    public function setProgrammeOfStudyInstance(\Arbor\Model\Cymru\ProgrammeOfStudyInstance $programmeOfStudyInstance = null)
+    public function setProgrammeOfStudyInstance(?\Arbor\Model\Cymru\ProgrammeOfStudyInstance $programmeOfStudyInstance = null)
     {
         $this->setProperty('programmeOfStudyInstance', $programmeOfStudyInstance);
     }
@@ -92,7 +92,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -108,7 +108,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param int $guidedContactHours
      */
-    public function setGuidedContactHours(int $guidedContactHours = null)
+    public function setGuidedContactHours(?int $guidedContactHours = null)
     {
         $this->setProperty('guidedContactHours', $guidedContactHours);
     }
@@ -124,7 +124,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param \DateTime $plannedStartDate
      */
-    public function setPlannedStartDate(\DateTime $plannedStartDate = null)
+    public function setPlannedStartDate(?\DateTime $plannedStartDate = null)
     {
         $this->setProperty('plannedStartDate', $plannedStartDate);
     }
@@ -140,7 +140,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param \DateTime $plannedEndDate
      */
-    public function setPlannedEndDate(\DateTime $plannedEndDate = null)
+    public function setPlannedEndDate(?\DateTime $plannedEndDate = null)
     {
         $this->setProperty('plannedEndDate', $plannedEndDate);
     }
@@ -156,7 +156,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param \DateTime $actualEndDate
      */
-    public function setActualEndDate(\DateTime $actualEndDate = null)
+    public function setActualEndDate(?\DateTime $actualEndDate = null)
     {
         $this->setProperty('actualEndDate', $actualEndDate);
     }
@@ -172,7 +172,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param int $lengthOfProgramme
      */
-    public function setLengthOfProgramme(int $lengthOfProgramme = null)
+    public function setLengthOfProgramme(?int $lengthOfProgramme = null)
     {
         $this->setProperty('lengthOfProgramme', $lengthOfProgramme);
     }
@@ -188,7 +188,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param int $yearOfProgramme
      */
-    public function setYearOfProgramme(int $yearOfProgramme = null)
+    public function setYearOfProgramme(?int $yearOfProgramme = null)
     {
         $this->setProperty('yearOfProgramme', $yearOfProgramme);
     }
@@ -204,7 +204,7 @@ class ProgrammeOfStudyEnrolment extends ModelBase
     /**
      * @param string $completionStatus
      */
-    public function setCompletionStatus(string $completionStatus = null)
+    public function setCompletionStatus(?string $completionStatus = null)
     {
         $this->setProperty('completionStatus', $completionStatus);
     }

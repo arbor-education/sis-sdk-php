@@ -22,7 +22,7 @@ class BehaviourFollowUp extends ModelBase
      * @return BehaviourFollowUp[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class BehaviourFollowUp extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class BehaviourFollowUp extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -96,7 +96,7 @@ class BehaviourFollowUp extends ModelBase
     /**
      * @param \DateTime $followUpDatetime
      */
-    public function setFollowUpDatetime(\DateTime $followUpDatetime = null)
+    public function setFollowUpDatetime(?\DateTime $followUpDatetime = null)
     {
         $this->setProperty('followUpDatetime', $followUpDatetime);
     }
@@ -112,7 +112,7 @@ class BehaviourFollowUp extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

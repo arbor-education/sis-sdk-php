@@ -40,7 +40,7 @@ class TelephoneCall extends ModelBase
      * @return TelephoneCall[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,13 +82,13 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callerName
      */
-    public function setCallerName(string $callerName = null)
+    public function setCallerName(?string $callerName = null)
     {
         $this->setProperty('callerName', $callerName);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getCaller()
     {
@@ -96,9 +96,9 @@ class TelephoneCall extends ModelBase
     }
 
     /**
-     * @param ModelBase $caller
+     * @param \Arbor\Model\ModelBase $caller
      */
-    public function setCaller(\ModelBase $caller = null)
+    public function setCaller(?\Arbor\Model\ModelBase $caller = null)
     {
         $this->setProperty('caller', $caller);
     }
@@ -114,7 +114,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callerTelephoneNumber
      */
-    public function setCallerTelephoneNumber(string $callerTelephoneNumber = null)
+    public function setCallerTelephoneNumber(?string $callerTelephoneNumber = null)
     {
         $this->setProperty('callerTelephoneNumber', $callerTelephoneNumber);
     }
@@ -130,7 +130,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param \Arbor\Model\TelephoneNumber $callerTelephoneNumberModel
      */
-    public function setCallerTelephoneNumberModel(\Arbor\Model\TelephoneNumber $callerTelephoneNumberModel = null)
+    public function setCallerTelephoneNumberModel(?\Arbor\Model\TelephoneNumber $callerTelephoneNumberModel = null)
     {
         $this->setProperty('callerTelephoneNumberModel', $callerTelephoneNumberModel);
     }
@@ -146,7 +146,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param \DateTime $callDatetime
      */
-    public function setCallDatetime(\DateTime $callDatetime = null)
+    public function setCallDatetime(?\DateTime $callDatetime = null)
     {
         $this->setProperty('callDatetime', $callDatetime);
     }
@@ -162,7 +162,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $callDuration
      */
-    public function setCallDuration(string $callDuration = null)
+    public function setCallDuration(?string $callDuration = null)
     {
         $this->setProperty('callDuration', $callDuration);
     }
@@ -178,13 +178,13 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRecipient()
     {
@@ -192,9 +192,9 @@ class TelephoneCall extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -210,7 +210,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $recipientTelephoneNumber
      */
-    public function setRecipientTelephoneNumber(string $recipientTelephoneNumber = null)
+    public function setRecipientTelephoneNumber(?string $recipientTelephoneNumber = null)
     {
         $this->setProperty('recipientTelephoneNumber', $recipientTelephoneNumber);
     }
@@ -226,7 +226,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param \Arbor\Model\TelephoneNumber $recipientTelephoneNumberModel
      */
-    public function setRecipientTelephoneNumberModel(\Arbor\Model\TelephoneNumber $recipientTelephoneNumberModel = null)
+    public function setRecipientTelephoneNumberModel(?\Arbor\Model\TelephoneNumber $recipientTelephoneNumberModel = null)
     {
         $this->setProperty('recipientTelephoneNumberModel', $recipientTelephoneNumberModel);
     }
@@ -242,7 +242,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -258,7 +258,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -274,7 +274,7 @@ class TelephoneCall extends ModelBase
     /**
      * @param \DateTime $actionRequiredByDatetime
      */
-    public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
+    public function setActionRequiredByDatetime(?\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }

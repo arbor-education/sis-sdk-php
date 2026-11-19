@@ -24,7 +24,7 @@ class Calendar extends ModelBase
      * @return Calendar[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -56,7 +56,7 @@ class Calendar extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOwner()
     {
@@ -64,9 +64,9 @@ class Calendar extends ModelBase
     }
 
     /**
-     * @param ModelBase $owner
+     * @param \Arbor\Model\ModelBase $owner
      */
-    public function setOwner(\ModelBase $owner = null)
+    public function setOwner(?\Arbor\Model\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
@@ -82,7 +82,7 @@ class Calendar extends ModelBase
     /**
      * @param \Arbor\Model\CalendarType $calendarType
      */
-    public function setCalendarType(\Arbor\Model\CalendarType $calendarType = null)
+    public function setCalendarType(?\Arbor\Model\CalendarType $calendarType = null)
     {
         $this->setProperty('calendarType', $calendarType);
     }
@@ -98,7 +98,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarName
      */
-    public function setCalendarName(string $calendarName = null)
+    public function setCalendarName(?string $calendarName = null)
     {
         $this->setProperty('calendarName', $calendarName);
     }
@@ -114,7 +114,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarDescription
      */
-    public function setCalendarDescription(string $calendarDescription = null)
+    public function setCalendarDescription(?string $calendarDescription = null)
     {
         $this->setProperty('calendarDescription', $calendarDescription);
     }
@@ -130,7 +130,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarColor
      */
-    public function setCalendarColor(string $calendarColor = null)
+    public function setCalendarColor(?string $calendarColor = null)
     {
         $this->setProperty('calendarColor', $calendarColor);
     }

@@ -44,7 +44,7 @@ class PointAwardScale extends ModelBase
      * @return PointAwardScale[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -86,7 +86,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $pointAwardScaleName
      */
-    public function setPointAwardScaleName(string $pointAwardScaleName = null)
+    public function setPointAwardScaleName(?string $pointAwardScaleName = null)
     {
         $this->setProperty('pointAwardScaleName', $pointAwardScaleName);
     }
@@ -102,7 +102,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $singularPointName
      */
-    public function setSingularPointName(string $singularPointName = null)
+    public function setSingularPointName(?string $singularPointName = null)
     {
         $this->setProperty('singularPointName', $singularPointName);
     }
@@ -118,7 +118,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $pluralPointName
      */
-    public function setPluralPointName(string $pluralPointName = null)
+    public function setPluralPointName(?string $pluralPointName = null)
     {
         $this->setProperty('pluralPointName', $pluralPointName);
     }
@@ -134,7 +134,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $cycleOpeningPointsBalance
      */
-    public function setCycleOpeningPointsBalance(float $cycleOpeningPointsBalance = null)
+    public function setCycleOpeningPointsBalance(?float $cycleOpeningPointsBalance = null)
     {
         $this->setProperty('cycleOpeningPointsBalance', $cycleOpeningPointsBalance);
     }
@@ -150,7 +150,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $termOpeningPointsBalance
      */
-    public function setTermOpeningPointsBalance(float $termOpeningPointsBalance = null)
+    public function setTermOpeningPointsBalance(?float $termOpeningPointsBalance = null)
     {
         $this->setProperty('termOpeningPointsBalance', $termOpeningPointsBalance);
     }
@@ -166,7 +166,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $academicYearOpeningPointsBalance
      */
-    public function setAcademicYearOpeningPointsBalance(float $academicYearOpeningPointsBalance = null)
+    public function setAcademicYearOpeningPointsBalance(?float $academicYearOpeningPointsBalance = null)
     {
         $this->setProperty('academicYearOpeningPointsBalance', $academicYearOpeningPointsBalance);
     }
@@ -182,7 +182,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $lifetimeOpeningPointsBalance
      */
-    public function setLifetimeOpeningPointsBalance(float $lifetimeOpeningPointsBalance = null)
+    public function setLifetimeOpeningPointsBalance(?float $lifetimeOpeningPointsBalance = null)
     {
         $this->setProperty('lifetimeOpeningPointsBalance', $lifetimeOpeningPointsBalance);
     }
@@ -198,7 +198,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $minPointAward
      */
-    public function setMinPointAward(float $minPointAward = null)
+    public function setMinPointAward(?float $minPointAward = null)
     {
         $this->setProperty('minPointAward', $minPointAward);
     }
@@ -214,7 +214,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param float $maxPointAward
      */
-    public function setMaxPointAward(float $maxPointAward = null)
+    public function setMaxPointAward(?float $maxPointAward = null)
     {
         $this->setProperty('maxPointAward', $maxPointAward);
     }
@@ -230,7 +230,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param string $directionality
      */
-    public function setDirectionality(string $directionality = null)
+    public function setDirectionality(?string $directionality = null)
     {
         $this->setProperty('directionality', $directionality);
     }
@@ -246,7 +246,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showInParentPortal
      */
-    public function setShowInParentPortal(bool $showInParentPortal = null)
+    public function setShowInParentPortal(?bool $showInParentPortal = null)
     {
         $this->setProperty('showInParentPortal', $showInParentPortal);
     }
@@ -262,7 +262,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showNarrativeInParentPortal
      */
-    public function setShowNarrativeInParentPortal(bool $showNarrativeInParentPortal = null)
+    public function setShowNarrativeInParentPortal(?bool $showNarrativeInParentPortal = null)
     {
         $this->setProperty('showNarrativeInParentPortal', $showNarrativeInParentPortal);
     }
@@ -278,7 +278,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showAwardedByInParentPortal
      */
-    public function setShowAwardedByInParentPortal(bool $showAwardedByInParentPortal = null)
+    public function setShowAwardedByInParentPortal(?bool $showAwardedByInParentPortal = null)
     {
         $this->setProperty('showAwardedByInParentPortal', $showAwardedByInParentPortal);
     }
@@ -294,7 +294,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $showEventInParentPortal
      */
-    public function setShowEventInParentPortal(bool $showEventInParentPortal = null)
+    public function setShowEventInParentPortal(?bool $showEventInParentPortal = null)
     {
         $this->setProperty('showEventInParentPortal', $showEventInParentPortal);
     }
@@ -310,7 +310,7 @@ class PointAwardScale extends ModelBase
     /**
      * @param bool $isAccessibleInLesson
      */
-    public function setIsAccessibleInLesson(bool $isAccessibleInLesson = null)
+    public function setIsAccessibleInLesson(?bool $isAccessibleInLesson = null)
     {
         $this->setProperty('isAccessibleInLesson', $isAccessibleInLesson);
     }

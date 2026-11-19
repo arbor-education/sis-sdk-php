@@ -22,7 +22,7 @@ class ObservationJudgement extends ModelBase
      * @return ObservationJudgement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param \Arbor\Model\Observation $observation
      */
-    public function setObservation(\Arbor\Model\Observation $observation = null)
+    public function setObservation(?\Arbor\Model\Observation $observation = null)
     {
         $this->setProperty('observation', $observation);
     }
@@ -80,7 +80,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param \Arbor\Model\ObservationStrand $observationStrand
      */
-    public function setObservationStrand(\Arbor\Model\ObservationStrand $observationStrand = null)
+    public function setObservationStrand(?\Arbor\Model\ObservationStrand $observationStrand = null)
     {
         $this->setProperty('observationStrand', $observationStrand);
     }
@@ -96,7 +96,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param \Arbor\Model\ObservationGrade $observationGrade
      */
-    public function setObservationGrade(\Arbor\Model\ObservationGrade $observationGrade = null)
+    public function setObservationGrade(?\Arbor\Model\ObservationGrade $observationGrade = null)
     {
         $this->setProperty('observationGrade', $observationGrade);
     }
@@ -112,7 +112,7 @@ class ObservationJudgement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

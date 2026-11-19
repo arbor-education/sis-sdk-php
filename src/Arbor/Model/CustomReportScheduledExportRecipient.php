@@ -22,7 +22,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
      * @return CustomReportScheduledExportRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
     /**
      * @param \Arbor\Model\CustomReportScheduledExport $customReportScheduledExport
      */
-    public function setCustomReportScheduledExport(\Arbor\Model\CustomReportScheduledExport $customReportScheduledExport = null)
+    public function setCustomReportScheduledExport(?\Arbor\Model\CustomReportScheduledExport $customReportScheduledExport = null)
     {
         $this->setProperty('customReportScheduledExport', $customReportScheduledExport);
     }
@@ -80,7 +80,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -96,7 +96,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Staff $emailReportStaff
      */
-    public function setEmailReportStaff(\Arbor\Model\Staff $emailReportStaff = null)
+    public function setEmailReportStaff(?\Arbor\Model\Staff $emailReportStaff = null)
     {
         $this->setProperty('emailReportStaff', $emailReportStaff);
     }
@@ -112,7 +112,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress(string $emailAddress = null)
+    public function setEmailAddress(?string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }

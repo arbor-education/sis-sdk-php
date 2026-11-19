@@ -20,7 +20,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
      * @return AcademicUnitAutomaticEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTrigger()
     {
@@ -76,9 +76,9 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     }
 
     /**
-     * @param ModelBase $trigger
+     * @param \Arbor\Model\ModelBase $trigger
      */
-    public function setTrigger(\ModelBase $trigger = null)
+    public function setTrigger(?\Arbor\Model\ModelBase $trigger = null)
     {
         $this->setProperty('trigger', $trigger);
     }
@@ -94,7 +94,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     /**
      * @param \Arbor\Model\AttendancePattern $attendancePattern
      */
-    public function setAttendancePattern(\Arbor\Model\AttendancePattern $attendancePattern = null)
+    public function setAttendancePattern(?\Arbor\Model\AttendancePattern $attendancePattern = null)
     {
         $this->setProperty('attendancePattern', $attendancePattern);
     }

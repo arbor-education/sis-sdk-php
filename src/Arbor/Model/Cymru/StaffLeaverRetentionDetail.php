@@ -30,7 +30,7 @@ class StaffLeaverRetentionDetail extends ModelBase
      * @return StaffLeaverRetentionDetail[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param \DateTime $leavingDate
      */
-    public function setLeavingDate(\DateTime $leavingDate = null)
+    public function setLeavingDate(?\DateTime $leavingDate = null)
     {
         $this->setProperty('leavingDate', $leavingDate);
     }
@@ -88,7 +88,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -105,7 +105,7 @@ class StaffLeaverRetentionDetail extends ModelBase
      * @param \Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole
      * $schoolWorkforceCensusBusinessRole
      */
-    public function setSchoolWorkforceCensusBusinessRole(\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
+    public function setSchoolWorkforceCensusBusinessRole(?\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
     {
         $this->setProperty('schoolWorkforceCensusBusinessRole', $schoolWorkforceCensusBusinessRole);
     }
@@ -121,7 +121,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -137,7 +137,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param \Arbor\Model\StaffDestination $staffDestination
      */
-    public function setStaffDestination(\Arbor\Model\StaffDestination $staffDestination = null)
+    public function setStaffDestination(?\Arbor\Model\StaffDestination $staffDestination = null)
     {
         $this->setProperty('staffDestination', $staffDestination);
     }
@@ -153,7 +153,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -169,7 +169,7 @@ class StaffLeaverRetentionDetail extends ModelBase
     /**
      * @param int $teachingExperience
      */
-    public function setTeachingExperience(int $teachingExperience = null)
+    public function setTeachingExperience(?int $teachingExperience = null)
     {
         $this->setProperty('teachingExperience', $teachingExperience);
     }

@@ -38,7 +38,7 @@ class SchoolVacancy extends ModelBase
      * @return SchoolVacancy[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -97,7 +97,7 @@ class SchoolVacancy extends ModelBase
      * @param \Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole
      * $schoolWorkforceCensusBusinessRole
      */
-    public function setSchoolWorkforceCensusBusinessRole(\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
+    public function setSchoolWorkforceCensusBusinessRole(?\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
     {
         $this->setProperty('schoolWorkforceCensusBusinessRole', $schoolWorkforceCensusBusinessRole);
     }
@@ -113,7 +113,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -129,7 +129,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -145,7 +145,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param bool $welshMediumVacancy
      */
-    public function setWelshMediumVacancy(bool $welshMediumVacancy = null)
+    public function setWelshMediumVacancy(?bool $welshMediumVacancy = null)
     {
         $this->setProperty('welshMediumVacancy', $welshMediumVacancy);
     }
@@ -161,7 +161,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param string $tenure
      */
-    public function setTenure(string $tenure = null)
+    public function setTenure(?string $tenure = null)
     {
         $this->setProperty('tenure', $tenure);
     }
@@ -177,7 +177,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param \DateTime $vacancyStartDate
      */
-    public function setVacancyStartDate(\DateTime $vacancyStartDate = null)
+    public function setVacancyStartDate(?\DateTime $vacancyStartDate = null)
     {
         $this->setProperty('vacancyStartDate', $vacancyStartDate);
     }
@@ -193,7 +193,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param \DateTime $vacancyEndDate
      */
-    public function setVacancyEndDate(\DateTime $vacancyEndDate = null)
+    public function setVacancyEndDate(?\DateTime $vacancyEndDate = null)
     {
         $this->setProperty('vacancyEndDate', $vacancyEndDate);
     }
@@ -209,7 +209,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param int $totalNumberOfApplications
      */
-    public function setTotalNumberOfApplications(int $totalNumberOfApplications = null)
+    public function setTotalNumberOfApplications(?int $totalNumberOfApplications = null)
     {
         $this->setProperty('totalNumberOfApplications', $totalNumberOfApplications);
     }
@@ -225,7 +225,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param int $vacancyAdvertisedCount
      */
-    public function setVacancyAdvertisedCount(int $vacancyAdvertisedCount = null)
+    public function setVacancyAdvertisedCount(?int $vacancyAdvertisedCount = null)
     {
         $this->setProperty('vacancyAdvertisedCount', $vacancyAdvertisedCount);
     }
@@ -241,7 +241,7 @@ class SchoolVacancy extends ModelBase
     /**
      * @param bool $appointmentMade
      */
-    public function setAppointmentMade(bool $appointmentMade = null)
+    public function setAppointmentMade(?bool $appointmentMade = null)
     {
         $this->setProperty('appointmentMade', $appointmentMade);
     }

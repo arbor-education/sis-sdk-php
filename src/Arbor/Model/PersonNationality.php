@@ -20,7 +20,7 @@ class PersonNationality extends ModelBase
      * @return PersonNationality[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -52,7 +52,7 @@ class PersonNationality extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -60,9 +60,9 @@ class PersonNationality extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -78,7 +78,7 @@ class PersonNationality extends ModelBase
     /**
      * @param \Arbor\Model\Country $country
      */
-    public function setCountry(\Arbor\Model\Country $country = null)
+    public function setCountry(?\Arbor\Model\Country $country = null)
     {
         $this->setProperty('country', $country);
     }
@@ -94,7 +94,7 @@ class PersonNationality extends ModelBase
     /**
      * @param \Arbor\Model\NationalityStatus $nationalityStatus
      */
-    public function setNationalityStatus(\Arbor\Model\NationalityStatus $nationalityStatus = null)
+    public function setNationalityStatus(?\Arbor\Model\NationalityStatus $nationalityStatus = null)
     {
         $this->setProperty('nationalityStatus', $nationalityStatus);
     }

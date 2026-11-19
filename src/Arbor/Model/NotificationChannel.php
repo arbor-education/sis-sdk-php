@@ -24,7 +24,7 @@ class NotificationChannel extends ModelBase
      * @return NotificationChannel[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class NotificationChannel extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -82,7 +82,7 @@ class NotificationChannel extends ModelBase
     /**
      * @param string $method
      */
-    public function setMethod(string $method = null)
+    public function setMethod(?string $method = null)
     {
         $this->setProperty('method', $method);
     }
@@ -98,7 +98,7 @@ class NotificationChannel extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel(string $channel = null)
+    public function setChannel(?string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }
@@ -114,7 +114,7 @@ class NotificationChannel extends ModelBase
     /**
      * @param bool $enabled
      */
-    public function setEnabled(bool $enabled = null)
+    public function setEnabled(?bool $enabled = null)
     {
         $this->setProperty('enabled', $enabled);
     }
@@ -130,7 +130,7 @@ class NotificationChannel extends ModelBase
     /**
      * @param \DateTime $modifiedDatetime
      */
-    public function setModifiedDatetime(\DateTime $modifiedDatetime = null)
+    public function setModifiedDatetime(?\DateTime $modifiedDatetime = null)
     {
         $this->setProperty('modifiedDatetime', $modifiedDatetime);
     }

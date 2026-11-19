@@ -36,7 +36,7 @@ class CustomerInvoiceItem extends ModelBase
      * @return CustomerInvoiceItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(?\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -94,7 +94,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param \Arbor\Model\ItemUnit $itemUnit
      */
-    public function setItemUnit(\Arbor\Model\ItemUnit $itemUnit = null)
+    public function setItemUnit(?\Arbor\Model\ItemUnit $itemUnit = null)
     {
         $this->setProperty('itemUnit', $itemUnit);
     }
@@ -110,7 +110,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemDescription
      */
-    public function setItemDescription(string $itemDescription = null)
+    public function setItemDescription(?string $itemDescription = null)
     {
         $this->setProperty('itemDescription', $itemDescription);
     }
@@ -126,7 +126,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemPriceExVat
      */
-    public function setItemPriceExVat(string $itemPriceExVat = null)
+    public function setItemPriceExVat(?string $itemPriceExVat = null)
     {
         $this->setProperty('itemPriceExVat', $itemPriceExVat);
     }
@@ -142,7 +142,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param int $quantityInvoiced
      */
-    public function setQuantityInvoiced(int $quantityInvoiced = null)
+    public function setQuantityInvoiced(?int $quantityInvoiced = null)
     {
         $this->setProperty('quantityInvoiced', $quantityInvoiced);
     }
@@ -158,7 +158,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
+    public function setVatRate(?\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -174,7 +174,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemVatAmount
      */
-    public function setItemVatAmount(string $itemVatAmount = null)
+    public function setItemVatAmount(?string $itemVatAmount = null)
     {
         $this->setProperty('itemVatAmount', $itemVatAmount);
     }
@@ -190,7 +190,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemTotalAmount
      */
-    public function setItemTotalAmount(string $itemTotalAmount = null)
+    public function setItemTotalAmount(?string $itemTotalAmount = null)
     {
         $this->setProperty('itemTotalAmount', $itemTotalAmount);
     }
@@ -206,7 +206,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param int $lineNumber
      */
-    public function setLineNumber(int $lineNumber = null)
+    public function setLineNumber(?int $lineNumber = null)
     {
         $this->setProperty('lineNumber', $lineNumber);
     }
@@ -222,7 +222,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param \DateTime $fullyPaidDate
      */
-    public function setFullyPaidDate(\DateTime $fullyPaidDate = null)
+    public function setFullyPaidDate(?\DateTime $fullyPaidDate = null)
     {
         $this->setProperty('fullyPaidDate', $fullyPaidDate);
     }
@@ -238,7 +238,7 @@ class CustomerInvoiceItem extends ModelBase
     /**
      * @param string $itemStatus
      */
-    public function setItemStatus(string $itemStatus = null)
+    public function setItemStatus(?string $itemStatus = null)
     {
         $this->setProperty('itemStatus', $itemStatus);
     }

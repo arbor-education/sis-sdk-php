@@ -18,7 +18,7 @@ class QualificationLearningUnitAssessable extends ModelBase
      * @return QualificationLearningUnitAssessable[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class QualificationLearningUnitAssessable extends ModelBase
     /**
      * @param \Arbor\Model\QualificationLearningUnit $qualificationLearningUnit
      */
-    public function setQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
+    public function setQualificationLearningUnit(?\Arbor\Model\QualificationLearningUnit $qualificationLearningUnit = null)
     {
         $this->setProperty('qualificationLearningUnit', $qualificationLearningUnit);
     }
@@ -76,7 +76,7 @@ class QualificationLearningUnitAssessable extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(?\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }

@@ -40,7 +40,7 @@ class CustomerAccount extends ModelBase
      * @return CustomerAccount[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedEntity()
     {
@@ -80,9 +80,9 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedEntity
+     * @param \Arbor\Model\ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(?\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
@@ -98,7 +98,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $deletedRelatedEntityName
      */
-    public function setDeletedRelatedEntityName(string $deletedRelatedEntityName = null)
+    public function setDeletedRelatedEntityName(?string $deletedRelatedEntityName = null)
     {
         $this->setProperty('deletedRelatedEntityName', $deletedRelatedEntityName);
     }
@@ -114,7 +114,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(?\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -130,7 +130,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer1
      */
-    public function setBillPayer1(\Arbor\Model\BillPayer $billPayer1 = null)
+    public function setBillPayer1(?\Arbor\Model\BillPayer $billPayer1 = null)
     {
         $this->setProperty('billPayer1', $billPayer1);
     }
@@ -146,7 +146,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer2
      */
-    public function setBillPayer2(\Arbor\Model\BillPayer $billPayer2 = null)
+    public function setBillPayer2(?\Arbor\Model\BillPayer $billPayer2 = null)
     {
         $this->setProperty('billPayer2', $billPayer2);
     }
@@ -162,7 +162,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer3
      */
-    public function setBillPayer3(\Arbor\Model\BillPayer $billPayer3 = null)
+    public function setBillPayer3(?\Arbor\Model\BillPayer $billPayer3 = null)
     {
         $this->setProperty('billPayer3', $billPayer3);
     }
@@ -178,7 +178,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer1Proportion
      */
-    public function setBillPayer1Proportion(float $billPayer1Proportion = null)
+    public function setBillPayer1Proportion(?float $billPayer1Proportion = null)
     {
         $this->setProperty('billPayer1Proportion', $billPayer1Proportion);
     }
@@ -194,7 +194,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer2Proportion
      */
-    public function setBillPayer2Proportion(float $billPayer2Proportion = null)
+    public function setBillPayer2Proportion(?float $billPayer2Proportion = null)
     {
         $this->setProperty('billPayer2Proportion', $billPayer2Proportion);
     }
@@ -210,7 +210,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param float $billPayer3Proportion
      */
-    public function setBillPayer3Proportion(float $billPayer3Proportion = null)
+    public function setBillPayer3Proportion(?float $billPayer3Proportion = null)
     {
         $this->setProperty('billPayer3Proportion', $billPayer3Proportion);
     }
@@ -226,7 +226,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $accountBalance
      */
-    public function setAccountBalance(string $accountBalance = null)
+    public function setAccountBalance(?string $accountBalance = null)
     {
         $this->setProperty('accountBalance', $accountBalance);
     }
@@ -242,7 +242,7 @@ class CustomerAccount extends ModelBase
     /**
      * @param string $creditLimit
      */
-    public function setCreditLimit(string $creditLimit = null)
+    public function setCreditLimit(?string $creditLimit = null)
     {
         $this->setProperty('creditLimit', $creditLimit);
     }
@@ -258,13 +258,13 @@ class CustomerAccount extends ModelBase
     /**
      * @param \DateTime $openingBalanceTransactionDatetime
      */
-    public function setOpeningBalanceTransactionDatetime(\DateTime $openingBalanceTransactionDatetime = null)
+    public function setOpeningBalanceTransactionDatetime(?\DateTime $openingBalanceTransactionDatetime = null)
     {
         $this->setProperty('openingBalanceTransactionDatetime', $openingBalanceTransactionDatetime);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOpeningBalanceTransaction()
     {
@@ -272,9 +272,9 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @param ModelBase $openingBalanceTransaction
+     * @param \Arbor\Model\ModelBase $openingBalanceTransaction
      */
-    public function setOpeningBalanceTransaction(\ModelBase $openingBalanceTransaction = null)
+    public function setOpeningBalanceTransaction(?\Arbor\Model\ModelBase $openingBalanceTransaction = null)
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }

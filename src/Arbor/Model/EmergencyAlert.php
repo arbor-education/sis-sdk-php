@@ -32,7 +32,7 @@ class EmergencyAlert extends ModelBase
      * @return EmergencyAlert[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param \DateTime $datetime
      */
-    public function setDatetime(\DateTime $datetime = null)
+    public function setDatetime(?\DateTime $datetime = null)
     {
         $this->setProperty('datetime', $datetime);
     }
@@ -90,7 +90,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param \Arbor\Model\Staff $triggeredByStaff
      */
-    public function setTriggeredByStaff(\Arbor\Model\Staff $triggeredByStaff = null)
+    public function setTriggeredByStaff(?\Arbor\Model\Staff $triggeredByStaff = null)
     {
         $this->setProperty('triggeredByStaff', $triggeredByStaff);
     }
@@ -106,13 +106,13 @@ class EmergencyAlert extends ModelBase
     /**
      * @param \Arbor\Model\Room $location
      */
-    public function setLocation(\Arbor\Model\Room $location = null)
+    public function setLocation(?\Arbor\Model\Room $location = null)
     {
         $this->setProperty('location', $location);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvent()
     {
@@ -120,9 +120,9 @@ class EmergencyAlert extends ModelBase
     }
 
     /**
-     * @param ModelBase $event
+     * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -138,7 +138,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -154,7 +154,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param \Arbor\Model\EmergencyAlertType $emergencyAlertType
      */
-    public function setEmergencyAlertType(\Arbor\Model\EmergencyAlertType $emergencyAlertType = null)
+    public function setEmergencyAlertType(?\Arbor\Model\EmergencyAlertType $emergencyAlertType = null)
     {
         $this->setProperty('emergencyAlertType', $emergencyAlertType);
     }
@@ -170,7 +170,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -186,7 +186,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param \Arbor\Model\Staff $statusModifiedStaff
      */
-    public function setStatusModifiedStaff(\Arbor\Model\Staff $statusModifiedStaff = null)
+    public function setStatusModifiedStaff(?\Arbor\Model\Staff $statusModifiedStaff = null)
     {
         $this->setProperty('statusModifiedStaff', $statusModifiedStaff);
     }
@@ -202,7 +202,7 @@ class EmergencyAlert extends ModelBase
     /**
      * @param \DateTime $statusModifiedDatetime
      */
-    public function setStatusModifiedDatetime(\DateTime $statusModifiedDatetime = null)
+    public function setStatusModifiedDatetime(?\DateTime $statusModifiedDatetime = null)
     {
         $this->setProperty('statusModifiedDatetime', $statusModifiedDatetime);
     }

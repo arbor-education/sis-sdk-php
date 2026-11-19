@@ -30,7 +30,7 @@ class MealRotationMenu extends ModelBase
      * @return MealRotationMenu[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -88,7 +88,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(\Arbor\Model\Meal $meal = null)
+    public function setMeal(?\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -104,7 +104,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -120,7 +120,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -136,7 +136,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled(bool $isEnabled = null)
+    public function setIsEnabled(?bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
@@ -152,7 +152,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param string $cutOffTimePeriod
      */
-    public function setCutOffTimePeriod(string $cutOffTimePeriod = null)
+    public function setCutOffTimePeriod(?string $cutOffTimePeriod = null)
     {
         $this->setProperty('cutOffTimePeriod', $cutOffTimePeriod);
     }
@@ -168,7 +168,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param string $cutOffTimeValue
      */
-    public function setCutOffTimeValue(string $cutOffTimeValue = null)
+    public function setCutOffTimeValue(?string $cutOffTimeValue = null)
     {
         $this->setProperty('cutOffTimeValue', $cutOffTimeValue);
     }
@@ -184,7 +184,7 @@ class MealRotationMenu extends ModelBase
     /**
      * @param bool $allowMealChoicesWhenNotEnoughBalance
      */
-    public function setAllowMealChoicesWhenNotEnoughBalance(bool $allowMealChoicesWhenNotEnoughBalance = null)
+    public function setAllowMealChoicesWhenNotEnoughBalance(?bool $allowMealChoicesWhenNotEnoughBalance = null)
     {
         $this->setProperty('allowMealChoicesWhenNotEnoughBalance', $allowMealChoicesWhenNotEnoughBalance);
     }

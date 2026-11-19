@@ -40,7 +40,7 @@ class EducationalInstitution extends ModelBase
      * @return EducationalInstitution[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +82,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $schoolSexMix
      */
-    public function setSchoolSexMix(string $schoolSexMix = null)
+    public function setSchoolSexMix(?string $schoolSexMix = null)
     {
         $this->setProperty('schoolSexMix', $schoolSexMix);
     }
@@ -98,7 +98,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\LocalAuthority $localAuthority
      */
-    public function setLocalAuthority(\Arbor\Model\LocalAuthority $localAuthority = null)
+    public function setLocalAuthority(?\Arbor\Model\LocalAuthority $localAuthority = null)
     {
         $this->setProperty('localAuthority', $localAuthority);
     }
@@ -114,7 +114,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\CensusSchoolPhase $censusSchoolPhase
      */
-    public function setCensusSchoolPhase(\Arbor\Model\Cymru\CensusSchoolPhase $censusSchoolPhase = null)
+    public function setCensusSchoolPhase(?\Arbor\Model\Cymru\CensusSchoolPhase $censusSchoolPhase = null)
     {
         $this->setProperty('censusSchoolPhase', $censusSchoolPhase);
     }
@@ -130,7 +130,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\SchoolType $schoolType
      */
-    public function setSchoolType(\Arbor\Model\Cymru\SchoolType $schoolType = null)
+    public function setSchoolType(?\Arbor\Model\Cymru\SchoolType $schoolType = null)
     {
         $this->setProperty('schoolType', $schoolType);
     }
@@ -146,7 +146,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\SchoolGovernanceType $schoolGovernanceType
      */
-    public function setSchoolGovernanceType(\Arbor\Model\Cymru\SchoolGovernanceType $schoolGovernanceType = null)
+    public function setSchoolGovernanceType(?\Arbor\Model\Cymru\SchoolGovernanceType $schoolGovernanceType = null)
     {
         $this->setProperty('schoolGovernanceType', $schoolGovernanceType);
     }
@@ -162,7 +162,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $establishmentNumber
      */
-    public function setEstablishmentNumber(string $establishmentNumber = null)
+    public function setEstablishmentNumber(?string $establishmentNumber = null)
     {
         $this->setProperty('establishmentNumber', $establishmentNumber);
     }
@@ -178,7 +178,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $urn
      */
-    public function setUrn(string $urn = null)
+    public function setUrn(?string $urn = null)
     {
         $this->setProperty('urn', $urn);
     }
@@ -194,7 +194,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $ukprn
      */
-    public function setUkprn(string $ukprn = null)
+    public function setUkprn(?string $ukprn = null)
     {
         $this->setProperty('ukprn', $ukprn);
     }
@@ -210,7 +210,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $openPlan
      */
-    public function setOpenPlan(bool $openPlan = null)
+    public function setOpenPlan(?bool $openPlan = null)
     {
         $this->setProperty('openPlan', $openPlan);
     }
@@ -226,7 +226,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $specialSchoolAccommodation
      */
-    public function setSpecialSchoolAccommodation(string $specialSchoolAccommodation = null)
+    public function setSpecialSchoolAccommodation(?string $specialSchoolAccommodation = null)
     {
         $this->setProperty('specialSchoolAccommodation', $specialSchoolAccommodation);
     }
@@ -242,7 +242,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param bool $isOptedOutOfHrPayrollSla
      */
-    public function setIsOptedOutOfHrPayrollSla(bool $isOptedOutOfHrPayrollSla = null)
+    public function setIsOptedOutOfHrPayrollSla(?bool $isOptedOutOfHrPayrollSla = null)
     {
         $this->setProperty('isOptedOutOfHrPayrollSla', $isOptedOutOfHrPayrollSla);
     }
@@ -258,7 +258,7 @@ class EducationalInstitution extends ModelBase
     /**
      * @param string $federatedGoverningBodyCode
      */
-    public function setFederatedGoverningBodyCode(string $federatedGoverningBodyCode = null)
+    public function setFederatedGoverningBodyCode(?string $federatedGoverningBodyCode = null)
     {
         $this->setProperty('federatedGoverningBodyCode', $federatedGoverningBodyCode);
     }

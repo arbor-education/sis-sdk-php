@@ -24,7 +24,7 @@ class BusinessRoleAssignment extends ModelBase
      * @return BusinessRoleAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param \Arbor\Model\BusinessRole $businessRole
      */
-    public function setBusinessRole(\Arbor\Model\BusinessRole $businessRole = null)
+    public function setBusinessRole(?\Arbor\Model\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
@@ -82,13 +82,13 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(?\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -96,9 +96,9 @@ class BusinessRoleAssignment extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -114,7 +114,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -130,7 +130,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

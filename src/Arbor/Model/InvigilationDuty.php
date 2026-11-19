@@ -24,7 +24,7 @@ class InvigilationDuty extends ModelBase
      * @return InvigilationDuty[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param \Arbor\Model\InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(\Arbor\Model\InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(?\Arbor\Model\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
@@ -82,7 +82,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -98,7 +98,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param string $additionalRole
      */
-    public function setAdditionalRole(string $additionalRole = null)
+    public function setAdditionalRole(?string $additionalRole = null)
     {
         $this->setProperty('additionalRole', $additionalRole);
     }
@@ -114,7 +114,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -130,7 +130,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }

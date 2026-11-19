@@ -20,7 +20,7 @@ class CustomReportShare extends ModelBase
      * @return CustomReportShare[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class CustomReportShare extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSharedWith()
     {
@@ -76,9 +76,9 @@ class CustomReportShare extends ModelBase
     }
 
     /**
-     * @param ModelBase $sharedWith
+     * @param \Arbor\Model\ModelBase $sharedWith
      */
-    public function setSharedWith(\ModelBase $sharedWith = null)
+    public function setSharedWith(?\Arbor\Model\ModelBase $sharedWith = null)
     {
         $this->setProperty('sharedWith', $sharedWith);
     }
@@ -94,7 +94,7 @@ class CustomReportShare extends ModelBase
     /**
      * @param string $permissionLevel
      */
-    public function setPermissionLevel(string $permissionLevel = null)
+    public function setPermissionLevel(?string $permissionLevel = null)
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }

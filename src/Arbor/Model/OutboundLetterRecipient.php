@@ -24,7 +24,7 @@ class OutboundLetterRecipient extends ModelBase
      * @return OutboundLetterRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class OutboundLetterRecipient extends ModelBase
     /**
      * @param \Arbor\Model\OutboundLetter $outboundLetter
      */
-    public function setOutboundLetter(\Arbor\Model\OutboundLetter $outboundLetter = null)
+    public function setOutboundLetter(?\Arbor\Model\OutboundLetter $outboundLetter = null)
     {
         $this->setProperty('outboundLetter', $outboundLetter);
     }
@@ -82,13 +82,13 @@ class OutboundLetterRecipient extends ModelBase
     /**
      * @param string $recipientName
      */
-    public function setRecipientName(string $recipientName = null)
+    public function setRecipientName(?string $recipientName = null)
     {
         $this->setProperty('recipientName', $recipientName);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRecipient()
     {
@@ -96,9 +96,9 @@ class OutboundLetterRecipient extends ModelBase
     }
 
     /**
-     * @param ModelBase $recipient
+     * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -114,7 +114,7 @@ class OutboundLetterRecipient extends ModelBase
     /**
      * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(?\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -130,7 +130,7 @@ class OutboundLetterRecipient extends ModelBase
     /**
      * @param int $recipientIndex
      */
-    public function setRecipientIndex(int $recipientIndex = null)
+    public function setRecipientIndex(?int $recipientIndex = null)
     {
         $this->setProperty('recipientIndex', $recipientIndex);
     }

@@ -24,7 +24,7 @@ class CashReceipt extends ModelBase
      * @return CashReceipt[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class CashReceipt extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -82,7 +82,7 @@ class CashReceipt extends ModelBase
     /**
      * @param \Arbor\Model\BankDeposit $bankDeposit
      */
-    public function setBankDeposit(\Arbor\Model\BankDeposit $bankDeposit = null)
+    public function setBankDeposit(?\Arbor\Model\BankDeposit $bankDeposit = null)
     {
         $this->setProperty('bankDeposit', $bankDeposit);
     }
@@ -98,7 +98,7 @@ class CashReceipt extends ModelBase
     /**
      * @param \DateTime $receivedDate
      */
-    public function setReceivedDate(\DateTime $receivedDate = null)
+    public function setReceivedDate(?\DateTime $receivedDate = null)
     {
         $this->setProperty('receivedDate', $receivedDate);
     }
@@ -114,7 +114,7 @@ class CashReceipt extends ModelBase
     /**
      * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    public function setCancelledDatetime(?\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
@@ -130,7 +130,7 @@ class CashReceipt extends ModelBase
     /**
      * @param string $receivedPayment
      */
-    public function setReceivedPayment(string $receivedPayment = null)
+    public function setReceivedPayment(?string $receivedPayment = null)
     {
         $this->setProperty('receivedPayment', $receivedPayment);
     }

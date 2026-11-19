@@ -26,7 +26,7 @@ class RoomChangeRequirement extends ModelBase
      * @return RoomChangeRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class RoomChangeRequirement extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvent()
     {
@@ -66,9 +66,9 @@ class RoomChangeRequirement extends ModelBase
     }
 
     /**
-     * @param ModelBase $event
+     * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -84,7 +84,7 @@ class RoomChangeRequirement extends ModelBase
     /**
      * @param \Arbor\Model\Room $unavailableRoom
      */
-    public function setUnavailableRoom(\Arbor\Model\Room $unavailableRoom = null)
+    public function setUnavailableRoom(?\Arbor\Model\Room $unavailableRoom = null)
     {
         $this->setProperty('unavailableRoom', $unavailableRoom);
     }
@@ -100,7 +100,7 @@ class RoomChangeRequirement extends ModelBase
     /**
      * @param \Arbor\Model\Room $newRoom
      */
-    public function setNewRoom(\Arbor\Model\Room $newRoom = null)
+    public function setNewRoom(?\Arbor\Model\Room $newRoom = null)
     {
         $this->setProperty('newRoom', $newRoom);
     }
@@ -116,7 +116,7 @@ class RoomChangeRequirement extends ModelBase
     /**
      * @param \Arbor\Model\RoomUnavailability $unavailabilityEvent
      */
-    public function setUnavailabilityEvent(\Arbor\Model\RoomUnavailability $unavailabilityEvent = null)
+    public function setUnavailabilityEvent(?\Arbor\Model\RoomUnavailability $unavailabilityEvent = null)
     {
         $this->setProperty('unavailabilityEvent', $unavailabilityEvent);
     }
@@ -132,7 +132,7 @@ class RoomChangeRequirement extends ModelBase
     /**
      * @param \DateTime $roomChangedDatetime
      */
-    public function setRoomChangedDatetime(\DateTime $roomChangedDatetime = null)
+    public function setRoomChangedDatetime(?\DateTime $roomChangedDatetime = null)
     {
         $this->setProperty('roomChangedDatetime', $roomChangedDatetime);
     }
@@ -148,7 +148,7 @@ class RoomChangeRequirement extends ModelBase
     /**
      * @param \DateTime $ignoredDatetime
      */
-    public function setIgnoredDatetime(\DateTime $ignoredDatetime = null)
+    public function setIgnoredDatetime(?\DateTime $ignoredDatetime = null)
     {
         $this->setProperty('ignoredDatetime', $ignoredDatetime);
     }

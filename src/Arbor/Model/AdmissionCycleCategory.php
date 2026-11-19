@@ -22,7 +22,7 @@ class AdmissionCycleCategory extends ModelBase
      * @return AdmissionCycleCategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AdmissionCycleCategory extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -80,7 +80,7 @@ class AdmissionCycleCategory extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCategory $admissionCategory
      */
-    public function setAdmissionCategory(\Arbor\Model\AdmissionCategory $admissionCategory = null)
+    public function setAdmissionCategory(?\Arbor\Model\AdmissionCategory $admissionCategory = null)
     {
         $this->setProperty('admissionCategory', $admissionCategory);
     }
@@ -96,7 +96,7 @@ class AdmissionCycleCategory extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionCycle $admissionCycle
      */
-    public function setAdmissionCycle(\Arbor\Model\AdmissionCycle $admissionCycle = null)
+    public function setAdmissionCycle(?\Arbor\Model\AdmissionCycle $admissionCycle = null)
     {
         $this->setProperty('admissionCycle', $admissionCycle);
     }
@@ -112,7 +112,7 @@ class AdmissionCycleCategory extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

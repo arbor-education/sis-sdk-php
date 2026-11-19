@@ -18,7 +18,7 @@ class PermanentExclusion extends ModelBase
      * @return PermanentExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param bool $excludeFromSchoolCensus
      */
-    public function setExcludeFromSchoolCensus(bool $excludeFromSchoolCensus = null)
+    public function setExcludeFromSchoolCensus(?bool $excludeFromSchoolCensus = null)
     {
         $this->setProperty('excludeFromSchoolCensus', $excludeFromSchoolCensus);
     }

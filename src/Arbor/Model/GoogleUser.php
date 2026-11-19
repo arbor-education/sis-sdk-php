@@ -24,7 +24,7 @@ class GoogleUser extends ModelBase
      * @return GoogleUser[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $givenName
      */
-    public function setGivenName(string $givenName = null)
+    public function setGivenName(?string $givenName = null)
     {
         $this->setProperty('givenName', $givenName);
     }
@@ -82,7 +82,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $familyName
      */
-    public function setFamilyName(string $familyName = null)
+    public function setFamilyName(?string $familyName = null)
     {
         $this->setProperty('familyName', $familyName);
     }
@@ -98,7 +98,7 @@ class GoogleUser extends ModelBase
     /**
      * @param string $primaryEmail
      */
-    public function setPrimaryEmail(string $primaryEmail = null)
+    public function setPrimaryEmail(?string $primaryEmail = null)
     {
         $this->setProperty('primaryEmail', $primaryEmail);
     }
@@ -114,13 +114,13 @@ class GoogleUser extends ModelBase
     /**
      * @param string $googleIdentifier
      */
-    public function setGoogleIdentifier(string $googleIdentifier = null)
+    public function setGoogleIdentifier(?string $googleIdentifier = null)
     {
         $this->setProperty('googleIdentifier', $googleIdentifier);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getMatchedPerson()
     {
@@ -128,9 +128,9 @@ class GoogleUser extends ModelBase
     }
 
     /**
-     * @param ModelBase $matchedPerson
+     * @param \Arbor\Model\ModelBase $matchedPerson
      */
-    public function setMatchedPerson(\ModelBase $matchedPerson = null)
+    public function setMatchedPerson(?\Arbor\Model\ModelBase $matchedPerson = null)
     {
         $this->setProperty('matchedPerson', $matchedPerson);
     }

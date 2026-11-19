@@ -22,7 +22,7 @@ class AssessmentMetricSet extends ModelBase
      * @return AssessmentMetricSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -80,7 +80,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param bool $isKeyMetric
      */
-    public function setIsKeyMetric(bool $isKeyMetric = null)
+    public function setIsKeyMetric(?bool $isKeyMetric = null)
     {
         $this->setProperty('isKeyMetric', $isKeyMetric);
     }
@@ -96,7 +96,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param string $ruleItemType
      */
-    public function setRuleItemType(string $ruleItemType = null)
+    public function setRuleItemType(?string $ruleItemType = null)
     {
         $this->setProperty('ruleItemType', $ruleItemType);
     }
@@ -112,7 +112,7 @@ class AssessmentMetricSet extends ModelBase
     /**
      * @param string $upwardTrend
      */
-    public function setUpwardTrend(string $upwardTrend = null)
+    public function setUpwardTrend(?string $upwardTrend = null)
     {
         $this->setProperty('upwardTrend', $upwardTrend);
     }

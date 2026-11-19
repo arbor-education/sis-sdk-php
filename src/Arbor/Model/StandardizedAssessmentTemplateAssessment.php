@@ -20,7 +20,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
      * @return StandardizedAssessmentTemplateAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +63,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
      * @param \Arbor\Model\StandardizedAssessmentTemplate
      * $standardizedAssessmentTemplate
      */
-    public function setStandardizedAssessmentTemplate(\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
+    public function setStandardizedAssessmentTemplate(?\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
         $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }
@@ -79,7 +79,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessment $standardizedAssessment
      */
-    public function setStandardizedAssessment(\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
+    public function setStandardizedAssessment(?\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
     {
         $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
@@ -95,7 +95,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

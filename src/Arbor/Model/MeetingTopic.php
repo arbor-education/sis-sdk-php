@@ -18,7 +18,7 @@ class MeetingTopic extends ModelBase
      * @return MeetingTopic[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,13 +60,13 @@ class MeetingTopic extends ModelBase
     /**
      * @param \Arbor\Model\Meeting $meeting
      */
-    public function setMeeting(\Arbor\Model\Meeting $meeting = null)
+    public function setMeeting(?\Arbor\Model\Meeting $meeting = null)
     {
         $this->setProperty('meeting', $meeting);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTopic()
     {
@@ -74,9 +74,9 @@ class MeetingTopic extends ModelBase
     }
 
     /**
-     * @param ModelBase $topic
+     * @param \Arbor\Model\ModelBase $topic
      */
-    public function setTopic(\ModelBase $topic = null)
+    public function setTopic(?\Arbor\Model\ModelBase $topic = null)
     {
         $this->setProperty('topic', $topic);
     }

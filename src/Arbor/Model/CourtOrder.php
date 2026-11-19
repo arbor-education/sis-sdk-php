@@ -22,7 +22,7 @@ class CourtOrder extends ModelBase
      * @return CourtOrder[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CourtOrder extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -80,7 +80,7 @@ class CourtOrder extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent(string $content = null)
+    public function setContent(?string $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -96,7 +96,7 @@ class CourtOrder extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -112,7 +112,7 @@ class CourtOrder extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

@@ -26,7 +26,7 @@ class Tagging extends ModelBase
      * @return Tagging[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,13 +68,13 @@ class Tagging extends ModelBase
     /**
      * @param \Arbor\Model\Tag $tag
      */
-    public function setTag(\Arbor\Model\Tag $tag = null)
+    public function setTag(?\Arbor\Model\Tag $tag = null)
     {
         $this->setProperty('tag', $tag);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTaggedObject()
     {
@@ -82,9 +82,9 @@ class Tagging extends ModelBase
     }
 
     /**
-     * @param ModelBase $taggedObject
+     * @param \Arbor\Model\ModelBase $taggedObject
      */
-    public function setTaggedObject(\ModelBase $taggedObject = null)
+    public function setTaggedObject(?\Arbor\Model\ModelBase $taggedObject = null)
     {
         $this->setProperty('taggedObject', $taggedObject);
     }
@@ -100,7 +100,7 @@ class Tagging extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -116,13 +116,13 @@ class Tagging extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLink1()
     {
@@ -130,15 +130,15 @@ class Tagging extends ModelBase
     }
 
     /**
-     * @param ModelBase $link1
+     * @param \Arbor\Model\ModelBase $link1
      */
-    public function setLink1(\ModelBase $link1 = null)
+    public function setLink1(?\Arbor\Model\ModelBase $link1 = null)
     {
         $this->setProperty('link1', $link1);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLink2()
     {
@@ -146,9 +146,9 @@ class Tagging extends ModelBase
     }
 
     /**
-     * @param ModelBase $link2
+     * @param \Arbor\Model\ModelBase $link2
      */
-    public function setLink2(\ModelBase $link2 = null)
+    public function setLink2(?\Arbor\Model\ModelBase $link2 = null)
     {
         $this->setProperty('link2', $link2);
     }

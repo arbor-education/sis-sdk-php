@@ -26,7 +26,7 @@ class InHouseExamResult extends ModelBase
      * @return InHouseExamResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class InHouseExamResult extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
+    public function setInHouseExam(?\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }
@@ -84,7 +84,7 @@ class InHouseExamResult extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -100,7 +100,7 @@ class InHouseExamResult extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExamEntry $inHouseExamEntry
      */
-    public function setInHouseExamEntry(\Arbor\Model\InHouseExamEntry $inHouseExamEntry = null)
+    public function setInHouseExamEntry(?\Arbor\Model\InHouseExamEntry $inHouseExamEntry = null)
     {
         $this->setProperty('inHouseExamEntry', $inHouseExamEntry);
     }
@@ -116,7 +116,7 @@ class InHouseExamResult extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue(float $numericValue = null)
+    public function setNumericValue(?float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -132,7 +132,7 @@ class InHouseExamResult extends ModelBase
     /**
      * @param \Arbor\Model\InHouseExamGrade $inHouseExamGrade
      */
-    public function setInHouseExamGrade(\Arbor\Model\InHouseExamGrade $inHouseExamGrade = null)
+    public function setInHouseExamGrade(?\Arbor\Model\InHouseExamGrade $inHouseExamGrade = null)
     {
         $this->setProperty('inHouseExamGrade', $inHouseExamGrade);
     }
@@ -148,7 +148,7 @@ class InHouseExamResult extends ModelBase
     /**
      * @param \DateTime $resultDate
      */
-    public function setResultDate(\DateTime $resultDate = null)
+    public function setResultDate(?\DateTime $resultDate = null)
     {
         $this->setProperty('resultDate', $resultDate);
     }

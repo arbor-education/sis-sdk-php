@@ -42,7 +42,7 @@ class QualificationResult extends ModelBase
      * @return QualificationResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAspect $qualificationAspect
      */
-    public function setQualificationAspect(\Arbor\Model\QualificationAspect $qualificationAspect = null)
+    public function setQualificationAspect(?\Arbor\Model\QualificationAspect $qualificationAspect = null)
     {
         $this->setProperty('qualificationAspect', $qualificationAspect);
     }
@@ -100,7 +100,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(\Arbor\Model\QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(?\Arbor\Model\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -116,7 +116,7 @@ class QualificationResult extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue(float $numericValue = null)
+    public function setNumericValue(?float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -132,7 +132,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -148,7 +148,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(\Arbor\Model\CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(?\Arbor\Model\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }
@@ -164,7 +164,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(?\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -180,7 +180,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\CandidateAssessableEntry $candidateAssessableEntry
      */
-    public function setCandidateAssessableEntry(\Arbor\Model\CandidateAssessableEntry $candidateAssessableEntry = null)
+    public function setCandidateAssessableEntry(?\Arbor\Model\CandidateAssessableEntry $candidateAssessableEntry = null)
     {
         $this->setProperty('candidateAssessableEntry', $candidateAssessableEntry);
     }
@@ -196,7 +196,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \DateTime $resultDatetime
      */
-    public function setResultDatetime(\DateTime $resultDatetime = null)
+    public function setResultDatetime(?\DateTime $resultDatetime = null)
     {
         $this->setProperty('resultDatetime', $resultDatetime);
     }
@@ -212,7 +212,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \DateTime $embargoDatetime
      */
-    public function setEmbargoDatetime(\DateTime $embargoDatetime = null)
+    public function setEmbargoDatetime(?\DateTime $embargoDatetime = null)
     {
         $this->setProperty('embargoDatetime', $embargoDatetime);
     }
@@ -228,7 +228,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\UkJcq\QualificationResultImportJob $importJob
      */
-    public function setImportJob(\Arbor\Model\UkJcq\QualificationResultImportJob $importJob = null)
+    public function setImportJob(?\Arbor\Model\UkJcq\QualificationResultImportJob $importJob = null)
     {
         $this->setProperty('importJob', $importJob);
     }
@@ -245,7 +245,7 @@ class QualificationResult extends ModelBase
      * @param \Arbor\Model\QualificationAvailabilityInstance
      * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(?\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -261,7 +261,7 @@ class QualificationResult extends ModelBase
     /**
      * @param string $missingResultReason
      */
-    public function setMissingResultReason(string $missingResultReason = null)
+    public function setMissingResultReason(?string $missingResultReason = null)
     {
         $this->setProperty('missingResultReason', $missingResultReason);
     }
@@ -277,7 +277,7 @@ class QualificationResult extends ModelBase
     /**
      * @param int $partialAbsence
      */
-    public function setPartialAbsence(int $partialAbsence = null)
+    public function setPartialAbsence(?int $partialAbsence = null)
     {
         $this->setProperty('partialAbsence', $partialAbsence);
     }
@@ -293,7 +293,7 @@ class QualificationResult extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGrade $endorsementGrade
      */
-    public function setEndorsementGrade(\Arbor\Model\QualificationGrade $endorsementGrade = null)
+    public function setEndorsementGrade(?\Arbor\Model\QualificationGrade $endorsementGrade = null)
     {
         $this->setProperty('endorsementGrade', $endorsementGrade);
     }

@@ -22,7 +22,7 @@ class BehaviouralIncidentWitness extends ModelBase
      * @return BehaviouralIncidentWitness[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,13 +64,13 @@ class BehaviouralIncidentWitness extends ModelBase
     /**
      * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(?\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getWitness()
     {
@@ -78,9 +78,9 @@ class BehaviouralIncidentWitness extends ModelBase
     }
 
     /**
-     * @param ModelBase $witness
+     * @param \Arbor\Model\ModelBase $witness
      */
-    public function setWitness(\ModelBase $witness = null)
+    public function setWitness(?\Arbor\Model\ModelBase $witness = null)
     {
         $this->setProperty('witness', $witness);
     }
@@ -96,7 +96,7 @@ class BehaviouralIncidentWitness extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -112,7 +112,7 @@ class BehaviouralIncidentWitness extends ModelBase
     /**
      * @param \DateTime $confirmedDatetime
      */
-    public function setConfirmedDatetime(\DateTime $confirmedDatetime = null)
+    public function setConfirmedDatetime(?\DateTime $confirmedDatetime = null)
     {
         $this->setProperty('confirmedDatetime', $confirmedDatetime);
     }

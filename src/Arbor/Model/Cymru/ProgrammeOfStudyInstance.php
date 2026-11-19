@@ -30,7 +30,7 @@ class ProgrammeOfStudyInstance extends ModelBase
      * @return ProgrammeOfStudyInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\ProgrammeOfStudy $programmeOfStudy
      */
-    public function setProgrammeOfStudy(\Arbor\Model\Cymru\ProgrammeOfStudy $programmeOfStudy = null)
+    public function setProgrammeOfStudy(?\Arbor\Model\Cymru\ProgrammeOfStudy $programmeOfStudy = null)
     {
         $this->setProperty('programmeOfStudy', $programmeOfStudy);
     }
@@ -88,7 +88,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -104,7 +104,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param int $defaultGuidedContactHours
      */
-    public function setDefaultGuidedContactHours(int $defaultGuidedContactHours = null)
+    public function setDefaultGuidedContactHours(?int $defaultGuidedContactHours = null)
     {
         $this->setProperty('defaultGuidedContactHours', $defaultGuidedContactHours);
     }
@@ -120,7 +120,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param \DateTime $defaultPlannedStartDate
      */
-    public function setDefaultPlannedStartDate(\DateTime $defaultPlannedStartDate = null)
+    public function setDefaultPlannedStartDate(?\DateTime $defaultPlannedStartDate = null)
     {
         $this->setProperty('defaultPlannedStartDate', $defaultPlannedStartDate);
     }
@@ -136,7 +136,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param \DateTime $defaultPlannedEndDate
      */
-    public function setDefaultPlannedEndDate(\DateTime $defaultPlannedEndDate = null)
+    public function setDefaultPlannedEndDate(?\DateTime $defaultPlannedEndDate = null)
     {
         $this->setProperty('defaultPlannedEndDate', $defaultPlannedEndDate);
     }
@@ -152,7 +152,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param int $defaultLengthOfProgramme
      */
-    public function setDefaultLengthOfProgramme(int $defaultLengthOfProgramme = null)
+    public function setDefaultLengthOfProgramme(?int $defaultLengthOfProgramme = null)
     {
         $this->setProperty('defaultLengthOfProgramme', $defaultLengthOfProgramme);
     }
@@ -168,7 +168,7 @@ class ProgrammeOfStudyInstance extends ModelBase
     /**
      * @param int $defaultYearOfProgramme
      */
-    public function setDefaultYearOfProgramme(int $defaultYearOfProgramme = null)
+    public function setDefaultYearOfProgramme(?int $defaultYearOfProgramme = null)
     {
         $this->setProperty('defaultYearOfProgramme', $defaultYearOfProgramme);
     }

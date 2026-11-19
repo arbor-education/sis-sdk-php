@@ -22,7 +22,7 @@ class IssuedCheque extends ModelBase
      * @return IssuedCheque[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(?\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -80,7 +80,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param \DateTime $issuedDatetime
      */
-    public function setIssuedDatetime(\DateTime $issuedDatetime = null)
+    public function setIssuedDatetime(?\DateTime $issuedDatetime = null)
     {
         $this->setProperty('issuedDatetime', $issuedDatetime);
     }
@@ -96,7 +96,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param string $issued
      */
-    public function setIssued(string $issued = null)
+    public function setIssued(?string $issued = null)
     {
         $this->setProperty('issued', $issued);
     }
@@ -112,7 +112,7 @@ class IssuedCheque extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

@@ -30,7 +30,7 @@ class SubscriptionBalance extends ModelBase
      * @return SubscriptionBalance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param int $serviceSubscriptionId
      */
-    public function setServiceSubscriptionId(int $serviceSubscriptionId = null)
+    public function setServiceSubscriptionId(?int $serviceSubscriptionId = null)
     {
         $this->setProperty('serviceSubscriptionId', $serviceSubscriptionId);
     }
@@ -88,7 +88,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param \DateTime $cancelledDate
      */
-    public function setCancelledDate(\DateTime $cancelledDate = null)
+    public function setCancelledDate(?\DateTime $cancelledDate = null)
     {
         $this->setProperty('cancelledDate', $cancelledDate);
     }
@@ -104,7 +104,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param string $tokenType
      */
-    public function setTokenType(string $tokenType = null)
+    public function setTokenType(?string $tokenType = null)
     {
         $this->setProperty('tokenType', $tokenType);
     }
@@ -120,7 +120,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param int $tokenQuantity
      */
-    public function setTokenQuantity(int $tokenQuantity = null)
+    public function setTokenQuantity(?int $tokenQuantity = null)
     {
         $this->setProperty('tokenQuantity', $tokenQuantity);
     }
@@ -136,7 +136,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -152,7 +152,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -168,7 +168,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -184,7 +184,7 @@ class SubscriptionBalance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }

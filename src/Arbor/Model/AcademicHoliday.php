@@ -22,7 +22,7 @@ class AcademicHoliday extends ModelBase
      * @return AcademicHoliday[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param string $academicHolidayType
      */
-    public function setAcademicHolidayType(string $academicHolidayType = null)
+    public function setAcademicHolidayType(?string $academicHolidayType = null)
     {
         $this->setProperty('academicHolidayType', $academicHolidayType);
     }
@@ -80,7 +80,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -96,7 +96,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -112,7 +112,7 @@ class AcademicHoliday extends ModelBase
     /**
      * @param string $holidayLabel
      */
-    public function setHolidayLabel(string $holidayLabel = null)
+    public function setHolidayLabel(?string $holidayLabel = null)
     {
         $this->setProperty('holidayLabel', $holidayLabel);
     }

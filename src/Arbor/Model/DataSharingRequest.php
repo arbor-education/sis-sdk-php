@@ -26,7 +26,7 @@ class DataSharingRequest extends ModelBase
      * @return DataSharingRequest[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $groupApplicationId
      */
-    public function setGroupApplicationId(string $groupApplicationId = null)
+    public function setGroupApplicationId(?string $groupApplicationId = null)
     {
         $this->setProperty('groupApplicationId', $groupApplicationId);
     }
@@ -84,7 +84,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $permissionLevel
      */
-    public function setPermissionLevel(string $permissionLevel = null)
+    public function setPermissionLevel(?string $permissionLevel = null)
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }
@@ -100,7 +100,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -116,7 +116,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param \DateTime $requestedDatetime
      */
-    public function setRequestedDatetime(\DateTime $requestedDatetime = null)
+    public function setRequestedDatetime(?\DateTime $requestedDatetime = null)
     {
         $this->setProperty('requestedDatetime', $requestedDatetime);
     }
@@ -132,7 +132,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param \Arbor\Model\User $statusUpdatedByUser
      */
-    public function setStatusUpdatedByUser(\Arbor\Model\User $statusUpdatedByUser = null)
+    public function setStatusUpdatedByUser(?\Arbor\Model\User $statusUpdatedByUser = null)
     {
         $this->setProperty('statusUpdatedByUser', $statusUpdatedByUser);
     }
@@ -148,7 +148,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param \DateTime $statusUpdatedDatetime
      */
-    public function setStatusUpdatedDatetime(\DateTime $statusUpdatedDatetime = null)
+    public function setStatusUpdatedDatetime(?\DateTime $statusUpdatedDatetime = null)
     {
         $this->setProperty('statusUpdatedDatetime', $statusUpdatedDatetime);
     }

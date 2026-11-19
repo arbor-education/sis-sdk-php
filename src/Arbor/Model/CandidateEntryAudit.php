@@ -20,7 +20,7 @@ class CandidateEntryAudit extends ModelBase
      * @return CandidateEntryAudit[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class CandidateEntryAudit extends ModelBase
     /**
      * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(?\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -78,7 +78,7 @@ class CandidateEntryAudit extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -94,7 +94,7 @@ class CandidateEntryAudit extends ModelBase
     /**
      * @param \DateTime $actionDatetime
      */
-    public function setActionDatetime(\DateTime $actionDatetime = null)
+    public function setActionDatetime(?\DateTime $actionDatetime = null)
     {
         $this->setProperty('actionDatetime', $actionDatetime);
     }

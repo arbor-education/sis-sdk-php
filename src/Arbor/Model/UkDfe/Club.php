@@ -18,7 +18,7 @@ class Club extends ModelBase
      * @return Club[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Club extends ModelBase
     /**
      * @param bool $dfeFreeBreakfastClub
      */
-    public function setDfeFreeBreakfastClub(bool $dfeFreeBreakfastClub = null)
+    public function setDfeFreeBreakfastClub(?bool $dfeFreeBreakfastClub = null)
     {
         $this->setProperty('dfeFreeBreakfastClub', $dfeFreeBreakfastClub);
     }

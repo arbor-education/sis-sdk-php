@@ -30,7 +30,7 @@ class AssessmentDerivation extends ModelBase
      * @return AssessmentDerivation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,13 +104,13 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAssessment()
     {
@@ -118,9 +118,9 @@ class AssessmentDerivation extends ModelBase
     }
 
     /**
-     * @param ModelBase $assessment
+     * @param \Arbor\Model\ModelBase $assessment
      */
-    public function setAssessment(\ModelBase $assessment = null)
+    public function setAssessment(?\Arbor\Model\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -136,7 +136,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -152,7 +152,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -168,7 +168,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -184,7 +184,7 @@ class AssessmentDerivation extends ModelBase
     /**
      * @param string $calculatorClass
      */
-    public function setCalculatorClass(string $calculatorClass = null)
+    public function setCalculatorClass(?string $calculatorClass = null)
     {
         $this->setProperty('calculatorClass', $calculatorClass);
     }

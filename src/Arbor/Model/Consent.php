@@ -30,7 +30,7 @@ class Consent extends ModelBase
      * @return Consent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class Consent extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,13 +88,13 @@ class Consent extends ModelBase
     /**
      * @param \Arbor\Model\ConsentType $consentType
      */
-    public function setConsentType(\Arbor\Model\ConsentType $consentType = null)
+    public function setConsentType(?\Arbor\Model\ConsentType $consentType = null)
     {
         $this->setProperty('consentType', $consentType);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelated()
     {
@@ -102,9 +102,9 @@ class Consent extends ModelBase
     }
 
     /**
-     * @param ModelBase $related
+     * @param \Arbor\Model\ModelBase $related
      */
-    public function setRelated(\ModelBase $related = null)
+    public function setRelated(?\Arbor\Model\ModelBase $related = null)
     {
         $this->setProperty('related', $related);
     }
@@ -120,7 +120,7 @@ class Consent extends ModelBase
     /**
      * @param \Arbor\Model\Staff $requestor
      */
-    public function setRequestor(\Arbor\Model\Staff $requestor = null)
+    public function setRequestor(?\Arbor\Model\Staff $requestor = null)
     {
         $this->setProperty('requestor', $requestor);
     }
@@ -136,7 +136,7 @@ class Consent extends ModelBase
     /**
      * @param \DateTime $requestedDatetime
      */
-    public function setRequestedDatetime(\DateTime $requestedDatetime = null)
+    public function setRequestedDatetime(?\DateTime $requestedDatetime = null)
     {
         $this->setProperty('requestedDatetime', $requestedDatetime);
     }
@@ -152,7 +152,7 @@ class Consent extends ModelBase
     /**
      * @param \DateTime $rejectedDatetime
      */
-    public function setRejectedDatetime(\DateTime $rejectedDatetime = null)
+    public function setRejectedDatetime(?\DateTime $rejectedDatetime = null)
     {
         $this->setProperty('rejectedDatetime', $rejectedDatetime);
     }
@@ -168,13 +168,13 @@ class Consent extends ModelBase
     /**
      * @param \DateTime $consentedDatetime
      */
-    public function setConsentedDatetime(\DateTime $consentedDatetime = null)
+    public function setConsentedDatetime(?\DateTime $consentedDatetime = null)
     {
         $this->setProperty('consentedDatetime', $consentedDatetime);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRespondee()
     {
@@ -182,9 +182,9 @@ class Consent extends ModelBase
     }
 
     /**
-     * @param ModelBase $respondee
+     * @param \Arbor\Model\ModelBase $respondee
      */
-    public function setRespondee(\ModelBase $respondee = null)
+    public function setRespondee(?\Arbor\Model\ModelBase $respondee = null)
     {
         $this->setProperty('respondee', $respondee);
     }
