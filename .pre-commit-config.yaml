@@ -1,0 +1,5 @@
+repos:
+  - repo: https://github.com/arbor-education/internal.pre-commit
+    rev: v0.0.1
+    hooks:
+      - id: snyk-code
