@@ -52,7 +52,7 @@ class MealRotationMenuChoice extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAttendee()
     {
@@ -60,9 +60,9 @@ class MealRotationMenuChoice extends ModelBase
     }
 
     /**
-     * @param ModelBase $attendee
+     * @param \Arbor\Model\ModelBase $attendee
      */
-    public function setAttendee(\ModelBase $attendee = null)
+    public function setAttendee(\Arbor\Model\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }

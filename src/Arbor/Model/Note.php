@@ -68,7 +68,7 @@ class Note extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getReferenceObject()
     {
@@ -76,9 +76,9 @@ class Note extends ModelBase
     }
 
     /**
-     * @param ModelBase $referenceObject
+     * @param \Arbor\Model\ModelBase $referenceObject
      */
-    public function setReferenceObject(\ModelBase $referenceObject = null)
+    public function setReferenceObject(\Arbor\Model\ModelBase $referenceObject = null)
     {
         $this->setProperty('referenceObject', $referenceObject);
     }

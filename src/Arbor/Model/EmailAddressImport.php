@@ -76,7 +76,7 @@ class EmailAddressImport extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEmailAddressOwner()
     {
@@ -84,9 +84,9 @@ class EmailAddressImport extends ModelBase
     }
 
     /**
-     * @param ModelBase $emailAddressOwner
+     * @param \Arbor\Model\ModelBase $emailAddressOwner
      */
-    public function setEmailAddressOwner(\ModelBase $emailAddressOwner = null)
+    public function setEmailAddressOwner(\Arbor\Model\ModelBase $emailAddressOwner = null)
     {
         $this->setProperty('emailAddressOwner', $emailAddressOwner);
     }

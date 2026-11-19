@@ -60,7 +60,7 @@ class PersonIdentificationDocument extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getPerson()
     {
@@ -68,9 +68,9 @@ class PersonIdentificationDocument extends ModelBase
     }
 
     /**
-     * @param ModelBase $person
+     * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\ModelBase $person = null)
+    public function setPerson(\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }

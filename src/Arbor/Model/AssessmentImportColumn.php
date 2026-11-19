@@ -66,7 +66,7 @@ class AssessmentImportColumn extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getMappedAssessmentAspect()
     {
@@ -74,9 +74,9 @@ class AssessmentImportColumn extends ModelBase
     }
 
     /**
-     * @param ModelBase $mappedAssessmentAspect
+     * @param \Arbor\Model\ModelBase $mappedAssessmentAspect
      */
-    public function setMappedAssessmentAspect(\ModelBase $mappedAssessmentAspect = null)
+    public function setMappedAssessmentAspect(\Arbor\Model\ModelBase $mappedAssessmentAspect = null)
     {
         $this->setProperty('mappedAssessmentAspect', $mappedAssessmentAspect);
     }

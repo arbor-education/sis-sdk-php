@@ -112,7 +112,7 @@ class StudentRecordChange extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getReferenceObject()
     {
@@ -120,9 +120,9 @@ class StudentRecordChange extends ModelBase
     }
 
     /**
-     * @param ModelBase $referenceObject
+     * @param \Arbor\Model\ModelBase $referenceObject
      */
-    public function setReferenceObject(\ModelBase $referenceObject = null)
+    public function setReferenceObject(\Arbor\Model\ModelBase $referenceObject = null)
     {
         $this->setProperty('referenceObject', $referenceObject);
     }

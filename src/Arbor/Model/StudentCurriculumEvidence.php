@@ -174,7 +174,7 @@ class StudentCurriculumEvidence extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvidence()
     {
@@ -182,9 +182,9 @@ class StudentCurriculumEvidence extends ModelBase
     }
 
     /**
-     * @param ModelBase $evidence
+     * @param \Arbor\Model\ModelBase $evidence
      */
-    public function setEvidence(\ModelBase $evidence = null)
+    public function setEvidence(\Arbor\Model\ModelBase $evidence = null)
     {
         $this->setProperty('evidence', $evidence);
     }

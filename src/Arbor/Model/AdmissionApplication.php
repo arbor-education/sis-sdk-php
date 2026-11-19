@@ -27,6 +27,8 @@ class AdmissionApplication extends ModelBase
 
     public const DISPLAY_ORDER = 'displayOrder';
 
+    public const SOURCE = 'source';
+
     protected $_resourceType = ResourceType::ADMISSION_APPLICATION;
 
     /**
@@ -223,5 +225,21 @@ class AdmissionApplication extends ModelBase
     public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->getProperty('source');
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource(string $source = null)
+    {
+        $this->setProperty('source', $source);
     }
 }

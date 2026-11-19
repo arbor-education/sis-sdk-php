@@ -122,7 +122,7 @@ class Snippet extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedToEntity()
     {
@@ -130,9 +130,9 @@ class Snippet extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedToEntity
+     * @param \Arbor\Model\ModelBase $linkedToEntity
      */
-    public function setLinkedToEntity(\ModelBase $linkedToEntity = null)
+    public function setLinkedToEntity(\Arbor\Model\ModelBase $linkedToEntity = null)
     {
         $this->setProperty('linkedToEntity', $linkedToEntity);
     }

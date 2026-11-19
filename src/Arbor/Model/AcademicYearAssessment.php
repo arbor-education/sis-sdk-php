@@ -114,7 +114,7 @@ class AcademicYearAssessment extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAssessmentEntity()
     {
@@ -122,9 +122,9 @@ class AcademicYearAssessment extends ModelBase
     }
 
     /**
-     * @param ModelBase $assessmentEntity
+     * @param \Arbor\Model\ModelBase $assessmentEntity
      */
-    public function setAssessmentEntity(\ModelBase $assessmentEntity = null)
+    public function setAssessmentEntity(\Arbor\Model\ModelBase $assessmentEntity = null)
     {
         $this->setProperty('assessmentEntity', $assessmentEntity);
     }

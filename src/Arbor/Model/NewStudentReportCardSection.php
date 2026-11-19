@@ -70,7 +70,7 @@ class NewStudentReportCardSection extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedEntity()
     {
@@ -78,9 +78,9 @@ class NewStudentReportCardSection extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedEntity
+     * @param \Arbor\Model\ModelBase $linkedEntity
      */
-    public function setLinkedEntity(\ModelBase $linkedEntity = null)
+    public function setLinkedEntity(\Arbor\Model\ModelBase $linkedEntity = null)
     {
         $this->setProperty('linkedEntity', $linkedEntity);
     }

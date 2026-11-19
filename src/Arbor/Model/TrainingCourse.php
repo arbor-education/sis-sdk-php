@@ -88,7 +88,7 @@ class TrainingCourse extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOrganizer()
     {
@@ -96,9 +96,9 @@ class TrainingCourse extends ModelBase
     }
 
     /**
-     * @param ModelBase $organizer
+     * @param \Arbor\Model\ModelBase $organizer
      */
-    public function setOrganizer(\ModelBase $organizer = null)
+    public function setOrganizer(\Arbor\Model\ModelBase $organizer = null)
     {
         $this->setProperty('organizer', $organizer);
     }

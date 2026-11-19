@@ -68,7 +68,7 @@ class CustomReportShare extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSharedWith()
     {
@@ -76,9 +76,9 @@ class CustomReportShare extends ModelBase
     }
 
     /**
-     * @param ModelBase $sharedWith
+     * @param \Arbor\Model\ModelBase $sharedWith
      */
-    public function setSharedWith(\ModelBase $sharedWith = null)
+    public function setSharedWith(\Arbor\Model\ModelBase $sharedWith = null)
     {
         $this->setProperty('sharedWith', $sharedWith);
     }

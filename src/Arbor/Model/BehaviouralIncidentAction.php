@@ -86,7 +86,7 @@ class BehaviouralIncidentAction extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAction()
     {
@@ -94,9 +94,9 @@ class BehaviouralIncidentAction extends ModelBase
     }
 
     /**
-     * @param ModelBase $action
+     * @param \Arbor\Model\ModelBase $action
      */
-    public function setAction(\ModelBase $action = null)
+    public function setAction(\Arbor\Model\ModelBase $action = null)
     {
         $this->setProperty('action', $action);
     }

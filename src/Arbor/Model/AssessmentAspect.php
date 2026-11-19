@@ -116,7 +116,7 @@ class AssessmentAspect extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getAssessment()
     {
@@ -124,9 +124,9 @@ class AssessmentAspect extends ModelBase
     }
 
     /**
-     * @param ModelBase $assessment
+     * @param \Arbor\Model\ModelBase $assessment
      */
-    public function setAssessment(\ModelBase $assessment = null)
+    public function setAssessment(\Arbor\Model\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }

@@ -144,7 +144,7 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvent()
     {
@@ -152,15 +152,15 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @param ModelBase $event
+     * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLocation()
     {
@@ -168,9 +168,9 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @param ModelBase $location
+     * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\ModelBase $location = null)
+    public function setLocation(\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }

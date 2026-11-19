@@ -124,7 +124,7 @@ class TimetablerImportStepOutcome extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedObject()
     {
@@ -132,9 +132,9 @@ class TimetablerImportStepOutcome extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedObject
+     * @param \Arbor\Model\ModelBase $linkedObject
      */
-    public function setLinkedObject(\ModelBase $linkedObject = null)
+    public function setLinkedObject(\Arbor\Model\ModelBase $linkedObject = null)
     {
         $this->setProperty('linkedObject', $linkedObject);
     }

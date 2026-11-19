@@ -66,7 +66,7 @@ class TimetablerImportResultUpdate extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getUpdated()
     {
@@ -74,9 +74,9 @@ class TimetablerImportResultUpdate extends ModelBase
     }
 
     /**
-     * @param ModelBase $updated
+     * @param \Arbor\Model\ModelBase $updated
      */
-    public function setUpdated(\ModelBase $updated = null)
+    public function setUpdated(\Arbor\Model\ModelBase $updated = null)
     {
         $this->setProperty('updated', $updated);
     }

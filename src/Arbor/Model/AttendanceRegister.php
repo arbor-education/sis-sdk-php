@@ -58,7 +58,7 @@ class AttendanceRegister extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEvent()
     {
@@ -66,9 +66,9 @@ class AttendanceRegister extends ModelBase
     }
 
     /**
-     * @param ModelBase $event
+     * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\ModelBase $event = null)
+    public function setEvent(\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }

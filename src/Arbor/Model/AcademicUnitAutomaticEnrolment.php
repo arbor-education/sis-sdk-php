@@ -68,7 +68,7 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getTrigger()
     {
@@ -76,9 +76,9 @@ class AcademicUnitAutomaticEnrolment extends ModelBase
     }
 
     /**
-     * @param ModelBase $trigger
+     * @param \Arbor\Model\ModelBase $trigger
      */
-    public function setTrigger(\ModelBase $trigger = null)
+    public function setTrigger(\Arbor\Model\ModelBase $trigger = null)
     {
         $this->setProperty('trigger', $trigger);
     }

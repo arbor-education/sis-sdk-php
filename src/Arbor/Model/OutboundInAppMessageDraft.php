@@ -60,7 +60,7 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getSender()
     {
@@ -68,9 +68,9 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @param ModelBase $sender
+     * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\ModelBase $sender = null)
+    public function setSender(\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -156,7 +156,7 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getContext()
     {
@@ -164,9 +164,9 @@ class OutboundInAppMessageDraft extends ModelBase
     }
 
     /**
-     * @param ModelBase $context
+     * @param \Arbor\Model\ModelBase $context
      */
-    public function setContext(\ModelBase $context = null)
+    public function setContext(\Arbor\Model\ModelBase $context = null)
     {
         $this->setProperty('context', $context);
     }

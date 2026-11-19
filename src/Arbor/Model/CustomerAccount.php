@@ -72,7 +72,7 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getRelatedEntity()
     {
@@ -80,9 +80,9 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @param ModelBase $relatedEntity
+     * @param \Arbor\Model\ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
@@ -264,7 +264,7 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getOpeningBalanceTransaction()
     {
@@ -272,9 +272,9 @@ class CustomerAccount extends ModelBase
     }
 
     /**
-     * @param ModelBase $openingBalanceTransaction
+     * @param \Arbor\Model\ModelBase $openingBalanceTransaction
      */
-    public function setOpeningBalanceTransaction(\ModelBase $openingBalanceTransaction = null)
+    public function setOpeningBalanceTransaction(\Arbor\Model\ModelBase $openingBalanceTransaction = null)
     {
         $this->setProperty('openingBalanceTransaction', $openingBalanceTransaction);
     }

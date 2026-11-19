@@ -70,7 +70,7 @@ class BehaviouralIncidentWitness extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getWitness()
     {
@@ -78,9 +78,9 @@ class BehaviouralIncidentWitness extends ModelBase
     }
 
     /**
-     * @param ModelBase $witness
+     * @param \Arbor\Model\ModelBase $witness
      */
-    public function setWitness(\ModelBase $witness = null)
+    public function setWitness(\Arbor\Model\ModelBase $witness = null)
     {
         $this->setProperty('witness', $witness);
     }

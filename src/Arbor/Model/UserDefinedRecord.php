@@ -52,7 +52,7 @@ class UserDefinedRecord extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getEntity()
     {
@@ -60,9 +60,9 @@ class UserDefinedRecord extends ModelBase
     }
 
     /**
-     * @param ModelBase $entity
+     * @param \Arbor\Model\ModelBase $entity
      */
-    public function setEntity(\ModelBase $entity = null)
+    public function setEntity(\Arbor\Model\ModelBase $entity = null)
     {
         $this->setProperty('entity', $entity);
     }

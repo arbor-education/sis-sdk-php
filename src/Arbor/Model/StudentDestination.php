@@ -138,7 +138,7 @@ class StudentDestination extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getLinkedRecord()
     {
@@ -146,9 +146,9 @@ class StudentDestination extends ModelBase
     }
 
     /**
-     * @param ModelBase $linkedRecord
+     * @param \Arbor\Model\ModelBase $linkedRecord
      */
-    public function setLinkedRecord(\ModelBase $linkedRecord = null)
+    public function setLinkedRecord(\Arbor\Model\ModelBase $linkedRecord = null)
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }

@@ -66,7 +66,7 @@ class RepeatingSchoolEventParticipant extends ModelBase
     }
 
     /**
-     * @return ModelBase
+     * @return \Arbor\Model\ModelBase
      */
     public function getParticipant()
     {
@@ -74,9 +74,9 @@ class RepeatingSchoolEventParticipant extends ModelBase
     }
 
     /**
-     * @param ModelBase $participant
+     * @param \Arbor\Model\ModelBase $participant
      */
-    public function setParticipant(\ModelBase $participant = null)
+    public function setParticipant(\Arbor\Model\ModelBase $participant = null)
     {
         $this->setProperty('participant', $participant);
     }
