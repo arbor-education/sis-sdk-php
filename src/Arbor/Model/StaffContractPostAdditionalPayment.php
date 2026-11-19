@@ -26,7 +26,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
      * @return StaffContractPostAdditionalPayment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(?\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -84,7 +84,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param string $additionalPayment
      */
-    public function setAdditionalPayment(string $additionalPayment = null)
+    public function setAdditionalPayment(?string $additionalPayment = null)
     {
         $this->setProperty('additionalPayment', $additionalPayment);
     }
@@ -100,7 +100,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param \DateTime $paymentDate
      */
-    public function setPaymentDate(\DateTime $paymentDate = null)
+    public function setPaymentDate(?\DateTime $paymentDate = null)
     {
         $this->setProperty('paymentDate', $paymentDate);
     }
@@ -116,7 +116,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param \Arbor\Model\AdditionalPaymentReason $additionalPaymentReason
      */
-    public function setAdditionalPaymentReason(\Arbor\Model\AdditionalPaymentReason $additionalPaymentReason = null)
+    public function setAdditionalPaymentReason(?\Arbor\Model\AdditionalPaymentReason $additionalPaymentReason = null)
     {
         $this->setProperty('additionalPaymentReason', $additionalPaymentReason);
     }
@@ -132,7 +132,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -148,7 +148,7 @@ class StaffContractPostAdditionalPayment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

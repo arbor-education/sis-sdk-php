@@ -22,7 +22,7 @@ class AcademicUnitDepartment extends ModelBase
      * @return AcademicUnitDepartment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AcademicUnitDepartment extends ModelBase
     /**
      * @param \Arbor\Model\Department $department
      */
-    public function setDepartment(\Arbor\Model\Department $department = null)
+    public function setDepartment(?\Arbor\Model\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
@@ -80,7 +80,7 @@ class AcademicUnitDepartment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -96,7 +96,7 @@ class AcademicUnitDepartment extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class AcademicUnitDepartment extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

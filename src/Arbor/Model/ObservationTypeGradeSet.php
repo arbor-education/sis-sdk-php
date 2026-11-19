@@ -18,7 +18,7 @@ class ObservationTypeGradeSet extends ModelBase
      * @return ObservationTypeGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ObservationTypeGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\ObservationType $observationType
      */
-    public function setObservationType(\Arbor\Model\ObservationType $observationType = null)
+    public function setObservationType(?\Arbor\Model\ObservationType $observationType = null)
     {
         $this->setProperty('observationType', $observationType);
     }
@@ -76,7 +76,7 @@ class ObservationTypeGradeSet extends ModelBase
     /**
      * @param \Arbor\Model\ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(?\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }

@@ -22,7 +22,7 @@ class EligibilityRecord extends ModelBase
      * @return EligibilityRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\FsmCategory $fsmCategory
      */
-    public function setFsmCategory(\Arbor\Model\UkDfe\FsmCategory $fsmCategory = null)
+    public function setFsmCategory(?\Arbor\Model\UkDfe\FsmCategory $fsmCategory = null)
     {
         $this->setProperty('fsmCategory', $fsmCategory);
     }
@@ -80,7 +80,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param string $ukCountry
      */
-    public function setUkCountry(string $ukCountry = null)
+    public function setUkCountry(?string $ukCountry = null)
     {
         $this->setProperty('ukCountry', $ukCountry);
     }
@@ -96,7 +96,7 @@ class EligibilityRecord extends ModelBase
     /**
      * @param \Arbor\Model\Guardian $fsmClaimantGuardian
      */
-    public function setFsmClaimantGuardian(\Arbor\Model\Guardian $fsmClaimantGuardian = null)
+    public function setFsmClaimantGuardian(?\Arbor\Model\Guardian $fsmClaimantGuardian = null)
     {
         $this->setProperty('fsmClaimantGuardian', $fsmClaimantGuardian);
     }

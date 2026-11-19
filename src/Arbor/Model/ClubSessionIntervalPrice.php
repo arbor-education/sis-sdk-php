@@ -22,7 +22,7 @@ class ClubSessionIntervalPrice extends ModelBase
      * @return ClubSessionIntervalPrice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param \Arbor\Model\ClubSessionInterval $clubSessionInterval
      */
-    public function setClubSessionInterval(\Arbor\Model\ClubSessionInterval $clubSessionInterval = null)
+    public function setClubSessionInterval(?\Arbor\Model\ClubSessionInterval $clubSessionInterval = null)
     {
         $this->setProperty('clubSessionInterval', $clubSessionInterval);
     }
@@ -80,7 +80,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $group
      */
-    public function setGroup(\Arbor\Model\ModelBase $group = null)
+    public function setGroup(?\Arbor\Model\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }
@@ -96,7 +96,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -112,7 +112,7 @@ class ClubSessionIntervalPrice extends ModelBase
     /**
      * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
+    public function setVatRate(?\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }

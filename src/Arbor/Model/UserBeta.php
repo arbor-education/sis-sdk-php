@@ -20,7 +20,7 @@ class UserBeta extends ModelBase
      * @return UserBeta[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UserBeta extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -78,7 +78,7 @@ class UserBeta extends ModelBase
     /**
      * @param bool $isEligible
      */
-    public function setIsEligible(bool $isEligible = null)
+    public function setIsEligible(?bool $isEligible = null)
     {
         $this->setProperty('isEligible', $isEligible);
     }
@@ -94,7 +94,7 @@ class UserBeta extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled(bool $isEnabled = null)
+    public function setIsEnabled(?bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }

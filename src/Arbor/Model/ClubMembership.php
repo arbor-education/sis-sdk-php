@@ -36,7 +36,7 @@ class ClubMembership extends ModelBase
      * @return ClubMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Arbor\Model\Club $club = null)
+    public function setClub(?\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -94,7 +94,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -110,7 +110,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -126,7 +126,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod
      */
-    public function setClubMembershipPeriod(\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
+    public function setClubMembershipPeriod(?\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }
@@ -142,7 +142,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -158,7 +158,7 @@ class ClubMembership extends ModelBase
     /**
      * @param bool $consentReceived
      */
-    public function setConsentReceived(bool $consentReceived = null)
+    public function setConsentReceived(?bool $consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
     }
@@ -174,7 +174,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \DateTime $activatedDatetime
      */
-    public function setActivatedDatetime(\DateTime $activatedDatetime = null)
+    public function setActivatedDatetime(?\DateTime $activatedDatetime = null)
     {
         $this->setProperty('activatedDatetime', $activatedDatetime);
     }
@@ -190,7 +190,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(?\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -206,7 +206,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(?\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -222,7 +222,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    public function setCancelledDatetime(?\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
@@ -238,7 +238,7 @@ class ClubMembership extends ModelBase
     /**
      * @param \DateTime $disabledDatetime
      */
-    public function setDisabledDatetime(\DateTime $disabledDatetime = null)
+    public function setDisabledDatetime(?\DateTime $disabledDatetime = null)
     {
         $this->setProperty('disabledDatetime', $disabledDatetime);
     }

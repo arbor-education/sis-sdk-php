@@ -18,7 +18,7 @@ class EmailAccountAccessPermission extends ModelBase
      * @return EmailAccountAccessPermission[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class EmailAccountAccessPermission extends ModelBase
     /**
      * @param \Arbor\Model\EmailAccount $emailAccount
      */
-    public function setEmailAccount(\Arbor\Model\EmailAccount $emailAccount = null)
+    public function setEmailAccount(?\Arbor\Model\EmailAccount $emailAccount = null)
     {
         $this->setProperty('emailAccount', $emailAccount);
     }
@@ -76,7 +76,7 @@ class EmailAccountAccessPermission extends ModelBase
     /**
      * @param \Arbor\Model\BusinessRole $businessRole
      */
-    public function setBusinessRole(\Arbor\Model\BusinessRole $businessRole = null)
+    public function setBusinessRole(?\Arbor\Model\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }

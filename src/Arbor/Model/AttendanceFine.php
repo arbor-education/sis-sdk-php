@@ -24,7 +24,7 @@ class AttendanceFine extends ModelBase
      * @return AttendanceFine[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -82,7 +82,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -98,7 +98,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param \DateTime $fineDecisionDate
      */
-    public function setFineDecisionDate(\DateTime $fineDecisionDate = null)
+    public function setFineDecisionDate(?\DateTime $fineDecisionDate = null)
     {
         $this->setProperty('fineDecisionDate', $fineDecisionDate);
     }
@@ -114,7 +114,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param \DateTime $fineCreatedDate
      */
-    public function setFineCreatedDate(\DateTime $fineCreatedDate = null)
+    public function setFineCreatedDate(?\DateTime $fineCreatedDate = null)
     {
         $this->setProperty('fineCreatedDate', $fineCreatedDate);
     }
@@ -130,7 +130,7 @@ class AttendanceFine extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

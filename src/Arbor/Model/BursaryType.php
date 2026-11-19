@@ -22,7 +22,7 @@ class BursaryType extends ModelBase
      * @return BursaryType[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class BursaryType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -80,7 +80,7 @@ class BursaryType extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -96,7 +96,7 @@ class BursaryType extends ModelBase
     /**
      * @param \Arbor\Model\StudentFundingType $studentFundingType
      */
-    public function setStudentFundingType(\Arbor\Model\StudentFundingType $studentFundingType = null)
+    public function setStudentFundingType(?\Arbor\Model\StudentFundingType $studentFundingType = null)
     {
         $this->setProperty('studentFundingType', $studentFundingType);
     }
@@ -112,7 +112,7 @@ class BursaryType extends ModelBase
     /**
      * @param string $allocatedAmount
      */
-    public function setAllocatedAmount(string $allocatedAmount = null)
+    public function setAllocatedAmount(?string $allocatedAmount = null)
     {
         $this->setProperty('allocatedAmount', $allocatedAmount);
     }

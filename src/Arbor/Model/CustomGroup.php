@@ -34,7 +34,7 @@ class CustomGroup extends ModelBase
      * @return CustomGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $customGroupName
      */
-    public function setCustomGroupName(string $customGroupName = null)
+    public function setCustomGroupName(?string $customGroupName = null)
     {
         $this->setProperty('customGroupName', $customGroupName);
     }
@@ -92,7 +92,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription(string $description = null)
+    public function setDescription(?string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -108,7 +108,7 @@ class CustomGroup extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -124,7 +124,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $containsStudents
      */
-    public function setContainsStudents(string $containsStudents = null)
+    public function setContainsStudents(?string $containsStudents = null)
     {
         $this->setProperty('containsStudents', $containsStudents);
     }
@@ -140,7 +140,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $containsGuardians
      */
-    public function setContainsGuardians(string $containsGuardians = null)
+    public function setContainsGuardians(?string $containsGuardians = null)
     {
         $this->setProperty('containsGuardians', $containsGuardians);
     }
@@ -156,7 +156,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $containsStaff
      */
-    public function setContainsStaff(string $containsStaff = null)
+    public function setContainsStaff(?string $containsStaff = null)
     {
         $this->setProperty('containsStaff', $containsStaff);
     }
@@ -172,7 +172,7 @@ class CustomGroup extends ModelBase
     /**
      * @param bool $isDynamic
      */
-    public function setIsDynamic(bool $isDynamic = null)
+    public function setIsDynamic(?bool $isDynamic = null)
     {
         $this->setProperty('isDynamic', $isDynamic);
     }
@@ -188,7 +188,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -204,7 +204,7 @@ class CustomGroup extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -220,7 +220,7 @@ class CustomGroup extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

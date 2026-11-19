@@ -22,7 +22,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      * @return StandardizedAssessmentTemplate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName = null)
+    public function setTemplateName(?string $templateName = null)
     {
         $this->setProperty('templateName', $templateName);
     }
@@ -80,7 +80,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -96,7 +96,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param \DateTime $validityStartDate
      */
-    public function setValidityStartDate(\DateTime $validityStartDate = null)
+    public function setValidityStartDate(?\DateTime $validityStartDate = null)
     {
         $this->setProperty('validityStartDate', $validityStartDate);
     }
@@ -112,7 +112,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param \DateTime $validityEndDate
      */
-    public function setValidityEndDate(\DateTime $validityEndDate = null)
+    public function setValidityEndDate(?\DateTime $validityEndDate = null)
     {
         $this->setProperty('validityEndDate', $validityEndDate);
     }

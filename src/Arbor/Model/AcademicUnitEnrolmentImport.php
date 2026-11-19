@@ -26,7 +26,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      * @return AcademicUnitEnrolmentImport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -84,7 +84,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -100,7 +100,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param \DateTime $importStartedDatetime
      */
-    public function setImportStartedDatetime(\DateTime $importStartedDatetime = null)
+    public function setImportStartedDatetime(?\DateTime $importStartedDatetime = null)
     {
         $this->setProperty('importStartedDatetime', $importStartedDatetime);
     }
@@ -116,7 +116,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param \DateTime $importCompletedDatetime
      */
-    public function setImportCompletedDatetime(\DateTime $importCompletedDatetime = null)
+    public function setImportCompletedDatetime(?\DateTime $importCompletedDatetime = null)
     {
         $this->setProperty('importCompletedDatetime', $importCompletedDatetime);
     }
@@ -132,7 +132,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param \DateTime $enrolmentStartDate
      */
-    public function setEnrolmentStartDate(\DateTime $enrolmentStartDate = null)
+    public function setEnrolmentStartDate(?\DateTime $enrolmentStartDate = null)
     {
         $this->setProperty('enrolmentStartDate', $enrolmentStartDate);
     }
@@ -148,7 +148,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param \DateTime $enrolmentEndDate
      */
-    public function setEnrolmentEndDate(\DateTime $enrolmentEndDate = null)
+    public function setEnrolmentEndDate(?\DateTime $enrolmentEndDate = null)
     {
         $this->setProperty('enrolmentEndDate', $enrolmentEndDate);
     }

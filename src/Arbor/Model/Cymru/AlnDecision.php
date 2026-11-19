@@ -26,7 +26,7 @@ class AlnDecision extends ModelBase
      * @return AlnDecision[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class AlnDecision extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -84,7 +84,7 @@ class AlnDecision extends ModelBase
     /**
      * @param string $decisionOutcome
      */
-    public function setDecisionOutcome(string $decisionOutcome = null)
+    public function setDecisionOutcome(?string $decisionOutcome = null)
     {
         $this->setProperty('decisionOutcome', $decisionOutcome);
     }
@@ -100,7 +100,7 @@ class AlnDecision extends ModelBase
     /**
      * @param string $decisionBody
      */
-    public function setDecisionBody(string $decisionBody = null)
+    public function setDecisionBody(?string $decisionBody = null)
     {
         $this->setProperty('decisionBody', $decisionBody);
     }
@@ -116,7 +116,7 @@ class AlnDecision extends ModelBase
     /**
      * @param \DateTime $decisionDate
      */
-    public function setDecisionDate(\DateTime $decisionDate = null)
+    public function setDecisionDate(?\DateTime $decisionDate = null)
     {
         $this->setProperty('decisionDate', $decisionDate);
     }
@@ -132,7 +132,7 @@ class AlnDecision extends ModelBase
     /**
      * @param string $supportingInformation
      */
-    public function setSupportingInformation(string $supportingInformation = null)
+    public function setSupportingInformation(?string $supportingInformation = null)
     {
         $this->setProperty('supportingInformation', $supportingInformation);
     }

@@ -24,7 +24,7 @@ class UserRoleAssignment extends ModelBase
      * @return UserRoleAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -82,7 +82,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param \Arbor\Model\UserRole $userRole
      */
-    public function setUserRole(\Arbor\Model\UserRole $userRole = null)
+    public function setUserRole(?\Arbor\Model\UserRole $userRole = null)
     {
         $this->setProperty('userRole', $userRole);
     }
@@ -98,7 +98,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param \Arbor\Model\BusinessRoleAssignment $businessRoleAssignment
      */
-    public function setBusinessRoleAssignment(\Arbor\Model\BusinessRoleAssignment $businessRoleAssignment = null)
+    public function setBusinessRoleAssignment(?\Arbor\Model\BusinessRoleAssignment $businessRoleAssignment = null)
     {
         $this->setProperty('businessRoleAssignment', $businessRoleAssignment);
     }
@@ -114,7 +114,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -130,7 +130,7 @@ class UserRoleAssignment extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }

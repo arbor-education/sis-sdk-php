@@ -30,7 +30,7 @@ class InterventionGroup extends ModelBase
      * @return InterventionGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -88,7 +88,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
+    public function setIntervention(?\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -104,7 +104,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -120,7 +120,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -136,7 +136,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims(string $aims = null)
+    public function setAims(?string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -152,7 +152,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria(string $successCriteria = null)
+    public function setSuccessCriteria(?string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -168,7 +168,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -184,7 +184,7 @@ class InterventionGroup extends ModelBase
     /**
      * @param bool $isAttendanceRegistered
      */
-    public function setIsAttendanceRegistered(bool $isAttendanceRegistered = null)
+    public function setIsAttendanceRegistered(?bool $isAttendanceRegistered = null)
     {
         $this->setProperty('isAttendanceRegistered', $isAttendanceRegistered);
     }

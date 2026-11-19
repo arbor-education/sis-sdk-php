@@ -30,7 +30,7 @@ class StudentClubSessionInterval extends ModelBase
      * @return StudentClubSessionInterval[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,7 +88,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\ClubSessionInterval $clubSessionInterval
      */
-    public function setClubSessionInterval(\Arbor\Model\ClubSessionInterval $clubSessionInterval = null)
+    public function setClubSessionInterval(?\Arbor\Model\ClubSessionInterval $clubSessionInterval = null)
     {
         $this->setProperty('clubSessionInterval', $clubSessionInterval);
     }
@@ -104,7 +104,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\ClubSession $clubSession
      */
-    public function setClubSession(\Arbor\Model\ClubSession $clubSession = null)
+    public function setClubSession(?\Arbor\Model\ClubSession $clubSession = null)
     {
         $this->setProperty('clubSession', $clubSession);
     }
@@ -120,7 +120,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat(string $priceExVat = null)
+    public function setPriceExVat(?string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -136,7 +136,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
+    public function setVatRate(?\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }
@@ -152,7 +152,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(?\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -168,7 +168,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(?\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -184,7 +184,7 @@ class StudentClubSessionInterval extends ModelBase
     /**
      * @param bool $hasMeals
      */
-    public function setHasMeals(bool $hasMeals = null)
+    public function setHasMeals(?bool $hasMeals = null)
     {
         $this->setProperty('hasMeals', $hasMeals);
     }

@@ -20,7 +20,7 @@ class ReportCardBatchStandardizedAssessment extends ModelBase
      * @return ReportCardBatchStandardizedAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ReportCardBatchStandardizedAssessment extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -78,7 +78,7 @@ class ReportCardBatchStandardizedAssessment extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessment $standardizedAssessment
      */
-    public function setStandardizedAssessment(\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
+    public function setStandardizedAssessment(?\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
     {
         $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
@@ -94,7 +94,7 @@ class ReportCardBatchStandardizedAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(int $order = null)
+    public function setOrder(?int $order = null)
     {
         $this->setProperty('order', $order);
     }

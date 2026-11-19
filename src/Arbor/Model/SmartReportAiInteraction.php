@@ -20,7 +20,7 @@ class SmartReportAiInteraction extends ModelBase
      * @return SmartReportAiInteraction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SmartReportAiInteraction extends ModelBase
     /**
      * @param \Arbor\Model\SmartReport $smartReport
      */
-    public function setSmartReport(\Arbor\Model\SmartReport $smartReport = null)
+    public function setSmartReport(?\Arbor\Model\SmartReport $smartReport = null)
     {
         $this->setProperty('smartReport', $smartReport);
     }
@@ -78,7 +78,7 @@ class SmartReportAiInteraction extends ModelBase
     /**
      * @param \Arbor\Model\AiInteraction $aiInteraction
      */
-    public function setAiInteraction(\Arbor\Model\AiInteraction $aiInteraction = null)
+    public function setAiInteraction(?\Arbor\Model\AiInteraction $aiInteraction = null)
     {
         $this->setProperty('aiInteraction', $aiInteraction);
     }
@@ -94,7 +94,7 @@ class SmartReportAiInteraction extends ModelBase
     /**
      * @param string $interactionType
      */
-    public function setInteractionType(string $interactionType = null)
+    public function setInteractionType(?string $interactionType = null)
     {
         $this->setProperty('interactionType', $interactionType);
     }

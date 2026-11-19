@@ -26,7 +26,7 @@ class SmsMessagePart extends ModelBase
      * @return SmsMessagePart[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param \Arbor\Model\SmsMessage $smsMessage
      */
-    public function setSmsMessage(\Arbor\Model\SmsMessage $smsMessage = null)
+    public function setSmsMessage(?\Arbor\Model\SmsMessage $smsMessage = null)
     {
         $this->setProperty('smsMessage', $smsMessage);
     }
@@ -84,7 +84,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param string $partIdentifier
      */
-    public function setPartIdentifier(string $partIdentifier = null)
+    public function setPartIdentifier(?string $partIdentifier = null)
     {
         $this->setProperty('partIdentifier', $partIdentifier);
     }
@@ -100,7 +100,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param \DateTime $receivedDatetime
      */
-    public function setReceivedDatetime(\DateTime $receivedDatetime = null)
+    public function setReceivedDatetime(?\DateTime $receivedDatetime = null)
     {
         $this->setProperty('receivedDatetime', $receivedDatetime);
     }
@@ -116,7 +116,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param \DateTime $failedDatetime
      */
-    public function setFailedDatetime(\DateTime $failedDatetime = null)
+    public function setFailedDatetime(?\DateTime $failedDatetime = null)
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
@@ -132,7 +132,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param string $recipientNetworkCode
      */
-    public function setRecipientNetworkCode(string $recipientNetworkCode = null)
+    public function setRecipientNetworkCode(?string $recipientNetworkCode = null)
     {
         $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }
@@ -148,7 +148,7 @@ class SmsMessagePart extends ModelBase
     /**
      * @param string $cost
      */
-    public function setCost(string $cost = null)
+    public function setCost(?string $cost = null)
     {
         $this->setProperty('cost', $cost);
     }

@@ -22,7 +22,7 @@ class IncomingBankTransaction extends ModelBase
      * @return IncomingBankTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -80,7 +80,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param \DateTime $receivedDate
      */
-    public function setReceivedDate(\DateTime $receivedDate = null)
+    public function setReceivedDate(?\DateTime $receivedDate = null)
     {
         $this->setProperty('receivedDate', $receivedDate);
     }
@@ -96,7 +96,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    public function setCancelledDatetime(?\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }
@@ -112,7 +112,7 @@ class IncomingBankTransaction extends ModelBase
     /**
      * @param string $payment
      */
-    public function setPayment(string $payment = null)
+    public function setPayment(?string $payment = null)
     {
         $this->setProperty('payment', $payment);
     }

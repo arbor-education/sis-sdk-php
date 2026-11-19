@@ -20,7 +20,7 @@ class LearningSupportFunding extends ModelBase
      * @return LearningSupportFunding[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class LearningSupportFunding extends ModelBase
     /**
      * @param \Arbor\Model\ProgrammeEnrolment $programmeEnrolment
      */
-    public function setProgrammeEnrolment(\Arbor\Model\ProgrammeEnrolment $programmeEnrolment = null)
+    public function setProgrammeEnrolment(?\Arbor\Model\ProgrammeEnrolment $programmeEnrolment = null)
     {
         $this->setProperty('programmeEnrolment', $programmeEnrolment);
     }
@@ -78,7 +78,7 @@ class LearningSupportFunding extends ModelBase
     /**
      * @param int $learningSupportFundingCode
      */
-    public function setLearningSupportFundingCode(int $learningSupportFundingCode = null)
+    public function setLearningSupportFundingCode(?int $learningSupportFundingCode = null)
     {
         $this->setProperty('learningSupportFundingCode', $learningSupportFundingCode);
     }

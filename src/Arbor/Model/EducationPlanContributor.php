@@ -18,7 +18,7 @@ class EducationPlanContributor extends ModelBase
      * @return EducationPlanContributor[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class EducationPlanContributor extends ModelBase
     /**
      * @param \Arbor\Model\EducationPlan $educationPlan
      */
-    public function setEducationPlan(\Arbor\Model\EducationPlan $educationPlan = null)
+    public function setEducationPlan(?\Arbor\Model\EducationPlan $educationPlan = null)
     {
         $this->setProperty('educationPlan', $educationPlan);
     }
@@ -76,7 +76,7 @@ class EducationPlanContributor extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $contributor
      */
-    public function setContributor(\Arbor\Model\ModelBase $contributor = null)
+    public function setContributor(?\Arbor\Model\ModelBase $contributor = null)
     {
         $this->setProperty('contributor', $contributor);
     }

@@ -28,7 +28,7 @@ class CoverArrangement extends ModelBase
      * @return CoverArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param \Arbor\Model\CoverRequirement $coverRequirement
      */
-    public function setCoverRequirement(\Arbor\Model\CoverRequirement $coverRequirement = null)
+    public function setCoverRequirement(?\Arbor\Model\CoverRequirement $coverRequirement = null)
     {
         $this->setProperty('coverRequirement', $coverRequirement);
     }
@@ -86,7 +86,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param \Arbor\Model\Staff $coveringStaff
      */
-    public function setCoveringStaff(\Arbor\Model\Staff $coveringStaff = null)
+    public function setCoveringStaff(?\Arbor\Model\Staff $coveringStaff = null)
     {
         $this->setProperty('coveringStaff', $coveringStaff);
     }
@@ -102,7 +102,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param \DateTime $coverStartDatetime
      */
-    public function setCoverStartDatetime(\DateTime $coverStartDatetime = null)
+    public function setCoverStartDatetime(?\DateTime $coverStartDatetime = null)
     {
         $this->setProperty('coverStartDatetime', $coverStartDatetime);
     }
@@ -118,7 +118,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param \DateTime $coverEndDatetime
      */
-    public function setCoverEndDatetime(\DateTime $coverEndDatetime = null)
+    public function setCoverEndDatetime(?\DateTime $coverEndDatetime = null)
     {
         $this->setProperty('coverEndDatetime', $coverEndDatetime);
     }
@@ -134,7 +134,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param \DateTime $agreedDatetime
      */
-    public function setAgreedDatetime(\DateTime $agreedDatetime = null)
+    public function setAgreedDatetime(?\DateTime $agreedDatetime = null)
     {
         $this->setProperty('agreedDatetime', $agreedDatetime);
     }
@@ -150,7 +150,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param \DateTime $notAgreedDatetime
      */
-    public function setNotAgreedDatetime(\DateTime $notAgreedDatetime = null)
+    public function setNotAgreedDatetime(?\DateTime $notAgreedDatetime = null)
     {
         $this->setProperty('notAgreedDatetime', $notAgreedDatetime);
     }
@@ -166,7 +166,7 @@ class CoverArrangement extends ModelBase
     /**
      * @param bool $isSendCreationNotification
      */
-    public function setIsSendCreationNotification(bool $isSendCreationNotification = null)
+    public function setIsSendCreationNotification(?bool $isSendCreationNotification = null)
     {
         $this->setProperty('isSendCreationNotification', $isSendCreationNotification);
     }

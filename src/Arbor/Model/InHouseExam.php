@@ -22,7 +22,7 @@ class InHouseExam extends ModelBase
      * @return InHouseExam[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class InHouseExam extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAssessable $mockQualificationAssessable
      */
-    public function setMockQualificationAssessable(\Arbor\Model\QualificationAssessable $mockQualificationAssessable = null)
+    public function setMockQualificationAssessable(?\Arbor\Model\QualificationAssessable $mockQualificationAssessable = null)
     {
         $this->setProperty('mockQualificationAssessable', $mockQualificationAssessable);
     }
@@ -80,7 +80,7 @@ class InHouseExam extends ModelBase
     /**
      * @param \Arbor\Model\QualificationLearningUnit $mockQualificationLearningUnit
      */
-    public function setMockQualificationLearningUnit(\Arbor\Model\QualificationLearningUnit $mockQualificationLearningUnit = null)
+    public function setMockQualificationLearningUnit(?\Arbor\Model\QualificationLearningUnit $mockQualificationLearningUnit = null)
     {
         $this->setProperty('mockQualificationLearningUnit', $mockQualificationLearningUnit);
     }
@@ -96,7 +96,7 @@ class InHouseExam extends ModelBase
     /**
      * @param string $duration
      */
-    public function setDuration(string $duration = null)
+    public function setDuration(?string $duration = null)
     {
         $this->setProperty('duration', $duration);
     }
@@ -112,7 +112,7 @@ class InHouseExam extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

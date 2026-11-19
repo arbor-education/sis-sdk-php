@@ -22,7 +22,7 @@ class PayScaleSpinalPointValue extends ModelBase
      * @return PayScaleSpinalPointValue[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class PayScaleSpinalPointValue extends ModelBase
     /**
      * @param \Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint
      */
-    public function setPayScaleSpinalPoint(\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
+    public function setPayScaleSpinalPoint(?\Arbor\Model\PayScaleSpinalPoint $payScaleSpinalPoint = null)
     {
         $this->setProperty('payScaleSpinalPoint', $payScaleSpinalPoint);
     }
@@ -80,7 +80,7 @@ class PayScaleSpinalPointValue extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -96,7 +96,7 @@ class PayScaleSpinalPointValue extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -112,7 +112,7 @@ class PayScaleSpinalPointValue extends ModelBase
     /**
      * @param string $grossSalary
      */
-    public function setGrossSalary(string $grossSalary = null)
+    public function setGrossSalary(?string $grossSalary = null)
     {
         $this->setProperty('grossSalary', $grossSalary);
     }

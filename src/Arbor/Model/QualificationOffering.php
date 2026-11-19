@@ -18,7 +18,7 @@ class QualificationOffering extends ModelBase
      * @return QualificationOffering[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class QualificationOffering extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $qualificationElement
      */
-    public function setQualificationElement(\Arbor\Model\ModelBase $qualificationElement = null)
+    public function setQualificationElement(?\Arbor\Model\ModelBase $qualificationElement = null)
     {
         $this->setProperty('qualificationElement', $qualificationElement);
     }
@@ -76,7 +76,7 @@ class QualificationOffering extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

@@ -18,7 +18,7 @@ class ObservationTheme extends ModelBase
      * @return ObservationTheme[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ObservationTheme extends ModelBase
     /**
      * @param \Arbor\Model\ObservationType $observationType
      */
-    public function setObservationType(\Arbor\Model\ObservationType $observationType = null)
+    public function setObservationType(?\Arbor\Model\ObservationType $observationType = null)
     {
         $this->setProperty('observationType', $observationType);
     }
@@ -76,7 +76,7 @@ class ObservationTheme extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

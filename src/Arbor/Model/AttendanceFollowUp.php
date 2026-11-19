@@ -30,7 +30,7 @@ class AttendanceFollowUp extends ModelBase
      * @return AttendanceFollowUp[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,7 +88,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $attendanceDate
      */
-    public function setAttendanceDate(\DateTime $attendanceDate = null)
+    public function setAttendanceDate(?\DateTime $attendanceDate = null)
     {
         $this->setProperty('attendanceDate', $attendanceDate);
     }
@@ -104,7 +104,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $sendingStartedDatetime
      */
-    public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
+    public function setSendingStartedDatetime(?\DateTime $sendingStartedDatetime = null)
     {
         $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
@@ -120,7 +120,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $emailSentDatetime
      */
-    public function setEmailSentDatetime(\DateTime $emailSentDatetime = null)
+    public function setEmailSentDatetime(?\DateTime $emailSentDatetime = null)
     {
         $this->setProperty('emailSentDatetime', $emailSentDatetime);
     }
@@ -136,7 +136,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $emailFailedDatetime
      */
-    public function setEmailFailedDatetime(\DateTime $emailFailedDatetime = null)
+    public function setEmailFailedDatetime(?\DateTime $emailFailedDatetime = null)
     {
         $this->setProperty('emailFailedDatetime', $emailFailedDatetime);
     }
@@ -152,7 +152,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $smsSentDatetime
      */
-    public function setSmsSentDatetime(\DateTime $smsSentDatetime = null)
+    public function setSmsSentDatetime(?\DateTime $smsSentDatetime = null)
     {
         $this->setProperty('smsSentDatetime', $smsSentDatetime);
     }
@@ -168,7 +168,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $smsFailedDatetime
      */
-    public function setSmsFailedDatetime(\DateTime $smsFailedDatetime = null)
+    public function setSmsFailedDatetime(?\DateTime $smsFailedDatetime = null)
     {
         $this->setProperty('smsFailedDatetime', $smsFailedDatetime);
     }
@@ -184,7 +184,7 @@ class AttendanceFollowUp extends ModelBase
     /**
      * @param \DateTime $telephoneCallDatetime
      */
-    public function setTelephoneCallDatetime(\DateTime $telephoneCallDatetime = null)
+    public function setTelephoneCallDatetime(?\DateTime $telephoneCallDatetime = null)
     {
         $this->setProperty('telephoneCallDatetime', $telephoneCallDatetime);
     }

@@ -22,7 +22,7 @@ class TeachingGroupMembership extends ModelBase
      * @return TeachingGroupMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class TeachingGroupMembership extends ModelBase
     /**
      * @param \Arbor\Model\TeachingGroup $teachingGroup
      */
-    public function setTeachingGroup(\Arbor\Model\TeachingGroup $teachingGroup = null)
+    public function setTeachingGroup(?\Arbor\Model\TeachingGroup $teachingGroup = null)
     {
         $this->setProperty('teachingGroup', $teachingGroup);
     }
@@ -80,7 +80,7 @@ class TeachingGroupMembership extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -96,7 +96,7 @@ class TeachingGroupMembership extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class TeachingGroupMembership extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

@@ -30,7 +30,7 @@ class InternalExclusion extends ModelBase
      * @return InternalExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,7 +88,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \Arbor\Model\Staff $issuedByStaff
      */
-    public function setIssuedByStaff(\Arbor\Model\Staff $issuedByStaff = null)
+    public function setIssuedByStaff(?\Arbor\Model\Staff $issuedByStaff = null)
     {
         $this->setProperty('issuedByStaff', $issuedByStaff);
     }
@@ -104,7 +104,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \Arbor\Model\InternalExclusionSession $internalExclusionSession
      */
-    public function setInternalExclusionSession(\Arbor\Model\InternalExclusionSession $internalExclusionSession = null)
+    public function setInternalExclusionSession(?\Arbor\Model\InternalExclusionSession $internalExclusionSession = null)
     {
         $this->setProperty('internalExclusionSession', $internalExclusionSession);
     }
@@ -120,7 +120,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \Arbor\Model\InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(\Arbor\Model\InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(?\Arbor\Model\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
@@ -136,7 +136,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(?\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -152,7 +152,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \Arbor\Model\InternalExclusionReason $internalExclusionReason
      */
-    public function setInternalExclusionReason(\Arbor\Model\InternalExclusionReason $internalExclusionReason = null)
+    public function setInternalExclusionReason(?\Arbor\Model\InternalExclusionReason $internalExclusionReason = null)
     {
         $this->setProperty('internalExclusionReason', $internalExclusionReason);
     }
@@ -168,7 +168,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param \DateTime $issuedDatetime
      */
-    public function setIssuedDatetime(\DateTime $issuedDatetime = null)
+    public function setIssuedDatetime(?\DateTime $issuedDatetime = null)
     {
         $this->setProperty('issuedDatetime', $issuedDatetime);
     }
@@ -184,7 +184,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

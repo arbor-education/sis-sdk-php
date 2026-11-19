@@ -28,7 +28,7 @@ class ApplicationAppeal extends ModelBase
      * @return ApplicationAppeal[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param \Arbor\Model\Application $application
      */
-    public function setApplication(\Arbor\Model\Application $application = null)
+    public function setApplication(?\Arbor\Model\Application $application = null)
     {
         $this->setProperty('application', $application);
     }
@@ -86,7 +86,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -102,7 +102,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param \DateTime $lodgedDate
      */
-    public function setLodgedDate(\DateTime $lodgedDate = null)
+    public function setLodgedDate(?\DateTime $lodgedDate = null)
     {
         $this->setProperty('lodgedDate', $lodgedDate);
     }
@@ -118,7 +118,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param \DateTime $withdrawnDate
      */
-    public function setWithdrawnDate(\DateTime $withdrawnDate = null)
+    public function setWithdrawnDate(?\DateTime $withdrawnDate = null)
     {
         $this->setProperty('withdrawnDate', $withdrawnDate);
     }
@@ -134,7 +134,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param \DateTime $hearingDate
      */
-    public function setHearingDate(\DateTime $hearingDate = null)
+    public function setHearingDate(?\DateTime $hearingDate = null)
     {
         $this->setProperty('hearingDate', $hearingDate);
     }
@@ -150,7 +150,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param \DateTime $decisionDatetime
      */
-    public function setDecisionDatetime(\DateTime $decisionDatetime = null)
+    public function setDecisionDatetime(?\DateTime $decisionDatetime = null)
     {
         $this->setProperty('decisionDatetime', $decisionDatetime);
     }
@@ -166,7 +166,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param string $decision
      */
-    public function setDecision(string $decision = null)
+    public function setDecision(?string $decision = null)
     {
         $this->setProperty('decision', $decision);
     }

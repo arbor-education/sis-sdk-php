@@ -26,7 +26,7 @@ class PlascCensusClassSizeException extends ModelBase
      * @return PlascCensusClassSizeException[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class PlascCensusClassSizeException extends ModelBase
     /**
      * @param \Arbor\Model\Statutory\DataReturn $dataReturn
      */
-    public function setDataReturn(\Arbor\Model\Statutory\DataReturn $dataReturn = null)
+    public function setDataReturn(?\Arbor\Model\Statutory\DataReturn $dataReturn = null)
     {
         $this->setProperty('dataReturn', $dataReturn);
     }
@@ -84,7 +84,7 @@ class PlascCensusClassSizeException extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\PlascCensusClass $plascCensusClass
      */
-    public function setPlascCensusClass(\Arbor\Model\Cymru\PlascCensusClass $plascCensusClass = null)
+    public function setPlascCensusClass(?\Arbor\Model\Cymru\PlascCensusClass $plascCensusClass = null)
     {
         $this->setProperty('plascCensusClass', $plascCensusClass);
     }
@@ -100,7 +100,7 @@ class PlascCensusClassSizeException extends ModelBase
     /**
      * @param int $count
      */
-    public function setCount(int $count = null)
+    public function setCount(?int $count = null)
     {
         $this->setProperty('count', $count);
     }
@@ -117,7 +117,7 @@ class PlascCensusClassSizeException extends ModelBase
      * @param \Arbor\Model\Cymru\SchoolCensusClassSizeExceptionReason
      * $schoolCensusClassSizeExceptionReason
      */
-    public function setSchoolCensusClassSizeExceptionReason(\Arbor\Model\Cymru\SchoolCensusClassSizeExceptionReason $schoolCensusClassSizeExceptionReason = null)
+    public function setSchoolCensusClassSizeExceptionReason(?\Arbor\Model\Cymru\SchoolCensusClassSizeExceptionReason $schoolCensusClassSizeExceptionReason = null)
     {
         $this->setProperty('schoolCensusClassSizeExceptionReason', $schoolCensusClassSizeExceptionReason);
     }
@@ -133,7 +133,7 @@ class PlascCensusClassSizeException extends ModelBase
     /**
      * @param int $pupilsInCatchment
      */
-    public function setPupilsInCatchment(int $pupilsInCatchment = null)
+    public function setPupilsInCatchment(?int $pupilsInCatchment = null)
     {
         $this->setProperty('pupilsInCatchment', $pupilsInCatchment);
     }

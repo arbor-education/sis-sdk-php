@@ -36,7 +36,7 @@ class SchoolProgressTargetRule extends ModelBase
      * @return SchoolProgressTargetRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param string $ruleName
      */
-    public function setRuleName(string $ruleName = null)
+    public function setRuleName(?string $ruleName = null)
     {
         $this->setProperty('ruleName', $ruleName);
     }
@@ -94,7 +94,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -110,7 +110,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -126,7 +126,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -142,7 +142,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -158,7 +158,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param int $termNumber
      */
-    public function setTermNumber(int $termNumber = null)
+    public function setTermNumber(?int $termNumber = null)
     {
         $this->setProperty('termNumber', $termNumber);
     }
@@ -174,7 +174,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param float $progressAmount
      */
-    public function setProgressAmount(float $progressAmount = null)
+    public function setProgressAmount(?float $progressAmount = null)
     {
         $this->setProperty('progressAmount', $progressAmount);
     }
@@ -190,7 +190,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param string $progressAmountUnit
      */
-    public function setProgressAmountUnit(string $progressAmountUnit = null)
+    public function setProgressAmountUnit(?string $progressAmountUnit = null)
     {
         $this->setProperty('progressAmountUnit', $progressAmountUnit);
     }
@@ -206,7 +206,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param string $progressReferenceMarkType
      */
-    public function setProgressReferenceMarkType(string $progressReferenceMarkType = null)
+    public function setProgressReferenceMarkType(?string $progressReferenceMarkType = null)
     {
         $this->setProperty('progressReferenceMarkType', $progressReferenceMarkType);
     }
@@ -222,7 +222,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param int $academicYearsOffset
      */
-    public function setAcademicYearsOffset(int $academicYearsOffset = null)
+    public function setAcademicYearsOffset(?int $academicYearsOffset = null)
     {
         $this->setProperty('academicYearsOffset', $academicYearsOffset);
     }
@@ -238,7 +238,7 @@ class SchoolProgressTargetRule extends ModelBase
     /**
      * @param bool $hasSameAttainmentTargetForEachPeriod
      */
-    public function setHasSameAttainmentTargetForEachPeriod(bool $hasSameAttainmentTargetForEachPeriod = null)
+    public function setHasSameAttainmentTargetForEachPeriod(?bool $hasSameAttainmentTargetForEachPeriod = null)
     {
         $this->setProperty('hasSameAttainmentTargetForEachPeriod', $hasSameAttainmentTargetForEachPeriod);
     }

@@ -34,7 +34,7 @@ class ProgrammeInstance extends ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param \Arbor\Model\Programme $programme
      */
-    public function setProgramme(\Arbor\Model\Programme $programme = null)
+    public function setProgramme(?\Arbor\Model\Programme $programme = null)
     {
         $this->setProperty('programme', $programme);
     }
@@ -92,7 +92,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -108,7 +108,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param \DateTime $plannedStartDate
      */
-    public function setPlannedStartDate(\DateTime $plannedStartDate = null)
+    public function setPlannedStartDate(?\DateTime $plannedStartDate = null)
     {
         $this->setProperty('plannedStartDate', $plannedStartDate);
     }
@@ -124,7 +124,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param \DateTime $plannedEndDate
      */
-    public function setPlannedEndDate(\DateTime $plannedEndDate = null)
+    public function setPlannedEndDate(?\DateTime $plannedEndDate = null)
     {
         $this->setProperty('plannedEndDate', $plannedEndDate);
     }
@@ -140,7 +140,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $placeholderQualificationAwardName
      */
-    public function setPlaceholderQualificationAwardName(string $placeholderQualificationAwardName = null)
+    public function setPlaceholderQualificationAwardName(?string $placeholderQualificationAwardName = null)
     {
         $this->setProperty('placeholderQualificationAwardName', $placeholderQualificationAwardName);
     }
@@ -156,7 +156,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $placeholderQualificationAwardReference
      */
-    public function setPlaceholderQualificationAwardReference(string $placeholderQualificationAwardReference = null)
+    public function setPlaceholderQualificationAwardReference(?string $placeholderQualificationAwardReference = null)
     {
         $this->setProperty('placeholderQualificationAwardReference', $placeholderQualificationAwardReference);
     }
@@ -172,7 +172,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param \Arbor\Model\ProgrammeClassification $programmeClassification
      */
-    public function setProgrammeClassification(\Arbor\Model\ProgrammeClassification $programmeClassification = null)
+    public function setProgrammeClassification(?\Arbor\Model\ProgrammeClassification $programmeClassification = null)
     {
         $this->setProperty('programmeClassification', $programmeClassification);
     }
@@ -188,7 +188,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $partnerUkprn
      */
-    public function setPartnerUkprn(string $partnerUkprn = null)
+    public function setPartnerUkprn(?string $partnerUkprn = null)
     {
         $this->setProperty('partnerUkprn', $partnerUkprn);
     }
@@ -204,7 +204,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(int $plannedLearningHours = null)
+    public function setPlannedLearningHours(?int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -220,7 +220,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(?int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }

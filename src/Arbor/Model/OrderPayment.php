@@ -18,7 +18,7 @@ class OrderPayment extends ModelBase
      * @return OrderPayment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class OrderPayment extends ModelBase
     /**
      * @param \Arbor\Model\Order $order
      */
-    public function setOrder(\Arbor\Model\Order $order = null)
+    public function setOrder(?\Arbor\Model\Order $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -76,7 +76,7 @@ class OrderPayment extends ModelBase
     /**
      * @param string $paymentAmount
      */
-    public function setPaymentAmount(string $paymentAmount = null)
+    public function setPaymentAmount(?string $paymentAmount = null)
     {
         $this->setProperty('paymentAmount', $paymentAmount);
     }

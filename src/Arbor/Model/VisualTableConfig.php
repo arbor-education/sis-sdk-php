@@ -24,7 +24,7 @@ class VisualTableConfig extends ModelBase
      * @return VisualTableConfig[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $pageContext
      */
-    public function setPageContext(string $pageContext = null)
+    public function setPageContext(?string $pageContext = null)
     {
         $this->setProperty('pageContext', $pageContext);
     }
@@ -82,7 +82,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $tableUrl
      */
-    public function setTableUrl(string $tableUrl = null)
+    public function setTableUrl(?string $tableUrl = null)
     {
         $this->setProperty('tableUrl', $tableUrl);
     }
@@ -98,7 +98,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -114,7 +114,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $extraContext
      */
-    public function setExtraContext(string $extraContext = null)
+    public function setExtraContext(?string $extraContext = null)
     {
         $this->setProperty('extraContext', $extraContext);
     }
@@ -130,7 +130,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $config
      */
-    public function setConfig(string $config = null)
+    public function setConfig(?string $config = null)
     {
         $this->setProperty('config', $config);
     }

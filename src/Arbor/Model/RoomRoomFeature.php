@@ -18,7 +18,7 @@ class RoomRoomFeature extends ModelBase
      * @return RoomRoomFeature[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class RoomRoomFeature extends ModelBase
     /**
      * @param \Arbor\Model\Room $room
      */
-    public function setRoom(\Arbor\Model\Room $room = null)
+    public function setRoom(?\Arbor\Model\Room $room = null)
     {
         $this->setProperty('room', $room);
     }
@@ -76,7 +76,7 @@ class RoomRoomFeature extends ModelBase
     /**
      * @param \Arbor\Model\RoomFeature $roomFeature
      */
-    public function setRoomFeature(\Arbor\Model\RoomFeature $roomFeature = null)
+    public function setRoomFeature(?\Arbor\Model\RoomFeature $roomFeature = null)
     {
         $this->setProperty('roomFeature', $roomFeature);
     }

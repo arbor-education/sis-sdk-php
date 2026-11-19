@@ -18,7 +18,7 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
      * @return AssessmentMetricRuleStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMetricRule $assessmentMetricRule
      */
-    public function setAssessmentMetricRule(\Arbor\Model\AssessmentMetricRule $assessmentMetricRule = null)
+    public function setAssessmentMetricRule(?\Arbor\Model\AssessmentMetricRule $assessmentMetricRule = null)
     {
         $this->setProperty('assessmentMetricRule', $assessmentMetricRule);
     }
@@ -76,7 +76,7 @@ class AssessmentMetricRuleStudentGroup extends ModelBase
     /**
      * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(?\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }

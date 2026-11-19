@@ -22,7 +22,7 @@ class StudentTrainingProviderRecord extends ModelBase
      * @return StudentTrainingProviderRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class StudentTrainingProviderRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class StudentTrainingProviderRecord extends ModelBase
     /**
      * @param \Arbor\Model\TrainingProvider $trainingProvider
      */
-    public function setTrainingProvider(\Arbor\Model\TrainingProvider $trainingProvider = null)
+    public function setTrainingProvider(?\Arbor\Model\TrainingProvider $trainingProvider = null)
     {
         $this->setProperty('trainingProvider', $trainingProvider);
     }
@@ -96,7 +96,7 @@ class StudentTrainingProviderRecord extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -112,7 +112,7 @@ class StudentTrainingProviderRecord extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

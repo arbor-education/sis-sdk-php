@@ -18,7 +18,7 @@ class TrainingProvider extends ModelBase
      * @return TrainingProvider[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class TrainingProvider extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -76,7 +76,7 @@ class TrainingProvider extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }

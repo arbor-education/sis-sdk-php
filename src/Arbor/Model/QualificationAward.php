@@ -46,7 +46,7 @@ class QualificationAward extends ModelBase
      * @return QualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -88,7 +88,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -104,7 +104,7 @@ class QualificationAward extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -120,7 +120,7 @@ class QualificationAward extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -136,7 +136,7 @@ class QualificationAward extends ModelBase
     /**
      * @param \Arbor\Model\QualificationScheme $qualificationScheme
      */
-    public function setQualificationScheme(\Arbor\Model\QualificationScheme $qualificationScheme = null)
+    public function setQualificationScheme(?\Arbor\Model\QualificationScheme $qualificationScheme = null)
     {
         $this->setProperty('qualificationScheme', $qualificationScheme);
     }
@@ -152,7 +152,7 @@ class QualificationAward extends ModelBase
     /**
      * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(?\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -168,7 +168,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $awardIdentifier
      */
-    public function setAwardIdentifier(string $awardIdentifier = null)
+    public function setAwardIdentifier(?string $awardIdentifier = null)
     {
         $this->setProperty('awardIdentifier', $awardIdentifier);
     }
@@ -184,7 +184,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -200,7 +200,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $shortTitle
      */
-    public function setShortTitle(string $shortTitle = null)
+    public function setShortTitle(?string $shortTitle = null)
     {
         $this->setProperty('shortTitle', $shortTitle);
     }
@@ -216,7 +216,7 @@ class QualificationAward extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAwardType $qualificationAwardType
      */
-    public function setQualificationAwardType(\Arbor\Model\QualificationAwardType $qualificationAwardType = null)
+    public function setQualificationAwardType(?\Arbor\Model\QualificationAwardType $qualificationAwardType = null)
     {
         $this->setProperty('qualificationAwardType', $qualificationAwardType);
     }
@@ -232,7 +232,7 @@ class QualificationAward extends ModelBase
     /**
      * @param bool $isLinearQualification
      */
-    public function setIsLinearQualification(bool $isLinearQualification = null)
+    public function setIsLinearQualification(?bool $isLinearQualification = null)
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }
@@ -248,7 +248,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $qcaAccreditationNumber
      */
-    public function setQcaAccreditationNumber(string $qcaAccreditationNumber = null)
+    public function setQcaAccreditationNumber(?string $qcaAccreditationNumber = null)
     {
         $this->setProperty('qcaAccreditationNumber', $qcaAccreditationNumber);
     }
@@ -264,7 +264,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2014
      */
-    public function setKs4DiscountCode2014(string $ks4DiscountCode2014 = null)
+    public function setKs4DiscountCode2014(?string $ks4DiscountCode2014 = null)
     {
         $this->setProperty('ks4DiscountCode2014', $ks4DiscountCode2014);
     }
@@ -280,7 +280,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2015
      */
-    public function setKs4DiscountCode2015(string $ks4DiscountCode2015 = null)
+    public function setKs4DiscountCode2015(?string $ks4DiscountCode2015 = null)
     {
         $this->setProperty('ks4DiscountCode2015', $ks4DiscountCode2015);
     }
@@ -296,7 +296,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2016
      */
-    public function setKs4DiscountCode2016(string $ks4DiscountCode2016 = null)
+    public function setKs4DiscountCode2016(?string $ks4DiscountCode2016 = null)
     {
         $this->setProperty('ks4DiscountCode2016', $ks4DiscountCode2016);
     }
@@ -312,7 +312,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2017
      */
-    public function setKs4DiscountCode2017(string $ks4DiscountCode2017 = null)
+    public function setKs4DiscountCode2017(?string $ks4DiscountCode2017 = null)
     {
         $this->setProperty('ks4DiscountCode2017', $ks4DiscountCode2017);
     }
@@ -328,7 +328,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $post16DiscountCode
      */
-    public function setPost16DiscountCode(string $post16DiscountCode = null)
+    public function setPost16DiscountCode(?string $post16DiscountCode = null)
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }

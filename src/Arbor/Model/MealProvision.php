@@ -36,7 +36,7 @@ class MealProvision extends ModelBase
      * @return MealProvision[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class MealProvision extends ModelBase
     /**
      * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(\Arbor\Model\Meal $meal = null)
+    public function setMeal(?\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
@@ -94,7 +94,7 @@ class MealProvision extends ModelBase
     /**
      * @param string $mealProvisionName
      */
-    public function setMealProvisionName(string $mealProvisionName = null)
+    public function setMealProvisionName(?string $mealProvisionName = null)
     {
         $this->setProperty('mealProvisionName', $mealProvisionName);
     }
@@ -110,7 +110,7 @@ class MealProvision extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -126,7 +126,7 @@ class MealProvision extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -142,7 +142,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isAbsent
      */
-    public function setIsAbsent(bool $isAbsent = null)
+    public function setIsAbsent(?bool $isAbsent = null)
     {
         $this->setProperty('isAbsent', $isAbsent);
     }
@@ -158,7 +158,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isSchoolHotMeal
      */
-    public function setIsSchoolHotMeal(bool $isSchoolHotMeal = null)
+    public function setIsSchoolHotMeal(?bool $isSchoolHotMeal = null)
     {
         $this->setProperty('isSchoolHotMeal', $isSchoolHotMeal);
     }
@@ -174,7 +174,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isSchoolLightMeal
      */
-    public function setIsSchoolLightMeal(bool $isSchoolLightMeal = null)
+    public function setIsSchoolLightMeal(?bool $isSchoolLightMeal = null)
     {
         $this->setProperty('isSchoolLightMeal', $isSchoolLightMeal);
     }
@@ -190,7 +190,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isSchoolPackedMeal
      */
-    public function setIsSchoolPackedMeal(bool $isSchoolPackedMeal = null)
+    public function setIsSchoolPackedMeal(?bool $isSchoolPackedMeal = null)
     {
         $this->setProperty('isSchoolPackedMeal', $isSchoolPackedMeal);
     }
@@ -206,7 +206,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $isStudentPackedMeal
      */
-    public function setIsStudentPackedMeal(bool $isStudentPackedMeal = null)
+    public function setIsStudentPackedMeal(?bool $isStudentPackedMeal = null)
     {
         $this->setProperty('isStudentPackedMeal', $isStudentPackedMeal);
     }
@@ -222,7 +222,7 @@ class MealProvision extends ModelBase
     /**
      * @param bool $requiresMeal
      */
-    public function setRequiresMeal(bool $requiresMeal = null)
+    public function setRequiresMeal(?bool $requiresMeal = null)
     {
         $this->setProperty('requiresMeal', $requiresMeal);
     }
@@ -238,7 +238,7 @@ class MealProvision extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $copiedToMealProvision
      */
-    public function setCopiedToMealProvision(\Arbor\Model\MealProvision $copiedToMealProvision = null)
+    public function setCopiedToMealProvision(?\Arbor\Model\MealProvision $copiedToMealProvision = null)
     {
         $this->setProperty('copiedToMealProvision', $copiedToMealProvision);
     }

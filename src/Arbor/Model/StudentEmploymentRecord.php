@@ -30,7 +30,7 @@ class StudentEmploymentRecord extends ModelBase
      * @return StudentEmploymentRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,7 +88,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param \Arbor\Model\Employer $employer
      */
-    public function setEmployer(\Arbor\Model\Employer $employer = null)
+    public function setEmployer(?\Arbor\Model\Employer $employer = null)
     {
         $this->setProperty('employer', $employer);
     }
@@ -104,7 +104,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -120,7 +120,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -136,7 +136,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param string $hoursPerWeek
      */
-    public function setHoursPerWeek(string $hoursPerWeek = null)
+    public function setHoursPerWeek(?string $hoursPerWeek = null)
     {
         $this->setProperty('hoursPerWeek', $hoursPerWeek);
     }
@@ -152,7 +152,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param \DateTime $informationCollectedDate
      */
-    public function setInformationCollectedDate(\DateTime $informationCollectedDate = null)
+    public function setInformationCollectedDate(?\DateTime $informationCollectedDate = null)
     {
         $this->setProperty('informationCollectedDate', $informationCollectedDate);
     }
@@ -168,7 +168,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param \Arbor\Model\EmploymentRecordType $employmentRecordType
      */
-    public function setEmploymentRecordType(\Arbor\Model\EmploymentRecordType $employmentRecordType = null)
+    public function setEmploymentRecordType(?\Arbor\Model\EmploymentRecordType $employmentRecordType = null)
     {
         $this->setProperty('employmentRecordType', $employmentRecordType);
     }
@@ -184,7 +184,7 @@ class StudentEmploymentRecord extends ModelBase
     /**
      * @param string $jobTitle
      */
-    public function setJobTitle(string $jobTitle = null)
+    public function setJobTitle(?string $jobTitle = null)
     {
         $this->setProperty('jobTitle', $jobTitle);
     }

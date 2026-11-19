@@ -20,7 +20,7 @@ class BehaviourDefaultWatcher extends ModelBase
      * @return BehaviourDefaultWatcher[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
+    public function setBehaviour(?\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
@@ -78,7 +78,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent(string $relationToStudent = null)
+    public function setRelationToStudent(?string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }
@@ -94,7 +94,7 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

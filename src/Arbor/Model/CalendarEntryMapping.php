@@ -26,7 +26,7 @@ class CalendarEntryMapping extends ModelBase
      * @return CalendarEntryMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\Arbor\Model\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -84,7 +84,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -100,7 +100,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -116,7 +116,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $mapped
      */
-    public function setMapped(\Arbor\Model\ModelBase $mapped = null)
+    public function setMapped(?\Arbor\Model\ModelBase $mapped = null)
     {
         $this->setProperty('mapped', $mapped);
     }
@@ -132,7 +132,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param \Arbor\Model\Calendar $calendar
      */
-    public function setCalendar(\Arbor\Model\Calendar $calendar = null)
+    public function setCalendar(?\Arbor\Model\Calendar $calendar = null)
     {
         $this->setProperty('calendar', $calendar);
     }
@@ -148,7 +148,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param bool $timeslotBlocked
      */
-    public function setTimeslotBlocked(bool $timeslotBlocked = null)
+    public function setTimeslotBlocked(?bool $timeslotBlocked = null)
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }

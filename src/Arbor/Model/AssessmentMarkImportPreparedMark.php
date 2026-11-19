@@ -30,7 +30,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
      * @return AssessmentMarkImportPreparedMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMarkImportJob $importJob
      */
-    public function setImportJob(\Arbor\Model\AssessmentMarkImportJob $importJob = null)
+    public function setImportJob(?\Arbor\Model\AssessmentMarkImportJob $importJob = null)
     {
         $this->setProperty('importJob', $importJob);
     }
@@ -88,7 +88,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentMarkImportJobColumn $importJobColumn
      */
-    public function setImportJobColumn(\Arbor\Model\AssessmentMarkImportJobColumn $importJobColumn = null)
+    public function setImportJobColumn(?\Arbor\Model\AssessmentMarkImportJobColumn $importJobColumn = null)
     {
         $this->setProperty('importJobColumn', $importJobColumn);
     }
@@ -104,7 +104,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param string $identifierValue
      */
-    public function setIdentifierValue(string $identifierValue = null)
+    public function setIdentifierValue(?string $identifierValue = null)
     {
         $this->setProperty('identifierValue', $identifierValue);
     }
@@ -120,7 +120,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -136,7 +136,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param string $rawValue
      */
-    public function setRawValue(string $rawValue = null)
+    public function setRawValue(?string $rawValue = null)
     {
         $this->setProperty('rawValue', $rawValue);
     }
@@ -152,7 +152,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param string $gradeValue
      */
-    public function setGradeValue(string $gradeValue = null)
+    public function setGradeValue(?string $gradeValue = null)
     {
         $this->setProperty('gradeValue', $gradeValue);
     }
@@ -168,7 +168,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentGrade $assessmentGrade
      */
-    public function setAssessmentGrade(\Arbor\Model\AssessmentGrade $assessmentGrade = null)
+    public function setAssessmentGrade(?\Arbor\Model\AssessmentGrade $assessmentGrade = null)
     {
         $this->setProperty('assessmentGrade', $assessmentGrade);
     }
@@ -184,7 +184,7 @@ class AssessmentMarkImportPreparedMark extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }

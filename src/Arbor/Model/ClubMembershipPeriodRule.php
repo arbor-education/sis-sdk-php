@@ -20,7 +20,7 @@ class ClubMembershipPeriodRule extends ModelBase
      * @return ClubMembershipPeriodRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param string $ruleIdentifier
      */
-    public function setRuleIdentifier(string $ruleIdentifier = null)
+    public function setRuleIdentifier(?string $ruleIdentifier = null)
     {
         $this->setProperty('ruleIdentifier', $ruleIdentifier);
     }
@@ -78,7 +78,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param string $ruleValue
      */
-    public function setRuleValue(string $ruleValue = null)
+    public function setRuleValue(?string $ruleValue = null)
     {
         $this->setProperty('ruleValue', $ruleValue);
     }
@@ -94,7 +94,7 @@ class ClubMembershipPeriodRule extends ModelBase
     /**
      * @param \Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod
      */
-    public function setClubMembershipPeriod(\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
+    public function setClubMembershipPeriod(?\Arbor\Model\ClubMembershipPeriod $clubMembershipPeriod = null)
     {
         $this->setProperty('clubMembershipPeriod', $clubMembershipPeriod);
     }

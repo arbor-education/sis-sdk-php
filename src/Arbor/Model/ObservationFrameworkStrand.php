@@ -18,7 +18,7 @@ class ObservationFrameworkStrand extends ModelBase
      * @return ObservationFrameworkStrand[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ObservationFrameworkStrand extends ModelBase
     /**
      * @param \Arbor\Model\ObservationFramework $observationFramework
      */
-    public function setObservationFramework(\Arbor\Model\ObservationFramework $observationFramework = null)
+    public function setObservationFramework(?\Arbor\Model\ObservationFramework $observationFramework = null)
     {
         $this->setProperty('observationFramework', $observationFramework);
     }
@@ -76,7 +76,7 @@ class ObservationFrameworkStrand extends ModelBase
     /**
      * @param \Arbor\Model\ObservationStrand $observationStrand
      */
-    public function setObservationStrand(\Arbor\Model\ObservationStrand $observationStrand = null)
+    public function setObservationStrand(?\Arbor\Model\ObservationStrand $observationStrand = null)
     {
         $this->setProperty('observationStrand', $observationStrand);
     }

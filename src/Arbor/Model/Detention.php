@@ -42,7 +42,7 @@ class Detention extends ModelBase
      * @return Detention[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -100,7 +100,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\Staff $issuedByStaff
      */
-    public function setIssuedByStaff(\Arbor\Model\Staff $issuedByStaff = null)
+    public function setIssuedByStaff(?\Arbor\Model\Staff $issuedByStaff = null)
     {
         $this->setProperty('issuedByStaff', $issuedByStaff);
     }
@@ -116,7 +116,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\DetentionSession $detentionSession
      */
-    public function setDetentionSession(\Arbor\Model\DetentionSession $detentionSession = null)
+    public function setDetentionSession(?\Arbor\Model\DetentionSession $detentionSession = null)
     {
         $this->setProperty('detentionSession', $detentionSession);
     }
@@ -132,7 +132,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\DetentionType $detentionType
      */
-    public function setDetentionType(\Arbor\Model\DetentionType $detentionType = null)
+    public function setDetentionType(?\Arbor\Model\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
@@ -148,7 +148,7 @@ class Detention extends ModelBase
     /**
      * @param \DateTime $decisionDatetime
      */
-    public function setDecisionDatetime(\DateTime $decisionDatetime = null)
+    public function setDecisionDatetime(?\DateTime $decisionDatetime = null)
     {
         $this->setProperty('decisionDatetime', $decisionDatetime);
     }
@@ -164,7 +164,7 @@ class Detention extends ModelBase
     /**
      * @param \DateTime $notifiedStudentDatetime
      */
-    public function setNotifiedStudentDatetime(\DateTime $notifiedStudentDatetime = null)
+    public function setNotifiedStudentDatetime(?\DateTime $notifiedStudentDatetime = null)
     {
         $this->setProperty('notifiedStudentDatetime', $notifiedStudentDatetime);
     }
@@ -180,7 +180,7 @@ class Detention extends ModelBase
     /**
      * @param \DateTime $notifiedGuardiansDatetime
      */
-    public function setNotifiedGuardiansDatetime(\DateTime $notifiedGuardiansDatetime = null)
+    public function setNotifiedGuardiansDatetime(?\DateTime $notifiedGuardiansDatetime = null)
     {
         $this->setProperty('notifiedGuardiansDatetime', $notifiedGuardiansDatetime);
     }
@@ -196,7 +196,7 @@ class Detention extends ModelBase
     /**
      * @param \DateTime $notifiedTutorsDatetime
      */
-    public function setNotifiedTutorsDatetime(\DateTime $notifiedTutorsDatetime = null)
+    public function setNotifiedTutorsDatetime(?\DateTime $notifiedTutorsDatetime = null)
     {
         $this->setProperty('notifiedTutorsDatetime', $notifiedTutorsDatetime);
     }
@@ -212,7 +212,7 @@ class Detention extends ModelBase
     /**
      * @param string $detentionDuration
      */
-    public function setDetentionDuration(string $detentionDuration = null)
+    public function setDetentionDuration(?string $detentionDuration = null)
     {
         $this->setProperty('detentionDuration', $detentionDuration);
     }
@@ -228,7 +228,7 @@ class Detention extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark(string $attendanceMark = null)
+    public function setAttendanceMark(?string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -244,7 +244,7 @@ class Detention extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -260,7 +260,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\Behaviour $reasonForDetention
      */
-    public function setReasonForDetention(\Arbor\Model\Behaviour $reasonForDetention = null)
+    public function setReasonForDetention(?\Arbor\Model\Behaviour $reasonForDetention = null)
     {
         $this->setProperty('reasonForDetention', $reasonForDetention);
     }
@@ -276,7 +276,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $absenteesDetentionAction
      */
-    public function setAbsenteesDetentionAction(\Arbor\Model\ModelBase $absenteesDetentionAction = null)
+    public function setAbsenteesDetentionAction(?\Arbor\Model\ModelBase $absenteesDetentionAction = null)
     {
         $this->setProperty('absenteesDetentionAction', $absenteesDetentionAction);
     }
@@ -292,7 +292,7 @@ class Detention extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\Arbor\Model\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }

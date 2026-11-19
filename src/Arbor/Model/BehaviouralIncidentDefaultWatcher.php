@@ -22,7 +22,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      * @return BehaviouralIncidentDefaultWatcher[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param int $levelOfIncident
      */
-    public function setLevelOfIncident(int $levelOfIncident = null)
+    public function setLevelOfIncident(?int $levelOfIncident = null)
     {
         $this->setProperty('levelOfIncident', $levelOfIncident);
     }
@@ -81,7 +81,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      * @param \Arbor\Model\BehaviouralIncidentLevelWorkflow
      * $behaviouralIncidentLevelWorkflow
      */
-    public function setBehaviouralIncidentLevelWorkflow(\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    public function setBehaviouralIncidentLevelWorkflow(?\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
     {
         $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
@@ -97,7 +97,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent(string $relationToStudent = null)
+    public function setRelationToStudent(?string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }
@@ -113,7 +113,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

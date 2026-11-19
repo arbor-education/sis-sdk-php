@@ -20,7 +20,7 @@ class AssessmentFrameworkAssessment extends ModelBase
      * @return AssessmentFrameworkAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $assessment
      */
-    public function setAssessment(\Arbor\Model\ModelBase $assessment = null)
+    public function setAssessment(?\Arbor\Model\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -78,7 +78,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted(int $stepsCompleted = null)
+    public function setStepsCompleted(?int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -94,7 +94,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param bool $setupCompleted
      */
-    public function setSetupCompleted(bool $setupCompleted = null)
+    public function setSetupCompleted(?bool $setupCompleted = null)
     {
         $this->setProperty('setupCompleted', $setupCompleted);
     }

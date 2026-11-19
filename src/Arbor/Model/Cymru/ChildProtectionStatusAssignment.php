@@ -18,7 +18,7 @@ class ChildProtectionStatusAssignment extends ModelBase
      * @return ChildProtectionStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ChildProtectionStatusAssignment extends ModelBase
     /**
      * @param \Arbor\Model\LocalAuthority $responsibleLocalAuthority
      */
-    public function setResponsibleLocalAuthority(\Arbor\Model\LocalAuthority $responsibleLocalAuthority = null)
+    public function setResponsibleLocalAuthority(?\Arbor\Model\LocalAuthority $responsibleLocalAuthority = null)
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }

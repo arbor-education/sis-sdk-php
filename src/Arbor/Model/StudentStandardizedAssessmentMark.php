@@ -34,7 +34,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
      * @return StudentStandardizedAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -92,7 +92,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessment $standardizedAssessment
      */
-    public function setStandardizedAssessment(\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
+    public function setStandardizedAssessment(?\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
     {
         $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
@@ -108,7 +108,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\StudentStandardizedAssessment $studentStandardizedAssessment
      */
-    public function setStudentStandardizedAssessment(\Arbor\Model\StudentStandardizedAssessment $studentStandardizedAssessment = null)
+    public function setStudentStandardizedAssessment(?\Arbor\Model\StudentStandardizedAssessment $studentStandardizedAssessment = null)
     {
         $this->setProperty('studentStandardizedAssessment', $studentStandardizedAssessment);
     }
@@ -124,7 +124,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param int $markInteger
      */
-    public function setMarkInteger(int $markInteger = null)
+    public function setMarkInteger(?int $markInteger = null)
     {
         $this->setProperty('markInteger', $markInteger);
     }
@@ -140,7 +140,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param float $markDecimal
      */
-    public function setMarkDecimal(float $markDecimal = null)
+    public function setMarkDecimal(?float $markDecimal = null)
     {
         $this->setProperty('markDecimal', $markDecimal);
     }
@@ -156,7 +156,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param string $markComment
      */
-    public function setMarkComment(string $markComment = null)
+    public function setMarkComment(?string $markComment = null)
     {
         $this->setProperty('markComment', $markComment);
     }
@@ -172,7 +172,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Grade $markGrade
      */
-    public function setMarkGrade(\Arbor\Model\Grade $markGrade = null)
+    public function setMarkGrade(?\Arbor\Model\Grade $markGrade = null)
     {
         $this->setProperty('markGrade', $markGrade);
     }
@@ -188,7 +188,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \DateTime $assessmentDate
      */
-    public function setAssessmentDate(\DateTime $assessmentDate = null)
+    public function setAssessmentDate(?\DateTime $assessmentDate = null)
     {
         $this->setProperty('assessmentDate', $assessmentDate);
     }
@@ -204,7 +204,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
@@ -220,7 +220,7 @@ class StudentStandardizedAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Staff $completedStaff
      */
-    public function setCompletedStaff(\Arbor\Model\Staff $completedStaff = null)
+    public function setCompletedStaff(?\Arbor\Model\Staff $completedStaff = null)
     {
         $this->setProperty('completedStaff', $completedStaff);
     }

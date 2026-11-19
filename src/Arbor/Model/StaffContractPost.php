@@ -38,7 +38,7 @@ class StaffContractPost extends ModelBase
      * @return StaffContractPost[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \Arbor\Model\StaffContract $staffContract
      */
-    public function setStaffContract(\Arbor\Model\StaffContract $staffContract = null)
+    public function setStaffContract(?\Arbor\Model\StaffContract $staffContract = null)
     {
         $this->setProperty('staffContract', $staffContract);
     }
@@ -96,7 +96,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \Arbor\Model\Position $position
      */
-    public function setPosition(\Arbor\Model\Position $position = null)
+    public function setPosition(?\Arbor\Model\Position $position = null)
     {
         $this->setProperty('position', $position);
     }
@@ -112,7 +112,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param string $postReference
      */
-    public function setPostReference(string $postReference = null)
+    public function setPostReference(?string $postReference = null)
     {
         $this->setProperty('postReference', $postReference);
     }
@@ -128,7 +128,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param string $jobTitle
      */
-    public function setJobTitle(string $jobTitle = null)
+    public function setJobTitle(?string $jobTitle = null)
     {
         $this->setProperty('jobTitle', $jobTitle);
     }
@@ -144,7 +144,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \DateTime $offeredDate
      */
-    public function setOfferedDate(\DateTime $offeredDate = null)
+    public function setOfferedDate(?\DateTime $offeredDate = null)
     {
         $this->setProperty('offeredDate', $offeredDate);
     }
@@ -160,7 +160,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \DateTime $acceptedDate
      */
-    public function setAcceptedDate(\DateTime $acceptedDate = null)
+    public function setAcceptedDate(?\DateTime $acceptedDate = null)
     {
         $this->setProperty('acceptedDate', $acceptedDate);
     }
@@ -176,7 +176,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -192,7 +192,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \Arbor\Model\StaffContractPostStartReason $startReason
      */
-    public function setStartReason(\Arbor\Model\StaffContractPostStartReason $startReason = null)
+    public function setStartReason(?\Arbor\Model\StaffContractPostStartReason $startReason = null)
     {
         $this->setProperty('startReason', $startReason);
     }
@@ -208,7 +208,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \DateTime $expectedEndDate
      */
-    public function setExpectedEndDate(\DateTime $expectedEndDate = null)
+    public function setExpectedEndDate(?\DateTime $expectedEndDate = null)
     {
         $this->setProperty('expectedEndDate', $expectedEndDate);
     }
@@ -224,7 +224,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \Arbor\Model\StaffContractPostEndReason $expectedEndReason
      */
-    public function setExpectedEndReason(\Arbor\Model\StaffContractPostEndReason $expectedEndReason = null)
+    public function setExpectedEndReason(?\Arbor\Model\StaffContractPostEndReason $expectedEndReason = null)
     {
         $this->setProperty('expectedEndReason', $expectedEndReason);
     }
@@ -240,7 +240,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -256,7 +256,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param \Arbor\Model\StaffContractPostEndReason $endReason
      */
-    public function setEndReason(\Arbor\Model\StaffContractPostEndReason $endReason = null)
+    public function setEndReason(?\Arbor\Model\StaffContractPostEndReason $endReason = null)
     {
         $this->setProperty('endReason', $endReason);
     }

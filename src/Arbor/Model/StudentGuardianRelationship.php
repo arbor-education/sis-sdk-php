@@ -34,7 +34,7 @@ class StudentGuardianRelationship extends ModelBase
      * @return StudentGuardianRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -92,7 +92,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param \Arbor\Model\Guardian $guardian
      */
-    public function setGuardian(\Arbor\Model\Guardian $guardian = null)
+    public function setGuardian(?\Arbor\Model\Guardian $guardian = null)
     {
         $this->setProperty('guardian', $guardian);
     }
@@ -108,7 +108,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param \Arbor\Model\GuardianRelationshipType $guardianRelationshipType
      */
-    public function setGuardianRelationshipType(\Arbor\Model\GuardianRelationshipType $guardianRelationshipType = null)
+    public function setGuardianRelationshipType(?\Arbor\Model\GuardianRelationshipType $guardianRelationshipType = null)
     {
         $this->setProperty('guardianRelationshipType', $guardianRelationshipType);
     }
@@ -124,7 +124,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isLegalGuardian
      */
-    public function setIsLegalGuardian(bool $isLegalGuardian = null)
+    public function setIsLegalGuardian(?bool $isLegalGuardian = null)
     {
         $this->setProperty('isLegalGuardian', $isLegalGuardian);
     }
@@ -140,7 +140,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isPrimaryGuardian
      */
-    public function setIsPrimaryGuardian(bool $isPrimaryGuardian = null)
+    public function setIsPrimaryGuardian(?bool $isPrimaryGuardian = null)
     {
         $this->setProperty('isPrimaryGuardian', $isPrimaryGuardian);
     }
@@ -156,7 +156,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $isAuthorizedToCollect
      */
-    public function setIsAuthorizedToCollect(bool $isAuthorizedToCollect = null)
+    public function setIsAuthorizedToCollect(?bool $isAuthorizedToCollect = null)
     {
         $this->setProperty('isAuthorizedToCollect', $isAuthorizedToCollect);
     }
@@ -172,7 +172,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param string $emergencyContactPriority
      */
-    public function setEmergencyContactPriority(string $emergencyContactPriority = null)
+    public function setEmergencyContactPriority(?string $emergencyContactPriority = null)
     {
         $this->setProperty('emergencyContactPriority', $emergencyContactPriority);
     }
@@ -188,7 +188,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $unsubscribedFromComms
      */
-    public function setUnsubscribedFromComms(bool $unsubscribedFromComms = null)
+    public function setUnsubscribedFromComms(?bool $unsubscribedFromComms = null)
     {
         $this->setProperty('unsubscribedFromComms', $unsubscribedFromComms);
     }
@@ -204,7 +204,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param bool $guardianUserAuthorized
      */
-    public function setGuardianUserAuthorized(bool $guardianUserAuthorized = null)
+    public function setGuardianUserAuthorized(?bool $guardianUserAuthorized = null)
     {
         $this->setProperty('guardianUserAuthorized', $guardianUserAuthorized);
     }
@@ -220,7 +220,7 @@ class StudentGuardianRelationship extends ModelBase
     /**
      * @param string $accessNotes
      */
-    public function setAccessNotes(string $accessNotes = null)
+    public function setAccessNotes(?string $accessNotes = null)
     {
         $this->setProperty('accessNotes', $accessNotes);
     }

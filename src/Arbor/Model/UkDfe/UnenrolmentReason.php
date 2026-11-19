@@ -18,7 +18,7 @@ class UnenrolmentReason extends ModelBase
      * @return UnenrolmentReason[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class UnenrolmentReason extends ModelBase
     /**
      * @param string $d00206
      */
-    public function setD00206(string $d00206 = null)
+    public function setD00206(?string $d00206 = null)
     {
         $this->setProperty('d00206', $d00206);
     }

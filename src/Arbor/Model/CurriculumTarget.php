@@ -22,7 +22,7 @@ class CurriculumTarget extends ModelBase
      * @return CurriculumTarget[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumTargetSet $curriculumTargetSet
      */
-    public function setCurriculumTargetSet(\Arbor\Model\CurriculumTargetSet $curriculumTargetSet = null)
+    public function setCurriculumTargetSet(?\Arbor\Model\CurriculumTargetSet $curriculumTargetSet = null)
     {
         $this->setProperty('curriculumTargetSet', $curriculumTargetSet);
     }
@@ -80,7 +80,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param int $academicYearIndex
      */
-    public function setAcademicYearIndex(int $academicYearIndex = null)
+    public function setAcademicYearIndex(?int $academicYearIndex = null)
     {
         $this->setProperty('academicYearIndex', $academicYearIndex);
     }
@@ -96,7 +96,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param float $academicYearPoint
      */
-    public function setAcademicYearPoint(float $academicYearPoint = null)
+    public function setAcademicYearPoint(?float $academicYearPoint = null)
     {
         $this->setProperty('academicYearPoint', $academicYearPoint);
     }
@@ -112,7 +112,7 @@ class CurriculumTarget extends ModelBase
     /**
      * @param float $target
      */
-    public function setTarget(float $target = null)
+    public function setTarget(?float $target = null)
     {
         $this->setProperty('target', $target);
     }

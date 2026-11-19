@@ -22,7 +22,7 @@ class StudentStandardizedAssessment extends ModelBase
      * @return StudentStandardizedAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class StudentStandardizedAssessment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -81,7 +81,7 @@ class StudentStandardizedAssessment extends ModelBase
      * @param \Arbor\Model\StandardizedAssessmentTemplate
      * $standardizedAssessmentTemplate
      */
-    public function setStandardizedAssessmentTemplate(\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
+    public function setStandardizedAssessmentTemplate(?\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
         $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }
@@ -97,7 +97,7 @@ class StudentStandardizedAssessment extends ModelBase
     /**
      * @param \DateTime $assessmentDate
      */
-    public function setAssessmentDate(\DateTime $assessmentDate = null)
+    public function setAssessmentDate(?\DateTime $assessmentDate = null)
     {
         $this->setProperty('assessmentDate', $assessmentDate);
     }
@@ -113,7 +113,7 @@ class StudentStandardizedAssessment extends ModelBase
     /**
      * @param \DateTime $completedDate
      */
-    public function setCompletedDate(\DateTime $completedDate = null)
+    public function setCompletedDate(?\DateTime $completedDate = null)
     {
         $this->setProperty('completedDate', $completedDate);
     }

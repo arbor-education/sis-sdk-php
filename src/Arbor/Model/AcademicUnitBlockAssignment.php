@@ -18,7 +18,7 @@ class AcademicUnitBlockAssignment extends ModelBase
      * @return AcademicUnitBlockAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicUnitBlockAssignment extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(?\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -76,7 +76,7 @@ class AcademicUnitBlockAssignment extends ModelBase
     /**
      * @param string $blockName
      */
-    public function setBlockName(string $blockName = null)
+    public function setBlockName(?string $blockName = null)
     {
         $this->setProperty('blockName', $blockName);
     }

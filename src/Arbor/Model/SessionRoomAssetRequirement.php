@@ -20,7 +20,7 @@ class SessionRoomAssetRequirement extends ModelBase
      * @return SessionRoomAssetRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param \Arbor\Model\Session $session
      */
-    public function setSession(\Arbor\Model\Session $session = null)
+    public function setSession(?\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -78,7 +78,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param \Arbor\Model\RoomAsset $roomAsset
      */
-    public function setRoomAsset(\Arbor\Model\RoomAsset $roomAsset = null)
+    public function setRoomAsset(?\Arbor\Model\RoomAsset $roomAsset = null)
     {
         $this->setProperty('roomAsset', $roomAsset);
     }
@@ -94,7 +94,7 @@ class SessionRoomAssetRequirement extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity = null)
+    public function setQuantity(?int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }

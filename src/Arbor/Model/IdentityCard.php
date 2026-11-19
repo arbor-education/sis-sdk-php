@@ -24,7 +24,7 @@ class IdentityCard extends ModelBase
      * @return IdentityCard[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class IdentityCard extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $owner
      */
-    public function setOwner(\Arbor\Model\ModelBase $owner = null)
+    public function setOwner(?\Arbor\Model\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
@@ -82,7 +82,7 @@ class IdentityCard extends ModelBase
     /**
      * @param string $cardNumber
      */
-    public function setCardNumber(string $cardNumber = null)
+    public function setCardNumber(?string $cardNumber = null)
     {
         $this->setProperty('cardNumber', $cardNumber);
     }
@@ -98,7 +98,7 @@ class IdentityCard extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -114,7 +114,7 @@ class IdentityCard extends ModelBase
     /**
      * @param \DateTime $issuedDatetime
      */
-    public function setIssuedDatetime(\DateTime $issuedDatetime = null)
+    public function setIssuedDatetime(?\DateTime $issuedDatetime = null)
     {
         $this->setProperty('issuedDatetime', $issuedDatetime);
     }
@@ -130,7 +130,7 @@ class IdentityCard extends ModelBase
     /**
      * @param \DateTime $lostDatetime
      */
-    public function setLostDatetime(\DateTime $lostDatetime = null)
+    public function setLostDatetime(?\DateTime $lostDatetime = null)
     {
         $this->setProperty('lostDatetime', $lostDatetime);
     }

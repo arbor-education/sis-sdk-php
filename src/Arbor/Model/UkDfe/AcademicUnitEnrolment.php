@@ -18,7 +18,7 @@ class AcademicUnitEnrolment extends ModelBase
      * @return AcademicUnitEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicUnitEnrolment extends ModelBase
     /**
      * @param int $plannedEepHours
      */
-    public function setPlannedEepHours(int $plannedEepHours = null)
+    public function setPlannedEepHours(?int $plannedEepHours = null)
     {
         $this->setProperty('plannedEepHours', $plannedEepHours);
     }

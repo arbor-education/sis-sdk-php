@@ -18,7 +18,7 @@ class InAppMessageThread extends ModelBase
      * @return InAppMessageThread[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class InAppMessageThread extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\Arbor\Model\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -76,7 +76,7 @@ class InAppMessageThread extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }

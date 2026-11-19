@@ -24,7 +24,7 @@ class ProgrammeInstance extends ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\LearningActivityProvider $learningActivityProvider
      */
-    public function setLearningActivityProvider(\Arbor\Model\Cymru\LearningActivityProvider $learningActivityProvider = null)
+    public function setLearningActivityProvider(?\Arbor\Model\Cymru\LearningActivityProvider $learningActivityProvider = null)
     {
         $this->setProperty('learningActivityProvider', $learningActivityProvider);
     }
@@ -82,7 +82,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours(int $plannedLearningHours = null)
+    public function setPlannedLearningHours(?int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -98,7 +98,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(?int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }
@@ -114,7 +114,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $defaultLearnerActivityThroughWelshMedium
      */
-    public function setDefaultLearnerActivityThroughWelshMedium(string $defaultLearnerActivityThroughWelshMedium = null)
+    public function setDefaultLearnerActivityThroughWelshMedium(?string $defaultLearnerActivityThroughWelshMedium = null)
     {
         $this->setProperty('defaultLearnerActivityThroughWelshMedium', $defaultLearnerActivityThroughWelshMedium);
     }

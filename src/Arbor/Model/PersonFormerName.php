@@ -26,7 +26,7 @@ class PersonFormerName extends ModelBase
      * @return PersonFormerName[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Arbor\Model\Person $person = null)
+    public function setPerson(?\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -84,7 +84,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param \DateTime $fromDate
      */
-    public function setFromDate(\DateTime $fromDate = null)
+    public function setFromDate(?\DateTime $fromDate = null)
     {
         $this->setProperty('fromDate', $fromDate);
     }
@@ -100,7 +100,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -116,7 +116,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalFirstName
      */
-    public function setLegalFirstName(string $legalFirstName = null)
+    public function setLegalFirstName(?string $legalFirstName = null)
     {
         $this->setProperty('legalFirstName', $legalFirstName);
     }
@@ -132,7 +132,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalMiddleNames
      */
-    public function setLegalMiddleNames(string $legalMiddleNames = null)
+    public function setLegalMiddleNames(?string $legalMiddleNames = null)
     {
         $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
@@ -148,7 +148,7 @@ class PersonFormerName extends ModelBase
     /**
      * @param string $legalLastName
      */
-    public function setLegalLastName(string $legalLastName = null)
+    public function setLegalLastName(?string $legalLastName = null)
     {
         $this->setProperty('legalLastName', $legalLastName);
     }

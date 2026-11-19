@@ -54,7 +54,7 @@ class Staff extends ModelBase
      * @return Staff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -96,7 +96,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Arbor\Model\Person $person = null)
+    public function setPerson(?\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -112,7 +112,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\Ethnicity $ethnicity
      */
-    public function setEthnicity(\Arbor\Model\Ethnicity $ethnicity = null)
+    public function setEthnicity(?\Arbor\Model\Ethnicity $ethnicity = null)
     {
         $this->setProperty('ethnicity', $ethnicity);
     }
@@ -128,7 +128,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\Religion $religion
      */
-    public function setReligion(\Arbor\Model\Religion $religion = null)
+    public function setReligion(?\Arbor\Model\Religion $religion = null)
     {
         $this->setProperty('religion', $religion);
     }
@@ -144,7 +144,7 @@ class Staff extends ModelBase
     /**
      * @param string $bloodGroup
      */
-    public function setBloodGroup(string $bloodGroup = null)
+    public function setBloodGroup(?string $bloodGroup = null)
     {
         $this->setProperty('bloodGroup', $bloodGroup);
     }
@@ -160,7 +160,7 @@ class Staff extends ModelBase
     /**
      * @param string $staffNumber
      */
-    public function setStaffNumber(string $staffNumber = null)
+    public function setStaffNumber(?string $staffNumber = null)
     {
         $this->setProperty('staffNumber', $staffNumber);
     }
@@ -176,7 +176,7 @@ class Staff extends ModelBase
     /**
      * @param \DateTime $continuousServiceStartDate
      */
-    public function setContinuousServiceStartDate(\DateTime $continuousServiceStartDate = null)
+    public function setContinuousServiceStartDate(?\DateTime $continuousServiceStartDate = null)
     {
         $this->setProperty('continuousServiceStartDate', $continuousServiceStartDate);
     }
@@ -192,7 +192,7 @@ class Staff extends ModelBase
     /**
      * @param string $zendeskUser
      */
-    public function setZendeskUser(string $zendeskUser = null)
+    public function setZendeskUser(?string $zendeskUser = null)
     {
         $this->setProperty('zendeskUser', $zendeskUser);
     }
@@ -208,7 +208,7 @@ class Staff extends ModelBase
     /**
      * @param string $timetableAbbreviation
      */
-    public function setTimetableAbbreviation(string $timetableAbbreviation = null)
+    public function setTimetableAbbreviation(?string $timetableAbbreviation = null)
     {
         $this->setProperty('timetableAbbreviation', $timetableAbbreviation);
     }
@@ -224,7 +224,7 @@ class Staff extends ModelBase
     /**
      * @param string $legacySystemId
      */
-    public function setLegacySystemId(string $legacySystemId = null)
+    public function setLegacySystemId(?string $legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
     }
@@ -240,7 +240,7 @@ class Staff extends ModelBase
     /**
      * @param string $externalPersonId
      */
-    public function setExternalPersonId(string $externalPersonId = null)
+    public function setExternalPersonId(?string $externalPersonId = null)
     {
         $this->setProperty('externalPersonId', $externalPersonId);
     }
@@ -256,7 +256,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\DisabilityStatus $disabilityStatus
      */
-    public function setDisabilityStatus(\Arbor\Model\DisabilityStatus $disabilityStatus = null)
+    public function setDisabilityStatus(?\Arbor\Model\DisabilityStatus $disabilityStatus = null)
     {
         $this->setProperty('disabilityStatus', $disabilityStatus);
     }
@@ -272,7 +272,7 @@ class Staff extends ModelBase
     /**
      * @param bool $includeInCover
      */
-    public function setIncludeInCover(bool $includeInCover = null)
+    public function setIncludeInCover(?bool $includeInCover = null)
     {
         $this->setProperty('includeInCover', $includeInCover);
     }
@@ -288,7 +288,7 @@ class Staff extends ModelBase
     /**
      * @param bool $eligibleForSchoolWorkforceReturn
      */
-    public function setEligibleForSchoolWorkforceReturn(bool $eligibleForSchoolWorkforceReturn = null)
+    public function setEligibleForSchoolWorkforceReturn(?bool $eligibleForSchoolWorkforceReturn = null)
     {
         $this->setProperty('eligibleForSchoolWorkforceReturn', $eligibleForSchoolWorkforceReturn);
     }
@@ -304,7 +304,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherStatus
      */
-    public function setQualifiedTeacherStatus(bool $qualifiedTeacherStatus = null)
+    public function setQualifiedTeacherStatus(?bool $qualifiedTeacherStatus = null)
     {
         $this->setProperty('qualifiedTeacherStatus', $qualifiedTeacherStatus);
     }
@@ -320,7 +320,7 @@ class Staff extends ModelBase
     /**
      * @param bool $qualifiedTeacherLearningAndSkillsStatus
      */
-    public function setQualifiedTeacherLearningAndSkillsStatus(bool $qualifiedTeacherLearningAndSkillsStatus = null)
+    public function setQualifiedTeacherLearningAndSkillsStatus(?bool $qualifiedTeacherLearningAndSkillsStatus = null)
     {
         $this->setProperty('qualifiedTeacherLearningAndSkillsStatus', $qualifiedTeacherLearningAndSkillsStatus);
     }
@@ -336,7 +336,7 @@ class Staff extends ModelBase
     /**
      * @param bool $earlyYearsTeacherStatus
      */
-    public function setEarlyYearsTeacherStatus(bool $earlyYearsTeacherStatus = null)
+    public function setEarlyYearsTeacherStatus(?bool $earlyYearsTeacherStatus = null)
     {
         $this->setProperty('earlyYearsTeacherStatus', $earlyYearsTeacherStatus);
     }
@@ -352,7 +352,7 @@ class Staff extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute
      */
-    public function setQualifiedTeacherRoute(\Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
+    public function setQualifiedTeacherRoute(?\Arbor\Model\UkDfe\QualifiedTeacherRoute $qualifiedTeacherRoute = null)
     {
         $this->setProperty('qualifiedTeacherRoute', $qualifiedTeacherRoute);
     }
@@ -368,7 +368,7 @@ class Staff extends ModelBase
     /**
      * @param bool $hltaStatus
      */
-    public function setHltaStatus(bool $hltaStatus = null)
+    public function setHltaStatus(?bool $hltaStatus = null)
     {
         $this->setProperty('hltaStatus', $hltaStatus);
     }
@@ -384,7 +384,7 @@ class Staff extends ModelBase
     /**
      * @param \DateTime $newlyQualifiedTeacherDate
      */
-    public function setNewlyQualifiedTeacherDate(\DateTime $newlyQualifiedTeacherDate = null)
+    public function setNewlyQualifiedTeacherDate(?\DateTime $newlyQualifiedTeacherDate = null)
     {
         $this->setProperty('newlyQualifiedTeacherDate', $newlyQualifiedTeacherDate);
     }
@@ -400,7 +400,7 @@ class Staff extends ModelBase
     /**
      * @param string $sltStatusForSwc
      */
-    public function setSltStatusForSwc(string $sltStatusForSwc = null)
+    public function setSltStatusForSwc(?string $sltStatusForSwc = null)
     {
         $this->setProperty('sltStatusForSwc', $sltStatusForSwc);
     }

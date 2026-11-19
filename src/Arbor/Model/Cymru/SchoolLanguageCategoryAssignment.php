@@ -20,7 +20,7 @@ class SchoolLanguageCategoryAssignment extends ModelBase
      * @return SchoolLanguageCategoryAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SchoolLanguageCategoryAssignment extends ModelBase
     /**
      * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(?\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -78,7 +78,7 @@ class SchoolLanguageCategoryAssignment extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\SchoolLanguageCategory $schoolLanguageCategory
      */
-    public function setSchoolLanguageCategory(\Arbor\Model\Cymru\SchoolLanguageCategory $schoolLanguageCategory = null)
+    public function setSchoolLanguageCategory(?\Arbor\Model\Cymru\SchoolLanguageCategory $schoolLanguageCategory = null)
     {
         $this->setProperty('schoolLanguageCategory', $schoolLanguageCategory);
     }

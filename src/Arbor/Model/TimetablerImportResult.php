@@ -30,7 +30,7 @@ class TimetablerImportResult extends ModelBase
      * @return TimetablerImportResult[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -88,7 +88,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted(int $stepsCompleted = null)
+    public function setStepsCompleted(?int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -104,7 +104,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param int $stepInProgress
      */
-    public function setStepInProgress(int $stepInProgress = null)
+    public function setStepInProgress(?int $stepInProgress = null)
     {
         $this->setProperty('stepInProgress', $stepInProgress);
     }
@@ -120,7 +120,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param \DateTime $startedDatetime
      */
-    public function setStartedDatetime(\DateTime $startedDatetime = null)
+    public function setStartedDatetime(?\DateTime $startedDatetime = null)
     {
         $this->setProperty('startedDatetime', $startedDatetime);
     }
@@ -136,7 +136,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
@@ -152,7 +152,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param \DateTime $timetableEffectiveDate
      */
-    public function setTimetableEffectiveDate(\DateTime $timetableEffectiveDate = null)
+    public function setTimetableEffectiveDate(?\DateTime $timetableEffectiveDate = null)
     {
         $this->setProperty('timetableEffectiveDate', $timetableEffectiveDate);
     }
@@ -168,7 +168,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param \DateTime $timetableEndDate
      */
-    public function setTimetableEndDate(\DateTime $timetableEndDate = null)
+    public function setTimetableEndDate(?\DateTime $timetableEndDate = null)
     {
         $this->setProperty('timetableEndDate', $timetableEndDate);
     }
@@ -184,7 +184,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param string $fileHash
      */
-    public function setFileHash(string $fileHash = null)
+    public function setFileHash(?string $fileHash = null)
     {
         $this->setProperty('fileHash', $fileHash);
     }

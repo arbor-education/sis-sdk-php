@@ -16,7 +16,7 @@ class AlertRule extends ModelBase
      * @return AlertRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class AlertRule extends ModelBase
     /**
      * @param string $triggerEventType
      */
-    public function setTriggerEventType(string $triggerEventType = null)
+    public function setTriggerEventType(?string $triggerEventType = null)
     {
         $this->setProperty('triggerEventType', $triggerEventType);
     }

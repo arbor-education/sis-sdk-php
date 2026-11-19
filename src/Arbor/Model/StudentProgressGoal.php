@@ -34,7 +34,7 @@ class StudentProgressGoal extends ModelBase
      * @return StudentProgressGoal[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -92,7 +92,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -108,7 +108,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
+    public function setAssessment(?\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -124,7 +124,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param string $goalType
      */
-    public function setGoalType(string $goalType = null)
+    public function setGoalType(?string $goalType = null)
     {
         $this->setProperty('goalType', $goalType);
     }
@@ -140,7 +140,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(\Arbor\Model\Grade $grade = null)
+    public function setGrade(?\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -156,7 +156,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(?\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -172,7 +172,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -188,7 +188,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -204,7 +204,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(?float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -220,7 +220,7 @@ class StudentProgressGoal extends ModelBase
     /**
      * @param bool $isCalculatedGrade
      */
-    public function setIsCalculatedGrade(bool $isCalculatedGrade = null)
+    public function setIsCalculatedGrade(?bool $isCalculatedGrade = null)
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }

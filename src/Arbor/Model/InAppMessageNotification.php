@@ -18,7 +18,7 @@ class InAppMessageNotification extends ModelBase
      * @return InAppMessageNotification[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class InAppMessageNotification extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $inAppMessage
      */
-    public function setInAppMessage(\Arbor\Model\ModelBase $inAppMessage = null)
+    public function setInAppMessage(?\Arbor\Model\ModelBase $inAppMessage = null)
     {
         $this->setProperty('inAppMessage', $inAppMessage);
     }
@@ -76,7 +76,7 @@ class InAppMessageNotification extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $notificationChannel
      */
-    public function setNotificationChannel(\Arbor\Model\ModelBase $notificationChannel = null)
+    public function setNotificationChannel(?\Arbor\Model\ModelBase $notificationChannel = null)
     {
         $this->setProperty('notificationChannel', $notificationChannel);
     }

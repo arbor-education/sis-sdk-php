@@ -24,7 +24,7 @@ class AlertRuleCondition extends ModelBase
      * @return AlertRuleCondition[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param \Arbor\Model\AlertRule $alertRule
      */
-    public function setAlertRule(\Arbor\Model\AlertRule $alertRule = null)
+    public function setAlertRule(?\Arbor\Model\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -82,7 +82,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param string $triggerField
      */
-    public function setTriggerField(string $triggerField = null)
+    public function setTriggerField(?string $triggerField = null)
     {
         $this->setProperty('triggerField', $triggerField);
     }
@@ -98,7 +98,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param bool $conditionGroup
      */
-    public function setConditionGroup(bool $conditionGroup = null)
+    public function setConditionGroup(?bool $conditionGroup = null)
     {
         $this->setProperty('conditionGroup', $conditionGroup);
     }
@@ -114,7 +114,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $condition
      */
-    public function setCondition(\Arbor\Model\ModelBase $condition = null)
+    public function setCondition(?\Arbor\Model\ModelBase $condition = null)
     {
         $this->setProperty('condition', $condition);
     }
@@ -130,7 +130,7 @@ class AlertRuleCondition extends ModelBase
     /**
      * @param string $conditionResolver
      */
-    public function setConditionResolver(string $conditionResolver = null)
+    public function setConditionResolver(?string $conditionResolver = null)
     {
         $this->setProperty('conditionResolver', $conditionResolver);
     }

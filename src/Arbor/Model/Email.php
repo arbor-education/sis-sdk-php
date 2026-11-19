@@ -44,7 +44,7 @@ class Email extends ModelBase
      * @return Email[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -86,7 +86,7 @@ class Email extends ModelBase
     /**
      * @param \Arbor\Model\EmailMailbox $emailMailbox
      */
-    public function setEmailMailbox(\Arbor\Model\EmailMailbox $emailMailbox = null)
+    public function setEmailMailbox(?\Arbor\Model\EmailMailbox $emailMailbox = null)
     {
         $this->setProperty('emailMailbox', $emailMailbox);
     }
@@ -102,7 +102,7 @@ class Email extends ModelBase
     /**
      * @param \Arbor\Model\EmailDraft $emailDraft
      */
-    public function setEmailDraft(\Arbor\Model\EmailDraft $emailDraft = null)
+    public function setEmailDraft(?\Arbor\Model\EmailDraft $emailDraft = null)
     {
         $this->setProperty('emailDraft', $emailDraft);
     }
@@ -118,7 +118,7 @@ class Email extends ModelBase
     /**
      * @param int $uid
      */
-    public function setUid(int $uid = null)
+    public function setUid(?int $uid = null)
     {
         $this->setProperty('uid', $uid);
     }
@@ -134,7 +134,7 @@ class Email extends ModelBase
     /**
      * @param int $uidValidity
      */
-    public function setUidValidity(int $uidValidity = null)
+    public function setUidValidity(?int $uidValidity = null)
     {
         $this->setProperty('uidValidity', $uidValidity);
     }
@@ -150,7 +150,7 @@ class Email extends ModelBase
     /**
      * @param string $messageId
      */
-    public function setMessageId(string $messageId = null)
+    public function setMessageId(?string $messageId = null)
     {
         $this->setProperty('messageId', $messageId);
     }
@@ -166,7 +166,7 @@ class Email extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -182,7 +182,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $originationDatetime
      */
-    public function setOriginationDatetime(\DateTime $originationDatetime = null)
+    public function setOriginationDatetime(?\DateTime $originationDatetime = null)
     {
         $this->setProperty('originationDatetime', $originationDatetime);
     }
@@ -198,7 +198,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $sendingStartedDatetime
      */
-    public function setSendingStartedDatetime(\DateTime $sendingStartedDatetime = null)
+    public function setSendingStartedDatetime(?\DateTime $sendingStartedDatetime = null)
     {
         $this->setProperty('sendingStartedDatetime', $sendingStartedDatetime);
     }
@@ -214,7 +214,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $sentDatetime
      */
-    public function setSentDatetime(\DateTime $sentDatetime = null)
+    public function setSentDatetime(?\DateTime $sentDatetime = null)
     {
         $this->setProperty('sentDatetime', $sentDatetime);
     }
@@ -230,7 +230,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $receivedDatetime
      */
-    public function setReceivedDatetime(\DateTime $receivedDatetime = null)
+    public function setReceivedDatetime(?\DateTime $receivedDatetime = null)
     {
         $this->setProperty('receivedDatetime', $receivedDatetime);
     }
@@ -246,7 +246,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $failedDatetime
      */
-    public function setFailedDatetime(\DateTime $failedDatetime = null)
+    public function setFailedDatetime(?\DateTime $failedDatetime = null)
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
@@ -262,7 +262,7 @@ class Email extends ModelBase
     /**
      * @param \Arbor\Model\EmailPart $textPart
      */
-    public function setTextPart(\Arbor\Model\EmailPart $textPart = null)
+    public function setTextPart(?\Arbor\Model\EmailPart $textPart = null)
     {
         $this->setProperty('textPart', $textPart);
     }
@@ -278,7 +278,7 @@ class Email extends ModelBase
     /**
      * @param \Arbor\Model\EmailPart $htmlPart
      */
-    public function setHtmlPart(\Arbor\Model\EmailPart $htmlPart = null)
+    public function setHtmlPart(?\Arbor\Model\EmailPart $htmlPart = null)
     {
         $this->setProperty('htmlPart', $htmlPart);
     }
@@ -294,7 +294,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $readDatetime
      */
-    public function setReadDatetime(\DateTime $readDatetime = null)
+    public function setReadDatetime(?\DateTime $readDatetime = null)
     {
         $this->setProperty('readDatetime', $readDatetime);
     }
@@ -310,7 +310,7 @@ class Email extends ModelBase
     /**
      * @param \DateTime $actionRequiredByDatetime
      */
-    public function setActionRequiredByDatetime(\DateTime $actionRequiredByDatetime = null)
+    public function setActionRequiredByDatetime(?\DateTime $actionRequiredByDatetime = null)
     {
         $this->setProperty('actionRequiredByDatetime', $actionRequiredByDatetime);
     }

@@ -20,7 +20,7 @@ class ProgrammeOfStudy extends ModelBase
      * @return ProgrammeOfStudy[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ProgrammeOfStudy extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\ProgrammeReference $programmeReference
      */
-    public function setProgrammeReference(\Arbor\Model\Cymru\ProgrammeReference $programmeReference = null)
+    public function setProgrammeReference(?\Arbor\Model\Cymru\ProgrammeReference $programmeReference = null)
     {
         $this->setProperty('programmeReference', $programmeReference);
     }
@@ -78,7 +78,7 @@ class ProgrammeOfStudy extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }

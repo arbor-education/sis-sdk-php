@@ -22,7 +22,7 @@ class CashPayout extends ModelBase
      * @return CashPayout[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CashPayout extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(?\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -80,7 +80,7 @@ class CashPayout extends ModelBase
     /**
      * @param \DateTime $payoutDatetime
      */
-    public function setPayoutDatetime(\DateTime $payoutDatetime = null)
+    public function setPayoutDatetime(?\DateTime $payoutDatetime = null)
     {
         $this->setProperty('payoutDatetime', $payoutDatetime);
     }
@@ -96,7 +96,7 @@ class CashPayout extends ModelBase
     /**
      * @param string $payout
      */
-    public function setPayout(string $payout = null)
+    public function setPayout(?string $payout = null)
     {
         $this->setProperty('payout', $payout);
     }
@@ -112,7 +112,7 @@ class CashPayout extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

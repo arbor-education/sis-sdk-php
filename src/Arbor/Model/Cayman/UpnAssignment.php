@@ -34,7 +34,7 @@ class UpnAssignment extends ModelBase
      * @return UpnAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -92,7 +92,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param string $upn
      */
-    public function setUpn(string $upn = null)
+    public function setUpn(?string $upn = null)
     {
         $this->setProperty('upn', $upn);
     }
@@ -108,7 +108,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param int $issuedYear
      */
-    public function setIssuedYear(int $issuedYear = null)
+    public function setIssuedYear(?int $issuedYear = null)
     {
         $this->setProperty('issuedYear', $issuedYear);
     }
@@ -124,7 +124,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param string $issuedLocalAuthority
      */
-    public function setIssuedLocalAuthority(string $issuedLocalAuthority = null)
+    public function setIssuedLocalAuthority(?string $issuedLocalAuthority = null)
     {
         $this->setProperty('issuedLocalAuthority', $issuedLocalAuthority);
     }
@@ -140,7 +140,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param string $issuedEstablishmentNumber
      */
-    public function setIssuedEstablishmentNumber(string $issuedEstablishmentNumber = null)
+    public function setIssuedEstablishmentNumber(?string $issuedEstablishmentNumber = null)
     {
         $this->setProperty('issuedEstablishmentNumber', $issuedEstablishmentNumber);
     }
@@ -156,7 +156,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param int $issuedSerialNumber
      */
-    public function setIssuedSerialNumber(int $issuedSerialNumber = null)
+    public function setIssuedSerialNumber(?int $issuedSerialNumber = null)
     {
         $this->setProperty('issuedSerialNumber', $issuedSerialNumber);
     }
@@ -172,7 +172,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -188,7 +188,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -204,7 +204,7 @@ class UpnAssignment extends ModelBase
     /**
      * @param bool $isTemporary
      */
-    public function setIsTemporary(bool $isTemporary = null)
+    public function setIsTemporary(?bool $isTemporary = null)
     {
         $this->setProperty('isTemporary', $isTemporary);
     }

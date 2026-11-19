@@ -28,7 +28,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      * @return BehaviouralIncidentStudentInvolvement[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(?\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -86,7 +86,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -102,7 +102,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param \Arbor\Model\Staff $resolvedBy
      */
-    public function setResolvedBy(\Arbor\Model\Staff $resolvedBy = null)
+    public function setResolvedBy(?\Arbor\Model\Staff $resolvedBy = null)
     {
         $this->setProperty('resolvedBy', $resolvedBy);
     }
@@ -118,7 +118,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param \DateTime $resolvedDatetime
      */
-    public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
+    public function setResolvedDatetime(?\DateTime $resolvedDatetime = null)
     {
         $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
@@ -134,7 +134,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -150,7 +150,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param int $severity
      */
-    public function setSeverity(int $severity = null)
+    public function setSeverity(?int $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -166,7 +166,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param \Arbor\Model\Staff $assignee
      */
-    public function setAssignee(\Arbor\Model\Staff $assignee = null)
+    public function setAssignee(?\Arbor\Model\Staff $assignee = null)
     {
         $this->setProperty('assignee', $assignee);
     }

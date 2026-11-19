@@ -28,7 +28,7 @@ class EventParticipantInvitation extends ModelBase
      * @return EventParticipantInvitation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param \Arbor\Model\EventParticipant $eventParticipant
      */
-    public function setEventParticipant(\Arbor\Model\EventParticipant $eventParticipant = null)
+    public function setEventParticipant(?\Arbor\Model\EventParticipant $eventParticipant = null)
     {
         $this->setProperty('eventParticipant', $eventParticipant);
     }
@@ -86,7 +86,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $invitee
      */
-    public function setInvitee(\Arbor\Model\ModelBase $invitee = null)
+    public function setInvitee(?\Arbor\Model\ModelBase $invitee = null)
     {
         $this->setProperty('invitee', $invitee);
     }
@@ -102,7 +102,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param \DateTime $invitationDatetime
      */
-    public function setInvitationDatetime(\DateTime $invitationDatetime = null)
+    public function setInvitationDatetime(?\DateTime $invitationDatetime = null)
     {
         $this->setProperty('invitationDatetime', $invitationDatetime);
     }
@@ -118,7 +118,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationStatus
      */
-    public function setInvitationStatus(string $invitationStatus = null)
+    public function setInvitationStatus(?string $invitationStatus = null)
     {
         $this->setProperty('invitationStatus', $invitationStatus);
     }
@@ -134,7 +134,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param \DateTime $statusChangedDatetime
      */
-    public function setStatusChangedDatetime(\DateTime $statusChangedDatetime = null)
+    public function setStatusChangedDatetime(?\DateTime $statusChangedDatetime = null)
     {
         $this->setProperty('statusChangedDatetime', $statusChangedDatetime);
     }
@@ -150,7 +150,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationMessage
      */
-    public function setInvitationMessage(string $invitationMessage = null)
+    public function setInvitationMessage(?string $invitationMessage = null)
     {
         $this->setProperty('invitationMessage', $invitationMessage);
     }
@@ -166,7 +166,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationReply
      */
-    public function setInvitationReply(string $invitationReply = null)
+    public function setInvitationReply(?string $invitationReply = null)
     {
         $this->setProperty('invitationReply', $invitationReply);
     }

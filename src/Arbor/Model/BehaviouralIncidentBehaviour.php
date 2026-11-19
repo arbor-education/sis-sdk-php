@@ -20,7 +20,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
      * @return BehaviouralIncidentBehaviour[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
     /**
      * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(?\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
@@ -78,7 +78,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -94,7 +94,7 @@ class BehaviouralIncidentBehaviour extends ModelBase
     /**
      * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
+    public function setBehaviour(?\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }

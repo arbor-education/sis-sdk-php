@@ -32,7 +32,7 @@ class PermanentExclusion extends ModelBase
      * @return PermanentExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -90,7 +90,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(?\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -106,7 +106,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \DateTime $fromDate
      */
-    public function setFromDate(\DateTime $fromDate = null)
+    public function setFromDate(?\DateTime $fromDate = null)
     {
         $this->setProperty('fromDate', $fromDate);
     }
@@ -122,7 +122,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \DateTime $decisionDatetime
      */
-    public function setDecisionDatetime(\DateTime $decisionDatetime = null)
+    public function setDecisionDatetime(?\DateTime $decisionDatetime = null)
     {
         $this->setProperty('decisionDatetime', $decisionDatetime);
     }
@@ -138,7 +138,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \DateTime $notifiedStudentDatetime
      */
-    public function setNotifiedStudentDatetime(\DateTime $notifiedStudentDatetime = null)
+    public function setNotifiedStudentDatetime(?\DateTime $notifiedStudentDatetime = null)
     {
         $this->setProperty('notifiedStudentDatetime', $notifiedStudentDatetime);
     }
@@ -154,7 +154,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \DateTime $notifiedGuardiansDatetime
      */
-    public function setNotifiedGuardiansDatetime(\DateTime $notifiedGuardiansDatetime = null)
+    public function setNotifiedGuardiansDatetime(?\DateTime $notifiedGuardiansDatetime = null)
     {
         $this->setProperty('notifiedGuardiansDatetime', $notifiedGuardiansDatetime);
     }
@@ -170,7 +170,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -186,7 +186,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param string $cancellationReason
      */
-    public function setCancellationReason(string $cancellationReason = null)
+    public function setCancellationReason(?string $cancellationReason = null)
     {
         $this->setProperty('cancellationReason', $cancellationReason);
     }
@@ -202,7 +202,7 @@ class PermanentExclusion extends ModelBase
     /**
      * @param \DateTime $studentReinstatementDate
      */
-    public function setStudentReinstatementDate(\DateTime $studentReinstatementDate = null)
+    public function setStudentReinstatementDate(?\DateTime $studentReinstatementDate = null)
     {
         $this->setProperty('studentReinstatementDate', $studentReinstatementDate);
     }

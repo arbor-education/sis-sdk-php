@@ -22,7 +22,7 @@ class CurriculumStatementBand extends ModelBase
      * @return CurriculumStatementBand[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
+    public function setCurriculum(?\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -80,7 +80,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -96,7 +96,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(?float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -112,7 +112,7 @@ class CurriculumStatementBand extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(?float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }

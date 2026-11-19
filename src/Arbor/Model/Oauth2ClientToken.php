@@ -26,7 +26,7 @@ class Oauth2ClientToken extends ModelBase
      * @return Oauth2ClientToken[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\Arbor\Model\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(?\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
@@ -84,7 +84,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider(string $provider = null)
+    public function setProvider(?string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }
@@ -100,7 +100,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $accessToken
      */
-    public function setAccessToken(string $accessToken = null)
+    public function setAccessToken(?string $accessToken = null)
     {
         $this->setProperty('accessToken', $accessToken);
     }
@@ -116,7 +116,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $refreshToken
      */
-    public function setRefreshToken(string $refreshToken = null)
+    public function setRefreshToken(?string $refreshToken = null)
     {
         $this->setProperty('refreshToken', $refreshToken);
     }
@@ -132,7 +132,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param \DateTime $expireDatetime
      */
-    public function setExpireDatetime(\DateTime $expireDatetime = null)
+    public function setExpireDatetime(?\DateTime $expireDatetime = null)
     {
         $this->setProperty('expireDatetime', $expireDatetime);
     }
@@ -148,7 +148,7 @@ class Oauth2ClientToken extends ModelBase
     /**
      * @param string $resourceOwnerIdentifier
      */
-    public function setResourceOwnerIdentifier(string $resourceOwnerIdentifier = null)
+    public function setResourceOwnerIdentifier(?string $resourceOwnerIdentifier = null)
     {
         $this->setProperty('resourceOwnerIdentifier', $resourceOwnerIdentifier);
     }

@@ -36,7 +36,7 @@ class DataExport extends ModelBase
      * @return DataExport[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class DataExport extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -94,7 +94,7 @@ class DataExport extends ModelBase
     /**
      * @param string $module
      */
-    public function setModule(string $module = null)
+    public function setModule(?string $module = null)
     {
         $this->setProperty('module', $module);
     }
@@ -110,7 +110,7 @@ class DataExport extends ModelBase
     /**
      * @param string $controller
      */
-    public function setController(string $controller = null)
+    public function setController(?string $controller = null)
     {
         $this->setProperty('controller', $controller);
     }
@@ -126,7 +126,7 @@ class DataExport extends ModelBase
     /**
      * @param string $action
      */
-    public function setAction(string $action = null)
+    public function setAction(?string $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -142,7 +142,7 @@ class DataExport extends ModelBase
     /**
      * @param string $params
      */
-    public function setParams(string $params = null)
+    public function setParams(?string $params = null)
     {
         $this->setProperty('params', $params);
     }
@@ -158,7 +158,7 @@ class DataExport extends ModelBase
     /**
      * @param string $hash
      */
-    public function setHash(string $hash = null)
+    public function setHash(?string $hash = null)
     {
         $this->setProperty('hash', $hash);
     }
@@ -174,7 +174,7 @@ class DataExport extends ModelBase
     /**
      * @param string $label
      */
-    public function setLabel(string $label = null)
+    public function setLabel(?string $label = null)
     {
         $this->setProperty('label', $label);
     }
@@ -190,7 +190,7 @@ class DataExport extends ModelBase
     /**
      * @param bool $requiresAuthentication
      */
-    public function setRequiresAuthentication(bool $requiresAuthentication = null)
+    public function setRequiresAuthentication(?bool $requiresAuthentication = null)
     {
         $this->setProperty('requiresAuthentication', $requiresAuthentication);
     }
@@ -206,7 +206,7 @@ class DataExport extends ModelBase
     /**
      * @param string $defaultExportType
      */
-    public function setDefaultExportType(string $defaultExportType = null)
+    public function setDefaultExportType(?string $defaultExportType = null)
     {
         $this->setProperty('defaultExportType', $defaultExportType);
     }
@@ -222,7 +222,7 @@ class DataExport extends ModelBase
     /**
      * @param \DateTime $lastExportDatetime
      */
-    public function setLastExportDatetime(\DateTime $lastExportDatetime = null)
+    public function setLastExportDatetime(?\DateTime $lastExportDatetime = null)
     {
         $this->setProperty('lastExportDatetime', $lastExportDatetime);
     }
@@ -238,7 +238,7 @@ class DataExport extends ModelBase
     /**
      * @param string $lastExportTitle
      */
-    public function setLastExportTitle(string $lastExportTitle = null)
+    public function setLastExportTitle(?string $lastExportTitle = null)
     {
         $this->setProperty('lastExportTitle', $lastExportTitle);
     }

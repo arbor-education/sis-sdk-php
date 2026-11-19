@@ -16,7 +16,7 @@ class InboundNotificationAutomaticRecipient extends ModelBase
      * @return InboundNotificationAutomaticRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class InboundNotificationAutomaticRecipient extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $automaticRecipient
      */
-    public function setAutomaticRecipient(\Arbor\Model\ModelBase $automaticRecipient = null)
+    public function setAutomaticRecipient(?\Arbor\Model\ModelBase $automaticRecipient = null)
     {
         $this->setProperty('automaticRecipient', $automaticRecipient);
     }

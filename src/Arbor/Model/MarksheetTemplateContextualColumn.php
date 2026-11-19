@@ -22,7 +22,7 @@ class MarksheetTemplateContextualColumn extends ModelBase
      * @return MarksheetTemplateContextualColumn[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class MarksheetTemplateContextualColumn extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -80,7 +80,7 @@ class MarksheetTemplateContextualColumn extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -96,7 +96,7 @@ class MarksheetTemplateContextualColumn extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -112,7 +112,7 @@ class MarksheetTemplateContextualColumn extends ModelBase
     /**
      * @param string $class
      */
-    public function setClass(string $class = null)
+    public function setClass(?string $class = null)
     {
         $this->setProperty('class', $class);
     }
@@ -128,7 +128,7 @@ class MarksheetTemplateContextualColumn extends ModelBase
     /**
      * @param string $formatterClass
      */
-    public function setFormatterClass(string $formatterClass = null)
+    public function setFormatterClass(?string $formatterClass = null)
     {
         $this->setProperty('formatterClass', $formatterClass);
     }

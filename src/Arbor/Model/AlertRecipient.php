@@ -24,7 +24,7 @@ class AlertRecipient extends ModelBase
      * @return AlertRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Alert $alert
      */
-    public function setAlert(\Arbor\Model\Alert $alert = null)
+    public function setAlert(?\Arbor\Model\Alert $alert = null)
     {
         $this->setProperty('alert', $alert);
     }
@@ -82,7 +82,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param \Arbor\Model\AlertRuleRecipient $alertRuleRecipient
      */
-    public function setAlertRuleRecipient(\Arbor\Model\AlertRuleRecipient $alertRuleRecipient = null)
+    public function setAlertRuleRecipient(?\Arbor\Model\AlertRuleRecipient $alertRuleRecipient = null)
     {
         $this->setProperty('alertRuleRecipient', $alertRuleRecipient);
     }
@@ -98,7 +98,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel(string $channel = null)
+    public function setChannel(?string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }
@@ -114,7 +114,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -130,7 +130,7 @@ class AlertRecipient extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $message
      */
-    public function setMessage(\Arbor\Model\ModelBase $message = null)
+    public function setMessage(?\Arbor\Model\ModelBase $message = null)
     {
         $this->setProperty('message', $message);
     }

@@ -24,7 +24,7 @@ class StudentFunding extends ModelBase
      * @return StudentFunding[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class StudentFunding extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -82,7 +82,7 @@ class StudentFunding extends ModelBase
     /**
      * @param \Arbor\Model\StudentFundingType $studentFundingType
      */
-    public function setStudentFundingType(\Arbor\Model\StudentFundingType $studentFundingType = null)
+    public function setStudentFundingType(?\Arbor\Model\StudentFundingType $studentFundingType = null)
     {
         $this->setProperty('studentFundingType', $studentFundingType);
     }
@@ -98,7 +98,7 @@ class StudentFunding extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -114,7 +114,7 @@ class StudentFunding extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -130,7 +130,7 @@ class StudentFunding extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote(string $note = null)
+    public function setNote(?string $note = null)
     {
         $this->setProperty('note', $note);
     }

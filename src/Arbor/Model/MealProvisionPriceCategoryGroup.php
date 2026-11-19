@@ -18,7 +18,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
      * @return MealProvisionPriceCategoryGroup[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
     /**
      * @param \Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory
      */
-    public function setMealProvisionPriceCategory(\Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
+    public function setMealProvisionPriceCategory(?\Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
         $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
@@ -76,7 +76,7 @@ class MealProvisionPriceCategoryGroup extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $group
      */
-    public function setGroup(\Arbor\Model\ModelBase $group = null)
+    public function setGroup(?\Arbor\Model\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }

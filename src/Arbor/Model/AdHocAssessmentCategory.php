@@ -16,7 +16,7 @@ class AdHocAssessmentCategory extends ModelBase
      * @return AdHocAssessmentCategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class AdHocAssessmentCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName(string $categoryName = null)
+    public function setCategoryName(?string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }

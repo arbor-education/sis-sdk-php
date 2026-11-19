@@ -32,7 +32,7 @@ class AcademicLevel extends ModelBase
      * @return AcademicLevel[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param string $academicLevelName
      */
-    public function setAcademicLevelName(string $academicLevelName = null)
+    public function setAcademicLevelName(?string $academicLevelName = null)
     {
         $this->setProperty('academicLevelName', $academicLevelName);
     }
@@ -90,7 +90,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -106,7 +106,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -122,7 +122,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -138,7 +138,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param \Arbor\Model\AcademicLevel $promotedToAcademicLevel
      */
-    public function setPromotedToAcademicLevel(\Arbor\Model\AcademicLevel $promotedToAcademicLevel = null)
+    public function setPromotedToAcademicLevel(?\Arbor\Model\AcademicLevel $promotedToAcademicLevel = null)
     {
         $this->setProperty('promotedToAcademicLevel', $promotedToAcademicLevel);
     }
@@ -154,7 +154,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param \DateTime $promotedDatetime
      */
-    public function setPromotedDatetime(\DateTime $promotedDatetime = null)
+    public function setPromotedDatetime(?\DateTime $promotedDatetime = null)
     {
         $this->setProperty('promotedDatetime', $promotedDatetime);
     }
@@ -170,7 +170,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param \Arbor\Model\AcademicLevel $copiedToAcademicLevel
      */
-    public function setCopiedToAcademicLevel(\Arbor\Model\AcademicLevel $copiedToAcademicLevel = null)
+    public function setCopiedToAcademicLevel(?\Arbor\Model\AcademicLevel $copiedToAcademicLevel = null)
     {
         $this->setProperty('copiedToAcademicLevel', $copiedToAcademicLevel);
     }
@@ -186,7 +186,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -202,7 +202,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param int $targetEnrolment
      */
-    public function setTargetEnrolment(int $targetEnrolment = null)
+    public function setTargetEnrolment(?int $targetEnrolment = null)
     {
         $this->setProperty('targetEnrolment', $targetEnrolment);
     }

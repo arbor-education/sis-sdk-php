@@ -24,7 +24,7 @@ class AcademicYear extends ModelBase
      * @return AcademicYear[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class AcademicYear extends ModelBase
     /**
      * @param string $academicYearName
      */
-    public function setAcademicYearName(string $academicYearName = null)
+    public function setAcademicYearName(?string $academicYearName = null)
     {
         $this->setProperty('academicYearName', $academicYearName);
     }
@@ -82,7 +82,7 @@ class AcademicYear extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -98,7 +98,7 @@ class AcademicYear extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -114,7 +114,7 @@ class AcademicYear extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -130,7 +130,7 @@ class AcademicYear extends ModelBase
     /**
      * @param int $timetableCycleLength
      */
-    public function setTimetableCycleLength(int $timetableCycleLength = null)
+    public function setTimetableCycleLength(?int $timetableCycleLength = null)
     {
         $this->setProperty('timetableCycleLength', $timetableCycleLength);
     }

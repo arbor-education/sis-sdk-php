@@ -32,7 +32,7 @@ class StudentAbsenceNote extends ModelBase
      * @return StudentAbsenceNote[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -90,7 +90,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \DateTime $absenceStartDatetime
      */
-    public function setAbsenceStartDatetime(\DateTime $absenceStartDatetime = null)
+    public function setAbsenceStartDatetime(?\DateTime $absenceStartDatetime = null)
     {
         $this->setProperty('absenceStartDatetime', $absenceStartDatetime);
     }
@@ -106,7 +106,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \DateTime $absenceEndDatetime
      */
-    public function setAbsenceEndDatetime(\DateTime $absenceEndDatetime = null)
+    public function setAbsenceEndDatetime(?\DateTime $absenceEndDatetime = null)
     {
         $this->setProperty('absenceEndDatetime', $absenceEndDatetime);
     }
@@ -122,7 +122,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }
@@ -138,7 +138,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \DateTime $approvedDate
      */
-    public function setApprovedDate(\DateTime $approvedDate = null)
+    public function setApprovedDate(?\DateTime $approvedDate = null)
     {
         $this->setProperty('approvedDate', $approvedDate);
     }
@@ -154,7 +154,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
+    public function setApprovedByStaff(?\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -170,7 +170,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(\Arbor\Model\AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(?\Arbor\Model\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -186,7 +186,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion
      */
-    public function setFixedPeriodExclusion(\Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion = null)
+    public function setFixedPeriodExclusion(?\Arbor\Model\FixedPeriodExclusion $fixedPeriodExclusion = null)
     {
         $this->setProperty('fixedPeriodExclusion', $fixedPeriodExclusion);
     }
@@ -202,7 +202,7 @@ class StudentAbsenceNote extends ModelBase
     /**
      * @param \Arbor\Model\StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote
      */
-    public function setStudentRepeatingAbsenceNote(\Arbor\Model\StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote = null)
+    public function setStudentRepeatingAbsenceNote(?\Arbor\Model\StudentRepeatingAbsenceNote $studentRepeatingAbsenceNote = null)
     {
         $this->setProperty('studentRepeatingAbsenceNote', $studentRepeatingAbsenceNote);
     }

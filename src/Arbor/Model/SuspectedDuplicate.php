@@ -36,7 +36,7 @@ class SuspectedDuplicate extends ModelBase
      * @return SuspectedDuplicate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $suspectOne
      */
-    public function setSuspectOne(\Arbor\Model\ModelBase $suspectOne = null)
+    public function setSuspectOne(?\Arbor\Model\ModelBase $suspectOne = null)
     {
         $this->setProperty('suspectOne', $suspectOne);
     }
@@ -94,7 +94,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $suspectTwo
      */
-    public function setSuspectTwo(\Arbor\Model\ModelBase $suspectTwo = null)
+    public function setSuspectTwo(?\Arbor\Model\ModelBase $suspectTwo = null)
     {
         $this->setProperty('suspectTwo', $suspectTwo);
     }
@@ -110,7 +110,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $uniqueKey
      */
-    public function setUniqueKey(string $uniqueKey = null)
+    public function setUniqueKey(?string $uniqueKey = null)
     {
         $this->setProperty('uniqueKey', $uniqueKey);
     }
@@ -126,7 +126,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param int $totalDuplicateScore
      */
-    public function setTotalDuplicateScore(int $totalDuplicateScore = null)
+    public function setTotalDuplicateScore(?int $totalDuplicateScore = null)
     {
         $this->setProperty('totalDuplicateScore', $totalDuplicateScore);
     }
@@ -142,7 +142,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $duplicateScores
      */
-    public function setDuplicateScores(string $duplicateScores = null)
+    public function setDuplicateScores(?string $duplicateScores = null)
     {
         $this->setProperty('duplicateScores', $duplicateScores);
     }
@@ -158,7 +158,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \DateTime $resolvedDatetime
      */
-    public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
+    public function setResolvedDatetime(?\DateTime $resolvedDatetime = null)
     {
         $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
@@ -174,7 +174,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \Arbor\Model\Staff $resolutionApprovalRequestedByStaff
      */
-    public function setResolutionApprovalRequestedByStaff(\Arbor\Model\Staff $resolutionApprovalRequestedByStaff = null)
+    public function setResolutionApprovalRequestedByStaff(?\Arbor\Model\Staff $resolutionApprovalRequestedByStaff = null)
     {
         $this->setProperty('resolutionApprovalRequestedByStaff', $resolutionApprovalRequestedByStaff);
     }
@@ -190,7 +190,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \Arbor\Model\Staff $resolutionApprovalRequestedFromStaff
      */
-    public function setResolutionApprovalRequestedFromStaff(\Arbor\Model\Staff $resolutionApprovalRequestedFromStaff = null)
+    public function setResolutionApprovalRequestedFromStaff(?\Arbor\Model\Staff $resolutionApprovalRequestedFromStaff = null)
     {
         $this->setProperty('resolutionApprovalRequestedFromStaff', $resolutionApprovalRequestedFromStaff);
     }
@@ -206,7 +206,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \Arbor\Model\Staff $resolutionApprovedByStaff
      */
-    public function setResolutionApprovedByStaff(\Arbor\Model\Staff $resolutionApprovedByStaff = null)
+    public function setResolutionApprovedByStaff(?\Arbor\Model\Staff $resolutionApprovedByStaff = null)
     {
         $this->setProperty('resolutionApprovedByStaff', $resolutionApprovedByStaff);
     }
@@ -222,7 +222,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param \Arbor\Model\Staff $resolvedByStaff
      */
-    public function setResolvedByStaff(\Arbor\Model\Staff $resolvedByStaff = null)
+    public function setResolvedByStaff(?\Arbor\Model\Staff $resolvedByStaff = null)
     {
         $this->setProperty('resolvedByStaff', $resolvedByStaff);
     }
@@ -238,7 +238,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $resolution
      */
-    public function setResolution(string $resolution = null)
+    public function setResolution(?string $resolution = null)
     {
         $this->setProperty('resolution', $resolution);
     }

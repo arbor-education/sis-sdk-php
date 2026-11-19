@@ -22,7 +22,7 @@ class SuperannuationSchemeValue extends ModelBase
      * @return SuperannuationSchemeValue[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param \Arbor\Model\SuperannuationScheme $superannuationScheme
      */
-    public function setSuperannuationScheme(\Arbor\Model\SuperannuationScheme $superannuationScheme = null)
+    public function setSuperannuationScheme(?\Arbor\Model\SuperannuationScheme $superannuationScheme = null)
     {
         $this->setProperty('superannuationScheme', $superannuationScheme);
     }
@@ -80,7 +80,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -96,7 +96,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -112,7 +112,7 @@ class SuperannuationSchemeValue extends ModelBase
     /**
      * @param float $value
      */
-    public function setValue(float $value = null)
+    public function setValue(?float $value = null)
     {
         $this->setProperty('value', $value);
     }

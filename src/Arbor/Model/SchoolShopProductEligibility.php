@@ -18,7 +18,7 @@ class SchoolShopProductEligibility extends ModelBase
      * @return SchoolShopProductEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class SchoolShopProductEligibility extends ModelBase
     /**
      * @param \Arbor\Model\SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(?\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
@@ -76,7 +76,7 @@ class SchoolShopProductEligibility extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $eligible
      */
-    public function setEligible(\Arbor\Model\ModelBase $eligible = null)
+    public function setEligible(?\Arbor\Model\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }

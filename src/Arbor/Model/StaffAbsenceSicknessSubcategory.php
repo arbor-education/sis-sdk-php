@@ -24,7 +24,7 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
      * @return StaffAbsenceSicknessSubcategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -82,7 +82,7 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -98,7 +98,7 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -114,7 +114,7 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     /**
      * @param \Arbor\Model\StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory
      */
-    public function setStaffAbsenceSicknessCategory(\Arbor\Model\StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory = null)
+    public function setStaffAbsenceSicknessCategory(?\Arbor\Model\StaffAbsenceSicknessCategory $staffAbsenceSicknessCategory = null)
     {
         $this->setProperty('staffAbsenceSicknessCategory', $staffAbsenceSicknessCategory);
     }
@@ -130,7 +130,7 @@ class StaffAbsenceSicknessSubcategory extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }

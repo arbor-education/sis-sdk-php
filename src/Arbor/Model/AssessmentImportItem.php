@@ -22,7 +22,7 @@ class AssessmentImportItem extends ModelBase
      * @return AssessmentImportItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentImportColumn $assessmentImportColumn
      */
-    public function setAssessmentImportColumn(\Arbor\Model\AssessmentImportColumn $assessmentImportColumn = null)
+    public function setAssessmentImportColumn(?\Arbor\Model\AssessmentImportColumn $assessmentImportColumn = null)
     {
         $this->setProperty('assessmentImportColumn', $assessmentImportColumn);
     }
@@ -80,7 +80,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentImportRow $assessmentImportRow
      */
-    public function setAssessmentImportRow(\Arbor\Model\AssessmentImportRow $assessmentImportRow = null)
+    public function setAssessmentImportRow(?\Arbor\Model\AssessmentImportRow $assessmentImportRow = null)
     {
         $this->setProperty('assessmentImportRow', $assessmentImportRow);
     }
@@ -96,7 +96,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param string $dataValue
      */
-    public function setDataValue(string $dataValue = null)
+    public function setDataValue(?string $dataValue = null)
     {
         $this->setProperty('dataValue', $dataValue);
     }
@@ -112,7 +112,7 @@ class AssessmentImportItem extends ModelBase
     /**
      * @param \DateTime $importedDatetime
      */
-    public function setImportedDatetime(\DateTime $importedDatetime = null)
+    public function setImportedDatetime(?\DateTime $importedDatetime = null)
     {
         $this->setProperty('importedDatetime', $importedDatetime);
     }

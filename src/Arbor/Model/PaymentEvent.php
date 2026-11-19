@@ -34,7 +34,7 @@ class PaymentEvent extends ModelBase
      * @return PaymentEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param \Arbor\Model\User $user
      */
-    public function setUser(\Arbor\Model\User $user = null)
+    public function setUser(?\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -92,7 +92,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $eventNamespace
      */
-    public function setEventNamespace(string $eventNamespace = null)
+    public function setEventNamespace(?string $eventNamespace = null)
     {
         $this->setProperty('eventNamespace', $eventNamespace);
     }
@@ -108,7 +108,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $eventType
      */
-    public function setEventType(string $eventType = null)
+    public function setEventType(?string $eventType = null)
     {
         $this->setProperty('eventType', $eventType);
     }
@@ -124,7 +124,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage(string $message = null)
+    public function setMessage(?string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -140,7 +140,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param \Arbor\Model\Content $content
      */
-    public function setContent(\Arbor\Model\Content $content = null)
+    public function setContent(?\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -156,7 +156,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $source
      */
-    public function setSource(\Arbor\Model\ModelBase $source = null)
+    public function setSource(?\Arbor\Model\ModelBase $source = null)
     {
         $this->setProperty('source', $source);
     }
@@ -172,7 +172,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $requestId
      */
-    public function setRequestId(string $requestId = null)
+    public function setRequestId(?string $requestId = null)
     {
         $this->setProperty('requestId', $requestId);
     }
@@ -188,7 +188,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $correlationId
      */
-    public function setCorrelationId(string $correlationId = null)
+    public function setCorrelationId(?string $correlationId = null)
     {
         $this->setProperty('correlationId', $correlationId);
     }
@@ -204,7 +204,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $eventDatetime
      */
-    public function setEventDatetime(string $eventDatetime = null)
+    public function setEventDatetime(?string $eventDatetime = null)
     {
         $this->setProperty('eventDatetime', $eventDatetime);
     }
@@ -220,7 +220,7 @@ class PaymentEvent extends ModelBase
     /**
      * @param string $idempotencyKey
      */
-    public function setIdempotencyKey(string $idempotencyKey = null)
+    public function setIdempotencyKey(?string $idempotencyKey = null)
     {
         $this->setProperty('idempotencyKey', $idempotencyKey);
     }

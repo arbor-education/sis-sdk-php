@@ -28,7 +28,7 @@ class StudentMedicalRelationship extends ModelBase
      * @return StudentMedicalRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -86,7 +86,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param \Arbor\Model\MedicalInstitution $medicalInstitution
      */
-    public function setMedicalInstitution(\Arbor\Model\MedicalInstitution $medicalInstitution = null)
+    public function setMedicalInstitution(?\Arbor\Model\MedicalInstitution $medicalInstitution = null)
     {
         $this->setProperty('medicalInstitution', $medicalInstitution);
     }
@@ -102,7 +102,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param \Arbor\Model\MedicalInstitutionStaff $medicalInstitutionStaff
      */
-    public function setMedicalInstitutionStaff(\Arbor\Model\MedicalInstitutionStaff $medicalInstitutionStaff = null)
+    public function setMedicalInstitutionStaff(?\Arbor\Model\MedicalInstitutionStaff $medicalInstitutionStaff = null)
     {
         $this->setProperty('medicalInstitutionStaff', $medicalInstitutionStaff);
     }
@@ -118,7 +118,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param \Arbor\Model\MedicalRelationshipType $medicalRelationshipType
      */
-    public function setMedicalRelationshipType(\Arbor\Model\MedicalRelationshipType $medicalRelationshipType = null)
+    public function setMedicalRelationshipType(?\Arbor\Model\MedicalRelationshipType $medicalRelationshipType = null)
     {
         $this->setProperty('medicalRelationshipType', $medicalRelationshipType);
     }
@@ -134,7 +134,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -150,7 +150,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -166,7 +166,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes = null)
+    public function setNotes(?string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

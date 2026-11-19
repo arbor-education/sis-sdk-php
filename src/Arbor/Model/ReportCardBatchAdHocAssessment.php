@@ -22,7 +22,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
      * @return ReportCardBatchAdHocAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -80,7 +80,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param \Arbor\Model\AdHocAssessment $adHocAssessment
      */
-    public function setAdHocAssessment(\Arbor\Model\AdHocAssessment $adHocAssessment = null)
+    public function setAdHocAssessment(?\Arbor\Model\AdHocAssessment $adHocAssessment = null)
     {
         $this->setProperty('adHocAssessment', $adHocAssessment);
     }
@@ -96,7 +96,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(int $order = null)
+    public function setOrder(?int $order = null)
     {
         $this->setProperty('order', $order);
     }
@@ -112,7 +112,7 @@ class ReportCardBatchAdHocAssessment extends ModelBase
     /**
      * @param \DateTime $markingCompletedDatetime
      */
-    public function setMarkingCompletedDatetime(\DateTime $markingCompletedDatetime = null)
+    public function setMarkingCompletedDatetime(?\DateTime $markingCompletedDatetime = null)
     {
         $this->setProperty('markingCompletedDatetime', $markingCompletedDatetime);
     }

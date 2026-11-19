@@ -28,7 +28,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
      * @return QualificationCenterAssessedOutcome[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAspect $qualificationAspect
      */
-    public function setQualificationAspect(\Arbor\Model\QualificationAspect $qualificationAspect = null)
+    public function setQualificationAspect(?\Arbor\Model\QualificationAspect $qualificationAspect = null)
     {
         $this->setProperty('qualificationAspect', $qualificationAspect);
     }
@@ -86,7 +86,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param \Arbor\Model\QualificationGrade $qualificationGrade
      */
-    public function setQualificationGrade(\Arbor\Model\QualificationGrade $qualificationGrade = null)
+    public function setQualificationGrade(?\Arbor\Model\QualificationGrade $qualificationGrade = null)
     {
         $this->setProperty('qualificationGrade', $qualificationGrade);
     }
@@ -102,7 +102,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param float $numericValue
      */
-    public function setNumericValue(float $numericValue = null)
+    public function setNumericValue(?float $numericValue = null)
     {
         $this->setProperty('numericValue', $numericValue);
     }
@@ -118,7 +118,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -134,7 +134,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(?\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -150,7 +150,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param \DateTime $assessmentDate
      */
-    public function setAssessmentDate(\DateTime $assessmentDate = null)
+    public function setAssessmentDate(?\DateTime $assessmentDate = null)
     {
         $this->setProperty('assessmentDate', $assessmentDate);
     }
@@ -166,7 +166,7 @@ class QualificationCenterAssessedOutcome extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

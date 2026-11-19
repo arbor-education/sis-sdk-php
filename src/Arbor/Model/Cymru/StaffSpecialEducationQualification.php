@@ -20,7 +20,7 @@ class StaffSpecialEducationQualification extends ModelBase
      * @return StaffSpecialEducationQualification[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class StaffSpecialEducationQualification extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -79,7 +79,7 @@ class StaffSpecialEducationQualification extends ModelBase
      * @param \Arbor\Model\Cymru\StaffSpecialEducationQualificationCategory
      * $staffSpecialEducationQualificationCategory
      */
-    public function setStaffSpecialEducationQualificationCategory(\Arbor\Model\Cymru\StaffSpecialEducationQualificationCategory $staffSpecialEducationQualificationCategory = null)
+    public function setStaffSpecialEducationQualificationCategory(?\Arbor\Model\Cymru\StaffSpecialEducationQualificationCategory $staffSpecialEducationQualificationCategory = null)
     {
         $this->setProperty('staffSpecialEducationQualificationCategory', $staffSpecialEducationQualificationCategory);
     }

@@ -24,7 +24,7 @@ class FacultyMembership extends ModelBase
      * @return FacultyMembership[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param \Arbor\Model\FacultyResponsibility $facultyResponsibility
      */
-    public function setFacultyResponsibility(\Arbor\Model\FacultyResponsibility $facultyResponsibility = null)
+    public function setFacultyResponsibility(?\Arbor\Model\FacultyResponsibility $facultyResponsibility = null)
     {
         $this->setProperty('facultyResponsibility', $facultyResponsibility);
     }
@@ -82,7 +82,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
+    public function setFaculty(?\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -98,7 +98,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -114,7 +114,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -130,7 +130,7 @@ class FacultyMembership extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

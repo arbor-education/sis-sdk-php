@@ -28,7 +28,7 @@ class CustomReportOrdering extends ModelBase
      * @return CustomReportOrdering[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -86,7 +86,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass(string $fieldClass = null)
+    public function setFieldClass(?string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -102,7 +102,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams(string $fieldParams = null)
+    public function setFieldParams(?string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -118,7 +118,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass(string $transformationClass = null)
+    public function setTransformationClass(?string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -134,7 +134,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param string $direction
      */
-    public function setDirection(string $direction = null)
+    public function setDirection(?string $direction = null)
     {
         $this->setProperty('direction', $direction);
     }
@@ -150,7 +150,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param \Arbor\Model\CustomReportGrouping $targetGrouping
      */
-    public function setTargetGrouping(\Arbor\Model\CustomReportGrouping $targetGrouping = null)
+    public function setTargetGrouping(?\Arbor\Model\CustomReportGrouping $targetGrouping = null)
     {
         $this->setProperty('targetGrouping', $targetGrouping);
     }
@@ -166,7 +166,7 @@ class CustomReportOrdering extends ModelBase
     /**
      * @param \Arbor\Model\CustomReportColumn $customReportColumn
      */
-    public function setCustomReportColumn(\Arbor\Model\CustomReportColumn $customReportColumn = null)
+    public function setCustomReportColumn(?\Arbor\Model\CustomReportColumn $customReportColumn = null)
     {
         $this->setProperty('customReportColumn', $customReportColumn);
     }

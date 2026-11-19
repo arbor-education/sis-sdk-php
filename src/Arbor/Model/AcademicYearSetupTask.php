@@ -22,7 +22,7 @@ class AcademicYearSetupTask extends ModelBase
      * @return AcademicYearSetupTask[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AcademicYearSetupTask extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -80,7 +80,7 @@ class AcademicYearSetupTask extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -96,7 +96,7 @@ class AcademicYearSetupTask extends ModelBase
     /**
      * @param \DateTime $approvedDatetime
      */
-    public function setApprovedDatetime(\DateTime $approvedDatetime = null)
+    public function setApprovedDatetime(?\DateTime $approvedDatetime = null)
     {
         $this->setProperty('approvedDatetime', $approvedDatetime);
     }
@@ -112,7 +112,7 @@ class AcademicYearSetupTask extends ModelBase
     /**
      * @param \DateTime $skippedDatetime
      */
-    public function setSkippedDatetime(\DateTime $skippedDatetime = null)
+    public function setSkippedDatetime(?\DateTime $skippedDatetime = null)
     {
         $this->setProperty('skippedDatetime', $skippedDatetime);
     }

@@ -18,7 +18,7 @@ class Tag extends ModelBase
      * @return Tag[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Tag extends ModelBase
     /**
      * @param string $tagName
      */
-    public function setTagName(string $tagName = null)
+    public function setTagName(?string $tagName = null)
     {
         $this->setProperty('tagName', $tagName);
     }
@@ -76,7 +76,7 @@ class Tag extends ModelBase
     /**
      * @param string $tagIdentifier
      */
-    public function setTagIdentifier(string $tagIdentifier = null)
+    public function setTagIdentifier(?string $tagIdentifier = null)
     {
         $this->setProperty('tagIdentifier', $tagIdentifier);
     }

@@ -24,7 +24,7 @@ class ChequeBook extends ModelBase
      * @return ChequeBook[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class ChequeBook extends ModelBase
     /**
      * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
+    public function setBankAccount(?\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
@@ -82,7 +82,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $chequeNumberLength
      */
-    public function setChequeNumberLength(int $chequeNumberLength = null)
+    public function setChequeNumberLength(?int $chequeNumberLength = null)
     {
         $this->setProperty('chequeNumberLength', $chequeNumberLength);
     }
@@ -98,7 +98,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $chequeNumberStart
      */
-    public function setChequeNumberStart(int $chequeNumberStart = null)
+    public function setChequeNumberStart(?int $chequeNumberStart = null)
     {
         $this->setProperty('chequeNumberStart', $chequeNumberStart);
     }
@@ -114,7 +114,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $chequeNumberEnd
      */
-    public function setChequeNumberEnd(int $chequeNumberEnd = null)
+    public function setChequeNumberEnd(?int $chequeNumberEnd = null)
     {
         $this->setProperty('chequeNumberEnd', $chequeNumberEnd);
     }
@@ -130,7 +130,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $nextChequeNumber
      */
-    public function setNextChequeNumber(int $nextChequeNumber = null)
+    public function setNextChequeNumber(?int $nextChequeNumber = null)
     {
         $this->setProperty('nextChequeNumber', $nextChequeNumber);
     }

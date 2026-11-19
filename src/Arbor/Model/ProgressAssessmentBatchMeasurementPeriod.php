@@ -18,7 +18,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
      * @return ProgressAssessmentBatchMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     /**
      * @param \Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch
      */
-    public function setProgressAssessmentBatch(\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
+    public function setProgressAssessmentBatch(?\Arbor\Model\ProgressAssessmentBatch $progressAssessmentBatch = null)
     {
         $this->setProperty('progressAssessmentBatch', $progressAssessmentBatch);
     }
@@ -76,7 +76,7 @@ class ProgressAssessmentBatchMeasurementPeriod extends ModelBase
     /**
      * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(?\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }

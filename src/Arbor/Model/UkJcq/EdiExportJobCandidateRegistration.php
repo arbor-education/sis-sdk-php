@@ -20,7 +20,7 @@ class EdiExportJobCandidateRegistration extends ModelBase
      * @return EdiExportJobCandidateRegistration[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class EdiExportJobCandidateRegistration extends ModelBase
     /**
      * @param \Arbor\Model\UkJcq\EdiExportJob $ediExportJob
      */
-    public function setEdiExportJob(\Arbor\Model\UkJcq\EdiExportJob $ediExportJob = null)
+    public function setEdiExportJob(?\Arbor\Model\UkJcq\EdiExportJob $ediExportJob = null)
     {
         $this->setProperty('ediExportJob', $ediExportJob);
     }
@@ -78,7 +78,7 @@ class EdiExportJobCandidateRegistration extends ModelBase
     /**
      * @param \Arbor\Model\CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(\Arbor\Model\CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(?\Arbor\Model\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }

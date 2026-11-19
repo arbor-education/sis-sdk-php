@@ -22,7 +22,7 @@ class SchoolShopOrderItem extends ModelBase
      * @return SchoolShopOrderItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param \Arbor\Model\SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(?\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
@@ -80,7 +80,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param \Arbor\Model\CustomerInvoiceItem $customerInvoiceItem
      */
-    public function setCustomerInvoiceItem(\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
+    public function setCustomerInvoiceItem(?\Arbor\Model\CustomerInvoiceItem $customerInvoiceItem = null)
     {
         $this->setProperty('customerInvoiceItem', $customerInvoiceItem);
     }
@@ -96,7 +96,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -112,7 +112,7 @@ class SchoolShopOrderItem extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

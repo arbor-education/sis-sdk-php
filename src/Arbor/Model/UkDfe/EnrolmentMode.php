@@ -18,7 +18,7 @@ class EnrolmentMode extends ModelBase
      * @return EnrolmentMode[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class EnrolmentMode extends ModelBase
     /**
      * @param string $d00018
      */
-    public function setD00018(string $d00018 = null)
+    public function setD00018(?string $d00018 = null)
     {
         $this->setProperty('d00018', $d00018);
     }

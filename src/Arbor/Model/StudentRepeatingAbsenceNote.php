@@ -28,7 +28,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
      * @return StudentRepeatingAbsenceNote[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -86,7 +86,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -102,7 +102,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -118,7 +118,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -134,7 +134,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -150,7 +150,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param string $repeatingType
      */
-    public function setRepeatingType(string $repeatingType = null)
+    public function setRepeatingType(?string $repeatingType = null)
     {
         $this->setProperty('repeatingType', $repeatingType);
     }
@@ -166,7 +166,7 @@ class StudentRepeatingAbsenceNote extends ModelBase
     /**
      * @param int $maxOccurrence
      */
-    public function setMaxOccurrence(int $maxOccurrence = null)
+    public function setMaxOccurrence(?int $maxOccurrence = null)
     {
         $this->setProperty('maxOccurrence', $maxOccurrence);
     }

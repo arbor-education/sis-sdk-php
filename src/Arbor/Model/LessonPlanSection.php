@@ -26,7 +26,7 @@ class LessonPlanSection extends ModelBase
      * @return LessonPlanSection[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param \Arbor\Model\LessonPlan $lessonPlan
      */
-    public function setLessonPlan(\Arbor\Model\LessonPlan $lessonPlan = null)
+    public function setLessonPlan(?\Arbor\Model\LessonPlan $lessonPlan = null)
     {
         $this->setProperty('lessonPlan', $lessonPlan);
     }
@@ -84,7 +84,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -100,7 +100,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes(string $teacherNotes = null)
+    public function setTeacherNotes(?string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -116,7 +116,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $sectionType
      */
-    public function setSectionType(string $sectionType = null)
+    public function setSectionType(?string $sectionType = null)
     {
         $this->setProperty('sectionType', $sectionType);
     }
@@ -132,7 +132,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param string $expectedDuration
      */
-    public function setExpectedDuration(string $expectedDuration = null)
+    public function setExpectedDuration(?string $expectedDuration = null)
     {
         $this->setProperty('expectedDuration', $expectedDuration);
     }
@@ -148,7 +148,7 @@ class LessonPlanSection extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

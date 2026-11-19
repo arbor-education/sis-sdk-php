@@ -20,7 +20,7 @@ class ReportCardBatchStandardizedAssessmentAspect extends ModelBase
      * @return ReportCardBatchStandardizedAssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class ReportCardBatchStandardizedAssessmentAspect extends ModelBase
     /**
      * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(?\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -78,7 +78,7 @@ class ReportCardBatchStandardizedAssessmentAspect extends ModelBase
     /**
      * @param \Arbor\Model\StandardizedAssessmentAspect $standardizedAssessmentAspect
      */
-    public function setStandardizedAssessmentAspect(\Arbor\Model\StandardizedAssessmentAspect $standardizedAssessmentAspect = null)
+    public function setStandardizedAssessmentAspect(?\Arbor\Model\StandardizedAssessmentAspect $standardizedAssessmentAspect = null)
     {
         $this->setProperty('standardizedAssessmentAspect', $standardizedAssessmentAspect);
     }
@@ -94,7 +94,7 @@ class ReportCardBatchStandardizedAssessmentAspect extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder(int $order = null)
+    public function setOrder(?int $order = null)
     {
         $this->setProperty('order', $order);
     }

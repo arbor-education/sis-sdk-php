@@ -24,7 +24,7 @@ class OptionsImportStudentMapping extends ModelBase
      * @return OptionsImportStudentMapping[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param \Arbor\Model\OptionsImportResult $optionsImportResult
      */
-    public function setOptionsImportResult(\Arbor\Model\OptionsImportResult $optionsImportResult = null)
+    public function setOptionsImportResult(?\Arbor\Model\OptionsImportResult $optionsImportResult = null)
     {
         $this->setProperty('optionsImportResult', $optionsImportResult);
     }
@@ -82,7 +82,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $studentName
      */
-    public function setStudentName(string $studentName = null)
+    public function setStudentName(?string $studentName = null)
     {
         $this->setProperty('studentName', $studentName);
     }
@@ -98,7 +98,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $studentIdentifier
      */
-    public function setStudentIdentifier(string $studentIdentifier = null)
+    public function setStudentIdentifier(?string $studentIdentifier = null)
     {
         $this->setProperty('studentIdentifier', $studentIdentifier);
     }
@@ -114,7 +114,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param string $mappingAction
      */
-    public function setMappingAction(string $mappingAction = null)
+    public function setMappingAction(?string $mappingAction = null)
     {
         $this->setProperty('mappingAction', $mappingAction);
     }
@@ -130,7 +130,7 @@ class OptionsImportStudentMapping extends ModelBase
     /**
      * @param \Arbor\Model\Student $mappedStudent
      */
-    public function setMappedStudent(\Arbor\Model\Student $mappedStudent = null)
+    public function setMappedStudent(?\Arbor\Model\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }

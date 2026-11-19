@@ -26,7 +26,7 @@ class AttendanceRegister extends ModelBase
      * @return AttendanceRegister[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class AttendanceRegister extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\Arbor\Model\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -84,7 +84,7 @@ class AttendanceRegister extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -100,7 +100,7 @@ class AttendanceRegister extends ModelBase
     /**
      * @param \DateTime $openedDatetime
      */
-    public function setOpenedDatetime(\DateTime $openedDatetime = null)
+    public function setOpenedDatetime(?\DateTime $openedDatetime = null)
     {
         $this->setProperty('openedDatetime', $openedDatetime);
     }
@@ -116,7 +116,7 @@ class AttendanceRegister extends ModelBase
     /**
      * @param \DateTime $completedDatetime
      */
-    public function setCompletedDatetime(\DateTime $completedDatetime = null)
+    public function setCompletedDatetime(?\DateTime $completedDatetime = null)
     {
         $this->setProperty('completedDatetime', $completedDatetime);
     }
@@ -132,7 +132,7 @@ class AttendanceRegister extends ModelBase
     /**
      * @param \DateTime $validatedDatetime
      */
-    public function setValidatedDatetime(\DateTime $validatedDatetime = null)
+    public function setValidatedDatetime(?\DateTime $validatedDatetime = null)
     {
         $this->setProperty('validatedDatetime', $validatedDatetime);
     }
@@ -148,7 +148,7 @@ class AttendanceRegister extends ModelBase
     /**
      * @param \DateTime $closedDatetime
      */
-    public function setClosedDatetime(\DateTime $closedDatetime = null)
+    public function setClosedDatetime(?\DateTime $closedDatetime = null)
     {
         $this->setProperty('closedDatetime', $closedDatetime);
     }

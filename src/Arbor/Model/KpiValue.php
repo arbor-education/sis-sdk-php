@@ -36,7 +36,7 @@ class KpiValue extends ModelBase
      * @return KpiValue[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class KpiValue extends ModelBase
     /**
      * @param \Arbor\Model\Kpi $kpi
      */
-    public function setKpi(\Arbor\Model\Kpi $kpi = null)
+    public function setKpi(?\Arbor\Model\Kpi $kpi = null)
     {
         $this->setProperty('kpi', $kpi);
     }
@@ -94,7 +94,7 @@ class KpiValue extends ModelBase
     /**
      * @param string $kpiCategory
      */
-    public function setKpiCategory(string $kpiCategory = null)
+    public function setKpiCategory(?string $kpiCategory = null)
     {
         $this->setProperty('kpiCategory', $kpiCategory);
     }
@@ -110,7 +110,7 @@ class KpiValue extends ModelBase
     /**
      * @param \DateTime $referenceDatetime
      */
-    public function setReferenceDatetime(\DateTime $referenceDatetime = null)
+    public function setReferenceDatetime(?\DateTime $referenceDatetime = null)
     {
         $this->setProperty('referenceDatetime', $referenceDatetime);
     }
@@ -126,7 +126,7 @@ class KpiValue extends ModelBase
     /**
      * @param \DateTime $calculationRangeStartDatetime
      */
-    public function setCalculationRangeStartDatetime(\DateTime $calculationRangeStartDatetime = null)
+    public function setCalculationRangeStartDatetime(?\DateTime $calculationRangeStartDatetime = null)
     {
         $this->setProperty('calculationRangeStartDatetime', $calculationRangeStartDatetime);
     }
@@ -142,7 +142,7 @@ class KpiValue extends ModelBase
     /**
      * @param \DateTime $calculationRangeEndDatetime
      */
-    public function setCalculationRangeEndDatetime(\DateTime $calculationRangeEndDatetime = null)
+    public function setCalculationRangeEndDatetime(?\DateTime $calculationRangeEndDatetime = null)
     {
         $this->setProperty('calculationRangeEndDatetime', $calculationRangeEndDatetime);
     }
@@ -158,7 +158,7 @@ class KpiValue extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $basis
      */
-    public function setBasis(\Arbor\Model\ModelBase $basis = null)
+    public function setBasis(?\Arbor\Model\ModelBase $basis = null)
     {
         $this->setProperty('basis', $basis);
     }
@@ -174,7 +174,7 @@ class KpiValue extends ModelBase
     /**
      * @param float $value
      */
-    public function setValue(float $value = null)
+    public function setValue(?float $value = null)
     {
         $this->setProperty('value', $value);
     }
@@ -190,7 +190,7 @@ class KpiValue extends ModelBase
     /**
      * @param \Arbor\Model\KpiRange $kpiRange
      */
-    public function setKpiRange(\Arbor\Model\KpiRange $kpiRange = null)
+    public function setKpiRange(?\Arbor\Model\KpiRange $kpiRange = null)
     {
         $this->setProperty('kpiRange', $kpiRange);
     }
@@ -206,7 +206,7 @@ class KpiValue extends ModelBase
     /**
      * @param \DateTime $recalculationScheduledDatetime
      */
-    public function setRecalculationScheduledDatetime(\DateTime $recalculationScheduledDatetime = null)
+    public function setRecalculationScheduledDatetime(?\DateTime $recalculationScheduledDatetime = null)
     {
         $this->setProperty('recalculationScheduledDatetime', $recalculationScheduledDatetime);
     }
@@ -222,7 +222,7 @@ class KpiValue extends ModelBase
     /**
      * @param \DateTime $recalculationStartedDatetime
      */
-    public function setRecalculationStartedDatetime(\DateTime $recalculationStartedDatetime = null)
+    public function setRecalculationStartedDatetime(?\DateTime $recalculationStartedDatetime = null)
     {
         $this->setProperty('recalculationStartedDatetime', $recalculationStartedDatetime);
     }
@@ -238,7 +238,7 @@ class KpiValue extends ModelBase
     /**
      * @param \DateTime $lastCalculatedDatetime
      */
-    public function setLastCalculatedDatetime(\DateTime $lastCalculatedDatetime = null)
+    public function setLastCalculatedDatetime(?\DateTime $lastCalculatedDatetime = null)
     {
         $this->setProperty('lastCalculatedDatetime', $lastCalculatedDatetime);
     }

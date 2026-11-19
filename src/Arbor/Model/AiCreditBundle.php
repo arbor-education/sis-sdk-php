@@ -26,7 +26,7 @@ class AiCreditBundle extends ModelBase
      * @return AiCreditBundle[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class AiCreditBundle extends ModelBase
     /**
      * @param string $bundleType
      */
-    public function setBundleType(string $bundleType = null)
+    public function setBundleType(?string $bundleType = null)
     {
         $this->setProperty('bundleType', $bundleType);
     }
@@ -84,7 +84,7 @@ class AiCreditBundle extends ModelBase
     /**
      * @param string $purchaseIdentifier
      */
-    public function setPurchaseIdentifier(string $purchaseIdentifier = null)
+    public function setPurchaseIdentifier(?string $purchaseIdentifier = null)
     {
         $this->setProperty('purchaseIdentifier', $purchaseIdentifier);
     }
@@ -100,7 +100,7 @@ class AiCreditBundle extends ModelBase
     /**
      * @param \DateTime $effectiveDatetime
      */
-    public function setEffectiveDatetime(\DateTime $effectiveDatetime = null)
+    public function setEffectiveDatetime(?\DateTime $effectiveDatetime = null)
     {
         $this->setProperty('effectiveDatetime', $effectiveDatetime);
     }
@@ -116,7 +116,7 @@ class AiCreditBundle extends ModelBase
     /**
      * @param \DateTime $expiryDatetime
      */
-    public function setExpiryDatetime(\DateTime $expiryDatetime = null)
+    public function setExpiryDatetime(?\DateTime $expiryDatetime = null)
     {
         $this->setProperty('expiryDatetime', $expiryDatetime);
     }
@@ -132,7 +132,7 @@ class AiCreditBundle extends ModelBase
     /**
      * @param string $bundleAmount
      */
-    public function setBundleAmount(string $bundleAmount = null)
+    public function setBundleAmount(?string $bundleAmount = null)
     {
         $this->setProperty('bundleAmount', $bundleAmount);
     }
@@ -148,7 +148,7 @@ class AiCreditBundle extends ModelBase
     /**
      * @param string $remainingAmount
      */
-    public function setRemainingAmount(string $remainingAmount = null)
+    public function setRemainingAmount(?string $remainingAmount = null)
     {
         $this->setProperty('remainingAmount', $remainingAmount);
     }

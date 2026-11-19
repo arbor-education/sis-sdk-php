@@ -42,7 +42,7 @@ class SchoolCensusSchoolDetail extends ModelBase
      * @return SchoolCensusSchoolDetail[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param \Arbor\Model\UkDfe\SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(?\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
@@ -100,7 +100,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $teenMotherPlaces
      */
-    public function setTeenMotherPlaces(int $teenMotherPlaces = null)
+    public function setTeenMotherPlaces(?int $teenMotherPlaces = null)
     {
         $this->setProperty('teenMotherPlaces', $teenMotherPlaces);
     }
@@ -116,7 +116,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $freeSchoolMealsTaken
      */
-    public function setFreeSchoolMealsTaken(int $freeSchoolMealsTaken = null)
+    public function setFreeSchoolMealsTaken(?int $freeSchoolMealsTaken = null)
     {
         $this->setProperty('freeSchoolMealsTaken', $freeSchoolMealsTaken);
     }
@@ -132,7 +132,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $admissionsAppealsJson
      */
-    public function setAdmissionsAppealsJson(string $admissionsAppealsJson = null)
+    public function setAdmissionsAppealsJson(?string $admissionsAppealsJson = null)
     {
         $this->setProperty('admissionsAppealsJson', $admissionsAppealsJson);
     }
@@ -148,7 +148,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $admissionsAppealsLodged
      */
-    public function setAdmissionsAppealsLodged(int $admissionsAppealsLodged = null)
+    public function setAdmissionsAppealsLodged(?int $admissionsAppealsLodged = null)
     {
         $this->setProperty('admissionsAppealsLodged', $admissionsAppealsLodged);
     }
@@ -164,7 +164,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $admissionsAppealsWithdrawn
      */
-    public function setAdmissionsAppealsWithdrawn(int $admissionsAppealsWithdrawn = null)
+    public function setAdmissionsAppealsWithdrawn(?int $admissionsAppealsWithdrawn = null)
     {
         $this->setProperty('admissionsAppealsWithdrawn', $admissionsAppealsWithdrawn);
     }
@@ -180,7 +180,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $admissionsAppealsHeard
      */
-    public function setAdmissionsAppealsHeard(int $admissionsAppealsHeard = null)
+    public function setAdmissionsAppealsHeard(?int $admissionsAppealsHeard = null)
     {
         $this->setProperty('admissionsAppealsHeard', $admissionsAppealsHeard);
     }
@@ -196,7 +196,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $admissionsAppealsUpheld
      */
-    public function setAdmissionsAppealsUpheld(int $admissionsAppealsUpheld = null)
+    public function setAdmissionsAppealsUpheld(?int $admissionsAppealsUpheld = null)
     {
         $this->setProperty('admissionsAppealsUpheld', $admissionsAppealsUpheld);
     }
@@ -212,7 +212,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param int $admissionsAppealsRejected
      */
-    public function setAdmissionsAppealsRejected(int $admissionsAppealsRejected = null)
+    public function setAdmissionsAppealsRejected(?int $admissionsAppealsRejected = null)
     {
         $this->setProperty('admissionsAppealsRejected', $admissionsAppealsRejected);
     }
@@ -228,7 +228,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $schoolLunchTakenStudentIds
      */
-    public function setSchoolLunchTakenStudentIds(string $schoolLunchTakenStudentIds = null)
+    public function setSchoolLunchTakenStudentIds(?string $schoolLunchTakenStudentIds = null)
     {
         $this->setProperty('schoolLunchTakenStudentIds', $schoolLunchTakenStudentIds);
     }
@@ -244,7 +244,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $partTimeStudentJson
      */
-    public function setPartTimeStudentJson(string $partTimeStudentJson = null)
+    public function setPartTimeStudentJson(?string $partTimeStudentJson = null)
     {
         $this->setProperty('partTimeStudentJson', $partTimeStudentJson);
     }
@@ -260,7 +260,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $qualificationResultsJson
      */
-    public function setQualificationResultsJson(string $qualificationResultsJson = null)
+    public function setQualificationResultsJson(?string $qualificationResultsJson = null)
     {
         $this->setProperty('qualificationResultsJson', $qualificationResultsJson);
     }
@@ -276,7 +276,7 @@ class SchoolCensusSchoolDetail extends ModelBase
     /**
      * @param string $previousYearQualificationResultsJson
      */
-    public function setPreviousYearQualificationResultsJson(string $previousYearQualificationResultsJson = null)
+    public function setPreviousYearQualificationResultsJson(?string $previousYearQualificationResultsJson = null)
     {
         $this->setProperty('previousYearQualificationResultsJson', $previousYearQualificationResultsJson);
     }

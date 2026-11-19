@@ -26,7 +26,7 @@ class ThirdPartyLogin extends ModelBase
      * @return ThirdPartyLogin[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param \Arbor\Model\ThirdPartySite $thirdPartySite
      */
-    public function setThirdPartySite(\Arbor\Model\ThirdPartySite $thirdPartySite = null)
+    public function setThirdPartySite(?\Arbor\Model\ThirdPartySite $thirdPartySite = null)
     {
         $this->setProperty('thirdPartySite', $thirdPartySite);
     }
@@ -84,7 +84,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername(string $username = null)
+    public function setUsername(?string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -100,7 +100,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param string $password
      */
-    public function setPassword(string $password = null)
+    public function setPassword(?string $password = null)
     {
         $this->setProperty('password', $password);
     }
@@ -116,7 +116,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param \DateTime $verifiedDatetime
      */
-    public function setVerifiedDatetime(\DateTime $verifiedDatetime = null)
+    public function setVerifiedDatetime(?\DateTime $verifiedDatetime = null)
     {
         $this->setProperty('verifiedDatetime', $verifiedDatetime);
     }
@@ -132,7 +132,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param \DateTime $failedDatetime
      */
-    public function setFailedDatetime(\DateTime $failedDatetime = null)
+    public function setFailedDatetime(?\DateTime $failedDatetime = null)
     {
         $this->setProperty('failedDatetime', $failedDatetime);
     }
@@ -148,7 +148,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\Arbor\Model\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }

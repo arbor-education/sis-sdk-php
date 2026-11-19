@@ -26,7 +26,7 @@ class MealProvisionPriceCategory extends ModelBase
      * @return MealProvisionPriceCategory[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName(string $categoryName = null)
+    public function setCategoryName(?string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }
@@ -84,7 +84,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param \Arbor\Model\MealProvision $mealProvision
      */
-    public function setMealProvision(\Arbor\Model\MealProvision $mealProvision = null)
+    public function setMealProvision(?\Arbor\Model\MealProvision $mealProvision = null)
     {
         $this->setProperty('mealProvision', $mealProvision);
     }
@@ -100,7 +100,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param string $appliesTo
      */
-    public function setAppliesTo(string $appliesTo = null)
+    public function setAppliesTo(?string $appliesTo = null)
     {
         $this->setProperty('appliesTo', $appliesTo);
     }
@@ -116,7 +116,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $group
      */
-    public function setGroup(\Arbor\Model\ModelBase $group = null)
+    public function setGroup(?\Arbor\Model\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }
@@ -132,7 +132,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -148,7 +148,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

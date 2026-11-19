@@ -28,7 +28,7 @@ class CovidTestingTest extends ModelBase
      * @return CovidTestingTest[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\Arbor\Model\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -86,7 +86,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $testType
      */
-    public function setTestType(string $testType = null)
+    public function setTestType(?string $testType = null)
     {
         $this->setProperty('testType', $testType);
     }
@@ -102,7 +102,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $barcode
      */
-    public function setBarcode(string $barcode = null)
+    public function setBarcode(?string $barcode = null)
     {
         $this->setProperty('barcode', $barcode);
     }
@@ -118,7 +118,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param string $result
      */
-    public function setResult(string $result = null)
+    public function setResult(?string $result = null)
     {
         $this->setProperty('result', $result);
     }
@@ -134,7 +134,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param \DateTime $resultDatetime
      */
-    public function setResultDatetime(\DateTime $resultDatetime = null)
+    public function setResultDatetime(?\DateTime $resultDatetime = null)
     {
         $this->setProperty('resultDatetime', $resultDatetime);
     }
@@ -150,7 +150,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $administeredBy
      */
-    public function setAdministeredBy(\Arbor\Model\ModelBase $administeredBy = null)
+    public function setAdministeredBy(?\Arbor\Model\ModelBase $administeredBy = null)
     {
         $this->setProperty('administeredBy', $administeredBy);
     }
@@ -166,7 +166,7 @@ class CovidTestingTest extends ModelBase
     /**
      * @param \DateTime $administeredDatetime
      */
-    public function setAdministeredDatetime(\DateTime $administeredDatetime = null)
+    public function setAdministeredDatetime(?\DateTime $administeredDatetime = null)
     {
         $this->setProperty('administeredDatetime', $administeredDatetime);
     }

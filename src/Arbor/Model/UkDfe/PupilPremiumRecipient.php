@@ -30,7 +30,7 @@ class PupilPremiumRecipient extends ModelBase
      * @return PupilPremiumRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,7 +88,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -104,7 +104,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param float $fte
      */
-    public function setFte(float $fte = null)
+    public function setFte(?float $fte = null)
     {
         $this->setProperty('fte', $fte);
     }
@@ -120,7 +120,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param string $fteCashAmount
      */
-    public function setFteCashAmount(string $fteCashAmount = null)
+    public function setFteCashAmount(?string $fteCashAmount = null)
     {
         $this->setProperty('fteCashAmount', $fteCashAmount);
     }
@@ -136,7 +136,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -152,7 +152,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -168,7 +168,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param string $lastFsm
      */
-    public function setLastFsm(string $lastFsm = null)
+    public function setLastFsm(?string $lastFsm = null)
     {
         $this->setProperty('lastFsm', $lastFsm);
     }

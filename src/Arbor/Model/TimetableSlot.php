@@ -42,7 +42,7 @@ class TimetableSlot extends ModelBase
      * @return TimetableSlot[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -100,7 +100,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $timetabledObject
      */
-    public function setTimetabledObject(\Arbor\Model\ModelBase $timetabledObject = null)
+    public function setTimetabledObject(?\Arbor\Model\ModelBase $timetabledObject = null)
     {
         $this->setProperty('timetabledObject', $timetabledObject);
     }
@@ -116,7 +116,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle(int $dayOfCycle = null)
+    public function setDayOfCycle(?int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -132,7 +132,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param int $dayOfWeek
      */
-    public function setDayOfWeek(int $dayOfWeek = null)
+    public function setDayOfWeek(?int $dayOfWeek = null)
     {
         $this->setProperty('dayOfWeek', $dayOfWeek);
     }
@@ -148,7 +148,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param bool $termTimeOnly
      */
-    public function setTermTimeOnly(bool $termTimeOnly = null)
+    public function setTermTimeOnly(?bool $termTimeOnly = null)
     {
         $this->setProperty('termTimeOnly', $termTimeOnly);
     }
@@ -164,7 +164,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime(string $startTime = null)
+    public function setStartTime(?string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -180,7 +180,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime(string $endTime = null)
+    public function setEndTime(?string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -196,7 +196,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -212,7 +212,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -228,7 +228,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency(string $frequency = null)
+    public function setFrequency(?string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }
@@ -244,7 +244,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -260,7 +260,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $schedulingErrorType
      */
-    public function setSchedulingErrorType(string $schedulingErrorType = null)
+    public function setSchedulingErrorType(?string $schedulingErrorType = null)
     {
         $this->setProperty('schedulingErrorType', $schedulingErrorType);
     }
@@ -276,7 +276,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param string $schedulingError
      */
-    public function setSchedulingError(string $schedulingError = null)
+    public function setSchedulingError(?string $schedulingError = null)
     {
         $this->setProperty('schedulingError', $schedulingError);
     }
@@ -292,7 +292,7 @@ class TimetableSlot extends ModelBase
     /**
      * @param \DateTime $schedulingErrorDatetime
      */
-    public function setSchedulingErrorDatetime(\DateTime $schedulingErrorDatetime = null)
+    public function setSchedulingErrorDatetime(?\DateTime $schedulingErrorDatetime = null)
     {
         $this->setProperty('schedulingErrorDatetime', $schedulingErrorDatetime);
     }

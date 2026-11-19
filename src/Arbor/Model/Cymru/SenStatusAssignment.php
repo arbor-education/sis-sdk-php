@@ -26,7 +26,7 @@ class SenStatusAssignment extends ModelBase
      * @return SenStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param string $senAdviceAndAssessment
      */
-    public function setSenAdviceAndAssessment(string $senAdviceAndAssessment = null)
+    public function setSenAdviceAndAssessment(?string $senAdviceAndAssessment = null)
     {
         $this->setProperty('senAdviceAndAssessment', $senAdviceAndAssessment);
     }
@@ -84,7 +84,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param string $senCurriculumAndTeachingMethods
      */
-    public function setSenCurriculumAndTeachingMethods(string $senCurriculumAndTeachingMethods = null)
+    public function setSenCurriculumAndTeachingMethods(?string $senCurriculumAndTeachingMethods = null)
     {
         $this->setProperty('senCurriculumAndTeachingMethods', $senCurriculumAndTeachingMethods);
     }
@@ -100,7 +100,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param string $senGroupingAndSupport
      */
-    public function setSenGroupingAndSupport(string $senGroupingAndSupport = null)
+    public function setSenGroupingAndSupport(?string $senGroupingAndSupport = null)
     {
         $this->setProperty('senGroupingAndSupport', $senGroupingAndSupport);
     }
@@ -116,7 +116,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param bool $senLocalHealthBoardSecuredProvision
      */
-    public function setSenLocalHealthBoardSecuredProvision(bool $senLocalHealthBoardSecuredProvision = null)
+    public function setSenLocalHealthBoardSecuredProvision(?bool $senLocalHealthBoardSecuredProvision = null)
     {
         $this->setProperty('senLocalHealthBoardSecuredProvision', $senLocalHealthBoardSecuredProvision);
     }
@@ -132,7 +132,7 @@ class SenStatusAssignment extends ModelBase
     /**
      * @param string $senSpecialisedResources
      */
-    public function setSenSpecialisedResources(string $senSpecialisedResources = null)
+    public function setSenSpecialisedResources(?string $senSpecialisedResources = null)
     {
         $this->setProperty('senSpecialisedResources', $senSpecialisedResources);
     }

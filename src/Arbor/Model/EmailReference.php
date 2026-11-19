@@ -24,7 +24,7 @@ class EmailReference extends ModelBase
      * @return EmailReference[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class EmailReference extends ModelBase
     /**
      * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Arbor\Model\Email $email = null)
+    public function setEmail(?\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -82,7 +82,7 @@ class EmailReference extends ModelBase
     /**
      * @param string $referenceType
      */
-    public function setReferenceType(string $referenceType = null)
+    public function setReferenceType(?string $referenceType = null)
     {
         $this->setProperty('referenceType', $referenceType);
     }
@@ -98,7 +98,7 @@ class EmailReference extends ModelBase
     /**
      * @param string $referencedMessageId
      */
-    public function setReferencedMessageId(string $referencedMessageId = null)
+    public function setReferencedMessageId(?string $referencedMessageId = null)
     {
         $this->setProperty('referencedMessageId', $referencedMessageId);
     }
@@ -114,7 +114,7 @@ class EmailReference extends ModelBase
     /**
      * @param \Arbor\Model\Email $referenceEmail
      */
-    public function setReferenceEmail(\Arbor\Model\Email $referenceEmail = null)
+    public function setReferenceEmail(?\Arbor\Model\Email $referenceEmail = null)
     {
         $this->setProperty('referenceEmail', $referenceEmail);
     }
@@ -130,7 +130,7 @@ class EmailReference extends ModelBase
     /**
      * @param int $referenceIndex
      */
-    public function setReferenceIndex(int $referenceIndex = null)
+    public function setReferenceIndex(?int $referenceIndex = null)
     {
         $this->setProperty('referenceIndex', $referenceIndex);
     }

@@ -22,7 +22,7 @@ class LearnerPriorAttainment extends ModelBase
      * @return LearnerPriorAttainment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class LearnerPriorAttainment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class LearnerPriorAttainment extends ModelBase
     /**
      * @param string $priorLevel
      */
-    public function setPriorLevel(string $priorLevel = null)
+    public function setPriorLevel(?string $priorLevel = null)
     {
         $this->setProperty('priorLevel', $priorLevel);
     }
@@ -96,7 +96,7 @@ class LearnerPriorAttainment extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }

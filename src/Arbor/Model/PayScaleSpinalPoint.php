@@ -22,7 +22,7 @@ class PayScaleSpinalPoint extends ModelBase
      * @return PayScaleSpinalPoint[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param \Arbor\Model\PayScale $payScale
      */
-    public function setPayScale(\Arbor\Model\PayScale $payScale = null)
+    public function setPayScale(?\Arbor\Model\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
@@ -80,7 +80,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param string $spinalPointCode
      */
-    public function setSpinalPointCode(string $spinalPointCode = null)
+    public function setSpinalPointCode(?string $spinalPointCode = null)
     {
         $this->setProperty('spinalPointCode', $spinalPointCode);
     }
@@ -96,7 +96,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param string $spinalPointName
      */
-    public function setSpinalPointName(string $spinalPointName = null)
+    public function setSpinalPointName(?string $spinalPointName = null)
     {
         $this->setProperty('spinalPointName', $spinalPointName);
     }
@@ -112,7 +112,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

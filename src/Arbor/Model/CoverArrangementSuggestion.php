@@ -24,7 +24,7 @@ class CoverArrangementSuggestion extends ModelBase
      * @return CoverArrangementSuggestion[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param \Arbor\Model\CoverRequirement $coverRequirement
      */
-    public function setCoverRequirement(\Arbor\Model\CoverRequirement $coverRequirement = null)
+    public function setCoverRequirement(?\Arbor\Model\CoverRequirement $coverRequirement = null)
     {
         $this->setProperty('coverRequirement', $coverRequirement);
     }
@@ -82,7 +82,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(\Arbor\Model\Staff $staff = null)
+    public function setStaff(?\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -98,7 +98,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param \Arbor\Model\CoverArrangement $coverArrangement
      */
-    public function setCoverArrangement(\Arbor\Model\CoverArrangement $coverArrangement = null)
+    public function setCoverArrangement(?\Arbor\Model\CoverArrangement $coverArrangement = null)
     {
         $this->setProperty('coverArrangement', $coverArrangement);
     }
@@ -114,7 +114,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(string $reason = null)
+    public function setReason(?string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -130,7 +130,7 @@ class CoverArrangementSuggestion extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }

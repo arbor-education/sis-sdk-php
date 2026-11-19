@@ -18,7 +18,7 @@ class LessonPlan extends ModelBase
      * @return LessonPlan[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class LessonPlan extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -76,7 +76,7 @@ class LessonPlan extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary(string $summary = null)
+    public function setSummary(?string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

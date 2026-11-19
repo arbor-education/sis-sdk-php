@@ -30,7 +30,7 @@ class SchoolWorkforceCensus extends ModelBase
      * @return SchoolWorkforceCensus[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -88,7 +88,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -104,7 +104,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -120,7 +120,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -136,7 +136,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param string $censusYear
      */
-    public function setCensusYear(string $censusYear = null)
+    public function setCensusYear(?string $censusYear = null)
     {
         $this->setProperty('censusYear', $censusYear);
     }
@@ -152,7 +152,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param \DateTime $censusReferenceDate
      */
-    public function setCensusReferenceDate(\DateTime $censusReferenceDate = null)
+    public function setCensusReferenceDate(?\DateTime $censusReferenceDate = null)
     {
         $this->setProperty('censusReferenceDate', $censusReferenceDate);
     }
@@ -168,7 +168,7 @@ class SchoolWorkforceCensus extends ModelBase
     /**
      * @param \DateTime $censusSubmissionDeadlineDate
      */
-    public function setCensusSubmissionDeadlineDate(\DateTime $censusSubmissionDeadlineDate = null)
+    public function setCensusSubmissionDeadlineDate(?\DateTime $censusSubmissionDeadlineDate = null)
     {
         $this->setProperty('censusSubmissionDeadlineDate', $censusSubmissionDeadlineDate);
     }

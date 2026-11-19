@@ -40,7 +40,7 @@ class IncomingCardTransaction extends ModelBase
      * @return IncomingCardTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -82,7 +82,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
+    public function setBillPayer(?\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
@@ -98,7 +98,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(?\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -114,7 +114,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \Arbor\Model\PaymentProviderPayout $paymentProviderPayout
      */
-    public function setPaymentProviderPayout(\Arbor\Model\PaymentProviderPayout $paymentProviderPayout = null)
+    public function setPaymentProviderPayout(?\Arbor\Model\PaymentProviderPayout $paymentProviderPayout = null)
     {
         $this->setProperty('paymentProviderPayout', $paymentProviderPayout);
     }
@@ -130,7 +130,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $paymentProviderTransactionIdentifier
      */
-    public function setPaymentProviderTransactionIdentifier(string $paymentProviderTransactionIdentifier = null)
+    public function setPaymentProviderTransactionIdentifier(?string $paymentProviderTransactionIdentifier = null)
     {
         $this->setProperty('paymentProviderTransactionIdentifier', $paymentProviderTransactionIdentifier);
     }
@@ -146,7 +146,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionNetAmount
      */
-    public function setTransactionNetAmount(string $transactionNetAmount = null)
+    public function setTransactionNetAmount(?string $transactionNetAmount = null)
     {
         $this->setProperty('transactionNetAmount', $transactionNetAmount);
     }
@@ -162,7 +162,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionFeeAmount
      */
-    public function setTransactionFeeAmount(string $transactionFeeAmount = null)
+    public function setTransactionFeeAmount(?string $transactionFeeAmount = null)
     {
         $this->setProperty('transactionFeeAmount', $transactionFeeAmount);
     }
@@ -178,7 +178,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionReference
      */
-    public function setTransactionReference(string $transactionReference = null)
+    public function setTransactionReference(?string $transactionReference = null)
     {
         $this->setProperty('transactionReference', $transactionReference);
     }
@@ -194,7 +194,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \DateTime $transactionInitiatedDatetime
      */
-    public function setTransactionInitiatedDatetime(\DateTime $transactionInitiatedDatetime = null)
+    public function setTransactionInitiatedDatetime(?\DateTime $transactionInitiatedDatetime = null)
     {
         $this->setProperty('transactionInitiatedDatetime', $transactionInitiatedDatetime);
     }
@@ -210,7 +210,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \DateTime $transactionSucceededDatetime
      */
-    public function setTransactionSucceededDatetime(\DateTime $transactionSucceededDatetime = null)
+    public function setTransactionSucceededDatetime(?\DateTime $transactionSucceededDatetime = null)
     {
         $this->setProperty('transactionSucceededDatetime', $transactionSucceededDatetime);
     }
@@ -226,7 +226,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \DateTime $transactionFailedDatetime
      */
-    public function setTransactionFailedDatetime(\DateTime $transactionFailedDatetime = null)
+    public function setTransactionFailedDatetime(?\DateTime $transactionFailedDatetime = null)
     {
         $this->setProperty('transactionFailedDatetime', $transactionFailedDatetime);
     }
@@ -242,7 +242,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \DateTime $transactionRefundedDatetime
      */
-    public function setTransactionRefundedDatetime(\DateTime $transactionRefundedDatetime = null)
+    public function setTransactionRefundedDatetime(?\DateTime $transactionRefundedDatetime = null)
     {
         $this->setProperty('transactionRefundedDatetime', $transactionRefundedDatetime);
     }
@@ -258,7 +258,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $cardTokenId
      */
-    public function setCardTokenId(string $cardTokenId = null)
+    public function setCardTokenId(?string $cardTokenId = null)
     {
         $this->setProperty('cardTokenId', $cardTokenId);
     }
@@ -274,7 +274,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param \DateTime $cancelledDatetime
      */
-    public function setCancelledDatetime(\DateTime $cancelledDatetime = null)
+    public function setCancelledDatetime(?\DateTime $cancelledDatetime = null)
     {
         $this->setProperty('cancelledDatetime', $cancelledDatetime);
     }

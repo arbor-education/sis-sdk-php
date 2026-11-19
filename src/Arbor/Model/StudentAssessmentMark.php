@@ -38,7 +38,7 @@ class StudentAssessmentMark extends ModelBase
      * @return StudentAssessmentMark[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -96,7 +96,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentSubject $assessmentSubject
      */
-    public function setAssessmentSubject(\Arbor\Model\AssessmentSubject $assessmentSubject = null)
+    public function setAssessmentSubject(?\Arbor\Model\AssessmentSubject $assessmentSubject = null)
     {
         $this->setProperty('assessmentSubject', $assessmentSubject);
     }
@@ -112,7 +112,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentComponent $assessmentComponent
      */
-    public function setAssessmentComponent(\Arbor\Model\AssessmentComponent $assessmentComponent = null)
+    public function setAssessmentComponent(?\Arbor\Model\AssessmentComponent $assessmentComponent = null)
     {
         $this->setProperty('assessmentComponent', $assessmentComponent);
     }
@@ -128,7 +128,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataDrop $assessmentDataDrop
      */
-    public function setAssessmentDataDrop(\Arbor\Model\AssessmentDataDrop $assessmentDataDrop = null)
+    public function setAssessmentDataDrop(?\Arbor\Model\AssessmentDataDrop $assessmentDataDrop = null)
     {
         $this->setProperty('assessmentDataDrop', $assessmentDataDrop);
     }
@@ -144,7 +144,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(?\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -160,7 +160,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentGrade $assessmentGrade
      */
-    public function setAssessmentGrade(\Arbor\Model\AssessmentGrade $assessmentGrade = null)
+    public function setAssessmentGrade(?\Arbor\Model\AssessmentGrade $assessmentGrade = null)
     {
         $this->setProperty('assessmentGrade', $assessmentGrade);
     }
@@ -176,7 +176,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param string $gradeValue
      */
-    public function setGradeValue(string $gradeValue = null)
+    public function setGradeValue(?string $gradeValue = null)
     {
         $this->setProperty('gradeValue', $gradeValue);
     }
@@ -192,7 +192,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param int $pointValue
      */
-    public function setPointValue(int $pointValue = null)
+    public function setPointValue(?int $pointValue = null)
     {
         $this->setProperty('pointValue', $pointValue);
     }
@@ -208,7 +208,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \DateTime $assessmentDate
      */
-    public function setAssessmentDate(\DateTime $assessmentDate = null)
+    public function setAssessmentDate(?\DateTime $assessmentDate = null)
     {
         $this->setProperty('assessmentDate', $assessmentDate);
     }
@@ -224,7 +224,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Staff $markingStaff
      */
-    public function setMarkingStaff(\Arbor\Model\Staff $markingStaff = null)
+    public function setMarkingStaff(?\Arbor\Model\Staff $markingStaff = null)
     {
         $this->setProperty('markingStaff', $markingStaff);
     }
@@ -240,7 +240,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \Arbor\Model\Staff $approvalStaff
      */
-    public function setApprovalStaff(\Arbor\Model\Staff $approvalStaff = null)
+    public function setApprovalStaff(?\Arbor\Model\Staff $approvalStaff = null)
     {
         $this->setProperty('approvalStaff', $approvalStaff);
     }
@@ -256,7 +256,7 @@ class StudentAssessmentMark extends ModelBase
     /**
      * @param \DateTime $approvalDate
      */
-    public function setApprovalDate(\DateTime $approvalDate = null)
+    public function setApprovalDate(?\DateTime $approvalDate = null)
     {
         $this->setProperty('approvalDate', $approvalDate);
     }

@@ -18,7 +18,7 @@ class MarksheetTemplateAutomation extends ModelBase
      * @return MarksheetTemplateAutomation[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class MarksheetTemplateAutomation extends ModelBase
     /**
      * @param \Arbor\Model\MarksheetTemplateColumn $marksheetTemplateSourceColumn
      */
-    public function setMarksheetTemplateSourceColumn(\Arbor\Model\MarksheetTemplateColumn $marksheetTemplateSourceColumn = null)
+    public function setMarksheetTemplateSourceColumn(?\Arbor\Model\MarksheetTemplateColumn $marksheetTemplateSourceColumn = null)
     {
         $this->setProperty('marksheetTemplateSourceColumn', $marksheetTemplateSourceColumn);
     }
@@ -76,7 +76,7 @@ class MarksheetTemplateAutomation extends ModelBase
     /**
      * @param \Arbor\Model\MarksheetTemplateColumn $marksheetTemplateDestinationColumn
      */
-    public function setMarksheetTemplateDestinationColumn(\Arbor\Model\MarksheetTemplateColumn $marksheetTemplateDestinationColumn = null)
+    public function setMarksheetTemplateDestinationColumn(?\Arbor\Model\MarksheetTemplateColumn $marksheetTemplateDestinationColumn = null)
     {
         $this->setProperty('marksheetTemplateDestinationColumn', $marksheetTemplateDestinationColumn);
     }

@@ -20,7 +20,7 @@ class SiteOperatingPeriodException extends ModelBase
      * @return SiteOperatingPeriodException[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class SiteOperatingPeriodException extends ModelBase
     /**
      * @param \Arbor\Model\Site $site
      */
-    public function setSite(\Arbor\Model\Site $site = null)
+    public function setSite(?\Arbor\Model\Site $site = null)
     {
         $this->setProperty('site', $site);
     }
@@ -78,7 +78,7 @@ class SiteOperatingPeriodException extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -94,7 +94,7 @@ class SiteOperatingPeriodException extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

@@ -22,7 +22,7 @@ class StudentInterventionReview extends ModelBase
      * @return StudentInterventionReview[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param \Arbor\Model\StudentIntervention $studentIntervention
      */
-    public function setStudentIntervention(\Arbor\Model\StudentIntervention $studentIntervention = null)
+    public function setStudentIntervention(?\Arbor\Model\StudentIntervention $studentIntervention = null)
     {
         $this->setProperty('studentIntervention', $studentIntervention);
     }
@@ -80,7 +80,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param \Arbor\Model\InterventionReview $interventionReview
      */
-    public function setInterventionReview(\Arbor\Model\InterventionReview $interventionReview = null)
+    public function setInterventionReview(?\Arbor\Model\InterventionReview $interventionReview = null)
     {
         $this->setProperty('interventionReview', $interventionReview);
     }
@@ -96,7 +96,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param string $review
      */
-    public function setReview(string $review = null)
+    public function setReview(?string $review = null)
     {
         $this->setProperty('review', $review);
     }
@@ -112,7 +112,7 @@ class StudentInterventionReview extends ModelBase
     /**
      * @param \DateTime $reviewDate
      */
-    public function setReviewDate(\DateTime $reviewDate = null)
+    public function setReviewDate(?\DateTime $reviewDate = null)
     {
         $this->setProperty('reviewDate', $reviewDate);
     }

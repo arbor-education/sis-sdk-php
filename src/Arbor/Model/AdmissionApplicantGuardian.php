@@ -22,7 +22,7 @@ class AdmissionApplicantGuardian extends ModelBase
      * @return AdmissionApplicantGuardian[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class AdmissionApplicantGuardian extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionApplicant $admissionApplicant
      */
-    public function setAdmissionApplicant(\Arbor\Model\AdmissionApplicant $admissionApplicant = null)
+    public function setAdmissionApplicant(?\Arbor\Model\AdmissionApplicant $admissionApplicant = null)
     {
         $this->setProperty('admissionApplicant', $admissionApplicant);
     }
@@ -80,7 +80,7 @@ class AdmissionApplicantGuardian extends ModelBase
     /**
      * @param \Arbor\Model\AdmissionGuardian $admissionGuardian
      */
-    public function setAdmissionGuardian(\Arbor\Model\AdmissionGuardian $admissionGuardian = null)
+    public function setAdmissionGuardian(?\Arbor\Model\AdmissionGuardian $admissionGuardian = null)
     {
         $this->setProperty('admissionGuardian', $admissionGuardian);
     }
@@ -96,7 +96,7 @@ class AdmissionApplicantGuardian extends ModelBase
     /**
      * @param \Arbor\Model\GuardianRelationshipType $guardianRelationshipType
      */
-    public function setGuardianRelationshipType(\Arbor\Model\GuardianRelationshipType $guardianRelationshipType = null)
+    public function setGuardianRelationshipType(?\Arbor\Model\GuardianRelationshipType $guardianRelationshipType = null)
     {
         $this->setProperty('guardianRelationshipType', $guardianRelationshipType);
     }
@@ -112,7 +112,7 @@ class AdmissionApplicantGuardian extends ModelBase
     /**
      * @param bool $isPrimaryGuardian
      */
-    public function setIsPrimaryGuardian(bool $isPrimaryGuardian = null)
+    public function setIsPrimaryGuardian(?bool $isPrimaryGuardian = null)
     {
         $this->setProperty('isPrimaryGuardian', $isPrimaryGuardian);
     }

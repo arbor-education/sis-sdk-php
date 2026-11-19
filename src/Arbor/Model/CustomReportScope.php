@@ -28,7 +28,7 @@ class CustomReportScope extends ModelBase
      * @return CustomReportScope[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
+    public function setCustomReport(?\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -86,7 +86,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $baseEntityType
      */
-    public function setBaseEntityType(int $baseEntityType = null)
+    public function setBaseEntityType(?int $baseEntityType = null)
     {
         $this->setProperty('baseEntityType', $baseEntityType);
     }
@@ -102,7 +102,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param \DateTime $referenceDateRangeStartDate
      */
-    public function setReferenceDateRangeStartDate(\DateTime $referenceDateRangeStartDate = null)
+    public function setReferenceDateRangeStartDate(?\DateTime $referenceDateRangeStartDate = null)
     {
         $this->setProperty('referenceDateRangeStartDate', $referenceDateRangeStartDate);
     }
@@ -118,7 +118,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param \DateTime $referenceDateRangeEndDate
      */
-    public function setReferenceDateRangeEndDate(\DateTime $referenceDateRangeEndDate = null)
+    public function setReferenceDateRangeEndDate(?\DateTime $referenceDateRangeEndDate = null)
     {
         $this->setProperty('referenceDateRangeEndDate', $referenceDateRangeEndDate);
     }
@@ -134,7 +134,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param string $referenceDateRangePeriodType
      */
-    public function setReferenceDateRangePeriodType(string $referenceDateRangePeriodType = null)
+    public function setReferenceDateRangePeriodType(?string $referenceDateRangePeriodType = null)
     {
         $this->setProperty('referenceDateRangePeriodType', $referenceDateRangePeriodType);
     }
@@ -150,7 +150,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $referenceDateRangePeriodCount
      */
-    public function setReferenceDateRangePeriodCount(int $referenceDateRangePeriodCount = null)
+    public function setReferenceDateRangePeriodCount(?int $referenceDateRangePeriodCount = null)
     {
         $this->setProperty('referenceDateRangePeriodCount', $referenceDateRangePeriodCount);
     }
@@ -166,7 +166,7 @@ class CustomReportScope extends ModelBase
     /**
      * @param int $referenceDateRangePeriodOffset
      */
-    public function setReferenceDateRangePeriodOffset(int $referenceDateRangePeriodOffset = null)
+    public function setReferenceDateRangePeriodOffset(?int $referenceDateRangePeriodOffset = null)
     {
         $this->setProperty('referenceDateRangePeriodOffset', $referenceDateRangePeriodOffset);
     }

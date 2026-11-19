@@ -20,7 +20,7 @@ class Notice extends ModelBase
      * @return Notice[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class Notice extends ModelBase
     /**
      * @param string $noticeHtml
      */
-    public function setNoticeHtml(string $noticeHtml = null)
+    public function setNoticeHtml(?string $noticeHtml = null)
     {
         $this->setProperty('noticeHtml', $noticeHtml);
     }
@@ -78,7 +78,7 @@ class Notice extends ModelBase
     /**
      * @param \DateTime $noticeDatetime
      */
-    public function setNoticeDatetime(\DateTime $noticeDatetime = null)
+    public function setNoticeDatetime(?\DateTime $noticeDatetime = null)
     {
         $this->setProperty('noticeDatetime', $noticeDatetime);
     }
@@ -94,7 +94,7 @@ class Notice extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }

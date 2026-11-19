@@ -20,7 +20,7 @@ class UniversityStaff extends ModelBase
      * @return UniversityStaff[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class UniversityStaff extends ModelBase
     /**
      * @param \Arbor\Model\University $university
      */
-    public function setUniversity(\Arbor\Model\University $university = null)
+    public function setUniversity(?\Arbor\Model\University $university = null)
     {
         $this->setProperty('university', $university);
     }
@@ -78,7 +78,7 @@ class UniversityStaff extends ModelBase
     /**
      * @param \Arbor\Model\Person $person
      */
-    public function setPerson(\Arbor\Model\Person $person = null)
+    public function setPerson(?\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -94,7 +94,7 @@ class UniversityStaff extends ModelBase
     /**
      * @param string $position
      */
-    public function setPosition(string $position = null)
+    public function setPosition(?string $position = null)
     {
         $this->setProperty('position', $position);
     }

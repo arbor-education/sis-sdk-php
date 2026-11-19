@@ -68,7 +68,7 @@ class AcademicUnit extends ModelBase
      * @return AcademicUnit[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -110,7 +110,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $uniqueIdentifier
      */
-    public function setUniqueIdentifier(string $uniqueIdentifier = null)
+    public function setUniqueIdentifier(?string $uniqueIdentifier = null)
     {
         $this->setProperty('uniqueIdentifier', $uniqueIdentifier);
     }
@@ -126,7 +126,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $parentAcademicUnit
      */
-    public function setParentAcademicUnit(\Arbor\Model\AcademicUnit $parentAcademicUnit = null)
+    public function setParentAcademicUnit(?\Arbor\Model\AcademicUnit $parentAcademicUnit = null)
     {
         $this->setProperty('parentAcademicUnit', $parentAcademicUnit);
     }
@@ -142,7 +142,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicProgrammeInstance $academicProgrammeInstance
      */
-    public function setAcademicProgrammeInstance(\Arbor\Model\AcademicProgrammeInstance $academicProgrammeInstance = null)
+    public function setAcademicProgrammeInstance(?\Arbor\Model\AcademicProgrammeInstance $academicProgrammeInstance = null)
     {
         $this->setProperty('academicProgrammeInstance', $academicProgrammeInstance);
     }
@@ -158,7 +158,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $academicUnitName
      */
-    public function setAcademicUnitName(string $academicUnitName = null)
+    public function setAcademicUnitName(?string $academicUnitName = null)
     {
         $this->setProperty('academicUnitName', $academicUnitName);
     }
@@ -174,7 +174,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName(string $longName = null)
+    public function setLongName(?string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -190,7 +190,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $longNameFormat
      */
-    public function setLongNameFormat(string $longNameFormat = null)
+    public function setLongNameFormat(?string $longNameFormat = null)
     {
         $this->setProperty('longNameFormat', $longNameFormat);
     }
@@ -206,7 +206,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -222,7 +222,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $shortNameFormat
      */
-    public function setShortNameFormat(string $shortNameFormat = null)
+    public function setShortNameFormat(?string $shortNameFormat = null)
     {
         $this->setProperty('shortNameFormat', $shortNameFormat);
     }
@@ -238,7 +238,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param string $academicUnitCode
      */
-    public function setAcademicUnitCode(string $academicUnitCode = null)
+    public function setAcademicUnitCode(?string $academicUnitCode = null)
     {
         $this->setProperty('academicUnitCode', $academicUnitCode);
     }
@@ -254,7 +254,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -270,7 +270,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $promotedToAcademicUnit
      */
-    public function setPromotedToAcademicUnit(\Arbor\Model\AcademicUnit $promotedToAcademicUnit = null)
+    public function setPromotedToAcademicUnit(?\Arbor\Model\AcademicUnit $promotedToAcademicUnit = null)
     {
         $this->setProperty('promotedToAcademicUnit', $promotedToAcademicUnit);
     }
@@ -286,7 +286,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \DateTime $promotedDatetime
      */
-    public function setPromotedDatetime(\DateTime $promotedDatetime = null)
+    public function setPromotedDatetime(?\DateTime $promotedDatetime = null)
     {
         $this->setProperty('promotedDatetime', $promotedDatetime);
     }
@@ -302,7 +302,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicUnit $copiedToAcademicUnit
      */
-    public function setCopiedToAcademicUnit(\Arbor\Model\AcademicUnit $copiedToAcademicUnit = null)
+    public function setCopiedToAcademicUnit(?\Arbor\Model\AcademicUnit $copiedToAcademicUnit = null)
     {
         $this->setProperty('copiedToAcademicUnit', $copiedToAcademicUnit);
     }
@@ -318,7 +318,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -334,7 +334,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -350,7 +350,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
+    public function setFaculty(?\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -366,7 +366,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param bool $selfServiceEnrolment
      */
-    public function setSelfServiceEnrolment(bool $selfServiceEnrolment = null)
+    public function setSelfServiceEnrolment(?bool $selfServiceEnrolment = null)
     {
         $this->setProperty('selfServiceEnrolment', $selfServiceEnrolment);
     }
@@ -382,7 +382,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param int $maximumEnrolments
      */
-    public function setMaximumEnrolments(int $maximumEnrolments = null)
+    public function setMaximumEnrolments(?int $maximumEnrolments = null)
     {
         $this->setProperty('maximumEnrolments', $maximumEnrolments);
     }
@@ -398,7 +398,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param int $targetEnrolments
      */
-    public function setTargetEnrolments(int $targetEnrolments = null)
+    public function setTargetEnrolments(?int $targetEnrolments = null)
     {
         $this->setProperty('targetEnrolments', $targetEnrolments);
     }
@@ -414,7 +414,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(\Arbor\Model\Subject $subject = null)
+    public function setSubject(?\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -430,7 +430,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(?\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
@@ -446,7 +446,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(\Arbor\Model\RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(?\Arbor\Model\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
@@ -462,7 +462,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param bool $isMainAssessableUnit
      */
-    public function setIsMainAssessableUnit(bool $isMainAssessableUnit = null)
+    public function setIsMainAssessableUnit(?bool $isMainAssessableUnit = null)
     {
         $this->setProperty('isMainAssessableUnit', $isMainAssessableUnit);
     }
@@ -478,7 +478,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -494,7 +494,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(?\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -510,7 +510,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \DateTime $promotedEnrolmentStartDate
      */
-    public function setPromotedEnrolmentStartDate(\DateTime $promotedEnrolmentStartDate = null)
+    public function setPromotedEnrolmentStartDate(?\DateTime $promotedEnrolmentStartDate = null)
     {
         $this->setProperty('promotedEnrolmentStartDate', $promotedEnrolmentStartDate);
     }
@@ -526,7 +526,7 @@ class AcademicUnit extends ModelBase
     /**
      * @param \DateTime $promotedEnrolmentEndDate
      */
-    public function setPromotedEnrolmentEndDate(\DateTime $promotedEnrolmentEndDate = null)
+    public function setPromotedEnrolmentEndDate(?\DateTime $promotedEnrolmentEndDate = null)
     {
         $this->setProperty('promotedEnrolmentEndDate', $promotedEnrolmentEndDate);
     }

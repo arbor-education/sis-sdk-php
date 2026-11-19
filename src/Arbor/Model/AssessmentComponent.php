@@ -36,7 +36,7 @@ class AssessmentComponent extends ModelBase
      * @return AssessmentComponent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -94,7 +94,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -110,7 +110,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -126,7 +126,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param string $componentType
      */
-    public function setComponentType(string $componentType = null)
+    public function setComponentType(?string $componentType = null)
     {
         $this->setProperty('componentType', $componentType);
     }
@@ -142,7 +142,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -158,7 +158,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -174,7 +174,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet
      */
-    public function setAssessmentDataGradeSet(\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
+    public function setAssessmentDataGradeSet(?\Arbor\Model\AssessmentDataGradeSet $assessmentDataGradeSet = null)
     {
         $this->setProperty('assessmentDataGradeSet', $assessmentDataGradeSet);
     }
@@ -190,7 +190,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param float $minimumValue
      */
-    public function setMinimumValue(float $minimumValue = null)
+    public function setMinimumValue(?float $minimumValue = null)
     {
         $this->setProperty('minimumValue', $minimumValue);
     }
@@ -206,7 +206,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param float $maximumValue
      */
-    public function setMaximumValue(float $maximumValue = null)
+    public function setMaximumValue(?float $maximumValue = null)
     {
         $this->setProperty('maximumValue', $maximumValue);
     }
@@ -222,7 +222,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param int $decimalPlaces
      */
-    public function setDecimalPlaces(int $decimalPlaces = null)
+    public function setDecimalPlaces(?int $decimalPlaces = null)
     {
         $this->setProperty('decimalPlaces', $decimalPlaces);
     }
@@ -238,7 +238,7 @@ class AssessmentComponent extends ModelBase
     /**
      * @param string $commentType
      */
-    public function setCommentType(string $commentType = null)
+    public function setCommentType(?string $commentType = null)
     {
         $this->setProperty('commentType', $commentType);
     }

@@ -22,7 +22,7 @@ class EmailRelatedEntity extends ModelBase
      * @return EmailRelatedEntity[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class EmailRelatedEntity extends ModelBase
     /**
      * @param \Arbor\Model\Email $email
      */
-    public function setEmail(\Arbor\Model\Email $email = null)
+    public function setEmail(?\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -80,7 +80,7 @@ class EmailRelatedEntity extends ModelBase
     /**
      * @param string $emailType
      */
-    public function setEmailType(string $emailType = null)
+    public function setEmailType(?string $emailType = null)
     {
         $this->setProperty('emailType', $emailType);
     }
@@ -96,7 +96,7 @@ class EmailRelatedEntity extends ModelBase
     /**
      * @param \Arbor\Model\Order $relatedEntity
      */
-    public function setRelatedEntity(\Arbor\Model\Order $relatedEntity = null)
+    public function setRelatedEntity(?\Arbor\Model\Order $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }
@@ -112,7 +112,7 @@ class EmailRelatedEntity extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }

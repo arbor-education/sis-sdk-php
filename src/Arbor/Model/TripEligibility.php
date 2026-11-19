@@ -18,7 +18,7 @@ class TripEligibility extends ModelBase
      * @return TripEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class TripEligibility extends ModelBase
     /**
      * @param \Arbor\Model\Trip $trip
      */
-    public function setTrip(\Arbor\Model\Trip $trip = null)
+    public function setTrip(?\Arbor\Model\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
@@ -76,7 +76,7 @@ class TripEligibility extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $eligibile
      */
-    public function setEligibile(\Arbor\Model\ModelBase $eligibile = null)
+    public function setEligibile(?\Arbor\Model\ModelBase $eligibile = null)
     {
         $this->setProperty('eligibile', $eligibile);
     }

@@ -24,7 +24,7 @@ class TrainingCourse extends ModelBase
      * @return TrainingCourse[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param string $trainingCourseTitle
      */
-    public function setTrainingCourseTitle(string $trainingCourseTitle = null)
+    public function setTrainingCourseTitle(?string $trainingCourseTitle = null)
     {
         $this->setProperty('trainingCourseTitle', $trainingCourseTitle);
     }
@@ -82,7 +82,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param string $trainingCourseDescription
      */
-    public function setTrainingCourseDescription(string $trainingCourseDescription = null)
+    public function setTrainingCourseDescription(?string $trainingCourseDescription = null)
     {
         $this->setProperty('trainingCourseDescription', $trainingCourseDescription);
     }
@@ -98,7 +98,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $organizer
      */
-    public function setOrganizer(\Arbor\Model\ModelBase $organizer = null)
+    public function setOrganizer(?\Arbor\Model\ModelBase $organizer = null)
     {
         $this->setProperty('organizer', $organizer);
     }
@@ -114,7 +114,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param float $courseFees
      */
-    public function setCourseFees(float $courseFees = null)
+    public function setCourseFees(?float $courseFees = null)
     {
         $this->setProperty('courseFees', $courseFees);
     }
@@ -130,7 +130,7 @@ class TrainingCourse extends ModelBase
     /**
      * @param float $otherCosts
      */
-    public function setOtherCosts(float $otherCosts = null)
+    public function setOtherCosts(?float $otherCosts = null)
     {
         $this->setProperty('otherCosts', $otherCosts);
     }

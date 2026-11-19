@@ -26,7 +26,7 @@ class InterventionStaffCost extends ModelBase
      * @return InterventionStaffCost[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $staff
      */
-    public function setStaff(\Arbor\Model\ModelBase $staff = null)
+    public function setStaff(?\Arbor\Model\ModelBase $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -84,7 +84,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $costPerHour
      */
-    public function setCostPerHour(string $costPerHour = null)
+    public function setCostPerHour(?string $costPerHour = null)
     {
         $this->setProperty('costPerHour', $costPerHour);
     }
@@ -100,7 +100,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -116,7 +116,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,7 +132,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $roundToNearest
      */
-    public function setRoundToNearest(string $roundToNearest = null)
+    public function setRoundToNearest(?string $roundToNearest = null)
     {
         $this->setProperty('roundToNearest', $roundToNearest);
     }
@@ -148,7 +148,7 @@ class InterventionStaffCost extends ModelBase
     /**
      * @param string $minimumCharge
      */
-    public function setMinimumCharge(string $minimumCharge = null)
+    public function setMinimumCharge(?string $minimumCharge = null)
     {
         $this->setProperty('minimumCharge', $minimumCharge);
     }

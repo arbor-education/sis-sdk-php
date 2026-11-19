@@ -26,7 +26,7 @@ class Meal extends ModelBase
      * @return Meal[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class Meal extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -84,7 +84,7 @@ class Meal extends ModelBase
     /**
      * @param string $mealName
      */
-    public function setMealName(string $mealName = null)
+    public function setMealName(?string $mealName = null)
     {
         $this->setProperty('mealName', $mealName);
     }
@@ -100,7 +100,7 @@ class Meal extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -116,7 +116,7 @@ class Meal extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,7 +132,7 @@ class Meal extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(?\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -148,7 +148,7 @@ class Meal extends ModelBase
     /**
      * @param \Arbor\Model\Meal $copiedToMeal
      */
-    public function setCopiedToMeal(\Arbor\Model\Meal $copiedToMeal = null)
+    public function setCopiedToMeal(?\Arbor\Model\Meal $copiedToMeal = null)
     {
         $this->setProperty('copiedToMeal', $copiedToMeal);
     }

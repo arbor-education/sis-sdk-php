@@ -36,7 +36,7 @@ class PersonCheck extends ModelBase
      * @return PersonCheck[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -78,7 +78,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $person
      */
-    public function setPerson(\Arbor\Model\ModelBase $person = null)
+    public function setPerson(?\Arbor\Model\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -94,7 +94,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \Arbor\Model\CheckType $checkType
      */
-    public function setCheckType(\Arbor\Model\CheckType $checkType = null)
+    public function setCheckType(?\Arbor\Model\CheckType $checkType = null)
     {
         $this->setProperty('checkType', $checkType);
     }
@@ -110,7 +110,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \Arbor\Model\CheckClearanceLevel $checkClearanceLevel
      */
-    public function setCheckClearanceLevel(\Arbor\Model\CheckClearanceLevel $checkClearanceLevel = null)
+    public function setCheckClearanceLevel(?\Arbor\Model\CheckClearanceLevel $checkClearanceLevel = null)
     {
         $this->setProperty('checkClearanceLevel', $checkClearanceLevel);
     }
@@ -126,7 +126,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \DateTime $requestedDate
      */
-    public function setRequestedDate(\DateTime $requestedDate = null)
+    public function setRequestedDate(?\DateTime $requestedDate = null)
     {
         $this->setProperty('requestedDate', $requestedDate);
     }
@@ -142,7 +142,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \DateTime $returnedDate
      */
-    public function setReturnedDate(\DateTime $returnedDate = null)
+    public function setReturnedDate(?\DateTime $returnedDate = null)
     {
         $this->setProperty('returnedDate', $returnedDate);
     }
@@ -158,7 +158,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \DateTime $expiryDate
      */
-    public function setExpiryDate(\DateTime $expiryDate = null)
+    public function setExpiryDate(?\DateTime $expiryDate = null)
     {
         $this->setProperty('expiryDate', $expiryDate);
     }
@@ -174,7 +174,7 @@ class PersonCheck extends ModelBase
     /**
      * @param string $referenceNumber
      */
-    public function setReferenceNumber(string $referenceNumber = null)
+    public function setReferenceNumber(?string $referenceNumber = null)
     {
         $this->setProperty('referenceNumber', $referenceNumber);
     }
@@ -190,7 +190,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \DateTime $authenticatedDate
      */
-    public function setAuthenticatedDate(\DateTime $authenticatedDate = null)
+    public function setAuthenticatedDate(?\DateTime $authenticatedDate = null)
     {
         $this->setProperty('authenticatedDate', $authenticatedDate);
     }
@@ -206,7 +206,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \Arbor\Model\Staff $authenticatedByStaff
      */
-    public function setAuthenticatedByStaff(\Arbor\Model\Staff $authenticatedByStaff = null)
+    public function setAuthenticatedByStaff(?\Arbor\Model\Staff $authenticatedByStaff = null)
     {
         $this->setProperty('authenticatedByStaff', $authenticatedByStaff);
     }
@@ -222,7 +222,7 @@ class PersonCheck extends ModelBase
     /**
      * @param \DateTime $evidenceRecordedDate
      */
-    public function setEvidenceRecordedDate(\DateTime $evidenceRecordedDate = null)
+    public function setEvidenceRecordedDate(?\DateTime $evidenceRecordedDate = null)
     {
         $this->setProperty('evidenceRecordedDate', $evidenceRecordedDate);
     }
@@ -238,7 +238,7 @@ class PersonCheck extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment(string $comment = null)
+    public function setComment(?string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

@@ -48,7 +48,7 @@ class StudentIntervention extends ModelBase
      * @return StudentIntervention[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -90,7 +90,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -106,7 +106,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
+    public function setIntervention(?\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -122,7 +122,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \Arbor\Model\InterventionGroup $interventionGroup
      */
-    public function setInterventionGroup(\Arbor\Model\InterventionGroup $interventionGroup = null)
+    public function setInterventionGroup(?\Arbor\Model\InterventionGroup $interventionGroup = null)
     {
         $this->setProperty('interventionGroup', $interventionGroup);
     }
@@ -138,7 +138,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -154,7 +154,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \DateTime $endDatetime
      */
-    public function setEndDatetime(\DateTime $endDatetime = null)
+    public function setEndDatetime(?\DateTime $endDatetime = null)
     {
         $this->setProperty('endDatetime', $endDatetime);
     }
@@ -170,7 +170,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $priority
      */
-    public function setPriority(string $priority = null)
+    public function setPriority(?string $priority = null)
     {
         $this->setProperty('priority', $priority);
     }
@@ -186,7 +186,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -202,7 +202,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $monitoring
      */
-    public function setMonitoring(string $monitoring = null)
+    public function setMonitoring(?string $monitoring = null)
     {
         $this->setProperty('monitoring', $monitoring);
     }
@@ -218,7 +218,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims(string $aims = null)
+    public function setAims(?string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -234,7 +234,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $strategies
      */
-    public function setStrategies(string $strategies = null)
+    public function setStrategies(?string $strategies = null)
     {
         $this->setProperty('strategies', $strategies);
     }
@@ -250,7 +250,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria(string $successCriteria = null)
+    public function setSuccessCriteria(?string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -266,7 +266,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason(string $reason = null)
+    public function setReason(?string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
@@ -282,7 +282,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \Arbor\Model\SenNeed $senNeed
      */
-    public function setSenNeed(\Arbor\Model\SenNeed $senNeed = null)
+    public function setSenNeed(?\Arbor\Model\SenNeed $senNeed = null)
     {
         $this->setProperty('senNeed', $senNeed);
     }
@@ -298,7 +298,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \Arbor\Model\LanguageAbility $languageAbility
      */
-    public function setLanguageAbility(\Arbor\Model\LanguageAbility $languageAbility = null)
+    public function setLanguageAbility(?\Arbor\Model\LanguageAbility $languageAbility = null)
     {
         $this->setProperty('languageAbility', $languageAbility);
     }
@@ -314,7 +314,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param \Arbor\Model\MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(\Arbor\Model\MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(?\Arbor\Model\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
@@ -330,7 +330,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $success
      */
-    public function setSuccess(string $success = null)
+    public function setSuccess(?string $success = null)
     {
         $this->setProperty('success', $success);
     }
@@ -346,7 +346,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $estimatedDuration
      */
-    public function setEstimatedDuration(string $estimatedDuration = null)
+    public function setEstimatedDuration(?string $estimatedDuration = null)
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }

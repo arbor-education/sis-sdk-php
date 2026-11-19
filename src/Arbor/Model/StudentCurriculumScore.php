@@ -34,7 +34,7 @@ class StudentCurriculumScore extends ModelBase
      * @return StudentCurriculumScore[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -92,7 +92,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $curriculumEntity
      */
-    public function setCurriculumEntity(\Arbor\Model\ModelBase $curriculumEntity = null)
+    public function setCurriculumEntity(?\Arbor\Model\ModelBase $curriculumEntity = null)
     {
         $this->setProperty('curriculumEntity', $curriculumEntity);
     }
@@ -108,7 +108,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param string $assessmentType
      */
-    public function setAssessmentType(string $assessmentType = null)
+    public function setAssessmentType(?string $assessmentType = null)
     {
         $this->setProperty('assessmentType', $assessmentType);
     }
@@ -124,7 +124,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $curriculumCompletion
      */
-    public function setCurriculumCompletion(float $curriculumCompletion = null)
+    public function setCurriculumCompletion(?float $curriculumCompletion = null)
     {
         $this->setProperty('curriculumCompletion', $curriculumCompletion);
     }
@@ -140,7 +140,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $predictedMastery
      */
-    public function setPredictedMastery(float $predictedMastery = null)
+    public function setPredictedMastery(?float $predictedMastery = null)
     {
         $this->setProperty('predictedMastery', $predictedMastery);
     }
@@ -156,7 +156,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $currentMastery
      */
-    public function setCurrentMastery(float $currentMastery = null)
+    public function setCurrentMastery(?float $currentMastery = null)
     {
         $this->setProperty('currentMastery', $currentMastery);
     }
@@ -172,7 +172,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $predictedGradePointValue
      */
-    public function setPredictedGradePointValue(float $predictedGradePointValue = null)
+    public function setPredictedGradePointValue(?float $predictedGradePointValue = null)
     {
         $this->setProperty('predictedGradePointValue', $predictedGradePointValue);
     }
@@ -188,7 +188,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $currentGradePointValue
      */
-    public function setCurrentGradePointValue(float $currentGradePointValue = null)
+    public function setCurrentGradePointValue(?float $currentGradePointValue = null)
     {
         $this->setProperty('currentGradePointValue', $currentGradePointValue);
     }
@@ -204,7 +204,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $gradePointValueCap
      */
-    public function setGradePointValueCap(float $gradePointValueCap = null)
+    public function setGradePointValueCap(?float $gradePointValueCap = null)
     {
         $this->setProperty('gradePointValueCap', $gradePointValueCap);
     }
@@ -220,7 +220,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param \DateTime $date
      */
-    public function setDate(\DateTime $date = null)
+    public function setDate(?\DateTime $date = null)
     {
         $this->setProperty('date', $date);
     }

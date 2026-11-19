@@ -24,7 +24,7 @@ class CurriculumTargetSet extends ModelBase
      * @return CurriculumTargetSet[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
+    public function setCurriculum(?\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }
@@ -82,7 +82,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -98,7 +98,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -114,7 +114,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -130,7 +130,7 @@ class CurriculumTargetSet extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

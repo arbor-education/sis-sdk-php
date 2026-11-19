@@ -18,7 +18,7 @@ class Candidate extends ModelBase
      * @return Candidate[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class Candidate extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -76,7 +76,7 @@ class Candidate extends ModelBase
     /**
      * @param int $candidateNumber
      */
-    public function setCandidateNumber(int $candidateNumber = null)
+    public function setCandidateNumber(?int $candidateNumber = null)
     {
         $this->setProperty('candidateNumber', $candidateNumber);
     }

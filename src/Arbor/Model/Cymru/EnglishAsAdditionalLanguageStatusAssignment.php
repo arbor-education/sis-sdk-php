@@ -22,7 +22,7 @@ class EnglishAsAdditionalLanguageStatusAssignment extends ModelBase
      * @return EnglishAsAdditionalLanguageStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class EnglishAsAdditionalLanguageStatusAssignment extends ModelBase
     /**
      * @param string $progress
      */
-    public function setProgress(string $progress = null)
+    public function setProgress(?string $progress = null)
     {
         $this->setProperty('progress', $progress);
     }
@@ -80,7 +80,7 @@ class EnglishAsAdditionalLanguageStatusAssignment extends ModelBase
     /**
      * @param \DateTime $progressDate
      */
-    public function setProgressDate(\DateTime $progressDate = null)
+    public function setProgressDate(?\DateTime $progressDate = null)
     {
         $this->setProperty('progressDate', $progressDate);
     }
@@ -96,7 +96,7 @@ class EnglishAsAdditionalLanguageStatusAssignment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

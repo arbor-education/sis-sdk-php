@@ -32,7 +32,7 @@ class BehaviouralIncident extends ModelBase
      * @return BehaviouralIncident[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
+    public function setBehaviour(?\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
@@ -90,7 +90,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $incidentName
      */
-    public function setIncidentName(string $incidentName = null)
+    public function setIncidentName(?string $incidentName = null)
     {
         $this->setProperty('incidentName', $incidentName);
     }
@@ -106,7 +106,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -122,7 +122,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param \DateTime $incidentDatetime
      */
-    public function setIncidentDatetime(\DateTime $incidentDatetime = null)
+    public function setIncidentDatetime(?\DateTime $incidentDatetime = null)
     {
         $this->setProperty('incidentDatetime', $incidentDatetime);
     }
@@ -138,7 +138,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity(string $severity = null)
+    public function setSeverity(?string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -154,7 +154,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $event
      */
-    public function setEvent(\Arbor\Model\ModelBase $event = null)
+    public function setEvent(?\Arbor\Model\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -170,7 +170,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $location
      */
-    public function setLocation(\Arbor\Model\ModelBase $location = null)
+    public function setLocation(?\Arbor\Model\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -186,7 +186,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param \DateTime $resolvedDatetime
      */
-    public function setResolvedDatetime(\DateTime $resolvedDatetime = null)
+    public function setResolvedDatetime(?\DateTime $resolvedDatetime = null)
     {
         $this->setProperty('resolvedDatetime', $resolvedDatetime);
     }
@@ -202,7 +202,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param \Arbor\Model\Staff $loggedByStaff
      */
-    public function setLoggedByStaff(\Arbor\Model\Staff $loggedByStaff = null)
+    public function setLoggedByStaff(?\Arbor\Model\Staff $loggedByStaff = null)
     {
         $this->setProperty('loggedByStaff', $loggedByStaff);
     }

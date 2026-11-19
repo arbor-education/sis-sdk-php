@@ -24,7 +24,7 @@ class StudentBursaryLevel extends ModelBase
      * @return StudentBursaryLevel[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -82,7 +82,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param \Arbor\Model\BursaryLevel $bursaryLevel
      */
-    public function setBursaryLevel(\Arbor\Model\BursaryLevel $bursaryLevel = null)
+    public function setBursaryLevel(?\Arbor\Model\BursaryLevel $bursaryLevel = null)
     {
         $this->setProperty('bursaryLevel', $bursaryLevel);
     }
@@ -98,7 +98,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param \Arbor\Model\StudentFunding $studentFunding
      */
-    public function setStudentFunding(\Arbor\Model\StudentFunding $studentFunding = null)
+    public function setStudentFunding(?\Arbor\Model\StudentFunding $studentFunding = null)
     {
         $this->setProperty('studentFunding', $studentFunding);
     }
@@ -114,7 +114,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param \DateTime $effectiveDate
      */
-    public function setEffectiveDate(\DateTime $effectiveDate = null)
+    public function setEffectiveDate(?\DateTime $effectiveDate = null)
     {
         $this->setProperty('effectiveDate', $effectiveDate);
     }
@@ -130,7 +130,7 @@ class StudentBursaryLevel extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }

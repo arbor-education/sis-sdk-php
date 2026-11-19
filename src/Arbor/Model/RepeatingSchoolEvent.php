@@ -24,7 +24,7 @@ class RepeatingSchoolEvent extends ModelBase
      * @return RepeatingSchoolEvent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -82,7 +82,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param \Arbor\Model\SchoolEventType $schoolEventType
      */
-    public function setSchoolEventType(\Arbor\Model\SchoolEventType $schoolEventType = null)
+    public function setSchoolEventType(?\Arbor\Model\SchoolEventType $schoolEventType = null)
     {
         $this->setProperty('schoolEventType', $schoolEventType);
     }
@@ -98,7 +98,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param string $schoolEventName
      */
-    public function setSchoolEventName(string $schoolEventName = null)
+    public function setSchoolEventName(?string $schoolEventName = null)
     {
         $this->setProperty('schoolEventName', $schoolEventName);
     }
@@ -114,7 +114,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -130,7 +130,7 @@ class RepeatingSchoolEvent extends ModelBase
     /**
      * @param bool $coverRequired
      */
-    public function setCoverRequired(bool $coverRequired = null)
+    public function setCoverRequired(?bool $coverRequired = null)
     {
         $this->setProperty('coverRequired', $coverRequired);
     }

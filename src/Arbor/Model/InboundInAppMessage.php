@@ -32,7 +32,7 @@ class InboundInAppMessage extends ModelBase
      * @return InboundInAppMessage[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $sender
      */
-    public function setSender(\Arbor\Model\ModelBase $sender = null)
+    public function setSender(?\Arbor\Model\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -90,7 +90,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $recipient
      */
-    public function setRecipient(\Arbor\Model\ModelBase $recipient = null)
+    public function setRecipient(?\Arbor\Model\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -106,7 +106,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage(string $message = null)
+    public function setMessage(?string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -122,7 +122,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \DateTime $readDatetime
      */
-    public function setReadDatetime(\DateTime $readDatetime = null)
+    public function setReadDatetime(?\DateTime $readDatetime = null)
     {
         $this->setProperty('readDatetime', $readDatetime);
     }
@@ -138,7 +138,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\InAppMessageThread $thread
      */
-    public function setThread(\Arbor\Model\InAppMessageThread $thread = null)
+    public function setThread(?\Arbor\Model\InAppMessageThread $thread = null)
     {
         $this->setProperty('thread', $thread);
     }
@@ -154,7 +154,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject(string $subject = null)
+    public function setSubject(?string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -170,7 +170,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \DateTime $receivedDatetime
      */
-    public function setReceivedDatetime(\DateTime $receivedDatetime = null)
+    public function setReceivedDatetime(?\DateTime $receivedDatetime = null)
     {
         $this->setProperty('receivedDatetime', $receivedDatetime);
     }
@@ -186,7 +186,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\Staff $firstReadBy
      */
-    public function setFirstReadBy(\Arbor\Model\Staff $firstReadBy = null)
+    public function setFirstReadBy(?\Arbor\Model\Staff $firstReadBy = null)
     {
         $this->setProperty('firstReadBy', $firstReadBy);
     }
@@ -202,7 +202,7 @@ class InboundInAppMessage extends ModelBase
     /**
      * @param \Arbor\Model\OutboundInAppMessage $outboundInAppMessageRepliedTo
      */
-    public function setOutboundInAppMessageRepliedTo(\Arbor\Model\OutboundInAppMessage $outboundInAppMessageRepliedTo = null)
+    public function setOutboundInAppMessageRepliedTo(?\Arbor\Model\OutboundInAppMessage $outboundInAppMessageRepliedTo = null)
     {
         $this->setProperty('outboundInAppMessageRepliedTo', $outboundInAppMessageRepliedTo);
     }

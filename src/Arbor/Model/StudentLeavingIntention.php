@@ -22,7 +22,7 @@ class StudentLeavingIntention extends ModelBase
      * @return StudentLeavingIntention[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class StudentLeavingIntention extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -80,7 +80,7 @@ class StudentLeavingIntention extends ModelBase
     /**
      * @param \DateTime $recordedDate
      */
-    public function setRecordedDate(\DateTime $recordedDate = null)
+    public function setRecordedDate(?\DateTime $recordedDate = null)
     {
         $this->setProperty('recordedDate', $recordedDate);
     }
@@ -96,7 +96,7 @@ class StudentLeavingIntention extends ModelBase
     /**
      * @param \DateTime $anticipatedLeavingDate
      */
-    public function setAnticipatedLeavingDate(\DateTime $anticipatedLeavingDate = null)
+    public function setAnticipatedLeavingDate(?\DateTime $anticipatedLeavingDate = null)
     {
         $this->setProperty('anticipatedLeavingDate', $anticipatedLeavingDate);
     }
@@ -112,7 +112,7 @@ class StudentLeavingIntention extends ModelBase
     /**
      * @param \Arbor\Model\StudentLeavingIntentionType $studentLeavingIntentionType
      */
-    public function setStudentLeavingIntentionType(\Arbor\Model\StudentLeavingIntentionType $studentLeavingIntentionType = null)
+    public function setStudentLeavingIntentionType(?\Arbor\Model\StudentLeavingIntentionType $studentLeavingIntentionType = null)
     {
         $this->setProperty('studentLeavingIntentionType', $studentLeavingIntentionType);
     }

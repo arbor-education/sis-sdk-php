@@ -18,7 +18,7 @@ class RepeatingSchoolEventParticipant extends ModelBase
      * @return RepeatingSchoolEventParticipant[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class RepeatingSchoolEventParticipant extends ModelBase
     /**
      * @param \Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent
      */
-    public function setRepeatingSchoolEvent(\Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent = null)
+    public function setRepeatingSchoolEvent(?\Arbor\Model\RepeatingSchoolEvent $repeatingSchoolEvent = null)
     {
         $this->setProperty('repeatingSchoolEvent', $repeatingSchoolEvent);
     }
@@ -76,7 +76,7 @@ class RepeatingSchoolEventParticipant extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $participant
      */
-    public function setParticipant(\Arbor\Model\ModelBase $participant = null)
+    public function setParticipant(?\Arbor\Model\ModelBase $participant = null)
     {
         $this->setProperty('participant', $participant);
     }

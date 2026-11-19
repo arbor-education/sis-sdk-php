@@ -42,7 +42,7 @@ class Person extends ModelBase
      * @return Person[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -84,7 +84,7 @@ class Person extends ModelBase
     /**
      * @param \Arbor\Model\Gender $gender
      */
-    public function setGender(\Arbor\Model\Gender $gender = null)
+    public function setGender(?\Arbor\Model\Gender $gender = null)
     {
         $this->setProperty('gender', $gender);
     }
@@ -100,7 +100,7 @@ class Person extends ModelBase
     /**
      * @param \Arbor\Model\GenderIdentity $genderIdentity
      */
-    public function setGenderIdentity(\Arbor\Model\GenderIdentity $genderIdentity = null)
+    public function setGenderIdentity(?\Arbor\Model\GenderIdentity $genderIdentity = null)
     {
         $this->setProperty('genderIdentity', $genderIdentity);
     }
@@ -116,7 +116,7 @@ class Person extends ModelBase
     /**
      * @param string $genderIdentityPreferredTerm
      */
-    public function setGenderIdentityPreferredTerm(string $genderIdentityPreferredTerm = null)
+    public function setGenderIdentityPreferredTerm(?string $genderIdentityPreferredTerm = null)
     {
         $this->setProperty('genderIdentityPreferredTerm', $genderIdentityPreferredTerm);
     }
@@ -132,7 +132,7 @@ class Person extends ModelBase
     /**
      * @param \Arbor\Model\Title $title
      */
-    public function setTitle(\Arbor\Model\Title $title = null)
+    public function setTitle(?\Arbor\Model\Title $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -148,7 +148,7 @@ class Person extends ModelBase
     /**
      * @param \Arbor\Model\MaritalStatus $maritalStatus
      */
-    public function setMaritalStatus(\Arbor\Model\MaritalStatus $maritalStatus = null)
+    public function setMaritalStatus(?\Arbor\Model\MaritalStatus $maritalStatus = null)
     {
         $this->setProperty('maritalStatus', $maritalStatus);
     }
@@ -164,7 +164,7 @@ class Person extends ModelBase
     /**
      * @param string $legalFirstName
      */
-    public function setLegalFirstName(string $legalFirstName = null)
+    public function setLegalFirstName(?string $legalFirstName = null)
     {
         $this->setProperty('legalFirstName', $legalFirstName);
     }
@@ -180,7 +180,7 @@ class Person extends ModelBase
     /**
      * @param string $legalMiddleNames
      */
-    public function setLegalMiddleNames(string $legalMiddleNames = null)
+    public function setLegalMiddleNames(?string $legalMiddleNames = null)
     {
         $this->setProperty('legalMiddleNames', $legalMiddleNames);
     }
@@ -196,7 +196,7 @@ class Person extends ModelBase
     /**
      * @param string $legalLastName
      */
-    public function setLegalLastName(string $legalLastName = null)
+    public function setLegalLastName(?string $legalLastName = null)
     {
         $this->setProperty('legalLastName', $legalLastName);
     }
@@ -212,7 +212,7 @@ class Person extends ModelBase
     /**
      * @param string $preferredFirstName
      */
-    public function setPreferredFirstName(string $preferredFirstName = null)
+    public function setPreferredFirstName(?string $preferredFirstName = null)
     {
         $this->setProperty('preferredFirstName', $preferredFirstName);
     }
@@ -228,7 +228,7 @@ class Person extends ModelBase
     /**
      * @param string $preferredLastName
      */
-    public function setPreferredLastName(string $preferredLastName = null)
+    public function setPreferredLastName(?string $preferredLastName = null)
     {
         $this->setProperty('preferredLastName', $preferredLastName);
     }
@@ -244,7 +244,7 @@ class Person extends ModelBase
     /**
      * @param \DateTime $dateOfBirth
      */
-    public function setDateOfBirth(\DateTime $dateOfBirth = null)
+    public function setDateOfBirth(?\DateTime $dateOfBirth = null)
     {
         $this->setProperty('dateOfBirth', $dateOfBirth);
     }
@@ -260,7 +260,7 @@ class Person extends ModelBase
     /**
      * @param \Arbor\Model\Country $countryOfBirth
      */
-    public function setCountryOfBirth(\Arbor\Model\Country $countryOfBirth = null)
+    public function setCountryOfBirth(?\Arbor\Model\Country $countryOfBirth = null)
     {
         $this->setProperty('countryOfBirth', $countryOfBirth);
     }
@@ -276,7 +276,7 @@ class Person extends ModelBase
     /**
      * @param bool $deceased
      */
-    public function setDeceased(bool $deceased = null)
+    public function setDeceased(?bool $deceased = null)
     {
         $this->setProperty('deceased', $deceased);
     }
@@ -292,7 +292,7 @@ class Person extends ModelBase
     /**
      * @param \DateTime $dateOfDeath
      */
-    public function setDateOfDeath(\DateTime $dateOfDeath = null)
+    public function setDateOfDeath(?\DateTime $dateOfDeath = null)
     {
         $this->setProperty('dateOfDeath', $dateOfDeath);
     }

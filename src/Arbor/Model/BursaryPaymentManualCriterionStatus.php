@@ -20,7 +20,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
      * @return BursaryPaymentManualCriterionStatus[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param \Arbor\Model\BursaryPayment $bursaryPayment
      */
-    public function setBursaryPayment(\Arbor\Model\BursaryPayment $bursaryPayment = null)
+    public function setBursaryPayment(?\Arbor\Model\BursaryPayment $bursaryPayment = null)
     {
         $this->setProperty('bursaryPayment', $bursaryPayment);
     }
@@ -78,7 +78,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param \Arbor\Model\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion
      */
-    public function setBursaryPaymentManualCriterion(\Arbor\Model\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion = null)
+    public function setBursaryPaymentManualCriterion(?\Arbor\Model\BursaryPaymentManualCriterion $bursaryPaymentManualCriterion = null)
     {
         $this->setProperty('bursaryPaymentManualCriterion', $bursaryPaymentManualCriterion);
     }
@@ -94,7 +94,7 @@ class BursaryPaymentManualCriterionStatus extends ModelBase
     /**
      * @param bool $isMet
      */
-    public function setIsMet(bool $isMet = null)
+    public function setIsMet(?bool $isMet = null)
     {
         $this->setProperty('isMet', $isMet);
     }

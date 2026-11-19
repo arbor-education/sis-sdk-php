@@ -16,7 +16,7 @@ class QualificationResultEmbargoViewer extends ModelBase
      * @return QualificationResultEmbargoViewer[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -58,7 +58,7 @@ class QualificationResultEmbargoViewer extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $viewer
      */
-    public function setViewer(\Arbor\Model\ModelBase $viewer = null)
+    public function setViewer(?\Arbor\Model\ModelBase $viewer = null)
     {
         $this->setProperty('viewer', $viewer);
     }

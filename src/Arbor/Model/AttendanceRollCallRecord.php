@@ -30,7 +30,7 @@ class AttendanceRollCallRecord extends ModelBase
      * @return AttendanceRollCallRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRollCall $attendanceRollCall
      */
-    public function setAttendanceRollCall(\Arbor\Model\AttendanceRollCall $attendanceRollCall = null)
+    public function setAttendanceRollCall(?\Arbor\Model\AttendanceRollCall $attendanceRollCall = null)
     {
         $this->setProperty('attendanceRollCall', $attendanceRollCall);
     }
@@ -88,7 +88,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param \DateTime $recordDate
      */
-    public function setRecordDate(\DateTime $recordDate = null)
+    public function setRecordDate(?\DateTime $recordDate = null)
     {
         $this->setProperty('recordDate', $recordDate);
     }
@@ -104,7 +104,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -120,7 +120,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(\Arbor\Model\AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(?\Arbor\Model\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -136,7 +136,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(int $minutesLate = null)
+    public function setMinutesLate(?int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }
@@ -152,7 +152,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param \Arbor\Model\AttendanceRecord $sourceAttendanceRecord
      */
-    public function setSourceAttendanceRecord(\Arbor\Model\AttendanceRecord $sourceAttendanceRecord = null)
+    public function setSourceAttendanceRecord(?\Arbor\Model\AttendanceRecord $sourceAttendanceRecord = null)
     {
         $this->setProperty('sourceAttendanceRecord', $sourceAttendanceRecord);
     }
@@ -168,7 +168,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param string $validationError
      */
-    public function setValidationError(string $validationError = null)
+    public function setValidationError(?string $validationError = null)
     {
         $this->setProperty('validationError', $validationError);
     }
@@ -184,7 +184,7 @@ class AttendanceRollCallRecord extends ModelBase
     /**
      * @param string $source
      */
-    public function setSource(string $source = null)
+    public function setSource(?string $source = null)
     {
         $this->setProperty('source', $source);
     }

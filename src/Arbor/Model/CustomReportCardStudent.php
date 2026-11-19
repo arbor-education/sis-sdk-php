@@ -22,7 +22,7 @@ class CustomReportCardStudent extends ModelBase
      * @return CustomReportCardStudent[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +64,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param \Arbor\Model\CustomReportCard $customReportCard
      */
-    public function setCustomReportCard(\Arbor\Model\CustomReportCard $customReportCard = null)
+    public function setCustomReportCard(?\Arbor\Model\CustomReportCard $customReportCard = null)
     {
         $this->setProperty('customReportCard', $customReportCard);
     }
@@ -80,7 +80,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -96,7 +96,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -112,7 +112,7 @@ class CustomReportCardStudent extends ModelBase
     /**
      * @param \DateTime $generatedDatetime
      */
-    public function setGeneratedDatetime(\DateTime $generatedDatetime = null)
+    public function setGeneratedDatetime(?\DateTime $generatedDatetime = null)
     {
         $this->setProperty('generatedDatetime', $generatedDatetime);
     }

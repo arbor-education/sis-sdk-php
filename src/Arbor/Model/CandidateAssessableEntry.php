@@ -32,7 +32,7 @@ class CandidateAssessableEntry extends ModelBase
      * @return CandidateAssessableEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(?\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -90,7 +90,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(?\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
@@ -107,7 +107,7 @@ class CandidateAssessableEntry extends ModelBase
      * @param \Arbor\Model\QualificationAssessableInstance
      * $qualificationAssessableInstance
      */
-    public function setQualificationAssessableInstance(\Arbor\Model\QualificationAssessableInstance $qualificationAssessableInstance = null)
+    public function setQualificationAssessableInstance(?\Arbor\Model\QualificationAssessableInstance $qualificationAssessableInstance = null)
     {
         $this->setProperty('qualificationAssessableInstance', $qualificationAssessableInstance);
     }
@@ -123,7 +123,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param \Arbor\Model\InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(\Arbor\Model\InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(?\Arbor\Model\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
@@ -139,7 +139,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param \Arbor\Model\RoomLayoutSeat $seat
      */
-    public function setSeat(\Arbor\Model\RoomLayoutSeat $seat = null)
+    public function setSeat(?\Arbor\Model\RoomLayoutSeat $seat = null)
     {
         $this->setProperty('seat', $seat);
     }
@@ -155,7 +155,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param \DateTime $startDatetime
      */
-    public function setStartDatetime(\DateTime $startDatetime = null)
+    public function setStartDatetime(?\DateTime $startDatetime = null)
     {
         $this->setProperty('startDatetime', $startDatetime);
     }
@@ -171,7 +171,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage(float $extraTimePercentage = null)
+    public function setExtraTimePercentage(?float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -187,7 +187,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark(string $attendanceMark = null)
+    public function setAttendanceMark(?string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -203,7 +203,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate(int $minutesLate = null)
+    public function setMinutesLate(?int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }

@@ -28,7 +28,7 @@ class SupplyStaffRecord extends ModelBase
      * @return SupplyStaffRecord[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class SupplyStaffRecord extends ModelBase
     /**
      * @param \DateTime $recordDate
      */
-    public function setRecordDate(\DateTime $recordDate = null)
+    public function setRecordDate(?\DateTime $recordDate = null)
     {
         $this->setProperty('recordDate', $recordDate);
     }
@@ -86,7 +86,7 @@ class SupplyStaffRecord extends ModelBase
     /**
      * @param string $category
      */
-    public function setCategory(string $category = null)
+    public function setCategory(?string $category = null)
     {
         $this->setProperty('category', $category);
     }
@@ -102,7 +102,7 @@ class SupplyStaffRecord extends ModelBase
     /**
      * @param string $planned
      */
-    public function setPlanned(string $planned = null)
+    public function setPlanned(?string $planned = null)
     {
         $this->setProperty('planned', $planned);
     }
@@ -118,7 +118,7 @@ class SupplyStaffRecord extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -134,7 +134,7 @@ class SupplyStaffRecord extends ModelBase
     /**
      * @param float $daysDuration
      */
-    public function setDaysDuration(float $daysDuration = null)
+    public function setDaysDuration(?float $daysDuration = null)
     {
         $this->setProperty('daysDuration', $daysDuration);
     }
@@ -150,7 +150,7 @@ class SupplyStaffRecord extends ModelBase
     /**
      * @param string $cost
      */
-    public function setCost(string $cost = null)
+    public function setCost(?string $cost = null)
     {
         $this->setProperty('cost', $cost);
     }

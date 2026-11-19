@@ -18,7 +18,7 @@ class TimetableImportTimetableSlotRelatedEntity extends ModelBase
      * @return TimetableImportTimetableSlotRelatedEntity[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class TimetableImportTimetableSlotRelatedEntity extends ModelBase
     /**
      * @param \Arbor\Model\TimetableImportTimetableSlot $timetableImportTimetableSlot
      */
-    public function setTimetableImportTimetableSlot(\Arbor\Model\TimetableImportTimetableSlot $timetableImportTimetableSlot = null)
+    public function setTimetableImportTimetableSlot(?\Arbor\Model\TimetableImportTimetableSlot $timetableImportTimetableSlot = null)
     {
         $this->setProperty('timetableImportTimetableSlot', $timetableImportTimetableSlot);
     }
@@ -76,7 +76,7 @@ class TimetableImportTimetableSlotRelatedEntity extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $relatedEntity
      */
-    public function setRelatedEntity(\Arbor\Model\ModelBase $relatedEntity = null)
+    public function setRelatedEntity(?\Arbor\Model\ModelBase $relatedEntity = null)
     {
         $this->setProperty('relatedEntity', $relatedEntity);
     }

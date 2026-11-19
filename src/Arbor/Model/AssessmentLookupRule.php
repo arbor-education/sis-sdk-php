@@ -34,7 +34,7 @@ class AssessmentLookupRule extends ModelBase
      * @return AssessmentLookupRule[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -76,7 +76,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode(string $code = null)
+    public function setCode(?string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -92,7 +92,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive(bool $active = null)
+    public function setActive(?bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -108,7 +108,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder(int $dataOrder = null)
+    public function setDataOrder(?int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -124,7 +124,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentLookup $assessmentLookup
      */
-    public function setAssessmentLookup(\Arbor\Model\AssessmentLookup $assessmentLookup = null)
+    public function setAssessmentLookup(?\Arbor\Model\AssessmentLookup $assessmentLookup = null)
     {
         $this->setProperty('assessmentLookup', $assessmentLookup);
     }
@@ -140,7 +140,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -156,7 +156,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName(string $shortName = null)
+    public function setShortName(?string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -172,7 +172,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param \Arbor\Model\AssessmentGrade $assessmentGrade
      */
-    public function setAssessmentGrade(\Arbor\Model\AssessmentGrade $assessmentGrade = null)
+    public function setAssessmentGrade(?\Arbor\Model\AssessmentGrade $assessmentGrade = null)
     {
         $this->setProperty('assessmentGrade', $assessmentGrade);
     }
@@ -188,7 +188,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param int $lowerLimit
      */
-    public function setLowerLimit(int $lowerLimit = null)
+    public function setLowerLimit(?int $lowerLimit = null)
     {
         $this->setProperty('lowerLimit', $lowerLimit);
     }
@@ -204,7 +204,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param int $upperLimit
      */
-    public function setUpperLimit(int $upperLimit = null)
+    public function setUpperLimit(?int $upperLimit = null)
     {
         $this->setProperty('upperLimit', $upperLimit);
     }
@@ -220,7 +220,7 @@ class AssessmentLookupRule extends ModelBase
     /**
      * @param float $statisticalValue
      */
-    public function setStatisticalValue(float $statisticalValue = null)
+    public function setStatisticalValue(?float $statisticalValue = null)
     {
         $this->setProperty('statisticalValue', $statisticalValue);
     }

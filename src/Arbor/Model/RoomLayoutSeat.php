@@ -20,7 +20,7 @@ class RoomLayoutSeat extends ModelBase
      * @return RoomLayoutSeat[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param \Arbor\Model\RoomLayout $roomLayout
      */
-    public function setRoomLayout(\Arbor\Model\RoomLayout $roomLayout = null)
+    public function setRoomLayout(?\Arbor\Model\RoomLayout $roomLayout = null)
     {
         $this->setProperty('roomLayout', $roomLayout);
     }
@@ -78,7 +78,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param int $x
      */
-    public function setX(int $x = null)
+    public function setX(?int $x = null)
     {
         $this->setProperty('x', $x);
     }
@@ -94,7 +94,7 @@ class RoomLayoutSeat extends ModelBase
     /**
      * @param int $y
      */
-    public function setY(int $y = null)
+    public function setY(?int $y = null)
     {
         $this->setProperty('y', $y);
     }

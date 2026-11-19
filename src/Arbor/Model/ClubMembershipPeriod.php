@@ -28,7 +28,7 @@ class ClubMembershipPeriod extends ModelBase
      * @return ClubMembershipPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param \Arbor\Model\Club $club
      */
-    public function setClub(\Arbor\Model\Club $club = null)
+    public function setClub(?\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -86,7 +86,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param string $name
      */
-    public function setName(string $name = null)
+    public function setName(?string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -102,7 +102,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param \DateTime $purchaseStartDate
      */
-    public function setPurchaseStartDate(\DateTime $purchaseStartDate = null)
+    public function setPurchaseStartDate(?\DateTime $purchaseStartDate = null)
     {
         $this->setProperty('purchaseStartDate', $purchaseStartDate);
     }
@@ -118,7 +118,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param \DateTime $purchaseEndDate
      */
-    public function setPurchaseEndDate(\DateTime $purchaseEndDate = null)
+    public function setPurchaseEndDate(?\DateTime $purchaseEndDate = null)
     {
         $this->setProperty('purchaseEndDate', $purchaseEndDate);
     }
@@ -134,7 +134,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param string $membershipPeriodType
      */
-    public function setMembershipPeriodType(string $membershipPeriodType = null)
+    public function setMembershipPeriodType(?string $membershipPeriodType = null)
     {
         $this->setProperty('membershipPeriodType', $membershipPeriodType);
     }
@@ -150,7 +150,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param \DateTime $guardianSignupStartDatetime
      */
-    public function setGuardianSignupStartDatetime(\DateTime $guardianSignupStartDatetime = null)
+    public function setGuardianSignupStartDatetime(?\DateTime $guardianSignupStartDatetime = null)
     {
         $this->setProperty('guardianSignupStartDatetime', $guardianSignupStartDatetime);
     }
@@ -166,7 +166,7 @@ class ClubMembershipPeriod extends ModelBase
     /**
      * @param \DateTime $guardianSignupEndDatetime
      */
-    public function setGuardianSignupEndDatetime(\DateTime $guardianSignupEndDatetime = null)
+    public function setGuardianSignupEndDatetime(?\DateTime $guardianSignupEndDatetime = null)
     {
         $this->setProperty('guardianSignupEndDatetime', $guardianSignupEndDatetime);
     }

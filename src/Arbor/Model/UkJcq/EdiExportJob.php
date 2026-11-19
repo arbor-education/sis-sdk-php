@@ -32,7 +32,7 @@ class EdiExportJob extends ModelBase
      * @return EdiExportJob[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +74,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $fileName
      */
-    public function setFileName(string $fileName = null)
+    public function setFileName(?string $fileName = null)
     {
         $this->setProperty('fileName', $fileName);
     }
@@ -90,7 +90,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $fileType
      */
-    public function setFileType(string $fileType = null)
+    public function setFileType(?string $fileType = null)
     {
         $this->setProperty('fileType', $fileType);
     }
@@ -106,7 +106,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param \DateTime $exportedDatetime
      */
-    public function setExportedDatetime(\DateTime $exportedDatetime = null)
+    public function setExportedDatetime(?\DateTime $exportedDatetime = null)
     {
         $this->setProperty('exportedDatetime', $exportedDatetime);
     }
@@ -122,7 +122,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus(string $status = null)
+    public function setStatus(?string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -138,7 +138,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param int $sequenceNumber
      */
-    public function setSequenceNumber(int $sequenceNumber = null)
+    public function setSequenceNumber(?int $sequenceNumber = null)
     {
         $this->setProperty('sequenceNumber', $sequenceNumber);
     }
@@ -154,7 +154,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
+    public function setAcademicYear(?\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -170,7 +170,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(?\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -187,7 +187,7 @@ class EdiExportJob extends ModelBase
      * @param \Arbor\Model\QualificationAvailabilityInstance
      * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(?\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }

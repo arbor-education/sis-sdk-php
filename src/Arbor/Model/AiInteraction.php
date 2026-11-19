@@ -38,7 +38,7 @@ class AiInteraction extends ModelBase
      * @return AiInteraction[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -80,7 +80,7 @@ class AiInteraction extends ModelBase
     /**
      * @param string $type
      */
-    public function setType(string $type = null)
+    public function setType(?string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -96,7 +96,7 @@ class AiInteraction extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier(string $identifier = null)
+    public function setIdentifier(?string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -112,7 +112,7 @@ class AiInteraction extends ModelBase
     /**
      * @param string $featureCode
      */
-    public function setFeatureCode(string $featureCode = null)
+    public function setFeatureCode(?string $featureCode = null)
     {
         $this->setProperty('featureCode', $featureCode);
     }
@@ -128,7 +128,7 @@ class AiInteraction extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle(string $title = null)
+    public function setTitle(?string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -144,7 +144,7 @@ class AiInteraction extends ModelBase
     /**
      * @param string $cost
      */
-    public function setCost(string $cost = null)
+    public function setCost(?string $cost = null)
     {
         $this->setProperty('cost', $cost);
     }
@@ -160,7 +160,7 @@ class AiInteraction extends ModelBase
     /**
      * @param int $chatLength
      */
-    public function setChatLength(int $chatLength = null)
+    public function setChatLength(?int $chatLength = null)
     {
         $this->setProperty('chatLength', $chatLength);
     }
@@ -176,7 +176,7 @@ class AiInteraction extends ModelBase
     /**
      * @param bool $moderationAlert
      */
-    public function setModerationAlert(bool $moderationAlert = null)
+    public function setModerationAlert(?bool $moderationAlert = null)
     {
         $this->setProperty('moderationAlert', $moderationAlert);
     }
@@ -192,7 +192,7 @@ class AiInteraction extends ModelBase
     /**
      * @param \Arbor\Model\Staff $reviewAssignedToStaff
      */
-    public function setReviewAssignedToStaff(\Arbor\Model\Staff $reviewAssignedToStaff = null)
+    public function setReviewAssignedToStaff(?\Arbor\Model\Staff $reviewAssignedToStaff = null)
     {
         $this->setProperty('reviewAssignedToStaff', $reviewAssignedToStaff);
     }
@@ -208,7 +208,7 @@ class AiInteraction extends ModelBase
     /**
      * @param \DateTime $reviewAssignedDatetime
      */
-    public function setReviewAssignedDatetime(\DateTime $reviewAssignedDatetime = null)
+    public function setReviewAssignedDatetime(?\DateTime $reviewAssignedDatetime = null)
     {
         $this->setProperty('reviewAssignedDatetime', $reviewAssignedDatetime);
     }
@@ -224,7 +224,7 @@ class AiInteraction extends ModelBase
     /**
      * @param \Arbor\Model\Staff $reviewedByStaff
      */
-    public function setReviewedByStaff(\Arbor\Model\Staff $reviewedByStaff = null)
+    public function setReviewedByStaff(?\Arbor\Model\Staff $reviewedByStaff = null)
     {
         $this->setProperty('reviewedByStaff', $reviewedByStaff);
     }
@@ -240,7 +240,7 @@ class AiInteraction extends ModelBase
     /**
      * @param \DateTime $reviewedDatetime
      */
-    public function setReviewedDatetime(\DateTime $reviewedDatetime = null)
+    public function setReviewedDatetime(?\DateTime $reviewedDatetime = null)
     {
         $this->setProperty('reviewedDatetime', $reviewedDatetime);
     }
@@ -256,7 +256,7 @@ class AiInteraction extends ModelBase
     /**
      * @param bool $isArchived
      */
-    public function setIsArchived(bool $isArchived = null)
+    public function setIsArchived(?bool $isArchived = null)
     {
         $this->setProperty('isArchived', $isArchived);
     }

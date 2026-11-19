@@ -30,7 +30,7 @@ class BursaryPayment extends ModelBase
      * @return BursaryPayment[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -72,7 +72,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\Student $student
      */
-    public function setStudent(\Arbor\Model\Student $student = null)
+    public function setStudent(?\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -88,7 +88,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\BursaryLevelAmount $bursaryLevelAmount
      */
-    public function setBursaryLevelAmount(\Arbor\Model\BursaryLevelAmount $bursaryLevelAmount = null)
+    public function setBursaryLevelAmount(?\Arbor\Model\BursaryLevelAmount $bursaryLevelAmount = null)
     {
         $this->setProperty('bursaryLevelAmount', $bursaryLevelAmount);
     }
@@ -104,7 +104,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\BursaryPaymentDate $bursaryPaymentDate
      */
-    public function setBursaryPaymentDate(\Arbor\Model\BursaryPaymentDate $bursaryPaymentDate = null)
+    public function setBursaryPaymentDate(?\Arbor\Model\BursaryPaymentDate $bursaryPaymentDate = null)
     {
         $this->setProperty('bursaryPaymentDate', $bursaryPaymentDate);
     }
@@ -120,7 +120,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \DateTime $approvedDate
      */
-    public function setApprovedDate(\DateTime $approvedDate = null)
+    public function setApprovedDate(?\DateTime $approvedDate = null)
     {
         $this->setProperty('approvedDate', $approvedDate);
     }
@@ -136,7 +136,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
+    public function setApprovedByStaff(?\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -152,7 +152,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \DateTime $rejectedDate
      */
-    public function setRejectedDate(\DateTime $rejectedDate = null)
+    public function setRejectedDate(?\DateTime $rejectedDate = null)
     {
         $this->setProperty('rejectedDate', $rejectedDate);
     }
@@ -168,7 +168,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \Arbor\Model\Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(\Arbor\Model\Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(?\Arbor\Model\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }
@@ -184,7 +184,7 @@ class BursaryPayment extends ModelBase
     /**
      * @param \DateTime $paidDate
      */
-    public function setPaidDate(\DateTime $paidDate = null)
+    public function setPaidDate(?\DateTime $paidDate = null)
     {
         $this->setProperty('paidDate', $paidDate);
     }

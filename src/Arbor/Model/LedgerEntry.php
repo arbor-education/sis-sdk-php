@@ -20,7 +20,7 @@ class LedgerEntry extends ModelBase
      * @return LedgerEntry[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param string $amount
      */
-    public function setAmount(string $amount = null)
+    public function setAmount(?string $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -78,7 +78,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(?\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -94,7 +94,7 @@ class LedgerEntry extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $transaction
      */
-    public function setTransaction(\Arbor\Model\ModelBase $transaction = null)
+    public function setTransaction(?\Arbor\Model\ModelBase $transaction = null)
     {
         $this->setProperty('transaction', $transaction);
     }

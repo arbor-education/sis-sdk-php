@@ -24,7 +24,7 @@ class LessonPlanSectionItem extends ModelBase
      * @return LessonPlanSectionItem[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -66,7 +66,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param \Arbor\Model\LessonPlanSection $lessonPlanSection
      */
-    public function setLessonPlanSection(\Arbor\Model\LessonPlanSection $lessonPlanSection = null)
+    public function setLessonPlanSection(?\Arbor\Model\LessonPlanSection $lessonPlanSection = null)
     {
         $this->setProperty('lessonPlanSection', $lessonPlanSection);
     }
@@ -82,7 +82,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $linkedItem
      */
-    public function setLinkedItem(\Arbor\Model\ModelBase $linkedItem = null)
+    public function setLinkedItem(?\Arbor\Model\ModelBase $linkedItem = null)
     {
         $this->setProperty('linkedItem', $linkedItem);
     }
@@ -98,7 +98,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative(string $narrative = null)
+    public function setNarrative(?string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -114,7 +114,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes(string $teacherNotes = null)
+    public function setTeacherNotes(?string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -130,7 +130,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder(int $displayOrder = null)
+    public function setDisplayOrder(?int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

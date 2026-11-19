@@ -28,7 +28,7 @@ class CustomerPaymentRefund extends ModelBase
      * @return CustomerPaymentRefund[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -70,7 +70,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param \Arbor\Model\CustomerPayment $customerPayment
      */
-    public function setCustomerPayment(\Arbor\Model\CustomerPayment $customerPayment = null)
+    public function setCustomerPayment(?\Arbor\Model\CustomerPayment $customerPayment = null)
     {
         $this->setProperty('customerPayment', $customerPayment);
     }
@@ -86,7 +86,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param \DateTime $refundDatetime
      */
-    public function setRefundDatetime(\DateTime $refundDatetime = null)
+    public function setRefundDatetime(?\DateTime $refundDatetime = null)
     {
         $this->setProperty('refundDatetime', $refundDatetime);
     }
@@ -102,7 +102,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param string $refundAmount
      */
-    public function setRefundAmount(string $refundAmount = null)
+    public function setRefundAmount(?string $refundAmount = null)
     {
         $this->setProperty('refundAmount', $refundAmount);
     }
@@ -118,7 +118,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $refundTransaction
      */
-    public function setRefundTransaction(\Arbor\Model\ModelBase $refundTransaction = null)
+    public function setRefundTransaction(?\Arbor\Model\ModelBase $refundTransaction = null)
     {
         $this->setProperty('refundTransaction', $refundTransaction);
     }
@@ -134,7 +134,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param \DateTime $refundSucceededDatetime
      */
-    public function setRefundSucceededDatetime(\DateTime $refundSucceededDatetime = null)
+    public function setRefundSucceededDatetime(?\DateTime $refundSucceededDatetime = null)
     {
         $this->setProperty('refundSucceededDatetime', $refundSucceededDatetime);
     }
@@ -150,7 +150,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param \DateTime $refundFailedDatetime
      */
-    public function setRefundFailedDatetime(\DateTime $refundFailedDatetime = null)
+    public function setRefundFailedDatetime(?\DateTime $refundFailedDatetime = null)
     {
         $this->setProperty('refundFailedDatetime', $refundFailedDatetime);
     }
@@ -166,7 +166,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param string $customerPaymentRefundMethod
      */
-    public function setCustomerPaymentRefundMethod(string $customerPaymentRefundMethod = null)
+    public function setCustomerPaymentRefundMethod(?string $customerPaymentRefundMethod = null)
     {
         $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }

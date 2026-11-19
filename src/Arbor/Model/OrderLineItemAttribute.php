@@ -20,7 +20,7 @@ class OrderLineItemAttribute extends ModelBase
      * @return OrderLineItemAttribute[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class OrderLineItemAttribute extends ModelBase
     /**
      * @param \Arbor\Model\OrderLineItem $orderLineItem
      */
-    public function setOrderLineItem(\Arbor\Model\OrderLineItem $orderLineItem = null)
+    public function setOrderLineItem(?\Arbor\Model\OrderLineItem $orderLineItem = null)
     {
         $this->setProperty('orderLineItem', $orderLineItem);
     }
@@ -78,7 +78,7 @@ class OrderLineItemAttribute extends ModelBase
     /**
      * @param string $attribute
      */
-    public function setAttribute(string $attribute = null)
+    public function setAttribute(?string $attribute = null)
     {
         $this->setProperty('attribute', $attribute);
     }
@@ -94,7 +94,7 @@ class OrderLineItemAttribute extends ModelBase
     /**
      * @param string $value
      */
-    public function setValue(string $value = null)
+    public function setValue(?string $value = null)
     {
         $this->setProperty('value', $value);
     }

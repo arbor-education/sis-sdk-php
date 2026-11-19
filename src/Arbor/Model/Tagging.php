@@ -26,7 +26,7 @@ class Tagging extends ModelBase
      * @return Tagging[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -68,7 +68,7 @@ class Tagging extends ModelBase
     /**
      * @param \Arbor\Model\Tag $tag
      */
-    public function setTag(\Arbor\Model\Tag $tag = null)
+    public function setTag(?\Arbor\Model\Tag $tag = null)
     {
         $this->setProperty('tag', $tag);
     }
@@ -84,7 +84,7 @@ class Tagging extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $taggedObject
      */
-    public function setTaggedObject(\Arbor\Model\ModelBase $taggedObject = null)
+    public function setTaggedObject(?\Arbor\Model\ModelBase $taggedObject = null)
     {
         $this->setProperty('taggedObject', $taggedObject);
     }
@@ -100,7 +100,7 @@ class Tagging extends ModelBase
     /**
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate = null)
+    public function setStartDate(?\DateTime $startDate = null)
     {
         $this->setProperty('startDate', $startDate);
     }
@@ -116,7 +116,7 @@ class Tagging extends ModelBase
     /**
      * @param \DateTime $endDate
      */
-    public function setEndDate(\DateTime $endDate = null)
+    public function setEndDate(?\DateTime $endDate = null)
     {
         $this->setProperty('endDate', $endDate);
     }
@@ -132,7 +132,7 @@ class Tagging extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $link1
      */
-    public function setLink1(\Arbor\Model\ModelBase $link1 = null)
+    public function setLink1(?\Arbor\Model\ModelBase $link1 = null)
     {
         $this->setProperty('link1', $link1);
     }
@@ -148,7 +148,7 @@ class Tagging extends ModelBase
     /**
      * @param \Arbor\Model\ModelBase $link2
      */
-    public function setLink2(\Arbor\Model\ModelBase $link2 = null)
+    public function setLink2(?\Arbor\Model\ModelBase $link2 = null)
     {
         $this->setProperty('link2', $link2);
     }

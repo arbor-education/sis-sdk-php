@@ -20,7 +20,7 @@ class Position extends ModelBase
      * @return Position[] | Collection
      * @throws Exception
      */
-    public static function query(\Arbor\Query\Query $query = null)
+    public static function query(?\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,7 +62,7 @@ class Position extends ModelBase
     /**
      * @param \Arbor\Model\Cymru\PositionCategory $positionCategory
      */
-    public function setPositionCategory(\Arbor\Model\Cymru\PositionCategory $positionCategory = null)
+    public function setPositionCategory(?\Arbor\Model\Cymru\PositionCategory $positionCategory = null)
     {
         $this->setProperty('positionCategory', $positionCategory);
     }
@@ -79,7 +79,7 @@ class Position extends ModelBase
      * @param \Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole
      * $schoolWorkforceCensusBusinessRole
      */
-    public function setSchoolWorkforceCensusBusinessRole(\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
+    public function setSchoolWorkforceCensusBusinessRole(?\Arbor\Model\Cymru\SchoolWorkforceCensusBusinessRole $schoolWorkforceCensusBusinessRole = null)
     {
         $this->setProperty('schoolWorkforceCensusBusinessRole', $schoolWorkforceCensusBusinessRole);
     }
